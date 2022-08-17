@@ -29,19 +29,11 @@ func CreateWindows10XTrustedRootCertificateFromDiscriminatorValue(parseNode i878
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
 func (m *Windows10XTrustedRootCertificate) GetCertFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certFileName
-    }
+    return m.certFileName
 }
 // GetDestinationStore gets the destinationStore property value. Possible values for the Certificate Destination Store.
 func (m *Windows10XTrustedRootCertificate) GetDestinationStore()(*CertificateDestinationStore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.destinationStore
-    }
+    return m.destinationStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10XTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *Windows10XTrustedRootCertificate) GetFieldDeserializers()(map[string]fu
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
 func (m *Windows10XTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustedRootCertificate
-    }
+    return m.trustedRootCertificate
 }
 // Serialize serializes information the current object
 func (m *Windows10XTrustedRootCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *Windows10XTrustedRootCertificate) Serialize(writer i878a80d2330e89d2689
 }
 // SetCertFileName sets the certFileName property value. File name to display in UI.
 func (m *Windows10XTrustedRootCertificate) SetCertFileName(value *string)() {
-    if m != nil {
-        m.certFileName = value
-    }
+    m.certFileName = value
 }
 // SetDestinationStore sets the destinationStore property value. Possible values for the Certificate Destination Store.
 func (m *Windows10XTrustedRootCertificate) SetDestinationStore(value *CertificateDestinationStore)() {
-    if m != nil {
-        m.destinationStore = value
-    }
+    m.destinationStore = value
 }
 // SetTrustedRootCertificate sets the trustedRootCertificate property value. Trusted Root Certificate
 func (m *Windows10XTrustedRootCertificate) SetTrustedRootCertificate(value []byte)() {
-    if m != nil {
-        m.trustedRootCertificate = value
-    }
+    m.trustedRootCertificate = value
 }

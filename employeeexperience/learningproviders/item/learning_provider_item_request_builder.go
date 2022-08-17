@@ -164,15 +164,15 @@ func (m *LearningProviderItemRequestBuilder) LearningContents()(*i2919c38739be04
     return i2919c38739be04a3e465de3c3099dbdbcce772b268c4d68f95903feeeeed2e4e.NewLearningContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LearningContentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.employeeExperience.learningProviders.item.learningContents.item collection
-func (m *LearningProviderItemRequestBuilder) LearningContentsById(id string)(*i39fd7d6efa293a5c2ce369286bc48b30105ae461e89f150a49f1690bd94f5906.LearningContentExternalItemRequestBuilder) {
+func (m *LearningProviderItemRequestBuilder) LearningContentsById(id string)(*i39fd7d6efa293a5c2ce369286bc48b30105ae461e89f150a49f1690bd94f5906.LearningContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["learningContent%2DexternalId"] = id
+        urlTplParams["learningContent%2Did"] = id
     }
-    return i39fd7d6efa293a5c2ce369286bc48b30105ae461e89f150a49f1690bd94f5906.NewLearningContentExternalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i39fd7d6efa293a5c2ce369286bc48b30105ae461e89f150a49f1690bd94f5906.NewLearningContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property learningProviders in employeeExperience
 func (m *LearningProviderItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable)(error) {

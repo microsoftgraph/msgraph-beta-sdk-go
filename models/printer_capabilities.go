@@ -104,83 +104,43 @@ func CreatePrinterCapabilitiesFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterCapabilities) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBottomMargins gets the bottomMargins property value. A list of supported bottom margins(in microns) for the printer.
 func (m *PrinterCapabilities) GetBottomMargins()([]int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bottomMargins
-    }
+    return m.bottomMargins
 }
 // GetCollation gets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
 func (m *PrinterCapabilities) GetCollation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.collation
-    }
+    return m.collation
 }
 // GetColorModes gets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
 func (m *PrinterCapabilities) GetColorModes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.colorModes
-    }
+    return m.colorModes
 }
 // GetContentTypes gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
 func (m *PrinterCapabilities) GetContentTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentTypes
-    }
+    return m.contentTypes
 }
 // GetCopiesPerJob gets the copiesPerJob property value. The range of copies per job supported by the printer.
 func (m *PrinterCapabilities) GetCopiesPerJob()(IntegerRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.copiesPerJob
-    }
+    return m.copiesPerJob
 }
 // GetDpis gets the dpis property value. The list of print resolutions in DPI that are supported by the printer.
 func (m *PrinterCapabilities) GetDpis()([]int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dpis
-    }
+    return m.dpis
 }
 // GetDuplexModes gets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
 func (m *PrinterCapabilities) GetDuplexModes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duplexModes
-    }
+    return m.duplexModes
 }
 // GetFeedDirections gets the feedDirections property value. The feedDirections property
 func (m *PrinterCapabilities) GetFeedDirections()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedDirections
-    }
+    return m.feedDirections
 }
 // GetFeedOrientations gets the feedOrientations property value. The list of feed orientations that are supported by the printer.
 func (m *PrinterCapabilities) GetFeedOrientations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedOrientations
-    }
+    return m.feedOrientations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -717,251 +677,127 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFinishings gets the finishings property value. Finishing processes the printer supports for a printed document.
 func (m *PrinterCapabilities) GetFinishings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finishings
-    }
+    return m.finishings
 }
 // GetInputBins gets the inputBins property value. Supported input bins for the printer.
 func (m *PrinterCapabilities) GetInputBins()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputBins
-    }
+    return m.inputBins
 }
 // GetIsColorPrintingSupported gets the isColorPrintingSupported property value. True if color printing is supported by the printer; false otherwise. Read-only.
 func (m *PrinterCapabilities) GetIsColorPrintingSupported()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isColorPrintingSupported
-    }
+    return m.isColorPrintingSupported
 }
 // GetIsPageRangeSupported gets the isPageRangeSupported property value. True if the printer supports printing by page ranges; false otherwise.
 func (m *PrinterCapabilities) GetIsPageRangeSupported()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPageRangeSupported
-    }
+    return m.isPageRangeSupported
 }
 // GetLeftMargins gets the leftMargins property value. A list of supported left margins(in microns) for the printer.
 func (m *PrinterCapabilities) GetLeftMargins()([]int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.leftMargins
-    }
+    return m.leftMargins
 }
 // GetMediaColors gets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
 func (m *PrinterCapabilities) GetMediaColors()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaColors
-    }
+    return m.mediaColors
 }
 // GetMediaSizes gets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
 func (m *PrinterCapabilities) GetMediaSizes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSizes
-    }
+    return m.mediaSizes
 }
 // GetMediaTypes gets the mediaTypes property value. The media types supported by the printer.
 func (m *PrinterCapabilities) GetMediaTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaTypes
-    }
+    return m.mediaTypes
 }
 // GetMultipageLayouts gets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
 func (m *PrinterCapabilities) GetMultipageLayouts()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multipageLayouts
-    }
+    return m.multipageLayouts
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrinterCapabilities) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOrientations gets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
 func (m *PrinterCapabilities) GetOrientations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientations
-    }
+    return m.orientations
 }
 // GetOutputBins gets the outputBins property value. The printer's supported output bins (trays).
 func (m *PrinterCapabilities) GetOutputBins()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputBins
-    }
+    return m.outputBins
 }
 // GetPagesPerSheet gets the pagesPerSheet property value. Supported number of Input Pages to impose upon a single Impression.
 func (m *PrinterCapabilities) GetPagesPerSheet()([]int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pagesPerSheet
-    }
+    return m.pagesPerSheet
 }
 // GetQualities gets the qualities property value. The print qualities supported by the printer.
 func (m *PrinterCapabilities) GetQualities()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualities
-    }
+    return m.qualities
 }
 // GetRightMargins gets the rightMargins property value. A list of supported right margins(in microns) for the printer.
 func (m *PrinterCapabilities) GetRightMargins()([]int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rightMargins
-    }
+    return m.rightMargins
 }
 // GetScalings gets the scalings property value. Supported print scalings.
 func (m *PrinterCapabilities) GetScalings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scalings
-    }
+    return m.scalings
 }
 // GetSupportedColorConfigurations gets the supportedColorConfigurations property value. The supportedColorConfigurations property
 func (m *PrinterCapabilities) GetSupportedColorConfigurations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedColorConfigurations
-    }
+    return m.supportedColorConfigurations
 }
 // GetSupportedCopiesPerJob gets the supportedCopiesPerJob property value. The supportedCopiesPerJob property
 func (m *PrinterCapabilities) GetSupportedCopiesPerJob()(IntegerRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedCopiesPerJob
-    }
+    return m.supportedCopiesPerJob
 }
 // GetSupportedDocumentMimeTypes gets the supportedDocumentMimeTypes property value. The supportedDocumentMimeTypes property
 func (m *PrinterCapabilities) GetSupportedDocumentMimeTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedDocumentMimeTypes
-    }
+    return m.supportedDocumentMimeTypes
 }
 // GetSupportedDuplexConfigurations gets the supportedDuplexConfigurations property value. The supportedDuplexConfigurations property
 func (m *PrinterCapabilities) GetSupportedDuplexConfigurations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedDuplexConfigurations
-    }
+    return m.supportedDuplexConfigurations
 }
 // GetSupportedFinishings gets the supportedFinishings property value. The supportedFinishings property
 func (m *PrinterCapabilities) GetSupportedFinishings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedFinishings
-    }
+    return m.supportedFinishings
 }
 // GetSupportedMediaColors gets the supportedMediaColors property value. The supportedMediaColors property
 func (m *PrinterCapabilities) GetSupportedMediaColors()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedMediaColors
-    }
+    return m.supportedMediaColors
 }
 // GetSupportedMediaSizes gets the supportedMediaSizes property value. The supportedMediaSizes property
 func (m *PrinterCapabilities) GetSupportedMediaSizes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedMediaSizes
-    }
+    return m.supportedMediaSizes
 }
 // GetSupportedMediaTypes gets the supportedMediaTypes property value. The supportedMediaTypes property
 func (m *PrinterCapabilities) GetSupportedMediaTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedMediaTypes
-    }
+    return m.supportedMediaTypes
 }
 // GetSupportedOrientations gets the supportedOrientations property value. The supportedOrientations property
 func (m *PrinterCapabilities) GetSupportedOrientations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedOrientations
-    }
+    return m.supportedOrientations
 }
 // GetSupportedOutputBins gets the supportedOutputBins property value. The supportedOutputBins property
 func (m *PrinterCapabilities) GetSupportedOutputBins()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedOutputBins
-    }
+    return m.supportedOutputBins
 }
 // GetSupportedPagesPerSheet gets the supportedPagesPerSheet property value. The supportedPagesPerSheet property
 func (m *PrinterCapabilities) GetSupportedPagesPerSheet()(IntegerRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedPagesPerSheet
-    }
+    return m.supportedPagesPerSheet
 }
 // GetSupportedPresentationDirections gets the supportedPresentationDirections property value. The supportedPresentationDirections property
 func (m *PrinterCapabilities) GetSupportedPresentationDirections()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedPresentationDirections
-    }
+    return m.supportedPresentationDirections
 }
 // GetSupportedPrintQualities gets the supportedPrintQualities property value. The supportedPrintQualities property
 func (m *PrinterCapabilities) GetSupportedPrintQualities()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedPrintQualities
-    }
+    return m.supportedPrintQualities
 }
 // GetSupportsFitPdfToPage gets the supportsFitPdfToPage property value. True if the printer supports scaling PDF pages to match the print media size; false otherwise.
 func (m *PrinterCapabilities) GetSupportsFitPdfToPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportsFitPdfToPage
-    }
+    return m.supportsFitPdfToPage
 }
 // GetTopMargins gets the topMargins property value. A list of supported top margins(in microns) for the printer.
 func (m *PrinterCapabilities) GetTopMargins()([]int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topMargins
-    }
+    return m.topMargins
 }
 // Serialize serializes information the current object
 func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1215,247 +1051,165 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterCapabilities) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBottomMargins sets the bottomMargins property value. A list of supported bottom margins(in microns) for the printer.
 func (m *PrinterCapabilities) SetBottomMargins(value []int32)() {
-    if m != nil {
-        m.bottomMargins = value
-    }
+    m.bottomMargins = value
 }
 // SetCollation sets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
 func (m *PrinterCapabilities) SetCollation(value *bool)() {
-    if m != nil {
-        m.collation = value
-    }
+    m.collation = value
 }
 // SetColorModes sets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
 func (m *PrinterCapabilities) SetColorModes(value []string)() {
-    if m != nil {
-        m.colorModes = value
-    }
+    m.colorModes = value
 }
 // SetContentTypes sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
 func (m *PrinterCapabilities) SetContentTypes(value []string)() {
-    if m != nil {
-        m.contentTypes = value
-    }
+    m.contentTypes = value
 }
 // SetCopiesPerJob sets the copiesPerJob property value. The range of copies per job supported by the printer.
 func (m *PrinterCapabilities) SetCopiesPerJob(value IntegerRangeable)() {
-    if m != nil {
-        m.copiesPerJob = value
-    }
+    m.copiesPerJob = value
 }
 // SetDpis sets the dpis property value. The list of print resolutions in DPI that are supported by the printer.
 func (m *PrinterCapabilities) SetDpis(value []int32)() {
-    if m != nil {
-        m.dpis = value
-    }
+    m.dpis = value
 }
 // SetDuplexModes sets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
 func (m *PrinterCapabilities) SetDuplexModes(value []string)() {
-    if m != nil {
-        m.duplexModes = value
-    }
+    m.duplexModes = value
 }
 // SetFeedDirections sets the feedDirections property value. The feedDirections property
 func (m *PrinterCapabilities) SetFeedDirections(value []string)() {
-    if m != nil {
-        m.feedDirections = value
-    }
+    m.feedDirections = value
 }
 // SetFeedOrientations sets the feedOrientations property value. The list of feed orientations that are supported by the printer.
 func (m *PrinterCapabilities) SetFeedOrientations(value []string)() {
-    if m != nil {
-        m.feedOrientations = value
-    }
+    m.feedOrientations = value
 }
 // SetFinishings sets the finishings property value. Finishing processes the printer supports for a printed document.
 func (m *PrinterCapabilities) SetFinishings(value []string)() {
-    if m != nil {
-        m.finishings = value
-    }
+    m.finishings = value
 }
 // SetInputBins sets the inputBins property value. Supported input bins for the printer.
 func (m *PrinterCapabilities) SetInputBins(value []string)() {
-    if m != nil {
-        m.inputBins = value
-    }
+    m.inputBins = value
 }
 // SetIsColorPrintingSupported sets the isColorPrintingSupported property value. True if color printing is supported by the printer; false otherwise. Read-only.
 func (m *PrinterCapabilities) SetIsColorPrintingSupported(value *bool)() {
-    if m != nil {
-        m.isColorPrintingSupported = value
-    }
+    m.isColorPrintingSupported = value
 }
 // SetIsPageRangeSupported sets the isPageRangeSupported property value. True if the printer supports printing by page ranges; false otherwise.
 func (m *PrinterCapabilities) SetIsPageRangeSupported(value *bool)() {
-    if m != nil {
-        m.isPageRangeSupported = value
-    }
+    m.isPageRangeSupported = value
 }
 // SetLeftMargins sets the leftMargins property value. A list of supported left margins(in microns) for the printer.
 func (m *PrinterCapabilities) SetLeftMargins(value []int32)() {
-    if m != nil {
-        m.leftMargins = value
-    }
+    m.leftMargins = value
 }
 // SetMediaColors sets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
 func (m *PrinterCapabilities) SetMediaColors(value []string)() {
-    if m != nil {
-        m.mediaColors = value
-    }
+    m.mediaColors = value
 }
 // SetMediaSizes sets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
 func (m *PrinterCapabilities) SetMediaSizes(value []string)() {
-    if m != nil {
-        m.mediaSizes = value
-    }
+    m.mediaSizes = value
 }
 // SetMediaTypes sets the mediaTypes property value. The media types supported by the printer.
 func (m *PrinterCapabilities) SetMediaTypes(value []string)() {
-    if m != nil {
-        m.mediaTypes = value
-    }
+    m.mediaTypes = value
 }
 // SetMultipageLayouts sets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
 func (m *PrinterCapabilities) SetMultipageLayouts(value []string)() {
-    if m != nil {
-        m.multipageLayouts = value
-    }
+    m.multipageLayouts = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrinterCapabilities) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOrientations sets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
 func (m *PrinterCapabilities) SetOrientations(value []string)() {
-    if m != nil {
-        m.orientations = value
-    }
+    m.orientations = value
 }
 // SetOutputBins sets the outputBins property value. The printer's supported output bins (trays).
 func (m *PrinterCapabilities) SetOutputBins(value []string)() {
-    if m != nil {
-        m.outputBins = value
-    }
+    m.outputBins = value
 }
 // SetPagesPerSheet sets the pagesPerSheet property value. Supported number of Input Pages to impose upon a single Impression.
 func (m *PrinterCapabilities) SetPagesPerSheet(value []int32)() {
-    if m != nil {
-        m.pagesPerSheet = value
-    }
+    m.pagesPerSheet = value
 }
 // SetQualities sets the qualities property value. The print qualities supported by the printer.
 func (m *PrinterCapabilities) SetQualities(value []string)() {
-    if m != nil {
-        m.qualities = value
-    }
+    m.qualities = value
 }
 // SetRightMargins sets the rightMargins property value. A list of supported right margins(in microns) for the printer.
 func (m *PrinterCapabilities) SetRightMargins(value []int32)() {
-    if m != nil {
-        m.rightMargins = value
-    }
+    m.rightMargins = value
 }
 // SetScalings sets the scalings property value. Supported print scalings.
 func (m *PrinterCapabilities) SetScalings(value []string)() {
-    if m != nil {
-        m.scalings = value
-    }
+    m.scalings = value
 }
 // SetSupportedColorConfigurations sets the supportedColorConfigurations property value. The supportedColorConfigurations property
 func (m *PrinterCapabilities) SetSupportedColorConfigurations(value []string)() {
-    if m != nil {
-        m.supportedColorConfigurations = value
-    }
+    m.supportedColorConfigurations = value
 }
 // SetSupportedCopiesPerJob sets the supportedCopiesPerJob property value. The supportedCopiesPerJob property
 func (m *PrinterCapabilities) SetSupportedCopiesPerJob(value IntegerRangeable)() {
-    if m != nil {
-        m.supportedCopiesPerJob = value
-    }
+    m.supportedCopiesPerJob = value
 }
 // SetSupportedDocumentMimeTypes sets the supportedDocumentMimeTypes property value. The supportedDocumentMimeTypes property
 func (m *PrinterCapabilities) SetSupportedDocumentMimeTypes(value []string)() {
-    if m != nil {
-        m.supportedDocumentMimeTypes = value
-    }
+    m.supportedDocumentMimeTypes = value
 }
 // SetSupportedDuplexConfigurations sets the supportedDuplexConfigurations property value. The supportedDuplexConfigurations property
 func (m *PrinterCapabilities) SetSupportedDuplexConfigurations(value []string)() {
-    if m != nil {
-        m.supportedDuplexConfigurations = value
-    }
+    m.supportedDuplexConfigurations = value
 }
 // SetSupportedFinishings sets the supportedFinishings property value. The supportedFinishings property
 func (m *PrinterCapabilities) SetSupportedFinishings(value []string)() {
-    if m != nil {
-        m.supportedFinishings = value
-    }
+    m.supportedFinishings = value
 }
 // SetSupportedMediaColors sets the supportedMediaColors property value. The supportedMediaColors property
 func (m *PrinterCapabilities) SetSupportedMediaColors(value []string)() {
-    if m != nil {
-        m.supportedMediaColors = value
-    }
+    m.supportedMediaColors = value
 }
 // SetSupportedMediaSizes sets the supportedMediaSizes property value. The supportedMediaSizes property
 func (m *PrinterCapabilities) SetSupportedMediaSizes(value []string)() {
-    if m != nil {
-        m.supportedMediaSizes = value
-    }
+    m.supportedMediaSizes = value
 }
 // SetSupportedMediaTypes sets the supportedMediaTypes property value. The supportedMediaTypes property
 func (m *PrinterCapabilities) SetSupportedMediaTypes(value []string)() {
-    if m != nil {
-        m.supportedMediaTypes = value
-    }
+    m.supportedMediaTypes = value
 }
 // SetSupportedOrientations sets the supportedOrientations property value. The supportedOrientations property
 func (m *PrinterCapabilities) SetSupportedOrientations(value []string)() {
-    if m != nil {
-        m.supportedOrientations = value
-    }
+    m.supportedOrientations = value
 }
 // SetSupportedOutputBins sets the supportedOutputBins property value. The supportedOutputBins property
 func (m *PrinterCapabilities) SetSupportedOutputBins(value []string)() {
-    if m != nil {
-        m.supportedOutputBins = value
-    }
+    m.supportedOutputBins = value
 }
 // SetSupportedPagesPerSheet sets the supportedPagesPerSheet property value. The supportedPagesPerSheet property
 func (m *PrinterCapabilities) SetSupportedPagesPerSheet(value IntegerRangeable)() {
-    if m != nil {
-        m.supportedPagesPerSheet = value
-    }
+    m.supportedPagesPerSheet = value
 }
 // SetSupportedPresentationDirections sets the supportedPresentationDirections property value. The supportedPresentationDirections property
 func (m *PrinterCapabilities) SetSupportedPresentationDirections(value []string)() {
-    if m != nil {
-        m.supportedPresentationDirections = value
-    }
+    m.supportedPresentationDirections = value
 }
 // SetSupportedPrintQualities sets the supportedPrintQualities property value. The supportedPrintQualities property
 func (m *PrinterCapabilities) SetSupportedPrintQualities(value []string)() {
-    if m != nil {
-        m.supportedPrintQualities = value
-    }
+    m.supportedPrintQualities = value
 }
 // SetSupportsFitPdfToPage sets the supportsFitPdfToPage property value. True if the printer supports scaling PDF pages to match the print media size; false otherwise.
 func (m *PrinterCapabilities) SetSupportsFitPdfToPage(value *bool)() {
-    if m != nil {
-        m.supportsFitPdfToPage = value
-    }
+    m.supportsFitPdfToPage = value
 }
 // SetTopMargins sets the topMargins property value. A list of supported top margins(in microns) for the printer.
 func (m *PrinterCapabilities) SetTopMargins(value []int32)() {
-    if m != nil {
-        m.topMargins = value
-    }
+    m.topMargins = value
 }

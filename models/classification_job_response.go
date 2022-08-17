@@ -40,11 +40,7 @@ func (m *ClassificationJobResponse) GetFieldDeserializers()(map[string]func(i878
 }
 // GetResult gets the result property value. The result property
 func (m *ClassificationJobResponse) GetResult()(DetectedSensitiveContentWrapperable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.result
-    }
+    return m.result
 }
 // Serialize serializes information the current object
 func (m *ClassificationJobResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *ClassificationJobResponse) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetResult sets the result property value. The result property
 func (m *ClassificationJobResponse) SetResult(value DetectedSensitiveContentWrapperable)() {
-    if m != nil {
-        m.result = value
-    }
+    m.result = value
 }

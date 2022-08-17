@@ -23,7 +23,7 @@ type ColumnDefinitionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ColumnDefinitionItemRequestBuilderGetQueryParameters the collection of field definitions for this list.
+// ColumnDefinitionItemRequestBuilderGetQueryParameters get columns from me
 type ColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *ColumnDefinitionItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of field definitions for this list.
+// CreateGetRequestInformation get columns from me
 func (m *ColumnDefinitionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of field definitions for this list.
+// CreateGetRequestInformationWithRequestConfiguration get columns from me
 func (m *ColumnDefinitionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ColumnDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *ColumnDefinitionItemRequestBuilder) DeleteWithRequestConfigurationAndRe
     }
     return nil
 }
-// Get the collection of field definitions for this list.
+// Get get columns from me
 func (m *ColumnDefinitionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of field definitions for this list.
+// GetWithRequestConfigurationAndResponseHandler get columns from me
 func (m *ColumnDefinitionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ColumnDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

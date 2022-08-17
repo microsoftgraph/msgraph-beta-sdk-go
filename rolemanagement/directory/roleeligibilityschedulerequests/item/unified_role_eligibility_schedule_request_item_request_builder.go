@@ -28,7 +28,7 @@ type UnifiedRoleEligibilityScheduleRequestItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters requests for role eligibilities for principals through PIM.
+// UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters get roleEligibilityScheduleRequests from roleManagement
 type UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -94,11 +94,11 @@ func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation requests for role eligibilities for principals through PIM.
+// CreateGetRequestInformation get roleEligibilityScheduleRequests from roleManagement
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration requests for role eligibilities for principals through PIM.
+// CreateGetRequestInformationWithRequestConfiguration get roleEligibilityScheduleRequests from roleManagement
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,11 +155,11 @@ func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) DeleteWithRequ
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) DirectoryScope()(*i42b41d4fd35db87fa4e585e05c89566c3db5f09fd0ba9febd2c8f4f83f4f3171.DirectoryScopeRequestBuilder) {
     return i42b41d4fd35db87fa4e585e05c89566c3db5f09fd0ba9febd2c8f4f83f4f3171.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get requests for role eligibilities for principals through PIM.
+// Get get roleEligibilityScheduleRequests from roleManagement
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler requests for role eligibilities for principals through PIM.
+// GetWithRequestConfigurationAndResponseHandler get roleEligibilityScheduleRequests from roleManagement
 func (m *UnifiedRoleEligibilityScheduleRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

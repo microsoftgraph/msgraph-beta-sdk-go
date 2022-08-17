@@ -56,19 +56,11 @@ func CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i878
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AospDeviceOwnerWiFiConfiguration) GetConnectAutomatically()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectAutomatically
-    }
+    return m.connectAutomatically
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AospDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectWhenNetworkNameIsHidden
-    }
+    return m.connectWhenNetworkNameIsHidden
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -147,43 +139,23 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]fu
 }
 // GetNetworkName gets the networkName property value. Network Name
 func (m *AospDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkName
-    }
+    return m.networkName
 }
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preSharedKey
-    }
+    return m.preSharedKey
 }
 // GetPreSharedKeyIsSet gets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preSharedKeyIsSet
-    }
+    return m.preSharedKeyIsSet
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AospDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ssid
-    }
+    return m.ssid
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for AOSP Device Owner.
 func (m *AospDeviceOwnerWiFiConfiguration) GetWiFiSecurityType()(*AospDeviceOwnerWiFiSecurityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wiFiSecurityType
-    }
+    return m.wiFiSecurityType
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -238,43 +210,29 @@ func (m *AospDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d2689
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AospDeviceOwnerWiFiConfiguration) SetConnectAutomatically(value *bool)() {
-    if m != nil {
-        m.connectAutomatically = value
-    }
+    m.connectAutomatically = value
 }
 // SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AospDeviceOwnerWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
-    if m != nil {
-        m.connectWhenNetworkNameIsHidden = value
-    }
+    m.connectWhenNetworkNameIsHidden = value
 }
 // SetNetworkName sets the networkName property value. Network Name
 func (m *AospDeviceOwnerWiFiConfiguration) SetNetworkName(value *string)() {
-    if m != nil {
-        m.networkName = value
-    }
+    m.networkName = value
 }
 // SetPreSharedKey sets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKey(value *string)() {
-    if m != nil {
-        m.preSharedKey = value
-    }
+    m.preSharedKey = value
 }
 // SetPreSharedKeyIsSet sets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKeyIsSet(value *bool)() {
-    if m != nil {
-        m.preSharedKeyIsSet = value
-    }
+    m.preSharedKeyIsSet = value
 }
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AospDeviceOwnerWiFiConfiguration) SetSsid(value *string)() {
-    if m != nil {
-        m.ssid = value
-    }
+    m.ssid = value
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for AOSP Device Owner.
 func (m *AospDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType)() {
-    if m != nil {
-        m.wiFiSecurityType = value
-    }
+    m.wiFiSecurityType = value
 }

@@ -34,19 +34,11 @@ func CreateWindowsKioskProfileFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskProfile) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppConfiguration gets the appConfiguration property value. The app base class used to identify the application info for the kiosk configuration
 func (m *WindowsKioskProfile) GetAppConfiguration()(WindowsKioskAppConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appConfiguration
-    }
+    return m.appConfiguration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,35 +101,19 @@ func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsKioskProfile) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProfileId gets the profileId property value. Key of the entity.
 func (m *WindowsKioskProfile) GetProfileId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileId
-    }
+    return m.profileId
 }
 // GetProfileName gets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsKioskProfile) GetProfileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileName
-    }
+    return m.profileName
 }
 // GetUserAccountsConfiguration gets the userAccountsConfiguration property value. The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
 func (m *WindowsKioskProfile) GetUserAccountsConfiguration()([]WindowsKioskUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccountsConfiguration
-    }
+    return m.userAccountsConfiguration
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,37 +161,25 @@ func (m *WindowsKioskProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskProfile) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppConfiguration sets the appConfiguration property value. The app base class used to identify the application info for the kiosk configuration
 func (m *WindowsKioskProfile) SetAppConfiguration(value WindowsKioskAppConfigurationable)() {
-    if m != nil {
-        m.appConfiguration = value
-    }
+    m.appConfiguration = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsKioskProfile) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProfileId sets the profileId property value. Key of the entity.
 func (m *WindowsKioskProfile) SetProfileId(value *string)() {
-    if m != nil {
-        m.profileId = value
-    }
+    m.profileId = value
 }
 // SetProfileName sets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsKioskProfile) SetProfileName(value *string)() {
-    if m != nil {
-        m.profileName = value
-    }
+    m.profileName = value
 }
 // SetUserAccountsConfiguration sets the userAccountsConfiguration property value. The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
 func (m *WindowsKioskProfile) SetUserAccountsConfiguration(value []WindowsKioskUserable)() {
-    if m != nil {
-        m.userAccountsConfiguration = value
-    }
+    m.userAccountsConfiguration = value
 }

@@ -30,11 +30,7 @@ func CreateMediaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Media) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetIsTranscriptionShown gets the isTranscriptionShown property value. If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
 func (m *Media) GetIsTranscriptionShown()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTranscriptionShown
-    }
+    return m.isTranscriptionShown
 }
 // GetMediaSource gets the mediaSource property value. Information about the source of media. Read-only.
 func (m *Media) GetMediaSource()(MediaSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSource
-    }
+    return m.mediaSource
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Media) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Media) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsTranscriptionShown sets the isTranscriptionShown property value. If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
 func (m *Media) SetIsTranscriptionShown(value *bool)() {
-    if m != nil {
-        m.isTranscriptionShown = value
-    }
+    m.isTranscriptionShown = value
 }
 // SetMediaSource sets the mediaSource property value. Information about the source of media. Read-only.
 func (m *Media) SetMediaSource(value MediaSourceable)() {
-    if m != nil {
-        m.mediaSource = value
-    }
+    m.mediaSource = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Media) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

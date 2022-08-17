@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i073d319f04f99ce318c6fddd96cf3e8d8fb590738539d9bf3d2a17811ab2b856 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/restore"
     i07d40583df1b4aa1b0a3e7e32084dc8b4ab30be70327b272f2ad24d3ccd4095e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/troubleshoot"
     i97a56d161f68b1fd3ad12ad108342214d2bfeedae4b18c9748dc91bc1e04df9f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/changeuseraccounttype"
     i97b00529155a730b3ecc9a3f5590a17060250dc44e1d660aed1789b4345f43c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/reprovision"
@@ -212,6 +213,10 @@ func (m *CloudPCItemRequestBuilder) Rename()(*iecadcd2b05f98b70514e4bc46dddb17b2
 // Reprovision the reprovision property
 func (m *CloudPCItemRequestBuilder) Reprovision()(*i97b00529155a730b3ecc9a3f5590a17060250dc44e1d660aed1789b4345f43c0.ReprovisionRequestBuilder) {
     return i97b00529155a730b3ecc9a3f5590a17060250dc44e1d660aed1789b4345f43c0.NewReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Restore the restore property
+func (m *CloudPCItemRequestBuilder) Restore()(*i073d319f04f99ce318c6fddd96cf3e8d8fb590738539d9bf3d2a17811ab2b856.RestoreRequestBuilder) {
+    return i073d319f04f99ce318c6fddd96cf3e8d8fb590738539d9bf3d2a17811ab2b856.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Troubleshoot the troubleshoot property
 func (m *CloudPCItemRequestBuilder) Troubleshoot()(*i07d40583df1b4aa1b0a3e7e32084dc8b4ab30be70327b272f2ad24d3ccd4095e.TroubleshootRequestBuilder) {

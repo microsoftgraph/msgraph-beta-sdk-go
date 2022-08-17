@@ -40,27 +40,15 @@ func CreateWindowsPackageInformationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsPackageInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicableArchitecture gets the applicableArchitecture property value. Contains properties for Windows architecture.
 func (m *WindowsPackageInformation) GetApplicableArchitecture()(*WindowsArchitecture) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicableArchitecture
-    }
+    return m.applicableArchitecture
 }
 // GetDisplayName gets the displayName property value. The Display Name.
 func (m *WindowsPackageInformation) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPackageInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,51 +137,27 @@ func (m *WindowsPackageInformation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
 func (m *WindowsPackageInformation) GetIdentityName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityName
-    }
+    return m.identityName
 }
 // GetIdentityPublisher gets the identityPublisher property value. The Identity Publisher.
 func (m *WindowsPackageInformation) GetIdentityPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityPublisher
-    }
+    return m.identityPublisher
 }
 // GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsPackageInformation) GetIdentityResourceIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityResourceIdentifier
-    }
+    return m.identityResourceIdentifier
 }
 // GetIdentityVersion gets the identityVersion property value. The Identity Version.
 func (m *WindowsPackageInformation) GetIdentityVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityVersion
-    }
+    return m.identityVersion
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *WindowsPackageInformation) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsPackageInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *WindowsPackageInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -256,55 +220,37 @@ func (m *WindowsPackageInformation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsPackageInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicableArchitecture sets the applicableArchitecture property value. Contains properties for Windows architecture.
 func (m *WindowsPackageInformation) SetApplicableArchitecture(value *WindowsArchitecture)() {
-    if m != nil {
-        m.applicableArchitecture = value
-    }
+    m.applicableArchitecture = value
 }
 // SetDisplayName sets the displayName property value. The Display Name.
 func (m *WindowsPackageInformation) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIdentityName sets the identityName property value. The Identity Name.
 func (m *WindowsPackageInformation) SetIdentityName(value *string)() {
-    if m != nil {
-        m.identityName = value
-    }
+    m.identityName = value
 }
 // SetIdentityPublisher sets the identityPublisher property value. The Identity Publisher.
 func (m *WindowsPackageInformation) SetIdentityPublisher(value *string)() {
-    if m != nil {
-        m.identityPublisher = value
-    }
+    m.identityPublisher = value
 }
 // SetIdentityResourceIdentifier sets the identityResourceIdentifier property value. The Identity Resource Identifier.
 func (m *WindowsPackageInformation) SetIdentityResourceIdentifier(value *string)() {
-    if m != nil {
-        m.identityResourceIdentifier = value
-    }
+    m.identityResourceIdentifier = value
 }
 // SetIdentityVersion sets the identityVersion property value. The Identity Version.
 func (m *WindowsPackageInformation) SetIdentityVersion(value *string)() {
-    if m != nil {
-        m.identityVersion = value
-    }
+    m.identityVersion = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *WindowsPackageInformation) SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsPackageInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

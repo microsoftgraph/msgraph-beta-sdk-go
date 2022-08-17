@@ -30,11 +30,7 @@ func CreateDeviceAndAppManagementAssignedRoleDetailsFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementAssignedRoleDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAndAppManagementAssignedRoleDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,27 +77,15 @@ func (m *DeviceAndAppManagementAssignedRoleDetails) GetFieldDeserializers()(map[
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceAndAppManagementAssignedRoleDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRoleAssignmentIds gets the roleAssignmentIds property value. Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
 func (m *DeviceAndAppManagementAssignedRoleDetails) GetRoleAssignmentIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentIds
-    }
+    return m.roleAssignmentIds
 }
 // GetRoleDefinitionIds gets the roleDefinitionIds property value. Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
 func (m *DeviceAndAppManagementAssignedRoleDetails) GetRoleDefinitionIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionIds
-    }
+    return m.roleDefinitionIds
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementAssignedRoleDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *DeviceAndAppManagementAssignedRoleDetails) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementAssignedRoleDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceAndAppManagementAssignedRoleDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRoleAssignmentIds sets the roleAssignmentIds property value. Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
 func (m *DeviceAndAppManagementAssignedRoleDetails) SetRoleAssignmentIds(value []string)() {
-    if m != nil {
-        m.roleAssignmentIds = value
-    }
+    m.roleAssignmentIds = value
 }
 // SetRoleDefinitionIds sets the roleDefinitionIds property value. Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
 func (m *DeviceAndAppManagementAssignedRoleDetails) SetRoleDefinitionIds(value []string)() {
-    if m != nil {
-        m.roleDefinitionIds = value
-    }
+    m.roleDefinitionIds = value
 }

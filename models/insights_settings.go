@@ -27,11 +27,7 @@ func CreateInsightsSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDisabledForGroup gets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) GetDisabledForGroup()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.disabledForGroup
-    }
+    return m.disabledForGroup
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 func (m *InsightsSettings) GetIsEnabledInOrganization()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabledInOrganization
-    }
+    return m.isEnabledInOrganization
 }
 // Serialize serializes information the current object
 func (m *InsightsSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *InsightsSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDisabledForGroup sets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) SetDisabledForGroup(value *string)() {
-    if m != nil {
-        m.disabledForGroup = value
-    }
+    m.disabledForGroup = value
 }
 // SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 func (m *InsightsSettings) SetIsEnabledInOrganization(value *bool)() {
-    if m != nil {
-        m.isEnabledInOrganization = value
-    }
+    m.isEnabledInOrganization = value
 }

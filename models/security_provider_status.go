@@ -36,27 +36,15 @@ func CreateSecurityProviderStatusFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityProviderStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnabled gets the enabled property value. The enabled property
 func (m *SecurityProviderStatus) GetEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabled
-    }
+    return m.enabled
 }
 // GetEndpoint gets the endpoint property value. The endpoint property
 func (m *SecurityProviderStatus) GetEndpoint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endpoint
-    }
+    return m.endpoint
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,35 +113,19 @@ func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SecurityProviderStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProvider gets the provider property value. The provider property
 func (m *SecurityProviderStatus) GetProvider()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provider
-    }
+    return m.provider
 }
 // GetRegion gets the region property value. The region property
 func (m *SecurityProviderStatus) GetRegion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.region
-    }
+    return m.region
 }
 // GetVendor gets the vendor property value. The vendor property
 func (m *SecurityProviderStatus) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
-    }
+    return m.vendor_escaped
 }
 // Serialize serializes information the current object
 func (m *SecurityProviderStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *SecurityProviderStatus) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityProviderStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnabled sets the enabled property value. The enabled property
 func (m *SecurityProviderStatus) SetEnabled(value *bool)() {
-    if m != nil {
-        m.enabled = value
-    }
+    m.enabled = value
 }
 // SetEndpoint sets the endpoint property value. The endpoint property
 func (m *SecurityProviderStatus) SetEndpoint(value *string)() {
-    if m != nil {
-        m.endpoint = value
-    }
+    m.endpoint = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SecurityProviderStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProvider sets the provider property value. The provider property
 func (m *SecurityProviderStatus) SetProvider(value *string)() {
-    if m != nil {
-        m.provider = value
-    }
+    m.provider = value
 }
 // SetRegion sets the region property value. The region property
 func (m *SecurityProviderStatus) SetRegion(value *string)() {
-    if m != nil {
-        m.region = value
-    }
+    m.region = value
 }
 // SetVendor sets the vendor property value. The vendor property
 func (m *SecurityProviderStatus) SetVendor(value *string)() {
-    if m != nil {
-        m.vendor_escaped = value
-    }
+    m.vendor_escaped = value
 }

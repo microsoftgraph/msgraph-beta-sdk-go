@@ -36,19 +36,11 @@ func CreateUserTrainingEventInfoFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingEventInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name of the training.
 func (m *UserTrainingEventInfo) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.latestTrainingStatus
-    }
+    return m.latestTrainingStatus
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserTrainingEventInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTrainingAssignedProperties gets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
 func (m *UserTrainingEventInfo) GetTrainingAssignedProperties()(UserTrainingContentEventInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingAssignedProperties
-    }
+    return m.trainingAssignedProperties
 }
 // GetTrainingCompletedProperties gets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
 func (m *UserTrainingEventInfo) GetTrainingCompletedProperties()(UserTrainingContentEventInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingCompletedProperties
-    }
+    return m.trainingCompletedProperties
 }
 // GetTrainingUpdatedProperties gets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
 func (m *UserTrainingEventInfo) GetTrainingUpdatedProperties()(UserTrainingContentEventInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingUpdatedProperties
-    }
+    return m.trainingUpdatedProperties
 }
 // Serialize serializes information the current object
 func (m *UserTrainingEventInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *UserTrainingEventInfo) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingEventInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name of the training.
 func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
-    if m != nil {
-        m.latestTrainingStatus = value
-    }
+    m.latestTrainingStatus = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserTrainingEventInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTrainingAssignedProperties sets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
 func (m *UserTrainingEventInfo) SetTrainingAssignedProperties(value UserTrainingContentEventInfoable)() {
-    if m != nil {
-        m.trainingAssignedProperties = value
-    }
+    m.trainingAssignedProperties = value
 }
 // SetTrainingCompletedProperties sets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
 func (m *UserTrainingEventInfo) SetTrainingCompletedProperties(value UserTrainingContentEventInfoable)() {
-    if m != nil {
-        m.trainingCompletedProperties = value
-    }
+    m.trainingCompletedProperties = value
 }
 // SetTrainingUpdatedProperties sets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
 func (m *UserTrainingEventInfo) SetTrainingUpdatedProperties(value UserTrainingContentEventInfoable)() {
-    if m != nil {
-        m.trainingUpdatedProperties = value
-    }
+    m.trainingUpdatedProperties = value
 }

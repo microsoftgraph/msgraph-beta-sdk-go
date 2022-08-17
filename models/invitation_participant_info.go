@@ -38,19 +38,11 @@ func CreateInvitationParticipantInfoFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEndpointType gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endpointType
-    }
+    return m.endpointType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,51 +121,27 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878
 }
 // GetHidden gets the hidden property value. The hidden property
 func (m *InvitationParticipantInfo) GetHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hidden
-    }
+    return m.hidden
 }
 // GetIdentity gets the identity property value. The identity property
 func (m *InvitationParticipantInfo) GetIdentity()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identity
-    }
+    return m.identity
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *InvitationParticipantInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParticipantId gets the participantId property value. Optional. The ID of the target participant.
 func (m *InvitationParticipantInfo) GetParticipantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participantId
-    }
+    return m.participantId
 }
 // GetRemoveFromDefaultAudioRoutingGroup gets the removeFromDefaultAudioRoutingGroup property value. The removeFromDefaultAudioRoutingGroup property
 func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeFromDefaultAudioRoutingGroup
-    }
+    return m.removeFromDefaultAudioRoutingGroup
 }
 // GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replacesCallId
-    }
+    return m.replacesCallId
 }
 // Serialize serializes information the current object
 func (m *InvitationParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *InvitationParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEndpointType sets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *InvitationParticipantInfo) SetEndpointType(value *EndpointType)() {
-    if m != nil {
-        m.endpointType = value
-    }
+    m.endpointType = value
 }
 // SetHidden sets the hidden property value. The hidden property
 func (m *InvitationParticipantInfo) SetHidden(value *bool)() {
-    if m != nil {
-        m.hidden = value
-    }
+    m.hidden = value
 }
 // SetIdentity sets the identity property value. The identity property
 func (m *InvitationParticipantInfo) SetIdentity(value IdentitySetable)() {
-    if m != nil {
-        m.identity = value
-    }
+    m.identity = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *InvitationParticipantInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParticipantId sets the participantId property value. Optional. The ID of the target participant.
 func (m *InvitationParticipantInfo) SetParticipantId(value *string)() {
-    if m != nil {
-        m.participantId = value
-    }
+    m.participantId = value
 }
 // SetRemoveFromDefaultAudioRoutingGroup sets the removeFromDefaultAudioRoutingGroup property value. The removeFromDefaultAudioRoutingGroup property
 func (m *InvitationParticipantInfo) SetRemoveFromDefaultAudioRoutingGroup(value *bool)() {
-    if m != nil {
-        m.removeFromDefaultAudioRoutingGroup = value
-    }
+    m.removeFromDefaultAudioRoutingGroup = value
 }
 // SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
-    if m != nil {
-        m.replacesCallId = value
-    }
+    m.replacesCallId = value
 }

@@ -44,11 +44,7 @@ func (m *GroupPolicyPresentationValueList) GetFieldDeserializers()(map[string]fu
 }
 // GetValues gets the values property value. A list of pairs for the associated presentation.
 func (m *GroupPolicyPresentationValueList) GetValues()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *GroupPolicyPresentationValueList) Serialize(writer i878a80d2330e89d2689
 }
 // SetValues sets the values property value. A list of pairs for the associated presentation.
 func (m *GroupPolicyPresentationValueList) SetValues(value []KeyValuePairable)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }

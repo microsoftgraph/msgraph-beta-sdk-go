@@ -16,7 +16,7 @@ type PlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerTasks assigned to the user.
+// PlansRequestBuilderGetQueryParameters get plans from me
 type PlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *PlansRequestBuilder) Count()(*i03b0fea9c1f7beecfb05b9055b7c4749346c274e273f96aec7e17893de7eb268.CountRequestBuilder) {
     return i03b0fea9c1f7beecfb05b9055b7c4749346c274e273f96aec7e17893de7eb268.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreateGetRequestInformation get plans from me
 func (m *PlansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreateGetRequestInformationWithRequestConfiguration get plans from me
 func (m *PlansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *PlansRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Returns the plannerTasks assigned to the user.
+// Get get plans from me
 func (m *PlansRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Returns the plannerTasks assigned to the user.
+// GetWithRequestConfigurationAndResponseHandler get plans from me
 func (m *PlansRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlansRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

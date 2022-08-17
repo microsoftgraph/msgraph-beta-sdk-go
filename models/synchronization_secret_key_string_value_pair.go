@@ -30,11 +30,7 @@ func CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue(parseNo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationSecretKeyStringValuePair) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationSecretKeyStringValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *SynchronizationSecretKeyStringValuePair) GetFieldDeserializers()(map[st
 }
 // GetKey gets the key property value. The key property
 func (m *SynchronizationSecretKeyStringValuePair) GetKey()(*SynchronizationSecret) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
+    return m.key
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SynchronizationSecretKeyStringValuePair) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetValue gets the value property value. The value of the secret.
 func (m *SynchronizationSecretKeyStringValuePair) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *SynchronizationSecretKeyStringValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *SynchronizationSecretKeyStringValuePair) Serialize(writer i878a80d2330e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationSecretKeyStringValuePair) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKey sets the key property value. The key property
 func (m *SynchronizationSecretKeyStringValuePair) SetKey(value *SynchronizationSecret)() {
-    if m != nil {
-        m.key = value
-    }
+    m.key = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SynchronizationSecretKeyStringValuePair) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetValue sets the value property value. The value of the secret.
 func (m *SynchronizationSecretKeyStringValuePair) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

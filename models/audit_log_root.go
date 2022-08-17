@@ -6,11 +6,14 @@ import (
 
 // AuditLogRoot 
 type AuditLogRoot struct {
-    Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The directoryAudits property
     directoryAudits []DirectoryAuditable
     // The directoryProvisioning property
     directoryProvisioning []ProvisioningObjectSummaryable
+    // The OdataType property
+    odataType *string
     // The provisioning property
     provisioning []ProvisioningObjectSummaryable
     // The restrictedSignIns property
@@ -21,8 +24,8 @@ type AuditLogRoot struct {
 // NewAuditLogRoot instantiates a new AuditLogRoot and sets the default values.
 func NewAuditLogRoot()(*AuditLogRoot) {
     m := &AuditLogRoot{
-        Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     odataTypeValue := "#microsoft.graph.auditLogRoot";
     m.SetOdataType(&odataTypeValue);
     return m
@@ -31,25 +34,21 @@ func NewAuditLogRoot()(*AuditLogRoot) {
 func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogRoot(), nil
 }
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditLogRoot) GetAdditionalData()(map[string]interface{}) {
+    return m.additionalData
+}
 // GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryAudits
-    }
+    return m.directoryAudits
 }
 // GetDirectoryProvisioning gets the directoryProvisioning property value. The directoryProvisioning property
 func (m *AuditLogRoot) GetDirectoryProvisioning()([]ProvisioningObjectSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryProvisioning
-    }
+    return m.directoryProvisioning
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["directoryAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryAuditFromDiscriminatorValue)
         if err != nil {
@@ -75,6 +74,16 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
                 res[i] = v.(ProvisioningObjectSummaryable)
             }
             m.SetDirectoryProvisioning(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -122,42 +131,30 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuditLogRoot) GetOdataType()(*string) {
+    return m.odataType
+}
 // GetProvisioning gets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioning
-    }
+    return m.provisioning
 }
 // GetRestrictedSignIns gets the restrictedSignIns property value. The restrictedSignIns property
 func (m *AuditLogRoot) GetRestrictedSignIns()([]RestrictedSignInable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictedSignIns
-    }
+    return m.restrictedSignIns
 }
 // GetSignIns gets the signIns property value. The signIns property
 func (m *AuditLogRoot) GetSignIns()([]SignInable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signIns
-    }
+    return m.signIns
 }
 // Serialize serializes information the current object
 func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     if m.GetDirectoryAudits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryAudits()))
         for i, v := range m.GetDirectoryAudits() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("directoryAudits", cast)
+        err := writer.WriteCollectionOfObjectValues("directoryAudits", cast)
         if err != nil {
             return err
         }
@@ -167,7 +164,13 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         for i, v := range m.GetDirectoryProvisioning() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("directoryProvisioning", cast)
+        err := writer.WriteCollectionOfObjectValues("directoryProvisioning", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -177,7 +180,7 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         for i, v := range m.GetProvisioning() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("provisioning", cast)
+        err := writer.WriteCollectionOfObjectValues("provisioning", cast)
         if err != nil {
             return err
         }
@@ -187,7 +190,7 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         for i, v := range m.GetRestrictedSignIns() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("restrictedSignIns", cast)
+        err := writer.WriteCollectionOfObjectValues("restrictedSignIns", cast)
         if err != nil {
             return err
         }
@@ -197,40 +200,44 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         for i, v := range m.GetSignIns() {
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
-        err = writer.WriteCollectionOfObjectValues("signIns", cast)
+        err := writer.WriteCollectionOfObjectValues("signIns", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
 }
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditLogRoot) SetAdditionalData(value map[string]interface{})() {
+    m.additionalData = value
+}
 // SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
-    if m != nil {
-        m.directoryAudits = value
-    }
+    m.directoryAudits = value
 }
 // SetDirectoryProvisioning sets the directoryProvisioning property value. The directoryProvisioning property
 func (m *AuditLogRoot) SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)() {
-    if m != nil {
-        m.directoryProvisioning = value
-    }
+    m.directoryProvisioning = value
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuditLogRoot) SetOdataType(value *string)() {
+    m.odataType = value
 }
 // SetProvisioning sets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() {
-    if m != nil {
-        m.provisioning = value
-    }
+    m.provisioning = value
 }
 // SetRestrictedSignIns sets the restrictedSignIns property value. The restrictedSignIns property
 func (m *AuditLogRoot) SetRestrictedSignIns(value []RestrictedSignInable)() {
-    if m != nil {
-        m.restrictedSignIns = value
-    }
+    m.restrictedSignIns = value
 }
 // SetSignIns sets the signIns property value. The signIns property
 func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
-    if m != nil {
-        m.signIns = value
-    }
+    m.signIns = value
 }

@@ -30,11 +30,7 @@ func CreateAzureADFeatureUsageFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetFeatureName gets the featureName property value. The featureName property
 func (m *AzureADFeatureUsage) GetFeatureName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureName
-    }
+    return m.featureName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureADFeatureUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,19 +69,11 @@ func (m *AzureADFeatureUsage) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetSnapshotDateTime gets the snapshotDateTime property value. The snapshotDateTime property
 func (m *AzureADFeatureUsage) GetSnapshotDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.snapshotDateTime
-    }
+    return m.snapshotDateTime
 }
 // GetUsage gets the usage property value. The usage property
 func (m *AzureADFeatureUsage) GetUsage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usage
-    }
+    return m.usage
 }
 // Serialize serializes information the current object
 func (m *AzureADFeatureUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *AzureADFeatureUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetFeatureName sets the featureName property value. The featureName property
 func (m *AzureADFeatureUsage) SetFeatureName(value *string)() {
-    if m != nil {
-        m.featureName = value
-    }
+    m.featureName = value
 }
 // SetSnapshotDateTime sets the snapshotDateTime property value. The snapshotDateTime property
 func (m *AzureADFeatureUsage) SetSnapshotDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.snapshotDateTime = value
-    }
+    m.snapshotDateTime = value
 }
 // SetUsage sets the usage property value. The usage property
 func (m *AzureADFeatureUsage) SetUsage(value *int32)() {
-    if m != nil {
-        m.usage = value
-    }
+    m.usage = value
 }

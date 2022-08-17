@@ -56,43 +56,23 @@ func CreateDepOnboardingSettingFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAppleIdentifier gets the appleIdentifier property value. The Apple ID used to obtain the current token.
 func (m *DepOnboardingSetting) GetAppleIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appleIdentifier
-    }
+    return m.appleIdentifier
 }
 // GetDataSharingConsentGranted gets the dataSharingConsentGranted property value. Consent granted for data sharing with Apple Dep Service
 func (m *DepOnboardingSetting) GetDataSharingConsentGranted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataSharingConsentGranted
-    }
+    return m.dataSharingConsentGranted
 }
 // GetDefaultIosEnrollmentProfile gets the defaultIosEnrollmentProfile property value. Default iOS Enrollment Profile
 func (m *DepOnboardingSetting) GetDefaultIosEnrollmentProfile()(DepIOSEnrollmentProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultIosEnrollmentProfile
-    }
+    return m.defaultIosEnrollmentProfile
 }
 // GetDefaultMacOsEnrollmentProfile gets the defaultMacOsEnrollmentProfile property value. Default MacOs Enrollment Profile
 func (m *DepOnboardingSetting) GetDefaultMacOsEnrollmentProfile()(DepMacOSEnrollmentProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultMacOsEnrollmentProfile
-    }
+    return m.defaultMacOsEnrollmentProfile
 }
 // GetEnrollmentProfiles gets the enrollmentProfiles property value. The enrollment profiles.
 func (m *DepOnboardingSetting) GetEnrollmentProfiles()([]EnrollmentProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentProfiles
-    }
+    return m.enrollmentProfiles
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -273,91 +253,47 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetImportedAppleDeviceIdentities gets the importedAppleDeviceIdentities property value. The imported Apple device identities.
 func (m *DepOnboardingSetting) GetImportedAppleDeviceIdentities()([]ImportedAppleDeviceIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importedAppleDeviceIdentities
-    }
+    return m.importedAppleDeviceIdentities
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the service was onboarded.
 func (m *DepOnboardingSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLastSuccessfulSyncDateTime gets the lastSuccessfulSyncDateTime property value. When the service last syned with Intune
 func (m *DepOnboardingSetting) GetLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSuccessfulSyncDateTime
-    }
+    return m.lastSuccessfulSyncDateTime
 }
 // GetLastSyncErrorCode gets the lastSyncErrorCode property value. Error code reported by Apple during last dep sync.
 func (m *DepOnboardingSetting) GetLastSyncErrorCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncErrorCode
-    }
+    return m.lastSyncErrorCode
 }
 // GetLastSyncTriggeredDateTime gets the lastSyncTriggeredDateTime property value. When Intune last requested a sync.
 func (m *DepOnboardingSetting) GetLastSyncTriggeredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncTriggeredDateTime
-    }
+    return m.lastSyncTriggeredDateTime
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DepOnboardingSetting) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetShareTokenWithSchoolDataSyncService gets the shareTokenWithSchoolDataSyncService property value. Whether or not the Dep token sharing is enabled with the School Data Sync service.
 func (m *DepOnboardingSetting) GetShareTokenWithSchoolDataSyncService()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shareTokenWithSchoolDataSyncService
-    }
+    return m.shareTokenWithSchoolDataSyncService
 }
 // GetSyncedDeviceCount gets the syncedDeviceCount property value. Gets synced device count
 func (m *DepOnboardingSetting) GetSyncedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncedDeviceCount
-    }
+    return m.syncedDeviceCount
 }
 // GetTokenExpirationDateTime gets the tokenExpirationDateTime property value. When the token will expire.
 func (m *DepOnboardingSetting) GetTokenExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenExpirationDateTime
-    }
+    return m.tokenExpirationDateTime
 }
 // GetTokenName gets the tokenName property value. Friendly Name for Dep Token
 func (m *DepOnboardingSetting) GetTokenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenName
-    }
+    return m.tokenName
 }
 // GetTokenType gets the tokenType property value. The tokenType property
 func (m *DepOnboardingSetting) GetTokenType()(*DepTokenType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenType
-    }
+    return m.tokenType
 }
 // Serialize serializes information the current object
 func (m *DepOnboardingSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -474,97 +410,65 @@ func (m *DepOnboardingSetting) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAppleIdentifier sets the appleIdentifier property value. The Apple ID used to obtain the current token.
 func (m *DepOnboardingSetting) SetAppleIdentifier(value *string)() {
-    if m != nil {
-        m.appleIdentifier = value
-    }
+    m.appleIdentifier = value
 }
 // SetDataSharingConsentGranted sets the dataSharingConsentGranted property value. Consent granted for data sharing with Apple Dep Service
 func (m *DepOnboardingSetting) SetDataSharingConsentGranted(value *bool)() {
-    if m != nil {
-        m.dataSharingConsentGranted = value
-    }
+    m.dataSharingConsentGranted = value
 }
 // SetDefaultIosEnrollmentProfile sets the defaultIosEnrollmentProfile property value. Default iOS Enrollment Profile
 func (m *DepOnboardingSetting) SetDefaultIosEnrollmentProfile(value DepIOSEnrollmentProfileable)() {
-    if m != nil {
-        m.defaultIosEnrollmentProfile = value
-    }
+    m.defaultIosEnrollmentProfile = value
 }
 // SetDefaultMacOsEnrollmentProfile sets the defaultMacOsEnrollmentProfile property value. Default MacOs Enrollment Profile
 func (m *DepOnboardingSetting) SetDefaultMacOsEnrollmentProfile(value DepMacOSEnrollmentProfileable)() {
-    if m != nil {
-        m.defaultMacOsEnrollmentProfile = value
-    }
+    m.defaultMacOsEnrollmentProfile = value
 }
 // SetEnrollmentProfiles sets the enrollmentProfiles property value. The enrollment profiles.
 func (m *DepOnboardingSetting) SetEnrollmentProfiles(value []EnrollmentProfileable)() {
-    if m != nil {
-        m.enrollmentProfiles = value
-    }
+    m.enrollmentProfiles = value
 }
 // SetImportedAppleDeviceIdentities sets the importedAppleDeviceIdentities property value. The imported Apple device identities.
 func (m *DepOnboardingSetting) SetImportedAppleDeviceIdentities(value []ImportedAppleDeviceIdentityable)() {
-    if m != nil {
-        m.importedAppleDeviceIdentities = value
-    }
+    m.importedAppleDeviceIdentities = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. When the service was onboarded.
 func (m *DepOnboardingSetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLastSuccessfulSyncDateTime sets the lastSuccessfulSyncDateTime property value. When the service last syned with Intune
 func (m *DepOnboardingSetting) SetLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSuccessfulSyncDateTime = value
-    }
+    m.lastSuccessfulSyncDateTime = value
 }
 // SetLastSyncErrorCode sets the lastSyncErrorCode property value. Error code reported by Apple during last dep sync.
 func (m *DepOnboardingSetting) SetLastSyncErrorCode(value *int32)() {
-    if m != nil {
-        m.lastSyncErrorCode = value
-    }
+    m.lastSyncErrorCode = value
 }
 // SetLastSyncTriggeredDateTime sets the lastSyncTriggeredDateTime property value. When Intune last requested a sync.
 func (m *DepOnboardingSetting) SetLastSyncTriggeredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncTriggeredDateTime = value
-    }
+    m.lastSyncTriggeredDateTime = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DepOnboardingSetting) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetShareTokenWithSchoolDataSyncService sets the shareTokenWithSchoolDataSyncService property value. Whether or not the Dep token sharing is enabled with the School Data Sync service.
 func (m *DepOnboardingSetting) SetShareTokenWithSchoolDataSyncService(value *bool)() {
-    if m != nil {
-        m.shareTokenWithSchoolDataSyncService = value
-    }
+    m.shareTokenWithSchoolDataSyncService = value
 }
 // SetSyncedDeviceCount sets the syncedDeviceCount property value. Gets synced device count
 func (m *DepOnboardingSetting) SetSyncedDeviceCount(value *int32)() {
-    if m != nil {
-        m.syncedDeviceCount = value
-    }
+    m.syncedDeviceCount = value
 }
 // SetTokenExpirationDateTime sets the tokenExpirationDateTime property value. When the token will expire.
 func (m *DepOnboardingSetting) SetTokenExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.tokenExpirationDateTime = value
-    }
+    m.tokenExpirationDateTime = value
 }
 // SetTokenName sets the tokenName property value. Friendly Name for Dep Token
 func (m *DepOnboardingSetting) SetTokenName(value *string)() {
-    if m != nil {
-        m.tokenName = value
-    }
+    m.tokenName = value
 }
 // SetTokenType sets the tokenType property value. The tokenType property
 func (m *DepOnboardingSetting) SetTokenType(value *DepTokenType)() {
-    if m != nil {
-        m.tokenType = value
-    }
+    m.tokenType = value
 }

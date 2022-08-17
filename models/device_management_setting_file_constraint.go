@@ -44,11 +44,7 @@ func (m *DeviceManagementSettingFileConstraint) GetFieldDeserializers()(map[stri
 }
 // GetSupportedExtensions gets the supportedExtensions property value. Acceptable file extensions to upload for this setting
 func (m *DeviceManagementSettingFileConstraint) GetSupportedExtensions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedExtensions
-    }
+    return m.supportedExtensions
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingFileConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *DeviceManagementSettingFileConstraint) Serialize(writer i878a80d2330e89
 }
 // SetSupportedExtensions sets the supportedExtensions property value. Acceptable file extensions to upload for this setting
 func (m *DeviceManagementSettingFileConstraint) SetSupportedExtensions(value []string)() {
-    if m != nil {
-        m.supportedExtensions = value
-    }
+    m.supportedExtensions = value
 }

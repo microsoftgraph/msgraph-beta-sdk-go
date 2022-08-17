@@ -25,11 +25,7 @@ func CreateClassificationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetDetails gets the details property value. The details property
 func (m *ClassificationError) GetDetails()([]ClassifcationErrorBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassificationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *ClassificationError) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetDetails sets the details property value. The details property
 func (m *ClassificationError) SetDetails(value []ClassifcationErrorBaseable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }

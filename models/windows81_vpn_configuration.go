@@ -52,27 +52,15 @@ func CreateWindows81VpnConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetApplyOnlyToWindows81 gets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *Windows81VpnConfiguration) GetApplyOnlyToWindows81()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applyOnlyToWindows81
-    }
+    return m.applyOnlyToWindows81
 }
 // GetConnectionType gets the connectionType property value. Windows VPN connection type.
 func (m *Windows81VpnConfiguration) GetConnectionType()(*WindowsVpnConnectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionType
-    }
+    return m.connectionType
 }
 // GetEnableSplitTunneling gets the enableSplitTunneling property value. Enable split tunneling for the VPN.
 func (m *Windows81VpnConfiguration) GetEnableSplitTunneling()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableSplitTunneling
-    }
+    return m.enableSplitTunneling
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,19 +119,11 @@ func (m *Windows81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
 }
 // GetLoginGroupOrDomain gets the loginGroupOrDomain property value. Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
 func (m *Windows81VpnConfiguration) GetLoginGroupOrDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loginGroupOrDomain
-    }
+    return m.loginGroupOrDomain
 }
 // GetProxyServer gets the proxyServer property value. Proxy Server.
 func (m *Windows81VpnConfiguration) GetProxyServer()(Windows81VpnProxyServerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyServer
-    }
+    return m.proxyServer
 }
 // Serialize serializes information the current object
 func (m *Windows81VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,31 +166,21 @@ func (m *Windows81VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetApplyOnlyToWindows81 sets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *Windows81VpnConfiguration) SetApplyOnlyToWindows81(value *bool)() {
-    if m != nil {
-        m.applyOnlyToWindows81 = value
-    }
+    m.applyOnlyToWindows81 = value
 }
 // SetConnectionType sets the connectionType property value. Windows VPN connection type.
 func (m *Windows81VpnConfiguration) SetConnectionType(value *WindowsVpnConnectionType)() {
-    if m != nil {
-        m.connectionType = value
-    }
+    m.connectionType = value
 }
 // SetEnableSplitTunneling sets the enableSplitTunneling property value. Enable split tunneling for the VPN.
 func (m *Windows81VpnConfiguration) SetEnableSplitTunneling(value *bool)() {
-    if m != nil {
-        m.enableSplitTunneling = value
-    }
+    m.enableSplitTunneling = value
 }
 // SetLoginGroupOrDomain sets the loginGroupOrDomain property value. Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
 func (m *Windows81VpnConfiguration) SetLoginGroupOrDomain(value *string)() {
-    if m != nil {
-        m.loginGroupOrDomain = value
-    }
+    m.loginGroupOrDomain = value
 }
 // SetProxyServer sets the proxyServer property value. Proxy Server.
 func (m *Windows81VpnConfiguration) SetProxyServer(value Windows81VpnProxyServerable)() {
-    if m != nil {
-        m.proxyServer = value
-    }
+    m.proxyServer = value
 }

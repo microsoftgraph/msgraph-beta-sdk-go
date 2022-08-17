@@ -51,11 +51,7 @@ func CreateWindowsIdentityProtectionConfigurationFromDiscriminatorValue(parseNod
 }
 // GetEnhancedAntiSpoofingForFacialFeaturesEnabled gets the enhancedAntiSpoofingForFacialFeaturesEnabled property value. Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
 func (m *WindowsIdentityProtectionConfiguration) GetEnhancedAntiSpoofingForFacialFeaturesEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enhancedAntiSpoofingForFacialFeaturesEnabled
-    }
+    return m.enhancedAntiSpoofingForFacialFeaturesEnabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsIdentityProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -204,107 +200,55 @@ func (m *WindowsIdentityProtectionConfiguration) GetFieldDeserializers()(map[str
 }
 // GetPinExpirationInDays gets the pinExpirationInDays property value. Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
 func (m *WindowsIdentityProtectionConfiguration) GetPinExpirationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinExpirationInDays
-    }
+    return m.pinExpirationInDays
 }
 // GetPinLowercaseCharactersUsage gets the pinLowercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) GetPinLowercaseCharactersUsage()(*ConfigurationUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinLowercaseCharactersUsage
-    }
+    return m.pinLowercaseCharactersUsage
 }
 // GetPinMaximumLength gets the pinMaximumLength property value. Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127
 func (m *WindowsIdentityProtectionConfiguration) GetPinMaximumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinMaximumLength
-    }
+    return m.pinMaximumLength
 }
 // GetPinMinimumLength gets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the Windows Hello for Business PIN. Valid values are 4 to 127 inclusive and less than or equal to the value set for the maximum PIN. Valid values 4 to 127
 func (m *WindowsIdentityProtectionConfiguration) GetPinMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinMinimumLength
-    }
+    return m.pinMinimumLength
 }
 // GetPinPreviousBlockCount gets the pinPreviousBlockCount property value. Controls the ability to prevent users from using past PINs. This must be set between 0 and 50, inclusive, and the current PIN of the user is included in that count. If set to 0, previous PINs are not stored. PIN history is not preserved through a PIN reset. Valid values 0 to 50
 func (m *WindowsIdentityProtectionConfiguration) GetPinPreviousBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinPreviousBlockCount
-    }
+    return m.pinPreviousBlockCount
 }
 // GetPinRecoveryEnabled gets the pinRecoveryEnabled property value. Boolean value that enables a user to change their PIN by using the Windows Hello for Business PIN recovery service.
 func (m *WindowsIdentityProtectionConfiguration) GetPinRecoveryEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinRecoveryEnabled
-    }
+    return m.pinRecoveryEnabled
 }
 // GetPinSpecialCharactersUsage gets the pinSpecialCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) GetPinSpecialCharactersUsage()(*ConfigurationUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinSpecialCharactersUsage
-    }
+    return m.pinSpecialCharactersUsage
 }
 // GetPinUppercaseCharactersUsage gets the pinUppercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) GetPinUppercaseCharactersUsage()(*ConfigurationUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pinUppercaseCharactersUsage
-    }
+    return m.pinUppercaseCharactersUsage
 }
 // GetSecurityDeviceRequired gets the securityDeviceRequired property value. Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.
 func (m *WindowsIdentityProtectionConfiguration) GetSecurityDeviceRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityDeviceRequired
-    }
+    return m.securityDeviceRequired
 }
 // GetUnlockWithBiometricsEnabled gets the unlockWithBiometricsEnabled property value. Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
 func (m *WindowsIdentityProtectionConfiguration) GetUnlockWithBiometricsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unlockWithBiometricsEnabled
-    }
+    return m.unlockWithBiometricsEnabled
 }
 // GetUseCertificatesForOnPremisesAuthEnabled gets the useCertificatesForOnPremisesAuthEnabled property value. Boolean value that enables Windows Hello for Business to use certificates to authenticate on-premise resources.
 func (m *WindowsIdentityProtectionConfiguration) GetUseCertificatesForOnPremisesAuthEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useCertificatesForOnPremisesAuthEnabled
-    }
+    return m.useCertificatesForOnPremisesAuthEnabled
 }
 // GetUseSecurityKeyForSignin gets the useSecurityKeyForSignin property value. Boolean value used to enable the Windows Hello security key as a logon credential.
 func (m *WindowsIdentityProtectionConfiguration) GetUseSecurityKeyForSignin()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useSecurityKeyForSignin
-    }
+    return m.useSecurityKeyForSignin
 }
 // GetWindowsHelloForBusinessBlocked gets the windowsHelloForBusinessBlocked property value. Boolean value that blocks Windows Hello for Business as a method for signing into Windows.
 func (m *WindowsIdentityProtectionConfiguration) GetWindowsHelloForBusinessBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsHelloForBusinessBlocked
-    }
+    return m.windowsHelloForBusinessBlocked
 }
 // Serialize serializes information the current object
 func (m *WindowsIdentityProtectionConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -403,85 +347,57 @@ func (m *WindowsIdentityProtectionConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetEnhancedAntiSpoofingForFacialFeaturesEnabled sets the enhancedAntiSpoofingForFacialFeaturesEnabled property value. Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
 func (m *WindowsIdentityProtectionConfiguration) SetEnhancedAntiSpoofingForFacialFeaturesEnabled(value *bool)() {
-    if m != nil {
-        m.enhancedAntiSpoofingForFacialFeaturesEnabled = value
-    }
+    m.enhancedAntiSpoofingForFacialFeaturesEnabled = value
 }
 // SetPinExpirationInDays sets the pinExpirationInDays property value. Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
 func (m *WindowsIdentityProtectionConfiguration) SetPinExpirationInDays(value *int32)() {
-    if m != nil {
-        m.pinExpirationInDays = value
-    }
+    m.pinExpirationInDays = value
 }
 // SetPinLowercaseCharactersUsage sets the pinLowercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) SetPinLowercaseCharactersUsage(value *ConfigurationUsage)() {
-    if m != nil {
-        m.pinLowercaseCharactersUsage = value
-    }
+    m.pinLowercaseCharactersUsage = value
 }
 // SetPinMaximumLength sets the pinMaximumLength property value. Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127
 func (m *WindowsIdentityProtectionConfiguration) SetPinMaximumLength(value *int32)() {
-    if m != nil {
-        m.pinMaximumLength = value
-    }
+    m.pinMaximumLength = value
 }
 // SetPinMinimumLength sets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the Windows Hello for Business PIN. Valid values are 4 to 127 inclusive and less than or equal to the value set for the maximum PIN. Valid values 4 to 127
 func (m *WindowsIdentityProtectionConfiguration) SetPinMinimumLength(value *int32)() {
-    if m != nil {
-        m.pinMinimumLength = value
-    }
+    m.pinMinimumLength = value
 }
 // SetPinPreviousBlockCount sets the pinPreviousBlockCount property value. Controls the ability to prevent users from using past PINs. This must be set between 0 and 50, inclusive, and the current PIN of the user is included in that count. If set to 0, previous PINs are not stored. PIN history is not preserved through a PIN reset. Valid values 0 to 50
 func (m *WindowsIdentityProtectionConfiguration) SetPinPreviousBlockCount(value *int32)() {
-    if m != nil {
-        m.pinPreviousBlockCount = value
-    }
+    m.pinPreviousBlockCount = value
 }
 // SetPinRecoveryEnabled sets the pinRecoveryEnabled property value. Boolean value that enables a user to change their PIN by using the Windows Hello for Business PIN recovery service.
 func (m *WindowsIdentityProtectionConfiguration) SetPinRecoveryEnabled(value *bool)() {
-    if m != nil {
-        m.pinRecoveryEnabled = value
-    }
+    m.pinRecoveryEnabled = value
 }
 // SetPinSpecialCharactersUsage sets the pinSpecialCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) SetPinSpecialCharactersUsage(value *ConfigurationUsage)() {
-    if m != nil {
-        m.pinSpecialCharactersUsage = value
-    }
+    m.pinSpecialCharactersUsage = value
 }
 // SetPinUppercaseCharactersUsage sets the pinUppercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) SetPinUppercaseCharactersUsage(value *ConfigurationUsage)() {
-    if m != nil {
-        m.pinUppercaseCharactersUsage = value
-    }
+    m.pinUppercaseCharactersUsage = value
 }
 // SetSecurityDeviceRequired sets the securityDeviceRequired property value. Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.
 func (m *WindowsIdentityProtectionConfiguration) SetSecurityDeviceRequired(value *bool)() {
-    if m != nil {
-        m.securityDeviceRequired = value
-    }
+    m.securityDeviceRequired = value
 }
 // SetUnlockWithBiometricsEnabled sets the unlockWithBiometricsEnabled property value. Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
 func (m *WindowsIdentityProtectionConfiguration) SetUnlockWithBiometricsEnabled(value *bool)() {
-    if m != nil {
-        m.unlockWithBiometricsEnabled = value
-    }
+    m.unlockWithBiometricsEnabled = value
 }
 // SetUseCertificatesForOnPremisesAuthEnabled sets the useCertificatesForOnPremisesAuthEnabled property value. Boolean value that enables Windows Hello for Business to use certificates to authenticate on-premise resources.
 func (m *WindowsIdentityProtectionConfiguration) SetUseCertificatesForOnPremisesAuthEnabled(value *bool)() {
-    if m != nil {
-        m.useCertificatesForOnPremisesAuthEnabled = value
-    }
+    m.useCertificatesForOnPremisesAuthEnabled = value
 }
 // SetUseSecurityKeyForSignin sets the useSecurityKeyForSignin property value. Boolean value used to enable the Windows Hello security key as a logon credential.
 func (m *WindowsIdentityProtectionConfiguration) SetUseSecurityKeyForSignin(value *bool)() {
-    if m != nil {
-        m.useSecurityKeyForSignin = value
-    }
+    m.useSecurityKeyForSignin = value
 }
 // SetWindowsHelloForBusinessBlocked sets the windowsHelloForBusinessBlocked property value. Boolean value that blocks Windows Hello for Business as a method for signing into Windows.
 func (m *WindowsIdentityProtectionConfiguration) SetWindowsHelloForBusinessBlocked(value *bool)() {
-    if m != nil {
-        m.windowsHelloForBusinessBlocked = value
-    }
+    m.windowsHelloForBusinessBlocked = value
 }

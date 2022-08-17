@@ -20,7 +20,7 @@ type UserSettings struct {
     // The shift preferences for the user.
     shiftPreferences ShiftPreferencesable
 }
-// NewUserSettings instantiates a new userSettings and sets the default values.
+// NewUserSettings instantiates a new UserSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
     m := &UserSettings{
         Entity: *NewEntity(),
@@ -35,27 +35,15 @@ func CreateUserSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetContactMergeSuggestions gets the contactMergeSuggestions property value. The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 func (m *UserSettings) GetContactMergeSuggestions()(ContactMergeSuggestionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contactMergeSuggestions
-    }
+    return m.contactMergeSuggestions
 }
 // GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contributionToContentDiscoveryAsOrganizationDisabled
-    }
+    return m.contributionToContentDiscoveryAsOrganizationDisabled
 }
 // GetContributionToContentDiscoveryDisabled gets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
 func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contributionToContentDiscoveryDisabled
-    }
+    return m.contributionToContentDiscoveryDisabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,27 +112,15 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetItemInsights gets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 func (m *UserSettings) GetItemInsights()(UserInsightsSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemInsights
-    }
+    return m.itemInsights
 }
 // GetRegionalAndLanguageSettings gets the regionalAndLanguageSettings property value. The user's preferences for languages, regional locale and date/time formatting.
 func (m *UserSettings) GetRegionalAndLanguageSettings()(RegionalAndLanguageSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.regionalAndLanguageSettings
-    }
+    return m.regionalAndLanguageSettings
 }
 // GetShiftPreferences gets the shiftPreferences property value. The shift preferences for the user.
 func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shiftPreferences
-    }
+    return m.shiftPreferences
 }
 // Serialize serializes information the current object
 func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetContactMergeSuggestions sets the contactMergeSuggestions property value. The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 func (m *UserSettings) SetContactMergeSuggestions(value ContactMergeSuggestionsable)() {
-    if m != nil {
-        m.contactMergeSuggestions = value
-    }
+    m.contactMergeSuggestions = value
 }
 // SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 func (m *UserSettings) SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)() {
-    if m != nil {
-        m.contributionToContentDiscoveryAsOrganizationDisabled = value
-    }
+    m.contributionToContentDiscoveryAsOrganizationDisabled = value
 }
 // SetContributionToContentDiscoveryDisabled sets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
 func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() {
-    if m != nil {
-        m.contributionToContentDiscoveryDisabled = value
-    }
+    m.contributionToContentDiscoveryDisabled = value
 }
 // SetItemInsights sets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 func (m *UserSettings) SetItemInsights(value UserInsightsSettingsable)() {
-    if m != nil {
-        m.itemInsights = value
-    }
+    m.itemInsights = value
 }
 // SetRegionalAndLanguageSettings sets the regionalAndLanguageSettings property value. The user's preferences for languages, regional locale and date/time formatting.
 func (m *UserSettings) SetRegionalAndLanguageSettings(value RegionalAndLanguageSettingsable)() {
-    if m != nil {
-        m.regionalAndLanguageSettings = value
-    }
+    m.regionalAndLanguageSettings = value
 }
 // SetShiftPreferences sets the shiftPreferences property value. The shift preferences for the user.
 func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
-    if m != nil {
-        m.shiftPreferences = value
-    }
+    m.shiftPreferences = value
 }

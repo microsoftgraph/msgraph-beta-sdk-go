@@ -31,19 +31,11 @@ func CreatePublishedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) GetAgentGroups()([]OnPremisesAgentGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.agentGroups
-    }
+    return m.agentGroups
 }
 // GetDisplayName gets the displayName property value. Display Name of the publishedResource.
 func (m *PublishedResource) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,19 +88,11 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetPublishingType gets the publishingType property value. The publishingType property
 func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingType
-    }
+    return m.publishingType
 }
 // GetResourceName gets the resourceName property value. Name of the publishedResource.
 func (m *PublishedResource) GetResourceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceName
-    }
+    return m.resourceName
 }
 // Serialize serializes information the current object
 func (m *PublishedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,25 +133,17 @@ func (m *PublishedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) SetAgentGroups(value []OnPremisesAgentGroupable)() {
-    if m != nil {
-        m.agentGroups = value
-    }
+    m.agentGroups = value
 }
 // SetDisplayName sets the displayName property value. Display Name of the publishedResource.
 func (m *PublishedResource) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPublishingType sets the publishingType property value. The publishingType property
 func (m *PublishedResource) SetPublishingType(value *OnPremisesPublishingType)() {
-    if m != nil {
-        m.publishingType = value
-    }
+    m.publishingType = value
 }
 // SetResourceName sets the resourceName property value. Name of the publishedResource.
 func (m *PublishedResource) SetResourceName(value *string)() {
-    if m != nil {
-        m.resourceName = value
-    }
+    m.resourceName = value
 }

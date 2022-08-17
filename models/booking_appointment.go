@@ -95,99 +95,51 @@ func CreateBookingAppointmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalInformation gets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingAppointment) GetAdditionalInformation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalInformation
-    }
+    return m.additionalInformation
 }
 // GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. Url of meeting to join anonymously.
 func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.anonymousJoinWebUrl
-    }
+    return m.anonymousJoinWebUrl
 }
 // GetCustomerEmailAddress gets the customerEmailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment.
 func (m *BookingAppointment) GetCustomerEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerEmailAddress
-    }
+    return m.customerEmailAddress
 }
 // GetCustomerId gets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
 func (m *BookingAppointment) GetCustomerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerId
-    }
+    return m.customerId
 }
 // GetCustomerLocation gets the customerLocation property value. Represents location information for the bookingCustomer who is booking the appointment.
 func (m *BookingAppointment) GetCustomerLocation()(Locationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerLocation
-    }
+    return m.customerLocation
 }
 // GetCustomerName gets the customerName property value. The customer's name.
 func (m *BookingAppointment) GetCustomerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerName
-    }
+    return m.customerName
 }
 // GetCustomerNotes gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
 func (m *BookingAppointment) GetCustomerNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerNotes
-    }
+    return m.customerNotes
 }
 // GetCustomerPhone gets the customerPhone property value. The customer's phone number.
 func (m *BookingAppointment) GetCustomerPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerPhone
-    }
+    return m.customerPhone
 }
 // GetCustomers gets the customers property value. It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) GetCustomers()([]BookingCustomerInformationBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customers
-    }
+    return m.customers
 }
 // GetCustomerTimeZone gets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
 func (m *BookingAppointment) GetCustomerTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerTimeZone
-    }
+    return m.customerTimeZone
 }
 // GetDuration gets the duration property value. The length of the appointment, denoted in ISO8601 format.
 func (m *BookingAppointment) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duration
-    }
+    return m.duration
 }
 // GetEnd gets the end property value. The end property
 func (m *BookingAppointment) GetEnd()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.end
-    }
+    return m.end
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -568,195 +520,99 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment.
 func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filledAttendeesCount
-    }
+    return m.filledAttendeesCount
 }
 // GetInvoiceAmount gets the invoiceAmount property value. The billed amount on the invoice.
 func (m *BookingAppointment) GetInvoiceAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceAmount
-    }
+    return m.invoiceAmount
 }
 // GetInvoiceDate gets the invoiceDate property value. The date, time, and time zone of the invoice for this appointment.
 func (m *BookingAppointment) GetInvoiceDate()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceDate
-    }
+    return m.invoiceDate
 }
 // GetInvoiceId gets the invoiceId property value. The ID of the invoice.
 func (m *BookingAppointment) GetInvoiceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceId
-    }
+    return m.invoiceId
 }
 // GetInvoiceStatus gets the invoiceStatus property value. The invoiceStatus property
 func (m *BookingAppointment) GetInvoiceStatus()(*BookingInvoiceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceStatus
-    }
+    return m.invoiceStatus
 }
 // GetInvoiceUrl gets the invoiceUrl property value. The URL of the invoice in Microsoft Bookings.
 func (m *BookingAppointment) GetInvoiceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceUrl
-    }
+    return m.invoiceUrl
 }
 // GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLocationOnline
-    }
+    return m.isLocationOnline
 }
 // GetJoinWebUrl gets the joinWebUrl property value. The URL of the online meeting for the appointment.
 func (m *BookingAppointment) GetJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinWebUrl
-    }
+    return m.joinWebUrl
 }
 // GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
 func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAttendeesCount
-    }
+    return m.maximumAttendeesCount
 }
 // GetOnlineMeetingUrl gets the onlineMeetingUrl property value. The onlineMeetingUrl property
 func (m *BookingAppointment) GetOnlineMeetingUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetingUrl
-    }
+    return m.onlineMeetingUrl
 }
 // GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.optOutOfCustomerEmail
-    }
+    return m.optOutOfCustomerEmail
 }
 // GetPostBuffer gets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
 func (m *BookingAppointment) GetPostBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postBuffer
-    }
+    return m.postBuffer
 }
 // GetPreBuffer gets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
 func (m *BookingAppointment) GetPreBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preBuffer
-    }
+    return m.preBuffer
 }
 // GetPrice gets the price property value. The regular price for an appointment for the specified bookingService.
 func (m *BookingAppointment) GetPrice()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.price
-    }
+    return m.price
 }
 // GetPriceType gets the priceType property value. Represents the type of pricing of a booking service.
 func (m *BookingAppointment) GetPriceType()(*BookingPriceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priceType
-    }
+    return m.priceType
 }
 // GetReminders gets the reminders property value. The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
 func (m *BookingAppointment) GetReminders()([]BookingReminderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminders
-    }
+    return m.reminders
 }
 // GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
 func (m *BookingAppointment) GetSelfServiceAppointmentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selfServiceAppointmentId
-    }
+    return m.selfServiceAppointmentId
 }
 // GetServiceId gets the serviceId property value. The ID of the bookingService associated with this appointment.
 func (m *BookingAppointment) GetServiceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceId
-    }
+    return m.serviceId
 }
 // GetServiceLocation gets the serviceLocation property value. The location where the service is delivered.
 func (m *BookingAppointment) GetServiceLocation()(Locationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceLocation
-    }
+    return m.serviceLocation
 }
 // GetServiceName gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
 func (m *BookingAppointment) GetServiceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceName
-    }
+    return m.serviceName
 }
 // GetServiceNotes gets the serviceNotes property value. Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
 func (m *BookingAppointment) GetServiceNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceNotes
-    }
+    return m.serviceNotes
 }
 // GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
 func (m *BookingAppointment) GetSmsNotificationsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smsNotificationsEnabled
-    }
+    return m.smsNotificationsEnabled
 }
 // GetStaffMemberIds gets the staffMemberIds property value. The ID of each bookingStaffMember who is scheduled in this appointment.
 func (m *BookingAppointment) GetStaffMemberIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.staffMemberIds
-    }
+    return m.staffMemberIds
 }
 // GetStart gets the start property value. The start property
 func (m *BookingAppointment) GetStart()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.start
-    }
+    return m.start
 }
 // Serialize serializes information the current object
 func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -994,217 +850,145 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalInformation sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingAppointment) SetAdditionalInformation(value *string)() {
-    if m != nil {
-        m.additionalInformation = value
-    }
+    m.additionalInformation = value
 }
 // SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. Url of meeting to join anonymously.
 func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
-    if m != nil {
-        m.anonymousJoinWebUrl = value
-    }
+    m.anonymousJoinWebUrl = value
 }
 // SetCustomerEmailAddress sets the customerEmailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment.
 func (m *BookingAppointment) SetCustomerEmailAddress(value *string)() {
-    if m != nil {
-        m.customerEmailAddress = value
-    }
+    m.customerEmailAddress = value
 }
 // SetCustomerId sets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
 func (m *BookingAppointment) SetCustomerId(value *string)() {
-    if m != nil {
-        m.customerId = value
-    }
+    m.customerId = value
 }
 // SetCustomerLocation sets the customerLocation property value. Represents location information for the bookingCustomer who is booking the appointment.
 func (m *BookingAppointment) SetCustomerLocation(value Locationable)() {
-    if m != nil {
-        m.customerLocation = value
-    }
+    m.customerLocation = value
 }
 // SetCustomerName sets the customerName property value. The customer's name.
 func (m *BookingAppointment) SetCustomerName(value *string)() {
-    if m != nil {
-        m.customerName = value
-    }
+    m.customerName = value
 }
 // SetCustomerNotes sets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
 func (m *BookingAppointment) SetCustomerNotes(value *string)() {
-    if m != nil {
-        m.customerNotes = value
-    }
+    m.customerNotes = value
 }
 // SetCustomerPhone sets the customerPhone property value. The customer's phone number.
 func (m *BookingAppointment) SetCustomerPhone(value *string)() {
-    if m != nil {
-        m.customerPhone = value
-    }
+    m.customerPhone = value
 }
 // SetCustomers sets the customers property value. It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) SetCustomers(value []BookingCustomerInformationBaseable)() {
-    if m != nil {
-        m.customers = value
-    }
+    m.customers = value
 }
 // SetCustomerTimeZone sets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
 func (m *BookingAppointment) SetCustomerTimeZone(value *string)() {
-    if m != nil {
-        m.customerTimeZone = value
-    }
+    m.customerTimeZone = value
 }
 // SetDuration sets the duration property value. The length of the appointment, denoted in ISO8601 format.
 func (m *BookingAppointment) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.duration = value
-    }
+    m.duration = value
 }
 // SetEnd sets the end property value. The end property
 func (m *BookingAppointment) SetEnd(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.end = value
-    }
+    m.end = value
 }
 // SetFilledAttendeesCount sets the filledAttendeesCount property value. The current number of customers in the appointment.
 func (m *BookingAppointment) SetFilledAttendeesCount(value *int32)() {
-    if m != nil {
-        m.filledAttendeesCount = value
-    }
+    m.filledAttendeesCount = value
 }
 // SetInvoiceAmount sets the invoiceAmount property value. The billed amount on the invoice.
 func (m *BookingAppointment) SetInvoiceAmount(value *float64)() {
-    if m != nil {
-        m.invoiceAmount = value
-    }
+    m.invoiceAmount = value
 }
 // SetInvoiceDate sets the invoiceDate property value. The date, time, and time zone of the invoice for this appointment.
 func (m *BookingAppointment) SetInvoiceDate(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.invoiceDate = value
-    }
+    m.invoiceDate = value
 }
 // SetInvoiceId sets the invoiceId property value. The ID of the invoice.
 func (m *BookingAppointment) SetInvoiceId(value *string)() {
-    if m != nil {
-        m.invoiceId = value
-    }
+    m.invoiceId = value
 }
 // SetInvoiceStatus sets the invoiceStatus property value. The invoiceStatus property
 func (m *BookingAppointment) SetInvoiceStatus(value *BookingInvoiceStatus)() {
-    if m != nil {
-        m.invoiceStatus = value
-    }
+    m.invoiceStatus = value
 }
 // SetInvoiceUrl sets the invoiceUrl property value. The URL of the invoice in Microsoft Bookings.
 func (m *BookingAppointment) SetInvoiceUrl(value *string)() {
-    if m != nil {
-        m.invoiceUrl = value
-    }
+    m.invoiceUrl = value
 }
 // SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
-    if m != nil {
-        m.isLocationOnline = value
-    }
+    m.isLocationOnline = value
 }
 // SetJoinWebUrl sets the joinWebUrl property value. The URL of the online meeting for the appointment.
 func (m *BookingAppointment) SetJoinWebUrl(value *string)() {
-    if m != nil {
-        m.joinWebUrl = value
-    }
+    m.joinWebUrl = value
 }
 // SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
 func (m *BookingAppointment) SetMaximumAttendeesCount(value *int32)() {
-    if m != nil {
-        m.maximumAttendeesCount = value
-    }
+    m.maximumAttendeesCount = value
 }
 // SetOnlineMeetingUrl sets the onlineMeetingUrl property value. The onlineMeetingUrl property
 func (m *BookingAppointment) SetOnlineMeetingUrl(value *string)() {
-    if m != nil {
-        m.onlineMeetingUrl = value
-    }
+    m.onlineMeetingUrl = value
 }
 // SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) SetOptOutOfCustomerEmail(value *bool)() {
-    if m != nil {
-        m.optOutOfCustomerEmail = value
-    }
+    m.optOutOfCustomerEmail = value
 }
 // SetPostBuffer sets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
 func (m *BookingAppointment) SetPostBuffer(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.postBuffer = value
-    }
+    m.postBuffer = value
 }
 // SetPreBuffer sets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
 func (m *BookingAppointment) SetPreBuffer(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.preBuffer = value
-    }
+    m.preBuffer = value
 }
 // SetPrice sets the price property value. The regular price for an appointment for the specified bookingService.
 func (m *BookingAppointment) SetPrice(value *float64)() {
-    if m != nil {
-        m.price = value
-    }
+    m.price = value
 }
 // SetPriceType sets the priceType property value. Represents the type of pricing of a booking service.
 func (m *BookingAppointment) SetPriceType(value *BookingPriceType)() {
-    if m != nil {
-        m.priceType = value
-    }
+    m.priceType = value
 }
 // SetReminders sets the reminders property value. The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
 func (m *BookingAppointment) SetReminders(value []BookingReminderable)() {
-    if m != nil {
-        m.reminders = value
-    }
+    m.reminders = value
 }
 // SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
 func (m *BookingAppointment) SetSelfServiceAppointmentId(value *string)() {
-    if m != nil {
-        m.selfServiceAppointmentId = value
-    }
+    m.selfServiceAppointmentId = value
 }
 // SetServiceId sets the serviceId property value. The ID of the bookingService associated with this appointment.
 func (m *BookingAppointment) SetServiceId(value *string)() {
-    if m != nil {
-        m.serviceId = value
-    }
+    m.serviceId = value
 }
 // SetServiceLocation sets the serviceLocation property value. The location where the service is delivered.
 func (m *BookingAppointment) SetServiceLocation(value Locationable)() {
-    if m != nil {
-        m.serviceLocation = value
-    }
+    m.serviceLocation = value
 }
 // SetServiceName sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
 func (m *BookingAppointment) SetServiceName(value *string)() {
-    if m != nil {
-        m.serviceName = value
-    }
+    m.serviceName = value
 }
 // SetServiceNotes sets the serviceNotes property value. Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
 func (m *BookingAppointment) SetServiceNotes(value *string)() {
-    if m != nil {
-        m.serviceNotes = value
-    }
+    m.serviceNotes = value
 }
 // SetSmsNotificationsEnabled sets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
 func (m *BookingAppointment) SetSmsNotificationsEnabled(value *bool)() {
-    if m != nil {
-        m.smsNotificationsEnabled = value
-    }
+    m.smsNotificationsEnabled = value
 }
 // SetStaffMemberIds sets the staffMemberIds property value. The ID of each bookingStaffMember who is scheduled in this appointment.
 func (m *BookingAppointment) SetStaffMemberIds(value []string)() {
-    if m != nil {
-        m.staffMemberIds = value
-    }
+    m.staffMemberIds = value
 }
 // SetStart sets the start property value. The start property
 func (m *BookingAppointment) SetStart(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.start = value
-    }
+    m.start = value
 }

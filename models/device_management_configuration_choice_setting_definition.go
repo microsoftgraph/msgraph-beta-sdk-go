@@ -46,11 +46,7 @@ func CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminator
 }
 // GetDefaultOptionId gets the defaultOptionId property value. Default option for choice setting
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetDefaultOptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultOptionId
-    }
+    return m.defaultOptionId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,11 +79,7 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetFieldDeseriali
 }
 // GetOptions gets the options property value. Options for the setting that can be selected
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetOptions()([]DeviceManagementConfigurationOptionDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.options
-    }
+    return m.options
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,13 +107,9 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) Serialize(writer 
 }
 // SetDefaultOptionId sets the defaultOptionId property value. Default option for choice setting
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetDefaultOptionId(value *string)() {
-    if m != nil {
-        m.defaultOptionId = value
-    }
+    m.defaultOptionId = value
 }
 // SetOptions sets the options property value. Options for the setting that can be selected
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetOptions(value []DeviceManagementConfigurationOptionDefinitionable)() {
-    if m != nil {
-        m.options = value
-    }
+    m.options = value
 }

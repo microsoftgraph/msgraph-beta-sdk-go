@@ -31,11 +31,7 @@ func CreateMacOSCustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDeploymentChannel gets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
 func (m *MacOSCustomConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentChannel
-    }
+    return m.deploymentChannel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *MacOSCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *MacOSCustomConfiguration) GetPayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payload
-    }
+    return m.payload
 }
 // GetPayloadFileName gets the payloadFileName property value. Payload file name (.mobileconfig
 func (m *MacOSCustomConfiguration) GetPayloadFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadFileName
-    }
+    return m.payloadFileName
 }
 // GetPayloadName gets the payloadName property value. Name that is displayed to the user.
 func (m *MacOSCustomConfiguration) GetPayloadName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadName
-    }
+    return m.payloadName
 }
 // Serialize serializes information the current object
 func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDeploymentChannel sets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
 func (m *MacOSCustomConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
-    if m != nil {
-        m.deploymentChannel = value
-    }
+    m.deploymentChannel = value
 }
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *MacOSCustomConfiguration) SetPayload(value []byte)() {
-    if m != nil {
-        m.payload = value
-    }
+    m.payload = value
 }
 // SetPayloadFileName sets the payloadFileName property value. Payload file name (.mobileconfig
 func (m *MacOSCustomConfiguration) SetPayloadFileName(value *string)() {
-    if m != nil {
-        m.payloadFileName = value
-    }
+    m.payloadFileName = value
 }
 // SetPayloadName sets the payloadName property value. Name that is displayed to the user.
 func (m *MacOSCustomConfiguration) SetPayloadName(value *string)() {
-    if m != nil {
-        m.payloadName = value
-    }
+    m.payloadName = value
 }

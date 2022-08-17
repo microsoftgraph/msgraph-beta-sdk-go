@@ -52,83 +52,43 @@ func CreateAccessPackageAssignmentFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAccessPackage gets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
 func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackage
-    }
+    return m.accessPackage
 }
 // GetAccessPackageAssignmentPolicy gets the accessPackageAssignmentPolicy property value. Read-only. Nullable. Supports $filter (eq) on the id property
 func (m *AccessPackageAssignment) GetAccessPackageAssignmentPolicy()(AccessPackageAssignmentPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageAssignmentPolicy
-    }
+    return m.accessPackageAssignmentPolicy
 }
 // GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. The accessPackageAssignmentRequests property
 func (m *AccessPackageAssignment) GetAccessPackageAssignmentRequests()([]AccessPackageAssignmentRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageAssignmentRequests
-    }
+    return m.accessPackageAssignmentRequests
 }
 // GetAccessPackageAssignmentResourceRoles gets the accessPackageAssignmentResourceRoles property value. The resource roles delivered to the target user for this assignment. Read-only. Nullable.
 func (m *AccessPackageAssignment) GetAccessPackageAssignmentResourceRoles()([]AccessPackageAssignmentResourceRoleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageAssignmentResourceRoles
-    }
+    return m.accessPackageAssignmentResourceRoles
 }
 // GetAccessPackageId gets the accessPackageId property value. The identifier of the access package. Read-only.
 func (m *AccessPackageAssignment) GetAccessPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageId
-    }
+    return m.accessPackageId
 }
 // GetAssignmentPolicyId gets the assignmentPolicyId property value. The identifier of the access package assignment policy. Read-only.
 func (m *AccessPackageAssignment) GetAssignmentPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentPolicyId
-    }
+    return m.assignmentPolicyId
 }
 // GetAssignmentState gets the assignmentState property value. The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).
 func (m *AccessPackageAssignment) GetAssignmentState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentState
-    }
+    return m.assignmentState
 }
 // GetAssignmentStatus gets the assignmentStatus property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
 func (m *AccessPackageAssignment) GetAssignmentStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentStatus
-    }
+    return m.assignmentStatus
 }
 // GetCatalogId gets the catalogId property value. The identifier of the catalog containing the access package. Read-only.
 func (m *AccessPackageAssignment) GetCatalogId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalogId
-    }
+    return m.catalogId
 }
 // GetExpiredDateTime gets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expiredDateTime
-    }
+    return m.expiredDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -285,35 +245,19 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIsExtended gets the isExtended property value. Indicates whether the access package assignment is extended. Read-only.
 func (m *AccessPackageAssignment) GetIsExtended()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExtended
-    }
+    return m.isExtended
 }
 // GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
 func (m *AccessPackageAssignment) GetSchedule()(RequestScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
+    return m.schedule
 }
 // GetTarget gets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *AccessPackageAssignment) GetTarget()(AccessPackageSubjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // GetTargetId gets the targetId property value. The ID of the subject with the assignment. Read-only.
 func (m *AccessPackageAssignment) GetTargetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetId
-    }
+    return m.targetId
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -417,85 +361,57 @@ func (m *AccessPackageAssignment) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAccessPackage sets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
 func (m *AccessPackageAssignment) SetAccessPackage(value AccessPackageable)() {
-    if m != nil {
-        m.accessPackage = value
-    }
+    m.accessPackage = value
 }
 // SetAccessPackageAssignmentPolicy sets the accessPackageAssignmentPolicy property value. Read-only. Nullable. Supports $filter (eq) on the id property
 func (m *AccessPackageAssignment) SetAccessPackageAssignmentPolicy(value AccessPackageAssignmentPolicyable)() {
-    if m != nil {
-        m.accessPackageAssignmentPolicy = value
-    }
+    m.accessPackageAssignmentPolicy = value
 }
 // SetAccessPackageAssignmentRequests sets the accessPackageAssignmentRequests property value. The accessPackageAssignmentRequests property
 func (m *AccessPackageAssignment) SetAccessPackageAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
-    if m != nil {
-        m.accessPackageAssignmentRequests = value
-    }
+    m.accessPackageAssignmentRequests = value
 }
 // SetAccessPackageAssignmentResourceRoles sets the accessPackageAssignmentResourceRoles property value. The resource roles delivered to the target user for this assignment. Read-only. Nullable.
 func (m *AccessPackageAssignment) SetAccessPackageAssignmentResourceRoles(value []AccessPackageAssignmentResourceRoleable)() {
-    if m != nil {
-        m.accessPackageAssignmentResourceRoles = value
-    }
+    m.accessPackageAssignmentResourceRoles = value
 }
 // SetAccessPackageId sets the accessPackageId property value. The identifier of the access package. Read-only.
 func (m *AccessPackageAssignment) SetAccessPackageId(value *string)() {
-    if m != nil {
-        m.accessPackageId = value
-    }
+    m.accessPackageId = value
 }
 // SetAssignmentPolicyId sets the assignmentPolicyId property value. The identifier of the access package assignment policy. Read-only.
 func (m *AccessPackageAssignment) SetAssignmentPolicyId(value *string)() {
-    if m != nil {
-        m.assignmentPolicyId = value
-    }
+    m.assignmentPolicyId = value
 }
 // SetAssignmentState sets the assignmentState property value. The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).
 func (m *AccessPackageAssignment) SetAssignmentState(value *string)() {
-    if m != nil {
-        m.assignmentState = value
-    }
+    m.assignmentState = value
 }
 // SetAssignmentStatus sets the assignmentStatus property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
 func (m *AccessPackageAssignment) SetAssignmentStatus(value *string)() {
-    if m != nil {
-        m.assignmentStatus = value
-    }
+    m.assignmentStatus = value
 }
 // SetCatalogId sets the catalogId property value. The identifier of the catalog containing the access package. Read-only.
 func (m *AccessPackageAssignment) SetCatalogId(value *string)() {
-    if m != nil {
-        m.catalogId = value
-    }
+    m.catalogId = value
 }
 // SetExpiredDateTime sets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignment) SetExpiredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expiredDateTime = value
-    }
+    m.expiredDateTime = value
 }
 // SetIsExtended sets the isExtended property value. Indicates whether the access package assignment is extended. Read-only.
 func (m *AccessPackageAssignment) SetIsExtended(value *bool)() {
-    if m != nil {
-        m.isExtended = value
-    }
+    m.isExtended = value
 }
 // SetSchedule sets the schedule property value. When the access assignment is to be in place. Read-only.
 func (m *AccessPackageAssignment) SetSchedule(value RequestScheduleable)() {
-    if m != nil {
-        m.schedule = value
-    }
+    m.schedule = value
 }
 // SetTarget sets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *AccessPackageAssignment) SetTarget(value AccessPackageSubjectable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }
 // SetTargetId sets the targetId property value. The ID of the subject with the assignment. Read-only.
 func (m *AccessPackageAssignment) SetTargetId(value *string)() {
-    if m != nil {
-        m.targetId = value
-    }
+    m.targetId = value
 }

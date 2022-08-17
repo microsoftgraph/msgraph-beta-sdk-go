@@ -46,35 +46,19 @@ func CreateMatchingLabelFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingLabel) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
 func (m *MatchingLabel) GetApplicationMode()(*ApplicationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationMode
-    }
+    return m.applicationMode
 }
 // GetDescription gets the description property value. The description property
 func (m *MatchingLabel) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *MatchingLabel) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -197,67 +181,35 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetId gets the id property value. The id property
 func (m *MatchingLabel) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. The isEndpointProtectionEnabled property
 func (m *MatchingLabel) GetIsEndpointProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEndpointProtectionEnabled
-    }
+    return m.isEndpointProtectionEnabled
 }
 // GetLabelActions gets the labelActions property value. The labelActions property
 func (m *MatchingLabel) GetLabelActions()([]LabelActionBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelActions
-    }
+    return m.labelActions
 }
 // GetName gets the name property value. The name property
 func (m *MatchingLabel) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MatchingLabel) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
 func (m *MatchingLabel) GetPolicyTip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTip
-    }
+    return m.policyTip
 }
 // GetPriority gets the priority property value. The priority property
 func (m *MatchingLabel) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetToolTip gets the toolTip property value. The toolTip property
 func (m *MatchingLabel) GetToolTip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.toolTip
-    }
+    return m.toolTip
 }
 // Serialize serializes information the current object
 func (m *MatchingLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -342,73 +294,49 @@ func (m *MatchingLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingLabel) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property
 func (m *MatchingLabel) SetApplicationMode(value *ApplicationMode)() {
-    if m != nil {
-        m.applicationMode = value
-    }
+    m.applicationMode = value
 }
 // SetDescription sets the description property value. The description property
 func (m *MatchingLabel) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *MatchingLabel) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetId sets the id property value. The id property
 func (m *MatchingLabel) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetIsEndpointProtectionEnabled sets the isEndpointProtectionEnabled property value. The isEndpointProtectionEnabled property
 func (m *MatchingLabel) SetIsEndpointProtectionEnabled(value *bool)() {
-    if m != nil {
-        m.isEndpointProtectionEnabled = value
-    }
+    m.isEndpointProtectionEnabled = value
 }
 // SetLabelActions sets the labelActions property value. The labelActions property
 func (m *MatchingLabel) SetLabelActions(value []LabelActionBaseable)() {
-    if m != nil {
-        m.labelActions = value
-    }
+    m.labelActions = value
 }
 // SetName sets the name property value. The name property
 func (m *MatchingLabel) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MatchingLabel) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPolicyTip sets the policyTip property value. The policyTip property
 func (m *MatchingLabel) SetPolicyTip(value *string)() {
-    if m != nil {
-        m.policyTip = value
-    }
+    m.policyTip = value
 }
 // SetPriority sets the priority property value. The priority property
 func (m *MatchingLabel) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetToolTip sets the toolTip property value. The toolTip property
 func (m *MatchingLabel) SetToolTip(value *string)() {
-    if m != nil {
-        m.toolTip = value
-    }
+    m.toolTip = value
 }

@@ -38,19 +38,11 @@ func CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue(parseNode i87
 }
 // GetDetectionState gets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceComplianceScriptDeviceState) GetDetectionState()(*RunState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionState
-    }
+    return m.detectionState
 }
 // GetExpectedStateUpdateDateTime gets the expectedStateUpdateDateTime property value. The next timestamp of when the device compliance script is expected to execute
 func (m *DeviceComplianceScriptDeviceState) GetExpectedStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expectedStateUpdateDateTime
-    }
+    return m.expectedStateUpdateDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,43 +121,23 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
 }
 // GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device compliance script executed
 func (m *DeviceComplianceScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastStateUpdateDateTime
-    }
+    return m.lastStateUpdateDateTime
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
 func (m *DeviceComplianceScriptDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetManagedDevice gets the managedDevice property value. The managed device on which the device compliance script executed
 func (m *DeviceComplianceScriptDeviceState) GetManagedDevice()(ManagedDeviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevice
-    }
+    return m.managedDevice
 }
 // GetScriptError gets the scriptError property value. Error from the detection script
 func (m *DeviceComplianceScriptDeviceState) GetScriptError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptError
-    }
+    return m.scriptError
 }
 // GetScriptOutput gets the scriptOutput property value. Output of the detection script
 func (m *DeviceComplianceScriptDeviceState) GetScriptOutput()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptOutput
-    }
+    return m.scriptOutput
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptDeviceState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -220,43 +192,29 @@ func (m *DeviceComplianceScriptDeviceState) Serialize(writer i878a80d2330e89d268
 }
 // SetDetectionState sets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceComplianceScriptDeviceState) SetDetectionState(value *RunState)() {
-    if m != nil {
-        m.detectionState = value
-    }
+    m.detectionState = value
 }
 // SetExpectedStateUpdateDateTime sets the expectedStateUpdateDateTime property value. The next timestamp of when the device compliance script is expected to execute
 func (m *DeviceComplianceScriptDeviceState) SetExpectedStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expectedStateUpdateDateTime = value
-    }
+    m.expectedStateUpdateDateTime = value
 }
 // SetLastStateUpdateDateTime sets the lastStateUpdateDateTime property value. The last timestamp of when the device compliance script executed
 func (m *DeviceComplianceScriptDeviceState) SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastStateUpdateDateTime = value
-    }
+    m.lastStateUpdateDateTime = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
 func (m *DeviceComplianceScriptDeviceState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetManagedDevice sets the managedDevice property value. The managed device on which the device compliance script executed
 func (m *DeviceComplianceScriptDeviceState) SetManagedDevice(value ManagedDeviceable)() {
-    if m != nil {
-        m.managedDevice = value
-    }
+    m.managedDevice = value
 }
 // SetScriptError sets the scriptError property value. Error from the detection script
 func (m *DeviceComplianceScriptDeviceState) SetScriptError(value *string)() {
-    if m != nil {
-        m.scriptError = value
-    }
+    m.scriptError = value
 }
 // SetScriptOutput sets the scriptOutput property value. Output of the detection script
 func (m *DeviceComplianceScriptDeviceState) SetScriptOutput(value *string)() {
-    if m != nil {
-        m.scriptOutput = value
-    }
+    m.scriptOutput = value
 }

@@ -52,19 +52,11 @@ func (m *SkypeForBusinessUserConversationMember) GetFieldDeserializers()(map[str
 }
 // GetTenantId gets the tenantId property value. ID of the tenant that the user belongs to.
 func (m *SkypeForBusinessUserConversationMember) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetUserId gets the userId property value. ID of the user.
 func (m *SkypeForBusinessUserConversationMember) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *SkypeForBusinessUserConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *SkypeForBusinessUserConversationMember) Serialize(writer i878a80d2330e8
 }
 // SetTenantId sets the tenantId property value. ID of the tenant that the user belongs to.
 func (m *SkypeForBusinessUserConversationMember) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetUserId sets the userId property value. ID of the user.
 func (m *SkypeForBusinessUserConversationMember) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

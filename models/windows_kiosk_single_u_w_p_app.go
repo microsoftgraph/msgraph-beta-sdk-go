@@ -40,11 +40,7 @@ func (m *WindowsKioskSingleUWPApp) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetUwpApp gets the uwpApp property value. The uwpApp property
 func (m *WindowsKioskSingleUWPApp) GetUwpApp()(WindowsKioskUWPAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uwpApp
-    }
+    return m.uwpApp
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskSingleUWPApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsKioskSingleUWPApp) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetUwpApp sets the uwpApp property value. The uwpApp property
 func (m *WindowsKioskSingleUWPApp) SetUwpApp(value WindowsKioskUWPAppable)() {
-    if m != nil {
-        m.uwpApp = value
-    }
+    m.uwpApp = value
 }

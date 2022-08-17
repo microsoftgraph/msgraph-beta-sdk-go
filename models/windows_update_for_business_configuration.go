@@ -98,163 +98,83 @@ func CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue(parseNode
 }
 // GetAllowWindows11Upgrade gets the allowWindows11Upgrade property value. Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.
 func (m *WindowsUpdateForBusinessConfiguration) GetAllowWindows11Upgrade()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowWindows11Upgrade
-    }
+    return m.allowWindows11Upgrade
 }
 // GetAutomaticUpdateMode gets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*AutomaticUpdateMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.automaticUpdateMode
-    }
+    return m.automaticUpdateMode
 }
 // GetAutoRestartNotificationDismissal gets the autoRestartNotificationDismissal property value. Auto restart required notification dismissal method
 func (m *WindowsUpdateForBusinessConfiguration) GetAutoRestartNotificationDismissal()(*AutoRestartNotificationDismissalMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoRestartNotificationDismissal
-    }
+    return m.autoRestartNotificationDismissal
 }
 // GetBusinessReadyUpdatesOnly gets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) GetBusinessReadyUpdatesOnly()(*WindowsUpdateType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessReadyUpdatesOnly
-    }
+    return m.businessReadyUpdatesOnly
 }
 // GetDeadlineForFeatureUpdatesInDays gets the deadlineForFeatureUpdatesInDays property value. Number of days before feature updates are installed automatically with valid range from 0 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineForFeatureUpdatesInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deadlineForFeatureUpdatesInDays
-    }
+    return m.deadlineForFeatureUpdatesInDays
 }
 // GetDeadlineForQualityUpdatesInDays gets the deadlineForQualityUpdatesInDays property value. Number of days before quality updates are installed automatically with valid range from 0 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineForQualityUpdatesInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deadlineForQualityUpdatesInDays
-    }
+    return m.deadlineForQualityUpdatesInDays
 }
 // GetDeadlineGracePeriodInDays gets the deadlineGracePeriodInDays property value. Number of days after deadline  until restarts occur automatically with valid range from 0 to 7 days
 func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineGracePeriodInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deadlineGracePeriodInDays
-    }
+    return m.deadlineGracePeriodInDays
 }
 // GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deliveryOptimizationMode
-    }
+    return m.deliveryOptimizationMode
 }
 // GetDeviceUpdateStates gets the deviceUpdateStates property value. Windows update for business configuration device states. This collection can contain a maximum of 500 elements.
 func (m *WindowsUpdateForBusinessConfiguration) GetDeviceUpdateStates()([]WindowsUpdateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceUpdateStates
-    }
+    return m.deviceUpdateStates
 }
 // GetDriversExcluded gets the driversExcluded property value. Exclude Windows update Drivers
 func (m *WindowsUpdateForBusinessConfiguration) GetDriversExcluded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driversExcluded
-    }
+    return m.driversExcluded
 }
 // GetEngagedRestartDeadlineInDays gets the engagedRestartDeadlineInDays property value. Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartDeadlineInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.engagedRestartDeadlineInDays
-    }
+    return m.engagedRestartDeadlineInDays
 }
 // GetEngagedRestartSnoozeScheduleInDays gets the engagedRestartSnoozeScheduleInDays property value. Number of days a user can snooze Engaged Restart reminder notifications with valid range from 1 to 3 days
 func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartSnoozeScheduleInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.engagedRestartSnoozeScheduleInDays
-    }
+    return m.engagedRestartSnoozeScheduleInDays
 }
 // GetEngagedRestartTransitionScheduleInDays gets the engagedRestartTransitionScheduleInDays property value. Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartTransitionScheduleInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.engagedRestartTransitionScheduleInDays
-    }
+    return m.engagedRestartTransitionScheduleInDays
 }
 // GetFeatureUpdatesDeferralPeriodInDays gets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesDeferralPeriodInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesDeferralPeriodInDays
-    }
+    return m.featureUpdatesDeferralPeriodInDays
 }
 // GetFeatureUpdatesPaused gets the featureUpdatesPaused property value. Pause Feature Updates
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPaused()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesPaused
-    }
+    return m.featureUpdatesPaused
 }
 // GetFeatureUpdatesPauseExpiryDateTime gets the featureUpdatesPauseExpiryDateTime property value. Feature Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesPauseExpiryDateTime
-    }
+    return m.featureUpdatesPauseExpiryDateTime
 }
 // GetFeatureUpdatesPauseStartDate gets the featureUpdatesPauseStartDate property value. Feature Updates Pause start date. This property is read-only.
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesPauseStartDate
-    }
+    return m.featureUpdatesPauseStartDate
 }
 // GetFeatureUpdatesRollbackStartDateTime gets the featureUpdatesRollbackStartDateTime property value. Feature Updates Rollback Start datetime
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesRollbackStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesRollbackStartDateTime
-    }
+    return m.featureUpdatesRollbackStartDateTime
 }
 // GetFeatureUpdatesRollbackWindowInDays gets the featureUpdatesRollbackWindowInDays property value. The number of days after a Feature Update for which a rollback is valid
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesRollbackWindowInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesRollbackWindowInDays
-    }
+    return m.featureUpdatesRollbackWindowInDays
 }
 // GetFeatureUpdatesWillBeRolledBack gets the featureUpdatesWillBeRolledBack property value. Specifies whether to rollback Feature Updates on the next device check in
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesWillBeRolledBack()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdatesWillBeRolledBack
-    }
+    return m.featureUpdatesWillBeRolledBack
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -637,139 +557,71 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[stri
 }
 // GetInstallationSchedule gets the installationSchedule property value. Installation schedule
 func (m *WindowsUpdateForBusinessConfiguration) GetInstallationSchedule()(WindowsUpdateInstallScheduleTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installationSchedule
-    }
+    return m.installationSchedule
 }
 // GetMicrosoftUpdateServiceAllowed gets the microsoftUpdateServiceAllowed property value. Allow Microsoft Update Service
 func (m *WindowsUpdateForBusinessConfiguration) GetMicrosoftUpdateServiceAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftUpdateServiceAllowed
-    }
+    return m.microsoftUpdateServiceAllowed
 }
 // GetPostponeRebootUntilAfterDeadline gets the postponeRebootUntilAfterDeadline property value. Specifies if the device should wait until deadline for rebooting outside of active hours
 func (m *WindowsUpdateForBusinessConfiguration) GetPostponeRebootUntilAfterDeadline()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postponeRebootUntilAfterDeadline
-    }
+    return m.postponeRebootUntilAfterDeadline
 }
 // GetPrereleaseFeatures gets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) GetPrereleaseFeatures()(*PrereleaseFeatures) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prereleaseFeatures
-    }
+    return m.prereleaseFeatures
 }
 // GetQualityUpdatesDeferralPeriodInDays gets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesDeferralPeriodInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesDeferralPeriodInDays
-    }
+    return m.qualityUpdatesDeferralPeriodInDays
 }
 // GetQualityUpdatesPaused gets the qualityUpdatesPaused property value. Pause Quality Updates
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPaused()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesPaused
-    }
+    return m.qualityUpdatesPaused
 }
 // GetQualityUpdatesPauseExpiryDateTime gets the qualityUpdatesPauseExpiryDateTime property value. Quality Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesPauseExpiryDateTime
-    }
+    return m.qualityUpdatesPauseExpiryDateTime
 }
 // GetQualityUpdatesPauseStartDate gets the qualityUpdatesPauseStartDate property value. Quality Updates Pause start date. This property is read-only.
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesPauseStartDate
-    }
+    return m.qualityUpdatesPauseStartDate
 }
 // GetQualityUpdatesRollbackStartDateTime gets the qualityUpdatesRollbackStartDateTime property value. Quality Updates Rollback Start datetime
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesRollbackStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesRollbackStartDateTime
-    }
+    return m.qualityUpdatesRollbackStartDateTime
 }
 // GetQualityUpdatesWillBeRolledBack gets the qualityUpdatesWillBeRolledBack property value. Specifies whether to rollback Quality Updates on the next device check in
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesWillBeRolledBack()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdatesWillBeRolledBack
-    }
+    return m.qualityUpdatesWillBeRolledBack
 }
 // GetScheduleImminentRestartWarningInMinutes gets the scheduleImminentRestartWarningInMinutes property value. Specify the period for auto-restart imminent warning notifications. Supported values: 15, 30 or 60 (minutes).
 func (m *WindowsUpdateForBusinessConfiguration) GetScheduleImminentRestartWarningInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleImminentRestartWarningInMinutes
-    }
+    return m.scheduleImminentRestartWarningInMinutes
 }
 // GetScheduleRestartWarningInHours gets the scheduleRestartWarningInHours property value. Specify the period for auto-restart warning reminder notifications. Supported values: 2, 4, 8, 12 or 24 (hours).
 func (m *WindowsUpdateForBusinessConfiguration) GetScheduleRestartWarningInHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleRestartWarningInHours
-    }
+    return m.scheduleRestartWarningInHours
 }
 // GetSkipChecksBeforeRestart gets the skipChecksBeforeRestart property value. Set to skip all check before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc.
 func (m *WindowsUpdateForBusinessConfiguration) GetSkipChecksBeforeRestart()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skipChecksBeforeRestart
-    }
+    return m.skipChecksBeforeRestart
 }
 // GetUpdateNotificationLevel gets the updateNotificationLevel property value. Windows Update Notification Display Options
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateNotificationLevel()(*WindowsUpdateNotificationDisplayOption) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateNotificationLevel
-    }
+    return m.updateNotificationLevel
 }
 // GetUpdateWeeks gets the updateWeeks property value. Scheduled the update installation on the weeks of the month. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek.
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateForBusinessUpdateWeeks) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateWeeks
-    }
+    return m.updateWeeks
 }
 // GetUserPauseAccess gets the userPauseAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) GetUserPauseAccess()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPauseAccess
-    }
+    return m.userPauseAccess
 }
 // GetUserWindowsUpdateScanAccess gets the userWindowsUpdateScanAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) GetUserWindowsUpdateScanAccess()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userWindowsUpdateScanAccess
-    }
+    return m.userWindowsUpdateScanAccess
 }
 // Serialize serializes information the current object
 func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1016,223 +868,149 @@ func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89
 }
 // SetAllowWindows11Upgrade sets the allowWindows11Upgrade property value. Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.
 func (m *WindowsUpdateForBusinessConfiguration) SetAllowWindows11Upgrade(value *bool)() {
-    if m != nil {
-        m.allowWindows11Upgrade = value
-    }
+    m.allowWindows11Upgrade = value
 }
 // SetAutomaticUpdateMode sets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) SetAutomaticUpdateMode(value *AutomaticUpdateMode)() {
-    if m != nil {
-        m.automaticUpdateMode = value
-    }
+    m.automaticUpdateMode = value
 }
 // SetAutoRestartNotificationDismissal sets the autoRestartNotificationDismissal property value. Auto restart required notification dismissal method
 func (m *WindowsUpdateForBusinessConfiguration) SetAutoRestartNotificationDismissal(value *AutoRestartNotificationDismissalMethod)() {
-    if m != nil {
-        m.autoRestartNotificationDismissal = value
-    }
+    m.autoRestartNotificationDismissal = value
 }
 // SetBusinessReadyUpdatesOnly sets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) SetBusinessReadyUpdatesOnly(value *WindowsUpdateType)() {
-    if m != nil {
-        m.businessReadyUpdatesOnly = value
-    }
+    m.businessReadyUpdatesOnly = value
 }
 // SetDeadlineForFeatureUpdatesInDays sets the deadlineForFeatureUpdatesInDays property value. Number of days before feature updates are installed automatically with valid range from 0 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) SetDeadlineForFeatureUpdatesInDays(value *int32)() {
-    if m != nil {
-        m.deadlineForFeatureUpdatesInDays = value
-    }
+    m.deadlineForFeatureUpdatesInDays = value
 }
 // SetDeadlineForQualityUpdatesInDays sets the deadlineForQualityUpdatesInDays property value. Number of days before quality updates are installed automatically with valid range from 0 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) SetDeadlineForQualityUpdatesInDays(value *int32)() {
-    if m != nil {
-        m.deadlineForQualityUpdatesInDays = value
-    }
+    m.deadlineForQualityUpdatesInDays = value
 }
 // SetDeadlineGracePeriodInDays sets the deadlineGracePeriodInDays property value. Number of days after deadline  until restarts occur automatically with valid range from 0 to 7 days
 func (m *WindowsUpdateForBusinessConfiguration) SetDeadlineGracePeriodInDays(value *int32)() {
-    if m != nil {
-        m.deadlineGracePeriodInDays = value
-    }
+    m.deadlineGracePeriodInDays = value
 }
 // SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)() {
-    if m != nil {
-        m.deliveryOptimizationMode = value
-    }
+    m.deliveryOptimizationMode = value
 }
 // SetDeviceUpdateStates sets the deviceUpdateStates property value. Windows update for business configuration device states. This collection can contain a maximum of 500 elements.
 func (m *WindowsUpdateForBusinessConfiguration) SetDeviceUpdateStates(value []WindowsUpdateStateable)() {
-    if m != nil {
-        m.deviceUpdateStates = value
-    }
+    m.deviceUpdateStates = value
 }
 // SetDriversExcluded sets the driversExcluded property value. Exclude Windows update Drivers
 func (m *WindowsUpdateForBusinessConfiguration) SetDriversExcluded(value *bool)() {
-    if m != nil {
-        m.driversExcluded = value
-    }
+    m.driversExcluded = value
 }
 // SetEngagedRestartDeadlineInDays sets the engagedRestartDeadlineInDays property value. Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) SetEngagedRestartDeadlineInDays(value *int32)() {
-    if m != nil {
-        m.engagedRestartDeadlineInDays = value
-    }
+    m.engagedRestartDeadlineInDays = value
 }
 // SetEngagedRestartSnoozeScheduleInDays sets the engagedRestartSnoozeScheduleInDays property value. Number of days a user can snooze Engaged Restart reminder notifications with valid range from 1 to 3 days
 func (m *WindowsUpdateForBusinessConfiguration) SetEngagedRestartSnoozeScheduleInDays(value *int32)() {
-    if m != nil {
-        m.engagedRestartSnoozeScheduleInDays = value
-    }
+    m.engagedRestartSnoozeScheduleInDays = value
 }
 // SetEngagedRestartTransitionScheduleInDays sets the engagedRestartTransitionScheduleInDays property value. Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days
 func (m *WindowsUpdateForBusinessConfiguration) SetEngagedRestartTransitionScheduleInDays(value *int32)() {
-    if m != nil {
-        m.engagedRestartTransitionScheduleInDays = value
-    }
+    m.engagedRestartTransitionScheduleInDays = value
 }
 // SetFeatureUpdatesDeferralPeriodInDays sets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesDeferralPeriodInDays(value *int32)() {
-    if m != nil {
-        m.featureUpdatesDeferralPeriodInDays = value
-    }
+    m.featureUpdatesDeferralPeriodInDays = value
 }
 // SetFeatureUpdatesPaused sets the featureUpdatesPaused property value. Pause Feature Updates
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesPaused(value *bool)() {
-    if m != nil {
-        m.featureUpdatesPaused = value
-    }
+    m.featureUpdatesPaused = value
 }
 // SetFeatureUpdatesPauseExpiryDateTime sets the featureUpdatesPauseExpiryDateTime property value. Feature Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesPauseExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.featureUpdatesPauseExpiryDateTime = value
-    }
+    m.featureUpdatesPauseExpiryDateTime = value
 }
 // SetFeatureUpdatesPauseStartDate sets the featureUpdatesPauseStartDate property value. Feature Updates Pause start date. This property is read-only.
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesPauseStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.featureUpdatesPauseStartDate = value
-    }
+    m.featureUpdatesPauseStartDate = value
 }
 // SetFeatureUpdatesRollbackStartDateTime sets the featureUpdatesRollbackStartDateTime property value. Feature Updates Rollback Start datetime
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesRollbackStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.featureUpdatesRollbackStartDateTime = value
-    }
+    m.featureUpdatesRollbackStartDateTime = value
 }
 // SetFeatureUpdatesRollbackWindowInDays sets the featureUpdatesRollbackWindowInDays property value. The number of days after a Feature Update for which a rollback is valid
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesRollbackWindowInDays(value *int32)() {
-    if m != nil {
-        m.featureUpdatesRollbackWindowInDays = value
-    }
+    m.featureUpdatesRollbackWindowInDays = value
 }
 // SetFeatureUpdatesWillBeRolledBack sets the featureUpdatesWillBeRolledBack property value. Specifies whether to rollback Feature Updates on the next device check in
 func (m *WindowsUpdateForBusinessConfiguration) SetFeatureUpdatesWillBeRolledBack(value *bool)() {
-    if m != nil {
-        m.featureUpdatesWillBeRolledBack = value
-    }
+    m.featureUpdatesWillBeRolledBack = value
 }
 // SetInstallationSchedule sets the installationSchedule property value. Installation schedule
 func (m *WindowsUpdateForBusinessConfiguration) SetInstallationSchedule(value WindowsUpdateInstallScheduleTypeable)() {
-    if m != nil {
-        m.installationSchedule = value
-    }
+    m.installationSchedule = value
 }
 // SetMicrosoftUpdateServiceAllowed sets the microsoftUpdateServiceAllowed property value. Allow Microsoft Update Service
 func (m *WindowsUpdateForBusinessConfiguration) SetMicrosoftUpdateServiceAllowed(value *bool)() {
-    if m != nil {
-        m.microsoftUpdateServiceAllowed = value
-    }
+    m.microsoftUpdateServiceAllowed = value
 }
 // SetPostponeRebootUntilAfterDeadline sets the postponeRebootUntilAfterDeadline property value. Specifies if the device should wait until deadline for rebooting outside of active hours
 func (m *WindowsUpdateForBusinessConfiguration) SetPostponeRebootUntilAfterDeadline(value *bool)() {
-    if m != nil {
-        m.postponeRebootUntilAfterDeadline = value
-    }
+    m.postponeRebootUntilAfterDeadline = value
 }
 // SetPrereleaseFeatures sets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) SetPrereleaseFeatures(value *PrereleaseFeatures)() {
-    if m != nil {
-        m.prereleaseFeatures = value
-    }
+    m.prereleaseFeatures = value
 }
 // SetQualityUpdatesDeferralPeriodInDays sets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesDeferralPeriodInDays(value *int32)() {
-    if m != nil {
-        m.qualityUpdatesDeferralPeriodInDays = value
-    }
+    m.qualityUpdatesDeferralPeriodInDays = value
 }
 // SetQualityUpdatesPaused sets the qualityUpdatesPaused property value. Pause Quality Updates
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesPaused(value *bool)() {
-    if m != nil {
-        m.qualityUpdatesPaused = value
-    }
+    m.qualityUpdatesPaused = value
 }
 // SetQualityUpdatesPauseExpiryDateTime sets the qualityUpdatesPauseExpiryDateTime property value. Quality Updates Pause Expiry datetime
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesPauseExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.qualityUpdatesPauseExpiryDateTime = value
-    }
+    m.qualityUpdatesPauseExpiryDateTime = value
 }
 // SetQualityUpdatesPauseStartDate sets the qualityUpdatesPauseStartDate property value. Quality Updates Pause start date. This property is read-only.
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesPauseStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.qualityUpdatesPauseStartDate = value
-    }
+    m.qualityUpdatesPauseStartDate = value
 }
 // SetQualityUpdatesRollbackStartDateTime sets the qualityUpdatesRollbackStartDateTime property value. Quality Updates Rollback Start datetime
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesRollbackStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.qualityUpdatesRollbackStartDateTime = value
-    }
+    m.qualityUpdatesRollbackStartDateTime = value
 }
 // SetQualityUpdatesWillBeRolledBack sets the qualityUpdatesWillBeRolledBack property value. Specifies whether to rollback Quality Updates on the next device check in
 func (m *WindowsUpdateForBusinessConfiguration) SetQualityUpdatesWillBeRolledBack(value *bool)() {
-    if m != nil {
-        m.qualityUpdatesWillBeRolledBack = value
-    }
+    m.qualityUpdatesWillBeRolledBack = value
 }
 // SetScheduleImminentRestartWarningInMinutes sets the scheduleImminentRestartWarningInMinutes property value. Specify the period for auto-restart imminent warning notifications. Supported values: 15, 30 or 60 (minutes).
 func (m *WindowsUpdateForBusinessConfiguration) SetScheduleImminentRestartWarningInMinutes(value *int32)() {
-    if m != nil {
-        m.scheduleImminentRestartWarningInMinutes = value
-    }
+    m.scheduleImminentRestartWarningInMinutes = value
 }
 // SetScheduleRestartWarningInHours sets the scheduleRestartWarningInHours property value. Specify the period for auto-restart warning reminder notifications. Supported values: 2, 4, 8, 12 or 24 (hours).
 func (m *WindowsUpdateForBusinessConfiguration) SetScheduleRestartWarningInHours(value *int32)() {
-    if m != nil {
-        m.scheduleRestartWarningInHours = value
-    }
+    m.scheduleRestartWarningInHours = value
 }
 // SetSkipChecksBeforeRestart sets the skipChecksBeforeRestart property value. Set to skip all check before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc.
 func (m *WindowsUpdateForBusinessConfiguration) SetSkipChecksBeforeRestart(value *bool)() {
-    if m != nil {
-        m.skipChecksBeforeRestart = value
-    }
+    m.skipChecksBeforeRestart = value
 }
 // SetUpdateNotificationLevel sets the updateNotificationLevel property value. Windows Update Notification Display Options
 func (m *WindowsUpdateForBusinessConfiguration) SetUpdateNotificationLevel(value *WindowsUpdateNotificationDisplayOption)() {
-    if m != nil {
-        m.updateNotificationLevel = value
-    }
+    m.updateNotificationLevel = value
 }
 // SetUpdateWeeks sets the updateWeeks property value. Scheduled the update installation on the weeks of the month. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek.
 func (m *WindowsUpdateForBusinessConfiguration) SetUpdateWeeks(value *WindowsUpdateForBusinessUpdateWeeks)() {
-    if m != nil {
-        m.updateWeeks = value
-    }
+    m.updateWeeks = value
 }
 // SetUserPauseAccess sets the userPauseAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) SetUserPauseAccess(value *Enablement)() {
-    if m != nil {
-        m.userPauseAccess = value
-    }
+    m.userPauseAccess = value
 }
 // SetUserWindowsUpdateScanAccess sets the userWindowsUpdateScanAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) SetUserWindowsUpdateScanAccess(value *Enablement)() {
-    if m != nil {
-        m.userWindowsUpdateScanAccess = value
-    }
+    m.userWindowsUpdateScanAccess = value
 }

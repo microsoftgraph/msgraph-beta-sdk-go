@@ -291,171 +291,87 @@ func CreateAndroidDeviceOwnerGeneralDeviceConfigurationFromDiscriminatorValue(pa
 }
 // GetAccountsBlockModification gets the accountsBlockModification property value. Indicates whether or not adding or removing accounts is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAccountsBlockModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountsBlockModification
-    }
+    return m.accountsBlockModification
 }
 // GetAppsAllowInstallFromUnknownSources gets the appsAllowInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable to unknown sources setting.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAllowInstallFromUnknownSources()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsAllowInstallFromUnknownSources
-    }
+    return m.appsAllowInstallFromUnknownSources
 }
 // GetAppsAutoUpdatePolicy gets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerAppAutoUpdatePolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsAutoUpdatePolicy
-    }
+    return m.appsAutoUpdatePolicy
 }
 // GetAppsDefaultPermissionPolicy gets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerDefaultAppPermissionPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsDefaultPermissionPolicy
-    }
+    return m.appsDefaultPermissionPolicy
 }
 // GetAppsRecommendSkippingFirstUseHints gets the appsRecommendSkippingFirstUseHints property value. Whether or not to recommend all apps skip any first-time-use hints they may have added.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsRecommendSkippingFirstUseHints()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsRecommendSkippingFirstUseHints
-    }
+    return m.appsRecommendSkippingFirstUseHints
 }
 // GetAzureAdSharedDeviceDataClearApps gets the azureAdSharedDeviceDataClearApps property value. A list of managed apps that will have their data cleared during a global sign-out in AAD shared device mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAzureAdSharedDeviceDataClearApps()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdSharedDeviceDataClearApps
-    }
+    return m.azureAdSharedDeviceDataClearApps
 }
 // GetBluetoothBlockConfiguration gets the bluetoothBlockConfiguration property value. Indicates whether or not to block a user from configuring bluetooth.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetBluetoothBlockConfiguration()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetoothBlockConfiguration
-    }
+    return m.bluetoothBlockConfiguration
 }
 // GetBluetoothBlockContactSharing gets the bluetoothBlockContactSharing property value. Indicates whether or not to block a user from sharing contacts via bluetooth.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetBluetoothBlockContactSharing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetoothBlockContactSharing
-    }
+    return m.bluetoothBlockContactSharing
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to disable the use of the camera.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameraBlocked
-    }
+    return m.cameraBlocked
 }
 // GetCellularBlockWiFiTethering gets the cellularBlockWiFiTethering property value. Indicates whether or not to block Wi-Fi tethering.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCellularBlockWiFiTethering()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularBlockWiFiTethering
-    }
+    return m.cellularBlockWiFiTethering
 }
 // GetCertificateCredentialConfigurationDisabled gets the certificateCredentialConfigurationDisabled property value. Indicates whether or not to block users from any certificate credential configuration.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCertificateCredentialConfigurationDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateCredentialConfigurationDisabled
-    }
+    return m.certificateCredentialConfigurationDisabled
 }
 // GetCrossProfilePoliciesAllowCopyPaste gets the crossProfilePoliciesAllowCopyPaste property value. Indicates whether or not text copied from one profile (personal or work) can be pasted in the other.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAllowCopyPaste()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.crossProfilePoliciesAllowCopyPaste
-    }
+    return m.crossProfilePoliciesAllowCopyPaste
 }
 // GetCrossProfilePoliciesAllowDataSharing gets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAllowDataSharing()(*AndroidDeviceOwnerCrossProfileDataSharing) {
-    if m == nil {
-        return nil
-    } else {
-        return m.crossProfilePoliciesAllowDataSharing
-    }
+    return m.crossProfilePoliciesAllowDataSharing
 }
 // GetCrossProfilePoliciesShowWorkContactsInPersonalProfile gets the crossProfilePoliciesShowWorkContactsInPersonalProfile property value. Indicates whether or not contacts stored in work profile are shown in personal profile contact searches/incoming calls.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesShowWorkContactsInPersonalProfile()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.crossProfilePoliciesShowWorkContactsInPersonalProfile
-    }
+    return m.crossProfilePoliciesShowWorkContactsInPersonalProfile
 }
 // GetDataRoamingBlocked gets the dataRoamingBlocked property value. Indicates whether or not to block a user from data roaming.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDataRoamingBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataRoamingBlocked
-    }
+    return m.dataRoamingBlocked
 }
 // GetDateTimeConfigurationBlocked gets the dateTimeConfigurationBlocked property value. Indicates whether or not to block the user from manually changing the date or time on the device
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDateTimeConfigurationBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateTimeConfigurationBlocked
-    }
+    return m.dateTimeConfigurationBlocked
 }
 // GetDetailedHelpText gets the detailedHelpText property value. Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(AndroidDeviceOwnerUserFacingMessageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detailedHelpText
-    }
+    return m.detailedHelpText
 }
 // GetDeviceOwnerLockScreenMessage gets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceOwnerLockScreenMessage()(AndroidDeviceOwnerUserFacingMessageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceOwnerLockScreenMessage
-    }
+    return m.deviceOwnerLockScreenMessage
 }
 // GetEnrollmentProfile gets the enrollmentProfile property value. Android Device Owner Enrollment Profile types.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfileType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentProfile
-    }
+    return m.enrollmentProfile
 }
 // GetFactoryResetBlocked gets the factoryResetBlocked property value. Indicates whether or not the factory reset option in settings is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.factoryResetBlocked
-    }
+    return m.factoryResetBlocked
 }
 // GetFactoryResetDeviceAdministratorEmails gets the factoryResetDeviceAdministratorEmails property value. List of Google account emails that will be required to authenticate after a device is factory reset before it can be set up.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFactoryResetDeviceAdministratorEmails()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.factoryResetDeviceAdministratorEmails
-    }
+    return m.factoryResetDeviceAdministratorEmails
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -1844,907 +1760,455 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
 }
 // GetGlobalProxy gets the globalProxy property value. Proxy is set up directly with host, port and excluded hosts.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGlobalProxy()(AndroidDeviceOwnerGlobalProxyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.globalProxy
-    }
+    return m.globalProxy
 }
 // GetGoogleAccountsBlocked gets the googleAccountsBlocked property value. Indicates whether or not google accounts will be blocked.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGoogleAccountsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.googleAccountsBlocked
-    }
+    return m.googleAccountsBlocked
 }
 // GetKioskCustomizationDeviceSettingsBlocked gets the kioskCustomizationDeviceSettingsBlocked property value. Indicates whether a user can access the device's Settings app while in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationDeviceSettingsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskCustomizationDeviceSettingsBlocked
-    }
+    return m.kioskCustomizationDeviceSettingsBlocked
 }
 // GetKioskCustomizationPowerButtonActionsBlocked gets the kioskCustomizationPowerButtonActionsBlocked property value. Whether the power menu is shown when a user long presses the Power button of a device in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationPowerButtonActionsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskCustomizationPowerButtonActionsBlocked
-    }
+    return m.kioskCustomizationPowerButtonActionsBlocked
 }
 // GetKioskCustomizationStatusBar gets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerKioskCustomizationStatusBar) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskCustomizationStatusBar
-    }
+    return m.kioskCustomizationStatusBar
 }
 // GetKioskCustomizationSystemErrorWarnings gets the kioskCustomizationSystemErrorWarnings property value. Indicates whether system error dialogs for crashed or unresponsive apps are shown in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSystemErrorWarnings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskCustomizationSystemErrorWarnings
-    }
+    return m.kioskCustomizationSystemErrorWarnings
 }
 // GetKioskCustomizationSystemNavigation gets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSystemNavigation()(*AndroidDeviceOwnerKioskCustomizationSystemNavigation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskCustomizationSystemNavigation
-    }
+    return m.kioskCustomizationSystemNavigation
 }
 // GetKioskModeAppOrderEnabled gets the kioskModeAppOrderEnabled property value. Whether or not to enable app ordering in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppOrderEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAppOrderEnabled
-    }
+    return m.kioskModeAppOrderEnabled
 }
 // GetKioskModeAppPositions gets the kioskModeAppPositions property value. The ordering of items on Kiosk Mode Managed Home Screen. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppPositions()([]AndroidDeviceOwnerKioskModeAppPositionItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAppPositions
-    }
+    return m.kioskModeAppPositions
 }
 // GetKioskModeApps gets the kioskModeApps property value. A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeApps()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeApps
-    }
+    return m.kioskModeApps
 }
 // GetKioskModeAppsInFolderOrderedByName gets the kioskModeAppsInFolderOrderedByName property value. Whether or not to alphabetize applications within a folder in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppsInFolderOrderedByName()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeAppsInFolderOrderedByName
-    }
+    return m.kioskModeAppsInFolderOrderedByName
 }
 // GetKioskModeBluetoothConfigurationEnabled gets the kioskModeBluetoothConfigurationEnabled property value. Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeBluetoothConfigurationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeBluetoothConfigurationEnabled
-    }
+    return m.kioskModeBluetoothConfigurationEnabled
 }
 // GetKioskModeDebugMenuEasyAccessEnabled gets the kioskModeDebugMenuEasyAccessEnabled property value. Whether or not to allow a user to easy access to the debug menu in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeDebugMenuEasyAccessEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeDebugMenuEasyAccessEnabled
-    }
+    return m.kioskModeDebugMenuEasyAccessEnabled
 }
 // GetKioskModeExitCode gets the kioskModeExitCode property value. Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeExitCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeExitCode
-    }
+    return m.kioskModeExitCode
 }
 // GetKioskModeFlashlightConfigurationEnabled gets the kioskModeFlashlightConfigurationEnabled property value. Whether or not to allow a user to use the flashlight in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFlashlightConfigurationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeFlashlightConfigurationEnabled
-    }
+    return m.kioskModeFlashlightConfigurationEnabled
 }
 // GetKioskModeFolderIcon gets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFolderIcon()(*AndroidDeviceOwnerKioskModeFolderIcon) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeFolderIcon
-    }
+    return m.kioskModeFolderIcon
 }
 // GetKioskModeGridHeight gets the kioskModeGridHeight property value. Number of rows for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeGridHeight
-    }
+    return m.kioskModeGridHeight
 }
 // GetKioskModeGridWidth gets the kioskModeGridWidth property value. Number of columns for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeGridWidth
-    }
+    return m.kioskModeGridWidth
 }
 // GetKioskModeIconSize gets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeIconSize()(*AndroidDeviceOwnerKioskModeIconSize) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeIconSize
-    }
+    return m.kioskModeIconSize
 }
 // GetKioskModeLockHomeScreen gets the kioskModeLockHomeScreen property value. Whether or not to lock home screen to the end user in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeLockHomeScreen()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeLockHomeScreen
-    }
+    return m.kioskModeLockHomeScreen
 }
 // GetKioskModeManagedFolders gets the kioskModeManagedFolders property value. A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedFolders()([]AndroidDeviceOwnerKioskModeManagedFolderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedFolders
-    }
+    return m.kioskModeManagedFolders
 }
 // GetKioskModeManagedHomeScreenAutoSignout gets the kioskModeManagedHomeScreenAutoSignout property value. Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenAutoSignout()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenAutoSignout
-    }
+    return m.kioskModeManagedHomeScreenAutoSignout
 }
 // GetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds gets the kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds property value. Number of seconds to give user notice before automatically signing them out for Managed Home Screen. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds
-    }
+    return m.kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds
 }
 // GetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds gets the kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds property value. Number of seconds device is inactive before automatically signing user out for Managed Home Screen. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds
-    }
+    return m.kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds
 }
 // GetKioskModeManagedHomeScreenPinComplexity gets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinComplexity()(*KioskModeManagedHomeScreenPinComplexity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenPinComplexity
-    }
+    return m.kioskModeManagedHomeScreenPinComplexity
 }
 // GetKioskModeManagedHomeScreenPinRequired gets the kioskModeManagedHomeScreenPinRequired property value. Whether or not require user to set a PIN for sign-in session for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenPinRequired
-    }
+    return m.kioskModeManagedHomeScreenPinRequired
 }
 // GetKioskModeManagedHomeScreenPinRequiredToResume gets the kioskModeManagedHomeScreenPinRequiredToResume property value. Whether or not required user to enter session PIN if screensaver has appeared for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinRequiredToResume()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenPinRequiredToResume
-    }
+    return m.kioskModeManagedHomeScreenPinRequiredToResume
 }
 // GetKioskModeManagedHomeScreenSignInBackground gets the kioskModeManagedHomeScreenSignInBackground property value. Custom URL background for sign-in screen for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenSignInBackground()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenSignInBackground
-    }
+    return m.kioskModeManagedHomeScreenSignInBackground
 }
 // GetKioskModeManagedHomeScreenSignInBrandingLogo gets the kioskModeManagedHomeScreenSignInBrandingLogo property value. Custom URL branding logo for sign-in screen and session pin page for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenSignInBrandingLogo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenSignInBrandingLogo
-    }
+    return m.kioskModeManagedHomeScreenSignInBrandingLogo
 }
 // GetKioskModeManagedHomeScreenSignInEnabled gets the kioskModeManagedHomeScreenSignInEnabled property value. Whether or not show sign-in screen for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenSignInEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedHomeScreenSignInEnabled
-    }
+    return m.kioskModeManagedHomeScreenSignInEnabled
 }
 // GetKioskModeManagedSettingsEntryDisabled gets the kioskModeManagedSettingsEntryDisabled property value. Whether or not to display the Managed Settings entry point on the managed home screen in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedSettingsEntryDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeManagedSettingsEntryDisabled
-    }
+    return m.kioskModeManagedSettingsEntryDisabled
 }
 // GetKioskModeMediaVolumeConfigurationEnabled gets the kioskModeMediaVolumeConfigurationEnabled property value. Whether or not to allow a user to change the media volume in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeMediaVolumeConfigurationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeMediaVolumeConfigurationEnabled
-    }
+    return m.kioskModeMediaVolumeConfigurationEnabled
 }
 // GetKioskModeScreenOrientation gets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenOrientation()(*AndroidDeviceOwnerKioskModeScreenOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeScreenOrientation
-    }
+    return m.kioskModeScreenOrientation
 }
 // GetKioskModeScreenSaverConfigurationEnabled gets the kioskModeScreenSaverConfigurationEnabled property value. Whether or not to enable screen saver mode or not in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverConfigurationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeScreenSaverConfigurationEnabled
-    }
+    return m.kioskModeScreenSaverConfigurationEnabled
 }
 // GetKioskModeScreenSaverDetectMediaDisabled gets the kioskModeScreenSaverDetectMediaDisabled property value. Whether or not the device screen should show the screen saver if audio/video is playing in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverDetectMediaDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeScreenSaverDetectMediaDisabled
-    }
+    return m.kioskModeScreenSaverDetectMediaDisabled
 }
 // GetKioskModeScreenSaverDisplayTimeInSeconds gets the kioskModeScreenSaverDisplayTimeInSeconds property value. The number of seconds that the device will display the screen saver for in Kiosk Mode. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverDisplayTimeInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeScreenSaverDisplayTimeInSeconds
-    }
+    return m.kioskModeScreenSaverDisplayTimeInSeconds
 }
 // GetKioskModeScreenSaverImageUrl gets the kioskModeScreenSaverImageUrl property value. URL for an image that will be the device's screen saver in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverImageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeScreenSaverImageUrl
-    }
+    return m.kioskModeScreenSaverImageUrl
 }
 // GetKioskModeScreenSaverStartDelayInSeconds gets the kioskModeScreenSaverStartDelayInSeconds property value. The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverStartDelayInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeScreenSaverStartDelayInSeconds
-    }
+    return m.kioskModeScreenSaverStartDelayInSeconds
 }
 // GetKioskModeShowAppNotificationBadge gets the kioskModeShowAppNotificationBadge property value. Whether or not to display application notification badges in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowAppNotificationBadge()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeShowAppNotificationBadge
-    }
+    return m.kioskModeShowAppNotificationBadge
 }
 // GetKioskModeShowDeviceInfo gets the kioskModeShowDeviceInfo property value. Whether or not to allow a user to access basic device information.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowDeviceInfo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeShowDeviceInfo
-    }
+    return m.kioskModeShowDeviceInfo
 }
 // GetKioskModeUseManagedHomeScreenApp gets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeUseManagedHomeScreenApp()(*KioskModeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeUseManagedHomeScreenApp
-    }
+    return m.kioskModeUseManagedHomeScreenApp
 }
 // GetKioskModeVirtualHomeButtonEnabled gets the kioskModeVirtualHomeButtonEnabled property value. Whether or not to display a virtual home button when the device is in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeButtonEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeVirtualHomeButtonEnabled
-    }
+    return m.kioskModeVirtualHomeButtonEnabled
 }
 // GetKioskModeVirtualHomeButtonType gets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeButtonType()(*AndroidDeviceOwnerVirtualHomeButtonType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeVirtualHomeButtonType
-    }
+    return m.kioskModeVirtualHomeButtonType
 }
 // GetKioskModeWallpaperUrl gets the kioskModeWallpaperUrl property value. URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWallpaperUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeWallpaperUrl
-    }
+    return m.kioskModeWallpaperUrl
 }
 // GetKioskModeWifiAllowedSsids gets the kioskModeWifiAllowedSsids property value. The restricted set of WIFI SSIDs available for the user to configure in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWifiAllowedSsids()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeWifiAllowedSsids
-    }
+    return m.kioskModeWifiAllowedSsids
 }
 // GetKioskModeWiFiConfigurationEnabled gets the kioskModeWiFiConfigurationEnabled property value. Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWiFiConfigurationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskModeWiFiConfigurationEnabled
-    }
+    return m.kioskModeWiFiConfigurationEnabled
 }
 // GetMicrophoneForceMute gets the microphoneForceMute property value. Indicates whether or not to block unmuting the microphone on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrophoneForceMute()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphoneForceMute
-    }
+    return m.microphoneForceMute
 }
 // GetMicrosoftLauncherConfigurationEnabled gets the microsoftLauncherConfigurationEnabled property value. Indicates whether or not to you want configure Microsoft Launcher.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherConfigurationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherConfigurationEnabled
-    }
+    return m.microsoftLauncherConfigurationEnabled
 }
 // GetMicrosoftLauncherCustomWallpaperAllowUserModification gets the microsoftLauncherCustomWallpaperAllowUserModification property value. Indicates whether or not the user can modify the wallpaper to personalize their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCustomWallpaperAllowUserModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherCustomWallpaperAllowUserModification
-    }
+    return m.microsoftLauncherCustomWallpaperAllowUserModification
 }
 // GetMicrosoftLauncherCustomWallpaperEnabled gets the microsoftLauncherCustomWallpaperEnabled property value. Indicates whether or not to configure the wallpaper on the targeted devices.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCustomWallpaperEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherCustomWallpaperEnabled
-    }
+    return m.microsoftLauncherCustomWallpaperEnabled
 }
 // GetMicrosoftLauncherCustomWallpaperImageUrl gets the microsoftLauncherCustomWallpaperImageUrl property value. Indicates the URL for the image file to use as the wallpaper on the targeted devices.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCustomWallpaperImageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherCustomWallpaperImageUrl
-    }
+    return m.microsoftLauncherCustomWallpaperImageUrl
 }
 // GetMicrosoftLauncherDockPresenceAllowUserModification gets the microsoftLauncherDockPresenceAllowUserModification property value. Indicates whether or not the user can modify the device dock configuration on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockPresenceAllowUserModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherDockPresenceAllowUserModification
-    }
+    return m.microsoftLauncherDockPresenceAllowUserModification
 }
 // GetMicrosoftLauncherDockPresenceConfiguration gets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockPresenceConfiguration()(*MicrosoftLauncherDockPresence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherDockPresenceConfiguration
-    }
+    return m.microsoftLauncherDockPresenceConfiguration
 }
 // GetMicrosoftLauncherFeedAllowUserModification gets the microsoftLauncherFeedAllowUserModification property value. Indicates whether or not the user can modify the launcher feed on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedAllowUserModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherFeedAllowUserModification
-    }
+    return m.microsoftLauncherFeedAllowUserModification
 }
 // GetMicrosoftLauncherFeedEnabled gets the microsoftLauncherFeedEnabled property value. Indicates whether or not you want to enable the launcher feed on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherFeedEnabled
-    }
+    return m.microsoftLauncherFeedEnabled
 }
 // GetMicrosoftLauncherSearchBarPlacementConfiguration gets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherSearchBarPlacementConfiguration()(*MicrosoftLauncherSearchBarPlacement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftLauncherSearchBarPlacementConfiguration
-    }
+    return m.microsoftLauncherSearchBarPlacementConfiguration
 }
 // GetNetworkEscapeHatchAllowed gets the networkEscapeHatchAllowed property value. Indicates whether or not the device will allow connecting to a temporary network connection at boot time.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetNetworkEscapeHatchAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkEscapeHatchAllowed
-    }
+    return m.networkEscapeHatchAllowed
 }
 // GetNfcBlockOutgoingBeam gets the nfcBlockOutgoingBeam property value. Indicates whether or not to block NFC outgoing beam.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetNfcBlockOutgoingBeam()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nfcBlockOutgoingBeam
-    }
+    return m.nfcBlockOutgoingBeam
 }
 // GetPasswordBlockKeyguard gets the passwordBlockKeyguard property value. Indicates whether or not the keyguard is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguard()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockKeyguard
-    }
+    return m.passwordBlockKeyguard
 }
 // GetPasswordBlockKeyguardFeatures gets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 7 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguardFeatures()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockKeyguardFeatures
-    }
+    return m.passwordBlockKeyguardFeatures
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Indicates the minimum length of the password required on the device. Valid values 4 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinimumLetterCharacters gets the passwordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLetterCharacters
-    }
+    return m.passwordMinimumLetterCharacters
 }
 // GetPasswordMinimumLowerCaseCharacters gets the passwordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLowerCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLowerCaseCharacters
-    }
+    return m.passwordMinimumLowerCaseCharacters
 }
 // GetPasswordMinimumNonLetterCharacters gets the passwordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumNonLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumNonLetterCharacters
-    }
+    return m.passwordMinimumNonLetterCharacters
 }
 // GetPasswordMinimumNumericCharacters gets the passwordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumNumericCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumNumericCharacters
-    }
+    return m.passwordMinimumNumericCharacters
 }
 // GetPasswordMinimumSymbolCharacters gets the passwordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumSymbolCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumSymbolCharacters
-    }
+    return m.passwordMinimumSymbolCharacters
 }
 // GetPasswordMinimumUpperCaseCharacters gets the passwordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumUpperCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumUpperCaseCharacters
-    }
+    return m.passwordMinimumUpperCaseCharacters
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.passwordMinutesOfInactivityBeforeScreenTimeout
 }
 // GetPasswordPreviousPasswordCountToBlock gets the passwordPreviousPasswordCountToBlock property value. Indicates the length of password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordPreviousPasswordCountToBlock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordCountToBlock
-    }
+    return m.passwordPreviousPasswordCountToBlock
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordRequireUnlock gets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequireUnlock
-    }
+    return m.passwordRequireUnlock
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordSignInFailureCountBeforeFactoryReset
-    }
+    return m.passwordSignInFailureCountBeforeFactoryReset
 }
 // GetPersonalProfileAppsAllowInstallFromUnknownSources gets the personalProfileAppsAllowInstallFromUnknownSources property value. Indicates whether the user can install apps from unknown sources on the personal profile.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileAppsAllowInstallFromUnknownSources()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalProfileAppsAllowInstallFromUnknownSources
-    }
+    return m.personalProfileAppsAllowInstallFromUnknownSources
 }
 // GetPersonalProfileCameraBlocked gets the personalProfileCameraBlocked property value. Indicates whether to disable the use of the camera on the personal profile.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileCameraBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalProfileCameraBlocked
-    }
+    return m.personalProfileCameraBlocked
 }
 // GetPersonalProfilePersonalApplications gets the personalProfilePersonalApplications property value. Policy applied to applications in the personal profile. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePersonalApplications()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalProfilePersonalApplications
-    }
+    return m.personalProfilePersonalApplications
 }
 // GetPersonalProfilePlayStoreMode gets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePlayStoreMode()(*PersonalProfilePersonalPlayStoreMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalProfilePlayStoreMode
-    }
+    return m.personalProfilePlayStoreMode
 }
 // GetPersonalProfileScreenCaptureBlocked gets the personalProfileScreenCaptureBlocked property value. Indicates whether to disable the capability to take screenshots on the personal profile.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalProfileScreenCaptureBlocked
-    }
+    return m.personalProfileScreenCaptureBlocked
 }
 // GetPlayStoreMode gets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPlayStoreMode()(*AndroidDeviceOwnerPlayStoreMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.playStoreMode
-    }
+    return m.playStoreMode
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to disable the capability to take screenshots.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
+    return m.screenCaptureBlocked
 }
 // GetSecurityCommonCriteriaModeEnabled gets the securityCommonCriteriaModeEnabled property value. Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityCommonCriteriaModeEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityCommonCriteriaModeEnabled
-    }
+    return m.securityCommonCriteriaModeEnabled
 }
 // GetSecurityDeveloperSettingsEnabled gets the securityDeveloperSettingsEnabled property value. Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityDeveloperSettingsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityDeveloperSettingsEnabled
-    }
+    return m.securityDeveloperSettingsEnabled
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Indicates whether or not verify apps is required.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireVerifyApps
-    }
+    return m.securityRequireVerifyApps
 }
 // GetShortHelpText gets the shortHelpText property value. Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetShortHelpText()(AndroidDeviceOwnerUserFacingMessageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shortHelpText
-    }
+    return m.shortHelpText
 }
 // GetStatusBarBlocked gets the statusBarBlocked property value. Indicates whether or the status bar is disabled, including notifications, quick settings and other screen overlays.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStatusBarBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusBarBlocked
-    }
+    return m.statusBarBlocked
 }
 // GetStayOnModes gets the stayOnModes property value. List of modes in which the device's display will stay powered-on. This collection can contain a maximum of 4 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStayOnModes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stayOnModes
-    }
+    return m.stayOnModes
 }
 // GetStorageAllowUsb gets the storageAllowUsb property value. Indicates whether or not to allow USB mass storage.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageAllowUsb()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageAllowUsb
-    }
+    return m.storageAllowUsb
 }
 // GetStorageBlockExternalMedia gets the storageBlockExternalMedia property value. Indicates whether or not to block external media.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageBlockExternalMedia()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageBlockExternalMedia
-    }
+    return m.storageBlockExternalMedia
 }
 // GetStorageBlockUsbFileTransfer gets the storageBlockUsbFileTransfer property value. Indicates whether or not to block USB file transfer.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageBlockUsbFileTransfer()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageBlockUsbFileTransfer
-    }
+    return m.storageBlockUsbFileTransfer
 }
 // GetSystemUpdateFreezePeriods gets the systemUpdateFreezePeriods property value. Indicates the annually repeating time periods during which system updates are postponed. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateFreezePeriods()([]AndroidDeviceOwnerSystemUpdateFreezePeriodable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemUpdateFreezePeriods
-    }
+    return m.systemUpdateFreezePeriods
 }
 // GetSystemUpdateInstallType gets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateInstallType()(*AndroidDeviceOwnerSystemUpdateInstallType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemUpdateInstallType
-    }
+    return m.systemUpdateInstallType
 }
 // GetSystemUpdateWindowEndMinutesAfterMidnight gets the systemUpdateWindowEndMinutesAfterMidnight property value. Indicates the number of minutes after midnight that the system update window ends. Valid values 0 to 1440
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateWindowEndMinutesAfterMidnight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemUpdateWindowEndMinutesAfterMidnight
-    }
+    return m.systemUpdateWindowEndMinutesAfterMidnight
 }
 // GetSystemUpdateWindowStartMinutesAfterMidnight gets the systemUpdateWindowStartMinutesAfterMidnight property value. Indicates the number of minutes after midnight that the system update window starts. Valid values 0 to 1440
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateWindowStartMinutesAfterMidnight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemUpdateWindowStartMinutesAfterMidnight
-    }
+    return m.systemUpdateWindowStartMinutesAfterMidnight
 }
 // GetSystemWindowsBlocked gets the systemWindowsBlocked property value. Whether or not to block Android system prompt windows, like toasts, phone activities, and system alerts.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemWindowsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemWindowsBlocked
-    }
+    return m.systemWindowsBlocked
 }
 // GetUsersBlockAdd gets the usersBlockAdd property value. Indicates whether or not adding users and profiles is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetUsersBlockAdd()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usersBlockAdd
-    }
+    return m.usersBlockAdd
 }
 // GetUsersBlockRemove gets the usersBlockRemove property value. Indicates whether or not to disable removing other users from the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetUsersBlockRemove()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usersBlockRemove
-    }
+    return m.usersBlockRemove
 }
 // GetVolumeBlockAdjustment gets the volumeBlockAdjustment property value. Indicates whether or not adjusting the master volume is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVolumeBlockAdjustment()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.volumeBlockAdjustment
-    }
+    return m.volumeBlockAdjustment
 }
 // GetVpnAlwaysOnLockdownMode gets the vpnAlwaysOnLockdownMode property value. If an always on VPN package name is specified, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVpnAlwaysOnLockdownMode()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vpnAlwaysOnLockdownMode
-    }
+    return m.vpnAlwaysOnLockdownMode
 }
 // GetVpnAlwaysOnPackageIdentifier gets the vpnAlwaysOnPackageIdentifier property value. Android app package name for app that will handle an always-on VPN connection.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVpnAlwaysOnPackageIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vpnAlwaysOnPackageIdentifier
-    }
+    return m.vpnAlwaysOnPackageIdentifier
 }
 // GetWifiBlockEditConfigurations gets the wifiBlockEditConfigurations property value. Indicates whether or not to block the user from editing the wifi connection settings.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWifiBlockEditConfigurations()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBlockEditConfigurations
-    }
+    return m.wifiBlockEditConfigurations
 }
 // GetWifiBlockEditPolicyDefinedConfigurations gets the wifiBlockEditPolicyDefinedConfigurations property value. Indicates whether or not to block the user from editing just the networks defined by the policy.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWifiBlockEditPolicyDefinedConfigurations()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBlockEditPolicyDefinedConfigurations
-    }
+    return m.wifiBlockEditPolicyDefinedConfigurations
 }
 // GetWorkProfilePasswordExpirationDays gets the workProfilePasswordExpirationDays property value. Indicates the number of days that a work profile password can be set before it expires and a new password will be required. Valid values 1 to 365
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordExpirationDays
-    }
+    return m.workProfilePasswordExpirationDays
 }
 // GetWorkProfilePasswordMinimumLength gets the workProfilePasswordMinimumLength property value. Indicates the minimum length of the work profile password. Valid values 4 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumLength
-    }
+    return m.workProfilePasswordMinimumLength
 }
 // GetWorkProfilePasswordMinimumLetterCharacters gets the workProfilePasswordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumLetterCharacters
-    }
+    return m.workProfilePasswordMinimumLetterCharacters
 }
 // GetWorkProfilePasswordMinimumLowerCaseCharacters gets the workProfilePasswordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower-case characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLowerCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumLowerCaseCharacters
-    }
+    return m.workProfilePasswordMinimumLowerCaseCharacters
 }
 // GetWorkProfilePasswordMinimumNonLetterCharacters gets the workProfilePasswordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumNonLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumNonLetterCharacters
-    }
+    return m.workProfilePasswordMinimumNonLetterCharacters
 }
 // GetWorkProfilePasswordMinimumNumericCharacters gets the workProfilePasswordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumNumericCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumNumericCharacters
-    }
+    return m.workProfilePasswordMinimumNumericCharacters
 }
 // GetWorkProfilePasswordMinimumSymbolCharacters gets the workProfilePasswordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumSymbolCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumSymbolCharacters
-    }
+    return m.workProfilePasswordMinimumSymbolCharacters
 }
 // GetWorkProfilePasswordMinimumUpperCaseCharacters gets the workProfilePasswordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper-case letter characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumUpperCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumUpperCaseCharacters
-    }
+    return m.workProfilePasswordMinimumUpperCaseCharacters
 }
 // GetWorkProfilePasswordPreviousPasswordCountToBlock gets the workProfilePasswordPreviousPasswordCountToBlock property value. Indicates the length of the work profile password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordPreviousPasswordCountToBlock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordPreviousPasswordCountToBlock
-    }
+    return m.workProfilePasswordPreviousPasswordCountToBlock
 }
 // GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordRequiredType
-    }
+    return m.workProfilePasswordRequiredType
 }
 // GetWorkProfilePasswordRequireUnlock gets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordRequireUnlock
-    }
+    return m.workProfilePasswordRequireUnlock
 }
 // GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset gets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect work profile password before the device is wiped. Valid values 4 to 11
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordSignInFailureCountBeforeFactoryReset
-    }
+    return m.workProfilePasswordSignInFailureCountBeforeFactoryReset
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -3605,805 +3069,537 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
 }
 // SetAccountsBlockModification sets the accountsBlockModification property value. Indicates whether or not adding or removing accounts is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAccountsBlockModification(value *bool)() {
-    if m != nil {
-        m.accountsBlockModification = value
-    }
+    m.accountsBlockModification = value
 }
 // SetAppsAllowInstallFromUnknownSources sets the appsAllowInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable to unknown sources setting.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsAllowInstallFromUnknownSources(value *bool)() {
-    if m != nil {
-        m.appsAllowInstallFromUnknownSources = value
-    }
+    m.appsAllowInstallFromUnknownSources = value
 }
 // SetAppsAutoUpdatePolicy sets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsAutoUpdatePolicy(value *AndroidDeviceOwnerAppAutoUpdatePolicyType)() {
-    if m != nil {
-        m.appsAutoUpdatePolicy = value
-    }
+    m.appsAutoUpdatePolicy = value
 }
 // SetAppsDefaultPermissionPolicy sets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsDefaultPermissionPolicy(value *AndroidDeviceOwnerDefaultAppPermissionPolicyType)() {
-    if m != nil {
-        m.appsDefaultPermissionPolicy = value
-    }
+    m.appsDefaultPermissionPolicy = value
 }
 // SetAppsRecommendSkippingFirstUseHints sets the appsRecommendSkippingFirstUseHints property value. Whether or not to recommend all apps skip any first-time-use hints they may have added.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsRecommendSkippingFirstUseHints(value *bool)() {
-    if m != nil {
-        m.appsRecommendSkippingFirstUseHints = value
-    }
+    m.appsRecommendSkippingFirstUseHints = value
 }
 // SetAzureAdSharedDeviceDataClearApps sets the azureAdSharedDeviceDataClearApps property value. A list of managed apps that will have their data cleared during a global sign-out in AAD shared device mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAzureAdSharedDeviceDataClearApps(value []AppListItemable)() {
-    if m != nil {
-        m.azureAdSharedDeviceDataClearApps = value
-    }
+    m.azureAdSharedDeviceDataClearApps = value
 }
 // SetBluetoothBlockConfiguration sets the bluetoothBlockConfiguration property value. Indicates whether or not to block a user from configuring bluetooth.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetBluetoothBlockConfiguration(value *bool)() {
-    if m != nil {
-        m.bluetoothBlockConfiguration = value
-    }
+    m.bluetoothBlockConfiguration = value
 }
 // SetBluetoothBlockContactSharing sets the bluetoothBlockContactSharing property value. Indicates whether or not to block a user from sharing contacts via bluetooth.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetBluetoothBlockContactSharing(value *bool)() {
-    if m != nil {
-        m.bluetoothBlockContactSharing = value
-    }
+    m.bluetoothBlockContactSharing = value
 }
 // SetCameraBlocked sets the cameraBlocked property value. Indicates whether or not to disable the use of the camera.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCameraBlocked(value *bool)() {
-    if m != nil {
-        m.cameraBlocked = value
-    }
+    m.cameraBlocked = value
 }
 // SetCellularBlockWiFiTethering sets the cellularBlockWiFiTethering property value. Indicates whether or not to block Wi-Fi tethering.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCellularBlockWiFiTethering(value *bool)() {
-    if m != nil {
-        m.cellularBlockWiFiTethering = value
-    }
+    m.cellularBlockWiFiTethering = value
 }
 // SetCertificateCredentialConfigurationDisabled sets the certificateCredentialConfigurationDisabled property value. Indicates whether or not to block users from any certificate credential configuration.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCertificateCredentialConfigurationDisabled(value *bool)() {
-    if m != nil {
-        m.certificateCredentialConfigurationDisabled = value
-    }
+    m.certificateCredentialConfigurationDisabled = value
 }
 // SetCrossProfilePoliciesAllowCopyPaste sets the crossProfilePoliciesAllowCopyPaste property value. Indicates whether or not text copied from one profile (personal or work) can be pasted in the other.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesAllowCopyPaste(value *bool)() {
-    if m != nil {
-        m.crossProfilePoliciesAllowCopyPaste = value
-    }
+    m.crossProfilePoliciesAllowCopyPaste = value
 }
 // SetCrossProfilePoliciesAllowDataSharing sets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesAllowDataSharing(value *AndroidDeviceOwnerCrossProfileDataSharing)() {
-    if m != nil {
-        m.crossProfilePoliciesAllowDataSharing = value
-    }
+    m.crossProfilePoliciesAllowDataSharing = value
 }
 // SetCrossProfilePoliciesShowWorkContactsInPersonalProfile sets the crossProfilePoliciesShowWorkContactsInPersonalProfile property value. Indicates whether or not contacts stored in work profile are shown in personal profile contact searches/incoming calls.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesShowWorkContactsInPersonalProfile(value *bool)() {
-    if m != nil {
-        m.crossProfilePoliciesShowWorkContactsInPersonalProfile = value
-    }
+    m.crossProfilePoliciesShowWorkContactsInPersonalProfile = value
 }
 // SetDataRoamingBlocked sets the dataRoamingBlocked property value. Indicates whether or not to block a user from data roaming.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDataRoamingBlocked(value *bool)() {
-    if m != nil {
-        m.dataRoamingBlocked = value
-    }
+    m.dataRoamingBlocked = value
 }
 // SetDateTimeConfigurationBlocked sets the dateTimeConfigurationBlocked property value. Indicates whether or not to block the user from manually changing the date or time on the device
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDateTimeConfigurationBlocked(value *bool)() {
-    if m != nil {
-        m.dateTimeConfigurationBlocked = value
-    }
+    m.dateTimeConfigurationBlocked = value
 }
 // SetDetailedHelpText sets the detailedHelpText property value. Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDetailedHelpText(value AndroidDeviceOwnerUserFacingMessageable)() {
-    if m != nil {
-        m.detailedHelpText = value
-    }
+    m.detailedHelpText = value
 }
 // SetDeviceOwnerLockScreenMessage sets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDeviceOwnerLockScreenMessage(value AndroidDeviceOwnerUserFacingMessageable)() {
-    if m != nil {
-        m.deviceOwnerLockScreenMessage = value
-    }
+    m.deviceOwnerLockScreenMessage = value
 }
 // SetEnrollmentProfile sets the enrollmentProfile property value. Android Device Owner Enrollment Profile types.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetEnrollmentProfile(value *AndroidDeviceOwnerEnrollmentProfileType)() {
-    if m != nil {
-        m.enrollmentProfile = value
-    }
+    m.enrollmentProfile = value
 }
 // SetFactoryResetBlocked sets the factoryResetBlocked property value. Indicates whether or not the factory reset option in settings is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetFactoryResetBlocked(value *bool)() {
-    if m != nil {
-        m.factoryResetBlocked = value
-    }
+    m.factoryResetBlocked = value
 }
 // SetFactoryResetDeviceAdministratorEmails sets the factoryResetDeviceAdministratorEmails property value. List of Google account emails that will be required to authenticate after a device is factory reset before it can be set up.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetFactoryResetDeviceAdministratorEmails(value []string)() {
-    if m != nil {
-        m.factoryResetDeviceAdministratorEmails = value
-    }
+    m.factoryResetDeviceAdministratorEmails = value
 }
 // SetGlobalProxy sets the globalProxy property value. Proxy is set up directly with host, port and excluded hosts.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetGlobalProxy(value AndroidDeviceOwnerGlobalProxyable)() {
-    if m != nil {
-        m.globalProxy = value
-    }
+    m.globalProxy = value
 }
 // SetGoogleAccountsBlocked sets the googleAccountsBlocked property value. Indicates whether or not google accounts will be blocked.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetGoogleAccountsBlocked(value *bool)() {
-    if m != nil {
-        m.googleAccountsBlocked = value
-    }
+    m.googleAccountsBlocked = value
 }
 // SetKioskCustomizationDeviceSettingsBlocked sets the kioskCustomizationDeviceSettingsBlocked property value. Indicates whether a user can access the device's Settings app while in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationDeviceSettingsBlocked(value *bool)() {
-    if m != nil {
-        m.kioskCustomizationDeviceSettingsBlocked = value
-    }
+    m.kioskCustomizationDeviceSettingsBlocked = value
 }
 // SetKioskCustomizationPowerButtonActionsBlocked sets the kioskCustomizationPowerButtonActionsBlocked property value. Whether the power menu is shown when a user long presses the Power button of a device in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationPowerButtonActionsBlocked(value *bool)() {
-    if m != nil {
-        m.kioskCustomizationPowerButtonActionsBlocked = value
-    }
+    m.kioskCustomizationPowerButtonActionsBlocked = value
 }
 // SetKioskCustomizationStatusBar sets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerKioskCustomizationStatusBar)() {
-    if m != nil {
-        m.kioskCustomizationStatusBar = value
-    }
+    m.kioskCustomizationStatusBar = value
 }
 // SetKioskCustomizationSystemErrorWarnings sets the kioskCustomizationSystemErrorWarnings property value. Indicates whether system error dialogs for crashed or unresponsive apps are shown in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationSystemErrorWarnings(value *bool)() {
-    if m != nil {
-        m.kioskCustomizationSystemErrorWarnings = value
-    }
+    m.kioskCustomizationSystemErrorWarnings = value
 }
 // SetKioskCustomizationSystemNavigation sets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationSystemNavigation(value *AndroidDeviceOwnerKioskCustomizationSystemNavigation)() {
-    if m != nil {
-        m.kioskCustomizationSystemNavigation = value
-    }
+    m.kioskCustomizationSystemNavigation = value
 }
 // SetKioskModeAppOrderEnabled sets the kioskModeAppOrderEnabled property value. Whether or not to enable app ordering in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeAppOrderEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeAppOrderEnabled = value
-    }
+    m.kioskModeAppOrderEnabled = value
 }
 // SetKioskModeAppPositions sets the kioskModeAppPositions property value. The ordering of items on Kiosk Mode Managed Home Screen. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeAppPositions(value []AndroidDeviceOwnerKioskModeAppPositionItemable)() {
-    if m != nil {
-        m.kioskModeAppPositions = value
-    }
+    m.kioskModeAppPositions = value
 }
 // SetKioskModeApps sets the kioskModeApps property value. A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeApps(value []AppListItemable)() {
-    if m != nil {
-        m.kioskModeApps = value
-    }
+    m.kioskModeApps = value
 }
 // SetKioskModeAppsInFolderOrderedByName sets the kioskModeAppsInFolderOrderedByName property value. Whether or not to alphabetize applications within a folder in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeAppsInFolderOrderedByName(value *bool)() {
-    if m != nil {
-        m.kioskModeAppsInFolderOrderedByName = value
-    }
+    m.kioskModeAppsInFolderOrderedByName = value
 }
 // SetKioskModeBluetoothConfigurationEnabled sets the kioskModeBluetoothConfigurationEnabled property value. Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeBluetoothConfigurationEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeBluetoothConfigurationEnabled = value
-    }
+    m.kioskModeBluetoothConfigurationEnabled = value
 }
 // SetKioskModeDebugMenuEasyAccessEnabled sets the kioskModeDebugMenuEasyAccessEnabled property value. Whether or not to allow a user to easy access to the debug menu in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeDebugMenuEasyAccessEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeDebugMenuEasyAccessEnabled = value
-    }
+    m.kioskModeDebugMenuEasyAccessEnabled = value
 }
 // SetKioskModeExitCode sets the kioskModeExitCode property value. Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeExitCode(value *string)() {
-    if m != nil {
-        m.kioskModeExitCode = value
-    }
+    m.kioskModeExitCode = value
 }
 // SetKioskModeFlashlightConfigurationEnabled sets the kioskModeFlashlightConfigurationEnabled property value. Whether or not to allow a user to use the flashlight in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeFlashlightConfigurationEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeFlashlightConfigurationEnabled = value
-    }
+    m.kioskModeFlashlightConfigurationEnabled = value
 }
 // SetKioskModeFolderIcon sets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeFolderIcon(value *AndroidDeviceOwnerKioskModeFolderIcon)() {
-    if m != nil {
-        m.kioskModeFolderIcon = value
-    }
+    m.kioskModeFolderIcon = value
 }
 // SetKioskModeGridHeight sets the kioskModeGridHeight property value. Number of rows for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeGridHeight(value *int32)() {
-    if m != nil {
-        m.kioskModeGridHeight = value
-    }
+    m.kioskModeGridHeight = value
 }
 // SetKioskModeGridWidth sets the kioskModeGridWidth property value. Number of columns for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeGridWidth(value *int32)() {
-    if m != nil {
-        m.kioskModeGridWidth = value
-    }
+    m.kioskModeGridWidth = value
 }
 // SetKioskModeIconSize sets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeIconSize(value *AndroidDeviceOwnerKioskModeIconSize)() {
-    if m != nil {
-        m.kioskModeIconSize = value
-    }
+    m.kioskModeIconSize = value
 }
 // SetKioskModeLockHomeScreen sets the kioskModeLockHomeScreen property value. Whether or not to lock home screen to the end user in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeLockHomeScreen(value *bool)() {
-    if m != nil {
-        m.kioskModeLockHomeScreen = value
-    }
+    m.kioskModeLockHomeScreen = value
 }
 // SetKioskModeManagedFolders sets the kioskModeManagedFolders property value. A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedFolders(value []AndroidDeviceOwnerKioskModeManagedFolderable)() {
-    if m != nil {
-        m.kioskModeManagedFolders = value
-    }
+    m.kioskModeManagedFolders = value
 }
 // SetKioskModeManagedHomeScreenAutoSignout sets the kioskModeManagedHomeScreenAutoSignout property value. Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenAutoSignout(value *bool)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenAutoSignout = value
-    }
+    m.kioskModeManagedHomeScreenAutoSignout = value
 }
 // SetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds sets the kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds property value. Number of seconds to give user notice before automatically signing them out for Managed Home Screen. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds(value *int32)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds = value
-    }
+    m.kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds = value
 }
 // SetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds sets the kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds property value. Number of seconds device is inactive before automatically signing user out for Managed Home Screen. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds(value *int32)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds = value
-    }
+    m.kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds = value
 }
 // SetKioskModeManagedHomeScreenPinComplexity sets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenPinComplexity(value *KioskModeManagedHomeScreenPinComplexity)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenPinComplexity = value
-    }
+    m.kioskModeManagedHomeScreenPinComplexity = value
 }
 // SetKioskModeManagedHomeScreenPinRequired sets the kioskModeManagedHomeScreenPinRequired property value. Whether or not require user to set a PIN for sign-in session for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenPinRequired(value *bool)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenPinRequired = value
-    }
+    m.kioskModeManagedHomeScreenPinRequired = value
 }
 // SetKioskModeManagedHomeScreenPinRequiredToResume sets the kioskModeManagedHomeScreenPinRequiredToResume property value. Whether or not required user to enter session PIN if screensaver has appeared for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenPinRequiredToResume(value *bool)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenPinRequiredToResume = value
-    }
+    m.kioskModeManagedHomeScreenPinRequiredToResume = value
 }
 // SetKioskModeManagedHomeScreenSignInBackground sets the kioskModeManagedHomeScreenSignInBackground property value. Custom URL background for sign-in screen for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenSignInBackground(value *string)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenSignInBackground = value
-    }
+    m.kioskModeManagedHomeScreenSignInBackground = value
 }
 // SetKioskModeManagedHomeScreenSignInBrandingLogo sets the kioskModeManagedHomeScreenSignInBrandingLogo property value. Custom URL branding logo for sign-in screen and session pin page for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenSignInBrandingLogo(value *string)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenSignInBrandingLogo = value
-    }
+    m.kioskModeManagedHomeScreenSignInBrandingLogo = value
 }
 // SetKioskModeManagedHomeScreenSignInEnabled sets the kioskModeManagedHomeScreenSignInEnabled property value. Whether or not show sign-in screen for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenSignInEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeManagedHomeScreenSignInEnabled = value
-    }
+    m.kioskModeManagedHomeScreenSignInEnabled = value
 }
 // SetKioskModeManagedSettingsEntryDisabled sets the kioskModeManagedSettingsEntryDisabled property value. Whether or not to display the Managed Settings entry point on the managed home screen in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedSettingsEntryDisabled(value *bool)() {
-    if m != nil {
-        m.kioskModeManagedSettingsEntryDisabled = value
-    }
+    m.kioskModeManagedSettingsEntryDisabled = value
 }
 // SetKioskModeMediaVolumeConfigurationEnabled sets the kioskModeMediaVolumeConfigurationEnabled property value. Whether or not to allow a user to change the media volume in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeMediaVolumeConfigurationEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeMediaVolumeConfigurationEnabled = value
-    }
+    m.kioskModeMediaVolumeConfigurationEnabled = value
 }
 // SetKioskModeScreenOrientation sets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenOrientation(value *AndroidDeviceOwnerKioskModeScreenOrientation)() {
-    if m != nil {
-        m.kioskModeScreenOrientation = value
-    }
+    m.kioskModeScreenOrientation = value
 }
 // SetKioskModeScreenSaverConfigurationEnabled sets the kioskModeScreenSaverConfigurationEnabled property value. Whether or not to enable screen saver mode or not in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenSaverConfigurationEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeScreenSaverConfigurationEnabled = value
-    }
+    m.kioskModeScreenSaverConfigurationEnabled = value
 }
 // SetKioskModeScreenSaverDetectMediaDisabled sets the kioskModeScreenSaverDetectMediaDisabled property value. Whether or not the device screen should show the screen saver if audio/video is playing in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenSaverDetectMediaDisabled(value *bool)() {
-    if m != nil {
-        m.kioskModeScreenSaverDetectMediaDisabled = value
-    }
+    m.kioskModeScreenSaverDetectMediaDisabled = value
 }
 // SetKioskModeScreenSaverDisplayTimeInSeconds sets the kioskModeScreenSaverDisplayTimeInSeconds property value. The number of seconds that the device will display the screen saver for in Kiosk Mode. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenSaverDisplayTimeInSeconds(value *int32)() {
-    if m != nil {
-        m.kioskModeScreenSaverDisplayTimeInSeconds = value
-    }
+    m.kioskModeScreenSaverDisplayTimeInSeconds = value
 }
 // SetKioskModeScreenSaverImageUrl sets the kioskModeScreenSaverImageUrl property value. URL for an image that will be the device's screen saver in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenSaverImageUrl(value *string)() {
-    if m != nil {
-        m.kioskModeScreenSaverImageUrl = value
-    }
+    m.kioskModeScreenSaverImageUrl = value
 }
 // SetKioskModeScreenSaverStartDelayInSeconds sets the kioskModeScreenSaverStartDelayInSeconds property value. The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenSaverStartDelayInSeconds(value *int32)() {
-    if m != nil {
-        m.kioskModeScreenSaverStartDelayInSeconds = value
-    }
+    m.kioskModeScreenSaverStartDelayInSeconds = value
 }
 // SetKioskModeShowAppNotificationBadge sets the kioskModeShowAppNotificationBadge property value. Whether or not to display application notification badges in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeShowAppNotificationBadge(value *bool)() {
-    if m != nil {
-        m.kioskModeShowAppNotificationBadge = value
-    }
+    m.kioskModeShowAppNotificationBadge = value
 }
 // SetKioskModeShowDeviceInfo sets the kioskModeShowDeviceInfo property value. Whether or not to allow a user to access basic device information.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeShowDeviceInfo(value *bool)() {
-    if m != nil {
-        m.kioskModeShowDeviceInfo = value
-    }
+    m.kioskModeShowDeviceInfo = value
 }
 // SetKioskModeUseManagedHomeScreenApp sets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeUseManagedHomeScreenApp(value *KioskModeType)() {
-    if m != nil {
-        m.kioskModeUseManagedHomeScreenApp = value
-    }
+    m.kioskModeUseManagedHomeScreenApp = value
 }
 // SetKioskModeVirtualHomeButtonEnabled sets the kioskModeVirtualHomeButtonEnabled property value. Whether or not to display a virtual home button when the device is in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeVirtualHomeButtonEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeVirtualHomeButtonEnabled = value
-    }
+    m.kioskModeVirtualHomeButtonEnabled = value
 }
 // SetKioskModeVirtualHomeButtonType sets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeVirtualHomeButtonType(value *AndroidDeviceOwnerVirtualHomeButtonType)() {
-    if m != nil {
-        m.kioskModeVirtualHomeButtonType = value
-    }
+    m.kioskModeVirtualHomeButtonType = value
 }
 // SetKioskModeWallpaperUrl sets the kioskModeWallpaperUrl property value. URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeWallpaperUrl(value *string)() {
-    if m != nil {
-        m.kioskModeWallpaperUrl = value
-    }
+    m.kioskModeWallpaperUrl = value
 }
 // SetKioskModeWifiAllowedSsids sets the kioskModeWifiAllowedSsids property value. The restricted set of WIFI SSIDs available for the user to configure in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeWifiAllowedSsids(value []string)() {
-    if m != nil {
-        m.kioskModeWifiAllowedSsids = value
-    }
+    m.kioskModeWifiAllowedSsids = value
 }
 // SetKioskModeWiFiConfigurationEnabled sets the kioskModeWiFiConfigurationEnabled property value. Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeWiFiConfigurationEnabled(value *bool)() {
-    if m != nil {
-        m.kioskModeWiFiConfigurationEnabled = value
-    }
+    m.kioskModeWiFiConfigurationEnabled = value
 }
 // SetMicrophoneForceMute sets the microphoneForceMute property value. Indicates whether or not to block unmuting the microphone on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrophoneForceMute(value *bool)() {
-    if m != nil {
-        m.microphoneForceMute = value
-    }
+    m.microphoneForceMute = value
 }
 // SetMicrosoftLauncherConfigurationEnabled sets the microsoftLauncherConfigurationEnabled property value. Indicates whether or not to you want configure Microsoft Launcher.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherConfigurationEnabled(value *bool)() {
-    if m != nil {
-        m.microsoftLauncherConfigurationEnabled = value
-    }
+    m.microsoftLauncherConfigurationEnabled = value
 }
 // SetMicrosoftLauncherCustomWallpaperAllowUserModification sets the microsoftLauncherCustomWallpaperAllowUserModification property value. Indicates whether or not the user can modify the wallpaper to personalize their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherCustomWallpaperAllowUserModification(value *bool)() {
-    if m != nil {
-        m.microsoftLauncherCustomWallpaperAllowUserModification = value
-    }
+    m.microsoftLauncherCustomWallpaperAllowUserModification = value
 }
 // SetMicrosoftLauncherCustomWallpaperEnabled sets the microsoftLauncherCustomWallpaperEnabled property value. Indicates whether or not to configure the wallpaper on the targeted devices.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherCustomWallpaperEnabled(value *bool)() {
-    if m != nil {
-        m.microsoftLauncherCustomWallpaperEnabled = value
-    }
+    m.microsoftLauncherCustomWallpaperEnabled = value
 }
 // SetMicrosoftLauncherCustomWallpaperImageUrl sets the microsoftLauncherCustomWallpaperImageUrl property value. Indicates the URL for the image file to use as the wallpaper on the targeted devices.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherCustomWallpaperImageUrl(value *string)() {
-    if m != nil {
-        m.microsoftLauncherCustomWallpaperImageUrl = value
-    }
+    m.microsoftLauncherCustomWallpaperImageUrl = value
 }
 // SetMicrosoftLauncherDockPresenceAllowUserModification sets the microsoftLauncherDockPresenceAllowUserModification property value. Indicates whether or not the user can modify the device dock configuration on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherDockPresenceAllowUserModification(value *bool)() {
-    if m != nil {
-        m.microsoftLauncherDockPresenceAllowUserModification = value
-    }
+    m.microsoftLauncherDockPresenceAllowUserModification = value
 }
 // SetMicrosoftLauncherDockPresenceConfiguration sets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherDockPresenceConfiguration(value *MicrosoftLauncherDockPresence)() {
-    if m != nil {
-        m.microsoftLauncherDockPresenceConfiguration = value
-    }
+    m.microsoftLauncherDockPresenceConfiguration = value
 }
 // SetMicrosoftLauncherFeedAllowUserModification sets the microsoftLauncherFeedAllowUserModification property value. Indicates whether or not the user can modify the launcher feed on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherFeedAllowUserModification(value *bool)() {
-    if m != nil {
-        m.microsoftLauncherFeedAllowUserModification = value
-    }
+    m.microsoftLauncherFeedAllowUserModification = value
 }
 // SetMicrosoftLauncherFeedEnabled sets the microsoftLauncherFeedEnabled property value. Indicates whether or not you want to enable the launcher feed on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherFeedEnabled(value *bool)() {
-    if m != nil {
-        m.microsoftLauncherFeedEnabled = value
-    }
+    m.microsoftLauncherFeedEnabled = value
 }
 // SetMicrosoftLauncherSearchBarPlacementConfiguration sets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherSearchBarPlacementConfiguration(value *MicrosoftLauncherSearchBarPlacement)() {
-    if m != nil {
-        m.microsoftLauncherSearchBarPlacementConfiguration = value
-    }
+    m.microsoftLauncherSearchBarPlacementConfiguration = value
 }
 // SetNetworkEscapeHatchAllowed sets the networkEscapeHatchAllowed property value. Indicates whether or not the device will allow connecting to a temporary network connection at boot time.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetNetworkEscapeHatchAllowed(value *bool)() {
-    if m != nil {
-        m.networkEscapeHatchAllowed = value
-    }
+    m.networkEscapeHatchAllowed = value
 }
 // SetNfcBlockOutgoingBeam sets the nfcBlockOutgoingBeam property value. Indicates whether or not to block NFC outgoing beam.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetNfcBlockOutgoingBeam(value *bool)() {
-    if m != nil {
-        m.nfcBlockOutgoingBeam = value
-    }
+    m.nfcBlockOutgoingBeam = value
 }
 // SetPasswordBlockKeyguard sets the passwordBlockKeyguard property value. Indicates whether or not the keyguard is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordBlockKeyguard(value *bool)() {
-    if m != nil {
-        m.passwordBlockKeyguard = value
-    }
+    m.passwordBlockKeyguard = value
 }
 // SetPasswordBlockKeyguardFeatures sets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 7 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordBlockKeyguardFeatures(value []string)() {
-    if m != nil {
-        m.passwordBlockKeyguardFeatures = value
-    }
+    m.passwordBlockKeyguardFeatures = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Indicates the minimum length of the password required on the device. Valid values 4 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinimumLetterCharacters sets the passwordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinimumLetterCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLetterCharacters = value
-    }
+    m.passwordMinimumLetterCharacters = value
 }
 // SetPasswordMinimumLowerCaseCharacters sets the passwordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinimumLowerCaseCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLowerCaseCharacters = value
-    }
+    m.passwordMinimumLowerCaseCharacters = value
 }
 // SetPasswordMinimumNonLetterCharacters sets the passwordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinimumNonLetterCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumNonLetterCharacters = value
-    }
+    m.passwordMinimumNonLetterCharacters = value
 }
 // SetPasswordMinimumNumericCharacters sets the passwordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinimumNumericCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumNumericCharacters = value
-    }
+    m.passwordMinimumNumericCharacters = value
 }
 // SetPasswordMinimumSymbolCharacters sets the passwordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinimumSymbolCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumSymbolCharacters = value
-    }
+    m.passwordMinimumSymbolCharacters = value
 }
 // SetPasswordMinimumUpperCaseCharacters sets the passwordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinimumUpperCaseCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumUpperCaseCharacters = value
-    }
+    m.passwordMinimumUpperCaseCharacters = value
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetPasswordPreviousPasswordCountToBlock sets the passwordPreviousPasswordCountToBlock property value. Indicates the length of password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordPreviousPasswordCountToBlock(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordCountToBlock = value
-    }
+    m.passwordPreviousPasswordCountToBlock = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordRequireUnlock sets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)() {
-    if m != nil {
-        m.passwordRequireUnlock = value
-    }
+    m.passwordRequireUnlock = value
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.passwordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.passwordSignInFailureCountBeforeFactoryReset = value
 }
 // SetPersonalProfileAppsAllowInstallFromUnknownSources sets the personalProfileAppsAllowInstallFromUnknownSources property value. Indicates whether the user can install apps from unknown sources on the personal profile.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfileAppsAllowInstallFromUnknownSources(value *bool)() {
-    if m != nil {
-        m.personalProfileAppsAllowInstallFromUnknownSources = value
-    }
+    m.personalProfileAppsAllowInstallFromUnknownSources = value
 }
 // SetPersonalProfileCameraBlocked sets the personalProfileCameraBlocked property value. Indicates whether to disable the use of the camera on the personal profile.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfileCameraBlocked(value *bool)() {
-    if m != nil {
-        m.personalProfileCameraBlocked = value
-    }
+    m.personalProfileCameraBlocked = value
 }
 // SetPersonalProfilePersonalApplications sets the personalProfilePersonalApplications property value. Policy applied to applications in the personal profile. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfilePersonalApplications(value []AppListItemable)() {
-    if m != nil {
-        m.personalProfilePersonalApplications = value
-    }
+    m.personalProfilePersonalApplications = value
 }
 // SetPersonalProfilePlayStoreMode sets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfilePlayStoreMode(value *PersonalProfilePersonalPlayStoreMode)() {
-    if m != nil {
-        m.personalProfilePlayStoreMode = value
-    }
+    m.personalProfilePlayStoreMode = value
 }
 // SetPersonalProfileScreenCaptureBlocked sets the personalProfileScreenCaptureBlocked property value. Indicates whether to disable the capability to take screenshots on the personal profile.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfileScreenCaptureBlocked(value *bool)() {
-    if m != nil {
-        m.personalProfileScreenCaptureBlocked = value
-    }
+    m.personalProfileScreenCaptureBlocked = value
 }
 // SetPlayStoreMode sets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPlayStoreMode(value *AndroidDeviceOwnerPlayStoreMode)() {
-    if m != nil {
-        m.playStoreMode = value
-    }
+    m.playStoreMode = value
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether or not to disable the capability to take screenshots.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetScreenCaptureBlocked(value *bool)() {
-    if m != nil {
-        m.screenCaptureBlocked = value
-    }
+    m.screenCaptureBlocked = value
 }
 // SetSecurityCommonCriteriaModeEnabled sets the securityCommonCriteriaModeEnabled property value. Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSecurityCommonCriteriaModeEnabled(value *bool)() {
-    if m != nil {
-        m.securityCommonCriteriaModeEnabled = value
-    }
+    m.securityCommonCriteriaModeEnabled = value
 }
 // SetSecurityDeveloperSettingsEnabled sets the securityDeveloperSettingsEnabled property value. Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSecurityDeveloperSettingsEnabled(value *bool)() {
-    if m != nil {
-        m.securityDeveloperSettingsEnabled = value
-    }
+    m.securityDeveloperSettingsEnabled = value
 }
 // SetSecurityRequireVerifyApps sets the securityRequireVerifyApps property value. Indicates whether or not verify apps is required.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSecurityRequireVerifyApps(value *bool)() {
-    if m != nil {
-        m.securityRequireVerifyApps = value
-    }
+    m.securityRequireVerifyApps = value
 }
 // SetShortHelpText sets the shortHelpText property value. Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetShortHelpText(value AndroidDeviceOwnerUserFacingMessageable)() {
-    if m != nil {
-        m.shortHelpText = value
-    }
+    m.shortHelpText = value
 }
 // SetStatusBarBlocked sets the statusBarBlocked property value. Indicates whether or the status bar is disabled, including notifications, quick settings and other screen overlays.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStatusBarBlocked(value *bool)() {
-    if m != nil {
-        m.statusBarBlocked = value
-    }
+    m.statusBarBlocked = value
 }
 // SetStayOnModes sets the stayOnModes property value. List of modes in which the device's display will stay powered-on. This collection can contain a maximum of 4 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStayOnModes(value []string)() {
-    if m != nil {
-        m.stayOnModes = value
-    }
+    m.stayOnModes = value
 }
 // SetStorageAllowUsb sets the storageAllowUsb property value. Indicates whether or not to allow USB mass storage.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStorageAllowUsb(value *bool)() {
-    if m != nil {
-        m.storageAllowUsb = value
-    }
+    m.storageAllowUsb = value
 }
 // SetStorageBlockExternalMedia sets the storageBlockExternalMedia property value. Indicates whether or not to block external media.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStorageBlockExternalMedia(value *bool)() {
-    if m != nil {
-        m.storageBlockExternalMedia = value
-    }
+    m.storageBlockExternalMedia = value
 }
 // SetStorageBlockUsbFileTransfer sets the storageBlockUsbFileTransfer property value. Indicates whether or not to block USB file transfer.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStorageBlockUsbFileTransfer(value *bool)() {
-    if m != nil {
-        m.storageBlockUsbFileTransfer = value
-    }
+    m.storageBlockUsbFileTransfer = value
 }
 // SetSystemUpdateFreezePeriods sets the systemUpdateFreezePeriods property value. Indicates the annually repeating time periods during which system updates are postponed. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateFreezePeriods(value []AndroidDeviceOwnerSystemUpdateFreezePeriodable)() {
-    if m != nil {
-        m.systemUpdateFreezePeriods = value
-    }
+    m.systemUpdateFreezePeriods = value
 }
 // SetSystemUpdateInstallType sets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateInstallType(value *AndroidDeviceOwnerSystemUpdateInstallType)() {
-    if m != nil {
-        m.systemUpdateInstallType = value
-    }
+    m.systemUpdateInstallType = value
 }
 // SetSystemUpdateWindowEndMinutesAfterMidnight sets the systemUpdateWindowEndMinutesAfterMidnight property value. Indicates the number of minutes after midnight that the system update window ends. Valid values 0 to 1440
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateWindowEndMinutesAfterMidnight(value *int32)() {
-    if m != nil {
-        m.systemUpdateWindowEndMinutesAfterMidnight = value
-    }
+    m.systemUpdateWindowEndMinutesAfterMidnight = value
 }
 // SetSystemUpdateWindowStartMinutesAfterMidnight sets the systemUpdateWindowStartMinutesAfterMidnight property value. Indicates the number of minutes after midnight that the system update window starts. Valid values 0 to 1440
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateWindowStartMinutesAfterMidnight(value *int32)() {
-    if m != nil {
-        m.systemUpdateWindowStartMinutesAfterMidnight = value
-    }
+    m.systemUpdateWindowStartMinutesAfterMidnight = value
 }
 // SetSystemWindowsBlocked sets the systemWindowsBlocked property value. Whether or not to block Android system prompt windows, like toasts, phone activities, and system alerts.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemWindowsBlocked(value *bool)() {
-    if m != nil {
-        m.systemWindowsBlocked = value
-    }
+    m.systemWindowsBlocked = value
 }
 // SetUsersBlockAdd sets the usersBlockAdd property value. Indicates whether or not adding users and profiles is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetUsersBlockAdd(value *bool)() {
-    if m != nil {
-        m.usersBlockAdd = value
-    }
+    m.usersBlockAdd = value
 }
 // SetUsersBlockRemove sets the usersBlockRemove property value. Indicates whether or not to disable removing other users from the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetUsersBlockRemove(value *bool)() {
-    if m != nil {
-        m.usersBlockRemove = value
-    }
+    m.usersBlockRemove = value
 }
 // SetVolumeBlockAdjustment sets the volumeBlockAdjustment property value. Indicates whether or not adjusting the master volume is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetVolumeBlockAdjustment(value *bool)() {
-    if m != nil {
-        m.volumeBlockAdjustment = value
-    }
+    m.volumeBlockAdjustment = value
 }
 // SetVpnAlwaysOnLockdownMode sets the vpnAlwaysOnLockdownMode property value. If an always on VPN package name is specified, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetVpnAlwaysOnLockdownMode(value *bool)() {
-    if m != nil {
-        m.vpnAlwaysOnLockdownMode = value
-    }
+    m.vpnAlwaysOnLockdownMode = value
 }
 // SetVpnAlwaysOnPackageIdentifier sets the vpnAlwaysOnPackageIdentifier property value. Android app package name for app that will handle an always-on VPN connection.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetVpnAlwaysOnPackageIdentifier(value *string)() {
-    if m != nil {
-        m.vpnAlwaysOnPackageIdentifier = value
-    }
+    m.vpnAlwaysOnPackageIdentifier = value
 }
 // SetWifiBlockEditConfigurations sets the wifiBlockEditConfigurations property value. Indicates whether or not to block the user from editing the wifi connection settings.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWifiBlockEditConfigurations(value *bool)() {
-    if m != nil {
-        m.wifiBlockEditConfigurations = value
-    }
+    m.wifiBlockEditConfigurations = value
 }
 // SetWifiBlockEditPolicyDefinedConfigurations sets the wifiBlockEditPolicyDefinedConfigurations property value. Indicates whether or not to block the user from editing just the networks defined by the policy.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWifiBlockEditPolicyDefinedConfigurations(value *bool)() {
-    if m != nil {
-        m.wifiBlockEditPolicyDefinedConfigurations = value
-    }
+    m.wifiBlockEditPolicyDefinedConfigurations = value
 }
 // SetWorkProfilePasswordExpirationDays sets the workProfilePasswordExpirationDays property value. Indicates the number of days that a work profile password can be set before it expires and a new password will be required. Valid values 1 to 365
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordExpirationDays = value
-    }
+    m.workProfilePasswordExpirationDays = value
 }
 // SetWorkProfilePasswordMinimumLength sets the workProfilePasswordMinimumLength property value. Indicates the minimum length of the work profile password. Valid values 4 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumLength = value
-    }
+    m.workProfilePasswordMinimumLength = value
 }
 // SetWorkProfilePasswordMinimumLetterCharacters sets the workProfilePasswordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumLetterCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumLetterCharacters = value
-    }
+    m.workProfilePasswordMinimumLetterCharacters = value
 }
 // SetWorkProfilePasswordMinimumLowerCaseCharacters sets the workProfilePasswordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower-case characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumLowerCaseCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumLowerCaseCharacters = value
-    }
+    m.workProfilePasswordMinimumLowerCaseCharacters = value
 }
 // SetWorkProfilePasswordMinimumNonLetterCharacters sets the workProfilePasswordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumNonLetterCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumNonLetterCharacters = value
-    }
+    m.workProfilePasswordMinimumNonLetterCharacters = value
 }
 // SetWorkProfilePasswordMinimumNumericCharacters sets the workProfilePasswordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumNumericCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumNumericCharacters = value
-    }
+    m.workProfilePasswordMinimumNumericCharacters = value
 }
 // SetWorkProfilePasswordMinimumSymbolCharacters sets the workProfilePasswordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumSymbolCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumSymbolCharacters = value
-    }
+    m.workProfilePasswordMinimumSymbolCharacters = value
 }
 // SetWorkProfilePasswordMinimumUpperCaseCharacters sets the workProfilePasswordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper-case letter characters required for the work profile password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumUpperCaseCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumUpperCaseCharacters = value
-    }
+    m.workProfilePasswordMinimumUpperCaseCharacters = value
 }
 // SetWorkProfilePasswordPreviousPasswordCountToBlock sets the workProfilePasswordPreviousPasswordCountToBlock property value. Indicates the length of the work profile password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordPreviousPasswordCountToBlock(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordPreviousPasswordCountToBlock = value
-    }
+    m.workProfilePasswordPreviousPasswordCountToBlock = value
 }
 // SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
-    if m != nil {
-        m.workProfilePasswordRequiredType = value
-    }
+    m.workProfilePasswordRequiredType = value
 }
 // SetWorkProfilePasswordRequireUnlock sets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)() {
-    if m != nil {
-        m.workProfilePasswordRequireUnlock = value
-    }
+    m.workProfilePasswordRequireUnlock = value
 }
 // SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset sets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect work profile password before the device is wiped. Valid values 4 to 11
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.workProfilePasswordSignInFailureCountBeforeFactoryReset = value
 }

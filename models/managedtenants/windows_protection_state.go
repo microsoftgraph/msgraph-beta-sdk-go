@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// WindowsProtectionState provides operations to manage the collection of activityStatistics entities.
+// WindowsProtectionState provides operations to manage the collection of accessReviewDecision entities.
 type WindowsProtectionState struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The anti-malware version for the managed device. Optional. Read-only.
@@ -75,43 +75,23 @@ func CreateWindowsProtectionStateFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAntiMalwareVersion gets the antiMalwareVersion property value. The anti-malware version for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetAntiMalwareVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.antiMalwareVersion
-    }
+    return m.antiMalwareVersion
 }
 // GetAttentionRequired gets the attentionRequired property value. A flag indicating whether attention is required for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetAttentionRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attentionRequired
-    }
+    return m.attentionRequired
 }
 // GetDeviceDeleted gets the deviceDeleted property value. A flag indicating whether the managed device has been deleted. Optional. Read-only.
 func (m *WindowsProtectionState) GetDeviceDeleted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDeleted
-    }
+    return m.deviceDeleted
 }
 // GetDevicePropertyRefreshDateTime gets the devicePropertyRefreshDateTime property value. The date and time the device property has been refreshed. Optional. Read-only.
 func (m *WindowsProtectionState) GetDevicePropertyRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devicePropertyRefreshDateTime
-    }
+    return m.devicePropertyRefreshDateTime
 }
 // GetEngineVersion gets the engineVersion property value. The anti-virus engine version for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetEngineVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.engineVersion
-    }
+    return m.engineVersion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -370,163 +350,83 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFullScanOverdue gets the fullScanOverdue property value. A flag indicating whether quick scan is overdue for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetFullScanOverdue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fullScanOverdue
-    }
+    return m.fullScanOverdue
 }
 // GetFullScanRequired gets the fullScanRequired property value. A flag indicating whether full scan is overdue for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetFullScanRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fullScanRequired
-    }
+    return m.fullScanRequired
 }
 // GetLastFullScanDateTime gets the lastFullScanDateTime property value. The date and time a full scan was completed. Optional. Read-only.
 func (m *WindowsProtectionState) GetLastFullScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastFullScanDateTime
-    }
+    return m.lastFullScanDateTime
 }
 // GetLastFullScanSignatureVersion gets the lastFullScanSignatureVersion property value. The version anti-malware version used to perform the last full scan. Optional. Read-only.
 func (m *WindowsProtectionState) GetLastFullScanSignatureVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastFullScanSignatureVersion
-    }
+    return m.lastFullScanSignatureVersion
 }
 // GetLastQuickScanDateTime gets the lastQuickScanDateTime property value. The date and time a quick scan was completed. Optional. Read-only.
 func (m *WindowsProtectionState) GetLastQuickScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastQuickScanDateTime
-    }
+    return m.lastQuickScanDateTime
 }
 // GetLastQuickScanSignatureVersion gets the lastQuickScanSignatureVersion property value. The version anti-malware version used to perform the last full scan. Optional. Read-only.
 func (m *WindowsProtectionState) GetLastQuickScanSignatureVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastQuickScanSignatureVersion
-    }
+    return m.lastQuickScanSignatureVersion
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *WindowsProtectionState) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
-    }
+    return m.lastRefreshedDateTime
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. The date and time the protection state was last reported for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
+    return m.lastReportedDateTime
 }
 // GetMalwareProtectionEnabled gets the malwareProtectionEnabled property value. A flag indicating whether malware protection is enabled for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetMalwareProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.malwareProtectionEnabled
-    }
+    return m.malwareProtectionEnabled
 }
 // GetManagedDeviceHealthState gets the managedDeviceHealthState property value. The health state for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetManagedDeviceHealthState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceHealthState
-    }
+    return m.managedDeviceHealthState
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The unique identifier for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetManagedDeviceName gets the managedDeviceName property value. The display name for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetManagedDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceName
-    }
+    return m.managedDeviceName
 }
 // GetNetworkInspectionSystemEnabled gets the networkInspectionSystemEnabled property value. A flag indicating whether the network inspection system is enabled. Optional. Read-only.
 func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkInspectionSystemEnabled
-    }
+    return m.networkInspectionSystemEnabled
 }
 // GetQuickScanOverdue gets the quickScanOverdue property value. A flag indicating weather a quick scan is overdue. Optional. Read-only.
 func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quickScanOverdue
-    }
+    return m.quickScanOverdue
 }
 // GetRealTimeProtectionEnabled gets the realTimeProtectionEnabled property value. A flag indicating whether real time protection is enabled. Optional. Read-only.
 func (m *WindowsProtectionState) GetRealTimeProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.realTimeProtectionEnabled
-    }
+    return m.realTimeProtectionEnabled
 }
 // GetRebootRequired gets the rebootRequired property value. A flag indicating whether a reboot is required. Optional. Read-only.
 func (m *WindowsProtectionState) GetRebootRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rebootRequired
-    }
+    return m.rebootRequired
 }
 // GetSignatureUpdateOverdue gets the signatureUpdateOverdue property value. A flag indicating whether an signature update is overdue. Optional. Read-only.
 func (m *WindowsProtectionState) GetSignatureUpdateOverdue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signatureUpdateOverdue
-    }
+    return m.signatureUpdateOverdue
 }
 // GetSignatureVersion gets the signatureVersion property value. The signature version for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) GetSignatureVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signatureVersion
-    }
+    return m.signatureVersion
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *WindowsProtectionState) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
+    return m.tenantDisplayName
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *WindowsProtectionState) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *WindowsProtectionState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -688,151 +588,101 @@ func (m *WindowsProtectionState) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAntiMalwareVersion sets the antiMalwareVersion property value. The anti-malware version for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetAntiMalwareVersion(value *string)() {
-    if m != nil {
-        m.antiMalwareVersion = value
-    }
+    m.antiMalwareVersion = value
 }
 // SetAttentionRequired sets the attentionRequired property value. A flag indicating whether attention is required for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetAttentionRequired(value *bool)() {
-    if m != nil {
-        m.attentionRequired = value
-    }
+    m.attentionRequired = value
 }
 // SetDeviceDeleted sets the deviceDeleted property value. A flag indicating whether the managed device has been deleted. Optional. Read-only.
 func (m *WindowsProtectionState) SetDeviceDeleted(value *bool)() {
-    if m != nil {
-        m.deviceDeleted = value
-    }
+    m.deviceDeleted = value
 }
 // SetDevicePropertyRefreshDateTime sets the devicePropertyRefreshDateTime property value. The date and time the device property has been refreshed. Optional. Read-only.
 func (m *WindowsProtectionState) SetDevicePropertyRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.devicePropertyRefreshDateTime = value
-    }
+    m.devicePropertyRefreshDateTime = value
 }
 // SetEngineVersion sets the engineVersion property value. The anti-virus engine version for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetEngineVersion(value *string)() {
-    if m != nil {
-        m.engineVersion = value
-    }
+    m.engineVersion = value
 }
 // SetFullScanOverdue sets the fullScanOverdue property value. A flag indicating whether quick scan is overdue for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetFullScanOverdue(value *bool)() {
-    if m != nil {
-        m.fullScanOverdue = value
-    }
+    m.fullScanOverdue = value
 }
 // SetFullScanRequired sets the fullScanRequired property value. A flag indicating whether full scan is overdue for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetFullScanRequired(value *bool)() {
-    if m != nil {
-        m.fullScanRequired = value
-    }
+    m.fullScanRequired = value
 }
 // SetLastFullScanDateTime sets the lastFullScanDateTime property value. The date and time a full scan was completed. Optional. Read-only.
 func (m *WindowsProtectionState) SetLastFullScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastFullScanDateTime = value
-    }
+    m.lastFullScanDateTime = value
 }
 // SetLastFullScanSignatureVersion sets the lastFullScanSignatureVersion property value. The version anti-malware version used to perform the last full scan. Optional. Read-only.
 func (m *WindowsProtectionState) SetLastFullScanSignatureVersion(value *string)() {
-    if m != nil {
-        m.lastFullScanSignatureVersion = value
-    }
+    m.lastFullScanSignatureVersion = value
 }
 // SetLastQuickScanDateTime sets the lastQuickScanDateTime property value. The date and time a quick scan was completed. Optional. Read-only.
 func (m *WindowsProtectionState) SetLastQuickScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastQuickScanDateTime = value
-    }
+    m.lastQuickScanDateTime = value
 }
 // SetLastQuickScanSignatureVersion sets the lastQuickScanSignatureVersion property value. The version anti-malware version used to perform the last full scan. Optional. Read-only.
 func (m *WindowsProtectionState) SetLastQuickScanSignatureVersion(value *string)() {
-    if m != nil {
-        m.lastQuickScanSignatureVersion = value
-    }
+    m.lastQuickScanSignatureVersion = value
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *WindowsProtectionState) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastRefreshedDateTime = value
-    }
+    m.lastRefreshedDateTime = value
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. The date and time the protection state was last reported for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastReportedDateTime = value
-    }
+    m.lastReportedDateTime = value
 }
 // SetMalwareProtectionEnabled sets the malwareProtectionEnabled property value. A flag indicating whether malware protection is enabled for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetMalwareProtectionEnabled(value *bool)() {
-    if m != nil {
-        m.malwareProtectionEnabled = value
-    }
+    m.malwareProtectionEnabled = value
 }
 // SetManagedDeviceHealthState sets the managedDeviceHealthState property value. The health state for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetManagedDeviceHealthState(value *string)() {
-    if m != nil {
-        m.managedDeviceHealthState = value
-    }
+    m.managedDeviceHealthState = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The unique identifier for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetManagedDeviceName sets the managedDeviceName property value. The display name for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetManagedDeviceName(value *string)() {
-    if m != nil {
-        m.managedDeviceName = value
-    }
+    m.managedDeviceName = value
 }
 // SetNetworkInspectionSystemEnabled sets the networkInspectionSystemEnabled property value. A flag indicating whether the network inspection system is enabled. Optional. Read-only.
 func (m *WindowsProtectionState) SetNetworkInspectionSystemEnabled(value *bool)() {
-    if m != nil {
-        m.networkInspectionSystemEnabled = value
-    }
+    m.networkInspectionSystemEnabled = value
 }
 // SetQuickScanOverdue sets the quickScanOverdue property value. A flag indicating weather a quick scan is overdue. Optional. Read-only.
 func (m *WindowsProtectionState) SetQuickScanOverdue(value *bool)() {
-    if m != nil {
-        m.quickScanOverdue = value
-    }
+    m.quickScanOverdue = value
 }
 // SetRealTimeProtectionEnabled sets the realTimeProtectionEnabled property value. A flag indicating whether real time protection is enabled. Optional. Read-only.
 func (m *WindowsProtectionState) SetRealTimeProtectionEnabled(value *bool)() {
-    if m != nil {
-        m.realTimeProtectionEnabled = value
-    }
+    m.realTimeProtectionEnabled = value
 }
 // SetRebootRequired sets the rebootRequired property value. A flag indicating whether a reboot is required. Optional. Read-only.
 func (m *WindowsProtectionState) SetRebootRequired(value *bool)() {
-    if m != nil {
-        m.rebootRequired = value
-    }
+    m.rebootRequired = value
 }
 // SetSignatureUpdateOverdue sets the signatureUpdateOverdue property value. A flag indicating whether an signature update is overdue. Optional. Read-only.
 func (m *WindowsProtectionState) SetSignatureUpdateOverdue(value *bool)() {
-    if m != nil {
-        m.signatureUpdateOverdue = value
-    }
+    m.signatureUpdateOverdue = value
 }
 // SetSignatureVersion sets the signatureVersion property value. The signature version for the managed device. Optional. Read-only.
 func (m *WindowsProtectionState) SetSignatureVersion(value *string)() {
-    if m != nil {
-        m.signatureVersion = value
-    }
+    m.signatureVersion = value
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *WindowsProtectionState) SetTenantDisplayName(value *string)() {
-    if m != nil {
-        m.tenantDisplayName = value
-    }
+    m.tenantDisplayName = value
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *WindowsProtectionState) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesQuoteLine provides operations to manage the collection of activityStatistics entities.
+// SalesQuoteLine 
 type SalesQuoteLine struct {
     Entity
     // The account property
@@ -52,7 +52,7 @@ type SalesQuoteLine struct {
     // The unitPrice property
     unitPrice *float64
 }
-// NewSalesQuoteLine instantiates a new salesQuoteLine and sets the default values.
+// NewSalesQuoteLine instantiates a new SalesQuoteLine and sets the default values.
 func NewSalesQuoteLine()(*SalesQuoteLine) {
     m := &SalesQuoteLine{
         Entity: *NewEntity(),
@@ -67,75 +67,39 @@ func CreateSalesQuoteLineFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAccount gets the account property value. The account property
 func (m *SalesQuoteLine) GetAccount()(Accountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.account
-    }
+    return m.account
 }
 // GetAccountId gets the accountId property value. The accountId property
 func (m *SalesQuoteLine) GetAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountId
-    }
+    return m.accountId
 }
 // GetAmountExcludingTax gets the amountExcludingTax property value. The amountExcludingTax property
 func (m *SalesQuoteLine) GetAmountExcludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.amountExcludingTax
-    }
+    return m.amountExcludingTax
 }
 // GetAmountIncludingTax gets the amountIncludingTax property value. The amountIncludingTax property
 func (m *SalesQuoteLine) GetAmountIncludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.amountIncludingTax
-    }
+    return m.amountIncludingTax
 }
 // GetDescription gets the description property value. The description property
 func (m *SalesQuoteLine) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
 func (m *SalesQuoteLine) GetDiscountAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.discountAmount
-    }
+    return m.discountAmount
 }
 // GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesQuoteLine) GetDiscountAppliedBeforeTax()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.discountAppliedBeforeTax
-    }
+    return m.discountAppliedBeforeTax
 }
 // GetDiscountPercent gets the discountPercent property value. The discountPercent property
 func (m *SalesQuoteLine) GetDiscountPercent()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.discountPercent
-    }
+    return m.discountPercent
 }
 // GetDocumentId gets the documentId property value. The documentId property
 func (m *SalesQuoteLine) GetDocumentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.documentId
-    }
+    return m.documentId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -364,107 +328,55 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetItem gets the item property value. The item property
 func (m *SalesQuoteLine) GetItem()(Itemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.item
-    }
+    return m.item
 }
 // GetItemId gets the itemId property value. The itemId property
 func (m *SalesQuoteLine) GetItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemId
-    }
+    return m.itemId
 }
 // GetLineType gets the lineType property value. The lineType property
 func (m *SalesQuoteLine) GetLineType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lineType
-    }
+    return m.lineType
 }
 // GetNetAmount gets the netAmount property value. The netAmount property
 func (m *SalesQuoteLine) GetNetAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netAmount
-    }
+    return m.netAmount
 }
 // GetNetAmountIncludingTax gets the netAmountIncludingTax property value. The netAmountIncludingTax property
 func (m *SalesQuoteLine) GetNetAmountIncludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netAmountIncludingTax
-    }
+    return m.netAmountIncludingTax
 }
 // GetNetTaxAmount gets the netTaxAmount property value. The netTaxAmount property
 func (m *SalesQuoteLine) GetNetTaxAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netTaxAmount
-    }
+    return m.netTaxAmount
 }
 // GetQuantity gets the quantity property value. The quantity property
 func (m *SalesQuoteLine) GetQuantity()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quantity
-    }
+    return m.quantity
 }
 // GetSequence gets the sequence property value. The sequence property
 func (m *SalesQuoteLine) GetSequence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sequence
-    }
+    return m.sequence
 }
 // GetTaxCode gets the taxCode property value. The taxCode property
 func (m *SalesQuoteLine) GetTaxCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxCode
-    }
+    return m.taxCode
 }
 // GetTaxPercent gets the taxPercent property value. The taxPercent property
 func (m *SalesQuoteLine) GetTaxPercent()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxPercent
-    }
+    return m.taxPercent
 }
 // GetTotalTaxAmount gets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesQuoteLine) GetTotalTaxAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalTaxAmount
-    }
+    return m.totalTaxAmount
 }
 // GetUnitOfMeasureId gets the unitOfMeasureId property value. The unitOfMeasureId property
 func (m *SalesQuoteLine) GetUnitOfMeasureId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitOfMeasureId
-    }
+    return m.unitOfMeasureId
 }
 // GetUnitPrice gets the unitPrice property value. The unitPrice property
 func (m *SalesQuoteLine) GetUnitPrice()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitPrice
-    }
+    return m.unitPrice
 }
 // Serialize serializes information the current object
 func (m *SalesQuoteLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -608,133 +520,89 @@ func (m *SalesQuoteLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAccount sets the account property value. The account property
 func (m *SalesQuoteLine) SetAccount(value Accountable)() {
-    if m != nil {
-        m.account = value
-    }
+    m.account = value
 }
 // SetAccountId sets the accountId property value. The accountId property
 func (m *SalesQuoteLine) SetAccountId(value *string)() {
-    if m != nil {
-        m.accountId = value
-    }
+    m.accountId = value
 }
 // SetAmountExcludingTax sets the amountExcludingTax property value. The amountExcludingTax property
 func (m *SalesQuoteLine) SetAmountExcludingTax(value *float64)() {
-    if m != nil {
-        m.amountExcludingTax = value
-    }
+    m.amountExcludingTax = value
 }
 // SetAmountIncludingTax sets the amountIncludingTax property value. The amountIncludingTax property
 func (m *SalesQuoteLine) SetAmountIncludingTax(value *float64)() {
-    if m != nil {
-        m.amountIncludingTax = value
-    }
+    m.amountIncludingTax = value
 }
 // SetDescription sets the description property value. The description property
 func (m *SalesQuoteLine) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDiscountAmount sets the discountAmount property value. The discountAmount property
 func (m *SalesQuoteLine) SetDiscountAmount(value *float64)() {
-    if m != nil {
-        m.discountAmount = value
-    }
+    m.discountAmount = value
 }
 // SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesQuoteLine) SetDiscountAppliedBeforeTax(value *bool)() {
-    if m != nil {
-        m.discountAppliedBeforeTax = value
-    }
+    m.discountAppliedBeforeTax = value
 }
 // SetDiscountPercent sets the discountPercent property value. The discountPercent property
 func (m *SalesQuoteLine) SetDiscountPercent(value *float64)() {
-    if m != nil {
-        m.discountPercent = value
-    }
+    m.discountPercent = value
 }
 // SetDocumentId sets the documentId property value. The documentId property
 func (m *SalesQuoteLine) SetDocumentId(value *string)() {
-    if m != nil {
-        m.documentId = value
-    }
+    m.documentId = value
 }
 // SetItem sets the item property value. The item property
 func (m *SalesQuoteLine) SetItem(value Itemable)() {
-    if m != nil {
-        m.item = value
-    }
+    m.item = value
 }
 // SetItemId sets the itemId property value. The itemId property
 func (m *SalesQuoteLine) SetItemId(value *string)() {
-    if m != nil {
-        m.itemId = value
-    }
+    m.itemId = value
 }
 // SetLineType sets the lineType property value. The lineType property
 func (m *SalesQuoteLine) SetLineType(value *string)() {
-    if m != nil {
-        m.lineType = value
-    }
+    m.lineType = value
 }
 // SetNetAmount sets the netAmount property value. The netAmount property
 func (m *SalesQuoteLine) SetNetAmount(value *float64)() {
-    if m != nil {
-        m.netAmount = value
-    }
+    m.netAmount = value
 }
 // SetNetAmountIncludingTax sets the netAmountIncludingTax property value. The netAmountIncludingTax property
 func (m *SalesQuoteLine) SetNetAmountIncludingTax(value *float64)() {
-    if m != nil {
-        m.netAmountIncludingTax = value
-    }
+    m.netAmountIncludingTax = value
 }
 // SetNetTaxAmount sets the netTaxAmount property value. The netTaxAmount property
 func (m *SalesQuoteLine) SetNetTaxAmount(value *float64)() {
-    if m != nil {
-        m.netTaxAmount = value
-    }
+    m.netTaxAmount = value
 }
 // SetQuantity sets the quantity property value. The quantity property
 func (m *SalesQuoteLine) SetQuantity(value *float64)() {
-    if m != nil {
-        m.quantity = value
-    }
+    m.quantity = value
 }
 // SetSequence sets the sequence property value. The sequence property
 func (m *SalesQuoteLine) SetSequence(value *int32)() {
-    if m != nil {
-        m.sequence = value
-    }
+    m.sequence = value
 }
 // SetTaxCode sets the taxCode property value. The taxCode property
 func (m *SalesQuoteLine) SetTaxCode(value *string)() {
-    if m != nil {
-        m.taxCode = value
-    }
+    m.taxCode = value
 }
 // SetTaxPercent sets the taxPercent property value. The taxPercent property
 func (m *SalesQuoteLine) SetTaxPercent(value *float64)() {
-    if m != nil {
-        m.taxPercent = value
-    }
+    m.taxPercent = value
 }
 // SetTotalTaxAmount sets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesQuoteLine) SetTotalTaxAmount(value *float64)() {
-    if m != nil {
-        m.totalTaxAmount = value
-    }
+    m.totalTaxAmount = value
 }
 // SetUnitOfMeasureId sets the unitOfMeasureId property value. The unitOfMeasureId property
 func (m *SalesQuoteLine) SetUnitOfMeasureId(value *string)() {
-    if m != nil {
-        m.unitOfMeasureId = value
-    }
+    m.unitOfMeasureId = value
 }
 // SetUnitPrice sets the unitPrice property value. The unitPrice property
 func (m *SalesQuoteLine) SetUnitPrice(value *float64)() {
-    if m != nil {
-        m.unitPrice = value
-    }
+    m.unitPrice = value
 }

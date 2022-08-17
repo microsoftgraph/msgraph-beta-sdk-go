@@ -30,19 +30,11 @@ func CreateGovernanceNotificationPolicyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationPolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnabledTemplateTypes gets the enabledTemplateTypes property value. The enabledTemplateTypes property
 func (m *GovernanceNotificationPolicy) GetEnabledTemplateTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabledTemplateTypes
-    }
+    return m.enabledTemplateTypes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceNotificationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,19 +81,11 @@ func (m *GovernanceNotificationPolicy) GetFieldDeserializers()(map[string]func(i
 }
 // GetNotificationTemplates gets the notificationTemplates property value. The notificationTemplates property
 func (m *GovernanceNotificationPolicy) GetNotificationTemplates()([]GovernanceNotificationTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTemplates
-    }
+    return m.notificationTemplates
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *GovernanceNotificationPolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *GovernanceNotificationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -137,25 +121,17 @@ func (m *GovernanceNotificationPolicy) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationPolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnabledTemplateTypes sets the enabledTemplateTypes property value. The enabledTemplateTypes property
 func (m *GovernanceNotificationPolicy) SetEnabledTemplateTypes(value []string)() {
-    if m != nil {
-        m.enabledTemplateTypes = value
-    }
+    m.enabledTemplateTypes = value
 }
 // SetNotificationTemplates sets the notificationTemplates property value. The notificationTemplates property
 func (m *GovernanceNotificationPolicy) SetNotificationTemplates(value []GovernanceNotificationTemplateable)() {
-    if m != nil {
-        m.notificationTemplates = value
-    }
+    m.notificationTemplates = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *GovernanceNotificationPolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

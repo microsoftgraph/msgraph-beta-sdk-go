@@ -33,19 +33,11 @@ func CreateSynchronizationScheduleFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationSchedule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpiration gets the expiration property value. Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationSchedule) GetExpiration()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expiration
-    }
+    return m.expiration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,27 +86,15 @@ func (m *SynchronizationSchedule) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetInterval gets the interval property value. The interval between synchronization iterations.
 func (m *SynchronizationSchedule) GetInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.interval
-    }
+    return m.interval
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SynchronizationSchedule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. The state property
 func (m *SynchronizationSchedule) GetState()(*SynchronizationScheduleState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *SynchronizationSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *SynchronizationSchedule) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationSchedule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpiration sets the expiration property value. Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationSchedule) SetExpiration(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expiration = value
-    }
+    m.expiration = value
 }
 // SetInterval sets the interval property value. The interval between synchronization iterations.
 func (m *SynchronizationSchedule) SetInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.interval = value
-    }
+    m.interval = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SynchronizationSchedule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. The state property
 func (m *SynchronizationSchedule) SetState(value *SynchronizationScheduleState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

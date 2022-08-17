@@ -107,243 +107,123 @@ func CreateMacOSDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878
 }
 // GetAdminShowHostInfo gets the adminShowHostInfo property value. Whether to show admin host information on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAdminShowHostInfo()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.adminShowHostInfo
-    }
+    return m.adminShowHostInfo
 }
 // GetAppAssociatedDomains gets the appAssociatedDomains property value. Gets or sets a list that maps apps to their associated domains. Application identifiers must be unique. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) GetAppAssociatedDomains()([]MacOSAssociatedDomainsItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appAssociatedDomains
-    }
+    return m.appAssociatedDomains
 }
 // GetAssociatedDomains gets the associatedDomains property value. DEPRECATED: use appAssociatedDomains instead. Gets or sets a list that maps apps to their associated domains. The key should match the app's ID, and the value should be a string in the form of 'service:domain' where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) GetAssociatedDomains()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.associatedDomains
-    }
+    return m.associatedDomains
 }
 // GetAuthorizedUsersListHidden gets the authorizedUsersListHidden property value. Whether to show the name and password dialog or a list of users on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizedUsersListHidden
-    }
+    return m.authorizedUsersListHidden
 }
 // GetAuthorizedUsersListHideAdminUsers gets the authorizedUsersListHideAdminUsers property value. Whether to hide admin users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideAdminUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizedUsersListHideAdminUsers
-    }
+    return m.authorizedUsersListHideAdminUsers
 }
 // GetAuthorizedUsersListHideLocalUsers gets the authorizedUsersListHideLocalUsers property value. Whether to show only network and system users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideLocalUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizedUsersListHideLocalUsers
-    }
+    return m.authorizedUsersListHideLocalUsers
 }
 // GetAuthorizedUsersListHideMobileAccounts gets the authorizedUsersListHideMobileAccounts property value. Whether to hide mobile users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideMobileAccounts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizedUsersListHideMobileAccounts
-    }
+    return m.authorizedUsersListHideMobileAccounts
 }
 // GetAuthorizedUsersListIncludeNetworkUsers gets the authorizedUsersListIncludeNetworkUsers property value. Whether to show network users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListIncludeNetworkUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizedUsersListIncludeNetworkUsers
-    }
+    return m.authorizedUsersListIncludeNetworkUsers
 }
 // GetAuthorizedUsersListShowOtherManagedUsers gets the authorizedUsersListShowOtherManagedUsers property value. Whether to show other users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListShowOtherManagedUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizedUsersListShowOtherManagedUsers
-    }
+    return m.authorizedUsersListShowOtherManagedUsers
 }
 // GetAutoLaunchItems gets the autoLaunchItems property value. List of applications, files, folders, and other items to launch when the user logs in. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) GetAutoLaunchItems()([]MacOSLaunchItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoLaunchItems
-    }
+    return m.autoLaunchItems
 }
 // GetConsoleAccessDisabled gets the consoleAccessDisabled property value. Whether the Other user will disregard use of the console special user name.
 func (m *MacOSDeviceFeaturesConfiguration) GetConsoleAccessDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.consoleAccessDisabled
-    }
+    return m.consoleAccessDisabled
 }
 // GetContentCachingBlockDeletion gets the contentCachingBlockDeletion property value. Prevents content caches from purging content to free up disk space for other apps.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingBlockDeletion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingBlockDeletion
-    }
+    return m.contentCachingBlockDeletion
 }
 // GetContentCachingClientListenRanges gets the contentCachingClientListenRanges property value. A list of custom IP ranges content caches will use to listen for clients. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientListenRanges()([]IpRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingClientListenRanges
-    }
+    return m.contentCachingClientListenRanges
 }
 // GetContentCachingClientPolicy gets the contentCachingClientPolicy property value. Determines which clients a content cache will serve.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientPolicy()(*MacOSContentCachingClientPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingClientPolicy
-    }
+    return m.contentCachingClientPolicy
 }
 // GetContentCachingDataPath gets the contentCachingDataPath property value. The path to the directory used to store cached content. The value must be (or end with) /Library/Application Support/Apple/AssetCache/Data
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingDataPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingDataPath
-    }
+    return m.contentCachingDataPath
 }
 // GetContentCachingDisableConnectionSharing gets the contentCachingDisableConnectionSharing property value. Disables internet connection sharing.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingDisableConnectionSharing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingDisableConnectionSharing
-    }
+    return m.contentCachingDisableConnectionSharing
 }
 // GetContentCachingEnabled gets the contentCachingEnabled property value. Enables content caching and prevents it from being disabled by the user.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingEnabled
-    }
+    return m.contentCachingEnabled
 }
 // GetContentCachingForceConnectionSharing gets the contentCachingForceConnectionSharing property value. Forces internet connection sharing. contentCachingDisableConnectionSharing overrides this setting.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingForceConnectionSharing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingForceConnectionSharing
-    }
+    return m.contentCachingForceConnectionSharing
 }
 // GetContentCachingKeepAwake gets the contentCachingKeepAwake property value. Prevent the device from sleeping if content caching is enabled.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingKeepAwake()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingKeepAwake
-    }
+    return m.contentCachingKeepAwake
 }
 // GetContentCachingLogClientIdentities gets the contentCachingLogClientIdentities property value. Enables logging of IP addresses and ports of clients that request cached content.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingLogClientIdentities()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingLogClientIdentities
-    }
+    return m.contentCachingLogClientIdentities
 }
 // GetContentCachingMaxSizeBytes gets the contentCachingMaxSizeBytes property value. The maximum number of bytes of disk space that will be used for the content cache. A value of 0 (default) indicates unlimited disk space.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingMaxSizeBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingMaxSizeBytes
-    }
+    return m.contentCachingMaxSizeBytes
 }
 // GetContentCachingParents gets the contentCachingParents property value. A list of IP addresses representing parent content caches.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParents()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingParents
-    }
+    return m.contentCachingParents
 }
 // GetContentCachingParentSelectionPolicy gets the contentCachingParentSelectionPolicy property value. Determines how content caches select a parent cache.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParentSelectionPolicy()(*MacOSContentCachingParentSelectionPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingParentSelectionPolicy
-    }
+    return m.contentCachingParentSelectionPolicy
 }
 // GetContentCachingPeerFilterRanges gets the contentCachingPeerFilterRanges property value. A list of custom IP ranges content caches will use to query for content from peers caches. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerFilterRanges()([]IpRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingPeerFilterRanges
-    }
+    return m.contentCachingPeerFilterRanges
 }
 // GetContentCachingPeerListenRanges gets the contentCachingPeerListenRanges property value. A list of custom IP ranges content caches will use to listen for peer caches. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerListenRanges()([]IpRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingPeerListenRanges
-    }
+    return m.contentCachingPeerListenRanges
 }
 // GetContentCachingPeerPolicy gets the contentCachingPeerPolicy property value. Determines which content caches other content caches will peer with.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerPolicy()(*MacOSContentCachingPeerPolicy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingPeerPolicy
-    }
+    return m.contentCachingPeerPolicy
 }
 // GetContentCachingPort gets the contentCachingPort property value. Sets the port used for content caching. If the value is 0, a random available port will be selected. Valid values 0 to 65535
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingPort
-    }
+    return m.contentCachingPort
 }
 // GetContentCachingPublicRanges gets the contentCachingPublicRanges property value. A list of custom IP ranges that Apple's content caching service should use to match clients to content caches. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPublicRanges()([]IpRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingPublicRanges
-    }
+    return m.contentCachingPublicRanges
 }
 // GetContentCachingShowAlerts gets the contentCachingShowAlerts property value. Display content caching alerts as system notifications.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingShowAlerts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingShowAlerts
-    }
+    return m.contentCachingShowAlerts
 }
 // GetContentCachingType gets the contentCachingType property value. Indicates the type of content allowed to be cached by Apple's content caching service.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingType()(*MacOSContentCachingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCachingType
-    }
+    return m.contentCachingType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -804,99 +684,51 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
 }
 // GetLoginWindowText gets the loginWindowText property value. Custom text to be displayed on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetLoginWindowText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loginWindowText
-    }
+    return m.loginWindowText
 }
 // GetLogOutDisabledWhileLoggedIn gets the logOutDisabledWhileLoggedIn property value. Whether the Log Out menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) GetLogOutDisabledWhileLoggedIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logOutDisabledWhileLoggedIn
-    }
+    return m.logOutDisabledWhileLoggedIn
 }
 // GetMacOSSingleSignOnExtension gets the macOSSingleSignOnExtension property value. Gets or sets a single sign-on extension profile.
 func (m *MacOSDeviceFeaturesConfiguration) GetMacOSSingleSignOnExtension()(MacOSSingleSignOnExtensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macOSSingleSignOnExtension
-    }
+    return m.macOSSingleSignOnExtension
 }
 // GetPowerOffDisabledWhileLoggedIn gets the powerOffDisabledWhileLoggedIn property value. Whether the Power Off menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) GetPowerOffDisabledWhileLoggedIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.powerOffDisabledWhileLoggedIn
-    }
+    return m.powerOffDisabledWhileLoggedIn
 }
 // GetRestartDisabled gets the restartDisabled property value. Whether to hide the Restart button item on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetRestartDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartDisabled
-    }
+    return m.restartDisabled
 }
 // GetRestartDisabledWhileLoggedIn gets the restartDisabledWhileLoggedIn property value. Whether the Restart menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) GetRestartDisabledWhileLoggedIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restartDisabledWhileLoggedIn
-    }
+    return m.restartDisabledWhileLoggedIn
 }
 // GetScreenLockDisableImmediate gets the screenLockDisableImmediate property value. Whether to disable the immediate screen lock functions.
 func (m *MacOSDeviceFeaturesConfiguration) GetScreenLockDisableImmediate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenLockDisableImmediate
-    }
+    return m.screenLockDisableImmediate
 }
 // GetShutDownDisabled gets the shutDownDisabled property value. Whether to hide the Shut Down button item on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetShutDownDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shutDownDisabled
-    }
+    return m.shutDownDisabled
 }
 // GetShutDownDisabledWhileLoggedIn gets the shutDownDisabledWhileLoggedIn property value. Whether the Shut Down menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) GetShutDownDisabledWhileLoggedIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shutDownDisabledWhileLoggedIn
-    }
+    return m.shutDownDisabledWhileLoggedIn
 }
 // GetSingleSignOnExtension gets the singleSignOnExtension property value. Gets or sets a single sign-on extension profile. Deprecated: use MacOSSingleSignOnExtension instead.
 func (m *MacOSDeviceFeaturesConfiguration) GetSingleSignOnExtension()(SingleSignOnExtensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleSignOnExtension
-    }
+    return m.singleSignOnExtension
 }
 // GetSingleSignOnExtensionPkinitCertificate gets the singleSignOnExtensionPkinitCertificate property value. PKINIT Certificate for the authentication with single sign-on extensions.
 func (m *MacOSDeviceFeaturesConfiguration) GetSingleSignOnExtensionPkinitCertificate()(MacOSCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleSignOnExtensionPkinitCertificate
-    }
+    return m.singleSignOnExtensionPkinitCertificate
 }
 // GetSleepDisabled gets the sleepDisabled property value. Whether to hide the Sleep menu item on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetSleepDisabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sleepDisabled
-    }
+    return m.sleepDisabled
 }
 // Serialize serializes information the current object
 func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1192,253 +1024,169 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdminShowHostInfo sets the adminShowHostInfo property value. Whether to show admin host information on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAdminShowHostInfo(value *bool)() {
-    if m != nil {
-        m.adminShowHostInfo = value
-    }
+    m.adminShowHostInfo = value
 }
 // SetAppAssociatedDomains sets the appAssociatedDomains property value. Gets or sets a list that maps apps to their associated domains. Application identifiers must be unique. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) SetAppAssociatedDomains(value []MacOSAssociatedDomainsItemable)() {
-    if m != nil {
-        m.appAssociatedDomains = value
-    }
+    m.appAssociatedDomains = value
 }
 // SetAssociatedDomains sets the associatedDomains property value. DEPRECATED: use appAssociatedDomains instead. Gets or sets a list that maps apps to their associated domains. The key should match the app's ID, and the value should be a string in the form of 'service:domain' where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) SetAssociatedDomains(value []KeyValuePairable)() {
-    if m != nil {
-        m.associatedDomains = value
-    }
+    m.associatedDomains = value
 }
 // SetAuthorizedUsersListHidden sets the authorizedUsersListHidden property value. Whether to show the name and password dialog or a list of users on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAuthorizedUsersListHidden(value *bool)() {
-    if m != nil {
-        m.authorizedUsersListHidden = value
-    }
+    m.authorizedUsersListHidden = value
 }
 // SetAuthorizedUsersListHideAdminUsers sets the authorizedUsersListHideAdminUsers property value. Whether to hide admin users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAuthorizedUsersListHideAdminUsers(value *bool)() {
-    if m != nil {
-        m.authorizedUsersListHideAdminUsers = value
-    }
+    m.authorizedUsersListHideAdminUsers = value
 }
 // SetAuthorizedUsersListHideLocalUsers sets the authorizedUsersListHideLocalUsers property value. Whether to show only network and system users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAuthorizedUsersListHideLocalUsers(value *bool)() {
-    if m != nil {
-        m.authorizedUsersListHideLocalUsers = value
-    }
+    m.authorizedUsersListHideLocalUsers = value
 }
 // SetAuthorizedUsersListHideMobileAccounts sets the authorizedUsersListHideMobileAccounts property value. Whether to hide mobile users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAuthorizedUsersListHideMobileAccounts(value *bool)() {
-    if m != nil {
-        m.authorizedUsersListHideMobileAccounts = value
-    }
+    m.authorizedUsersListHideMobileAccounts = value
 }
 // SetAuthorizedUsersListIncludeNetworkUsers sets the authorizedUsersListIncludeNetworkUsers property value. Whether to show network users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAuthorizedUsersListIncludeNetworkUsers(value *bool)() {
-    if m != nil {
-        m.authorizedUsersListIncludeNetworkUsers = value
-    }
+    m.authorizedUsersListIncludeNetworkUsers = value
 }
 // SetAuthorizedUsersListShowOtherManagedUsers sets the authorizedUsersListShowOtherManagedUsers property value. Whether to show other users in the authorized users list on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAuthorizedUsersListShowOtherManagedUsers(value *bool)() {
-    if m != nil {
-        m.authorizedUsersListShowOtherManagedUsers = value
-    }
+    m.authorizedUsersListShowOtherManagedUsers = value
 }
 // SetAutoLaunchItems sets the autoLaunchItems property value. List of applications, files, folders, and other items to launch when the user logs in. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) SetAutoLaunchItems(value []MacOSLaunchItemable)() {
-    if m != nil {
-        m.autoLaunchItems = value
-    }
+    m.autoLaunchItems = value
 }
 // SetConsoleAccessDisabled sets the consoleAccessDisabled property value. Whether the Other user will disregard use of the console special user name.
 func (m *MacOSDeviceFeaturesConfiguration) SetConsoleAccessDisabled(value *bool)() {
-    if m != nil {
-        m.consoleAccessDisabled = value
-    }
+    m.consoleAccessDisabled = value
 }
 // SetContentCachingBlockDeletion sets the contentCachingBlockDeletion property value. Prevents content caches from purging content to free up disk space for other apps.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingBlockDeletion(value *bool)() {
-    if m != nil {
-        m.contentCachingBlockDeletion = value
-    }
+    m.contentCachingBlockDeletion = value
 }
 // SetContentCachingClientListenRanges sets the contentCachingClientListenRanges property value. A list of custom IP ranges content caches will use to listen for clients. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingClientListenRanges(value []IpRangeable)() {
-    if m != nil {
-        m.contentCachingClientListenRanges = value
-    }
+    m.contentCachingClientListenRanges = value
 }
 // SetContentCachingClientPolicy sets the contentCachingClientPolicy property value. Determines which clients a content cache will serve.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingClientPolicy(value *MacOSContentCachingClientPolicy)() {
-    if m != nil {
-        m.contentCachingClientPolicy = value
-    }
+    m.contentCachingClientPolicy = value
 }
 // SetContentCachingDataPath sets the contentCachingDataPath property value. The path to the directory used to store cached content. The value must be (or end with) /Library/Application Support/Apple/AssetCache/Data
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingDataPath(value *string)() {
-    if m != nil {
-        m.contentCachingDataPath = value
-    }
+    m.contentCachingDataPath = value
 }
 // SetContentCachingDisableConnectionSharing sets the contentCachingDisableConnectionSharing property value. Disables internet connection sharing.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingDisableConnectionSharing(value *bool)() {
-    if m != nil {
-        m.contentCachingDisableConnectionSharing = value
-    }
+    m.contentCachingDisableConnectionSharing = value
 }
 // SetContentCachingEnabled sets the contentCachingEnabled property value. Enables content caching and prevents it from being disabled by the user.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingEnabled(value *bool)() {
-    if m != nil {
-        m.contentCachingEnabled = value
-    }
+    m.contentCachingEnabled = value
 }
 // SetContentCachingForceConnectionSharing sets the contentCachingForceConnectionSharing property value. Forces internet connection sharing. contentCachingDisableConnectionSharing overrides this setting.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingForceConnectionSharing(value *bool)() {
-    if m != nil {
-        m.contentCachingForceConnectionSharing = value
-    }
+    m.contentCachingForceConnectionSharing = value
 }
 // SetContentCachingKeepAwake sets the contentCachingKeepAwake property value. Prevent the device from sleeping if content caching is enabled.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingKeepAwake(value *bool)() {
-    if m != nil {
-        m.contentCachingKeepAwake = value
-    }
+    m.contentCachingKeepAwake = value
 }
 // SetContentCachingLogClientIdentities sets the contentCachingLogClientIdentities property value. Enables logging of IP addresses and ports of clients that request cached content.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingLogClientIdentities(value *bool)() {
-    if m != nil {
-        m.contentCachingLogClientIdentities = value
-    }
+    m.contentCachingLogClientIdentities = value
 }
 // SetContentCachingMaxSizeBytes sets the contentCachingMaxSizeBytes property value. The maximum number of bytes of disk space that will be used for the content cache. A value of 0 (default) indicates unlimited disk space.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingMaxSizeBytes(value *int64)() {
-    if m != nil {
-        m.contentCachingMaxSizeBytes = value
-    }
+    m.contentCachingMaxSizeBytes = value
 }
 // SetContentCachingParents sets the contentCachingParents property value. A list of IP addresses representing parent content caches.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingParents(value []string)() {
-    if m != nil {
-        m.contentCachingParents = value
-    }
+    m.contentCachingParents = value
 }
 // SetContentCachingParentSelectionPolicy sets the contentCachingParentSelectionPolicy property value. Determines how content caches select a parent cache.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingParentSelectionPolicy(value *MacOSContentCachingParentSelectionPolicy)() {
-    if m != nil {
-        m.contentCachingParentSelectionPolicy = value
-    }
+    m.contentCachingParentSelectionPolicy = value
 }
 // SetContentCachingPeerFilterRanges sets the contentCachingPeerFilterRanges property value. A list of custom IP ranges content caches will use to query for content from peers caches. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingPeerFilterRanges(value []IpRangeable)() {
-    if m != nil {
-        m.contentCachingPeerFilterRanges = value
-    }
+    m.contentCachingPeerFilterRanges = value
 }
 // SetContentCachingPeerListenRanges sets the contentCachingPeerListenRanges property value. A list of custom IP ranges content caches will use to listen for peer caches. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingPeerListenRanges(value []IpRangeable)() {
-    if m != nil {
-        m.contentCachingPeerListenRanges = value
-    }
+    m.contentCachingPeerListenRanges = value
 }
 // SetContentCachingPeerPolicy sets the contentCachingPeerPolicy property value. Determines which content caches other content caches will peer with.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingPeerPolicy(value *MacOSContentCachingPeerPolicy)() {
-    if m != nil {
-        m.contentCachingPeerPolicy = value
-    }
+    m.contentCachingPeerPolicy = value
 }
 // SetContentCachingPort sets the contentCachingPort property value. Sets the port used for content caching. If the value is 0, a random available port will be selected. Valid values 0 to 65535
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingPort(value *int32)() {
-    if m != nil {
-        m.contentCachingPort = value
-    }
+    m.contentCachingPort = value
 }
 // SetContentCachingPublicRanges sets the contentCachingPublicRanges property value. A list of custom IP ranges that Apple's content caching service should use to match clients to content caches. This collection can contain a maximum of 500 elements.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingPublicRanges(value []IpRangeable)() {
-    if m != nil {
-        m.contentCachingPublicRanges = value
-    }
+    m.contentCachingPublicRanges = value
 }
 // SetContentCachingShowAlerts sets the contentCachingShowAlerts property value. Display content caching alerts as system notifications.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingShowAlerts(value *bool)() {
-    if m != nil {
-        m.contentCachingShowAlerts = value
-    }
+    m.contentCachingShowAlerts = value
 }
 // SetContentCachingType sets the contentCachingType property value. Indicates the type of content allowed to be cached by Apple's content caching service.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingType(value *MacOSContentCachingType)() {
-    if m != nil {
-        m.contentCachingType = value
-    }
+    m.contentCachingType = value
 }
 // SetLoginWindowText sets the loginWindowText property value. Custom text to be displayed on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetLoginWindowText(value *string)() {
-    if m != nil {
-        m.loginWindowText = value
-    }
+    m.loginWindowText = value
 }
 // SetLogOutDisabledWhileLoggedIn sets the logOutDisabledWhileLoggedIn property value. Whether the Log Out menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) SetLogOutDisabledWhileLoggedIn(value *bool)() {
-    if m != nil {
-        m.logOutDisabledWhileLoggedIn = value
-    }
+    m.logOutDisabledWhileLoggedIn = value
 }
 // SetMacOSSingleSignOnExtension sets the macOSSingleSignOnExtension property value. Gets or sets a single sign-on extension profile.
 func (m *MacOSDeviceFeaturesConfiguration) SetMacOSSingleSignOnExtension(value MacOSSingleSignOnExtensionable)() {
-    if m != nil {
-        m.macOSSingleSignOnExtension = value
-    }
+    m.macOSSingleSignOnExtension = value
 }
 // SetPowerOffDisabledWhileLoggedIn sets the powerOffDisabledWhileLoggedIn property value. Whether the Power Off menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) SetPowerOffDisabledWhileLoggedIn(value *bool)() {
-    if m != nil {
-        m.powerOffDisabledWhileLoggedIn = value
-    }
+    m.powerOffDisabledWhileLoggedIn = value
 }
 // SetRestartDisabled sets the restartDisabled property value. Whether to hide the Restart button item on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetRestartDisabled(value *bool)() {
-    if m != nil {
-        m.restartDisabled = value
-    }
+    m.restartDisabled = value
 }
 // SetRestartDisabledWhileLoggedIn sets the restartDisabledWhileLoggedIn property value. Whether the Restart menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) SetRestartDisabledWhileLoggedIn(value *bool)() {
-    if m != nil {
-        m.restartDisabledWhileLoggedIn = value
-    }
+    m.restartDisabledWhileLoggedIn = value
 }
 // SetScreenLockDisableImmediate sets the screenLockDisableImmediate property value. Whether to disable the immediate screen lock functions.
 func (m *MacOSDeviceFeaturesConfiguration) SetScreenLockDisableImmediate(value *bool)() {
-    if m != nil {
-        m.screenLockDisableImmediate = value
-    }
+    m.screenLockDisableImmediate = value
 }
 // SetShutDownDisabled sets the shutDownDisabled property value. Whether to hide the Shut Down button item on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetShutDownDisabled(value *bool)() {
-    if m != nil {
-        m.shutDownDisabled = value
-    }
+    m.shutDownDisabled = value
 }
 // SetShutDownDisabledWhileLoggedIn sets the shutDownDisabledWhileLoggedIn property value. Whether the Shut Down menu item on the login window will be disabled while the user is logged in.
 func (m *MacOSDeviceFeaturesConfiguration) SetShutDownDisabledWhileLoggedIn(value *bool)() {
-    if m != nil {
-        m.shutDownDisabledWhileLoggedIn = value
-    }
+    m.shutDownDisabledWhileLoggedIn = value
 }
 // SetSingleSignOnExtension sets the singleSignOnExtension property value. Gets or sets a single sign-on extension profile. Deprecated: use MacOSSingleSignOnExtension instead.
 func (m *MacOSDeviceFeaturesConfiguration) SetSingleSignOnExtension(value SingleSignOnExtensionable)() {
-    if m != nil {
-        m.singleSignOnExtension = value
-    }
+    m.singleSignOnExtension = value
 }
 // SetSingleSignOnExtensionPkinitCertificate sets the singleSignOnExtensionPkinitCertificate property value. PKINIT Certificate for the authentication with single sign-on extensions.
 func (m *MacOSDeviceFeaturesConfiguration) SetSingleSignOnExtensionPkinitCertificate(value MacOSCertificateProfileBaseable)() {
-    if m != nil {
-        m.singleSignOnExtensionPkinitCertificate = value
-    }
+    m.singleSignOnExtensionPkinitCertificate = value
 }
 // SetSleepDisabled sets the sleepDisabled property value. Whether to hide the Sleep menu item on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetSleepDisabled(value *bool)() {
-    if m != nil {
-        m.sleepDisabled = value
-    }
+    m.sleepDisabled = value
 }

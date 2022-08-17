@@ -31,35 +31,19 @@ func CreateUpdatePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAddedPolicySetItems gets the addedPolicySetItems property value. The addedPolicySetItems property
 func (m *UpdatePostRequestBody) GetAddedPolicySetItems()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addedPolicySetItems
-    }
+    return m.addedPolicySetItems
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignments gets the assignments property value. The assignments property
 func (m *UpdatePostRequestBody) GetAssignments()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetDeletedPolicySetItems gets the deletedPolicySetItems property value. The deletedPolicySetItems property
 func (m *UpdatePostRequestBody) GetDeletedPolicySetItems()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deletedPolicySetItems
-    }
+    return m.deletedPolicySetItems
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,11 +108,7 @@ func (m *UpdatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetUpdatedPolicySetItems gets the updatedPolicySetItems property value. The updatedPolicySetItems property
 func (m *UpdatePostRequestBody) GetUpdatedPolicySetItems()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatedPolicySetItems
-    }
+    return m.updatedPolicySetItems
 }
 // Serialize serializes information the current object
 func (m *UpdatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,31 +158,21 @@ func (m *UpdatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAddedPolicySetItems sets the addedPolicySetItems property value. The addedPolicySetItems property
 func (m *UpdatePostRequestBody) SetAddedPolicySetItems(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable)() {
-    if m != nil {
-        m.addedPolicySetItems = value
-    }
+    m.addedPolicySetItems = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignments sets the assignments property value. The assignments property
 func (m *UpdatePostRequestBody) SetAssignments(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetDeletedPolicySetItems sets the deletedPolicySetItems property value. The deletedPolicySetItems property
 func (m *UpdatePostRequestBody) SetDeletedPolicySetItems(value []string)() {
-    if m != nil {
-        m.deletedPolicySetItems = value
-    }
+    m.deletedPolicySetItems = value
 }
 // SetUpdatedPolicySetItems sets the updatedPolicySetItems property value. The updatedPolicySetItems property
 func (m *UpdatePostRequestBody) SetUpdatedPolicySetItems(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable)() {
-    if m != nil {
-        m.updatedPolicySetItems = value
-    }
+    m.updatedPolicySetItems = value
 }

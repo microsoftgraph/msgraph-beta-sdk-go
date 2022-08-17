@@ -29,27 +29,15 @@ func CreateMobileAppDependencyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetDependencyType gets the dependencyType property value. Indicates the dependency type associated with a relationship between two mobile apps.
 func (m *MobileAppDependency) GetDependencyType()(*MobileAppDependencyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependencyType
-    }
+    return m.dependencyType
 }
 // GetDependentAppCount gets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app.
 func (m *MobileAppDependency) GetDependentAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependentAppCount
-    }
+    return m.dependentAppCount
 }
 // GetDependsOnAppCount gets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on.
 func (m *MobileAppDependency) GetDependsOnAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependsOnAppCount
-    }
+    return m.dependsOnAppCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppDependency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,19 +103,13 @@ func (m *MobileAppDependency) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetDependencyType sets the dependencyType property value. Indicates the dependency type associated with a relationship between two mobile apps.
 func (m *MobileAppDependency) SetDependencyType(value *MobileAppDependencyType)() {
-    if m != nil {
-        m.dependencyType = value
-    }
+    m.dependencyType = value
 }
 // SetDependentAppCount sets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app.
 func (m *MobileAppDependency) SetDependentAppCount(value *int32)() {
-    if m != nil {
-        m.dependentAppCount = value
-    }
+    m.dependentAppCount = value
 }
 // SetDependsOnAppCount sets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on.
 func (m *MobileAppDependency) SetDependsOnAppCount(value *int32)() {
-    if m != nil {
-        m.dependsOnAppCount = value
-    }
+    m.dependsOnAppCount = value
 }

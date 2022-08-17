@@ -36,19 +36,11 @@ func CreateGovernanceNotificationTemplateFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationTemplate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCulture gets the culture property value. The culture property
 func (m *GovernanceNotificationTemplate) GetCulture()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.culture
-    }
+    return m.culture
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
 }
 // GetId gets the id property value. The id property
 func (m *GovernanceNotificationTemplate) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *GovernanceNotificationTemplate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSource gets the source property value. The source property
 func (m *GovernanceNotificationTemplate) GetSource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
+    return m.source
 }
 // GetType gets the type property value. The type property
 func (m *GovernanceNotificationTemplate) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetVersion gets the version property value. The version property
 func (m *GovernanceNotificationTemplate) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *GovernanceNotificationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *GovernanceNotificationTemplate) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationTemplate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCulture sets the culture property value. The culture property
 func (m *GovernanceNotificationTemplate) SetCulture(value *string)() {
-    if m != nil {
-        m.culture = value
-    }
+    m.culture = value
 }
 // SetId sets the id property value. The id property
 func (m *GovernanceNotificationTemplate) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *GovernanceNotificationTemplate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSource sets the source property value. The source property
 func (m *GovernanceNotificationTemplate) SetSource(value *string)() {
-    if m != nil {
-        m.source = value
-    }
+    m.source = value
 }
 // SetType sets the type property value. The type property
 func (m *GovernanceNotificationTemplate) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetVersion sets the version property value. The version property
 func (m *GovernanceNotificationTemplate) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

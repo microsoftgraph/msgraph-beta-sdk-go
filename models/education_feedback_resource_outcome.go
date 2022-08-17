@@ -27,11 +27,7 @@ func CreateEducationFeedbackResourceOutcomeFromDiscriminatorValue(parseNode i878
 }
 // GetFeedbackResource gets the feedbackResource property value. The actual feedback resource.
 func (m *EducationFeedbackResourceOutcome) GetFeedbackResource()(EducationResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedbackResource
-    }
+    return m.feedbackResource
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]fu
 }
 // GetResourceStatus gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
 func (m *EducationFeedbackResourceOutcome) GetResourceStatus()(*EducationFeedbackResourceOutcomeStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceStatus
-    }
+    return m.resourceStatus
 }
 // Serialize serializes information the current object
 func (m *EducationFeedbackResourceOutcome) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *EducationFeedbackResourceOutcome) Serialize(writer i878a80d2330e89d2689
 }
 // SetFeedbackResource sets the feedbackResource property value. The actual feedback resource.
 func (m *EducationFeedbackResourceOutcome) SetFeedbackResource(value EducationResourceable)() {
-    if m != nil {
-        m.feedbackResource = value
-    }
+    m.feedbackResource = value
 }
 // SetResourceStatus sets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
 func (m *EducationFeedbackResourceOutcome) SetResourceStatus(value *EducationFeedbackResourceOutcomeStatus)() {
-    if m != nil {
-        m.resourceStatus = value
-    }
+    m.resourceStatus = value
 }

@@ -52,19 +52,11 @@ func (m *DeviceManagementSettingCollectionConstraint) GetFieldDeserializers()(ma
 }
 // GetMaximumLength gets the maximumLength property value. The maximum number of elements in the collection
 func (m *DeviceManagementSettingCollectionConstraint) GetMaximumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumLength
-    }
+    return m.maximumLength
 }
 // GetMinimumLength gets the minimumLength property value. The minimum number of elements in the collection
 func (m *DeviceManagementSettingCollectionConstraint) GetMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumLength
-    }
+    return m.minimumLength
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingCollectionConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DeviceManagementSettingCollectionConstraint) Serialize(writer i878a80d2
 }
 // SetMaximumLength sets the maximumLength property value. The maximum number of elements in the collection
 func (m *DeviceManagementSettingCollectionConstraint) SetMaximumLength(value *int32)() {
-    if m != nil {
-        m.maximumLength = value
-    }
+    m.maximumLength = value
 }
 // SetMinimumLength sets the minimumLength property value. The minimum number of elements in the collection
 func (m *DeviceManagementSettingCollectionConstraint) SetMinimumLength(value *int32)() {
-    if m != nil {
-        m.minimumLength = value
-    }
+    m.minimumLength = value
 }

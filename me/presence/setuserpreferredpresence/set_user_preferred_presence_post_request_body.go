@@ -28,35 +28,19 @@ func CreateSetUserPreferredPresencePostRequestBodyFromDiscriminatorValue(parseNo
 }
 // GetActivity gets the activity property value. The activity property
 func (m *SetUserPreferredPresencePostRequestBody) GetActivity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activity
-    }
+    return m.activity
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetUserPreferredPresencePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAvailability gets the availability property value. The availability property
 func (m *SetUserPreferredPresencePostRequestBody) GetAvailability()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availability
-    }
+    return m.availability
 }
 // GetExpirationDuration gets the expirationDuration property value. The expirationDuration property
 func (m *SetUserPreferredPresencePostRequestBody) GetExpirationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDuration
-    }
+    return m.expirationDuration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SetUserPreferredPresencePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,25 +107,17 @@ func (m *SetUserPreferredPresencePostRequestBody) Serialize(writer i878a80d2330e
 }
 // SetActivity sets the activity property value. The activity property
 func (m *SetUserPreferredPresencePostRequestBody) SetActivity(value *string)() {
-    if m != nil {
-        m.activity = value
-    }
+    m.activity = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetUserPreferredPresencePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAvailability sets the availability property value. The availability property
 func (m *SetUserPreferredPresencePostRequestBody) SetAvailability(value *string)() {
-    if m != nil {
-        m.availability = value
-    }
+    m.availability = value
 }
 // SetExpirationDuration sets the expirationDuration property value. The expirationDuration property
 func (m *SetUserPreferredPresencePostRequestBody) SetExpirationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.expirationDuration = value
-    }
+    m.expirationDuration = value
 }

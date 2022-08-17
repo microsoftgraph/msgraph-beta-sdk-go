@@ -25,11 +25,7 @@ func CreateDeviceHealthScriptRunOnceScheduleFromDiscriminatorValue(parseNode i87
 }
 // GetDate gets the date property value. The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptRunOnceSchedule) GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.date
-    }
+    return m.date
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptRunOnceSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *DeviceHealthScriptRunOnceSchedule) Serialize(writer i878a80d2330e89d268
 }
 // SetDate sets the date property value. The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptRunOnceSchedule) SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.date = value
-    }
+    m.date = value
 }

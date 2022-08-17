@@ -12,7 +12,7 @@ type UserAnalytics struct {
     // The current settings for a user to use the analytics API.
     settings Settingsable
 }
-// NewUserAnalytics instantiates a new userAnalytics and sets the default values.
+// NewUserAnalytics instantiates a new UserAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
     m := &UserAnalytics{
         Entity: *NewEntity(),
@@ -27,11 +27,7 @@ func CreateUserAnalyticsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetActivityStatistics gets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatisticsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityStatistics
-    }
+    return m.activityStatistics
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetSettings gets the settings property value. The current settings for a user to use the analytics API.
 func (m *UserAnalytics) GetSettings()(Settingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // Serialize serializes information the current object
 func (m *UserAnalytics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *UserAnalytics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetActivityStatistics sets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *UserAnalytics) SetActivityStatistics(value []ActivityStatisticsable)() {
-    if m != nil {
-        m.activityStatistics = value
-    }
+    m.activityStatistics = value
 }
 // SetSettings sets the settings property value. The current settings for a user to use the analytics API.
 func (m *UserAnalytics) SetSettings(value Settingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }

@@ -39,19 +39,11 @@ func CreateUserAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAccount) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *UserAccount) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -130,51 +122,27 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *UserAccount) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
+    return m.lastSeenDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserAccount) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *UserAccount) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetService gets the service property value. The service property
 func (m *UserAccount) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // GetSigninName gets the signinName property value. The signinName property
 func (m *UserAccount) GetSigninName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signinName
-    }
+    return m.signinName
 }
 // GetStatus gets the status property value. The status property
 func (m *UserAccount) GetStatus()(*AccountStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -231,49 +199,33 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAccount) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *UserAccount) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *UserAccount) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSeenDateTime = value
-    }
+    m.lastSeenDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserAccount) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *UserAccount) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetService sets the service property value. The service property
 func (m *UserAccount) SetService(value *string)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }
 // SetSigninName sets the signinName property value. The signinName property
 func (m *UserAccount) SetSigninName(value *string)() {
-    if m != nil {
-        m.signinName = value
-    }
+    m.signinName = value
 }
 // SetStatus sets the status property value. The status property
 func (m *UserAccount) SetStatus(value *AccountStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

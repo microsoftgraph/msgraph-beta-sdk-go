@@ -35,11 +35,7 @@ func CreatePrivilegedAccessFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDisplayName gets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,43 +124,23 @@ func (m *PrivilegedAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetResources gets the resources property value. A collection of resources for the provider.
 func (m *PrivilegedAccess) GetResources()([]GovernanceResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resources
-    }
+    return m.resources
 }
 // GetRoleAssignmentRequests gets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
 func (m *PrivilegedAccess) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignmentRequests
-    }
+    return m.roleAssignmentRequests
 }
 // GetRoleAssignments gets the roleAssignments property value. A collection of role assignments for the provider.
 func (m *PrivilegedAccess) GetRoleAssignments()([]GovernanceRoleAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignments
-    }
+    return m.roleAssignments
 }
 // GetRoleDefinitions gets the roleDefinitions property value. A collection of role defintions for the provider.
 func (m *PrivilegedAccess) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitions
-    }
+    return m.roleDefinitions
 }
 // GetRoleSettings gets the roleSettings property value. A collection of role settings for the provider.
 func (m *PrivilegedAccess) GetRoleSettings()([]GovernanceRoleSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleSettings
-    }
+    return m.roleSettings
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -232,37 +208,25 @@ func (m *PrivilegedAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDisplayName sets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetResources sets the resources property value. A collection of resources for the provider.
 func (m *PrivilegedAccess) SetResources(value []GovernanceResourceable)() {
-    if m != nil {
-        m.resources = value
-    }
+    m.resources = value
 }
 // SetRoleAssignmentRequests sets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
 func (m *PrivilegedAccess) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequestable)() {
-    if m != nil {
-        m.roleAssignmentRequests = value
-    }
+    m.roleAssignmentRequests = value
 }
 // SetRoleAssignments sets the roleAssignments property value. A collection of role assignments for the provider.
 func (m *PrivilegedAccess) SetRoleAssignments(value []GovernanceRoleAssignmentable)() {
-    if m != nil {
-        m.roleAssignments = value
-    }
+    m.roleAssignments = value
 }
 // SetRoleDefinitions sets the roleDefinitions property value. A collection of role defintions for the provider.
 func (m *PrivilegedAccess) SetRoleDefinitions(value []GovernanceRoleDefinitionable)() {
-    if m != nil {
-        m.roleDefinitions = value
-    }
+    m.roleDefinitions = value
 }
 // SetRoleSettings sets the roleSettings property value. A collection of role settings for the provider.
 func (m *PrivilegedAccess) SetRoleSettings(value []GovernanceRoleSettingable)() {
-    if m != nil {
-        m.roleSettings = value
-    }
+    m.roleSettings = value
 }

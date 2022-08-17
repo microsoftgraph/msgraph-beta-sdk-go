@@ -28,11 +28,7 @@ func CreateAndroidDeviceOwnerSilentCertificateAccessFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerSilentCertificateAccess) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerSilentCertificateAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,19 +57,11 @@ func (m *AndroidDeviceOwnerSilentCertificateAccess) GetFieldDeserializers()(map[
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerSilentCertificateAccess) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPackageId gets the packageId property value. Package ID that has the pre-granted access to the certificate.
 func (m *AndroidDeviceOwnerSilentCertificateAccess) GetPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageId
-    }
+    return m.packageId
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerSilentCertificateAccess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *AndroidDeviceOwnerSilentCertificateAccess) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerSilentCertificateAccess) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerSilentCertificateAccess) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPackageId sets the packageId property value. Package ID that has the pre-granted access to the certificate.
 func (m *AndroidDeviceOwnerSilentCertificateAccess) SetPackageId(value *string)() {
-    if m != nil {
-        m.packageId = value
-    }
+    m.packageId = value
 }

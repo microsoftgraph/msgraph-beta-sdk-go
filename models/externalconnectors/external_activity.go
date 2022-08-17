@@ -85,27 +85,15 @@ func (m *ExternalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetPerformedBy gets the performedBy property value. Represents an identity used to identify who is responsible for the activity.
 func (m *ExternalActivity) GetPerformedBy()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.performedBy
-    }
+    return m.performedBy
 }
 // GetStartDateTime gets the startDateTime property value. When the particular activity occurred.
 func (m *ExternalActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetType gets the type property value. The type property
 func (m *ExternalActivity) GetType()(*ExternalActivityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *ExternalActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -136,19 +124,13 @@ func (m *ExternalActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetPerformedBy sets the performedBy property value. Represents an identity used to identify who is responsible for the activity.
 func (m *ExternalActivity) SetPerformedBy(value Identityable)() {
-    if m != nil {
-        m.performedBy = value
-    }
+    m.performedBy = value
 }
 // SetStartDateTime sets the startDateTime property value. When the particular activity occurred.
 func (m *ExternalActivity) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetType sets the type property value. The type property
 func (m *ExternalActivity) SetType(value *ExternalActivityType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

@@ -31,27 +31,15 @@ func CreateValidateCredentialsPostRequestBodyFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateCredentialsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicationIdentifier gets the applicationIdentifier property value. The applicationIdentifier property
 func (m *ValidateCredentialsPostRequestBody) GetApplicationIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationIdentifier
-    }
+    return m.applicationIdentifier
 }
 // GetCredentials gets the credentials property value. The credentials property
 func (m *ValidateCredentialsPostRequestBody) GetCredentials()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.credentials
-    }
+    return m.credentials
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ValidateCredentialsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,19 +92,11 @@ func (m *ValidateCredentialsPostRequestBody) GetFieldDeserializers()(map[string]
 }
 // GetTemplateId gets the templateId property value. The templateId property
 func (m *ValidateCredentialsPostRequestBody) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
+    return m.templateId
 }
 // GetUseSavedCredentials gets the useSavedCredentials property value. The useSavedCredentials property
 func (m *ValidateCredentialsPostRequestBody) GetUseSavedCredentials()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useSavedCredentials
-    }
+    return m.useSavedCredentials
 }
 // Serialize serializes information the current object
 func (m *ValidateCredentialsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -158,31 +138,21 @@ func (m *ValidateCredentialsPostRequestBody) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateCredentialsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicationIdentifier sets the applicationIdentifier property value. The applicationIdentifier property
 func (m *ValidateCredentialsPostRequestBody) SetApplicationIdentifier(value *string)() {
-    if m != nil {
-        m.applicationIdentifier = value
-    }
+    m.applicationIdentifier = value
 }
 // SetCredentials sets the credentials property value. The credentials property
 func (m *ValidateCredentialsPostRequestBody) SetCredentials(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSecretKeyStringValuePairable)() {
-    if m != nil {
-        m.credentials = value
-    }
+    m.credentials = value
 }
 // SetTemplateId sets the templateId property value. The templateId property
 func (m *ValidateCredentialsPostRequestBody) SetTemplateId(value *string)() {
-    if m != nil {
-        m.templateId = value
-    }
+    m.templateId = value
 }
 // SetUseSavedCredentials sets the useSavedCredentials property value. The useSavedCredentials property
 func (m *ValidateCredentialsPostRequestBody) SetUseSavedCredentials(value *bool)() {
-    if m != nil {
-        m.useSavedCredentials = value
-    }
+    m.useSavedCredentials = value
 }

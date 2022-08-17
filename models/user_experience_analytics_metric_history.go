@@ -30,11 +30,7 @@ func CreateUserExperienceAnalyticsMetricHistoryFromDiscriminatorValue(parseNode 
 }
 // GetDeviceId gets the deviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsMetricHistory) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,19 +69,11 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
 }
 // GetMetricDateTime gets the metricDateTime property value. The user experience analytics metric date time.
 func (m *UserExperienceAnalyticsMetricHistory) GetMetricDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricDateTime
-    }
+    return m.metricDateTime
 }
 // GetMetricType gets the metricType property value. The user experience analytics metric type.
 func (m *UserExperienceAnalyticsMetricHistory) GetMetricType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricType
-    }
+    return m.metricType
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsMetricHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *UserExperienceAnalyticsMetricHistory) Serialize(writer i878a80d2330e89d
 }
 // SetDeviceId sets the deviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsMetricHistory) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetMetricDateTime sets the metricDateTime property value. The user experience analytics metric date time.
 func (m *UserExperienceAnalyticsMetricHistory) SetMetricDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.metricDateTime = value
-    }
+    m.metricDateTime = value
 }
 // SetMetricType sets the metricType property value. The user experience analytics metric type.
 func (m *UserExperienceAnalyticsMetricHistory) SetMetricType(value *string)() {
-    if m != nil {
-        m.metricType = value
-    }
+    m.metricType = value
 }

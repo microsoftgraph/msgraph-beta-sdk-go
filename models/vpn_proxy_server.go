@@ -53,27 +53,15 @@ func CreateVpnProxyServerFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnProxyServer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddress gets the address property value. Address.
 func (m *VpnProxyServer) GetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetAutomaticConfigurationScriptUrl gets the automaticConfigurationScriptUrl property value. Proxy's automatic configuration script url.
 func (m *VpnProxyServer) GetAutomaticConfigurationScriptUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.automaticConfigurationScriptUrl
-    }
+    return m.automaticConfigurationScriptUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,19 +110,11 @@ func (m *VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VpnProxyServer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPort gets the port property value. Port. Valid values 0 to 65535
 func (m *VpnProxyServer) GetPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.port
-    }
+    return m.port
 }
 // Serialize serializes information the current object
 func (m *VpnProxyServer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,31 +152,21 @@ func (m *VpnProxyServer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnProxyServer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddress sets the address property value. Address.
 func (m *VpnProxyServer) SetAddress(value *string)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetAutomaticConfigurationScriptUrl sets the automaticConfigurationScriptUrl property value. Proxy's automatic configuration script url.
 func (m *VpnProxyServer) SetAutomaticConfigurationScriptUrl(value *string)() {
-    if m != nil {
-        m.automaticConfigurationScriptUrl = value
-    }
+    m.automaticConfigurationScriptUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VpnProxyServer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPort sets the port property value. Port. Valid values 0 to 65535
 func (m *VpnProxyServer) SetPort(value *int32)() {
-    if m != nil {
-        m.port = value
-    }
+    m.port = value
 }

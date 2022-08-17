@@ -52,91 +52,47 @@ func CreateAccessPackageCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAccessPackageResourceRoles gets the accessPackageResourceRoles property value. The roles in each resource in a catalog. Read-only.
 func (m *AccessPackageCatalog) GetAccessPackageResourceRoles()([]AccessPackageResourceRoleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResourceRoles
-    }
+    return m.accessPackageResourceRoles
 }
 // GetAccessPackageResources gets the accessPackageResources property value. The accessPackageResources property
 func (m *AccessPackageCatalog) GetAccessPackageResources()([]AccessPackageResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResources
-    }
+    return m.accessPackageResources
 }
 // GetAccessPackageResourceScopes gets the accessPackageResourceScopes property value. The accessPackageResourceScopes property
 func (m *AccessPackageCatalog) GetAccessPackageResourceScopes()([]AccessPackageResourceScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResourceScopes
-    }
+    return m.accessPackageResourceScopes
 }
 // GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackages
-    }
+    return m.accessPackages
 }
 // GetCatalogStatus gets the catalogStatus property value. Has the value Published if the access packages are available for management.
 func (m *AccessPackageCatalog) GetCatalogStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalogStatus
-    }
+    return m.catalogStatus
 }
 // GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
 func (m *AccessPackageCatalog) GetCatalogType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalogType
-    }
+    return m.catalogType
 }
 // GetCreatedBy gets the createdBy property value. UPN of the user who created this resource. Read-only.
 func (m *AccessPackageCatalog) GetCreatedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCustomAccessPackageWorkflowExtensions gets the customAccessPackageWorkflowExtensions property value. The customAccessPackageWorkflowExtensions property
 func (m *AccessPackageCatalog) GetCustomAccessPackageWorkflowExtensions()([]CustomAccessPackageWorkflowExtensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customAccessPackageWorkflowExtensions
-    }
+    return m.customAccessPackageWorkflowExtensions
 }
 // GetDescription gets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
 func (m *AccessPackageCatalog) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -305,27 +261,15 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsExternallyVisible gets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
 func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExternallyVisible
-    }
+    return m.isExternallyVisible
 }
 // GetModifiedBy gets the modifiedBy property value. The UPN of the user who last modified this resource. Read-only.
 func (m *AccessPackageCatalog) GetModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedBy
-    }
+    return m.modifiedBy
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
+    return m.modifiedDateTime
 }
 // Serialize serializes information the current object
 func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -441,85 +385,57 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAccessPackageResourceRoles sets the accessPackageResourceRoles property value. The roles in each resource in a catalog. Read-only.
 func (m *AccessPackageCatalog) SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)() {
-    if m != nil {
-        m.accessPackageResourceRoles = value
-    }
+    m.accessPackageResourceRoles = value
 }
 // SetAccessPackageResources sets the accessPackageResources property value. The accessPackageResources property
 func (m *AccessPackageCatalog) SetAccessPackageResources(value []AccessPackageResourceable)() {
-    if m != nil {
-        m.accessPackageResources = value
-    }
+    m.accessPackageResources = value
 }
 // SetAccessPackageResourceScopes sets the accessPackageResourceScopes property value. The accessPackageResourceScopes property
 func (m *AccessPackageCatalog) SetAccessPackageResourceScopes(value []AccessPackageResourceScopeable)() {
-    if m != nil {
-        m.accessPackageResourceScopes = value
-    }
+    m.accessPackageResourceScopes = value
 }
 // SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackageable)() {
-    if m != nil {
-        m.accessPackages = value
-    }
+    m.accessPackages = value
 }
 // SetCatalogStatus sets the catalogStatus property value. Has the value Published if the access packages are available for management.
 func (m *AccessPackageCatalog) SetCatalogStatus(value *string)() {
-    if m != nil {
-        m.catalogStatus = value
-    }
+    m.catalogStatus = value
 }
 // SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
 func (m *AccessPackageCatalog) SetCatalogType(value *string)() {
-    if m != nil {
-        m.catalogType = value
-    }
+    m.catalogType = value
 }
 // SetCreatedBy sets the createdBy property value. UPN of the user who created this resource. Read-only.
 func (m *AccessPackageCatalog) SetCreatedBy(value *string)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCustomAccessPackageWorkflowExtensions sets the customAccessPackageWorkflowExtensions property value. The customAccessPackageWorkflowExtensions property
 func (m *AccessPackageCatalog) SetCustomAccessPackageWorkflowExtensions(value []CustomAccessPackageWorkflowExtensionable)() {
-    if m != nil {
-        m.customAccessPackageWorkflowExtensions = value
-    }
+    m.customAccessPackageWorkflowExtensions = value
 }
 // SetDescription sets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
 func (m *AccessPackageCatalog) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsExternallyVisible sets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
 func (m *AccessPackageCatalog) SetIsExternallyVisible(value *bool)() {
-    if m != nil {
-        m.isExternallyVisible = value
-    }
+    m.isExternallyVisible = value
 }
 // SetModifiedBy sets the modifiedBy property value. The UPN of the user who last modified this resource. Read-only.
 func (m *AccessPackageCatalog) SetModifiedBy(value *string)() {
-    if m != nil {
-        m.modifiedBy = value
-    }
+    m.modifiedBy = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.modifiedDateTime = value
-    }
+    m.modifiedDateTime = value
 }

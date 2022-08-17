@@ -19,7 +19,7 @@ type ContentTypesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ContentTypesRequestBuilderGetQueryParameters the collection of content types present in this list.
+// ContentTypesRequestBuilderGetQueryParameters get contentTypes from users
 type ContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -85,11 +85,11 @@ func NewContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ContentTypesRequestBuilder) Count()(*ieb38aa05c6a85905f326bc94d57c9dce604be09c4981941e3f1e3af67ad2964f.CountRequestBuilder) {
     return ieb38aa05c6a85905f326bc94d57c9dce604be09c4981941e3f1e3af67ad2964f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of content types present in this list.
+// CreateGetRequestInformation get contentTypes from users
 func (m *ContentTypesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of content types present in this list.
+// CreateGetRequestInformationWithRequestConfiguration get contentTypes from users
 func (m *ContentTypesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *ContentTypesRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get the collection of content types present in this list.
+// Get get contentTypes from users
 func (m *ContentTypesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -131,7 +131,7 @@ func (m *ContentTypesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde1
 func (m *ContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*i1c3dd62716f9586bf16167dbe52e2d8366a39b8eafc74cff1884586a6cbbf258.GetCompatibleHubContentTypesRequestBuilder) {
     return i1c3dd62716f9586bf16167dbe52e2d8366a39b8eafc74cff1884586a6cbbf258.NewGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of content types present in this list.
+// GetWithRequestConfigurationAndResponseHandler get contentTypes from users
 func (m *ContentTypesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContentTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

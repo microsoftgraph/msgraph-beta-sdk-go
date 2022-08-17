@@ -27,11 +27,7 @@ func CreateImportAppleDeviceIdentityListPostRequestBodyFromDiscriminatorValue(pa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportAppleDeviceIdentityListPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImportAppleDeviceIdentityListPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,19 +60,11 @@ func (m *ImportAppleDeviceIdentityListPostRequestBody) GetFieldDeserializers()(m
 }
 // GetImportedAppleDeviceIdentities gets the importedAppleDeviceIdentities property value. The importedAppleDeviceIdentities property
 func (m *ImportAppleDeviceIdentityListPostRequestBody) GetImportedAppleDeviceIdentities()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importedAppleDeviceIdentities
-    }
+    return m.importedAppleDeviceIdentities
 }
 // GetOverwriteImportedDeviceIdentities gets the overwriteImportedDeviceIdentities property value. The overwriteImportedDeviceIdentities property
 func (m *ImportAppleDeviceIdentityListPostRequestBody) GetOverwriteImportedDeviceIdentities()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overwriteImportedDeviceIdentities
-    }
+    return m.overwriteImportedDeviceIdentities
 }
 // Serialize serializes information the current object
 func (m *ImportAppleDeviceIdentityListPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,19 +94,13 @@ func (m *ImportAppleDeviceIdentityListPostRequestBody) Serialize(writer i878a80d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportAppleDeviceIdentityListPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetImportedAppleDeviceIdentities sets the importedAppleDeviceIdentities property value. The importedAppleDeviceIdentities property
 func (m *ImportAppleDeviceIdentityListPostRequestBody) SetImportedAppleDeviceIdentities(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable)() {
-    if m != nil {
-        m.importedAppleDeviceIdentities = value
-    }
+    m.importedAppleDeviceIdentities = value
 }
 // SetOverwriteImportedDeviceIdentities sets the overwriteImportedDeviceIdentities property value. The overwriteImportedDeviceIdentities property
 func (m *ImportAppleDeviceIdentityListPostRequestBody) SetOverwriteImportedDeviceIdentities(value *bool)() {
-    if m != nil {
-        m.overwriteImportedDeviceIdentities = value
-    }
+    m.overwriteImportedDeviceIdentities = value
 }

@@ -78,99 +78,51 @@ func CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue(parseNode i878a8
 }
 // GetAddressableUserName gets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) GetAddressableUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addressableUserName
-    }
+    return m.addressableUserName
 }
 // GetAzureActiveDirectoryDeviceId gets the azureActiveDirectoryDeviceId property value. AAD Device ID - to be deprecated
 func (m *WindowsAutopilotDeviceIdentity) GetAzureActiveDirectoryDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureActiveDirectoryDeviceId
-    }
+    return m.azureActiveDirectoryDeviceId
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. AAD Device ID
 func (m *WindowsAutopilotDeviceIdentity) GetAzureAdDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdDeviceId
-    }
+    return m.azureAdDeviceId
 }
 // GetDeploymentProfile gets the deploymentProfile property value. Deployment profile currently assigned to the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfile()(WindowsAutopilotDeploymentProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentProfile
-    }
+    return m.deploymentProfile
 }
 // GetDeploymentProfileAssignedDateTime gets the deploymentProfileAssignedDateTime property value. Profile set time of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfileAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentProfileAssignedDateTime
-    }
+    return m.deploymentProfileAssignedDateTime
 }
 // GetDeploymentProfileAssignmentDetailedStatus gets the deploymentProfileAssignmentDetailedStatus property value. The deploymentProfileAssignmentDetailedStatus property
 func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfileAssignmentDetailedStatus()(*WindowsAutopilotProfileAssignmentDetailedStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentProfileAssignmentDetailedStatus
-    }
+    return m.deploymentProfileAssignmentDetailedStatus
 }
 // GetDeploymentProfileAssignmentStatus gets the deploymentProfileAssignmentStatus property value. The deploymentProfileAssignmentStatus property
 func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfileAssignmentStatus()(*WindowsAutopilotProfileAssignmentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentProfileAssignmentStatus
-    }
+    return m.deploymentProfileAssignmentStatus
 }
 // GetDeviceAccountPassword gets the deviceAccountPassword property value. Surface Hub Device Account Password
 func (m *WindowsAutopilotDeviceIdentity) GetDeviceAccountPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAccountPassword
-    }
+    return m.deviceAccountPassword
 }
 // GetDeviceAccountUpn gets the deviceAccountUpn property value. Surface Hub Device Account Upn
 func (m *WindowsAutopilotDeviceIdentity) GetDeviceAccountUpn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAccountUpn
-    }
+    return m.deviceAccountUpn
 }
 // GetDeviceFriendlyName gets the deviceFriendlyName property value. Surface Hub Device Friendly Name
 func (m *WindowsAutopilotDeviceIdentity) GetDeviceFriendlyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceFriendlyName
-    }
+    return m.deviceFriendlyName
 }
 // GetDisplayName gets the displayName property value. Display Name
 func (m *WindowsAutopilotDeviceIdentity) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
 func (m *WindowsAutopilotDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentState
-    }
+    return m.enrollmentState
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -449,123 +401,63 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
 }
 // GetGroupTag gets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetGroupTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupTag
-    }
+    return m.groupTag
 }
 // GetIntendedDeploymentProfile gets the intendedDeploymentProfile property value. Deployment profile intended to be assigned to the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetIntendedDeploymentProfile()(WindowsAutopilotDeploymentProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intendedDeploymentProfile
-    }
+    return m.intendedDeploymentProfile
 }
 // GetLastContactedDateTime gets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastContactedDateTime
-    }
+    return m.lastContactedDateTime
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Managed Device ID
 func (m *WindowsAutopilotDeviceIdentity) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetManufacturer gets the manufacturer property value. Oem manufacturer of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. Model name of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetProductKey gets the productKey property value. Product Key of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetProductKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productKey
-    }
+    return m.productKey
 }
 // GetPurchaseOrderIdentifier gets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetPurchaseOrderIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.purchaseOrderIdentifier
-    }
+    return m.purchaseOrderIdentifier
 }
 // GetRemediationState gets the remediationState property value. Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
 func (m *WindowsAutopilotDeviceIdentity) GetRemediationState()(*WindowsAutopilotDeviceRemediationState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationState
-    }
+    return m.remediationState
 }
 // GetRemediationStateLastModifiedDateTime gets the remediationStateLastModifiedDateTime property value. RemediationState set time of Autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetRemediationStateLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationStateLastModifiedDateTime
-    }
+    return m.remediationStateLastModifiedDateTime
 }
 // GetResourceName gets the resourceName property value. Resource Name.
 func (m *WindowsAutopilotDeviceIdentity) GetResourceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceName
-    }
+    return m.resourceName
 }
 // GetSerialNumber gets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
+    return m.serialNumber
 }
 // GetSkuNumber gets the skuNumber property value. SKU Number
 func (m *WindowsAutopilotDeviceIdentity) GetSkuNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuNumber
-    }
+    return m.skuNumber
 }
 // GetSystemFamily gets the systemFamily property value. System Family
 func (m *WindowsAutopilotDeviceIdentity) GetSystemFamily()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemFamily
-    }
+    return m.systemFamily
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
 func (m *WindowsAutopilotDeviceIdentity) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -743,163 +635,109 @@ func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d268963
 }
 // SetAddressableUserName sets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) SetAddressableUserName(value *string)() {
-    if m != nil {
-        m.addressableUserName = value
-    }
+    m.addressableUserName = value
 }
 // SetAzureActiveDirectoryDeviceId sets the azureActiveDirectoryDeviceId property value. AAD Device ID - to be deprecated
 func (m *WindowsAutopilotDeviceIdentity) SetAzureActiveDirectoryDeviceId(value *string)() {
-    if m != nil {
-        m.azureActiveDirectoryDeviceId = value
-    }
+    m.azureActiveDirectoryDeviceId = value
 }
 // SetAzureAdDeviceId sets the azureAdDeviceId property value. AAD Device ID
 func (m *WindowsAutopilotDeviceIdentity) SetAzureAdDeviceId(value *string)() {
-    if m != nil {
-        m.azureAdDeviceId = value
-    }
+    m.azureAdDeviceId = value
 }
 // SetDeploymentProfile sets the deploymentProfile property value. Deployment profile currently assigned to the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetDeploymentProfile(value WindowsAutopilotDeploymentProfileable)() {
-    if m != nil {
-        m.deploymentProfile = value
-    }
+    m.deploymentProfile = value
 }
 // SetDeploymentProfileAssignedDateTime sets the deploymentProfileAssignedDateTime property value. Profile set time of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetDeploymentProfileAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.deploymentProfileAssignedDateTime = value
-    }
+    m.deploymentProfileAssignedDateTime = value
 }
 // SetDeploymentProfileAssignmentDetailedStatus sets the deploymentProfileAssignmentDetailedStatus property value. The deploymentProfileAssignmentDetailedStatus property
 func (m *WindowsAutopilotDeviceIdentity) SetDeploymentProfileAssignmentDetailedStatus(value *WindowsAutopilotProfileAssignmentDetailedStatus)() {
-    if m != nil {
-        m.deploymentProfileAssignmentDetailedStatus = value
-    }
+    m.deploymentProfileAssignmentDetailedStatus = value
 }
 // SetDeploymentProfileAssignmentStatus sets the deploymentProfileAssignmentStatus property value. The deploymentProfileAssignmentStatus property
 func (m *WindowsAutopilotDeviceIdentity) SetDeploymentProfileAssignmentStatus(value *WindowsAutopilotProfileAssignmentStatus)() {
-    if m != nil {
-        m.deploymentProfileAssignmentStatus = value
-    }
+    m.deploymentProfileAssignmentStatus = value
 }
 // SetDeviceAccountPassword sets the deviceAccountPassword property value. Surface Hub Device Account Password
 func (m *WindowsAutopilotDeviceIdentity) SetDeviceAccountPassword(value *string)() {
-    if m != nil {
-        m.deviceAccountPassword = value
-    }
+    m.deviceAccountPassword = value
 }
 // SetDeviceAccountUpn sets the deviceAccountUpn property value. Surface Hub Device Account Upn
 func (m *WindowsAutopilotDeviceIdentity) SetDeviceAccountUpn(value *string)() {
-    if m != nil {
-        m.deviceAccountUpn = value
-    }
+    m.deviceAccountUpn = value
 }
 // SetDeviceFriendlyName sets the deviceFriendlyName property value. Surface Hub Device Friendly Name
 func (m *WindowsAutopilotDeviceIdentity) SetDeviceFriendlyName(value *string)() {
-    if m != nil {
-        m.deviceFriendlyName = value
-    }
+    m.deviceFriendlyName = value
 }
 // SetDisplayName sets the displayName property value. Display Name
 func (m *WindowsAutopilotDeviceIdentity) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnrollmentState sets the enrollmentState property value. The enrollmentState property
 func (m *WindowsAutopilotDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
-    if m != nil {
-        m.enrollmentState = value
-    }
+    m.enrollmentState = value
 }
 // SetGroupTag sets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetGroupTag(value *string)() {
-    if m != nil {
-        m.groupTag = value
-    }
+    m.groupTag = value
 }
 // SetIntendedDeploymentProfile sets the intendedDeploymentProfile property value. Deployment profile intended to be assigned to the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetIntendedDeploymentProfile(value WindowsAutopilotDeploymentProfileable)() {
-    if m != nil {
-        m.intendedDeploymentProfile = value
-    }
+    m.intendedDeploymentProfile = value
 }
 // SetLastContactedDateTime sets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastContactedDateTime = value
-    }
+    m.lastContactedDateTime = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Managed Device ID
 func (m *WindowsAutopilotDeviceIdentity) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetManufacturer sets the manufacturer property value. Oem manufacturer of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. Model name of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetProductKey sets the productKey property value. Product Key of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetProductKey(value *string)() {
-    if m != nil {
-        m.productKey = value
-    }
+    m.productKey = value
 }
 // SetPurchaseOrderIdentifier sets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetPurchaseOrderIdentifier(value *string)() {
-    if m != nil {
-        m.purchaseOrderIdentifier = value
-    }
+    m.purchaseOrderIdentifier = value
 }
 // SetRemediationState sets the remediationState property value. Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
 func (m *WindowsAutopilotDeviceIdentity) SetRemediationState(value *WindowsAutopilotDeviceRemediationState)() {
-    if m != nil {
-        m.remediationState = value
-    }
+    m.remediationState = value
 }
 // SetRemediationStateLastModifiedDateTime sets the remediationStateLastModifiedDateTime property value. RemediationState set time of Autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetRemediationStateLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.remediationStateLastModifiedDateTime = value
-    }
+    m.remediationStateLastModifiedDateTime = value
 }
 // SetResourceName sets the resourceName property value. Resource Name.
 func (m *WindowsAutopilotDeviceIdentity) SetResourceName(value *string)() {
-    if m != nil {
-        m.resourceName = value
-    }
+    m.resourceName = value
 }
 // SetSerialNumber sets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetSerialNumber(value *string)() {
-    if m != nil {
-        m.serialNumber = value
-    }
+    m.serialNumber = value
 }
 // SetSkuNumber sets the skuNumber property value. SKU Number
 func (m *WindowsAutopilotDeviceIdentity) SetSkuNumber(value *string)() {
-    if m != nil {
-        m.skuNumber = value
-    }
+    m.skuNumber = value
 }
 // SetSystemFamily sets the systemFamily property value. System Family
 func (m *WindowsAutopilotDeviceIdentity) SetSystemFamily(value *string)() {
-    if m != nil {
-        m.systemFamily = value
-    }
+    m.systemFamily = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name.
 func (m *WindowsAutopilotDeviceIdentity) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

@@ -25,11 +25,7 @@ func CreateOnTokenIssuanceStartCustomExtensionHandlerFromDiscriminatorValue(pars
 }
 // GetCustomExtension gets the customExtension property value. The customExtension property
 func (m *OnTokenIssuanceStartCustomExtensionHandler) GetCustomExtension()(OnTokenIssuanceStartCustomExtensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customExtension
-    }
+    return m.customExtension
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnTokenIssuanceStartCustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *OnTokenIssuanceStartCustomExtensionHandler) Serialize(writer i878a80d23
 }
 // SetCustomExtension sets the customExtension property value. The customExtension property
 func (m *OnTokenIssuanceStartCustomExtensionHandler) SetCustomExtension(value OnTokenIssuanceStartCustomExtensionable)() {
-    if m != nil {
-        m.customExtension = value
-    }
+    m.customExtension = value
 }

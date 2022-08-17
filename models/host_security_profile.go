@@ -60,19 +60,11 @@ func CreateHostSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *HostSecurityProfile) GetAzureSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureSubscriptionId
-    }
+    return m.azureSubscriptionId
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
 func (m *HostSecurityProfile) GetAzureTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureTenantId
-    }
+    return m.azureTenantId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -277,131 +269,67 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *HostSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
+    return m.firstSeenDateTime
 }
 // GetFqdn gets the fqdn property value. The fqdn property
 func (m *HostSecurityProfile) GetFqdn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fqdn
-    }
+    return m.fqdn
 }
 // GetIsAzureAdJoined gets the isAzureAdJoined property value. The isAzureAdJoined property
 func (m *HostSecurityProfile) GetIsAzureAdJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdJoined
-    }
+    return m.isAzureAdJoined
 }
 // GetIsAzureAdRegistered gets the isAzureAdRegistered property value. The isAzureAdRegistered property
 func (m *HostSecurityProfile) GetIsAzureAdRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAzureAdRegistered
-    }
+    return m.isAzureAdRegistered
 }
 // GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. The isHybridAzureDomainJoined property
 func (m *HostSecurityProfile) GetIsHybridAzureDomainJoined()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHybridAzureDomainJoined
-    }
+    return m.isHybridAzureDomainJoined
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *HostSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
+    return m.lastSeenDateTime
 }
 // GetLogonUsers gets the logonUsers property value. The logonUsers property
 func (m *HostSecurityProfile) GetLogonUsers()([]LogonUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logonUsers
-    }
+    return m.logonUsers
 }
 // GetNetBiosName gets the netBiosName property value. The netBiosName property
 func (m *HostSecurityProfile) GetNetBiosName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.netBiosName
-    }
+    return m.netBiosName
 }
 // GetNetworkInterfaces gets the networkInterfaces property value. The networkInterfaces property
 func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterfaceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkInterfaces
-    }
+    return m.networkInterfaces
 }
 // GetOs gets the os property value. The os property
 func (m *HostSecurityProfile) GetOs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.os
-    }
+    return m.os
 }
 // GetOsVersion gets the osVersion property value. The osVersion property
 func (m *HostSecurityProfile) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // GetParentHost gets the parentHost property value. The parentHost property
 func (m *HostSecurityProfile) GetParentHost()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentHost
-    }
+    return m.parentHost
 }
 // GetRelatedHostIds gets the relatedHostIds property value. The relatedHostIds property
 func (m *HostSecurityProfile) GetRelatedHostIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relatedHostIds
-    }
+    return m.relatedHostIds
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *HostSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetTags gets the tags property value. The tags property
 func (m *HostSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *HostSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
+    return m.vendorInformation
 }
 // Serialize serializes information the current object
 func (m *HostSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -529,109 +457,73 @@ func (m *HostSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *HostSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    if m != nil {
-        m.azureSubscriptionId = value
-    }
+    m.azureSubscriptionId = value
 }
 // SetAzureTenantId sets the azureTenantId property value. The azureTenantId property
 func (m *HostSecurityProfile) SetAzureTenantId(value *string)() {
-    if m != nil {
-        m.azureTenantId = value
-    }
+    m.azureTenantId = value
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *HostSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.firstSeenDateTime = value
-    }
+    m.firstSeenDateTime = value
 }
 // SetFqdn sets the fqdn property value. The fqdn property
 func (m *HostSecurityProfile) SetFqdn(value *string)() {
-    if m != nil {
-        m.fqdn = value
-    }
+    m.fqdn = value
 }
 // SetIsAzureAdJoined sets the isAzureAdJoined property value. The isAzureAdJoined property
 func (m *HostSecurityProfile) SetIsAzureAdJoined(value *bool)() {
-    if m != nil {
-        m.isAzureAdJoined = value
-    }
+    m.isAzureAdJoined = value
 }
 // SetIsAzureAdRegistered sets the isAzureAdRegistered property value. The isAzureAdRegistered property
 func (m *HostSecurityProfile) SetIsAzureAdRegistered(value *bool)() {
-    if m != nil {
-        m.isAzureAdRegistered = value
-    }
+    m.isAzureAdRegistered = value
 }
 // SetIsHybridAzureDomainJoined sets the isHybridAzureDomainJoined property value. The isHybridAzureDomainJoined property
 func (m *HostSecurityProfile) SetIsHybridAzureDomainJoined(value *bool)() {
-    if m != nil {
-        m.isHybridAzureDomainJoined = value
-    }
+    m.isHybridAzureDomainJoined = value
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *HostSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSeenDateTime = value
-    }
+    m.lastSeenDateTime = value
 }
 // SetLogonUsers sets the logonUsers property value. The logonUsers property
 func (m *HostSecurityProfile) SetLogonUsers(value []LogonUserable)() {
-    if m != nil {
-        m.logonUsers = value
-    }
+    m.logonUsers = value
 }
 // SetNetBiosName sets the netBiosName property value. The netBiosName property
 func (m *HostSecurityProfile) SetNetBiosName(value *string)() {
-    if m != nil {
-        m.netBiosName = value
-    }
+    m.netBiosName = value
 }
 // SetNetworkInterfaces sets the networkInterfaces property value. The networkInterfaces property
 func (m *HostSecurityProfile) SetNetworkInterfaces(value []NetworkInterfaceable)() {
-    if m != nil {
-        m.networkInterfaces = value
-    }
+    m.networkInterfaces = value
 }
 // SetOs sets the os property value. The os property
 func (m *HostSecurityProfile) SetOs(value *string)() {
-    if m != nil {
-        m.os = value
-    }
+    m.os = value
 }
 // SetOsVersion sets the osVersion property value. The osVersion property
 func (m *HostSecurityProfile) SetOsVersion(value *string)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }
 // SetParentHost sets the parentHost property value. The parentHost property
 func (m *HostSecurityProfile) SetParentHost(value *string)() {
-    if m != nil {
-        m.parentHost = value
-    }
+    m.parentHost = value
 }
 // SetRelatedHostIds sets the relatedHostIds property value. The relatedHostIds property
 func (m *HostSecurityProfile) SetRelatedHostIds(value []string)() {
-    if m != nil {
-        m.relatedHostIds = value
-    }
+    m.relatedHostIds = value
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *HostSecurityProfile) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *HostSecurityProfile) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *HostSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
-    if m != nil {
-        m.vendorInformation = value
-    }
+    m.vendorInformation = value
 }

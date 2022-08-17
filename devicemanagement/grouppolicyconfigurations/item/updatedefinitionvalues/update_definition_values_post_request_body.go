@@ -29,27 +29,15 @@ func CreateUpdateDefinitionValuesPostRequestBodyFromDiscriminatorValue(parseNode
 }
 // GetAdded gets the added property value. The added property
 func (m *UpdateDefinitionValuesPostRequestBody) GetAdded()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.added
-    }
+    return m.added
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDefinitionValuesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeletedIds gets the deletedIds property value. The deletedIds property
 func (m *UpdateDefinitionValuesPostRequestBody) GetDeletedIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deletedIds
-    }
+    return m.deletedIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateDefinitionValuesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,11 +88,7 @@ func (m *UpdateDefinitionValuesPostRequestBody) GetFieldDeserializers()(map[stri
 }
 // GetUpdated gets the updated property value. The updated property
 func (m *UpdateDefinitionValuesPostRequestBody) GetUpdated()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updated
-    }
+    return m.updated
 }
 // Serialize serializes information the current object
 func (m *UpdateDefinitionValuesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,25 +128,17 @@ func (m *UpdateDefinitionValuesPostRequestBody) Serialize(writer i878a80d2330e89
 }
 // SetAdded sets the added property value. The added property
 func (m *UpdateDefinitionValuesPostRequestBody) SetAdded(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionValueable)() {
-    if m != nil {
-        m.added = value
-    }
+    m.added = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDefinitionValuesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeletedIds sets the deletedIds property value. The deletedIds property
 func (m *UpdateDefinitionValuesPostRequestBody) SetDeletedIds(value []string)() {
-    if m != nil {
-        m.deletedIds = value
-    }
+    m.deletedIds = value
 }
 // SetUpdated sets the updated property value. The updated property
 func (m *UpdateDefinitionValuesPostRequestBody) SetUpdated(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionValueable)() {
-    if m != nil {
-        m.updated = value
-    }
+    m.updated = value
 }

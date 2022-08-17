@@ -27,19 +27,11 @@ func CreateWindowsMicrosoftEdgeAppFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetChannel gets the channel property value. The enum to specify the channels for Microsoft Edge apps.
 func (m *WindowsMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.channel
-    }
+    return m.channel
 }
 // GetDisplayLanguageLocale gets the displayLanguageLocale property value. The language locale to use when the Edge app displays text to the user.
 func (m *WindowsMicrosoftEdgeApp) GetDisplayLanguageLocale()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayLanguageLocale
-    }
+    return m.displayLanguageLocale
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsMicrosoftEdgeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,13 +81,9 @@ func (m *WindowsMicrosoftEdgeApp) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetChannel sets the channel property value. The enum to specify the channels for Microsoft Edge apps.
 func (m *WindowsMicrosoftEdgeApp) SetChannel(value *MicrosoftEdgeChannel)() {
-    if m != nil {
-        m.channel = value
-    }
+    m.channel = value
 }
 // SetDisplayLanguageLocale sets the displayLanguageLocale property value. The language locale to use when the Edge app displays text to the user.
 func (m *WindowsMicrosoftEdgeApp) SetDisplayLanguageLocale(value *string)() {
-    if m != nil {
-        m.displayLanguageLocale = value
-    }
+    m.displayLanguageLocale = value
 }

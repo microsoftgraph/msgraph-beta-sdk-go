@@ -24,19 +24,11 @@ func CreateGetTargetedUsersAndDevicesPostRequestBodyFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetTargetedUsersAndDevicesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceConfigurationIds gets the deviceConfigurationIds property value. The deviceConfigurationIds property
 func (m *GetTargetedUsersAndDevicesPostRequestBody) GetDeviceConfigurationIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceConfigurationIds
-    }
+    return m.deviceConfigurationIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetTargetedUsersAndDevicesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,13 +67,9 @@ func (m *GetTargetedUsersAndDevicesPostRequestBody) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetTargetedUsersAndDevicesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceConfigurationIds sets the deviceConfigurationIds property value. The deviceConfigurationIds property
 func (m *GetTargetedUsersAndDevicesPostRequestBody) SetDeviceConfigurationIds(value []string)() {
-    if m != nil {
-        m.deviceConfigurationIds = value
-    }
+    m.deviceConfigurationIds = value
 }

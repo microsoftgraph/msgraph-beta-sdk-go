@@ -35,19 +35,11 @@ func CreateMembershipOutlierInsightFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetContainer gets the container property value. The container property
 func (m *MembershipOutlierInsight) GetContainer()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.container
-    }
+    return m.container
 }
 // GetContainerId gets the containerId property value. The containerId property
 func (m *MembershipOutlierInsight) GetContainerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.containerId
-    }
+    return m.containerId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,35 +108,19 @@ func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetMember gets the member property value. The member property
 func (m *MembershipOutlierInsight) GetMember()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.member
-    }
+    return m.member
 }
 // GetMemberId gets the memberId property value. The memberId property
 func (m *MembershipOutlierInsight) GetMemberId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberId
-    }
+    return m.memberId
 }
 // GetOutlierContainerType gets the outlierContainerType property value. The outlierContainerType property
 func (m *MembershipOutlierInsight) GetOutlierContainerType()(*OutlierContainerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outlierContainerType
-    }
+    return m.outlierContainerType
 }
 // GetOutlierMemberType gets the outlierMemberType property value. The outlierMemberType property
 func (m *MembershipOutlierInsight) GetOutlierMemberType()(*OutlierMemberType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outlierMemberType
-    }
+    return m.outlierMemberType
 }
 // Serialize serializes information the current object
 func (m *MembershipOutlierInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *MembershipOutlierInsight) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetContainer sets the container property value. The container property
 func (m *MembershipOutlierInsight) SetContainer(value DirectoryObjectable)() {
-    if m != nil {
-        m.container = value
-    }
+    m.container = value
 }
 // SetContainerId sets the containerId property value. The containerId property
 func (m *MembershipOutlierInsight) SetContainerId(value *string)() {
-    if m != nil {
-        m.containerId = value
-    }
+    m.containerId = value
 }
 // SetMember sets the member property value. The member property
 func (m *MembershipOutlierInsight) SetMember(value DirectoryObjectable)() {
-    if m != nil {
-        m.member = value
-    }
+    m.member = value
 }
 // SetMemberId sets the memberId property value. The memberId property
 func (m *MembershipOutlierInsight) SetMemberId(value *string)() {
-    if m != nil {
-        m.memberId = value
-    }
+    m.memberId = value
 }
 // SetOutlierContainerType sets the outlierContainerType property value. The outlierContainerType property
 func (m *MembershipOutlierInsight) SetOutlierContainerType(value *OutlierContainerType)() {
-    if m != nil {
-        m.outlierContainerType = value
-    }
+    m.outlierContainerType = value
 }
 // SetOutlierMemberType sets the outlierMemberType property value. The outlierMemberType property
 func (m *MembershipOutlierInsight) SetOutlierMemberType(value *OutlierMemberType)() {
-    if m != nil {
-        m.outlierMemberType = value
-    }
+    m.outlierMemberType = value
 }

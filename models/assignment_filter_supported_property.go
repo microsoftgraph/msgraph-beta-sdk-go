@@ -38,19 +38,11 @@ func CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterSupportedProperty) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDataType gets the dataType property value. The data type of the property.
 func (m *AssignmentFilterSupportedProperty) GetDataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataType
-    }
+    return m.dataType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,51 +129,27 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
 }
 // GetIsCollection gets the isCollection property value. Indicates whether the property is a collection type or not.
 func (m *AssignmentFilterSupportedProperty) GetIsCollection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCollection
-    }
+    return m.isCollection
 }
 // GetName gets the name property value. Name of the property.
 func (m *AssignmentFilterSupportedProperty) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AssignmentFilterSupportedProperty) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPropertyRegexConstraint gets the propertyRegexConstraint property value. Regex string to do validation on the property value.
 func (m *AssignmentFilterSupportedProperty) GetPropertyRegexConstraint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyRegexConstraint
-    }
+    return m.propertyRegexConstraint
 }
 // GetSupportedOperators gets the supportedOperators property value. List of all supported operators on this property.
 func (m *AssignmentFilterSupportedProperty) GetSupportedOperators()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedOperators
-    }
+    return m.supportedOperators
 }
 // GetSupportedValues gets the supportedValues property value. List of all supported values for this propery, empty if everything is supported.
 func (m *AssignmentFilterSupportedProperty) GetSupportedValues()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedValues
-    }
+    return m.supportedValues
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterSupportedProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -237,49 +205,33 @@ func (m *AssignmentFilterSupportedProperty) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterSupportedProperty) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDataType sets the dataType property value. The data type of the property.
 func (m *AssignmentFilterSupportedProperty) SetDataType(value *string)() {
-    if m != nil {
-        m.dataType = value
-    }
+    m.dataType = value
 }
 // SetIsCollection sets the isCollection property value. Indicates whether the property is a collection type or not.
 func (m *AssignmentFilterSupportedProperty) SetIsCollection(value *bool)() {
-    if m != nil {
-        m.isCollection = value
-    }
+    m.isCollection = value
 }
 // SetName sets the name property value. Name of the property.
 func (m *AssignmentFilterSupportedProperty) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AssignmentFilterSupportedProperty) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPropertyRegexConstraint sets the propertyRegexConstraint property value. Regex string to do validation on the property value.
 func (m *AssignmentFilterSupportedProperty) SetPropertyRegexConstraint(value *string)() {
-    if m != nil {
-        m.propertyRegexConstraint = value
-    }
+    m.propertyRegexConstraint = value
 }
 // SetSupportedOperators sets the supportedOperators property value. List of all supported operators on this property.
 func (m *AssignmentFilterSupportedProperty) SetSupportedOperators(value []string)() {
-    if m != nil {
-        m.supportedOperators = value
-    }
+    m.supportedOperators = value
 }
 // SetSupportedValues sets the supportedValues property value. List of all supported values for this propery, empty if everything is supported.
 func (m *AssignmentFilterSupportedProperty) SetSupportedValues(value []string)() {
-    if m != nil {
-        m.supportedValues = value
-    }
+    m.supportedValues = value
 }

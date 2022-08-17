@@ -54,51 +54,27 @@ func CreateStrongAuthenticationPhoneAppDetailFromDiscriminatorValue(parseNode i8
 }
 // GetAuthenticationType gets the authenticationType property value. The authenticationType property
 func (m *StrongAuthenticationPhoneAppDetail) GetAuthenticationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationType
-    }
+    return m.authenticationType
 }
 // GetAuthenticatorFlavor gets the authenticatorFlavor property value. The authenticatorFlavor property
 func (m *StrongAuthenticationPhoneAppDetail) GetAuthenticatorFlavor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticatorFlavor
-    }
+    return m.authenticatorFlavor
 }
 // GetDeviceId gets the deviceId property value. The deviceId property
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetDeviceTag gets the deviceTag property value. The deviceTag property
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceTag
-    }
+    return m.deviceTag
 }
 // GetDeviceToken gets the deviceToken property value. The deviceToken property
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceToken
-    }
+    return m.deviceToken
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StrongAuthenticationPhoneAppDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -257,75 +233,39 @@ func (m *StrongAuthenticationPhoneAppDetail) GetFieldDeserializers()(map[string]
 }
 // GetHashFunction gets the hashFunction property value. The hashFunction property
 func (m *StrongAuthenticationPhoneAppDetail) GetHashFunction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashFunction
-    }
+    return m.hashFunction
 }
 // GetLastAuthenticatedDateTime gets the lastAuthenticatedDateTime property value. The lastAuthenticatedDateTime property
 func (m *StrongAuthenticationPhoneAppDetail) GetLastAuthenticatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAuthenticatedDateTime
-    }
+    return m.lastAuthenticatedDateTime
 }
 // GetNotificationType gets the notificationType property value. The notificationType property
 func (m *StrongAuthenticationPhoneAppDetail) GetNotificationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationType
-    }
+    return m.notificationType
 }
 // GetOathSecretKey gets the oathSecretKey property value. The oathSecretKey property
 func (m *StrongAuthenticationPhoneAppDetail) GetOathSecretKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oathSecretKey
-    }
+    return m.oathSecretKey
 }
 // GetOathTokenMetadata gets the oathTokenMetadata property value. The oathTokenMetadata property
 func (m *StrongAuthenticationPhoneAppDetail) GetOathTokenMetadata()(OathTokenMetadataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oathTokenMetadata
-    }
+    return m.oathTokenMetadata
 }
 // GetOathTokenTimeDriftInSeconds gets the oathTokenTimeDriftInSeconds property value. The oathTokenTimeDriftInSeconds property
 func (m *StrongAuthenticationPhoneAppDetail) GetOathTokenTimeDriftInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oathTokenTimeDriftInSeconds
-    }
+    return m.oathTokenTimeDriftInSeconds
 }
 // GetPhoneAppVersion gets the phoneAppVersion property value. The phoneAppVersion property
 func (m *StrongAuthenticationPhoneAppDetail) GetPhoneAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneAppVersion
-    }
+    return m.phoneAppVersion
 }
 // GetTenantDeviceId gets the tenantDeviceId property value. The tenantDeviceId property
 func (m *StrongAuthenticationPhoneAppDetail) GetTenantDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDeviceId
-    }
+    return m.tenantDeviceId
 }
 // GetTokenGenerationIntervalInSeconds gets the tokenGenerationIntervalInSeconds property value. The tokenGenerationIntervalInSeconds property
 func (m *StrongAuthenticationPhoneAppDetail) GetTokenGenerationIntervalInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenGenerationIntervalInSeconds
-    }
+    return m.tokenGenerationIntervalInSeconds
 }
 // Serialize serializes information the current object
 func (m *StrongAuthenticationPhoneAppDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -427,91 +367,61 @@ func (m *StrongAuthenticationPhoneAppDetail) Serialize(writer i878a80d2330e89d26
 }
 // SetAuthenticationType sets the authenticationType property value. The authenticationType property
 func (m *StrongAuthenticationPhoneAppDetail) SetAuthenticationType(value *string)() {
-    if m != nil {
-        m.authenticationType = value
-    }
+    m.authenticationType = value
 }
 // SetAuthenticatorFlavor sets the authenticatorFlavor property value. The authenticatorFlavor property
 func (m *StrongAuthenticationPhoneAppDetail) SetAuthenticatorFlavor(value *string)() {
-    if m != nil {
-        m.authenticatorFlavor = value
-    }
+    m.authenticatorFlavor = value
 }
 // SetDeviceId sets the deviceId property value. The deviceId property
 func (m *StrongAuthenticationPhoneAppDetail) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceName sets the deviceName property value. The deviceName property
 func (m *StrongAuthenticationPhoneAppDetail) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetDeviceTag sets the deviceTag property value. The deviceTag property
 func (m *StrongAuthenticationPhoneAppDetail) SetDeviceTag(value *string)() {
-    if m != nil {
-        m.deviceTag = value
-    }
+    m.deviceTag = value
 }
 // SetDeviceToken sets the deviceToken property value. The deviceToken property
 func (m *StrongAuthenticationPhoneAppDetail) SetDeviceToken(value *string)() {
-    if m != nil {
-        m.deviceToken = value
-    }
+    m.deviceToken = value
 }
 // SetHashFunction sets the hashFunction property value. The hashFunction property
 func (m *StrongAuthenticationPhoneAppDetail) SetHashFunction(value *string)() {
-    if m != nil {
-        m.hashFunction = value
-    }
+    m.hashFunction = value
 }
 // SetLastAuthenticatedDateTime sets the lastAuthenticatedDateTime property value. The lastAuthenticatedDateTime property
 func (m *StrongAuthenticationPhoneAppDetail) SetLastAuthenticatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastAuthenticatedDateTime = value
-    }
+    m.lastAuthenticatedDateTime = value
 }
 // SetNotificationType sets the notificationType property value. The notificationType property
 func (m *StrongAuthenticationPhoneAppDetail) SetNotificationType(value *string)() {
-    if m != nil {
-        m.notificationType = value
-    }
+    m.notificationType = value
 }
 // SetOathSecretKey sets the oathSecretKey property value. The oathSecretKey property
 func (m *StrongAuthenticationPhoneAppDetail) SetOathSecretKey(value *string)() {
-    if m != nil {
-        m.oathSecretKey = value
-    }
+    m.oathSecretKey = value
 }
 // SetOathTokenMetadata sets the oathTokenMetadata property value. The oathTokenMetadata property
 func (m *StrongAuthenticationPhoneAppDetail) SetOathTokenMetadata(value OathTokenMetadataable)() {
-    if m != nil {
-        m.oathTokenMetadata = value
-    }
+    m.oathTokenMetadata = value
 }
 // SetOathTokenTimeDriftInSeconds sets the oathTokenTimeDriftInSeconds property value. The oathTokenTimeDriftInSeconds property
 func (m *StrongAuthenticationPhoneAppDetail) SetOathTokenTimeDriftInSeconds(value *int32)() {
-    if m != nil {
-        m.oathTokenTimeDriftInSeconds = value
-    }
+    m.oathTokenTimeDriftInSeconds = value
 }
 // SetPhoneAppVersion sets the phoneAppVersion property value. The phoneAppVersion property
 func (m *StrongAuthenticationPhoneAppDetail) SetPhoneAppVersion(value *string)() {
-    if m != nil {
-        m.phoneAppVersion = value
-    }
+    m.phoneAppVersion = value
 }
 // SetTenantDeviceId sets the tenantDeviceId property value. The tenantDeviceId property
 func (m *StrongAuthenticationPhoneAppDetail) SetTenantDeviceId(value *string)() {
-    if m != nil {
-        m.tenantDeviceId = value
-    }
+    m.tenantDeviceId = value
 }
 // SetTokenGenerationIntervalInSeconds sets the tokenGenerationIntervalInSeconds property value. The tokenGenerationIntervalInSeconds property
 func (m *StrongAuthenticationPhoneAppDetail) SetTokenGenerationIntervalInSeconds(value *int32)() {
-    if m != nil {
-        m.tokenGenerationIntervalInSeconds = value
-    }
+    m.tokenGenerationIntervalInSeconds = value
 }

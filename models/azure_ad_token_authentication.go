@@ -40,11 +40,7 @@ func (m *AzureAdTokenAuthentication) GetFieldDeserializers()(map[string]func(i87
 }
 // GetResourceId gets the resourceId property value. The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
 func (m *AzureAdTokenAuthentication) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
+    return m.resourceId
 }
 // Serialize serializes information the current object
 func (m *AzureAdTokenAuthentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AzureAdTokenAuthentication) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetResourceId sets the resourceId property value. The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
 func (m *AzureAdTokenAuthentication) SetResourceId(value *string)() {
-    if m != nil {
-        m.resourceId = value
-    }
+    m.resourceId = value
 }

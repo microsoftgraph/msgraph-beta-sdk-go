@@ -27,11 +27,7 @@ func CreateMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue(parseNod
 }
 // GetDisabledForGroup gets the disabledForGroup property value. The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.
 func (m *MicrosoftApplicationDataAccessSettings) GetDisabledForGroup()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.disabledForGroup
-    }
+    return m.disabledForGroup
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[str
 }
 // GetIsEnabledForAllMicrosoftApplications gets the isEnabledForAllMicrosoftApplications property value. When set to true, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is true.  It is possible to disable this access for a subset of users in an Azure AD security group, by specifying the group in the disabledForGroup property.  When set to false, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.
 func (m *MicrosoftApplicationDataAccessSettings) GetIsEnabledForAllMicrosoftApplications()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabledForAllMicrosoftApplications
-    }
+    return m.isEnabledForAllMicrosoftApplications
 }
 // Serialize serializes information the current object
 func (m *MicrosoftApplicationDataAccessSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *MicrosoftApplicationDataAccessSettings) Serialize(writer i878a80d2330e8
 }
 // SetDisabledForGroup sets the disabledForGroup property value. The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.
 func (m *MicrosoftApplicationDataAccessSettings) SetDisabledForGroup(value *string)() {
-    if m != nil {
-        m.disabledForGroup = value
-    }
+    m.disabledForGroup = value
 }
 // SetIsEnabledForAllMicrosoftApplications sets the isEnabledForAllMicrosoftApplications property value. When set to true, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is true.  It is possible to disable this access for a subset of users in an Azure AD security group, by specifying the group in the disabledForGroup property.  When set to false, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.
 func (m *MicrosoftApplicationDataAccessSettings) SetIsEnabledForAllMicrosoftApplications(value *bool)() {
-    if m != nil {
-        m.isEnabledForAllMicrosoftApplications = value
-    }
+    m.isEnabledForAllMicrosoftApplications = value
 }

@@ -32,19 +32,11 @@ func CreateTeamworkLoginStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkLoginStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExchangeConnection gets the exchangeConnection property value. Information about the Exchange connection.
 func (m *TeamworkLoginStatus) GetExchangeConnection()(TeamworkConnectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exchangeConnection
-    }
+    return m.exchangeConnection
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkLoginStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSkypeConnection gets the skypeConnection property value. Information about the Skype for Business connection.
 func (m *TeamworkLoginStatus) GetSkypeConnection()(TeamworkConnectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skypeConnection
-    }
+    return m.skypeConnection
 }
 // GetTeamsConnection gets the teamsConnection property value. Information about the Teams connection.
 func (m *TeamworkLoginStatus) GetTeamsConnection()(TeamworkConnectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsConnection
-    }
+    return m.teamsConnection
 }
 // Serialize serializes information the current object
 func (m *TeamworkLoginStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *TeamworkLoginStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkLoginStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExchangeConnection sets the exchangeConnection property value. Information about the Exchange connection.
 func (m *TeamworkLoginStatus) SetExchangeConnection(value TeamworkConnectionable)() {
-    if m != nil {
-        m.exchangeConnection = value
-    }
+    m.exchangeConnection = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkLoginStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSkypeConnection sets the skypeConnection property value. Information about the Skype for Business connection.
 func (m *TeamworkLoginStatus) SetSkypeConnection(value TeamworkConnectionable)() {
-    if m != nil {
-        m.skypeConnection = value
-    }
+    m.skypeConnection = value
 }
 // SetTeamsConnection sets the teamsConnection property value. Information about the Teams connection.
 func (m *TeamworkLoginStatus) SetTeamsConnection(value TeamworkConnectionable)() {
-    if m != nil {
-        m.teamsConnection = value
-    }
+    m.teamsConnection = value
 }

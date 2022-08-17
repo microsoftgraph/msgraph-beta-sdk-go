@@ -29,19 +29,11 @@ func CreateDeviceCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetDescription gets the description property value. Optional description for the device category.
 func (m *DeviceCategory) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Display name for the device category.
 func (m *DeviceCategory) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. Optional role scope tags for the device category.
 func (m *DeviceCategory) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // Serialize serializes information the current object
 func (m *DeviceCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,19 +106,13 @@ func (m *DeviceCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetDescription sets the description property value. Optional description for the device category.
 func (m *DeviceCategory) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Display name for the device category.
 func (m *DeviceCategory) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. Optional role scope tags for the device category.
 func (m *DeviceCategory) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }

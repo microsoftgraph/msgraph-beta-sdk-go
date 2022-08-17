@@ -60,19 +60,11 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automations created to run on a tenant.
 func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulationAutomations
-    }
+    return m.simulationAutomations
 }
 // GetSimulations gets the simulations property value. Represents an attack simulation training campaign in a tenant.
 func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulations
-    }
+    return m.simulations
 }
 // Serialize serializes information the current object
 func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automations created to run on a tenant.
 func (m *AttackSimulationRoot) SetSimulationAutomations(value []SimulationAutomationable)() {
-    if m != nil {
-        m.simulationAutomations = value
-    }
+    m.simulationAutomations = value
 }
 // SetSimulations sets the simulations property value. Represents an attack simulation training campaign in a tenant.
 func (m *AttackSimulationRoot) SetSimulations(value []Simulationable)() {
-    if m != nil {
-        m.simulations = value
-    }
+    m.simulations = value
 }

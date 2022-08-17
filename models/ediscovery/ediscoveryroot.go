@@ -26,11 +26,7 @@ func CreateEdiscoveryrootFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetCases gets the cases property value. The cases property
 func (m *Ediscoveryroot) GetCases()([]Case_escapedable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cases
-    }
+    return m.cases
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Ediscoveryroot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,7 +67,5 @@ func (m *Ediscoveryroot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetCases sets the cases property value. The cases property
 func (m *Ediscoveryroot) SetCases(value []Case_escapedable)() {
-    if m != nil {
-        m.cases = value
-    }
+    m.cases = value
 }

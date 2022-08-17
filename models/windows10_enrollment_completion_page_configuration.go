@@ -45,59 +45,31 @@ func CreateWindows10EnrollmentCompletionPageConfigurationFromDiscriminatorValue(
 }
 // GetAllowDeviceResetOnInstallFailure gets the allowDeviceResetOnInstallFailure property value. Allow or block device reset on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceResetOnInstallFailure()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDeviceResetOnInstallFailure
-    }
+    return m.allowDeviceResetOnInstallFailure
 }
 // GetAllowDeviceUseOnInstallFailure gets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceUseOnInstallFailure()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDeviceUseOnInstallFailure
-    }
+    return m.allowDeviceUseOnInstallFailure
 }
 // GetAllowLogCollectionOnInstallFailure gets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowLogCollectionOnInstallFailure()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowLogCollectionOnInstallFailure
-    }
+    return m.allowLogCollectionOnInstallFailure
 }
 // GetAllowNonBlockingAppInstallation gets the allowNonBlockingAppInstallation property value. Install all required apps as non blocking apps during white glove
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowNonBlockingAppInstallation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowNonBlockingAppInstallation
-    }
+    return m.allowNonBlockingAppInstallation
 }
 // GetBlockDeviceSetupRetryByUser gets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetBlockDeviceSetupRetryByUser()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockDeviceSetupRetryByUser
-    }
+    return m.blockDeviceSetupRetryByUser
 }
 // GetCustomErrorMessage gets the customErrorMessage property value. Set custom error message to show upon installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetCustomErrorMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customErrorMessage
-    }
+    return m.customErrorMessage
 }
 // GetDisableUserStatusTrackingAfterFirstUser gets the disableUserStatusTrackingAfterFirstUser property value. Only show installation progress for first user post enrollment
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetDisableUserStatusTrackingAfterFirstUser()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.disableUserStatusTrackingAfterFirstUser
-    }
+    return m.disableUserStatusTrackingAfterFirstUser
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -220,35 +192,19 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()
 }
 // GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallProgressTimeoutInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installProgressTimeoutInMinutes
-    }
+    return m.installProgressTimeoutInMinutes
 }
 // GetSelectedMobileAppIds gets the selectedMobileAppIds property value. Selected applications to track the installation status
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetSelectedMobileAppIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selectedMobileAppIds
-    }
+    return m.selectedMobileAppIds
 }
 // GetShowInstallationProgress gets the showInstallationProgress property value. Show or hide installation progress to user
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetShowInstallationProgress()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showInstallationProgress
-    }
+    return m.showInstallationProgress
 }
 // GetTrackInstallProgressForAutopilotOnly gets the trackInstallProgressForAutopilotOnly property value. Only show installation progress for Autopilot enrollment scenarios
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetTrackInstallProgressForAutopilotOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trackInstallProgressForAutopilotOnly
-    }
+    return m.trackInstallProgressForAutopilotOnly
 }
 // Serialize serializes information the current object
 func (m *Windows10EnrollmentCompletionPageConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -326,67 +282,45 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) Serialize(writer i878a8
 }
 // SetAllowDeviceResetOnInstallFailure sets the allowDeviceResetOnInstallFailure property value. Allow or block device reset on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowDeviceResetOnInstallFailure(value *bool)() {
-    if m != nil {
-        m.allowDeviceResetOnInstallFailure = value
-    }
+    m.allowDeviceResetOnInstallFailure = value
 }
 // SetAllowDeviceUseOnInstallFailure sets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowDeviceUseOnInstallFailure(value *bool)() {
-    if m != nil {
-        m.allowDeviceUseOnInstallFailure = value
-    }
+    m.allowDeviceUseOnInstallFailure = value
 }
 // SetAllowLogCollectionOnInstallFailure sets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowLogCollectionOnInstallFailure(value *bool)() {
-    if m != nil {
-        m.allowLogCollectionOnInstallFailure = value
-    }
+    m.allowLogCollectionOnInstallFailure = value
 }
 // SetAllowNonBlockingAppInstallation sets the allowNonBlockingAppInstallation property value. Install all required apps as non blocking apps during white glove
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowNonBlockingAppInstallation(value *bool)() {
-    if m != nil {
-        m.allowNonBlockingAppInstallation = value
-    }
+    m.allowNonBlockingAppInstallation = value
 }
 // SetBlockDeviceSetupRetryByUser sets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetBlockDeviceSetupRetryByUser(value *bool)() {
-    if m != nil {
-        m.blockDeviceSetupRetryByUser = value
-    }
+    m.blockDeviceSetupRetryByUser = value
 }
 // SetCustomErrorMessage sets the customErrorMessage property value. Set custom error message to show upon installation failure
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetCustomErrorMessage(value *string)() {
-    if m != nil {
-        m.customErrorMessage = value
-    }
+    m.customErrorMessage = value
 }
 // SetDisableUserStatusTrackingAfterFirstUser sets the disableUserStatusTrackingAfterFirstUser property value. Only show installation progress for first user post enrollment
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetDisableUserStatusTrackingAfterFirstUser(value *bool)() {
-    if m != nil {
-        m.disableUserStatusTrackingAfterFirstUser = value
-    }
+    m.disableUserStatusTrackingAfterFirstUser = value
 }
 // SetInstallProgressTimeoutInMinutes sets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetInstallProgressTimeoutInMinutes(value *int32)() {
-    if m != nil {
-        m.installProgressTimeoutInMinutes = value
-    }
+    m.installProgressTimeoutInMinutes = value
 }
 // SetSelectedMobileAppIds sets the selectedMobileAppIds property value. Selected applications to track the installation status
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetSelectedMobileAppIds(value []string)() {
-    if m != nil {
-        m.selectedMobileAppIds = value
-    }
+    m.selectedMobileAppIds = value
 }
 // SetShowInstallationProgress sets the showInstallationProgress property value. Show or hide installation progress to user
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetShowInstallationProgress(value *bool)() {
-    if m != nil {
-        m.showInstallationProgress = value
-    }
+    m.showInstallationProgress = value
 }
 // SetTrackInstallProgressForAutopilotOnly sets the trackInstallProgressForAutopilotOnly property value. Only show installation progress for Autopilot enrollment scenarios
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetTrackInstallProgressForAutopilotOnly(value *bool)() {
-    if m != nil {
-        m.trackInstallProgressForAutopilotOnly = value
-    }
+    m.trackInstallProgressForAutopilotOnly = value
 }

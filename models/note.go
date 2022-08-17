@@ -39,27 +39,15 @@ func CreateNoteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAttachments gets the attachments property value. The attachments property
 func (m *Note) GetAttachments()([]Attachmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachments
-    }
+    return m.attachments
 }
 // GetBody gets the body property value. The body property
 func (m *Note) GetBody()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.body
-    }
+    return m.body
 }
 // GetExtensions gets the extensions property value. The extensions property
 func (m *Note) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,43 +152,23 @@ func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetHasAttachments gets the hasAttachments property value. The hasAttachments property
 func (m *Note) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
+    return m.hasAttachments
 }
 // GetIsDeleted gets the isDeleted property value. The isDeleted property
 func (m *Note) GetIsDeleted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeleted
-    }
+    return m.isDeleted
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
 func (m *Note) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
+    return m.multiValueExtendedProperties
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
 func (m *Note) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
+    return m.singleValueExtendedProperties
 }
 // GetSubject gets the subject property value. The subject property
 func (m *Note) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // Serialize serializes information the current object
 func (m *Note) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -276,49 +244,33 @@ func (m *Note) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAttachments sets the attachments property value. The attachments property
 func (m *Note) SetAttachments(value []Attachmentable)() {
-    if m != nil {
-        m.attachments = value
-    }
+    m.attachments = value
 }
 // SetBody sets the body property value. The body property
 func (m *Note) SetBody(value ItemBodyable)() {
-    if m != nil {
-        m.body = value
-    }
+    m.body = value
 }
 // SetExtensions sets the extensions property value. The extensions property
 func (m *Note) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetHasAttachments sets the hasAttachments property value. The hasAttachments property
 func (m *Note) SetHasAttachments(value *bool)() {
-    if m != nil {
-        m.hasAttachments = value
-    }
+    m.hasAttachments = value
 }
 // SetIsDeleted sets the isDeleted property value. The isDeleted property
 func (m *Note) SetIsDeleted(value *bool)() {
-    if m != nil {
-        m.isDeleted = value
-    }
+    m.isDeleted = value
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
 func (m *Note) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.multiValueExtendedProperties = value
-    }
+    m.multiValueExtendedProperties = value
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
 func (m *Note) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.singleValueExtendedProperties = value
-    }
+    m.singleValueExtendedProperties = value
 }
 // SetSubject sets the subject property value. The subject property
 func (m *Note) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }

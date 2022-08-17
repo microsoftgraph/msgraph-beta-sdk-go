@@ -30,11 +30,7 @@ func CreateSiteSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SiteSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *SiteSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetLanguageTag gets the languageTag property value. The language tag for the language used on this site.
 func (m *SiteSettings) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
+    return m.languageTag
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SiteSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTimeZone gets the timeZone property value. Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
 func (m *SiteSettings) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
+    return m.timeZone
 }
 // Serialize serializes information the current object
 func (m *SiteSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *SiteSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLanguageTag sets the languageTag property value. The language tag for the language used on this site.
 func (m *SiteSettings) SetLanguageTag(value *string)() {
-    if m != nil {
-        m.languageTag = value
-    }
+    m.languageTag = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SiteSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTimeZone sets the timeZone property value. Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
 func (m *SiteSettings) SetTimeZone(value *string)() {
-    if m != nil {
-        m.timeZone = value
-    }
+    m.timeZone = value
 }

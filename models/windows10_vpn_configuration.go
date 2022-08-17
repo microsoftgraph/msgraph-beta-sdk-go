@@ -73,107 +73,55 @@ func CreateWindows10VpnConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAssociatedApps gets the associatedApps property value. Associated Apps. This collection can contain a maximum of 10000 elements.
 func (m *Windows10VpnConfiguration) GetAssociatedApps()([]Windows10AssociatedAppsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.associatedApps
-    }
+    return m.associatedApps
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Windows 10 VPN connection types.
 func (m *Windows10VpnConfiguration) GetAuthenticationMethod()(*Windows10VpnAuthenticationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethod
-    }
+    return m.authenticationMethod
 }
 // GetConnectionType gets the connectionType property value. VPN connection types.
 func (m *Windows10VpnConfiguration) GetConnectionType()(*Windows10VpnConnectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionType
-    }
+    return m.connectionType
 }
 // GetCryptographySuite gets the cryptographySuite property value. Cryptography Suite security settings for IKEv2 VPN in Windows10 and above
 func (m *Windows10VpnConfiguration) GetCryptographySuite()(CryptographySuiteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cryptographySuite
-    }
+    return m.cryptographySuite
 }
 // GetDnsRules gets the dnsRules property value. DNS rules. This collection can contain a maximum of 1000 elements.
 func (m *Windows10VpnConfiguration) GetDnsRules()([]VpnDnsRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dnsRules
-    }
+    return m.dnsRules
 }
 // GetDnsSuffixes gets the dnsSuffixes property value. Specify DNS suffixes to add to the DNS search list to properly route short names.
 func (m *Windows10VpnConfiguration) GetDnsSuffixes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dnsSuffixes
-    }
+    return m.dnsSuffixes
 }
 // GetEapXml gets the eapXml property value. Extensible Authentication Protocol (EAP) XML. (UTF8 encoded byte array)
 func (m *Windows10VpnConfiguration) GetEapXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eapXml
-    }
+    return m.eapXml
 }
 // GetEnableAlwaysOn gets the enableAlwaysOn property value. Enable Always On mode.
 func (m *Windows10VpnConfiguration) GetEnableAlwaysOn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableAlwaysOn
-    }
+    return m.enableAlwaysOn
 }
 // GetEnableConditionalAccess gets the enableConditionalAccess property value. Enable conditional access.
 func (m *Windows10VpnConfiguration) GetEnableConditionalAccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableConditionalAccess
-    }
+    return m.enableConditionalAccess
 }
 // GetEnableDeviceTunnel gets the enableDeviceTunnel property value. Enable device tunnel.
 func (m *Windows10VpnConfiguration) GetEnableDeviceTunnel()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableDeviceTunnel
-    }
+    return m.enableDeviceTunnel
 }
 // GetEnableDnsRegistration gets the enableDnsRegistration property value. Enable IP address registration with internal DNS.
 func (m *Windows10VpnConfiguration) GetEnableDnsRegistration()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableDnsRegistration
-    }
+    return m.enableDnsRegistration
 }
 // GetEnableSingleSignOnWithAlternateCertificate gets the enableSingleSignOnWithAlternateCertificate property value. Enable single sign-on (SSO) with alternate certificate.
 func (m *Windows10VpnConfiguration) GetEnableSingleSignOnWithAlternateCertificate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableSingleSignOnWithAlternateCertificate
-    }
+    return m.enableSingleSignOnWithAlternateCertificate
 }
 // GetEnableSplitTunneling gets the enableSplitTunneling property value. Enable split tunneling.
 func (m *Windows10VpnConfiguration) GetEnableSplitTunneling()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableSplitTunneling
-    }
+    return m.enableSplitTunneling
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -456,99 +404,51 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *Windows10VpnConfiguration) GetIdentityCertificate()(WindowsCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificate
-    }
+    return m.identityCertificate
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. ID of the Microsoft Tunnel site associated with the VPN profile.
 func (m *Windows10VpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftTunnelSiteId
-    }
+    return m.microsoftTunnelSiteId
 }
 // GetOnlyAssociatedAppsCanUseConnection gets the onlyAssociatedAppsCanUseConnection property value. Only associated Apps can use connection (per-app VPN).
 func (m *Windows10VpnConfiguration) GetOnlyAssociatedAppsCanUseConnection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlyAssociatedAppsCanUseConnection
-    }
+    return m.onlyAssociatedAppsCanUseConnection
 }
 // GetProfileTarget gets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
 func (m *Windows10VpnConfiguration) GetProfileTarget()(*Windows10VpnProfileTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileTarget
-    }
+    return m.profileTarget
 }
 // GetProxyServer gets the proxyServer property value. Proxy Server.
 func (m *Windows10VpnConfiguration) GetProxyServer()(Windows10VpnProxyServerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyServer
-    }
+    return m.proxyServer
 }
 // GetRememberUserCredentials gets the rememberUserCredentials property value. Remember user credentials.
 func (m *Windows10VpnConfiguration) GetRememberUserCredentials()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rememberUserCredentials
-    }
+    return m.rememberUserCredentials
 }
 // GetRoutes gets the routes property value. Routes (optional for third-party providers). This collection can contain a maximum of 1000 elements.
 func (m *Windows10VpnConfiguration) GetRoutes()([]VpnRouteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routes
-    }
+    return m.routes
 }
 // GetSingleSignOnEku gets the singleSignOnEku property value. Single sign-on Extended Key Usage (EKU).
 func (m *Windows10VpnConfiguration) GetSingleSignOnEku()(ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleSignOnEku
-    }
+    return m.singleSignOnEku
 }
 // GetSingleSignOnIssuerHash gets the singleSignOnIssuerHash property value. Single sign-on issuer hash.
 func (m *Windows10VpnConfiguration) GetSingleSignOnIssuerHash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleSignOnIssuerHash
-    }
+    return m.singleSignOnIssuerHash
 }
 // GetTrafficRules gets the trafficRules property value. Traffic rules. This collection can contain a maximum of 1000 elements.
 func (m *Windows10VpnConfiguration) GetTrafficRules()([]VpnTrafficRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trafficRules
-    }
+    return m.trafficRules
 }
 // GetTrustedNetworkDomains gets the trustedNetworkDomains property value. Trusted Network Domains
 func (m *Windows10VpnConfiguration) GetTrustedNetworkDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustedNetworkDomains
-    }
+    return m.trustedNetworkDomains
 }
 // GetWindowsInformationProtectionDomain gets the windowsInformationProtectionDomain property value. Windows Information Protection (WIP) domain to associate with this connection.
 func (m *Windows10VpnConfiguration) GetWindowsInformationProtectionDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsInformationProtectionDomain
-    }
+    return m.windowsInformationProtectionDomain
 }
 // Serialize serializes information the current object
 func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -729,151 +629,101 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAssociatedApps sets the associatedApps property value. Associated Apps. This collection can contain a maximum of 10000 elements.
 func (m *Windows10VpnConfiguration) SetAssociatedApps(value []Windows10AssociatedAppsable)() {
-    if m != nil {
-        m.associatedApps = value
-    }
+    m.associatedApps = value
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Windows 10 VPN connection types.
 func (m *Windows10VpnConfiguration) SetAuthenticationMethod(value *Windows10VpnAuthenticationMethod)() {
-    if m != nil {
-        m.authenticationMethod = value
-    }
+    m.authenticationMethod = value
 }
 // SetConnectionType sets the connectionType property value. VPN connection types.
 func (m *Windows10VpnConfiguration) SetConnectionType(value *Windows10VpnConnectionType)() {
-    if m != nil {
-        m.connectionType = value
-    }
+    m.connectionType = value
 }
 // SetCryptographySuite sets the cryptographySuite property value. Cryptography Suite security settings for IKEv2 VPN in Windows10 and above
 func (m *Windows10VpnConfiguration) SetCryptographySuite(value CryptographySuiteable)() {
-    if m != nil {
-        m.cryptographySuite = value
-    }
+    m.cryptographySuite = value
 }
 // SetDnsRules sets the dnsRules property value. DNS rules. This collection can contain a maximum of 1000 elements.
 func (m *Windows10VpnConfiguration) SetDnsRules(value []VpnDnsRuleable)() {
-    if m != nil {
-        m.dnsRules = value
-    }
+    m.dnsRules = value
 }
 // SetDnsSuffixes sets the dnsSuffixes property value. Specify DNS suffixes to add to the DNS search list to properly route short names.
 func (m *Windows10VpnConfiguration) SetDnsSuffixes(value []string)() {
-    if m != nil {
-        m.dnsSuffixes = value
-    }
+    m.dnsSuffixes = value
 }
 // SetEapXml sets the eapXml property value. Extensible Authentication Protocol (EAP) XML. (UTF8 encoded byte array)
 func (m *Windows10VpnConfiguration) SetEapXml(value []byte)() {
-    if m != nil {
-        m.eapXml = value
-    }
+    m.eapXml = value
 }
 // SetEnableAlwaysOn sets the enableAlwaysOn property value. Enable Always On mode.
 func (m *Windows10VpnConfiguration) SetEnableAlwaysOn(value *bool)() {
-    if m != nil {
-        m.enableAlwaysOn = value
-    }
+    m.enableAlwaysOn = value
 }
 // SetEnableConditionalAccess sets the enableConditionalAccess property value. Enable conditional access.
 func (m *Windows10VpnConfiguration) SetEnableConditionalAccess(value *bool)() {
-    if m != nil {
-        m.enableConditionalAccess = value
-    }
+    m.enableConditionalAccess = value
 }
 // SetEnableDeviceTunnel sets the enableDeviceTunnel property value. Enable device tunnel.
 func (m *Windows10VpnConfiguration) SetEnableDeviceTunnel(value *bool)() {
-    if m != nil {
-        m.enableDeviceTunnel = value
-    }
+    m.enableDeviceTunnel = value
 }
 // SetEnableDnsRegistration sets the enableDnsRegistration property value. Enable IP address registration with internal DNS.
 func (m *Windows10VpnConfiguration) SetEnableDnsRegistration(value *bool)() {
-    if m != nil {
-        m.enableDnsRegistration = value
-    }
+    m.enableDnsRegistration = value
 }
 // SetEnableSingleSignOnWithAlternateCertificate sets the enableSingleSignOnWithAlternateCertificate property value. Enable single sign-on (SSO) with alternate certificate.
 func (m *Windows10VpnConfiguration) SetEnableSingleSignOnWithAlternateCertificate(value *bool)() {
-    if m != nil {
-        m.enableSingleSignOnWithAlternateCertificate = value
-    }
+    m.enableSingleSignOnWithAlternateCertificate = value
 }
 // SetEnableSplitTunneling sets the enableSplitTunneling property value. Enable split tunneling.
 func (m *Windows10VpnConfiguration) SetEnableSplitTunneling(value *bool)() {
-    if m != nil {
-        m.enableSplitTunneling = value
-    }
+    m.enableSplitTunneling = value
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *Windows10VpnConfiguration) SetIdentityCertificate(value WindowsCertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificate = value
-    }
+    m.identityCertificate = value
 }
 // SetMicrosoftTunnelSiteId sets the microsoftTunnelSiteId property value. ID of the Microsoft Tunnel site associated with the VPN profile.
 func (m *Windows10VpnConfiguration) SetMicrosoftTunnelSiteId(value *string)() {
-    if m != nil {
-        m.microsoftTunnelSiteId = value
-    }
+    m.microsoftTunnelSiteId = value
 }
 // SetOnlyAssociatedAppsCanUseConnection sets the onlyAssociatedAppsCanUseConnection property value. Only associated Apps can use connection (per-app VPN).
 func (m *Windows10VpnConfiguration) SetOnlyAssociatedAppsCanUseConnection(value *bool)() {
-    if m != nil {
-        m.onlyAssociatedAppsCanUseConnection = value
-    }
+    m.onlyAssociatedAppsCanUseConnection = value
 }
 // SetProfileTarget sets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
 func (m *Windows10VpnConfiguration) SetProfileTarget(value *Windows10VpnProfileTarget)() {
-    if m != nil {
-        m.profileTarget = value
-    }
+    m.profileTarget = value
 }
 // SetProxyServer sets the proxyServer property value. Proxy Server.
 func (m *Windows10VpnConfiguration) SetProxyServer(value Windows10VpnProxyServerable)() {
-    if m != nil {
-        m.proxyServer = value
-    }
+    m.proxyServer = value
 }
 // SetRememberUserCredentials sets the rememberUserCredentials property value. Remember user credentials.
 func (m *Windows10VpnConfiguration) SetRememberUserCredentials(value *bool)() {
-    if m != nil {
-        m.rememberUserCredentials = value
-    }
+    m.rememberUserCredentials = value
 }
 // SetRoutes sets the routes property value. Routes (optional for third-party providers). This collection can contain a maximum of 1000 elements.
 func (m *Windows10VpnConfiguration) SetRoutes(value []VpnRouteable)() {
-    if m != nil {
-        m.routes = value
-    }
+    m.routes = value
 }
 // SetSingleSignOnEku sets the singleSignOnEku property value. Single sign-on Extended Key Usage (EKU).
 func (m *Windows10VpnConfiguration) SetSingleSignOnEku(value ExtendedKeyUsageable)() {
-    if m != nil {
-        m.singleSignOnEku = value
-    }
+    m.singleSignOnEku = value
 }
 // SetSingleSignOnIssuerHash sets the singleSignOnIssuerHash property value. Single sign-on issuer hash.
 func (m *Windows10VpnConfiguration) SetSingleSignOnIssuerHash(value *string)() {
-    if m != nil {
-        m.singleSignOnIssuerHash = value
-    }
+    m.singleSignOnIssuerHash = value
 }
 // SetTrafficRules sets the trafficRules property value. Traffic rules. This collection can contain a maximum of 1000 elements.
 func (m *Windows10VpnConfiguration) SetTrafficRules(value []VpnTrafficRuleable)() {
-    if m != nil {
-        m.trafficRules = value
-    }
+    m.trafficRules = value
 }
 // SetTrustedNetworkDomains sets the trustedNetworkDomains property value. Trusted Network Domains
 func (m *Windows10VpnConfiguration) SetTrustedNetworkDomains(value []string)() {
-    if m != nil {
-        m.trustedNetworkDomains = value
-    }
+    m.trustedNetworkDomains = value
 }
 // SetWindowsInformationProtectionDomain sets the windowsInformationProtectionDomain property value. Windows Information Protection (WIP) domain to associate with this connection.
 func (m *Windows10VpnConfiguration) SetWindowsInformationProtectionDomain(value *string)() {
-    if m != nil {
-        m.windowsInformationProtectionDomain = value
-    }
+    m.windowsInformationProtectionDomain = value
 }

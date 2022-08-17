@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalGroup provides operations to manage the collection of accessReview entities.
+// ExternalGroup provides operations to manage the collection of activityStatistics entities.
 type ExternalGroup struct {
     Entity
     // The description property
@@ -27,19 +27,11 @@ func CreateExternalGroupFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetDescription gets the description property value. The description property
 func (m *ExternalGroup) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *ExternalGroup) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *ExternalGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetDescription sets the description property value. The description property
 func (m *ExternalGroup) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ExternalGroup) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }

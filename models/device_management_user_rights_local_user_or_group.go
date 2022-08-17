@@ -32,19 +32,11 @@ func CreateDeviceManagementUserRightsLocalUserOrGroupFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementUserRightsLocalUserOrGroup) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDescription gets the description property value. Admin’s description of this local user or group.
 func (m *DeviceManagementUserRightsLocalUserOrGroup) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementUserRightsLocalUserOrGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *DeviceManagementUserRightsLocalUserOrGroup) GetFieldDeserializers()(map
 }
 // GetName gets the name property value. The name of this local user or group.
 func (m *DeviceManagementUserRightsLocalUserOrGroup) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementUserRightsLocalUserOrGroup) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSecurityIdentifier gets the securityIdentifier property value. The security identifier of this local user or group (e.g. S-1-5-32-544).
 func (m *DeviceManagementUserRightsLocalUserOrGroup) GetSecurityIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityIdentifier
-    }
+    return m.securityIdentifier
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementUserRightsLocalUserOrGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *DeviceManagementUserRightsLocalUserOrGroup) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementUserRightsLocalUserOrGroup) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDescription sets the description property value. Admin’s description of this local user or group.
 func (m *DeviceManagementUserRightsLocalUserOrGroup) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetName sets the name property value. The name of this local user or group.
 func (m *DeviceManagementUserRightsLocalUserOrGroup) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementUserRightsLocalUserOrGroup) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSecurityIdentifier sets the securityIdentifier property value. The security identifier of this local user or group (e.g. S-1-5-32-544).
 func (m *DeviceManagementUserRightsLocalUserOrGroup) SetSecurityIdentifier(value *string)() {
-    if m != nil {
-        m.securityIdentifier = value
-    }
+    m.securityIdentifier = value
 }

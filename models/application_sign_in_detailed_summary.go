@@ -34,27 +34,15 @@ func CreateApplicationSignInDetailedSummaryFromDiscriminatorValue(parseNode i878
 }
 // GetAggregatedEventDateTime gets the aggregatedEventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ApplicationSignInDetailedSummary) GetAggregatedEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aggregatedEventDateTime
-    }
+    return m.aggregatedEventDateTime
 }
 // GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) GetAppDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appDisplayName
-    }
+    return m.appDisplayName
 }
 // GetAppId gets the appId property value. ID of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +101,11 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
 }
 // GetSignInCount gets the signInCount property value. Count of sign-ins made by the application.
 func (m *ApplicationSignInDetailedSummary) GetSignInCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInCount
-    }
+    return m.signInCount
 }
 // GetStatus gets the status property value. Details of the sign-in status.
 func (m *ApplicationSignInDetailedSummary) GetStatus()(SignInStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ApplicationSignInDetailedSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *ApplicationSignInDetailedSummary) Serialize(writer i878a80d2330e89d2689
 }
 // SetAggregatedEventDateTime sets the aggregatedEventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ApplicationSignInDetailedSummary) SetAggregatedEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.aggregatedEventDateTime = value
-    }
+    m.aggregatedEventDateTime = value
 }
 // SetAppDisplayName sets the appDisplayName property value. Name of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) SetAppDisplayName(value *string)() {
-    if m != nil {
-        m.appDisplayName = value
-    }
+    m.appDisplayName = value
 }
 // SetAppId sets the appId property value. ID of the application that the user signed in to.
 func (m *ApplicationSignInDetailedSummary) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetSignInCount sets the signInCount property value. Count of sign-ins made by the application.
 func (m *ApplicationSignInDetailedSummary) SetSignInCount(value *int64)() {
-    if m != nil {
-        m.signInCount = value
-    }
+    m.signInCount = value
 }
 // SetStatus sets the status property value. Details of the sign-in status.
 func (m *ApplicationSignInDetailedSummary) SetStatus(value SignInStatusable)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

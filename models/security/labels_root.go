@@ -45,11 +45,7 @@ func (m *LabelsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetRetentionLabels gets the retentionLabels property value. The retentionLabels property
 func (m *LabelsRoot) GetRetentionLabels()([]RetentionLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retentionLabels
-    }
+    return m.retentionLabels
 }
 // Serialize serializes information the current object
 func (m *LabelsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,7 +67,5 @@ func (m *LabelsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetRetentionLabels sets the retentionLabels property value. The retentionLabels property
 func (m *LabelsRoot) SetRetentionLabels(value []RetentionLabelable)() {
-    if m != nil {
-        m.retentionLabels = value
-    }
+    m.retentionLabels = value
 }

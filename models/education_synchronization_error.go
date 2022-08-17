@@ -36,27 +36,15 @@ func CreateEducationSynchronizationErrorFromDiscriminatorValue(parseNode i878a80
 }
 // GetEntryType gets the entryType property value. Represents the sync entity (school, section, student, teacher).
 func (m *EducationSynchronizationError) GetEntryType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.entryType
-    }
+    return m.entryType
 }
 // GetErrorCode gets the errorCode property value. Represents the error code for this error.
 func (m *EducationSynchronizationError) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetErrorMessage gets the errorMessage property value. Contains a description of the error.
 func (m *EducationSynchronizationError) GetErrorMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorMessage
-    }
+    return m.errorMessage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,27 +113,15 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
 }
 // GetJoiningValue gets the joiningValue property value. The unique identifier for the entry.
 func (m *EducationSynchronizationError) GetJoiningValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joiningValue
-    }
+    return m.joiningValue
 }
 // GetRecordedDateTime gets the recordedDateTime property value. The time of occurrence of this error.
 func (m *EducationSynchronizationError) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordedDateTime
-    }
+    return m.recordedDateTime
 }
 // GetReportableIdentifier gets the reportableIdentifier property value. The identifier of this error entry.
 func (m *EducationSynchronizationError) GetReportableIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportableIdentifier
-    }
+    return m.reportableIdentifier
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *EducationSynchronizationError) Serialize(writer i878a80d2330e89d2689638
 }
 // SetEntryType sets the entryType property value. Represents the sync entity (school, section, student, teacher).
 func (m *EducationSynchronizationError) SetEntryType(value *string)() {
-    if m != nil {
-        m.entryType = value
-    }
+    m.entryType = value
 }
 // SetErrorCode sets the errorCode property value. Represents the error code for this error.
 func (m *EducationSynchronizationError) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetErrorMessage sets the errorMessage property value. Contains a description of the error.
 func (m *EducationSynchronizationError) SetErrorMessage(value *string)() {
-    if m != nil {
-        m.errorMessage = value
-    }
+    m.errorMessage = value
 }
 // SetJoiningValue sets the joiningValue property value. The unique identifier for the entry.
 func (m *EducationSynchronizationError) SetJoiningValue(value *string)() {
-    if m != nil {
-        m.joiningValue = value
-    }
+    m.joiningValue = value
 }
 // SetRecordedDateTime sets the recordedDateTime property value. The time of occurrence of this error.
 func (m *EducationSynchronizationError) SetRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.recordedDateTime = value
-    }
+    m.recordedDateTime = value
 }
 // SetReportableIdentifier sets the reportableIdentifier property value. The identifier of this error entry.
 func (m *EducationSynchronizationError) SetReportableIdentifier(value *string)() {
-    if m != nil {
-        m.reportableIdentifier = value
-    }
+    m.reportableIdentifier = value
 }

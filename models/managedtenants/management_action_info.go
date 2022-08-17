@@ -32,11 +32,7 @@ func CreateManagementActionInfoFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionInfo) GetManagementActionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementActionId
-    }
+    return m.managementActionId
 }
 // GetManagementTemplateId gets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
 func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateId
-    }
+    return m.managementTemplateId
 }
 // GetManagementTemplateVersion gets the managementTemplateVersion property value. The managementTemplateVersion property
 func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateVersion
-    }
+    return m.managementTemplateVersion
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagementActionInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ManagementActionInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ManagementActionInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetManagementActionId sets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionInfo) SetManagementActionId(value *string)() {
-    if m != nil {
-        m.managementActionId = value
-    }
+    m.managementActionId = value
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
 func (m *ManagementActionInfo) SetManagementTemplateId(value *string)() {
-    if m != nil {
-        m.managementTemplateId = value
-    }
+    m.managementTemplateId = value
 }
 // SetManagementTemplateVersion sets the managementTemplateVersion property value. The managementTemplateVersion property
 func (m *ManagementActionInfo) SetManagementTemplateVersion(value *int32)() {
-    if m != nil {
-        m.managementTemplateVersion = value
-    }
+    m.managementTemplateVersion = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagementActionInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

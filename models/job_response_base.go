@@ -61,27 +61,15 @@ func CreateJobResponseBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
 func (m *JobResponseBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creationDateTime
-    }
+    return m.creationDateTime
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
 func (m *JobResponseBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetError gets the error property value. The error property
 func (m *JobResponseBase) GetError()(ClassificationErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -160,35 +148,19 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *JobResponseBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *JobResponseBase) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *JobResponseBase) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetType gets the type property value. The type property
 func (m *JobResponseBase) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *JobResponseBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -242,43 +214,29 @@ func (m *JobResponseBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetCreationDateTime sets the creationDateTime property value. The creationDateTime property
 func (m *JobResponseBase) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.creationDateTime = value
-    }
+    m.creationDateTime = value
 }
 // SetEndDateTime sets the endDateTime property value. The endDateTime property
 func (m *JobResponseBase) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetError sets the error property value. The error property
 func (m *JobResponseBase) SetError(value ClassificationErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *JobResponseBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *JobResponseBase) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *JobResponseBase) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetType sets the type property value. The type property
 func (m *JobResponseBase) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

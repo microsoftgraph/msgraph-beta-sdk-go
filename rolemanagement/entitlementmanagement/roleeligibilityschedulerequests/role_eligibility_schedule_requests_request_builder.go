@@ -17,7 +17,7 @@ type RoleEligibilityScheduleRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters requests for role eligibilities for principals through PIM.
+// RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters get roleEligibilityScheduleRequests from roleManagement
 type RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewRoleEligibilityScheduleRequestsRequestBuilder(rawUrl string, requestAdap
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) Count()(*i3af7aad4fd10cebaa65286d7ca739f079b7d2f537ca96c5801a1f5f7ae420c58.CountRequestBuilder) {
     return i3af7aad4fd10cebaa65286d7ca739f079b7d2f537ca96c5801a1f5f7ae420c58.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation requests for role eligibilities for principals through PIM.
+// CreateGetRequestInformation get roleEligibilityScheduleRequests from roleManagement
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration requests for role eligibilities for principals through PIM.
+// CreateGetRequestInformationWithRequestConfiguration get roleEligibilityScheduleRequests from roleManagement
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,11 +117,11 @@ func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreatePostRequestInforma
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i2df1f2ec6bcaebd8a160ad4ee70f5f93b4e72d59bdb438558429949401790abc.FilterByCurrentUserWithOnRequestBuilder) {
     return i2df1f2ec6bcaebd8a160ad4ee70f5f93b4e72d59bdb438558429949401790abc.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get requests for role eligibilities for principals through PIM.
+// Get get roleEligibilityScheduleRequests from roleManagement
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler requests for role eligibilities for principals through PIM.
+// GetWithRequestConfigurationAndResponseHandler get roleEligibilityScheduleRequests from roleManagement
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

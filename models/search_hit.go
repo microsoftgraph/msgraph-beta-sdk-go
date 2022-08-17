@@ -46,51 +46,27 @@ func CreateSearchHitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // Get_id gets the _id property value. The _id property
 func (m *SearchHit) Get_id()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m._id
-    }
+    return m._id
 }
 // Get_score gets the _score property value. The _score property
 func (m *SearchHit) Get_score()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m._score
-    }
+    return m._score
 }
 // Get_source gets the _source property value. The _source property
 func (m *SearchHit) Get_source()(Entityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m._source
-    }
+    return m._source
 }
 // Get_summary gets the _summary property value. The _summary property
 func (m *SearchHit) Get_summary()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m._summary
-    }
+    return m._summary
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHit) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentSource gets the contentSource property value. The name of the content source which the externalItem is part of .
 func (m *SearchHit) GetContentSource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentSource
-    }
+    return m.contentSource
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -209,51 +185,27 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetHitId gets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
 func (m *SearchHit) GetHitId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hitId
-    }
+    return m.hitId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchHit) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRank gets the rank property value. The rank or the order of the result.
 func (m *SearchHit) GetRank()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rank
-    }
+    return m.rank
 }
 // GetResource gets the resource property value. The resource property
 func (m *SearchHit) GetResource()(Entityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
+    return m.resource
 }
 // GetResultTemplateId gets the resultTemplateId property value. ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
 func (m *SearchHit) GetResultTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultTemplateId
-    }
+    return m.resultTemplateId
 }
 // GetSummary gets the summary property value. A summary of the result, if a summary is available.
 func (m *SearchHit) GetSummary()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.summary
-    }
+    return m.summary
 }
 // Serialize serializes information the current object
 func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -333,73 +285,49 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // Set_id sets the _id property value. The _id property
 func (m *SearchHit) Set_id(value *string)() {
-    if m != nil {
-        m._id = value
-    }
+    m._id = value
 }
 // Set_score sets the _score property value. The _score property
 func (m *SearchHit) Set_score(value *int32)() {
-    if m != nil {
-        m._score = value
-    }
+    m._score = value
 }
 // Set_source sets the _source property value. The _source property
 func (m *SearchHit) Set_source(value Entityable)() {
-    if m != nil {
-        m._source = value
-    }
+    m._source = value
 }
 // Set_summary sets the _summary property value. The _summary property
 func (m *SearchHit) Set_summary(value *string)() {
-    if m != nil {
-        m._summary = value
-    }
+    m._summary = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHit) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentSource sets the contentSource property value. The name of the content source which the externalItem is part of .
 func (m *SearchHit) SetContentSource(value *string)() {
-    if m != nil {
-        m.contentSource = value
-    }
+    m.contentSource = value
 }
 // SetHitId sets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
 func (m *SearchHit) SetHitId(value *string)() {
-    if m != nil {
-        m.hitId = value
-    }
+    m.hitId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchHit) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRank sets the rank property value. The rank or the order of the result.
 func (m *SearchHit) SetRank(value *int32)() {
-    if m != nil {
-        m.rank = value
-    }
+    m.rank = value
 }
 // SetResource sets the resource property value. The resource property
 func (m *SearchHit) SetResource(value Entityable)() {
-    if m != nil {
-        m.resource = value
-    }
+    m.resource = value
 }
 // SetResultTemplateId sets the resultTemplateId property value. ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
 func (m *SearchHit) SetResultTemplateId(value *string)() {
-    if m != nil {
-        m.resultTemplateId = value
-    }
+    m.resultTemplateId = value
 }
 // SetSummary sets the summary property value. A summary of the result, if a summary is available.
 func (m *SearchHit) SetSummary(value *string)() {
-    if m != nil {
-        m.summary = value
-    }
+    m.summary = value
 }

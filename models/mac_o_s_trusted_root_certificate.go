@@ -27,11 +27,7 @@ func CreateMacOSTrustedRootCertificateFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
 func (m *MacOSTrustedRootCertificate) GetCertFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certFileName
-    }
+    return m.certFileName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *MacOSTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i8
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate.
 func (m *MacOSTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustedRootCertificate
-    }
+    return m.trustedRootCertificate
 }
 // Serialize serializes information the current object
 func (m *MacOSTrustedRootCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *MacOSTrustedRootCertificate) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetCertFileName sets the certFileName property value. File name to display in UI.
 func (m *MacOSTrustedRootCertificate) SetCertFileName(value *string)() {
-    if m != nil {
-        m.certFileName = value
-    }
+    m.certFileName = value
 }
 // SetTrustedRootCertificate sets the trustedRootCertificate property value. Trusted Root Certificate.
 func (m *MacOSTrustedRootCertificate) SetTrustedRootCertificate(value []byte)() {
-    if m != nil {
-        m.trustedRootCertificate = value
-    }
+    m.trustedRootCertificate = value
 }

@@ -36,11 +36,7 @@ func CreateTeamworkHardwareDetailFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkHardwareDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,51 +109,27 @@ func (m *TeamworkHardwareDetail) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetMacAddresses gets the macAddresses property value. MAC address.
 func (m *TeamworkHardwareDetail) GetMacAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macAddresses
-    }
+    return m.macAddresses
 }
 // GetManufacturer gets the manufacturer property value. Device manufacturer.
 func (m *TeamworkHardwareDetail) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. Devie model.
 func (m *TeamworkHardwareDetail) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSerialNumber gets the serialNumber property value. Device serial number.
 func (m *TeamworkHardwareDetail) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
+    return m.serialNumber
 }
 // GetUniqueId gets the uniqueId property value. The unique identifier for the device.
 func (m *TeamworkHardwareDetail) GetUniqueId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueId
-    }
+    return m.uniqueId
 }
 // Serialize serializes information the current object
 func (m *TeamworkHardwareDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -207,43 +179,29 @@ func (m *TeamworkHardwareDetail) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMacAddresses sets the macAddresses property value. MAC address.
 func (m *TeamworkHardwareDetail) SetMacAddresses(value []string)() {
-    if m != nil {
-        m.macAddresses = value
-    }
+    m.macAddresses = value
 }
 // SetManufacturer sets the manufacturer property value. Device manufacturer.
 func (m *TeamworkHardwareDetail) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. Devie model.
 func (m *TeamworkHardwareDetail) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSerialNumber sets the serialNumber property value. Device serial number.
 func (m *TeamworkHardwareDetail) SetSerialNumber(value *string)() {
-    if m != nil {
-        m.serialNumber = value
-    }
+    m.serialNumber = value
 }
 // SetUniqueId sets the uniqueId property value. The unique identifier for the device.
 func (m *TeamworkHardwareDetail) SetUniqueId(value *string)() {
-    if m != nil {
-        m.uniqueId = value
-    }
+    m.uniqueId = value
 }

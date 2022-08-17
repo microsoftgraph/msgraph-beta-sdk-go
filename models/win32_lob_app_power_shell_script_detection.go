@@ -29,11 +29,7 @@ func CreateWin32LobAppPowerShellScriptDetectionFromDiscriminatorValue(parseNode 
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. A value indicating whether signature check is enforced
 func (m *Win32LobAppPowerShellScriptDetection) GetEnforceSignatureCheck()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforceSignatureCheck
-    }
+    return m.enforceSignatureCheck
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppPowerShellScriptDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *Win32LobAppPowerShellScriptDetection) GetFieldDeserializers()(map[strin
 }
 // GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptDetection) GetRunAs32Bit()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAs32Bit
-    }
+    return m.runAs32Bit
 }
 // GetScriptContent gets the scriptContent property value. The base64 encoded script content to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppPowerShellScriptDetection) GetScriptContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptContent
-    }
+    return m.scriptContent
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppPowerShellScriptDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *Win32LobAppPowerShellScriptDetection) Serialize(writer i878a80d2330e89d
 }
 // SetEnforceSignatureCheck sets the enforceSignatureCheck property value. A value indicating whether signature check is enforced
 func (m *Win32LobAppPowerShellScriptDetection) SetEnforceSignatureCheck(value *bool)() {
-    if m != nil {
-        m.enforceSignatureCheck = value
-    }
+    m.enforceSignatureCheck = value
 }
 // SetRunAs32Bit sets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptDetection) SetRunAs32Bit(value *bool)() {
-    if m != nil {
-        m.runAs32Bit = value
-    }
+    m.runAs32Bit = value
 }
 // SetScriptContent sets the scriptContent property value. The base64 encoded script content to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppPowerShellScriptDetection) SetScriptContent(value *string)() {
-    if m != nil {
-        m.scriptContent = value
-    }
+    m.scriptContent = value
 }

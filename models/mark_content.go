@@ -87,27 +87,15 @@ func (m *MarkContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetFontColor gets the fontColor property value. The fontColor property
 func (m *MarkContent) GetFontColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fontColor
-    }
+    return m.fontColor
 }
 // GetFontSize gets the fontSize property value. The fontSize property
 func (m *MarkContent) GetFontSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fontSize
-    }
+    return m.fontSize
 }
 // GetText gets the text property value. The text property
 func (m *MarkContent) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *MarkContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -137,19 +125,13 @@ func (m *MarkContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetFontColor sets the fontColor property value. The fontColor property
 func (m *MarkContent) SetFontColor(value *string)() {
-    if m != nil {
-        m.fontColor = value
-    }
+    m.fontColor = value
 }
 // SetFontSize sets the fontSize property value. The fontSize property
 func (m *MarkContent) SetFontSize(value *int64)() {
-    if m != nil {
-        m.fontSize = value
-    }
+    m.fontSize = value
 }
 // SetText sets the text property value. The text property
 func (m *MarkContent) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

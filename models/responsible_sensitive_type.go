@@ -38,19 +38,11 @@ func CreateResponsibleSensitiveTypeFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResponsibleSensitiveType) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDescription gets the description property value. The description property
 func (m *ResponsibleSensitiveType) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ResponsibleSensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,51 +121,27 @@ func (m *ResponsibleSensitiveType) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetId gets the id property value. The id property
 func (m *ResponsibleSensitiveType) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetName gets the name property value. The name property
 func (m *ResponsibleSensitiveType) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ResponsibleSensitiveType) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPublisherName gets the publisherName property value. The publisherName property
 func (m *ResponsibleSensitiveType) GetPublisherName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisherName
-    }
+    return m.publisherName
 }
 // GetRulePackageId gets the rulePackageId property value. The rulePackageId property
 func (m *ResponsibleSensitiveType) GetRulePackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rulePackageId
-    }
+    return m.rulePackageId
 }
 // GetRulePackageType gets the rulePackageType property value. The rulePackageType property
 func (m *ResponsibleSensitiveType) GetRulePackageType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rulePackageType
-    }
+    return m.rulePackageType
 }
 // Serialize serializes information the current object
 func (m *ResponsibleSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *ResponsibleSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResponsibleSensitiveType) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDescription sets the description property value. The description property
 func (m *ResponsibleSensitiveType) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetId sets the id property value. The id property
 func (m *ResponsibleSensitiveType) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetName sets the name property value. The name property
 func (m *ResponsibleSensitiveType) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ResponsibleSensitiveType) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPublisherName sets the publisherName property value. The publisherName property
 func (m *ResponsibleSensitiveType) SetPublisherName(value *string)() {
-    if m != nil {
-        m.publisherName = value
-    }
+    m.publisherName = value
 }
 // SetRulePackageId sets the rulePackageId property value. The rulePackageId property
 func (m *ResponsibleSensitiveType) SetRulePackageId(value *string)() {
-    if m != nil {
-        m.rulePackageId = value
-    }
+    m.rulePackageId = value
 }
 // SetRulePackageType sets the rulePackageType property value. The rulePackageType property
 func (m *ResponsibleSensitiveType) SetRulePackageType(value *string)() {
-    if m != nil {
-        m.rulePackageType = value
-    }
+    m.rulePackageType = value
 }

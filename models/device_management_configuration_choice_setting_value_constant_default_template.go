@@ -27,11 +27,7 @@ func CreateDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplat
 }
 // GetChildren gets the children property value. Option Children
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetChildren()([]DeviceManagementConfigurationSettingInstanceTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.children
-    }
+    return m.children
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
 }
 // GetSettingDefinitionOptionId gets the settingDefinitionOptionId property value. Default Constant Value
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetSettingDefinitionOptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDefinitionOptionId
-    }
+    return m.settingDefinitionOptionId
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
 }
 // SetChildren sets the children property value. Option Children
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) SetChildren(value []DeviceManagementConfigurationSettingInstanceTemplateable)() {
-    if m != nil {
-        m.children = value
-    }
+    m.children = value
 }
 // SetSettingDefinitionOptionId sets the settingDefinitionOptionId property value. Default Constant Value
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) SetSettingDefinitionOptionId(value *string)() {
-    if m != nil {
-        m.settingDefinitionOptionId = value
-    }
+    m.settingDefinitionOptionId = value
 }

@@ -22,7 +22,7 @@ type PrintOperationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrintOperationItemRequestBuilderGetQueryParameters the list of print long running operations.
+// PrintOperationItemRequestBuilderGetQueryParameters get operations from print
 type PrintOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *PrintOperationItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the list of print long running operations.
+// CreateGetRequestInformation get operations from print
 func (m *PrintOperationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of print long running operations.
+// CreateGetRequestInformationWithRequestConfiguration get operations from print
 func (m *PrintOperationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrintOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *PrintOperationItemRequestBuilder) DeleteWithRequestConfigurationAndResp
     }
     return nil
 }
-// Get the list of print long running operations.
+// Get get operations from print
 func (m *PrintOperationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the list of print long running operations.
+// GetWithRequestConfigurationAndResponseHandler get operations from print
 func (m *PrintOperationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrintOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

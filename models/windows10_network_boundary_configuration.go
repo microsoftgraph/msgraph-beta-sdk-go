@@ -40,11 +40,7 @@ func (m *Windows10NetworkBoundaryConfiguration) GetFieldDeserializers()(map[stri
 }
 // GetWindowsNetworkIsolationPolicy gets the windowsNetworkIsolationPolicy property value. Windows Network Isolation Policy
 func (m *Windows10NetworkBoundaryConfiguration) GetWindowsNetworkIsolationPolicy()(WindowsNetworkIsolationPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsNetworkIsolationPolicy
-    }
+    return m.windowsNetworkIsolationPolicy
 }
 // Serialize serializes information the current object
 func (m *Windows10NetworkBoundaryConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *Windows10NetworkBoundaryConfiguration) Serialize(writer i878a80d2330e89
 }
 // SetWindowsNetworkIsolationPolicy sets the windowsNetworkIsolationPolicy property value. Windows Network Isolation Policy
 func (m *Windows10NetworkBoundaryConfiguration) SetWindowsNetworkIsolationPolicy(value WindowsNetworkIsolationPolicyable)() {
-    if m != nil {
-        m.windowsNetworkIsolationPolicy = value
-    }
+    m.windowsNetworkIsolationPolicy = value
 }

@@ -34,35 +34,19 @@ func CreateTenantInformationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDefaultDomainName gets the defaultDomainName property value. Primary domain name of an Azure AD tenant.
 func (m *TenantInformation) GetDefaultDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultDomainName
-    }
+    return m.defaultDomainName
 }
 // GetDisplayName gets the displayName property value. Display name of an Azure AD tenant.
 func (m *TenantInformation) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFederationBrandName gets the federationBrandName property value. Name shown to users that sign in to an Azure AD tenant.
 func (m *TenantInformation) GetFederationBrandName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.federationBrandName
-    }
+    return m.federationBrandName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,19 +105,11 @@ func (m *TenantInformation) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TenantInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTenantId gets the tenantId property value. Unique identifier of an Azure AD tenant.
 func (m *TenantInformation) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *TenantInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *TenantInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDefaultDomainName sets the defaultDomainName property value. Primary domain name of an Azure AD tenant.
 func (m *TenantInformation) SetDefaultDomainName(value *string)() {
-    if m != nil {
-        m.defaultDomainName = value
-    }
+    m.defaultDomainName = value
 }
 // SetDisplayName sets the displayName property value. Display name of an Azure AD tenant.
 func (m *TenantInformation) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFederationBrandName sets the federationBrandName property value. Name shown to users that sign in to an Azure AD tenant.
 func (m *TenantInformation) SetFederationBrandName(value *string)() {
-    if m != nil {
-        m.federationBrandName = value
-    }
+    m.federationBrandName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TenantInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTenantId sets the tenantId property value. Unique identifier of an Azure AD tenant.
 func (m *TenantInformation) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

@@ -31,11 +31,7 @@ func CreateAndroidDeviceOwnerImportedPFXCertificateProfileFromDiscriminatorValue
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateAccessType
-    }
+    return m.certificateAccessType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,27 +88,15 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetFieldDeserializers(
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intendedPurpose
-    }
+    return m.intendedPurpose
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.silentCertificateAccessDetails
-    }
+    return m.silentCertificateAccessDetails
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -158,25 +142,17 @@ func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) Serialize(writer i878a
 }
 // SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
-    if m != nil {
-        m.certificateAccessType = value
-    }
+    m.certificateAccessType = value
 }
 // SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
-    if m != nil {
-        m.intendedPurpose = value
-    }
+    m.intendedPurpose = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetSilentCertificateAccessDetails sets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerImportedPFXCertificateProfile) SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)() {
-    if m != nil {
-        m.silentCertificateAccessDetails = value
-    }
+    m.silentCertificateAccessDetails = value
 }

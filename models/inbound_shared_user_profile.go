@@ -34,19 +34,11 @@ func CreateInboundSharedUserProfileFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InboundSharedUserProfile) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *InboundSharedUserProfile) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *InboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetHomeTenantId gets the homeTenantId property value. The homeTenantId property
 func (m *InboundSharedUserProfile) GetHomeTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeTenantId
-    }
+    return m.homeTenantId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *InboundSharedUserProfile) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserId gets the userId property value. The userId property
 func (m *InboundSharedUserProfile) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *InboundSharedUserProfile) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *InboundSharedUserProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *InboundSharedUserProfile) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InboundSharedUserProfile) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *InboundSharedUserProfile) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHomeTenantId sets the homeTenantId property value. The homeTenantId property
 func (m *InboundSharedUserProfile) SetHomeTenantId(value *string)() {
-    if m != nil {
-        m.homeTenantId = value
-    }
+    m.homeTenantId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *InboundSharedUserProfile) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserId sets the userId property value. The userId property
 func (m *InboundSharedUserProfile) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *InboundSharedUserProfile) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

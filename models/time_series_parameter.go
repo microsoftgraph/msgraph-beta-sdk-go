@@ -33,19 +33,11 @@ func CreateTimeSeriesParameterFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeSeriesParameter) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEndDateTime gets the endDateTime property value. End time of the series being requested. Optional; if not specified, current time is used.
 func (m *TimeSeriesParameter) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeSeriesParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,27 +86,15 @@ func (m *TimeSeriesParameter) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetMetricName gets the metricName property value. The name of the metric for which a time series is requested.
 func (m *TimeSeriesParameter) GetMetricName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricName
-    }
+    return m.metricName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TimeSeriesParameter) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartDateTime gets the startDateTime property value. Start time of the series being requested.
 func (m *TimeSeriesParameter) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *TimeSeriesParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *TimeSeriesParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeSeriesParameter) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEndDateTime sets the endDateTime property value. End time of the series being requested. Optional; if not specified, current time is used.
 func (m *TimeSeriesParameter) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetMetricName sets the metricName property value. The name of the metric for which a time series is requested.
 func (m *TimeSeriesParameter) SetMetricName(value *string)() {
-    if m != nil {
-        m.metricName = value
-    }
+    m.metricName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TimeSeriesParameter) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartDateTime sets the startDateTime property value. Start time of the series being requested.
 func (m *TimeSeriesParameter) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

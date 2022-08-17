@@ -35,11 +35,7 @@ func CreatePropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,43 +98,23 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PropertyRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperation gets the operation property value. The operation property
 func (m *PropertyRule) GetOperation()(*RuleOperation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operation
-    }
+    return m.operation
 }
 // GetProperty gets the property property value. The property from the externalItem schema. Required.
 func (m *PropertyRule) GetProperty()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.property
-    }
+    return m.property
 }
 // GetValues gets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
 func (m *PropertyRule) GetValues()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // GetValuesJoinedBy gets the valuesJoinedBy property value. The valuesJoinedBy property
 func (m *PropertyRule) GetValuesJoinedBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valuesJoinedBy
-    }
+    return m.valuesJoinedBy
 }
 // Serialize serializes information the current object
 func (m *PropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -184,37 +160,25 @@ func (m *PropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PropertyRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperation sets the operation property value. The operation property
 func (m *PropertyRule) SetOperation(value *RuleOperation)() {
-    if m != nil {
-        m.operation = value
-    }
+    m.operation = value
 }
 // SetProperty sets the property property value. The property from the externalItem schema. Required.
 func (m *PropertyRule) SetProperty(value *string)() {
-    if m != nil {
-        m.property = value
-    }
+    m.property = value
 }
 // SetValues sets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
 func (m *PropertyRule) SetValues(value []string)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }
 // SetValuesJoinedBy sets the valuesJoinedBy property value. The valuesJoinedBy property
 func (m *PropertyRule) SetValuesJoinedBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator)() {
-    if m != nil {
-        m.valuesJoinedBy = value
-    }
+    m.valuesJoinedBy = value
 }

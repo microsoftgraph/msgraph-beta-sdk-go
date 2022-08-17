@@ -27,19 +27,11 @@ func CreateEntitlementManagementSettingsFromDiscriminatorValue(parseNode i878a80
 }
 // GetDaysUntilExternalUserDeletedAfterBlocked gets the daysUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
 func (m *EntitlementManagementSettings) GetDaysUntilExternalUserDeletedAfterBlocked()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.daysUntilExternalUserDeletedAfterBlocked
-    }
+    return m.daysUntilExternalUserDeletedAfterBlocked
 }
 // GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalUserLifecycleAction
-    }
+    return m.externalUserLifecycleAction
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *EntitlementManagementSettings) Serialize(writer i878a80d2330e89d2689638
 }
 // SetDaysUntilExternalUserDeletedAfterBlocked sets the daysUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
 func (m *EntitlementManagementSettings) SetDaysUntilExternalUserDeletedAfterBlocked(value *int32)() {
-    if m != nil {
-        m.daysUntilExternalUserDeletedAfterBlocked = value
-    }
+    m.daysUntilExternalUserDeletedAfterBlocked = value
 }
 // SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *string)() {
-    if m != nil {
-        m.externalUserLifecycleAction = value
-    }
+    m.externalUserLifecycleAction = value
 }

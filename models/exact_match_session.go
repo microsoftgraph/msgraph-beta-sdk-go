@@ -39,19 +39,11 @@ func CreateExactMatchSessionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetChecksum gets the checksum property value. The checksum property
 func (m *ExactMatchSession) GetChecksum()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.checksum
-    }
+    return m.checksum
 }
 // GetDataUploadURI gets the dataUploadURI property value. The dataUploadURI property
 func (m *ExactMatchSession) GetDataUploadURI()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataUploadURI
-    }
+    return m.dataUploadURI
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -144,51 +136,27 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFields gets the fields property value. The fields property
 func (m *ExactMatchSession) GetFields()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fields
-    }
+    return m.fields
 }
 // GetFileName gets the fileName property value. The fileName property
 func (m *ExactMatchSession) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetRowsPerBlock gets the rowsPerBlock property value. The rowsPerBlock property
 func (m *ExactMatchSession) GetRowsPerBlock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rowsPerBlock
-    }
+    return m.rowsPerBlock
 }
 // GetSalt gets the salt property value. The salt property
 func (m *ExactMatchSession) GetSalt()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salt
-    }
+    return m.salt
 }
 // GetUploadAgent gets the uploadAgent property value. The uploadAgent property
 func (m *ExactMatchSession) GetUploadAgent()(ExactMatchUploadAgentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadAgent
-    }
+    return m.uploadAgent
 }
 // GetUploadAgentId gets the uploadAgentId property value. The uploadAgentId property
 func (m *ExactMatchSession) GetUploadAgentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadAgentId
-    }
+    return m.uploadAgentId
 }
 // Serialize serializes information the current object
 func (m *ExactMatchSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -248,49 +216,33 @@ func (m *ExactMatchSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetChecksum sets the checksum property value. The checksum property
 func (m *ExactMatchSession) SetChecksum(value *string)() {
-    if m != nil {
-        m.checksum = value
-    }
+    m.checksum = value
 }
 // SetDataUploadURI sets the dataUploadURI property value. The dataUploadURI property
 func (m *ExactMatchSession) SetDataUploadURI(value *string)() {
-    if m != nil {
-        m.dataUploadURI = value
-    }
+    m.dataUploadURI = value
 }
 // SetFields sets the fields property value. The fields property
 func (m *ExactMatchSession) SetFields(value []string)() {
-    if m != nil {
-        m.fields = value
-    }
+    m.fields = value
 }
 // SetFileName sets the fileName property value. The fileName property
 func (m *ExactMatchSession) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetRowsPerBlock sets the rowsPerBlock property value. The rowsPerBlock property
 func (m *ExactMatchSession) SetRowsPerBlock(value *int32)() {
-    if m != nil {
-        m.rowsPerBlock = value
-    }
+    m.rowsPerBlock = value
 }
 // SetSalt sets the salt property value. The salt property
 func (m *ExactMatchSession) SetSalt(value *string)() {
-    if m != nil {
-        m.salt = value
-    }
+    m.salt = value
 }
 // SetUploadAgent sets the uploadAgent property value. The uploadAgent property
 func (m *ExactMatchSession) SetUploadAgent(value ExactMatchUploadAgentable)() {
-    if m != nil {
-        m.uploadAgent = value
-    }
+    m.uploadAgent = value
 }
 // SetUploadAgentId sets the uploadAgentId property value. The uploadAgentId property
 func (m *ExactMatchSession) SetUploadAgentId(value *string)() {
-    if m != nil {
-        m.uploadAgentId = value
-    }
+    m.uploadAgentId = value
 }

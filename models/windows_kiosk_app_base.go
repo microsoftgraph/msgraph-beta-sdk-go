@@ -57,27 +57,15 @@ func CreateWindowsKioskAppBaseFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskAppBase) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppType gets the appType property value. The type of Windows kiosk app.
 func (m *WindowsKioskAppBase) GetAppType()(*WindowsKioskAppType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appType
-    }
+    return m.appType
 }
 // GetAutoLaunch gets the autoLaunch property value. Allow the app to be auto-launched in multi-app kiosk mode
 func (m *WindowsKioskAppBase) GetAutoLaunch()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoLaunch
-    }
+    return m.autoLaunch
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskAppBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,27 +124,15 @@ func (m *WindowsKioskAppBase) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetName gets the name property value. Represents the friendly name of an app
 func (m *WindowsKioskAppBase) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsKioskAppBase) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartLayoutTileSize gets the startLayoutTileSize property value. The tile size of Windows app in the start layout.
 func (m *WindowsKioskAppBase) GetStartLayoutTileSize()(*WindowsAppStartLayoutTileSize) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startLayoutTileSize
-    }
+    return m.startLayoutTileSize
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskAppBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -202,37 +178,25 @@ func (m *WindowsKioskAppBase) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskAppBase) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppType sets the appType property value. The type of Windows kiosk app.
 func (m *WindowsKioskAppBase) SetAppType(value *WindowsKioskAppType)() {
-    if m != nil {
-        m.appType = value
-    }
+    m.appType = value
 }
 // SetAutoLaunch sets the autoLaunch property value. Allow the app to be auto-launched in multi-app kiosk mode
 func (m *WindowsKioskAppBase) SetAutoLaunch(value *bool)() {
-    if m != nil {
-        m.autoLaunch = value
-    }
+    m.autoLaunch = value
 }
 // SetName sets the name property value. Represents the friendly name of an app
 func (m *WindowsKioskAppBase) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsKioskAppBase) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartLayoutTileSize sets the startLayoutTileSize property value. The tile size of Windows app in the start layout.
 func (m *WindowsKioskAppBase) SetStartLayoutTileSize(value *WindowsAppStartLayoutTileSize)() {
-    if m != nil {
-        m.startLayoutTileSize = value
-    }
+    m.startLayoutTileSize = value
 }

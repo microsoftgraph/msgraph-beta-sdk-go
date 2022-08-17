@@ -35,19 +35,11 @@ func CreateEducationSynchronizationCustomizationFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationSynchronizationCustomization) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowDisplayNameUpdate gets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.
 func (m *EducationSynchronizationCustomization) GetAllowDisplayNameUpdate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDisplayNameUpdate
-    }
+    return m.allowDisplayNameUpdate
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSynchronizationCustomization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,35 +102,19 @@ func (m *EducationSynchronizationCustomization) GetFieldDeserializers()(map[stri
 }
 // GetIsSyncDeferred gets the isSyncDeferred property value. Indicates whether synchronization of the parent entity is deferred to a later date.
 func (m *EducationSynchronizationCustomization) GetIsSyncDeferred()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSyncDeferred
-    }
+    return m.isSyncDeferred
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationSynchronizationCustomization) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOptionalPropertiesToSync gets the optionalPropertiesToSync property value. The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
 func (m *EducationSynchronizationCustomization) GetOptionalPropertiesToSync()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.optionalPropertiesToSync
-    }
+    return m.optionalPropertiesToSync
 }
 // GetSynchronizationStartDate gets the synchronizationStartDate property value. The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
 func (m *EducationSynchronizationCustomization) GetSynchronizationStartDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.synchronizationStartDate
-    }
+    return m.synchronizationStartDate
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationCustomization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -182,37 +158,25 @@ func (m *EducationSynchronizationCustomization) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationSynchronizationCustomization) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowDisplayNameUpdate sets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.
 func (m *EducationSynchronizationCustomization) SetAllowDisplayNameUpdate(value *bool)() {
-    if m != nil {
-        m.allowDisplayNameUpdate = value
-    }
+    m.allowDisplayNameUpdate = value
 }
 // SetIsSyncDeferred sets the isSyncDeferred property value. Indicates whether synchronization of the parent entity is deferred to a later date.
 func (m *EducationSynchronizationCustomization) SetIsSyncDeferred(value *bool)() {
-    if m != nil {
-        m.isSyncDeferred = value
-    }
+    m.isSyncDeferred = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationSynchronizationCustomization) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOptionalPropertiesToSync sets the optionalPropertiesToSync property value. The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
 func (m *EducationSynchronizationCustomization) SetOptionalPropertiesToSync(value []string)() {
-    if m != nil {
-        m.optionalPropertiesToSync = value
-    }
+    m.optionalPropertiesToSync = value
 }
 // SetSynchronizationStartDate sets the synchronizationStartDate property value. The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
 func (m *EducationSynchronizationCustomization) SetSynchronizationStartDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.synchronizationStartDate = value
-    }
+    m.synchronizationStartDate = value
 }

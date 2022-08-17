@@ -40,11 +40,7 @@ func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) GetFieldDes
 }
 // GetSimpleSettingValueTemplate gets the simpleSettingValueTemplate property value. Simple Setting Value Template
 func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) GetSimpleSettingValueTemplate()(DeviceManagementConfigurationSimpleSettingValueTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simpleSettingValueTemplate
-    }
+    return m.simpleSettingValueTemplate
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) Serialize(w
 }
 // SetSimpleSettingValueTemplate sets the simpleSettingValueTemplate property value. Simple Setting Value Template
 func (m *DeviceManagementConfigurationSimpleSettingInstanceTemplate) SetSimpleSettingValueTemplate(value DeviceManagementConfigurationSimpleSettingValueTemplateable)() {
-    if m != nil {
-        m.simpleSettingValueTemplate = value
-    }
+    m.simpleSettingValueTemplate = value
 }

@@ -32,27 +32,15 @@ func CreateAppLogCollectionRequestFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCompletedDateTime gets the completedDateTime property value. Time at which the upload log request reached a terminal state
 func (m *AppLogCollectionRequest) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetCustomLogFolders gets the customLogFolders property value. List of log folders.
 func (m *AppLogCollectionRequest) GetCustomLogFolders()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customLogFolders
-    }
+    return m.customLogFolders
 }
 // GetErrorMessage gets the errorMessage property value. Error message if any during the upload process
 func (m *AppLogCollectionRequest) GetErrorMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorMessage
-    }
+    return m.errorMessage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,11 +93,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetStatus gets the status property value. AppLogUploadStatus
 func (m *AppLogCollectionRequest) GetStatus()(*AppLogUploadState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *AppLogCollectionRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -146,25 +130,17 @@ func (m *AppLogCollectionRequest) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetCompletedDateTime sets the completedDateTime property value. Time at which the upload log request reached a terminal state
 func (m *AppLogCollectionRequest) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetCustomLogFolders sets the customLogFolders property value. List of log folders.
 func (m *AppLogCollectionRequest) SetCustomLogFolders(value []string)() {
-    if m != nil {
-        m.customLogFolders = value
-    }
+    m.customLogFolders = value
 }
 // SetErrorMessage sets the errorMessage property value. Error message if any during the upload process
 func (m *AppLogCollectionRequest) SetErrorMessage(value *string)() {
-    if m != nil {
-        m.errorMessage = value
-    }
+    m.errorMessage = value
 }
 // SetStatus sets the status property value. AppLogUploadStatus
 func (m *AppLogCollectionRequest) SetStatus(value *AppLogUploadState)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

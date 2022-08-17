@@ -16,7 +16,7 @@ type HistoryItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// HistoryItemsRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// HistoryItemsRequestBuilderGetQueryParameters get historyItems from me
 type HistoryItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewHistoryItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *HistoryItemsRequestBuilder) Count()(*i94c9f1c8cfec8503fb2d1b9aa90c221c0a14b89abfd72d1a8dfdc01a733b3829.CountRequestBuilder) {
     return i94c9f1c8cfec8503fb2d1b9aa90c221c0a14b89abfd72d1a8dfdc01a733b3829.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// CreateGetRequestInformation get historyItems from me
 func (m *HistoryItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// CreateGetRequestInformationWithRequestConfiguration get historyItems from me
 func (m *HistoryItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *HistoryItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *HistoryItemsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// Get get historyItems from me
 func (m *HistoryItemsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// GetWithRequestConfigurationAndResponseHandler get historyItems from me
 func (m *HistoryItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *HistoryItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

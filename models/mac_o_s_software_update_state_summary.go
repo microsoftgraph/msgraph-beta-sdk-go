@@ -36,11 +36,7 @@ func CreateMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue(parseNode i878a
 }
 // GetDisplayName gets the displayName property value. Human readable name of the software update
 func (m *MacOSSoftwareUpdateStateSummary) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,43 +105,23 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
 func (m *MacOSSoftwareUpdateStateSummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetProductKey gets the productKey property value. Product key of the software update.
 func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productKey
-    }
+    return m.productKey
 }
 // GetState gets the state property value. MacOS Software Update State
 func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUpdateCategory gets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateCategory
-    }
+    return m.updateCategory
 }
 // GetUpdateVersion gets the updateVersion property value. Version of the software update
 func (m *MacOSSoftwareUpdateStateSummary) GetUpdateVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateVersion
-    }
+    return m.updateVersion
 }
 // Serialize serializes information the current object
 func (m *MacOSSoftwareUpdateStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -195,37 +171,25 @@ func (m *MacOSSoftwareUpdateStateSummary) Serialize(writer i878a80d2330e89d26896
 }
 // SetDisplayName sets the displayName property value. Human readable name of the software update
 func (m *MacOSSoftwareUpdateStateSummary) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
 func (m *MacOSSoftwareUpdateStateSummary) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetProductKey sets the productKey property value. Product key of the software update.
 func (m *MacOSSoftwareUpdateStateSummary) SetProductKey(value *string)() {
-    if m != nil {
-        m.productKey = value
-    }
+    m.productKey = value
 }
 // SetState sets the state property value. MacOS Software Update State
 func (m *MacOSSoftwareUpdateStateSummary) SetState(value *MacOSSoftwareUpdateState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUpdateCategory sets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateStateSummary) SetUpdateCategory(value *MacOSSoftwareUpdateCategory)() {
-    if m != nil {
-        m.updateCategory = value
-    }
+    m.updateCategory = value
 }
 // SetUpdateVersion sets the updateVersion property value. Version of the software update
 func (m *MacOSSoftwareUpdateStateSummary) SetUpdateVersion(value *string)() {
-    if m != nil {
-        m.updateVersion = value
-    }
+    m.updateVersion = value
 }

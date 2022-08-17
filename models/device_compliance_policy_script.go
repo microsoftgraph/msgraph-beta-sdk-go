@@ -30,19 +30,11 @@ func CreateDeviceCompliancePolicyScriptFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceCompliancePolicyScript) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceComplianceScriptId gets the deviceComplianceScriptId property value. Device compliance script Id.
 func (m *DeviceCompliancePolicyScript) GetDeviceComplianceScriptId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceComplianceScriptId
-    }
+    return m.deviceComplianceScriptId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicyScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *DeviceCompliancePolicyScript) GetFieldDeserializers()(map[string]func(i
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceCompliancePolicyScript) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRulesContent gets the rulesContent property value. Json of the rules.
 func (m *DeviceCompliancePolicyScript) GetRulesContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rulesContent
-    }
+    return m.rulesContent
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DeviceCompliancePolicyScript) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceCompliancePolicyScript) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceComplianceScriptId sets the deviceComplianceScriptId property value. Device compliance script Id.
 func (m *DeviceCompliancePolicyScript) SetDeviceComplianceScriptId(value *string)() {
-    if m != nil {
-        m.deviceComplianceScriptId = value
-    }
+    m.deviceComplianceScriptId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceCompliancePolicyScript) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRulesContent sets the rulesContent property value. Json of the rules.
 func (m *DeviceCompliancePolicyScript) SetRulesContent(value []byte)() {
-    if m != nil {
-        m.rulesContent = value
-    }
+    m.rulesContent = value
 }

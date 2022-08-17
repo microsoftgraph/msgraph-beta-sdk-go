@@ -32,19 +32,11 @@ func CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkMicrophoneConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDefaultMicrophone gets the defaultMicrophone property value. The defaultMicrophone property
 func (m *TeamworkMicrophoneConfiguration) GetDefaultMicrophone()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultMicrophone
-    }
+    return m.defaultMicrophone
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,27 +89,15 @@ func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]fun
 }
 // GetIsMicrophoneOptional gets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
 func (m *TeamworkMicrophoneConfiguration) GetIsMicrophoneOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMicrophoneOptional
-    }
+    return m.isMicrophoneOptional
 }
 // GetMicrophones gets the microphones property value. The microphones property
 func (m *TeamworkMicrophoneConfiguration) GetMicrophones()([]TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphones
-    }
+    return m.microphones
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkMicrophoneConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamworkMicrophoneConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *TeamworkMicrophoneConfiguration) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkMicrophoneConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDefaultMicrophone sets the defaultMicrophone property value. The defaultMicrophone property
 func (m *TeamworkMicrophoneConfiguration) SetDefaultMicrophone(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.defaultMicrophone = value
-    }
+    m.defaultMicrophone = value
 }
 // SetIsMicrophoneOptional sets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
 func (m *TeamworkMicrophoneConfiguration) SetIsMicrophoneOptional(value *bool)() {
-    if m != nil {
-        m.isMicrophoneOptional = value
-    }
+    m.isMicrophoneOptional = value
 }
 // SetMicrophones sets the microphones property value. The microphones property
 func (m *TeamworkMicrophoneConfiguration) SetMicrophones(value []TeamworkPeripheralable)() {
-    if m != nil {
-        m.microphones = value
-    }
+    m.microphones = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkMicrophoneConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

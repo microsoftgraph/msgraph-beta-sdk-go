@@ -35,35 +35,19 @@ func CreateWindowsPhone81VpnConfigurationFromDiscriminatorValue(parseNode i878a8
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *WindowsPhone81VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethod
-    }
+    return m.authenticationMethod
 }
 // GetBypassVpnOnCompanyWifi gets the bypassVpnOnCompanyWifi property value. Bypass VPN on company Wi-Fi.
 func (m *WindowsPhone81VpnConfiguration) GetBypassVpnOnCompanyWifi()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bypassVpnOnCompanyWifi
-    }
+    return m.bypassVpnOnCompanyWifi
 }
 // GetBypassVpnOnHomeWifi gets the bypassVpnOnHomeWifi property value. Bypass VPN on home Wi-Fi.
 func (m *WindowsPhone81VpnConfiguration) GetBypassVpnOnHomeWifi()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bypassVpnOnHomeWifi
-    }
+    return m.bypassVpnOnHomeWifi
 }
 // GetDnsSuffixSearchList gets the dnsSuffixSearchList property value. DNS suffix search list.
 func (m *WindowsPhone81VpnConfiguration) GetDnsSuffixSearchList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dnsSuffixSearchList
-    }
+    return m.dnsSuffixSearchList
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,19 +120,11 @@ func (m *WindowsPhone81VpnConfiguration) GetFieldDeserializers()(map[string]func
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *WindowsPhone81VpnConfiguration) GetIdentityCertificate()(WindowsPhone81CertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificate
-    }
+    return m.identityCertificate
 }
 // GetRememberUserCredentials gets the rememberUserCredentials property value. Remember user credentials.
 func (m *WindowsPhone81VpnConfiguration) GetRememberUserCredentials()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rememberUserCredentials
-    }
+    return m.rememberUserCredentials
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -197,37 +173,25 @@ func (m *WindowsPhone81VpnConfiguration) Serialize(writer i878a80d2330e89d268963
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *WindowsPhone81VpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
-    if m != nil {
-        m.authenticationMethod = value
-    }
+    m.authenticationMethod = value
 }
 // SetBypassVpnOnCompanyWifi sets the bypassVpnOnCompanyWifi property value. Bypass VPN on company Wi-Fi.
 func (m *WindowsPhone81VpnConfiguration) SetBypassVpnOnCompanyWifi(value *bool)() {
-    if m != nil {
-        m.bypassVpnOnCompanyWifi = value
-    }
+    m.bypassVpnOnCompanyWifi = value
 }
 // SetBypassVpnOnHomeWifi sets the bypassVpnOnHomeWifi property value. Bypass VPN on home Wi-Fi.
 func (m *WindowsPhone81VpnConfiguration) SetBypassVpnOnHomeWifi(value *bool)() {
-    if m != nil {
-        m.bypassVpnOnHomeWifi = value
-    }
+    m.bypassVpnOnHomeWifi = value
 }
 // SetDnsSuffixSearchList sets the dnsSuffixSearchList property value. DNS suffix search list.
 func (m *WindowsPhone81VpnConfiguration) SetDnsSuffixSearchList(value []string)() {
-    if m != nil {
-        m.dnsSuffixSearchList = value
-    }
+    m.dnsSuffixSearchList = value
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *WindowsPhone81VpnConfiguration) SetIdentityCertificate(value WindowsPhone81CertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificate = value
-    }
+    m.identityCertificate = value
 }
 // SetRememberUserCredentials sets the rememberUserCredentials property value. Remember user credentials.
 func (m *WindowsPhone81VpnConfiguration) SetRememberUserCredentials(value *bool)() {
-    if m != nil {
-        m.rememberUserCredentials = value
-    }
+    m.rememberUserCredentials = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Connector provides operations to manage the collection of activityStatistics entities.
+// Connector provides operations to manage the collection of accessReviewDecision entities.
 type Connector struct {
     Entity
     // The external IP address as detected by the the connector server. Read-only.
@@ -31,11 +31,7 @@ func CreateConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetExternalIp gets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
 func (m *Connector) GetExternalIp()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalIp
-    }
+    return m.externalIp
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,27 +84,15 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetMachineName gets the machineName property value. The machine name the connector is installed and running on.
 func (m *Connector) GetMachineName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.machineName
-    }
+    return m.machineName
 }
 // GetMemberOf gets the memberOf property value. The connectorGroup that the connector is a member of. Read-only.
 func (m *Connector) GetMemberOf()([]ConnectorGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberOf
-    }
+    return m.memberOf
 }
 // GetStatus gets the status property value. The status property
 func (m *Connector) GetStatus()(*ConnectorStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *Connector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,25 +133,17 @@ func (m *Connector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetExternalIp sets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
 func (m *Connector) SetExternalIp(value *string)() {
-    if m != nil {
-        m.externalIp = value
-    }
+    m.externalIp = value
 }
 // SetMachineName sets the machineName property value. The machine name the connector is installed and running on.
 func (m *Connector) SetMachineName(value *string)() {
-    if m != nil {
-        m.machineName = value
-    }
+    m.machineName = value
 }
 // SetMemberOf sets the memberOf property value. The connectorGroup that the connector is a member of. Read-only.
 func (m *Connector) SetMemberOf(value []ConnectorGroupable)() {
-    if m != nil {
-        m.memberOf = value
-    }
+    m.memberOf = value
 }
 // SetStatus sets the status property value. The status property
 func (m *Connector) SetStatus(value *ConnectorStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

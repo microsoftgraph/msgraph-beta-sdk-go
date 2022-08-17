@@ -27,19 +27,11 @@ func CreateProtectSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAccessType gets the accessType property value. The accessType property
 func (m *ProtectSite) GetAccessType()(*SiteAccessType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessType
-    }
+    return m.accessType
 }
 // GetConditionalAccessProtectionLevelId gets the conditionalAccessProtectionLevelId property value. The conditionalAccessProtectionLevelId property
 func (m *ProtectSite) GetConditionalAccessProtectionLevelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conditionalAccessProtectionLevelId
-    }
+    return m.conditionalAccessProtectionLevelId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,13 +81,9 @@ func (m *ProtectSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAccessType sets the accessType property value. The accessType property
 func (m *ProtectSite) SetAccessType(value *SiteAccessType)() {
-    if m != nil {
-        m.accessType = value
-    }
+    m.accessType = value
 }
 // SetConditionalAccessProtectionLevelId sets the conditionalAccessProtectionLevelId property value. The conditionalAccessProtectionLevelId property
 func (m *ProtectSite) SetConditionalAccessProtectionLevelId(value *string)() {
-    if m != nil {
-        m.conditionalAccessProtectionLevelId = value
-    }
+    m.conditionalAccessProtectionLevelId = value
 }

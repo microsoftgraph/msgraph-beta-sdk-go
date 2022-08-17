@@ -8,7 +8,7 @@ import (
 // Identity provides operations to manage the collection of activityStatistics entities.
 type Identity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+    // The type property
     type_escaped *IdentityType
 }
 // NewIdentity instantiates a new identity and sets the default values.
@@ -39,13 +39,9 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetType gets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+// GetType gets the type property value. The type property
 func (m *Identity) GetType()(*IdentityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,9 +58,7 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetType sets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+// SetType sets the type property value. The type property
 func (m *Identity) SetType(value *IdentityType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

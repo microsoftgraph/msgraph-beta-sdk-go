@@ -46,43 +46,23 @@ func CreateItemActionSetFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActionSet) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComment gets the comment property value. A comment was added to the item.
 func (m *ItemActionSet) GetComment()(CommentActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comment
-    }
+    return m.comment
 }
 // GetCreate gets the create property value. An item was created.
 func (m *ItemActionSet) GetCreate()(CreateActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.create
-    }
+    return m.create
 }
 // GetDelete gets the delete property value. An item was deleted.
 func (m *ItemActionSet) GetDelete()(DeleteActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.delete
-    }
+    return m.delete
 }
 // GetEdit gets the edit property value. An item was edited.
 func (m *ItemActionSet) GetEdit()(EditActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.edit
-    }
+    return m.edit
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -201,59 +181,31 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMention gets the mention property value. A user was mentioned in the item.
 func (m *ItemActionSet) GetMention()(MentionActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mention
-    }
+    return m.mention
 }
 // GetMove gets the move property value. An item was moved.
 func (m *ItemActionSet) GetMove()(MoveActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.move
-    }
+    return m.move
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ItemActionSet) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRename gets the rename property value. An item was renamed.
 func (m *ItemActionSet) GetRename()(RenameActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rename
-    }
+    return m.rename
 }
 // GetRestore gets the restore property value. An item was restored.
 func (m *ItemActionSet) GetRestore()(RestoreActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restore
-    }
+    return m.restore
 }
 // GetShare gets the share property value. An item was shared.
 func (m *ItemActionSet) GetShare()(ShareActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.share
-    }
+    return m.share
 }
 // GetVersion gets the version property value. An item was versioned.
 func (m *ItemActionSet) GetVersion()(VersionActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *ItemActionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -333,73 +285,49 @@ func (m *ItemActionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActionSet) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComment sets the comment property value. A comment was added to the item.
 func (m *ItemActionSet) SetComment(value CommentActionable)() {
-    if m != nil {
-        m.comment = value
-    }
+    m.comment = value
 }
 // SetCreate sets the create property value. An item was created.
 func (m *ItemActionSet) SetCreate(value CreateActionable)() {
-    if m != nil {
-        m.create = value
-    }
+    m.create = value
 }
 // SetDelete sets the delete property value. An item was deleted.
 func (m *ItemActionSet) SetDelete(value DeleteActionable)() {
-    if m != nil {
-        m.delete = value
-    }
+    m.delete = value
 }
 // SetEdit sets the edit property value. An item was edited.
 func (m *ItemActionSet) SetEdit(value EditActionable)() {
-    if m != nil {
-        m.edit = value
-    }
+    m.edit = value
 }
 // SetMention sets the mention property value. A user was mentioned in the item.
 func (m *ItemActionSet) SetMention(value MentionActionable)() {
-    if m != nil {
-        m.mention = value
-    }
+    m.mention = value
 }
 // SetMove sets the move property value. An item was moved.
 func (m *ItemActionSet) SetMove(value MoveActionable)() {
-    if m != nil {
-        m.move = value
-    }
+    m.move = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ItemActionSet) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRename sets the rename property value. An item was renamed.
 func (m *ItemActionSet) SetRename(value RenameActionable)() {
-    if m != nil {
-        m.rename = value
-    }
+    m.rename = value
 }
 // SetRestore sets the restore property value. An item was restored.
 func (m *ItemActionSet) SetRestore(value RestoreActionable)() {
-    if m != nil {
-        m.restore = value
-    }
+    m.restore = value
 }
 // SetShare sets the share property value. An item was shared.
 func (m *ItemActionSet) SetShare(value ShareActionable)() {
-    if m != nil {
-        m.share = value
-    }
+    m.share = value
 }
 // SetVersion sets the version property value. An item was versioned.
 func (m *ItemActionSet) SetVersion(value VersionActionable)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

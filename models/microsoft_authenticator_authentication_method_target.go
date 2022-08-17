@@ -29,19 +29,11 @@ func CreateMicrosoftAuthenticatorAuthenticationMethodTargetFromDiscriminatorValu
 }
 // GetAuthenticationMode gets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetAuthenticationMode()(*MicrosoftAuthenticatorAuthenticationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMode
-    }
+    return m.authenticationMode
 }
 // GetDisplayAppInformationRequiredState gets the displayAppInformationRequiredState property value. The displayAppInformationRequiredState property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetDisplayAppInformationRequiredState()(*AdvancedConfigState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayAppInformationRequiredState
-    }
+    return m.displayAppInformationRequiredState
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetFieldDeserializers
 }
 // GetNumberMatchingRequiredState gets the numberMatchingRequiredState property value. The numberMatchingRequiredState property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetNumberMatchingRequiredState()(*AdvancedConfigState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.numberMatchingRequiredState
-    }
+    return m.numberMatchingRequiredState
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -117,19 +105,13 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) Serialize(writer i878
 }
 // SetAuthenticationMode sets the authenticationMode property value. The authenticationMode property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetAuthenticationMode(value *MicrosoftAuthenticatorAuthenticationMode)() {
-    if m != nil {
-        m.authenticationMode = value
-    }
+    m.authenticationMode = value
 }
 // SetDisplayAppInformationRequiredState sets the displayAppInformationRequiredState property value. The displayAppInformationRequiredState property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetDisplayAppInformationRequiredState(value *AdvancedConfigState)() {
-    if m != nil {
-        m.displayAppInformationRequiredState = value
-    }
+    m.displayAppInformationRequiredState = value
 }
 // SetNumberMatchingRequiredState sets the numberMatchingRequiredState property value. The numberMatchingRequiredState property
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetNumberMatchingRequiredState(value *AdvancedConfigState)() {
-    if m != nil {
-        m.numberMatchingRequiredState = value
-    }
+    m.numberMatchingRequiredState = value
 }

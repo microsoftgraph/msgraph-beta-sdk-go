@@ -60,27 +60,15 @@ func CreateAndroidManagedStoreAppFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAppIdentifier gets the appIdentifier property value. The Identity Name.
 func (m *AndroidManagedStoreApp) GetAppIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appIdentifier
-    }
+    return m.appIdentifier
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Play for Work Store app URL.
 func (m *AndroidManagedStoreApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetAppTracks gets the appTracks property value. The tracks that are visible to this enterprise.
 func (m *AndroidManagedStoreApp) GetAppTracks()([]AndroidManagedStoreAppTrackable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appTracks
-    }
+    return m.appTracks
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -183,51 +171,27 @@ func (m *AndroidManagedStoreApp) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIsPrivate gets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users.
 func (m *AndroidManagedStoreApp) GetIsPrivate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPrivate
-    }
+    return m.isPrivate
 }
 // GetIsSystemApp gets the isSystemApp property value. Indicates whether the app is a preinstalled system app.
 func (m *AndroidManagedStoreApp) GetIsSystemApp()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSystemApp
-    }
+    return m.isSystemApp
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *AndroidManagedStoreApp) GetPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageId
-    }
+    return m.packageId
 }
 // GetSupportsOemConfig gets the supportsOemConfig property value. Whether this app supports OEMConfig policy.
 func (m *AndroidManagedStoreApp) GetSupportsOemConfig()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportsOemConfig
-    }
+    return m.supportsOemConfig
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *AndroidManagedStoreApp) GetTotalLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicenseCount
-    }
+    return m.totalLicenseCount
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *AndroidManagedStoreApp) GetUsedLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usedLicenseCount
-    }
+    return m.usedLicenseCount
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -297,55 +261,37 @@ func (m *AndroidManagedStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAppIdentifier sets the appIdentifier property value. The Identity Name.
 func (m *AndroidManagedStoreApp) SetAppIdentifier(value *string)() {
-    if m != nil {
-        m.appIdentifier = value
-    }
+    m.appIdentifier = value
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Play for Work Store app URL.
 func (m *AndroidManagedStoreApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }
 // SetAppTracks sets the appTracks property value. The tracks that are visible to this enterprise.
 func (m *AndroidManagedStoreApp) SetAppTracks(value []AndroidManagedStoreAppTrackable)() {
-    if m != nil {
-        m.appTracks = value
-    }
+    m.appTracks = value
 }
 // SetIsPrivate sets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users.
 func (m *AndroidManagedStoreApp) SetIsPrivate(value *bool)() {
-    if m != nil {
-        m.isPrivate = value
-    }
+    m.isPrivate = value
 }
 // SetIsSystemApp sets the isSystemApp property value. Indicates whether the app is a preinstalled system app.
 func (m *AndroidManagedStoreApp) SetIsSystemApp(value *bool)() {
-    if m != nil {
-        m.isSystemApp = value
-    }
+    m.isSystemApp = value
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *AndroidManagedStoreApp) SetPackageId(value *string)() {
-    if m != nil {
-        m.packageId = value
-    }
+    m.packageId = value
 }
 // SetSupportsOemConfig sets the supportsOemConfig property value. Whether this app supports OEMConfig policy.
 func (m *AndroidManagedStoreApp) SetSupportsOemConfig(value *bool)() {
-    if m != nil {
-        m.supportsOemConfig = value
-    }
+    m.supportsOemConfig = value
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *AndroidManagedStoreApp) SetTotalLicenseCount(value *int32)() {
-    if m != nil {
-        m.totalLicenseCount = value
-    }
+    m.totalLicenseCount = value
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *AndroidManagedStoreApp) SetUsedLicenseCount(value *int32)() {
-    if m != nil {
-        m.usedLicenseCount = value
-    }
+    m.usedLicenseCount = value
 }

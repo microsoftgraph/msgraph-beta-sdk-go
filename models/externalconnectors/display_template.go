@@ -35,11 +35,7 @@ func CreateDisplayTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DisplayTemplate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,43 +98,23 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetId gets the id property value. The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.
 func (m *DisplayTemplate) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetLayout gets the layout property value. The layout property
 func (m *DisplayTemplate) GetLayout()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.layout
-    }
+    return m.layout
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DisplayTemplate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPriority gets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
 func (m *DisplayTemplate) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetRules gets the rules property value. Specifies additional rules for selecting this display template based on the item schema. Optional.
 func (m *DisplayTemplate) GetRules()([]PropertyRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rules
-    }
+    return m.rules
 }
 // Serialize serializes information the current object
 func (m *DisplayTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,37 +162,25 @@ func (m *DisplayTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DisplayTemplate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetId sets the id property value. The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.
 func (m *DisplayTemplate) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetLayout sets the layout property value. The layout property
 func (m *DisplayTemplate) SetLayout(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable)() {
-    if m != nil {
-        m.layout = value
-    }
+    m.layout = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DisplayTemplate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPriority sets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
 func (m *DisplayTemplate) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetRules sets the rules property value. Specifies additional rules for selecting this display template based on the item schema. Optional.
 func (m *DisplayTemplate) SetRules(value []PropertyRuleable)() {
-    if m != nil {
-        m.rules = value
-    }
+    m.rules = value
 }

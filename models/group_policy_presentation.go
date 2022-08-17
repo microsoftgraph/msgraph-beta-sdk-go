@@ -67,11 +67,7 @@ func CreateGroupPolicyPresentationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDefinition gets the definition property value. The group policy definition associated with the presentation.
 func (m *GroupPolicyPresentation) GetDefinition()(GroupPolicyDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definition
-    }
+    return m.definition
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,19 +106,11 @@ func (m *GroupPolicyPresentation) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLabel gets the label property value. Localized text label for any presentation entity. The default value is empty.
 func (m *GroupPolicyPresentation) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
+    return m.label
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyPresentation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,19 +140,13 @@ func (m *GroupPolicyPresentation) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDefinition sets the definition property value. The group policy definition associated with the presentation.
 func (m *GroupPolicyPresentation) SetDefinition(value GroupPolicyDefinitionable)() {
-    if m != nil {
-        m.definition = value
-    }
+    m.definition = value
 }
 // SetLabel sets the label property value. Localized text label for any presentation entity. The default value is empty.
 func (m *GroupPolicyPresentation) SetLabel(value *string)() {
-    if m != nil {
-        m.label = value
-    }
+    m.label = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyPresentation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }

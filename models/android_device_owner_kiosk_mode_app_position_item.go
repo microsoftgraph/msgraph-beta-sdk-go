@@ -30,11 +30,7 @@ func CreateAndroidDeviceOwnerKioskModeAppPositionItemFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetFieldDeserializers()(map
 }
 // GetItem gets the item property value. Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetItem()(AndroidDeviceOwnerKioskModeHomeScreenItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.item
-    }
+    return m.item
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPosition gets the position property value. Position of the item on the grid. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetPosition()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.position
-    }
+    return m.position
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItem) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetItem sets the item property value. Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetItem(value AndroidDeviceOwnerKioskModeHomeScreenItemable)() {
-    if m != nil {
-        m.item = value
-    }
+    m.item = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPosition sets the position property value. Position of the item on the grid. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetPosition(value *int32)() {
-    if m != nil {
-        m.position = value
-    }
+    m.position = value
 }

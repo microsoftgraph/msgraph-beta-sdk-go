@@ -29,11 +29,7 @@ func CreateAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *AppManagementPolicy) GetAppliesTo()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliesTo
-    }
+    return m.appliesTo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIsEnabled gets the isEnabled property value. The isEnabled property
 func (m *AppManagementPolicy) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // GetRestrictions gets the restrictions property value. The restrictions property
 func (m *AppManagementPolicy) GetRestrictions()(AppManagementConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictions
-    }
+    return m.restrictions
 }
 // Serialize serializes information the current object
 func (m *AppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *AppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *AppManagementPolicy) SetAppliesTo(value []DirectoryObjectable)() {
-    if m != nil {
-        m.appliesTo = value
-    }
+    m.appliesTo = value
 }
 // SetIsEnabled sets the isEnabled property value. The isEnabled property
 func (m *AppManagementPolicy) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }
 // SetRestrictions sets the restrictions property value. The restrictions property
 func (m *AppManagementPolicy) SetRestrictions(value AppManagementConfigurationable)() {
-    if m != nil {
-        m.restrictions = value
-    }
+    m.restrictions = value
 }

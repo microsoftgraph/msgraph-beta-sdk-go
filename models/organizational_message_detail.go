@@ -50,27 +50,15 @@ func CreateOrganizationalMessageDetailFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetContent gets the content property value. The content that will be displayed to clients for the message. This includes the text portion of the message and the displayed logo
 func (m *OrganizationalMessageDetail) GetContent()(OrganizationalMessageContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time of when the message was created
 func (m *OrganizationalMessageDetail) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetEndDateTime gets the endDateTime property value. The date and time of when the message will stop being displayed to clients
 func (m *OrganizationalMessageDetail) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -209,83 +197,43 @@ func (m *OrganizationalMessageDetail) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFrequency gets the frequency property value. The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice.
 func (m *OrganizationalMessageDetail) GetFrequency()(*OrganizationalMessageFrequency) {
-    if m == nil {
-        return nil
-    } else {
-        return m.frequency
-    }
+    return m.frequency
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of when the message was last modified
 func (m *OrganizationalMessageDetail) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetScenario gets the scenario property value. Indicates the scenario for the message. Possible values are: onboarding, lifecycle.
 func (m *OrganizationalMessageDetail) GetScenario()(*OrganizationalMessageScenario) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scenario
-    }
+    return m.scenario
 }
 // GetStartDateTime gets the startDateTime property value. The date and time of when the message will start being displayed to clients
 func (m *OrganizationalMessageDetail) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled.
 func (m *OrganizationalMessageDetail) GetStatus()(*OrganizationalMessageStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetSurface gets the surface property value. Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding.
 func (m *OrganizationalMessageDetail) GetSurface()(*OrganizationalMessageSurface) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surface
-    }
+    return m.surface
 }
 // GetTargeting gets the targeting property value. The groups of devices that will receive the message. This also contains a list of excluded groups that will not receive the message regardless of the device being part of an included group
 func (m *OrganizationalMessageDetail) GetTargeting()(OrganizationalMessageTargetingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targeting
-    }
+    return m.targeting
 }
 // GetTheme gets the theme property value. Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows.
 func (m *OrganizationalMessageDetail) GetTheme()(*OrganizationalMessageTheme) {
-    if m == nil {
-        return nil
-    } else {
-        return m.theme
-    }
+    return m.theme
 }
 // GetUserEngagementStatistics gets the userEngagementStatistics property value. The statistics containing how the message was interacted with by clients. This includes the number of impressions, clicks, and dismisses from targeted clients.
 func (m *OrganizationalMessageDetail) GetUserEngagementStatistics()(OrganizationalMessageInsightsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEngagementStatistics
-    }
+    return m.userEngagementStatistics
 }
 // GetVariant gets the variant property value. Indicates the corresponding variant for the experience
 func (m *OrganizationalMessageDetail) GetVariant()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.variant
-    }
+    return m.variant
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -380,79 +328,53 @@ func (m *OrganizationalMessageDetail) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetContent sets the content property value. The content that will be displayed to clients for the message. This includes the text portion of the message and the displayed logo
 func (m *OrganizationalMessageDetail) SetContent(value OrganizationalMessageContentable)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time of when the message was created
 func (m *OrganizationalMessageDetail) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetEndDateTime sets the endDateTime property value. The date and time of when the message will stop being displayed to clients
 func (m *OrganizationalMessageDetail) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetFrequency sets the frequency property value. The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice.
 func (m *OrganizationalMessageDetail) SetFrequency(value *OrganizationalMessageFrequency)() {
-    if m != nil {
-        m.frequency = value
-    }
+    m.frequency = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time of when the message was last modified
 func (m *OrganizationalMessageDetail) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetScenario sets the scenario property value. Indicates the scenario for the message. Possible values are: onboarding, lifecycle.
 func (m *OrganizationalMessageDetail) SetScenario(value *OrganizationalMessageScenario)() {
-    if m != nil {
-        m.scenario = value
-    }
+    m.scenario = value
 }
 // SetStartDateTime sets the startDateTime property value. The date and time of when the message will start being displayed to clients
 func (m *OrganizationalMessageDetail) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled.
 func (m *OrganizationalMessageDetail) SetStatus(value *OrganizationalMessageStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetSurface sets the surface property value. Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding.
 func (m *OrganizationalMessageDetail) SetSurface(value *OrganizationalMessageSurface)() {
-    if m != nil {
-        m.surface = value
-    }
+    m.surface = value
 }
 // SetTargeting sets the targeting property value. The groups of devices that will receive the message. This also contains a list of excluded groups that will not receive the message regardless of the device being part of an included group
 func (m *OrganizationalMessageDetail) SetTargeting(value OrganizationalMessageTargetingable)() {
-    if m != nil {
-        m.targeting = value
-    }
+    m.targeting = value
 }
 // SetTheme sets the theme property value. Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows.
 func (m *OrganizationalMessageDetail) SetTheme(value *OrganizationalMessageTheme)() {
-    if m != nil {
-        m.theme = value
-    }
+    m.theme = value
 }
 // SetUserEngagementStatistics sets the userEngagementStatistics property value. The statistics containing how the message was interacted with by clients. This includes the number of impressions, clicks, and dismisses from targeted clients.
 func (m *OrganizationalMessageDetail) SetUserEngagementStatistics(value OrganizationalMessageInsightsable)() {
-    if m != nil {
-        m.userEngagementStatistics = value
-    }
+    m.userEngagementStatistics = value
 }
 // SetVariant sets the variant property value. Indicates the corresponding variant for the experience
 func (m *OrganizationalMessageDetail) SetVariant(value *string)() {
-    if m != nil {
-        m.variant = value
-    }
+    m.variant = value
 }

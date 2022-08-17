@@ -40,11 +40,7 @@ func (m *AppleVppTokenTroubleshootingEvent) GetFieldDeserializers()(map[string]f
 }
 // GetTokenId gets the tokenId property value. Apple Volume Purchase Program Token Identifier.
 func (m *AppleVppTokenTroubleshootingEvent) GetTokenId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenId
-    }
+    return m.tokenId
 }
 // Serialize serializes information the current object
 func (m *AppleVppTokenTroubleshootingEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AppleVppTokenTroubleshootingEvent) Serialize(writer i878a80d2330e89d268
 }
 // SetTokenId sets the tokenId property value. Apple Volume Purchase Program Token Identifier.
 func (m *AppleVppTokenTroubleshootingEvent) SetTokenId(value *string)() {
-    if m != nil {
-        m.tokenId = value
-    }
+    m.tokenId = value
 }

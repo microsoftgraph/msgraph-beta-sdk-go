@@ -26,11 +26,7 @@ func CreateRemoveMembersByIdPostRequestBodyFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveMembersByIdPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoveMembersByIdPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,19 +59,11 @@ func (m *RemoveMembersByIdPostRequestBody) GetFieldDeserializers()(map[string]fu
 }
 // GetIds gets the ids property value. The ids property
 func (m *RemoveMembersByIdPostRequestBody) GetIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ids
-    }
+    return m.ids
 }
 // GetMemberEntityType gets the memberEntityType property value. The memberEntityType property
 func (m *RemoveMembersByIdPostRequestBody) GetMemberEntityType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberEntityType
-    }
+    return m.memberEntityType
 }
 // Serialize serializes information the current object
 func (m *RemoveMembersByIdPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,19 +89,13 @@ func (m *RemoveMembersByIdPostRequestBody) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveMembersByIdPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIds sets the ids property value. The ids property
 func (m *RemoveMembersByIdPostRequestBody) SetIds(value []string)() {
-    if m != nil {
-        m.ids = value
-    }
+    m.ids = value
 }
 // SetMemberEntityType sets the memberEntityType property value. The memberEntityType property
 func (m *RemoveMembersByIdPostRequestBody) SetMemberEntityType(value *string)() {
-    if m != nil {
-        m.memberEntityType = value
-    }
+    m.memberEntityType = value
 }

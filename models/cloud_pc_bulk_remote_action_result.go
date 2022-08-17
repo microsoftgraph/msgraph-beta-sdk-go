@@ -34,19 +34,11 @@ func CreateCloudPcBulkRemoteActionResultFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcBulkRemoteActionResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFailedDeviceIds gets the failedDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action with a failure.
 func (m *CloudPcBulkRemoteActionResult) GetFailedDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedDeviceIds
-    }
+    return m.failedDeviceIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcBulkRemoteActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,35 +113,19 @@ func (m *CloudPcBulkRemoteActionResult) GetFieldDeserializers()(map[string]func(
 }
 // GetNotFoundDeviceIds gets the notFoundDeviceIds property value. A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
 func (m *CloudPcBulkRemoteActionResult) GetNotFoundDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notFoundDeviceIds
-    }
+    return m.notFoundDeviceIds
 }
 // GetNotSupportedDeviceIds gets the notSupportedDeviceIds property value. A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
 func (m *CloudPcBulkRemoteActionResult) GetNotSupportedDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notSupportedDeviceIds
-    }
+    return m.notSupportedDeviceIds
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcBulkRemoteActionResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSuccessfulDeviceIds gets the successfulDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action successfully.
 func (m *CloudPcBulkRemoteActionResult) GetSuccessfulDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulDeviceIds
-    }
+    return m.successfulDeviceIds
 }
 // Serialize serializes information the current object
 func (m *CloudPcBulkRemoteActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *CloudPcBulkRemoteActionResult) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcBulkRemoteActionResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFailedDeviceIds sets the failedDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action with a failure.
 func (m *CloudPcBulkRemoteActionResult) SetFailedDeviceIds(value []string)() {
-    if m != nil {
-        m.failedDeviceIds = value
-    }
+    m.failedDeviceIds = value
 }
 // SetNotFoundDeviceIds sets the notFoundDeviceIds property value. A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
 func (m *CloudPcBulkRemoteActionResult) SetNotFoundDeviceIds(value []string)() {
-    if m != nil {
-        m.notFoundDeviceIds = value
-    }
+    m.notFoundDeviceIds = value
 }
 // SetNotSupportedDeviceIds sets the notSupportedDeviceIds property value. A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
 func (m *CloudPcBulkRemoteActionResult) SetNotSupportedDeviceIds(value []string)() {
-    if m != nil {
-        m.notSupportedDeviceIds = value
-    }
+    m.notSupportedDeviceIds = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcBulkRemoteActionResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSuccessfulDeviceIds sets the successfulDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action successfully.
 func (m *CloudPcBulkRemoteActionResult) SetSuccessfulDeviceIds(value []string)() {
-    if m != nil {
-        m.successfulDeviceIds = value
-    }
+    m.successfulDeviceIds = value
 }

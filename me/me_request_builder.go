@@ -160,7 +160,7 @@ type MeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MeRequestBuilderGetQueryParameters retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+// MeRequestBuilderGetQueryParameters returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -444,11 +444,11 @@ func (m *MeRequestBuilder) CreatedObjectsById(id string)(*i36124d7f986d43728dd4e
     }
     return i36124d7f986d43728dd4e4ec2537be43e1bb06aafbfb36badf4c29a92469fb74.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+// CreateGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *MeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+// CreateGetRequestInformationWithRequestConfiguration returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *MeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -633,7 +633,7 @@ func (m *MeRequestBuilder) FollowedSitesById(id string)(*i0c7e22c7b3c700585549fd
     }
     return i0c7e22c7b3c700585549fd382bfa2115e0602d341e57daae7fcadf078a118fe1.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+// Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *MeRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -673,7 +673,7 @@ func (m *MeRequestBuilder) GetMemberGroups()(*i3d2fc4aaa671f5674c171e95891301e78
 func (m *MeRequestBuilder) GetMemberObjects()(*ib30fb712d3d83e6954d3924903b95a5b7b6e5583943adf5f99bff52563c27b53.GetMemberObjectsRequestBuilder) {
     return ib30fb712d3d83e6954d3924903b95a5b7b6e5583943adf5f99bff52563c27b53.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+// GetWithRequestConfigurationAndResponseHandler returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *MeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

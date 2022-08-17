@@ -52,19 +52,11 @@ func CreateAndroidForWorkWiFiConfigurationFromDiscriminatorValue(parseNode i878a
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidForWorkWiFiConfiguration) GetConnectAutomatically()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectAutomatically
-    }
+    return m.connectAutomatically
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AndroidForWorkWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectWhenNetworkNameIsHidden
-    }
+    return m.connectWhenNetworkNameIsHidden
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,27 +115,15 @@ func (m *AndroidForWorkWiFiConfiguration) GetFieldDeserializers()(map[string]fun
 }
 // GetNetworkName gets the networkName property value. Network Name
 func (m *AndroidForWorkWiFiConfiguration) GetNetworkName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkName
-    }
+    return m.networkName
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AndroidForWorkWiFiConfiguration) GetSsid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ssid
-    }
+    return m.ssid
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
 func (m *AndroidForWorkWiFiConfiguration) GetWiFiSecurityType()(*AndroidWiFiSecurityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wiFiSecurityType
-    }
+    return m.wiFiSecurityType
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,31 +166,21 @@ func (m *AndroidForWorkWiFiConfiguration) Serialize(writer i878a80d2330e89d26896
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidForWorkWiFiConfiguration) SetConnectAutomatically(value *bool)() {
-    if m != nil {
-        m.connectAutomatically = value
-    }
+    m.connectAutomatically = value
 }
 // SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 func (m *AndroidForWorkWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
-    if m != nil {
-        m.connectWhenNetworkNameIsHidden = value
-    }
+    m.connectWhenNetworkNameIsHidden = value
 }
 // SetNetworkName sets the networkName property value. Network Name
 func (m *AndroidForWorkWiFiConfiguration) SetNetworkName(value *string)() {
-    if m != nil {
-        m.networkName = value
-    }
+    m.networkName = value
 }
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 func (m *AndroidForWorkWiFiConfiguration) SetSsid(value *string)() {
-    if m != nil {
-        m.ssid = value
-    }
+    m.ssid = value
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
 func (m *AndroidForWorkWiFiConfiguration) SetWiFiSecurityType(value *AndroidWiFiSecurityType)() {
-    if m != nil {
-        m.wiFiSecurityType = value
-    }
+    m.wiFiSecurityType = value
 }

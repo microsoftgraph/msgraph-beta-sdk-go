@@ -40,11 +40,7 @@ func (m *UserGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetUserId gets the userId property value. The userId property
 func (m *UserGovernanceCriteria) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *UserGovernanceCriteria) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *UserGovernanceCriteria) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetUserId sets the userId property value. The userId property
 func (m *UserGovernanceCriteria) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

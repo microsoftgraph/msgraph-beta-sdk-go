@@ -40,11 +40,7 @@ func (m *EmailUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetMessageUrl gets the messageUrl property value. Specifies the url of the message to be submitted.
 func (m *EmailUrlThreatSubmission) GetMessageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageUrl
-    }
+    return m.messageUrl
 }
 // Serialize serializes information the current object
 func (m *EmailUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *EmailUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetMessageUrl sets the messageUrl property value. Specifies the url of the message to be submitted.
 func (m *EmailUrlThreatSubmission) SetMessageUrl(value *string)() {
-    if m != nil {
-        m.messageUrl = value
-    }
+    m.messageUrl = value
 }

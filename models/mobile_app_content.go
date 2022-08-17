@@ -27,11 +27,7 @@ func CreateMobileAppContentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetContainedApps gets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
 func (m *MobileAppContent) GetContainedApps()([]MobileContainedAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.containedApps
-    }
+    return m.containedApps
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +64,7 @@ func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetFiles gets the files property value. The list of files for this app content version.
 func (m *MobileAppContent) GetFiles()([]MobileAppContentFileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.files
-    }
+    return m.files
 }
 // Serialize serializes information the current object
 func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetContainedApps sets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
 func (m *MobileAppContent) SetContainedApps(value []MobileContainedAppable)() {
-    if m != nil {
-        m.containedApps = value
-    }
+    m.containedApps = value
 }
 // SetFiles sets the files property value. The list of files for this app content version.
 func (m *MobileAppContent) SetFiles(value []MobileAppContentFileable)() {
-    if m != nil {
-        m.files = value
-    }
+    m.files = value
 }

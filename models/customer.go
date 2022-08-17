@@ -70,59 +70,31 @@ func CreateCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAddress gets the address property value. The address property
 func (m *Customer) GetAddress()(PostalAddressTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetBlocked gets the blocked property value. The blocked property
 func (m *Customer) GetBlocked()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blocked
-    }
+    return m.blocked
 }
 // GetCurrency gets the currency property value. The currency property
 func (m *Customer) GetCurrency()(Currencyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currency
-    }
+    return m.currency
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *Customer) GetCurrencyCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencyCode
-    }
+    return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
 func (m *Customer) GetCurrencyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencyId
-    }
+    return m.currencyId
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Customer) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmail gets the email property value. The email property
 func (m *Customer) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -365,131 +337,67 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Customer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetNumber gets the number property value. The number property
 func (m *Customer) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetPaymentMethod gets the paymentMethod property value. The paymentMethod property
 func (m *Customer) GetPaymentMethod()(PaymentMethodable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethod
-    }
+    return m.paymentMethod
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
 func (m *Customer) GetPaymentMethodId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethodId
-    }
+    return m.paymentMethodId
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
 func (m *Customer) GetPaymentTerm()(PaymentTermable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTerm
-    }
+    return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
 func (m *Customer) GetPaymentTermsId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTermsId
-    }
+    return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *Customer) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
+    return m.phoneNumber
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Customer) GetPicture()([]Pictureable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
+    return m.picture
 }
 // GetShipmentMethod gets the shipmentMethod property value. The shipmentMethod property
 func (m *Customer) GetShipmentMethod()(ShipmentMethodable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethod
-    }
+    return m.shipmentMethod
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
 func (m *Customer) GetShipmentMethodId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethodId
-    }
+    return m.shipmentMethodId
 }
 // GetTaxAreaDisplayName gets the taxAreaDisplayName property value. The taxAreaDisplayName property
 func (m *Customer) GetTaxAreaDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxAreaDisplayName
-    }
+    return m.taxAreaDisplayName
 }
 // GetTaxAreaId gets the taxAreaId property value. The taxAreaId property
 func (m *Customer) GetTaxAreaId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxAreaId
-    }
+    return m.taxAreaId
 }
 // GetTaxLiable gets the taxLiable property value. The taxLiable property
 func (m *Customer) GetTaxLiable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxLiable
-    }
+    return m.taxLiable
 }
 // GetTaxRegistrationNumber gets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *Customer) GetTaxRegistrationNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxRegistrationNumber
-    }
+    return m.taxRegistrationNumber
 }
 // GetType gets the type property value. The type property
 func (m *Customer) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetWebsite gets the website property value. The website property
 func (m *Customer) GetWebsite()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.website
-    }
+    return m.website
 }
 // Serialize serializes information the current object
 func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -643,139 +551,93 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAddress sets the address property value. The address property
 func (m *Customer) SetAddress(value PostalAddressTypeable)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetBlocked sets the blocked property value. The blocked property
 func (m *Customer) SetBlocked(value *string)() {
-    if m != nil {
-        m.blocked = value
-    }
+    m.blocked = value
 }
 // SetCurrency sets the currency property value. The currency property
 func (m *Customer) SetCurrency(value Currencyable)() {
-    if m != nil {
-        m.currency = value
-    }
+    m.currency = value
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *Customer) SetCurrencyCode(value *string)() {
-    if m != nil {
-        m.currencyCode = value
-    }
+    m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
 func (m *Customer) SetCurrencyId(value *string)() {
-    if m != nil {
-        m.currencyId = value
-    }
+    m.currencyId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Customer) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmail sets the email property value. The email property
 func (m *Customer) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Customer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetNumber sets the number property value. The number property
 func (m *Customer) SetNumber(value *string)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetPaymentMethod sets the paymentMethod property value. The paymentMethod property
 func (m *Customer) SetPaymentMethod(value PaymentMethodable)() {
-    if m != nil {
-        m.paymentMethod = value
-    }
+    m.paymentMethod = value
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
 func (m *Customer) SetPaymentMethodId(value *string)() {
-    if m != nil {
-        m.paymentMethodId = value
-    }
+    m.paymentMethodId = value
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
 func (m *Customer) SetPaymentTerm(value PaymentTermable)() {
-    if m != nil {
-        m.paymentTerm = value
-    }
+    m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
 func (m *Customer) SetPaymentTermsId(value *string)() {
-    if m != nil {
-        m.paymentTermsId = value
-    }
+    m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *Customer) SetPhoneNumber(value *string)() {
-    if m != nil {
-        m.phoneNumber = value
-    }
+    m.phoneNumber = value
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Customer) SetPicture(value []Pictureable)() {
-    if m != nil {
-        m.picture = value
-    }
+    m.picture = value
 }
 // SetShipmentMethod sets the shipmentMethod property value. The shipmentMethod property
 func (m *Customer) SetShipmentMethod(value ShipmentMethodable)() {
-    if m != nil {
-        m.shipmentMethod = value
-    }
+    m.shipmentMethod = value
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. The shipmentMethodId property
 func (m *Customer) SetShipmentMethodId(value *string)() {
-    if m != nil {
-        m.shipmentMethodId = value
-    }
+    m.shipmentMethodId = value
 }
 // SetTaxAreaDisplayName sets the taxAreaDisplayName property value. The taxAreaDisplayName property
 func (m *Customer) SetTaxAreaDisplayName(value *string)() {
-    if m != nil {
-        m.taxAreaDisplayName = value
-    }
+    m.taxAreaDisplayName = value
 }
 // SetTaxAreaId sets the taxAreaId property value. The taxAreaId property
 func (m *Customer) SetTaxAreaId(value *string)() {
-    if m != nil {
-        m.taxAreaId = value
-    }
+    m.taxAreaId = value
 }
 // SetTaxLiable sets the taxLiable property value. The taxLiable property
 func (m *Customer) SetTaxLiable(value *bool)() {
-    if m != nil {
-        m.taxLiable = value
-    }
+    m.taxLiable = value
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *Customer) SetTaxRegistrationNumber(value *string)() {
-    if m != nil {
-        m.taxRegistrationNumber = value
-    }
+    m.taxRegistrationNumber = value
 }
 // SetType sets the type property value. The type property
 func (m *Customer) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetWebsite sets the website property value. The website property
 func (m *Customer) SetWebsite(value *string)() {
-    if m != nil {
-        m.website = value
-    }
+    m.website = value
 }

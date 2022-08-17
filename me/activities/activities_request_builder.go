@@ -17,7 +17,7 @@ type ActivitiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ActivitiesRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
+// ActivitiesRequestBuilderGetQueryParameters get activities from me
 type ActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ActivitiesRequestBuilder) Count()(*ie98d7ca6adc9a844a9d854bf969c1ddf1341a5599b1bbf8d80cd8aa93d38d79a.CountRequestBuilder) {
     return ie98d7ca6adc9a844a9d854bf969c1ddf1341a5599b1bbf8d80cd8aa93d38d79a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the user's activities across devices. Read-only. Nullable.
+// CreateGetRequestInformation get activities from me
 func (m *ActivitiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's activities across devices. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get activities from me
 func (m *ActivitiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,11 +113,11 @@ func (m *ActivitiesRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get the user's activities across devices. Read-only. Nullable.
+// Get get activities from me
 func (m *ActivitiesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the user's activities across devices. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get activities from me
 func (m *ActivitiesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ActivitiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

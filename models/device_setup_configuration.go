@@ -34,27 +34,15 @@ func CreateDeviceSetupConfigurationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceSetupConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceSetupConfiguration) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceSetupConfiguration) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceSetupConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +101,11 @@ func (m *DeviceSetupConfiguration) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceSetupConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetVersion gets the version property value. Version of the device configuration.
 func (m *DeviceSetupConfiguration) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DeviceSetupConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *DeviceSetupConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceSetupConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceSetupConfiguration) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceSetupConfiguration) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceSetupConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *DeviceSetupConfiguration) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

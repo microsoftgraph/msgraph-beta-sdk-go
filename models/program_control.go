@@ -42,35 +42,19 @@ func CreateProgramControlFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetControlId gets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) GetControlId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.controlId
-    }
+    return m.controlId
 }
 // GetControlTypeId gets the controlTypeId property value. The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
 func (m *ProgramControl) GetControlTypeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.controlTypeId
-    }
+    return m.controlTypeId
 }
 // GetCreatedDateTime gets the createdDateTime property value. The creation date and time of the program control.
 func (m *ProgramControl) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The name of the control.
 func (m *ProgramControl) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProgramControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -169,43 +153,23 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetOwner gets the owner property value. The user who created the program control.
 func (m *ProgramControl) GetOwner()(UserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
+    return m.owner
 }
 // GetProgram gets the program property value. The program this control is part of.
 func (m *ProgramControl) GetProgram()(Programable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.program
-    }
+    return m.program
 }
 // GetProgramId gets the programId property value. The programId of the program this control is a part of. Required on create.
 func (m *ProgramControl) GetProgramId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.programId
-    }
+    return m.programId
 }
 // GetResource gets the resource property value. The resource, a group or an app, targeted by this program control's access review.
 func (m *ProgramControl) GetResource()(ProgramResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
+    return m.resource
 }
 // GetStatus gets the status property value. The life cycle status of the control.
 func (m *ProgramControl) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ProgramControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -271,55 +235,37 @@ func (m *ProgramControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetControlId sets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) SetControlId(value *string)() {
-    if m != nil {
-        m.controlId = value
-    }
+    m.controlId = value
 }
 // SetControlTypeId sets the controlTypeId property value. The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
 func (m *ProgramControl) SetControlTypeId(value *string)() {
-    if m != nil {
-        m.controlTypeId = value
-    }
+    m.controlTypeId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The creation date and time of the program control.
 func (m *ProgramControl) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The name of the control.
 func (m *ProgramControl) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOwner sets the owner property value. The user who created the program control.
 func (m *ProgramControl) SetOwner(value UserIdentityable)() {
-    if m != nil {
-        m.owner = value
-    }
+    m.owner = value
 }
 // SetProgram sets the program property value. The program this control is part of.
 func (m *ProgramControl) SetProgram(value Programable)() {
-    if m != nil {
-        m.program = value
-    }
+    m.program = value
 }
 // SetProgramId sets the programId property value. The programId of the program this control is a part of. Required on create.
 func (m *ProgramControl) SetProgramId(value *string)() {
-    if m != nil {
-        m.programId = value
-    }
+    m.programId = value
 }
 // SetResource sets the resource property value. The resource, a group or an app, targeted by this program control's access review.
 func (m *ProgramControl) SetResource(value ProgramResourceable)() {
-    if m != nil {
-        m.resource = value
-    }
+    m.resource = value
 }
 // SetStatus sets the status property value. The life cycle status of the control.
 func (m *ProgramControl) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -91,91 +91,47 @@ func CreateUserExperienceAnalyticsWorkFromAnywhereDeviceFromDiscriminatorValue(p
 }
 // GetAutoPilotProfileAssigned gets the autoPilotProfileAssigned property value. The user experience analytics work from anywhere intune device's autopilotProfileAssigned.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAutoPilotProfileAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoPilotProfileAssigned
-    }
+    return m.autoPilotProfileAssigned
 }
 // GetAutoPilotRegistered gets the autoPilotRegistered property value. The user experience work from anywhere intune device's autopilotRegistered.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAutoPilotRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoPilotRegistered
-    }
+    return m.autoPilotRegistered
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. The user experience work from anywhere azure Ad device Id.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdDeviceId
-    }
+    return m.azureAdDeviceId
 }
 // GetAzureAdJoinType gets the azureAdJoinType property value. The user experience work from anywhere device's azure Ad joinType.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdJoinType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdJoinType
-    }
+    return m.azureAdJoinType
 }
 // GetAzureAdRegistered gets the azureAdRegistered property value. The user experience work from anywhere device's azureAdRegistered.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdRegistered
-    }
+    return m.azureAdRegistered
 }
 // GetCloudIdentityScore gets the cloudIdentityScore property value. The user experience work from anywhere per device cloud identity score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudIdentityScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudIdentityScore
-    }
+    return m.cloudIdentityScore
 }
 // GetCloudManagementScore gets the cloudManagementScore property value. The user experience work from anywhere per device cloud management score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudManagementScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudManagementScore
-    }
+    return m.cloudManagementScore
 }
 // GetCloudProvisioningScore gets the cloudProvisioningScore property value. The user experience work from anywhere per device cloud provisioning score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudProvisioningScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudProvisioningScore
-    }
+    return m.cloudProvisioningScore
 }
 // GetCompliancePolicySetToIntune gets the compliancePolicySetToIntune property value. The user experience work from anywhere device's compliancePolicySetToIntune.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCompliancePolicySetToIntune()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliancePolicySetToIntune
-    }
+    return m.compliancePolicySetToIntune
 }
 // GetDeviceId gets the deviceId property value. The user experience work from anywhere device Id.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceName gets the deviceName property value. The work from anywhere device's name.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -524,187 +480,95 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
+    return m.healthStatus
 }
 // GetIsCloudManagedGatewayEnabled gets the isCloudManagedGatewayEnabled property value. The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetIsCloudManagedGatewayEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCloudManagedGatewayEnabled
-    }
+    return m.isCloudManagedGatewayEnabled
 }
 // GetManagedBy gets the managedBy property value. The user experience work from anywhere management agent of the device.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetManagedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedBy
-    }
+    return m.managedBy
 }
 // GetManufacturer gets the manufacturer property value. The user experience work from anywhere device's manufacturer.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. The user experience work from anywhere device's model.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetOsCheckFailed gets the osCheckFailed property value. The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osCheckFailed
-    }
+    return m.osCheckFailed
 }
 // GetOsDescription gets the osDescription property value. The user experience work from anywhere device's OS Description.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
+    return m.osDescription
 }
 // GetOsVersion gets the osVersion property value. The user experience work from anywhere device's OS Version.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // GetOtherWorkloadsSetToIntune gets the otherWorkloadsSetToIntune property value. The user experience work from anywhere device's otherWorkloadsSetToIntune.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOtherWorkloadsSetToIntune()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.otherWorkloadsSetToIntune
-    }
+    return m.otherWorkloadsSetToIntune
 }
 // GetOwnership gets the ownership property value. The user experience work from anywhere device's ownership.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOwnership()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownership
-    }
+    return m.ownership
 }
 // GetProcessor64BitCheckFailed gets the processor64BitCheckFailed property value. The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessor64BitCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processor64BitCheckFailed
-    }
+    return m.processor64BitCheckFailed
 }
 // GetProcessorCoreCountCheckFailed gets the processorCoreCountCheckFailed property value. The user experience work from anywhere device, Is processor hardware core count check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorCoreCountCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processorCoreCountCheckFailed
-    }
+    return m.processorCoreCountCheckFailed
 }
 // GetProcessorFamilyCheckFailed gets the processorFamilyCheckFailed property value. The user experience work from anywhere device, Is processor hardware family check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorFamilyCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processorFamilyCheckFailed
-    }
+    return m.processorFamilyCheckFailed
 }
 // GetProcessorSpeedCheckFailed gets the processorSpeedCheckFailed property value. The user experience work from anywhere device, Is processor hardware speed check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorSpeedCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processorSpeedCheckFailed
-    }
+    return m.processorSpeedCheckFailed
 }
 // GetRamCheckFailed gets the ramCheckFailed property value. Is the user experience analytics work from anywhere device RAM hardware check failed for device to upgrade to the latest version of windows
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetRamCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ramCheckFailed
-    }
+    return m.ramCheckFailed
 }
 // GetSecureBootCheckFailed gets the secureBootCheckFailed property value. The user experience work from anywhere device, Is secure boot hardware check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetSecureBootCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureBootCheckFailed
-    }
+    return m.secureBootCheckFailed
 }
 // GetSerialNumber gets the serialNumber property value. The user experience work from anywhere device's serial number.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
+    return m.serialNumber
 }
 // GetStorageCheckFailed gets the storageCheckFailed property value. The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetStorageCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageCheckFailed
-    }
+    return m.storageCheckFailed
 }
 // GetTenantAttached gets the tenantAttached property value. The user experience work from anywhere device's tenantAttached.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTenantAttached()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantAttached
-    }
+    return m.tenantAttached
 }
 // GetTpmCheckFailed gets the tpmCheckFailed property value. The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTpmCheckFailed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tpmCheckFailed
-    }
+    return m.tpmCheckFailed
 }
 // GetUpgradeEligibility gets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetUpgradeEligibility()(*OperatingSystemUpgradeEligibility) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upgradeEligibility
-    }
+    return m.upgradeEligibility
 }
 // GetWindowsScore gets the windowsScore property value. The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWindowsScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsScore
-    }
+    return m.windowsScore
 }
 // GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWorkFromAnywhereScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workFromAnywhereScore
-    }
+    return m.workFromAnywhereScore
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -922,205 +786,137 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) Serialize(writer i878a80
 }
 // SetAutoPilotProfileAssigned sets the autoPilotProfileAssigned property value. The user experience analytics work from anywhere intune device's autopilotProfileAssigned.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetAutoPilotProfileAssigned(value *bool)() {
-    if m != nil {
-        m.autoPilotProfileAssigned = value
-    }
+    m.autoPilotProfileAssigned = value
 }
 // SetAutoPilotRegistered sets the autoPilotRegistered property value. The user experience work from anywhere intune device's autopilotRegistered.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetAutoPilotRegistered(value *bool)() {
-    if m != nil {
-        m.autoPilotRegistered = value
-    }
+    m.autoPilotRegistered = value
 }
 // SetAzureAdDeviceId sets the azureAdDeviceId property value. The user experience work from anywhere azure Ad device Id.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetAzureAdDeviceId(value *string)() {
-    if m != nil {
-        m.azureAdDeviceId = value
-    }
+    m.azureAdDeviceId = value
 }
 // SetAzureAdJoinType sets the azureAdJoinType property value. The user experience work from anywhere device's azure Ad joinType.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetAzureAdJoinType(value *string)() {
-    if m != nil {
-        m.azureAdJoinType = value
-    }
+    m.azureAdJoinType = value
 }
 // SetAzureAdRegistered sets the azureAdRegistered property value. The user experience work from anywhere device's azureAdRegistered.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetAzureAdRegistered(value *bool)() {
-    if m != nil {
-        m.azureAdRegistered = value
-    }
+    m.azureAdRegistered = value
 }
 // SetCloudIdentityScore sets the cloudIdentityScore property value. The user experience work from anywhere per device cloud identity score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudIdentityScore(value *float64)() {
-    if m != nil {
-        m.cloudIdentityScore = value
-    }
+    m.cloudIdentityScore = value
 }
 // SetCloudManagementScore sets the cloudManagementScore property value. The user experience work from anywhere per device cloud management score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudManagementScore(value *float64)() {
-    if m != nil {
-        m.cloudManagementScore = value
-    }
+    m.cloudManagementScore = value
 }
 // SetCloudProvisioningScore sets the cloudProvisioningScore property value. The user experience work from anywhere per device cloud provisioning score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCloudProvisioningScore(value *float64)() {
-    if m != nil {
-        m.cloudProvisioningScore = value
-    }
+    m.cloudProvisioningScore = value
 }
 // SetCompliancePolicySetToIntune sets the compliancePolicySetToIntune property value. The user experience work from anywhere device's compliancePolicySetToIntune.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetCompliancePolicySetToIntune(value *bool)() {
-    if m != nil {
-        m.compliancePolicySetToIntune = value
-    }
+    m.compliancePolicySetToIntune = value
 }
 // SetDeviceId sets the deviceId property value. The user experience work from anywhere device Id.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceName sets the deviceName property value. The work from anywhere device's name.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    if m != nil {
-        m.healthStatus = value
-    }
+    m.healthStatus = value
 }
 // SetIsCloudManagedGatewayEnabled sets the isCloudManagedGatewayEnabled property value. The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetIsCloudManagedGatewayEnabled(value *bool)() {
-    if m != nil {
-        m.isCloudManagedGatewayEnabled = value
-    }
+    m.isCloudManagedGatewayEnabled = value
 }
 // SetManagedBy sets the managedBy property value. The user experience work from anywhere management agent of the device.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetManagedBy(value *string)() {
-    if m != nil {
-        m.managedBy = value
-    }
+    m.managedBy = value
 }
 // SetManufacturer sets the manufacturer property value. The user experience work from anywhere device's manufacturer.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. The user experience work from anywhere device's model.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetOsCheckFailed sets the osCheckFailed property value. The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetOsCheckFailed(value *bool)() {
-    if m != nil {
-        m.osCheckFailed = value
-    }
+    m.osCheckFailed = value
 }
 // SetOsDescription sets the osDescription property value. The user experience work from anywhere device's OS Description.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetOsDescription(value *string)() {
-    if m != nil {
-        m.osDescription = value
-    }
+    m.osDescription = value
 }
 // SetOsVersion sets the osVersion property value. The user experience work from anywhere device's OS Version.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetOsVersion(value *string)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }
 // SetOtherWorkloadsSetToIntune sets the otherWorkloadsSetToIntune property value. The user experience work from anywhere device's otherWorkloadsSetToIntune.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetOtherWorkloadsSetToIntune(value *bool)() {
-    if m != nil {
-        m.otherWorkloadsSetToIntune = value
-    }
+    m.otherWorkloadsSetToIntune = value
 }
 // SetOwnership sets the ownership property value. The user experience work from anywhere device's ownership.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetOwnership(value *string)() {
-    if m != nil {
-        m.ownership = value
-    }
+    m.ownership = value
 }
 // SetProcessor64BitCheckFailed sets the processor64BitCheckFailed property value. The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetProcessor64BitCheckFailed(value *bool)() {
-    if m != nil {
-        m.processor64BitCheckFailed = value
-    }
+    m.processor64BitCheckFailed = value
 }
 // SetProcessorCoreCountCheckFailed sets the processorCoreCountCheckFailed property value. The user experience work from anywhere device, Is processor hardware core count check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetProcessorCoreCountCheckFailed(value *bool)() {
-    if m != nil {
-        m.processorCoreCountCheckFailed = value
-    }
+    m.processorCoreCountCheckFailed = value
 }
 // SetProcessorFamilyCheckFailed sets the processorFamilyCheckFailed property value. The user experience work from anywhere device, Is processor hardware family check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetProcessorFamilyCheckFailed(value *bool)() {
-    if m != nil {
-        m.processorFamilyCheckFailed = value
-    }
+    m.processorFamilyCheckFailed = value
 }
 // SetProcessorSpeedCheckFailed sets the processorSpeedCheckFailed property value. The user experience work from anywhere device, Is processor hardware speed check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetProcessorSpeedCheckFailed(value *bool)() {
-    if m != nil {
-        m.processorSpeedCheckFailed = value
-    }
+    m.processorSpeedCheckFailed = value
 }
 // SetRamCheckFailed sets the ramCheckFailed property value. Is the user experience analytics work from anywhere device RAM hardware check failed for device to upgrade to the latest version of windows
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetRamCheckFailed(value *bool)() {
-    if m != nil {
-        m.ramCheckFailed = value
-    }
+    m.ramCheckFailed = value
 }
 // SetSecureBootCheckFailed sets the secureBootCheckFailed property value. The user experience work from anywhere device, Is secure boot hardware check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetSecureBootCheckFailed(value *bool)() {
-    if m != nil {
-        m.secureBootCheckFailed = value
-    }
+    m.secureBootCheckFailed = value
 }
 // SetSerialNumber sets the serialNumber property value. The user experience work from anywhere device's serial number.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetSerialNumber(value *string)() {
-    if m != nil {
-        m.serialNumber = value
-    }
+    m.serialNumber = value
 }
 // SetStorageCheckFailed sets the storageCheckFailed property value. The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetStorageCheckFailed(value *bool)() {
-    if m != nil {
-        m.storageCheckFailed = value
-    }
+    m.storageCheckFailed = value
 }
 // SetTenantAttached sets the tenantAttached property value. The user experience work from anywhere device's tenantAttached.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetTenantAttached(value *bool)() {
-    if m != nil {
-        m.tenantAttached = value
-    }
+    m.tenantAttached = value
 }
 // SetTpmCheckFailed sets the tpmCheckFailed property value. The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetTpmCheckFailed(value *bool)() {
-    if m != nil {
-        m.tpmCheckFailed = value
-    }
+    m.tpmCheckFailed = value
 }
 // SetUpgradeEligibility sets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetUpgradeEligibility(value *OperatingSystemUpgradeEligibility)() {
-    if m != nil {
-        m.upgradeEligibility = value
-    }
+    m.upgradeEligibility = value
 }
 // SetWindowsScore sets the windowsScore property value. The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetWindowsScore(value *float64)() {
-    if m != nil {
-        m.windowsScore = value
-    }
+    m.windowsScore = value
 }
 // SetWorkFromAnywhereScore sets the workFromAnywhereScore property value. The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetWorkFromAnywhereScore(value *float64)() {
-    if m != nil {
-        m.workFromAnywhereScore = value
-    }
+    m.workFromAnywhereScore = value
 }

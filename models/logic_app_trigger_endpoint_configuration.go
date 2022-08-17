@@ -64,27 +64,15 @@ func (m *LogicAppTriggerEndpointConfiguration) GetFieldDeserializers()(map[strin
 }
 // GetLogicAppWorkflowName gets the logicAppWorkflowName property value. The name of the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) GetLogicAppWorkflowName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logicAppWorkflowName
-    }
+    return m.logicAppWorkflowName
 }
 // GetResourceGroupName gets the resourceGroupName property value. The Azure resource group name for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) GetResourceGroupName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceGroupName
-    }
+    return m.resourceGroupName
 }
 // GetSubscriptionId gets the subscriptionId property value. Identifier of the Azure subscription for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) GetSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionId
-    }
+    return m.subscriptionId
 }
 // Serialize serializes information the current object
 func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *LogicAppTriggerEndpointConfiguration) Serialize(writer i878a80d2330e89d
 }
 // SetLogicAppWorkflowName sets the logicAppWorkflowName property value. The name of the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) SetLogicAppWorkflowName(value *string)() {
-    if m != nil {
-        m.logicAppWorkflowName = value
-    }
+    m.logicAppWorkflowName = value
 }
 // SetResourceGroupName sets the resourceGroupName property value. The Azure resource group name for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) SetResourceGroupName(value *string)() {
-    if m != nil {
-        m.resourceGroupName = value
-    }
+    m.resourceGroupName = value
 }
 // SetSubscriptionId sets the subscriptionId property value. Identifier of the Azure subscription for the logic app.
 func (m *LogicAppTriggerEndpointConfiguration) SetSubscriptionId(value *string)() {
-    if m != nil {
-        m.subscriptionId = value
-    }
+    m.subscriptionId = value
 }

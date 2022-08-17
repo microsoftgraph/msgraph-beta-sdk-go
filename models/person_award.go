@@ -35,19 +35,11 @@ func CreatePersonAwardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetDescription gets the description property value. Descpription of the award or honor.
 func (m *PersonAward) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Name of the award or honor.
 func (m *PersonAward) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonAward) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,35 +108,19 @@ func (m *PersonAward) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetIssuedDate gets the issuedDate property value. The date that the award or honor was granted.
 func (m *PersonAward) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuedDate
-    }
+    return m.issuedDate
 }
 // GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the award or honor.
 func (m *PersonAward) GetIssuingAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuingAuthority
-    }
+    return m.issuingAuthority
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the award or honor.
 func (m *PersonAward) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // GetWebUrl gets the webUrl property value. URL referencing the award or honor.
 func (m *PersonAward) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *PersonAward) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *PersonAward) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetDescription sets the description property value. Descpription of the award or honor.
 func (m *PersonAward) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Name of the award or honor.
 func (m *PersonAward) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIssuedDate sets the issuedDate property value. The date that the award or honor was granted.
 func (m *PersonAward) SetIssuedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.issuedDate = value
-    }
+    m.issuedDate = value
 }
 // SetIssuingAuthority sets the issuingAuthority property value. Authority which granted the award or honor.
 func (m *PersonAward) SetIssuingAuthority(value *string)() {
-    if m != nil {
-        m.issuingAuthority = value
-    }
+    m.issuingAuthority = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. URL referencing a thumbnail of the award or honor.
 func (m *PersonAward) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }
 // SetWebUrl sets the webUrl property value. URL referencing the award or honor.
 func (m *PersonAward) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

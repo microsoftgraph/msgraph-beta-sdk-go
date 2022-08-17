@@ -32,27 +32,15 @@ func CreateMacOSLobChildAppFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSLobChildApp) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBuildNumber gets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobChildApp) GetBuildNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.buildNumber
-    }
+    return m.buildNumber
 }
 // GetBundleId gets the bundleId property value. The Identity Name.
 func (m *MacOSLobChildApp) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSLobChildApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *MacOSLobChildApp) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSLobChildApp) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetVersionNumber gets the versionNumber property value. The version number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobChildApp) GetVersionNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionNumber
-    }
+    return m.versionNumber
 }
 // Serialize serializes information the current object
 func (m *MacOSLobChildApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *MacOSLobChildApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSLobChildApp) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBuildNumber sets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobChildApp) SetBuildNumber(value *string)() {
-    if m != nil {
-        m.buildNumber = value
-    }
+    m.buildNumber = value
 }
 // SetBundleId sets the bundleId property value. The Identity Name.
 func (m *MacOSLobChildApp) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSLobChildApp) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetVersionNumber sets the versionNumber property value. The version number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobChildApp) SetVersionNumber(value *string)() {
-    if m != nil {
-        m.versionNumber = value
-    }
+    m.versionNumber = value
 }

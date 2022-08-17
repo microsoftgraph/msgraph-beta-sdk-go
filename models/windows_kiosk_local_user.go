@@ -40,11 +40,7 @@ func (m *WindowsKioskLocalUser) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetUserName gets the userName property value. The local user that will be locked to this kiosk configuration
 func (m *WindowsKioskLocalUser) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskLocalUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsKioskLocalUser) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetUserName sets the userName property value. The local user that will be locked to this kiosk configuration
 func (m *WindowsKioskLocalUser) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }

@@ -58,51 +58,27 @@ func CreateTrustFrameworkKeyFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrustFrameworkKey) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetD gets the d property value. RSA Key - private exponent. Field cannot be read back.
 func (m *TrustFrameworkKey) GetD()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.d
-    }
+    return m.d
 }
 // GetDp gets the dp property value. RSA Key - first exponent. Field cannot be read back.
 func (m *TrustFrameworkKey) GetDp()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dp
-    }
+    return m.dp
 }
 // GetDq gets the dq property value. RSA Key - second exponent. Field cannot be read back.
 func (m *TrustFrameworkKey) GetDq()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dq
-    }
+    return m.dq
 }
 // GetE gets the e property value. RSA Key - public exponent
 func (m *TrustFrameworkKey) GetE()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.e
-    }
+    return m.e
 }
 // GetExp gets the exp property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *TrustFrameworkKey) GetExp()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exp
-    }
+    return m.exp
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -285,99 +261,51 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetK gets the k property value. Symmetric Key for oct key type. Field cannot be read back.
 func (m *TrustFrameworkKey) GetK()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.k
-    }
+    return m.k
 }
 // GetKid gets the kid property value. The unique identifier for the key.
 func (m *TrustFrameworkKey) GetKid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kid
-    }
+    return m.kid
 }
 // GetKty gets the kty property value. The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
 func (m *TrustFrameworkKey) GetKty()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kty
-    }
+    return m.kty
 }
 // GetN gets the n property value. RSA Key - modulus
 func (m *TrustFrameworkKey) GetN()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.n
-    }
+    return m.n
 }
 // GetNbf gets the nbf property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *TrustFrameworkKey) GetNbf()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nbf
-    }
+    return m.nbf
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TrustFrameworkKey) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetP gets the p property value. RSA Key - first prime. Field cannot be read back.
 func (m *TrustFrameworkKey) GetP()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.p
-    }
+    return m.p
 }
 // GetQ gets the q property value. RSA Key - second prime. Field cannot be read back.
 func (m *TrustFrameworkKey) GetQ()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.q
-    }
+    return m.q
 }
 // GetQi gets the qi property value. RSA Key - Coefficient. Field cannot be read back.
 func (m *TrustFrameworkKey) GetQi()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qi
-    }
+    return m.qi
 }
 // GetUse gets the use property value. The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
 func (m *TrustFrameworkKey) GetUse()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.use
-    }
+    return m.use
 }
 // GetX5c gets the x5c property value. The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
 func (m *TrustFrameworkKey) GetX5c()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.x5c
-    }
+    return m.x5c
 }
 // GetX5t gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
 func (m *TrustFrameworkKey) GetX5t()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.x5t
-    }
+    return m.x5t
 }
 // Serialize serializes information the current object
 func (m *TrustFrameworkKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -493,109 +421,73 @@ func (m *TrustFrameworkKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrustFrameworkKey) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetD sets the d property value. RSA Key - private exponent. Field cannot be read back.
 func (m *TrustFrameworkKey) SetD(value *string)() {
-    if m != nil {
-        m.d = value
-    }
+    m.d = value
 }
 // SetDp sets the dp property value. RSA Key - first exponent. Field cannot be read back.
 func (m *TrustFrameworkKey) SetDp(value *string)() {
-    if m != nil {
-        m.dp = value
-    }
+    m.dp = value
 }
 // SetDq sets the dq property value. RSA Key - second exponent. Field cannot be read back.
 func (m *TrustFrameworkKey) SetDq(value *string)() {
-    if m != nil {
-        m.dq = value
-    }
+    m.dq = value
 }
 // SetE sets the e property value. RSA Key - public exponent
 func (m *TrustFrameworkKey) SetE(value *string)() {
-    if m != nil {
-        m.e = value
-    }
+    m.e = value
 }
 // SetExp sets the exp property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *TrustFrameworkKey) SetExp(value *int64)() {
-    if m != nil {
-        m.exp = value
-    }
+    m.exp = value
 }
 // SetK sets the k property value. Symmetric Key for oct key type. Field cannot be read back.
 func (m *TrustFrameworkKey) SetK(value *string)() {
-    if m != nil {
-        m.k = value
-    }
+    m.k = value
 }
 // SetKid sets the kid property value. The unique identifier for the key.
 func (m *TrustFrameworkKey) SetKid(value *string)() {
-    if m != nil {
-        m.kid = value
-    }
+    m.kid = value
 }
 // SetKty sets the kty property value. The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
 func (m *TrustFrameworkKey) SetKty(value *string)() {
-    if m != nil {
-        m.kty = value
-    }
+    m.kty = value
 }
 // SetN sets the n property value. RSA Key - modulus
 func (m *TrustFrameworkKey) SetN(value *string)() {
-    if m != nil {
-        m.n = value
-    }
+    m.n = value
 }
 // SetNbf sets the nbf property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
 func (m *TrustFrameworkKey) SetNbf(value *int64)() {
-    if m != nil {
-        m.nbf = value
-    }
+    m.nbf = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TrustFrameworkKey) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetP sets the p property value. RSA Key - first prime. Field cannot be read back.
 func (m *TrustFrameworkKey) SetP(value *string)() {
-    if m != nil {
-        m.p = value
-    }
+    m.p = value
 }
 // SetQ sets the q property value. RSA Key - second prime. Field cannot be read back.
 func (m *TrustFrameworkKey) SetQ(value *string)() {
-    if m != nil {
-        m.q = value
-    }
+    m.q = value
 }
 // SetQi sets the qi property value. RSA Key - Coefficient. Field cannot be read back.
 func (m *TrustFrameworkKey) SetQi(value *string)() {
-    if m != nil {
-        m.qi = value
-    }
+    m.qi = value
 }
 // SetUse sets the use property value. The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
 func (m *TrustFrameworkKey) SetUse(value *string)() {
-    if m != nil {
-        m.use = value
-    }
+    m.use = value
 }
 // SetX5c sets the x5c property value. The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
 func (m *TrustFrameworkKey) SetX5c(value []string)() {
-    if m != nil {
-        m.x5c = value
-    }
+    m.x5c = value
 }
 // SetX5t sets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
 func (m *TrustFrameworkKey) SetX5t(value *string)() {
-    if m != nil {
-        m.x5t = value
-    }
+    m.x5t = value
 }

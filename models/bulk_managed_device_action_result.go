@@ -34,19 +34,11 @@ func CreateBulkManagedDeviceActionResultFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkManagedDeviceActionResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFailedDeviceIds gets the failedDeviceIds property value. Failed devices
 func (m *BulkManagedDeviceActionResult) GetFailedDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedDeviceIds
-    }
+    return m.failedDeviceIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,35 +113,19 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
 }
 // GetNotFoundDeviceIds gets the notFoundDeviceIds property value. Not found devices
 func (m *BulkManagedDeviceActionResult) GetNotFoundDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notFoundDeviceIds
-    }
+    return m.notFoundDeviceIds
 }
 // GetNotSupportedDeviceIds gets the notSupportedDeviceIds property value. Not supported devices
 func (m *BulkManagedDeviceActionResult) GetNotSupportedDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notSupportedDeviceIds
-    }
+    return m.notSupportedDeviceIds
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BulkManagedDeviceActionResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSuccessfulDeviceIds gets the successfulDeviceIds property value. Successful devices
 func (m *BulkManagedDeviceActionResult) GetSuccessfulDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulDeviceIds
-    }
+    return m.successfulDeviceIds
 }
 // Serialize serializes information the current object
 func (m *BulkManagedDeviceActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *BulkManagedDeviceActionResult) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkManagedDeviceActionResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFailedDeviceIds sets the failedDeviceIds property value. Failed devices
 func (m *BulkManagedDeviceActionResult) SetFailedDeviceIds(value []string)() {
-    if m != nil {
-        m.failedDeviceIds = value
-    }
+    m.failedDeviceIds = value
 }
 // SetNotFoundDeviceIds sets the notFoundDeviceIds property value. Not found devices
 func (m *BulkManagedDeviceActionResult) SetNotFoundDeviceIds(value []string)() {
-    if m != nil {
-        m.notFoundDeviceIds = value
-    }
+    m.notFoundDeviceIds = value
 }
 // SetNotSupportedDeviceIds sets the notSupportedDeviceIds property value. Not supported devices
 func (m *BulkManagedDeviceActionResult) SetNotSupportedDeviceIds(value []string)() {
-    if m != nil {
-        m.notSupportedDeviceIds = value
-    }
+    m.notSupportedDeviceIds = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BulkManagedDeviceActionResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSuccessfulDeviceIds sets the successfulDeviceIds property value. Successful devices
 func (m *BulkManagedDeviceActionResult) SetSuccessfulDeviceIds(value []string)() {
-    if m != nil {
-        m.successfulDeviceIds = value
-    }
+    m.successfulDeviceIds = value
 }

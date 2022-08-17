@@ -34,19 +34,11 @@ func CreateZebraFotaConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetEnrollmentAuthorizationUrl gets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
 func (m *ZebraFotaConnector) GetEnrollmentAuthorizationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentAuthorizationUrl
-    }
+    return m.enrollmentAuthorizationUrl
 }
 // GetEnrollmentToken gets the enrollmentToken property value. Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
 func (m *ZebraFotaConnector) GetEnrollmentToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentToken
-    }
+    return m.enrollmentToken
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ZebraFotaConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,27 +97,15 @@ func (m *ZebraFotaConnector) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetFotaAppsApproved gets the fotaAppsApproved property value. Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.
 func (m *ZebraFotaConnector) GetFotaAppsApproved()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fotaAppsApproved
-    }
+    return m.fotaAppsApproved
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Date and time when the account was last synched with Zebra
 func (m *ZebraFotaConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetState gets the state property value. Represents various states for Zebra FOTA connector.
 func (m *ZebraFotaConnector) GetState()(*ZebraFotaConnectorState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ZebraFotaConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,31 +148,21 @@ func (m *ZebraFotaConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetEnrollmentAuthorizationUrl sets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
 func (m *ZebraFotaConnector) SetEnrollmentAuthorizationUrl(value *string)() {
-    if m != nil {
-        m.enrollmentAuthorizationUrl = value
-    }
+    m.enrollmentAuthorizationUrl = value
 }
 // SetEnrollmentToken sets the enrollmentToken property value. Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
 func (m *ZebraFotaConnector) SetEnrollmentToken(value *string)() {
-    if m != nil {
-        m.enrollmentToken = value
-    }
+    m.enrollmentToken = value
 }
 // SetFotaAppsApproved sets the fotaAppsApproved property value. Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.
 func (m *ZebraFotaConnector) SetFotaAppsApproved(value *bool)() {
-    if m != nil {
-        m.fotaAppsApproved = value
-    }
+    m.fotaAppsApproved = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Date and time when the account was last synched with Zebra
 func (m *ZebraFotaConnector) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetState sets the state property value. Represents various states for Zebra FOTA connector.
 func (m *ZebraFotaConnector) SetState(value *ZebraFotaConnectorState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

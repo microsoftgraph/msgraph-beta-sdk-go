@@ -29,19 +29,11 @@ func CreatePresenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
 func (m *Presence) GetActivity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activity
-    }
+    return m.activity
 }
 // GetAvailability gets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
 func (m *Presence) GetAvailability()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availability
-    }
+    return m.availability
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The out of office settings for a user.
 func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outOfOfficeSettings
-    }
+    return m.outOfOfficeSettings
 }
 // Serialize serializes information the current object
 func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetActivity sets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
 func (m *Presence) SetActivity(value *string)() {
-    if m != nil {
-        m.activity = value
-    }
+    m.activity = value
 }
 // SetAvailability sets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
 func (m *Presence) SetAvailability(value *string)() {
-    if m != nil {
-        m.availability = value
-    }
+    m.availability = value
 }
 // SetOutOfOfficeSettings sets the outOfOfficeSettings property value. The out of office settings for a user.
 func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
-    if m != nil {
-        m.outOfOfficeSettings = value
-    }
+    m.outOfOfficeSettings = value
 }

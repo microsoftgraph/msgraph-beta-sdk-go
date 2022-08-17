@@ -34,43 +34,23 @@ func CreateOemWarrantyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OemWarranty) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdditionalWarranties gets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) GetAdditionalWarranties()([]WarrantyOfferable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalWarranties
-    }
+    return m.additionalWarranties
 }
 // GetBaseWarranties gets the baseWarranties property value. List of base warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) GetBaseWarranties()([]WarrantyOfferable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.baseWarranties
-    }
+    return m.baseWarranties
 }
 // GetDeviceConfigurationUrl gets the deviceConfigurationUrl property value. Device configuration page URL
 func (m *OemWarranty) GetDeviceConfigurationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceConfigurationUrl
-    }
+    return m.deviceConfigurationUrl
 }
 // GetDeviceWarrantyUrl gets the deviceWarrantyUrl property value. Device warranty page URL
 func (m *OemWarranty) GetDeviceWarrantyUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceWarrantyUrl
-    }
+    return m.deviceWarrantyUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OemWarranty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,11 +117,7 @@ func (m *OemWarranty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OemWarranty) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *OemWarranty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *OemWarranty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OemWarranty) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdditionalWarranties sets the additionalWarranties property value. List of additional warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) SetAdditionalWarranties(value []WarrantyOfferable)() {
-    if m != nil {
-        m.additionalWarranties = value
-    }
+    m.additionalWarranties = value
 }
 // SetBaseWarranties sets the baseWarranties property value. List of base warranty offers. This collection can contain a maximum of 100 elements.
 func (m *OemWarranty) SetBaseWarranties(value []WarrantyOfferable)() {
-    if m != nil {
-        m.baseWarranties = value
-    }
+    m.baseWarranties = value
 }
 // SetDeviceConfigurationUrl sets the deviceConfigurationUrl property value. Device configuration page URL
 func (m *OemWarranty) SetDeviceConfigurationUrl(value *string)() {
-    if m != nil {
-        m.deviceConfigurationUrl = value
-    }
+    m.deviceConfigurationUrl = value
 }
 // SetDeviceWarrantyUrl sets the deviceWarrantyUrl property value. Device warranty page URL
 func (m *OemWarranty) SetDeviceWarrantyUrl(value *string)() {
-    if m != nil {
-        m.deviceWarrantyUrl = value
-    }
+    m.deviceWarrantyUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OemWarranty) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

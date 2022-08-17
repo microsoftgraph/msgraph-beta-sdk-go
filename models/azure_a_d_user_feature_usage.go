@@ -38,11 +38,7 @@ func CreateAzureADUserFeatureUsageFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetFeatureUsageDetails gets the featureUsageDetails property value. The featureUsageDetails property
 func (m *AzureADUserFeatureUsage) GetFeatureUsageDetails()([]FeatureUsageDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUsageDetails
-    }
+    return m.featureUsageDetails
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,51 +121,27 @@ func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
 func (m *AzureADUserFeatureUsage) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetLicenseAssigned gets the licenseAssigned property value. The licenseAssigned property
 func (m *AzureADUserFeatureUsage) GetLicenseAssigned()(*AzureADLicenseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseAssigned
-    }
+    return m.licenseAssigned
 }
 // GetLicenseRecommended gets the licenseRecommended property value. The licenseRecommended property
 func (m *AzureADUserFeatureUsage) GetLicenseRecommended()(*AzureADLicenseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseRecommended
-    }
+    return m.licenseRecommended
 }
 // GetUserDisplayName gets the userDisplayName property value. The userDisplayName property
 func (m *AzureADUserFeatureUsage) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
+    return m.userDisplayName
 }
 // GetUserId gets the userId property value. The userId property
 func (m *AzureADUserFeatureUsage) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *AzureADUserFeatureUsage) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *AzureADUserFeatureUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,43 +201,29 @@ func (m *AzureADUserFeatureUsage) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetFeatureUsageDetails sets the featureUsageDetails property value. The featureUsageDetails property
 func (m *AzureADUserFeatureUsage) SetFeatureUsageDetails(value []FeatureUsageDetailable)() {
-    if m != nil {
-        m.featureUsageDetails = value
-    }
+    m.featureUsageDetails = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
 func (m *AzureADUserFeatureUsage) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetLicenseAssigned sets the licenseAssigned property value. The licenseAssigned property
 func (m *AzureADUserFeatureUsage) SetLicenseAssigned(value *AzureADLicenseType)() {
-    if m != nil {
-        m.licenseAssigned = value
-    }
+    m.licenseAssigned = value
 }
 // SetLicenseRecommended sets the licenseRecommended property value. The licenseRecommended property
 func (m *AzureADUserFeatureUsage) SetLicenseRecommended(value *AzureADLicenseType)() {
-    if m != nil {
-        m.licenseRecommended = value
-    }
+    m.licenseRecommended = value
 }
 // SetUserDisplayName sets the userDisplayName property value. The userDisplayName property
 func (m *AzureADUserFeatureUsage) SetUserDisplayName(value *string)() {
-    if m != nil {
-        m.userDisplayName = value
-    }
+    m.userDisplayName = value
 }
 // SetUserId sets the userId property value. The userId property
 func (m *AzureADUserFeatureUsage) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *AzureADUserFeatureUsage) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

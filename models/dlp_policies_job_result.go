@@ -33,27 +33,15 @@ func CreateDlpPoliciesJobResultFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpPoliciesJobResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAuditCorrelationId gets the auditCorrelationId property value. The auditCorrelationId property
 func (m *DlpPoliciesJobResult) GetAuditCorrelationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.auditCorrelationId
-    }
+    return m.auditCorrelationId
 }
 // GetEvaluationDateTime gets the evaluationDateTime property value. The evaluationDateTime property
 func (m *DlpPoliciesJobResult) GetEvaluationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.evaluationDateTime
-    }
+    return m.evaluationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,19 +94,11 @@ func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMatchingRules gets the matchingRules property value. The matchingRules property
 func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchingRules
-    }
+    return m.matchingRules
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DlpPoliciesJobResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DlpPoliciesJobResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -160,31 +140,21 @@ func (m *DlpPoliciesJobResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpPoliciesJobResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAuditCorrelationId sets the auditCorrelationId property value. The auditCorrelationId property
 func (m *DlpPoliciesJobResult) SetAuditCorrelationId(value *string)() {
-    if m != nil {
-        m.auditCorrelationId = value
-    }
+    m.auditCorrelationId = value
 }
 // SetEvaluationDateTime sets the evaluationDateTime property value. The evaluationDateTime property
 func (m *DlpPoliciesJobResult) SetEvaluationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.evaluationDateTime = value
-    }
+    m.evaluationDateTime = value
 }
 // SetMatchingRules sets the matchingRules property value. The matchingRules property
 func (m *DlpPoliciesJobResult) SetMatchingRules(value []MatchingDlpRuleable)() {
-    if m != nil {
-        m.matchingRules = value
-    }
+    m.matchingRules = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DlpPoliciesJobResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

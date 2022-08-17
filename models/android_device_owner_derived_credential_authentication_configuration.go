@@ -29,19 +29,11 @@ func CreateAndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationFromDis
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateAccessType
-    }
+    return m.certificateAccessType
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.derivedCredentialSettings
-    }
+    return m.derivedCredentialSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetFiel
 }
 // GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.silentCertificateAccessDetails
-    }
+    return m.silentCertificateAccessDetails
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,19 +111,13 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) Seriali
 }
 // SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
-    if m != nil {
-        m.certificateAccessType = value
-    }
+    m.certificateAccessType = value
 }
 // SetDerivedCredentialSettings sets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)() {
-    if m != nil {
-        m.derivedCredentialSettings = value
-    }
+    m.derivedCredentialSettings = value
 }
 // SetSilentCertificateAccessDetails sets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)() {
-    if m != nil {
-        m.silentCertificateAccessDetails = value
-    }
+    m.silentCertificateAccessDetails = value
 }

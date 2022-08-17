@@ -136,75 +136,39 @@ func (m *AospDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]fun
 }
 // GetMinAndroidSecurityPatchLevel gets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AospDeviceOwnerCompliancePolicy) GetMinAndroidSecurityPatchLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minAndroidSecurityPatchLevel
-    }
+    return m.minAndroidSecurityPatchLevel
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) GetOsMaximumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMaximumVersion
-    }
+    return m.osMaximumVersion
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) GetOsMinimumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMinimumVersion
-    }
+    return m.osMinimumVersion
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required. Valid values 1 to 8640
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeLock
-    }
+    return m.passwordMinutesOfInactivityBeforeLock
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock device.
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AospDeviceOwnerCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityBlockJailbrokenDevices
-    }
+    return m.securityBlockJailbrokenDevices
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AospDeviceOwnerCompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireEncryption
-    }
+    return m.storageRequireEncryption
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -271,55 +235,37 @@ func (m *AospDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26896
 }
 // SetMinAndroidSecurityPatchLevel sets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AospDeviceOwnerCompliancePolicy) SetMinAndroidSecurityPatchLevel(value *string)() {
-    if m != nil {
-        m.minAndroidSecurityPatchLevel = value
-    }
+    m.minAndroidSecurityPatchLevel = value
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) SetOsMaximumVersion(value *string)() {
-    if m != nil {
-        m.osMaximumVersion = value
-    }
+    m.osMaximumVersion = value
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum Android version.
 func (m *AospDeviceOwnerCompliancePolicy) SetOsMinimumVersion(value *string)() {
-    if m != nil {
-        m.osMinimumVersion = value
-    }
+    m.osMinimumVersion = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required. Valid values 1 to 8640
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeLock = value
-    }
+    m.passwordMinutesOfInactivityBeforeLock = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Require a password to unlock device.
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AospDeviceOwnerCompliancePolicy) SetSecurityBlockJailbrokenDevices(value *bool)() {
-    if m != nil {
-        m.securityBlockJailbrokenDevices = value
-    }
+    m.securityBlockJailbrokenDevices = value
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AospDeviceOwnerCompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireEncryption = value
-    }
+    m.storageRequireEncryption = value
 }

@@ -34,19 +34,11 @@ func CreateApplyPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExcludeGroups gets the excludeGroups property value. The excludeGroups property
 func (m *ApplyPostRequestBody) GetExcludeGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeGroups
-    }
+    return m.excludeGroups
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,43 +115,23 @@ func (m *ApplyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIncludeAllUsers gets the includeAllUsers property value. The includeAllUsers property
 func (m *ApplyPostRequestBody) GetIncludeAllUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeAllUsers
-    }
+    return m.includeAllUsers
 }
 // GetIncludeGroups gets the includeGroups property value. The includeGroups property
 func (m *ApplyPostRequestBody) GetIncludeGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeGroups
-    }
+    return m.includeGroups
 }
 // GetManagementTemplateId gets the managementTemplateId property value. The managementTemplateId property
 func (m *ApplyPostRequestBody) GetManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateId
-    }
+    return m.managementTemplateId
 }
 // GetTenantGroupId gets the tenantGroupId property value. The tenantGroupId property
 func (m *ApplyPostRequestBody) GetTenantGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantGroupId
-    }
+    return m.tenantGroupId
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *ApplyPostRequestBody) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *ApplyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -209,43 +181,29 @@ func (m *ApplyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExcludeGroups sets the excludeGroups property value. The excludeGroups property
 func (m *ApplyPostRequestBody) SetExcludeGroups(value []string)() {
-    if m != nil {
-        m.excludeGroups = value
-    }
+    m.excludeGroups = value
 }
 // SetIncludeAllUsers sets the includeAllUsers property value. The includeAllUsers property
 func (m *ApplyPostRequestBody) SetIncludeAllUsers(value *bool)() {
-    if m != nil {
-        m.includeAllUsers = value
-    }
+    m.includeAllUsers = value
 }
 // SetIncludeGroups sets the includeGroups property value. The includeGroups property
 func (m *ApplyPostRequestBody) SetIncludeGroups(value []string)() {
-    if m != nil {
-        m.includeGroups = value
-    }
+    m.includeGroups = value
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The managementTemplateId property
 func (m *ApplyPostRequestBody) SetManagementTemplateId(value *string)() {
-    if m != nil {
-        m.managementTemplateId = value
-    }
+    m.managementTemplateId = value
 }
 // SetTenantGroupId sets the tenantGroupId property value. The tenantGroupId property
 func (m *ApplyPostRequestBody) SetTenantGroupId(value *string)() {
-    if m != nil {
-        m.tenantGroupId = value
-    }
+    m.tenantGroupId = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *ApplyPostRequestBody) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamTemplateDefinition provides operations to manage the collection of accessReview entities.
+// TeamTemplateDefinition provides operations to manage the collection of activityStatistics entities.
 type TeamTemplateDefinition struct {
     Entity
     // The audience property
@@ -48,35 +48,19 @@ func CreateTeamTemplateDefinitionFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAudience gets the audience property value. The audience property
 func (m *TeamTemplateDefinition) GetAudience()(*TeamTemplateAudience) {
-    if m == nil {
-        return nil
-    } else {
-        return m.audience
-    }
+    return m.audience
 }
 // GetCategories gets the categories property value. The categories property
 func (m *TeamTemplateDefinition) GetCategories()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
 // GetDescription gets the description property value. The description property
 func (m *TeamTemplateDefinition) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *TeamTemplateDefinition) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamTemplateDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -209,67 +193,35 @@ func (m *TeamTemplateDefinition) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIconUrl gets the iconUrl property value. The iconUrl property
 func (m *TeamTemplateDefinition) GetIconUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iconUrl
-    }
+    return m.iconUrl
 }
 // GetLanguageTag gets the languageTag property value. The languageTag property
 func (m *TeamTemplateDefinition) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
+    return m.languageTag
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
 func (m *TeamTemplateDefinition) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *TeamTemplateDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetParentTemplateId gets the parentTemplateId property value. The parentTemplateId property
 func (m *TeamTemplateDefinition) GetParentTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentTemplateId
-    }
+    return m.parentTemplateId
 }
 // GetPublisherName gets the publisherName property value. The publisherName property
 func (m *TeamTemplateDefinition) GetPublisherName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisherName
-    }
+    return m.publisherName
 }
 // GetShortDescription gets the shortDescription property value. The shortDescription property
 func (m *TeamTemplateDefinition) GetShortDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shortDescription
-    }
+    return m.shortDescription
 }
 // GetTeamDefinition gets the teamDefinition property value. The teamDefinition property
 func (m *TeamTemplateDefinition) GetTeamDefinition()(Teamable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamDefinition
-    }
+    return m.teamDefinition
 }
 // Serialize serializes information the current object
 func (m *TeamTemplateDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -354,73 +306,49 @@ func (m *TeamTemplateDefinition) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAudience sets the audience property value. The audience property
 func (m *TeamTemplateDefinition) SetAudience(value *TeamTemplateAudience)() {
-    if m != nil {
-        m.audience = value
-    }
+    m.audience = value
 }
 // SetCategories sets the categories property value. The categories property
 func (m *TeamTemplateDefinition) SetCategories(value []string)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
 // SetDescription sets the description property value. The description property
 func (m *TeamTemplateDefinition) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *TeamTemplateDefinition) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIconUrl sets the iconUrl property value. The iconUrl property
 func (m *TeamTemplateDefinition) SetIconUrl(value *string)() {
-    if m != nil {
-        m.iconUrl = value
-    }
+    m.iconUrl = value
 }
 // SetLanguageTag sets the languageTag property value. The languageTag property
 func (m *TeamTemplateDefinition) SetLanguageTag(value *string)() {
-    if m != nil {
-        m.languageTag = value
-    }
+    m.languageTag = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
 func (m *TeamTemplateDefinition) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *TeamTemplateDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetParentTemplateId sets the parentTemplateId property value. The parentTemplateId property
 func (m *TeamTemplateDefinition) SetParentTemplateId(value *string)() {
-    if m != nil {
-        m.parentTemplateId = value
-    }
+    m.parentTemplateId = value
 }
 // SetPublisherName sets the publisherName property value. The publisherName property
 func (m *TeamTemplateDefinition) SetPublisherName(value *string)() {
-    if m != nil {
-        m.publisherName = value
-    }
+    m.publisherName = value
 }
 // SetShortDescription sets the shortDescription property value. The shortDescription property
 func (m *TeamTemplateDefinition) SetShortDescription(value *string)() {
-    if m != nil {
-        m.shortDescription = value
-    }
+    m.shortDescription = value
 }
 // SetTeamDefinition sets the teamDefinition property value. The teamDefinition property
 func (m *TeamTemplateDefinition) SetTeamDefinition(value Teamable)() {
-    if m != nil {
-        m.teamDefinition = value
-    }
+    m.teamDefinition = value
 }

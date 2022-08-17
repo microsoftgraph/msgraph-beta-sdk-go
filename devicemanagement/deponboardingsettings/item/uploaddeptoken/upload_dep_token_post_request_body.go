@@ -26,27 +26,15 @@ func CreateUploadDepTokenPostRequestBodyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadDepTokenPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppleId gets the appleId property value. The appleId property
 func (m *UploadDepTokenPostRequestBody) GetAppleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appleId
-    }
+    return m.appleId
 }
 // GetDepToken gets the depToken property value. The depToken property
 func (m *UploadDepTokenPostRequestBody) GetDepToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.depToken
-    }
+    return m.depToken
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UploadDepTokenPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,19 +85,13 @@ func (m *UploadDepTokenPostRequestBody) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadDepTokenPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppleId sets the appleId property value. The appleId property
 func (m *UploadDepTokenPostRequestBody) SetAppleId(value *string)() {
-    if m != nil {
-        m.appleId = value
-    }
+    m.appleId = value
 }
 // SetDepToken sets the depToken property value. The depToken property
 func (m *UploadDepTokenPostRequestBody) SetDepToken(value *string)() {
-    if m != nil {
-        m.depToken = value
-    }
+    m.depToken = value
 }

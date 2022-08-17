@@ -25,11 +25,7 @@ func CreateExternalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetConnections gets the connections property value. The connections property
 func (m *External) GetConnections()([]ExternalConnectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connections
-    }
+    return m.connections
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *External) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *External) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetConnections sets the connections property value. The connections property
 func (m *External) SetConnections(value []ExternalConnectionable)() {
-    if m != nil {
-        m.connections = value
-    }
+    m.connections = value
 }

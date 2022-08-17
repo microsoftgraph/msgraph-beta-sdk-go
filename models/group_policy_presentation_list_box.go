@@ -27,11 +27,7 @@ func CreateGroupPolicyPresentationListBoxFromDiscriminatorValue(parseNode i878a8
 }
 // GetExplicitValue gets the explicitValue property value. If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
 func (m *GroupPolicyPresentationListBox) GetExplicitValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.explicitValue
-    }
+    return m.explicitValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationListBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *GroupPolicyPresentationListBox) GetFieldDeserializers()(map[string]func
 }
 // GetValuePrefix gets the valuePrefix property value. Not yet documented
 func (m *GroupPolicyPresentationListBox) GetValuePrefix()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valuePrefix
-    }
+    return m.valuePrefix
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationListBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *GroupPolicyPresentationListBox) Serialize(writer i878a80d2330e89d268963
 }
 // SetExplicitValue sets the explicitValue property value. If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
 func (m *GroupPolicyPresentationListBox) SetExplicitValue(value *bool)() {
-    if m != nil {
-        m.explicitValue = value
-    }
+    m.explicitValue = value
 }
 // SetValuePrefix sets the valuePrefix property value. Not yet documented
 func (m *GroupPolicyPresentationListBox) SetValuePrefix(value *string)() {
-    if m != nil {
-        m.valuePrefix = value
-    }
+    m.valuePrefix = value
 }

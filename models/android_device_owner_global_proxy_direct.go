@@ -29,11 +29,7 @@ func CreateAndroidDeviceOwnerGlobalProxyDirectFromDiscriminatorValue(parseNode i
 }
 // GetExcludedHosts gets the excludedHosts property value. The excluded hosts
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetExcludedHosts()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludedHosts
-    }
+    return m.excludedHosts
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) GetFieldDeserializers()(map[string
 }
 // GetHost gets the host property value. The host name
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetHost()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.host
-    }
+    return m.host
 }
 // GetPort gets the port property value. The port
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.port
-    }
+    return m.port
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerGlobalProxyDirect) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,19 +106,13 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) Serialize(writer i878a80d2330e89d2
 }
 // SetExcludedHosts sets the excludedHosts property value. The excluded hosts
 func (m *AndroidDeviceOwnerGlobalProxyDirect) SetExcludedHosts(value []string)() {
-    if m != nil {
-        m.excludedHosts = value
-    }
+    m.excludedHosts = value
 }
 // SetHost sets the host property value. The host name
 func (m *AndroidDeviceOwnerGlobalProxyDirect) SetHost(value *string)() {
-    if m != nil {
-        m.host = value
-    }
+    m.host = value
 }
 // SetPort sets the port property value. The port
 func (m *AndroidDeviceOwnerGlobalProxyDirect) SetPort(value *int32)() {
-    if m != nil {
-        m.port = value
-    }
+    m.port = value
 }

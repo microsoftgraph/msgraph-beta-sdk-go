@@ -44,35 +44,19 @@ func CreateComanagedDevicesSummaryFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagedDevicesSummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCompliancePolicyCount gets the compliancePolicyCount property value. Number of devices with CompliancePolicy swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetCompliancePolicyCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliancePolicyCount
-    }
+    return m.compliancePolicyCount
 }
 // GetConfigurationSettingsCount gets the configurationSettingsCount property value. Number of devices with ConfigurationSettings swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetConfigurationSettingsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationSettingsCount
-    }
+    return m.configurationSettingsCount
 }
 // GetEndpointProtectionCount gets the endpointProtectionCount property value. Number of devices with EndpointProtection swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetEndpointProtectionCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endpointProtectionCount
-    }
+    return m.endpointProtectionCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -181,59 +165,31 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetInventoryCount gets the inventoryCount property value. Number of devices with Inventory swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetInventoryCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventoryCount
-    }
+    return m.inventoryCount
 }
 // GetModernAppsCount gets the modernAppsCount property value. Number of devices with ModernApps swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetModernAppsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modernAppsCount
-    }
+    return m.modernAppsCount
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ComanagedDevicesSummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOfficeAppsCount gets the officeAppsCount property value. Number of devices with OfficeApps swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetOfficeAppsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeAppsCount
-    }
+    return m.officeAppsCount
 }
 // GetResourceAccessCount gets the resourceAccessCount property value. Number of devices with ResourceAccess swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetResourceAccessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceAccessCount
-    }
+    return m.resourceAccessCount
 }
 // GetTotalComanagedCount gets the totalComanagedCount property value. Number of Co-Managed Devices. This property is read-only.
 func (m *ComanagedDevicesSummary) GetTotalComanagedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalComanagedCount
-    }
+    return m.totalComanagedCount
 }
 // GetWindowsUpdateForBusinessCount gets the windowsUpdateForBusinessCount property value. Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) GetWindowsUpdateForBusinessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsUpdateForBusinessCount
-    }
+    return m.windowsUpdateForBusinessCount
 }
 // Serialize serializes information the current object
 func (m *ComanagedDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -307,67 +263,45 @@ func (m *ComanagedDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagedDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCompliancePolicyCount sets the compliancePolicyCount property value. Number of devices with CompliancePolicy swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetCompliancePolicyCount(value *int32)() {
-    if m != nil {
-        m.compliancePolicyCount = value
-    }
+    m.compliancePolicyCount = value
 }
 // SetConfigurationSettingsCount sets the configurationSettingsCount property value. Number of devices with ConfigurationSettings swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetConfigurationSettingsCount(value *int32)() {
-    if m != nil {
-        m.configurationSettingsCount = value
-    }
+    m.configurationSettingsCount = value
 }
 // SetEndpointProtectionCount sets the endpointProtectionCount property value. Number of devices with EndpointProtection swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetEndpointProtectionCount(value *int32)() {
-    if m != nil {
-        m.endpointProtectionCount = value
-    }
+    m.endpointProtectionCount = value
 }
 // SetInventoryCount sets the inventoryCount property value. Number of devices with Inventory swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetInventoryCount(value *int32)() {
-    if m != nil {
-        m.inventoryCount = value
-    }
+    m.inventoryCount = value
 }
 // SetModernAppsCount sets the modernAppsCount property value. Number of devices with ModernApps swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetModernAppsCount(value *int32)() {
-    if m != nil {
-        m.modernAppsCount = value
-    }
+    m.modernAppsCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ComanagedDevicesSummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOfficeAppsCount sets the officeAppsCount property value. Number of devices with OfficeApps swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetOfficeAppsCount(value *int32)() {
-    if m != nil {
-        m.officeAppsCount = value
-    }
+    m.officeAppsCount = value
 }
 // SetResourceAccessCount sets the resourceAccessCount property value. Number of devices with ResourceAccess swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetResourceAccessCount(value *int32)() {
-    if m != nil {
-        m.resourceAccessCount = value
-    }
+    m.resourceAccessCount = value
 }
 // SetTotalComanagedCount sets the totalComanagedCount property value. Number of Co-Managed Devices. This property is read-only.
 func (m *ComanagedDevicesSummary) SetTotalComanagedCount(value *int32)() {
-    if m != nil {
-        m.totalComanagedCount = value
-    }
+    m.totalComanagedCount = value
 }
 // SetWindowsUpdateForBusinessCount sets the windowsUpdateForBusinessCount property value. Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetWindowsUpdateForBusinessCount(value *int32)() {
-    if m != nil {
-        m.windowsUpdateForBusinessCount = value
-    }
+    m.windowsUpdateForBusinessCount = value
 }

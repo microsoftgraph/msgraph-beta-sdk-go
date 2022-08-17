@@ -40,11 +40,7 @@ func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]fun
 }
 // GetSettings gets the settings property value. The settings property
 func (m *DirectoryRoleAccessReviewPolicy) GetSettings()(AccessReviewScheduleSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // Serialize serializes information the current object
 func (m *DirectoryRoleAccessReviewPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DirectoryRoleAccessReviewPolicy) Serialize(writer i878a80d2330e89d26896
 }
 // SetSettings sets the settings property value. The settings property
 func (m *DirectoryRoleAccessReviewPolicy) SetSettings(value AccessReviewScheduleSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }

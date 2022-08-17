@@ -32,19 +32,11 @@ func CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidEnrollmentCompanyCode) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnrollmentToken gets the enrollmentToken property value. Enrollment Token used by the User to enroll their device.
 func (m *AndroidEnrollmentCompanyCode) GetEnrollmentToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentToken
-    }
+    return m.enrollmentToken
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidEnrollmentCompanyCode) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) GetQrCodeContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qrCodeContent
-    }
+    return m.qrCodeContent
 }
 // GetQrCodeImage gets the qrCodeImage property value. Generated QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) GetQrCodeImage()(MimeContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qrCodeImage
-    }
+    return m.qrCodeImage
 }
 // Serialize serializes information the current object
 func (m *AndroidEnrollmentCompanyCode) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *AndroidEnrollmentCompanyCode) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidEnrollmentCompanyCode) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnrollmentToken sets the enrollmentToken property value. Enrollment Token used by the User to enroll their device.
 func (m *AndroidEnrollmentCompanyCode) SetEnrollmentToken(value *string)() {
-    if m != nil {
-        m.enrollmentToken = value
-    }
+    m.enrollmentToken = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidEnrollmentCompanyCode) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQrCodeContent sets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) SetQrCodeContent(value *string)() {
-    if m != nil {
-        m.qrCodeContent = value
-    }
+    m.qrCodeContent = value
 }
 // SetQrCodeImage sets the qrCodeImage property value. Generated QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) SetQrCodeImage(value MimeContentable)() {
-    if m != nil {
-        m.qrCodeImage = value
-    }
+    m.qrCodeImage = value
 }

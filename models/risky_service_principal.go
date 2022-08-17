@@ -63,27 +63,15 @@ func CreateRiskyServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false.
 func (m *RiskyServicePrincipal) GetAccountEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountEnabled
-    }
+    return m.accountEnabled
 }
 // GetAppId gets the appId property value. The globally unique identifier for the associated application (its appId property), if any.
 func (m *RiskyServicePrincipal) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetDisplayName gets the displayName property value. The display name for the service principal.
 func (m *RiskyServicePrincipal) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -196,59 +184,31 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetHistory gets the history property value. Represents the risk history of Azure AD service principals.
 func (m *RiskyServicePrincipal) GetHistory()([]RiskyServicePrincipalHistoryItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.history
-    }
+    return m.history
 }
 // GetIsProcessing gets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
 func (m *RiskyServicePrincipal) GetIsProcessing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isProcessing
-    }
+    return m.isProcessing
 }
 // GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden,  adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 func (m *RiskyServicePrincipal) GetRiskDetail()(*RiskDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskDetail
-    }
+    return m.riskDetail
 }
 // GetRiskLastUpdatedDateTime gets the riskLastUpdatedDateTime property value. The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
 func (m *RiskyServicePrincipal) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskLastUpdatedDateTime
-    }
+    return m.riskLastUpdatedDateTime
 }
 // GetRiskLevel gets the riskLevel property value. Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
 func (m *RiskyServicePrincipal) GetRiskLevel()(*RiskLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskLevel
-    }
+    return m.riskLevel
 }
 // GetRiskState gets the riskState property value. State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyServicePrincipal) GetRiskState()(*RiskState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskState
-    }
+    return m.riskState
 }
 // GetServicePrincipalType gets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
 func (m *RiskyServicePrincipal) GetServicePrincipalType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalType
-    }
+    return m.servicePrincipalType
 }
 // Serialize serializes information the current object
 func (m *RiskyServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -327,61 +287,41 @@ func (m *RiskyServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false.
 func (m *RiskyServicePrincipal) SetAccountEnabled(value *bool)() {
-    if m != nil {
-        m.accountEnabled = value
-    }
+    m.accountEnabled = value
 }
 // SetAppId sets the appId property value. The globally unique identifier for the associated application (its appId property), if any.
 func (m *RiskyServicePrincipal) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetDisplayName sets the displayName property value. The display name for the service principal.
 func (m *RiskyServicePrincipal) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHistory sets the history property value. Represents the risk history of Azure AD service principals.
 func (m *RiskyServicePrincipal) SetHistory(value []RiskyServicePrincipalHistoryItemable)() {
-    if m != nil {
-        m.history = value
-    }
+    m.history = value
 }
 // SetIsProcessing sets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
 func (m *RiskyServicePrincipal) SetIsProcessing(value *bool)() {
-    if m != nil {
-        m.isProcessing = value
-    }
+    m.isProcessing = value
 }
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden,  adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 func (m *RiskyServicePrincipal) SetRiskDetail(value *RiskDetail)() {
-    if m != nil {
-        m.riskDetail = value
-    }
+    m.riskDetail = value
 }
 // SetRiskLastUpdatedDateTime sets the riskLastUpdatedDateTime property value. The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
 func (m *RiskyServicePrincipal) SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.riskLastUpdatedDateTime = value
-    }
+    m.riskLastUpdatedDateTime = value
 }
 // SetRiskLevel sets the riskLevel property value. Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
 func (m *RiskyServicePrincipal) SetRiskLevel(value *RiskLevel)() {
-    if m != nil {
-        m.riskLevel = value
-    }
+    m.riskLevel = value
 }
 // SetRiskState sets the riskState property value. State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyServicePrincipal) SetRiskState(value *RiskState)() {
-    if m != nil {
-        m.riskState = value
-    }
+    m.riskState = value
 }
 // SetServicePrincipalType sets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
 func (m *RiskyServicePrincipal) SetServicePrincipalType(value *string)() {
-    if m != nil {
-        m.servicePrincipalType = value
-    }
+    m.servicePrincipalType = value
 }

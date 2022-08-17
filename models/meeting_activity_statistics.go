@@ -35,19 +35,11 @@ func CreateMeetingActivityStatisticsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAfterHours gets the afterHours property value. Time spent on meetings outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.afterHours
-    }
+    return m.afterHours
 }
 // GetConflicting gets the conflicting property value. Time spent in conflicting meetings (meetings that overlap with other meetings that the person accepted and where the person’s status is set to Busy). The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) GetConflicting()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflicting
-    }
+    return m.conflicting
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,35 +108,19 @@ func (m *MeetingActivityStatistics) GetFieldDeserializers()(map[string]func(i878
 }
 // GetLong gets the long property value. Time spent in long meetings (more than an hour in duration). The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) GetLong()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.long
-    }
+    return m.long
 }
 // GetMultitasking gets the multitasking property value. Time spent in meetings where the person was multitasking (read/sent more than a minimum number of emails and/or sent more than a minimum number of messages in Teams or in Skype for Business). The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) GetMultitasking()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multitasking
-    }
+    return m.multitasking
 }
 // GetOrganized gets the organized property value. Time spent in meetings organized by the user. The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) GetOrganized()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organized
-    }
+    return m.organized
 }
 // GetRecurring gets the recurring property value. Time spent on recurring meetings. The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) GetRecurring()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurring
-    }
+    return m.recurring
 }
 // Serialize serializes information the current object
 func (m *MeetingActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *MeetingActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAfterHours sets the afterHours property value. Time spent on meetings outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.afterHours = value
-    }
+    m.afterHours = value
 }
 // SetConflicting sets the conflicting property value. Time spent in conflicting meetings (meetings that overlap with other meetings that the person accepted and where the person’s status is set to Busy). The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) SetConflicting(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.conflicting = value
-    }
+    m.conflicting = value
 }
 // SetLong sets the long property value. Time spent in long meetings (more than an hour in duration). The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) SetLong(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.long = value
-    }
+    m.long = value
 }
 // SetMultitasking sets the multitasking property value. Time spent in meetings where the person was multitasking (read/sent more than a minimum number of emails and/or sent more than a minimum number of messages in Teams or in Skype for Business). The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) SetMultitasking(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.multitasking = value
-    }
+    m.multitasking = value
 }
 // SetOrganized sets the organized property value. Time spent in meetings organized by the user. The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) SetOrganized(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.organized = value
-    }
+    m.organized = value
 }
 // SetRecurring sets the recurring property value. Time spent on recurring meetings. The value is represented in ISO 8601 format for durations.
 func (m *MeetingActivityStatistics) SetRecurring(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.recurring = value
-    }
+    m.recurring = value
 }

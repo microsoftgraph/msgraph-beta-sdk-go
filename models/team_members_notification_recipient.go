@@ -40,11 +40,7 @@ func (m *TeamMembersNotificationRecipient) GetFieldDeserializers()(map[string]fu
 }
 // GetTeamId gets the teamId property value. The team's identifier.
 func (m *TeamMembersNotificationRecipient) GetTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamId
-    }
+    return m.teamId
 }
 // Serialize serializes information the current object
 func (m *TeamMembersNotificationRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *TeamMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2689
 }
 // SetTeamId sets the teamId property value. The team's identifier.
 func (m *TeamMembersNotificationRecipient) SetTeamId(value *string)() {
-    if m != nil {
-        m.teamId = value
-    }
+    m.teamId = value
 }

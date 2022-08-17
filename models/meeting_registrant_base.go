@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrantBase provides operations to manage the collection of activityStatistics entities.
+// MeetingRegistrantBase provides operations to manage the collection of accessReviewDecision entities.
 type MeetingRegistrantBase struct {
     Entity
     // A unique web URL for the registrant to join the meeting. Read-only.
@@ -61,11 +61,7 @@ func (m *MeetingRegistrantBase) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetJoinWebUrl gets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
 func (m *MeetingRegistrantBase) GetJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinWebUrl
-    }
+    return m.joinWebUrl
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrantBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,7 +79,5 @@ func (m *MeetingRegistrantBase) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetJoinWebUrl sets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
 func (m *MeetingRegistrantBase) SetJoinWebUrl(value *string)() {
-    if m != nil {
-        m.joinWebUrl = value
-    }
+    m.joinWebUrl = value
 }

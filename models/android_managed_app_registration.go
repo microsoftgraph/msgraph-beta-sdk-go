@@ -40,11 +40,7 @@ func (m *AndroidManagedAppRegistration) GetFieldDeserializers()(map[string]func(
 }
 // GetPatchVersion gets the patchVersion property value. The patch version for the current android app registration
 func (m *AndroidManagedAppRegistration) GetPatchVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.patchVersion
-    }
+    return m.patchVersion
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AndroidManagedAppRegistration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetPatchVersion sets the patchVersion property value. The patch version for the current android app registration
 func (m *AndroidManagedAppRegistration) SetPatchVersion(value *string)() {
-    if m != nil {
-        m.patchVersion = value
-    }
+    m.patchVersion = value
 }

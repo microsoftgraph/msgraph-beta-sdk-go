@@ -52,19 +52,11 @@ func (m *OmaSettingInteger) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIsReadOnly gets the isReadOnly property value. By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set
 func (m *OmaSettingInteger) GetIsReadOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReadOnly
-    }
+    return m.isReadOnly
 }
 // GetValue gets the value property value. Value.
 func (m *OmaSettingInteger) GetValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *OmaSettingInteger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *OmaSettingInteger) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetIsReadOnly sets the isReadOnly property value. By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set
 func (m *OmaSettingInteger) SetIsReadOnly(value *bool)() {
-    if m != nil {
-        m.isReadOnly = value
-    }
+    m.isReadOnly = value
 }
 // SetValue sets the value property value. Value.
 func (m *OmaSettingInteger) SetValue(value *int32)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

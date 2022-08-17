@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SynchronizationJob provides operations to manage the collection of accessReview entities.
+// SynchronizationJob provides operations to manage the collection of accessReviewDecision entities.
 type SynchronizationJob struct {
     Entity
     // Schedule used to run the job. Read-only.
@@ -92,43 +92,23 @@ func (m *SynchronizationJob) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetSchedule gets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) GetSchedule()(SynchronizationScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
+    return m.schedule
 }
 // GetSchema gets the schema property value. The synchronization schema configured for the job.
 func (m *SynchronizationJob) GetSchema()(SynchronizationSchemaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schema
-    }
+    return m.schema
 }
 // GetStatus gets the status property value. Status of the job, which includes when the job was last run, current job state, and errors.
 func (m *SynchronizationJob) GetStatus()(SynchronizationStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetSynchronizationJobSettings gets the synchronizationJobSettings property value. Settings associated with the job. Some settings are inherited from the template.
 func (m *SynchronizationJob) GetSynchronizationJobSettings()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.synchronizationJobSettings
-    }
+    return m.synchronizationJobSettings
 }
 // GetTemplateId gets the templateId property value. Identifier of the synchronization template this job is based on.
 func (m *SynchronizationJob) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
+    return m.templateId
 }
 // Serialize serializes information the current object
 func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetSchedule sets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) SetSchedule(value SynchronizationScheduleable)() {
-    if m != nil {
-        m.schedule = value
-    }
+    m.schedule = value
 }
 // SetSchema sets the schema property value. The synchronization schema configured for the job.
 func (m *SynchronizationJob) SetSchema(value SynchronizationSchemaable)() {
-    if m != nil {
-        m.schema = value
-    }
+    m.schema = value
 }
 // SetStatus sets the status property value. Status of the job, which includes when the job was last run, current job state, and errors.
 func (m *SynchronizationJob) SetStatus(value SynchronizationStatusable)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetSynchronizationJobSettings sets the synchronizationJobSettings property value. Settings associated with the job. Some settings are inherited from the template.
 func (m *SynchronizationJob) SetSynchronizationJobSettings(value []KeyValuePairable)() {
-    if m != nil {
-        m.synchronizationJobSettings = value
-    }
+    m.synchronizationJobSettings = value
 }
 // SetTemplateId sets the templateId property value. Identifier of the synchronization template this job is based on.
 func (m *SynchronizationJob) SetTemplateId(value *string)() {
-    if m != nil {
-        m.templateId = value
-    }
+    m.templateId = value
 }

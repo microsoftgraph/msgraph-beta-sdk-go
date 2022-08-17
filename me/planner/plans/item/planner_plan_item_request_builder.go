@@ -27,7 +27,7 @@ type PlannerPlanItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PlannerPlanItemRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerTasks assigned to the user.
+// PlannerPlanItemRequestBuilderGetQueryParameters get plans from me
 type PlannerPlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -100,11 +100,11 @@ func (m *PlannerPlanItemRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreateGetRequestInformation get plans from me
 func (m *PlannerPlanItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerTasks assigned to the user.
+// CreateGetRequestInformationWithRequestConfiguration get plans from me
 func (m *PlannerPlanItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlannerPlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,11 +161,11 @@ func (m *PlannerPlanItemRequestBuilder) DeleteWithRequestConfigurationAndRespons
 func (m *PlannerPlanItemRequestBuilder) Details()(*i9800485461c637fd964b8b604adecc9eb52f29415b0fdcbce97286ef735a649d.DetailsRequestBuilder) {
     return i9800485461c637fd964b8b604adecc9eb52f29415b0fdcbce97286ef735a649d.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get read-only. Nullable. Returns the plannerTasks assigned to the user.
+// Get get plans from me
 func (m *PlannerPlanItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Returns the plannerTasks assigned to the user.
+// GetWithRequestConfigurationAndResponseHandler get plans from me
 func (m *PlannerPlanItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlannerPlanItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -29,11 +29,7 @@ func CreateMobileAppTroubleshootingAppTargetHistoryFromDiscriminatorValue(parseN
 }
 // GetErrorCode gets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppTargetHistory) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingAppTargetHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *MobileAppTroubleshootingAppTargetHistory) GetFieldDeserializers()(map[s
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppTargetHistory) GetRunState()(*RunState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runState
-    }
+    return m.runState
 }
 // GetSecurityGroupId gets the securityGroupId property value. AAD security group id to which it was targeted.
 func (m *MobileAppTroubleshootingAppTargetHistory) GetSecurityGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityGroupId
-    }
+    return m.securityGroupId
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingAppTargetHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *MobileAppTroubleshootingAppTargetHistory) Serialize(writer i878a80d2330
 }
 // SetErrorCode sets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppTargetHistory) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppTargetHistory) SetRunState(value *RunState)() {
-    if m != nil {
-        m.runState = value
-    }
+    m.runState = value
 }
 // SetSecurityGroupId sets the securityGroupId property value. AAD security group id to which it was targeted.
 func (m *MobileAppTroubleshootingAppTargetHistory) SetSecurityGroupId(value *string)() {
-    if m != nil {
-        m.securityGroupId = value
-    }
+    m.securityGroupId = value
 }

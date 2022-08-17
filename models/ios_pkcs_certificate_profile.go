@@ -39,43 +39,23 @@ func CreateIosPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *IosPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateStore
-    }
+    return m.certificateStore
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name.
 func (m *IosPkcsCertificateProfile) GetCertificateTemplateName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateTemplateName
-    }
+    return m.certificateTemplateName
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority.
 func (m *IosPkcsCertificateProfile) GetCertificationAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthority
-    }
+    return m.certificationAuthority
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name.
 func (m *IosPkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthorityName
-    }
+    return m.certificationAuthorityName
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *IosPkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSubjectAlternativeNames
-    }
+    return m.customSubjectAlternativeNames
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -172,27 +152,15 @@ func (m *IosPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *IosPkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *IosPkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormatString
-    }
+    return m.subjectAlternativeNameFormatString
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *IosPkcsCertificateProfile) GetSubjectNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormatString
-    }
+    return m.subjectNameFormatString
 }
 // Serialize serializes information the current object
 func (m *IosPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -261,49 +229,33 @@ func (m *IosPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *IosPkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    if m != nil {
-        m.certificateStore = value
-    }
+    m.certificateStore = value
 }
 // SetCertificateTemplateName sets the certificateTemplateName property value. PKCS Certificate Template Name.
 func (m *IosPkcsCertificateProfile) SetCertificateTemplateName(value *string)() {
-    if m != nil {
-        m.certificateTemplateName = value
-    }
+    m.certificateTemplateName = value
 }
 // SetCertificationAuthority sets the certificationAuthority property value. PKCS Certification Authority.
 func (m *IosPkcsCertificateProfile) SetCertificationAuthority(value *string)() {
-    if m != nil {
-        m.certificationAuthority = value
-    }
+    m.certificationAuthority = value
 }
 // SetCertificationAuthorityName sets the certificationAuthorityName property value. PKCS Certification Authority Name.
 func (m *IosPkcsCertificateProfile) SetCertificationAuthorityName(value *string)() {
-    if m != nil {
-        m.certificationAuthorityName = value
-    }
+    m.certificationAuthorityName = value
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *IosPkcsCertificateProfile) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    if m != nil {
-        m.customSubjectAlternativeNames = value
-    }
+    m.customSubjectAlternativeNames = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *IosPkcsCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *IosPkcsCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectAlternativeNameFormatString = value
-    }
+    m.subjectAlternativeNameFormatString = value
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *IosPkcsCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectNameFormatString = value
-    }
+    m.subjectNameFormatString = value
 }

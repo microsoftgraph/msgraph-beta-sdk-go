@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelServerLogCollectionResponse 
+// MicrosoftTunnelServerLogCollectionResponse entity that stores the server log collection status.
 type MicrosoftTunnelServerLogCollectionResponse struct {
     Entity
     // The end time of the logs collected
@@ -23,7 +23,7 @@ type MicrosoftTunnelServerLogCollectionResponse struct {
     // Enum type that represent the status of log collection.
     status *MicrosoftTunnelLogCollectionStatus
 }
-// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new MicrosoftTunnelServerLogCollectionResponse and sets the default values.
+// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new microsoftTunnelServerLogCollectionResponse and sets the default values.
 func NewMicrosoftTunnelServerLogCollectionResponse()(*MicrosoftTunnelServerLogCollectionResponse) {
     m := &MicrosoftTunnelServerLogCollectionResponse{
         Entity: *NewEntity(),
@@ -38,19 +38,11 @@ func CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue(pars
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the logs collected
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetExpiryDateTime gets the expiryDateTime property value. The time when the log collection is expired
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expiryDateTime
-    }
+    return m.expiryDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,43 +121,23 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
 }
 // GetRequestDateTime gets the requestDateTime property value. The time when the log collection was requested
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestDateTime
-    }
+    return m.requestDateTime
 }
 // GetServerId gets the serverId property value. ID of the server the log collection is requested upon
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetServerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serverId
-    }
+    return m.serverId
 }
 // GetSizeInBytes gets the sizeInBytes property value. The size of the logs in bytes
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sizeInBytes
-    }
+    return m.sizeInBytes
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the logs collected
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. Enum type that represent the status of log collection.
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetStatus()(*MicrosoftTunnelLogCollectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *MicrosoftTunnelServerLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -220,43 +192,29 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) Serialize(writer i878a80d23
 }
 // SetEndDateTime sets the endDateTime property value. The end time of the logs collected
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetExpiryDateTime sets the expiryDateTime property value. The time when the log collection is expired
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expiryDateTime = value
-    }
+    m.expiryDateTime = value
 }
 // SetRequestDateTime sets the requestDateTime property value. The time when the log collection was requested
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.requestDateTime = value
-    }
+    m.requestDateTime = value
 }
 // SetServerId sets the serverId property value. ID of the server the log collection is requested upon
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetServerId(value *string)() {
-    if m != nil {
-        m.serverId = value
-    }
+    m.serverId = value
 }
 // SetSizeInBytes sets the sizeInBytes property value. The size of the logs in bytes
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetSizeInBytes(value *int64)() {
-    if m != nil {
-        m.sizeInBytes = value
-    }
+    m.sizeInBytes = value
 }
 // SetStartDateTime sets the startDateTime property value. The start time of the logs collected
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. Enum type that represent the status of log collection.
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetStatus(value *MicrosoftTunnelLogCollectionStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -42,27 +42,15 @@ func CreateMacOSSoftwareUpdateCategorySummaryFromDiscriminatorValue(parseNode i8
 }
 // GetDeviceId gets the deviceId property value. The device ID.
 func (m *MacOSSoftwareUpdateCategorySummary) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDisplayName gets the displayName property value. The name of the report
 func (m *MacOSSoftwareUpdateCategorySummary) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFailedUpdateCount gets the failedUpdateCount property value. Number of failed updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) GetFailedUpdateCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedUpdateCount
-    }
+    return m.failedUpdateCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,51 +153,27 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device was updated.
 func (m *MacOSSoftwareUpdateCategorySummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetSuccessfulUpdateCount gets the successfulUpdateCount property value. Number of successful updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) GetSuccessfulUpdateCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulUpdateCount
-    }
+    return m.successfulUpdateCount
 }
 // GetTotalUpdateCount gets the totalUpdateCount property value. Number of total updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) GetTotalUpdateCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUpdateCount
-    }
+    return m.totalUpdateCount
 }
 // GetUpdateCategory gets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateCategorySummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateCategory
-    }
+    return m.updateCategory
 }
 // GetUpdateStateSummaries gets the updateStateSummaries property value. Summary of the update states.
 func (m *MacOSSoftwareUpdateCategorySummary) GetUpdateStateSummaries()([]MacOSSoftwareUpdateStateSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateStateSummaries
-    }
+    return m.updateStateSummaries
 }
 // GetUserId gets the userId property value. The user ID.
 func (m *MacOSSoftwareUpdateCategorySummary) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *MacOSSoftwareUpdateCategorySummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -280,55 +244,37 @@ func (m *MacOSSoftwareUpdateCategorySummary) Serialize(writer i878a80d2330e89d26
 }
 // SetDeviceId sets the deviceId property value. The device ID.
 func (m *MacOSSoftwareUpdateCategorySummary) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDisplayName sets the displayName property value. The name of the report
 func (m *MacOSSoftwareUpdateCategorySummary) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFailedUpdateCount sets the failedUpdateCount property value. Number of failed updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) SetFailedUpdateCount(value *int32)() {
-    if m != nil {
-        m.failedUpdateCount = value
-    }
+    m.failedUpdateCount = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Last date time the report for this device was updated.
 func (m *MacOSSoftwareUpdateCategorySummary) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetSuccessfulUpdateCount sets the successfulUpdateCount property value. Number of successful updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) SetSuccessfulUpdateCount(value *int32)() {
-    if m != nil {
-        m.successfulUpdateCount = value
-    }
+    m.successfulUpdateCount = value
 }
 // SetTotalUpdateCount sets the totalUpdateCount property value. Number of total updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) SetTotalUpdateCount(value *int32)() {
-    if m != nil {
-        m.totalUpdateCount = value
-    }
+    m.totalUpdateCount = value
 }
 // SetUpdateCategory sets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateCategorySummary) SetUpdateCategory(value *MacOSSoftwareUpdateCategory)() {
-    if m != nil {
-        m.updateCategory = value
-    }
+    m.updateCategory = value
 }
 // SetUpdateStateSummaries sets the updateStateSummaries property value. Summary of the update states.
 func (m *MacOSSoftwareUpdateCategorySummary) SetUpdateStateSummaries(value []MacOSSoftwareUpdateStateSummaryable)() {
-    if m != nil {
-        m.updateStateSummaries = value
-    }
+    m.updateStateSummaries = value
 }
 // SetUserId sets the userId property value. The user ID.
 func (m *MacOSSoftwareUpdateCategorySummary) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

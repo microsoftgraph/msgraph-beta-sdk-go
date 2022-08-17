@@ -88,43 +88,23 @@ func (m *RegistryValueEvidence) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetRegistryHive gets the registryHive property value. The registryHive property
 func (m *RegistryValueEvidence) GetRegistryHive()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registryHive
-    }
+    return m.registryHive
 }
 // GetRegistryKey gets the registryKey property value. The registryKey property
 func (m *RegistryValueEvidence) GetRegistryKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registryKey
-    }
+    return m.registryKey
 }
 // GetRegistryValue gets the registryValue property value. The registryValue property
 func (m *RegistryValueEvidence) GetRegistryValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registryValue
-    }
+    return m.registryValue
 }
 // GetRegistryValueName gets the registryValueName property value. The registryValueName property
 func (m *RegistryValueEvidence) GetRegistryValueName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registryValueName
-    }
+    return m.registryValueName
 }
 // GetRegistryValueType gets the registryValueType property value. The registryValueType property
 func (m *RegistryValueEvidence) GetRegistryValueType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registryValueType
-    }
+    return m.registryValueType
 }
 // Serialize serializes information the current object
 func (m *RegistryValueEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *RegistryValueEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetRegistryHive sets the registryHive property value. The registryHive property
 func (m *RegistryValueEvidence) SetRegistryHive(value *string)() {
-    if m != nil {
-        m.registryHive = value
-    }
+    m.registryHive = value
 }
 // SetRegistryKey sets the registryKey property value. The registryKey property
 func (m *RegistryValueEvidence) SetRegistryKey(value *string)() {
-    if m != nil {
-        m.registryKey = value
-    }
+    m.registryKey = value
 }
 // SetRegistryValue sets the registryValue property value. The registryValue property
 func (m *RegistryValueEvidence) SetRegistryValue(value *string)() {
-    if m != nil {
-        m.registryValue = value
-    }
+    m.registryValue = value
 }
 // SetRegistryValueName sets the registryValueName property value. The registryValueName property
 func (m *RegistryValueEvidence) SetRegistryValueName(value *string)() {
-    if m != nil {
-        m.registryValueName = value
-    }
+    m.registryValueName = value
 }
 // SetRegistryValueType sets the registryValueType property value. The registryValueType property
 func (m *RegistryValueEvidence) SetRegistryValueType(value *string)() {
-    if m != nil {
-        m.registryValueType = value
-    }
+    m.registryValueType = value
 }

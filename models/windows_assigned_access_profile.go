@@ -35,19 +35,11 @@ func CreateWindowsAssignedAccessProfileFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAppUserModelIds gets the appUserModelIds property value. These are the only Windows Store Apps that will be available to launch from the Start menu.
 func (m *WindowsAssignedAccessProfile) GetAppUserModelIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appUserModelIds
-    }
+    return m.appUserModelIds
 }
 // GetDesktopAppPaths gets the desktopAppPaths property value. These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.
 func (m *WindowsAssignedAccessProfile) GetDesktopAppPaths()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.desktopAppPaths
-    }
+    return m.desktopAppPaths
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,35 +120,19 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
 }
 // GetProfileName gets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsAssignedAccessProfile) GetProfileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileName
-    }
+    return m.profileName
 }
 // GetShowTaskBar gets the showTaskBar property value. This setting allows the admin to specify whether the Task Bar is shown or not.
 func (m *WindowsAssignedAccessProfile) GetShowTaskBar()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showTaskBar
-    }
+    return m.showTaskBar
 }
 // GetStartMenuLayoutXml gets the startMenuLayoutXml property value. Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
 func (m *WindowsAssignedAccessProfile) GetStartMenuLayoutXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startMenuLayoutXml
-    }
+    return m.startMenuLayoutXml
 }
 // GetUserAccounts gets the userAccounts property value. The user accounts that will be locked to this kiosk configuration.
 func (m *WindowsAssignedAccessProfile) GetUserAccounts()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccounts
-    }
+    return m.userAccounts
 }
 // Serialize serializes information the current object
 func (m *WindowsAssignedAccessProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,37 +180,25 @@ func (m *WindowsAssignedAccessProfile) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAppUserModelIds sets the appUserModelIds property value. These are the only Windows Store Apps that will be available to launch from the Start menu.
 func (m *WindowsAssignedAccessProfile) SetAppUserModelIds(value []string)() {
-    if m != nil {
-        m.appUserModelIds = value
-    }
+    m.appUserModelIds = value
 }
 // SetDesktopAppPaths sets the desktopAppPaths property value. These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.
 func (m *WindowsAssignedAccessProfile) SetDesktopAppPaths(value []string)() {
-    if m != nil {
-        m.desktopAppPaths = value
-    }
+    m.desktopAppPaths = value
 }
 // SetProfileName sets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsAssignedAccessProfile) SetProfileName(value *string)() {
-    if m != nil {
-        m.profileName = value
-    }
+    m.profileName = value
 }
 // SetShowTaskBar sets the showTaskBar property value. This setting allows the admin to specify whether the Task Bar is shown or not.
 func (m *WindowsAssignedAccessProfile) SetShowTaskBar(value *bool)() {
-    if m != nil {
-        m.showTaskBar = value
-    }
+    m.showTaskBar = value
 }
 // SetStartMenuLayoutXml sets the startMenuLayoutXml property value. Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
 func (m *WindowsAssignedAccessProfile) SetStartMenuLayoutXml(value []byte)() {
-    if m != nil {
-        m.startMenuLayoutXml = value
-    }
+    m.startMenuLayoutXml = value
 }
 // SetUserAccounts sets the userAccounts property value. The user accounts that will be locked to this kiosk configuration.
 func (m *WindowsAssignedAccessProfile) SetUserAccounts(value []string)() {
-    if m != nil {
-        m.userAccounts = value
-    }
+    m.userAccounts = value
 }

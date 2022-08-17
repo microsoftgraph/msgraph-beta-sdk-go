@@ -41,35 +41,19 @@ func CreateCloudPcRemoteActionResultFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetActionName gets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
 func (m *CloudPcRemoteActionResult) GetActionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionName
-    }
+    return m.actionName
 }
 // GetActionState gets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
 func (m *CloudPcRemoteActionResult) GetActionState()(*ActionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionState
-    }
+    return m.actionState
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRemoteActionResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCloudPcId gets the cloudPcId property value. The ID of the Cloud PC device on which the remote action is performed. Read-only.
 func (m *CloudPcRemoteActionResult) GetCloudPcId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPcId
-    }
+    return m.cloudPcId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -158,43 +142,23 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
 func (m *CloudPcRemoteActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The ID of the Intune managed device on which the remote action is performed. Read-only.
 func (m *CloudPcRemoteActionResult) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcRemoteActionResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartDateTime gets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
 func (m *CloudPcRemoteActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
 func (m *CloudPcRemoteActionResult) GetStatusDetails()(CloudPcStatusDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetails
-    }
+    return m.statusDetails
 }
 // Serialize serializes information the current object
 func (m *CloudPcRemoteActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -257,55 +221,37 @@ func (m *CloudPcRemoteActionResult) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetActionName sets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
 func (m *CloudPcRemoteActionResult) SetActionName(value *string)() {
-    if m != nil {
-        m.actionName = value
-    }
+    m.actionName = value
 }
 // SetActionState sets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
 func (m *CloudPcRemoteActionResult) SetActionState(value *ActionState)() {
-    if m != nil {
-        m.actionState = value
-    }
+    m.actionState = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRemoteActionResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCloudPcId sets the cloudPcId property value. The ID of the Cloud PC device on which the remote action is performed. Read-only.
 func (m *CloudPcRemoteActionResult) SetCloudPcId(value *string)() {
-    if m != nil {
-        m.cloudPcId = value
-    }
+    m.cloudPcId = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
 func (m *CloudPcRemoteActionResult) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The ID of the Intune managed device on which the remote action is performed. Read-only.
 func (m *CloudPcRemoteActionResult) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcRemoteActionResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartDateTime sets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
 func (m *CloudPcRemoteActionResult) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status.
 func (m *CloudPcRemoteActionResult) SetStatusDetails(value CloudPcStatusDetailsable)() {
-    if m != nil {
-        m.statusDetails = value
-    }
+    m.statusDetails = value
 }

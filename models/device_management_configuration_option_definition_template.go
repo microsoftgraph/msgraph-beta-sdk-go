@@ -30,19 +30,11 @@ func CreateDeviceManagementConfigurationOptionDefinitionTemplateFromDiscriminato
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetChildren gets the children property value. Option Children
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetChildren()([]DeviceManagementConfigurationSettingInstanceTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.children
-    }
+    return m.children
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetFieldDeserial
 }
 // GetItemId gets the itemId property value. Option ItemId
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemId
-    }
+    return m.itemId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *DeviceManagementConfigurationOptionDefinitionTemplate) Serialize(writer
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetChildren sets the children property value. Option Children
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) SetChildren(value []DeviceManagementConfigurationSettingInstanceTemplateable)() {
-    if m != nil {
-        m.children = value
-    }
+    m.children = value
 }
 // SetItemId sets the itemId property value. Option ItemId
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) SetItemId(value *string)() {
-    if m != nil {
-        m.itemId = value
-    }
+    m.itemId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationOptionDefinitionTemplate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

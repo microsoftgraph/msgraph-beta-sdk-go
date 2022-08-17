@@ -52,19 +52,11 @@ func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]f
 }
 // GetTargetGroupId gets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
 func (m *TermsAndConditionsGroupAssignment) GetTargetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupId
-    }
+    return m.targetGroupId
 }
 // GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsGroupAssignment) GetTermsAndConditions()(TermsAndConditionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termsAndConditions
-    }
+    return m.termsAndConditions
 }
 // Serialize serializes information the current object
 func (m *TermsAndConditionsGroupAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *TermsAndConditionsGroupAssignment) Serialize(writer i878a80d2330e89d268
 }
 // SetTargetGroupId sets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
 func (m *TermsAndConditionsGroupAssignment) SetTargetGroupId(value *string)() {
-    if m != nil {
-        m.targetGroupId = value
-    }
+    m.targetGroupId = value
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsGroupAssignment) SetTermsAndConditions(value TermsAndConditionsable)() {
-    if m != nil {
-        m.termsAndConditions = value
-    }
+    m.termsAndConditions = value
 }

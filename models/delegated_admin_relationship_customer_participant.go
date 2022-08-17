@@ -30,19 +30,11 @@ func CreateDelegatedAdminRelationshipCustomerParticipantFromDiscriminatorValue(p
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The display name of the customer tenant as set by Azure AD. Read only
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetFieldDeserializers()(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTenantId gets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminRelationshipCustomerParticipant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) Serialize(writer i878a80
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The display name of the customer tenant as set by Azure AD. Read only
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTenantId sets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

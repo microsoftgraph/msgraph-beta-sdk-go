@@ -32,27 +32,15 @@ func CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue(
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDevicesNotAutopilotRegistered gets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetDevicesNotAutopilotRegistered()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devicesNotAutopilotRegistered
-    }
+    return m.devicesNotAutopilotRegistered
 }
 // GetDevicesWithoutAutopilotProfileAssigned gets the devicesWithoutAutopilotProfileAssigned property value. The count of intune devices not autopilot profile assigned.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetDevicesWithoutAutopilotProfileAssigned()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devicesWithoutAutopilotProfileAssigned
-    }
+    return m.devicesWithoutAutopilotProfileAssigned
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTotalWindows10DevicesWithoutTenantAttached gets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetTotalWindows10DevicesWithoutTenantAttached()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalWindows10DevicesWithoutTenantAttached
-    }
+    return m.totalWindows10DevicesWithoutTenantAttached
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) Serialize(writer i878a8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDevicesNotAutopilotRegistered sets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesNotAutopilotRegistered(value *int32)() {
-    if m != nil {
-        m.devicesNotAutopilotRegistered = value
-    }
+    m.devicesNotAutopilotRegistered = value
 }
 // SetDevicesWithoutAutopilotProfileAssigned sets the devicesWithoutAutopilotProfileAssigned property value. The count of intune devices not autopilot profile assigned.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesWithoutAutopilotProfileAssigned(value *int32)() {
-    if m != nil {
-        m.devicesWithoutAutopilotProfileAssigned = value
-    }
+    m.devicesWithoutAutopilotProfileAssigned = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTotalWindows10DevicesWithoutTenantAttached sets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetTotalWindows10DevicesWithoutTenantAttached(value *int32)() {
-    if m != nil {
-        m.totalWindows10DevicesWithoutTenantAttached = value
-    }
+    m.totalWindows10DevicesWithoutTenantAttached = value
 }

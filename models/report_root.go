@@ -49,59 +49,31 @@ func CreateReportRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetApplicationSignInDetailedSummary gets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
 func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationSignInDetailedSummary
-    }
+    return m.applicationSignInDetailedSummary
 }
 // GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethods
-    }
+    return m.authenticationMethods
 }
 // GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.credentialUserRegistrationDetails
-    }
+    return m.credentialUserRegistrationDetails
 }
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dailyPrintUsageByPrinter
-    }
+    return m.dailyPrintUsageByPrinter
 }
 // GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dailyPrintUsageByUser
-    }
+    return m.dailyPrintUsageByUser
 }
 // GetDailyPrintUsageSummariesByPrinter gets the dailyPrintUsageSummariesByPrinter property value. The dailyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dailyPrintUsageSummariesByPrinter
-    }
+    return m.dailyPrintUsageSummariesByPrinter
 }
 // GetDailyPrintUsageSummariesByUser gets the dailyPrintUsageSummariesByUser property value. The dailyPrintUsageSummariesByUser property
 func (m *ReportRoot) GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dailyPrintUsageSummariesByUser
-    }
+    return m.dailyPrintUsageSummariesByUser
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -284,51 +256,27 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.monthlyPrintUsageByPrinter
-    }
+    return m.monthlyPrintUsageByPrinter
 }
 // GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.monthlyPrintUsageByUser
-    }
+    return m.monthlyPrintUsageByUser
 }
 // GetMonthlyPrintUsageSummariesByPrinter gets the monthlyPrintUsageSummariesByPrinter property value. The monthlyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.monthlyPrintUsageSummariesByPrinter
-    }
+    return m.monthlyPrintUsageSummariesByPrinter
 }
 // GetMonthlyPrintUsageSummariesByUser gets the monthlyPrintUsageSummariesByUser property value. The monthlyPrintUsageSummariesByUser property
 func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.monthlyPrintUsageSummariesByUser
-    }
+    return m.monthlyPrintUsageSummariesByUser
 }
 // GetSecurity gets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.security
-    }
+    return m.security
 }
 // GetUserCredentialUsageDetails gets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userCredentialUsageDetails
-    }
+    return m.userCredentialUsageDetails
 }
 // Serialize serializes information the current object
 func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -462,79 +410,53 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetApplicationSignInDetailedSummary sets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
 func (m *ReportRoot) SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)() {
-    if m != nil {
-        m.applicationSignInDetailedSummary = value
-    }
+    m.applicationSignInDetailedSummary = value
 }
 // SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootable)() {
-    if m != nil {
-        m.authenticationMethods = value
-    }
+    m.authenticationMethods = value
 }
 // SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)() {
-    if m != nil {
-        m.credentialUserRegistrationDetails = value
-    }
+    m.credentialUserRegistrationDetails = value
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
-    if m != nil {
-        m.dailyPrintUsageByPrinter = value
-    }
+    m.dailyPrintUsageByPrinter = value
 }
 // SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUserable)() {
-    if m != nil {
-        m.dailyPrintUsageByUser = value
-    }
+    m.dailyPrintUsageByUser = value
 }
 // SetDailyPrintUsageSummariesByPrinter sets the dailyPrintUsageSummariesByPrinter property value. The dailyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)() {
-    if m != nil {
-        m.dailyPrintUsageSummariesByPrinter = value
-    }
+    m.dailyPrintUsageSummariesByPrinter = value
 }
 // SetDailyPrintUsageSummariesByUser sets the dailyPrintUsageSummariesByUser property value. The dailyPrintUsageSummariesByUser property
 func (m *ReportRoot) SetDailyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
-    if m != nil {
-        m.dailyPrintUsageSummariesByUser = value
-    }
+    m.dailyPrintUsageSummariesByUser = value
 }
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
-    if m != nil {
-        m.monthlyPrintUsageByPrinter = value
-    }
+    m.monthlyPrintUsageByPrinter = value
 }
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)() {
-    if m != nil {
-        m.monthlyPrintUsageByUser = value
-    }
+    m.monthlyPrintUsageByUser = value
 }
 // SetMonthlyPrintUsageSummariesByPrinter sets the monthlyPrintUsageSummariesByPrinter property value. The monthlyPrintUsageSummariesByPrinter property
 func (m *ReportRoot) SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)() {
-    if m != nil {
-        m.monthlyPrintUsageSummariesByPrinter = value
-    }
+    m.monthlyPrintUsageSummariesByPrinter = value
 }
 // SetMonthlyPrintUsageSummariesByUser sets the monthlyPrintUsageSummariesByUser property value. The monthlyPrintUsageSummariesByUser property
 func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
-    if m != nil {
-        m.monthlyPrintUsageSummariesByUser = value
-    }
+    m.monthlyPrintUsageSummariesByUser = value
 }
 // SetSecurity sets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
-    if m != nil {
-        m.security = value
-    }
+    m.security = value
 }
 // SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)() {
-    if m != nil {
-        m.userCredentialUsageDetails = value
-    }
+    m.userCredentialUsageDetails = value
 }

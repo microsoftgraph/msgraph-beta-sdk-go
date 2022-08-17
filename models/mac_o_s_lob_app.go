@@ -43,27 +43,15 @@ func CreateMacOSLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetBuildNumber gets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobApp) GetBuildNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.buildNumber
-    }
+    return m.buildNumber
 }
 // GetBundleId gets the bundleId property value. The bundle id.
 func (m *MacOSLobApp) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetChildApps gets the childApps property value. The app list in this bundle package
 func (m *MacOSLobApp) GetChildApps()([]MacOSLobChildAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.childApps
-    }
+    return m.childApps
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,59 +168,31 @@ func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetIdentityVersion gets the identityVersion property value. The identity version.
 func (m *MacOSLobApp) GetIdentityVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityVersion
-    }
+    return m.identityVersion
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for macOS Line of Business (LoB) apps that use a self update feature.
 func (m *MacOSLobApp) GetIgnoreVersionDetection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ignoreVersionDetection
-    }
+    return m.ignoreVersionDetection
 }
 // GetInstallAsManaged gets the installAsManaged property value. A boolean to control whether the app will be installed as managed (requires macOS 11.0 and other PKG restrictions).
 func (m *MacOSLobApp) GetInstallAsManaged()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installAsManaged
-    }
+    return m.installAsManaged
 }
 // GetMd5Hash gets the md5Hash property value. The MD5 hash codes
 func (m *MacOSLobApp) GetMd5Hash()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.md5Hash
-    }
+    return m.md5Hash
 }
 // GetMd5HashChunkSize gets the md5HashChunkSize property value. The chunk size for MD5 hash
 func (m *MacOSLobApp) GetMd5HashChunkSize()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.md5HashChunkSize
-    }
+    return m.md5HashChunkSize
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *MacOSLobApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // GetVersionNumber gets the versionNumber property value. The version number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobApp) GetVersionNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionNumber
-    }
+    return m.versionNumber
 }
 // Serialize serializes information the current object
 func (m *MacOSLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -308,61 +268,41 @@ func (m *MacOSLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetBuildNumber sets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobApp) SetBuildNumber(value *string)() {
-    if m != nil {
-        m.buildNumber = value
-    }
+    m.buildNumber = value
 }
 // SetBundleId sets the bundleId property value. The bundle id.
 func (m *MacOSLobApp) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetChildApps sets the childApps property value. The app list in this bundle package
 func (m *MacOSLobApp) SetChildApps(value []MacOSLobChildAppable)() {
-    if m != nil {
-        m.childApps = value
-    }
+    m.childApps = value
 }
 // SetIdentityVersion sets the identityVersion property value. The identity version.
 func (m *MacOSLobApp) SetIdentityVersion(value *string)() {
-    if m != nil {
-        m.identityVersion = value
-    }
+    m.identityVersion = value
 }
 // SetIgnoreVersionDetection sets the ignoreVersionDetection property value. A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for macOS Line of Business (LoB) apps that use a self update feature.
 func (m *MacOSLobApp) SetIgnoreVersionDetection(value *bool)() {
-    if m != nil {
-        m.ignoreVersionDetection = value
-    }
+    m.ignoreVersionDetection = value
 }
 // SetInstallAsManaged sets the installAsManaged property value. A boolean to control whether the app will be installed as managed (requires macOS 11.0 and other PKG restrictions).
 func (m *MacOSLobApp) SetInstallAsManaged(value *bool)() {
-    if m != nil {
-        m.installAsManaged = value
-    }
+    m.installAsManaged = value
 }
 // SetMd5Hash sets the md5Hash property value. The MD5 hash codes
 func (m *MacOSLobApp) SetMd5Hash(value []string)() {
-    if m != nil {
-        m.md5Hash = value
-    }
+    m.md5Hash = value
 }
 // SetMd5HashChunkSize sets the md5HashChunkSize property value. The chunk size for MD5 hash
 func (m *MacOSLobApp) SetMd5HashChunkSize(value *int32)() {
-    if m != nil {
-        m.md5HashChunkSize = value
-    }
+    m.md5HashChunkSize = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *MacOSLobApp) SetMinimumSupportedOperatingSystem(value MacOSMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }
 // SetVersionNumber sets the versionNumber property value. The version number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobApp) SetVersionNumber(value *string)() {
-    if m != nil {
-        m.versionNumber = value
-    }
+    m.versionNumber = value
 }

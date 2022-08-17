@@ -42,11 +42,7 @@ func CreateGetQuietTimePolicyUsersReportPostRequestBodyFromDiscriminatorValue(pa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -167,83 +163,43 @@ func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetFieldDeserializers()(m
 }
 // GetFilter gets the filter property value. The filter property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
+    return m.filter
 }
 // GetGroupBy gets the groupBy property value. The groupBy property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetGroupBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupBy
-    }
+    return m.groupBy
 }
 // GetName gets the name property value. The name property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOrderBy gets the orderBy property value. The orderBy property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
+    return m.orderBy
 }
 // GetSearch gets the search property value. The search property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetSearch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
+    return m.search
 }
 // GetSelect gets the select property value. The select property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
+    return m.select_escaped
 }
 // GetSessionId gets the sessionId property value. The sessionId property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetSessionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionId
-    }
+    return m.sessionId
 }
 // GetSkip gets the skip property value. The skip property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
+    return m.skip
 }
 // GetSkipToken gets the skipToken property value. The skipToken property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetSkipToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skipToken
-    }
+    return m.skipToken
 }
 // GetTop gets the top property value. The top property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
-    }
+    return m.top
 }
 // Serialize serializes information the current object
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -317,67 +273,45 @@ func (m *GetQuietTimePolicyUsersReportPostRequestBody) Serialize(writer i878a80d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetFilter(value *string)() {
-    if m != nil {
-        m.filter = value
-    }
+    m.filter = value
 }
 // SetGroupBy sets the groupBy property value. The groupBy property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetGroupBy(value []string)() {
-    if m != nil {
-        m.groupBy = value
-    }
+    m.groupBy = value
 }
 // SetName sets the name property value. The name property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOrderBy sets the orderBy property value. The orderBy property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetOrderBy(value []string)() {
-    if m != nil {
-        m.orderBy = value
-    }
+    m.orderBy = value
 }
 // SetSearch sets the search property value. The search property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetSearch(value *string)() {
-    if m != nil {
-        m.search = value
-    }
+    m.search = value
 }
 // SetSelect sets the select property value. The select property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetSelect(value []string)() {
-    if m != nil {
-        m.select_escaped = value
-    }
+    m.select_escaped = value
 }
 // SetSessionId sets the sessionId property value. The sessionId property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetSessionId(value *string)() {
-    if m != nil {
-        m.sessionId = value
-    }
+    m.sessionId = value
 }
 // SetSkip sets the skip property value. The skip property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetSkip(value *int32)() {
-    if m != nil {
-        m.skip = value
-    }
+    m.skip = value
 }
 // SetSkipToken sets the skipToken property value. The skipToken property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetSkipToken(value *string)() {
-    if m != nil {
-        m.skipToken = value
-    }
+    m.skipToken = value
 }
 // SetTop sets the top property value. The top property
 func (m *GetQuietTimePolicyUsersReportPostRequestBody) SetTop(value *int32)() {
-    if m != nil {
-        m.top = value
-    }
+    m.top = value
 }

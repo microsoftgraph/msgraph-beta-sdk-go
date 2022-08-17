@@ -29,19 +29,11 @@ func CreateMacOSCustomAppConfigurationFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetBundleId gets the bundleId property value. Bundle id for targeting.
 func (m *MacOSCustomAppConfiguration) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetConfigurationXml gets the configurationXml property value. Configuration xml. (UTF8 encoded byte array)
 func (m *MacOSCustomAppConfiguration) GetConfigurationXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationXml
-    }
+    return m.configurationXml
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSCustomAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *MacOSCustomAppConfiguration) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFileName gets the fileName property value. Configuration file name (.plist
 func (m *MacOSCustomAppConfiguration) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // Serialize serializes information the current object
 func (m *MacOSCustomAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *MacOSCustomAppConfiguration) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetBundleId sets the bundleId property value. Bundle id for targeting.
 func (m *MacOSCustomAppConfiguration) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetConfigurationXml sets the configurationXml property value. Configuration xml. (UTF8 encoded byte array)
 func (m *MacOSCustomAppConfiguration) SetConfigurationXml(value []byte)() {
-    if m != nil {
-        m.configurationXml = value
-    }
+    m.configurationXml = value
 }
 // SetFileName sets the fileName property value. Configuration file name (.plist
 func (m *MacOSCustomAppConfiguration) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }

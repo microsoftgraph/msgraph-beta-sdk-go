@@ -50,43 +50,23 @@ func CreateMobileAppInstallStatusFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetApp gets the app property value. The navigation link to the mobile app.
 func (m *MobileAppInstallStatus) GetApp()(MobileAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.app
-    }
+    return m.app
 }
 // GetDeviceId gets the deviceId property value. Device ID
 func (m *MobileAppInstallStatus) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceName gets the deviceName property value. Device name
 func (m *MobileAppInstallStatus) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetDisplayVersion gets the displayVersion property value. Human readable version of the application
 func (m *MobileAppInstallStatus) GetDisplayVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayVersion
-    }
+    return m.displayVersion
 }
 // GetErrorCode gets the errorCode property value. The error code for install or uninstall failures.
 func (m *MobileAppInstallStatus) GetErrorCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -225,67 +205,35 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetInstallState gets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppInstallStatus) GetInstallState()(*ResultantAppState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installState
-    }
+    return m.installState
 }
 // GetInstallStateDetail gets the installStateDetail property value. Enum indicating additional details regarding why an application has a particular install state.
 func (m *MobileAppInstallStatus) GetInstallStateDetail()(*ResultantAppStateDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installStateDetail
-    }
+    return m.installStateDetail
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date time
 func (m *MobileAppInstallStatus) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetMobileAppInstallStatusValue gets the mobileAppInstallStatusValue property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppInstallStatus) GetMobileAppInstallStatusValue()(*ResultantAppState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppInstallStatusValue
-    }
+    return m.mobileAppInstallStatusValue
 }
 // GetOsDescription gets the osDescription property value. OS Description
 func (m *MobileAppInstallStatus) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
+    return m.osDescription
 }
 // GetOsVersion gets the osVersion property value. OS Version
 func (m *MobileAppInstallStatus) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // GetUserName gets the userName property value. Device User Name
 func (m *MobileAppInstallStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
 func (m *MobileAppInstallStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *MobileAppInstallStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -378,79 +326,53 @@ func (m *MobileAppInstallStatus) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetApp sets the app property value. The navigation link to the mobile app.
 func (m *MobileAppInstallStatus) SetApp(value MobileAppable)() {
-    if m != nil {
-        m.app = value
-    }
+    m.app = value
 }
 // SetDeviceId sets the deviceId property value. Device ID
 func (m *MobileAppInstallStatus) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceName sets the deviceName property value. Device name
 func (m *MobileAppInstallStatus) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetDisplayVersion sets the displayVersion property value. Human readable version of the application
 func (m *MobileAppInstallStatus) SetDisplayVersion(value *string)() {
-    if m != nil {
-        m.displayVersion = value
-    }
+    m.displayVersion = value
 }
 // SetErrorCode sets the errorCode property value. The error code for install or uninstall failures.
 func (m *MobileAppInstallStatus) SetErrorCode(value *int32)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetInstallState sets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppInstallStatus) SetInstallState(value *ResultantAppState)() {
-    if m != nil {
-        m.installState = value
-    }
+    m.installState = value
 }
 // SetInstallStateDetail sets the installStateDetail property value. Enum indicating additional details regarding why an application has a particular install state.
 func (m *MobileAppInstallStatus) SetInstallStateDetail(value *ResultantAppStateDetail)() {
-    if m != nil {
-        m.installStateDetail = value
-    }
+    m.installStateDetail = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync date time
 func (m *MobileAppInstallStatus) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetMobileAppInstallStatusValue sets the mobileAppInstallStatusValue property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppInstallStatus) SetMobileAppInstallStatusValue(value *ResultantAppState)() {
-    if m != nil {
-        m.mobileAppInstallStatusValue = value
-    }
+    m.mobileAppInstallStatusValue = value
 }
 // SetOsDescription sets the osDescription property value. OS Description
 func (m *MobileAppInstallStatus) SetOsDescription(value *string)() {
-    if m != nil {
-        m.osDescription = value
-    }
+    m.osDescription = value
 }
 // SetOsVersion sets the osVersion property value. OS Version
 func (m *MobileAppInstallStatus) SetOsVersion(value *string)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }
 // SetUserName sets the userName property value. Device User Name
 func (m *MobileAppInstallStatus) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name
 func (m *MobileAppInstallStatus) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

@@ -34,11 +34,7 @@ func CreateSimulationReportOverviewFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationReportOverview) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,43 +97,23 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SimulationReportOverview) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecommendedActions gets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
 func (m *SimulationReportOverview) GetRecommendedActions()([]RecommendedActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedActions
-    }
+    return m.recommendedActions
 }
 // GetResolvedTargetsCount gets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetResolvedTargetsCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resolvedTargetsCount
-    }
+    return m.resolvedTargetsCount
 }
 // GetSimulationEventsContent gets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetSimulationEventsContent()(SimulationEventsContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulationEventsContent
-    }
+    return m.simulationEventsContent
 }
 // GetTrainingEventsContent gets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
 func (m *SimulationReportOverview) GetTrainingEventsContent()(TrainingEventsContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingEventsContent
-    }
+    return m.trainingEventsContent
 }
 // Serialize serializes information the current object
 func (m *SimulationReportOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,37 +161,25 @@ func (m *SimulationReportOverview) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationReportOverview) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SimulationReportOverview) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecommendedActions sets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
 func (m *SimulationReportOverview) SetRecommendedActions(value []RecommendedActionable)() {
-    if m != nil {
-        m.recommendedActions = value
-    }
+    m.recommendedActions = value
 }
 // SetResolvedTargetsCount sets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetResolvedTargetsCount(value *int32)() {
-    if m != nil {
-        m.resolvedTargetsCount = value
-    }
+    m.resolvedTargetsCount = value
 }
 // SetSimulationEventsContent sets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetSimulationEventsContent(value SimulationEventsContentable)() {
-    if m != nil {
-        m.simulationEventsContent = value
-    }
+    m.simulationEventsContent = value
 }
 // SetTrainingEventsContent sets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetTrainingEventsContent(value TrainingEventsContentable)() {
-    if m != nil {
-        m.trainingEventsContent = value
-    }
+    m.trainingEventsContent = value
 }

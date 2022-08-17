@@ -23,7 +23,7 @@ type UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters instances for active role assignments.
+// UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters get roleAssignmentScheduleInstances from roleManagement
 type UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,11 +85,11 @@ func (m *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation instances for active role assignments.
+// CreateGetRequestInformation get roleAssignmentScheduleInstances from roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration instances for active role assignments.
+// CreateGetRequestInformationWithRequestConfiguration get roleAssignmentScheduleInstances from roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,11 +142,11 @@ func (m *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) DeleteWithRequ
     }
     return nil
 }
-// Get instances for active role assignments.
+// Get get roleAssignmentScheduleInstances from roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler instances for active role assignments.
+// GetWithRequestConfigurationAndResponseHandler get roleAssignmentScheduleInstances from roleManagement
 func (m *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

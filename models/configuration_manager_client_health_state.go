@@ -33,19 +33,11 @@ func CreateConfigurationManagerClientHealthStateFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientHealthState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetErrorCode gets the errorCode property value. Error code for failed state.
 func (m *ConfigurationManagerClientHealthState) GetErrorCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,27 +86,15 @@ func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[stri
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Datetime for last sync with configuration manager management point.
 func (m *ConfigurationManagerClientHealthState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientHealthState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. Configuration manager client state
 func (m *ConfigurationManagerClientHealthState) GetState()(*ConfigurationManagerClientState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ConfigurationManagerClientHealthState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *ConfigurationManagerClientHealthState) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientHealthState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetErrorCode sets the errorCode property value. Error code for failed state.
 func (m *ConfigurationManagerClientHealthState) SetErrorCode(value *int32)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Datetime for last sync with configuration manager management point.
 func (m *ConfigurationManagerClientHealthState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientHealthState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. Configuration manager client state
 func (m *ConfigurationManagerClientHealthState) SetState(value *ConfigurationManagerClientState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

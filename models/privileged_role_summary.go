@@ -33,11 +33,7 @@ func CreatePrivilegedRoleSummaryFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetElevatedCount gets the elevatedCount property value. The number of users that have the role assigned and the role is activated.
 func (m *PrivilegedRoleSummary) GetElevatedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.elevatedCount
-    }
+    return m.elevatedCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,35 +92,19 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetManagedCount gets the managedCount property value. The number of users that have the role assigned but the role is deactivated.
 func (m *PrivilegedRoleSummary) GetManagedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedCount
-    }
+    return m.managedCount
 }
 // GetMfaEnabled gets the mfaEnabled property value. true if the role activation requires MFA. false if the role activation doesn't require MFA.
 func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mfaEnabled
-    }
+    return m.mfaEnabled
 }
 // GetStatus gets the status property value. Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
 func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUsersCount gets the usersCount property value. The number of users that are assigned with the role.
 func (m *PrivilegedRoleSummary) GetUsersCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usersCount
-    }
+    return m.usersCount
 }
 // Serialize serializes information the current object
 func (m *PrivilegedRoleSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *PrivilegedRoleSummary) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetElevatedCount sets the elevatedCount property value. The number of users that have the role assigned and the role is activated.
 func (m *PrivilegedRoleSummary) SetElevatedCount(value *int32)() {
-    if m != nil {
-        m.elevatedCount = value
-    }
+    m.elevatedCount = value
 }
 // SetManagedCount sets the managedCount property value. The number of users that have the role assigned but the role is deactivated.
 func (m *PrivilegedRoleSummary) SetManagedCount(value *int32)() {
-    if m != nil {
-        m.managedCount = value
-    }
+    m.managedCount = value
 }
 // SetMfaEnabled sets the mfaEnabled property value. true if the role activation requires MFA. false if the role activation doesn't require MFA.
 func (m *PrivilegedRoleSummary) SetMfaEnabled(value *bool)() {
-    if m != nil {
-        m.mfaEnabled = value
-    }
+    m.mfaEnabled = value
 }
 // SetStatus sets the status property value. Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
 func (m *PrivilegedRoleSummary) SetStatus(value *RoleSummaryStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUsersCount sets the usersCount property value. The number of users that are assigned with the role.
 func (m *PrivilegedRoleSummary) SetUsersCount(value *int32)() {
-    if m != nil {
-        m.usersCount = value
-    }
+    m.usersCount = value
 }

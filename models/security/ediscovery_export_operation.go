@@ -41,43 +41,23 @@ func CreateEdiscoveryExportOperationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAzureBlobContainer gets the azureBlobContainer property value. The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
 func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureBlobContainer
-    }
+    return m.azureBlobContainer
 }
 // GetAzureBlobToken gets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
 func (m *EdiscoveryExportOperation) GetAzureBlobToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureBlobToken
-    }
+    return m.azureBlobToken
 }
 // GetDescription gets the description property value. The description provided for the export.
 func (m *EdiscoveryExportOperation) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetExportOptions gets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
 func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exportOptions
-    }
+    return m.exportOptions
 }
 // GetExportStructure gets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
 func (m *EdiscoveryExportOperation) GetExportStructure()(*ExportFileStructure) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exportStructure
-    }
+    return m.exportStructure
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -176,35 +156,19 @@ func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOutputFolderId gets the outputFolderId property value. The outputFolderId property
 func (m *EdiscoveryExportOperation) GetOutputFolderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputFolderId
-    }
+    return m.outputFolderId
 }
 // GetOutputName gets the outputName property value. The name provided for the export.
 func (m *EdiscoveryExportOperation) GetOutputName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputName
-    }
+    return m.outputName
 }
 // GetReviewSet gets the reviewSet property value. Review set from where documents are exported.
 func (m *EdiscoveryExportOperation) GetReviewSet()(EdiscoveryReviewSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewSet
-    }
+    return m.reviewSet
 }
 // GetReviewSetQuery gets the reviewSetQuery property value. The review set query which is used to filter the documents for export.
 func (m *EdiscoveryExportOperation) GetReviewSetQuery()(EdiscoveryReviewSetQueryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewSetQuery
-    }
+    return m.reviewSetQuery
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryExportOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -272,55 +236,37 @@ func (m *EdiscoveryExportOperation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAzureBlobContainer sets the azureBlobContainer property value. The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
 func (m *EdiscoveryExportOperation) SetAzureBlobContainer(value *string)() {
-    if m != nil {
-        m.azureBlobContainer = value
-    }
+    m.azureBlobContainer = value
 }
 // SetAzureBlobToken sets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
 func (m *EdiscoveryExportOperation) SetAzureBlobToken(value *string)() {
-    if m != nil {
-        m.azureBlobToken = value
-    }
+    m.azureBlobToken = value
 }
 // SetDescription sets the description property value. The description provided for the export.
 func (m *EdiscoveryExportOperation) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetExportOptions sets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
 func (m *EdiscoveryExportOperation) SetExportOptions(value *ExportOptions)() {
-    if m != nil {
-        m.exportOptions = value
-    }
+    m.exportOptions = value
 }
 // SetExportStructure sets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
 func (m *EdiscoveryExportOperation) SetExportStructure(value *ExportFileStructure)() {
-    if m != nil {
-        m.exportStructure = value
-    }
+    m.exportStructure = value
 }
 // SetOutputFolderId sets the outputFolderId property value. The outputFolderId property
 func (m *EdiscoveryExportOperation) SetOutputFolderId(value *string)() {
-    if m != nil {
-        m.outputFolderId = value
-    }
+    m.outputFolderId = value
 }
 // SetOutputName sets the outputName property value. The name provided for the export.
 func (m *EdiscoveryExportOperation) SetOutputName(value *string)() {
-    if m != nil {
-        m.outputName = value
-    }
+    m.outputName = value
 }
 // SetReviewSet sets the reviewSet property value. Review set from where documents are exported.
 func (m *EdiscoveryExportOperation) SetReviewSet(value EdiscoveryReviewSetable)() {
-    if m != nil {
-        m.reviewSet = value
-    }
+    m.reviewSet = value
 }
 // SetReviewSetQuery sets the reviewSetQuery property value. The review set query which is used to filter the documents for export.
 func (m *EdiscoveryExportOperation) SetReviewSetQuery(value EdiscoveryReviewSetQueryable)() {
-    if m != nil {
-        m.reviewSetQuery = value
-    }
+    m.reviewSetQuery = value
 }

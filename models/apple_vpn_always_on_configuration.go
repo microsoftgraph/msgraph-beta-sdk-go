@@ -46,51 +46,27 @@ func CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppleVpnAlwaysOnConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAirPrintExceptionAction gets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) GetAirPrintExceptionAction()(*VpnServiceExceptionAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.airPrintExceptionAction
-    }
+    return m.airPrintExceptionAction
 }
 // GetAllowAllCaptiveNetworkPlugins gets the allowAllCaptiveNetworkPlugins property value. Specifies whether traffic from all captive network plugins should be allowed outside the vpn
 func (m *AppleVpnAlwaysOnConfiguration) GetAllowAllCaptiveNetworkPlugins()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAllCaptiveNetworkPlugins
-    }
+    return m.allowAllCaptiveNetworkPlugins
 }
 // GetAllowCaptiveWebSheet gets the allowCaptiveWebSheet property value. Determines whether traffic from the Websheet app is allowed outside of the VPN
 func (m *AppleVpnAlwaysOnConfiguration) GetAllowCaptiveWebSheet()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowCaptiveWebSheet
-    }
+    return m.allowCaptiveWebSheet
 }
 // GetAllowedCaptiveNetworkPlugins gets the allowedCaptiveNetworkPlugins property value. Determines whether all, some, or no non-native captive networking apps are allowed
 func (m *AppleVpnAlwaysOnConfiguration) GetAllowedCaptiveNetworkPlugins()(SpecifiedCaptiveNetworkPluginsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedCaptiveNetworkPlugins
-    }
+    return m.allowedCaptiveNetworkPlugins
 }
 // GetCellularExceptionAction gets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*VpnServiceExceptionAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cellularExceptionAction
-    }
+    return m.cellularExceptionAction
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -209,51 +185,27 @@ func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(
 }
 // GetNatKeepAliveIntervalInSeconds gets the natKeepAliveIntervalInSeconds property value. Specifies how often in seconds to send a network address translation keepalive package through the VPN
 func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveIntervalInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natKeepAliveIntervalInSeconds
-    }
+    return m.natKeepAliveIntervalInSeconds
 }
 // GetNatKeepAliveOffloadEnable gets the natKeepAliveOffloadEnable property value. Enable hardware offloading of NAT keepalive signals when the device is asleep
 func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveOffloadEnable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.natKeepAliveOffloadEnable
-    }
+    return m.natKeepAliveOffloadEnable
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppleVpnAlwaysOnConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTunnelConfiguration gets the tunnelConfiguration property value. The type of tunnels that will be present to the VPN client for configuration
 func (m *AppleVpnAlwaysOnConfiguration) GetTunnelConfiguration()(*VpnTunnelConfigurationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tunnelConfiguration
-    }
+    return m.tunnelConfiguration
 }
 // GetUserToggleEnabled gets the userToggleEnabled property value. Allow the user to toggle the VPN configuration using the UI
 func (m *AppleVpnAlwaysOnConfiguration) GetUserToggleEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userToggleEnabled
-    }
+    return m.userToggleEnabled
 }
 // GetVoicemailExceptionAction gets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) GetVoicemailExceptionAction()(*VpnServiceExceptionAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.voicemailExceptionAction
-    }
+    return m.voicemailExceptionAction
 }
 // Serialize serializes information the current object
 func (m *AppleVpnAlwaysOnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -337,73 +289,49 @@ func (m *AppleVpnAlwaysOnConfiguration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppleVpnAlwaysOnConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAirPrintExceptionAction sets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) SetAirPrintExceptionAction(value *VpnServiceExceptionAction)() {
-    if m != nil {
-        m.airPrintExceptionAction = value
-    }
+    m.airPrintExceptionAction = value
 }
 // SetAllowAllCaptiveNetworkPlugins sets the allowAllCaptiveNetworkPlugins property value. Specifies whether traffic from all captive network plugins should be allowed outside the vpn
 func (m *AppleVpnAlwaysOnConfiguration) SetAllowAllCaptiveNetworkPlugins(value *bool)() {
-    if m != nil {
-        m.allowAllCaptiveNetworkPlugins = value
-    }
+    m.allowAllCaptiveNetworkPlugins = value
 }
 // SetAllowCaptiveWebSheet sets the allowCaptiveWebSheet property value. Determines whether traffic from the Websheet app is allowed outside of the VPN
 func (m *AppleVpnAlwaysOnConfiguration) SetAllowCaptiveWebSheet(value *bool)() {
-    if m != nil {
-        m.allowCaptiveWebSheet = value
-    }
+    m.allowCaptiveWebSheet = value
 }
 // SetAllowedCaptiveNetworkPlugins sets the allowedCaptiveNetworkPlugins property value. Determines whether all, some, or no non-native captive networking apps are allowed
 func (m *AppleVpnAlwaysOnConfiguration) SetAllowedCaptiveNetworkPlugins(value SpecifiedCaptiveNetworkPluginsable)() {
-    if m != nil {
-        m.allowedCaptiveNetworkPlugins = value
-    }
+    m.allowedCaptiveNetworkPlugins = value
 }
 // SetCellularExceptionAction sets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) SetCellularExceptionAction(value *VpnServiceExceptionAction)() {
-    if m != nil {
-        m.cellularExceptionAction = value
-    }
+    m.cellularExceptionAction = value
 }
 // SetNatKeepAliveIntervalInSeconds sets the natKeepAliveIntervalInSeconds property value. Specifies how often in seconds to send a network address translation keepalive package through the VPN
 func (m *AppleVpnAlwaysOnConfiguration) SetNatKeepAliveIntervalInSeconds(value *int32)() {
-    if m != nil {
-        m.natKeepAliveIntervalInSeconds = value
-    }
+    m.natKeepAliveIntervalInSeconds = value
 }
 // SetNatKeepAliveOffloadEnable sets the natKeepAliveOffloadEnable property value. Enable hardware offloading of NAT keepalive signals when the device is asleep
 func (m *AppleVpnAlwaysOnConfiguration) SetNatKeepAliveOffloadEnable(value *bool)() {
-    if m != nil {
-        m.natKeepAliveOffloadEnable = value
-    }
+    m.natKeepAliveOffloadEnable = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppleVpnAlwaysOnConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTunnelConfiguration sets the tunnelConfiguration property value. The type of tunnels that will be present to the VPN client for configuration
 func (m *AppleVpnAlwaysOnConfiguration) SetTunnelConfiguration(value *VpnTunnelConfigurationType)() {
-    if m != nil {
-        m.tunnelConfiguration = value
-    }
+    m.tunnelConfiguration = value
 }
 // SetUserToggleEnabled sets the userToggleEnabled property value. Allow the user to toggle the VPN configuration using the UI
 func (m *AppleVpnAlwaysOnConfiguration) SetUserToggleEnabled(value *bool)() {
-    if m != nil {
-        m.userToggleEnabled = value
-    }
+    m.userToggleEnabled = value
 }
 // SetVoicemailExceptionAction sets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) SetVoicemailExceptionAction(value *VpnServiceExceptionAction)() {
-    if m != nil {
-        m.voicemailExceptionAction = value
-    }
+    m.voicemailExceptionAction = value
 }

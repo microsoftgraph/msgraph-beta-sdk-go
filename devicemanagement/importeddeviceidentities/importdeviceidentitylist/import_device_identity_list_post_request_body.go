@@ -27,11 +27,7 @@ func CreateImportDeviceIdentityListPostRequestBodyFromDiscriminatorValue(parseNo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportDeviceIdentityListPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ImportDeviceIdentityListPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,19 +60,11 @@ func (m *ImportDeviceIdentityListPostRequestBody) GetFieldDeserializers()(map[st
 }
 // GetImportedDeviceIdentities gets the importedDeviceIdentities property value. The importedDeviceIdentities property
 func (m *ImportDeviceIdentityListPostRequestBody) GetImportedDeviceIdentities()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importedDeviceIdentities
-    }
+    return m.importedDeviceIdentities
 }
 // GetOverwriteImportedDeviceIdentities gets the overwriteImportedDeviceIdentities property value. The overwriteImportedDeviceIdentities property
 func (m *ImportDeviceIdentityListPostRequestBody) GetOverwriteImportedDeviceIdentities()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overwriteImportedDeviceIdentities
-    }
+    return m.overwriteImportedDeviceIdentities
 }
 // Serialize serializes information the current object
 func (m *ImportDeviceIdentityListPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -106,19 +94,13 @@ func (m *ImportDeviceIdentityListPostRequestBody) Serialize(writer i878a80d2330e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportDeviceIdentityListPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetImportedDeviceIdentities sets the importedDeviceIdentities property value. The importedDeviceIdentities property
 func (m *ImportDeviceIdentityListPostRequestBody) SetImportedDeviceIdentities(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityable)() {
-    if m != nil {
-        m.importedDeviceIdentities = value
-    }
+    m.importedDeviceIdentities = value
 }
 // SetOverwriteImportedDeviceIdentities sets the overwriteImportedDeviceIdentities property value. The overwriteImportedDeviceIdentities property
 func (m *ImportDeviceIdentityListPostRequestBody) SetOverwriteImportedDeviceIdentities(value *bool)() {
-    if m != nil {
-        m.overwriteImportedDeviceIdentities = value
-    }
+    m.overwriteImportedDeviceIdentities = value
 }

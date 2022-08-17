@@ -64,27 +64,15 @@ func (m *GroupPolicyPresentationMultiTextBox) GetFieldDeserializers()(map[string
 }
 // GetMaxLength gets the maxLength property value. An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
 func (m *GroupPolicyPresentationMultiTextBox) GetMaxLength()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxLength
-    }
+    return m.maxLength
 }
 // GetMaxStrings gets the maxStrings property value. An unsigned integer that specifies the maximum number of strings. Default value is 0.
 func (m *GroupPolicyPresentationMultiTextBox) GetMaxStrings()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxStrings
-    }
+    return m.maxStrings
 }
 // GetRequired gets the required property value. Requirement to enter a value in the text box. Default value is false.
 func (m *GroupPolicyPresentationMultiTextBox) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
+    return m.required
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationMultiTextBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *GroupPolicyPresentationMultiTextBox) Serialize(writer i878a80d2330e89d2
 }
 // SetMaxLength sets the maxLength property value. An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
 func (m *GroupPolicyPresentationMultiTextBox) SetMaxLength(value *int64)() {
-    if m != nil {
-        m.maxLength = value
-    }
+    m.maxLength = value
 }
 // SetMaxStrings sets the maxStrings property value. An unsigned integer that specifies the maximum number of strings. Default value is 0.
 func (m *GroupPolicyPresentationMultiTextBox) SetMaxStrings(value *int64)() {
-    if m != nil {
-        m.maxStrings = value
-    }
+    m.maxStrings = value
 }
 // SetRequired sets the required property value. Requirement to enter a value in the text box. Default value is false.
 func (m *GroupPolicyPresentationMultiTextBox) SetRequired(value *bool)() {
-    if m != nil {
-        m.required = value
-    }
+    m.required = value
 }

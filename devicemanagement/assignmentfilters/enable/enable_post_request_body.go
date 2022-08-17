@@ -24,19 +24,11 @@ func CreateEnablePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EnablePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnable gets the enable property value. The enable property
 func (m *EnablePostRequestBody) GetEnable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enable
-    }
+    return m.enable
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EnablePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,13 +63,9 @@ func (m *EnablePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EnablePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnable sets the enable property value. The enable property
 func (m *EnablePostRequestBody) SetEnable(value *bool)() {
-    if m != nil {
-        m.enable = value
-    }
+    m.enable = value
 }

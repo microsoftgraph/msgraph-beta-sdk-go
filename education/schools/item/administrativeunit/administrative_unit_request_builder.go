@@ -15,7 +15,7 @@ type AdministrativeUnitRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdministrativeUnitRequestBuilderGetQueryParameters the underlying administrativeUnit for this school.
+// AdministrativeUnitRequestBuilderGetQueryParameters get administrativeUnit from education
 type AdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewAdministrativeUnitRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the underlying administrativeUnit for this school.
+// CreateGetRequestInformation get administrativeUnit from education
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the underlying administrativeUnit for this school.
+// CreateGetRequestInformationWithRequestConfiguration get administrativeUnit from education
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get the underlying administrativeUnit for this school.
+// Get get administrativeUnit from education
 func (m *AdministrativeUnitRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the underlying administrativeUnit for this school.
+// GetWithRequestConfigurationAndResponseHandler get administrativeUnit from education
 func (m *AdministrativeUnitRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdministrativeUnitRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

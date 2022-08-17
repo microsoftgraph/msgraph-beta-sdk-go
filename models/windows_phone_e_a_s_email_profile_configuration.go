@@ -43,43 +43,23 @@ func CreateWindowsPhoneEASEmailProfileConfigurationFromDiscriminatorValue(parseN
 }
 // GetAccountName gets the accountName property value. Account name.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountName
-    }
+    return m.accountName
 }
 // GetApplyOnlyToWindowsPhone81 gets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetApplyOnlyToWindowsPhone81()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applyOnlyToWindowsPhone81
-    }
+    return m.applyOnlyToWindowsPhone81
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationOfEmailToSync
-    }
+    return m.durationOfEmailToSync
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddressSource
-    }
+    return m.emailAddressSource
 }
 // GetEmailSyncSchedule gets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncSchedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailSyncSchedule
-    }
+    return m.emailSyncSchedule
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -188,43 +168,23 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetFieldDeserializers()(map[s
 }
 // GetHostName gets the hostName property value. Exchange location that (URL) that the native mail app connects to.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetHostName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostName
-    }
+    return m.hostName
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetRequireSsl()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireSsl
-    }
+    return m.requireSsl
 }
 // GetSyncCalendar gets the syncCalendar property value. Whether or not to sync the calendar.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncCalendar()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncCalendar
-    }
+    return m.syncCalendar
 }
 // GetSyncContacts gets the syncContacts property value. Whether or not to sync contacts.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncContacts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncContacts
-    }
+    return m.syncContacts
 }
 // GetSyncTasks gets the syncTasks property value. Whether or not to sync tasks.
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncTasks()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncTasks
-    }
+    return m.syncTasks
 }
 // Serialize serializes information the current object
 func (m *WindowsPhoneEASEmailProfileConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -299,61 +259,41 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) Serialize(writer i878a80d2330
 }
 // SetAccountName sets the accountName property value. Account name.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetAccountName(value *string)() {
-    if m != nil {
-        m.accountName = value
-    }
+    m.accountName = value
 }
 // SetApplyOnlyToWindowsPhone81 sets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetApplyOnlyToWindowsPhone81(value *bool)() {
-    if m != nil {
-        m.applyOnlyToWindowsPhone81 = value
-    }
+    m.applyOnlyToWindowsPhone81 = value
 }
 // SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
-    if m != nil {
-        m.durationOfEmailToSync = value
-    }
+    m.durationOfEmailToSync = value
 }
 // SetEmailAddressSource sets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetEmailAddressSource(value *UserEmailSource)() {
-    if m != nil {
-        m.emailAddressSource = value
-    }
+    m.emailAddressSource = value
 }
 // SetEmailSyncSchedule sets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetEmailSyncSchedule(value *EmailSyncSchedule)() {
-    if m != nil {
-        m.emailSyncSchedule = value
-    }
+    m.emailSyncSchedule = value
 }
 // SetHostName sets the hostName property value. Exchange location that (URL) that the native mail app connects to.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetHostName(value *string)() {
-    if m != nil {
-        m.hostName = value
-    }
+    m.hostName = value
 }
 // SetRequireSsl sets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetRequireSsl(value *bool)() {
-    if m != nil {
-        m.requireSsl = value
-    }
+    m.requireSsl = value
 }
 // SetSyncCalendar sets the syncCalendar property value. Whether or not to sync the calendar.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetSyncCalendar(value *bool)() {
-    if m != nil {
-        m.syncCalendar = value
-    }
+    m.syncCalendar = value
 }
 // SetSyncContacts sets the syncContacts property value. Whether or not to sync contacts.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetSyncContacts(value *bool)() {
-    if m != nil {
-        m.syncContacts = value
-    }
+    m.syncContacts = value
 }
 // SetSyncTasks sets the syncTasks property value. Whether or not to sync tasks.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetSyncTasks(value *bool)() {
-    if m != nil {
-        m.syncTasks = value
-    }
+    m.syncTasks = value
 }

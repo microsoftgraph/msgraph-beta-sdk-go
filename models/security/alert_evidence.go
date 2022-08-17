@@ -84,19 +84,11 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertEvidence) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *AlertEvidence) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -183,51 +175,27 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AlertEvidence) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRemediationStatus gets the remediationStatus property value. The remediationStatus property
 func (m *AlertEvidence) GetRemediationStatus()(*EvidenceRemediationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationStatus
-    }
+    return m.remediationStatus
 }
 // GetRemediationStatusDetails gets the remediationStatusDetails property value. The remediationStatusDetails property
 func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationStatusDetails
-    }
+    return m.remediationStatusDetails
 }
 // GetRoles gets the roles property value. The roles property
 func (m *AlertEvidence) GetRoles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roles
-    }
+    return m.roles
 }
 // GetTags gets the tags property value. The tags property
 func (m *AlertEvidence) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetVerdict gets the verdict property value. The verdict property
 func (m *AlertEvidence) GetVerdict()(*EvidenceVerdict) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verdict
-    }
+    return m.verdict
 }
 // Serialize serializes information the current object
 func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -285,49 +253,33 @@ func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertEvidence) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *AlertEvidence) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AlertEvidence) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRemediationStatus sets the remediationStatus property value. The remediationStatus property
 func (m *AlertEvidence) SetRemediationStatus(value *EvidenceRemediationStatus)() {
-    if m != nil {
-        m.remediationStatus = value
-    }
+    m.remediationStatus = value
 }
 // SetRemediationStatusDetails sets the remediationStatusDetails property value. The remediationStatusDetails property
 func (m *AlertEvidence) SetRemediationStatusDetails(value *string)() {
-    if m != nil {
-        m.remediationStatusDetails = value
-    }
+    m.remediationStatusDetails = value
 }
 // SetRoles sets the roles property value. The roles property
 func (m *AlertEvidence) SetRoles(value []string)() {
-    if m != nil {
-        m.roles = value
-    }
+    m.roles = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *AlertEvidence) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetVerdict sets the verdict property value. The verdict property
 func (m *AlertEvidence) SetVerdict(value *EvidenceVerdict)() {
-    if m != nil {
-        m.verdict = value
-    }
+    m.verdict = value
 }

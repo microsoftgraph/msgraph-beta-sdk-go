@@ -23,7 +23,7 @@ type ActivityHistoryItemItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivityHistoryItemItemRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// ActivityHistoryItemItemRequestBuilderGetQueryParameters get historyItems from me
 type ActivityHistoryItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,11 +85,11 @@ func (m *ActivityHistoryItemItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// CreateGetRequestInformation get historyItems from me
 func (m *ActivityHistoryItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// CreateGetRequestInformationWithRequestConfiguration get historyItems from me
 func (m *ActivityHistoryItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ActivityHistoryItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,11 +142,11 @@ func (m *ActivityHistoryItemItemRequestBuilder) DeleteWithRequestConfigurationAn
     }
     return nil
 }
-// Get optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// Get get historyItems from me
 func (m *ActivityHistoryItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// GetWithRequestConfigurationAndResponseHandler get historyItems from me
 func (m *ActivityHistoryItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ActivityHistoryItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

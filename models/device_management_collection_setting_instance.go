@@ -44,11 +44,7 @@ func (m *DeviceManagementCollectionSettingInstance) GetFieldDeserializers()(map[
 }
 // GetValue gets the value property value. The collection of values
 func (m *DeviceManagementCollectionSettingInstance) GetValue()([]DeviceManagementSettingInstanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementCollectionSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *DeviceManagementCollectionSettingInstance) Serialize(writer i878a80d233
 }
 // SetValue sets the value property value. The collection of values
 func (m *DeviceManagementCollectionSettingInstance) SetValue(value []DeviceManagementSettingInstanceable)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

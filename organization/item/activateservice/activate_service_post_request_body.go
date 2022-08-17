@@ -28,11 +28,7 @@ func CreateActivateServicePostRequestBodyFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateServicePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ActivateServicePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,27 +67,15 @@ func (m *ActivateServicePostRequestBody) GetFieldDeserializers()(map[string]func
 }
 // GetService gets the service property value. The service property
 func (m *ActivateServicePostRequestBody) GetService()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // GetServicePlanId gets the servicePlanId property value. The servicePlanId property
 func (m *ActivateServicePostRequestBody) GetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlanId
-    }
+    return m.servicePlanId
 }
 // GetSkuId gets the skuId property value. The skuId property
 func (m *ActivateServicePostRequestBody) GetSkuId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skuId
-    }
+    return m.skuId
 }
 // Serialize serializes information the current object
 func (m *ActivateServicePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,25 +107,17 @@ func (m *ActivateServicePostRequestBody) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateServicePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetService sets the service property value. The service property
 func (m *ActivateServicePostRequestBody) SetService(value *string)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }
 // SetServicePlanId sets the servicePlanId property value. The servicePlanId property
 func (m *ActivateServicePostRequestBody) SetServicePlanId(value *string)() {
-    if m != nil {
-        m.servicePlanId = value
-    }
+    m.servicePlanId = value
 }
 // SetSkuId sets the skuId property value. The skuId property
 func (m *ActivateServicePostRequestBody) SetSkuId(value *string)() {
-    if m != nil {
-        m.skuId = value
-    }
+    m.skuId = value
 }

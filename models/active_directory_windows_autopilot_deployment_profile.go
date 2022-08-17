@@ -27,11 +27,7 @@ func CreateActiveDirectoryWindowsAutopilotDeploymentProfileFromDiscriminatorValu
 }
 // GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Configuration to join Active Directory domain
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetDomainJoinConfiguration()(WindowsDomainJoinConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainJoinConfiguration
-    }
+    return m.domainJoinConfiguration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetFieldDeserializers
 }
 // GetHybridAzureADJoinSkipConnectivityCheck gets the hybridAzureADJoinSkipConnectivityCheck property value. The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetHybridAzureADJoinSkipConnectivityCheck()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hybridAzureADJoinSkipConnectivityCheck
-    }
+    return m.hybridAzureADJoinSkipConnectivityCheck
 }
 // Serialize serializes information the current object
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) Serialize(writer i878
 }
 // SetDomainJoinConfiguration sets the domainJoinConfiguration property value. Configuration to join Active Directory domain
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) SetDomainJoinConfiguration(value WindowsDomainJoinConfigurationable)() {
-    if m != nil {
-        m.domainJoinConfiguration = value
-    }
+    m.domainJoinConfiguration = value
 }
 // SetHybridAzureADJoinSkipConnectivityCheck sets the hybridAzureADJoinSkipConnectivityCheck property value. The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) SetHybridAzureADJoinSkipConnectivityCheck(value *bool)() {
-    if m != nil {
-        m.hybridAzureADJoinSkipConnectivityCheck = value
-    }
+    m.hybridAzureADJoinSkipConnectivityCheck = value
 }

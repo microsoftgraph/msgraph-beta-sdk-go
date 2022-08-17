@@ -23,7 +23,7 @@ type UserConsentRequestItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserConsentRequestItemRequestBuilderGetQueryParameters a list of pending user consent requests.
+// UserConsentRequestItemRequestBuilderGetQueryParameters a list of pending user consent requests. Supports $filter (eq).
 type UserConsentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,11 +85,11 @@ func (m *UserConsentRequestItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation a list of pending user consent requests.
+// CreateGetRequestInformation a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of pending user consent requests.
+// CreateGetRequestInformationWithRequestConfiguration a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserConsentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,11 +142,11 @@ func (m *UserConsentRequestItemRequestBuilder) DeleteWithRequestConfigurationAnd
     }
     return nil
 }
-// Get a list of pending user consent requests.
+// Get a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a list of pending user consent requests.
+// GetWithRequestConfigurationAndResponseHandler a list of pending user consent requests. Supports $filter (eq).
 func (m *UserConsentRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserConsentRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

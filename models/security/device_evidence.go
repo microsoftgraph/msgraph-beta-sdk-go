@@ -54,27 +54,15 @@ func CreateDeviceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. The azureAdDeviceId property
 func (m *DeviceEvidence) GetAzureAdDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdDeviceId
-    }
+    return m.azureAdDeviceId
 }
 // GetDefenderAvStatus gets the defenderAvStatus property value. The defenderAvStatus property
 func (m *DeviceEvidence) GetDefenderAvStatus()(*DefenderAvStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defenderAvStatus
-    }
+    return m.defenderAvStatus
 }
 // GetDeviceDnsName gets the deviceDnsName property value. The deviceDnsName property
 func (m *DeviceEvidence) GetDeviceDnsName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDnsName
-    }
+    return m.deviceDnsName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -237,99 +225,51 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *DeviceEvidence) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
+    return m.firstSeenDateTime
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
+    return m.healthStatus
 }
 // GetLoggedOnUsers gets the loggedOnUsers property value. The loggedOnUsers property
 func (m *DeviceEvidence) GetLoggedOnUsers()([]LoggedOnUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loggedOnUsers
-    }
+    return m.loggedOnUsers
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. The mdeDeviceId property
 func (m *DeviceEvidence) GetMdeDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdeDeviceId
-    }
+    return m.mdeDeviceId
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The onboardingStatus property
 func (m *DeviceEvidence) GetOnboardingStatus()(*OnboardingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardingStatus
-    }
+    return m.onboardingStatus
 }
 // GetOsBuild gets the osBuild property value. The osBuild property
 func (m *DeviceEvidence) GetOsBuild()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osBuild
-    }
+    return m.osBuild
 }
 // GetOsPlatform gets the osPlatform property value. The osPlatform property
 func (m *DeviceEvidence) GetOsPlatform()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osPlatform
-    }
+    return m.osPlatform
 }
 // GetRbacGroupId gets the rbacGroupId property value. The rbacGroupId property
 func (m *DeviceEvidence) GetRbacGroupId()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rbacGroupId
-    }
+    return m.rbacGroupId
 }
 // GetRbacGroupName gets the rbacGroupName property value. The rbacGroupName property
 func (m *DeviceEvidence) GetRbacGroupName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rbacGroupName
-    }
+    return m.rbacGroupName
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *DeviceEvidence) GetRiskScore()(*DeviceRiskScore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetVersion gets the version property value. The version property
 func (m *DeviceEvidence) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // GetVmMetadata gets the vmMetadata property value. The vmMetadata property
 func (m *DeviceEvidence) GetVmMetadata()(VmMetadataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vmMetadata
-    }
+    return m.vmMetadata
 }
 // Serialize serializes information the current object
 func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -439,91 +379,61 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAzureAdDeviceId sets the azureAdDeviceId property value. The azureAdDeviceId property
 func (m *DeviceEvidence) SetAzureAdDeviceId(value *string)() {
-    if m != nil {
-        m.azureAdDeviceId = value
-    }
+    m.azureAdDeviceId = value
 }
 // SetDefenderAvStatus sets the defenderAvStatus property value. The defenderAvStatus property
 func (m *DeviceEvidence) SetDefenderAvStatus(value *DefenderAvStatus)() {
-    if m != nil {
-        m.defenderAvStatus = value
-    }
+    m.defenderAvStatus = value
 }
 // SetDeviceDnsName sets the deviceDnsName property value. The deviceDnsName property
 func (m *DeviceEvidence) SetDeviceDnsName(value *string)() {
-    if m != nil {
-        m.deviceDnsName = value
-    }
+    m.deviceDnsName = value
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *DeviceEvidence) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.firstSeenDateTime = value
-    }
+    m.firstSeenDateTime = value
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *DeviceEvidence) SetHealthStatus(value *DeviceHealthStatus)() {
-    if m != nil {
-        m.healthStatus = value
-    }
+    m.healthStatus = value
 }
 // SetLoggedOnUsers sets the loggedOnUsers property value. The loggedOnUsers property
 func (m *DeviceEvidence) SetLoggedOnUsers(value []LoggedOnUserable)() {
-    if m != nil {
-        m.loggedOnUsers = value
-    }
+    m.loggedOnUsers = value
 }
 // SetMdeDeviceId sets the mdeDeviceId property value. The mdeDeviceId property
 func (m *DeviceEvidence) SetMdeDeviceId(value *string)() {
-    if m != nil {
-        m.mdeDeviceId = value
-    }
+    m.mdeDeviceId = value
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The onboardingStatus property
 func (m *DeviceEvidence) SetOnboardingStatus(value *OnboardingStatus)() {
-    if m != nil {
-        m.onboardingStatus = value
-    }
+    m.onboardingStatus = value
 }
 // SetOsBuild sets the osBuild property value. The osBuild property
 func (m *DeviceEvidence) SetOsBuild(value *int64)() {
-    if m != nil {
-        m.osBuild = value
-    }
+    m.osBuild = value
 }
 // SetOsPlatform sets the osPlatform property value. The osPlatform property
 func (m *DeviceEvidence) SetOsPlatform(value *string)() {
-    if m != nil {
-        m.osPlatform = value
-    }
+    m.osPlatform = value
 }
 // SetRbacGroupId sets the rbacGroupId property value. The rbacGroupId property
 func (m *DeviceEvidence) SetRbacGroupId(value *int32)() {
-    if m != nil {
-        m.rbacGroupId = value
-    }
+    m.rbacGroupId = value
 }
 // SetRbacGroupName sets the rbacGroupName property value. The rbacGroupName property
 func (m *DeviceEvidence) SetRbacGroupName(value *string)() {
-    if m != nil {
-        m.rbacGroupName = value
-    }
+    m.rbacGroupName = value
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *DeviceEvidence) SetRiskScore(value *DeviceRiskScore)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetVersion sets the version property value. The version property
 func (m *DeviceEvidence) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }
 // SetVmMetadata sets the vmMetadata property value. The vmMetadata property
 func (m *DeviceEvidence) SetVmMetadata(value VmMetadataable)() {
-    if m != nil {
-        m.vmMetadata = value
-    }
+    m.vmMetadata = value
 }

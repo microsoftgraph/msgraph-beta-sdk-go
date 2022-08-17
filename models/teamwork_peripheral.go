@@ -29,11 +29,7 @@ func CreateTeamworkPeripheralFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDisplayName gets the displayName property value. Display name for the peripheral.
 func (m *TeamworkPeripheral) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetProductId gets the productId property value. The product ID of the device. Each product from a vendor has its own ID.
 func (m *TeamworkPeripheral) GetProductId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productId
-    }
+    return m.productId
 }
 // GetVendorId gets the vendorId property value. The unique identifier for the vendor of the device. Each vendor has a unique ID.
 func (m *TeamworkPeripheral) GetVendorId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorId
-    }
+    return m.vendorId
 }
 // Serialize serializes information the current object
 func (m *TeamworkPeripheral) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *TeamworkPeripheral) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDisplayName sets the displayName property value. Display name for the peripheral.
 func (m *TeamworkPeripheral) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetProductId sets the productId property value. The product ID of the device. Each product from a vendor has its own ID.
 func (m *TeamworkPeripheral) SetProductId(value *string)() {
-    if m != nil {
-        m.productId = value
-    }
+    m.productId = value
 }
 // SetVendorId sets the vendorId property value. The unique identifier for the vendor of the device. Each vendor has a unique ID.
 func (m *TeamworkPeripheral) SetVendorId(value *string)() {
-    if m != nil {
-        m.vendorId = value
-    }
+    m.vendorId = value
 }

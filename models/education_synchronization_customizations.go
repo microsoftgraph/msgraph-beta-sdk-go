@@ -100,51 +100,27 @@ func (m *EducationSynchronizationCustomizations) GetFieldDeserializers()(map[str
 }
 // GetSchool gets the school property value. Customizations for School entities.
 func (m *EducationSynchronizationCustomizations) GetSchool()(EducationSynchronizationCustomizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.school
-    }
+    return m.school
 }
 // GetSection gets the section property value. Customizations for Section entities.
 func (m *EducationSynchronizationCustomizations) GetSection()(EducationSynchronizationCustomizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.section
-    }
+    return m.section
 }
 // GetStudent gets the student property value. Customizations for Student entities.
 func (m *EducationSynchronizationCustomizations) GetStudent()(EducationSynchronizationCustomizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.student
-    }
+    return m.student
 }
 // GetStudentEnrollment gets the studentEnrollment property value. Customizations for Student Enrollments.
 func (m *EducationSynchronizationCustomizations) GetStudentEnrollment()(EducationSynchronizationCustomizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.studentEnrollment
-    }
+    return m.studentEnrollment
 }
 // GetTeacher gets the teacher property value. Customizations for Teacher entities.
 func (m *EducationSynchronizationCustomizations) GetTeacher()(EducationSynchronizationCustomizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teacher
-    }
+    return m.teacher
 }
 // GetTeacherRoster gets the teacherRoster property value. Customizations for Teacher Rosters.
 func (m *EducationSynchronizationCustomizations) GetTeacherRoster()(EducationSynchronizationCustomizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teacherRoster
-    }
+    return m.teacherRoster
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationCustomizations) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *EducationSynchronizationCustomizations) Serialize(writer i878a80d2330e8
 }
 // SetSchool sets the school property value. Customizations for School entities.
 func (m *EducationSynchronizationCustomizations) SetSchool(value EducationSynchronizationCustomizationable)() {
-    if m != nil {
-        m.school = value
-    }
+    m.school = value
 }
 // SetSection sets the section property value. Customizations for Section entities.
 func (m *EducationSynchronizationCustomizations) SetSection(value EducationSynchronizationCustomizationable)() {
-    if m != nil {
-        m.section = value
-    }
+    m.section = value
 }
 // SetStudent sets the student property value. Customizations for Student entities.
 func (m *EducationSynchronizationCustomizations) SetStudent(value EducationSynchronizationCustomizationable)() {
-    if m != nil {
-        m.student = value
-    }
+    m.student = value
 }
 // SetStudentEnrollment sets the studentEnrollment property value. Customizations for Student Enrollments.
 func (m *EducationSynchronizationCustomizations) SetStudentEnrollment(value EducationSynchronizationCustomizationable)() {
-    if m != nil {
-        m.studentEnrollment = value
-    }
+    m.studentEnrollment = value
 }
 // SetTeacher sets the teacher property value. Customizations for Teacher entities.
 func (m *EducationSynchronizationCustomizations) SetTeacher(value EducationSynchronizationCustomizationable)() {
-    if m != nil {
-        m.teacher = value
-    }
+    m.teacher = value
 }
 // SetTeacherRoster sets the teacherRoster property value. Customizations for Teacher Rosters.
 func (m *EducationSynchronizationCustomizations) SetTeacherRoster(value EducationSynchronizationCustomizationable)() {
-    if m != nil {
-        m.teacherRoster = value
-    }
+    m.teacherRoster = value
 }

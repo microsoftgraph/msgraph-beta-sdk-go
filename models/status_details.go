@@ -33,27 +33,15 @@ func CreateStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalDetails gets the additionalDetails property value. Additional details in case of error.
 func (m *StatusDetails) GetAdditionalDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalDetails
-    }
+    return m.additionalDetails
 }
 // GetErrorCategory gets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
 func (m *StatusDetails) GetErrorCategory()(*ProvisioningStatusErrorCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCategory
-    }
+    return m.errorCategory
 }
 // GetErrorCode gets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *StatusDetails) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,19 +100,11 @@ func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetReason gets the reason property value. Summarizes the status and describes why the status happened.
 func (m *StatusDetails) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // GetRecommendedAction gets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *StatusDetails) GetRecommendedAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedAction
-    }
+    return m.recommendedAction
 }
 // Serialize serializes information the current object
 func (m *StatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *StatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalDetails sets the additionalDetails property value. Additional details in case of error.
 func (m *StatusDetails) SetAdditionalDetails(value *string)() {
-    if m != nil {
-        m.additionalDetails = value
-    }
+    m.additionalDetails = value
 }
 // SetErrorCategory sets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
 func (m *StatusDetails) SetErrorCategory(value *ProvisioningStatusErrorCategory)() {
-    if m != nil {
-        m.errorCategory = value
-    }
+    m.errorCategory = value
 }
 // SetErrorCode sets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *StatusDetails) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetReason sets the reason property value. Summarizes the status and describes why the status happened.
 func (m *StatusDetails) SetReason(value *string)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }
 // SetRecommendedAction sets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *StatusDetails) SetRecommendedAction(value *string)() {
-    if m != nil {
-        m.recommendedAction = value
-    }
+    m.recommendedAction = value
 }

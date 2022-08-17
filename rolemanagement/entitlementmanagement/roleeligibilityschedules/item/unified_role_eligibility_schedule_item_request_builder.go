@@ -22,7 +22,7 @@ type UnifiedRoleEligibilityScheduleItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters schedules for role eligibility operations.
+// UnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters get roleEligibilitySchedules from roleManagement
 type UnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation schedules for role eligibility operations.
+// CreateGetRequestInformation get roleEligibilitySchedules from roleManagement
 func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration schedules for role eligibility operations.
+// CreateGetRequestInformationWithRequestConfiguration get roleEligibilitySchedules from roleManagement
 func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) DeleteWithRequestConf
     }
     return nil
 }
-// Get schedules for role eligibility operations.
+// Get get roleEligibilitySchedules from roleManagement
 func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler schedules for role eligibility operations.
+// GetWithRequestConfigurationAndResponseHandler get roleEligibilitySchedules from roleManagement
 func (m *UnifiedRoleEligibilityScheduleItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleEligibilityScheduleItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

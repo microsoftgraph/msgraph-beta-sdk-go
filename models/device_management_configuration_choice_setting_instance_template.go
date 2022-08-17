@@ -25,11 +25,7 @@ func CreateDeviceManagementConfigurationChoiceSettingInstanceTemplateFromDiscrim
 }
 // GetChoiceSettingValueTemplate gets the choiceSettingValueTemplate property value. Choice Setting Value Template
 func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) GetChoiceSettingValueTemplate()(DeviceManagementConfigurationChoiceSettingValueTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.choiceSettingValueTemplate
-    }
+    return m.choiceSettingValueTemplate
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) Serialize(w
 }
 // SetChoiceSettingValueTemplate sets the choiceSettingValueTemplate property value. Choice Setting Value Template
 func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) SetChoiceSettingValueTemplate(value DeviceManagementConfigurationChoiceSettingValueTemplateable)() {
-    if m != nil {
-        m.choiceSettingValueTemplate = value
-    }
+    m.choiceSettingValueTemplate = value
 }

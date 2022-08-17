@@ -36,19 +36,11 @@ func CreateOathTokenMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OathTokenMetadata) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnabled gets the enabled property value. The enabled property
 func (m *OathTokenMetadata) GetEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabled
-    }
+    return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OathTokenMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,43 +113,23 @@ func (m *OathTokenMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer property
 func (m *OathTokenMetadata) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetManufacturerProperties gets the manufacturerProperties property value. The manufacturerProperties property
 func (m *OathTokenMetadata) GetManufacturerProperties()([]KeyValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturerProperties
-    }
+    return m.manufacturerProperties
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OathTokenMetadata) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSerialNumber gets the serialNumber property value. The serialNumber property
 func (m *OathTokenMetadata) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
+    return m.serialNumber
 }
 // GetTokenType gets the tokenType property value. The tokenType property
 func (m *OathTokenMetadata) GetTokenType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenType
-    }
+    return m.tokenType
 }
 // Serialize serializes information the current object
 func (m *OathTokenMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *OathTokenMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OathTokenMetadata) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnabled sets the enabled property value. The enabled property
 func (m *OathTokenMetadata) SetEnabled(value *bool)() {
-    if m != nil {
-        m.enabled = value
-    }
+    m.enabled = value
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer property
 func (m *OathTokenMetadata) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetManufacturerProperties sets the manufacturerProperties property value. The manufacturerProperties property
 func (m *OathTokenMetadata) SetManufacturerProperties(value []KeyValueable)() {
-    if m != nil {
-        m.manufacturerProperties = value
-    }
+    m.manufacturerProperties = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OathTokenMetadata) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSerialNumber sets the serialNumber property value. The serialNumber property
 func (m *OathTokenMetadata) SetSerialNumber(value *string)() {
-    if m != nil {
-        m.serialNumber = value
-    }
+    m.serialNumber = value
 }
 // SetTokenType sets the tokenType property value. The tokenType property
 func (m *OathTokenMetadata) SetTokenType(value *string)() {
-    if m != nil {
-        m.tokenType = value
-    }
+    m.tokenType = value
 }

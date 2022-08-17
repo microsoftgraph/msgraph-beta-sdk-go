@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRequest provides operations to manage the collection of activityStatistics entities.
+// AccessPackageResourceRequest provides operations to manage the collection of accessReviewDecision entities.
 type AccessPackageResourceRequest struct {
     Entity
     // The accessPackageResource property
@@ -44,35 +44,19 @@ func CreateAccessPackageResourceRequestFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAccessPackageResource gets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRequest) GetAccessPackageResource()(AccessPackageResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResource
-    }
+    return m.accessPackageResource
 }
 // GetCatalogId gets the catalogId property value. The unique ID of the access package catalog.
 func (m *AccessPackageResourceRequest) GetCatalogId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalogId
-    }
+    return m.catalogId
 }
 // GetExecuteImmediately gets the executeImmediately property value. The executeImmediately property
 func (m *AccessPackageResourceRequest) GetExecuteImmediately()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.executeImmediately
-    }
+    return m.executeImmediately
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRequest) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -181,51 +165,27 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsValidationOnly gets the isValidationOnly property value. If set, does not add the resource.
 func (m *AccessPackageResourceRequest) GetIsValidationOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isValidationOnly
-    }
+    return m.isValidationOnly
 }
 // GetJustification gets the justification property value. The requestor's justification for adding or removing the resource.
 func (m *AccessPackageResourceRequest) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
+    return m.justification
 }
 // GetRequestor gets the requestor property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRequest) GetRequestor()(AccessPackageSubjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestor
-    }
+    return m.requestor
 }
 // GetRequestState gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
 func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestState
-    }
+    return m.requestState
 }
 // GetRequestStatus gets the requestStatus property value. The requestStatus property
 func (m *AccessPackageResourceRequest) GetRequestStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestStatus
-    }
+    return m.requestStatus
 }
 // GetRequestType gets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
 func (m *AccessPackageResourceRequest) GetRequestType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestType
-    }
+    return m.requestType
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -297,61 +257,41 @@ func (m *AccessPackageResourceRequest) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRequest) SetAccessPackageResource(value AccessPackageResourceable)() {
-    if m != nil {
-        m.accessPackageResource = value
-    }
+    m.accessPackageResource = value
 }
 // SetCatalogId sets the catalogId property value. The unique ID of the access package catalog.
 func (m *AccessPackageResourceRequest) SetCatalogId(value *string)() {
-    if m != nil {
-        m.catalogId = value
-    }
+    m.catalogId = value
 }
 // SetExecuteImmediately sets the executeImmediately property value. The executeImmediately property
 func (m *AccessPackageResourceRequest) SetExecuteImmediately(value *bool)() {
-    if m != nil {
-        m.executeImmediately = value
-    }
+    m.executeImmediately = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRequest) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetIsValidationOnly sets the isValidationOnly property value. If set, does not add the resource.
 func (m *AccessPackageResourceRequest) SetIsValidationOnly(value *bool)() {
-    if m != nil {
-        m.isValidationOnly = value
-    }
+    m.isValidationOnly = value
 }
 // SetJustification sets the justification property value. The requestor's justification for adding or removing the resource.
 func (m *AccessPackageResourceRequest) SetJustification(value *string)() {
-    if m != nil {
-        m.justification = value
-    }
+    m.justification = value
 }
 // SetRequestor sets the requestor property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRequest) SetRequestor(value AccessPackageSubjectable)() {
-    if m != nil {
-        m.requestor = value
-    }
+    m.requestor = value
 }
 // SetRequestState sets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
 func (m *AccessPackageResourceRequest) SetRequestState(value *string)() {
-    if m != nil {
-        m.requestState = value
-    }
+    m.requestState = value
 }
 // SetRequestStatus sets the requestStatus property value. The requestStatus property
 func (m *AccessPackageResourceRequest) SetRequestStatus(value *string)() {
-    if m != nil {
-        m.requestStatus = value
-    }
+    m.requestStatus = value
 }
 // SetRequestType sets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
 func (m *AccessPackageResourceRequest) SetRequestType(value *string)() {
-    if m != nil {
-        m.requestType = value
-    }
+    m.requestType = value
 }

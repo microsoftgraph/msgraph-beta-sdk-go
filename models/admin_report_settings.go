@@ -25,11 +25,7 @@ func CreateAdminReportSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetDisplayConcealedNames gets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
 func (m *AdminReportSettings) GetDisplayConcealedNames()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayConcealedNames
-    }
+    return m.displayConcealedNames
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AdminReportSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *AdminReportSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetDisplayConcealedNames sets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
 func (m *AdminReportSettings) SetDisplayConcealedNames(value *bool)() {
-    if m != nil {
-        m.displayConcealedNames = value
-    }
+    m.displayConcealedNames = value
 }

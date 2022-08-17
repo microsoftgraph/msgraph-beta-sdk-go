@@ -40,11 +40,7 @@ func (m *ProtectByTemplateAction) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetTemplateId gets the templateId property value. The GUID of the Azure Information Protection template to apply to the information.
 func (m *ProtectByTemplateAction) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
+    return m.templateId
 }
 // Serialize serializes information the current object
 func (m *ProtectByTemplateAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *ProtectByTemplateAction) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetTemplateId sets the templateId property value. The GUID of the Azure Information Protection template to apply to the information.
 func (m *ProtectByTemplateAction) SetTemplateId(value *string)() {
-    if m != nil {
-        m.templateId = value
-    }
+    m.templateId = value
 }

@@ -40,11 +40,7 @@ func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) GetFieldDeserializers()(map[st
 }
 // GetProxyAutoConfigURL gets the proxyAutoConfigURL property value. The proxy auto-config URL
 func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) GetProxyAutoConfigURL()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyAutoConfigURL
-    }
+    return m.proxyAutoConfigURL
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) Serialize(writer i878a80d2330e
 }
 // SetProxyAutoConfigURL sets the proxyAutoConfigURL property value. The proxy auto-config URL
 func (m *AndroidDeviceOwnerGlobalProxyAutoConfig) SetProxyAutoConfigURL(value *string)() {
-    if m != nil {
-        m.proxyAutoConfigURL = value
-    }
+    m.proxyAutoConfigURL = value
 }

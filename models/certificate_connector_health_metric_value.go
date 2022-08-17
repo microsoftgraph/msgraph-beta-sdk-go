@@ -33,27 +33,15 @@ func CreateCertificateConnectorHealthMetricValueFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorHealthMetricValue) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDateTime gets the dateTime property value. Timestamp for this metric data-point.
 func (m *CertificateConnectorHealthMetricValue) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateTime
-    }
+    return m.dateTime
 }
 // GetFailureCount gets the failureCount property value. Count of failed requests/operations.
 func (m *CertificateConnectorHealthMetricValue) GetFailureCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureCount
-    }
+    return m.failureCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CertificateConnectorHealthMetricValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,19 +90,11 @@ func (m *CertificateConnectorHealthMetricValue) GetFieldDeserializers()(map[stri
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CertificateConnectorHealthMetricValue) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSuccessCount gets the successCount property value. Count of successful requests/operations.
 func (m *CertificateConnectorHealthMetricValue) GetSuccessCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successCount
-    }
+    return m.successCount
 }
 // Serialize serializes information the current object
 func (m *CertificateConnectorHealthMetricValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *CertificateConnectorHealthMetricValue) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorHealthMetricValue) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDateTime sets the dateTime property value. Timestamp for this metric data-point.
 func (m *CertificateConnectorHealthMetricValue) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.dateTime = value
-    }
+    m.dateTime = value
 }
 // SetFailureCount sets the failureCount property value. Count of failed requests/operations.
 func (m *CertificateConnectorHealthMetricValue) SetFailureCount(value *int64)() {
-    if m != nil {
-        m.failureCount = value
-    }
+    m.failureCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CertificateConnectorHealthMetricValue) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSuccessCount sets the successCount property value. Count of successful requests/operations.
 func (m *CertificateConnectorHealthMetricValue) SetSuccessCount(value *int64)() {
-    if m != nil {
-        m.successCount = value
-    }
+    m.successCount = value
 }

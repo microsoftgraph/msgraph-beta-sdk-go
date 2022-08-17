@@ -32,11 +32,7 @@ func CreateIdleSessionSignOutFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdleSessionSignOut) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdleSessionSignOut) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *IdleSessionSignOut) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the idle session sign-out policy is enabled.
 func (m *IdleSessionSignOut) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdleSessionSignOut) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSignOutAfterInSeconds gets the signOutAfterInSeconds property value. Number of seconds of inactivity after which a user is signed out.
 func (m *IdleSessionSignOut) GetSignOutAfterInSeconds()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signOutAfterInSeconds
-    }
+    return m.signOutAfterInSeconds
 }
 // GetWarnAfterInSeconds gets the warnAfterInSeconds property value. Number of seconds of inactivity after which a user is notified that they'll be signed out.
 func (m *IdleSessionSignOut) GetWarnAfterInSeconds()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.warnAfterInSeconds
-    }
+    return m.warnAfterInSeconds
 }
 // Serialize serializes information the current object
 func (m *IdleSessionSignOut) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *IdleSessionSignOut) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdleSessionSignOut) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the idle session sign-out policy is enabled.
 func (m *IdleSessionSignOut) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdleSessionSignOut) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSignOutAfterInSeconds sets the signOutAfterInSeconds property value. Number of seconds of inactivity after which a user is signed out.
 func (m *IdleSessionSignOut) SetSignOutAfterInSeconds(value *int64)() {
-    if m != nil {
-        m.signOutAfterInSeconds = value
-    }
+    m.signOutAfterInSeconds = value
 }
 // SetWarnAfterInSeconds sets the warnAfterInSeconds property value. Number of seconds of inactivity after which a user is notified that they'll be signed out.
 func (m *IdleSessionSignOut) SetWarnAfterInSeconds(value *int64)() {
-    if m != nil {
-        m.warnAfterInSeconds = value
-    }
+    m.warnAfterInSeconds = value
 }

@@ -49,43 +49,23 @@ func CreateRetireScheduledManagedDeviceFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RetireScheduledManagedDevice) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComplianceState gets the complianceState property value. The complianceState property
 func (m *RetireScheduledManagedDevice) GetComplianceState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceState
-    }
+    return m.complianceState
 }
 // GetDeviceCompliancePolicyId gets the deviceCompliancePolicyId property value. Device Compliance PolicyId
 func (m *RetireScheduledManagedDevice) GetDeviceCompliancePolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCompliancePolicyId
-    }
+    return m.deviceCompliancePolicyId
 }
 // GetDeviceCompliancePolicyName gets the deviceCompliancePolicyName property value. Device Compliance Policy Name
 func (m *RetireScheduledManagedDevice) GetDeviceCompliancePolicyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCompliancePolicyName
-    }
+    return m.deviceCompliancePolicyName
 }
 // GetDeviceType gets the deviceType property value. Device type.
 func (m *RetireScheduledManagedDevice) GetDeviceType()(*DeviceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceType
-    }
+    return m.deviceType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -218,67 +198,35 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
 }
 // GetId gets the id property value. Key of the entity.
 func (m *RetireScheduledManagedDevice) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Managed DeviceId
 func (m *RetireScheduledManagedDevice) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetManagedDeviceName gets the managedDeviceName property value. Managed Device Name
 func (m *RetireScheduledManagedDevice) GetManagedDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceName
-    }
+    return m.managedDeviceName
 }
 // GetManagementAgent gets the managementAgent property value. Management agent type.
 func (m *RetireScheduledManagedDevice) GetManagementAgent()(*ManagementAgentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementAgent
-    }
+    return m.managementAgent
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RetireScheduledManagedDevice) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *RetireScheduledManagedDevice) GetOwnerType()(*ManagedDeviceOwnerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerType
-    }
+    return m.ownerType
 }
 // GetRetireAfterDateTime gets the retireAfterDateTime property value. Managed Device Retire After DateTime
 func (m *RetireScheduledManagedDevice) GetRetireAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retireAfterDateTime
-    }
+    return m.retireAfterDateTime
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *RetireScheduledManagedDevice) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // Serialize serializes information the current object
 func (m *RetireScheduledManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -368,79 +316,53 @@ func (m *RetireScheduledManagedDevice) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RetireScheduledManagedDevice) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComplianceState sets the complianceState property value. The complianceState property
 func (m *RetireScheduledManagedDevice) SetComplianceState(value *ComplianceStatus)() {
-    if m != nil {
-        m.complianceState = value
-    }
+    m.complianceState = value
 }
 // SetDeviceCompliancePolicyId sets the deviceCompliancePolicyId property value. Device Compliance PolicyId
 func (m *RetireScheduledManagedDevice) SetDeviceCompliancePolicyId(value *string)() {
-    if m != nil {
-        m.deviceCompliancePolicyId = value
-    }
+    m.deviceCompliancePolicyId = value
 }
 // SetDeviceCompliancePolicyName sets the deviceCompliancePolicyName property value. Device Compliance Policy Name
 func (m *RetireScheduledManagedDevice) SetDeviceCompliancePolicyName(value *string)() {
-    if m != nil {
-        m.deviceCompliancePolicyName = value
-    }
+    m.deviceCompliancePolicyName = value
 }
 // SetDeviceType sets the deviceType property value. Device type.
 func (m *RetireScheduledManagedDevice) SetDeviceType(value *DeviceType)() {
-    if m != nil {
-        m.deviceType = value
-    }
+    m.deviceType = value
 }
 // SetId sets the id property value. Key of the entity.
 func (m *RetireScheduledManagedDevice) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Managed DeviceId
 func (m *RetireScheduledManagedDevice) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetManagedDeviceName sets the managedDeviceName property value. Managed Device Name
 func (m *RetireScheduledManagedDevice) SetManagedDeviceName(value *string)() {
-    if m != nil {
-        m.managedDeviceName = value
-    }
+    m.managedDeviceName = value
 }
 // SetManagementAgent sets the managementAgent property value. Management agent type.
 func (m *RetireScheduledManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
-    if m != nil {
-        m.managementAgent = value
-    }
+    m.managementAgent = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RetireScheduledManagedDevice) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *RetireScheduledManagedDevice) SetOwnerType(value *ManagedDeviceOwnerType)() {
-    if m != nil {
-        m.ownerType = value
-    }
+    m.ownerType = value
 }
 // SetRetireAfterDateTime sets the retireAfterDateTime property value. Managed Device Retire After DateTime
 func (m *RetireScheduledManagedDevice) SetRetireAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.retireAfterDateTime = value
-    }
+    m.retireAfterDateTime = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *RetireScheduledManagedDevice) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }

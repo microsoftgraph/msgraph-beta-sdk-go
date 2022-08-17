@@ -30,11 +30,7 @@ func CreateEncryptionReportPolicyDetailsFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptionReportPolicyDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptionReportPolicyDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *EncryptionReportPolicyDetails) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EncryptionReportPolicyDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPolicyId gets the policyId property value. Policy Id for Encryption Report
 func (m *EncryptionReportPolicyDetails) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
+    return m.policyId
 }
 // GetPolicyName gets the policyName property value. Policy Name for Encryption Report
 func (m *EncryptionReportPolicyDetails) GetPolicyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyName
-    }
+    return m.policyName
 }
 // Serialize serializes information the current object
 func (m *EncryptionReportPolicyDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *EncryptionReportPolicyDetails) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptionReportPolicyDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EncryptionReportPolicyDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPolicyId sets the policyId property value. Policy Id for Encryption Report
 func (m *EncryptionReportPolicyDetails) SetPolicyId(value *string)() {
-    if m != nil {
-        m.policyId = value
-    }
+    m.policyId = value
 }
 // SetPolicyName sets the policyName property value. Policy Name for Encryption Report
 func (m *EncryptionReportPolicyDetails) SetPolicyName(value *string)() {
-    if m != nil {
-        m.policyName = value
-    }
+    m.policyName = value
 }

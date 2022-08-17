@@ -38,19 +38,11 @@ func CreateOutOfBoxExperienceSettingsFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutOfBoxExperienceSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceUsageType gets the deviceUsageType property value. The deviceUsageType property
 func (m *OutOfBoxExperienceSettings) GetDeviceUsageType()(*WindowsDeviceUsageType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceUsageType
-    }
+    return m.deviceUsageType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,51 +121,27 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(i87
 }
 // GetHideEscapeLink gets the hideEscapeLink property value. If set to true, then the user can't start over with different account, on company sign-in
 func (m *OutOfBoxExperienceSettings) GetHideEscapeLink()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hideEscapeLink
-    }
+    return m.hideEscapeLink
 }
 // GetHideEULA gets the hideEULA property value. Show or hide EULA to user
 func (m *OutOfBoxExperienceSettings) GetHideEULA()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hideEULA
-    }
+    return m.hideEULA
 }
 // GetHidePrivacySettings gets the hidePrivacySettings property value. Show or hide privacy settings to user
 func (m *OutOfBoxExperienceSettings) GetHidePrivacySettings()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hidePrivacySettings
-    }
+    return m.hidePrivacySettings
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OutOfBoxExperienceSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSkipKeyboardSelectionPage gets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set
 func (m *OutOfBoxExperienceSettings) GetSkipKeyboardSelectionPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skipKeyboardSelectionPage
-    }
+    return m.skipKeyboardSelectionPage
 }
 // GetUserType gets the userType property value. The userType property
 func (m *OutOfBoxExperienceSettings) GetUserType()(*WindowsUserType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userType
-    }
+    return m.userType
 }
 // Serialize serializes information the current object
 func (m *OutOfBoxExperienceSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -231,49 +199,33 @@ func (m *OutOfBoxExperienceSettings) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutOfBoxExperienceSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceUsageType sets the deviceUsageType property value. The deviceUsageType property
 func (m *OutOfBoxExperienceSettings) SetDeviceUsageType(value *WindowsDeviceUsageType)() {
-    if m != nil {
-        m.deviceUsageType = value
-    }
+    m.deviceUsageType = value
 }
 // SetHideEscapeLink sets the hideEscapeLink property value. If set to true, then the user can't start over with different account, on company sign-in
 func (m *OutOfBoxExperienceSettings) SetHideEscapeLink(value *bool)() {
-    if m != nil {
-        m.hideEscapeLink = value
-    }
+    m.hideEscapeLink = value
 }
 // SetHideEULA sets the hideEULA property value. Show or hide EULA to user
 func (m *OutOfBoxExperienceSettings) SetHideEULA(value *bool)() {
-    if m != nil {
-        m.hideEULA = value
-    }
+    m.hideEULA = value
 }
 // SetHidePrivacySettings sets the hidePrivacySettings property value. Show or hide privacy settings to user
 func (m *OutOfBoxExperienceSettings) SetHidePrivacySettings(value *bool)() {
-    if m != nil {
-        m.hidePrivacySettings = value
-    }
+    m.hidePrivacySettings = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OutOfBoxExperienceSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSkipKeyboardSelectionPage sets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set
 func (m *OutOfBoxExperienceSettings) SetSkipKeyboardSelectionPage(value *bool)() {
-    if m != nil {
-        m.skipKeyboardSelectionPage = value
-    }
+    m.skipKeyboardSelectionPage = value
 }
 // SetUserType sets the userType property value. The userType property
 func (m *OutOfBoxExperienceSettings) SetUserType(value *WindowsUserType)() {
-    if m != nil {
-        m.userType = value
-    }
+    m.userType = value
 }

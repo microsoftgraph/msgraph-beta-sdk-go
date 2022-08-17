@@ -22,7 +22,7 @@ type LicenseDetailsItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LicenseDetailsItemRequestBuilderGetQueryParameters a collection of this user's license details. Read-only.
+// LicenseDetailsItemRequestBuilderGetQueryParameters get licenseDetails from me
 type LicenseDetailsItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *LicenseDetailsItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation a collection of this user's license details. Read-only.
+// CreateGetRequestInformation get licenseDetails from me
 func (m *LicenseDetailsItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of this user's license details. Read-only.
+// CreateGetRequestInformationWithRequestConfiguration get licenseDetails from me
 func (m *LicenseDetailsItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LicenseDetailsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *LicenseDetailsItemRequestBuilder) DeleteWithRequestConfigurationAndResp
     }
     return nil
 }
-// Get a collection of this user's license details. Read-only.
+// Get get licenseDetails from me
 func (m *LicenseDetailsItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a collection of this user's license details. Read-only.
+// GetWithRequestConfigurationAndResponseHandler get licenseDetails from me
 func (m *LicenseDetailsItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LicenseDetailsItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

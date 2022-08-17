@@ -33,7 +33,7 @@ type TeamworkDeviceConfiguration struct {
     // The Teams client configuration. Applicable only for Teams Rooms-enabled devices.
     teamsClientConfiguration TeamworkTeamsClientConfigurationable
 }
-// NewTeamworkDeviceConfiguration instantiates a new TeamworkDeviceConfiguration and sets the default values.
+// NewTeamworkDeviceConfiguration instantiates a new teamworkDeviceConfiguration and sets the default values.
 func NewTeamworkDeviceConfiguration()(*TeamworkDeviceConfiguration) {
     m := &TeamworkDeviceConfiguration{
         Entity: *NewEntity(),
@@ -48,35 +48,19 @@ func CreateTeamworkDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetCameraConfiguration gets the cameraConfiguration property value. The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) GetCameraConfiguration()(TeamworkCameraConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameraConfiguration
-    }
+    return m.cameraConfiguration
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device configuration document.
 func (m *TeamworkDeviceConfiguration) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device configuration document was created.
 func (m *TeamworkDeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayConfiguration gets the displayConfiguration property value. The display configuration.
 func (m *TeamworkDeviceConfiguration) GetDisplayConfiguration()(TeamworkDisplayConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayConfiguration
-    }
+    return m.displayConfiguration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -205,67 +189,35 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(i8
 }
 // GetHardwareConfiguration gets the hardwareConfiguration property value. The hardware configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) GetHardwareConfiguration()(TeamworkHardwareConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hardwareConfiguration
-    }
+    return m.hardwareConfiguration
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device configuration.
 func (m *TeamworkDeviceConfiguration) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device configuration was last modified.
 func (m *TeamworkDeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetMicrophoneConfiguration gets the microphoneConfiguration property value. The microphone configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) GetMicrophoneConfiguration()(TeamworkMicrophoneConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphoneConfiguration
-    }
+    return m.microphoneConfiguration
 }
 // GetSoftwareVersions gets the softwareVersions property value. Information related to software versions for the device, such as firmware, operating system, Teams client, and admin agent.
 func (m *TeamworkDeviceConfiguration) GetSoftwareVersions()(TeamworkDeviceSoftwareVersionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.softwareVersions
-    }
+    return m.softwareVersions
 }
 // GetSpeakerConfiguration gets the speakerConfiguration property value. The speaker configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) GetSpeakerConfiguration()(TeamworkSpeakerConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.speakerConfiguration
-    }
+    return m.speakerConfiguration
 }
 // GetSystemConfiguration gets the systemConfiguration property value. The system configuration. Not applicable for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) GetSystemConfiguration()(TeamworkSystemConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemConfiguration
-    }
+    return m.systemConfiguration
 }
 // GetTeamsClientConfiguration gets the teamsClientConfiguration property value. The Teams client configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) GetTeamsClientConfiguration()(TeamworkTeamsClientConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsClientConfiguration
-    }
+    return m.teamsClientConfiguration
 }
 // Serialize serializes information the current object
 func (m *TeamworkDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -349,73 +301,49 @@ func (m *TeamworkDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetCameraConfiguration sets the cameraConfiguration property value. The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) SetCameraConfiguration(value TeamworkCameraConfigurationable)() {
-    if m != nil {
-        m.cameraConfiguration = value
-    }
+    m.cameraConfiguration = value
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who created the device configuration document.
 func (m *TeamworkDeviceConfiguration) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The UTC date and time when the device configuration document was created.
 func (m *TeamworkDeviceConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayConfiguration sets the displayConfiguration property value. The display configuration.
 func (m *TeamworkDeviceConfiguration) SetDisplayConfiguration(value TeamworkDisplayConfigurationable)() {
-    if m != nil {
-        m.displayConfiguration = value
-    }
+    m.displayConfiguration = value
 }
 // SetHardwareConfiguration sets the hardwareConfiguration property value. The hardware configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) SetHardwareConfiguration(value TeamworkHardwareConfigurationable)() {
-    if m != nil {
-        m.hardwareConfiguration = value
-    }
+    m.hardwareConfiguration = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the device configuration.
 func (m *TeamworkDeviceConfiguration) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The UTC date and time when the device configuration was last modified.
 func (m *TeamworkDeviceConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetMicrophoneConfiguration sets the microphoneConfiguration property value. The microphone configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) SetMicrophoneConfiguration(value TeamworkMicrophoneConfigurationable)() {
-    if m != nil {
-        m.microphoneConfiguration = value
-    }
+    m.microphoneConfiguration = value
 }
 // SetSoftwareVersions sets the softwareVersions property value. Information related to software versions for the device, such as firmware, operating system, Teams client, and admin agent.
 func (m *TeamworkDeviceConfiguration) SetSoftwareVersions(value TeamworkDeviceSoftwareVersionsable)() {
-    if m != nil {
-        m.softwareVersions = value
-    }
+    m.softwareVersions = value
 }
 // SetSpeakerConfiguration sets the speakerConfiguration property value. The speaker configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) SetSpeakerConfiguration(value TeamworkSpeakerConfigurationable)() {
-    if m != nil {
-        m.speakerConfiguration = value
-    }
+    m.speakerConfiguration = value
 }
 // SetSystemConfiguration sets the systemConfiguration property value. The system configuration. Not applicable for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) SetSystemConfiguration(value TeamworkSystemConfigurationable)() {
-    if m != nil {
-        m.systemConfiguration = value
-    }
+    m.systemConfiguration = value
 }
 // SetTeamsClientConfiguration sets the teamsClientConfiguration property value. The Teams client configuration. Applicable only for Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) SetTeamsClientConfiguration(value TeamworkTeamsClientConfigurationable)() {
-    if m != nil {
-        m.teamsClientConfiguration = value
-    }
+    m.teamsClientConfiguration = value
 }

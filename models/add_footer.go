@@ -27,11 +27,7 @@ func CreateAddFooterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAlignment gets the alignment property value. The alignment property
 func (m *AddFooter) GetAlignment()(*Alignment) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alignment
-    }
+    return m.alignment
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AddFooter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *AddFooter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetMargin gets the margin property value. The margin property
 func (m *AddFooter) GetMargin()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.margin
-    }
+    return m.margin
 }
 // Serialize serializes information the current object
 func (m *AddFooter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *AddFooter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAlignment sets the alignment property value. The alignment property
 func (m *AddFooter) SetAlignment(value *Alignment)() {
-    if m != nil {
-        m.alignment = value
-    }
+    m.alignment = value
 }
 // SetMargin sets the margin property value. The margin property
 func (m *AddFooter) SetMargin(value *int32)() {
-    if m != nil {
-        m.margin = value
-    }
+    m.margin = value
 }

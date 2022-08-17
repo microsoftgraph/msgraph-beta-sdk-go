@@ -31,19 +31,11 @@ func CreateClassifyExactMatchesPostRequestBodyFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyExactMatchesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentClassifications gets the contentClassifications property value. The contentClassifications property
 func (m *ClassifyExactMatchesPostRequestBody) GetContentClassifications()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentClassificationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentClassifications
-    }
+    return m.contentClassifications
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassifyExactMatchesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,27 +92,15 @@ func (m *ClassifyExactMatchesPostRequestBody) GetFieldDeserializers()(map[string
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyExactMatchesPostRequestBody) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
-    }
+    return m.sensitiveTypeIds
 }
 // GetText gets the text property value. The text property
 func (m *ClassifyExactMatchesPostRequestBody) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // GetTimeoutInMs gets the timeoutInMs property value. The timeoutInMs property
 func (m *ClassifyExactMatchesPostRequestBody) GetTimeoutInMs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeoutInMs
-    }
+    return m.timeoutInMs
 }
 // Serialize serializes information the current object
 func (m *ClassifyExactMatchesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -162,31 +142,21 @@ func (m *ClassifyExactMatchesPostRequestBody) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyExactMatchesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentClassifications sets the contentClassifications property value. The contentClassifications property
 func (m *ClassifyExactMatchesPostRequestBody) SetContentClassifications(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentClassificationable)() {
-    if m != nil {
-        m.contentClassifications = value
-    }
+    m.contentClassifications = value
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyExactMatchesPostRequestBody) SetSensitiveTypeIds(value []string)() {
-    if m != nil {
-        m.sensitiveTypeIds = value
-    }
+    m.sensitiveTypeIds = value
 }
 // SetText sets the text property value. The text property
 func (m *ClassifyExactMatchesPostRequestBody) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }
 // SetTimeoutInMs sets the timeoutInMs property value. The timeoutInMs property
 func (m *ClassifyExactMatchesPostRequestBody) SetTimeoutInMs(value *string)() {
-    if m != nil {
-        m.timeoutInMs = value
-    }
+    m.timeoutInMs = value
 }

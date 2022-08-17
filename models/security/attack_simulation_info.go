@@ -35,43 +35,23 @@ func CreateAttackSimulationInfoFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttackSimulationInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttackSimDateTime gets the attackSimDateTime property value. Specifies the date time of the attack simulation.
 func (m *AttackSimulationInfo) GetAttackSimDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attackSimDateTime
-    }
+    return m.attackSimDateTime
 }
 // GetAttackSimDurationTime gets the attackSimDurationTime property value. Specifies the duration (in time) for the attack simulation
 func (m *AttackSimulationInfo) GetAttackSimDurationTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attackSimDurationTime
-    }
+    return m.attackSimDurationTime
 }
 // GetAttackSimId gets the attackSimId property value. Specifies the activity id for the attack simulation.
 func (m *AttackSimulationInfo) GetAttackSimId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attackSimId
-    }
+    return m.attackSimId
 }
 // GetAttackSimUserId gets the attackSimUserId property value. Specifies the user id of the user who got the attack simulation email
 func (m *AttackSimulationInfo) GetAttackSimUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attackSimUserId
-    }
+    return m.attackSimUserId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttackSimulationInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -130,11 +110,7 @@ func (m *AttackSimulationInfo) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttackSimulationInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AttackSimulationInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *AttackSimulationInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttackSimulationInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttackSimDateTime sets the attackSimDateTime property value. Specifies the date time of the attack simulation.
 func (m *AttackSimulationInfo) SetAttackSimDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.attackSimDateTime = value
-    }
+    m.attackSimDateTime = value
 }
 // SetAttackSimDurationTime sets the attackSimDurationTime property value. Specifies the duration (in time) for the attack simulation
 func (m *AttackSimulationInfo) SetAttackSimDurationTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.attackSimDurationTime = value
-    }
+    m.attackSimDurationTime = value
 }
 // SetAttackSimId sets the attackSimId property value. Specifies the activity id for the attack simulation.
 func (m *AttackSimulationInfo) SetAttackSimId(value *string)() {
-    if m != nil {
-        m.attackSimId = value
-    }
+    m.attackSimId = value
 }
 // SetAttackSimUserId sets the attackSimUserId property value. Specifies the user id of the user who got the attack simulation email
 func (m *AttackSimulationInfo) SetAttackSimUserId(value *string)() {
-    if m != nil {
-        m.attackSimUserId = value
-    }
+    m.attackSimUserId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttackSimulationInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

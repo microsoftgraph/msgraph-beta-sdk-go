@@ -40,11 +40,7 @@ func (m *DeviceManagementSettingBooleanConstraint) GetFieldDeserializers()(map[s
 }
 // GetValue gets the value property value. The boolean value to compare against
 func (m *DeviceManagementSettingBooleanConstraint) GetValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingBooleanConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementSettingBooleanConstraint) Serialize(writer i878a80d2330
 }
 // SetValue sets the value property value. The boolean value to compare against
 func (m *DeviceManagementSettingBooleanConstraint) SetValue(value *bool)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

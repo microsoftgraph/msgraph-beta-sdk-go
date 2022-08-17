@@ -40,11 +40,7 @@ func (m *WindowsFeatureUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
 }
 // GetVersion gets the version property value. The feature update version
 func (m *WindowsFeatureUpdateCatalogItem) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *WindowsFeatureUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsFeatureUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896
 }
 // SetVersion sets the version property value. The feature update version
 func (m *WindowsFeatureUpdateCatalogItem) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

@@ -34,19 +34,11 @@ func CreateHasPayloadLinkResultItemFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HasPayloadLinkResultItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetError gets the error property value. Exception information indicates if check for this item was successful or not.Empty string for no error.
 func (m *HasPayloadLinkResultItem) GetError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,35 +101,19 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetHasLink gets the hasLink property value. Indicate whether a payload has any link or not.
 func (m *HasPayloadLinkResultItem) GetHasLink()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasLink
-    }
+    return m.hasLink
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *HasPayloadLinkResultItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPayloadId gets the payloadId property value. Key of the Payload, In the format of Guid.
 func (m *HasPayloadLinkResultItem) GetPayloadId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadId
-    }
+    return m.payloadId
 }
 // GetSources gets the sources property value. The reason where the link comes from.
 func (m *HasPayloadLinkResultItem) GetSources()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sources
-    }
+    return m.sources
 }
 // Serialize serializes information the current object
 func (m *HasPayloadLinkResultItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -181,37 +157,25 @@ func (m *HasPayloadLinkResultItem) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HasPayloadLinkResultItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetError sets the error property value. Exception information indicates if check for this item was successful or not.Empty string for no error.
 func (m *HasPayloadLinkResultItem) SetError(value *string)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetHasLink sets the hasLink property value. Indicate whether a payload has any link or not.
 func (m *HasPayloadLinkResultItem) SetHasLink(value *bool)() {
-    if m != nil {
-        m.hasLink = value
-    }
+    m.hasLink = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *HasPayloadLinkResultItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPayloadId sets the payloadId property value. Key of the Payload, In the format of Guid.
 func (m *HasPayloadLinkResultItem) SetPayloadId(value *string)() {
-    if m != nil {
-        m.payloadId = value
-    }
+    m.payloadId = value
 }
 // SetSources sets the sources property value. The reason where the link comes from.
 func (m *HasPayloadLinkResultItem) SetSources(value []string)() {
-    if m != nil {
-        m.sources = value
-    }
+    m.sources = value
 }

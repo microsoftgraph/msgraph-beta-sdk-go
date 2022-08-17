@@ -27,11 +27,7 @@ func CreateAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue(parseNode 
 }
 // GetExampleJson gets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidForWorkAppConfigurationSchema) GetExampleJson()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exampleJson
-    }
+    return m.exampleJson
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[strin
 }
 // GetSchemaItems gets the schemaItems property value. Collection of items each representing a named configuration option in the schema
 func (m *AndroidForWorkAppConfigurationSchema) GetSchemaItems()([]AndroidForWorkAppConfigurationSchemaItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schemaItems
-    }
+    return m.schemaItems
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i878a80d2330e89d
 }
 // SetExampleJson sets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidForWorkAppConfigurationSchema) SetExampleJson(value []byte)() {
-    if m != nil {
-        m.exampleJson = value
-    }
+    m.exampleJson = value
 }
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema
 func (m *AndroidForWorkAppConfigurationSchema) SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItemable)() {
-    if m != nil {
-        m.schemaItems = value
-    }
+    m.schemaItems = value
 }

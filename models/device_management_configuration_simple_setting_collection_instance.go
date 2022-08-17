@@ -44,11 +44,7 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) GetFieldD
 }
 // GetSimpleSettingCollectionValue gets the simpleSettingCollectionValue property value. Simple setting collection instance value
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) GetSimpleSettingCollectionValue()([]DeviceManagementConfigurationSimpleSettingValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simpleSettingCollectionValue
-    }
+    return m.simpleSettingCollectionValue
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) Serialize
 }
 // SetSimpleSettingCollectionValue sets the simpleSettingCollectionValue property value. Simple setting collection instance value
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) SetSimpleSettingCollectionValue(value []DeviceManagementConfigurationSimpleSettingValueable)() {
-    if m != nil {
-        m.simpleSettingCollectionValue = value
-    }
+    m.simpleSettingCollectionValue = value
 }

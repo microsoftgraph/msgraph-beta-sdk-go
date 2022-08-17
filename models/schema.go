@@ -27,11 +27,7 @@ func CreateSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetBaseType gets the baseType property value. The baseType property
 func (m *Schema) GetBaseType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.baseType
-    }
+    return m.baseType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Schema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *Schema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetProperties gets the properties property value. The properties property
 func (m *Schema) GetProperties()([]Propertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
+    return m.properties
 }
 // Serialize serializes information the current object
 func (m *Schema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *Schema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetBaseType sets the baseType property value. The baseType property
 func (m *Schema) SetBaseType(value *string)() {
-    if m != nil {
-        m.baseType = value
-    }
+    m.baseType = value
 }
 // SetProperties sets the properties property value. The properties property
 func (m *Schema) SetProperties(value []Propertyable)() {
-    if m != nil {
-        m.properties = value
-    }
+    m.properties = value
 }

@@ -29,11 +29,7 @@ func CreateSynchronizationSchemaFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDirectories gets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) GetDirectories()([]DirectoryDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directories
-    }
+    return m.directories
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,19 +76,11 @@ func (m *SynchronizationSchema) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetSynchronizationRules gets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) GetSynchronizationRules()([]SynchronizationRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.synchronizationRules
-    }
+    return m.synchronizationRules
 }
 // GetVersion gets the version property value. The version of the schema, updated automatically with every schema change.
 func (m *SynchronizationSchema) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *SynchronizationSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,19 +118,13 @@ func (m *SynchronizationSchema) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDirectories sets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) SetDirectories(value []DirectoryDefinitionable)() {
-    if m != nil {
-        m.directories = value
-    }
+    m.directories = value
 }
 // SetSynchronizationRules sets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) SetSynchronizationRules(value []SynchronizationRuleable)() {
-    if m != nil {
-        m.synchronizationRules = value
-    }
+    m.synchronizationRules = value
 }
 // SetVersion sets the version property value. The version of the schema, updated automatically with every schema change.
 func (m *SynchronizationSchema) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

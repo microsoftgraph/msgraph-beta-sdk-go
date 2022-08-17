@@ -42,43 +42,23 @@ func CreateDeviceManagementConfigurationOptionDefinitionFromDiscriminatorValue(p
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationOptionDefinition) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDependedOnBy gets the dependedOnBy property value. List of Settings that depends on this option
 func (m *DeviceManagementConfigurationOptionDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependedOnBy
-    }
+    return m.dependedOnBy
 }
 // GetDependentOn gets the dependentOn property value. List of dependent settings for this option
 func (m *DeviceManagementConfigurationOptionDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependentOn
-    }
+    return m.dependentOn
 }
 // GetDescription gets the description property value. Description of the option
 func (m *DeviceManagementConfigurationOptionDefinition) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Friendly name of the option
 func (m *DeviceManagementConfigurationOptionDefinition) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationOptionDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -185,43 +165,23 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetFieldDeserializers()(
 }
 // GetHelpText gets the helpText property value. Help text of the option
 func (m *DeviceManagementConfigurationOptionDefinition) GetHelpText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.helpText
-    }
+    return m.helpText
 }
 // GetItemId gets the itemId property value. Identifier of option
 func (m *DeviceManagementConfigurationOptionDefinition) GetItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemId
-    }
+    return m.itemId
 }
 // GetName gets the name property value. Name of the option
 func (m *DeviceManagementConfigurationOptionDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationOptionDefinition) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOptionValue gets the optionValue property value. Value of the option
 func (m *DeviceManagementConfigurationOptionDefinition) GetOptionValue()(DeviceManagementConfigurationSettingValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.optionValue
-    }
+    return m.optionValue
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationOptionDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -297,61 +257,41 @@ func (m *DeviceManagementConfigurationOptionDefinition) Serialize(writer i878a80
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationOptionDefinition) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDependedOnBy sets the dependedOnBy property value. List of Settings that depends on this option
 func (m *DeviceManagementConfigurationOptionDefinition) SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)() {
-    if m != nil {
-        m.dependedOnBy = value
-    }
+    m.dependedOnBy = value
 }
 // SetDependentOn sets the dependentOn property value. List of dependent settings for this option
 func (m *DeviceManagementConfigurationOptionDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
-    if m != nil {
-        m.dependentOn = value
-    }
+    m.dependentOn = value
 }
 // SetDescription sets the description property value. Description of the option
 func (m *DeviceManagementConfigurationOptionDefinition) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Friendly name of the option
 func (m *DeviceManagementConfigurationOptionDefinition) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHelpText sets the helpText property value. Help text of the option
 func (m *DeviceManagementConfigurationOptionDefinition) SetHelpText(value *string)() {
-    if m != nil {
-        m.helpText = value
-    }
+    m.helpText = value
 }
 // SetItemId sets the itemId property value. Identifier of option
 func (m *DeviceManagementConfigurationOptionDefinition) SetItemId(value *string)() {
-    if m != nil {
-        m.itemId = value
-    }
+    m.itemId = value
 }
 // SetName sets the name property value. Name of the option
 func (m *DeviceManagementConfigurationOptionDefinition) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationOptionDefinition) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOptionValue sets the optionValue property value. Value of the option
 func (m *DeviceManagementConfigurationOptionDefinition) SetOptionValue(value DeviceManagementConfigurationSettingValueable)() {
-    if m != nil {
-        m.optionValue = value
-    }
+    m.optionValue = value
 }

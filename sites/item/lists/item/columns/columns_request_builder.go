@@ -16,7 +16,7 @@ type ColumnsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ColumnsRequestBuilderGetQueryParameters the collection of field definitions for this list.
+// ColumnsRequestBuilderGetQueryParameters get columns from sites
 type ColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ColumnsRequestBuilder) Count()(*ie824963da67b3499c5ddbb7191f1ee49fe2ce2698e63efcf4cbbcdaec6b68a70.CountRequestBuilder) {
     return ie824963da67b3499c5ddbb7191f1ee49fe2ce2698e63efcf4cbbcdaec6b68a70.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of field definitions for this list.
+// CreateGetRequestInformation get columns from sites
 func (m *ColumnsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of field definitions for this list.
+// CreateGetRequestInformationWithRequestConfiguration get columns from sites
 func (m *ColumnsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ColumnsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get the collection of field definitions for this list.
+// Get get columns from sites
 func (m *ColumnsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of field definitions for this list.
+// GetWithRequestConfigurationAndResponseHandler get columns from sites
 func (m *ColumnsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ColumnsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

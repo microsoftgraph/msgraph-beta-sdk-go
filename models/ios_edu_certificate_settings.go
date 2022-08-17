@@ -42,59 +42,31 @@ func CreateIosEduCertificateSettingsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosEduCertificateSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
 func (m *IosEduCertificateSettings) GetCertFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certFileName
-    }
+    return m.certFileName
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name.
 func (m *IosEduCertificateSettings) GetCertificateTemplateName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateTemplateName
-    }
+    return m.certificateTemplateName
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *IosEduCertificateSettings) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodScale
-    }
+    return m.certificateValidityPeriodScale
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *IosEduCertificateSettings) GetCertificateValidityPeriodValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodValue
-    }
+    return m.certificateValidityPeriodValue
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority.
 func (m *IosEduCertificateSettings) GetCertificationAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthority
-    }
+    return m.certificationAuthority
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name.
 func (m *IosEduCertificateSettings) GetCertificationAuthorityName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthorityName
-    }
+    return m.certificationAuthorityName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosEduCertificateSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -193,27 +165,15 @@ func (m *IosEduCertificateSettings) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosEduCertificateSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *IosEduCertificateSettings) GetRenewalThresholdPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.renewalThresholdPercentage
-    }
+    return m.renewalThresholdPercentage
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate.
 func (m *IosEduCertificateSettings) GetTrustedRootCertificate()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustedRootCertificate
-    }
+    return m.trustedRootCertificate
 }
 // Serialize serializes information the current object
 func (m *IosEduCertificateSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -282,61 +242,41 @@ func (m *IosEduCertificateSettings) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosEduCertificateSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertFileName sets the certFileName property value. File name to display in UI.
 func (m *IosEduCertificateSettings) SetCertFileName(value *string)() {
-    if m != nil {
-        m.certFileName = value
-    }
+    m.certFileName = value
 }
 // SetCertificateTemplateName sets the certificateTemplateName property value. PKCS Certificate Template Name.
 func (m *IosEduCertificateSettings) SetCertificateTemplateName(value *string)() {
-    if m != nil {
-        m.certificateTemplateName = value
-    }
+    m.certificateTemplateName = value
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *IosEduCertificateSettings) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
-    if m != nil {
-        m.certificateValidityPeriodScale = value
-    }
+    m.certificateValidityPeriodScale = value
 }
 // SetCertificateValidityPeriodValue sets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *IosEduCertificateSettings) SetCertificateValidityPeriodValue(value *int32)() {
-    if m != nil {
-        m.certificateValidityPeriodValue = value
-    }
+    m.certificateValidityPeriodValue = value
 }
 // SetCertificationAuthority sets the certificationAuthority property value. PKCS Certification Authority.
 func (m *IosEduCertificateSettings) SetCertificationAuthority(value *string)() {
-    if m != nil {
-        m.certificationAuthority = value
-    }
+    m.certificationAuthority = value
 }
 // SetCertificationAuthorityName sets the certificationAuthorityName property value. PKCS Certification Authority Name.
 func (m *IosEduCertificateSettings) SetCertificationAuthorityName(value *string)() {
-    if m != nil {
-        m.certificationAuthorityName = value
-    }
+    m.certificationAuthorityName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosEduCertificateSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *IosEduCertificateSettings) SetRenewalThresholdPercentage(value *int32)() {
-    if m != nil {
-        m.renewalThresholdPercentage = value
-    }
+    m.renewalThresholdPercentage = value
 }
 // SetTrustedRootCertificate sets the trustedRootCertificate property value. Trusted Root Certificate.
 func (m *IosEduCertificateSettings) SetTrustedRootCertificate(value []byte)() {
-    if m != nil {
-        m.trustedRootCertificate = value
-    }
+    m.trustedRootCertificate = value
 }

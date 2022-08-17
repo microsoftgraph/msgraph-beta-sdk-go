@@ -29,19 +29,11 @@ func CreateParseExpressionPostRequestBodyFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpression gets the expression property value. The expression property
 func (m *ParseExpressionPostRequestBody) GetExpression()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expression
-    }
+    return m.expression
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParseExpressionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,19 +72,11 @@ func (m *ParseExpressionPostRequestBody) GetFieldDeserializers()(map[string]func
 }
 // GetTargetAttributeDefinition gets the targetAttributeDefinition property value. The targetAttributeDefinition property
 func (m *ParseExpressionPostRequestBody) GetTargetAttributeDefinition()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetAttributeDefinition
-    }
+    return m.targetAttributeDefinition
 }
 // GetTestInputObject gets the testInputObject property value. The testInputObject property
 func (m *ParseExpressionPostRequestBody) GetTestInputObject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExpressionInputObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.testInputObject
-    }
+    return m.testInputObject
 }
 // Serialize serializes information the current object
 func (m *ParseExpressionPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,25 +108,17 @@ func (m *ParseExpressionPostRequestBody) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpression sets the expression property value. The expression property
 func (m *ParseExpressionPostRequestBody) SetExpression(value *string)() {
-    if m != nil {
-        m.expression = value
-    }
+    m.expression = value
 }
 // SetTargetAttributeDefinition sets the targetAttributeDefinition property value. The targetAttributeDefinition property
 func (m *ParseExpressionPostRequestBody) SetTargetAttributeDefinition(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeDefinitionable)() {
-    if m != nil {
-        m.targetAttributeDefinition = value
-    }
+    m.targetAttributeDefinition = value
 }
 // SetTestInputObject sets the testInputObject property value. The testInputObject property
 func (m *ParseExpressionPostRequestBody) SetTestInputObject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExpressionInputObjectable)() {
-    if m != nil {
-        m.testInputObject = value
-    }
+    m.testInputObject = value
 }

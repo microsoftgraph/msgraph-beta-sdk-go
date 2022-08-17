@@ -30,11 +30,7 @@ func CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue(pa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorResource) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(m
 }
 // GetLink gets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
 func (m *DeviceManagementTroubleshootingErrorResource) GetLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.link
-    }
+    return m.link
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementTroubleshootingErrorResource) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetText gets the text property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingErrorResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DeviceManagementTroubleshootingErrorResource) Serialize(writer i878a80d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorResource) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLink sets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
 func (m *DeviceManagementTroubleshootingErrorResource) SetLink(value *string)() {
-    if m != nil {
-        m.link = value
-    }
+    m.link = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementTroubleshootingErrorResource) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetText sets the text property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorResource) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

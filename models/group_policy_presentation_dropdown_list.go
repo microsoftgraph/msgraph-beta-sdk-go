@@ -29,11 +29,7 @@ func CreateGroupPolicyPresentationDropdownListFromDiscriminatorValue(parseNode i
 }
 // GetDefaultItem gets the defaultItem property value. Localized string value identifying the default choice of the list of items.
 func (m *GroupPolicyPresentationDropdownList) GetDefaultItem()(GroupPolicyPresentationDropdownListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultItem
-    }
+    return m.defaultItem
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationDropdownList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *GroupPolicyPresentationDropdownList) GetFieldDeserializers()(map[string
 }
 // GetItems gets the items property value. Represents a set of localized display names and their associated values.
 func (m *GroupPolicyPresentationDropdownList) GetItems()([]GroupPolicyPresentationDropdownListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetRequired gets the required property value. Requirement to enter a value in the parameter box. The default value is false.
 func (m *GroupPolicyPresentationDropdownList) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
+    return m.required
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationDropdownList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *GroupPolicyPresentationDropdownList) Serialize(writer i878a80d2330e89d2
 }
 // SetDefaultItem sets the defaultItem property value. Localized string value identifying the default choice of the list of items.
 func (m *GroupPolicyPresentationDropdownList) SetDefaultItem(value GroupPolicyPresentationDropdownListItemable)() {
-    if m != nil {
-        m.defaultItem = value
-    }
+    m.defaultItem = value
 }
 // SetItems sets the items property value. Represents a set of localized display names and their associated values.
 func (m *GroupPolicyPresentationDropdownList) SetItems(value []GroupPolicyPresentationDropdownListItemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetRequired sets the required property value. Requirement to enter a value in the parameter box. The default value is false.
 func (m *GroupPolicyPresentationDropdownList) SetRequired(value *bool)() {
-    if m != nil {
-        m.required = value
-    }
+    m.required = value
 }

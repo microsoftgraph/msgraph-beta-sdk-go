@@ -32,19 +32,11 @@ func CreateOrganizationalMessageTargetingFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageTargeting) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExcludeIds gets the excludeIds property value. The groups that will not receive the message. If a user from an excluded group is part of an included group, it will not receive the message
 func (m *OrganizationalMessageTargeting) GetExcludeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeIds
-    }
+    return m.excludeIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageTargeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,27 +93,15 @@ func (m *OrganizationalMessageTargeting) GetFieldDeserializers()(map[string]func
 }
 // GetIncludeIds gets the includeIds property value. The groups that will be targeted and receive the message
 func (m *OrganizationalMessageTargeting) GetIncludeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeIds
-    }
+    return m.includeIds
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageTargeting) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTargetingType gets the targetingType property value. Indicates the type of targeting
 func (m *OrganizationalMessageTargeting) GetTargetingType()(*OrganizationalMessageTargetingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetingType
-    }
+    return m.targetingType
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageTargeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -160,31 +140,21 @@ func (m *OrganizationalMessageTargeting) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageTargeting) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExcludeIds sets the excludeIds property value. The groups that will not receive the message. If a user from an excluded group is part of an included group, it will not receive the message
 func (m *OrganizationalMessageTargeting) SetExcludeIds(value []string)() {
-    if m != nil {
-        m.excludeIds = value
-    }
+    m.excludeIds = value
 }
 // SetIncludeIds sets the includeIds property value. The groups that will be targeted and receive the message
 func (m *OrganizationalMessageTargeting) SetIncludeIds(value []string)() {
-    if m != nil {
-        m.includeIds = value
-    }
+    m.includeIds = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageTargeting) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTargetingType sets the targetingType property value. Indicates the type of targeting
 func (m *OrganizationalMessageTargeting) SetTargetingType(value *OrganizationalMessageTargetingType)() {
-    if m != nil {
-        m.targetingType = value
-    }
+    m.targetingType = value
 }

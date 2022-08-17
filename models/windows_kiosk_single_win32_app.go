@@ -40,11 +40,7 @@ func (m *WindowsKioskSingleWin32App) GetFieldDeserializers()(map[string]func(i87
 }
 // GetWin32App gets the win32App property value. The win32App property
 func (m *WindowsKioskSingleWin32App) GetWin32App()(WindowsKioskWin32Appable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.win32App
-    }
+    return m.win32App
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskSingleWin32App) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsKioskSingleWin32App) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetWin32App sets the win32App property value. The win32App property
 func (m *WindowsKioskSingleWin32App) SetWin32App(value WindowsKioskWin32Appable)() {
-    if m != nil {
-        m.win32App = value
-    }
+    m.win32App = value
 }

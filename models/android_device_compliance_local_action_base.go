@@ -61,11 +61,7 @@ func (m *AndroidDeviceComplianceLocalActionBase) GetFieldDeserializers()(map[str
 }
 // GetGracePeriodInMinutes gets the gracePeriodInMinutes property value. Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647
 func (m *AndroidDeviceComplianceLocalActionBase) GetGracePeriodInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gracePeriodInMinutes
-    }
+    return m.gracePeriodInMinutes
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceComplianceLocalActionBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,7 +79,5 @@ func (m *AndroidDeviceComplianceLocalActionBase) Serialize(writer i878a80d2330e8
 }
 // SetGracePeriodInMinutes sets the gracePeriodInMinutes property value. Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647
 func (m *AndroidDeviceComplianceLocalActionBase) SetGracePeriodInMinutes(value *int32)() {
-    if m != nil {
-        m.gracePeriodInMinutes = value
-    }
+    m.gracePeriodInMinutes = value
 }

@@ -27,11 +27,7 @@ func CreateDlpEvaluationWindowsDevicesInputFromDiscriminatorValue(parseNode i878
 }
 // GetContentProperties gets the contentProperties property value. The contentProperties property
 func (m *DlpEvaluationWindowsDevicesInput) GetContentProperties()(ContentPropertiesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentProperties
-    }
+    return m.contentProperties
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpEvaluationWindowsDevicesInput) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *DlpEvaluationWindowsDevicesInput) GetFieldDeserializers()(map[string]fu
 }
 // GetSharedBy gets the sharedBy property value. The sharedBy property
 func (m *DlpEvaluationWindowsDevicesInput) GetSharedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedBy
-    }
+    return m.sharedBy
 }
 // Serialize serializes information the current object
 func (m *DlpEvaluationWindowsDevicesInput) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DlpEvaluationWindowsDevicesInput) Serialize(writer i878a80d2330e89d2689
 }
 // SetContentProperties sets the contentProperties property value. The contentProperties property
 func (m *DlpEvaluationWindowsDevicesInput) SetContentProperties(value ContentPropertiesable)() {
-    if m != nil {
-        m.contentProperties = value
-    }
+    m.contentProperties = value
 }
 // SetSharedBy sets the sharedBy property value. The sharedBy property
 func (m *DlpEvaluationWindowsDevicesInput) SetSharedBy(value *string)() {
-    if m != nil {
-        m.sharedBy = value
-    }
+    m.sharedBy = value
 }

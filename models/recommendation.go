@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Recommendation provides operations to manage the collection of activityStatistics entities.
+// Recommendation 
 type Recommendation struct {
     Entity
     // The actionSteps property
@@ -39,7 +39,7 @@ type Recommendation struct {
     // The status property
     status *RecommendationStatus
 }
-// NewRecommendation instantiates a new recommendation and sets the default values.
+// NewRecommendation instantiates a new Recommendation and sets the default values.
 func NewRecommendation()(*Recommendation) {
     m := &Recommendation{
         Entity: *NewEntity(),
@@ -54,43 +54,23 @@ func CreateRecommendationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetActionSteps gets the actionSteps property value. The actionSteps property
 func (m *Recommendation) GetActionSteps()([]ActionStepable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionSteps
-    }
+    return m.actionSteps
 }
 // GetBenefits gets the benefits property value. The benefits property
 func (m *Recommendation) GetBenefits()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.benefits
-    }
+    return m.benefits
 }
 // GetCategory gets the category property value. The category property
 func (m *Recommendation) GetCategory()(*RecommendationCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *Recommendation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Recommendation) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Recommendation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -257,83 +237,43 @@ func (m *Recommendation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetImpactedResources gets the impactedResources property value. The impactedResources property
 func (m *Recommendation) GetImpactedResources()([]RecommendationResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactedResources
-    }
+    return m.impactedResources
 }
 // GetImpactStartDateTime gets the impactStartDateTime property value. The impactStartDateTime property
 func (m *Recommendation) GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactStartDateTime
-    }
+    return m.impactStartDateTime
 }
 // GetImpactType gets the impactType property value. The impactType property
 func (m *Recommendation) GetImpactType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactType
-    }
+    return m.impactType
 }
 // GetInsights gets the insights property value. The insights property
 func (m *Recommendation) GetInsights()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insights
-    }
+    return m.insights
 }
 // GetLastCheckedDateTime gets the lastCheckedDateTime property value. The lastCheckedDateTime property
 func (m *Recommendation) GetLastCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckedDateTime
-    }
+    return m.lastCheckedDateTime
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
 func (m *Recommendation) GetLastModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Recommendation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The postponeUntilDateTime property
 func (m *Recommendation) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postponeUntilDateTime
-    }
+    return m.postponeUntilDateTime
 }
 // GetPriority gets the priority property value. The priority property
 func (m *Recommendation) GetPriority()(*RecommendationPriority) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetStatus gets the status property value. The status property
 func (m *Recommendation) GetStatus()(*RecommendationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *Recommendation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -446,91 +386,61 @@ func (m *Recommendation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetActionSteps sets the actionSteps property value. The actionSteps property
 func (m *Recommendation) SetActionSteps(value []ActionStepable)() {
-    if m != nil {
-        m.actionSteps = value
-    }
+    m.actionSteps = value
 }
 // SetBenefits sets the benefits property value. The benefits property
 func (m *Recommendation) SetBenefits(value *string)() {
-    if m != nil {
-        m.benefits = value
-    }
+    m.benefits = value
 }
 // SetCategory sets the category property value. The category property
 func (m *Recommendation) SetCategory(value *RecommendationCategory)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *Recommendation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Recommendation) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetImpactedResources sets the impactedResources property value. The impactedResources property
 func (m *Recommendation) SetImpactedResources(value []RecommendationResourceable)() {
-    if m != nil {
-        m.impactedResources = value
-    }
+    m.impactedResources = value
 }
 // SetImpactStartDateTime sets the impactStartDateTime property value. The impactStartDateTime property
 func (m *Recommendation) SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.impactStartDateTime = value
-    }
+    m.impactStartDateTime = value
 }
 // SetImpactType sets the impactType property value. The impactType property
 func (m *Recommendation) SetImpactType(value *string)() {
-    if m != nil {
-        m.impactType = value
-    }
+    m.impactType = value
 }
 // SetInsights sets the insights property value. The insights property
 func (m *Recommendation) SetInsights(value *string)() {
-    if m != nil {
-        m.insights = value
-    }
+    m.insights = value
 }
 // SetLastCheckedDateTime sets the lastCheckedDateTime property value. The lastCheckedDateTime property
 func (m *Recommendation) SetLastCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastCheckedDateTime = value
-    }
+    m.lastCheckedDateTime = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
 func (m *Recommendation) SetLastModifiedBy(value *string)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Recommendation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetPostponeUntilDateTime sets the postponeUntilDateTime property value. The postponeUntilDateTime property
 func (m *Recommendation) SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.postponeUntilDateTime = value
-    }
+    m.postponeUntilDateTime = value
 }
 // SetPriority sets the priority property value. The priority property
 func (m *Recommendation) SetPriority(value *RecommendationPriority)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetStatus sets the status property value. The status property
 func (m *Recommendation) SetStatus(value *RecommendationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

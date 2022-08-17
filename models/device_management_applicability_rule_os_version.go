@@ -34,11 +34,7 @@ func CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) GetFieldDeserializers()(map
 }
 // GetMaxOSVersion gets the maxOSVersion property value. Max OS version for Applicability Rule.
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetMaxOSVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxOSVersion
-    }
+    return m.maxOSVersion
 }
 // GetMinOSVersion gets the minOSVersion property value. Min OS version for Applicability Rule.
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetMinOSVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minOSVersion
-    }
+    return m.minOSVersion
 }
 // GetName gets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleType
-    }
+    return m.ruleType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementApplicabilityRuleOsVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMaxOSVersion sets the maxOSVersion property value. Max OS version for Applicability Rule.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetMaxOSVersion(value *string)() {
-    if m != nil {
-        m.maxOSVersion = value
-    }
+    m.maxOSVersion = value
 }
 // SetMinOSVersion sets the minOSVersion property value. Min OS version for Applicability Rule.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetMinOSVersion(value *string)() {
-    if m != nil {
-        m.minOSVersion = value
-    }
+    m.minOSVersion = value
 }
 // SetName sets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRuleType sets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
-    if m != nil {
-        m.ruleType = value
-    }
+    m.ruleType = value
 }

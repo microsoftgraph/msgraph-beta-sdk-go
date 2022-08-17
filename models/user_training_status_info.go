@@ -35,35 +35,19 @@ func CreateUserTrainingStatusInfoFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingStatusInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignedDateTime gets the assignedDateTime property value. Date and time of assignment of the training to the user.
 func (m *UserTrainingStatusInfo) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedDateTime
-    }
+    return m.assignedDateTime
 }
 // GetCompletionDateTime gets the completionDateTime property value. Date and time of completion of the training by the user.
 func (m *UserTrainingStatusInfo) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completionDateTime
-    }
+    return m.completionDateTime
 }
 // GetDisplayName gets the displayName property value. Display name of the assigned training.
 func (m *UserTrainingStatusInfo) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,19 +106,11 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTrainingStatus gets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingStatus
-    }
+    return m.trainingStatus
 }
 // Serialize serializes information the current object
 func (m *UserTrainingStatusInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -179,37 +155,25 @@ func (m *UserTrainingStatusInfo) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingStatusInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignedDateTime sets the assignedDateTime property value. Date and time of assignment of the training to the user.
 func (m *UserTrainingStatusInfo) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.assignedDateTime = value
-    }
+    m.assignedDateTime = value
 }
 // SetCompletionDateTime sets the completionDateTime property value. Date and time of completion of the training by the user.
 func (m *UserTrainingStatusInfo) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completionDateTime = value
-    }
+    m.completionDateTime = value
 }
 // SetDisplayName sets the displayName property value. Display name of the assigned training.
 func (m *UserTrainingStatusInfo) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserTrainingStatusInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTrainingStatus sets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) SetTrainingStatus(value *TrainingStatus)() {
-    if m != nil {
-        m.trainingStatus = value
-    }
+    m.trainingStatus = value
 }

@@ -25,11 +25,7 @@ func CreateDeviceHealthScriptIntegerParameterFromDiscriminatorValue(parseNode i8
 }
 // GetDefaultValue gets the defaultValue property value. The default value of Integer param. Valid values -2147483648 to 2147483647
 func (m *DeviceHealthScriptIntegerParameter) GetDefaultValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptIntegerParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *DeviceHealthScriptIntegerParameter) Serialize(writer i878a80d2330e89d26
 }
 // SetDefaultValue sets the defaultValue property value. The default value of Integer param. Valid values -2147483648 to 2147483647
 func (m *DeviceHealthScriptIntegerParameter) SetDefaultValue(value *int32)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }

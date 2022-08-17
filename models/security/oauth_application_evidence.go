@@ -31,19 +31,11 @@ func CreateOauthApplicationEvidenceFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAppId gets the appId property value. The appId property
 func (m *OauthApplicationEvidence) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *OauthApplicationEvidence) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OauthApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *OauthApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetObjectId gets the objectId property value. The objectId property
 func (m *OauthApplicationEvidence) GetObjectId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.objectId
-    }
+    return m.objectId
 }
 // GetPublisher gets the publisher property value. The publisher property
 func (m *OauthApplicationEvidence) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
+    return m.publisher
 }
 // Serialize serializes information the current object
 func (m *OauthApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *OauthApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAppId sets the appId property value. The appId property
 func (m *OauthApplicationEvidence) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *OauthApplicationEvidence) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetObjectId sets the objectId property value. The objectId property
 func (m *OauthApplicationEvidence) SetObjectId(value *string)() {
-    if m != nil {
-        m.objectId = value
-    }
+    m.objectId = value
 }
 // SetPublisher sets the publisher property value. The publisher property
 func (m *OauthApplicationEvidence) SetPublisher(value *string)() {
-    if m != nil {
-        m.publisher = value
-    }
+    m.publisher = value
 }

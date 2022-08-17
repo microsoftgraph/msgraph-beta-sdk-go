@@ -44,11 +44,7 @@ func CreateRoleSuccessStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,83 +153,43 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RoleSuccessStatistics) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPermanentFail gets the permanentFail property value. The permanentFail property
 func (m *RoleSuccessStatistics) GetPermanentFail()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permanentFail
-    }
+    return m.permanentFail
 }
 // GetPermanentSuccess gets the permanentSuccess property value. The permanentSuccess property
 func (m *RoleSuccessStatistics) GetPermanentSuccess()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permanentSuccess
-    }
+    return m.permanentSuccess
 }
 // GetRemoveFail gets the removeFail property value. The removeFail property
 func (m *RoleSuccessStatistics) GetRemoveFail()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeFail
-    }
+    return m.removeFail
 }
 // GetRemoveSuccess gets the removeSuccess property value. The removeSuccess property
 func (m *RoleSuccessStatistics) GetRemoveSuccess()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeSuccess
-    }
+    return m.removeSuccess
 }
 // GetRoleId gets the roleId property value. The roleId property
 func (m *RoleSuccessStatistics) GetRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleId
-    }
+    return m.roleId
 }
 // GetRoleName gets the roleName property value. The roleName property
 func (m *RoleSuccessStatistics) GetRoleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleName
-    }
+    return m.roleName
 }
 // GetTemporaryFail gets the temporaryFail property value. The temporaryFail property
 func (m *RoleSuccessStatistics) GetTemporaryFail()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.temporaryFail
-    }
+    return m.temporaryFail
 }
 // GetTemporarySuccess gets the temporarySuccess property value. The temporarySuccess property
 func (m *RoleSuccessStatistics) GetTemporarySuccess()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.temporarySuccess
-    }
+    return m.temporarySuccess
 }
 // GetUnknownFail gets the unknownFail property value. The unknownFail property
 func (m *RoleSuccessStatistics) GetUnknownFail()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownFail
-    }
+    return m.unknownFail
 }
 // Serialize serializes information the current object
 func (m *RoleSuccessStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -307,67 +263,45 @@ func (m *RoleSuccessStatistics) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleSuccessStatistics) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RoleSuccessStatistics) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPermanentFail sets the permanentFail property value. The permanentFail property
 func (m *RoleSuccessStatistics) SetPermanentFail(value *int64)() {
-    if m != nil {
-        m.permanentFail = value
-    }
+    m.permanentFail = value
 }
 // SetPermanentSuccess sets the permanentSuccess property value. The permanentSuccess property
 func (m *RoleSuccessStatistics) SetPermanentSuccess(value *int64)() {
-    if m != nil {
-        m.permanentSuccess = value
-    }
+    m.permanentSuccess = value
 }
 // SetRemoveFail sets the removeFail property value. The removeFail property
 func (m *RoleSuccessStatistics) SetRemoveFail(value *int64)() {
-    if m != nil {
-        m.removeFail = value
-    }
+    m.removeFail = value
 }
 // SetRemoveSuccess sets the removeSuccess property value. The removeSuccess property
 func (m *RoleSuccessStatistics) SetRemoveSuccess(value *int64)() {
-    if m != nil {
-        m.removeSuccess = value
-    }
+    m.removeSuccess = value
 }
 // SetRoleId sets the roleId property value. The roleId property
 func (m *RoleSuccessStatistics) SetRoleId(value *string)() {
-    if m != nil {
-        m.roleId = value
-    }
+    m.roleId = value
 }
 // SetRoleName sets the roleName property value. The roleName property
 func (m *RoleSuccessStatistics) SetRoleName(value *string)() {
-    if m != nil {
-        m.roleName = value
-    }
+    m.roleName = value
 }
 // SetTemporaryFail sets the temporaryFail property value. The temporaryFail property
 func (m *RoleSuccessStatistics) SetTemporaryFail(value *int64)() {
-    if m != nil {
-        m.temporaryFail = value
-    }
+    m.temporaryFail = value
 }
 // SetTemporarySuccess sets the temporarySuccess property value. The temporarySuccess property
 func (m *RoleSuccessStatistics) SetTemporarySuccess(value *int64)() {
-    if m != nil {
-        m.temporarySuccess = value
-    }
+    m.temporarySuccess = value
 }
 // SetUnknownFail sets the unknownFail property value. The unknownFail property
 func (m *RoleSuccessStatistics) SetUnknownFail(value *int64)() {
-    if m != nil {
-        m.unknownFail = value
-    }
+    m.unknownFail = value
 }

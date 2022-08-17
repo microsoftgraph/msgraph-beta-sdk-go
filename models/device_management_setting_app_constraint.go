@@ -44,11 +44,7 @@ func (m *DeviceManagementSettingAppConstraint) GetFieldDeserializers()(map[strin
 }
 // GetSupportedTypes gets the supportedTypes property value. Acceptable app types to allow for this setting
 func (m *DeviceManagementSettingAppConstraint) GetSupportedTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedTypes
-    }
+    return m.supportedTypes
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingAppConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *DeviceManagementSettingAppConstraint) Serialize(writer i878a80d2330e89d
 }
 // SetSupportedTypes sets the supportedTypes property value. Acceptable app types to allow for this setting
 func (m *DeviceManagementSettingAppConstraint) SetSupportedTypes(value []string)() {
-    if m != nil {
-        m.supportedTypes = value
-    }
+    m.supportedTypes = value
 }

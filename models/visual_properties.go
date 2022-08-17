@@ -30,19 +30,11 @@ func CreateVisualPropertiesFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualProperties) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBody gets the body property value. The body of a visual user notification. Body is optional.
 func (m *VisualProperties) GetBody()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.body
-    }
+    return m.body
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VisualProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *VisualProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VisualProperties) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTitle gets the title property value. The title of a visual user notification. This field is required for visual notification payloads.
 func (m *VisualProperties) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // Serialize serializes information the current object
 func (m *VisualProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *VisualProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualProperties) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBody sets the body property value. The body of a visual user notification. Body is optional.
 func (m *VisualProperties) SetBody(value *string)() {
-    if m != nil {
-        m.body = value
-    }
+    m.body = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VisualProperties) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTitle sets the title property value. The title of a visual user notification. This field is required for visual notification payloads.
 func (m *VisualProperties) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }

@@ -44,11 +44,7 @@ func CreateProcessEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDetectionStatus gets the detectionStatus property value. The detectionStatus property
 func (m *ProcessEvidence) GetDetectionStatus()(*DetectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionStatus
-    }
+    return m.detectionStatus
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,75 +153,39 @@ func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetImageFile gets the imageFile property value. The imageFile property
 func (m *ProcessEvidence) GetImageFile()(FileDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imageFile
-    }
+    return m.imageFile
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. The mdeDeviceId property
 func (m *ProcessEvidence) GetMdeDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdeDeviceId
-    }
+    return m.mdeDeviceId
 }
 // GetParentProcessCreationDateTime gets the parentProcessCreationDateTime property value. The parentProcessCreationDateTime property
 func (m *ProcessEvidence) GetParentProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessCreationDateTime
-    }
+    return m.parentProcessCreationDateTime
 }
 // GetParentProcessId gets the parentProcessId property value. The parentProcessId property
 func (m *ProcessEvidence) GetParentProcessId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessId
-    }
+    return m.parentProcessId
 }
 // GetParentProcessImageFile gets the parentProcessImageFile property value. The parentProcessImageFile property
 func (m *ProcessEvidence) GetParentProcessImageFile()(FileDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentProcessImageFile
-    }
+    return m.parentProcessImageFile
 }
 // GetProcessCommandLine gets the processCommandLine property value. The processCommandLine property
 func (m *ProcessEvidence) GetProcessCommandLine()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processCommandLine
-    }
+    return m.processCommandLine
 }
 // GetProcessCreationDateTime gets the processCreationDateTime property value. The processCreationDateTime property
 func (m *ProcessEvidence) GetProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processCreationDateTime
-    }
+    return m.processCreationDateTime
 }
 // GetProcessId gets the processId property value. The processId property
 func (m *ProcessEvidence) GetProcessId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processId
-    }
+    return m.processId
 }
 // GetUserAccount gets the userAccount property value. The userAccount property
 func (m *ProcessEvidence) GetUserAccount()(UserAccountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccount
-    }
+    return m.userAccount
 }
 // Serialize serializes information the current object
 func (m *ProcessEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -298,61 +258,41 @@ func (m *ProcessEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDetectionStatus sets the detectionStatus property value. The detectionStatus property
 func (m *ProcessEvidence) SetDetectionStatus(value *DetectionStatus)() {
-    if m != nil {
-        m.detectionStatus = value
-    }
+    m.detectionStatus = value
 }
 // SetImageFile sets the imageFile property value. The imageFile property
 func (m *ProcessEvidence) SetImageFile(value FileDetailsable)() {
-    if m != nil {
-        m.imageFile = value
-    }
+    m.imageFile = value
 }
 // SetMdeDeviceId sets the mdeDeviceId property value. The mdeDeviceId property
 func (m *ProcessEvidence) SetMdeDeviceId(value *string)() {
-    if m != nil {
-        m.mdeDeviceId = value
-    }
+    m.mdeDeviceId = value
 }
 // SetParentProcessCreationDateTime sets the parentProcessCreationDateTime property value. The parentProcessCreationDateTime property
 func (m *ProcessEvidence) SetParentProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.parentProcessCreationDateTime = value
-    }
+    m.parentProcessCreationDateTime = value
 }
 // SetParentProcessId sets the parentProcessId property value. The parentProcessId property
 func (m *ProcessEvidence) SetParentProcessId(value *int64)() {
-    if m != nil {
-        m.parentProcessId = value
-    }
+    m.parentProcessId = value
 }
 // SetParentProcessImageFile sets the parentProcessImageFile property value. The parentProcessImageFile property
 func (m *ProcessEvidence) SetParentProcessImageFile(value FileDetailsable)() {
-    if m != nil {
-        m.parentProcessImageFile = value
-    }
+    m.parentProcessImageFile = value
 }
 // SetProcessCommandLine sets the processCommandLine property value. The processCommandLine property
 func (m *ProcessEvidence) SetProcessCommandLine(value *string)() {
-    if m != nil {
-        m.processCommandLine = value
-    }
+    m.processCommandLine = value
 }
 // SetProcessCreationDateTime sets the processCreationDateTime property value. The processCreationDateTime property
 func (m *ProcessEvidence) SetProcessCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.processCreationDateTime = value
-    }
+    m.processCreationDateTime = value
 }
 // SetProcessId sets the processId property value. The processId property
 func (m *ProcessEvidence) SetProcessId(value *int64)() {
-    if m != nil {
-        m.processId = value
-    }
+    m.processId = value
 }
 // SetUserAccount sets the userAccount property value. The userAccount property
 func (m *ProcessEvidence) SetUserAccount(value UserAccountable)() {
-    if m != nil {
-        m.userAccount = value
-    }
+    m.userAccount = value
 }

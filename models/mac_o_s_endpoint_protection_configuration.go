@@ -71,67 +71,35 @@ func CreateMacOSEndpointProtectionConfigurationFromDiscriminatorValue(parseNode 
 }
 // GetAdvancedThreatProtectionAutomaticSampleSubmission gets the advancedThreatProtectionAutomaticSampleSubmission property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionAutomaticSampleSubmission()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionAutomaticSampleSubmission
-    }
+    return m.advancedThreatProtectionAutomaticSampleSubmission
 }
 // GetAdvancedThreatProtectionCloudDelivered gets the advancedThreatProtectionCloudDelivered property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionCloudDelivered()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionCloudDelivered
-    }
+    return m.advancedThreatProtectionCloudDelivered
 }
 // GetAdvancedThreatProtectionDiagnosticDataCollection gets the advancedThreatProtectionDiagnosticDataCollection property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionDiagnosticDataCollection()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionDiagnosticDataCollection
-    }
+    return m.advancedThreatProtectionDiagnosticDataCollection
 }
 // GetAdvancedThreatProtectionExcludedExtensions gets the advancedThreatProtectionExcludedExtensions property value. A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionExcludedExtensions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionExcludedExtensions
-    }
+    return m.advancedThreatProtectionExcludedExtensions
 }
 // GetAdvancedThreatProtectionExcludedFiles gets the advancedThreatProtectionExcludedFiles property value. A list of paths to files to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionExcludedFiles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionExcludedFiles
-    }
+    return m.advancedThreatProtectionExcludedFiles
 }
 // GetAdvancedThreatProtectionExcludedFolders gets the advancedThreatProtectionExcludedFolders property value. A list of paths to folders to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionExcludedFolders()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionExcludedFolders
-    }
+    return m.advancedThreatProtectionExcludedFolders
 }
 // GetAdvancedThreatProtectionExcludedProcesses gets the advancedThreatProtectionExcludedProcesses property value. A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionExcludedProcesses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionExcludedProcesses
-    }
+    return m.advancedThreatProtectionExcludedProcesses
 }
 // GetAdvancedThreatProtectionRealTime gets the advancedThreatProtectionRealTime property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionRealTime()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionRealTime
-    }
+    return m.advancedThreatProtectionRealTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -400,131 +368,67 @@ func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[strin
 }
 // GetFileVaultAllowDeferralUntilSignOut gets the fileVaultAllowDeferralUntilSignOut property value. Optional. If set to true, the user can defer the enabling of FileVault until they sign out.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultAllowDeferralUntilSignOut()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultAllowDeferralUntilSignOut
-    }
+    return m.fileVaultAllowDeferralUntilSignOut
 }
 // GetFileVaultDisablePromptAtSignOut gets the fileVaultDisablePromptAtSignOut property value. Optional. When using the Defer option, if set to true, the user is not prompted to enable FileVault at sign-out.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultDisablePromptAtSignOut()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultDisablePromptAtSignOut
-    }
+    return m.fileVaultDisablePromptAtSignOut
 }
 // GetFileVaultEnabled gets the fileVaultEnabled property value. Whether FileVault should be enabled or not.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultEnabled
-    }
+    return m.fileVaultEnabled
 }
 // GetFileVaultHidePersonalRecoveryKey gets the fileVaultHidePersonalRecoveryKey property value. Optional. A hidden personal recovery key does not appear on the user's screen during FileVault encryption, reducing the risk of it ending up in the wrong hands.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultHidePersonalRecoveryKey()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultHidePersonalRecoveryKey
-    }
+    return m.fileVaultHidePersonalRecoveryKey
 }
 // GetFileVaultInstitutionalRecoveryKeyCertificate gets the fileVaultInstitutionalRecoveryKeyCertificate property value. Required if selected recovery key type(s) include InstitutionalRecoveryKey. The DER Encoded certificate file used to set an institutional recovery key.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultInstitutionalRecoveryKeyCertificate()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultInstitutionalRecoveryKeyCertificate
-    }
+    return m.fileVaultInstitutionalRecoveryKeyCertificate
 }
 // GetFileVaultInstitutionalRecoveryKeyCertificateFileName gets the fileVaultInstitutionalRecoveryKeyCertificateFileName property value. File name of the institutional recovery key certificate to display in UI. (.der).
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultInstitutionalRecoveryKeyCertificateFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultInstitutionalRecoveryKeyCertificateFileName
-    }
+    return m.fileVaultInstitutionalRecoveryKeyCertificateFileName
 }
 // GetFileVaultNumberOfTimesUserCanIgnore gets the fileVaultNumberOfTimesUserCanIgnore property value. Optional. When using the Defer option, this is the maximum number of times the user can ignore prompts to enable FileVault before FileVault will be required for the user to sign in. If set to -1, it will always prompt to enable FileVault until FileVault is enabled, though it will allow the user to bypass enabling FileVault. Setting this to 0 will disable the feature.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultNumberOfTimesUserCanIgnore()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultNumberOfTimesUserCanIgnore
-    }
+    return m.fileVaultNumberOfTimesUserCanIgnore
 }
 // GetFileVaultPersonalRecoveryKeyHelpMessage gets the fileVaultPersonalRecoveryKeyHelpMessage property value. Required if selected recovery key type(s) include PersonalRecoveryKey. A short message displayed to the user that explains how they can retrieve their personal recovery key.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultPersonalRecoveryKeyHelpMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultPersonalRecoveryKeyHelpMessage
-    }
+    return m.fileVaultPersonalRecoveryKeyHelpMessage
 }
 // GetFileVaultPersonalRecoveryKeyRotationInMonths gets the fileVaultPersonalRecoveryKeyRotationInMonths property value. Optional. If selected recovery key type(s) include PersonalRecoveryKey, the frequency to rotate that key, in months.
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultPersonalRecoveryKeyRotationInMonths()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultPersonalRecoveryKeyRotationInMonths
-    }
+    return m.fileVaultPersonalRecoveryKeyRotationInMonths
 }
 // GetFileVaultSelectedRecoveryKeyTypes gets the fileVaultSelectedRecoveryKeyTypes property value. Recovery key types for macOS FileVault
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultSelectedRecoveryKeyTypes()(*MacOSFileVaultRecoveryKeyTypes) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileVaultSelectedRecoveryKeyTypes
-    }
+    return m.fileVaultSelectedRecoveryKeyTypes
 }
 // GetFirewallApplications gets the firewallApplications property value. List of applications with firewall settings. Firewall settings for applications not on this list are determined by the user. This collection can contain a maximum of 500 elements.
 func (m *MacOSEndpointProtectionConfiguration) GetFirewallApplications()([]MacOSFirewallApplicationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallApplications
-    }
+    return m.firewallApplications
 }
 // GetFirewallBlockAllIncoming gets the firewallBlockAllIncoming property value. Corresponds to the 'Block all incoming connections' option.
 func (m *MacOSEndpointProtectionConfiguration) GetFirewallBlockAllIncoming()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallBlockAllIncoming
-    }
+    return m.firewallBlockAllIncoming
 }
 // GetFirewallEnabled gets the firewallEnabled property value. Whether the firewall should be enabled or not.
 func (m *MacOSEndpointProtectionConfiguration) GetFirewallEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallEnabled
-    }
+    return m.firewallEnabled
 }
 // GetFirewallEnableStealthMode gets the firewallEnableStealthMode property value. Corresponds to 'Enable stealth mode.'
 func (m *MacOSEndpointProtectionConfiguration) GetFirewallEnableStealthMode()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firewallEnableStealthMode
-    }
+    return m.firewallEnableStealthMode
 }
 // GetGatekeeperAllowedAppSource gets the gatekeeperAllowedAppSource property value. App source options for macOS Gatekeeper.
 func (m *MacOSEndpointProtectionConfiguration) GetGatekeeperAllowedAppSource()(*MacOSGatekeeperAppSources) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gatekeeperAllowedAppSource
-    }
+    return m.gatekeeperAllowedAppSource
 }
 // GetGatekeeperBlockOverride gets the gatekeeperBlockOverride property value. If set to true, the user override for Gatekeeper will be disabled.
 func (m *MacOSEndpointProtectionConfiguration) GetGatekeeperBlockOverride()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gatekeeperBlockOverride
-    }
+    return m.gatekeeperBlockOverride
 }
 // Serialize serializes information the current object
 func (m *MacOSEndpointProtectionConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -690,145 +594,97 @@ func (m *MacOSEndpointProtectionConfiguration) Serialize(writer i878a80d2330e89d
 }
 // SetAdvancedThreatProtectionAutomaticSampleSubmission sets the advancedThreatProtectionAutomaticSampleSubmission property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionAutomaticSampleSubmission(value *Enablement)() {
-    if m != nil {
-        m.advancedThreatProtectionAutomaticSampleSubmission = value
-    }
+    m.advancedThreatProtectionAutomaticSampleSubmission = value
 }
 // SetAdvancedThreatProtectionCloudDelivered sets the advancedThreatProtectionCloudDelivered property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionCloudDelivered(value *Enablement)() {
-    if m != nil {
-        m.advancedThreatProtectionCloudDelivered = value
-    }
+    m.advancedThreatProtectionCloudDelivered = value
 }
 // SetAdvancedThreatProtectionDiagnosticDataCollection sets the advancedThreatProtectionDiagnosticDataCollection property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionDiagnosticDataCollection(value *Enablement)() {
-    if m != nil {
-        m.advancedThreatProtectionDiagnosticDataCollection = value
-    }
+    m.advancedThreatProtectionDiagnosticDataCollection = value
 }
 // SetAdvancedThreatProtectionExcludedExtensions sets the advancedThreatProtectionExcludedExtensions property value. A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionExcludedExtensions(value []string)() {
-    if m != nil {
-        m.advancedThreatProtectionExcludedExtensions = value
-    }
+    m.advancedThreatProtectionExcludedExtensions = value
 }
 // SetAdvancedThreatProtectionExcludedFiles sets the advancedThreatProtectionExcludedFiles property value. A list of paths to files to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionExcludedFiles(value []string)() {
-    if m != nil {
-        m.advancedThreatProtectionExcludedFiles = value
-    }
+    m.advancedThreatProtectionExcludedFiles = value
 }
 // SetAdvancedThreatProtectionExcludedFolders sets the advancedThreatProtectionExcludedFolders property value. A list of paths to folders to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionExcludedFolders(value []string)() {
-    if m != nil {
-        m.advancedThreatProtectionExcludedFolders = value
-    }
+    m.advancedThreatProtectionExcludedFolders = value
 }
 // SetAdvancedThreatProtectionExcludedProcesses sets the advancedThreatProtectionExcludedProcesses property value. A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionExcludedProcesses(value []string)() {
-    if m != nil {
-        m.advancedThreatProtectionExcludedProcesses = value
-    }
+    m.advancedThreatProtectionExcludedProcesses = value
 }
 // SetAdvancedThreatProtectionRealTime sets the advancedThreatProtectionRealTime property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionRealTime(value *Enablement)() {
-    if m != nil {
-        m.advancedThreatProtectionRealTime = value
-    }
+    m.advancedThreatProtectionRealTime = value
 }
 // SetFileVaultAllowDeferralUntilSignOut sets the fileVaultAllowDeferralUntilSignOut property value. Optional. If set to true, the user can defer the enabling of FileVault until they sign out.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultAllowDeferralUntilSignOut(value *bool)() {
-    if m != nil {
-        m.fileVaultAllowDeferralUntilSignOut = value
-    }
+    m.fileVaultAllowDeferralUntilSignOut = value
 }
 // SetFileVaultDisablePromptAtSignOut sets the fileVaultDisablePromptAtSignOut property value. Optional. When using the Defer option, if set to true, the user is not prompted to enable FileVault at sign-out.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultDisablePromptAtSignOut(value *bool)() {
-    if m != nil {
-        m.fileVaultDisablePromptAtSignOut = value
-    }
+    m.fileVaultDisablePromptAtSignOut = value
 }
 // SetFileVaultEnabled sets the fileVaultEnabled property value. Whether FileVault should be enabled or not.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultEnabled(value *bool)() {
-    if m != nil {
-        m.fileVaultEnabled = value
-    }
+    m.fileVaultEnabled = value
 }
 // SetFileVaultHidePersonalRecoveryKey sets the fileVaultHidePersonalRecoveryKey property value. Optional. A hidden personal recovery key does not appear on the user's screen during FileVault encryption, reducing the risk of it ending up in the wrong hands.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultHidePersonalRecoveryKey(value *bool)() {
-    if m != nil {
-        m.fileVaultHidePersonalRecoveryKey = value
-    }
+    m.fileVaultHidePersonalRecoveryKey = value
 }
 // SetFileVaultInstitutionalRecoveryKeyCertificate sets the fileVaultInstitutionalRecoveryKeyCertificate property value. Required if selected recovery key type(s) include InstitutionalRecoveryKey. The DER Encoded certificate file used to set an institutional recovery key.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultInstitutionalRecoveryKeyCertificate(value []byte)() {
-    if m != nil {
-        m.fileVaultInstitutionalRecoveryKeyCertificate = value
-    }
+    m.fileVaultInstitutionalRecoveryKeyCertificate = value
 }
 // SetFileVaultInstitutionalRecoveryKeyCertificateFileName sets the fileVaultInstitutionalRecoveryKeyCertificateFileName property value. File name of the institutional recovery key certificate to display in UI. (.der).
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultInstitutionalRecoveryKeyCertificateFileName(value *string)() {
-    if m != nil {
-        m.fileVaultInstitutionalRecoveryKeyCertificateFileName = value
-    }
+    m.fileVaultInstitutionalRecoveryKeyCertificateFileName = value
 }
 // SetFileVaultNumberOfTimesUserCanIgnore sets the fileVaultNumberOfTimesUserCanIgnore property value. Optional. When using the Defer option, this is the maximum number of times the user can ignore prompts to enable FileVault before FileVault will be required for the user to sign in. If set to -1, it will always prompt to enable FileVault until FileVault is enabled, though it will allow the user to bypass enabling FileVault. Setting this to 0 will disable the feature.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultNumberOfTimesUserCanIgnore(value *int32)() {
-    if m != nil {
-        m.fileVaultNumberOfTimesUserCanIgnore = value
-    }
+    m.fileVaultNumberOfTimesUserCanIgnore = value
 }
 // SetFileVaultPersonalRecoveryKeyHelpMessage sets the fileVaultPersonalRecoveryKeyHelpMessage property value. Required if selected recovery key type(s) include PersonalRecoveryKey. A short message displayed to the user that explains how they can retrieve their personal recovery key.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultPersonalRecoveryKeyHelpMessage(value *string)() {
-    if m != nil {
-        m.fileVaultPersonalRecoveryKeyHelpMessage = value
-    }
+    m.fileVaultPersonalRecoveryKeyHelpMessage = value
 }
 // SetFileVaultPersonalRecoveryKeyRotationInMonths sets the fileVaultPersonalRecoveryKeyRotationInMonths property value. Optional. If selected recovery key type(s) include PersonalRecoveryKey, the frequency to rotate that key, in months.
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultPersonalRecoveryKeyRotationInMonths(value *int32)() {
-    if m != nil {
-        m.fileVaultPersonalRecoveryKeyRotationInMonths = value
-    }
+    m.fileVaultPersonalRecoveryKeyRotationInMonths = value
 }
 // SetFileVaultSelectedRecoveryKeyTypes sets the fileVaultSelectedRecoveryKeyTypes property value. Recovery key types for macOS FileVault
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultSelectedRecoveryKeyTypes(value *MacOSFileVaultRecoveryKeyTypes)() {
-    if m != nil {
-        m.fileVaultSelectedRecoveryKeyTypes = value
-    }
+    m.fileVaultSelectedRecoveryKeyTypes = value
 }
 // SetFirewallApplications sets the firewallApplications property value. List of applications with firewall settings. Firewall settings for applications not on this list are determined by the user. This collection can contain a maximum of 500 elements.
 func (m *MacOSEndpointProtectionConfiguration) SetFirewallApplications(value []MacOSFirewallApplicationable)() {
-    if m != nil {
-        m.firewallApplications = value
-    }
+    m.firewallApplications = value
 }
 // SetFirewallBlockAllIncoming sets the firewallBlockAllIncoming property value. Corresponds to the 'Block all incoming connections' option.
 func (m *MacOSEndpointProtectionConfiguration) SetFirewallBlockAllIncoming(value *bool)() {
-    if m != nil {
-        m.firewallBlockAllIncoming = value
-    }
+    m.firewallBlockAllIncoming = value
 }
 // SetFirewallEnabled sets the firewallEnabled property value. Whether the firewall should be enabled or not.
 func (m *MacOSEndpointProtectionConfiguration) SetFirewallEnabled(value *bool)() {
-    if m != nil {
-        m.firewallEnabled = value
-    }
+    m.firewallEnabled = value
 }
 // SetFirewallEnableStealthMode sets the firewallEnableStealthMode property value. Corresponds to 'Enable stealth mode.'
 func (m *MacOSEndpointProtectionConfiguration) SetFirewallEnableStealthMode(value *bool)() {
-    if m != nil {
-        m.firewallEnableStealthMode = value
-    }
+    m.firewallEnableStealthMode = value
 }
 // SetGatekeeperAllowedAppSource sets the gatekeeperAllowedAppSource property value. App source options for macOS Gatekeeper.
 func (m *MacOSEndpointProtectionConfiguration) SetGatekeeperAllowedAppSource(value *MacOSGatekeeperAppSources)() {
-    if m != nil {
-        m.gatekeeperAllowedAppSource = value
-    }
+    m.gatekeeperAllowedAppSource = value
 }
 // SetGatekeeperBlockOverride sets the gatekeeperBlockOverride property value. If set to true, the user override for Gatekeeper will be disabled.
 func (m *MacOSEndpointProtectionConfiguration) SetGatekeeperBlockOverride(value *bool)() {
-    if m != nil {
-        m.gatekeeperBlockOverride = value
-    }
+    m.gatekeeperBlockOverride = value
 }

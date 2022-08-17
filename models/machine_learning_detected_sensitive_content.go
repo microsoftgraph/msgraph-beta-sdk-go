@@ -52,19 +52,11 @@ func (m *MachineLearningDetectedSensitiveContent) GetFieldDeserializers()(map[st
 }
 // GetMatchTolerance gets the matchTolerance property value. The matchTolerance property
 func (m *MachineLearningDetectedSensitiveContent) GetMatchTolerance()(*MlClassificationMatchTolerance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchTolerance
-    }
+    return m.matchTolerance
 }
 // GetModelVersion gets the modelVersion property value. The modelVersion property
 func (m *MachineLearningDetectedSensitiveContent) GetModelVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelVersion
-    }
+    return m.modelVersion
 }
 // Serialize serializes information the current object
 func (m *MachineLearningDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *MachineLearningDetectedSensitiveContent) Serialize(writer i878a80d2330e
 }
 // SetMatchTolerance sets the matchTolerance property value. The matchTolerance property
 func (m *MachineLearningDetectedSensitiveContent) SetMatchTolerance(value *MlClassificationMatchTolerance)() {
-    if m != nil {
-        m.matchTolerance = value
-    }
+    m.matchTolerance = value
 }
 // SetModelVersion sets the modelVersion property value. The modelVersion property
 func (m *MachineLearningDetectedSensitiveContent) SetModelVersion(value *string)() {
-    if m != nil {
-        m.modelVersion = value
-    }
+    m.modelVersion = value
 }

@@ -32,19 +32,11 @@ func CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminator
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCoManagedDeviceCount gets the coManagedDeviceCount property value. Total number of  co-managed devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetCoManagedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.coManagedDeviceCount
-    }
+    return m.coManagedDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeseriali
 }
 // GetIntuneDeviceCount gets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetIntuneDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneDeviceCount
-    }
+    return m.intuneDeviceCount
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTenantAttachDeviceCount gets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetTenantAttachDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantAttachDeviceCount
-    }
+    return m.tenantAttachDeviceCount
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) Serialize(writer 
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCoManagedDeviceCount sets the coManagedDeviceCount property value. Total number of  co-managed devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetCoManagedDeviceCount(value *int32)() {
-    if m != nil {
-        m.coManagedDeviceCount = value
-    }
+    m.coManagedDeviceCount = value
 }
 // SetIntuneDeviceCount sets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetIntuneDeviceCount(value *int32)() {
-    if m != nil {
-        m.intuneDeviceCount = value
-    }
+    m.intuneDeviceCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTenantAttachDeviceCount sets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetTenantAttachDeviceCount(value *int32)() {
-    if m != nil {
-        m.tenantAttachDeviceCount = value
-    }
+    m.tenantAttachDeviceCount = value
 }

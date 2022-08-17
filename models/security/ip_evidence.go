@@ -40,11 +40,7 @@ func (m *IpEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetIpAddress gets the ipAddress property value. The ipAddress property
 func (m *IpEvidence) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // Serialize serializes information the current object
 func (m *IpEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *IpEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetIpAddress sets the ipAddress property value. The ipAddress property
 func (m *IpEvidence) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }

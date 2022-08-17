@@ -30,11 +30,7 @@ func CreateDeviceManagementConfigurationSettingOccurrenceFromDiscriminatorValue(
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingOccurrence) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()
 }
 // GetMaxDeviceOccurrence gets the maxDeviceOccurrence property value. Maximum times setting can be set on device.
 func (m *DeviceManagementConfigurationSettingOccurrence) GetMaxDeviceOccurrence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxDeviceOccurrence
-    }
+    return m.maxDeviceOccurrence
 }
 // GetMinDeviceOccurrence gets the minDeviceOccurrence property value. Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
 func (m *DeviceManagementConfigurationSettingOccurrence) GetMinDeviceOccurrence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minDeviceOccurrence
-    }
+    return m.minDeviceOccurrence
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingOccurrence) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i878a8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingOccurrence) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMaxDeviceOccurrence sets the maxDeviceOccurrence property value. Maximum times setting can be set on device.
 func (m *DeviceManagementConfigurationSettingOccurrence) SetMaxDeviceOccurrence(value *int32)() {
-    if m != nil {
-        m.maxDeviceOccurrence = value
-    }
+    m.maxDeviceOccurrence = value
 }
 // SetMinDeviceOccurrence sets the minDeviceOccurrence property value. Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
 func (m *DeviceManagementConfigurationSettingOccurrence) SetMinDeviceOccurrence(value *int32)() {
-    if m != nil {
-        m.minDeviceOccurrence = value
-    }
+    m.minDeviceOccurrence = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingOccurrence) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

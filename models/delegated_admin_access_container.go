@@ -30,27 +30,15 @@ func CreateDelegatedAdminAccessContainerFromDiscriminatorValue(parseNode i878a80
 }
 // GetAccessContainerId gets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
 func (m *DelegatedAdminAccessContainer) GetAccessContainerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessContainerId
-    }
+    return m.accessContainerId
 }
 // GetAccessContainerType gets the accessContainerType property value. The accessContainerType property
 func (m *DelegatedAdminAccessContainer) GetAccessContainerType()(*DelegatedAdminAccessContainerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessContainerType
-    }
+    return m.accessContainerType
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DelegatedAdminAccessContainer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminAccessContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *DelegatedAdminAccessContainer) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DelegatedAdminAccessContainer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminAccessContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *DelegatedAdminAccessContainer) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAccessContainerId sets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
 func (m *DelegatedAdminAccessContainer) SetAccessContainerId(value *string)() {
-    if m != nil {
-        m.accessContainerId = value
-    }
+    m.accessContainerId = value
 }
 // SetAccessContainerType sets the accessContainerType property value. The accessContainerType property
 func (m *DelegatedAdminAccessContainer) SetAccessContainerType(value *DelegatedAdminAccessContainerType)() {
-    if m != nil {
-        m.accessContainerType = value
-    }
+    m.accessContainerType = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DelegatedAdminAccessContainer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DelegatedAdminAccessContainer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

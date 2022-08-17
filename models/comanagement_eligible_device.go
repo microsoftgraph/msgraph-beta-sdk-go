@@ -61,35 +61,19 @@ func CreateComanagementEligibleDeviceFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetClientRegistrationStatus gets the clientRegistrationStatus property value. Device registration status.
 func (m *ComanagementEligibleDevice) GetClientRegistrationStatus()(*DeviceRegistrationState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientRegistrationStatus
-    }
+    return m.clientRegistrationStatus
 }
 // GetDeviceName gets the deviceName property value. DeviceName
 func (m *ComanagementEligibleDevice) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetDeviceType gets the deviceType property value. Device type.
 func (m *ComanagementEligibleDevice) GetDeviceType()(*DeviceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceType
-    }
+    return m.deviceType
 }
 // GetEntitySource gets the entitySource property value. EntitySource
 func (m *ComanagementEligibleDevice) GetEntitySource()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.entitySource
-    }
+    return m.entitySource
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -288,123 +272,63 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i87
 }
 // GetManagementAgents gets the managementAgents property value. Management agent type.
 func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementAgents
-    }
+    return m.managementAgents
 }
 // GetManagementState gets the managementState property value. Management state of device in Microsoft Intune.
 func (m *ComanagementEligibleDevice) GetManagementState()(*ManagementState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementState
-    }
+    return m.managementState
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer
 func (m *ComanagementEligibleDevice) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetMdmStatus gets the mdmStatus property value. MDMStatus
 func (m *ComanagementEligibleDevice) GetMdmStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmStatus
-    }
+    return m.mdmStatus
 }
 // GetModel gets the model property value. Model
 func (m *ComanagementEligibleDevice) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetOsDescription gets the osDescription property value. OSDescription
 func (m *ComanagementEligibleDevice) GetOsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osDescription
-    }
+    return m.osDescription
 }
 // GetOsVersion gets the osVersion property value. OSVersion
 func (m *ComanagementEligibleDevice) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *ComanagementEligibleDevice) GetOwnerType()(*OwnerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerType
-    }
+    return m.ownerType
 }
 // GetReferenceId gets the referenceId property value. ReferenceId
 func (m *ComanagementEligibleDevice) GetReferenceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceId
-    }
+    return m.referenceId
 }
 // GetSerialNumber gets the serialNumber property value. SerialNumber
 func (m *ComanagementEligibleDevice) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
+    return m.serialNumber
 }
 // GetStatus gets the status property value. The status property
 func (m *ComanagementEligibleDevice) GetStatus()(*ComanagementEligibleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUpn gets the upn property value. UPN
 func (m *ComanagementEligibleDevice) GetUpn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upn
-    }
+    return m.upn
 }
 // GetUserEmail gets the userEmail property value. UserEmail
 func (m *ComanagementEligibleDevice) GetUserEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmail
-    }
+    return m.userEmail
 }
 // GetUserId gets the userId property value. UserId
 func (m *ComanagementEligibleDevice) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserName gets the userName property value. UserName
 func (m *ComanagementEligibleDevice) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // Serialize serializes information the current object
 func (m *ComanagementEligibleDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -536,115 +460,77 @@ func (m *ComanagementEligibleDevice) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetClientRegistrationStatus sets the clientRegistrationStatus property value. Device registration status.
 func (m *ComanagementEligibleDevice) SetClientRegistrationStatus(value *DeviceRegistrationState)() {
-    if m != nil {
-        m.clientRegistrationStatus = value
-    }
+    m.clientRegistrationStatus = value
 }
 // SetDeviceName sets the deviceName property value. DeviceName
 func (m *ComanagementEligibleDevice) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetDeviceType sets the deviceType property value. Device type.
 func (m *ComanagementEligibleDevice) SetDeviceType(value *DeviceType)() {
-    if m != nil {
-        m.deviceType = value
-    }
+    m.deviceType = value
 }
 // SetEntitySource sets the entitySource property value. EntitySource
 func (m *ComanagementEligibleDevice) SetEntitySource(value *int32)() {
-    if m != nil {
-        m.entitySource = value
-    }
+    m.entitySource = value
 }
 // SetManagementAgents sets the managementAgents property value. Management agent type.
 func (m *ComanagementEligibleDevice) SetManagementAgents(value *ManagementAgentType)() {
-    if m != nil {
-        m.managementAgents = value
-    }
+    m.managementAgents = value
 }
 // SetManagementState sets the managementState property value. Management state of device in Microsoft Intune.
 func (m *ComanagementEligibleDevice) SetManagementState(value *ManagementState)() {
-    if m != nil {
-        m.managementState = value
-    }
+    m.managementState = value
 }
 // SetManufacturer sets the manufacturer property value. Manufacturer
 func (m *ComanagementEligibleDevice) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetMdmStatus sets the mdmStatus property value. MDMStatus
 func (m *ComanagementEligibleDevice) SetMdmStatus(value *string)() {
-    if m != nil {
-        m.mdmStatus = value
-    }
+    m.mdmStatus = value
 }
 // SetModel sets the model property value. Model
 func (m *ComanagementEligibleDevice) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetOsDescription sets the osDescription property value. OSDescription
 func (m *ComanagementEligibleDevice) SetOsDescription(value *string)() {
-    if m != nil {
-        m.osDescription = value
-    }
+    m.osDescription = value
 }
 // SetOsVersion sets the osVersion property value. OSVersion
 func (m *ComanagementEligibleDevice) SetOsVersion(value *string)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *ComanagementEligibleDevice) SetOwnerType(value *OwnerType)() {
-    if m != nil {
-        m.ownerType = value
-    }
+    m.ownerType = value
 }
 // SetReferenceId sets the referenceId property value. ReferenceId
 func (m *ComanagementEligibleDevice) SetReferenceId(value *string)() {
-    if m != nil {
-        m.referenceId = value
-    }
+    m.referenceId = value
 }
 // SetSerialNumber sets the serialNumber property value. SerialNumber
 func (m *ComanagementEligibleDevice) SetSerialNumber(value *string)() {
-    if m != nil {
-        m.serialNumber = value
-    }
+    m.serialNumber = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ComanagementEligibleDevice) SetStatus(value *ComanagementEligibleType)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUpn sets the upn property value. UPN
 func (m *ComanagementEligibleDevice) SetUpn(value *string)() {
-    if m != nil {
-        m.upn = value
-    }
+    m.upn = value
 }
 // SetUserEmail sets the userEmail property value. UserEmail
 func (m *ComanagementEligibleDevice) SetUserEmail(value *string)() {
-    if m != nil {
-        m.userEmail = value
-    }
+    m.userEmail = value
 }
 // SetUserId sets the userId property value. UserId
 func (m *ComanagementEligibleDevice) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserName sets the userName property value. UserName
 func (m *ComanagementEligibleDevice) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }

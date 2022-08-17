@@ -37,27 +37,15 @@ func CreateUserTrainingContentEventInfoFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingContentEventInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBrowser gets the browser property value. Browser of the user from where the training event was generated.
 func (m *UserTrainingContentEventInfo) GetBrowser()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browser
-    }
+    return m.browser
 }
 // GetContentDateTime gets the contentDateTime property value. Date and time of the training content playback by the user.
 func (m *UserTrainingContentEventInfo) GetContentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentDateTime
-    }
+    return m.contentDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,35 +114,19 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
 }
 // GetIpAddress gets the ipAddress property value. IP address of the user for the training event.
 func (m *UserTrainingContentEventInfo) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserTrainingContentEventInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
 func (m *UserTrainingContentEventInfo) GetOsPlatformDeviceDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osPlatformDeviceDetails
-    }
+    return m.osPlatformDeviceDetails
 }
 // GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security posture of the tenant after completion of the training by the user.
 func (m *UserTrainingContentEventInfo) GetPotentialScoreImpact()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.potentialScoreImpact
-    }
+    return m.potentialScoreImpact
 }
 // Serialize serializes information the current object
 func (m *UserTrainingContentEventInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *UserTrainingContentEventInfo) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingContentEventInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBrowser sets the browser property value. Browser of the user from where the training event was generated.
 func (m *UserTrainingContentEventInfo) SetBrowser(value *string)() {
-    if m != nil {
-        m.browser = value
-    }
+    m.browser = value
 }
 // SetContentDateTime sets the contentDateTime property value. Date and time of the training content playback by the user.
 func (m *UserTrainingContentEventInfo) SetContentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.contentDateTime = value
-    }
+    m.contentDateTime = value
 }
 // SetIpAddress sets the ipAddress property value. IP address of the user for the training event.
 func (m *UserTrainingContentEventInfo) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserTrainingContentEventInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOsPlatformDeviceDetails sets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
 func (m *UserTrainingContentEventInfo) SetOsPlatformDeviceDetails(value *string)() {
-    if m != nil {
-        m.osPlatformDeviceDetails = value
-    }
+    m.osPlatformDeviceDetails = value
 }
 // SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in security posture of the tenant after completion of the training by the user.
 func (m *UserTrainingContentEventInfo) SetPotentialScoreImpact(value *float64)() {
-    if m != nil {
-        m.potentialScoreImpact = value
-    }
+    m.potentialScoreImpact = value
 }

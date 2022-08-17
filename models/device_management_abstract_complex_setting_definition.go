@@ -44,11 +44,7 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) GetFieldDeserializers
 }
 // GetImplementations gets the implementations property value. List of definition IDs for all possible implementations of this abstract complex setting
 func (m *DeviceManagementAbstractComplexSettingDefinition) GetImplementations()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.implementations
-    }
+    return m.implementations
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementAbstractComplexSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *DeviceManagementAbstractComplexSettingDefinition) Serialize(writer i878
 }
 // SetImplementations sets the implementations property value. List of definition IDs for all possible implementations of this abstract complex setting
 func (m *DeviceManagementAbstractComplexSettingDefinition) SetImplementations(value []string)() {
-    if m != nil {
-        m.implementations = value
-    }
+    m.implementations = value
 }

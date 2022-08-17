@@ -34,19 +34,11 @@ func CreateEducationIdentityMatchingOptionsFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationIdentityMatchingOptions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *EducationIdentityMatchingOptions) GetAppliesTo()(*EducationUserRole) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliesTo
-    }
+    return m.appliesTo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationIdentityMatchingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *EducationIdentityMatchingOptions) GetFieldDeserializers()(map[string]fu
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationIdentityMatchingOptions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSourcePropertyName gets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) GetSourcePropertyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourcePropertyName
-    }
+    return m.sourcePropertyName
 }
 // GetTargetDomain gets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
 func (m *EducationIdentityMatchingOptions) GetTargetDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetDomain
-    }
+    return m.targetDomain
 }
 // GetTargetPropertyName gets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) GetTargetPropertyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetPropertyName
-    }
+    return m.targetPropertyName
 }
 // Serialize serializes information the current object
 func (m *EducationIdentityMatchingOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *EducationIdentityMatchingOptions) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationIdentityMatchingOptions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *EducationIdentityMatchingOptions) SetAppliesTo(value *EducationUserRole)() {
-    if m != nil {
-        m.appliesTo = value
-    }
+    m.appliesTo = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationIdentityMatchingOptions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSourcePropertyName sets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) SetSourcePropertyName(value *string)() {
-    if m != nil {
-        m.sourcePropertyName = value
-    }
+    m.sourcePropertyName = value
 }
 // SetTargetDomain sets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
 func (m *EducationIdentityMatchingOptions) SetTargetDomain(value *string)() {
-    if m != nil {
-        m.targetDomain = value
-    }
+    m.targetDomain = value
 }
 // SetTargetPropertyName sets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
 func (m *EducationIdentityMatchingOptions) SetTargetPropertyName(value *string)() {
-    if m != nil {
-        m.targetPropertyName = value
-    }
+    m.targetPropertyName = value
 }

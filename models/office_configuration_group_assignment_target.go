@@ -40,11 +40,7 @@ func (m *OfficeConfigurationGroupAssignmentTarget) GetFieldDeserializers()(map[s
 }
 // GetGroupId gets the groupId property value. The Id of the AAD group we are targeting the device configuration to.
 func (m *OfficeConfigurationGroupAssignmentTarget) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
+    return m.groupId
 }
 // Serialize serializes information the current object
 func (m *OfficeConfigurationGroupAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *OfficeConfigurationGroupAssignmentTarget) Serialize(writer i878a80d2330
 }
 // SetGroupId sets the groupId property value. The Id of the AAD group we are targeting the device configuration to.
 func (m *OfficeConfigurationGroupAssignmentTarget) SetGroupId(value *string)() {
-    if m != nil {
-        m.groupId = value
-    }
+    m.groupId = value
 }

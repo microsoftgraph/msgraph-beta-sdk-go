@@ -30,27 +30,15 @@ func CreateCloudPcLaunchInfoFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcLaunchInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCloudPcId gets the cloudPcId property value. The unique identifier of the Cloud PC.
 func (m *CloudPcLaunchInfo) GetCloudPcId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPcId
-    }
+    return m.cloudPcId
 }
 // GetCloudPcLaunchUrl gets the cloudPcLaunchUrl property value. The connect URL of the Cloud PC.
 func (m *CloudPcLaunchInfo) GetCloudPcLaunchUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPcLaunchUrl
-    }
+    return m.cloudPcLaunchUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcLaunchInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *CloudPcLaunchInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcLaunchInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *CloudPcLaunchInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *CloudPcLaunchInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcLaunchInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCloudPcId sets the cloudPcId property value. The unique identifier of the Cloud PC.
 func (m *CloudPcLaunchInfo) SetCloudPcId(value *string)() {
-    if m != nil {
-        m.cloudPcId = value
-    }
+    m.cloudPcId = value
 }
 // SetCloudPcLaunchUrl sets the cloudPcLaunchUrl property value. The connect URL of the Cloud PC.
 func (m *CloudPcLaunchInfo) SetCloudPcLaunchUrl(value *string)() {
-    if m != nil {
-        m.cloudPcLaunchUrl = value
-    }
+    m.cloudPcLaunchUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcLaunchInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

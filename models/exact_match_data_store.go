@@ -44,11 +44,7 @@ func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetSessions gets the sessions property value. The sessions property
 func (m *ExactMatchDataStore) GetSessions()([]ExactMatchSessionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessions
-    }
+    return m.sessions
 }
 // Serialize serializes information the current object
 func (m *ExactMatchDataStore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *ExactMatchDataStore) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetSessions sets the sessions property value. The sessions property
 func (m *ExactMatchDataStore) SetSessions(value []ExactMatchSessionable)() {
-    if m != nil {
-        m.sessions = value
-    }
+    m.sessions = value
 }

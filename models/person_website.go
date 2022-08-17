@@ -33,27 +33,15 @@ func CreatePersonWebsiteFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
 func (m *PersonWebsite) GetCategories()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
 // GetDescription gets the description property value. Contains a description of the website.
 func (m *PersonWebsite) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the website.
 func (m *PersonWebsite) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonWebsite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,19 +104,11 @@ func (m *PersonWebsite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonWebsite) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // GetWebUrl gets the webUrl property value. Contains a link to the website itself.
 func (m *PersonWebsite) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *PersonWebsite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -170,31 +150,21 @@ func (m *PersonWebsite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
 func (m *PersonWebsite) SetCategories(value []string)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
 // SetDescription sets the description property value. Contains a description of the website.
 func (m *PersonWebsite) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the website.
 func (m *PersonWebsite) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonWebsite) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }
 // SetWebUrl sets the webUrl property value. Contains a link to the website itself.
 func (m *PersonWebsite) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

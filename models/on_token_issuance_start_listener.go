@@ -40,11 +40,7 @@ func (m *OnTokenIssuanceStartListener) GetFieldDeserializers()(map[string]func(i
 }
 // GetHandler gets the handler property value. The handler property
 func (m *OnTokenIssuanceStartListener) GetHandler()(OnTokenIssuanceStartHandlerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.handler
-    }
+    return m.handler
 }
 // Serialize serializes information the current object
 func (m *OnTokenIssuanceStartListener) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *OnTokenIssuanceStartListener) Serialize(writer i878a80d2330e89d26896388
 }
 // SetHandler sets the handler property value. The handler property
 func (m *OnTokenIssuanceStartListener) SetHandler(value OnTokenIssuanceStartHandlerable)() {
-    if m != nil {
-        m.handler = value
-    }
+    m.handler = value
 }

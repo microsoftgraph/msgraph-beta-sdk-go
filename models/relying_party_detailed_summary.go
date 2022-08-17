@@ -45,11 +45,7 @@ func CreateRelyingPartyDetailedSummaryFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetFailedSignInCount gets the failedSignInCount property value. Number of failed sign in on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedSignInCount
-    }
+    return m.failedSignInCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -176,83 +172,43 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i8
 }
 // GetMigrationStatus gets the migrationStatus property value. The migrationStatus property
 func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.migrationStatus
-    }
+    return m.migrationStatus
 }
 // GetMigrationValidationDetails gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
 func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.migrationValidationDetails
-    }
+    return m.migrationValidationDetails
 }
 // GetRelyingPartyId gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relyingPartyId
-    }
+    return m.relyingPartyId
 }
 // GetRelyingPartyName gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relyingPartyName
-    }
+    return m.relyingPartyName
 }
 // GetReplyUrls gets the replyUrls property value. Specifies where the relying party expects to receive the token.
 func (m *RelyingPartyDetailedSummary) GetReplyUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replyUrls
-    }
+    return m.replyUrls
 }
 // GetServiceId gets the serviceId property value. Uniquely identifies the Active Directory forest.
 func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceId
-    }
+    return m.serviceId
 }
 // GetSignInSuccessRate gets the signInSuccessRate property value. Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInSuccessRate
-    }
+    return m.signInSuccessRate
 }
 // GetSuccessfulSignInCount gets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
 func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulSignInCount
-    }
+    return m.successfulSignInCount
 }
 // GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalSignInCount
-    }
+    return m.totalSignInCount
 }
 // GetUniqueUserCount gets the uniqueUserCount property value. Number of unique users that have signed into the application.
 func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueUserCount
-    }
+    return m.uniqueUserCount
 }
 // Serialize serializes information the current object
 func (m *RelyingPartyDetailedSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -335,67 +291,45 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetFailedSignInCount sets the failedSignInCount property value. Number of failed sign in on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) SetFailedSignInCount(value *int64)() {
-    if m != nil {
-        m.failedSignInCount = value
-    }
+    m.failedSignInCount = value
 }
 // SetMigrationStatus sets the migrationStatus property value. The migrationStatus property
 func (m *RelyingPartyDetailedSummary) SetMigrationStatus(value *MigrationStatus)() {
-    if m != nil {
-        m.migrationStatus = value
-    }
+    m.migrationStatus = value
 }
 // SetMigrationValidationDetails sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
 func (m *RelyingPartyDetailedSummary) SetMigrationValidationDetails(value []KeyValuePairable)() {
-    if m != nil {
-        m.migrationValidationDetails = value
-    }
+    m.migrationValidationDetails = value
 }
 // SetRelyingPartyId sets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
 func (m *RelyingPartyDetailedSummary) SetRelyingPartyId(value *string)() {
-    if m != nil {
-        m.relyingPartyId = value
-    }
+    m.relyingPartyId = value
 }
 // SetRelyingPartyName sets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
 func (m *RelyingPartyDetailedSummary) SetRelyingPartyName(value *string)() {
-    if m != nil {
-        m.relyingPartyName = value
-    }
+    m.relyingPartyName = value
 }
 // SetReplyUrls sets the replyUrls property value. Specifies where the relying party expects to receive the token.
 func (m *RelyingPartyDetailedSummary) SetReplyUrls(value []string)() {
-    if m != nil {
-        m.replyUrls = value
-    }
+    m.replyUrls = value
 }
 // SetServiceId sets the serviceId property value. Uniquely identifies the Active Directory forest.
 func (m *RelyingPartyDetailedSummary) SetServiceId(value *string)() {
-    if m != nil {
-        m.serviceId = value
-    }
+    m.serviceId = value
 }
 // SetSignInSuccessRate sets the signInSuccessRate property value. Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) SetSignInSuccessRate(value *float64)() {
-    if m != nil {
-        m.signInSuccessRate = value
-    }
+    m.signInSuccessRate = value
 }
 // SetSuccessfulSignInCount sets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
 func (m *RelyingPartyDetailedSummary) SetSuccessfulSignInCount(value *int64)() {
-    if m != nil {
-        m.successfulSignInCount = value
-    }
+    m.successfulSignInCount = value
 }
 // SetTotalSignInCount sets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
 func (m *RelyingPartyDetailedSummary) SetTotalSignInCount(value *int64)() {
-    if m != nil {
-        m.totalSignInCount = value
-    }
+    m.totalSignInCount = value
 }
 // SetUniqueUserCount sets the uniqueUserCount property value. Number of unique users that have signed into the application.
 func (m *RelyingPartyDetailedSummary) SetUniqueUserCount(value *int64)() {
-    if m != nil {
-        m.uniqueUserCount = value
-    }
+    m.uniqueUserCount = value
 }

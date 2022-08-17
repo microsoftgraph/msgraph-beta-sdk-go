@@ -33,35 +33,19 @@ func CreateVirtualAppointmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAppointmentClientJoinWebUrl gets the appointmentClientJoinWebUrl property value. The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
 func (m *VirtualAppointment) GetAppointmentClientJoinWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appointmentClientJoinWebUrl
-    }
+    return m.appointmentClientJoinWebUrl
 }
 // GetAppointmentClients gets the appointmentClients property value. The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
 func (m *VirtualAppointment) GetAppointmentClients()([]VirtualAppointmentUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appointmentClients
-    }
+    return m.appointmentClients
 }
 // GetExternalAppointmentId gets the externalAppointmentId property value. The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) GetExternalAppointmentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalAppointmentId
-    }
+    return m.externalAppointmentId
 }
 // GetExternalAppointmentUrl gets the externalAppointmentUrl property value. The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) GetExternalAppointmentUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalAppointmentUrl
-    }
+    return m.externalAppointmentUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VirtualAppointment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,11 +108,7 @@ func (m *VirtualAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetSettings gets the settings property value. The settings associated with the virtual appointment resource. Optional.
 func (m *VirtualAppointment) GetSettings()(VirtualAppointmentSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // Serialize serializes information the current object
 func (m *VirtualAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *VirtualAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAppointmentClientJoinWebUrl sets the appointmentClientJoinWebUrl property value. The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
 func (m *VirtualAppointment) SetAppointmentClientJoinWebUrl(value *string)() {
-    if m != nil {
-        m.appointmentClientJoinWebUrl = value
-    }
+    m.appointmentClientJoinWebUrl = value
 }
 // SetAppointmentClients sets the appointmentClients property value. The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
 func (m *VirtualAppointment) SetAppointmentClients(value []VirtualAppointmentUserable)() {
-    if m != nil {
-        m.appointmentClients = value
-    }
+    m.appointmentClients = value
 }
 // SetExternalAppointmentId sets the externalAppointmentId property value. The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) SetExternalAppointmentId(value *string)() {
-    if m != nil {
-        m.externalAppointmentId = value
-    }
+    m.externalAppointmentId = value
 }
 // SetExternalAppointmentUrl sets the externalAppointmentUrl property value. The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.
 func (m *VirtualAppointment) SetExternalAppointmentUrl(value *string)() {
-    if m != nil {
-        m.externalAppointmentUrl = value
-    }
+    m.externalAppointmentUrl = value
 }
 // SetSettings sets the settings property value. The settings associated with the virtual appointment resource. Optional.
 func (m *VirtualAppointment) SetSettings(value VirtualAppointmentSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }

@@ -30,11 +30,7 @@ func CreatePowerliftDownloadRequestFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PowerliftDownloadRequest) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PowerliftDownloadRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *PowerliftDownloadRequest) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetFiles gets the files property value. The list of files to download
 func (m *PowerliftDownloadRequest) GetFiles()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.files
-    }
+    return m.files
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PowerliftDownloadRequest) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPowerliftId gets the powerliftId property value. The unique id for the request
 func (m *PowerliftDownloadRequest) GetPowerliftId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.powerliftId
-    }
+    return m.powerliftId
 }
 // Serialize serializes information the current object
 func (m *PowerliftDownloadRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,25 +113,17 @@ func (m *PowerliftDownloadRequest) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PowerliftDownloadRequest) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFiles sets the files property value. The list of files to download
 func (m *PowerliftDownloadRequest) SetFiles(value []string)() {
-    if m != nil {
-        m.files = value
-    }
+    m.files = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PowerliftDownloadRequest) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPowerliftId sets the powerliftId property value. The unique id for the request
 func (m *PowerliftDownloadRequest) SetPowerliftId(value *string)() {
-    if m != nil {
-        m.powerliftId = value
-    }
+    m.powerliftId = value
 }

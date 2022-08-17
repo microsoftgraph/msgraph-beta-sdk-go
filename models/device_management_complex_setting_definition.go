@@ -44,11 +44,7 @@ func (m *DeviceManagementComplexSettingDefinition) GetFieldDeserializers()(map[s
 }
 // GetPropertyDefinitionIds gets the propertyDefinitionIds property value. The definitions of each property of the complex setting
 func (m *DeviceManagementComplexSettingDefinition) GetPropertyDefinitionIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyDefinitionIds
-    }
+    return m.propertyDefinitionIds
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementComplexSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *DeviceManagementComplexSettingDefinition) Serialize(writer i878a80d2330
 }
 // SetPropertyDefinitionIds sets the propertyDefinitionIds property value. The definitions of each property of the complex setting
 func (m *DeviceManagementComplexSettingDefinition) SetPropertyDefinitionIds(value []string)() {
-    if m != nil {
-        m.propertyDefinitionIds = value
-    }
+    m.propertyDefinitionIds = value
 }

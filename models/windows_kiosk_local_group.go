@@ -40,11 +40,7 @@ func (m *WindowsKioskLocalGroup) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetGroupName gets the groupName property value. The name of the local group that will be locked to this kiosk configuration
 func (m *WindowsKioskLocalGroup) GetGroupName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupName
-    }
+    return m.groupName
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskLocalGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsKioskLocalGroup) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetGroupName sets the groupName property value. The name of the local group that will be locked to this kiosk configuration
 func (m *WindowsKioskLocalGroup) SetGroupName(value *string)() {
-    if m != nil {
-        m.groupName = value
-    }
+    m.groupName = value
 }

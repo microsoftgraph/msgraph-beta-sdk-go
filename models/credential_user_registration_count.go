@@ -56,19 +56,11 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
 }
 // GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
 func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUserCount
-    }
+    return m.totalUserCount
 }
 // GetUserRegistrationCounts gets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
 func (m *CredentialUserRegistrationCount) GetUserRegistrationCounts()([]UserRegistrationCountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRegistrationCounts
-    }
+    return m.userRegistrationCounts
 }
 // Serialize serializes information the current object
 func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896
 }
 // SetTotalUserCount sets the totalUserCount property value. Provides the total user count in the tenant.
 func (m *CredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
-    if m != nil {
-        m.totalUserCount = value
-    }
+    m.totalUserCount = value
 }
 // SetUserRegistrationCounts sets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
 func (m *CredentialUserRegistrationCount) SetUserRegistrationCounts(value []UserRegistrationCountable)() {
-    if m != nil {
-        m.userRegistrationCounts = value
-    }
+    m.userRegistrationCounts = value
 }

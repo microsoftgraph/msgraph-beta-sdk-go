@@ -52,19 +52,11 @@ func (m *MobileAppPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppPolicySetItem) GetIntent()(*InstallIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intent
-    }
+    return m.intent
 }
 // GetSettings gets the settings property value. Settings of the MobileAppPolicySetItem.
 func (m *MobileAppPolicySetItem) GetSettings()(MobileAppAssignmentSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // Serialize serializes information the current object
 func (m *MobileAppPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *MobileAppPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetIntent sets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppPolicySetItem) SetIntent(value *InstallIntent)() {
-    if m != nil {
-        m.intent = value
-    }
+    m.intent = value
 }
 // SetSettings sets the settings property value. Settings of the MobileAppPolicySetItem.
 func (m *MobileAppPolicySetItem) SetSettings(value MobileAppAssignmentSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }

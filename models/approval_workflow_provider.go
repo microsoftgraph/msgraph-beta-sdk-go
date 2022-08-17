@@ -31,27 +31,15 @@ func CreateApprovalWorkflowProviderFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetBusinessFlows gets the businessFlows property value. The businessFlows property
 func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessFlows
-    }
+    return m.businessFlows
 }
 // GetBusinessFlowsWithRequestsAwaitingMyDecision gets the businessFlowsWithRequestsAwaitingMyDecision property value. The businessFlowsWithRequestsAwaitingMyDecision property
 func (m *ApprovalWorkflowProvider) GetBusinessFlowsWithRequestsAwaitingMyDecision()([]BusinessFlowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessFlowsWithRequestsAwaitingMyDecision
-    }
+    return m.businessFlowsWithRequestsAwaitingMyDecision
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,11 +100,7 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPolicyTemplates gets the policyTemplates property value. The policyTemplates property
 func (m *ApprovalWorkflowProvider) GetPolicyTemplates()([]GovernancePolicyTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTemplates
-    }
+    return m.policyTemplates
 }
 // Serialize serializes information the current object
 func (m *ApprovalWorkflowProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -164,25 +148,17 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetBusinessFlows sets the businessFlows property value. The businessFlows property
 func (m *ApprovalWorkflowProvider) SetBusinessFlows(value []BusinessFlowable)() {
-    if m != nil {
-        m.businessFlows = value
-    }
+    m.businessFlows = value
 }
 // SetBusinessFlowsWithRequestsAwaitingMyDecision sets the businessFlowsWithRequestsAwaitingMyDecision property value. The businessFlowsWithRequestsAwaitingMyDecision property
 func (m *ApprovalWorkflowProvider) SetBusinessFlowsWithRequestsAwaitingMyDecision(value []BusinessFlowable)() {
-    if m != nil {
-        m.businessFlowsWithRequestsAwaitingMyDecision = value
-    }
+    m.businessFlowsWithRequestsAwaitingMyDecision = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ApprovalWorkflowProvider) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPolicyTemplates sets the policyTemplates property value. The policyTemplates property
 func (m *ApprovalWorkflowProvider) SetPolicyTemplates(value []GovernancePolicyTemplateable)() {
-    if m != nil {
-        m.policyTemplates = value
-    }
+    m.policyTemplates = value
 }

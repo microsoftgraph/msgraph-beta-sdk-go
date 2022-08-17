@@ -25,11 +25,7 @@ func CreateDocumentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetComments gets the comments property value. The comments property
 func (m *Document) GetComments()([]DocumentCommentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comments
-    }
+    return m.comments
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Document) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *Document) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetComments sets the comments property value. The comments property
 func (m *Document) SetComments(value []DocumentCommentable)() {
-    if m != nil {
-        m.comments = value
-    }
+    m.comments = value
 }

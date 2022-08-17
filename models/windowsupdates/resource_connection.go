@@ -60,11 +60,7 @@ func (m *ResourceConnection) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetState gets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
 func (m *ResourceConnection) GetState()(*ResourceConnectionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ResourceConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,7 +79,5 @@ func (m *ResourceConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetState sets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
 func (m *ResourceConnection) SetState(value *ResourceConnectionState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

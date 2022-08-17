@@ -50,11 +50,7 @@ func CreateDeviceManagementSettingCategoryFromDiscriminatorValue(parseNode i878a
 }
 // GetDisplayName gets the displayName property value. The category name
 func (m *DeviceManagementSettingCategory) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,19 +93,11 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
 }
 // GetHasRequiredSetting gets the hasRequiredSetting property value. The category contains top level required setting
 func (m *DeviceManagementSettingCategory) GetHasRequiredSetting()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasRequiredSetting
-    }
+    return m.hasRequiredSetting
 }
 // GetSettingDefinitions gets the settingDefinitions property value. The setting definitions this category contains
 func (m *DeviceManagementSettingCategory) GetSettingDefinitions()([]DeviceManagementSettingDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDefinitions
-    }
+    return m.settingDefinitions
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -143,19 +131,13 @@ func (m *DeviceManagementSettingCategory) Serialize(writer i878a80d2330e89d26896
 }
 // SetDisplayName sets the displayName property value. The category name
 func (m *DeviceManagementSettingCategory) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHasRequiredSetting sets the hasRequiredSetting property value. The category contains top level required setting
 func (m *DeviceManagementSettingCategory) SetHasRequiredSetting(value *bool)() {
-    if m != nil {
-        m.hasRequiredSetting = value
-    }
+    m.hasRequiredSetting = value
 }
 // SetSettingDefinitions sets the settingDefinitions property value. The setting definitions this category contains
 func (m *DeviceManagementSettingCategory) SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)() {
-    if m != nil {
-        m.settingDefinitions = value
-    }
+    m.settingDefinitions = value
 }

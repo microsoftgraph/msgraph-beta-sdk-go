@@ -53,19 +53,11 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetGroup gets the group property value. The group property
 func (m *UnifiedGroupSource) GetGroup()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.group
-    }
+    return m.group
 }
 // GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UnifiedGroupSource) GetIncludedSources()(*SourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includedSources
-    }
+    return m.includedSources
 }
 // Serialize serializes information the current object
 func (m *UnifiedGroupSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -90,13 +82,9 @@ func (m *UnifiedGroupSource) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetGroup sets the group property value. The group property
 func (m *UnifiedGroupSource) SetGroup(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable)() {
-    if m != nil {
-        m.group = value
-    }
+    m.group = value
 }
 // SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UnifiedGroupSource) SetIncludedSources(value *SourceType)() {
-    if m != nil {
-        m.includedSources = value
-    }
+    m.includedSources = value
 }

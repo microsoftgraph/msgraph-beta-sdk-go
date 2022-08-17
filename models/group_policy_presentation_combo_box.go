@@ -31,11 +31,7 @@ func CreateGroupPolicyPresentationComboBoxFromDiscriminatorValue(parseNode i878a
 }
 // GetDefaultValue gets the defaultValue property value. Localized default string displayed in the combo box. The default value is empty.
 func (m *GroupPolicyPresentationComboBox) GetDefaultValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationComboBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,27 +84,15 @@ func (m *GroupPolicyPresentationComboBox) GetFieldDeserializers()(map[string]fun
 }
 // GetMaxLength gets the maxLength property value. An unsigned integer that specifies the maximum number of text characters for the parameter. The default value is 1023.
 func (m *GroupPolicyPresentationComboBox) GetMaxLength()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxLength
-    }
+    return m.maxLength
 }
 // GetRequired gets the required property value. Specifies whether a value must be specified for the parameter. The default value is false.
 func (m *GroupPolicyPresentationComboBox) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
+    return m.required
 }
 // GetSuggestions gets the suggestions property value. Localized strings listed in the drop-down list of the combo box. The default value is empty.
 func (m *GroupPolicyPresentationComboBox) GetSuggestions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.suggestions
-    }
+    return m.suggestions
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationComboBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -144,25 +128,17 @@ func (m *GroupPolicyPresentationComboBox) Serialize(writer i878a80d2330e89d26896
 }
 // SetDefaultValue sets the defaultValue property value. Localized default string displayed in the combo box. The default value is empty.
 func (m *GroupPolicyPresentationComboBox) SetDefaultValue(value *string)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }
 // SetMaxLength sets the maxLength property value. An unsigned integer that specifies the maximum number of text characters for the parameter. The default value is 1023.
 func (m *GroupPolicyPresentationComboBox) SetMaxLength(value *int64)() {
-    if m != nil {
-        m.maxLength = value
-    }
+    m.maxLength = value
 }
 // SetRequired sets the required property value. Specifies whether a value must be specified for the parameter. The default value is false.
 func (m *GroupPolicyPresentationComboBox) SetRequired(value *bool)() {
-    if m != nil {
-        m.required = value
-    }
+    m.required = value
 }
 // SetSuggestions sets the suggestions property value. Localized strings listed in the drop-down list of the combo box. The default value is empty.
 func (m *GroupPolicyPresentationComboBox) SetSuggestions(value []string)() {
-    if m != nil {
-        m.suggestions = value
-    }
+    m.suggestions = value
 }

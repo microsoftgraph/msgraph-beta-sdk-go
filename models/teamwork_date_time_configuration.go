@@ -36,19 +36,11 @@ func CreateTeamworkDateTimeConfigurationFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDateTimeConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDateFormat gets the dateFormat property value. The date format for the device.
 func (m *TeamworkDateTimeConfiguration) GetDateFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateFormat
-    }
+    return m.dateFormat
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDateTimeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *TeamworkDateTimeConfiguration) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkDateTimeConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOfficeHoursEndTime gets the officeHoursEndTime property value. The time of the day when the device is turned off.
 func (m *TeamworkDateTimeConfiguration) GetOfficeHoursEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeHoursEndTime
-    }
+    return m.officeHoursEndTime
 }
 // GetOfficeHoursStartTime gets the officeHoursStartTime property value. The time of the day when the device is turned on.
 func (m *TeamworkDateTimeConfiguration) GetOfficeHoursStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeHoursStartTime
-    }
+    return m.officeHoursStartTime
 }
 // GetTimeFormat gets the timeFormat property value. The time format for the device.
 func (m *TeamworkDateTimeConfiguration) GetTimeFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeFormat
-    }
+    return m.timeFormat
 }
 // GetTimeZone gets the timeZone property value. The time zone to which the office hours apply.
 func (m *TeamworkDateTimeConfiguration) GetTimeZone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZone
-    }
+    return m.timeZone
 }
 // Serialize serializes information the current object
 func (m *TeamworkDateTimeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *TeamworkDateTimeConfiguration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDateTimeConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDateFormat sets the dateFormat property value. The date format for the device.
 func (m *TeamworkDateTimeConfiguration) SetDateFormat(value *string)() {
-    if m != nil {
-        m.dateFormat = value
-    }
+    m.dateFormat = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkDateTimeConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOfficeHoursEndTime sets the officeHoursEndTime property value. The time of the day when the device is turned off.
 func (m *TeamworkDateTimeConfiguration) SetOfficeHoursEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.officeHoursEndTime = value
-    }
+    m.officeHoursEndTime = value
 }
 // SetOfficeHoursStartTime sets the officeHoursStartTime property value. The time of the day when the device is turned on.
 func (m *TeamworkDateTimeConfiguration) SetOfficeHoursStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.officeHoursStartTime = value
-    }
+    m.officeHoursStartTime = value
 }
 // SetTimeFormat sets the timeFormat property value. The time format for the device.
 func (m *TeamworkDateTimeConfiguration) SetTimeFormat(value *string)() {
-    if m != nil {
-        m.timeFormat = value
-    }
+    m.timeFormat = value
 }
 // SetTimeZone sets the timeZone property value. The time zone to which the office hours apply.
 func (m *TeamworkDateTimeConfiguration) SetTimeZone(value *string)() {
-    if m != nil {
-        m.timeZone = value
-    }
+    m.timeZone = value
 }

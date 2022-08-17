@@ -40,11 +40,7 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) GetFieldDeserializers()(map[s
 }
 // GetGroupIdSourceOption gets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
 func (m *DeliveryOptimizationGroupIdSourceOptions) GetGroupIdSourceOption()(*DeliveryOptimizationGroupIdOptionsType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupIdSourceOption
-    }
+    return m.groupIdSourceOption
 }
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationGroupIdSourceOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) Serialize(writer i878a80d2330
 }
 // SetGroupIdSourceOption sets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
 func (m *DeliveryOptimizationGroupIdSourceOptions) SetGroupIdSourceOption(value *DeliveryOptimizationGroupIdOptionsType)() {
-    if m != nil {
-        m.groupIdSourceOption = value
-    }
+    m.groupIdSourceOption = value
 }

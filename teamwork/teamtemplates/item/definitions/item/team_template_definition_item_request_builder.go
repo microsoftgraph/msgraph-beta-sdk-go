@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i3b8f0465ec65d39461cea7f1f67d1c31cf7ba2a1221c20146674e144f5c0baaa "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition"
 )
 
 // TeamTemplateDefinitionItemRequestBuilder provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
@@ -14,6 +15,13 @@ type TeamTemplateDefinitionItemRequestBuilder struct {
     requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
     urlTemplate string
+}
+// TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers map[string]string
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // TeamTemplateDefinitionItemRequestBuilderGetQueryParameters get definitions from teamwork
 type TeamTemplateDefinitionItemRequestBuilderGetQueryParameters struct {
@@ -30,6 +38,13 @@ type TeamTemplateDefinitionItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *TeamTemplateDefinitionItemRequestBuilderGetQueryParameters
+}
+// TeamTemplateDefinitionItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type TeamTemplateDefinitionItemRequestBuilderPatchRequestConfiguration struct {
+    // Request headers
+    Headers map[string]string
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewTeamTemplateDefinitionItemRequestBuilderInternal instantiates a new TeamTemplateDefinitionItemRequestBuilder and sets the default values.
 func NewTeamTemplateDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplateDefinitionItemRequestBuilder) {
@@ -49,6 +64,22 @@ func NewTeamTemplateDefinitionItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplateDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CreateDeleteRequestInformation delete navigation property definitions for teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
+}
+// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property definitions for teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }
 // CreateGetRequestInformation get definitions from teamwork
 func (m *TeamTemplateDefinitionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -70,6 +101,43 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
+// CreatePatchRequestInformation update the navigation property definitions in teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePatchRequestInformationWithRequestConfiguration update the navigation property definitions in teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// Delete delete navigation property definitions for teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property definitions for teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
 // Get get definitions from teamwork
 func (m *TeamTemplateDefinitionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -89,4 +157,28 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) GetWithRequestConfigurationAn
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable), nil
+}
+// Patch update the navigation property definitions in teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property definitions in teamwork
+func (m *TeamTemplateDefinitionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, requestConfiguration *TeamTemplateDefinitionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// TeamDefinition the teamDefinition property
+func (m *TeamTemplateDefinitionItemRequestBuilder) TeamDefinition()(*i3b8f0465ec65d39461cea7f1f67d1c31cf7ba2a1221c20146674e144f5c0baaa.TeamDefinitionRequestBuilder) {
+    return i3b8f0465ec65d39461cea7f1f67d1c31cf7ba2a1221c20146674e144f5c0baaa.NewTeamDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

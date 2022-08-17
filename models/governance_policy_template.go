@@ -29,11 +29,7 @@ func CreateGovernancePolicyTemplateFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *GovernancePolicyTemplate) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetPolicy gets the policy property value. The policy property
 func (m *GovernancePolicyTemplate) GetPolicy()(GovernancePolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policy
-    }
+    return m.policy
 }
 // GetSettings gets the settings property value. The settings property
 func (m *GovernancePolicyTemplate) GetSettings()(BusinessFlowSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // Serialize serializes information the current object
 func (m *GovernancePolicyTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *GovernancePolicyTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *GovernancePolicyTemplate) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPolicy sets the policy property value. The policy property
 func (m *GovernancePolicyTemplate) SetPolicy(value GovernancePolicyable)() {
-    if m != nil {
-        m.policy = value
-    }
+    m.policy = value
 }
 // SetSettings sets the settings property value. The settings property
 func (m *GovernancePolicyTemplate) SetSettings(value BusinessFlowSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }

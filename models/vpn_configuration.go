@@ -52,19 +52,11 @@ func CreateVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethod
-    }
+    return m.authenticationMethod
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *VpnConfiguration) GetConnectionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionName
-    }
+    return m.connectionName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,27 +119,15 @@ func (m *VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) GetRealm()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.realm
-    }
+    return m.realm
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) GetRole()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.role
-    }
+    return m.role
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *VpnConfiguration) GetServers()([]VpnServerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servers
-    }
+    return m.servers
 }
 // Serialize serializes information the current object
 func (m *VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,31 +174,21 @@ func (m *VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *VpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
-    if m != nil {
-        m.authenticationMethod = value
-    }
+    m.authenticationMethod = value
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *VpnConfiguration) SetConnectionName(value *string)() {
-    if m != nil {
-        m.connectionName = value
-    }
+    m.connectionName = value
 }
 // SetRealm sets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) SetRealm(value *string)() {
-    if m != nil {
-        m.realm = value
-    }
+    m.realm = value
 }
 // SetRole sets the role property value. Role when connection type is set to Pulse Secure.
 func (m *VpnConfiguration) SetRole(value *string)() {
-    if m != nil {
-        m.role = value
-    }
+    m.role = value
 }
 // SetServers sets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *VpnConfiguration) SetServers(value []VpnServerable)() {
-    if m != nil {
-        m.servers = value
-    }
+    m.servers = value
 }

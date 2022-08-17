@@ -27,19 +27,11 @@ func CreateOverrideComplianceStatePostRequestBodyFromDiscriminatorValue(parseNod
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OverrideComplianceStatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComplianceState gets the complianceState property value. Administrator configured device compliance state Enum
 func (m *OverrideComplianceStatePostRequestBody) GetComplianceState()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministratorConfiguredDeviceComplianceState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceState
-    }
+    return m.complianceState
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OverrideComplianceStatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +60,7 @@ func (m *OverrideComplianceStatePostRequestBody) GetFieldDeserializers()(map[str
 }
 // GetRemediationUrl gets the remediationUrl property value. The remediationUrl property
 func (m *OverrideComplianceStatePostRequestBody) GetRemediationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediationUrl
-    }
+    return m.remediationUrl
 }
 // Serialize serializes information the current object
 func (m *OverrideComplianceStatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *OverrideComplianceStatePostRequestBody) Serialize(writer i878a80d2330e8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OverrideComplianceStatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComplianceState sets the complianceState property value. Administrator configured device compliance state Enum
 func (m *OverrideComplianceStatePostRequestBody) SetComplianceState(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministratorConfiguredDeviceComplianceState)() {
-    if m != nil {
-        m.complianceState = value
-    }
+    m.complianceState = value
 }
 // SetRemediationUrl sets the remediationUrl property value. The remediationUrl property
 func (m *OverrideComplianceStatePostRequestBody) SetRemediationUrl(value *string)() {
-    if m != nil {
-        m.remediationUrl = value
-    }
+    m.remediationUrl = value
 }

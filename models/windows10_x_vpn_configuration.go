@@ -29,27 +29,15 @@ func CreateWindows10XVpnConfigurationFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAuthenticationCertificateId gets the authenticationCertificateId property value. ID to the Authentication Certificate
 func (m *Windows10XVpnConfiguration) GetAuthenticationCertificateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationCertificateId
-    }
+    return m.authenticationCertificateId
 }
 // GetCustomXml gets the customXml property value. Custom XML commands that configures the VPN connection. (UTF8 byte encoding)
 func (m *Windows10XVpnConfiguration) GetCustomXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customXml
-    }
+    return m.customXml
 }
 // GetCustomXmlFileName gets the customXmlFileName property value. Custom Xml file name.
 func (m *Windows10XVpnConfiguration) GetCustomXmlFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customXmlFileName
-    }
+    return m.customXmlFileName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10XVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,19 +102,13 @@ func (m *Windows10XVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAuthenticationCertificateId sets the authenticationCertificateId property value. ID to the Authentication Certificate
 func (m *Windows10XVpnConfiguration) SetAuthenticationCertificateId(value *string)() {
-    if m != nil {
-        m.authenticationCertificateId = value
-    }
+    m.authenticationCertificateId = value
 }
 // SetCustomXml sets the customXml property value. Custom XML commands that configures the VPN connection. (UTF8 byte encoding)
 func (m *Windows10XVpnConfiguration) SetCustomXml(value []byte)() {
-    if m != nil {
-        m.customXml = value
-    }
+    m.customXml = value
 }
 // SetCustomXmlFileName sets the customXmlFileName property value. Custom Xml file name.
 func (m *Windows10XVpnConfiguration) SetCustomXmlFileName(value *string)() {
-    if m != nil {
-        m.customXmlFileName = value
-    }
+    m.customXmlFileName = value
 }

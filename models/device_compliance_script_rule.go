@@ -38,35 +38,19 @@ func CreateDeviceComplianceScriptRuleFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDataType gets the dataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) GetDataType()(*DataType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataType
-    }
+    return m.dataType
 }
 // GetDeviceComplianceScriptRuleDataType gets the deviceComplianceScriptRuleDataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) GetDeviceComplianceScriptRuleDataType()(*DeviceComplianceScriptRuleDataType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceComplianceScriptRuleDataType
-    }
+    return m.deviceComplianceScriptRuleDataType
 }
 // GetDeviceComplianceScriptRulOperator gets the deviceComplianceScriptRulOperator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) GetDeviceComplianceScriptRulOperator()(*DeviceComplianceScriptRulOperator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceComplianceScriptRulOperator
-    }
+    return m.deviceComplianceScriptRulOperator
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,35 +129,19 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceComplianceScriptRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperand gets the operand property value. Operand specified in the rule.
 func (m *DeviceComplianceScriptRule) GetOperand()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operand
-    }
+    return m.operand
 }
 // GetOperator gets the operator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) GetOperator()(*Operator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
+    return m.operator
 }
 // GetSettingName gets the settingName property value. Setting name specified in the rule.
 func (m *DeviceComplianceScriptRule) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -233,49 +201,33 @@ func (m *DeviceComplianceScriptRule) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDataType sets the dataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) SetDataType(value *DataType)() {
-    if m != nil {
-        m.dataType = value
-    }
+    m.dataType = value
 }
 // SetDeviceComplianceScriptRuleDataType sets the deviceComplianceScriptRuleDataType property value. Data types for rules.
 func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRuleDataType(value *DeviceComplianceScriptRuleDataType)() {
-    if m != nil {
-        m.deviceComplianceScriptRuleDataType = value
-    }
+    m.deviceComplianceScriptRuleDataType = value
 }
 // SetDeviceComplianceScriptRulOperator sets the deviceComplianceScriptRulOperator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRulOperator(value *DeviceComplianceScriptRulOperator)() {
-    if m != nil {
-        m.deviceComplianceScriptRulOperator = value
-    }
+    m.deviceComplianceScriptRulOperator = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceComplianceScriptRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperand sets the operand property value. Operand specified in the rule.
 func (m *DeviceComplianceScriptRule) SetOperand(value *string)() {
-    if m != nil {
-        m.operand = value
-    }
+    m.operand = value
 }
 // SetOperator sets the operator property value. Operator for rules.
 func (m *DeviceComplianceScriptRule) SetOperator(value *Operator)() {
-    if m != nil {
-        m.operator = value
-    }
+    m.operator = value
 }
 // SetSettingName sets the settingName property value. Setting name specified in the rule.
 func (m *DeviceComplianceScriptRule) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }

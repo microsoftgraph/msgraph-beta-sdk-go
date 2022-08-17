@@ -25,11 +25,7 @@ func CreateRemoveLanguageFilesPostRequestBodyFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveLanguageFilesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RemoveLanguageFilesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -52,11 +48,7 @@ func (m *RemoveLanguageFilesPostRequestBody) GetFieldDeserializers()(map[string]
 }
 // GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. The groupPolicyUploadedLanguageFiles property
 func (m *RemoveLanguageFilesPostRequestBody) GetGroupPolicyUploadedLanguageFiles()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyUploadedLanguageFiles
-    }
+    return m.groupPolicyUploadedLanguageFiles
 }
 // Serialize serializes information the current object
 func (m *RemoveLanguageFilesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,13 +72,9 @@ func (m *RemoveLanguageFilesPostRequestBody) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveLanguageFilesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. The groupPolicyUploadedLanguageFiles property
 func (m *RemoveLanguageFilesPostRequestBody) SetGroupPolicyUploadedLanguageFiles(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedLanguageFileable)() {
-    if m != nil {
-        m.groupPolicyUploadedLanguageFiles = value
-    }
+    m.groupPolicyUploadedLanguageFiles = value
 }

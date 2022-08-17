@@ -25,11 +25,7 @@ func CreateAndroidOmaCpConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetConfigurationXml gets the configurationXml property value. Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.
 func (m *AndroidOmaCpConfiguration) GetConfigurationXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationXml
-    }
+    return m.configurationXml
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidOmaCpConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *AndroidOmaCpConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetConfigurationXml sets the configurationXml property value. Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.
 func (m *AndroidOmaCpConfiguration) SetConfigurationXml(value []byte)() {
-    if m != nil {
-        m.configurationXml = value
-    }
+    m.configurationXml = value
 }

@@ -49,35 +49,19 @@ func CreateWindows10XSCEPCertificateProfileFromDiscriminatorValue(parseNode i878
 }
 // GetCertificateStore gets the certificateStore property value. CertificateStore types
 func (m *Windows10XSCEPCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateStore
-    }
+    return m.certificateStore
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *Windows10XSCEPCertificateProfile) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodScale
-    }
+    return m.certificateValidityPeriodScale
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period
 func (m *Windows10XSCEPCertificateProfile) GetCertificateValidityPeriodValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodValue
-    }
+    return m.certificateValidityPeriodValue
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings.
 func (m *Windows10XSCEPCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedKeyUsages
-    }
+    return m.extendedKeyUsages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -232,75 +216,39 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm.
 func (m *Windows10XSCEPCertificateProfile) GetHashAlgorithm()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashAlgorithm
-    }
+    return m.hashAlgorithm
 }
 // GetKeySize gets the keySize property value. Key Size Options.
 func (m *Windows10XSCEPCertificateProfile) GetKeySize()(*KeySize) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keySize
-    }
+    return m.keySize
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10XSCEPCertificateProfile) GetKeyStorageProvider()(*KeyStorageProviderOption) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyStorageProvider
-    }
+    return m.keyStorageProvider
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *Windows10XSCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyUsage
-    }
+    return m.keyUsage
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage
 func (m *Windows10XSCEPCertificateProfile) GetRenewalThresholdPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.renewalThresholdPercentage
-    }
+    return m.renewalThresholdPercentage
 }
 // GetRootCertificateId gets the rootCertificateId property value. Trusted Root Certificate ID
 func (m *Windows10XSCEPCertificateProfile) GetRootCertificateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCertificateId
-    }
+    return m.rootCertificateId
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
 func (m *Windows10XSCEPCertificateProfile) GetScepServerUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scepServerUrls
-    }
+    return m.scepServerUrls
 }
 // GetSubjectAlternativeNameFormats gets the subjectAlternativeNameFormats property value. Custom AAD Attributes.
 func (m *Windows10XSCEPCertificateProfile) GetSubjectAlternativeNameFormats()([]Windows10XCustomSubjectAlternativeNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormats
-    }
+    return m.subjectAlternativeNameFormats
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows10XSCEPCertificateProfile) GetSubjectNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormatString
-    }
+    return m.subjectNameFormatString
 }
 // Serialize serializes information the current object
 func (m *Windows10XSCEPCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -403,79 +351,53 @@ func (m *Windows10XSCEPCertificateProfile) Serialize(writer i878a80d2330e89d2689
 }
 // SetCertificateStore sets the certificateStore property value. CertificateStore types
 func (m *Windows10XSCEPCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    if m != nil {
-        m.certificateStore = value
-    }
+    m.certificateStore = value
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *Windows10XSCEPCertificateProfile) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
-    if m != nil {
-        m.certificateValidityPeriodScale = value
-    }
+    m.certificateValidityPeriodScale = value
 }
 // SetCertificateValidityPeriodValue sets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period
 func (m *Windows10XSCEPCertificateProfile) SetCertificateValidityPeriodValue(value *int32)() {
-    if m != nil {
-        m.certificateValidityPeriodValue = value
-    }
+    m.certificateValidityPeriodValue = value
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings.
 func (m *Windows10XSCEPCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    if m != nil {
-        m.extendedKeyUsages = value
-    }
+    m.extendedKeyUsages = value
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm.
 func (m *Windows10XSCEPCertificateProfile) SetHashAlgorithm(value []string)() {
-    if m != nil {
-        m.hashAlgorithm = value
-    }
+    m.hashAlgorithm = value
 }
 // SetKeySize sets the keySize property value. Key Size Options.
 func (m *Windows10XSCEPCertificateProfile) SetKeySize(value *KeySize)() {
-    if m != nil {
-        m.keySize = value
-    }
+    m.keySize = value
 }
 // SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10XSCEPCertificateProfile) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
-    if m != nil {
-        m.keyStorageProvider = value
-    }
+    m.keyStorageProvider = value
 }
 // SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *Windows10XSCEPCertificateProfile) SetKeyUsage(value *KeyUsages)() {
-    if m != nil {
-        m.keyUsage = value
-    }
+    m.keyUsage = value
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage
 func (m *Windows10XSCEPCertificateProfile) SetRenewalThresholdPercentage(value *int32)() {
-    if m != nil {
-        m.renewalThresholdPercentage = value
-    }
+    m.renewalThresholdPercentage = value
 }
 // SetRootCertificateId sets the rootCertificateId property value. Trusted Root Certificate ID
 func (m *Windows10XSCEPCertificateProfile) SetRootCertificateId(value *string)() {
-    if m != nil {
-        m.rootCertificateId = value
-    }
+    m.rootCertificateId = value
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s).
 func (m *Windows10XSCEPCertificateProfile) SetScepServerUrls(value []string)() {
-    if m != nil {
-        m.scepServerUrls = value
-    }
+    m.scepServerUrls = value
 }
 // SetSubjectAlternativeNameFormats sets the subjectAlternativeNameFormats property value. Custom AAD Attributes.
 func (m *Windows10XSCEPCertificateProfile) SetSubjectAlternativeNameFormats(value []Windows10XCustomSubjectAlternativeNameable)() {
-    if m != nil {
-        m.subjectAlternativeNameFormats = value
-    }
+    m.subjectAlternativeNameFormats = value
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows10XSCEPCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectNameFormatString = value
-    }
+    m.subjectNameFormatString = value
 }

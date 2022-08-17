@@ -47,11 +47,7 @@ func CreateQualityUpdateReferenceFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetClassification gets the classification property value. Specifies the classification of the referenced content. Supports a subset of the values for qualityUpdateClassification. Possible values are: security, unknownFutureValue.
 func (m *QualityUpdateReference) GetClassification()(*QualityUpdateClassification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classification
-    }
+    return m.classification
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *QualityUpdateReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +76,7 @@ func (m *QualityUpdateReference) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetReleaseDateTime gets the releaseDateTime property value. Specifies a quality update in the given servicingChannel with the given classification by date (i.e. the last update published on the specified date). Default value is security.
 func (m *QualityUpdateReference) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateTime
-    }
+    return m.releaseDateTime
 }
 // Serialize serializes information the current object
 func (m *QualityUpdateReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +101,9 @@ func (m *QualityUpdateReference) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetClassification sets the classification property value. Specifies the classification of the referenced content. Supports a subset of the values for qualityUpdateClassification. Possible values are: security, unknownFutureValue.
 func (m *QualityUpdateReference) SetClassification(value *QualityUpdateClassification)() {
-    if m != nil {
-        m.classification = value
-    }
+    m.classification = value
 }
 // SetReleaseDateTime sets the releaseDateTime property value. Specifies a quality update in the given servicingChannel with the given classification by date (i.e. the last update published on the specified date). Default value is security.
 func (m *QualityUpdateReference) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.releaseDateTime = value
-    }
+    m.releaseDateTime = value
 }

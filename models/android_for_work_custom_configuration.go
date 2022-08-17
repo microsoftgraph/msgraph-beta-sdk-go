@@ -44,11 +44,7 @@ func (m *AndroidForWorkCustomConfiguration) GetFieldDeserializers()(map[string]f
 }
 // GetOmaSettings gets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidForWorkCustomConfiguration) GetOmaSettings()([]OmaSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.omaSettings
-    }
+    return m.omaSettings
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *AndroidForWorkCustomConfiguration) Serialize(writer i878a80d2330e89d268
 }
 // SetOmaSettings sets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
 func (m *AndroidForWorkCustomConfiguration) SetOmaSettings(value []OmaSettingable)() {
-    if m != nil {
-        m.omaSettings = value
-    }
+    m.omaSettings = value
 }

@@ -28,19 +28,11 @@ func CreateDetectedSensitiveContentWrapperFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DetectedSensitiveContentWrapper) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClassification gets the classification property value. The classification property
 func (m *DetectedSensitiveContentWrapper) GetClassification()([]DetectedSensitiveContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classification
-    }
+    return m.classification
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DetectedSensitiveContentWrapper) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,11 +65,7 @@ func (m *DetectedSensitiveContentWrapper) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DetectedSensitiveContentWrapper) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DetectedSensitiveContentWrapper) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,19 +95,13 @@ func (m *DetectedSensitiveContentWrapper) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DetectedSensitiveContentWrapper) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClassification sets the classification property value. The classification property
 func (m *DetectedSensitiveContentWrapper) SetClassification(value []DetectedSensitiveContentable)() {
-    if m != nil {
-        m.classification = value
-    }
+    m.classification = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DetectedSensitiveContentWrapper) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

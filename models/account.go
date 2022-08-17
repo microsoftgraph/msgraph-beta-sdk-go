@@ -36,27 +36,15 @@ func CreateAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetBlocked gets the blocked property value. The blocked property
 func (m *Account) GetBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blocked
-    }
+    return m.blocked
 }
 // GetCategory gets the category property value. The category property
 func (m *Account) GetCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Account) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Account) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,27 +113,15 @@ func (m *Account) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Account) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetNumber gets the number property value. The number property
 func (m *Account) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetSubCategory gets the subCategory property value. The subCategory property
 func (m *Account) GetSubCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subCategory
-    }
+    return m.subCategory
 }
 // Serialize serializes information the current object
 func (m *Account) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *Account) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetBlocked sets the blocked property value. The blocked property
 func (m *Account) SetBlocked(value *bool)() {
-    if m != nil {
-        m.blocked = value
-    }
+    m.blocked = value
 }
 // SetCategory sets the category property value. The category property
 func (m *Account) SetCategory(value *string)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Account) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Account) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetNumber sets the number property value. The number property
 func (m *Account) SetNumber(value *string)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetSubCategory sets the subCategory property value. The subCategory property
 func (m *Account) SetSubCategory(value *string)() {
-    if m != nil {
-        m.subCategory = value
-    }
+    m.subCategory = value
 }

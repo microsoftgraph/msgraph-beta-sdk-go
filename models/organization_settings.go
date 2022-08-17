@@ -80,35 +80,19 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetItemInsights gets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
 func (m *OrganizationSettings) GetItemInsights()(InsightsSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemInsights
-    }
+    return m.itemInsights
 }
 // GetMicrosoftApplicationDataAccess gets the microsoftApplicationDataAccess property value. The microsoftApplicationDataAccess property
 func (m *OrganizationSettings) GetMicrosoftApplicationDataAccess()(MicrosoftApplicationDataAccessSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftApplicationDataAccess
-    }
+    return m.microsoftApplicationDataAccess
 }
 // GetPeopleInsights gets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) GetPeopleInsights()(InsightsSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.peopleInsights
-    }
+    return m.peopleInsights
 }
 // GetProfileCardProperties gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 func (m *OrganizationSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileCardProperties
-    }
+    return m.profileCardProperties
 }
 // Serialize serializes information the current object
 func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -148,25 +132,17 @@ func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetItemInsights sets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
 func (m *OrganizationSettings) SetItemInsights(value InsightsSettingsable)() {
-    if m != nil {
-        m.itemInsights = value
-    }
+    m.itemInsights = value
 }
 // SetMicrosoftApplicationDataAccess sets the microsoftApplicationDataAccess property value. The microsoftApplicationDataAccess property
 func (m *OrganizationSettings) SetMicrosoftApplicationDataAccess(value MicrosoftApplicationDataAccessSettingsable)() {
-    if m != nil {
-        m.microsoftApplicationDataAccess = value
-    }
+    m.microsoftApplicationDataAccess = value
 }
 // SetPeopleInsights sets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) SetPeopleInsights(value InsightsSettingsable)() {
-    if m != nil {
-        m.peopleInsights = value
-    }
+    m.peopleInsights = value
 }
 // SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 func (m *OrganizationSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
-    if m != nil {
-        m.profileCardProperties = value
-    }
+    m.profileCardProperties = value
 }

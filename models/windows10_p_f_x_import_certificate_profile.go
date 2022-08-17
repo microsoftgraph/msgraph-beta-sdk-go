@@ -40,11 +40,7 @@ func (m *Windows10PFXImportCertificateProfile) GetFieldDeserializers()(map[strin
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10PFXImportCertificateProfile) GetKeyStorageProvider()(*KeyStorageProviderOption) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyStorageProvider
-    }
+    return m.keyStorageProvider
 }
 // Serialize serializes information the current object
 func (m *Windows10PFXImportCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *Windows10PFXImportCertificateProfile) Serialize(writer i878a80d2330e89d
 }
 // SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10PFXImportCertificateProfile) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
-    if m != nil {
-        m.keyStorageProvider = value
-    }
+    m.keyStorageProvider = value
 }

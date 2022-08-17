@@ -29,27 +29,15 @@ func CreateDeviceConfigurationConflictSummaryFromDiscriminatorValue(parseNode i8
 }
 // GetConflictingDeviceConfigurations gets the conflictingDeviceConfigurations property value. The set of policies in conflict with the given setting
 func (m *DeviceConfigurationConflictSummary) GetConflictingDeviceConfigurations()([]SettingSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictingDeviceConfigurations
-    }
+    return m.conflictingDeviceConfigurations
 }
 // GetContributingSettings gets the contributingSettings property value. The set of settings in conflict with the given policies
 func (m *DeviceConfigurationConflictSummary) GetContributingSettings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contributingSettings
-    }
+    return m.contributingSettings
 }
 // GetDeviceCheckinsImpacted gets the deviceCheckinsImpacted property value. The count of checkins impacted by the conflicting policies and settings
 func (m *DeviceConfigurationConflictSummary) GetDeviceCheckinsImpacted()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCheckinsImpacted
-    }
+    return m.deviceCheckinsImpacted
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,19 +114,13 @@ func (m *DeviceConfigurationConflictSummary) Serialize(writer i878a80d2330e89d26
 }
 // SetConflictingDeviceConfigurations sets the conflictingDeviceConfigurations property value. The set of policies in conflict with the given setting
 func (m *DeviceConfigurationConflictSummary) SetConflictingDeviceConfigurations(value []SettingSourceable)() {
-    if m != nil {
-        m.conflictingDeviceConfigurations = value
-    }
+    m.conflictingDeviceConfigurations = value
 }
 // SetContributingSettings sets the contributingSettings property value. The set of settings in conflict with the given policies
 func (m *DeviceConfigurationConflictSummary) SetContributingSettings(value []string)() {
-    if m != nil {
-        m.contributingSettings = value
-    }
+    m.contributingSettings = value
 }
 // SetDeviceCheckinsImpacted sets the deviceCheckinsImpacted property value. The count of checkins impacted by the conflicting policies and settings
 func (m *DeviceConfigurationConflictSummary) SetDeviceCheckinsImpacted(value *int32)() {
-    if m != nil {
-        m.deviceCheckinsImpacted = value
-    }
+    m.deviceCheckinsImpacted = value
 }

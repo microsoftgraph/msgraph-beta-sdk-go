@@ -31,19 +31,11 @@ func CreateWindowsDriverUpdateProfileInventorySyncStatusFromDiscriminatorValue(p
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDriverInventorySyncState gets the driverInventorySyncState property value. Windows DnF update inventory sync state.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetDriverInventorySyncState()(*WindowsDriverUpdateProfileInventorySyncState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driverInventorySyncState
-    }
+    return m.driverInventorySyncState
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,19 +74,11 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(
 }
 // GetLastSuccessfulSyncDateTime gets the lastSuccessfulSyncDateTime property value. The last successful sync date and time in UTC.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSuccessfulSyncDateTime
-    }
+    return m.lastSuccessfulSyncDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,25 +111,17 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) Serialize(writer i878a80
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDriverInventorySyncState sets the driverInventorySyncState property value. Windows DnF update inventory sync state.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetDriverInventorySyncState(value *WindowsDriverUpdateProfileInventorySyncState)() {
-    if m != nil {
-        m.driverInventorySyncState = value
-    }
+    m.driverInventorySyncState = value
 }
 // SetLastSuccessfulSyncDateTime sets the lastSuccessfulSyncDateTime property value. The last successful sync date and time in UTC.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSuccessfulSyncDateTime = value
-    }
+    m.lastSuccessfulSyncDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

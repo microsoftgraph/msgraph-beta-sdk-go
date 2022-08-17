@@ -50,19 +50,11 @@ func CreateBitLockerSystemDrivePolicyFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BitLockerSystemDrivePolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 func (m *BitLockerSystemDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptionMethod
-    }
+    return m.encryptionMethod
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BitLockerSystemDrivePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -201,99 +193,51 @@ func (m *BitLockerSystemDrivePolicy) GetFieldDeserializers()(map[string]func(i87
 }
 // GetMinimumPinLength gets the minimumPinLength property value. Indicates the minimum length of startup pin. Valid values 4 to 20
 func (m *BitLockerSystemDrivePolicy) GetMinimumPinLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumPinLength
-    }
+    return m.minimumPinLength
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BitLockerSystemDrivePolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPrebootRecoveryEnableMessageAndUrl gets the prebootRecoveryEnableMessageAndUrl property value. Enable pre-boot recovery message and Url. If requireStartupAuthentication is false, this value does not affect.
 func (m *BitLockerSystemDrivePolicy) GetPrebootRecoveryEnableMessageAndUrl()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prebootRecoveryEnableMessageAndUrl
-    }
+    return m.prebootRecoveryEnableMessageAndUrl
 }
 // GetPrebootRecoveryMessage gets the prebootRecoveryMessage property value. Defines a custom recovery message.
 func (m *BitLockerSystemDrivePolicy) GetPrebootRecoveryMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prebootRecoveryMessage
-    }
+    return m.prebootRecoveryMessage
 }
 // GetPrebootRecoveryUrl gets the prebootRecoveryUrl property value. Defines a custom recovery URL.
 func (m *BitLockerSystemDrivePolicy) GetPrebootRecoveryUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prebootRecoveryUrl
-    }
+    return m.prebootRecoveryUrl
 }
 // GetRecoveryOptions gets the recoveryOptions property value. Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.
 func (m *BitLockerSystemDrivePolicy) GetRecoveryOptions()(BitLockerRecoveryOptionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recoveryOptions
-    }
+    return m.recoveryOptions
 }
 // GetStartupAuthenticationBlockWithoutTpmChip gets the startupAuthenticationBlockWithoutTpmChip property value. Indicates whether to allow BitLocker without a compatible TPM (requires a password or a startup key on a USB flash drive).
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationBlockWithoutTpmChip()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupAuthenticationBlockWithoutTpmChip
-    }
+    return m.startupAuthenticationBlockWithoutTpmChip
 }
 // GetStartupAuthenticationRequired gets the startupAuthenticationRequired property value. Require additional authentication at startup.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupAuthenticationRequired
-    }
+    return m.startupAuthenticationRequired
 }
 // GetStartupAuthenticationTpmKeyUsage gets the startupAuthenticationTpmKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmKeyUsage()(*ConfigurationUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupAuthenticationTpmKeyUsage
-    }
+    return m.startupAuthenticationTpmKeyUsage
 }
 // GetStartupAuthenticationTpmPinAndKeyUsage gets the startupAuthenticationTpmPinAndKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmPinAndKeyUsage()(*ConfigurationUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupAuthenticationTpmPinAndKeyUsage
-    }
+    return m.startupAuthenticationTpmPinAndKeyUsage
 }
 // GetStartupAuthenticationTpmPinUsage gets the startupAuthenticationTpmPinUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmPinUsage()(*ConfigurationUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupAuthenticationTpmPinUsage
-    }
+    return m.startupAuthenticationTpmPinUsage
 }
 // GetStartupAuthenticationTpmUsage gets the startupAuthenticationTpmUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmUsage()(*ConfigurationUsage) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupAuthenticationTpmUsage
-    }
+    return m.startupAuthenticationTpmUsage
 }
 // Serialize serializes information the current object
 func (m *BitLockerSystemDrivePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -390,85 +334,57 @@ func (m *BitLockerSystemDrivePolicy) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BitLockerSystemDrivePolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 func (m *BitLockerSystemDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
-    if m != nil {
-        m.encryptionMethod = value
-    }
+    m.encryptionMethod = value
 }
 // SetMinimumPinLength sets the minimumPinLength property value. Indicates the minimum length of startup pin. Valid values 4 to 20
 func (m *BitLockerSystemDrivePolicy) SetMinimumPinLength(value *int32)() {
-    if m != nil {
-        m.minimumPinLength = value
-    }
+    m.minimumPinLength = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BitLockerSystemDrivePolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPrebootRecoveryEnableMessageAndUrl sets the prebootRecoveryEnableMessageAndUrl property value. Enable pre-boot recovery message and Url. If requireStartupAuthentication is false, this value does not affect.
 func (m *BitLockerSystemDrivePolicy) SetPrebootRecoveryEnableMessageAndUrl(value *bool)() {
-    if m != nil {
-        m.prebootRecoveryEnableMessageAndUrl = value
-    }
+    m.prebootRecoveryEnableMessageAndUrl = value
 }
 // SetPrebootRecoveryMessage sets the prebootRecoveryMessage property value. Defines a custom recovery message.
 func (m *BitLockerSystemDrivePolicy) SetPrebootRecoveryMessage(value *string)() {
-    if m != nil {
-        m.prebootRecoveryMessage = value
-    }
+    m.prebootRecoveryMessage = value
 }
 // SetPrebootRecoveryUrl sets the prebootRecoveryUrl property value. Defines a custom recovery URL.
 func (m *BitLockerSystemDrivePolicy) SetPrebootRecoveryUrl(value *string)() {
-    if m != nil {
-        m.prebootRecoveryUrl = value
-    }
+    m.prebootRecoveryUrl = value
 }
 // SetRecoveryOptions sets the recoveryOptions property value. Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.
 func (m *BitLockerSystemDrivePolicy) SetRecoveryOptions(value BitLockerRecoveryOptionsable)() {
-    if m != nil {
-        m.recoveryOptions = value
-    }
+    m.recoveryOptions = value
 }
 // SetStartupAuthenticationBlockWithoutTpmChip sets the startupAuthenticationBlockWithoutTpmChip property value. Indicates whether to allow BitLocker without a compatible TPM (requires a password or a startup key on a USB flash drive).
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationBlockWithoutTpmChip(value *bool)() {
-    if m != nil {
-        m.startupAuthenticationBlockWithoutTpmChip = value
-    }
+    m.startupAuthenticationBlockWithoutTpmChip = value
 }
 // SetStartupAuthenticationRequired sets the startupAuthenticationRequired property value. Require additional authentication at startup.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationRequired(value *bool)() {
-    if m != nil {
-        m.startupAuthenticationRequired = value
-    }
+    m.startupAuthenticationRequired = value
 }
 // SetStartupAuthenticationTpmKeyUsage sets the startupAuthenticationTpmKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmKeyUsage(value *ConfigurationUsage)() {
-    if m != nil {
-        m.startupAuthenticationTpmKeyUsage = value
-    }
+    m.startupAuthenticationTpmKeyUsage = value
 }
 // SetStartupAuthenticationTpmPinAndKeyUsage sets the startupAuthenticationTpmPinAndKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmPinAndKeyUsage(value *ConfigurationUsage)() {
-    if m != nil {
-        m.startupAuthenticationTpmPinAndKeyUsage = value
-    }
+    m.startupAuthenticationTpmPinAndKeyUsage = value
 }
 // SetStartupAuthenticationTpmPinUsage sets the startupAuthenticationTpmPinUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmPinUsage(value *ConfigurationUsage)() {
-    if m != nil {
-        m.startupAuthenticationTpmPinUsage = value
-    }
+    m.startupAuthenticationTpmPinUsage = value
 }
 // SetStartupAuthenticationTpmUsage sets the startupAuthenticationTpmUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmUsage(value *ConfigurationUsage)() {
-    if m != nil {
-        m.startupAuthenticationTpmUsage = value
-    }
+    m.startupAuthenticationTpmUsage = value
 }

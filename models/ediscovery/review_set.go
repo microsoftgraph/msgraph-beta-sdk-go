@@ -33,27 +33,15 @@ func CreateReviewSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetCreatedBy gets the createdBy property value. The user who created the review set. Read-only.
 func (m *ReviewSet) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ReviewSet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The review set name. The name is unique with a maximum limit of 64 characters.
 func (m *ReviewSet) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,11 +94,7 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetQueries gets the queries property value. The queries property
 func (m *ReviewSet) GetQueries()([]ReviewSetQueryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queries
-    }
+    return m.queries
 }
 // Serialize serializes information the current object
 func (m *ReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -150,25 +134,17 @@ func (m *ReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetCreatedBy sets the createdBy property value. The user who created the review set. Read-only.
 func (m *ReviewSet) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ReviewSet) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The review set name. The name is unique with a maximum limit of 64 characters.
 func (m *ReviewSet) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetQueries sets the queries property value. The queries property
 func (m *ReviewSet) SetQueries(value []ReviewSetQueryable)() {
-    if m != nil {
-        m.queries = value
-    }
+    m.queries = value
 }

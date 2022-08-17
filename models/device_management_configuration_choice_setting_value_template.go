@@ -34,19 +34,11 @@ func CreateDeviceManagementConfigurationChoiceSettingValueTemplateFromDiscrimina
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDefaultValue gets the defaultValue property value. Choice Setting Value Default Template.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetDefaultValue()(DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetFieldDeseri
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecommendedValueDefinition gets the recommendedValueDefinition property value. Recommended definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetRecommendedValueDefinition()(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedValueDefinition
-    }
+    return m.recommendedValueDefinition
 }
 // GetRequiredValueDefinition gets the requiredValueDefinition property value. Required definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetRequiredValueDefinition()(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiredValueDefinition
-    }
+    return m.requiredValueDefinition
 }
 // GetSettingValueTemplateId gets the settingValueTemplateId property value. Setting Value Template Id
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetSettingValueTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingValueTemplateId
-    }
+    return m.settingValueTemplateId
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) Serialize(writ
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDefaultValue sets the defaultValue property value. Choice Setting Value Default Template.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetDefaultValue(value DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecommendedValueDefinition sets the recommendedValueDefinition property value. Recommended definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetRecommendedValueDefinition(value DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)() {
-    if m != nil {
-        m.recommendedValueDefinition = value
-    }
+    m.recommendedValueDefinition = value
 }
 // SetRequiredValueDefinition sets the requiredValueDefinition property value. Required definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetRequiredValueDefinition(value DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable)() {
-    if m != nil {
-        m.requiredValueDefinition = value
-    }
+    m.requiredValueDefinition = value
 }
 // SetSettingValueTemplateId sets the settingValueTemplateId property value. Setting Value Template Id
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetSettingValueTemplateId(value *string)() {
-    if m != nil {
-        m.settingValueTemplateId = value
-    }
+    m.settingValueTemplateId = value
 }

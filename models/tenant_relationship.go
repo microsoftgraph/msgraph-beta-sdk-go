@@ -27,19 +27,11 @@ func CreateTenantRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDelegatedAdminCustomers gets the delegatedAdminCustomers property value. The customer who has a delegated admin relationship with a Microsoft partner.
 func (m *TenantRelationship) GetDelegatedAdminCustomers()([]DelegatedAdminCustomerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.delegatedAdminCustomers
-    }
+    return m.delegatedAdminCustomers
 }
 // GetDelegatedAdminRelationships gets the delegatedAdminRelationships property value. The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
 func (m *TenantRelationship) GetDelegatedAdminRelationships()([]DelegatedAdminRelationshipable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.delegatedAdminRelationships
-    }
+    return m.delegatedAdminRelationships
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,13 +96,9 @@ func (m *TenantRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDelegatedAdminCustomers sets the delegatedAdminCustomers property value. The customer who has a delegated admin relationship with a Microsoft partner.
 func (m *TenantRelationship) SetDelegatedAdminCustomers(value []DelegatedAdminCustomerable)() {
-    if m != nil {
-        m.delegatedAdminCustomers = value
-    }
+    m.delegatedAdminCustomers = value
 }
 // SetDelegatedAdminRelationships sets the delegatedAdminRelationships property value. The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
 func (m *TenantRelationship) SetDelegatedAdminRelationships(value []DelegatedAdminRelationshipable)() {
-    if m != nil {
-        m.delegatedAdminRelationships = value
-    }
+    m.delegatedAdminRelationships = value
 }

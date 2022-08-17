@@ -30,19 +30,11 @@ func CreateTrainingEventsContentFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrainingEventsContent) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignedTrainingsInfos gets the assignedTrainingsInfos property value. List of assigned trainings and their information in an attack simulation and training campaign.
 func (m *TrainingEventsContent) GetAssignedTrainingsInfos()([]AssignedTrainingInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTrainingsInfos
-    }
+    return m.assignedTrainingsInfos
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TrainingEventsContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *TrainingEventsContent) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TrainingEventsContent) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTrainingsAssignedUserCount gets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.
 func (m *TrainingEventsContent) GetTrainingsAssignedUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingsAssignedUserCount
-    }
+    return m.trainingsAssignedUserCount
 }
 // Serialize serializes information the current object
 func (m *TrainingEventsContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *TrainingEventsContent) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrainingEventsContent) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignedTrainingsInfos sets the assignedTrainingsInfos property value. List of assigned trainings and their information in an attack simulation and training campaign.
 func (m *TrainingEventsContent) SetAssignedTrainingsInfos(value []AssignedTrainingInfoable)() {
-    if m != nil {
-        m.assignedTrainingsInfos = value
-    }
+    m.assignedTrainingsInfos = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TrainingEventsContent) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTrainingsAssignedUserCount sets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.
 func (m *TrainingEventsContent) SetTrainingsAssignedUserCount(value *int32)() {
-    if m != nil {
-        m.trainingsAssignedUserCount = value
-    }
+    m.trainingsAssignedUserCount = value
 }

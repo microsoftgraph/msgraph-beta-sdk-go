@@ -35,19 +35,11 @@ func CreateIosAvailableUpdateVersionFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosAvailableUpdateVersion) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expiration date of the update.
 func (m *IosAvailableUpdateVersion) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosAvailableUpdateVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,35 +102,19 @@ func (m *IosAvailableUpdateVersion) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosAvailableUpdateVersion) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPostingDateTime gets the postingDateTime property value. The posting date of the update.
 func (m *IosAvailableUpdateVersion) GetPostingDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postingDateTime
-    }
+    return m.postingDateTime
 }
 // GetProductVersion gets the productVersion property value. The version of the update.
 func (m *IosAvailableUpdateVersion) GetProductVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productVersion
-    }
+    return m.productVersion
 }
 // GetSupportedDevices gets the supportedDevices property value. List of supported devices for the update.
 func (m *IosAvailableUpdateVersion) GetSupportedDevices()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedDevices
-    }
+    return m.supportedDevices
 }
 // Serialize serializes information the current object
 func (m *IosAvailableUpdateVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -182,37 +158,25 @@ func (m *IosAvailableUpdateVersion) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosAvailableUpdateVersion) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration date of the update.
 func (m *IosAvailableUpdateVersion) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosAvailableUpdateVersion) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPostingDateTime sets the postingDateTime property value. The posting date of the update.
 func (m *IosAvailableUpdateVersion) SetPostingDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.postingDateTime = value
-    }
+    m.postingDateTime = value
 }
 // SetProductVersion sets the productVersion property value. The version of the update.
 func (m *IosAvailableUpdateVersion) SetProductVersion(value *string)() {
-    if m != nil {
-        m.productVersion = value
-    }
+    m.productVersion = value
 }
 // SetSupportedDevices sets the supportedDevices property value. List of supported devices for the update.
 func (m *IosAvailableUpdateVersion) SetSupportedDevices(value []string)() {
-    if m != nil {
-        m.supportedDevices = value
-    }
+    m.supportedDevices = value
 }

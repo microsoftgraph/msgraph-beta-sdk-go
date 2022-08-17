@@ -36,35 +36,19 @@ func CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagementEligibleDevicesSummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComanagedCount gets the comanagedCount property value. Count of devices already Co-Managed
 func (m *ComanagementEligibleDevicesSummary) GetComanagedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comanagedCount
-    }
+    return m.comanagedCount
 }
 // GetEligibleButNotAzureAdJoinedCount gets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
 func (m *ComanagementEligibleDevicesSummary) GetEligibleButNotAzureAdJoinedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eligibleButNotAzureAdJoinedCount
-    }
+    return m.eligibleButNotAzureAdJoinedCount
 }
 // GetEligibleCount gets the eligibleCount property value. Count of devices fully eligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) GetEligibleCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eligibleCount
-    }
+    return m.eligibleCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,27 +117,15 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
 }
 // GetIneligibleCount gets the ineligibleCount property value. Count of devices ineligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) GetIneligibleCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ineligibleCount
-    }
+    return m.ineligibleCount
 }
 // GetNeedsOsUpdateCount gets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
 func (m *ComanagementEligibleDevicesSummary) GetNeedsOsUpdateCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.needsOsUpdateCount
-    }
+    return m.needsOsUpdateCount
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ComanagementEligibleDevicesSummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ComanagementEligibleDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *ComanagementEligibleDevicesSummary) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagementEligibleDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComanagedCount sets the comanagedCount property value. Count of devices already Co-Managed
 func (m *ComanagementEligibleDevicesSummary) SetComanagedCount(value *int32)() {
-    if m != nil {
-        m.comanagedCount = value
-    }
+    m.comanagedCount = value
 }
 // SetEligibleButNotAzureAdJoinedCount sets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
 func (m *ComanagementEligibleDevicesSummary) SetEligibleButNotAzureAdJoinedCount(value *int32)() {
-    if m != nil {
-        m.eligibleButNotAzureAdJoinedCount = value
-    }
+    m.eligibleButNotAzureAdJoinedCount = value
 }
 // SetEligibleCount sets the eligibleCount property value. Count of devices fully eligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) SetEligibleCount(value *int32)() {
-    if m != nil {
-        m.eligibleCount = value
-    }
+    m.eligibleCount = value
 }
 // SetIneligibleCount sets the ineligibleCount property value. Count of devices ineligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) SetIneligibleCount(value *int32)() {
-    if m != nil {
-        m.ineligibleCount = value
-    }
+    m.ineligibleCount = value
 }
 // SetNeedsOsUpdateCount sets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
 func (m *ComanagementEligibleDevicesSummary) SetNeedsOsUpdateCount(value *int32)() {
-    if m != nil {
-        m.needsOsUpdateCount = value
-    }
+    m.needsOsUpdateCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ComanagementEligibleDevicesSummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

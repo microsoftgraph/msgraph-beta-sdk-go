@@ -39,43 +39,23 @@ func CreateCommunicationsIdentitySetFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetApplicationInstance gets the applicationInstance property value. The application instance associated with this action.
 func (m *CommunicationsIdentitySet) GetApplicationInstance()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationInstance
-    }
+    return m.applicationInstance
 }
 // GetAssertedIdentity gets the assertedIdentity property value. An identity the participant would like to present itself as to the other participants in the call.
 func (m *CommunicationsIdentitySet) GetAssertedIdentity()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assertedIdentity
-    }
+    return m.assertedIdentity
 }
 // GetAzureCommunicationServicesUser gets the azureCommunicationServicesUser property value. The Azure Communication Services user associated with this action.
 func (m *CommunicationsIdentitySet) GetAzureCommunicationServicesUser()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureCommunicationServicesUser
-    }
+    return m.azureCommunicationServicesUser
 }
 // GetEncrypted gets the encrypted property value. The encrypted user associated with this action.
 func (m *CommunicationsIdentitySet) GetEncrypted()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encrypted
-    }
+    return m.encrypted
 }
 // GetEndpointType gets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *CommunicationsIdentitySet) GetEndpointType()(*EndpointType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endpointType
-    }
+    return m.endpointType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CommunicationsIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,27 +144,15 @@ func (m *CommunicationsIdentitySet) GetFieldDeserializers()(map[string]func(i878
 }
 // GetGuest gets the guest property value. The guest user associated with this action.
 func (m *CommunicationsIdentitySet) GetGuest()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guest
-    }
+    return m.guest
 }
 // GetOnPremises gets the onPremises property value. The Skype for Business On-Premises user associated with this action.
 func (m *CommunicationsIdentitySet) GetOnPremises()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremises
-    }
+    return m.onPremises
 }
 // GetPhone gets the phone property value. Inherited from identitySet. The phone user associated with this action.
 func (m *CommunicationsIdentitySet) GetPhone()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
+    return m.phone
 }
 // Serialize serializes information the current object
 func (m *CommunicationsIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -245,49 +213,33 @@ func (m *CommunicationsIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetApplicationInstance sets the applicationInstance property value. The application instance associated with this action.
 func (m *CommunicationsIdentitySet) SetApplicationInstance(value Identityable)() {
-    if m != nil {
-        m.applicationInstance = value
-    }
+    m.applicationInstance = value
 }
 // SetAssertedIdentity sets the assertedIdentity property value. An identity the participant would like to present itself as to the other participants in the call.
 func (m *CommunicationsIdentitySet) SetAssertedIdentity(value Identityable)() {
-    if m != nil {
-        m.assertedIdentity = value
-    }
+    m.assertedIdentity = value
 }
 // SetAzureCommunicationServicesUser sets the azureCommunicationServicesUser property value. The Azure Communication Services user associated with this action.
 func (m *CommunicationsIdentitySet) SetAzureCommunicationServicesUser(value Identityable)() {
-    if m != nil {
-        m.azureCommunicationServicesUser = value
-    }
+    m.azureCommunicationServicesUser = value
 }
 // SetEncrypted sets the encrypted property value. The encrypted user associated with this action.
 func (m *CommunicationsIdentitySet) SetEncrypted(value Identityable)() {
-    if m != nil {
-        m.encrypted = value
-    }
+    m.encrypted = value
 }
 // SetEndpointType sets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *CommunicationsIdentitySet) SetEndpointType(value *EndpointType)() {
-    if m != nil {
-        m.endpointType = value
-    }
+    m.endpointType = value
 }
 // SetGuest sets the guest property value. The guest user associated with this action.
 func (m *CommunicationsIdentitySet) SetGuest(value Identityable)() {
-    if m != nil {
-        m.guest = value
-    }
+    m.guest = value
 }
 // SetOnPremises sets the onPremises property value. The Skype for Business On-Premises user associated with this action.
 func (m *CommunicationsIdentitySet) SetOnPremises(value Identityable)() {
-    if m != nil {
-        m.onPremises = value
-    }
+    m.onPremises = value
 }
 // SetPhone sets the phone property value. Inherited from identitySet. The phone user associated with this action.
 func (m *CommunicationsIdentitySet) SetPhone(value Identityable)() {
-    if m != nil {
-        m.phone = value
-    }
+    m.phone = value
 }

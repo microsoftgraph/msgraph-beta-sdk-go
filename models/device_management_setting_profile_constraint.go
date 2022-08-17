@@ -56,19 +56,11 @@ func (m *DeviceManagementSettingProfileConstraint) GetFieldDeserializers()(map[s
 }
 // GetSource gets the source property value. The source of the entity
 func (m *DeviceManagementSettingProfileConstraint) GetSource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
+    return m.source
 }
 // GetTypes gets the types property value. A collection of types this entity carries
 func (m *DeviceManagementSettingProfileConstraint) GetTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.types
-    }
+    return m.types
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingProfileConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -92,13 +84,9 @@ func (m *DeviceManagementSettingProfileConstraint) Serialize(writer i878a80d2330
 }
 // SetSource sets the source property value. The source of the entity
 func (m *DeviceManagementSettingProfileConstraint) SetSource(value *string)() {
-    if m != nil {
-        m.source = value
-    }
+    m.source = value
 }
 // SetTypes sets the types property value. A collection of types this entity carries
 func (m *DeviceManagementSettingProfileConstraint) SetTypes(value []string)() {
-    if m != nil {
-        m.types = value
-    }
+    m.types = value
 }

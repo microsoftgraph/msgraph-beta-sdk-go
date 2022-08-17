@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RecommendationResource 
+// RecommendationResource provides operations to manage the collection of accessReviewDecision entities.
 type RecommendationResource struct {
     Entity
     // The addedDateTime property
@@ -29,7 +29,7 @@ type RecommendationResource struct {
     // The status property
     status *RecommendationStatus
 }
-// NewRecommendationResource instantiates a new RecommendationResource and sets the default values.
+// NewRecommendationResource instantiates a new recommendationResource and sets the default values.
 func NewRecommendationResource()(*RecommendationResource) {
     m := &RecommendationResource{
         Entity: *NewEntity(),
@@ -44,35 +44,19 @@ func CreateRecommendationResourceFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAddedDateTime gets the addedDateTime property value. The addedDateTime property
 func (m *RecommendationResource) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addedDateTime
-    }
+    return m.addedDateTime
 }
 // GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
 func (m *RecommendationResource) GetAdditionalDetails()([]KeyValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalDetails
-    }
+    return m.additionalDetails
 }
 // GetApiUrl gets the apiUrl property value. The apiUrl property
 func (m *RecommendationResource) GetApiUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.apiUrl
-    }
+    return m.apiUrl
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *RecommendationResource) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecommendationResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -185,51 +169,27 @@ func (m *RecommendationResource) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOwner gets the owner property value. The owner property
 func (m *RecommendationResource) GetOwner()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
+    return m.owner
 }
 // GetPortalUrl gets the portalUrl property value. The portalUrl property
 func (m *RecommendationResource) GetPortalUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.portalUrl
-    }
+    return m.portalUrl
 }
 // GetRank gets the rank property value. The rank property
 func (m *RecommendationResource) GetRank()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rank
-    }
+    return m.rank
 }
 // GetRecommendationId gets the recommendationId property value. The recommendationId property
 func (m *RecommendationResource) GetRecommendationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendationId
-    }
+    return m.recommendationId
 }
 // GetResourceType gets the resourceType property value. The resourceType property
 func (m *RecommendationResource) GetResourceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceType
-    }
+    return m.resourceType
 }
 // GetStatus gets the status property value. The status property
 func (m *RecommendationResource) GetStatus()(*RecommendationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *RecommendationResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -306,61 +266,41 @@ func (m *RecommendationResource) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAddedDateTime sets the addedDateTime property value. The addedDateTime property
 func (m *RecommendationResource) SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.addedDateTime = value
-    }
+    m.addedDateTime = value
 }
 // SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property
 func (m *RecommendationResource) SetAdditionalDetails(value []KeyValueable)() {
-    if m != nil {
-        m.additionalDetails = value
-    }
+    m.additionalDetails = value
 }
 // SetApiUrl sets the apiUrl property value. The apiUrl property
 func (m *RecommendationResource) SetApiUrl(value *string)() {
-    if m != nil {
-        m.apiUrl = value
-    }
+    m.apiUrl = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *RecommendationResource) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOwner sets the owner property value. The owner property
 func (m *RecommendationResource) SetOwner(value *string)() {
-    if m != nil {
-        m.owner = value
-    }
+    m.owner = value
 }
 // SetPortalUrl sets the portalUrl property value. The portalUrl property
 func (m *RecommendationResource) SetPortalUrl(value *string)() {
-    if m != nil {
-        m.portalUrl = value
-    }
+    m.portalUrl = value
 }
 // SetRank sets the rank property value. The rank property
 func (m *RecommendationResource) SetRank(value *int32)() {
-    if m != nil {
-        m.rank = value
-    }
+    m.rank = value
 }
 // SetRecommendationId sets the recommendationId property value. The recommendationId property
 func (m *RecommendationResource) SetRecommendationId(value *string)() {
-    if m != nil {
-        m.recommendationId = value
-    }
+    m.recommendationId = value
 }
 // SetResourceType sets the resourceType property value. The resourceType property
 func (m *RecommendationResource) SetResourceType(value *string)() {
-    if m != nil {
-        m.resourceType = value
-    }
+    m.resourceType = value
 }
 // SetStatus sets the status property value. The status property
 func (m *RecommendationResource) SetStatus(value *RecommendationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

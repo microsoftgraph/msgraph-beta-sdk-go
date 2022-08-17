@@ -25,11 +25,7 @@ func CreateWindows10VpnProxyServerFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetBypassProxyServerForLocalAddress gets the bypassProxyServerForLocalAddress property value. Bypass proxy server for local address.
 func (m *Windows10VpnProxyServer) GetBypassProxyServerForLocalAddress()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bypassProxyServerForLocalAddress
-    }
+    return m.bypassProxyServerForLocalAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *Windows10VpnProxyServer) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetBypassProxyServerForLocalAddress sets the bypassProxyServerForLocalAddress property value. Bypass proxy server for local address.
 func (m *Windows10VpnProxyServer) SetBypassProxyServerForLocalAddress(value *bool)() {
-    if m != nil {
-        m.bypassProxyServerForLocalAddress = value
-    }
+    m.bypassProxyServerForLocalAddress = value
 }

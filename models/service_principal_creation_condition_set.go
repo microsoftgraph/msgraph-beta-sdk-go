@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalCreationConditionSet provides operations to manage the collection of accessReview entities.
+// ServicePrincipalCreationConditionSet provides operations to manage the collection of accessReviewDecision entities.
 type ServicePrincipalCreationConditionSet struct {
     Entity
     // The applicationIds property
@@ -33,43 +33,23 @@ func CreateServicePrincipalCreationConditionSetFromDiscriminatorValue(parseNode 
 }
 // GetApplicationIds gets the applicationIds property value. The applicationIds property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationIds
-    }
+    return m.applicationIds
 }
 // GetApplicationPublisherIds gets the applicationPublisherIds property value. The applicationPublisherIds property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationPublisherIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationPublisherIds
-    }
+    return m.applicationPublisherIds
 }
 // GetApplicationsFromVerifiedPublisherOnly gets the applicationsFromVerifiedPublisherOnly property value. The applicationsFromVerifiedPublisherOnly property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationsFromVerifiedPublisherOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationsFromVerifiedPublisherOnly
-    }
+    return m.applicationsFromVerifiedPublisherOnly
 }
 // GetApplicationTenantIds gets the applicationTenantIds property value. The applicationTenantIds property
 func (m *ServicePrincipalCreationConditionSet) GetApplicationTenantIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationTenantIds
-    }
+    return m.applicationTenantIds
 }
 // GetCertifiedApplicationsOnly gets the certifiedApplicationsOnly property value. The certifiedApplicationsOnly property
 func (m *ServicePrincipalCreationConditionSet) GetCertifiedApplicationsOnly()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certifiedApplicationsOnly
-    }
+    return m.certifiedApplicationsOnly
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -178,31 +158,21 @@ func (m *ServicePrincipalCreationConditionSet) Serialize(writer i878a80d2330e89d
 }
 // SetApplicationIds sets the applicationIds property value. The applicationIds property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationIds(value []string)() {
-    if m != nil {
-        m.applicationIds = value
-    }
+    m.applicationIds = value
 }
 // SetApplicationPublisherIds sets the applicationPublisherIds property value. The applicationPublisherIds property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationPublisherIds(value []string)() {
-    if m != nil {
-        m.applicationPublisherIds = value
-    }
+    m.applicationPublisherIds = value
 }
 // SetApplicationsFromVerifiedPublisherOnly sets the applicationsFromVerifiedPublisherOnly property value. The applicationsFromVerifiedPublisherOnly property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationsFromVerifiedPublisherOnly(value *bool)() {
-    if m != nil {
-        m.applicationsFromVerifiedPublisherOnly = value
-    }
+    m.applicationsFromVerifiedPublisherOnly = value
 }
 // SetApplicationTenantIds sets the applicationTenantIds property value. The applicationTenantIds property
 func (m *ServicePrincipalCreationConditionSet) SetApplicationTenantIds(value []string)() {
-    if m != nil {
-        m.applicationTenantIds = value
-    }
+    m.applicationTenantIds = value
 }
 // SetCertifiedApplicationsOnly sets the certifiedApplicationsOnly property value. The certifiedApplicationsOnly property
 func (m *ServicePrincipalCreationConditionSet) SetCertifiedApplicationsOnly(value *bool)() {
-    if m != nil {
-        m.certifiedApplicationsOnly = value
-    }
+    m.certifiedApplicationsOnly = value
 }

@@ -44,11 +44,7 @@ func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]
 }
 // GetMatches gets the matches property value. The matches property
 func (m *ExactMatchDetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matches
-    }
+    return m.matches
 }
 // Serialize serializes information the current object
 func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26
 }
 // SetMatches sets the matches property value. The matches property
 func (m *ExactMatchDetectedSensitiveContent) SetMatches(value []SensitiveContentLocationable)() {
-    if m != nil {
-        m.matches = value
-    }
+    m.matches = value
 }

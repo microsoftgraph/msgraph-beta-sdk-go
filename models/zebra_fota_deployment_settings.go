@@ -57,51 +57,27 @@ func CreateZebraFotaDeploymentSettingsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ZebraFotaDeploymentSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBatteryRuleMinimumBatteryLevelPercentage gets the batteryRuleMinimumBatteryLevelPercentage property value. Minimum battery level (%) required for both download and installation. Default: -1 (System defaults). Maximum is 100.
 func (m *ZebraFotaDeploymentSettings) GetBatteryRuleMinimumBatteryLevelPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.batteryRuleMinimumBatteryLevelPercentage
-    }
+    return m.batteryRuleMinimumBatteryLevelPercentage
 }
 // GetBatteryRuleRequireCharger gets the batteryRuleRequireCharger property value. Flag indicating if charger is required. When set to false, the client can install updates whether the device is in or out of the charger. Applied only for installation. Defaults to false.
 func (m *ZebraFotaDeploymentSettings) GetBatteryRuleRequireCharger()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.batteryRuleRequireCharger
-    }
+    return m.batteryRuleRequireCharger
 }
 // GetDeviceModel gets the deviceModel property value. Deploy update for devices with this model only.
 func (m *ZebraFotaDeploymentSettings) GetDeviceModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceModel
-    }
+    return m.deviceModel
 }
 // GetDownloadRuleNetworkType gets the downloadRuleNetworkType property value. Represents various network types for Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentSettings) GetDownloadRuleNetworkType()(*ZebraFotaNetworkType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.downloadRuleNetworkType
-    }
+    return m.downloadRuleNetworkType
 }
 // GetDownloadRuleStartDateTime gets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
 func (m *ZebraFotaDeploymentSettings) GetDownloadRuleStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.downloadRuleStartDateTime
-    }
+    return m.downloadRuleStartDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -270,91 +246,47 @@ func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFirmwareTargetBoardSupportPackageVersion gets the firmwareTargetBoardSupportPackageVersion property value. Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetBoardSupportPackageVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firmwareTargetBoardSupportPackageVersion
-    }
+    return m.firmwareTargetBoardSupportPackageVersion
 }
 // GetFirmwareTargetOsVersion gets the firmwareTargetOsVersion property value. Target OS Version (e.g.: '8.1.0'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firmwareTargetOsVersion
-    }
+    return m.firmwareTargetOsVersion
 }
 // GetFirmwareTargetPatch gets the firmwareTargetPatch property value. Target patch name (e.g.: 'U06'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetPatch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firmwareTargetPatch
-    }
+    return m.firmwareTargetPatch
 }
 // GetInstallRuleStartDateTime gets the installRuleStartDateTime property value. Date and time in device time zone when the install will start. Default - download startDate if configured, otherwise defaults to NOW. Ignored when deployment update type was set to auto.
 func (m *ZebraFotaDeploymentSettings) GetInstallRuleStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installRuleStartDateTime
-    }
+    return m.installRuleStartDateTime
 }
 // GetInstallRuleWindowEndTime gets the installRuleWindowEndTime property value. Time of day after which the install cannot start. Possible range is 00:30:00 to 23:59:59. Should be greater than 'installRuleWindowStartTime' by 30 mins. The time is expressed in a 24-hour format, as hh:mm, and is in the device time zone. Default - 23:59:59. Respected for all values of update type, including AUTO.
 func (m *ZebraFotaDeploymentSettings) GetInstallRuleWindowEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installRuleWindowEndTime
-    }
+    return m.installRuleWindowEndTime
 }
 // GetInstallRuleWindowStartTime gets the installRuleWindowStartTime property value. Time of day (00:00:00 - 23:30:00) when installation should begin. The time is expressed in a 24-hour format, as hh:mm, and is in the device time zone. Default - 00:00:00. Respected for all values of update type, including AUTO.
 func (m *ZebraFotaDeploymentSettings) GetInstallRuleWindowStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installRuleWindowStartTime
-    }
+    return m.installRuleWindowStartTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ZebraFotaDeploymentSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetScheduleDurationInDays gets the scheduleDurationInDays property value. Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.
 func (m *ZebraFotaDeploymentSettings) GetScheduleDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleDurationInDays
-    }
+    return m.scheduleDurationInDays
 }
 // GetScheduleMode gets the scheduleMode property value. Represents various schedule modes for Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentSettings) GetScheduleMode()(*ZebraFotaScheduleMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduleMode
-    }
+    return m.scheduleMode
 }
 // GetTimeZoneOffsetInMinutes gets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
 func (m *ZebraFotaDeploymentSettings) GetTimeZoneOffsetInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZoneOffsetInMinutes
-    }
+    return m.timeZoneOffsetInMinutes
 }
 // GetUpdateType gets the updateType property value. Represents various update types for Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentSettings) GetUpdateType()(*ZebraFotaUpdateType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateType
-    }
+    return m.updateType
 }
 // Serialize serializes information the current object
 func (m *ZebraFotaDeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -467,103 +399,69 @@ func (m *ZebraFotaDeploymentSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ZebraFotaDeploymentSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBatteryRuleMinimumBatteryLevelPercentage sets the batteryRuleMinimumBatteryLevelPercentage property value. Minimum battery level (%) required for both download and installation. Default: -1 (System defaults). Maximum is 100.
 func (m *ZebraFotaDeploymentSettings) SetBatteryRuleMinimumBatteryLevelPercentage(value *int32)() {
-    if m != nil {
-        m.batteryRuleMinimumBatteryLevelPercentage = value
-    }
+    m.batteryRuleMinimumBatteryLevelPercentage = value
 }
 // SetBatteryRuleRequireCharger sets the batteryRuleRequireCharger property value. Flag indicating if charger is required. When set to false, the client can install updates whether the device is in or out of the charger. Applied only for installation. Defaults to false.
 func (m *ZebraFotaDeploymentSettings) SetBatteryRuleRequireCharger(value *bool)() {
-    if m != nil {
-        m.batteryRuleRequireCharger = value
-    }
+    m.batteryRuleRequireCharger = value
 }
 // SetDeviceModel sets the deviceModel property value. Deploy update for devices with this model only.
 func (m *ZebraFotaDeploymentSettings) SetDeviceModel(value *string)() {
-    if m != nil {
-        m.deviceModel = value
-    }
+    m.deviceModel = value
 }
 // SetDownloadRuleNetworkType sets the downloadRuleNetworkType property value. Represents various network types for Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentSettings) SetDownloadRuleNetworkType(value *ZebraFotaNetworkType)() {
-    if m != nil {
-        m.downloadRuleNetworkType = value
-    }
+    m.downloadRuleNetworkType = value
 }
 // SetDownloadRuleStartDateTime sets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
 func (m *ZebraFotaDeploymentSettings) SetDownloadRuleStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.downloadRuleStartDateTime = value
-    }
+    m.downloadRuleStartDateTime = value
 }
 // SetFirmwareTargetBoardSupportPackageVersion sets the firmwareTargetBoardSupportPackageVersion property value. Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) SetFirmwareTargetBoardSupportPackageVersion(value *string)() {
-    if m != nil {
-        m.firmwareTargetBoardSupportPackageVersion = value
-    }
+    m.firmwareTargetBoardSupportPackageVersion = value
 }
 // SetFirmwareTargetOsVersion sets the firmwareTargetOsVersion property value. Target OS Version (e.g.: '8.1.0'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) SetFirmwareTargetOsVersion(value *string)() {
-    if m != nil {
-        m.firmwareTargetOsVersion = value
-    }
+    m.firmwareTargetOsVersion = value
 }
 // SetFirmwareTargetPatch sets the firmwareTargetPatch property value. Target patch name (e.g.: 'U06'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) SetFirmwareTargetPatch(value *string)() {
-    if m != nil {
-        m.firmwareTargetPatch = value
-    }
+    m.firmwareTargetPatch = value
 }
 // SetInstallRuleStartDateTime sets the installRuleStartDateTime property value. Date and time in device time zone when the install will start. Default - download startDate if configured, otherwise defaults to NOW. Ignored when deployment update type was set to auto.
 func (m *ZebraFotaDeploymentSettings) SetInstallRuleStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.installRuleStartDateTime = value
-    }
+    m.installRuleStartDateTime = value
 }
 // SetInstallRuleWindowEndTime sets the installRuleWindowEndTime property value. Time of day after which the install cannot start. Possible range is 00:30:00 to 23:59:59. Should be greater than 'installRuleWindowStartTime' by 30 mins. The time is expressed in a 24-hour format, as hh:mm, and is in the device time zone. Default - 23:59:59. Respected for all values of update type, including AUTO.
 func (m *ZebraFotaDeploymentSettings) SetInstallRuleWindowEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.installRuleWindowEndTime = value
-    }
+    m.installRuleWindowEndTime = value
 }
 // SetInstallRuleWindowStartTime sets the installRuleWindowStartTime property value. Time of day (00:00:00 - 23:30:00) when installation should begin. The time is expressed in a 24-hour format, as hh:mm, and is in the device time zone. Default - 00:00:00. Respected for all values of update type, including AUTO.
 func (m *ZebraFotaDeploymentSettings) SetInstallRuleWindowStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.installRuleWindowStartTime = value
-    }
+    m.installRuleWindowStartTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ZebraFotaDeploymentSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetScheduleDurationInDays sets the scheduleDurationInDays property value. Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.
 func (m *ZebraFotaDeploymentSettings) SetScheduleDurationInDays(value *int32)() {
-    if m != nil {
-        m.scheduleDurationInDays = value
-    }
+    m.scheduleDurationInDays = value
 }
 // SetScheduleMode sets the scheduleMode property value. Represents various schedule modes for Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentSettings) SetScheduleMode(value *ZebraFotaScheduleMode)() {
-    if m != nil {
-        m.scheduleMode = value
-    }
+    m.scheduleMode = value
 }
 // SetTimeZoneOffsetInMinutes sets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
 func (m *ZebraFotaDeploymentSettings) SetTimeZoneOffsetInMinutes(value *int32)() {
-    if m != nil {
-        m.timeZoneOffsetInMinutes = value
-    }
+    m.timeZoneOffsetInMinutes = value
 }
 // SetUpdateType sets the updateType property value. Represents various update types for Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentSettings) SetUpdateType(value *ZebraFotaUpdateType)() {
-    if m != nil {
-        m.updateType = value
-    }
+    m.updateType = value
 }

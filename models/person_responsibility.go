@@ -33,27 +33,15 @@ func CreatePersonResponsibilityFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonResponsibility) GetCollaborationTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.collaborationTags
-    }
+    return m.collaborationTags
 }
 // GetDescription gets the description property value. Description of the responsibility.
 func (m *PersonResponsibility) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the responsibility.
 func (m *PersonResponsibility) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonResponsibility) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,19 +104,11 @@ func (m *PersonResponsibility) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonResponsibility) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // GetWebUrl gets the webUrl property value. Contains a link to a web page or resource about the responsibility.
 func (m *PersonResponsibility) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *PersonResponsibility) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -170,31 +150,21 @@ func (m *PersonResponsibility) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonResponsibility) SetCollaborationTags(value []string)() {
-    if m != nil {
-        m.collaborationTags = value
-    }
+    m.collaborationTags = value
 }
 // SetDescription sets the description property value. Description of the responsibility.
 func (m *PersonResponsibility) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the responsibility.
 func (m *PersonResponsibility) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonResponsibility) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }
 // SetWebUrl sets the webUrl property value. Contains a link to a web page or resource about the responsibility.
 func (m *PersonResponsibility) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

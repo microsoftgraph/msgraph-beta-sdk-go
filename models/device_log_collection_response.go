@@ -40,19 +40,11 @@ func CreateDeviceLogCollectionResponseFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetErrorCode gets the errorCode property value. The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *DeviceLogCollectionResponse) GetErrorCode()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetExpirationDateTimeUTC gets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs
 func (m *DeviceLogCollectionResponse) GetExpirationDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTimeUTC
-    }
+    return m.expirationDateTimeUTC
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -141,51 +133,27 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i8
 }
 // GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. The UPN for who initiated the request
 func (m *DeviceLogCollectionResponse) GetInitiatedByUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedByUserPrincipalName
-    }
+    return m.initiatedByUserPrincipalName
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The device Id
 func (m *DeviceLogCollectionResponse) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetReceivedDateTimeUTC gets the receivedDateTimeUTC property value. The DateTime the request was received
 func (m *DeviceLogCollectionResponse) GetReceivedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivedDateTimeUTC
-    }
+    return m.receivedDateTimeUTC
 }
 // GetRequestedDateTimeUTC gets the requestedDateTimeUTC property value. The DateTime of the request
 func (m *DeviceLogCollectionResponse) GetRequestedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestedDateTimeUTC
-    }
+    return m.requestedDateTimeUTC
 }
 // GetSize gets the size property value. The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *DeviceLogCollectionResponse) GetSize()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // GetStatus gets the status property value. The status of the log collection request
 func (m *DeviceLogCollectionResponse) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -245,49 +213,33 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetErrorCode sets the errorCode property value. The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *DeviceLogCollectionResponse) SetErrorCode(value *int64)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetExpirationDateTimeUTC sets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs
 func (m *DeviceLogCollectionResponse) SetExpirationDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTimeUTC = value
-    }
+    m.expirationDateTimeUTC = value
 }
 // SetInitiatedByUserPrincipalName sets the initiatedByUserPrincipalName property value. The UPN for who initiated the request
 func (m *DeviceLogCollectionResponse) SetInitiatedByUserPrincipalName(value *string)() {
-    if m != nil {
-        m.initiatedByUserPrincipalName = value
-    }
+    m.initiatedByUserPrincipalName = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The device Id
 func (m *DeviceLogCollectionResponse) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetReceivedDateTimeUTC sets the receivedDateTimeUTC property value. The DateTime the request was received
 func (m *DeviceLogCollectionResponse) SetReceivedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.receivedDateTimeUTC = value
-    }
+    m.receivedDateTimeUTC = value
 }
 // SetRequestedDateTimeUTC sets the requestedDateTimeUTC property value. The DateTime of the request
 func (m *DeviceLogCollectionResponse) SetRequestedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.requestedDateTimeUTC = value
-    }
+    m.requestedDateTimeUTC = value
 }
 // SetSize sets the size property value. The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *DeviceLogCollectionResponse) SetSize(value *float64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }
 // SetStatus sets the status property value. The status of the log collection request
 func (m *DeviceLogCollectionResponse) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

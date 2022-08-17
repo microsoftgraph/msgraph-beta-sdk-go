@@ -32,11 +32,7 @@ func CreateSynchronizationLinkedObjectsFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationLinkedObjects) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationLinkedObjects) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,35 +89,19 @@ func (m *SynchronizationLinkedObjects) GetFieldDeserializers()(map[string]func(i
 }
 // GetManager gets the manager property value. The manager property
 func (m *SynchronizationLinkedObjects) GetManager()(SynchronizationJobSubjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manager
-    }
+    return m.manager
 }
 // GetMembers gets the members property value. All group members that you would like to provision.
 func (m *SynchronizationLinkedObjects) GetMembers()([]SynchronizationJobSubjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SynchronizationLinkedObjects) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOwners gets the owners property value. The owners property
 func (m *SynchronizationLinkedObjects) GetOwners()([]SynchronizationJobSubjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owners
-    }
+    return m.owners
 }
 // Serialize serializes information the current object
 func (m *SynchronizationLinkedObjects) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *SynchronizationLinkedObjects) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationLinkedObjects) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetManager sets the manager property value. The manager property
 func (m *SynchronizationLinkedObjects) SetManager(value SynchronizationJobSubjectable)() {
-    if m != nil {
-        m.manager = value
-    }
+    m.manager = value
 }
 // SetMembers sets the members property value. All group members that you would like to provision.
 func (m *SynchronizationLinkedObjects) SetMembers(value []SynchronizationJobSubjectable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SynchronizationLinkedObjects) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOwners sets the owners property value. The owners property
 func (m *SynchronizationLinkedObjects) SetOwners(value []SynchronizationJobSubjectable)() {
-    if m != nil {
-        m.owners = value
-    }
+    m.owners = value
 }

@@ -30,11 +30,7 @@ func CreateKerberosSignOnSettingsFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KerberosSignOnSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetKerberosServicePrincipalName gets the kerberosServicePrincipalName property value. The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
 func (m *KerberosSignOnSettings) GetKerberosServicePrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kerberosServicePrincipalName
-    }
+    return m.kerberosServicePrincipalName
 }
 // GetKerberosSignOnMappingAttributeType gets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
 func (m *KerberosSignOnSettings) GetKerberosSignOnMappingAttributeType()(*KerberosSignOnMappingAttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kerberosSignOnMappingAttributeType
-    }
+    return m.kerberosSignOnMappingAttributeType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *KerberosSignOnSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *KerberosSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *KerberosSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KerberosSignOnSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKerberosServicePrincipalName sets the kerberosServicePrincipalName property value. The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
 func (m *KerberosSignOnSettings) SetKerberosServicePrincipalName(value *string)() {
-    if m != nil {
-        m.kerberosServicePrincipalName = value
-    }
+    m.kerberosServicePrincipalName = value
 }
 // SetKerberosSignOnMappingAttributeType sets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
 func (m *KerberosSignOnSettings) SetKerberosSignOnMappingAttributeType(value *KerberosSignOnMappingAttributeType)() {
-    if m != nil {
-        m.kerberosSignOnMappingAttributeType = value
-    }
+    m.kerberosSignOnMappingAttributeType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *KerberosSignOnSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

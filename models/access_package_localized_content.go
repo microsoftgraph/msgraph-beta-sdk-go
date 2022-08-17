@@ -30,19 +30,11 @@ func CreateAccessPackageLocalizedContentFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageLocalizedContent) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDefaultText gets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.
 func (m *AccessPackageLocalizedContent) GetDefaultText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultText
-    }
+    return m.defaultText
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageLocalizedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *AccessPackageLocalizedContent) GetFieldDeserializers()(map[string]func(
 }
 // GetLocalizedTexts gets the localizedTexts property value. Content represented in a format for a specific locale.
 func (m *AccessPackageLocalizedContent) GetLocalizedTexts()([]AccessPackageLocalizedTextable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizedTexts
-    }
+    return m.localizedTexts
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageLocalizedContent) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AccessPackageLocalizedContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *AccessPackageLocalizedContent) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageLocalizedContent) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDefaultText sets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.
 func (m *AccessPackageLocalizedContent) SetDefaultText(value *string)() {
-    if m != nil {
-        m.defaultText = value
-    }
+    m.defaultText = value
 }
 // SetLocalizedTexts sets the localizedTexts property value. Content represented in a format for a specific locale.
 func (m *AccessPackageLocalizedContent) SetLocalizedTexts(value []AccessPackageLocalizedTextable)() {
-    if m != nil {
-        m.localizedTexts = value
-    }
+    m.localizedTexts = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageLocalizedContent) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

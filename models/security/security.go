@@ -41,11 +41,7 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetInformationProtection gets the informationProtection property value. The informationProtection property
 func (m *Security) GetInformationProtection()(InformationProtectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.informationProtection
-    }
+    return m.informationProtection
 }
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetInformationProtection sets the informationProtection property value. The informationProtection property
 func (m *Security) SetInformationProtection(value InformationProtectionable)() {
-    if m != nil {
-        m.informationProtection = value
-    }
+    m.informationProtection = value
 }

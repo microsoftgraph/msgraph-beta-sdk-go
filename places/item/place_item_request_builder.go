@@ -23,7 +23,7 @@ type PlaceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PlaceItemRequestBuilderGetQueryParameters get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object. 
+// PlaceItemRequestBuilderGetQueryParameters get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
 type PlaceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *PlaceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object. 
+// CreateGetRequestInformation get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
 func (m *PlaceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object. 
+// CreateGetRequestInformationWithRequestConfiguration get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
 func (m *PlaceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlaceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,11 +101,11 @@ func (m *PlaceItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+// CreatePatchRequestInformation update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
 func (m *PlaceItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
 func (m *PlaceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, requestConfiguration *PlaceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *PlaceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandl
     }
     return nil
 }
-// Get get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object. 
+// Get get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
 func (m *PlaceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object. 
+// GetWithRequestConfigurationAndResponseHandler get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
 func (m *PlaceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlaceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -158,11 +158,11 @@ func (m *PlaceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable), nil
 }
-// Patch update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+// Patch update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
 func (m *PlaceItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+// PatchWithRequestConfigurationAndResponseHandler update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
 func (m *PlaceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, requestConfiguration *PlaceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

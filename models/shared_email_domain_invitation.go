@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedEmailDomainInvitation 
+// SharedEmailDomainInvitation provides operations to manage the collection of activityStatistics entities.
 type SharedEmailDomainInvitation struct {
     Entity
     // The expiryTime property
@@ -15,7 +15,7 @@ type SharedEmailDomainInvitation struct {
     // The invitationStatus property
     invitationStatus *string
 }
-// NewSharedEmailDomainInvitation instantiates a new SharedEmailDomainInvitation and sets the default values.
+// NewSharedEmailDomainInvitation instantiates a new sharedEmailDomainInvitation and sets the default values.
 func NewSharedEmailDomainInvitation()(*SharedEmailDomainInvitation) {
     m := &SharedEmailDomainInvitation{
         Entity: *NewEntity(),
@@ -30,11 +30,7 @@ func CreateSharedEmailDomainInvitationFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetExpiryTime gets the expiryTime property value. The expiryTime property
 func (m *SharedEmailDomainInvitation) GetExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expiryTime
-    }
+    return m.expiryTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,19 +69,11 @@ func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(i8
 }
 // GetInvitationDomain gets the invitationDomain property value. The invitationDomain property
 func (m *SharedEmailDomainInvitation) GetInvitationDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitationDomain
-    }
+    return m.invitationDomain
 }
 // GetInvitationStatus gets the invitationStatus property value. The invitationStatus property
 func (m *SharedEmailDomainInvitation) GetInvitationStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invitationStatus
-    }
+    return m.invitationStatus
 }
 // Serialize serializes information the current object
 func (m *SharedEmailDomainInvitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *SharedEmailDomainInvitation) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetExpiryTime sets the expiryTime property value. The expiryTime property
 func (m *SharedEmailDomainInvitation) SetExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expiryTime = value
-    }
+    m.expiryTime = value
 }
 // SetInvitationDomain sets the invitationDomain property value. The invitationDomain property
 func (m *SharedEmailDomainInvitation) SetInvitationDomain(value *string)() {
-    if m != nil {
-        m.invitationDomain = value
-    }
+    m.invitationDomain = value
 }
 // SetInvitationStatus sets the invitationStatus property value. The invitationStatus property
 func (m *SharedEmailDomainInvitation) SetInvitationStatus(value *string)() {
-    if m != nil {
-        m.invitationStatus = value
-    }
+    m.invitationStatus = value
 }

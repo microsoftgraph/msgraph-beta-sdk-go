@@ -54,19 +54,11 @@ func CreateSecurityBaselineStateSummaryFromDiscriminatorValue(parseNode i878a80d
 }
 // GetConflictCount gets the conflictCount property value. Number of conflict devices
 func (m *SecurityBaselineStateSummary) GetConflictCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictCount
-    }
+    return m.conflictCount
 }
 // GetErrorCount gets the errorCount property value. Number of error devices
 func (m *SecurityBaselineStateSummary) GetErrorCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCount
-    }
+    return m.errorCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -135,35 +127,19 @@ func (m *SecurityBaselineStateSummary) GetFieldDeserializers()(map[string]func(i
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
 func (m *SecurityBaselineStateSummary) GetNotApplicableCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableCount
-    }
+    return m.notApplicableCount
 }
 // GetNotSecureCount gets the notSecureCount property value. Number of not secure devices
 func (m *SecurityBaselineStateSummary) GetNotSecureCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notSecureCount
-    }
+    return m.notSecureCount
 }
 // GetSecureCount gets the secureCount property value. Number of secure devices
 func (m *SecurityBaselineStateSummary) GetSecureCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureCount
-    }
+    return m.secureCount
 }
 // GetUnknownCount gets the unknownCount property value. Number of unknown devices
 func (m *SecurityBaselineStateSummary) GetUnknownCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownCount
-    }
+    return m.unknownCount
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,37 +187,25 @@ func (m *SecurityBaselineStateSummary) Serialize(writer i878a80d2330e89d26896388
 }
 // SetConflictCount sets the conflictCount property value. Number of conflict devices
 func (m *SecurityBaselineStateSummary) SetConflictCount(value *int32)() {
-    if m != nil {
-        m.conflictCount = value
-    }
+    m.conflictCount = value
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *SecurityBaselineStateSummary) SetErrorCount(value *int32)() {
-    if m != nil {
-        m.errorCount = value
-    }
+    m.errorCount = value
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *SecurityBaselineStateSummary) SetNotApplicableCount(value *int32)() {
-    if m != nil {
-        m.notApplicableCount = value
-    }
+    m.notApplicableCount = value
 }
 // SetNotSecureCount sets the notSecureCount property value. Number of not secure devices
 func (m *SecurityBaselineStateSummary) SetNotSecureCount(value *int32)() {
-    if m != nil {
-        m.notSecureCount = value
-    }
+    m.notSecureCount = value
 }
 // SetSecureCount sets the secureCount property value. Number of secure devices
 func (m *SecurityBaselineStateSummary) SetSecureCount(value *int32)() {
-    if m != nil {
-        m.secureCount = value
-    }
+    m.secureCount = value
 }
 // SetUnknownCount sets the unknownCount property value. Number of unknown devices
 func (m *SecurityBaselineStateSummary) SetUnknownCount(value *int32)() {
-    if m != nil {
-        m.unknownCount = value
-    }
+    m.unknownCount = value
 }

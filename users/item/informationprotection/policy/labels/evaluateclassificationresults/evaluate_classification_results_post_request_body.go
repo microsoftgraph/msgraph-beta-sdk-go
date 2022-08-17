@@ -27,27 +27,15 @@ func CreateEvaluateClassificationResultsPostRequestBodyFromDiscriminatorValue(pa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateClassificationResultsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClassificationResults gets the classificationResults property value. The classificationResults property
 func (m *EvaluateClassificationResultsPostRequestBody) GetClassificationResults()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClassificationResultable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classificationResults
-    }
+    return m.classificationResults
 }
 // GetContentInfo gets the contentInfo property value. The contentInfo property
 func (m *EvaluateClassificationResultsPostRequestBody) GetContentInfo()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentInfo
-    }
+    return m.contentInfo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EvaluateClassificationResultsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,19 +94,13 @@ func (m *EvaluateClassificationResultsPostRequestBody) Serialize(writer i878a80d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateClassificationResultsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClassificationResults sets the classificationResults property value. The classificationResults property
 func (m *EvaluateClassificationResultsPostRequestBody) SetClassificationResults(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClassificationResultable)() {
-    if m != nil {
-        m.classificationResults = value
-    }
+    m.classificationResults = value
 }
 // SetContentInfo sets the contentInfo property value. The contentInfo property
 func (m *EvaluateClassificationResultsPostRequestBody) SetContentInfo(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentInfoable)() {
-    if m != nil {
-        m.contentInfo = value
-    }
+    m.contentInfo = value
 }

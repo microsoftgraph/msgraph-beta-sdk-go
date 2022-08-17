@@ -32,19 +32,11 @@ func CreateCompanyPortalBlockedActionFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAction gets the action property value. Action on a device that can be executed in the Company Portal
 func (m *CompanyPortalBlockedAction) GetAction()(*CompanyPortalAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyPortalBlockedAction) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CompanyPortalBlockedAction) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerType
-    }
+    return m.ownerType
 }
 // GetPlatform gets the platform property value. Supported platform types.
 func (m *CompanyPortalBlockedAction) GetPlatform()(*DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
+    return m.platform
 }
 // Serialize serializes information the current object
 func (m *CompanyPortalBlockedAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -154,31 +134,21 @@ func (m *CompanyPortalBlockedAction) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAction sets the action property value. Action on a device that can be executed in the Company Portal
 func (m *CompanyPortalBlockedAction) SetAction(value *CompanyPortalAction)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyPortalBlockedAction) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CompanyPortalBlockedAction) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *CompanyPortalBlockedAction) SetOwnerType(value *OwnerType)() {
-    if m != nil {
-        m.ownerType = value
-    }
+    m.ownerType = value
 }
 // SetPlatform sets the platform property value. Supported platform types.
 func (m *CompanyPortalBlockedAction) SetPlatform(value *DevicePlatformType)() {
-    if m != nil {
-        m.platform = value
-    }
+    m.platform = value
 }

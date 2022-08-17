@@ -38,43 +38,23 @@ func CreateJournalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAccount gets the account property value. The account property
 func (m *Journal) GetAccount()(Accountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.account
-    }
+    return m.account
 }
 // GetBalancingAccountId gets the balancingAccountId property value. The balancingAccountId property
 func (m *Journal) GetBalancingAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.balancingAccountId
-    }
+    return m.balancingAccountId
 }
 // GetBalancingAccountNumber gets the balancingAccountNumber property value. The balancingAccountNumber property
 func (m *Journal) GetBalancingAccountNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.balancingAccountNumber
-    }
+    return m.balancingAccountNumber
 }
 // GetCode gets the code property value. The code property
 func (m *Journal) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Journal) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Journal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,19 +137,11 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetJournalLines gets the journalLines property value. The journalLines property
 func (m *Journal) GetJournalLines()([]JournalLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journalLines
-    }
+    return m.journalLines
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Journal) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // Serialize serializes information the current object
 func (m *Journal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,43 +199,29 @@ func (m *Journal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAccount sets the account property value. The account property
 func (m *Journal) SetAccount(value Accountable)() {
-    if m != nil {
-        m.account = value
-    }
+    m.account = value
 }
 // SetBalancingAccountId sets the balancingAccountId property value. The balancingAccountId property
 func (m *Journal) SetBalancingAccountId(value *string)() {
-    if m != nil {
-        m.balancingAccountId = value
-    }
+    m.balancingAccountId = value
 }
 // SetBalancingAccountNumber sets the balancingAccountNumber property value. The balancingAccountNumber property
 func (m *Journal) SetBalancingAccountNumber(value *string)() {
-    if m != nil {
-        m.balancingAccountNumber = value
-    }
+    m.balancingAccountNumber = value
 }
 // SetCode sets the code property value. The code property
 func (m *Journal) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Journal) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetJournalLines sets the journalLines property value. The journalLines property
 func (m *Journal) SetJournalLines(value []JournalLineable)() {
-    if m != nil {
-        m.journalLines = value
-    }
+    m.journalLines = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Journal) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }

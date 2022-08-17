@@ -30,11 +30,7 @@ func CreateMacOSLaunchItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSLaunchItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSLaunchItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *MacOSLaunchItem) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetHide gets the hide property value. Whether or not to hide the item from the Users and Groups List.
 func (m *MacOSLaunchItem) GetHide()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hide
-    }
+    return m.hide
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSLaunchItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPath gets the path property value. Path to the launch item.
 func (m *MacOSLaunchItem) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
+    return m.path
 }
 // Serialize serializes information the current object
 func (m *MacOSLaunchItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *MacOSLaunchItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSLaunchItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHide sets the hide property value. Whether or not to hide the item from the Users and Groups List.
 func (m *MacOSLaunchItem) SetHide(value *bool)() {
-    if m != nil {
-        m.hide = value
-    }
+    m.hide = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSLaunchItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPath sets the path property value. Path to the launch item.
 func (m *MacOSLaunchItem) SetPath(value *string)() {
-    if m != nil {
-        m.path = value
-    }
+    m.path = value
 }

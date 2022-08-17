@@ -32,35 +32,19 @@ func CreateMeetingCapabilityFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingCapability) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowAnonymousUsersToDialOut gets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.
 func (m *MeetingCapability) GetAllowAnonymousUsersToDialOut()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAnonymousUsersToDialOut
-    }
+    return m.allowAnonymousUsersToDialOut
 }
 // GetAllowAnonymousUsersToStartMeeting gets the allowAnonymousUsersToStartMeeting property value. Indicates whether anonymous users are allowed to start a meeting.
 func (m *MeetingCapability) GetAllowAnonymousUsersToStartMeeting()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAnonymousUsersToStartMeeting
-    }
+    return m.allowAnonymousUsersToStartMeeting
 }
 // GetAutoAdmittedUsers gets the autoAdmittedUsers property value. The autoAdmittedUsers property
 func (m *MeetingCapability) GetAutoAdmittedUsers()(*AutoAdmittedUsersType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoAdmittedUsers
-    }
+    return m.autoAdmittedUsers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingCapability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +93,7 @@ func (m *MeetingCapability) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MeetingCapability) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *MeetingCapability) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *MeetingCapability) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingCapability) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowAnonymousUsersToDialOut sets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.
 func (m *MeetingCapability) SetAllowAnonymousUsersToDialOut(value *bool)() {
-    if m != nil {
-        m.allowAnonymousUsersToDialOut = value
-    }
+    m.allowAnonymousUsersToDialOut = value
 }
 // SetAllowAnonymousUsersToStartMeeting sets the allowAnonymousUsersToStartMeeting property value. Indicates whether anonymous users are allowed to start a meeting.
 func (m *MeetingCapability) SetAllowAnonymousUsersToStartMeeting(value *bool)() {
-    if m != nil {
-        m.allowAnonymousUsersToStartMeeting = value
-    }
+    m.allowAnonymousUsersToStartMeeting = value
 }
 // SetAutoAdmittedUsers sets the autoAdmittedUsers property value. The autoAdmittedUsers property
 func (m *MeetingCapability) SetAutoAdmittedUsers(value *AutoAdmittedUsersType)() {
-    if m != nil {
-        m.autoAdmittedUsers = value
-    }
+    m.autoAdmittedUsers = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MeetingCapability) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -73,19 +73,11 @@ func (m *DeviceHealthScriptTimeSchedule) GetFieldDeserializers()(map[string]func
 }
 // GetTime gets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptTimeSchedule) GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.time
-    }
+    return m.time
 }
 // GetUseUtc gets the useUtc property value. Indicate if the time is Utc or client local time.
 func (m *DeviceHealthScriptTimeSchedule) GetUseUtc()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useUtc
-    }
+    return m.useUtc
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptTimeSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,13 +101,9 @@ func (m *DeviceHealthScriptTimeSchedule) Serialize(writer i878a80d2330e89d268963
 }
 // SetTime sets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
 func (m *DeviceHealthScriptTimeSchedule) SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.time = value
-    }
+    m.time = value
 }
 // SetUseUtc sets the useUtc property value. Indicate if the time is Utc or client local time.
 func (m *DeviceHealthScriptTimeSchedule) SetUseUtc(value *bool)() {
-    if m != nil {
-        m.useUtc = value
-    }
+    m.useUtc = value
 }

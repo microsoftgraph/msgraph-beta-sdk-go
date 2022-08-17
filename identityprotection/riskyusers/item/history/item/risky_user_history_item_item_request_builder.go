@@ -22,7 +22,7 @@ type RiskyUserHistoryItemItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskyUserHistoryItemItemRequestBuilderGetQueryParameters the activity related to user risk level change
+// RiskyUserHistoryItemItemRequestBuilderGetQueryParameters get history from identityProtection
 type RiskyUserHistoryItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *RiskyUserHistoryItemItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the activity related to user risk level change
+// CreateGetRequestInformation get history from identityProtection
 func (m *RiskyUserHistoryItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the activity related to user risk level change
+// CreateGetRequestInformationWithRequestConfiguration get history from identityProtection
 func (m *RiskyUserHistoryItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *RiskyUserHistoryItemItemRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get the activity related to user risk level change
+// Get get history from identityProtection
 func (m *RiskyUserHistoryItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the activity related to user risk level change
+// GetWithRequestConfigurationAndResponseHandler get history from identityProtection
 func (m *RiskyUserHistoryItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

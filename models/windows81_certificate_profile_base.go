@@ -46,19 +46,11 @@ func CreateWindows81CertificateProfileBaseFromDiscriminatorValue(parseNode i878a
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSubjectAlternativeNames
-    }
+    return m.customSubjectAlternativeNames
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedKeyUsages
-    }
+    return m.extendedKeyUsages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81CertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -123,13 +115,9 @@ func (m *Windows81CertificateProfileBase) Serialize(writer i878a80d2330e89d26896
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    if m != nil {
-        m.customSubjectAlternativeNames = value
-    }
+    m.customSubjectAlternativeNames = value
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    if m != nil {
-        m.extendedKeyUsages = value
-    }
+    m.extendedKeyUsages = value
 }

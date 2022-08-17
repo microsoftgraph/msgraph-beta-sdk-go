@@ -27,11 +27,7 @@ func CreateAndroidWorkProfileTrustedRootCertificateFromDiscriminatorValue(parseN
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
 func (m *AndroidWorkProfileTrustedRootCertificate) GetCertFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certFileName
-    }
+    return m.certFileName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *AndroidWorkProfileTrustedRootCertificate) GetFieldDeserializers()(map[s
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
 func (m *AndroidWorkProfileTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustedRootCertificate
-    }
+    return m.trustedRootCertificate
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileTrustedRootCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AndroidWorkProfileTrustedRootCertificate) Serialize(writer i878a80d2330
 }
 // SetCertFileName sets the certFileName property value. File name to display in UI.
 func (m *AndroidWorkProfileTrustedRootCertificate) SetCertFileName(value *string)() {
-    if m != nil {
-        m.certFileName = value
-    }
+    m.certFileName = value
 }
 // SetTrustedRootCertificate sets the trustedRootCertificate property value. Trusted Root Certificate
 func (m *AndroidWorkProfileTrustedRootCertificate) SetTrustedRootCertificate(value []byte)() {
-    if m != nil {
-        m.trustedRootCertificate = value
-    }
+    m.trustedRootCertificate = value
 }

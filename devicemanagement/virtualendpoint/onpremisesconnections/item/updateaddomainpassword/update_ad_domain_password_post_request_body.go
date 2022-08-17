@@ -24,19 +24,11 @@ func CreateUpdateAdDomainPasswordPostRequestBodyFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAdDomainPasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdDomainPassword gets the adDomainPassword property value. The adDomainPassword property
 func (m *UpdateAdDomainPasswordPostRequestBody) GetAdDomainPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.adDomainPassword
-    }
+    return m.adDomainPassword
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateAdDomainPasswordPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,13 +63,9 @@ func (m *UpdateAdDomainPasswordPostRequestBody) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAdDomainPasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdDomainPassword sets the adDomainPassword property value. The adDomainPassword property
 func (m *UpdateAdDomainPasswordPostRequestBody) SetAdDomainPassword(value *string)() {
-    if m != nil {
-        m.adDomainPassword = value
-    }
+    m.adDomainPassword = value
 }

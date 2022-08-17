@@ -36,19 +36,11 @@ func CreateNetworkInterfaceFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkInterface) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDescription gets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).
 func (m *NetworkInterface) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *NetworkInterface) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIpV4Address gets the ipV4Address property value. Last IPv4 address associated with this NIC.
 func (m *NetworkInterface) GetIpV4Address()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipV4Address
-    }
+    return m.ipV4Address
 }
 // GetIpV6Address gets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
 func (m *NetworkInterface) GetIpV6Address()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipV6Address
-    }
+    return m.ipV6Address
 }
 // GetLocalIpV6Address gets the localIpV6Address property value. Last local (link-local or site-local) IPv6 address associated with this NIC.
 func (m *NetworkInterface) GetLocalIpV6Address()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localIpV6Address
-    }
+    return m.localIpV6Address
 }
 // GetMacAddress gets the macAddress property value. MAC address of the NIC on this host.
 func (m *NetworkInterface) GetMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macAddress
-    }
+    return m.macAddress
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *NetworkInterface) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *NetworkInterface) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *NetworkInterface) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkInterface) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDescription sets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).
 func (m *NetworkInterface) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetIpV4Address sets the ipV4Address property value. Last IPv4 address associated with this NIC.
 func (m *NetworkInterface) SetIpV4Address(value *string)() {
-    if m != nil {
-        m.ipV4Address = value
-    }
+    m.ipV4Address = value
 }
 // SetIpV6Address sets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
 func (m *NetworkInterface) SetIpV6Address(value *string)() {
-    if m != nil {
-        m.ipV6Address = value
-    }
+    m.ipV6Address = value
 }
 // SetLocalIpV6Address sets the localIpV6Address property value. Last local (link-local or site-local) IPv6 address associated with this NIC.
 func (m *NetworkInterface) SetLocalIpV6Address(value *string)() {
-    if m != nil {
-        m.localIpV6Address = value
-    }
+    m.localIpV6Address = value
 }
 // SetMacAddress sets the macAddress property value. MAC address of the NIC on this host.
 func (m *NetworkInterface) SetMacAddress(value *string)() {
-    if m != nil {
-        m.macAddress = value
-    }
+    m.macAddress = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *NetworkInterface) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

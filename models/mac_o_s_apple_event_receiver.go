@@ -34,27 +34,15 @@ func CreateMacOSAppleEventReceiverFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAppleEventReceiver) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowed gets the allowed property value. Allow or block this app from receiving Apple events.
 func (m *MacOSAppleEventReceiver) GetAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowed
-    }
+    return m.allowed
 }
 // GetCodeRequirement gets the codeRequirement property value. Code requirement for the app or binary that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) GetCodeRequirement()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.codeRequirement
-    }
+    return m.codeRequirement
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSAppleEventReceiver) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *MacOSAppleEventReceiver) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIdentifier gets the identifier property value. Bundle ID of the app or file path of the process or executable that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) GetIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identifier
-    }
+    return m.identifier
 }
 // GetIdentifierType gets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSAppleEventReceiver) GetIdentifierType()(*MacOSProcessIdentifierType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identifierType
-    }
+    return m.identifierType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSAppleEventReceiver) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *MacOSAppleEventReceiver) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *MacOSAppleEventReceiver) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAppleEventReceiver) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowed sets the allowed property value. Allow or block this app from receiving Apple events.
 func (m *MacOSAppleEventReceiver) SetAllowed(value *bool)() {
-    if m != nil {
-        m.allowed = value
-    }
+    m.allowed = value
 }
 // SetCodeRequirement sets the codeRequirement property value. Code requirement for the app or binary that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) SetCodeRequirement(value *string)() {
-    if m != nil {
-        m.codeRequirement = value
-    }
+    m.codeRequirement = value
 }
 // SetIdentifier sets the identifier property value. Bundle ID of the app or file path of the process or executable that receives the Apple Event.
 func (m *MacOSAppleEventReceiver) SetIdentifier(value *string)() {
-    if m != nil {
-        m.identifier = value
-    }
+    m.identifier = value
 }
 // SetIdentifierType sets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSAppleEventReceiver) SetIdentifierType(value *MacOSProcessIdentifierType)() {
-    if m != nil {
-        m.identifierType = value
-    }
+    m.identifierType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSAppleEventReceiver) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

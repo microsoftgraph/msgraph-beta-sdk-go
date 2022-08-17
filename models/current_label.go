@@ -30,19 +30,11 @@ func CreateCurrentLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CurrentLabel) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
 func (m *CurrentLabel) GetApplicationMode()(*ApplicationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationMode
-    }
+    return m.applicationMode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CurrentLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *CurrentLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetId gets the id property value. The id property
 func (m *CurrentLabel) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CurrentLabel) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *CurrentLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *CurrentLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CurrentLabel) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property
 func (m *CurrentLabel) SetApplicationMode(value *ApplicationMode)() {
-    if m != nil {
-        m.applicationMode = value
-    }
+    m.applicationMode = value
 }
 // SetId sets the id property value. The id property
 func (m *CurrentLabel) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CurrentLabel) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
