@@ -16,7 +16,7 @@ type AlertsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AlertsRequestBuilderGetQueryParameters get alerts from security
+// AlertsRequestBuilderGetQueryParameters the list of related alerts. Supports $expand.
 type AlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,11 +67,11 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AlertsRequestBuilder) Count()(*i9bea921f9f5af50a678d95b5de62c4969bcf286922d1a02ef1ff6384a53302c4.CountRequestBuilder) {
     return i9bea921f9f5af50a678d95b5de62c4969bcf286922d1a02ef1ff6384a53302c4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get alerts from security
+// CreateGetRequestInformation the list of related alerts. Supports $expand.
 func (m *AlertsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get alerts from security
+// CreateGetRequestInformationWithRequestConfiguration the list of related alerts. Supports $expand.
 func (m *AlertsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,11 +87,11 @@ func (m *AlertsRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get get alerts from security
+// Get the list of related alerts. Supports $expand.
 func (m *AlertsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get alerts from security
+// GetWithRequestConfigurationAndResponseHandler the list of related alerts. Supports $expand.
 func (m *AlertsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AlertsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PublishedResource 
+// PublishedResource provides operations to manage the collection of accessReviewDecision entities.
 type PublishedResource struct {
     Entity
     // List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
@@ -16,7 +16,7 @@ type PublishedResource struct {
     // Name of the publishedResource.
     resourceName *string
 }
-// NewPublishedResource instantiates a new PublishedResource and sets the default values.
+// NewPublishedResource instantiates a new publishedResource and sets the default values.
 func NewPublishedResource()(*PublishedResource) {
     m := &PublishedResource{
         Entity: *NewEntity(),

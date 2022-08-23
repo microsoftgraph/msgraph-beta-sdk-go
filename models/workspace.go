@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Workspace provides operations to manage the collection of activityStatistics entities.
+// Workspace 
 type Workspace struct {
     Place
     // Specifies the building name or building number that the workspace is in.
@@ -26,7 +26,7 @@ type Workspace struct {
     // Specifies additional features of the workspace, for example, details like the type of view or furniture type.
     tags []string
 }
-// NewWorkspace instantiates a new workspace and sets the default values.
+// NewWorkspace instantiates a new Workspace and sets the default values.
 func NewWorkspace()(*Workspace) {
     m := &Workspace{
         Place: *NewPlace(),

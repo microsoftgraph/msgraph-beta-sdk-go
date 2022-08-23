@@ -12,7 +12,7 @@ type AospDeviceOwnerTrustedRootCertificate struct {
     // Trusted Root Certificate
     trustedRootCertificate []byte
 }
-// NewAospDeviceOwnerTrustedRootCertificate instantiates a new aospDeviceOwnerTrustedRootCertificate and sets the default values.
+// NewAospDeviceOwnerTrustedRootCertificate instantiates a new AospDeviceOwnerTrustedRootCertificate and sets the default values.
 func NewAospDeviceOwnerTrustedRootCertificate()(*AospDeviceOwnerTrustedRootCertificate) {
     m := &AospDeviceOwnerTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),

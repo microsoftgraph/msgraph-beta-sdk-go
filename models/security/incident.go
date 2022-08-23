@@ -9,33 +9,33 @@ import (
 // Incident provides operations to manage the collection of accessReviewDecision entities.
 type Incident struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The alerts property
+    // The list of related alerts. Supports $expand.
     alerts []Alertable
-    // The assignedTo property
+    // Owner of the incident, or null if no owner is assigned. Free editable text.
     assignedTo *string
-    // The classification property
+    // The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
     classification *AlertClassification
-    // The comments property
+    // Array of comments created by the Security Operations (SecOps) team when the incident is managed.
     comments []AlertCommentable
-    // The createdDateTime property
+    // Time when the incident was first created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The determination property
+    // Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
     determination *AlertDetermination
-    // The displayName property
+    // The incident name.
     displayName *string
-    // The incidentWebUrl property
+    // The URL for the incident page in the Microsoft 365 Defender portal.
     incidentWebUrl *string
-    // The lastUpdateDateTime property
+    // Time when the incident was last updated.
     lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The redirectIncidentId property
+    // Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
     redirectIncidentId *string
     // The severity property
     severity *AlertSeverity
     // The status property
     status *IncidentStatus
-    // The tags property
+    // Array of custom tags associated with an incident.
     tags []string
-    // The tenantId property
+    // The Azure Active Directory tenant in which the alert was created.
     tenantId *string
 }
 // NewIncident instantiates a new incident and sets the default values.
@@ -51,31 +51,31 @@ func NewIncident()(*Incident) {
 func CreateIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIncident(), nil
 }
-// GetAlerts gets the alerts property value. The alerts property
+// GetAlerts gets the alerts property value. The list of related alerts. Supports $expand.
 func (m *Incident) GetAlerts()([]Alertable) {
     return m.alerts
 }
-// GetAssignedTo gets the assignedTo property value. The assignedTo property
+// GetAssignedTo gets the assignedTo property value. Owner of the incident, or null if no owner is assigned. Free editable text.
 func (m *Incident) GetAssignedTo()(*string) {
     return m.assignedTo
 }
-// GetClassification gets the classification property value. The classification property
+// GetClassification gets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Incident) GetClassification()(*AlertClassification) {
     return m.classification
 }
-// GetComments gets the comments property value. The comments property
+// GetComments gets the comments property value. Array of comments created by the Security Operations (SecOps) team when the incident is managed.
 func (m *Incident) GetComments()([]AlertCommentable) {
     return m.comments
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Time when the incident was first created.
 func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDetermination gets the determination property value. The determination property
+// GetDetermination gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Incident) GetDetermination()(*AlertDetermination) {
     return m.determination
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The incident name.
 func (m *Incident) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -236,15 +236,15 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetIncidentWebUrl gets the incidentWebUrl property value. The incidentWebUrl property
+// GetIncidentWebUrl gets the incidentWebUrl property value. The URL for the incident page in the Microsoft 365 Defender portal.
 func (m *Incident) GetIncidentWebUrl()(*string) {
     return m.incidentWebUrl
 }
-// GetLastUpdateDateTime gets the lastUpdateDateTime property value. The lastUpdateDateTime property
+// GetLastUpdateDateTime gets the lastUpdateDateTime property value. Time when the incident was last updated.
 func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastUpdateDateTime
 }
-// GetRedirectIncidentId gets the redirectIncidentId property value. The redirectIncidentId property
+// GetRedirectIncidentId gets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) GetRedirectIncidentId()(*string) {
     return m.redirectIncidentId
 }
@@ -256,11 +256,11 @@ func (m *Incident) GetSeverity()(*AlertSeverity) {
 func (m *Incident) GetStatus()(*IncidentStatus) {
     return m.status
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. Array of custom tags associated with an incident.
 func (m *Incident) GetTags()([]string) {
     return m.tags
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
 func (m *Incident) GetTenantId()(*string) {
     return m.tenantId
 }
@@ -368,43 +368,43 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAlerts sets the alerts property value. The alerts property
+// SetAlerts sets the alerts property value. The list of related alerts. Supports $expand.
 func (m *Incident) SetAlerts(value []Alertable)() {
     m.alerts = value
 }
-// SetAssignedTo sets the assignedTo property value. The assignedTo property
+// SetAssignedTo sets the assignedTo property value. Owner of the incident, or null if no owner is assigned. Free editable text.
 func (m *Incident) SetAssignedTo(value *string)() {
     m.assignedTo = value
 }
-// SetClassification sets the classification property value. The classification property
+// SetClassification sets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Incident) SetClassification(value *AlertClassification)() {
     m.classification = value
 }
-// SetComments sets the comments property value. The comments property
+// SetComments sets the comments property value. Array of comments created by the Security Operations (SecOps) team when the incident is managed.
 func (m *Incident) SetComments(value []AlertCommentable)() {
     m.comments = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Time when the incident was first created.
 func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDetermination sets the determination property value. The determination property
+// SetDetermination sets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Incident) SetDetermination(value *AlertDetermination)() {
     m.determination = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The incident name.
 func (m *Incident) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetIncidentWebUrl sets the incidentWebUrl property value. The incidentWebUrl property
+// SetIncidentWebUrl sets the incidentWebUrl property value. The URL for the incident page in the Microsoft 365 Defender portal.
 func (m *Incident) SetIncidentWebUrl(value *string)() {
     m.incidentWebUrl = value
 }
-// SetLastUpdateDateTime sets the lastUpdateDateTime property value. The lastUpdateDateTime property
+// SetLastUpdateDateTime sets the lastUpdateDateTime property value. Time when the incident was last updated.
 func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastUpdateDateTime = value
 }
-// SetRedirectIncidentId sets the redirectIncidentId property value. The redirectIncidentId property
+// SetRedirectIncidentId sets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) SetRedirectIncidentId(value *string)() {
     m.redirectIncidentId = value
 }
@@ -416,11 +416,11 @@ func (m *Incident) SetSeverity(value *AlertSeverity)() {
 func (m *Incident) SetStatus(value *IncidentStatus)() {
     m.status = value
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. Array of custom tags associated with an incident.
 func (m *Incident) SetTags(value []string)() {
     m.tags = value
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
 func (m *Incident) SetTenantId(value *string)() {
     m.tenantId = value
 }

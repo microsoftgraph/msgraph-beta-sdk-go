@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserCredentialUsageDetails 
+// UserCredentialUsageDetails provides operations to manage the collection of accessReviewDecision entities.
 type UserCredentialUsageDetails struct {
     Entity
     // The authMethod property
@@ -23,7 +23,7 @@ type UserCredentialUsageDetails struct {
     // User principal name of the user performing the reset or registration workflow.
     userPrincipalName *string
 }
-// NewUserCredentialUsageDetails instantiates a new UserCredentialUsageDetails and sets the default values.
+// NewUserCredentialUsageDetails instantiates a new userCredentialUsageDetails and sets the default values.
 func NewUserCredentialUsageDetails()(*UserCredentialUsageDetails) {
     m := &UserCredentialUsageDetails{
         Entity: *NewEntity(),

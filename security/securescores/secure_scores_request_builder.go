@@ -16,7 +16,7 @@ type SecureScoresRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SecureScoresRequestBuilderGetQueryParameters get secureScores from security
+// SecureScoresRequestBuilderGetQueryParameters measurements of tenants’ security posture to help protect them from threats.
 type SecureScoresRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewSecureScoresRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *SecureScoresRequestBuilder) Count()(*i72ec5b6779a296ea1e8784c591f89137b8a895bcc80cd822fbf6987deaace105.CountRequestBuilder) {
     return i72ec5b6779a296ea1e8784c591f89137b8a895bcc80cd822fbf6987deaace105.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get secureScores from security
+// CreateGetRequestInformation measurements of tenants’ security posture to help protect them from threats.
 func (m *SecureScoresRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get secureScores from security
+// CreateGetRequestInformationWithRequestConfiguration measurements of tenants’ security posture to help protect them from threats.
 func (m *SecureScoresRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SecureScoresRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *SecureScoresRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get get secureScores from security
+// Get measurements of tenants’ security posture to help protect them from threats.
 func (m *SecureScoresRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecureScoreCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get secureScores from security
+// GetWithRequestConfigurationAndResponseHandler measurements of tenants’ security posture to help protect them from threats.
 func (m *SecureScoresRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SecureScoresRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecureScoreCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

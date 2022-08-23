@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SensitiveType provides operations to manage the collection of activityStatistics entities.
+// SensitiveType 
 type SensitiveType struct {
     Entity
     // The classificationMethod property
@@ -26,7 +26,7 @@ type SensitiveType struct {
     // The state property
     state *string
 }
-// NewSensitiveType instantiates a new sensitiveType and sets the default values.
+// NewSensitiveType instantiates a new SensitiveType and sets the default values.
 func NewSensitiveType()(*SensitiveType) {
     m := &SensitiveType{
         Entity: *NewEntity(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Journal 
+// Journal provides operations to manage the collection of activityStatistics entities.
 type Journal struct {
     Entity
     // The account property
@@ -23,7 +23,7 @@ type Journal struct {
     // The lastModifiedDateTime property
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewJournal instantiates a new Journal and sets the default values.
+// NewJournal instantiates a new journal and sets the default values.
 func NewJournal()(*Journal) {
     m := &Journal{
         Entity: *NewEntity(),

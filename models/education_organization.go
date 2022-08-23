@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOrganization 
+// EducationOrganization provides operations to manage the collection of activityStatistics entities.
 type EducationOrganization struct {
     Entity
     // Organization description.
@@ -16,7 +16,7 @@ type EducationOrganization struct {
     // The externalSourceDetail property
     externalSourceDetail *string
 }
-// NewEducationOrganization instantiates a new EducationOrganization and sets the default values.
+// NewEducationOrganization instantiates a new educationOrganization and sets the default values.
 func NewEducationOrganization()(*EducationOrganization) {
     m := &EducationOrganization{
         Entity: *NewEntity(),

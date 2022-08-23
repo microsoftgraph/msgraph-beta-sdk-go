@@ -7,7 +7,7 @@ import (
 // IpEvidence 
 type IpEvidence struct {
     AlertEvidence
-    // The ipAddress property
+    // The value of the IP Address, can be either in V4 address or V6 address format.
     ipAddress *string
 }
 // NewIpEvidence instantiates a new IpEvidence and sets the default values.
@@ -38,7 +38,7 @@ func (m *IpEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. The ipAddress property
+// GetIpAddress gets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
 func (m *IpEvidence) GetIpAddress()(*string) {
     return m.ipAddress
 }
@@ -56,7 +56,7 @@ func (m *IpEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetIpAddress sets the ipAddress property value. The ipAddress property
+// SetIpAddress sets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
 func (m *IpEvidence) SetIpAddress(value *string)() {
     m.ipAddress = value
 }

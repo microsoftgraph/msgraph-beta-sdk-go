@@ -16,7 +16,7 @@ type Alerts_v2RequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// Alerts_v2RequestBuilderGetQueryParameters get alerts_v2 from security
+// Alerts_v2RequestBuilderGetQueryParameters a collection of alerts in Microsoft 365 Defender.
 type Alerts_v2RequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewAlerts_v2RequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *Alerts_v2RequestBuilder) Count()(*i3ba7c487b8a86019ae22cb325bfc8cc8bd9243e3a79bd3e14caf3c6472a9a249.CountRequestBuilder) {
     return i3ba7c487b8a86019ae22cb325bfc8cc8bd9243e3a79bd3e14caf3c6472a9a249.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get alerts_v2 from security
+// CreateGetRequestInformation a collection of alerts in Microsoft 365 Defender.
 func (m *Alerts_v2RequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get alerts_v2 from security
+// CreateGetRequestInformationWithRequestConfiguration a collection of alerts in Microsoft 365 Defender.
 func (m *Alerts_v2RequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *Alerts_v2RequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *Alerts_v2RequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get get alerts_v2 from security
+// Get a collection of alerts in Microsoft 365 Defender.
 func (m *Alerts_v2RequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get alerts_v2 from security
+// GetWithRequestConfigurationAndResponseHandler a collection of alerts in Microsoft 365 Defender.
 func (m *Alerts_v2RequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *Alerts_v2RequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -22,7 +22,7 @@ type AlertItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlertItemRequestBuilderGetQueryParameters get alerts_v2 from security
+// AlertItemRequestBuilderGetQueryParameters a collection of alerts in Microsoft 365 Defender.
 type AlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *AlertItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get alerts_v2 from security
+// CreateGetRequestInformation a collection of alerts in Microsoft 365 Defender.
 func (m *AlertItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get alerts_v2 from security
+// CreateGetRequestInformationWithRequestConfiguration a collection of alerts in Microsoft 365 Defender.
 func (m *AlertItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *AlertItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandl
     }
     return nil
 }
-// Get get alerts_v2 from security
+// Get a collection of alerts in Microsoft 365 Defender.
 func (m *AlertItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Alertable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get alerts_v2 from security
+// GetWithRequestConfigurationAndResponseHandler a collection of alerts in Microsoft 365 Defender.
 func (m *AlertItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AlertItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Alertable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

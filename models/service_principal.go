@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipal 
+// ServicePrincipal provides operations to manage the collection of activityStatistics entities.
 type ServicePrincipal struct {
     DirectoryObject
     // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
@@ -118,8 +118,10 @@ type ServicePrincipal struct {
     tokenLifetimePolicies []TokenLifetimePolicyable
     // The transitiveMemberOf property
     transitiveMemberOf []DirectoryObjectable
+    // Specifies the verified publisher of the application which this service principal represents.
+    verifiedPublisher VerifiedPublisherable
 }
-// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -885,6 +887,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["verifiedPublisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVerifiedPublisherFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerifiedPublisher(val.(VerifiedPublisherable))
+        }
+        return nil
+    }
     return res
 }
 // GetHomepage gets the homepage property value. Home page or landing page of the application.
@@ -1014,6 +1026,10 @@ func (m *ServicePrincipal) GetTokenLifetimePolicies()([]TokenLifetimePolicyable)
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *ServicePrincipal) GetTransitiveMemberOf()([]DirectoryObjectable) {
     return m.transitiveMemberOf
+}
+// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application which this service principal represents.
+func (m *ServicePrincipal) GetVerifiedPublisher()(VerifiedPublisherable) {
+    return m.verifiedPublisher
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1439,6 +1455,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("verifiedPublisher", m.GetVerifiedPublisher())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
@@ -1660,4 +1682,8 @@ func (m *ServicePrincipal) SetTokenLifetimePolicies(value []TokenLifetimePolicya
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. The transitiveMemberOf property
 func (m *ServicePrincipal) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     m.transitiveMemberOf = value
+}
+// SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application which this service principal represents.
+func (m *ServicePrincipal) SetVerifiedPublisher(value VerifiedPublisherable)() {
+    m.verifiedPublisher = value
 }

@@ -16,7 +16,7 @@ type WindowsManagementApp struct {
     // Managed Installer Configured Date Time
     managedInstallerConfiguredDateTime *string
 }
-// NewWindowsManagementApp instantiates a new windowsManagementApp and sets the default values.
+// NewWindowsManagementApp instantiates a new WindowsManagementApp and sets the default values.
 func NewWindowsManagementApp()(*WindowsManagementApp) {
     m := &WindowsManagementApp{
         Entity: *NewEntity(),

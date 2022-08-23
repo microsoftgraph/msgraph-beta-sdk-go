@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemActivityOLD provides operations to manage the collection of activityStatistics entities.
+// ItemActivityOLD provides operations to manage the collection of accessReviewDecision entities.
 type ItemActivityOLD struct {
     Entity
     // The action property
