@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesCreditMemoLine 
+// SalesCreditMemoLine provides operations to manage the collection of activityStatistics entities.
 type SalesCreditMemoLine struct {
     Entity
     // The account property
@@ -56,7 +56,7 @@ type SalesCreditMemoLine struct {
     // The unitPrice property
     unitPrice *float64
 }
-// NewSalesCreditMemoLine instantiates a new SalesCreditMemoLine and sets the default values.
+// NewSalesCreditMemoLine instantiates a new salesCreditMemoLine and sets the default values.
 func NewSalesCreditMemoLine()(*SalesCreditMemoLine) {
     m := &SalesCreditMemoLine{
         Entity: *NewEntity(),

@@ -27,7 +27,7 @@ type Security struct {
     providerTenantSettings []ProviderTenantSettingable
     // The secureScoreControlProfiles property
     secureScoreControlProfiles []SecureScoreControlProfileable
-    // The secureScores property
+    // Measurements of tenants’ security posture to help protect them from threats.
     secureScores []SecureScoreable
     // The securityActions property
     securityActions []SecurityActionable
@@ -302,7 +302,7 @@ func (m *Security) GetProviderTenantSettings()([]ProviderTenantSettingable) {
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
     return m.secureScoreControlProfiles
 }
-// GetSecureScores gets the secureScores property value. The secureScores property
+// GetSecureScores gets the secureScores property value. Measurements of tenants’ security posture to help protect them from threats.
 func (m *Security) GetSecureScores()([]SecureScoreable) {
     return m.secureScores
 }
@@ -516,7 +516,7 @@ func (m *Security) SetProviderTenantSettings(value []ProviderTenantSettingable)(
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
     m.secureScoreControlProfiles = value
 }
-// SetSecureScores sets the secureScores property value. The secureScores property
+// SetSecureScores sets the secureScores property value. Measurements of tenants’ security posture to help protect them from threats.
 func (m *Security) SetSecureScores(value []SecureScoreable)() {
     m.secureScores = value
 }

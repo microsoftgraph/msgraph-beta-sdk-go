@@ -8,7 +8,7 @@ import (
 type MacOSSingleSignOnExtension struct {
     SingleSignOnExtension
 }
-// NewMacOSSingleSignOnExtension instantiates a new MacOSSingleSignOnExtension and sets the default values.
+// NewMacOSSingleSignOnExtension instantiates a new macOSSingleSignOnExtension and sets the default values.
 func NewMacOSSingleSignOnExtension()(*MacOSSingleSignOnExtension) {
     m := &MacOSSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationalMessageDetail 
+// OrganizationalMessageDetail this will allow the admin to see the specific details of an organizational message that has been created for their tenant
 type OrganizationalMessageDetail struct {
     Entity
     // The content that will be displayed to clients for the message. This includes the text portion of the message and the displayed logo
@@ -35,7 +35,7 @@ type OrganizationalMessageDetail struct {
     // Indicates the corresponding variant for the experience
     variant *string
 }
-// NewOrganizationalMessageDetail instantiates a new OrganizationalMessageDetail and sets the default values.
+// NewOrganizationalMessageDetail instantiates a new organizationalMessageDetail and sets the default values.
 func NewOrganizationalMessageDetail()(*OrganizationalMessageDetail) {
     m := &OrganizationalMessageDetail{
         Entity: *NewEntity(),
