@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type ComanagementEligibleType int
 
 const (
@@ -11,10 +11,12 @@ const (
     ELIGIBLEBUTNOTAZUREADJOINED_COMANAGEMENTELIGIBLETYPE
     NEEDSOSUPDATE_COMANAGEMENTELIGIBLETYPE
     INELIGIBLE_COMANAGEMENTELIGIBLETYPE
+    // Devices scheduled for Co-Management enrollment
+    SCHEDULEDFORENROLLMENT_COMANAGEMENTELIGIBLETYPE
 )
 
 func (i ComanagementEligibleType) String() string {
-    return []string{"comanaged", "eligible", "eligibleButNotAzureAdJoined", "needsOsUpdate", "ineligible"}[i]
+    return []string{"comanaged", "eligible", "eligibleButNotAzureAdJoined", "needsOsUpdate", "ineligible", "scheduledForEnrollment"}[i]
 }
 func ParseComanagementEligibleType(v string) (interface{}, error) {
     result := COMANAGED_COMANAGEMENTELIGIBLETYPE
@@ -29,6 +31,8 @@ func ParseComanagementEligibleType(v string) (interface{}, error) {
             result = NEEDSOSUPDATE_COMANAGEMENTELIGIBLETYPE
         case "ineligible":
             result = INELIGIBLE_COMANAGEMENTELIGIBLETYPE
+        case "scheduledForEnrollment":
+            result = SCHEDULEDFORENROLLMENT_COMANAGEMENTELIGIBLETYPE
         default:
             return 0, errors.New("Unknown ComanagementEligibleType value: " + v)
     }

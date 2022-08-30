@@ -155,6 +155,8 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewWindowsUniversalAppX(), nil
                     case "#microsoft.graph.windowsWebApp":
                         return NewWindowsWebApp(), nil
+                    case "#microsoft.graph.winGetApp":
+                        return NewWinGetApp(), nil
                 }
             }
         }

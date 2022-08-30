@@ -26,6 +26,7 @@ type MobileThreatDefenseConnectorable interface {
     GetPartnerUnsupportedOsVersionBlocked()(*bool)
     GetWindowsDeviceBlockedOnMissingPartnerData()(*bool)
     GetWindowsEnabled()(*bool)
+    GetWindowsMobileApplicationManagementEnabled()(*bool)
     SetAllowPartnerToCollectIOSApplicationMetadata(value *bool)()
     SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)()
     SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)()
@@ -43,4 +44,5 @@ type MobileThreatDefenseConnectorable interface {
     SetPartnerUnsupportedOsVersionBlocked(value *bool)()
     SetWindowsDeviceBlockedOnMissingPartnerData(value *bool)()
     SetWindowsEnabled(value *bool)()
+    SetWindowsMobileApplicationManagementEnabled(value *bool)()
 }

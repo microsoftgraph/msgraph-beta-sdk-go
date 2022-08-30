@@ -3,7 +3,6 @@ package serviceprincipals
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i06ff0d811046a74890f51edd3cff651bef78898b54f602513c8c7a5b32cecf38 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/count"
     i07ea82e8cdb01938ad025e6648ae29c3c96f2adbafa7de6af15c650980651744 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/delta"
     i13ad01682da78442a9cf027f302e407c5d377fb9738dde4e75f036b89203db62 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/getbyids"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
@@ -22,20 +21,12 @@ type ServicePrincipalsRequestBuilder struct {
 }
 // ServicePrincipalsRequestBuilderGetQueryParameters retrieve a list of servicePrincipal objects.
 type ServicePrincipalsRequestBuilderGetQueryParameters struct {
-    // Include count of items
-    Count *bool `uriparametername:"%24count"`
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
-    // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -59,7 +50,7 @@ type ServicePrincipalsRequestBuilderPostRequestConfiguration struct {
 func NewServicePrincipalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalsRequestBuilder) {
     m := &ServicePrincipalsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/servicePrincipals{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/servicePrincipals{?%24top,%24search,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -73,10 +64,6 @@ func NewServicePrincipalsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalsRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count the Count property
-func (m *ServicePrincipalsRequestBuilder) Count()(*i06ff0d811046a74890f51edd3cff651bef78898b54f602513c8c7a5b32cecf38.CountRequestBuilder) {
-    return i06ff0d811046a74890f51edd3cff651bef78898b54f602513c8c7a5b32cecf38.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of servicePrincipal objects.
 func (m *ServicePrincipalsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

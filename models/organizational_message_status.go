@@ -14,10 +14,12 @@ const (
     COMPLETED_ORGANIZATIONALMESSAGESTATUS
     // Indicates that the message has been cancelled and will not be shown
     CANCELLED_ORGANIZATIONALMESSAGESTATUS
+    // UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGESTATUS
 )
 
 func (i OrganizationalMessageStatus) String() string {
-    return []string{"scheduled", "active", "completed", "cancelled"}[i]
+    return []string{"scheduled", "active", "completed", "cancelled", "unknownFutureValue"}[i]
 }
 func ParseOrganizationalMessageStatus(v string) (interface{}, error) {
     result := SCHEDULED_ORGANIZATIONALMESSAGESTATUS
@@ -30,6 +32,8 @@ func ParseOrganizationalMessageStatus(v string) (interface{}, error) {
             result = COMPLETED_ORGANIZATIONALMESSAGESTATUS
         case "cancelled":
             result = CANCELLED_ORGANIZATIONALMESSAGESTATUS
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGESTATUS
         default:
             return 0, errors.New("Unknown OrganizationalMessageStatus value: " + v)
     }

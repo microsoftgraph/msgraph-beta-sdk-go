@@ -10,10 +10,12 @@ const (
     ONBOARDING_ORGANIZATIONALMESSAGESCENARIO OrganizationalMessageScenario = iota
     // Indicates lifecycle scenario
     LIFECYCLE_ORGANIZATIONALMESSAGESCENARIO
+    // UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGESCENARIO
 )
 
 func (i OrganizationalMessageScenario) String() string {
-    return []string{"onboarding", "lifecycle"}[i]
+    return []string{"onboarding", "lifecycle", "unknownFutureValue"}[i]
 }
 func ParseOrganizationalMessageScenario(v string) (interface{}, error) {
     result := ONBOARDING_ORGANIZATIONALMESSAGESCENARIO
@@ -22,6 +24,8 @@ func ParseOrganizationalMessageScenario(v string) (interface{}, error) {
             result = ONBOARDING_ORGANIZATIONALMESSAGESCENARIO
         case "lifecycle":
             result = LIFECYCLE_ORGANIZATIONALMESSAGESCENARIO
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGESCENARIO
         default:
             return 0, errors.New("Unknown OrganizationalMessageScenario value: " + v)
     }

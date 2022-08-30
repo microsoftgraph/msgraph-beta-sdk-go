@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type WindowsUpdateForBusinessUpdateWeeks int
 
 const (
@@ -18,10 +18,12 @@ const (
     FOURTHWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
     // Scheduled the update installation on every week of the month
     EVERYWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+    // Evolvable enum member
+    UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
 )
 
 func (i WindowsUpdateForBusinessUpdateWeeks) String() string {
-    return []string{"userDefined", "firstWeek", "secondWeek", "thirdWeek", "fourthWeek", "everyWeek"}[i]
+    return []string{"userDefined", "firstWeek", "secondWeek", "thirdWeek", "fourthWeek", "everyWeek", "unknownFutureValue"}[i]
 }
 func ParseWindowsUpdateForBusinessUpdateWeeks(v string) (interface{}, error) {
     result := USERDEFINED_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
@@ -38,6 +40,8 @@ func ParseWindowsUpdateForBusinessUpdateWeeks(v string) (interface{}, error) {
             result = FOURTHWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
         case "everyWeek":
             result = EVERYWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
         default:
             return 0, errors.New("Unknown WindowsUpdateForBusinessUpdateWeeks value: " + v)
     }

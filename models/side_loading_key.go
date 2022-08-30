@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SideLoadingKey 
+// SideLoadingKey sideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line Of Business Apps for a tenant.
 type SideLoadingKey struct {
     Entity
     // Side Loading Key description displayed to the ITPro Admins..
@@ -18,7 +18,7 @@ type SideLoadingKey struct {
     // Side Loading Key Value, it is 5x5 value, seperated by hiphens.
     value *string
 }
-// NewSideLoadingKey instantiates a new SideLoadingKey and sets the default values.
+// NewSideLoadingKey instantiates a new sideLoadingKey and sets the default values.
 func NewSideLoadingKey()(*SideLoadingKey) {
     m := &SideLoadingKey{
         Entity: *NewEntity(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application 
+// Application casts the previous resource to application.
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
@@ -68,7 +68,7 @@ type Application struct {
     publicClient PublicClientApplicationable
     // The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
     publisherDomain *string
-    // The requestSignatureVerification property
+    // Specifies whether this application requires Azure AD to verify the signed authentication requests.
     requestSignatureVerification RequestSignatureVerificationable
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccessable
@@ -99,7 +99,7 @@ type Application struct {
     // Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
     windows WindowsApplicationable
 }
-// NewApplication instantiates a new Application and sets the default values.
+// NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
@@ -739,7 +739,7 @@ func (m *Application) GetPublicClient()(PublicClientApplicationable) {
 func (m *Application) GetPublisherDomain()(*string) {
     return m.publisherDomain
 }
-// GetRequestSignatureVerification gets the requestSignatureVerification property value. The requestSignatureVerification property
+// GetRequestSignatureVerification gets the requestSignatureVerification property value. Specifies whether this application requires Azure AD to verify the signed authentication requests.
 func (m *Application) GetRequestSignatureVerification()(RequestSignatureVerificationable) {
     return m.requestSignatureVerification
 }
@@ -1241,7 +1241,7 @@ func (m *Application) SetPublicClient(value PublicClientApplicationable)() {
 func (m *Application) SetPublisherDomain(value *string)() {
     m.publisherDomain = value
 }
-// SetRequestSignatureVerification sets the requestSignatureVerification property value. The requestSignatureVerification property
+// SetRequestSignatureVerification sets the requestSignatureVerification property value. Specifies whether this application requires Azure AD to verify the signed authentication requests.
 func (m *Application) SetRequestSignatureVerification(value RequestSignatureVerificationable)() {
     m.requestSignatureVerification = value
 }

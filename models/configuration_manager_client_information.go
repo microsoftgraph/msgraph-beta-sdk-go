@@ -10,6 +10,8 @@ type ConfigurationManagerClientInformation struct {
     additionalData map[string]interface{}
     // Configuration Manager Client Id from SCCM
     clientIdentifier *string
+    // Configuration Manager Client version from SCCM
+    clientVersion *string
     // Configuration Manager Client blocked status from SCCM
     isBlocked *bool
     // The OdataType property
@@ -36,6 +38,10 @@ func (m *ConfigurationManagerClientInformation) GetAdditionalData()(map[string]i
 func (m *ConfigurationManagerClientInformation) GetClientIdentifier()(*string) {
     return m.clientIdentifier
 }
+// GetClientVersion gets the clientVersion property value. Configuration Manager Client version from SCCM
+func (m *ConfigurationManagerClientInformation) GetClientVersion()(*string) {
+    return m.clientVersion
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerClientInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
@@ -46,6 +52,16 @@ func (m *ConfigurationManagerClientInformation) GetFieldDeserializers()(map[stri
         }
         if val != nil {
             m.SetClientIdentifier(val)
+        }
+        return nil
+    }
+    res["clientVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientVersion(val)
         }
         return nil
     }
@@ -88,6 +104,12 @@ func (m *ConfigurationManagerClientInformation) Serialize(writer i878a80d2330e89
         }
     }
     {
+        err := writer.WriteStringValue("clientVersion", m.GetClientVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isBlocked", m.GetIsBlocked())
         if err != nil {
             return err
@@ -114,6 +136,10 @@ func (m *ConfigurationManagerClientInformation) SetAdditionalData(value map[stri
 // SetClientIdentifier sets the clientIdentifier property value. Configuration Manager Client Id from SCCM
 func (m *ConfigurationManagerClientInformation) SetClientIdentifier(value *string)() {
     m.clientIdentifier = value
+}
+// SetClientVersion sets the clientVersion property value. Configuration Manager Client version from SCCM
+func (m *ConfigurationManagerClientInformation) SetClientVersion(value *string)() {
+    m.clientVersion = value
 }
 // SetIsBlocked sets the isBlocked property value. Configuration Manager Client blocked status from SCCM
 func (m *ConfigurationManagerClientInformation) SetIsBlocked(value *bool)() {

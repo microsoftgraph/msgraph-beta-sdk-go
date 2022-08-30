@@ -33,8 +33,6 @@ type DirectoryRoleItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // DirectoryRoleItemRequestBuilderGetQueryParameters retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.
 type DirectoryRoleItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -66,7 +64,7 @@ func (m *DirectoryRoleItemRequestBuilder) CheckMemberObjects()(*if07c44821ea1002
 func NewDirectoryRoleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleItemRequestBuilder) {
     m := &DirectoryRoleItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type WindowsUpdateNotificationDisplayOption int
 
 const (
@@ -14,10 +14,12 @@ const (
     RESTARTWARNINGSONLY_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
     // Turn off all notifications, including restart warnings.
     DISABLEALLNOTIFICATIONS_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
+    // Evolvable enum member
+    UNKNOWNFUTUREVALUE_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
 )
 
 func (i WindowsUpdateNotificationDisplayOption) String() string {
-    return []string{"notConfigured", "defaultNotifications", "restartWarningsOnly", "disableAllNotifications"}[i]
+    return []string{"notConfigured", "defaultNotifications", "restartWarningsOnly", "disableAllNotifications", "unknownFutureValue"}[i]
 }
 func ParseWindowsUpdateNotificationDisplayOption(v string) (interface{}, error) {
     result := NOTCONFIGURED_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
@@ -30,6 +32,8 @@ func ParseWindowsUpdateNotificationDisplayOption(v string) (interface{}, error) 
             result = RESTARTWARNINGSONLY_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
         case "disableAllNotifications":
             result = DISABLEALLNOTIFICATIONS_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSUPDATENOTIFICATIONDISPLAYOPTION
         default:
             return 0, errors.New("Unknown WindowsUpdateNotificationDisplayOption value: " + v)
     }

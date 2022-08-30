@@ -43,8 +43,6 @@ type DeviceItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // DeviceItemRequestBuilderGetQueryParameters get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 type DeviceItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -91,7 +89,7 @@ func (m *DeviceItemRequestBuilder) CommandsById(id string)(*ic49a80ae4774e504e1e
 func NewDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceItemRequestBuilder) {
     m := &DeviceItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/devices/{device%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/devices/{device%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

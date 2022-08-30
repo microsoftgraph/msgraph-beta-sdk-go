@@ -12,6 +12,8 @@ type AuditActor struct {
     applicationDisplayName *string
     // AAD Application Id.
     applicationId *string
+    // Actor Type.
+    auditActorType *string
     // IPAddress.
     ipAddress *string
     // The OdataType property
@@ -58,6 +60,10 @@ func (m *AuditActor) GetApplicationDisplayName()(*string) {
 func (m *AuditActor) GetApplicationId()(*string) {
     return m.applicationId
 }
+// GetAuditActorType gets the auditActorType property value. Actor Type.
+func (m *AuditActor) GetAuditActorType()(*string) {
+    return m.auditActorType
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
@@ -78,6 +84,16 @@ func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetApplicationId(val)
+        }
+        return nil
+    }
+    res["auditActorType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuditActorType(val)
         }
         return nil
     }
@@ -246,6 +262,12 @@ func (m *AuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err := writer.WriteStringValue("auditActorType", m.GetAuditActorType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("ipAddress", m.GetIpAddress())
         if err != nil {
             return err
@@ -328,6 +350,10 @@ func (m *AuditActor) SetApplicationDisplayName(value *string)() {
 // SetApplicationId sets the applicationId property value. AAD Application Id.
 func (m *AuditActor) SetApplicationId(value *string)() {
     m.applicationId = value
+}
+// SetAuditActorType sets the auditActorType property value. Actor Type.
+func (m *AuditActor) SetAuditActorType(value *string)() {
+    m.auditActorType = value
 }
 // SetIpAddress sets the ipAddress property value. IPAddress.
 func (m *AuditActor) SetIpAddress(value *string)() {

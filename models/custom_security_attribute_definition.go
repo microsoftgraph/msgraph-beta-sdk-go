@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomSecurityAttributeDefinition 
+// CustomSecurityAttributeDefinition provides operations to manage the collection of activityStatistics entities.
 type CustomSecurityAttributeDefinition struct {
     Entity
     // Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
@@ -26,7 +26,7 @@ type CustomSecurityAttributeDefinition struct {
     // Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
     usePreDefinedValuesOnly *bool
 }
-// NewCustomSecurityAttributeDefinition instantiates a new CustomSecurityAttributeDefinition and sets the default values.
+// NewCustomSecurityAttributeDefinition instantiates a new customSecurityAttributeDefinition and sets the default values.
 func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) {
     m := &CustomSecurityAttributeDefinition{
         Entity: *NewEntity(),

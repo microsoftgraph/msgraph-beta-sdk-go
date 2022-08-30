@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerEnrollmentProfile 
+// AndroidDeviceOwnerEnrollmentProfile enrollment Profile used to enroll Android Enterprise devices using Google's Cloud Management.
 type AndroidDeviceOwnerEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
     accountId *string
+    // Boolean that indicates that the Wi-Fi network should be configured during device provisioning. When set to TRUE, device provisioning will use Wi-Fi related properties to automatically connect to Wi-Fi networks. When set to FALSE or undefined, other Wi-Fi related properties will be ignored. Default value is TRUE. Returned by default.
+    configureWifi *bool
     // Date time the enrollment profile was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description for the enrollment profile.
@@ -47,7 +49,7 @@ type AndroidDeviceOwnerEnrollmentProfile struct {
     // String that contains the wi-fi login ssid
     wifiSsid *string
 }
-// NewAndroidDeviceOwnerEnrollmentProfile instantiates a new AndroidDeviceOwnerEnrollmentProfile and sets the default values.
+// NewAndroidDeviceOwnerEnrollmentProfile instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfile) {
     m := &AndroidDeviceOwnerEnrollmentProfile{
         Entity: *NewEntity(),
@@ -63,6 +65,10 @@ func CreateAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue(parseNode i
 // GetAccountId gets the accountId property value. Tenant GUID the enrollment profile belongs to.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetAccountId()(*string) {
     return m.accountId
+}
+// GetConfigureWifi gets the configureWifi property value. Boolean that indicates that the Wi-Fi network should be configured during device provisioning. When set to TRUE, device provisioning will use Wi-Fi related properties to automatically connect to Wi-Fi networks. When set to FALSE or undefined, other Wi-Fi related properties will be ignored. Default value is TRUE. Returned by default.
+func (m *AndroidDeviceOwnerEnrollmentProfile) GetConfigureWifi()(*bool) {
+    return m.configureWifi
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date time the enrollment profile was created.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -102,6 +108,16 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetAccountId(val)
+        }
+        return nil
+    }
+    res["configureWifi"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConfigureWifi(val)
         }
         return nil
     }
@@ -348,6 +364,12 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err = writer.WriteBoolValue("configureWifi", m.GetConfigureWifi())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
@@ -463,6 +485,10 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i878a80d2330e89d2
 // SetAccountId sets the accountId property value. Tenant GUID the enrollment profile belongs to.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetAccountId(value *string)() {
     m.accountId = value
+}
+// SetConfigureWifi sets the configureWifi property value. Boolean that indicates that the Wi-Fi network should be configured during device provisioning. When set to TRUE, device provisioning will use Wi-Fi related properties to automatically connect to Wi-Fi networks. When set to FALSE or undefined, other Wi-Fi related properties will be ignored. Default value is TRUE. Returned by default.
+func (m *AndroidDeviceOwnerEnrollmentProfile) SetConfigureWifi(value *bool)() {
+    m.configureWifi = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date time the enrollment profile was created.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

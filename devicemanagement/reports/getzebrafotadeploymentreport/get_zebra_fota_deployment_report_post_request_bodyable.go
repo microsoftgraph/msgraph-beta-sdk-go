@@ -14,7 +14,7 @@ type GetZebraFotaDeploymentReportPostRequestBodyable interface {
     GetOrderBy()([]string)
     GetSearch()(*string)
     GetSelect()([]string)
-    GetSessionId()(*int32)
+    GetSessionId()(*string)
     GetSkip()(*int32)
     GetTop()(*int32)
     SetFilter(value *string)()
@@ -23,7 +23,7 @@ type GetZebraFotaDeploymentReportPostRequestBodyable interface {
     SetOrderBy(value []string)()
     SetSearch(value *string)()
     SetSelect(value []string)()
-    SetSessionId(value *int32)()
+    SetSessionId(value *string)()
     SetSkip(value *int32)()
     SetTop(value *int32)()
 }

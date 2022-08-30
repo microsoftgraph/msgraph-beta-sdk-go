@@ -70,6 +70,8 @@ type DeviceManagement struct {
     configurationPolicyTemplates []DeviceManagementConfigurationPolicyTemplateable
     // List of all ConfigurationSettings
     configurationSettings []DeviceManagementConfigurationSettingDefinitionable
+    // A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
+    dataProcessorServiceForWindowsFeaturesOnboarding DataProcessorServiceForWindowsFeaturesOnboardingable
     // Data sharing consents.
     dataSharingConsents []DataSharingConsentable
     // This collections of multiple DEP tokens per-tenant.
@@ -491,6 +493,10 @@ func (m *DeviceManagement) GetConfigurationPolicyTemplates()([]DeviceManagementC
 // GetConfigurationSettings gets the configurationSettings property value. List of all ConfigurationSettings
 func (m *DeviceManagement) GetConfigurationSettings()([]DeviceManagementConfigurationSettingDefinitionable) {
     return m.configurationSettings
+}
+// GetDataProcessorServiceForWindowsFeaturesOnboarding gets the dataProcessorServiceForWindowsFeaturesOnboarding property value. A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
+func (m *DeviceManagement) GetDataProcessorServiceForWindowsFeaturesOnboarding()(DataProcessorServiceForWindowsFeaturesOnboardingable) {
+    return m.dataProcessorServiceForWindowsFeaturesOnboarding
 }
 // GetDataSharingConsents gets the dataSharingConsents property value. Data sharing consents.
 func (m *DeviceManagement) GetDataSharingConsents()([]DataSharingConsentable) {
@@ -1010,6 +1016,16 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 res[i] = v.(DeviceManagementConfigurationSettingDefinitionable)
             }
             m.SetConfigurationSettings(res)
+        }
+        return nil
+    }
+    res["dataProcessorServiceForWindowsFeaturesOnboarding"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDataProcessorServiceForWindowsFeaturesOnboardingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDataProcessorServiceForWindowsFeaturesOnboarding(val.(DataProcessorServiceForWindowsFeaturesOnboardingable))
         }
         return nil
     }
@@ -3615,6 +3631,12 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("dataProcessorServiceForWindowsFeaturesOnboarding", m.GetDataProcessorServiceForWindowsFeaturesOnboarding())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDataSharingConsents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDataSharingConsents()))
         for i, v := range m.GetDataSharingConsents() {
@@ -5030,6 +5052,10 @@ func (m *DeviceManagement) SetConfigurationPolicyTemplates(value []DeviceManagem
 // SetConfigurationSettings sets the configurationSettings property value. List of all ConfigurationSettings
 func (m *DeviceManagement) SetConfigurationSettings(value []DeviceManagementConfigurationSettingDefinitionable)() {
     m.configurationSettings = value
+}
+// SetDataProcessorServiceForWindowsFeaturesOnboarding sets the dataProcessorServiceForWindowsFeaturesOnboarding property value. A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
+func (m *DeviceManagement) SetDataProcessorServiceForWindowsFeaturesOnboarding(value DataProcessorServiceForWindowsFeaturesOnboardingable)() {
+    m.dataProcessorServiceForWindowsFeaturesOnboarding = value
 }
 // SetDataSharingConsents sets the dataSharingConsents property value. Data sharing consents.
 func (m *DeviceManagement) SetDataSharingConsents(value []DataSharingConsentable)() {

@@ -16,9 +16,11 @@ import (
     i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/retire"
     i16de495ce65b087460ba21136c9b72e3b2ff9a664a0756760685c434e52936ab "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/bypassactivationlock"
     i186b653434f13d6f68f59e5101c7347bca64c5d54c32438393e9e563d87e9a03 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/removedevicefirmwareconfigurationinterfacemanagement"
+    i1e7e9d2c76289c56aebdb9d202c39b53d102418f99f9090f015754be3f4bcc19 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/retrieveremotehelpsessionwithsessionkey"
     i1f766465498501463348486d49874ef974c6aa6e056820a5caf1c3a5e2690c21 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/logcollectionrequests"
     i2895d06145d6f77d60b53e7a17c29b5b08ec73440e1edd1592e6b4e58dfd3bcc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/rebootnow"
     i2a07ab69055107ffdc042942f8b812f851c28433435fb264c6d61d6e456d4a76 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/restorecloudpc"
+    i3457870a56ed4379638a45891e9b1f059c53eb0a34ddead12128729ae6824a94 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/requestremotehelpsessionaccess"
     i36fc8a6a1f1f21ea4c3b8e036968cd4b9f64fe509db56f6ee2a10b53e5e23daa "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/remotelock"
     i3776f24495e66930f2a43cb3ea8f98452ba8e71357481f30e1f01270eaebd89f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/createdevicelogcollectionrequest"
     i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/setdevicename"
@@ -49,6 +51,7 @@ import (
     ic31f6e50541d7a1a2cbdcc9661762fe7f00d68f3a4b2953edee9b926748ded33 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/revokeapplevpplicenses"
     ic3d46fe96eb7d3c0bbb5b76d1ae4693f9bdb9b5675396fff7df26f117611b089 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/wipe"
     ic7c5a2e2eaab60e96d43ceb51da74be9c7ac1bcacdb964857d2c4d2331784c70 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/overridecompliancestate"
+    icc098ec94f41a3c760dbaa62bd4f987e48ad5fa85a68d19121319d92c2f15eaf "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/createremotehelpsession"
     id2f34cb54ddaeb8cd225320949858738929421d17f72c94883305d6139b502e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/updatewindowsdeviceaccount"
     id8bc634ccb989ff6228ca3386217960759b949d6d7a4a6dcaef53ec645ce0bb1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/getcloudpcremoteactionresults"
     ie9117b0fbaf882b6a5c75879c83237b22998bbf1a1fd4b0542ac3ad863d25751 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/cleanwindowsdevice"
@@ -206,6 +209,10 @@ func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformationWithReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// CreateRemoteHelpSession the createRemoteHelpSession property
+func (m *ManagedDeviceItemRequestBuilder) CreateRemoteHelpSession()(*icc098ec94f41a3c760dbaa62bd4f987e48ad5fa85a68d19121319d92c2f15eaf.CreateRemoteHelpSessionRequestBuilder) {
+    return icc098ec94f41a3c760dbaa62bd4f987e48ad5fa85a68d19121319d92c2f15eaf.NewCreateRemoteHelpSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property managedDevices for me
 func (m *ManagedDeviceItemRequestBuilder) Delete()(error) {
@@ -430,6 +437,10 @@ func (m *ManagedDeviceItemRequestBuilder) ReprovisionCloudPc()(*iaac25517cf10384
 func (m *ManagedDeviceItemRequestBuilder) RequestRemoteAssistance()(*i3c078ae2cc611b9ba288af4dd645655413e06a9d17701e150ea19af27569731f.RequestRemoteAssistanceRequestBuilder) {
     return i3c078ae2cc611b9ba288af4dd645655413e06a9d17701e150ea19af27569731f.NewRequestRemoteAssistanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RequestRemoteHelpSessionAccess the requestRemoteHelpSessionAccess property
+func (m *ManagedDeviceItemRequestBuilder) RequestRemoteHelpSessionAccess()(*i3457870a56ed4379638a45891e9b1f059c53eb0a34ddead12128729ae6824a94.RequestRemoteHelpSessionAccessRequestBuilder) {
+    return i3457870a56ed4379638a45891e9b1f059c53eb0a34ddead12128729ae6824a94.NewRequestRemoteHelpSessionAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // ResetPasscode the resetPasscode property
 func (m *ManagedDeviceItemRequestBuilder) ResetPasscode()(*i76321fab1e28309a28c2fd699420e10a6d9d27fecba21c5f5ff3c89eb5e9417e.ResetPasscodeRequestBuilder) {
     return i76321fab1e28309a28c2fd699420e10a6d9d27fecba21c5f5ff3c89eb5e9417e.NewResetPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -445,6 +456,10 @@ func (m *ManagedDeviceItemRequestBuilder) RestoreCloudPc()(*i2a07ab69055107ffdc0
 // Retire the retire property
 func (m *ManagedDeviceItemRequestBuilder) Retire()(*i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e.RetireRequestBuilder) {
     return i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e.NewRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// RetrieveRemoteHelpSessionWithSessionKey provides operations to call the retrieveRemoteHelpSession method.
+func (m *ManagedDeviceItemRequestBuilder) RetrieveRemoteHelpSessionWithSessionKey(sessionKey *string)(*i1e7e9d2c76289c56aebdb9d202c39b53d102418f99f9090f015754be3f4bcc19.RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder) {
+    return i1e7e9d2c76289c56aebdb9d202c39b53d102418f99f9090f015754be3f4bcc19.NewRetrieveRemoteHelpSessionWithSessionKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, sessionKey);
 }
 // RevokeAppleVppLicenses the revokeAppleVppLicenses property
 func (m *ManagedDeviceItemRequestBuilder) RevokeAppleVppLicenses()(*ic31f6e50541d7a1a2cbdcc9661762fe7f00d68f3a4b2953edee9b926748ded33.RevokeAppleVppLicensesRequestBuilder) {

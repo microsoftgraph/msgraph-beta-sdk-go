@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileThreatDefenseConnector 
+// MobileThreatDefenseConnector entity which represents a connection to Mobile threat defense partner.
 type MobileThreatDefenseConnector struct {
     Entity
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
@@ -42,8 +42,10 @@ type MobileThreatDefenseConnector struct {
     windowsDeviceBlockedOnMissingPartnerData *bool
     // For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
     windowsEnabled *bool
+    // When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
+    windowsMobileApplicationManagementEnabled *bool
 }
-// NewMobileThreatDefenseConnector instantiates a new MobileThreatDefenseConnector and sets the default values.
+// NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     m := &MobileThreatDefenseConnector{
         Entity: *NewEntity(),
@@ -249,6 +251,16 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["windowsMobileApplicationManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsMobileApplicationManagementEnabled(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
@@ -298,6 +310,10 @@ func (m *MobileThreatDefenseConnector) GetWindowsDeviceBlockedOnMissingPartnerDa
 // GetWindowsEnabled gets the windowsEnabled property value. For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) GetWindowsEnabled()(*bool) {
     return m.windowsEnabled
+}
+// GetWindowsMobileApplicationManagementEnabled gets the windowsMobileApplicationManagementEnabled property value. When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
+func (m *MobileThreatDefenseConnector) GetWindowsMobileApplicationManagementEnabled()(*bool) {
+    return m.windowsMobileApplicationManagementEnabled
 }
 // Serialize serializes information the current object
 func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -408,6 +424,12 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("windowsMobileApplicationManagementEnabled", m.GetWindowsMobileApplicationManagementEnabled())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowPartnerToCollectIOSApplicationMetadata sets the allowPartnerToCollectIOSApplicationMetadata property value. For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
@@ -477,4 +499,8 @@ func (m *MobileThreatDefenseConnector) SetWindowsDeviceBlockedOnMissingPartnerDa
 // SetWindowsEnabled sets the windowsEnabled property value. For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) SetWindowsEnabled(value *bool)() {
     m.windowsEnabled = value
+}
+// SetWindowsMobileApplicationManagementEnabled sets the windowsMobileApplicationManagementEnabled property value. When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
+func (m *MobileThreatDefenseConnector) SetWindowsMobileApplicationManagementEnabled(value *bool)() {
+    m.windowsMobileApplicationManagementEnabled = value
 }

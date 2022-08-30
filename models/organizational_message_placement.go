@@ -16,10 +16,12 @@ const (
     CARD2_ORGANIZATIONALMESSAGEPLACEMENT
     // Indicates the area where the fourth card is displayed. Only applies to the getStarted surface
     CARD3_ORGANIZATIONALMESSAGEPLACEMENT
+    // UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGEPLACEMENT
 )
 
 func (i OrganizationalMessagePlacement) String() string {
-    return []string{"default", "card0", "card1", "card2", "card3"}[i]
+    return []string{"default", "card0", "card1", "card2", "card3", "unknownFutureValue"}[i]
 }
 func ParseOrganizationalMessagePlacement(v string) (interface{}, error) {
     result := DEFAULT_ESCAPED_ORGANIZATIONALMESSAGEPLACEMENT
@@ -34,6 +36,8 @@ func ParseOrganizationalMessagePlacement(v string) (interface{}, error) {
             result = CARD2_ORGANIZATIONALMESSAGEPLACEMENT
         case "card3":
             result = CARD3_ORGANIZATIONALMESSAGEPLACEMENT
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGEPLACEMENT
         default:
             return 0, errors.New("Unknown OrganizationalMessagePlacement value: " + v)
     }

@@ -8,13 +8,13 @@ import (
 type OnPremisesApplicationSegment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The alternateUrl property
+    // If you're configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.
     alternateUrl *string
-    // The corsConfigurations property
+    // CORS Rule definition for a particular application segment.
     corsConfigurations []CorsConfigurationable
-    // The externalUrl property
+    // The published external URL for the application segment; for example, https://intranet.contoso.com./
     externalUrl *string
-    // The internalUrl property
+    // The internal URL of the application segment; for example, https://intranet/.
     internalUrl *string
     // The OdataType property
     odataType *string
@@ -36,15 +36,15 @@ func CreateOnPremisesApplicationSegmentFromDiscriminatorValue(parseNode i878a80d
 func (m *OnPremisesApplicationSegment) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAlternateUrl gets the alternateUrl property value. The alternateUrl property
+// GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.
 func (m *OnPremisesApplicationSegment) GetAlternateUrl()(*string) {
     return m.alternateUrl
 }
-// GetCorsConfigurations gets the corsConfigurations property value. The corsConfigurations property
+// GetCorsConfigurations gets the corsConfigurations property value. CORS Rule definition for a particular application segment.
 func (m *OnPremisesApplicationSegment) GetCorsConfigurations()([]CorsConfigurationable) {
     return m.corsConfigurations
 }
-// GetExternalUrl gets the externalUrl property value. The externalUrl property
+// GetExternalUrl gets the externalUrl property value. The published external URL for the application segment; for example, https://intranet.contoso.com./
 func (m *OnPremisesApplicationSegment) GetExternalUrl()(*string) {
     return m.externalUrl
 }
@@ -107,7 +107,7 @@ func (m *OnPremisesApplicationSegment) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetInternalUrl gets the internalUrl property value. The internalUrl property
+// GetInternalUrl gets the internalUrl property value. The internal URL of the application segment; for example, https://intranet/.
 func (m *OnPremisesApplicationSegment) GetInternalUrl()(*string) {
     return m.internalUrl
 }
@@ -163,19 +163,19 @@ func (m *OnPremisesApplicationSegment) Serialize(writer i878a80d2330e89d26896388
 func (m *OnPremisesApplicationSegment) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAlternateUrl sets the alternateUrl property value. The alternateUrl property
+// SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.
 func (m *OnPremisesApplicationSegment) SetAlternateUrl(value *string)() {
     m.alternateUrl = value
 }
-// SetCorsConfigurations sets the corsConfigurations property value. The corsConfigurations property
+// SetCorsConfigurations sets the corsConfigurations property value. CORS Rule definition for a particular application segment.
 func (m *OnPremisesApplicationSegment) SetCorsConfigurations(value []CorsConfigurationable)() {
     m.corsConfigurations = value
 }
-// SetExternalUrl sets the externalUrl property value. The externalUrl property
+// SetExternalUrl sets the externalUrl property value. The published external URL for the application segment; for example, https://intranet.contoso.com./
 func (m *OnPremisesApplicationSegment) SetExternalUrl(value *string)() {
     m.externalUrl = value
 }
-// SetInternalUrl sets the internalUrl property value. The internalUrl property
+// SetInternalUrl sets the internalUrl property value. The internal URL of the application segment; for example, https://intranet/.
 func (m *OnPremisesApplicationSegment) SetInternalUrl(value *string)() {
     m.internalUrl = value
 }

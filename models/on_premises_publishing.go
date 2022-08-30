@@ -38,7 +38,7 @@ type OnPremisesPublishing struct {
     isTranslateLinksInBodyEnabled *bool
     // The OdataType property
     odataType *string
-    // The onPremisesApplicationSegments property
+    // Represents the application segment collection for an on-premises wildcard application.
     onPremisesApplicationSegments []OnPremisesApplicationSegmentable
     // Represents the single sign-on configuration for the on-premises application.
     singleSignOnSettings OnPremisesPublishingSingleSignOnable
@@ -347,7 +347,7 @@ func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
 func (m *OnPremisesPublishing) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
+// GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application.
 func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
     return m.onPremisesApplicationSegments
 }
@@ -576,7 +576,7 @@ func (m *OnPremisesPublishing) SetIsTranslateLinksInBodyEnabled(value *bool)() {
 func (m *OnPremisesPublishing) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
+// SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application.
 func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)() {
     m.onPremisesApplicationSegments = value
 }

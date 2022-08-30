@@ -12,10 +12,12 @@ const (
     MONTHLYONCE_ORGANIZATIONALMESSAGEFREQUENCY
     // Indicates that the message will be displayed twice a month
     MONTHLYTWICE_ORGANIZATIONALMESSAGEFREQUENCY
+    // UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGEFREQUENCY
 )
 
 func (i OrganizationalMessageFrequency) String() string {
-    return []string{"weeklyOnce", "monthlyOnce", "monthlyTwice"}[i]
+    return []string{"weeklyOnce", "monthlyOnce", "monthlyTwice", "unknownFutureValue"}[i]
 }
 func ParseOrganizationalMessageFrequency(v string) (interface{}, error) {
     result := WEEKLYONCE_ORGANIZATIONALMESSAGEFREQUENCY
@@ -26,6 +28,8 @@ func ParseOrganizationalMessageFrequency(v string) (interface{}, error) {
             result = MONTHLYONCE_ORGANIZATIONALMESSAGEFREQUENCY
         case "monthlyTwice":
             result = MONTHLYTWICE_ORGANIZATIONALMESSAGEFREQUENCY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGEFREQUENCY
         default:
             return 0, errors.New("Unknown OrganizationalMessageFrequency value: " + v)
     }

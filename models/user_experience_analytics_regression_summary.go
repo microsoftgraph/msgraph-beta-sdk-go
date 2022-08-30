@@ -14,7 +14,7 @@ type UserExperienceAnalyticsRegressionSummary struct {
     // The metric values for the user experience analytics operating system regression.
     operatingSystemRegression []UserExperienceAnalyticsMetricable
 }
-// NewUserExperienceAnalyticsRegressionSummary instantiates a new UserExperienceAnalyticsRegressionSummary and sets the default values.
+// NewUserExperienceAnalyticsRegressionSummary instantiates a new userExperienceAnalyticsRegressionSummary and sets the default values.
 func NewUserExperienceAnalyticsRegressionSummary()(*UserExperienceAnalyticsRegressionSummary) {
     m := &UserExperienceAnalyticsRegressionSummary{
         Entity: *NewEntity(),

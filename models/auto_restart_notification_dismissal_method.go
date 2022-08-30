@@ -2,20 +2,22 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type AutoRestartNotificationDismissalMethod int
 
 const (
     // Not configured
     NOTCONFIGURED_AUTORESTARTNOTIFICATIONDISMISSALMETHOD AutoRestartNotificationDismissalMethod = iota
-    // Auto dismissal
+    // Auto dismissal Indicates that the notification is automatically dismissed without user intervention
     AUTOMATIC_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
-    // User dismissal
+    // User dismissal. Allows the user to dismiss the notification
     USER_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
+    // Evolvable enum member
+    UNKNOWNFUTUREVALUE_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
 )
 
 func (i AutoRestartNotificationDismissalMethod) String() string {
-    return []string{"notConfigured", "automatic", "user"}[i]
+    return []string{"notConfigured", "automatic", "user", "unknownFutureValue"}[i]
 }
 func ParseAutoRestartNotificationDismissalMethod(v string) (interface{}, error) {
     result := NOTCONFIGURED_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
@@ -26,6 +28,8 @@ func ParseAutoRestartNotificationDismissalMethod(v string) (interface{}, error) 
             result = AUTOMATIC_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
         case "user":
             result = USER_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_AUTORESTARTNOTIFICATIONDISMISSALMETHOD
         default:
             return 0, errors.New("Unknown AutoRestartNotificationDismissalMethod value: " + v)
     }

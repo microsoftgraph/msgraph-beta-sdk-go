@@ -21,7 +21,7 @@ type GetZebraFotaDeploymentReportPostRequestBody struct {
     // The select property
     select_escaped []string
     // The sessionId property
-    sessionId *int32
+    sessionId *string
     // The skip property
     skip *int32
     // The top property
@@ -118,7 +118,7 @@ func (m *GetZebraFotaDeploymentReportPostRequestBody) GetFieldDeserializers()(ma
         return nil
     }
     res["sessionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
@@ -174,7 +174,7 @@ func (m *GetZebraFotaDeploymentReportPostRequestBody) GetSelect()([]string) {
     return m.select_escaped
 }
 // GetSessionId gets the sessionId property value. The sessionId property
-func (m *GetZebraFotaDeploymentReportPostRequestBody) GetSessionId()(*int32) {
+func (m *GetZebraFotaDeploymentReportPostRequestBody) GetSessionId()(*string) {
     return m.sessionId
 }
 // GetSkip gets the skip property value. The skip property
@@ -224,7 +224,7 @@ func (m *GetZebraFotaDeploymentReportPostRequestBody) Serialize(writer i878a80d2
         }
     }
     {
-        err := writer.WriteInt32Value("sessionId", m.GetSessionId())
+        err := writer.WriteStringValue("sessionId", m.GetSessionId())
         if err != nil {
             return err
         }
@@ -278,7 +278,7 @@ func (m *GetZebraFotaDeploymentReportPostRequestBody) SetSelect(value []string)(
     m.select_escaped = value
 }
 // SetSessionId sets the sessionId property value. The sessionId property
-func (m *GetZebraFotaDeploymentReportPostRequestBody) SetSessionId(value *int32)() {
+func (m *GetZebraFotaDeploymentReportPostRequestBody) SetSessionId(value *string)() {
     m.sessionId = value
 }
 // SetSkip sets the skip property value. The skip property

@@ -55,6 +55,8 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
                         return NewWindowsAppXAppAssignmentSettings(), nil
                     case "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings":
                         return NewWindowsUniversalAppXAppAssignmentSettings(), nil
+                    case "#microsoft.graph.winGetAppAssignmentSettings":
+                        return NewWinGetAppAssignmentSettings(), nil
                 }
             }
         }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerRosterMember 
+// PlannerRosterMember provides operations to manage the collection of activityStatistics entities.
 type PlannerRosterMember struct {
     Entity
     // Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
@@ -14,7 +14,7 @@ type PlannerRosterMember struct {
     // Identifier of the user.
     userId *string
 }
-// NewPlannerRosterMember instantiates a new PlannerRosterMember and sets the default values.
+// NewPlannerRosterMember instantiates a new plannerRosterMember and sets the default values.
 func NewPlannerRosterMember()(*PlannerRosterMember) {
     m := &PlannerRosterMember{
         Entity: *NewEntity(),
