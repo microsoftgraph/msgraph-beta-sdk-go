@@ -10,7 +10,7 @@ type OrganizationalMessagePlacementDetail struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3.
+    // Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3, unknownFutureValue.
     placement *OrganizationalMessagePlacement
     // The list of different variants that can be displayed for this placement
     variants []OrganizationalMessageVariantable
@@ -75,7 +75,7 @@ func (m *OrganizationalMessagePlacementDetail) GetFieldDeserializers()(map[strin
 func (m *OrganizationalMessagePlacementDetail) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPlacement gets the placement property value. Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3.
+// GetPlacement gets the placement property value. Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3, unknownFutureValue.
 func (m *OrganizationalMessagePlacementDetail) GetPlacement()(*OrganizationalMessagePlacement) {
     return m.placement
 }
@@ -124,7 +124,7 @@ func (m *OrganizationalMessagePlacementDetail) SetAdditionalData(value map[strin
 func (m *OrganizationalMessagePlacementDetail) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPlacement sets the placement property value. Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3.
+// SetPlacement sets the placement property value. Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3, unknownFutureValue.
 func (m *OrganizationalMessagePlacementDetail) SetPlacement(value *OrganizationalMessagePlacement)() {
     m.placement = value
 }

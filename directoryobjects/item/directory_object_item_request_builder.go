@@ -29,8 +29,6 @@ type DirectoryObjectItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // DirectoryObjectItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a directoryObject object.
 type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -62,7 +60,7 @@ func (m *DirectoryObjectItemRequestBuilder) CheckMemberObjects()(*i3e65d17a52d9e
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
     m := &DirectoryObjectItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

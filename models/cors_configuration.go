@@ -8,17 +8,17 @@ import (
 type CorsConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The allowedHeaders property
+    // The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
     allowedHeaders []string
-    // The allowedMethods property
+    // The HTTP request methods that the origin domain may use for a CORS request.
     allowedMethods []string
-    // The allowedOrigins property
+    // The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user age sends to the service.
     allowedOrigins []string
-    // The maxAgeInSeconds property
+    // The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.
     maxAgeInSeconds *int32
     // The OdataType property
     odataType *string
-    // The resource property
+    // Resource within the application segment for which CORS permissions are granted. / grants permission for whole app segment.
     resource *string
 }
 // NewCorsConfiguration instantiates a new corsConfiguration and sets the default values.
@@ -38,15 +38,15 @@ func CreateCorsConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *CorsConfiguration) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAllowedHeaders gets the allowedHeaders property value. The allowedHeaders property
+// GetAllowedHeaders gets the allowedHeaders property value. The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
 func (m *CorsConfiguration) GetAllowedHeaders()([]string) {
     return m.allowedHeaders
 }
-// GetAllowedMethods gets the allowedMethods property value. The allowedMethods property
+// GetAllowedMethods gets the allowedMethods property value. The HTTP request methods that the origin domain may use for a CORS request.
 func (m *CorsConfiguration) GetAllowedMethods()([]string) {
     return m.allowedMethods
 }
-// GetAllowedOrigins gets the allowedOrigins property value. The allowedOrigins property
+// GetAllowedOrigins gets the allowedOrigins property value. The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user age sends to the service.
 func (m *CorsConfiguration) GetAllowedOrigins()([]string) {
     return m.allowedOrigins
 }
@@ -127,7 +127,7 @@ func (m *CorsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetMaxAgeInSeconds gets the maxAgeInSeconds property value. The maxAgeInSeconds property
+// GetMaxAgeInSeconds gets the maxAgeInSeconds property value. The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.
 func (m *CorsConfiguration) GetMaxAgeInSeconds()(*int32) {
     return m.maxAgeInSeconds
 }
@@ -135,7 +135,7 @@ func (m *CorsConfiguration) GetMaxAgeInSeconds()(*int32) {
 func (m *CorsConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
-// GetResource gets the resource property value. The resource property
+// GetResource gets the resource property value. Resource within the application segment for which CORS permissions are granted. / grants permission for whole app segment.
 func (m *CorsConfiguration) GetResource()(*string) {
     return m.resource
 }
@@ -189,19 +189,19 @@ func (m *CorsConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *CorsConfiguration) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAllowedHeaders sets the allowedHeaders property value. The allowedHeaders property
+// SetAllowedHeaders sets the allowedHeaders property value. The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
 func (m *CorsConfiguration) SetAllowedHeaders(value []string)() {
     m.allowedHeaders = value
 }
-// SetAllowedMethods sets the allowedMethods property value. The allowedMethods property
+// SetAllowedMethods sets the allowedMethods property value. The HTTP request methods that the origin domain may use for a CORS request.
 func (m *CorsConfiguration) SetAllowedMethods(value []string)() {
     m.allowedMethods = value
 }
-// SetAllowedOrigins sets the allowedOrigins property value. The allowedOrigins property
+// SetAllowedOrigins sets the allowedOrigins property value. The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user age sends to the service.
 func (m *CorsConfiguration) SetAllowedOrigins(value []string)() {
     m.allowedOrigins = value
 }
-// SetMaxAgeInSeconds sets the maxAgeInSeconds property value. The maxAgeInSeconds property
+// SetMaxAgeInSeconds sets the maxAgeInSeconds property value. The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.
 func (m *CorsConfiguration) SetMaxAgeInSeconds(value *int32)() {
     m.maxAgeInSeconds = value
 }
@@ -209,7 +209,7 @@ func (m *CorsConfiguration) SetMaxAgeInSeconds(value *int32)() {
 func (m *CorsConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetResource sets the resource property value. The resource property
+// SetResource sets the resource property value. Resource within the application segment for which CORS permissions are granted. / grants permission for whole app segment.
 func (m *CorsConfiguration) SetResource(value *string)() {
     m.resource = value
 }

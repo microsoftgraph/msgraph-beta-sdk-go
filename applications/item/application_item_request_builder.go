@@ -53,8 +53,6 @@ type ApplicationItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // ApplicationItemRequestBuilderGetQueryParameters get the properties and relationships of an application object.
 type ApplicationItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -113,7 +111,7 @@ func (m *ApplicationItemRequestBuilder) ConnectorGroup()(*i3d2f054c80bc83cd28a63
 func NewApplicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationItemRequestBuilder) {
     m := &ApplicationItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

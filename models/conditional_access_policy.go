@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConditionalAccessPolicy 
+// ConditionalAccessPolicy provides operations to manage the collection of activityStatistics entities.
 type ConditionalAccessPolicy struct {
     Entity
     // The conditions property
@@ -25,7 +25,7 @@ type ConditionalAccessPolicy struct {
     // The state property
     state *ConditionalAccessPolicyState
 }
-// NewConditionalAccessPolicy instantiates a new ConditionalAccessPolicy and sets the default values.
+// NewConditionalAccessPolicy instantiates a new conditionalAccessPolicy and sets the default values.
 func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     m := &ConditionalAccessPolicy{
         Entity: *NewEntity(),

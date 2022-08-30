@@ -10,6 +10,8 @@ type CertificateConnectorDetails struct {
     Entity
     // Connector name (set during enrollment).
     connectorName *string
+    // Version of the connector installed.
+    connectorVersion *string
     // Date/time when this connector was enrolled.
     enrollmentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date/time when this connector last connected to the service.
@@ -34,6 +36,10 @@ func CreateCertificateConnectorDetailsFromDiscriminatorValue(parseNode i878a80d2
 func (m *CertificateConnectorDetails) GetConnectorName()(*string) {
     return m.connectorName
 }
+// GetConnectorVersion gets the connectorVersion property value. Version of the connector installed.
+func (m *CertificateConnectorDetails) GetConnectorVersion()(*string) {
+    return m.connectorVersion
+}
 // GetEnrollmentDateTime gets the enrollmentDateTime property value. Date/time when this connector was enrolled.
 func (m *CertificateConnectorDetails) GetEnrollmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.enrollmentDateTime
@@ -48,6 +54,16 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetConnectorName(val)
+        }
+        return nil
+    }
+    res["connectorVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectorVersion(val)
         }
         return nil
     }
@@ -104,6 +120,12 @@ func (m *CertificateConnectorDetails) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("connectorVersion", m.GetConnectorVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("enrollmentDateTime", m.GetEnrollmentDateTime())
         if err != nil {
             return err
@@ -126,6 +148,10 @@ func (m *CertificateConnectorDetails) Serialize(writer i878a80d2330e89d26896388a
 // SetConnectorName sets the connectorName property value. Connector name (set during enrollment).
 func (m *CertificateConnectorDetails) SetConnectorName(value *string)() {
     m.connectorName = value
+}
+// SetConnectorVersion sets the connectorVersion property value. Version of the connector installed.
+func (m *CertificateConnectorDetails) SetConnectorVersion(value *string)() {
+    m.connectorVersion = value
 }
 // SetEnrollmentDateTime sets the enrollmentDateTime property value. Date/time when this connector was enrolled.
 func (m *CertificateConnectorDetails) SetEnrollmentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

@@ -12,10 +12,12 @@ const (
     GETSTARTED_ORGANIZATIONALMESSAGESURFACE
     // Indicates the message will be displayed to the Soft Landing which is anchored to the Windows taskbar
     SOFTLANDING_ORGANIZATIONALMESSAGESURFACE
+    // UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGESURFACE
 )
 
 func (i OrganizationalMessageSurface) String() string {
-    return []string{"actionCenter", "getStarted", "softLanding"}[i]
+    return []string{"actionCenter", "getStarted", "softLanding", "unknownFutureValue"}[i]
 }
 func ParseOrganizationalMessageSurface(v string) (interface{}, error) {
     result := ACTIONCENTER_ORGANIZATIONALMESSAGESURFACE
@@ -26,6 +28,8 @@ func ParseOrganizationalMessageSurface(v string) (interface{}, error) {
             result = GETSTARTED_ORGANIZATIONALMESSAGESURFACE
         case "softLanding":
             result = SOFTLANDING_ORGANIZATIONALMESSAGESURFACE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ORGANIZATIONALMESSAGESURFACE
         default:
             return 0, errors.New("Unknown OrganizationalMessageSurface value: " + v)
     }

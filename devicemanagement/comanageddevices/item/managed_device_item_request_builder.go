@@ -24,6 +24,7 @@ import (
     i3eeb66f94f27e28ae758717375265f4c4a2b99c3b3ebf1d81e6148870d288958 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/wipe"
     i474daedfd97083a2b70cfaaee5db2b7ac23cd62bfacff938adc2ec3734dca31a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/locatedevice"
     i4f5f8cca618fea6d5b5be4aaf673f53045f46c671985beb22ae0ab9f9e5532c8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/deprovision"
+    i5107750dcc566711aaea7a0c5440bc82a417d831c00dfaf7b0ef450062c244f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/requestremotehelpsessionaccess"
     i523f2fe01a487001fe905fdd45d3f80a080ff6e83855beac7dba457c171312fd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/disablelostmode"
     i5a2cb0524ba36f3452cc942efde3281af6e49bd918b07ec6d4553a95679f4244 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/getcloudpcremoteactionresults"
     i5c1b61352546e0e98f55231ab68a18b6252bb9ae9d227682a4961bb808486269 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/reprovisioncloudpc"
@@ -44,11 +45,13 @@ import (
     iaab41b7756caa3ffe90d804bde7b8e128221af504e2142a1fe034770c8fe02f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/rotatefilevaultkey"
     iab5d4b97db65f3530dcf7249ef64d333c528c95523c7d2f233e65624d9c3aed6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/playlostmodesound"
     ib5f935e060b5bc7e8d0d5d9de0d928d9a660e962724c3cea1fd5cab5cff38ecc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/windowsprotectionstate"
+    ib91f37198c206760f080ed3c52a3266b46cf99b6575dbf9e8cf908164eceaf80 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/createremotehelpsession"
     ib9cb36346c054b7f4cf11cfb47fbe3a66ed7d2cdfbab1e96a8571434aa769b46 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/activatedeviceesim"
     ibf345d4df2f0f8a237eae842ca384dd517ada2627beba3c7d7f53baa0aac9cd3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/devicecategory"
     ic814e3839bc6f855c24fd1a5a83ccb31ddd05002e9bd4af67e2782c60291bd1d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/retire"
     id23da8ff63dabfc5e2f8ae52fc2c56079ba902db00a78ac2b11ded16d7c94017 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/recoverpasscode"
     id475b3b19e63c8aea08d85fbab4ad351d8d0271fec24c7176711f0a0a8a45d62 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/triggerconfigurationmanageraction"
+    id66e418ae657b5791755d760a0ab7a474f153480b8bd98438551043c3292970e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/retrieveremotehelpsessionwithsessionkey"
     ida779665108e67dcd8e766def39e06d84820ead54e3bd031f8b8be0d162618f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/reenable"
     idcab09b434ee10bc36b46bee67d1c1ee38cc5810295e2f26b4055875b7af37dc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/disable"
     iddee818f039172537f45ef3559b2d06b97b848792f16ac94552dcfd877edcdf4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/updatewindowsdeviceaccount"
@@ -206,6 +209,10 @@ func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformationWithReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// CreateRemoteHelpSession the createRemoteHelpSession property
+func (m *ManagedDeviceItemRequestBuilder) CreateRemoteHelpSession()(*ib91f37198c206760f080ed3c52a3266b46cf99b6575dbf9e8cf908164eceaf80.CreateRemoteHelpSessionRequestBuilder) {
+    return ib91f37198c206760f080ed3c52a3266b46cf99b6575dbf9e8cf908164eceaf80.NewCreateRemoteHelpSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property comanagedDevices for deviceManagement
 func (m *ManagedDeviceItemRequestBuilder) Delete()(error) {
@@ -430,6 +437,10 @@ func (m *ManagedDeviceItemRequestBuilder) ReprovisionCloudPc()(*i5c1b61352546e0e
 func (m *ManagedDeviceItemRequestBuilder) RequestRemoteAssistance()(*ia9e35aa934485810b7f428c752d5b72ac6c7bb25b0203c31668c6ffeb9016989.RequestRemoteAssistanceRequestBuilder) {
     return ia9e35aa934485810b7f428c752d5b72ac6c7bb25b0203c31668c6ffeb9016989.NewRequestRemoteAssistanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// RequestRemoteHelpSessionAccess the requestRemoteHelpSessionAccess property
+func (m *ManagedDeviceItemRequestBuilder) RequestRemoteHelpSessionAccess()(*i5107750dcc566711aaea7a0c5440bc82a417d831c00dfaf7b0ef450062c244f1.RequestRemoteHelpSessionAccessRequestBuilder) {
+    return i5107750dcc566711aaea7a0c5440bc82a417d831c00dfaf7b0ef450062c244f1.NewRequestRemoteHelpSessionAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // ResetPasscode the resetPasscode property
 func (m *ManagedDeviceItemRequestBuilder) ResetPasscode()(*i9da99e12e59b05474451fa26fb9ba2a61a1e7f3d2d11e16bb6107056d1bf1d18.ResetPasscodeRequestBuilder) {
     return i9da99e12e59b05474451fa26fb9ba2a61a1e7f3d2d11e16bb6107056d1bf1d18.NewResetPasscodeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -445,6 +456,10 @@ func (m *ManagedDeviceItemRequestBuilder) RestoreCloudPc()(*i2df51e7699d7e946c4c
 // Retire the retire property
 func (m *ManagedDeviceItemRequestBuilder) Retire()(*ic814e3839bc6f855c24fd1a5a83ccb31ddd05002e9bd4af67e2782c60291bd1d.RetireRequestBuilder) {
     return ic814e3839bc6f855c24fd1a5a83ccb31ddd05002e9bd4af67e2782c60291bd1d.NewRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// RetrieveRemoteHelpSessionWithSessionKey provides operations to call the retrieveRemoteHelpSession method.
+func (m *ManagedDeviceItemRequestBuilder) RetrieveRemoteHelpSessionWithSessionKey(sessionKey *string)(*id66e418ae657b5791755d760a0ab7a474f153480b8bd98438551043c3292970e.RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder) {
+    return id66e418ae657b5791755d760a0ab7a474f153480b8bd98438551043c3292970e.NewRetrieveRemoteHelpSessionWithSessionKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter, sessionKey);
 }
 // RevokeAppleVppLicenses the revokeAppleVppLicenses property
 func (m *ManagedDeviceItemRequestBuilder) RevokeAppleVppLicenses()(*i06f050446fb7bd265e92527bb85f6f2a987efadd05b06c81151de522ed58e0ef.RevokeAppleVppLicensesRequestBuilder) {

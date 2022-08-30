@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicy 
+// WindowsDefenderApplicationControlSupplementalPolicy provides operations to manage the collection of activityStatistics entities.
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
     // The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
@@ -31,7 +31,7 @@ type WindowsDefenderApplicationControlSupplementalPolicy struct {
     // The WindowsDefenderApplicationControl supplemental policy's version.
     version *string
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new WindowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderApplicationControlSupplementalPolicy) {
     m := &WindowsDefenderApplicationControlSupplementalPolicy{
         Entity: *NewEntity(),

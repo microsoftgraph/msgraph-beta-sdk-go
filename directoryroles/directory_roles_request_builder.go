@@ -4,7 +4,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i28acc41a9ddaa5012f518de9ebb17e81fc5d01a5bb443c4043b0cabb5ae0b5ac "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/count"
     i686e52110d509abde81e2ec02a4b1cacb26be255a28efb139b5fe07005585dcb "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/getuserownedobjects"
     i6c75901f09b564ec245b7b3a868272e273083db1b9879e0b05d7329117fa6e34 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/getbyids"
     i89f3d18e33abe74e12cff2eb112be1d34453a000675f0e7670b07807419b57ff "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/delta"
@@ -22,20 +21,12 @@ type DirectoryRolesRequestBuilder struct {
 }
 // DirectoryRolesRequestBuilderGetQueryParameters list the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
 type DirectoryRolesRequestBuilderGetQueryParameters struct {
-    // Include count of items
-    Count *bool `uriparametername:"%24count"`
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
-    // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
 }
 // DirectoryRolesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRolesRequestBuilderGetRequestConfiguration struct {
@@ -57,7 +48,7 @@ type DirectoryRolesRequestBuilderPostRequestConfiguration struct {
 func NewDirectoryRolesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRolesRequestBuilder) {
     m := &DirectoryRolesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directoryRoles{?%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/directoryRoles{?%24search,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -71,10 +62,6 @@ func NewDirectoryRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRolesRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count the Count property
-func (m *DirectoryRolesRequestBuilder) Count()(*i28acc41a9ddaa5012f518de9ebb17e81fc5d01a5bb443c4043b0cabb5ae0b5ac.CountRequestBuilder) {
-    return i28acc41a9ddaa5012f518de9ebb17e81fc5d01a5bb443c4043b0cabb5ae0b5ac.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
 func (m *DirectoryRolesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

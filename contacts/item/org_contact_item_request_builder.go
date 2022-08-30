@@ -38,8 +38,6 @@ type OrgContactItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // OrgContactItemRequestBuilderGetQueryParameters get the properties and relationships of an organizational contact object.
 type OrgContactItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -71,7 +69,7 @@ func (m *OrgContactItemRequestBuilder) CheckMemberObjects()(*iaaabcbb8c60e122516
 func NewOrgContactItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrgContactItemRequestBuilder) {
     m := &OrgContactItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/contacts/{orgContact%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/contacts/{orgContact%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

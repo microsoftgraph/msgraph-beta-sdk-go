@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSSoftwareUpdateAccountSummary 
+// MacOSSoftwareUpdateAccountSummary macOS software update account summary report for a device and user
 type MacOSSoftwareUpdateAccountSummary struct {
     Entity
     // Summary of the updates by category.
@@ -31,7 +31,7 @@ type MacOSSoftwareUpdateAccountSummary struct {
     // The user principal name
     userPrincipalName *string
 }
-// NewMacOSSoftwareUpdateAccountSummary instantiates a new MacOSSoftwareUpdateAccountSummary and sets the default values.
+// NewMacOSSoftwareUpdateAccountSummary instantiates a new macOSSoftwareUpdateAccountSummary and sets the default values.
 func NewMacOSSoftwareUpdateAccountSummary()(*MacOSSoftwareUpdateAccountSummary) {
     m := &MacOSSoftwareUpdateAccountSummary{
         Entity: *NewEntity(),

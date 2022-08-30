@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i1634d124e13ffd0cab6d792b39af6165594c5183595443f6dbd586fb2dacb598 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i7e1e98fdde7d483e4cf0a0c75f76875563a3b286a6d947496755378b2337f87b "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/lifecycleworkflows"
     i980a16b671cb1d9b9251e92f61e0a38b85d73c7e3da0d7d33055d60e7e5583df "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement"
     ia84e7b6e98da4aca360dbefe526b5e9895268f91ebdbd56a0d404de509c7705b "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/appconsent"
     ic8d738e0ef5dd83881ad42286a210c4014b53022a6b1ca33fb97933713ff69c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/termsofuse"
@@ -129,6 +130,10 @@ func (m *IdentityGovernanceRequestBuilder) GetWithRequestConfigurationAndRespons
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityGovernanceable), nil
+}
+// LifecycleWorkflows the lifecycleWorkflows property
+func (m *IdentityGovernanceRequestBuilder) LifecycleWorkflows()(*i7e1e98fdde7d483e4cf0a0c75f76875563a3b286a6d947496755378b2337f87b.LifecycleWorkflowsRequestBuilder) {
+    return i7e1e98fdde7d483e4cf0a0c75f76875563a3b286a6d947496755378b2337f87b.NewLifecycleWorkflowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update identityGovernance
 func (m *IdentityGovernanceRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityGovernanceable)(error) {

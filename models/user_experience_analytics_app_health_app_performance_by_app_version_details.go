@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails 
+// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails the user experience analytics application performance entity contains app performance by app version details.
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     Entity
     // The number of crashes for the app. Valid values -2147483648 to 2147483647
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     // Is the version of application the most used version for that app.
     isMostUsedVersion *bool
 }
-// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails{
         Entity: *NewEntity(),

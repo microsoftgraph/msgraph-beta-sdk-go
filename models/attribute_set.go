@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttributeSet 
+// AttributeSet provides operations to manage the collection of activityStatistics entities.
 type AttributeSet struct {
     Entity
     // Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
@@ -12,7 +12,7 @@ type AttributeSet struct {
     // Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
     maxAttributesPerSet *int32
 }
-// NewAttributeSet instantiates a new AttributeSet and sets the default values.
+// NewAttributeSet instantiates a new attributeSet and sets the default values.
 func NewAttributeSet()(*AttributeSet) {
     m := &AttributeSet{
         Entity: *NewEntity(),

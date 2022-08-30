@@ -162,8 +162,6 @@ type MeRequestBuilder struct {
 }
 // MeRequestBuilderGetQueryParameters returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 type MeRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -384,7 +382,7 @@ func (m *MeRequestBuilder) CloudPCsById(id string)(*i311c4a65493f2e31d79a3e80ede
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeRequestBuilder) {
     m := &MeRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

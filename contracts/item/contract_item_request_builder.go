@@ -29,8 +29,6 @@ type ContractItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // ContractItemRequestBuilderGetQueryParameters retrieve the properties and relationships of contract object.
 type ContractItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -62,7 +60,7 @@ func (m *ContractItemRequestBuilder) CheckMemberObjects()(*idde5435a6a0561007c34
 func NewContractItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContractItemRequestBuilder) {
     m := &ContractItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/contracts/{contract%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/contracts/{contract%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

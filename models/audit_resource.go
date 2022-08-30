@@ -8,6 +8,8 @@ import (
 type AuditResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // Audit resource's type.
+    auditResourceType *string
     // Display name.
     displayName *string
     // List of modified properties.
@@ -36,6 +38,10 @@ func CreateAuditResourceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *AuditResource) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
+// GetAuditResourceType gets the auditResourceType property value. Audit resource's type.
+func (m *AuditResource) GetAuditResourceType()(*string) {
+    return m.auditResourceType
+}
 // GetDisplayName gets the displayName property value. Display name.
 func (m *AuditResource) GetDisplayName()(*string) {
     return m.displayName
@@ -43,6 +49,16 @@ func (m *AuditResource) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["auditResourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuditResourceType(val)
+        }
+        return nil
+    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -118,6 +134,12 @@ func (m *AuditResource) GetType()(*string) {
 // Serialize serializes information the current object
 func (m *AuditResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("auditResourceType", m.GetAuditResourceType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -162,6 +184,10 @@ func (m *AuditResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditResource) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
+}
+// SetAuditResourceType sets the auditResourceType property value. Audit resource's type.
+func (m *AuditResource) SetAuditResourceType(value *string)() {
+    m.auditResourceType = value
 }
 // SetDisplayName sets the displayName property value. Display name.
 func (m *AuditResource) SetDisplayName(value *string)() {

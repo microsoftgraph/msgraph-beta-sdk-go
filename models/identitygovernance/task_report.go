@@ -1,0 +1,359 @@
+package identitygovernance
+
+import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+)
+
+// TaskReport provides operations to manage the collection of activityStatistics entities.
+type TaskReport struct {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The completedDateTime property
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The failedUsersCount property
+    failedUsersCount *int32
+    // The lastUpdatedDateTime property
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The processingStatus property
+    processingStatus *LifecycleWorkflowProcessingStatus
+    // The runId property
+    runId *string
+    // The startedDateTime property
+    startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The successfulUsersCount property
+    successfulUsersCount *int32
+    // The task property
+    task Taskable
+    // The taskDefinition property
+    taskDefinition TaskDefinitionable
+    // The taskProcessingResults property
+    taskProcessingResults []TaskProcessingResultable
+    // The totalUsersCount property
+    totalUsersCount *int32
+    // The unprocessedUsersCount property
+    unprocessedUsersCount *int32
+}
+// NewTaskReport instantiates a new taskReport and sets the default values.
+func NewTaskReport()(*TaskReport) {
+    m := &TaskReport{
+        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+    }
+    odataTypeValue := "#microsoft.graph.identityGovernance.taskReport";
+    m.SetOdataType(&odataTypeValue);
+    return m
+}
+// CreateTaskReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateTaskReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewTaskReport(), nil
+}
+// GetCompletedDateTime gets the completedDateTime property value. The completedDateTime property
+func (m *TaskReport) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.completedDateTime
+}
+// GetFailedUsersCount gets the failedUsersCount property value. The failedUsersCount property
+func (m *TaskReport) GetFailedUsersCount()(*int32) {
+    return m.failedUsersCount
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *TaskReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCompletedDateTime(val)
+        }
+        return nil
+    }
+    res["failedUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFailedUsersCount(val)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
+        return nil
+    }
+    res["processingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseLifecycleWorkflowProcessingStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProcessingStatus(val.(*LifecycleWorkflowProcessingStatus))
+        }
+        return nil
+    }
+    res["runId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRunId(val)
+        }
+        return nil
+    }
+    res["startedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartedDateTime(val)
+        }
+        return nil
+    }
+    res["successfulUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSuccessfulUsersCount(val)
+        }
+        return nil
+    }
+    res["task"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTaskFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTask(val.(Taskable))
+        }
+        return nil
+    }
+    res["taskDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTaskDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTaskDefinition(val.(TaskDefinitionable))
+        }
+        return nil
+    }
+    res["taskProcessingResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTaskProcessingResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TaskProcessingResultable, len(val))
+            for i, v := range val {
+                res[i] = v.(TaskProcessingResultable)
+            }
+            m.SetTaskProcessingResults(res)
+        }
+        return nil
+    }
+    res["totalUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalUsersCount(val)
+        }
+        return nil
+    }
+    res["unprocessedUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnprocessedUsersCount(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *TaskReport) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.lastUpdatedDateTime
+}
+// GetProcessingStatus gets the processingStatus property value. The processingStatus property
+func (m *TaskReport) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
+    return m.processingStatus
+}
+// GetRunId gets the runId property value. The runId property
+func (m *TaskReport) GetRunId()(*string) {
+    return m.runId
+}
+// GetStartedDateTime gets the startedDateTime property value. The startedDateTime property
+func (m *TaskReport) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.startedDateTime
+}
+// GetSuccessfulUsersCount gets the successfulUsersCount property value. The successfulUsersCount property
+func (m *TaskReport) GetSuccessfulUsersCount()(*int32) {
+    return m.successfulUsersCount
+}
+// GetTask gets the task property value. The task property
+func (m *TaskReport) GetTask()(Taskable) {
+    return m.task
+}
+// GetTaskDefinition gets the taskDefinition property value. The taskDefinition property
+func (m *TaskReport) GetTaskDefinition()(TaskDefinitionable) {
+    return m.taskDefinition
+}
+// GetTaskProcessingResults gets the taskProcessingResults property value. The taskProcessingResults property
+func (m *TaskReport) GetTaskProcessingResults()([]TaskProcessingResultable) {
+    return m.taskProcessingResults
+}
+// GetTotalUsersCount gets the totalUsersCount property value. The totalUsersCount property
+func (m *TaskReport) GetTotalUsersCount()(*int32) {
+    return m.totalUsersCount
+}
+// GetUnprocessedUsersCount gets the unprocessedUsersCount property value. The unprocessedUsersCount property
+func (m *TaskReport) GetUnprocessedUsersCount()(*int32) {
+    return m.unprocessedUsersCount
+}
+// Serialize serializes information the current object
+func (m *TaskReport) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteTimeValue("completedDateTime", m.GetCompletedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("failedUsersCount", m.GetFailedUsersCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetProcessingStatus() != nil {
+        cast := (*m.GetProcessingStatus()).String()
+        err = writer.WriteStringValue("processingStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("runId", m.GetRunId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("startedDateTime", m.GetStartedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("successfulUsersCount", m.GetSuccessfulUsersCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("task", m.GetTask())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("taskDefinition", m.GetTaskDefinition())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTaskProcessingResults() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskProcessingResults()))
+        for i, v := range m.GetTaskProcessingResults() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("taskProcessingResults", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("totalUsersCount", m.GetTotalUsersCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("unprocessedUsersCount", m.GetUnprocessedUsersCount())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetCompletedDateTime sets the completedDateTime property value. The completedDateTime property
+func (m *TaskReport) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.completedDateTime = value
+}
+// SetFailedUsersCount sets the failedUsersCount property value. The failedUsersCount property
+func (m *TaskReport) SetFailedUsersCount(value *int32)() {
+    m.failedUsersCount = value
+}
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+func (m *TaskReport) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.lastUpdatedDateTime = value
+}
+// SetProcessingStatus sets the processingStatus property value. The processingStatus property
+func (m *TaskReport) SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)() {
+    m.processingStatus = value
+}
+// SetRunId sets the runId property value. The runId property
+func (m *TaskReport) SetRunId(value *string)() {
+    m.runId = value
+}
+// SetStartedDateTime sets the startedDateTime property value. The startedDateTime property
+func (m *TaskReport) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.startedDateTime = value
+}
+// SetSuccessfulUsersCount sets the successfulUsersCount property value. The successfulUsersCount property
+func (m *TaskReport) SetSuccessfulUsersCount(value *int32)() {
+    m.successfulUsersCount = value
+}
+// SetTask sets the task property value. The task property
+func (m *TaskReport) SetTask(value Taskable)() {
+    m.task = value
+}
+// SetTaskDefinition sets the taskDefinition property value. The taskDefinition property
+func (m *TaskReport) SetTaskDefinition(value TaskDefinitionable)() {
+    m.taskDefinition = value
+}
+// SetTaskProcessingResults sets the taskProcessingResults property value. The taskProcessingResults property
+func (m *TaskReport) SetTaskProcessingResults(value []TaskProcessingResultable)() {
+    m.taskProcessingResults = value
+}
+// SetTotalUsersCount sets the totalUsersCount property value. The totalUsersCount property
+func (m *TaskReport) SetTotalUsersCount(value *int32)() {
+    m.totalUsersCount = value
+}
+// SetUnprocessedUsersCount sets the unprocessedUsersCount property value. The unprocessedUsersCount property
+func (m *TaskReport) SetUnprocessedUsersCount(value *int32)() {
+    m.unprocessedUsersCount = value
+}

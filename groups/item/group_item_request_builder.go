@@ -88,8 +88,6 @@ type GroupItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // GroupItemRequestBuilderGetQueryParameters get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that are _not_ returned by default, specify them in a `$select` OData query option. The **hasMembersWithLicenseErrors** and **isArchived** properties are an exception and are not returned in the `$select` query. Because the **group** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **group** instance.
 type GroupItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -182,7 +180,7 @@ func (m *GroupItemRequestBuilder) CheckMemberObjects()(*i89e2b1f1f516d9a68cf412b
 func NewGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupItemRequestBuilder) {
     m := &GroupItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

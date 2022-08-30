@@ -10,6 +10,7 @@ type AuditActorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplicationDisplayName()(*string)
     GetApplicationId()(*string)
+    GetAuditActorType()(*string)
     GetIpAddress()(*string)
     GetOdataType()(*string)
     GetRemoteTenantId()(*string)
@@ -22,6 +23,7 @@ type AuditActorable interface {
     GetUserRoleScopeTags()([]RoleScopeTagInfoable)
     SetApplicationDisplayName(value *string)()
     SetApplicationId(value *string)()
+    SetAuditActorType(value *string)()
     SetIpAddress(value *string)()
     SetOdataType(value *string)()
     SetRemoteTenantId(value *string)()

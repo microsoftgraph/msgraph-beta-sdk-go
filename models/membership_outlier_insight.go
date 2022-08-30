@@ -7,13 +7,13 @@ import (
 // MembershipOutlierInsight 
 type MembershipOutlierInsight struct {
     GovernanceInsight
-    // The container property
+    // Navigation link to the container directory object. For example, to a group.
     container DirectoryObjectable
-    // The containerId property
+    // Indicates the identifier of the container, for example, a group ID.
     containerId *string
-    // The member property
+    // Navigation link to a member object. For example, to a user.
     member DirectoryObjectable
-    // The memberId property
+    // Indicates the identifier of the user.
     memberId *string
     // The outlierContainerType property
     outlierContainerType *OutlierContainerType
@@ -33,11 +33,11 @@ func NewMembershipOutlierInsight()(*MembershipOutlierInsight) {
 func CreateMembershipOutlierInsightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMembershipOutlierInsight(), nil
 }
-// GetContainer gets the container property value. The container property
+// GetContainer gets the container property value. Navigation link to the container directory object. For example, to a group.
 func (m *MembershipOutlierInsight) GetContainer()(DirectoryObjectable) {
     return m.container
 }
-// GetContainerId gets the containerId property value. The containerId property
+// GetContainerId gets the containerId property value. Indicates the identifier of the container, for example, a group ID.
 func (m *MembershipOutlierInsight) GetContainerId()(*string) {
     return m.containerId
 }
@@ -106,11 +106,11 @@ func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetMember gets the member property value. The member property
+// GetMember gets the member property value. Navigation link to a member object. For example, to a user.
 func (m *MembershipOutlierInsight) GetMember()(DirectoryObjectable) {
     return m.member
 }
-// GetMemberId gets the memberId property value. The memberId property
+// GetMemberId gets the memberId property value. Indicates the identifier of the user.
 func (m *MembershipOutlierInsight) GetMemberId()(*string) {
     return m.memberId
 }
@@ -168,19 +168,19 @@ func (m *MembershipOutlierInsight) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetContainer sets the container property value. The container property
+// SetContainer sets the container property value. Navigation link to the container directory object. For example, to a group.
 func (m *MembershipOutlierInsight) SetContainer(value DirectoryObjectable)() {
     m.container = value
 }
-// SetContainerId sets the containerId property value. The containerId property
+// SetContainerId sets the containerId property value. Indicates the identifier of the container, for example, a group ID.
 func (m *MembershipOutlierInsight) SetContainerId(value *string)() {
     m.containerId = value
 }
-// SetMember sets the member property value. The member property
+// SetMember sets the member property value. Navigation link to a member object. For example, to a user.
 func (m *MembershipOutlierInsight) SetMember(value DirectoryObjectable)() {
     m.member = value
 }
-// SetMemberId sets the memberId property value. The memberId property
+// SetMemberId sets the memberId property value. Indicates the identifier of the user.
 func (m *MembershipOutlierInsight) SetMemberId(value *string)() {
     m.memberId = value
 }

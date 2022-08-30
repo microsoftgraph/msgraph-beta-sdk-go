@@ -37,8 +37,6 @@ type OrganizationItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // OrganizationItemRequestBuilderGetQueryParameters get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
 type OrganizationItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -93,7 +91,7 @@ func (m *OrganizationItemRequestBuilder) CheckMemberObjects()(*i3086ab3ba30171d3
 func NewOrganizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrganizationItemRequestBuilder) {
     m := &OrganizationItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/organization/{organization%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/organization/{organization%2Did}{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

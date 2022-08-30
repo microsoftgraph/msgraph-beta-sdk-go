@@ -3,7 +3,6 @@ package contracts
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/count"
     i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/getbyids"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/getuserownedobjects"
@@ -21,20 +20,12 @@ type ContractsRequestBuilder struct {
 }
 // ContractsRequestBuilderGetQueryParameters retrieve a list of contract objects associated to a partner tenant.
 type ContractsRequestBuilderGetQueryParameters struct {
-    // Include count of items
-    Count *bool `uriparametername:"%24count"`
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
-    // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -58,7 +49,7 @@ type ContractsRequestBuilderPostRequestConfiguration struct {
 func NewContractsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContractsRequestBuilder) {
     m := &ContractsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/contracts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/contracts{?%24top,%24search,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -72,10 +63,6 @@ func NewContractsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContractsRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count the Count property
-func (m *ContractsRequestBuilder) Count()(*i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.CountRequestBuilder) {
-    return i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of contract objects associated to a partner tenant.
 func (m *ContractsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

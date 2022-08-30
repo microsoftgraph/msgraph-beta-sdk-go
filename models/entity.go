@@ -621,6 +621,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDelegatedAdminServiceManagementDetail(), nil
                     case "#microsoft.graph.delegatedPermissionClassification":
                         return NewDelegatedPermissionClassification(), nil
+                    case "#microsoft.graph.deletedItemContainer":
+                        return NewDeletedItemContainer(), nil
                     case "#microsoft.graph.deletedTeam":
                         return NewDeletedTeam(), nil
                     case "#microsoft.graph.depEnrollmentBaseProfile":
@@ -2601,6 +2603,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindowsWifiEnterpriseEAPConfiguration(), nil
                     case "#microsoft.graph.windowsWiredNetworkConfiguration":
                         return NewWindowsWiredNetworkConfiguration(), nil
+                    case "#microsoft.graph.winGetApp":
+                        return NewWinGetApp(), nil
                     case "#microsoft.graph.workbook":
                         return NewWorkbook(), nil
                     case "#microsoft.graph.workbookApplication":
