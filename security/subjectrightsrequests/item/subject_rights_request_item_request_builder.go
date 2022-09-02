@@ -1,6 +1,7 @@
 package item
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
@@ -123,11 +124,7 @@ func (m *SubjectRightsRequestItemRequestBuilder) CreatePatchRequestInformationWi
     return requestInfo, nil
 }
 // Delete delete navigation property subjectRightsRequests for security
-func (m *SubjectRightsRequestItemRequestBuilder) Delete()(error) {
-    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// DeleteWithRequestConfigurationAndResponseHandler delete navigation property subjectRightsRequests for security
-func (m *SubjectRightsRequestItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SubjectRightsRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,26 +133,14 @@ func (m *SubjectRightsRequestItemRequestBuilder) DeleteWithRequestConfigurationA
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
 // Get get subjectRightsRequests from security
-func (m *SubjectRightsRequestItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetFinalAttachment provides operations to call the getFinalAttachment method.
-func (m *SubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*i3c6b3962f4f957ab38ad7c6292548c19324c840c5f4c6caf1d78354ceac67949.GetFinalAttachmentRequestBuilder) {
-    return i3c6b3962f4f957ab38ad7c6292548c19324c840c5f4c6caf1d78354ceac67949.NewGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetFinalReport provides operations to call the getFinalReport method.
-func (m *SubjectRightsRequestItemRequestBuilder) GetFinalReport()(*ia2013bbfcd0f09a5b744acfe4f28cd0f4a71f920f7dc684799f554684dec56af.GetFinalReportRequestBuilder) {
-    return ia2013bbfcd0f09a5b744acfe4f28cd0f4a71f920f7dc684799f554684dec56af.NewGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetWithRequestConfigurationAndResponseHandler get subjectRightsRequests from security
-func (m *SubjectRightsRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
+func (m *SubjectRightsRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -164,11 +149,22 @@ func (m *SubjectRightsRequestItemRequestBuilder) GetWithRequestConfigurationAndR
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSubjectRightsRequestFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSubjectRightsRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
+    if res == nil {
+        return nil, nil
+    }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable), nil
+}
+// GetFinalAttachment provides operations to call the getFinalAttachment method.
+func (m *SubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*i3c6b3962f4f957ab38ad7c6292548c19324c840c5f4c6caf1d78354ceac67949.GetFinalAttachmentRequestBuilder) {
+    return i3c6b3962f4f957ab38ad7c6292548c19324c840c5f4c6caf1d78354ceac67949.NewGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetFinalReport provides operations to call the getFinalReport method.
+func (m *SubjectRightsRequestItemRequestBuilder) GetFinalReport()(*ia2013bbfcd0f09a5b744acfe4f28cd0f4a71f920f7dc684799f554684dec56af.GetFinalReportRequestBuilder) {
+    return ia2013bbfcd0f09a5b744acfe4f28cd0f4a71f920f7dc684799f554684dec56af.NewGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Notes the notes property
 func (m *SubjectRightsRequestItemRequestBuilder) Notes()(*i85ceeb3fb58c5b0a45a32b65876d69fa3767299ea1e59ab70bb19f94fd16f3ba.NotesRequestBuilder) {
@@ -186,11 +182,7 @@ func (m *SubjectRightsRequestItemRequestBuilder) NotesById(id string)(*i8a7d93ed
     return i8a7d93ed28ef349b2b993a1fc0c5f4e014bde5b2d9f556a4c3a79c6c310a82c0.NewAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property subjectRightsRequests in security
-func (m *SubjectRightsRequestItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable)(error) {
-    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PatchWithRequestConfigurationAndResponseHandler update the navigation property subjectRightsRequests in security
-func (m *SubjectRightsRequestItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SubjectRightsRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -199,7 +191,7 @@ func (m *SubjectRightsRequestItemRequestBuilder) PatchWithRequestConfigurationAn
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

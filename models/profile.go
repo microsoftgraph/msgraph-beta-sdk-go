@@ -46,7 +46,7 @@ type Profile struct {
     // Represents detailed information about websites associated with a user in various services.
     websites []PersonWebsiteable
 }
-// NewProfile instantiates a new profile and sets the default values.
+// NewProfile instantiates a new Profile and sets the default values.
 func NewProfile()(*Profile) {
     m := &Profile{
         Entity: *NewEntity(),

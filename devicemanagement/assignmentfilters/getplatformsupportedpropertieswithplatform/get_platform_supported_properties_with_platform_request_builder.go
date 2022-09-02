@@ -1,6 +1,7 @@
 package getplatformsupportedpropertieswithplatform
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -61,11 +62,7 @@ func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequ
     return requestInfo, nil
 }
 // Get invoke function getPlatformSupportedProperties
-func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) Get()(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler invoke function getPlatformSupportedProperties
-func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
+func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) Get(ctx context.Context, requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -74,9 +71,12 @@ func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) GetWithReques
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPlatformSupportedPropertiesWithPlatformResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetPlatformSupportedPropertiesWithPlatformResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetPlatformSupportedPropertiesWithPlatformResponseable), nil
 }

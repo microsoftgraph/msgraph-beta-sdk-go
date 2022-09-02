@@ -1,6 +1,7 @@
 package unassignresourceaccountfromdevice
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -57,11 +58,7 @@ func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInfor
     return requestInfo, nil
 }
 // Post unassigns the resource account from an Autopilot device.
-func (m *UnassignResourceAccountFromDeviceRequestBuilder) Post()(error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler unassigns the resource account from an Autopilot device.
-func (m *UnassignResourceAccountFromDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -70,7 +67,7 @@ func (m *UnassignResourceAccountFromDeviceRequestBuilder) PostWithRequestConfigu
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

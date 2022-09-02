@@ -1,6 +1,7 @@
 package createdownloadurl
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformationWithReques
     return requestInfo, nil
 }
 // Post invoke action createDownloadUrl
-func (m *CreateDownloadUrlRequestBuilder) Post()(CreateDownloadUrlResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action createDownloadUrl
-func (m *CreateDownloadUrlRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *CreateDownloadUrlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateDownloadUrlResponseable, error) {
+func (m *CreateDownloadUrlRequestBuilder) Post(ctx context.Context, requestConfiguration *CreateDownloadUrlRequestBuilderPostRequestConfiguration)(CreateDownloadUrlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *CreateDownloadUrlRequestBuilder) PostWithRequestConfigurationAndRespons
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateDownloadUrlResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateCreateDownloadUrlResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(CreateDownloadUrlResponseable), nil
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyCategory the category entity stores the category of a group policy definition
+// GroupPolicyCategory 
 type GroupPolicyCategory struct {
     Entity
     // The children categories
@@ -25,7 +25,7 @@ type GroupPolicyCategory struct {
     // The parent category
     parent GroupPolicyCategoryable
 }
-// NewGroupPolicyCategory instantiates a new groupPolicyCategory and sets the default values.
+// NewGroupPolicyCategory instantiates a new GroupPolicyCategory and sets the default values.
 func NewGroupPolicyCategory()(*GroupPolicyCategory) {
     m := &GroupPolicyCategory{
         Entity: *NewEntity(),

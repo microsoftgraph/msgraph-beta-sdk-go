@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CertificateConnectorDetails entity used to retrieve information about Intune Certificate Connectors.
+// CertificateConnectorDetails 
 type CertificateConnectorDetails struct {
     Entity
     // Connector name (set during enrollment).
@@ -19,7 +19,7 @@ type CertificateConnectorDetails struct {
     // Name of the machine hosting this connector service.
     machineName *string
 }
-// NewCertificateConnectorDetails instantiates a new certificateConnectorDetails and sets the default values.
+// NewCertificateConnectorDetails instantiates a new CertificateConnectorDetails and sets the default values.
 func NewCertificateConnectorDetails()(*CertificateConnectorDetails) {
     m := &CertificateConnectorDetails{
         Entity: *NewEntity(),

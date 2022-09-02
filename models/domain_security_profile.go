@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DomainSecurityProfile provides operations to manage the collection of activityStatistics entities.
+// DomainSecurityProfile 
 type DomainSecurityProfile struct {
     Entity
     // The activityGroupNames property
@@ -37,7 +37,7 @@ type DomainSecurityProfile struct {
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
-// NewDomainSecurityProfile instantiates a new domainSecurityProfile and sets the default values.
+// NewDomainSecurityProfile instantiates a new DomainSecurityProfile and sets the default values.
 func NewDomainSecurityProfile()(*DomainSecurityProfile) {
     m := &DomainSecurityProfile{
         Entity: *NewEntity(),

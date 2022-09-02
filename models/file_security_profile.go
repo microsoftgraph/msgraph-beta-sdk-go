@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileSecurityProfile provides operations to manage the collection of activityStatistics entities.
+// FileSecurityProfile 
 type FileSecurityProfile struct {
     Entity
     // The activityGroupNames property
@@ -41,7 +41,7 @@ type FileSecurityProfile struct {
     // The vulnerabilityStates property
     vulnerabilityStates []VulnerabilityStateable
 }
-// NewFileSecurityProfile instantiates a new fileSecurityProfile and sets the default values.
+// NewFileSecurityProfile instantiates a new FileSecurityProfile and sets the default values.
 func NewFileSecurityProfile()(*FileSecurityProfile) {
     m := &FileSecurityProfile{
         Entity: *NewEntity(),

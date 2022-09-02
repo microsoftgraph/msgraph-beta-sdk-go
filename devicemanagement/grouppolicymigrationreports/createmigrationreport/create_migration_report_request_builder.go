@@ -1,6 +1,7 @@
 package createmigrationreport
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *CreateMigrationReportRequestBuilder) CreatePostRequestInformationWithRe
     return requestInfo, nil
 }
 // Post invoke action createMigrationReport
-func (m *CreateMigrationReportRequestBuilder) Post(body CreateMigrationReportPostRequestBodyable)(CreateMigrationReportResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action createMigrationReport
-func (m *CreateMigrationReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateMigrationReportPostRequestBodyable, requestConfiguration *CreateMigrationReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateMigrationReportResponseable, error) {
+func (m *CreateMigrationReportRequestBuilder) Post(ctx context.Context, body CreateMigrationReportPostRequestBodyable, requestConfiguration *CreateMigrationReportRequestBuilderPostRequestConfiguration)(CreateMigrationReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *CreateMigrationReportRequestBuilder) PostWithRequestConfigurationAndRes
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateMigrationReportResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateCreateMigrationReportResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(CreateMigrationReportResponseable), nil
 }

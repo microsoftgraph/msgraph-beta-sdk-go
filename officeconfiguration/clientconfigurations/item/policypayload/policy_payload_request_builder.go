@@ -1,6 +1,7 @@
 package policypayload
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -81,11 +82,7 @@ func (m *PolicyPayloadRequestBuilder) CreatePutRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Get policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) Get()([]byte, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PolicyPayloadRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+func (m *PolicyPayloadRequestBuilder) Get(ctx context.Context, requestConfiguration *PolicyPayloadRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -94,18 +91,17 @@ func (m *PolicyPayloadRequestBuilder) GetWithRequestConfigurationAndResponseHand
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "[]byte", responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendPrimitiveAsync(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.([]byte), nil
 }
 // Put policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) Put(body []byte)(error) {
-    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PutWithRequestConfigurationAndResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *PolicyPayloadRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *PolicyPayloadRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *PolicyPayloadRequestBuilderPutRequestConfiguration)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -114,7 +110,7 @@ func (m *PolicyPayloadRequestBuilder) PutWithRequestConfigurationAndResponseHand
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HostSecurityProfile provides operations to manage the collection of activityStatistics entities.
+// HostSecurityProfile 
 type HostSecurityProfile struct {
     Entity
     // The azureSubscriptionId property
@@ -45,7 +45,7 @@ type HostSecurityProfile struct {
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
-// NewHostSecurityProfile instantiates a new hostSecurityProfile and sets the default values.
+// NewHostSecurityProfile instantiates a new HostSecurityProfile and sets the default values.
 func NewHostSecurityProfile()(*HostSecurityProfile) {
     m := &HostSecurityProfile{
         Entity: *NewEntity(),

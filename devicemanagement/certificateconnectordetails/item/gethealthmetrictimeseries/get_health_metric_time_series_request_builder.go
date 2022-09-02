@@ -1,6 +1,7 @@
 package gethealthmetrictimeseries
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *GetHealthMetricTimeSeriesRequestBuilder) CreatePostRequestInformationWi
     return requestInfo, nil
 }
 // Post invoke action getHealthMetricTimeSeries
-func (m *GetHealthMetricTimeSeriesRequestBuilder) Post(body GetHealthMetricTimeSeriesPostRequestBodyable)(GetHealthMetricTimeSeriesResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action getHealthMetricTimeSeries
-func (m *GetHealthMetricTimeSeriesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetHealthMetricTimeSeriesPostRequestBodyable, requestConfiguration *GetHealthMetricTimeSeriesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetHealthMetricTimeSeriesResponseable, error) {
+func (m *GetHealthMetricTimeSeriesRequestBuilder) Post(ctx context.Context, body GetHealthMetricTimeSeriesPostRequestBodyable, requestConfiguration *GetHealthMetricTimeSeriesRequestBuilderPostRequestConfiguration)(GetHealthMetricTimeSeriesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *GetHealthMetricTimeSeriesRequestBuilder) PostWithRequestConfigurationAn
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetHealthMetricTimeSeriesResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetHealthMetricTimeSeriesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetHealthMetricTimeSeriesResponseable), nil
 }
