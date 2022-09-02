@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TaskDefinition provides operations to manage the collection of activityStatistics entities.
+// TaskDefinition 
 type TaskDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category property
@@ -21,7 +21,7 @@ type TaskDefinition struct {
     // The version property
     version *int32
 }
-// NewTaskDefinition instantiates a new taskDefinition and sets the default values.
+// NewTaskDefinition instantiates a new TaskDefinition and sets the default values.
 func NewTaskDefinition()(*TaskDefinition) {
     m := &TaskDefinition{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

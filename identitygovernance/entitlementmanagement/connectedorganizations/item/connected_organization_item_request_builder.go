@@ -1,6 +1,7 @@
 package item
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
@@ -122,11 +123,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) CreatePatchRequestInformationW
     return requestInfo, nil
 }
 // Delete delete navigation property connectedOrganizations for identityGovernance
-func (m *ConnectedOrganizationItemRequestBuilder) Delete()(error) {
-    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// DeleteWithRequestConfigurationAndResponseHandler delete navigation property connectedOrganizations for identityGovernance
-func (m *ConnectedOrganizationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ConnectedOrganizationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ConnectedOrganizationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectedOrganizationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -135,7 +132,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) DeleteWithRequestConfiguration
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -157,11 +154,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) ExternalSponsorsById(id string
     return i0dc4c794f51a132efa630bcc7fe954fbd3f2af62e62f7c1557759f789dc562fc.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get represents references to a directory or domain of another organization whose users can request access.
-func (m *ConnectedOrganizationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler represents references to a directory or domain of another organization whose users can request access.
-func (m *ConnectedOrganizationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConnectedOrganizationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, error) {
+func (m *ConnectedOrganizationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectedOrganizationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -170,9 +163,12 @@ func (m *ConnectedOrganizationItemRequestBuilder) GetWithRequestConfigurationAnd
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConnectedOrganizationFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConnectedOrganizationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable), nil
 }
@@ -192,11 +188,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) InternalSponsorsById(id string
     return iff3bb963dff2078fab9881a67d7525c7d4a7f645e97c901f5515f1e0a89e28b6.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property connectedOrganizations in identityGovernance
-func (m *ConnectedOrganizationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable)(error) {
-    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PatchWithRequestConfigurationAndResponseHandler update the navigation property connectedOrganizations in identityGovernance
-func (m *ConnectedOrganizationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, requestConfiguration *ConnectedOrganizationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ConnectedOrganizationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable, requestConfiguration *ConnectedOrganizationItemRequestBuilderPatchRequestConfiguration)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -205,7 +197,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) PatchWithRequestConfigurationA
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

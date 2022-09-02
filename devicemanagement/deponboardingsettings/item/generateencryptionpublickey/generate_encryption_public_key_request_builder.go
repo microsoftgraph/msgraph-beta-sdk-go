@@ -1,6 +1,7 @@
 package generateencryptionpublickey
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *GenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformation
     return requestInfo, nil
 }
 // Post generate a public key to use to encrypt the Apple device enrollment program token
-func (m *GenerateEncryptionPublicKeyRequestBuilder) Post()(GenerateEncryptionPublicKeyResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler generate a public key to use to encrypt the Apple device enrollment program token
-func (m *GenerateEncryptionPublicKeyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GenerateEncryptionPublicKeyResponseable, error) {
+func (m *GenerateEncryptionPublicKeyRequestBuilder) Post(ctx context.Context, requestConfiguration *GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration)(GenerateEncryptionPublicKeyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *GenerateEncryptionPublicKeyRequestBuilder) PostWithRequestConfiguration
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGenerateEncryptionPublicKeyResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGenerateEncryptionPublicKeyResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GenerateEncryptionPublicKeyResponseable), nil
 }

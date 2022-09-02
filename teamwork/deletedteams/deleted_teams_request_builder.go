@@ -1,6 +1,7 @@
 package deletedteams
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
@@ -114,15 +115,7 @@ func (m *DeletedTeamsRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Get a collection of deleted teams.
-func (m *DeletedTeamsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamCollectionResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetAllMessages provides operations to call the getAllMessages method.
-func (m *DeletedTeamsRequestBuilder) GetAllMessages()(*if631ffaec8045e222bb7bfa4826dd26eb7213cbcac06d6aeb78482492fb57fe0.GetAllMessagesRequestBuilder) {
-    return if631ffaec8045e222bb7bfa4826dd26eb7213cbcac06d6aeb78482492fb57fe0.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetWithRequestConfigurationAndResponseHandler a collection of deleted teams.
-func (m *DeletedTeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamCollectionResponseable, error) {
+func (m *DeletedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -131,18 +124,21 @@ func (m *DeletedTeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandl
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeletedTeamCollectionResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeletedTeamCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
+    if res == nil {
+        return nil, nil
+    }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamCollectionResponseable), nil
 }
-// Post create new navigation property to deletedTeams for teamwork
-func (m *DeletedTeamsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *DeletedTeamsRequestBuilder) GetAllMessages()(*if631ffaec8045e222bb7bfa4826dd26eb7213cbcac06d6aeb78482492fb57fe0.GetAllMessagesRequestBuilder) {
+    return if631ffaec8045e222bb7bfa4826dd26eb7213cbcac06d6aeb78482492fb57fe0.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithRequestConfigurationAndResponseHandler create new navigation property to deletedTeams for teamwork
-func (m *DeletedTeamsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, requestConfiguration *DeletedTeamsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, error) {
+// Post create new navigation property to deletedTeams for teamwork
+func (m *DeletedTeamsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, requestConfiguration *DeletedTeamsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -151,9 +147,12 @@ func (m *DeletedTeamsRequestBuilder) PostWithRequestConfigurationAndResponseHand
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeletedTeamFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeletedTeamFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable), nil
 }

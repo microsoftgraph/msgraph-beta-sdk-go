@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Task provides operations to manage the collection of activityStatistics entities.
+// Task 
 type Task struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The arguments property
@@ -27,7 +27,7 @@ type Task struct {
     // The taskProcessingResults property
     taskProcessingResults []TaskProcessingResultable
 }
-// NewTask instantiates a new task and sets the default values.
+// NewTask instantiates a new Task and sets the default values.
 func NewTask()(*Task) {
     m := &Task{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

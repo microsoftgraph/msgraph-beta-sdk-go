@@ -1,6 +1,7 @@
 package getdirectroutingcallswithfromdatetimewithtodatetime
 
 import (
+    "context"
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
@@ -65,11 +66,7 @@ func (m *GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) Crea
     return requestInfo, nil
 }
 // Get invoke function getDirectRoutingCalls
-func (m *GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) Get()(GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler invoke function getDirectRoutingCalls
-func (m *GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseable, error) {
+func (m *GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration)(GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -78,9 +75,12 @@ func (m *GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) GetW
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponseable), nil
 }

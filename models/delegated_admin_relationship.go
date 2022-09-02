@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationship provides operations to manage the collection of activityStatistics entities.
+// DelegatedAdminRelationship 
 type DelegatedAdminRelationship struct {
     Entity
     // The access assignments associated with the delegated admin relationship.
@@ -33,7 +33,7 @@ type DelegatedAdminRelationship struct {
     // The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
     status *DelegatedAdminRelationshipStatus
 }
-// NewDelegatedAdminRelationship instantiates a new delegatedAdminRelationship and sets the default values.
+// NewDelegatedAdminRelationship instantiates a new DelegatedAdminRelationship and sets the default values.
 func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     m := &DelegatedAdminRelationship{
         Entity: *NewEntity(),

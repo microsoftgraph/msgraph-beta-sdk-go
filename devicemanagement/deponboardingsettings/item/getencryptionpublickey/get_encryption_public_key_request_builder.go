@@ -1,6 +1,7 @@
 package getencryptionpublickey
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformationWithRe
     return requestInfo, nil
 }
 // Get get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) Get()(GetEncryptionPublicKeyResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEncryptionPublicKeyResponseable, error) {
+func (m *GetEncryptionPublicKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration)(GetEncryptionPublicKeyResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *GetEncryptionPublicKeyRequestBuilder) GetWithRequestConfigurationAndRes
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEncryptionPublicKeyResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetEncryptionPublicKeyResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetEncryptionPublicKeyResponseable), nil
 }

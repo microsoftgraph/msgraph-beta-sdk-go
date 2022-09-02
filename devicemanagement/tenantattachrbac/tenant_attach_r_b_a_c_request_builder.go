@@ -1,6 +1,7 @@
 package tenantattachrbac
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
@@ -120,11 +121,7 @@ func (m *TenantAttachRBACRequestBuilder) CreatePatchRequestInformationWithReques
     return requestInfo, nil
 }
 // Delete delete navigation property tenantAttachRBAC for deviceManagement
-func (m *TenantAttachRBACRequestBuilder) Delete()(error) {
-    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// DeleteWithRequestConfigurationAndResponseHandler delete navigation property tenantAttachRBAC for deviceManagement
-func (m *TenantAttachRBACRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *TenantAttachRBACRequestBuilder) Delete(ctx context.Context, requestConfiguration *TenantAttachRBACRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -133,7 +130,7 @@ func (m *TenantAttachRBACRequestBuilder) DeleteWithRequestConfigurationAndRespon
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -144,15 +141,7 @@ func (m *TenantAttachRBACRequestBuilder) Enable()(*i7bc33d26fea3adf37af488567a81
     return i7bc33d26fea3adf37af488567a81f90be048ebf49ee9219a6b86ea2b4cd5b097.NewEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get tenantAttach RBAC Enablement
-func (m *TenantAttachRBACRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetState provides operations to call the getState method.
-func (m *TenantAttachRBACRequestBuilder) GetState()(*i156783e63c46f563ab8ba6c58bd2e9689e66e8743f2dc518ade268d1f52fe636.GetStateRequestBuilder) {
-    return i156783e63c46f563ab8ba6c58bd2e9689e66e8743f2dc518ade268d1f52fe636.NewGetStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// GetWithRequestConfigurationAndResponseHandler tenantAttach RBAC Enablement
-func (m *TenantAttachRBACRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, error) {
+func (m *TenantAttachRBACRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantAttachRBACRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,18 +150,21 @@ func (m *TenantAttachRBACRequestBuilder) GetWithRequestConfigurationAndResponseH
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantAttachRBACFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantAttachRBACFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
+    if res == nil {
+        return nil, nil
+    }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable), nil
 }
-// Patch update the navigation property tenantAttachRBAC in deviceManagement
-func (m *TenantAttachRBACRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable)(error) {
-    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
+// GetState provides operations to call the getState method.
+func (m *TenantAttachRBACRequestBuilder) GetState()(*i156783e63c46f563ab8ba6c58bd2e9689e66e8743f2dc518ade268d1f52fe636.GetStateRequestBuilder) {
+    return i156783e63c46f563ab8ba6c58bd2e9689e66e8743f2dc518ade268d1f52fe636.NewGetStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithRequestConfigurationAndResponseHandler update the navigation property tenantAttachRBAC in deviceManagement
-func (m *TenantAttachRBACRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, requestConfiguration *TenantAttachRBACRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// Patch update the navigation property tenantAttachRBAC in deviceManagement
+func (m *TenantAttachRBACRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, requestConfiguration *TenantAttachRBACRequestBuilderPatchRequestConfiguration)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -181,7 +173,7 @@ func (m *TenantAttachRBACRequestBuilder) PatchWithRequestConfigurationAndRespons
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

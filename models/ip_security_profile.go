@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IpSecurityProfile provides operations to manage the collection of activityStatistics entities.
+// IpSecurityProfile 
 type IpSecurityProfile struct {
     Entity
     // The activityGroupNames property
@@ -35,7 +35,7 @@ type IpSecurityProfile struct {
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
-// NewIpSecurityProfile instantiates a new ipSecurityProfile and sets the default values.
+// NewIpSecurityProfile instantiates a new IpSecurityProfile and sets the default values.
 func NewIpSecurityProfile()(*IpSecurityProfile) {
     m := &IpSecurityProfile{
         Entity: *NewEntity(),

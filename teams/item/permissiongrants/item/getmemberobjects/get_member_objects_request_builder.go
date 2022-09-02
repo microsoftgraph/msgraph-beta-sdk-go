@@ -1,6 +1,7 @@
 package getmemberobjects
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) Post(body GetMemberObjectsPostRequestBodyable)(GetMemberObjectsResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action getMemberObjects
-func (m *GetMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetMemberObjectsPostRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetMemberObjectsResponseable, error) {
+func (m *GetMemberObjectsRequestBuilder) Post(ctx context.Context, body GetMemberObjectsPostRequestBodyable, requestConfiguration *GetMemberObjectsRequestBuilderPostRequestConfiguration)(GetMemberObjectsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *GetMemberObjectsRequestBuilder) PostWithRequestConfigurationAndResponse
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetMemberObjectsResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetMemberObjectsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetMemberObjectsResponseable), nil
 }

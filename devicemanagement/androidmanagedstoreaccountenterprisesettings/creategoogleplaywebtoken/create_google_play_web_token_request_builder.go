@@ -1,6 +1,7 @@
 package creategoogleplaywebtoken
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -59,11 +60,7 @@ func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformationWit
     return requestInfo, nil
 }
 // Post generates a web token that is used in an embeddable component.
-func (m *CreateGooglePlayWebTokenRequestBuilder) Post(body CreateGooglePlayWebTokenPostRequestBodyable)(CreateGooglePlayWebTokenResponseable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler generates a web token that is used in an embeddable component.
-func (m *CreateGooglePlayWebTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateGooglePlayWebTokenPostRequestBodyable, requestConfiguration *CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateGooglePlayWebTokenResponseable, error) {
+func (m *CreateGooglePlayWebTokenRequestBuilder) Post(ctx context.Context, body CreateGooglePlayWebTokenPostRequestBodyable, requestConfiguration *CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration)(CreateGooglePlayWebTokenResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -72,9 +69,12 @@ func (m *CreateGooglePlayWebTokenRequestBuilder) PostWithRequestConfigurationAnd
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCreateGooglePlayWebTokenResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateCreateGooglePlayWebTokenResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(CreateGooglePlayWebTokenResponseable), nil
 }

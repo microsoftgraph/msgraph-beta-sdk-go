@@ -1,6 +1,7 @@
 package wipemanagedappregistrationbydevicetag
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) CreatePostRequestI
     return requestInfo, nil
 }
 // Post issues a wipe operation on an app registration with specified device tag.
-func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) Post(body WipeManagedAppRegistrationByDeviceTagPostRequestBodyable)(error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler issues a wipe operation on an app registration with specified device tag.
-func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WipeManagedAppRegistrationByDeviceTagPostRequestBodyable, requestConfiguration *WipeManagedAppRegistrationByDeviceTagRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) Post(ctx context.Context, body WipeManagedAppRegistrationByDeviceTagPostRequestBodyable, requestConfiguration *WipeManagedAppRegistrationByDeviceTagRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
@@ -71,7 +68,7 @@ func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) PostWithRequestCon
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }

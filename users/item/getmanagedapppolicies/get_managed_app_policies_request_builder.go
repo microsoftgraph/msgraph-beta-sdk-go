@@ -1,6 +1,7 @@
 package getmanagedapppolicies
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformationWithReq
     return requestInfo, nil
 }
 // Get gets app restrictions for a given user.
-func (m *GetManagedAppPoliciesRequestBuilder) Get()(GetManagedAppPoliciesResponseable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler gets app restrictions for a given user.
-func (m *GetManagedAppPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedAppPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppPoliciesResponseable, error) {
+func (m *GetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(GetManagedAppPoliciesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *GetManagedAppPoliciesRequestBuilder) GetWithRequestConfigurationAndResp
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedAppPoliciesResponseFromDiscriminatorValue, responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, CreateGetManagedAppPoliciesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.(GetManagedAppPoliciesResponseable), nil
 }

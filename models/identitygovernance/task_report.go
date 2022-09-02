@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TaskReport provides operations to manage the collection of activityStatistics entities.
+// TaskReport 
 type TaskReport struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The completedDateTime property
@@ -34,7 +34,7 @@ type TaskReport struct {
     // The unprocessedUsersCount property
     unprocessedUsersCount *int32
 }
-// NewTaskReport instantiates a new taskReport and sets the default values.
+// NewTaskReport instantiates a new TaskReport and sets the default values.
 func NewTaskReport()(*TaskReport) {
     m := &TaskReport{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

@@ -1,6 +1,7 @@
 package getquiettimepolicyusersummaryreport
 
 import (
+    "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
@@ -58,11 +59,7 @@ func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) CreatePostRequestInf
     return requestInfo, nil
 }
 // Post invoke action getQuietTimePolicyUserSummaryReport
-func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) Post(body GetQuietTimePolicyUserSummaryReportPostRequestBodyable)([]byte, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler invoke action getQuietTimePolicyUserSummaryReport
-func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetQuietTimePolicyUserSummaryReportPostRequestBodyable, requestConfiguration *GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) Post(ctx context.Context, body GetQuietTimePolicyUserSummaryReportPostRequestBodyable, requestConfiguration *GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,9 +68,12 @@ func (m *GetQuietTimePolicyUserSummaryReportRequestBuilder) PostWithRequestConfi
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "[]byte", responseHandler, errorMapping)
+    res, err := m.requestAdapter.SendPrimitiveAsync(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
         return nil, err
+    }
+    if res == nil {
+        return nil, nil
     }
     return res.([]byte), nil
 }

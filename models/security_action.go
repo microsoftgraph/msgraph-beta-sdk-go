@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecurityAction provides operations to manage the collection of activityStatistics entities.
+// SecurityAction 
 type SecurityAction struct {
     Entity
     // Reason for invoking this action.
@@ -37,7 +37,7 @@ type SecurityAction struct {
     // Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
     vendorInformation SecurityVendorInformationable
 }
-// NewSecurityAction instantiates a new securityAction and sets the default values.
+// NewSecurityAction instantiates a new SecurityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {
     m := &SecurityAction{
         Entity: *NewEntity(),
