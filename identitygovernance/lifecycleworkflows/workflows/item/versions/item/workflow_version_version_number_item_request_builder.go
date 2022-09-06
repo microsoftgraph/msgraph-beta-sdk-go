@@ -23,7 +23,7 @@ type WorkflowVersionVersionNumberItemRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WorkflowVersionVersionNumberItemRequestBuilderGetQueryParameters get versions from identityGovernance
+// WorkflowVersionVersionNumberItemRequestBuilderGetQueryParameters the workflow versions that are available.
 type WorkflowVersionVersionNumberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *WorkflowVersionVersionNumberItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get versions from identityGovernance
+// CreateGetRequestInformation the workflow versions that are available.
 func (m *WorkflowVersionVersionNumberItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get versions from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the workflow versions that are available.
 func (m *WorkflowVersionVersionNumberItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkflowVersionVersionNumberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,7 +134,7 @@ func (m *WorkflowVersionVersionNumberItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get get versions from identityGovernance
+// Get the workflow versions that are available.
 func (m *WorkflowVersionVersionNumberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkflowVersionVersionNumberItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowVersionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

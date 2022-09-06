@@ -18,6 +18,7 @@ import (
     i7c7aa71fa334e1234ebb2953457bb8a87886a5cc192ada64a17391c65db699d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/template"
     ia3d84312b941dc5c3aaa9a4a37bc36866b779989abc4a4a4acd33b1e65368bcd "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/members"
     ia42fa4d97821d26378d9f7bee3d9af6325ce61b826e31042ce499fd11eed580f "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/allchannels"
+    iaea7dc1d2810e61c4f4af64fadfd0c501a401d347635121e06b6edf1018f12f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/templatedefinition"
     ib3d27e8197f598d7bf72f02ae854d33875306efb682c4984f7c88f1856aadd6d "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/unarchive"
     ib426e286e70724fac9bfa5fc5f23505db892b09653a2e444dddddd561a3ded1e "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/photo"
     ibd507eb28e5ea81639c3f3209c96a828f71ad54ba353088076f57e6cb7e164f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/incomingchannels"
@@ -367,6 +368,10 @@ func (m *TeamItemRequestBuilder) TagsById(id string)(*i7b61bd390262c74ea942911c7
 // Template the template property
 func (m *TeamItemRequestBuilder) Template()(*i7c7aa71fa334e1234ebb2953457bb8a87886a5cc192ada64a17391c65db699d5.TemplateRequestBuilder) {
     return i7c7aa71fa334e1234ebb2953457bb8a87886a5cc192ada64a17391c65db699d5.NewTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TemplateDefinition the templateDefinition property
+func (m *TeamItemRequestBuilder) TemplateDefinition()(*iaea7dc1d2810e61c4f4af64fadfd0c501a401d347635121e06b6edf1018f12f7.TemplateDefinitionRequestBuilder) {
+    return iaea7dc1d2810e61c4f4af64fadfd0c501a401d347635121e06b6edf1018f12f7.NewTemplateDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Unarchive the unarchive property
 func (m *TeamItemRequestBuilder) Unarchive()(*ib3d27e8197f598d7bf72f02ae854d33875306efb682c4984f7c88f1856aadd6d.UnarchiveRequestBuilder) {

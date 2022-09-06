@@ -10,13 +10,13 @@ type WorkflowTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category property
     category *LifecycleWorkflowCategory
-    // The description property
+    // The description of the workflowTemplate.
     description *string
-    // The displayName property
+    // The display name of the workflowTemplate. Supports  orderby.
     displayName *string
-    // The executionConditions property
+    // Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
     executionConditions WorkflowExecutionConditionsable
-    // The tasks property
+    // Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
     tasks []Taskable
 }
 // NewWorkflowTemplate instantiates a new WorkflowTemplate and sets the default values.
@@ -36,15 +36,15 @@ func CreateWorkflowTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *WorkflowTemplate) GetCategory()(*LifecycleWorkflowCategory) {
     return m.category
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the workflowTemplate.
 func (m *WorkflowTemplate) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the workflowTemplate. Supports  orderby.
 func (m *WorkflowTemplate) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetExecutionConditions gets the executionConditions property value. The executionConditions property
+// GetExecutionConditions gets the executionConditions property value. Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
 func (m *WorkflowTemplate) GetExecutionConditions()(WorkflowExecutionConditionsable) {
     return m.executionConditions
 }
@@ -107,7 +107,7 @@ func (m *WorkflowTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetTasks gets the tasks property value. The tasks property
+// GetTasks gets the tasks property value. Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *WorkflowTemplate) GetTasks()([]Taskable) {
     return m.tasks
 }
@@ -158,19 +158,19 @@ func (m *WorkflowTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *WorkflowTemplate) SetCategory(value *LifecycleWorkflowCategory)() {
     m.category = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the workflowTemplate.
 func (m *WorkflowTemplate) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the workflowTemplate. Supports  orderby.
 func (m *WorkflowTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetExecutionConditions sets the executionConditions property value. The executionConditions property
+// SetExecutionConditions sets the executionConditions property value. Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
 func (m *WorkflowTemplate) SetExecutionConditions(value WorkflowExecutionConditionsable)() {
     m.executionConditions = value
 }
-// SetTasks sets the tasks property value. The tasks property
+// SetTasks sets the tasks property value. Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *WorkflowTemplate) SetTasks(value []Taskable)() {
     m.tasks = value
 }

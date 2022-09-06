@@ -6,6 +6,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/ediscovery"
     i89e3ed68600e2e0d92b605e812700fb7aceb682bc5a959aa606822b3a1f743fc "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/operations/count"
+    i93ea821b9980699a2d9362f686c25a70b08121a88043a646e6e71f2e50aa556e "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/operations/caseexportoperation"
 )
 
 // OperationsRequestBuilder provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
@@ -51,6 +52,10 @@ type OperationsRequestBuilderPostRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CaseExportOperation the caseExportOperation property
+func (m *OperationsRequestBuilder) CaseExportOperation()(*i93ea821b9980699a2d9362f686c25a70b08121a88043a646e6e71f2e50aa556e.CaseExportOperationRequestBuilder) {
+    return i93ea821b9980699a2d9362f686c25a70b08121a88043a646e6e71f2e50aa556e.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
 func NewOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OperationsRequestBuilder) {

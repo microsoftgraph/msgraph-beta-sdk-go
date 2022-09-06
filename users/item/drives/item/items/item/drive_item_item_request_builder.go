@@ -13,6 +13,7 @@ import (
     i59f438e50c6a80a1653b614801cfeb12f2b820296bbce653018840e1f55f5d16 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item/validatepermission"
     i5e0caf385fd0a72673862609cf32c4402e9eba33ef56846ecb3c64b17416e3b0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item/checkin"
     i5efcbe4b461c812355323caa9dc418905255f803cf1cf6260dcc892a8b9ed564 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item/children"
+    i6823f4a9450f5e2aa2bf9bf6496d95df699a41e10d6b1d2835c8421e1d753dc9 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item/assignsensitivitylabel"
     i6c289201e7f2e775278d4b92176cf3c09061495aef9ede11695d4e3154732e84 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item/preview"
     i6f5104209c23bee9190bacc5292755c47101c4e311b94f75247635a6b88cb4cc "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item/checkout"
     i6fe8622edd27093c27a424c6ec65a9999da88f9aac0c0a17d00d0e4ecf7b5316 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item/deltawithtoken"
@@ -95,6 +96,10 @@ func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*i7310b5803cdc10
 // Analytics the analytics property
 func (m *DriveItemItemRequestBuilder) Analytics()(*i7021ce989d3be4c224e26d0dbaa6136089065fa4c7c08b6f8d132f6d6588c963.AnalyticsRequestBuilder) {
     return i7021ce989d3be4c224e26d0dbaa6136089065fa4c7c08b6f8d132f6d6588c963.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *DriveItemItemRequestBuilder) AssignSensitivityLabel()(*i6823f4a9450f5e2aa2bf9bf6496d95df699a41e10d6b1d2835c8421e1d753dc9.AssignSensitivityLabelRequestBuilder) {
+    return i6823f4a9450f5e2aa2bf9bf6496d95df699a41e10d6b1d2835c8421e1d753dc9.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *DriveItemItemRequestBuilder) Checkin()(*i5e0caf385fd0a72673862609cf32c4402e9eba33ef56846ecb3c64b17416e3b0.CheckinRequestBuilder) {

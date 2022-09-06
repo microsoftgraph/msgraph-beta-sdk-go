@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/ediscovery"
+    i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/operations/item/caseexportoperation"
 )
 
 // CaseOperationItemRequestBuilder provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
@@ -45,6 +46,10 @@ type CaseOperationItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CaseExportOperation the caseExportOperation property
+func (m *CaseOperationItemRequestBuilder) CaseExportOperation()(*i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.CaseExportOperationRequestBuilder) {
+    return i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewCaseOperationItemRequestBuilderInternal instantiates a new CaseOperationItemRequestBuilder and sets the default values.
 func NewCaseOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CaseOperationItemRequestBuilder) {

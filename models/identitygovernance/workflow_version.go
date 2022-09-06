@@ -7,7 +7,7 @@ import (
 // WorkflowVersion provides operations to manage the collection of accessReviewDecision entities.
 type WorkflowVersion struct {
     WorkflowBase
-    // The versionNumber property
+    // The version of the workflow.
     versionNumber *int32
 }
 // NewWorkflowVersion instantiates a new workflowVersion and sets the default values.
@@ -38,7 +38,7 @@ func (m *WorkflowVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetVersionNumber gets the versionNumber property value. The versionNumber property
+// GetVersionNumber gets the versionNumber property value. The version of the workflow.
 func (m *WorkflowVersion) GetVersionNumber()(*int32) {
     return m.versionNumber
 }
@@ -56,7 +56,7 @@ func (m *WorkflowVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetVersionNumber sets the versionNumber property value. The versionNumber property
+// SetVersionNumber sets the versionNumber property value. The version of the workflow.
 func (m *WorkflowVersion) SetVersionNumber(value *int32)() {
     m.versionNumber = value
 }

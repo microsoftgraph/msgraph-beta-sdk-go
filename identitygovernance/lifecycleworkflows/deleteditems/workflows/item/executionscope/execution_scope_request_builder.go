@@ -17,7 +17,7 @@ type ExecutionScopeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExecutionScopeRequestBuilderGetQueryParameters get executionScope from identityGovernance
+// ExecutionScopeRequestBuilderGetQueryParameters the unique identifier of the Azure AD identity that last modified the workflow object..
 type ExecutionScopeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -68,11 +68,11 @@ func NewExecutionScopeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ExecutionScopeRequestBuilder) Count()(*i3e4f9fcf5640bcfe852ed4a30ef501ae9a9c82734aac8bd8cfe29275e2e0341c.CountRequestBuilder) {
     return i3e4f9fcf5640bcfe852ed4a30ef501ae9a9c82734aac8bd8cfe29275e2e0341c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get executionScope from identityGovernance
+// CreateGetRequestInformation the unique identifier of the Azure AD identity that last modified the workflow object..
 func (m *ExecutionScopeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get executionScope from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the unique identifier of the Azure AD identity that last modified the workflow object..
 func (m *ExecutionScopeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExecutionScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *ExecutionScopeRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get get executionScope from identityGovernance
+// Get the unique identifier of the Azure AD identity that last modified the workflow object..
 func (m *ExecutionScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *ExecutionScopeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

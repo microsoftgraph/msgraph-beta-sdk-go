@@ -10,7 +10,7 @@ type CustomExtensionCallbackConfiguration struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // The timeoutDuration property
+    // Callback time out in ISO 8601 time duration. Accepted time durations are between five minutes to three hours. For example, PT5M for five minutes and PT3H for three hours.
     timeoutDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewCustomExtensionCallbackConfiguration instantiates a new customExtensionCallbackConfiguration and sets the default values.
@@ -59,7 +59,7 @@ func (m *CustomExtensionCallbackConfiguration) GetFieldDeserializers()(map[strin
 func (m *CustomExtensionCallbackConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTimeoutDuration gets the timeoutDuration property value. The timeoutDuration property
+// GetTimeoutDuration gets the timeoutDuration property value. Callback time out in ISO 8601 time duration. Accepted time durations are between five minutes to three hours. For example, PT5M for five minutes and PT3H for three hours.
 func (m *CustomExtensionCallbackConfiguration) GetTimeoutDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.timeoutDuration
 }
@@ -93,7 +93,7 @@ func (m *CustomExtensionCallbackConfiguration) SetAdditionalData(value map[strin
 func (m *CustomExtensionCallbackConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTimeoutDuration sets the timeoutDuration property value. The timeoutDuration property
+// SetTimeoutDuration sets the timeoutDuration property value. Callback time out in ISO 8601 time duration. Accepted time durations are between five minutes to three hours. For example, PT5M for five minutes and PT3H for three hours.
 func (m *CustomExtensionCallbackConfiguration) SetTimeoutDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.timeoutDuration = value
 }

@@ -9,27 +9,27 @@ import (
 // Workflow 
 type Workflow struct {
     WorkflowBase
-    // The deletedDateTime property
+    // The time and date a workflow is deleted. Supports $filter(lt,gt) and $orderby.
     deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The executionScope property
+    // The unique identifier of the Azure AD identity that last modified the workflow object..
     executionScope []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
-    // The id property
+    // Identifier used for individually addressing a specific workflow. Supports $filter(eq).
     id *string
-    // The isEnabled property
+    // If true, the workflow engine creates and processes taskProcessingResults on the users scoped to the workflow. Supports $filter(eq,ne) and orderby.
     isEnabled *bool
-    // The isSchedulingEnabled property
+    // If true, the workflow engine executes the workflow on the schedule defined by tenant settings.
     isSchedulingEnabled *bool
-    // The nextScheduleRunDateTime property
+    // The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
     nextScheduleRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The runs property
     runs []Runable
-    // The taskReports property
+    // Represents the aggregation of task execution data for tasks within a workflow object.
     taskReports []TaskReportable
     // The userProcessingResults property
     userProcessingResults []UserProcessingResultable
-    // The version property
+    // The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq).
     version *int32
-    // The versions property
+    // The workflow versions that are available.
     versions []WorkflowVersionable
 }
 // NewWorkflow instantiates a new Workflow and sets the default values.
@@ -45,11 +45,11 @@ func NewWorkflow()(*Workflow) {
 func CreateWorkflowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflow(), nil
 }
-// GetDeletedDateTime gets the deletedDateTime property value. The deletedDateTime property
+// GetDeletedDateTime gets the deletedDateTime property value. The time and date a workflow is deleted. Supports $filter(lt,gt) and $orderby.
 func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.deletedDateTime
 }
-// GetExecutionScope gets the executionScope property value. The executionScope property
+// GetExecutionScope gets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object..
 func (m *Workflow) GetExecutionScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
     return m.executionScope
 }
@@ -188,19 +188,19 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. Identifier used for individually addressing a specific workflow. Supports $filter(eq).
 func (m *Workflow) GetId()(*string) {
     return m.id
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. If true, the workflow engine creates and processes taskProcessingResults on the users scoped to the workflow. Supports $filter(eq,ne) and orderby.
 func (m *Workflow) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetIsSchedulingEnabled gets the isSchedulingEnabled property value. The isSchedulingEnabled property
+// GetIsSchedulingEnabled gets the isSchedulingEnabled property value. If true, the workflow engine executes the workflow on the schedule defined by tenant settings.
 func (m *Workflow) GetIsSchedulingEnabled()(*bool) {
     return m.isSchedulingEnabled
 }
-// GetNextScheduleRunDateTime gets the nextScheduleRunDateTime property value. The nextScheduleRunDateTime property
+// GetNextScheduleRunDateTime gets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
 func (m *Workflow) GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.nextScheduleRunDateTime
 }
@@ -208,7 +208,7 @@ func (m *Workflow) GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97
 func (m *Workflow) GetRuns()([]Runable) {
     return m.runs
 }
-// GetTaskReports gets the taskReports property value. The taskReports property
+// GetTaskReports gets the taskReports property value. Represents the aggregation of task execution data for tasks within a workflow object.
 func (m *Workflow) GetTaskReports()([]TaskReportable) {
     return m.taskReports
 }
@@ -216,11 +216,11 @@ func (m *Workflow) GetTaskReports()([]TaskReportable) {
 func (m *Workflow) GetUserProcessingResults()([]UserProcessingResultable) {
     return m.userProcessingResults
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq).
 func (m *Workflow) GetVersion()(*int32) {
     return m.version
 }
-// GetVersions gets the versions property value. The versions property
+// GetVersions gets the versions property value. The workflow versions that are available.
 func (m *Workflow) GetVersions()([]WorkflowVersionable) {
     return m.versions
 }
@@ -318,27 +318,27 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDeletedDateTime sets the deletedDateTime property value. The deletedDateTime property
+// SetDeletedDateTime sets the deletedDateTime property value. The time and date a workflow is deleted. Supports $filter(lt,gt) and $orderby.
 func (m *Workflow) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.deletedDateTime = value
 }
-// SetExecutionScope sets the executionScope property value. The executionScope property
+// SetExecutionScope sets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object..
 func (m *Workflow) SetExecutionScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     m.executionScope = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. Identifier used for individually addressing a specific workflow. Supports $filter(eq).
 func (m *Workflow) SetId(value *string)() {
     m.id = value
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. If true, the workflow engine creates and processes taskProcessingResults on the users scoped to the workflow. Supports $filter(eq,ne) and orderby.
 func (m *Workflow) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetIsSchedulingEnabled sets the isSchedulingEnabled property value. The isSchedulingEnabled property
+// SetIsSchedulingEnabled sets the isSchedulingEnabled property value. If true, the workflow engine executes the workflow on the schedule defined by tenant settings.
 func (m *Workflow) SetIsSchedulingEnabled(value *bool)() {
     m.isSchedulingEnabled = value
 }
-// SetNextScheduleRunDateTime sets the nextScheduleRunDateTime property value. The nextScheduleRunDateTime property
+// SetNextScheduleRunDateTime sets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
 func (m *Workflow) SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.nextScheduleRunDateTime = value
 }
@@ -346,7 +346,7 @@ func (m *Workflow) SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3
 func (m *Workflow) SetRuns(value []Runable)() {
     m.runs = value
 }
-// SetTaskReports sets the taskReports property value. The taskReports property
+// SetTaskReports sets the taskReports property value. Represents the aggregation of task execution data for tasks within a workflow object.
 func (m *Workflow) SetTaskReports(value []TaskReportable)() {
     m.taskReports = value
 }
@@ -354,11 +354,11 @@ func (m *Workflow) SetTaskReports(value []TaskReportable)() {
 func (m *Workflow) SetUserProcessingResults(value []UserProcessingResultable)() {
     m.userProcessingResults = value
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq).
 func (m *Workflow) SetVersion(value *int32)() {
     m.version = value
 }
-// SetVersions sets the versions property value. The versions property
+// SetVersions sets the versions property value. The workflow versions that are available.
 func (m *Workflow) SetVersions(value []WorkflowVersionable)() {
     m.versions = value
 }

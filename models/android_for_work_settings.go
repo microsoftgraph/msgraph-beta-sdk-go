@@ -27,7 +27,7 @@ type AndroidForWorkSettings struct {
     // Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
     targetGroupIds []string
 }
-// NewAndroidForWorkSettings instantiates a new androidForWorkSettings and sets the default values.
+// NewAndroidForWorkSettings instantiates a new AndroidForWorkSettings and sets the default values.
 func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
     m := &AndroidForWorkSettings{
         Entity: *NewEntity(),

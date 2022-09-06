@@ -18,7 +18,7 @@ type PrivilegedRoleSummary struct {
     // The number of users that are assigned with the role.
     usersCount *int32
 }
-// NewPrivilegedRoleSummary instantiates a new privilegedRoleSummary and sets the default values.
+// NewPrivilegedRoleSummary instantiates a new PrivilegedRoleSummary and sets the default values.
 func NewPrivilegedRoleSummary()(*PrivilegedRoleSummary) {
     m := &PrivilegedRoleSummary{
         Entity: *NewEntity(),

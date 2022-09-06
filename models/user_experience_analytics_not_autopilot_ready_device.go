@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsNotAutopilotReadyDevice 
+// UserExperienceAnalyticsNotAutopilotReadyDevice the user experience analytics Device not windows autopilot ready.
 type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     Entity
     // The intune device's autopilotProfileAssigned.
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     // The intune device's serial number.
     serialNumber *string
 }
-// NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new UserExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
+// NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new userExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalyticsNotAutopilotReadyDevice) {
     m := &UserExperienceAnalyticsNotAutopilotReadyDevice{
         Entity: *NewEntity(),

@@ -8,11 +8,11 @@ import (
 type Parameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The name property
+    // The name of the parameter.
     name *string
     // The OdataType property
     odataType *string
-    // The values property
+    // The values of the parameter.
     values []string
     // The valueType property
     valueType *ValueType
@@ -83,7 +83,7 @@ func (m *Parameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the parameter.
 func (m *Parameter) GetName()(*string) {
     return m.name
 }
@@ -91,7 +91,7 @@ func (m *Parameter) GetName()(*string) {
 func (m *Parameter) GetOdataType()(*string) {
     return m.odataType
 }
-// GetValues gets the values property value. The values property
+// GetValues gets the values property value. The values of the parameter.
 func (m *Parameter) GetValues()([]string) {
     return m.values
 }
@@ -138,7 +138,7 @@ func (m *Parameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 func (m *Parameter) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the parameter.
 func (m *Parameter) SetName(value *string)() {
     m.name = value
 }
@@ -146,7 +146,7 @@ func (m *Parameter) SetName(value *string)() {
 func (m *Parameter) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetValues sets the values property value. The values property
+// SetValues sets the values property value. The values of the parameter.
 func (m *Parameter) SetValues(value []string)() {
     m.values = value
 }

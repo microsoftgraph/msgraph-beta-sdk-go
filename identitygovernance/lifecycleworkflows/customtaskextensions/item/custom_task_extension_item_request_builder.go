@@ -25,7 +25,7 @@ type CustomTaskExtensionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CustomTaskExtensionItemRequestBuilderGetQueryParameters get customTaskExtensions from identityGovernance
+// CustomTaskExtensionItemRequestBuilderGetQueryParameters the customTaskExtension instance.
 type CustomTaskExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -87,11 +87,11 @@ func (m *CustomTaskExtensionItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get customTaskExtensions from identityGovernance
+// CreateGetRequestInformation the customTaskExtension instance.
 func (m *CustomTaskExtensionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get customTaskExtensions from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the customTaskExtension instance.
 func (m *CustomTaskExtensionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CustomTaskExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,7 +140,7 @@ func (m *CustomTaskExtensionItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get get customTaskExtensions from identityGovernance
+// Get the customTaskExtension instance.
 func (m *CustomTaskExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomTaskExtensionItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CustomTaskExtensionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

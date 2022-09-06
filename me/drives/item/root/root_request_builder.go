@@ -22,6 +22,7 @@ import (
     i9c6e8a7fe1c9cc5b7e0ea6c10c1af6f88e7214ebfec50e64d9cecd6189cf62a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/root/analytics"
     ia25ae513c8a06c69f8e9a2af04dc1fdb56a445d26c487329094eb799760f235c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/root/listitem"
     ia783022e23d4a61455349d260caeaf7f827f148e0b229a292c2448b110933f0f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/root/activities"
+    ib2a50031c8be26632ffac1f72d440d39608fce3dc0fc86ec7c84acbe8d8fbe43 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/root/assignsensitivitylabel"
     ib3375e0c67634a9e831a5be1208f27d49f468fbfd49b1b01ae47388c423cdae2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/root/delta"
     id52349d17c2abfaeae34ad4140c685947c41537424ad15ae45eab17d6b18b558 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/root/checkin"
     id5e391f2587d620e59fa3ee116774d47aa5530d731d5043f38e72e0e74a7a020 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/root/copy"
@@ -95,6 +96,10 @@ func (m *RootRequestBuilder) ActivitiesById(id string)(*i048cac4ee0d8d62b3c2b235
 // Analytics the analytics property
 func (m *RootRequestBuilder) Analytics()(*i9c6e8a7fe1c9cc5b7e0ea6c10c1af6f88e7214ebfec50e64d9cecd6189cf62a9.AnalyticsRequestBuilder) {
     return i9c6e8a7fe1c9cc5b7e0ea6c10c1af6f88e7214ebfec50e64d9cecd6189cf62a9.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *RootRequestBuilder) AssignSensitivityLabel()(*ib2a50031c8be26632ffac1f72d440d39608fce3dc0fc86ec7c84acbe8d8fbe43.AssignSensitivityLabelRequestBuilder) {
+    return ib2a50031c8be26632ffac1f72d440d39608fce3dc0fc86ec7c84acbe8d8fbe43.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *RootRequestBuilder) Checkin()(*id52349d17c2abfaeae34ad4140c685947c41537424ad15ae45eab17d6b18b558.CheckinRequestBuilder) {

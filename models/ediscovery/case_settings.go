@@ -15,7 +15,7 @@ type CaseSettings struct {
     // The Topic Modeling (Themes) settings for the case.
     topicModeling TopicModelingSettingsable
 }
-// NewCaseSettings instantiates a new caseSettings and sets the default values.
+// NewCaseSettings instantiates a new CaseSettings and sets the default values.
 func NewCaseSettings()(*CaseSettings) {
     m := &CaseSettings{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

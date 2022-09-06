@@ -25,7 +25,7 @@ type TaskItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TaskItemRequestBuilderGetQueryParameters get tasks from identityGovernance
+// TaskItemRequestBuilderGetQueryParameters represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 type TaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -83,11 +83,11 @@ func (m *TaskItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get tasks from identityGovernance
+// CreateGetRequestInformation represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *TaskItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get tasks from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *TaskItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -136,7 +136,7 @@ func (m *TaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// Get get tasks from identityGovernance
+// Get represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
 func (m *TaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -7,6 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i23240d4635f216590f410f77081a54298f8183e1a329b9313bd70c3b9c0398d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/items/item/versions"
     i3698548c75c9e39e8fb37d84501a95bbaa309a2be53ae11e8068b466fb837edf "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/items/item/follow"
+    i4ef476c1e742096d11d917d6e4231871fa93383f182a21f6b2fbb09b6b3f1101 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/items/item/assignsensitivitylabel"
     i61f85fe2c179ac73fc8f411fba8d669196ef105d3cbac9b6cd26b88f3d6e2daa "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/items/item/searchwithq"
     i64505e7006add25c659273d4b29738b87096b7ed3bed7899ec8784a67328f67c "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/items/item/unfollow"
     i6fc391d816f83b511a377e0649a19546c17517d7156bee27a0b5e396658c369b "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/items/item/deltawithtoken"
@@ -95,6 +96,10 @@ func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*i5ab78c0964728c
 // Analytics the analytics property
 func (m *DriveItemItemRequestBuilder) Analytics()(*if3106bc1fff17deee799295366ec0b5272378755fcc134899eb2437efd3be114.AnalyticsRequestBuilder) {
     return if3106bc1fff17deee799295366ec0b5272378755fcc134899eb2437efd3be114.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *DriveItemItemRequestBuilder) AssignSensitivityLabel()(*i4ef476c1e742096d11d917d6e4231871fa93383f182a21f6b2fbb09b6b3f1101.AssignSensitivityLabelRequestBuilder) {
+    return i4ef476c1e742096d11d917d6e4231871fa93383f182a21f6b2fbb09b6b3f1101.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *DriveItemItemRequestBuilder) Checkin()(*ie8bdf53c33c7ec4380140c27084ba54054d35b946201613b91a3e1d0b77ed053.CheckinRequestBuilder) {

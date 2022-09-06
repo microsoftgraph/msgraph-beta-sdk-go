@@ -13,6 +13,7 @@ import (
     i2a7f69c3331e3c6294d302c3ad63b0a41d71b202349cff9ed9a8d8ecd034b44a "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/clone"
     i30cd0e56846ce0bc314e66260e3ff08cecb87b28b88b48a48644621a804f7dc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/unarchive"
     i376d33ab52594655903baee2658a8eb0bf72bb812582ddc80179eb8c7d21b5b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/operations"
+    i8737cc3ee7299342142e7b5ad2bd5bb05f79251a72340e78dec8f8375e92c91d "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/templatedefinition"
     i9a85f226e9945a36b36dd1100ab1ac9605fd15848e758e3d548dd310910a4956 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/installedapps"
     ia890ddcd803e7ea023c874df73637cb89437966a6dbdedf95b71ef5e9f846efb "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/template"
     iaddb69d8d018d1f468b174e8ccf6d25ad974f32bc2cdfd002572d4137eedee31 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/members"
@@ -367,6 +368,10 @@ func (m *TeamDefinitionRequestBuilder) TagsById(id string)(*if60812fddb6d72c19ab
 // Template the template property
 func (m *TeamDefinitionRequestBuilder) Template()(*ia890ddcd803e7ea023c874df73637cb89437966a6dbdedf95b71ef5e9f846efb.TemplateRequestBuilder) {
     return ia890ddcd803e7ea023c874df73637cb89437966a6dbdedf95b71ef5e9f846efb.NewTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TemplateDefinition the templateDefinition property
+func (m *TeamDefinitionRequestBuilder) TemplateDefinition()(*i8737cc3ee7299342142e7b5ad2bd5bb05f79251a72340e78dec8f8375e92c91d.TemplateDefinitionRequestBuilder) {
+    return i8737cc3ee7299342142e7b5ad2bd5bb05f79251a72340e78dec8f8375e92c91d.NewTemplateDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Unarchive the unarchive property
 func (m *TeamDefinitionRequestBuilder) Unarchive()(*i30cd0e56846ce0bc314e66260e3ff08cecb87b28b88b48a48644621a804f7dc0.UnarchiveRequestBuilder) {

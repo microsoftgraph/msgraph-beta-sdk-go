@@ -19,7 +19,7 @@ type TaskReportsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TaskReportsRequestBuilderGetQueryParameters get taskReports from identityGovernance
+// TaskReportsRequestBuilderGetQueryParameters represents the aggregation of task execution data for tasks within a workflow object.
 type TaskReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewTaskReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *TaskReportsRequestBuilder) Count()(*i27b6eda364956199b41833a976393d7e86ee57a7439a08bae848ac970a46c81a.CountRequestBuilder) {
     return i27b6eda364956199b41833a976393d7e86ee57a7439a08bae848ac970a46c81a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get taskReports from identityGovernance
+// CreateGetRequestInformation represents the aggregation of task execution data for tasks within a workflow object.
 func (m *TaskReportsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get taskReports from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration represents the aggregation of task execution data for tasks within a workflow object.
 func (m *TaskReportsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +115,7 @@ func (m *TaskReportsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get get taskReports from identityGovernance
+// Get represents the aggregation of task execution data for tasks within a workflow object.
 func (m *TaskReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskReportsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskReportCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

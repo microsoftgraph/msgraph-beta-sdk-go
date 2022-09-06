@@ -8,7 +8,7 @@ import (
 // RuleBasedSubjectSet 
 type RuleBasedSubjectSet struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectSet
-    // The rule property
+    // The rule for the subject set.
     rule *string
 }
 // NewRuleBasedSubjectSet instantiates a new RuleBasedSubjectSet and sets the default values.
@@ -39,7 +39,7 @@ func (m *RuleBasedSubjectSet) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRule gets the rule property value. The rule property
+// GetRule gets the rule property value. The rule for the subject set.
 func (m *RuleBasedSubjectSet) GetRule()(*string) {
     return m.rule
 }
@@ -57,7 +57,7 @@ func (m *RuleBasedSubjectSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetRule sets the rule property value. The rule property
+// SetRule sets the rule property value. The rule for the subject set.
 func (m *RuleBasedSubjectSet) SetRule(value *string)() {
     m.rule = value
 }

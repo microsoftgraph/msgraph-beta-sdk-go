@@ -16,7 +16,7 @@ type TaskDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TaskDefinitionRequestBuilderGetQueryParameters get taskDefinition from identityGovernance
+// TaskDefinitionRequestBuilderGetQueryParameters the taskDefinition associated with the related lifecycle workflow task.
 type TaskDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewTaskDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewTaskDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get taskDefinition from identityGovernance
+// CreateGetRequestInformation the taskDefinition associated with the related lifecycle workflow task.
 func (m *TaskDefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get taskDefinition from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the taskDefinition associated with the related lifecycle workflow task.
 func (m *TaskDefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *TaskDefinitionRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get get taskDefinition from identityGovernance
+// Get the taskDefinition associated with the related lifecycle workflow task.
 func (m *TaskDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

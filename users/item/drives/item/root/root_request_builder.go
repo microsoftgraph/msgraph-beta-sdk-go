@@ -12,6 +12,7 @@ import (
     i50e5dbbc7adce54d30748bc54c16ad058df719691e3dd262034b95e19684d59d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root/analytics"
     i521b27574ef6b5fe4a6bfd7b853c014c561e97c0cf1244f787e95138a1e57d39 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root/invite"
     i658e4b44555250a3d896740bfd9a82dcd8af8ce52910c3bc230569041605a43d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root/subscriptions"
+    i6c6dcdf98e4d0069fa4979b0f011a559e1255d805e8ca9c12c7b2c8ae4ce66f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root/assignsensitivitylabel"
     i786356f560a4a8d426056e8340ecb57ddae9d12d69890ac34fb69a73b8469e38 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root/checkin"
     i7b7ef26a39790f7760efc19094f8a199de1cdbd8ffb8f10d4309d54d9d571530 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root/thumbnails"
     i8f75eaec56c7ab5659de30f31953e0926f050150805e53382e5637b9579e4ea1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root/listitem"
@@ -95,6 +96,10 @@ func (m *RootRequestBuilder) ActivitiesById(id string)(*i4873d5650fb447ccd691622
 // Analytics the analytics property
 func (m *RootRequestBuilder) Analytics()(*i50e5dbbc7adce54d30748bc54c16ad058df719691e3dd262034b95e19684d59d.AnalyticsRequestBuilder) {
     return i50e5dbbc7adce54d30748bc54c16ad058df719691e3dd262034b95e19684d59d.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *RootRequestBuilder) AssignSensitivityLabel()(*i6c6dcdf98e4d0069fa4979b0f011a559e1255d805e8ca9c12c7b2c8ae4ce66f7.AssignSensitivityLabelRequestBuilder) {
+    return i6c6dcdf98e4d0069fa4979b0f011a559e1255d805e8ca9c12c7b2c8ae4ce66f7.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *RootRequestBuilder) Checkin()(*i786356f560a4a8d426056e8340ecb57ddae9d12d69890ac34fb69a73b8469e38.CheckinRequestBuilder) {

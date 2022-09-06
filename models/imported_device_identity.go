@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImportedDeviceIdentity 
+// ImportedDeviceIdentity the importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
 type ImportedDeviceIdentity struct {
     Entity
     // Created Date Time of the device
@@ -25,7 +25,7 @@ type ImportedDeviceIdentity struct {
     // The platform property
     platform *Platform
 }
-// NewImportedDeviceIdentity instantiates a new ImportedDeviceIdentity and sets the default values.
+// NewImportedDeviceIdentity instantiates a new importedDeviceIdentity and sets the default values.
 func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {
     m := &ImportedDeviceIdentity{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 // CustomTaskExtensionCallbackData 
 type CustomTaskExtensionCallbackData struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionData
-    // The operationStatus property
+    // Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
     operationStatus *CustomTaskExtensionOperationStatus
 }
 // NewCustomTaskExtensionCallbackData instantiates a new CustomTaskExtensionCallbackData and sets the default values.
@@ -39,7 +39,7 @@ func (m *CustomTaskExtensionCallbackData) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetOperationStatus gets the operationStatus property value. The operationStatus property
+// GetOperationStatus gets the operationStatus property value. Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
 func (m *CustomTaskExtensionCallbackData) GetOperationStatus()(*CustomTaskExtensionOperationStatus) {
     return m.operationStatus
 }
@@ -58,7 +58,7 @@ func (m *CustomTaskExtensionCallbackData) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetOperationStatus sets the operationStatus property value. The operationStatus property
+// SetOperationStatus sets the operationStatus property value. Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
 func (m *CustomTaskExtensionCallbackData) SetOperationStatus(value *CustomTaskExtensionOperationStatus)() {
     m.operationStatus = value
 }

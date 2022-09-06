@@ -12,13 +12,13 @@ type TaskDefinition struct {
     category *LifecycleTaskCategory
     // The continueOnError property
     continueOnError *bool
-    // The description property
+    // The description of the taskDefinition.
     description *string
-    // The displayName property
+    // The display name of the taskDefinition.
     displayName *string
-    // The parameters property
+    // The parameters that must be supplied when creating a task.
     parameters []Parameterable
-    // The version property
+    // The version number of the taskDefinition. New records are pushed when we add support for new parameters.
     version *int32
 }
 // NewTaskDefinition instantiates a new TaskDefinition and sets the default values.
@@ -42,11 +42,11 @@ func (m *TaskDefinition) GetCategory()(*LifecycleTaskCategory) {
 func (m *TaskDefinition) GetContinueOnError()(*bool) {
     return m.continueOnError
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the taskDefinition.
 func (m *TaskDefinition) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the taskDefinition.
 func (m *TaskDefinition) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -119,11 +119,11 @@ func (m *TaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetParameters gets the parameters property value. The parameters property
+// GetParameters gets the parameters property value. The parameters that must be supplied when creating a task.
 func (m *TaskDefinition) GetParameters()([]Parameterable) {
     return m.parameters
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.
 func (m *TaskDefinition) GetVersion()(*int32) {
     return m.version
 }
@@ -184,19 +184,19 @@ func (m *TaskDefinition) SetCategory(value *LifecycleTaskCategory)() {
 func (m *TaskDefinition) SetContinueOnError(value *bool)() {
     m.continueOnError = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the taskDefinition.
 func (m *TaskDefinition) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the taskDefinition.
 func (m *TaskDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetParameters sets the parameters property value. The parameters property
+// SetParameters sets the parameters property value. The parameters that must be supplied when creating a task.
 func (m *TaskDefinition) SetParameters(value []Parameterable)() {
     m.parameters = value
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.
 func (m *TaskDefinition) SetVersion(value *int32)() {
     m.version = value
 }

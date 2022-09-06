@@ -10,12 +10,16 @@ type ConditionalAccessUsers struct {
     additionalData map[string]interface{}
     // Group IDs excluded from scope of policy.
     excludeGroups []string
+    // The excludeGuestsOrExternalUsers property
+    excludeGuestsOrExternalUsers ConditionalAccessGuestsOrExternalUsersable
     // Role IDs excluded from scope of policy.
     excludeRoles []string
     // User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
     excludeUsers []string
     // Group IDs in scope of policy unless explicitly excluded, or All.
     includeGroups []string
+    // The includeGuestsOrExternalUsers property
+    includeGuestsOrExternalUsers ConditionalAccessGuestsOrExternalUsersable
     // Role IDs in scope of policy unless explicitly excluded, or All.
     includeRoles []string
     // User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
@@ -44,6 +48,10 @@ func (m *ConditionalAccessUsers) GetAdditionalData()(map[string]interface{}) {
 func (m *ConditionalAccessUsers) GetExcludeGroups()([]string) {
     return m.excludeGroups
 }
+// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) GetExcludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
+    return m.excludeGuestsOrExternalUsers
+}
 // GetExcludeRoles gets the excludeRoles property value. Role IDs excluded from scope of policy.
 func (m *ConditionalAccessUsers) GetExcludeRoles()([]string) {
     return m.excludeRoles
@@ -66,6 +74,16 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
                 res[i] = *(v.(*string))
             }
             m.SetExcludeGroups(res)
+        }
+        return nil
+    }
+    res["excludeGuestsOrExternalUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessGuestsOrExternalUsersFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExcludeGuestsOrExternalUsers(val.(ConditionalAccessGuestsOrExternalUsersable))
         }
         return nil
     }
@@ -108,6 +126,16 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
                 res[i] = *(v.(*string))
             }
             m.SetIncludeGroups(res)
+        }
+        return nil
+    }
+    res["includeGuestsOrExternalUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessGuestsOrExternalUsersFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeGuestsOrExternalUsers(val.(ConditionalAccessGuestsOrExternalUsersable))
         }
         return nil
     }
@@ -155,6 +183,10 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
 func (m *ConditionalAccessUsers) GetIncludeGroups()([]string) {
     return m.includeGroups
 }
+// GetIncludeGuestsOrExternalUsers gets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) GetIncludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
+    return m.includeGuestsOrExternalUsers
+}
 // GetIncludeRoles gets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
 func (m *ConditionalAccessUsers) GetIncludeRoles()([]string) {
     return m.includeRoles
@@ -175,6 +207,12 @@ func (m *ConditionalAccessUsers) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("excludeGuestsOrExternalUsers", m.GetExcludeGuestsOrExternalUsers())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExcludeRoles() != nil {
         err := writer.WriteCollectionOfStringValues("excludeRoles", m.GetExcludeRoles())
         if err != nil {
@@ -189,6 +227,12 @@ func (m *ConditionalAccessUsers) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     if m.GetIncludeGroups() != nil {
         err := writer.WriteCollectionOfStringValues("includeGroups", m.GetIncludeGroups())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("includeGuestsOrExternalUsers", m.GetIncludeGuestsOrExternalUsers())
         if err != nil {
             return err
         }
@@ -227,6 +271,10 @@ func (m *ConditionalAccessUsers) SetAdditionalData(value map[string]interface{})
 func (m *ConditionalAccessUsers) SetExcludeGroups(value []string)() {
     m.excludeGroups = value
 }
+// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) SetExcludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
+    m.excludeGuestsOrExternalUsers = value
+}
 // SetExcludeRoles sets the excludeRoles property value. Role IDs excluded from scope of policy.
 func (m *ConditionalAccessUsers) SetExcludeRoles(value []string)() {
     m.excludeRoles = value
@@ -238,6 +286,10 @@ func (m *ConditionalAccessUsers) SetExcludeUsers(value []string)() {
 // SetIncludeGroups sets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded, or All.
 func (m *ConditionalAccessUsers) SetIncludeGroups(value []string)() {
     m.includeGroups = value
+}
+// SetIncludeGuestsOrExternalUsers sets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+func (m *ConditionalAccessUsers) SetIncludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
+    m.includeGuestsOrExternalUsers = value
 }
 // SetIncludeRoles sets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
 func (m *ConditionalAccessUsers) SetIncludeRoles(value []string)() {

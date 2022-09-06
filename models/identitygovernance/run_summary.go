@@ -8,15 +8,15 @@ import (
 type RunSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The failedRuns property
+    // The number of failed workflow runs.
     failedRuns *int32
-    // The failedTasks property
+    // The number of failed tasks of a workflow.
     failedTasks *int32
     // The OdataType property
     odataType *string
-    // The successfulRuns property
+    // The number of successful workflow runs.
     successfulRuns *int32
-    // The totalRuns property
+    // The total number of runs for a workflow.
     totalRuns *int32
     // The totalTasks property
     totalTasks *int32
@@ -40,11 +40,11 @@ func CreateRunSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 func (m *RunSummary) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetFailedRuns gets the failedRuns property value. The failedRuns property
+// GetFailedRuns gets the failedRuns property value. The number of failed workflow runs.
 func (m *RunSummary) GetFailedRuns()(*int32) {
     return m.failedRuns
 }
-// GetFailedTasks gets the failedTasks property value. The failedTasks property
+// GetFailedTasks gets the failedTasks property value. The number of failed tasks of a workflow.
 func (m *RunSummary) GetFailedTasks()(*int32) {
     return m.failedTasks
 }
@@ -127,11 +127,11 @@ func (m *RunSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 func (m *RunSummary) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSuccessfulRuns gets the successfulRuns property value. The successfulRuns property
+// GetSuccessfulRuns gets the successfulRuns property value. The number of successful workflow runs.
 func (m *RunSummary) GetSuccessfulRuns()(*int32) {
     return m.successfulRuns
 }
-// GetTotalRuns gets the totalRuns property value. The totalRuns property
+// GetTotalRuns gets the totalRuns property value. The total number of runs for a workflow.
 func (m *RunSummary) GetTotalRuns()(*int32) {
     return m.totalRuns
 }
@@ -199,11 +199,11 @@ func (m *RunSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 func (m *RunSummary) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetFailedRuns sets the failedRuns property value. The failedRuns property
+// SetFailedRuns sets the failedRuns property value. The number of failed workflow runs.
 func (m *RunSummary) SetFailedRuns(value *int32)() {
     m.failedRuns = value
 }
-// SetFailedTasks sets the failedTasks property value. The failedTasks property
+// SetFailedTasks sets the failedTasks property value. The number of failed tasks of a workflow.
 func (m *RunSummary) SetFailedTasks(value *int32)() {
     m.failedTasks = value
 }
@@ -211,11 +211,11 @@ func (m *RunSummary) SetFailedTasks(value *int32)() {
 func (m *RunSummary) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSuccessfulRuns sets the successfulRuns property value. The successfulRuns property
+// SetSuccessfulRuns sets the successfulRuns property value. The number of successful workflow runs.
 func (m *RunSummary) SetSuccessfulRuns(value *int32)() {
     m.successfulRuns = value
 }
-// SetTotalRuns sets the totalRuns property value. The totalRuns property
+// SetTotalRuns sets the totalRuns property value. The total number of runs for a workflow.
 func (m *RunSummary) SetTotalRuns(value *int32)() {
     m.totalRuns = value
 }

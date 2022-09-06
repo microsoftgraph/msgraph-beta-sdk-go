@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementIntent 
+// DeviceManagementIntent entity that represents an intent to apply settings to a device
 type DeviceManagementIntent struct {
     Entity
     // Collection of assignments
@@ -37,7 +37,7 @@ type DeviceManagementIntent struct {
     // A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
     userStateSummary DeviceManagementIntentUserStateSummaryable
 }
-// NewDeviceManagementIntent instantiates a new DeviceManagementIntent and sets the default values.
+// NewDeviceManagementIntent instantiates a new deviceManagementIntent and sets the default values.
 func NewDeviceManagementIntent()(*DeviceManagementIntent) {
     m := &DeviceManagementIntent{
         Entity: *NewEntity(),

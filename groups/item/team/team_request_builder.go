@@ -6,6 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i1bc1304b8111c00df1a1189b84612743ebd4140d3975e0163827f3227dbb3e26 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/owners"
+    i36b30ec6b3b73509ceaf601bd1a0e9b52a61826b627d410ae61a1345953630c9 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/templatedefinition"
     i40ac59694f013e4b5b1e15575a5f6e0e93c3dab17a07b99aa7bc71b7067d946b "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/template"
     i40ad1e813da21e893b26dc980943dedf8dfc449b6a62bf0f23277a7fec206bdf "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/clone"
     i4e5568f1c0c9475041cb74f67b12738556910403e2b8b6271342b9609cffb136 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/tags"
@@ -367,6 +368,10 @@ func (m *TeamRequestBuilder) TagsById(id string)(*ic7aad6617468ac8ab7994cbe9e037
 // Template the template property
 func (m *TeamRequestBuilder) Template()(*i40ac59694f013e4b5b1e15575a5f6e0e93c3dab17a07b99aa7bc71b7067d946b.TemplateRequestBuilder) {
     return i40ac59694f013e4b5b1e15575a5f6e0e93c3dab17a07b99aa7bc71b7067d946b.NewTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TemplateDefinition the templateDefinition property
+func (m *TeamRequestBuilder) TemplateDefinition()(*i36b30ec6b3b73509ceaf601bd1a0e9b52a61826b627d410ae61a1345953630c9.TemplateDefinitionRequestBuilder) {
+    return i36b30ec6b3b73509ceaf601bd1a0e9b52a61826b627d410ae61a1345953630c9.NewTemplateDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Unarchive the unarchive property
 func (m *TeamRequestBuilder) Unarchive()(*ibf8b99dc30819d603bffb578233c10cffceb8078bd72e4af9a92dc5c1985fc6a.UnarchiveRequestBuilder) {

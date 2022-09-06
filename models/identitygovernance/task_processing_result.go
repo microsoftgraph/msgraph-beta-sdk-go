@@ -9,15 +9,15 @@ import (
 // TaskProcessingResult provides operations to manage the collection of accessReviewDecision entities.
 type TaskProcessingResult struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The completedDateTime property
+    // The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The createdDateTime property
+    // The date time when the taskProcessingResult was created. Supports $filter(lt, gt) and orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The failureReason property
+    // Describes why the taskProcessingResult has failed.
     failureReason *string
     // The processingStatus property
     processingStatus *LifecycleWorkflowProcessingStatus
-    // The startedDateTime property
+    // The date time when taskProcessingResult execution started. Value is null if task execution has not yet started. Supports $filter(lt, gt) and orderBy.
     startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The subject property
     subject ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
@@ -37,15 +37,15 @@ func NewTaskProcessingResult()(*TaskProcessingResult) {
 func CreateTaskProcessingResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTaskProcessingResult(), nil
 }
-// GetCompletedDateTime gets the completedDateTime property value. The completedDateTime property
+// GetCompletedDateTime gets the completedDateTime property value. The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.
 func (m *TaskProcessingResult) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completedDateTime
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date time when the taskProcessingResult was created. Supports $filter(lt, gt) and orderBy.
 func (m *TaskProcessingResult) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetFailureReason gets the failureReason property value. The failureReason property
+// GetFailureReason gets the failureReason property value. Describes why the taskProcessingResult has failed.
 func (m *TaskProcessingResult) GetFailureReason()(*string) {
     return m.failureReason
 }
@@ -128,7 +128,7 @@ func (m *TaskProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *TaskProcessingResult) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
     return m.processingStatus
 }
-// GetStartedDateTime gets the startedDateTime property value. The startedDateTime property
+// GetStartedDateTime gets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution has not yet started. Supports $filter(lt, gt) and orderBy.
 func (m *TaskProcessingResult) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startedDateTime
 }
@@ -191,15 +191,15 @@ func (m *TaskProcessingResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCompletedDateTime sets the completedDateTime property value. The completedDateTime property
+// SetCompletedDateTime sets the completedDateTime property value. The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.
 func (m *TaskProcessingResult) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.completedDateTime = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date time when the taskProcessingResult was created. Supports $filter(lt, gt) and orderBy.
 func (m *TaskProcessingResult) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetFailureReason sets the failureReason property value. The failureReason property
+// SetFailureReason sets the failureReason property value. Describes why the taskProcessingResult has failed.
 func (m *TaskProcessingResult) SetFailureReason(value *string)() {
     m.failureReason = value
 }
@@ -207,7 +207,7 @@ func (m *TaskProcessingResult) SetFailureReason(value *string)() {
 func (m *TaskProcessingResult) SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)() {
     m.processingStatus = value
 }
-// SetStartedDateTime sets the startedDateTime property value. The startedDateTime property
+// SetStartedDateTime sets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution has not yet started. Supports $filter(lt, gt) and orderBy.
 func (m *TaskProcessingResult) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startedDateTime = value
 }

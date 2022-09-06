@@ -23,6 +23,7 @@ import (
     ic3c82b3e3aa4c99dd8bd9720303fa07cd398152ceb551f726c583832e8058410 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/items/item/content"
     icf8dc0aeed4d322b794a311185fc330019da0eb089fded259534290fa691efa5 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/items/item/children"
     id156ba179ca21bc9f80b635a70caebe7575117940bbe10acc18bc0f7eb713a02 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/items/item/subscriptions"
+    id227be76ac501fd73b03548cc80de4455d77559ed0b0e3b7b752c849edb75a61 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/items/item/assignsensitivitylabel"
     id6b8a37deec267f7027d31e5e08b078fd6e1b322d8f1881124a3ca32ed247ead "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/items/item/invite"
     idbcab2b6ba9486475cc4932c33de3aee3948e2cbb1284d224ffbad4030b72d3f "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/items/item/searchwithq"
     ie04dca5b5b781980351c4858cda0b7fd52bdddd155350031e965d0a1812a7a5d "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/items/item/deltawithtoken"
@@ -95,6 +96,10 @@ func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*i0e7818f4889eec
 // Analytics the analytics property
 func (m *DriveItemItemRequestBuilder) Analytics()(*ibbaf95ebb8b2c19c17c02a61a20827f061096731272353f476d3016f130f94c7.AnalyticsRequestBuilder) {
     return ibbaf95ebb8b2c19c17c02a61a20827f061096731272353f476d3016f130f94c7.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *DriveItemItemRequestBuilder) AssignSensitivityLabel()(*id227be76ac501fd73b03548cc80de4455d77559ed0b0e3b7b752c849edb75a61.AssignSensitivityLabelRequestBuilder) {
+    return id227be76ac501fd73b03548cc80de4455d77559ed0b0e3b7b752c849edb75a61.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *DriveItemItemRequestBuilder) Checkin()(*i1bdc748c35bb69b53ef59450b5f813610aa04eaf774bbcb3fa9b710ac39eb567.CheckinRequestBuilder) {

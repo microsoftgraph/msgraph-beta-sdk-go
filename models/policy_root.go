@@ -20,6 +20,8 @@ type PolicyRoot struct {
     authenticationFlowsPolicy AuthenticationFlowsPolicyable
     // The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
     authenticationMethodsPolicy AuthenticationMethodsPolicyable
+    // The authenticationStrengthPolicies property
+    authenticationStrengthPolicies []AuthenticationStrengthPolicyable
     // The policy that controls Azure AD authorization settings.
     authorizationPolicy []AuthorizationPolicyable
     // The Azure AD B2C policies that define how end users register via local accounts.
@@ -103,6 +105,10 @@ func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyabl
 // GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable) {
     return m.authenticationMethodsPolicy
+}
+// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+func (m *PolicyRoot) GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable) {
+    return m.authenticationStrengthPolicies
 }
 // GetAuthorizationPolicy gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
 func (m *PolicyRoot) GetAuthorizationPolicy()([]AuthorizationPolicyable) {
@@ -212,6 +218,20 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetAuthenticationMethodsPolicy(val.(AuthenticationMethodsPolicyable))
+        }
+        return nil
+    }
+    res["authenticationStrengthPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationStrengthPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationStrengthPolicyable, len(val))
+            for i, v := range val {
+                res[i] = v.(AuthenticationStrengthPolicyable)
+            }
+            m.SetAuthenticationStrengthPolicies(res)
         }
         return nil
     }
@@ -569,6 +589,16 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetAuthenticationStrengthPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationStrengthPolicies()))
+        for i, v := range m.GetAuthenticationStrengthPolicies() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("authenticationStrengthPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAuthorizationPolicy() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthorizationPolicy()))
         for i, v := range m.GetAuthorizationPolicy() {
@@ -782,6 +812,10 @@ func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolic
 // SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)() {
     m.authenticationMethodsPolicy = value
+}
+// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+func (m *PolicyRoot) SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)() {
+    m.authenticationStrengthPolicies = value
 }
 // SetAuthorizationPolicy sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
 func (m *PolicyRoot) SetAuthorizationPolicy(value []AuthorizationPolicyable)() {

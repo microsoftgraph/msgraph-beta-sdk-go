@@ -18,6 +18,7 @@ import (
     i178f0aa4e5987fcbfe2e98cbb6dd777ebcdcdf124dd3478d2bf40f83912ca030 "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontrols"
     i19717748912ff29c95998304f534371c35864a4579ea92608b32aeecf7d18cc4 "github.com/microsoftgraph/msgraph-beta-sdk-go/messageevents"
     i1b84a2c37ba0bbd175c6da40c8679db7d04dfcb044d8421d26d024db45218e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/schemaextensions"
+    i1c7e7a5d0708841f8c98ec910d583f348cbffaad386ef9a24d3ee4eba285ea21 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition"
     i1dfcb6e17563ae78b6dbaf02d32cee89099a7795106760d7d401df42ce73b8fc "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews"
     i20621ebd49d2bb1ed6c592ae35dfa701db30564a91ff100d25b0dcdb142bd942 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles"
     i20702653f98186060bd39b9fe8136743eafc0ddaa43435e527665ac75229a33a "github.com/microsoftgraph/msgraph-beta-sdk-go/identity"
@@ -60,7 +61,6 @@ import (
     i66f18ccab4e34309d26d1056f0e7dd8b563a5f8ee6f8d9c6e8e77c5fac50f8b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamstemplates"
     i6b96a96c52bbdff1731b8a5490cd5f342e33866e0931912944d323bc79f663e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus"
     i6c3f8c4b4b571cf0fbb7c7c8791ae736e28cc3f4bb62262698b6291c13e127b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/auditlogs"
-    i6d2c3fffc7aebd12fdef5b2007fc7f46ca63eb50a7f6e28aed7b919ca27a698d "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceregistrationpolicy"
     i6e398703c86ec3814400d80161079e7253c4e25f4ba1adb0c8d31da236f7bcd7 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory"
     i712907ad27a66d6ac32a26e01f88de1ad6484585eb7ed65f84b3a30571cec55b "github.com/microsoftgraph/msgraph-beta-sdk-go/scopedrolememberships"
     i71438b4a3f9d4a17f8c873a44b8ac76600403f5ce0cce2423bde35e0191f2c17 "github.com/microsoftgraph/msgraph-beta-sdk-go/grouplifecyclepolicies"
@@ -160,6 +160,7 @@ import (
     i9897ce060c8c140b6319d9eec7b10f1133ddeadce443b5c08d9e6e0b1a90a1fa "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontrols/item"
     i98e280807a93b84e9092eeb27b7840b536491d6fa3c9de876973f203933ecf7f "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroletemplates/item"
     i993beddae5d86c1977387e8b393295fbee6f591297fb6a91fc3501c6cb5ae0d8 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroles/item"
+    i9edbc585c67673e5bfc1e312a7fb5f8fca5cb966cef31e6fdfe8ab8ab7d5780d "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item"
     i9f2a6fa6c0a6eea0dc75c47461a955c3bf5d0e4f31c4695f5fda45cd2ac85e37 "github.com/microsoftgraph/msgraph-beta-sdk-go/authenticationmethodconfigurations/item"
     i9febca1a7c0d482f5cfd0d294e0b42f41284df1fc0f26b63341fd7066192a1d0 "github.com/microsoftgraph/msgraph-beta-sdk-go/scopedrolememberships/item"
     ia62d215a2c5a4beae9bb26027fb9b0f0438b6e34a48aa59b64ddddde97e1e648 "github.com/microsoftgraph/msgraph-beta-sdk-go/messagerecipients/item"
@@ -596,10 +597,6 @@ func (m *GraphServiceClient) DeviceAppManagement()(*idc4afe653def183ef95500aa004
 // DeviceManagement the deviceManagement property
 func (m *GraphServiceClient) DeviceManagement()(*i09893664b20e7c846b2bc7aaaf1cd7f554ed3d2c00ac11336bea4c3c3d859e09.DeviceManagementRequestBuilder) {
     return i09893664b20e7c846b2bc7aaaf1cd7f554ed3d2c00ac11336bea4c3c3d859e09.NewDeviceManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// DeviceRegistrationPolicy the deviceRegistrationPolicy property
-func (m *GraphServiceClient) DeviceRegistrationPolicy()(*i6d2c3fffc7aebd12fdef5b2007fc7f46ca63eb50a7f6e28aed7b919ca27a698d.DeviceRegistrationPolicyRequestBuilder) {
-    return i6d2c3fffc7aebd12fdef5b2007fc7f46ca63eb50a7f6e28aed7b919ca27a698d.NewDeviceRegistrationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Devices the devices property
 func (m *GraphServiceClient) Devices()(*i0b4892b2f92a31e44541567b8065e8e7760cb336e17d7dacb9120a865d5b0a37.DevicesRequestBuilder) {
@@ -1468,6 +1465,21 @@ func (m *GraphServiceClient) TeamsTemplatesById(id string)(*i44e397fa023407b3a97
         urlTplParams["teamsTemplate%2Did"] = id
     }
     return i44e397fa023407b3a9722e619d02140543ef889c8c03de376d8341cec5a43794.NewTeamsTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// TeamTemplateDefinition the teamTemplateDefinition property
+func (m *GraphServiceClient) TeamTemplateDefinition()(*i1c7e7a5d0708841f8c98ec910d583f348cbffaad386ef9a24d3ee4eba285ea21.TeamTemplateDefinitionRequestBuilder) {
+    return i1c7e7a5d0708841f8c98ec910d583f348cbffaad386ef9a24d3ee4eba285ea21.NewTeamTemplateDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TeamTemplateDefinitionById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamTemplateDefinition.item collection
+func (m *GraphServiceClient) TeamTemplateDefinitionById(id string)(*i9edbc585c67673e5bfc1e312a7fb5f8fca5cb966cef31e6fdfe8ab8ab7d5780d.TeamTemplateDefinitionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["teamTemplateDefinition%2Did"] = id
+    }
+    return i9edbc585c67673e5bfc1e312a7fb5f8fca5cb966cef31e6fdfe8ab8ab7d5780d.NewTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Teamwork the teamwork property
 func (m *GraphServiceClient) Teamwork()(*icb4f253cb1cd35435f5752b611229032c618bbcfeb3be80ee4d6a06d404114fc.TeamworkRequestBuilder) {
