@@ -23,7 +23,7 @@ type TaskDefinitionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TaskDefinitionItemRequestBuilderGetQueryParameters get taskDefinitions from identityGovernance
+// TaskDefinitionItemRequestBuilderGetQueryParameters the definition of tasks within the lifecycle workflows instance.
 type TaskDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *TaskDefinitionItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get taskDefinitions from identityGovernance
+// CreateGetRequestInformation the definition of tasks within the lifecycle workflows instance.
 func (m *TaskDefinitionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get taskDefinitions from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the definition of tasks within the lifecycle workflows instance.
 func (m *TaskDefinitionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,7 +134,7 @@ func (m *TaskDefinitionItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get get taskDefinitions from identityGovernance
+// Get the definition of tasks within the lifecycle workflows instance.
 func (m *TaskDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

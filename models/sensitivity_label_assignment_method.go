@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the extractSensitivityLabels method.
+// Provides operations to call the assignSensitivityLabel method.
 type SensitivityLabelAssignmentMethod int
 
 const (

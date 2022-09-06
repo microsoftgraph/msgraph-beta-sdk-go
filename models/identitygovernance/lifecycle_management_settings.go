@@ -8,7 +8,7 @@ import (
 // LifecycleManagementSettings 
 type LifecycleManagementSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The workflowScheduleIntervalInHours property
+    // The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
     workflowScheduleIntervalInHours *int32
 }
 // NewLifecycleManagementSettings instantiates a new LifecycleManagementSettings and sets the default values.
@@ -39,7 +39,7 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The workflowScheduleIntervalInHours property
+// GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
 func (m *LifecycleManagementSettings) GetWorkflowScheduleIntervalInHours()(*int32) {
     return m.workflowScheduleIntervalInHours
 }
@@ -57,7 +57,7 @@ func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetWorkflowScheduleIntervalInHours sets the workflowScheduleIntervalInHours property value. The workflowScheduleIntervalInHours property
+// SetWorkflowScheduleIntervalInHours sets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
 func (m *LifecycleManagementSettings) SetWorkflowScheduleIntervalInHours(value *int32)() {
     m.workflowScheduleIntervalInHours = value
 }

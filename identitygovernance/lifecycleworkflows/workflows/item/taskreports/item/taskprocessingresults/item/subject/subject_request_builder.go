@@ -16,7 +16,7 @@ type SubjectRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SubjectRequestBuilderGetQueryParameters get subject from identityGovernance
+// SubjectRequestBuilderGetQueryParameters the unique identifier of the Azure AD user targeted for the task execution.
 type SubjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewSubjectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get subject from identityGovernance
+// CreateGetRequestInformation the unique identifier of the Azure AD user targeted for the task execution.
 func (m *SubjectRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get subject from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the unique identifier of the Azure AD user targeted for the task execution.
 func (m *SubjectRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SubjectRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *SubjectRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get get subject from identityGovernance
+// Get the unique identifier of the Azure AD user targeted for the task execution.
 func (m *SubjectRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

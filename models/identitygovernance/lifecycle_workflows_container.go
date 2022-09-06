@@ -8,17 +8,17 @@ import (
 // LifecycleWorkflowsContainer 
 type LifecycleWorkflowsContainer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The customTaskExtensions property
+    // The customTaskExtension instance.
     customTaskExtensions []CustomTaskExtensionable
-    // The deletedItems property
+    // Deleted workflows in your lifecycle workflows instance.
     deletedItems ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable
     // The settings property
     settings LifecycleManagementSettingsable
-    // The taskDefinitions property
+    // The definition of tasks within the lifecycle workflows instance.
     taskDefinitions []TaskDefinitionable
-    // The workflows property
+    // The workflows in the lifecycle workflows instance.
     workflows []Workflowable
-    // The workflowTemplates property
+    // The workflow templates in the lifecycle workflow instance.
     workflowTemplates []WorkflowTemplateable
 }
 // NewLifecycleWorkflowsContainer instantiates a new LifecycleWorkflowsContainer and sets the default values.
@@ -34,11 +34,11 @@ func NewLifecycleWorkflowsContainer()(*LifecycleWorkflowsContainer) {
 func CreateLifecycleWorkflowsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLifecycleWorkflowsContainer(), nil
 }
-// GetCustomTaskExtensions gets the customTaskExtensions property value. The customTaskExtensions property
+// GetCustomTaskExtensions gets the customTaskExtensions property value. The customTaskExtension instance.
 func (m *LifecycleWorkflowsContainer) GetCustomTaskExtensions()([]CustomTaskExtensionable) {
     return m.customTaskExtensions
 }
-// GetDeletedItems gets the deletedItems property value. The deletedItems property
+// GetDeletedItems gets the deletedItems property value. Deleted workflows in your lifecycle workflows instance.
 func (m *LifecycleWorkflowsContainer) GetDeletedItems()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable) {
     return m.deletedItems
 }
@@ -127,15 +127,15 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
 func (m *LifecycleWorkflowsContainer) GetSettings()(LifecycleManagementSettingsable) {
     return m.settings
 }
-// GetTaskDefinitions gets the taskDefinitions property value. The taskDefinitions property
+// GetTaskDefinitions gets the taskDefinitions property value. The definition of tasks within the lifecycle workflows instance.
 func (m *LifecycleWorkflowsContainer) GetTaskDefinitions()([]TaskDefinitionable) {
     return m.taskDefinitions
 }
-// GetWorkflows gets the workflows property value. The workflows property
+// GetWorkflows gets the workflows property value. The workflows in the lifecycle workflows instance.
 func (m *LifecycleWorkflowsContainer) GetWorkflows()([]Workflowable) {
     return m.workflows
 }
-// GetWorkflowTemplates gets the workflowTemplates property value. The workflowTemplates property
+// GetWorkflowTemplates gets the workflowTemplates property value. The workflow templates in the lifecycle workflow instance.
 func (m *LifecycleWorkflowsContainer) GetWorkflowTemplates()([]WorkflowTemplateable) {
     return m.workflowTemplates
 }
@@ -199,11 +199,11 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCustomTaskExtensions sets the customTaskExtensions property value. The customTaskExtensions property
+// SetCustomTaskExtensions sets the customTaskExtensions property value. The customTaskExtension instance.
 func (m *LifecycleWorkflowsContainer) SetCustomTaskExtensions(value []CustomTaskExtensionable)() {
     m.customTaskExtensions = value
 }
-// SetDeletedItems sets the deletedItems property value. The deletedItems property
+// SetDeletedItems sets the deletedItems property value. Deleted workflows in your lifecycle workflows instance.
 func (m *LifecycleWorkflowsContainer) SetDeletedItems(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)() {
     m.deletedItems = value
 }
@@ -211,15 +211,15 @@ func (m *LifecycleWorkflowsContainer) SetDeletedItems(value ie233ee762e29b4ba697
 func (m *LifecycleWorkflowsContainer) SetSettings(value LifecycleManagementSettingsable)() {
     m.settings = value
 }
-// SetTaskDefinitions sets the taskDefinitions property value. The taskDefinitions property
+// SetTaskDefinitions sets the taskDefinitions property value. The definition of tasks within the lifecycle workflows instance.
 func (m *LifecycleWorkflowsContainer) SetTaskDefinitions(value []TaskDefinitionable)() {
     m.taskDefinitions = value
 }
-// SetWorkflows sets the workflows property value. The workflows property
+// SetWorkflows sets the workflows property value. The workflows in the lifecycle workflows instance.
 func (m *LifecycleWorkflowsContainer) SetWorkflows(value []Workflowable)() {
     m.workflows = value
 }
-// SetWorkflowTemplates sets the workflowTemplates property value. The workflowTemplates property
+// SetWorkflowTemplates sets the workflowTemplates property value. The workflow templates in the lifecycle workflow instance.
 func (m *LifecycleWorkflowsContainer) SetWorkflowTemplates(value []WorkflowTemplateable)() {
     m.workflowTemplates = value
 }

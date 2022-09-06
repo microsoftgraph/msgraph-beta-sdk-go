@@ -36,7 +36,7 @@ type WorkflowItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WorkflowItemRequestBuilderGetQueryParameters get workflows from identityGovernance
+// WorkflowItemRequestBuilderGetQueryParameters deleted workflows that end up in the deletedItemsContainer.
 type WorkflowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -98,11 +98,11 @@ func (m *WorkflowItemRequestBuilder) CreateDeleteRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get workflows from identityGovernance
+// CreateGetRequestInformation deleted workflows that end up in the deletedItemsContainer.
 func (m *WorkflowItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get workflows from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration deleted workflows that end up in the deletedItemsContainer.
 func (m *WorkflowItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkflowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,7 +170,7 @@ func (m *WorkflowItemRequestBuilder) ExecutionScopeById(id string)(*idbdb585d24d
     }
     return idbdb585d24d72a7d4a6280168e5b9b47a815e87a6055e162778e0dae48b4328e.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get workflows from identityGovernance
+// Get deleted workflows that end up in the deletedItemsContainer.
 func (m *WorkflowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkflowItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

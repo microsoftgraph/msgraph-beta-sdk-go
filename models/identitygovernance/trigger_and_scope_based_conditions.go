@@ -8,9 +8,9 @@ import (
 // TriggerAndScopeBasedConditions 
 type TriggerAndScopeBasedConditions struct {
     WorkflowExecutionConditions
-    // The scope property
+    // Defines who the workflow runs for.
     scope ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectSetable
-    // The trigger property
+    // What triggers a workflow to run.
     trigger WorkflowExecutionTriggerable
 }
 // NewTriggerAndScopeBasedConditions instantiates a new TriggerAndScopeBasedConditions and sets the default values.
@@ -51,11 +51,11 @@ func (m *TriggerAndScopeBasedConditions) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetScope gets the scope property value. The scope property
+// GetScope gets the scope property value. Defines who the workflow runs for.
 func (m *TriggerAndScopeBasedConditions) GetScope()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectSetable) {
     return m.scope
 }
-// GetTrigger gets the trigger property value. The trigger property
+// GetTrigger gets the trigger property value. What triggers a workflow to run.
 func (m *TriggerAndScopeBasedConditions) GetTrigger()(WorkflowExecutionTriggerable) {
     return m.trigger
 }
@@ -79,11 +79,11 @@ func (m *TriggerAndScopeBasedConditions) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetScope sets the scope property value. The scope property
+// SetScope sets the scope property value. Defines who the workflow runs for.
 func (m *TriggerAndScopeBasedConditions) SetScope(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectSetable)() {
     m.scope = value
 }
-// SetTrigger sets the trigger property value. The trigger property
+// SetTrigger sets the trigger property value. What triggers a workflow to run.
 func (m *TriggerAndScopeBasedConditions) SetTrigger(value WorkflowExecutionTriggerable)() {
     m.trigger = value
 }

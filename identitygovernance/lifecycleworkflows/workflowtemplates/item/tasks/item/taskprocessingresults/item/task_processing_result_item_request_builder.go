@@ -26,7 +26,7 @@ type TaskProcessingResultItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TaskProcessingResultItemRequestBuilderGetQueryParameters get taskProcessingResults from identityGovernance
+// TaskProcessingResultItemRequestBuilderGetQueryParameters the result of processing the task.
 type TaskProcessingResultItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -84,11 +84,11 @@ func (m *TaskProcessingResultItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get taskProcessingResults from identityGovernance
+// CreateGetRequestInformation the result of processing the task.
 func (m *TaskProcessingResultItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get taskProcessingResults from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the result of processing the task.
 func (m *TaskProcessingResultItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskProcessingResultItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,7 +137,7 @@ func (m *TaskProcessingResultItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get get taskProcessingResults from identityGovernance
+// Get the result of processing the task.
 func (m *TaskProcessingResultItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskProcessingResultItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskProcessingResultable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

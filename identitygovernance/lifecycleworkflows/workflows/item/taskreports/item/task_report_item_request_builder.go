@@ -27,7 +27,7 @@ type TaskReportItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TaskReportItemRequestBuilderGetQueryParameters get taskReports from identityGovernance
+// TaskReportItemRequestBuilderGetQueryParameters represents the aggregation of task execution data for tasks within a workflow object.
 type TaskReportItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,11 +85,11 @@ func (m *TaskReportItemRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get taskReports from identityGovernance
+// CreateGetRequestInformation represents the aggregation of task execution data for tasks within a workflow object.
 func (m *TaskReportItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get taskReports from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration represents the aggregation of task execution data for tasks within a workflow object.
 func (m *TaskReportItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskReportItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,7 +138,7 @@ func (m *TaskReportItemRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get get taskReports from identityGovernance
+// Get represents the aggregation of task execution data for tasks within a workflow object.
 func (m *TaskReportItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskReportItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskReportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

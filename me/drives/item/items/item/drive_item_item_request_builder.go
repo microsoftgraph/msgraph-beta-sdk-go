@@ -27,6 +27,7 @@ import (
     ic1373904794125c73001b993b8b33c6016f56d96174b0260f5b8823ac4e00b57 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/items/item/validatepermission"
     icf15246792ca783226cabc2cc3a1ceb518e142ebed900e2c7c1ebecc572b5964 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/items/item/createuploadsession"
     id3ae126c5fa04f7016956d96c261d74a03a367f18c87cbd6c0c81c4773856482 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/items/item/checkin"
+    id68215ba6f53cc548c3873fa209c4815d08e03d6e7263cc0cfcc3ab34ae4d18b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/items/item/assignsensitivitylabel"
     ie8ff27e9f76417e88fbdbaff20404d64201e0fb3256421b45e469dce450f5368 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/items/item/extractsensitivitylabels"
     if07779cafb32bcb954e8baa2fcdb6283357a647442af0a49aaa2643ddf7a2125 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/items/item/activities"
     if911b3a10b9730297fcd733857f877651ed5a7489ee33fe66b62a1e4b4c29263 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drives/item/items/item/checkout"
@@ -95,6 +96,10 @@ func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*ida01d8a4830793
 // Analytics the analytics property
 func (m *DriveItemItemRequestBuilder) Analytics()(*i37ff40e2aa7be9eca0148887400d7b085d8f3de83bf87492286dc92f5a7ac5eb.AnalyticsRequestBuilder) {
     return i37ff40e2aa7be9eca0148887400d7b085d8f3de83bf87492286dc92f5a7ac5eb.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *DriveItemItemRequestBuilder) AssignSensitivityLabel()(*id68215ba6f53cc548c3873fa209c4815d08e03d6e7263cc0cfcc3ab34ae4d18b.AssignSensitivityLabelRequestBuilder) {
+    return id68215ba6f53cc548c3873fa209c4815d08e03d6e7263cc0cfcc3ab34ae4d18b.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *DriveItemItemRequestBuilder) Checkin()(*id3ae126c5fa04f7016956d96c261d74a03a367f18c87cbd6c0c81c4773856482.CheckinRequestBuilder) {

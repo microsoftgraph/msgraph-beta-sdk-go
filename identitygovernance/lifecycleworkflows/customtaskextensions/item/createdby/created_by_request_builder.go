@@ -16,7 +16,7 @@ type CreatedByRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CreatedByRequestBuilderGetQueryParameters get createdBy from identityGovernance
+// CreatedByRequestBuilderGetQueryParameters the unique identifier of the Azure AD user that created the custom task extension.
 type CreatedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewCreatedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedByRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get createdBy from identityGovernance
+// CreateGetRequestInformation the unique identifier of the Azure AD user that created the custom task extension.
 func (m *CreatedByRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get createdBy from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the unique identifier of the Azure AD user that created the custom task extension.
 func (m *CreatedByRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CreatedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *CreatedByRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get createdBy from identityGovernance
+// Get the unique identifier of the Azure AD user that created the custom task extension.
 func (m *CreatedByRequestBuilder) Get(ctx context.Context, requestConfiguration *CreatedByRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

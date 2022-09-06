@@ -26,6 +26,7 @@ import (
     i8bf71418a40d55c88bd463ae8678f7a80a256e281726ddf4e9c5b367b472be7a "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/extractsensitivitylabels"
     i9e601979c83767d12347ff319a26aa16bd8cde9f1cf30b7a89c1c15121909250 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/preview"
     ia10d6bc417675919b129deccbb4a8ff6d0e423f7280ed162a4c41f59cc0e8de4 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/permissions"
+    ia379a18993382e2cd165de4f6dc66e23159c7edce7c85491eb79d8d5a828f2bb "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/assignsensitivitylabel"
     ib109f1365e8ac7f6b077a01adab1935b4dd6adc390c9e072a8b9a8ef2653e116 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/checkout"
     ibcde7b93c66be3ae4c6307030c9c1fd4912a9617a23339afbb10615f9a735dd3 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/unfollow"
     iccf725507e0de7b68f548524e89423d3c820bc9d1292124875957bfd3d78a358 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/delta"
@@ -95,6 +96,10 @@ func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*ib3b0b0b8db03e0
 // Analytics the analytics property
 func (m *DriveItemItemRequestBuilder) Analytics()(*i1559af655b2f07d6991e747733c0a5dbe16a79c9110b9cd4e95e89d1f533b436.AnalyticsRequestBuilder) {
     return i1559af655b2f07d6991e747733c0a5dbe16a79c9110b9cd4e95e89d1f533b436.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *DriveItemItemRequestBuilder) AssignSensitivityLabel()(*ia379a18993382e2cd165de4f6dc66e23159c7edce7c85491eb79d8d5a828f2bb.AssignSensitivityLabelRequestBuilder) {
+    return ia379a18993382e2cd165de4f6dc66e23159c7edce7c85491eb79d8d5a828f2bb.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *DriveItemItemRequestBuilder) Checkin()(*i3a42b727ca0a85dd5841ea0caf5e4ddcc0b92314677b92c30cdff812f9d18de6.CheckinRequestBuilder) {

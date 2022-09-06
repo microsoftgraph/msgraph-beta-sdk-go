@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDriverUpdateProfile 
+// WindowsDriverUpdateProfile windows Driver Update Profile
 type WindowsDriverUpdateProfile struct {
     Entity
     // An enum type to represent approval type of a driver update profile.
@@ -33,7 +33,7 @@ type WindowsDriverUpdateProfile struct {
     // List of Scope Tags for this Driver Update entity.
     roleScopeTagIds []string
 }
-// NewWindowsDriverUpdateProfile instantiates a new WindowsDriverUpdateProfile and sets the default values.
+// NewWindowsDriverUpdateProfile instantiates a new windowsDriverUpdateProfile and sets the default values.
 func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
     m := &WindowsDriverUpdateProfile{
         Entity: *NewEntity(),

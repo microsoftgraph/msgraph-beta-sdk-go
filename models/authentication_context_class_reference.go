@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationContextClassReference provides operations to manage the collection of accessReview entities.
+// AuthenticationContextClassReference 
 type AuthenticationContextClassReference struct {
     Entity
     // A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
@@ -14,7 +14,7 @@ type AuthenticationContextClassReference struct {
     // Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false it should not be shown in admin UX experiences because the value is not currently available for selection.
     isAvailable *bool
 }
-// NewAuthenticationContextClassReference instantiates a new authenticationContextClassReference and sets the default values.
+// NewAuthenticationContextClassReference instantiates a new AuthenticationContextClassReference and sets the default values.
 func NewAuthenticationContextClassReference()(*AuthenticationContextClassReference) {
     m := &AuthenticationContextClassReference{
         Entity: *NewEntity(),

@@ -17,7 +17,7 @@ type WorkflowsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WorkflowsRequestBuilderGetQueryParameters get workflows from identityGovernance
+// WorkflowsRequestBuilderGetQueryParameters the workflows in the lifecycle workflows instance.
 type WorkflowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewWorkflowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *WorkflowsRequestBuilder) Count()(*i232c536cbd7acac29d00b8d6ec5a3015194eba1fdeb0bf1040a1cd327b940a44.CountRequestBuilder) {
     return i232c536cbd7acac29d00b8d6ec5a3015194eba1fdeb0bf1040a1cd327b940a44.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get workflows from identityGovernance
+// CreateGetRequestInformation the workflows in the lifecycle workflows instance.
 func (m *WorkflowsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get workflows from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the workflows in the lifecycle workflows instance.
 func (m *WorkflowsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WorkflowsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get get workflows from identityGovernance
+// Get the workflows in the lifecycle workflows instance.
 func (m *WorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkflowsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

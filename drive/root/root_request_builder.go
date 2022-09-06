@@ -16,6 +16,7 @@ import (
     i99dec5917f189f07b941f0af454e20d24e6a05de83be2ef9aa75bd0bb19ccfab "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/root/checkin"
     ia051d8653049bc5b4ed721f87ef74e6a6f98703294cae8c9cb26c3b75bb3800a "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/root/extractsensitivitylabels"
     ia37b7adeb36356a67b48f2ea7350e35f5c25696a3527d14f974953d783db6caf "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/root/activities"
+    ia87bf156c71898851764f2c29617cea481b505dab75060c2975c701c1891060f "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/root/assignsensitivitylabel"
     iad9096207b89af0d541fff142c32b69ad17329661f64af59e5ec79321f8a805e "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/root/subscriptions"
     ib631e14e5c19c4b96df9154c3d72c540acde929be4dbc5294297164599670824 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/root/invite"
     ib695e935397298b0896bd5bea3f2317818e631b3dea7090cab84dbbadfddade9 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/root/listitem"
@@ -95,6 +96,10 @@ func (m *RootRequestBuilder) ActivitiesById(id string)(*iafd51b75b6c2dfedbe56900
 // Analytics the analytics property
 func (m *RootRequestBuilder) Analytics()(*i184aef01445a07bacf7eb34262da7f276c260c40192ac823afb65cc4a7633f1a.AnalyticsRequestBuilder) {
     return i184aef01445a07bacf7eb34262da7f276c260c40192ac823afb65cc4a7633f1a.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignSensitivityLabel the assignSensitivityLabel property
+func (m *RootRequestBuilder) AssignSensitivityLabel()(*ia87bf156c71898851764f2c29617cea481b505dab75060c2975c701c1891060f.AssignSensitivityLabelRequestBuilder) {
+    return ia87bf156c71898851764f2c29617cea481b505dab75060c2975c701c1891060f.NewAssignSensitivityLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Checkin the checkin property
 func (m *RootRequestBuilder) Checkin()(*i99dec5917f189f07b941f0af454e20d24e6a05de83be2ef9aa75bd0bb19ccfab.CheckinRequestBuilder) {

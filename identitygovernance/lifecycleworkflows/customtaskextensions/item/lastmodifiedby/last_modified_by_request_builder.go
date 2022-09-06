@@ -16,7 +16,7 @@ type LastModifiedByRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LastModifiedByRequestBuilderGetQueryParameters get lastModifiedBy from identityGovernance
+// LastModifiedByRequestBuilderGetQueryParameters the unique identifier of the Azure AD user that modified the custom task extension last.
 type LastModifiedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewLastModifiedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewLastModifiedByRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get lastModifiedBy from identityGovernance
+// CreateGetRequestInformation the unique identifier of the Azure AD user that modified the custom task extension last.
 func (m *LastModifiedByRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get lastModifiedBy from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the unique identifier of the Azure AD user that modified the custom task extension last.
 func (m *LastModifiedByRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastModifiedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *LastModifiedByRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get get lastModifiedBy from identityGovernance
+// Get the unique identifier of the Azure AD user that modified the custom task extension last.
 func (m *LastModifiedByRequestBuilder) Get(ctx context.Context, requestConfiguration *LastModifiedByRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

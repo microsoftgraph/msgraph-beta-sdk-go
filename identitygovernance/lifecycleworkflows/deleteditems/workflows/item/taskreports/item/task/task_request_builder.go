@@ -16,7 +16,7 @@ type TaskRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TaskRequestBuilderGetQueryParameters get task from identityGovernance
+// TaskRequestBuilderGetQueryParameters the related lifecycle workflow task.
 type TaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewTaskRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get task from identityGovernance
+// CreateGetRequestInformation the related lifecycle workflow task.
 func (m *TaskRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get task from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the related lifecycle workflow task.
 func (m *TaskRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *TaskRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Get get task from identityGovernance
+// Get the related lifecycle workflow task.
 func (m *TaskRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type VersionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// VersionsRequestBuilderGetQueryParameters get versions from identityGovernance
+// VersionsRequestBuilderGetQueryParameters the workflow versions that are available.
 type VersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewVersionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *VersionsRequestBuilder) Count()(*ie58cd97e5fb67e6f01fd12704cf639cb948203682ed7d01b207ac9272030257a.CountRequestBuilder) {
     return ie58cd97e5fb67e6f01fd12704cf639cb948203682ed7d01b207ac9272030257a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get versions from identityGovernance
+// CreateGetRequestInformation the workflow versions that are available.
 func (m *VersionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get versions from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the workflow versions that are available.
 func (m *VersionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *VersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *VersionsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get versions from identityGovernance
+// Get the workflow versions that are available.
 func (m *VersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VersionsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowVersionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPCConnectivityIssue 
+// CloudPCConnectivityIssue the user experience analyte connectivity issue entity.
 type CloudPCConnectivityIssue struct {
     Entity
     // The Intune DeviceId of the device the connection is associated with.
@@ -21,7 +21,7 @@ type CloudPCConnectivityIssue struct {
     // The unique id of user who initialize the connection.
     userId *string
 }
-// NewCloudPCConnectivityIssue instantiates a new CloudPCConnectivityIssue and sets the default values.
+// NewCloudPCConnectivityIssue instantiates a new cloudPCConnectivityIssue and sets the default values.
 func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {
     m := &CloudPCConnectivityIssue{
         Entity: *NewEntity(),

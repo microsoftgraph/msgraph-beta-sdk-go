@@ -12,23 +12,23 @@ type WorkflowBase struct {
     additionalData map[string]interface{}
     // The category property
     category *LifecycleWorkflowCategory
-    // The createdBy property
+    // The user who created the workflow.
     createdBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
-    // The createdDateTime property
+    // When a workflow was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
+    // A string that describes the purpose of the workflow.
     description *string
-    // The displayName property
+    // A string to identify the workflow.
     displayName *string
-    // The executionConditions property
+    // Defines when and for who the workflow will run.
     executionConditions WorkflowExecutionConditionsable
-    // The lastModifiedBy property
+    // The user who last modified the workflow.
     lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
-    // The lastModifiedDateTime property
+    // When the workflow was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
     odataType *string
-    // The tasks property
+    // The tasks in the workflow.
     tasks []Taskable
 }
 // NewWorkflowBase instantiates a new workflowBase and sets the default values.
@@ -73,23 +73,23 @@ func (m *WorkflowBase) GetAdditionalData()(map[string]interface{}) {
 func (m *WorkflowBase) GetCategory()(*LifecycleWorkflowCategory) {
     return m.category
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The user who created the workflow.
 func (m *WorkflowBase) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
     return m.createdBy
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. When a workflow was created.
 func (m *WorkflowBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A string that describes the purpose of the workflow.
 func (m *WorkflowBase) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. A string to identify the workflow.
 func (m *WorkflowBase) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetExecutionConditions gets the executionConditions property value. The executionConditions property
+// GetExecutionConditions gets the executionConditions property value. Defines when and for who the workflow will run.
 func (m *WorkflowBase) GetExecutionConditions()(WorkflowExecutionConditionsable) {
     return m.executionConditions
 }
@@ -202,11 +202,11 @@ func (m *WorkflowBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the workflow.
 func (m *WorkflowBase) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
     return m.lastModifiedBy
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the workflow was last modified.
 func (m *WorkflowBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
@@ -214,7 +214,7 @@ func (m *WorkflowBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
 func (m *WorkflowBase) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTasks gets the tasks property value. The tasks property
+// GetTasks gets the tasks property value. The tasks in the workflow.
 func (m *WorkflowBase) GetTasks()([]Taskable) {
     return m.tasks
 }
@@ -301,31 +301,31 @@ func (m *WorkflowBase) SetAdditionalData(value map[string]interface{})() {
 func (m *WorkflowBase) SetCategory(value *LifecycleWorkflowCategory)() {
     m.category = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The user who created the workflow.
 func (m *WorkflowBase) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     m.createdBy = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. When a workflow was created.
 func (m *WorkflowBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A string that describes the purpose of the workflow.
 func (m *WorkflowBase) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. A string to identify the workflow.
 func (m *WorkflowBase) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetExecutionConditions sets the executionConditions property value. The executionConditions property
+// SetExecutionConditions sets the executionConditions property value. Defines when and for who the workflow will run.
 func (m *WorkflowBase) SetExecutionConditions(value WorkflowExecutionConditionsable)() {
     m.executionConditions = value
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the workflow.
 func (m *WorkflowBase) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     m.lastModifiedBy = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. When the workflow was last modified.
 func (m *WorkflowBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
@@ -333,7 +333,7 @@ func (m *WorkflowBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe
 func (m *WorkflowBase) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTasks sets the tasks property value. The tasks property
+// SetTasks sets the tasks property value. The tasks in the workflow.
 func (m *WorkflowBase) SetTasks(value []Taskable)() {
     m.tasks = value
 }

@@ -9,15 +9,15 @@ import (
 // CustomTaskExtension 
 type CustomTaskExtension struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomCalloutExtension
-    // The callbackConfiguration property
+    // The callback configuration for a custom extension.
     callbackConfiguration ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionCallbackConfigurationable
-    // The createdBy property
+    // The unique identifier of the Azure AD user that created the custom task extension.
     createdBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
-    // The createdDateTime property
+    // When the custom task extension was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The lastModifiedBy property
+    // The unique identifier of the Azure AD user that modified the custom task extension last.
     lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
-    // The lastModifiedDateTime property
+    // When the custom extension was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewCustomTaskExtension instantiates a new CustomTaskExtension and sets the default values.
@@ -33,15 +33,15 @@ func NewCustomTaskExtension()(*CustomTaskExtension) {
 func CreateCustomTaskExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTaskExtension(), nil
 }
-// GetCallbackConfiguration gets the callbackConfiguration property value. The callbackConfiguration property
+// GetCallbackConfiguration gets the callbackConfiguration property value. The callback configuration for a custom extension.
 func (m *CustomTaskExtension) GetCallbackConfiguration()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionCallbackConfigurationable) {
     return m.callbackConfiguration
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The unique identifier of the Azure AD user that created the custom task extension.
 func (m *CustomTaskExtension) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
     return m.createdBy
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. When the custom task extension was created.
 func (m *CustomTaskExtension) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
@@ -100,11 +100,11 @@ func (m *CustomTaskExtension) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Azure AD user that modified the custom task extension last.
 func (m *CustomTaskExtension) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
     return m.lastModifiedBy
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the custom extension was last modified.
 func (m *CustomTaskExtension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
@@ -146,23 +146,23 @@ func (m *CustomTaskExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCallbackConfiguration sets the callbackConfiguration property value. The callbackConfiguration property
+// SetCallbackConfiguration sets the callbackConfiguration property value. The callback configuration for a custom extension.
 func (m *CustomTaskExtension) SetCallbackConfiguration(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionCallbackConfigurationable)() {
     m.callbackConfiguration = value
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The unique identifier of the Azure AD user that created the custom task extension.
 func (m *CustomTaskExtension) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     m.createdBy = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. When the custom task extension was created.
 func (m *CustomTaskExtension) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The unique identifier of the Azure AD user that modified the custom task extension last.
 func (m *CustomTaskExtension) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     m.lastModifiedBy = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. When the custom extension was last modified.
 func (m *CustomTaskExtension) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }

@@ -25,7 +25,7 @@ type WorkflowTemplateItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WorkflowTemplateItemRequestBuilderGetQueryParameters get workflowTemplates from identityGovernance
+// WorkflowTemplateItemRequestBuilderGetQueryParameters the workflow templates in the lifecycle workflow instance.
 type WorkflowTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -83,11 +83,11 @@ func (m *WorkflowTemplateItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get workflowTemplates from identityGovernance
+// CreateGetRequestInformation the workflow templates in the lifecycle workflow instance.
 func (m *WorkflowTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get workflowTemplates from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration the workflow templates in the lifecycle workflow instance.
 func (m *WorkflowTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkflowTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -136,7 +136,7 @@ func (m *WorkflowTemplateItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Get get workflowTemplates from identityGovernance
+// Get the workflow templates in the lifecycle workflow instance.
 func (m *WorkflowTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkflowTemplateItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

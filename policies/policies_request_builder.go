@@ -15,6 +15,7 @@ import (
     i3baef4935efa79b1ea53b0f8a4d12e8e33271d34f1b7fe4e5e3deefd698fb11d "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/adminconsentrequestpolicy"
     i4235b128855e4ef4e736e93e75306be2329042607217b14308bae073614f6b91 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/permissiongrantpolicies"
     i50186836a679beade2d866abd3fcf49adbbaf1d6161193ee717820c04941b95f "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicies"
+    i6390b41fee35d38ad58432cb872f7b0981fd1b58b2e222bdf8c0d929c212d726 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/authenticationstrengthpolicies"
     i63cc74da591a22ec8c6bde2e4173c23db89b2ae47fef9d9e7c5634f87419136f "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/serviceprincipalcreationpolicies"
     i82a0672e3a16707a14cf887f3b2b473d9e08df769ebfa56b019ad2205ea8732d "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/claimsmappingpolicies"
     i8ab23dd53a7ba192025fbd1c53f22ecde4f5853cf55f14dadae7c3d54bfe6ecc "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/accessreviewpolicy"
@@ -36,6 +37,7 @@ import (
     i3718ba1ac7c6b6b07b29bbaa42dc50cc122da4f510e54af905f2c63f5fba5585 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicyassignments/item"
     i3d72a8d05a1bc29e49b08e440b0f124e60a0a17cca39da307f0fc359f9ba8100 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/claimsmappingpolicies/item"
     i45b1afd0d7bc9158e4c62ccf7aeb399e7aef62431980207f6b6df372b62073b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/tokenissuancepolicies/item"
+    i48ae16125bc24acea72c4577c552f952c9f32fec09f609757df4b612154ccbef "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/authenticationstrengthpolicies/item"
     i5059ef490cc51ecd77364347b98e03ea1c34501de1dede44e9b212932f620cbc "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/authorizationpolicy/item"
     i5632bf91798252c9bca8fa6eadd95db82f90a142d927c3c26e684ab6f2d90a28 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/featurerolloutpolicies/item"
     i987e92fec12c74acd600441b6cc0e2c18b324562d146333edb4272ddc51cc302 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/mobiledevicemanagementpolicies/item"
@@ -125,6 +127,21 @@ func (m *PoliciesRequestBuilder) AuthenticationFlowsPolicy()(*i2c474f2aded367ce2
 // AuthenticationMethodsPolicy the authenticationMethodsPolicy property
 func (m *PoliciesRequestBuilder) AuthenticationMethodsPolicy()(*i37b836bda4608f9bed0d5aab3b4328d55f977ad2084b34eeeffb42e49f25237b.AuthenticationMethodsPolicyRequestBuilder) {
     return i37b836bda4608f9bed0d5aab3b4328d55f977ad2084b34eeeffb42e49f25237b.NewAuthenticationMethodsPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AuthenticationStrengthPolicies the authenticationStrengthPolicies property
+func (m *PoliciesRequestBuilder) AuthenticationStrengthPolicies()(*i6390b41fee35d38ad58432cb872f7b0981fd1b58b2e222bdf8c0d929c212d726.AuthenticationStrengthPoliciesRequestBuilder) {
+    return i6390b41fee35d38ad58432cb872f7b0981fd1b58b2e222bdf8c0d929c212d726.NewAuthenticationStrengthPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AuthenticationStrengthPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.authenticationStrengthPolicies.item collection
+func (m *PoliciesRequestBuilder) AuthenticationStrengthPoliciesById(id string)(*i48ae16125bc24acea72c4577c552f952c9f32fec09f609757df4b612154ccbef.AuthenticationStrengthPolicyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["authenticationStrengthPolicy%2Did"] = id
+    }
+    return i48ae16125bc24acea72c4577c552f952c9f32fec09f609757df4b612154ccbef.NewAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AuthorizationPolicy the authorizationPolicy property
 func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*idf9e8b9f9da041893e6b6cb24dd45425a8696e3da093aef925b748ba4b81e936.AuthorizationPolicyRequestBuilder) {

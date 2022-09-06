@@ -64,6 +64,8 @@ type Team struct {
     tags []TeamworkTagable
     // The template this team was created from. See available templates.
     template TeamsTemplateable
+    // The templateDefinition property
+    templateDefinition TeamTemplateDefinitionable
     // The ID of the Azure Active Directory tenant.
     tenantId *string
     // The visibility of the group and team. Defaults to Public.
@@ -431,6 +433,16 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["templateDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamTemplateDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTemplateDefinition(val.(TeamTemplateDefinitionable))
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -546,6 +558,10 @@ func (m *Team) GetTags()([]TeamworkTagable) {
 // GetTemplate gets the template property value. The template this team was created from. See available templates.
 func (m *Team) GetTemplate()(TeamsTemplateable) {
     return m.template
+}
+// GetTemplateDefinition gets the templateDefinition property value. The templateDefinition property
+func (m *Team) GetTemplateDefinition()(TeamTemplateDefinitionable) {
+    return m.templateDefinition
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Team) GetTenantId()(*string) {
@@ -771,6 +787,12 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("templateDefinition", m.GetTemplateDefinition())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
@@ -902,6 +924,10 @@ func (m *Team) SetTags(value []TeamworkTagable)() {
 // SetTemplate sets the template property value. The template this team was created from. See available templates.
 func (m *Team) SetTemplate(value TeamsTemplateable)() {
     m.template = value
+}
+// SetTemplateDefinition sets the templateDefinition property value. The templateDefinition property
+func (m *Team) SetTemplateDefinition(value TeamTemplateDefinitionable)() {
+    m.templateDefinition = value
 }
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Team) SetTenantId(value *string)() {
