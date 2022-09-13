@@ -33,8 +33,7 @@ func CreateDeployableContentFromDiscriminatorValue(parseNode i878a80d2330e89d268
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windowsUpdates.expeditedQualityUpdateReference":
                         return NewExpeditedQualityUpdateReference(), nil
                     case "#microsoft.graph.windowsUpdates.featureUpdateReference":

@@ -32,7 +32,7 @@ type AccessPackageAssignmentRequest struct {
     requestState *string
     // More information on the request processing status. Read-only.
     requestStatus *string
-    // One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+    // One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
     requestType *string
     // The range of dates that access is to be assigned to the requestor. Read-only.
     schedule RequestScheduleable
@@ -251,7 +251,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestState()(*string) {
 func (m *AccessPackageAssignmentRequest) GetRequestStatus()(*string) {
     return m.requestStatus
 }
-// GetRequestType gets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+// GetRequestType gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
     return m.requestType
 }
@@ -407,7 +407,7 @@ func (m *AccessPackageAssignmentRequest) SetRequestState(value *string)() {
 func (m *AccessPackageAssignmentRequest) SetRequestStatus(value *string)() {
     m.requestStatus = value
 }
-// SetRequestType sets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+// SetRequestType sets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *string)() {
     m.requestType = value
 }

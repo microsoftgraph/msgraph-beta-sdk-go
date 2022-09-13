@@ -33,8 +33,7 @@ func CreateAccessPackageResourceAttributeDestinationFromDiscriminatorValue(parse
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.accessPackageUserDirectoryAttributeStore":
                         return NewAccessPackageUserDirectoryAttributeStore(), nil
                 }

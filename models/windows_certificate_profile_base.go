@@ -42,8 +42,7 @@ func CreateWindowsCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windows10CertificateProfileBase":
                         return NewWindows10CertificateProfileBase(), nil
                     case "#microsoft.graph.windows10ImportedPFXCertificateProfile":

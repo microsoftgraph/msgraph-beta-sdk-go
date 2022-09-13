@@ -33,8 +33,7 @@ func CreateDeliveryOptimizationBandwidthFromDiscriminatorValue(parseNode i878a80
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deliveryOptimizationBandwidthAbsolute":
                         return NewDeliveryOptimizationBandwidthAbsolute(), nil
                     case "#microsoft.graph.deliveryOptimizationBandwidthHoursWithPercentage":

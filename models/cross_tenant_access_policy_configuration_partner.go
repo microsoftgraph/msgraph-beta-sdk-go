@@ -24,6 +24,8 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
     odataType *string
     // The tenant identifier for the partner Azure AD organization. Read-only. Key.
     tenantId *string
+    // The tenantRestrictions property
+    tenantRestrictions CrossTenantAccessPolicyTenantRestrictionsable
 }
 // NewCrossTenantAccessPolicyConfigurationPartner instantiates a new crossTenantAccessPolicyConfigurationPartner and sets the default values.
 func NewCrossTenantAccessPolicyConfigurationPartner()(*CrossTenantAccessPolicyConfigurationPartner) {
@@ -141,6 +143,16 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["tenantRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantRestrictions(val.(CrossTenantAccessPolicyTenantRestrictionsable))
+        }
+        return nil
+    }
     return res
 }
 // GetInboundTrust gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
@@ -158,6 +170,10 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetOdataType()(*string) {
 // GetTenantId gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
     return m.tenantId
+}
+// GetTenantRestrictions gets the tenantRestrictions property value. The tenantRestrictions property
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable) {
+    return m.tenantRestrictions
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -210,6 +226,12 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
         }
     }
     {
+        err := writer.WriteObjectValue("tenantRestrictions", m.GetTenantRestrictions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -252,4 +274,8 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetOdataType(value *string
 // SetTenantId sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantId(value *string)() {
     m.tenantId = value
+}
+// SetTenantRestrictions sets the tenantRestrictions property value. The tenantRestrictions property
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
+    m.tenantRestrictions = value
 }

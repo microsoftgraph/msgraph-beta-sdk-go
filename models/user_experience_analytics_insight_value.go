@@ -33,8 +33,7 @@ func CreateUserExperienceAnalyticsInsightValueFromDiscriminatorValue(parseNode i
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.insightValueDouble":
                         return NewInsightValueDouble(), nil
                     case "#microsoft.graph.insightValueInt":

@@ -33,8 +33,7 @@ func CreateDeviceManagementConfigurationStringSettingValueDefaultTemplateFromDis
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate":
                         return NewDeviceManagementConfigurationStringSettingValueConstantDefaultTemplate(), nil
                 }

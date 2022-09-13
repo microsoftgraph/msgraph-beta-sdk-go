@@ -68,8 +68,7 @@ func CreateDepEnrollmentBaseProfileFromDiscriminatorValue(parseNode i878a80d2330
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.depIOSEnrollmentProfile":
                         return NewDepIOSEnrollmentProfile(), nil
                     case "#microsoft.graph.depMacOSEnrollmentProfile":

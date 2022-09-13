@@ -35,8 +35,7 @@ func CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue(parse
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue":
                         return NewDeviceManagementConfigurationChoiceSettingValue(), nil
                     case "#microsoft.graph.deviceManagementConfigurationGroupSettingValue":

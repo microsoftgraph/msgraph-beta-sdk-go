@@ -38,8 +38,7 @@ func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidManagedAppProtection":
                         return NewAndroidManagedAppProtection(), nil
                     case "#microsoft.graph.iosManagedAppProtection":

@@ -8,7 +8,7 @@ import (
 type IosSingleSignOnExtension struct {
     SingleSignOnExtension
 }
-// NewIosSingleSignOnExtension instantiates a new IosSingleSignOnExtension and sets the default values.
+// NewIosSingleSignOnExtension instantiates a new iosSingleSignOnExtension and sets the default values.
 func NewIosSingleSignOnExtension()(*IosSingleSignOnExtension) {
     m := &IosSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
@@ -30,8 +30,7 @@ func CreateIosSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.iosAzureAdSingleSignOnExtension":
                         return NewIosAzureAdSingleSignOnExtension(), nil
                     case "#microsoft.graph.iosCredentialSingleSignOnExtension":

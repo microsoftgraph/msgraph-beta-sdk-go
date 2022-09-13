@@ -32,8 +32,7 @@ func CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue(parseNod
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.iosExpeditedCheckinConfiguration":
                         return NewIosExpeditedCheckinConfiguration(), nil
                 }

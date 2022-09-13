@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TaskReport 
+// TaskReport provides operations to manage the collection of accessReviewDecision entities.
 type TaskReport struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The date time that the associated run completed. Value is null if the run has not completed.
@@ -34,7 +34,7 @@ type TaskReport struct {
     // The number of users in the run execution for which the associated task is queued, in progress, or canceled.
     unprocessedUsersCount *int32
 }
-// NewTaskReport instantiates a new TaskReport and sets the default values.
+// NewTaskReport instantiates a new taskReport and sets the default values.
 func NewTaskReport()(*TaskReport) {
     m := &TaskReport{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

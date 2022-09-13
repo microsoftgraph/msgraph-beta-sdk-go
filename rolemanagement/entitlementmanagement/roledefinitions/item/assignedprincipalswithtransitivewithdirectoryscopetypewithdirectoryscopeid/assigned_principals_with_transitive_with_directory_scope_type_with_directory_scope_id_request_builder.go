@@ -37,7 +37,7 @@ type AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdR
 func NewAssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilder) {
     m := &AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition%2Did}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType='{directoryScopeType}',directoryScopeId='{directoryScopeId}'){?transitive,directoryScopeType,directoryScopeId}";
+    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/roleDefinitions/{unifiedRoleDefinition%2Did}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType='{directoryScopeType}',directoryScopeId='{directoryScopeId}'){?transitive*,directoryScopeType*,directoryScopeId*}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

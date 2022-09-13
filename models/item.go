@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Item provides operations to manage the collection of accessReview entities.
+// Item 
 type Item struct {
     Entity
     // The baseUnitOfMeasureId property
@@ -43,7 +43,7 @@ type Item struct {
     // The unitPrice property
     unitPrice *float64
 }
-// NewItem instantiates a new item and sets the default values.
+// NewItem instantiates a new Item and sets the default values.
 func NewItem()(*Item) {
     m := &Item{
         Entity: *NewEntity(),

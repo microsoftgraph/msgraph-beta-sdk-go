@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DataSource provides operations to manage the collection of accessReviewDecision entities.
+// DataSource provides operations to manage the collection of accessReview entities.
 type DataSource struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The user who created the dataSource.
@@ -40,8 +40,7 @@ func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.ediscovery.siteSource":
                         return NewSiteSource(), nil
                     case "#microsoft.graph.ediscovery.unifiedGroupSource":

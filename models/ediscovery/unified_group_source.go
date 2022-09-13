@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// UnifiedGroupSource 
+// UnifiedGroupSource provides operations to manage the collection of accessReviewDecision entities.
 type UnifiedGroupSource struct {
     DataSource
     // The group property
@@ -13,7 +13,7 @@ type UnifiedGroupSource struct {
     // Specifies which sources are included in this group. Possible values are: mailbox, site.
     includedSources *SourceType
 }
-// NewUnifiedGroupSource instantiates a new UnifiedGroupSource and sets the default values.
+// NewUnifiedGroupSource instantiates a new unifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {
     m := &UnifiedGroupSource{
         DataSource: *NewDataSource(),

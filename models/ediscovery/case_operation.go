@@ -46,8 +46,7 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.ediscovery.addToReviewSetOperation":
                         return NewAddToReviewSetOperation(), nil
                     case "#microsoft.graph.ediscovery.caseExportOperation":

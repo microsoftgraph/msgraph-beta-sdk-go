@@ -51,8 +51,7 @@ func CreateGroupPolicyDefinitionFileFromDiscriminatorValue(parseNode i878a80d233
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.groupPolicyUploadedDefinitionFile":
                         return NewGroupPolicyUploadedDefinitionFile(), nil
                 }

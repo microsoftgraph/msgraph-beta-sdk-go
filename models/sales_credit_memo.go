@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesCreditMemo provides operations to manage the collection of accessReview entities.
+// SalesCreditMemo 
 type SalesCreditMemo struct {
     Entity
     // The billingPostalAddress property
@@ -73,7 +73,7 @@ type SalesCreditMemo struct {
     // The totalTaxAmount property
     totalTaxAmount *float64
 }
-// NewSalesCreditMemo instantiates a new salesCreditMemo and sets the default values.
+// NewSalesCreditMemo instantiates a new SalesCreditMemo and sets the default values.
 func NewSalesCreditMemo()(*SalesCreditMemo) {
     m := &SalesCreditMemo{
         Entity: *NewEntity(),

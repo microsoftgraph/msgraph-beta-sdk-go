@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC 
+// CloudPC provides operations to manage the collection of accessReview entities.
 type CloudPC struct {
     Entity
     // The Azure Active Directory (Azure AD) device ID of the Cloud PC.
     aadDeviceId *string
     // The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
     connectivityResult CloudPcConnectivityResultable
+    // The diskEncryptionState property
+    diskEncryptionState *CloudPcDiskEncryptionState
     // The display name of the Cloud PC.
     displayName *string
     // The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -51,7 +53,7 @@ type CloudPC struct {
     // The user principal name (UPN) of the user assigned to the Cloud PC.
     userPrincipalName *string
 }
-// NewCloudPC instantiates a new CloudPC and sets the default values.
+// NewCloudPC instantiates a new cloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
@@ -71,6 +73,10 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
 // GetConnectivityResult gets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
 func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     return m.connectivityResult
+}
+// GetDiskEncryptionState gets the diskEncryptionState property value. The diskEncryptionState property
+func (m *CloudPC) GetDiskEncryptionState()(*CloudPcDiskEncryptionState) {
+    return m.diskEncryptionState
 }
 // GetDisplayName gets the displayName property value. The display name of the Cloud PC.
 func (m *CloudPC) GetDisplayName()(*string) {
@@ -96,6 +102,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetConnectivityResult(val.(CloudPcConnectivityResultable))
+        }
+        return nil
+    }
+    res["diskEncryptionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcDiskEncryptionState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDiskEncryptionState(val.(*CloudPcDiskEncryptionState))
         }
         return nil
     }
@@ -381,6 +397,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetDiskEncryptionState() != nil {
+        cast := (*m.GetDiskEncryptionState()).String()
+        err = writer.WriteStringValue("diskEncryptionState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -508,6 +531,10 @@ func (m *CloudPC) SetAadDeviceId(value *string)() {
 // SetConnectivityResult sets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
 func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
     m.connectivityResult = value
+}
+// SetDiskEncryptionState sets the diskEncryptionState property value. The diskEncryptionState property
+func (m *CloudPC) SetDiskEncryptionState(value *CloudPcDiskEncryptionState)() {
+    m.diskEncryptionState = value
 }
 // SetDisplayName sets the displayName property value. The display name of the Cloud PC.
 func (m *CloudPC) SetDisplayName(value *string)() {

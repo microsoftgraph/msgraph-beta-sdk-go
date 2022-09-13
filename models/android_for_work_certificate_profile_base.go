@@ -44,8 +44,7 @@ func CreateAndroidForWorkCertificateProfileBaseFromDiscriminatorValue(parseNode 
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidForWorkPkcsCertificateProfile":
                         return NewAndroidForWorkPkcsCertificateProfile(), nil
                     case "#microsoft.graph.androidForWorkScepCertificateProfile":

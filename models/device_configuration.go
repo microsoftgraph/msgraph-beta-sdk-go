@@ -65,8 +65,7 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidCertificateProfileBase":
                         return NewAndroidCertificateProfileBase(), nil
                     case "#microsoft.graph.androidCustomConfiguration":

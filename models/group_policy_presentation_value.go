@@ -39,8 +39,7 @@ func CreateGroupPolicyPresentationValueFromDiscriminatorValue(parseNode i878a80d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.groupPolicyPresentationValueBoolean":
                         return NewGroupPolicyPresentationValueBoolean(), nil
                     case "#microsoft.graph.groupPolicyPresentationValueDecimal":

@@ -33,8 +33,7 @@ func CreateEducationSynchronizationCustomizationsBaseFromDiscriminatorValue(pars
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.educationSynchronizationCustomizations":
                         return NewEducationSynchronizationCustomizations(), nil
                 }

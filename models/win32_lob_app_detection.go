@@ -33,8 +33,7 @@ func CreateWin32LobAppDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.win32LobAppFileSystemDetection":
                         return NewWin32LobAppFileSystemDetection(), nil
                     case "#microsoft.graph.win32LobAppPowerShellScriptDetection":

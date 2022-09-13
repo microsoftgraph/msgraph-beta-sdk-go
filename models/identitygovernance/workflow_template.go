@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// WorkflowTemplate 
+// WorkflowTemplate provides operations to manage the collection of accessReviewDecision entities.
 type WorkflowTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category property
@@ -19,7 +19,7 @@ type WorkflowTemplate struct {
     // Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
     tasks []Taskable
 }
-// NewWorkflowTemplate instantiates a new WorkflowTemplate and sets the default values.
+// NewWorkflowTemplate instantiates a new workflowTemplate and sets the default values.
 func NewWorkflowTemplate()(*WorkflowTemplate) {
     m := &WorkflowTemplate{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

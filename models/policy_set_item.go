@@ -47,8 +47,7 @@ func CreatePolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceCompliancePolicyPolicySetItem":
                         return NewDeviceCompliancePolicyPolicySetItem(), nil
                     case "#microsoft.graph.deviceConfigurationPolicySetItem":

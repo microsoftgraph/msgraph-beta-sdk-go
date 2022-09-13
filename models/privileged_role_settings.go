@@ -28,7 +28,7 @@ type PrivilegedRoleSettings struct {
     // true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
     ticketingInfoOnElevation *bool
 }
-// NewPrivilegedRoleSettings instantiates a new PrivilegedRoleSettings and sets the default values.
+// NewPrivilegedRoleSettings instantiates a new privilegedRoleSettings and sets the default values.
 func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
     m := &PrivilegedRoleSettings{
         Entity: *NewEntity(),

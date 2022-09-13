@@ -33,8 +33,7 @@ func CreateSubjectRightsRequestMailboxLocationFromDiscriminatorValue(parseNode i
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.subjectRightsRequestAllMailboxLocation":
                         return NewSubjectRightsRequestAllMailboxLocation(), nil
                     case "#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation":

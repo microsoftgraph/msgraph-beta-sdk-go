@@ -38,8 +38,7 @@ func CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminator
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition":
                         return NewDeviceManagementConfigurationSimpleSettingCollectionDefinition(), nil
                 }

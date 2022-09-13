@@ -50,7 +50,7 @@ type DirectorySettingTemplatesRequestBuilderPostRequestConfiguration struct {
 func NewDirectorySettingTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectorySettingTemplatesRequestBuilder) {
     m := &DirectorySettingTemplatesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directorySettingTemplates{?%24top,%24search,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/directorySettingTemplates{?%24top*,%24search*,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

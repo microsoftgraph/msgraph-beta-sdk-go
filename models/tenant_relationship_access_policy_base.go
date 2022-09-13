@@ -32,8 +32,7 @@ func CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue(parseNode i8
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.crossTenantAccessPolicy":
                         return NewCrossTenantAccessPolicy(), nil
                 }

@@ -51,8 +51,7 @@ func CreateDeviceAppManagementTaskFromDiscriminatorValue(parseNode i878a80d2330e
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.appVulnerabilityTask":
                         return NewAppVulnerabilityTask(), nil
                     case "#microsoft.graph.securityConfigurationTask":

@@ -37,8 +37,7 @@ func CreateEducationSynchronizationConnectionSettingsFromDiscriminatorValue(pars
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.educationSynchronizationOAuth1ConnectionSettings":
                         return NewEducationSynchronizationOAuth1ConnectionSettings(), nil
                     case "#microsoft.graph.educationSynchronizationOAuth2ClientCredentialsConnectionSettings":

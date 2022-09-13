@@ -55,8 +55,7 @@ func CreateManagedDeviceMobileAppConfigurationFromDiscriminatorValue(parseNode i
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidForWorkMobileAppConfiguration":
                         return NewAndroidForWorkMobileAppConfiguration(), nil
                     case "#microsoft.graph.androidManagedStoreAppConfiguration":

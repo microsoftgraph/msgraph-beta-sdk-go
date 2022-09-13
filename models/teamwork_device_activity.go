@@ -19,7 +19,7 @@ type TeamworkDeviceActivity struct {
     // The UTC date and time when the device activity detail was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewTeamworkDeviceActivity instantiates a new teamworkDeviceActivity and sets the default values.
+// NewTeamworkDeviceActivity instantiates a new TeamworkDeviceActivity and sets the default values.
 func NewTeamworkDeviceActivity()(*TeamworkDeviceActivity) {
     m := &TeamworkDeviceActivity{
         Entity: *NewEntity(),

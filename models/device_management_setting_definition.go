@@ -52,8 +52,7 @@ func CreateDeviceManagementSettingDefinitionFromDiscriminatorValue(parseNode i87
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition":
                         return NewDeviceManagementAbstractComplexSettingDefinition(), nil
                     case "#microsoft.graph.deviceManagementCollectionSettingDefinition":

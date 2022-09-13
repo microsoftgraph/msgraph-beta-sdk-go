@@ -30,8 +30,7 @@ func CreateWindows10XCertificateProfileFromDiscriminatorValue(parseNode i878a80d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windows10XSCEPCertificateProfile":
                         return NewWindows10XSCEPCertificateProfile(), nil
                 }

@@ -33,8 +33,7 @@ func CreateInformationProtectionActionFromDiscriminatorValue(parseNode i878a80d2
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.addContentFooterAction":
                         return NewAddContentFooterAction(), nil
                     case "#microsoft.graph.security.addContentHeaderAction":

@@ -35,8 +35,7 @@ func CreateKeyTypedValuePairFromDiscriminatorValue(parseNode i878a80d2330e89d268
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.keyBooleanValuePair":
                         return NewKeyBooleanValuePair(), nil
                     case "#microsoft.graph.keyIntegerValuePair":

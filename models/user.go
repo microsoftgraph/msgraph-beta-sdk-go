@@ -34,7 +34,7 @@ type User struct {
     assignedPlans []AssignedPlanable
     // The authentication property
     authentication Authenticationable
-    // The authorizationInfo property
+    // Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
     authorizationInfo AuthorizationInfoable
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -362,7 +362,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlanable) {
 func (m *User) GetAuthentication()(Authenticationable) {
     return m.authentication
 }
-// GetAuthorizationInfo gets the authorizationInfo property value. The authorizationInfo property
+// GetAuthorizationInfo gets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
 func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
     return m.authorizationInfo
 }
@@ -3719,7 +3719,7 @@ func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
 func (m *User) SetAuthentication(value Authenticationable)() {
     m.authentication = value
 }
-// SetAuthorizationInfo sets the authorizationInfo property value. The authorizationInfo property
+// SetAuthorizationInfo sets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
 func (m *User) SetAuthorizationInfo(value AuthorizationInfoable)() {
     m.authorizationInfo = value
 }

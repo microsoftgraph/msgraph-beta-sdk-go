@@ -44,8 +44,7 @@ func CreateAndroidForWorkEasEmailProfileBaseFromDiscriminatorValue(parseNode i87
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidForWorkGmailEasConfiguration":
                         return NewAndroidForWorkGmailEasConfiguration(), nil
                     case "#microsoft.graph.androidForWorkNineWorkEasConfiguration":

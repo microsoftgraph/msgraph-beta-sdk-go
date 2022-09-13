@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationalMessageGuidedContent 
+// OrganizationalMessageGuidedContent this will allow the admin to see the different templated organizational messages that can be created
 type OrganizationalMessageGuidedContent struct {
     Entity
     // Example of the logo that will be displayed to customers and its size requirements
@@ -18,7 +18,7 @@ type OrganizationalMessageGuidedContent struct {
     // Indicates the theme for the guided content
     theme *OrganizationalMessageTheme
 }
-// NewOrganizationalMessageGuidedContent instantiates a new OrganizationalMessageGuidedContent and sets the default values.
+// NewOrganizationalMessageGuidedContent instantiates a new organizationalMessageGuidedContent and sets the default values.
 func NewOrganizationalMessageGuidedContent()(*OrganizationalMessageGuidedContent) {
     m := &OrganizationalMessageGuidedContent{
         Entity: *NewEntity(),

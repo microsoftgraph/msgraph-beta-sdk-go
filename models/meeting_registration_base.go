@@ -34,8 +34,7 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.externalMeetingRegistration":
                         return NewExternalMeetingRegistration(), nil
                     case "#microsoft.graph.meetingRegistration":

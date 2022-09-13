@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDevice provides operations to manage the collection of accessReviewDecision entities.
+// TeamworkDevice 
 type TeamworkDevice struct {
     Entity
     // The activity properties that change based on the device usage.
@@ -39,7 +39,7 @@ type TeamworkDevice struct {
     // The async operations on the device.
     operations []TeamworkDeviceOperationable
 }
-// NewTeamworkDevice instantiates a new teamworkDevice and sets the default values.
+// NewTeamworkDevice instantiates a new TeamworkDevice and sets the default values.
 func NewTeamworkDevice()(*TeamworkDevice) {
     m := &TeamworkDevice{
         Entity: *NewEntity(),

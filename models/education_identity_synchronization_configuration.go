@@ -33,8 +33,7 @@ func CreateEducationIdentitySynchronizationConfigurationFromDiscriminatorValue(p
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.educationIdentityCreationConfiguration":
                         return NewEducationIdentityCreationConfiguration(), nil
                     case "#microsoft.graph.educationIdentityMatchingConfiguration":

@@ -47,8 +47,7 @@ func CreateExactMatchSessionBaseFromDiscriminatorValue(parseNode i878a80d2330e89
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.exactMatchSession":
                         return NewExactMatchSession(), nil
                 }

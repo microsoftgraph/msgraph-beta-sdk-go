@@ -35,8 +35,7 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.aadUserConversationMember":
                         return NewAadUserConversationMember(), nil
                     case "#microsoft.graph.accessPackage":
@@ -391,12 +390,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthoredNote(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
-                    case "#microsoft.graph.azureADFeatureUsage":
-                        return NewAzureADFeatureUsage(), nil
-                    case "#microsoft.graph.azureADLicenseUsage":
-                        return NewAzureADLicenseUsage(), nil
-                    case "#microsoft.graph.azureADUserFeatureUsage":
-                        return NewAzureADUserFeatureUsage(), nil
                     case "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile":
                         return NewAzureADWindowsAutopilotDeploymentProfile(), nil
                     case "#microsoft.graph.b2cAuthenticationMethodsPolicy":
@@ -1889,8 +1882,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewResourceSpecificPermissionGrant(), nil
                     case "#microsoft.graph.restrictedAppsViolation":
                         return NewRestrictedAppsViolation(), nil
-                    case "#microsoft.graph.restrictedSignIn":
-                        return NewRestrictedSignIn(), nil
                     case "#microsoft.graph.richLongRunningOperation":
                         return NewRichLongRunningOperation(), nil
                     case "#microsoft.graph.riskDetection":

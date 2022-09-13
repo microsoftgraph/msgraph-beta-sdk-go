@@ -41,8 +41,7 @@ func CreateDeviceHealthScriptParameterFromDiscriminatorValue(parseNode i878a80d2
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceHealthScriptBooleanParameter":
                         return NewDeviceHealthScriptBooleanParameter(), nil
                     case "#microsoft.graph.deviceHealthScriptIntegerParameter":

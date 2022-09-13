@@ -33,8 +33,7 @@ func CreateCustomExtensionEndpointConfigurationFromDiscriminatorValue(parseNode 
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.httpRequestEndpoint":
                         return NewHttpRequestEndpoint(), nil
                     case "#microsoft.graph.logicAppTriggerEndpointConfiguration":

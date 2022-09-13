@@ -104,12 +104,6 @@ func (m *SearchQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteObjectValue("query_string", m.GetQuery_string())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteStringValue("queryString", m.GetQueryString())
         if err != nil {
             return err
@@ -117,6 +111,12 @@ func (m *SearchQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("queryTemplate", m.GetQueryTemplate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("query_string", m.GetQuery_string())
         if err != nil {
             return err
         }
