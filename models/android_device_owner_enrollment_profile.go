@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerEnrollmentProfile enrollment Profile used to enroll Android Enterprise devices using Google's Cloud Management.
+// AndroidDeviceOwnerEnrollmentProfile 
 type AndroidDeviceOwnerEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
@@ -49,7 +49,7 @@ type AndroidDeviceOwnerEnrollmentProfile struct {
     // String that contains the wi-fi login ssid
     wifiSsid *string
 }
-// NewAndroidDeviceOwnerEnrollmentProfile instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
+// NewAndroidDeviceOwnerEnrollmentProfile instantiates a new AndroidDeviceOwnerEnrollmentProfile and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfile) {
     m := &AndroidDeviceOwnerEnrollmentProfile{
         Entity: *NewEntity(),

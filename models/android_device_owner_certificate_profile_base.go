@@ -44,8 +44,7 @@ func CreateAndroidDeviceOwnerCertificateProfileBaseFromDiscriminatorValue(parseN
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile":
                         return NewAndroidDeviceOwnerImportedPFXCertificateProfile(), nil
                     case "#microsoft.graph.androidDeviceOwnerPkcsCertificateProfile":

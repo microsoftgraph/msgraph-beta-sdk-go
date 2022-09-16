@@ -38,8 +38,7 @@ func CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue(parseNode i
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.mobileAppTroubleshootingAppPolicyCreationHistory":
                         return NewMobileAppTroubleshootingAppPolicyCreationHistory(), nil
                     case "#microsoft.graph.mobileAppTroubleshootingAppStateHistory":

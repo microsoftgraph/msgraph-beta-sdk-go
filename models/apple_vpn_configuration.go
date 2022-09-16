@@ -74,8 +74,7 @@ func CreateAppleVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.iosikEv2VpnConfiguration":
                         return NewIosikEv2VpnConfiguration(), nil
                     case "#microsoft.graph.iosVpnConfiguration":

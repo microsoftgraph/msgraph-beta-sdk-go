@@ -36,8 +36,7 @@ func CreateWindowsVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windows10VpnConfiguration":
                         return NewWindows10VpnConfiguration(), nil
                     case "#microsoft.graph.windows81VpnConfiguration":

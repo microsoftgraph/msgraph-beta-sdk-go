@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application 
+// Application casts the previous resource to application.
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
@@ -34,7 +34,7 @@ type Application struct {
     displayName *string
     // Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
     extensionProperties []ExtensionPropertyable
-    // Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+    // Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
     federatedIdentityCredentials []FederatedIdentityCredentialable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string
@@ -58,7 +58,7 @@ type Application struct {
     onPremisesPublishing OnPremisesPublishingable
     // Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
     optionalClaims OptionalClaimsable
-    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
     owners []DirectoryObjectable
     // Specifies parental control settings for an application.
     parentalControlSettings ParentalControlSettingsable
@@ -99,7 +99,7 @@ type Application struct {
     // Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
     windows WindowsApplicationable
 }
-// NewApplication instantiates a new Application and sets the default values.
+// NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
@@ -164,7 +164,7 @@ func (m *Application) GetDisplayName()(*string) {
 func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     return m.extensionProperties
 }
-// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
 func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     return m.federatedIdentityCredentials
 }
@@ -719,7 +719,7 @@ func (m *Application) GetOnPremisesPublishing()(OnPremisesPublishingable) {
 func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
     return m.optionalClaims
 }
-// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
 func (m *Application) GetOwners()([]DirectoryObjectable) {
     return m.owners
 }
@@ -1173,7 +1173,7 @@ func (m *Application) SetDisplayName(value *string)() {
 func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     m.extensionProperties = value
 }
-// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
 func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
     m.federatedIdentityCredentials = value
 }
@@ -1221,7 +1221,7 @@ func (m *Application) SetOnPremisesPublishing(value OnPremisesPublishingable)() 
 func (m *Application) SetOptionalClaims(value OptionalClaimsable)() {
     m.optionalClaims = value
 }
-// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
 func (m *Application) SetOwners(value []DirectoryObjectable)() {
     m.owners = value
 }

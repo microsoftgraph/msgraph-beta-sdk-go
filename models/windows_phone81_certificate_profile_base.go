@@ -44,8 +44,7 @@ func CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue(parseNode 
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windowsPhone81SCEPCertificateProfile":
                         return NewWindowsPhone81SCEPCertificateProfile(), nil
                 }

@@ -59,7 +59,7 @@ func (m *BookingAppointmentItemRequestBuilder) Cancel()(*i91e227b034f1c48ee53377
 func NewBookingAppointmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingAppointmentItemRequestBuilder) {
     m := &BookingAppointmentItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?start,end,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?start*,end*,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -37,8 +37,7 @@ func CreateWindowsUpdateCatalogItemFromDiscriminatorValue(parseNode i878a80d2330
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windowsFeatureUpdateCatalogItem":
                         return NewWindowsFeatureUpdateCatalogItem(), nil
                     case "#microsoft.graph.windowsQualityUpdateCatalogItem":

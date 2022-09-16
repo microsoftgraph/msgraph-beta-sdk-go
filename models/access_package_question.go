@@ -43,8 +43,7 @@ func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.accessPackageMultipleChoiceQuestion":
                         return NewAccessPackageMultipleChoiceQuestion(), nil
                     case "#microsoft.graph.accessPackageTextInputQuestion":

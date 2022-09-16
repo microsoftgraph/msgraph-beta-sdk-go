@@ -32,7 +32,6 @@ import (
     i2a4862a2c04d7e8705aebac57aeab2e0bf3268230862ae87191095bb620b0409 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getsharepointsiteusagedetailwithdate"
     i2d772c8afb07a24a1205c9ff6577c716c80df2a273be74d3b989c999d09199da "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getm365appusercountswithperiod"
     i2e11d2e753b93ae2e19efcae2b9d79d3efa476d4ee469d6db9c173f35ef3b620 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/manageddeviceenrollmentfailuredetails"
-    i2f33b15daf1a90f24cfd057ba3ae115167712db6f8ae25754e93e03dda31f0b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getazureadfeatureusagewithperiod"
     i306349847f73d7bf75fde4cca87b9e847d160d4298503961ee7173a877566811 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getemailappusageuserdetailwithperiod"
     i313577bbc7d677412230e87962a7a9319b6aabde4851f6c8739be336203bfa65 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getemailappusageusercountswithperiod"
     i328b60d96035cb1d9bd616db71d49e8436746e43b59c2ae74edb06e1c65f6158 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getoffice365groupsactivitydetailwithperiod"
@@ -99,7 +98,6 @@ import (
     iad427df3a804c5ea6bf927439cbace855bd9edf35dec361d7cc896c86a3c3e76 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getrelyingpartydetailedsummarywithperiod"
     iae029900a0da9f48c34f75ee5d793b8dc3931fe12b0f7a985040c1d5ec7c5523 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getskypeforbusinesspeertopeeractivityminutecountswithperiod"
     iae0b95416e4f0115ded4c5680f5308d53f4ab1191730356055fa78cb04fdb3a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getsharepointsiteusagedetailwithperiod"
-    ib0940dfc9fda27fd3417dffbd22411c0b91301cbc7c45b9b6d881f66526bed58 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getazureaduserfeatureusage"
     ib179175741f9263f3b9b2d70c2568f051b6ea034ea8268e68071c8691030b092 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getoffice365servicesusercountswithperiod"
     ib66df0db90f0ef258b3536c6659fe0d6ede8fd889a2c38cf8c63f72fb5f1ffaa "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getyammergroupsactivitydetailwithdate"
     ib749d3394cf27f1397536acbbae8cf02a899e5a39e5596471124bf4d71501852 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getonedriveusageaccountcountswithperiod"
@@ -134,7 +132,6 @@ import (
     ie5d033fba5fb2263cfd1bff0d67c57e993013c03f754b188e52f7a6cc45ba107 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getattacksimulationrepeatoffenders"
     ie7a68204cc4982a6b52ad00381436561da8774cf91ceef439cd495875cd84e9d "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getoffice365groupsactivitydetailwithdate"
     ie822df7440dd5b07f2cb5b9ae611cdc7ec11b9262d220f5682bd2958e02a643e "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getteamsdeviceusageuserdetailwithdate"
-    ie895dca61e12459d18d8e4a8bc8d206d63f32daf252f44923f36d9fcfadf9002 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getazureadlicenseusagewithperiod"
     ie8d93a68bfc5d77cb89a3bcaa58d306cf9c1eb664f150283d9e7c99bb68fdd94 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getattacksimulationtrainingusercoverage"
     if278596fba20816d527a904fbb7b5d78e3c177aa4b09c4e15657da9d6d06a2db "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getbrowserusercountswithperiod"
     if31836807723ff5bdd6b6e4e26ed08acbebd30a643cc4b8b53069f1facbbe742 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getoffice365groupsactivitygroupcountswithperiod"
@@ -419,18 +416,6 @@ func (m *ReportsRequestBuilder) GetAttackSimulationTrainingUserCoverage()(*ie8d9
 // GetAzureADApplicationSignInSummaryWithPeriod provides operations to call the getAzureADApplicationSignInSummary method.
 func (m *ReportsRequestBuilder) GetAzureADApplicationSignInSummaryWithPeriod(period *string)(*i8fc0ad0d8f4c5cb82e70d74504fd7555d8235044ab2b40bc6e68738d416134ae.GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) {
     return i8fc0ad0d8f4c5cb82e70d74504fd7555d8235044ab2b40bc6e68738d416134ae.NewGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetAzureADFeatureUsageWithPeriod provides operations to call the getAzureADFeatureUsage method.
-func (m *ReportsRequestBuilder) GetAzureADFeatureUsageWithPeriod(period *string)(*i2f33b15daf1a90f24cfd057ba3ae115167712db6f8ae25754e93e03dda31f0b1.GetAzureADFeatureUsageWithPeriodRequestBuilder) {
-    return i2f33b15daf1a90f24cfd057ba3ae115167712db6f8ae25754e93e03dda31f0b1.NewGetAzureADFeatureUsageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetAzureADLicenseUsageWithPeriod provides operations to call the getAzureADLicenseUsage method.
-func (m *ReportsRequestBuilder) GetAzureADLicenseUsageWithPeriod(period *string)(*ie895dca61e12459d18d8e4a8bc8d206d63f32daf252f44923f36d9fcfadf9002.GetAzureADLicenseUsageWithPeriodRequestBuilder) {
-    return ie895dca61e12459d18d8e4a8bc8d206d63f32daf252f44923f36d9fcfadf9002.NewGetAzureADLicenseUsageWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
-}
-// GetAzureADUserFeatureUsage provides operations to call the getAzureADUserFeatureUsage method.
-func (m *ReportsRequestBuilder) GetAzureADUserFeatureUsage()(*ib0940dfc9fda27fd3417dffbd22411c0b91301cbc7c45b9b6d881f66526bed58.GetAzureADUserFeatureUsageRequestBuilder) {
-    return ib0940dfc9fda27fd3417dffbd22411c0b91301cbc7c45b9b6d881f66526bed58.NewGetAzureADUserFeatureUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetBrowserDistributionUserCountsWithPeriod provides operations to call the getBrowserDistributionUserCounts method.
 func (m *ReportsRequestBuilder) GetBrowserDistributionUserCountsWithPeriod(period *string)(*i003173036331dffc584bd55a4a31f9eca0b7cc880c4006f990ef8ec3e90f8d61.GetBrowserDistributionUserCountsWithPeriodRequestBuilder) {

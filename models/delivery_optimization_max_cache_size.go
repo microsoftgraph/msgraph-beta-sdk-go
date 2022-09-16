@@ -33,8 +33,7 @@ func CreateDeliveryOptimizationMaxCacheSizeFromDiscriminatorValue(parseNode i878
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deliveryOptimizationMaxCacheSizeAbsolute":
                         return NewDeliveryOptimizationMaxCacheSizeAbsolute(), nil
                     case "#microsoft.graph.deliveryOptimizationMaxCacheSizePercentage":

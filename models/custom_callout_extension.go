@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomCalloutExtension provides operations to manage the collection of accessReview entities.
+// CustomCalloutExtension provides operations to manage the collection of accessReviewDecision entities.
 type CustomCalloutExtension struct {
     Entity
     // Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
@@ -40,8 +40,7 @@ func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e8
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.customAccessPackageWorkflowExtension":
                         return NewCustomAccessPackageWorkflowExtension(), nil
                     case "#microsoft.graph.customAuthenticationExtension":

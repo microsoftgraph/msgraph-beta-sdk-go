@@ -56,8 +56,7 @@ func CreateWindowsWifiConfigurationFromDiscriminatorValue(parseNode i878a80d2330
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration":
                         return NewWindowsWifiEnterpriseEAPConfiguration(), nil
                 }

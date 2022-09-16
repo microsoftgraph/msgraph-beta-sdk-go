@@ -14,10 +14,12 @@ type CrossTenantAccessPolicyConfigurationDefaultable interface {
     GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable)
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsServiceDefault()(*bool)
+    GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable)
     SetB2bCollaborationInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bCollaborationOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bDirectConnectInbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetB2bDirectConnectOutbound(value CrossTenantAccessPolicyB2BSettingable)()
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetIsServiceDefault(value *bool)()
+    SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)()
 }

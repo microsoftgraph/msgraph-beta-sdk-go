@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MailFolder 
+// MailFolder provides operations to manage the collection of accessReview entities.
 type MailFolder struct {
     Entity
     // The number of immediate child mailFolders in the current mailFolder.
@@ -34,7 +34,7 @@ type MailFolder struct {
     // The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
     wellKnownName *string
 }
-// NewMailFolder instantiates a new MailFolder and sets the default values.
+// NewMailFolder instantiates a new mailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),
@@ -56,8 +56,7 @@ func CreateMailFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.mailSearchFolder":
                         return NewMailSearchFolder(), nil
                 }

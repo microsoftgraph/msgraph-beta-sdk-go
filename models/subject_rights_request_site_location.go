@@ -33,8 +33,7 @@ func CreateSubjectRightsRequestSiteLocationFromDiscriminatorValue(parseNode i878
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.subjectRightsRequestAllSiteLocation":
                         return NewSubjectRightsRequestAllSiteLocation(), nil
                     case "#microsoft.graph.subjectRightsRequestEnumeratedSiteLocation":

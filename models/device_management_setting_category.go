@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementSettingCategory 
+// DeviceManagementSettingCategory entity representing a setting category
 type DeviceManagementSettingCategory struct {
     Entity
     // The category name
@@ -14,7 +14,7 @@ type DeviceManagementSettingCategory struct {
     // The setting definitions this category contains
     settingDefinitions []DeviceManagementSettingDefinitionable
 }
-// NewDeviceManagementSettingCategory instantiates a new DeviceManagementSettingCategory and sets the default values.
+// NewDeviceManagementSettingCategory instantiates a new deviceManagementSettingCategory and sets the default values.
 func NewDeviceManagementSettingCategory()(*DeviceManagementSettingCategory) {
     m := &DeviceManagementSettingCategory{
         Entity: *NewEntity(),
@@ -36,8 +36,7 @@ func CreateDeviceManagementSettingCategoryFromDiscriminatorValue(parseNode i878a
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceManagementIntentSettingCategory":
                         return NewDeviceManagementIntentSettingCategory(), nil
                     case "#microsoft.graph.deviceManagementTemplateSettingCategory":

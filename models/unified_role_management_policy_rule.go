@@ -32,8 +32,7 @@ func CreateUnifiedRoleManagementPolicyRuleFromDiscriminatorValue(parseNode i878a
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule":
                         return NewUnifiedRoleManagementPolicyApprovalRule(), nil
                     case "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule":

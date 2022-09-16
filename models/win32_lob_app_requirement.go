@@ -37,8 +37,7 @@ func CreateWin32LobAppRequirementFromDiscriminatorValue(parseNode i878a80d2330e8
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.win32LobAppFileSystemRequirement":
                         return NewWin32LobAppFileSystemRequirement(), nil
                     case "#microsoft.graph.win32LobAppPowerShellScriptRequirement":

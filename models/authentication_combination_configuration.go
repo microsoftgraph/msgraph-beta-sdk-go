@@ -32,8 +32,7 @@ func CreateAuthenticationCombinationConfigurationFromDiscriminatorValue(parseNod
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.fido2CombinationConfiguration":
                         return NewFido2CombinationConfiguration(), nil
                 }

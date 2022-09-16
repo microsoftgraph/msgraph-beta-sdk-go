@@ -33,8 +33,7 @@ func CreateWindowsKioskAppConfigurationFromDiscriminatorValue(parseNode i878a80d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windowsKioskMultipleApps":
                         return NewWindowsKioskMultipleApps(), nil
                     case "#microsoft.graph.windowsKioskSingleUWPApp":

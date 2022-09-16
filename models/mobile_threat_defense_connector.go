@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileThreatDefenseConnector 
+// MobileThreatDefenseConnector entity which represents a connection to Mobile threat defense partner.
 type MobileThreatDefenseConnector struct {
     Entity
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
@@ -45,7 +45,7 @@ type MobileThreatDefenseConnector struct {
     // When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
     windowsMobileApplicationManagementEnabled *bool
 }
-// NewMobileThreatDefenseConnector instantiates a new MobileThreatDefenseConnector and sets the default values.
+// NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     m := &MobileThreatDefenseConnector{
         Entity: *NewEntity(),

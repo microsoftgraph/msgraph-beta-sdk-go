@@ -33,8 +33,7 @@ func CreateWorkflowExecutionConditionsFromDiscriminatorValue(parseNode i878a80d2
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.identityGovernance.onDemandExecutionOnly":
                         return NewOnDemandExecutionOnly(), nil
                     case "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions":

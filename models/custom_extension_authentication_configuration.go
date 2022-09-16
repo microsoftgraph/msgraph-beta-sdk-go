@@ -33,8 +33,7 @@ func CreateCustomExtensionAuthenticationConfigurationFromDiscriminatorValue(pars
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.azureAdTokenAuthentication":
                         return NewAzureAdTokenAuthentication(), nil
                 }

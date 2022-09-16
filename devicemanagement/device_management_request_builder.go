@@ -58,6 +58,7 @@ import (
     i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessagedetails"
     i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configmanagercollections"
     i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversiondeviceid"
+    i4bd812738dda41107da4619109b291325f5d780358395b89fe5c82aad759ae99 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/monitoring"
     i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmodelscores"
     i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsworkfromanywheremodelperformance"
     i547e75c3751220b84b6d826399c69087ddca96b6bb141becda2daa5187b1f251 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancecategories"
@@ -1517,6 +1518,10 @@ func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectorsById(id st
         urlTplParams["mobileThreatDefenseConnector%2Did"] = id
     }
     return i60ad998c7dc9950655aee52ac45bca7b49a3b1860f7bb1443ad29a3fe43c5500.NewMobileThreatDefenseConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Monitoring the monitoring property
+func (m *DeviceManagementRequestBuilder) Monitoring()(*i4bd812738dda41107da4619109b291325f5d780358395b89fe5c82aad759ae99.MonitoringRequestBuilder) {
+    return i4bd812738dda41107da4619109b291325f5d780358395b89fe5c82aad759ae99.NewMonitoringRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NdesConnectors the ndesConnectors property
 func (m *DeviceManagementRequestBuilder) NdesConnectors()(*ieecc9464554ab62dc03bd18e0632d6ca6bab183f34e272de77883f92cba059ec.NdesConnectorsRequestBuilder) {

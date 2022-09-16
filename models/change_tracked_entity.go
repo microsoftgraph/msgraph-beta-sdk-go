@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChangeTrackedEntity provides operations to manage the collection of accessReview entities.
+// ChangeTrackedEntity provides operations to manage the collection of accessReviewDecision entities.
 type ChangeTrackedEntity struct {
     Entity
     // The createdBy property
@@ -39,8 +39,7 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.offerShiftRequest":
                         return NewOfferShiftRequest(), nil
                     case "#microsoft.graph.openShift":

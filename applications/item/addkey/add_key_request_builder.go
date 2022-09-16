@@ -43,11 +43,11 @@ func NewAddKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewAddKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action addKey
-func (m *AddKeyRequestBuilder) CreatePostRequestInformation(body KeyCredentialPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddKeyRequestBuilder) CreatePostRequestInformation(body AddKeyPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addKey
-func (m *AddKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body KeyCredentialPostRequestBodyable, requestConfiguration *AddKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddKeyPostRequestBodyable, requestConfiguration *AddKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -61,7 +61,7 @@ func (m *AddKeyRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     return requestInfo, nil
 }
 // Post invoke action addKey
-func (m *AddKeyRequestBuilder) Post(ctx context.Context, body KeyCredentialPostRequestBodyable, requestConfiguration *AddKeyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyCredentialable, error) {
+func (m *AddKeyRequestBuilder) Post(ctx context.Context, body AddKeyPostRequestBodyable, requestConfiguration *AddKeyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyCredentialable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

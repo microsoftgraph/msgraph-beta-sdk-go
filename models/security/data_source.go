@@ -40,8 +40,7 @@ func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.siteSource":
                         return NewSiteSource(), nil
                     case "#microsoft.graph.security.unifiedGroupSource":

@@ -46,8 +46,7 @@ func CreateWindowsPhone81AppXFromDiscriminatorValue(parseNode i878a80d2330e89d26
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.windowsPhone81AppXBundle":
                         return NewWindowsPhone81AppXBundle(), nil
                 }

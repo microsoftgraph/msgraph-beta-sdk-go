@@ -32,8 +32,7 @@ func CreateFileThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.fileContentThreatSubmission":
                         return NewFileContentThreatSubmission(), nil
                     case "#microsoft.graph.security.fileUrlThreatSubmission":

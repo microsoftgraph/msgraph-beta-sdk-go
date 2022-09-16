@@ -9,7 +9,7 @@ type AccessPackageTextInputQuestion struct {
     AccessPackageQuestion
     // Indicates whether the answer will be in single or multiple line format.
     isSingleLineQuestion *bool
-    // The regexPattern property
+    // This is the regex pattern that the corresponding text answer must follow.
     regexPattern *string
 }
 // NewAccessPackageTextInputQuestion instantiates a new AccessPackageTextInputQuestion and sets the default values.
@@ -54,7 +54,7 @@ func (m *AccessPackageTextInputQuestion) GetFieldDeserializers()(map[string]func
 func (m *AccessPackageTextInputQuestion) GetIsSingleLineQuestion()(*bool) {
     return m.isSingleLineQuestion
 }
-// GetRegexPattern gets the regexPattern property value. The regexPattern property
+// GetRegexPattern gets the regexPattern property value. This is the regex pattern that the corresponding text answer must follow.
 func (m *AccessPackageTextInputQuestion) GetRegexPattern()(*string) {
     return m.regexPattern
 }
@@ -82,7 +82,7 @@ func (m *AccessPackageTextInputQuestion) Serialize(writer i878a80d2330e89d268963
 func (m *AccessPackageTextInputQuestion) SetIsSingleLineQuestion(value *bool)() {
     m.isSingleLineQuestion = value
 }
-// SetRegexPattern sets the regexPattern property value. The regexPattern property
+// SetRegexPattern sets the regexPattern property value. This is the regex pattern that the corresponding text answer must follow.
 func (m *AccessPackageTextInputQuestion) SetRegexPattern(value *string)() {
     m.regexPattern = value
 }

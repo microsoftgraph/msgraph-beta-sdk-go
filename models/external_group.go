@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalGroup provides operations to manage the collection of accessReviewDecision entities.
+// ExternalGroup 
 type ExternalGroup struct {
     Entity
     // The description property
@@ -12,7 +12,7 @@ type ExternalGroup struct {
     // The displayName property
     displayName *string
 }
-// NewExternalGroup instantiates a new externalGroup and sets the default values.
+// NewExternalGroup instantiates a new ExternalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {
     m := &ExternalGroup{
         Entity: *NewEntity(),

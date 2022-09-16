@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TaskProcessingResult provides operations to manage the collection of accessReviewDecision entities.
+// TaskProcessingResult provides operations to manage the collection of accessReview entities.
 type TaskProcessingResult struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.

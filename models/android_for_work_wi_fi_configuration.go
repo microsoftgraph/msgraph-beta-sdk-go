@@ -40,8 +40,7 @@ func CreateAndroidForWorkWiFiConfigurationFromDiscriminatorValue(parseNode i878a
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration":
                         return NewAndroidForWorkEnterpriseWiFiConfiguration(), nil
                 }

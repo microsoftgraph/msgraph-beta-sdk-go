@@ -44,8 +44,7 @@ func CreateAospDeviceOwnerCertificateProfileBaseFromDiscriminatorValue(parseNode
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.aospDeviceOwnerPkcsCertificateProfile":
                         return NewAospDeviceOwnerPkcsCertificateProfile(), nil
                     case "#microsoft.graph.aospDeviceOwnerScepCertificateProfile":

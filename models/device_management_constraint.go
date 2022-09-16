@@ -33,8 +33,7 @@ func CreateDeviceManagementConstraintFromDiscriminatorValue(parseNode i878a80d23
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceManagementEnumConstraint":
                         return NewDeviceManagementEnumConstraint(), nil
                     case "#microsoft.graph.deviceManagementIntentSettingSecretConstraint":

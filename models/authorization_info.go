@@ -8,7 +8,7 @@ import (
 type AuthorizationInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The certificateUserIds property
+    // The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
     certificateUserIds []string
     // The OdataType property
     odataType *string
@@ -30,7 +30,7 @@ func CreateAuthorizationInfoFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *AuthorizationInfo) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetCertificateUserIds gets the certificateUserIds property value. The certificateUserIds property
+// GetCertificateUserIds gets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
 func (m *AuthorizationInfo) GetCertificateUserIds()([]string) {
     return m.certificateUserIds
 }
@@ -93,7 +93,7 @@ func (m *AuthorizationInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *AuthorizationInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetCertificateUserIds sets the certificateUserIds property value. The certificateUserIds property
+// SetCertificateUserIds sets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
 func (m *AuthorizationInfo) SetCertificateUserIds(value []string)() {
     m.certificateUserIds = value
 }

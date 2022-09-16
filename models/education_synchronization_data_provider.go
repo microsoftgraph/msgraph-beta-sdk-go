@@ -33,8 +33,7 @@ func CreateEducationSynchronizationDataProviderFromDiscriminatorValue(parseNode 
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.educationCsvDataProvider":
                         return NewEducationCsvDataProvider(), nil
                     case "#microsoft.graph.educationOneRosterApiDataProvider":

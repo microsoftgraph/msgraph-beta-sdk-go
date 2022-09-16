@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarGroup 
+// CalendarGroup provides operations to manage the collection of accessReview entities.
 type CalendarGroup struct {
     Entity
     // The calendars in the calendar group. Navigation property. Read-only. Nullable.
@@ -16,7 +16,7 @@ type CalendarGroup struct {
     // The group name.
     name *string
 }
-// NewCalendarGroup instantiates a new CalendarGroup and sets the default values.
+// NewCalendarGroup instantiates a new calendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {
     m := &CalendarGroup{
         Entity: *NewEntity(),

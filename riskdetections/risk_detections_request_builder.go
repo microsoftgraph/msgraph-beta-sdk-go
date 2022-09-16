@@ -51,7 +51,7 @@ type RiskDetectionsRequestBuilderPostRequestConfiguration struct {
 func NewRiskDetectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskDetectionsRequestBuilder) {
     m := &RiskDetectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/riskDetections{?%24top,%24search,%24filter,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/riskDetections{?%24top*,%24search*,%24filter*,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

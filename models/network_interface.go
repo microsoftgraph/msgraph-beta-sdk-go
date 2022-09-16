@@ -8,7 +8,7 @@ import (
 type NetworkInterface struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).
+    // Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
     description *string
     // Last IPv4 address associated with this NIC.
     ipV4Address *string
@@ -38,7 +38,7 @@ func CreateNetworkInterfaceFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *NetworkInterface) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetDescription gets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).
+// GetDescription gets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
 func (m *NetworkInterface) GetDescription()(*string) {
     return m.description
 }
@@ -177,7 +177,7 @@ func (m *NetworkInterface) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *NetworkInterface) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetDescription sets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#>, etc.).
+// SetDescription sets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
 func (m *NetworkInterface) SetDescription(value *string)() {
     m.description = value
 }

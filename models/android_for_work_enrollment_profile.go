@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkEnrollmentProfile enrollment Profile used to enroll COSU devices using Google's Cloud Management.
+// AndroidForWorkEnrollmentProfile 
 type AndroidForWorkEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
@@ -29,7 +29,7 @@ type AndroidForWorkEnrollmentProfile struct {
     // Value of the most recently created token for this enrollment profile.
     tokenValue *string
 }
-// NewAndroidForWorkEnrollmentProfile instantiates a new androidForWorkEnrollmentProfile and sets the default values.
+// NewAndroidForWorkEnrollmentProfile instantiates a new AndroidForWorkEnrollmentProfile and sets the default values.
 func NewAndroidForWorkEnrollmentProfile()(*AndroidForWorkEnrollmentProfile) {
     m := &AndroidForWorkEnrollmentProfile{
         Entity: *NewEntity(),

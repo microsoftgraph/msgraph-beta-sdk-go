@@ -30,8 +30,7 @@ func CreateGroupPolicyUploadedPresentationFromDiscriminatorValue(parseNode i878a
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.groupPolicyPresentationCheckBox":
                         return NewGroupPolicyPresentationCheckBox(), nil
                     case "#microsoft.graph.groupPolicyPresentationComboBox":

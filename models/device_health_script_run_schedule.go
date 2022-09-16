@@ -35,8 +35,7 @@ func CreateDeviceHealthScriptRunScheduleFromDiscriminatorValue(parseNode i878a80
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceHealthScriptDailySchedule":
                         return NewDeviceHealthScriptDailySchedule(), nil
                     case "#microsoft.graph.deviceHealthScriptHourlySchedule":

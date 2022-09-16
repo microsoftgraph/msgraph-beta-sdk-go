@@ -36,8 +36,7 @@ func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorV
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition":
                         return NewDeviceManagementConfigurationSettingGroupCollectionDefinition(), nil
                 }

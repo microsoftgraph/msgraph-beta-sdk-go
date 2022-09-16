@@ -210,30 +210,6 @@ func (m *SearchHit) GetSummary()(*string) {
 // Serialize serializes information the current object
 func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("_id", m.Get_id())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteInt32Value("_score", m.Get_score())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("_source", m.Get_source())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("_summary", m.Get_summary())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteStringValue("contentSource", m.GetContentSource())
         if err != nil {
             return err
@@ -271,6 +247,30 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err := writer.WriteStringValue("summary", m.GetSummary())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("_id", m.Get_id())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("_score", m.Get_score())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("_source", m.Get_source())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("_summary", m.Get_summary())
         if err != nil {
             return err
         }

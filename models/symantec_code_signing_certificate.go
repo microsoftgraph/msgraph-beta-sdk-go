@@ -27,7 +27,7 @@ type SymantecCodeSigningCertificate struct {
     // The Type of the CodeSigning Cert as Symantec Cert.
     uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewSymantecCodeSigningCertificate instantiates a new SymantecCodeSigningCertificate and sets the default values.
+// NewSymantecCodeSigningCertificate instantiates a new symantecCodeSigningCertificate and sets the default values.
 func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     m := &SymantecCodeSigningCertificate{
         Entity: *NewEntity(),

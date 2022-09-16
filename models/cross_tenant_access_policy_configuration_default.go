@@ -19,6 +19,8 @@ type CrossTenantAccessPolicyConfigurationDefault struct {
     inboundTrust CrossTenantAccessPolicyInboundTrustable
     // If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
     isServiceDefault *bool
+    // The tenantRestrictions property
+    tenantRestrictions CrossTenantAccessPolicyTenantRestrictionsable
 }
 // NewCrossTenantAccessPolicyConfigurationDefault instantiates a new crossTenantAccessPolicyConfigurationDefault and sets the default values.
 func NewCrossTenantAccessPolicyConfigurationDefault()(*CrossTenantAccessPolicyConfigurationDefault) {
@@ -112,6 +114,16 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["tenantRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantRestrictions(val.(CrossTenantAccessPolicyTenantRestrictionsable))
+        }
+        return nil
+    }
     return res
 }
 // GetInboundTrust gets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
@@ -121,6 +133,10 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetInboundTrust()(CrossTen
 // GetIsServiceDefault gets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
 func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*bool) {
     return m.isServiceDefault
+}
+// GetTenantRestrictions gets the tenantRestrictions property value. The tenantRestrictions property
+func (m *CrossTenantAccessPolicyConfigurationDefault) GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable) {
+    return m.tenantRestrictions
 }
 // Serialize serializes information the current object
 func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -164,6 +180,12 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) Serialize(writer i878a80d2
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("tenantRestrictions", m.GetTenantRestrictions())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetB2bCollaborationInbound sets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
@@ -189,4 +211,8 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) SetInboundTrust(value Cros
 // SetIsServiceDefault sets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
 func (m *CrossTenantAccessPolicyConfigurationDefault) SetIsServiceDefault(value *bool)() {
     m.isServiceDefault = value
+}
+// SetTenantRestrictions sets the tenantRestrictions property value. The tenantRestrictions property
+func (m *CrossTenantAccessPolicyConfigurationDefault) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
+    m.tenantRestrictions = value
 }

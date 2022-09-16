@@ -43,8 +43,7 @@ func CreateDetectedSensitiveContentBaseFromDiscriminatorValue(parseNode i878a80d
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.detectedSensitiveContent":
                         return NewDetectedSensitiveContent(), nil
                     case "#microsoft.graph.exactMatchDetectedSensitiveContent":

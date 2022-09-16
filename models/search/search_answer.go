@@ -42,8 +42,7 @@ func CreateSearchAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.search.acronym":
                         return NewAcronym(), nil
                     case "#microsoft.graph.search.bookmark":

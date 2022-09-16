@@ -38,6 +38,7 @@ import (
     i35277464b5f866fcf2cb5324cd283216c9f6e9fc22956c71cb5b11c4ab649a29 "github.com/microsoftgraph/msgraph-beta-sdk-go/approleassignments"
     i39dbae52481ac3c9530d9fae0a2292348b8f7327bab28ea21183045324adadbc "github.com/microsoftgraph/msgraph-beta-sdk-go/authenticationmethodspolicy"
     i3b7da1b693d5428b20b0bf3340acb4b879042a9393e45df9349b04a5b2830acb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources"
+    i3c2d5b7a05b0c58ca1d3b72343c5f03221f2bd894e75f89f62ccf8020a48250b "github.com/microsoftgraph/msgraph-beta-sdk-go/monitoring"
     i3de07fd1833246d183a4d60c2329c7467381716c2cfdfc096ff627e4e9479cf8 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignmentrequests"
     i424c8587488111febed6b9b4d2ad6d5226fb83e28676c38366dd47f76f319ffb "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviewdecisions"
     i43a1701c7f8902247fd60e3d6ff36be02d1a59f02884ce5734adb8deb69a47ef "github.com/microsoftgraph/msgraph-beta-sdk-go/messagetraces"
@@ -1001,6 +1002,10 @@ func (m *GraphServiceClient) MobilityManagementPoliciesById(id string)(*i0740547
         urlTplParams["mobilityManagementPolicy%2Did"] = id
     }
     return i0740547a5aa3dd54a8b262a3d1cd5e0bb409b1a645795e041ffa10dcb9019e0a.NewMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Monitoring the monitoring property
+func (m *GraphServiceClient) Monitoring()(*i3c2d5b7a05b0c58ca1d3b72343c5f03221f2bd894e75f89f62ccf8020a48250b.MonitoringRequestBuilder) {
+    return i3c2d5b7a05b0c58ca1d3b72343c5f03221f2bd894e75f89f62ccf8020a48250b.NewMonitoringRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Oauth2PermissionGrants the oauth2PermissionGrants property
 func (m *GraphServiceClient) Oauth2PermissionGrants()(*ie2e0818e93fcfbb33fde071a9354c3c22bedab0ec20855b7d5232d29bcc65bad.Oauth2PermissionGrantsRequestBuilder) {

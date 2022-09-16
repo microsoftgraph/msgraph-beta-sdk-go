@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalActivity provides operations to manage the collection of accessReview entities.
+// ExternalActivity 
 type ExternalActivity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Represents an identity used to identify who is responsible for the activity.
@@ -16,7 +16,7 @@ type ExternalActivity struct {
     // The type property
     type_escaped *ExternalActivityType
 }
-// NewExternalActivity instantiates a new externalActivity and sets the default values.
+// NewExternalActivity instantiates a new ExternalActivity and sets the default values.
 func NewExternalActivity()(*ExternalActivity) {
     m := &ExternalActivity{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -38,8 +38,7 @@ func CreateExternalActivityFromDiscriminatorValue(parseNode i878a80d2330e89d2689
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.externalConnectors.externalActivityResult":
                         return NewExternalActivityResult(), nil
                 }

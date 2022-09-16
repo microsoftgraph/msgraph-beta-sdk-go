@@ -33,8 +33,7 @@ func CreateOfficeConfigurationAssignmentTargetFromDiscriminatorValue(parseNode i
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.officeConfigurationGroupAssignmentTarget":
                         return NewOfficeConfigurationGroupAssignmentTarget(), nil
                 }

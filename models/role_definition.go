@@ -24,7 +24,7 @@ type RoleDefinition struct {
     // List of Scope Tags for this Entity instance.
     roleScopeTagIds []string
 }
-// NewRoleDefinition instantiates a new roleDefinition and sets the default values.
+// NewRoleDefinition instantiates a new RoleDefinition and sets the default values.
 func NewRoleDefinition()(*RoleDefinition) {
     m := &RoleDefinition{
         Entity: *NewEntity(),
@@ -46,8 +46,7 @@ func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.deviceAndAppManagementRoleDefinition":
                         return NewDeviceAndAppManagementRoleDefinition(), nil
                 }

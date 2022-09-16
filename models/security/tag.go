@@ -40,8 +40,7 @@ func CreateTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.security.ediscoveryReviewTag":
                         return NewEdiscoveryReviewTag(), nil
                 }

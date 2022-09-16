@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedEBook 
+// ManagedEBook an abstract class containing the base properties for Managed eBook.
 type ManagedEBook struct {
     Entity
     // The list of assignments for this eBook.
@@ -37,7 +37,7 @@ type ManagedEBook struct {
     // The list of installation states for this eBook.
     userStateSummary []UserInstallStateSummaryable
 }
-// NewManagedEBook instantiates a new ManagedEBook and sets the default values.
+// NewManagedEBook instantiates a new managedEBook and sets the default values.
 func NewManagedEBook()(*ManagedEBook) {
     m := &ManagedEBook{
         Entity: *NewEntity(),
@@ -59,8 +59,7 @@ func CreateManagedEBookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.iosVppEBook":
                         return NewIosVppEBook(), nil
                 }

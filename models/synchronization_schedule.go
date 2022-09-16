@@ -11,7 +11,7 @@ type SynchronizationSchedule struct {
     additionalData map[string]interface{}
     // Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     expiration *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The interval between synchronization iterations.
+    // The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
     interval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The OdataType property
     odataType *string
@@ -84,7 +84,7 @@ func (m *SynchronizationSchedule) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetInterval gets the interval property value. The interval between synchronization iterations.
+// GetInterval gets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
 func (m *SynchronizationSchedule) GetInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.interval
 }
@@ -139,7 +139,7 @@ func (m *SynchronizationSchedule) SetAdditionalData(value map[string]interface{}
 func (m *SynchronizationSchedule) SetExpiration(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expiration = value
 }
-// SetInterval sets the interval property value. The interval between synchronization iterations.
+// SetInterval sets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
 func (m *SynchronizationSchedule) SetInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.interval = value
 }

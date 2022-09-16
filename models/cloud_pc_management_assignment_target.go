@@ -33,8 +33,7 @@ func CreateCloudPcManagementAssignmentTargetFromDiscriminatorValue(parseNode i87
                 return nil, err
             }
             if mappingValue != nil {
-                mappingStr := *mappingValue
-                switch mappingStr {
+                switch *mappingValue {
                     case "#microsoft.graph.cloudPcManagementGroupAssignmentTarget":
                         return NewCloudPcManagementGroupAssignmentTarget(), nil
                 }

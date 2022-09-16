@@ -12,12 +12,10 @@ type AuditLogRootable interface {
     GetDirectoryProvisioning()([]ProvisioningObjectSummaryable)
     GetOdataType()(*string)
     GetProvisioning()([]ProvisioningObjectSummaryable)
-    GetRestrictedSignIns()([]RestrictedSignInable)
     GetSignIns()([]SignInable)
     SetDirectoryAudits(value []DirectoryAuditable)()
     SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)()
     SetOdataType(value *string)()
     SetProvisioning(value []ProvisioningObjectSummaryable)()
-    SetRestrictedSignIns(value []RestrictedSignInable)()
     SetSignIns(value []SignInable)()
 }
