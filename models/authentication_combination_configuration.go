@@ -8,7 +8,7 @@ import (
 type AuthenticationCombinationConfiguration struct {
     Entity
     // The appliesToCombinations property
-    appliesToCombinations []string
+    appliesToCombinations []AuthenticationMethodModes
 }
 // NewAuthenticationCombinationConfiguration instantiates a new AuthenticationCombinationConfiguration and sets the default values.
 func NewAuthenticationCombinationConfiguration()(*AuthenticationCombinationConfiguration) {
@@ -42,21 +42,21 @@ func CreateAuthenticationCombinationConfigurationFromDiscriminatorValue(parseNod
     return NewAuthenticationCombinationConfiguration(), nil
 }
 // GetAppliesToCombinations gets the appliesToCombinations property value. The appliesToCombinations property
-func (m *AuthenticationCombinationConfiguration) GetAppliesToCombinations()([]string) {
+func (m *AuthenticationCombinationConfiguration) GetAppliesToCombinations()([]AuthenticationMethodModes) {
     return m.appliesToCombinations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationCombinationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesToCombinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAuthenticationMethodModes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*AuthenticationMethodModes))
             }
             m.SetAppliesToCombinations(res)
         }
@@ -71,7 +71,7 @@ func (m *AuthenticationCombinationConfiguration) Serialize(writer i878a80d2330e8
         return err
     }
     if m.GetAppliesToCombinations() != nil {
-        err = writer.WriteCollectionOfStringValues("appliesToCombinations", m.GetAppliesToCombinations())
+        err = writer.WriteCollectionOfStringValues("appliesToCombinations", SerializeAuthenticationMethodModes(m.GetAppliesToCombinations()))
         if err != nil {
             return err
         }
@@ -79,6 +79,6 @@ func (m *AuthenticationCombinationConfiguration) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAppliesToCombinations sets the appliesToCombinations property value. The appliesToCombinations property
-func (m *AuthenticationCombinationConfiguration) SetAppliesToCombinations(value []string)() {
+func (m *AuthenticationCombinationConfiguration) SetAppliesToCombinations(value []AuthenticationMethodModes)() {
     m.appliesToCombinations = value
 }

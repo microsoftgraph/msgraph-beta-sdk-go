@@ -16,7 +16,7 @@ type Windows10XSCEPCertificateProfile struct {
     // Extended Key Usage (EKU) settings.
     extendedKeyUsages []ExtendedKeyUsageable
     // SCEP Hash Algorithm.
-    hashAlgorithm []string
+    hashAlgorithm []HashAlgorithms
     // Key Size Options.
     keySize *KeySize
     // Key Storage Provider (KSP) Import Options.
@@ -111,14 +111,14 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["hashAlgorithm"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseHashAlgorithms)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]HashAlgorithms, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*HashAlgorithms))
             }
             m.SetHashAlgorithm(res)
         }
@@ -215,7 +215,7 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm.
-func (m *Windows10XSCEPCertificateProfile) GetHashAlgorithm()([]string) {
+func (m *Windows10XSCEPCertificateProfile) GetHashAlgorithm()([]HashAlgorithms) {
     return m.hashAlgorithm
 }
 // GetKeySize gets the keySize property value. Key Size Options.
@@ -287,7 +287,7 @@ func (m *Windows10XSCEPCertificateProfile) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetHashAlgorithm() != nil {
-        err = writer.WriteCollectionOfStringValues("hashAlgorithm", m.GetHashAlgorithm())
+        err = writer.WriteCollectionOfStringValues("hashAlgorithm", SerializeHashAlgorithms(m.GetHashAlgorithm()))
         if err != nil {
             return err
         }
@@ -366,7 +366,7 @@ func (m *Windows10XSCEPCertificateProfile) SetExtendedKeyUsages(value []Extended
     m.extendedKeyUsages = value
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm.
-func (m *Windows10XSCEPCertificateProfile) SetHashAlgorithm(value []string)() {
+func (m *Windows10XSCEPCertificateProfile) SetHashAlgorithm(value []HashAlgorithms)() {
     m.hashAlgorithm = value
 }
 // SetKeySize sets the keySize property value. Key Size Options.

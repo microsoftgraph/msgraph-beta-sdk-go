@@ -8,7 +8,7 @@ import (
 type AuthenticationStrengthRoot struct {
     Entity
     // The authenticationCombinations property
-    authenticationCombinations []string
+    authenticationCombinations []AuthenticationMethodModes
     // The authenticationMethodModes property
     authenticationMethodModes []AuthenticationMethodModeDetailable
     // The policies property
@@ -28,7 +28,7 @@ func CreateAuthenticationStrengthRootFromDiscriminatorValue(parseNode i878a80d23
     return NewAuthenticationStrengthRoot(), nil
 }
 // GetAuthenticationCombinations gets the authenticationCombinations property value. The authenticationCombinations property
-func (m *AuthenticationStrengthRoot) GetAuthenticationCombinations()([]string) {
+func (m *AuthenticationStrengthRoot) GetAuthenticationCombinations()([]AuthenticationMethodModes) {
     return m.authenticationCombinations
 }
 // GetAuthenticationMethodModes gets the authenticationMethodModes property value. The authenticationMethodModes property
@@ -39,14 +39,14 @@ func (m *AuthenticationStrengthRoot) GetAuthenticationMethodModes()([]Authentica
 func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationCombinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAuthenticationMethodModes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*AuthenticationMethodModes))
             }
             m.SetAuthenticationCombinations(res)
         }
@@ -93,7 +93,7 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
         return err
     }
     if m.GetAuthenticationCombinations() != nil {
-        err = writer.WriteCollectionOfStringValues("authenticationCombinations", m.GetAuthenticationCombinations())
+        err = writer.WriteCollectionOfStringValues("authenticationCombinations", SerializeAuthenticationMethodModes(m.GetAuthenticationCombinations()))
         if err != nil {
             return err
         }
@@ -121,7 +121,7 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAuthenticationCombinations sets the authenticationCombinations property value. The authenticationCombinations property
-func (m *AuthenticationStrengthRoot) SetAuthenticationCombinations(value []string)() {
+func (m *AuthenticationStrengthRoot) SetAuthenticationCombinations(value []AuthenticationMethodModes)() {
     m.authenticationCombinations = value
 }
 // SetAuthenticationMethodModes sets the authenticationMethodModes property value. The authenticationMethodModes property

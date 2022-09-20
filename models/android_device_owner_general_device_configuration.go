@@ -168,7 +168,7 @@ type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     // Indicates whether or not the keyguard is disabled.
     passwordBlockKeyguard *bool
     // List of device keyguard features to block. This collection can contain a maximum of 7 elements.
-    passwordBlockKeyguardFeatures []string
+    passwordBlockKeyguardFeatures []AndroidKeyguardFeature
     // Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
     passwordExpirationDays *int32
     // Indicates the minimum length of the password required on the device. Valid values 4 to 16
@@ -220,7 +220,7 @@ type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     // Indicates whether or the status bar is disabled, including notifications, quick settings and other screen overlays.
     statusBarBlocked *bool
     // List of modes in which the device's display will stay powered-on. This collection can contain a maximum of 4 elements.
-    stayOnModes []string
+    stayOnModes []AndroidDeviceOwnerBatteryPluggedMode
     // Indicates whether or not to allow USB mass storage.
     storageAllowUsb *bool
     // Indicates whether or not to block external media.
@@ -1201,14 +1201,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["passwordBlockKeyguardFeatures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAndroidKeyguardFeature)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AndroidKeyguardFeature, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*AndroidKeyguardFeature))
             }
             m.SetPasswordBlockKeyguardFeatures(res)
         }
@@ -1469,14 +1469,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         return nil
     }
     res["stayOnModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAndroidDeviceOwnerBatteryPluggedMode)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AndroidDeviceOwnerBatteryPluggedMode, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*AndroidDeviceOwnerBatteryPluggedMode))
             }
             m.SetStayOnModes(res)
         }
@@ -1995,7 +1995,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguard(
     return m.passwordBlockKeyguard
 }
 // GetPasswordBlockKeyguardFeatures gets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 7 elements.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguardFeatures()([]string) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguardFeatures()([]AndroidKeyguardFeature) {
     return m.passwordBlockKeyguardFeatures
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
@@ -2099,7 +2099,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStatusBarBlocked()(*bo
     return m.statusBarBlocked
 }
 // GetStayOnModes gets the stayOnModes property value. List of modes in which the device's display will stay powered-on. This collection can contain a maximum of 4 elements.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStayOnModes()([]string) {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStayOnModes()([]AndroidDeviceOwnerBatteryPluggedMode) {
     return m.stayOnModes
 }
 // GetStorageAllowUsb gets the storageAllowUsb property value. Indicates whether or not to allow USB mass storage.
@@ -2727,7 +2727,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     if m.GetPasswordBlockKeyguardFeatures() != nil {
-        err = writer.WriteCollectionOfStringValues("passwordBlockKeyguardFeatures", m.GetPasswordBlockKeyguardFeatures())
+        err = writer.WriteCollectionOfStringValues("passwordBlockKeyguardFeatures", SerializeAndroidKeyguardFeature(m.GetPasswordBlockKeyguardFeatures()))
         if err != nil {
             return err
         }
@@ -2891,7 +2891,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     if m.GetStayOnModes() != nil {
-        err = writer.WriteCollectionOfStringValues("stayOnModes", m.GetStayOnModes())
+        err = writer.WriteCollectionOfStringValues("stayOnModes", SerializeAndroidDeviceOwnerBatteryPluggedMode(m.GetStayOnModes()))
         if err != nil {
             return err
         }
@@ -3388,7 +3388,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordBlockKeyguard(
     m.passwordBlockKeyguard = value
 }
 // SetPasswordBlockKeyguardFeatures sets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 7 elements.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordBlockKeyguardFeatures(value []string)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordBlockKeyguardFeatures(value []AndroidKeyguardFeature)() {
     m.passwordBlockKeyguardFeatures = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
@@ -3492,7 +3492,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStatusBarBlocked(value
     m.statusBarBlocked = value
 }
 // SetStayOnModes sets the stayOnModes property value. List of modes in which the device's display will stay powered-on. This collection can contain a maximum of 4 elements.
-func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStayOnModes(value []string)() {
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetStayOnModes(value []AndroidDeviceOwnerBatteryPluggedMode)() {
     m.stayOnModes = value
 }
 // SetStorageAllowUsb sets the storageAllowUsb property value. Indicates whether or not to allow USB mass storage.

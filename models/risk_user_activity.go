@@ -11,7 +11,7 @@ type RiskUserActivity struct {
     // The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
     detail *RiskDetail
     // The eventTypes property
-    eventTypes []string
+    eventTypes []RiskEventType
     // The OdataType property
     odataType *string
     // The riskEventTypes property
@@ -39,7 +39,7 @@ func (m *RiskUserActivity) GetDetail()(*RiskDetail) {
     return m.detail
 }
 // GetEventTypes gets the eventTypes property value. The eventTypes property
-func (m *RiskUserActivity) GetEventTypes()([]string) {
+func (m *RiskUserActivity) GetEventTypes()([]RiskEventType) {
     return m.eventTypes
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -56,14 +56,14 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["eventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRiskEventType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RiskEventType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*RiskEventType))
             }
             m.SetEventTypes(res)
         }
@@ -113,7 +113,7 @@ func (m *RiskUserActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     if m.GetEventTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("eventTypes", m.GetEventTypes())
+        err := writer.WriteCollectionOfStringValues("eventTypes", SerializeRiskEventType(m.GetEventTypes()))
         if err != nil {
             return err
         }
@@ -147,7 +147,7 @@ func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
     m.detail = value
 }
 // SetEventTypes sets the eventTypes property value. The eventTypes property
-func (m *RiskUserActivity) SetEventTypes(value []string)() {
+func (m *RiskUserActivity) SetEventTypes(value []RiskEventType)() {
     m.eventTypes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

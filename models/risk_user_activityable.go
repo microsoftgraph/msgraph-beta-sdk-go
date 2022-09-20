@@ -9,11 +9,11 @@ type RiskUserActivityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDetail()(*RiskDetail)
-    GetEventTypes()([]string)
+    GetEventTypes()([]RiskEventType)
     GetOdataType()(*string)
     GetRiskEventTypes()([]string)
     SetDetail(value *RiskDetail)()
-    SetEventTypes(value []string)()
+    SetEventTypes(value []RiskEventType)()
     SetOdataType(value *string)()
     SetRiskEventTypes(value []string)()
 }

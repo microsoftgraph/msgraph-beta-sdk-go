@@ -19,7 +19,7 @@ type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     // Recorded date time of this capacity details instance.
     lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new UserExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new userExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAnalyticsBatteryHealthCapacityDetails) {
     m := &UserExperienceAnalyticsBatteryHealthCapacityDetails{
         Entity: *NewEntity(),

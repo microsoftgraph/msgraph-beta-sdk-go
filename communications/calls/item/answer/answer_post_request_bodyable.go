@@ -9,12 +9,12 @@ import (
 type AnswerPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAcceptedModalities()([]string)
+    GetAcceptedModalities()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)
     GetCallbackUri()(*string)
     GetCallOptions()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IncomingCallOptionsable)
     GetMediaConfig()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MediaConfigable)
     GetParticipantCapacity()(*int32)
-    SetAcceptedModalities(value []string)()
+    SetAcceptedModalities(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)()
     SetCallbackUri(value *string)()
     SetCallOptions(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IncomingCallOptionsable)()
     SetMediaConfig(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MediaConfigable)()

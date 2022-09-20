@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttendanceRecord provides operations to manage the collection of accessReviewDecision entities.
+// AttendanceRecord provides operations to manage the commsApplication singleton.
 type AttendanceRecord struct {
     Entity
     // List of time periods between joining and leaving a meeting.
     attendanceIntervals []AttendanceIntervalable
     // Email address of the user associated with this atttendance record.
     emailAddress *string
-    // Identity of the user associated with this atttendance record.
+    // Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
     identity Identityable
     // Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
     registrantId *string
@@ -110,7 +110,7 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIdentity gets the identity property value. Identity of the user associated with this atttendance record.
+// GetIdentity gets the identity property value. Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 func (m *AttendanceRecord) GetIdentity()(Identityable) {
     return m.identity
 }
@@ -182,7 +182,7 @@ func (m *AttendanceRecord) SetAttendanceIntervals(value []AttendanceIntervalable
 func (m *AttendanceRecord) SetEmailAddress(value *string)() {
     m.emailAddress = value
 }
-// SetIdentity sets the identity property value. Identity of the user associated with this atttendance record.
+// SetIdentity sets the identity property value. Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
 func (m *AttendanceRecord) SetIdentity(value Identityable)() {
     m.identity = value
 }

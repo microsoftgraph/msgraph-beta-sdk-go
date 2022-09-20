@@ -8,7 +8,7 @@ import (
 type Call struct {
     Entity
     // The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-    activeModalities []string
+    activeModalities []Modality
     // The participant that answered the call. Read-only.
     answeredBy ParticipantInfoable
     // The audioRoutingGroups property
@@ -44,13 +44,13 @@ type Call struct {
     // The participants property
     participants []Participantable
     // The requestedModalities property
-    requestedModalities []string
+    requestedModalities []Modality
     // The resultInfo property
     resultInfo ResultInfoable
     // The ringingTimeoutInSeconds property
     ringingTimeoutInSeconds *int32
     // The routingPolicies property
-    routingPolicies []string
+    routingPolicies []RoutingPolicy
     // The source property
     source ParticipantInfoable
     // The state property
@@ -82,7 +82,7 @@ func CreateCallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     return NewCall(), nil
 }
 // GetActiveModalities gets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-func (m *Call) GetActiveModalities()([]string) {
+func (m *Call) GetActiveModalities()([]Modality) {
     return m.activeModalities
 }
 // GetAnsweredBy gets the answeredBy property value. The participant that answered the call. Read-only.
@@ -125,14 +125,14 @@ func (m *Call) GetDirection()(*CallDirection) {
 func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*Modality))
             }
             m.SetActiveModalities(res)
         }
@@ -329,14 +329,14 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["requestedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*Modality))
             }
             m.SetRequestedModalities(res)
         }
@@ -363,14 +363,14 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["routingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRoutingPolicy)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RoutingPolicy, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*RoutingPolicy))
             }
             m.SetRoutingPolicies(res)
         }
@@ -495,7 +495,7 @@ func (m *Call) GetParticipants()([]Participantable) {
     return m.participants
 }
 // GetRequestedModalities gets the requestedModalities property value. The requestedModalities property
-func (m *Call) GetRequestedModalities()([]string) {
+func (m *Call) GetRequestedModalities()([]Modality) {
     return m.requestedModalities
 }
 // GetResultInfo gets the resultInfo property value. The resultInfo property
@@ -507,7 +507,7 @@ func (m *Call) GetRingingTimeoutInSeconds()(*int32) {
     return m.ringingTimeoutInSeconds
 }
 // GetRoutingPolicies gets the routingPolicies property value. The routingPolicies property
-func (m *Call) GetRoutingPolicies()([]string) {
+func (m *Call) GetRoutingPolicies()([]RoutingPolicy) {
     return m.routingPolicies
 }
 // GetSource gets the source property value. The source property
@@ -549,7 +549,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         return err
     }
     if m.GetActiveModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("activeModalities", m.GetActiveModalities())
+        err = writer.WriteCollectionOfStringValues("activeModalities", SerializeModality(m.GetActiveModalities()))
         if err != nil {
             return err
         }
@@ -678,7 +678,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRequestedModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("requestedModalities", m.GetRequestedModalities())
+        err = writer.WriteCollectionOfStringValues("requestedModalities", SerializeModality(m.GetRequestedModalities()))
         if err != nil {
             return err
         }
@@ -696,7 +696,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRoutingPolicies() != nil {
-        err = writer.WriteCollectionOfStringValues("routingPolicies", m.GetRoutingPolicies())
+        err = writer.WriteCollectionOfStringValues("routingPolicies", SerializeRoutingPolicy(m.GetRoutingPolicies()))
         if err != nil {
             return err
         }
@@ -757,7 +757,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     return nil
 }
 // SetActiveModalities sets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-func (m *Call) SetActiveModalities(value []string)() {
+func (m *Call) SetActiveModalities(value []Modality)() {
     m.activeModalities = value
 }
 // SetAnsweredBy sets the answeredBy property value. The participant that answered the call. Read-only.
@@ -829,7 +829,7 @@ func (m *Call) SetParticipants(value []Participantable)() {
     m.participants = value
 }
 // SetRequestedModalities sets the requestedModalities property value. The requestedModalities property
-func (m *Call) SetRequestedModalities(value []string)() {
+func (m *Call) SetRequestedModalities(value []Modality)() {
     m.requestedModalities = value
 }
 // SetResultInfo sets the resultInfo property value. The resultInfo property
@@ -841,7 +841,7 @@ func (m *Call) SetRingingTimeoutInSeconds(value *int32)() {
     m.ringingTimeoutInSeconds = value
 }
 // SetRoutingPolicies sets the routingPolicies property value. The routingPolicies property
-func (m *Call) SetRoutingPolicies(value []string)() {
+func (m *Call) SetRoutingPolicies(value []RoutingPolicy)() {
     m.routingPolicies = value
 }
 // SetSource sets the source property value. The source property

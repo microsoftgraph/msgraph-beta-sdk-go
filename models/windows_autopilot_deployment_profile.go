@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAutopilotDeploymentProfile 
+// WindowsAutopilotDeploymentProfile windows Autopilot Deployment Profile
 type WindowsAutopilotDeploymentProfile struct {
     Entity
     // The list of assigned devices for the profile.
@@ -39,7 +39,7 @@ type WindowsAutopilotDeploymentProfile struct {
     // Scope tags for the profile.
     roleScopeTagIds []string
 }
-// NewWindowsAutopilotDeploymentProfile instantiates a new WindowsAutopilotDeploymentProfile and sets the default values.
+// NewWindowsAutopilotDeploymentProfile instantiates a new windowsAutopilotDeploymentProfile and sets the default values.
 func NewWindowsAutopilotDeploymentProfile()(*WindowsAutopilotDeploymentProfile) {
     m := &WindowsAutopilotDeploymentProfile{
         Entity: *NewEntity(),

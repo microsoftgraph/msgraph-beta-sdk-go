@@ -22,7 +22,7 @@ type EstimateStatisticsOperation struct {
     // The estimated size of unindexed items for the collection.
     unindexedItemsSize *int64
 }
-// NewEstimateStatisticsOperation instantiates a new EstimateStatisticsOperation and sets the default values.
+// NewEstimateStatisticsOperation instantiates a new estimateStatisticsOperation and sets the default values.
 func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
     m := &EstimateStatisticsOperation{
         CaseOperation: *NewCaseOperation(),

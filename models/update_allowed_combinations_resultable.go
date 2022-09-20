@@ -10,12 +10,12 @@ type UpdateAllowedCombinationsResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdditionalInformation()(*string)
     GetConditionalAccessReferences()([]string)
-    GetCurrentCombinations()([]string)
+    GetCurrentCombinations()([]AuthenticationMethodModes)
     GetOdataType()(*string)
-    GetPreviousCombinations()([]string)
+    GetPreviousCombinations()([]AuthenticationMethodModes)
     SetAdditionalInformation(value *string)()
     SetConditionalAccessReferences(value []string)()
-    SetCurrentCombinations(value []string)()
+    SetCurrentCombinations(value []AuthenticationMethodModes)()
     SetOdataType(value *string)()
-    SetPreviousCombinations(value []string)()
+    SetPreviousCombinations(value []AuthenticationMethodModes)()
 }

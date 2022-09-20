@@ -13,11 +13,11 @@ type DeviceManagementConfigurationWindowsSettingApplicabilityable interface {
     GetMinimumSupportedVersion()(*string)
     GetRequiredAzureAdTrustType()(*DeviceManagementConfigurationAzureAdTrustType)
     GetRequiresAzureAd()(*bool)
-    GetWindowsSkus()([]string)
+    GetWindowsSkus()([]DeviceManagementConfigurationWindowsSkus)
     SetConfigurationServiceProviderVersion(value *string)()
     SetMaximumSupportedVersion(value *string)()
     SetMinimumSupportedVersion(value *string)()
     SetRequiredAzureAdTrustType(value *DeviceManagementConfigurationAzureAdTrustType)()
     SetRequiresAzureAd(value *bool)()
-    SetWindowsSkus(value []string)()
+    SetWindowsSkus(value []DeviceManagementConfigurationWindowsSkus)()
 }
