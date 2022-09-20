@@ -12,10 +12,10 @@ type HasPayloadLinkResultItemable interface {
     GetHasLink()(*bool)
     GetOdataType()(*string)
     GetPayloadId()(*string)
-    GetSources()([]string)
+    GetSources()([]DeviceAndAppManagementAssignmentSource)
     SetError(value *string)()
     SetHasLink(value *bool)()
     SetOdataType(value *string)()
     SetPayloadId(value *string)()
-    SetSources(value []string)()
+    SetSources(value []DeviceAndAppManagementAssignmentSource)()
 }

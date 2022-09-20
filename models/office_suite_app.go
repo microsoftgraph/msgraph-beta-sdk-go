@@ -22,7 +22,7 @@ type OfficeSuiteApp struct {
     // Describes the OfficeSuiteApp file format types that can be selected.
     officeSuiteAppDefaultFileFormat *OfficeSuiteDefaultFileFormatType
     // The Product Ids that represent the Office365 Suite SKU.
-    productIds []string
+    productIds []OfficeProductId
     // The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.
     shouldUninstallOlderVersionsOfOffice *bool
     // The property to represent the specific target version for the Office365 app suite that should be remained deployed on the devices.
@@ -133,14 +133,14 @@ func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["productIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseOfficeProductId)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]OfficeProductId, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*OfficeProductId))
             }
             m.SetProductIds(res)
         }
@@ -219,7 +219,7 @@ func (m *OfficeSuiteApp) GetOfficeSuiteAppDefaultFileFormat()(*OfficeSuiteDefaul
     return m.officeSuiteAppDefaultFileFormat
 }
 // GetProductIds gets the productIds property value. The Product Ids that represent the Office365 Suite SKU.
-func (m *OfficeSuiteApp) GetProductIds()([]string) {
+func (m *OfficeSuiteApp) GetProductIds()([]OfficeProductId) {
     return m.productIds
 }
 // GetShouldUninstallOlderVersionsOfOffice gets the shouldUninstallOlderVersionsOfOffice property value. The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.
@@ -294,7 +294,7 @@ func (m *OfficeSuiteApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetProductIds() != nil {
-        err = writer.WriteCollectionOfStringValues("productIds", m.GetProductIds())
+        err = writer.WriteCollectionOfStringValues("productIds", SerializeOfficeProductId(m.GetProductIds()))
         if err != nil {
             return err
         }
@@ -361,7 +361,7 @@ func (m *OfficeSuiteApp) SetOfficeSuiteAppDefaultFileFormat(value *OfficeSuiteDe
     m.officeSuiteAppDefaultFileFormat = value
 }
 // SetProductIds sets the productIds property value. The Product Ids that represent the Office365 Suite SKU.
-func (m *OfficeSuiteApp) SetProductIds(value []string)() {
+func (m *OfficeSuiteApp) SetProductIds(value []OfficeProductId)() {
     m.productIds = value
 }
 // SetShouldUninstallOlderVersionsOfOffice sets the shouldUninstallOlderVersionsOfOffice property value. The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.

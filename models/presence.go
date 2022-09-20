@@ -14,7 +14,7 @@ type Presence struct {
     // The out of office settings for a user.
     outOfOfficeSettings OutOfOfficeSettingsable
 }
-// NewPresence instantiates a new Presence and sets the default values.
+// NewPresence instantiates a new presence and sets the default values.
 func NewPresence()(*Presence) {
     m := &Presence{
         Entity: *NewEntity(),

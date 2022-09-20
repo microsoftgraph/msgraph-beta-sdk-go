@@ -13,11 +13,11 @@ type UpdateAllowedCombinationsResult struct {
     // The conditionalAccessReferences property
     conditionalAccessReferences []string
     // The currentCombinations property
-    currentCombinations []string
+    currentCombinations []AuthenticationMethodModes
     // The OdataType property
     odataType *string
     // The previousCombinations property
-    previousCombinations []string
+    previousCombinations []AuthenticationMethodModes
 }
 // NewUpdateAllowedCombinationsResult instantiates a new updateAllowedCombinationsResult and sets the default values.
 func NewUpdateAllowedCombinationsResult()(*UpdateAllowedCombinationsResult) {
@@ -45,7 +45,7 @@ func (m *UpdateAllowedCombinationsResult) GetConditionalAccessReferences()([]str
     return m.conditionalAccessReferences
 }
 // GetCurrentCombinations gets the currentCombinations property value. The currentCombinations property
-func (m *UpdateAllowedCombinationsResult) GetCurrentCombinations()([]string) {
+func (m *UpdateAllowedCombinationsResult) GetCurrentCombinations()([]AuthenticationMethodModes) {
     return m.currentCombinations
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -76,14 +76,14 @@ func (m *UpdateAllowedCombinationsResult) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["currentCombinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAuthenticationMethodModes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*AuthenticationMethodModes))
             }
             m.SetCurrentCombinations(res)
         }
@@ -100,14 +100,14 @@ func (m *UpdateAllowedCombinationsResult) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["previousCombinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAuthenticationMethodModes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*AuthenticationMethodModes))
             }
             m.SetPreviousCombinations(res)
         }
@@ -120,7 +120,7 @@ func (m *UpdateAllowedCombinationsResult) GetOdataType()(*string) {
     return m.odataType
 }
 // GetPreviousCombinations gets the previousCombinations property value. The previousCombinations property
-func (m *UpdateAllowedCombinationsResult) GetPreviousCombinations()([]string) {
+func (m *UpdateAllowedCombinationsResult) GetPreviousCombinations()([]AuthenticationMethodModes) {
     return m.previousCombinations
 }
 // Serialize serializes information the current object
@@ -138,7 +138,7 @@ func (m *UpdateAllowedCombinationsResult) Serialize(writer i878a80d2330e89d26896
         }
     }
     if m.GetCurrentCombinations() != nil {
-        err := writer.WriteCollectionOfStringValues("currentCombinations", m.GetCurrentCombinations())
+        err := writer.WriteCollectionOfStringValues("currentCombinations", SerializeAuthenticationMethodModes(m.GetCurrentCombinations()))
         if err != nil {
             return err
         }
@@ -150,7 +150,7 @@ func (m *UpdateAllowedCombinationsResult) Serialize(writer i878a80d2330e89d26896
         }
     }
     if m.GetPreviousCombinations() != nil {
-        err := writer.WriteCollectionOfStringValues("previousCombinations", m.GetPreviousCombinations())
+        err := writer.WriteCollectionOfStringValues("previousCombinations", SerializeAuthenticationMethodModes(m.GetPreviousCombinations()))
         if err != nil {
             return err
         }
@@ -176,7 +176,7 @@ func (m *UpdateAllowedCombinationsResult) SetConditionalAccessReferences(value [
     m.conditionalAccessReferences = value
 }
 // SetCurrentCombinations sets the currentCombinations property value. The currentCombinations property
-func (m *UpdateAllowedCombinationsResult) SetCurrentCombinations(value []string)() {
+func (m *UpdateAllowedCombinationsResult) SetCurrentCombinations(value []AuthenticationMethodModes)() {
     m.currentCombinations = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
@@ -184,6 +184,6 @@ func (m *UpdateAllowedCombinationsResult) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetPreviousCombinations sets the previousCombinations property value. The previousCombinations property
-func (m *UpdateAllowedCombinationsResult) SetPreviousCombinations(value []string)() {
+func (m *UpdateAllowedCombinationsResult) SetPreviousCombinations(value []AuthenticationMethodModes)() {
     m.previousCombinations = value
 }

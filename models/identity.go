@@ -8,9 +8,9 @@ import (
 type Identity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The display name of the identity. This property is read-only.
+    // The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     displayName *string
-    // The identifier of the identity. This property is read-only.
+    // Unique identifier for the identity.
     id *string
     // The OdataType property
     odataType *string
@@ -90,7 +90,7 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 func (m *Identity) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetDisplayName gets the displayName property value. The display name of the identity. This property is read-only.
+// GetDisplayName gets the displayName property value. The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
 func (m *Identity) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -129,7 +129,7 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetId gets the id property value. The identifier of the identity. This property is read-only.
+// GetId gets the id property value. Unique identifier for the identity.
 func (m *Identity) GetId()(*string) {
     return m.id
 }
@@ -169,11 +169,11 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *Identity) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetDisplayName sets the displayName property value. The display name of the identity. This property is read-only.
+// SetDisplayName sets the displayName property value. The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
 func (m *Identity) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetId sets the id property value. The identifier of the identity. This property is read-only.
+// SetId sets the id property value. Unique identifier for the identity.
 func (m *Identity) SetId(value *string)() {
     m.id = value
 }

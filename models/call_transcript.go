@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CallTranscript provides operations to manage the collection of accessReviewDecision entities.
+// CallTranscript provides operations to manage the commsApplication singleton.
 type CallTranscript struct {
     Entity
     // A field representing the content of the transcript. Read-only.

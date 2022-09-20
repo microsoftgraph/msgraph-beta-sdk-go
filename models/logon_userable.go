@@ -15,7 +15,7 @@ type LogonUserable interface {
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLogonId()(*string)
-    GetLogonTypes()([]string)
+    GetLogonTypes()([]LogonType)
     GetOdataType()(*string)
     SetAccountDomain(value *string)()
     SetAccountName(value *string)()
@@ -23,6 +23,6 @@ type LogonUserable interface {
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLogonId(value *string)()
-    SetLogonTypes(value []string)()
+    SetLogonTypes(value []LogonType)()
     SetOdataType(value *string)()
 }

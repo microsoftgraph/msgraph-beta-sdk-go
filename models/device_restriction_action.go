@@ -12,7 +12,7 @@ type DeviceRestrictionAction struct {
     // The restrictionAction property
     restrictionAction *RestrictionAction
     // The triggers property
-    triggers []string
+    triggers []RestrictionTrigger
 }
 // NewDeviceRestrictionAction instantiates a new DeviceRestrictionAction and sets the default values.
 func NewDeviceRestrictionAction()(*DeviceRestrictionAction) {
@@ -51,14 +51,14 @@ func (m *DeviceRestrictionAction) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["triggers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRestrictionTrigger)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RestrictionTrigger, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*RestrictionTrigger))
             }
             m.SetTriggers(res)
         }
@@ -75,7 +75,7 @@ func (m *DeviceRestrictionAction) GetRestrictionAction()(*RestrictionAction) {
     return m.restrictionAction
 }
 // GetTriggers gets the triggers property value. The triggers property
-func (m *DeviceRestrictionAction) GetTriggers()([]string) {
+func (m *DeviceRestrictionAction) GetTriggers()([]RestrictionTrigger) {
     return m.triggers
 }
 // Serialize serializes information the current object
@@ -98,7 +98,7 @@ func (m *DeviceRestrictionAction) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     if m.GetTriggers() != nil {
-        err = writer.WriteCollectionOfStringValues("triggers", m.GetTriggers())
+        err = writer.WriteCollectionOfStringValues("triggers", SerializeRestrictionTrigger(m.GetTriggers()))
         if err != nil {
             return err
         }
@@ -114,6 +114,6 @@ func (m *DeviceRestrictionAction) SetRestrictionAction(value *RestrictionAction)
     m.restrictionAction = value
 }
 // SetTriggers sets the triggers property value. The triggers property
-func (m *DeviceRestrictionAction) SetTriggers(value []string)() {
+func (m *DeviceRestrictionAction) SetTriggers(value []RestrictionTrigger)() {
     m.triggers = value
 }

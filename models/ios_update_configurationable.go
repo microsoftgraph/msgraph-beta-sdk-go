@@ -14,7 +14,7 @@ type IosUpdateConfigurationable interface {
     GetDesiredOsVersion()(*string)
     GetEnforcedSoftwareUpdateDelayInDays()(*int32)
     GetIsEnabled()(*bool)
-    GetScheduledInstallDays()([]string)
+    GetScheduledInstallDays()([]DayOfWeek)
     GetUpdateScheduleType()(*IosSoftwareUpdateScheduleType)
     GetUtcTimeOffsetInMinutes()(*int32)
     SetActiveHoursEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
@@ -23,7 +23,7 @@ type IosUpdateConfigurationable interface {
     SetDesiredOsVersion(value *string)()
     SetEnforcedSoftwareUpdateDelayInDays(value *int32)()
     SetIsEnabled(value *bool)()
-    SetScheduledInstallDays(value []string)()
+    SetScheduledInstallDays(value []DayOfWeek)()
     SetUpdateScheduleType(value *IosSoftwareUpdateScheduleType)()
     SetUtcTimeOffsetInMinutes(value *int32)()
 }

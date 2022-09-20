@@ -10,10 +10,12 @@ type DefaultUserRolePermissionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowedToCreateApps()(*bool)
     GetAllowedToCreateSecurityGroups()(*bool)
+    GetAllowedToReadBitlockerKeysForOwnedDevice()(*bool)
     GetAllowedToReadOtherUsers()(*bool)
     GetOdataType()(*string)
     SetAllowedToCreateApps(value *bool)()
     SetAllowedToCreateSecurityGroups(value *bool)()
+    SetAllowedToReadBitlockerKeysForOwnedDevice(value *bool)()
     SetAllowedToReadOtherUsers(value *bool)()
     SetOdataType(value *string)()
 }

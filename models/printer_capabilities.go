@@ -13,7 +13,7 @@ type PrinterCapabilities struct {
     // True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
     collation *bool
     // The color modes supported by the printer. Valid values are described in the following table.
-    colorModes []string
+    colorModes []PrintColorMode
     // A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
     contentTypes []string
     // The range of copies per job supported by the printer.
@@ -21,13 +21,13 @@ type PrinterCapabilities struct {
     // The list of print resolutions in DPI that are supported by the printer.
     dpis []int32
     // The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-    duplexModes []string
+    duplexModes []PrintDuplexMode
     // The feedDirections property
-    feedDirections []string
+    feedDirections []PrinterFeedDirection
     // The list of feed orientations that are supported by the printer.
-    feedOrientations []string
+    feedOrientations []PrinterFeedOrientation
     // Finishing processes the printer supports for a printed document.
-    finishings []string
+    finishings []PrintFinishing
     // Supported input bins for the printer.
     inputBins []string
     // True if color printing is supported by the printer; false otherwise. Read-only.
@@ -43,47 +43,47 @@ type PrinterCapabilities struct {
     // The media types supported by the printer.
     mediaTypes []string
     // The presentation directions supported by the printer. Supported values are described in the following table.
-    multipageLayouts []string
+    multipageLayouts []PrintMultipageLayout
     // The OdataType property
     odataType *string
     // The print orientations supported by the printer. Valid values are described in the following table.
-    orientations []string
+    orientations []PrintOrientation
     // The printer's supported output bins (trays).
     outputBins []string
     // Supported number of Input Pages to impose upon a single Impression.
     pagesPerSheet []int32
     // The print qualities supported by the printer.
-    qualities []string
+    qualities []PrintQuality
     // A list of supported right margins(in microns) for the printer.
     rightMargins []int32
     // Supported print scalings.
-    scalings []string
+    scalings []PrintScaling
     // The supportedColorConfigurations property
-    supportedColorConfigurations []string
+    supportedColorConfigurations []PrintColorConfiguration
     // The supportedCopiesPerJob property
     supportedCopiesPerJob IntegerRangeable
     // The supportedDocumentMimeTypes property
     supportedDocumentMimeTypes []string
     // The supportedDuplexConfigurations property
-    supportedDuplexConfigurations []string
+    supportedDuplexConfigurations []PrintDuplexConfiguration
     // The supportedFinishings property
-    supportedFinishings []string
+    supportedFinishings []PrintFinishing
     // The supportedMediaColors property
     supportedMediaColors []string
     // The supportedMediaSizes property
     supportedMediaSizes []string
     // The supportedMediaTypes property
-    supportedMediaTypes []string
+    supportedMediaTypes []PrintMediaType
     // The supportedOrientations property
-    supportedOrientations []string
+    supportedOrientations []PrintOrientation
     // The supportedOutputBins property
     supportedOutputBins []string
     // The supportedPagesPerSheet property
     supportedPagesPerSheet IntegerRangeable
     // The supportedPresentationDirections property
-    supportedPresentationDirections []string
+    supportedPresentationDirections []PrintPresentationDirection
     // The supportedPrintQualities property
-    supportedPrintQualities []string
+    supportedPrintQualities []PrintQuality
     // True if the printer supports scaling PDF pages to match the print media size; false otherwise.
     supportsFitPdfToPage *bool
     // A list of supported top margins(in microns) for the printer.
@@ -115,7 +115,7 @@ func (m *PrinterCapabilities) GetCollation()(*bool) {
     return m.collation
 }
 // GetColorModes gets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) GetColorModes()([]string) {
+func (m *PrinterCapabilities) GetColorModes()([]PrintColorMode) {
     return m.colorModes
 }
 // GetContentTypes gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
@@ -131,15 +131,15 @@ func (m *PrinterCapabilities) GetDpis()([]int32) {
     return m.dpis
 }
 // GetDuplexModes gets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) GetDuplexModes()([]string) {
+func (m *PrinterCapabilities) GetDuplexModes()([]PrintDuplexMode) {
     return m.duplexModes
 }
 // GetFeedDirections gets the feedDirections property value. The feedDirections property
-func (m *PrinterCapabilities) GetFeedDirections()([]string) {
+func (m *PrinterCapabilities) GetFeedDirections()([]PrinterFeedDirection) {
     return m.feedDirections
 }
 // GetFeedOrientations gets the feedOrientations property value. The list of feed orientations that are supported by the printer.
-func (m *PrinterCapabilities) GetFeedOrientations()([]string) {
+func (m *PrinterCapabilities) GetFeedOrientations()([]PrinterFeedOrientation) {
     return m.feedOrientations
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -170,14 +170,14 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["colorModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintColorMode)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintColorMode, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintColorMode))
             }
             m.SetColorModes(res)
         }
@@ -222,56 +222,56 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["duplexModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintDuplexMode)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintDuplexMode, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintDuplexMode))
             }
             m.SetDuplexModes(res)
         }
         return nil
     }
     res["feedDirections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrinterFeedDirection)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrinterFeedDirection, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrinterFeedDirection))
             }
             m.SetFeedDirections(res)
         }
         return nil
     }
     res["feedOrientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrinterFeedOrientation)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrinterFeedOrientation, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrinterFeedOrientation))
             }
             m.SetFeedOrientations(res)
         }
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintFinishing, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintFinishing))
             }
             m.SetFinishings(res)
         }
@@ -368,14 +368,14 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["multipageLayouts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintMultipageLayout)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintMultipageLayout, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintMultipageLayout))
             }
             m.SetMultipageLayouts(res)
         }
@@ -392,14 +392,14 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["orientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintOrientation)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintOrientation, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintOrientation))
             }
             m.SetOrientations(res)
         }
@@ -434,14 +434,14 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["qualities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintQuality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintQuality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintQuality))
             }
             m.SetQualities(res)
         }
@@ -462,28 +462,28 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["scalings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintScaling)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintScaling, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintScaling))
             }
             m.SetScalings(res)
         }
         return nil
     }
     res["supportedColorConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintColorConfiguration)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintColorConfiguration, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintColorConfiguration))
             }
             m.SetSupportedColorConfigurations(res)
         }
@@ -514,28 +514,28 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["supportedDuplexConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintDuplexConfiguration)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintDuplexConfiguration, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintDuplexConfiguration))
             }
             m.SetSupportedDuplexConfigurations(res)
         }
         return nil
     }
     res["supportedFinishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintFinishing, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintFinishing))
             }
             m.SetSupportedFinishings(res)
         }
@@ -570,28 +570,28 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["supportedMediaTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintMediaType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintMediaType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintMediaType))
             }
             m.SetSupportedMediaTypes(res)
         }
         return nil
     }
     res["supportedOrientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintOrientation)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintOrientation, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintOrientation))
             }
             m.SetSupportedOrientations(res)
         }
@@ -622,28 +622,28 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["supportedPresentationDirections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintPresentationDirection)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintPresentationDirection, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintPresentationDirection))
             }
             m.SetSupportedPresentationDirections(res)
         }
         return nil
     }
     res["supportedPrintQualities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintQuality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintQuality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintQuality))
             }
             m.SetSupportedPrintQualities(res)
         }
@@ -676,7 +676,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFinishings gets the finishings property value. Finishing processes the printer supports for a printed document.
-func (m *PrinterCapabilities) GetFinishings()([]string) {
+func (m *PrinterCapabilities) GetFinishings()([]PrintFinishing) {
     return m.finishings
 }
 // GetInputBins gets the inputBins property value. Supported input bins for the printer.
@@ -708,7 +708,7 @@ func (m *PrinterCapabilities) GetMediaTypes()([]string) {
     return m.mediaTypes
 }
 // GetMultipageLayouts gets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
-func (m *PrinterCapabilities) GetMultipageLayouts()([]string) {
+func (m *PrinterCapabilities) GetMultipageLayouts()([]PrintMultipageLayout) {
     return m.multipageLayouts
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -716,7 +716,7 @@ func (m *PrinterCapabilities) GetOdataType()(*string) {
     return m.odataType
 }
 // GetOrientations gets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) GetOrientations()([]string) {
+func (m *PrinterCapabilities) GetOrientations()([]PrintOrientation) {
     return m.orientations
 }
 // GetOutputBins gets the outputBins property value. The printer's supported output bins (trays).
@@ -728,7 +728,7 @@ func (m *PrinterCapabilities) GetPagesPerSheet()([]int32) {
     return m.pagesPerSheet
 }
 // GetQualities gets the qualities property value. The print qualities supported by the printer.
-func (m *PrinterCapabilities) GetQualities()([]string) {
+func (m *PrinterCapabilities) GetQualities()([]PrintQuality) {
     return m.qualities
 }
 // GetRightMargins gets the rightMargins property value. A list of supported right margins(in microns) for the printer.
@@ -736,11 +736,11 @@ func (m *PrinterCapabilities) GetRightMargins()([]int32) {
     return m.rightMargins
 }
 // GetScalings gets the scalings property value. Supported print scalings.
-func (m *PrinterCapabilities) GetScalings()([]string) {
+func (m *PrinterCapabilities) GetScalings()([]PrintScaling) {
     return m.scalings
 }
 // GetSupportedColorConfigurations gets the supportedColorConfigurations property value. The supportedColorConfigurations property
-func (m *PrinterCapabilities) GetSupportedColorConfigurations()([]string) {
+func (m *PrinterCapabilities) GetSupportedColorConfigurations()([]PrintColorConfiguration) {
     return m.supportedColorConfigurations
 }
 // GetSupportedCopiesPerJob gets the supportedCopiesPerJob property value. The supportedCopiesPerJob property
@@ -752,11 +752,11 @@ func (m *PrinterCapabilities) GetSupportedDocumentMimeTypes()([]string) {
     return m.supportedDocumentMimeTypes
 }
 // GetSupportedDuplexConfigurations gets the supportedDuplexConfigurations property value. The supportedDuplexConfigurations property
-func (m *PrinterCapabilities) GetSupportedDuplexConfigurations()([]string) {
+func (m *PrinterCapabilities) GetSupportedDuplexConfigurations()([]PrintDuplexConfiguration) {
     return m.supportedDuplexConfigurations
 }
 // GetSupportedFinishings gets the supportedFinishings property value. The supportedFinishings property
-func (m *PrinterCapabilities) GetSupportedFinishings()([]string) {
+func (m *PrinterCapabilities) GetSupportedFinishings()([]PrintFinishing) {
     return m.supportedFinishings
 }
 // GetSupportedMediaColors gets the supportedMediaColors property value. The supportedMediaColors property
@@ -768,11 +768,11 @@ func (m *PrinterCapabilities) GetSupportedMediaSizes()([]string) {
     return m.supportedMediaSizes
 }
 // GetSupportedMediaTypes gets the supportedMediaTypes property value. The supportedMediaTypes property
-func (m *PrinterCapabilities) GetSupportedMediaTypes()([]string) {
+func (m *PrinterCapabilities) GetSupportedMediaTypes()([]PrintMediaType) {
     return m.supportedMediaTypes
 }
 // GetSupportedOrientations gets the supportedOrientations property value. The supportedOrientations property
-func (m *PrinterCapabilities) GetSupportedOrientations()([]string) {
+func (m *PrinterCapabilities) GetSupportedOrientations()([]PrintOrientation) {
     return m.supportedOrientations
 }
 // GetSupportedOutputBins gets the supportedOutputBins property value. The supportedOutputBins property
@@ -784,11 +784,11 @@ func (m *PrinterCapabilities) GetSupportedPagesPerSheet()(IntegerRangeable) {
     return m.supportedPagesPerSheet
 }
 // GetSupportedPresentationDirections gets the supportedPresentationDirections property value. The supportedPresentationDirections property
-func (m *PrinterCapabilities) GetSupportedPresentationDirections()([]string) {
+func (m *PrinterCapabilities) GetSupportedPresentationDirections()([]PrintPresentationDirection) {
     return m.supportedPresentationDirections
 }
 // GetSupportedPrintQualities gets the supportedPrintQualities property value. The supportedPrintQualities property
-func (m *PrinterCapabilities) GetSupportedPrintQualities()([]string) {
+func (m *PrinterCapabilities) GetSupportedPrintQualities()([]PrintQuality) {
     return m.supportedPrintQualities
 }
 // GetSupportsFitPdfToPage gets the supportsFitPdfToPage property value. True if the printer supports scaling PDF pages to match the print media size; false otherwise.
@@ -814,7 +814,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetColorModes() != nil {
-        err := writer.WriteCollectionOfStringValues("colorModes", m.GetColorModes())
+        err := writer.WriteCollectionOfStringValues("colorModes", SerializePrintColorMode(m.GetColorModes()))
         if err != nil {
             return err
         }
@@ -838,25 +838,25 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetDuplexModes() != nil {
-        err := writer.WriteCollectionOfStringValues("duplexModes", m.GetDuplexModes())
+        err := writer.WriteCollectionOfStringValues("duplexModes", SerializePrintDuplexMode(m.GetDuplexModes()))
         if err != nil {
             return err
         }
     }
     if m.GetFeedDirections() != nil {
-        err := writer.WriteCollectionOfStringValues("feedDirections", m.GetFeedDirections())
+        err := writer.WriteCollectionOfStringValues("feedDirections", SerializePrinterFeedDirection(m.GetFeedDirections()))
         if err != nil {
             return err
         }
     }
     if m.GetFeedOrientations() != nil {
-        err := writer.WriteCollectionOfStringValues("feedOrientations", m.GetFeedOrientations())
+        err := writer.WriteCollectionOfStringValues("feedOrientations", SerializePrinterFeedOrientation(m.GetFeedOrientations()))
         if err != nil {
             return err
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
+        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
         if err != nil {
             return err
         }
@@ -904,7 +904,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetMultipageLayouts() != nil {
-        err := writer.WriteCollectionOfStringValues("multipageLayouts", m.GetMultipageLayouts())
+        err := writer.WriteCollectionOfStringValues("multipageLayouts", SerializePrintMultipageLayout(m.GetMultipageLayouts()))
         if err != nil {
             return err
         }
@@ -916,7 +916,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetOrientations() != nil {
-        err := writer.WriteCollectionOfStringValues("orientations", m.GetOrientations())
+        err := writer.WriteCollectionOfStringValues("orientations", SerializePrintOrientation(m.GetOrientations()))
         if err != nil {
             return err
         }
@@ -934,7 +934,7 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetQualities() != nil {
-        err := writer.WriteCollectionOfStringValues("qualities", m.GetQualities())
+        err := writer.WriteCollectionOfStringValues("qualities", SerializePrintQuality(m.GetQualities()))
         if err != nil {
             return err
         }
@@ -946,13 +946,13 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetScalings() != nil {
-        err := writer.WriteCollectionOfStringValues("scalings", m.GetScalings())
+        err := writer.WriteCollectionOfStringValues("scalings", SerializePrintScaling(m.GetScalings()))
         if err != nil {
             return err
         }
     }
     if m.GetSupportedColorConfigurations() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedColorConfigurations", m.GetSupportedColorConfigurations())
+        err := writer.WriteCollectionOfStringValues("supportedColorConfigurations", SerializePrintColorConfiguration(m.GetSupportedColorConfigurations()))
         if err != nil {
             return err
         }
@@ -970,13 +970,13 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetSupportedDuplexConfigurations() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedDuplexConfigurations", m.GetSupportedDuplexConfigurations())
+        err := writer.WriteCollectionOfStringValues("supportedDuplexConfigurations", SerializePrintDuplexConfiguration(m.GetSupportedDuplexConfigurations()))
         if err != nil {
             return err
         }
     }
     if m.GetSupportedFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedFinishings", m.GetSupportedFinishings())
+        err := writer.WriteCollectionOfStringValues("supportedFinishings", SerializePrintFinishing(m.GetSupportedFinishings()))
         if err != nil {
             return err
         }
@@ -994,13 +994,13 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetSupportedMediaTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedMediaTypes", m.GetSupportedMediaTypes())
+        err := writer.WriteCollectionOfStringValues("supportedMediaTypes", SerializePrintMediaType(m.GetSupportedMediaTypes()))
         if err != nil {
             return err
         }
     }
     if m.GetSupportedOrientations() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedOrientations", m.GetSupportedOrientations())
+        err := writer.WriteCollectionOfStringValues("supportedOrientations", SerializePrintOrientation(m.GetSupportedOrientations()))
         if err != nil {
             return err
         }
@@ -1018,13 +1018,13 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetSupportedPresentationDirections() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedPresentationDirections", m.GetSupportedPresentationDirections())
+        err := writer.WriteCollectionOfStringValues("supportedPresentationDirections", SerializePrintPresentationDirection(m.GetSupportedPresentationDirections()))
         if err != nil {
             return err
         }
     }
     if m.GetSupportedPrintQualities() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedPrintQualities", m.GetSupportedPrintQualities())
+        err := writer.WriteCollectionOfStringValues("supportedPrintQualities", SerializePrintQuality(m.GetSupportedPrintQualities()))
         if err != nil {
             return err
         }
@@ -1062,7 +1062,7 @@ func (m *PrinterCapabilities) SetCollation(value *bool)() {
     m.collation = value
 }
 // SetColorModes sets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) SetColorModes(value []string)() {
+func (m *PrinterCapabilities) SetColorModes(value []PrintColorMode)() {
     m.colorModes = value
 }
 // SetContentTypes sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
@@ -1078,19 +1078,19 @@ func (m *PrinterCapabilities) SetDpis(value []int32)() {
     m.dpis = value
 }
 // SetDuplexModes sets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) SetDuplexModes(value []string)() {
+func (m *PrinterCapabilities) SetDuplexModes(value []PrintDuplexMode)() {
     m.duplexModes = value
 }
 // SetFeedDirections sets the feedDirections property value. The feedDirections property
-func (m *PrinterCapabilities) SetFeedDirections(value []string)() {
+func (m *PrinterCapabilities) SetFeedDirections(value []PrinterFeedDirection)() {
     m.feedDirections = value
 }
 // SetFeedOrientations sets the feedOrientations property value. The list of feed orientations that are supported by the printer.
-func (m *PrinterCapabilities) SetFeedOrientations(value []string)() {
+func (m *PrinterCapabilities) SetFeedOrientations(value []PrinterFeedOrientation)() {
     m.feedOrientations = value
 }
 // SetFinishings sets the finishings property value. Finishing processes the printer supports for a printed document.
-func (m *PrinterCapabilities) SetFinishings(value []string)() {
+func (m *PrinterCapabilities) SetFinishings(value []PrintFinishing)() {
     m.finishings = value
 }
 // SetInputBins sets the inputBins property value. Supported input bins for the printer.
@@ -1122,7 +1122,7 @@ func (m *PrinterCapabilities) SetMediaTypes(value []string)() {
     m.mediaTypes = value
 }
 // SetMultipageLayouts sets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
-func (m *PrinterCapabilities) SetMultipageLayouts(value []string)() {
+func (m *PrinterCapabilities) SetMultipageLayouts(value []PrintMultipageLayout)() {
     m.multipageLayouts = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
@@ -1130,7 +1130,7 @@ func (m *PrinterCapabilities) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetOrientations sets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
-func (m *PrinterCapabilities) SetOrientations(value []string)() {
+func (m *PrinterCapabilities) SetOrientations(value []PrintOrientation)() {
     m.orientations = value
 }
 // SetOutputBins sets the outputBins property value. The printer's supported output bins (trays).
@@ -1142,7 +1142,7 @@ func (m *PrinterCapabilities) SetPagesPerSheet(value []int32)() {
     m.pagesPerSheet = value
 }
 // SetQualities sets the qualities property value. The print qualities supported by the printer.
-func (m *PrinterCapabilities) SetQualities(value []string)() {
+func (m *PrinterCapabilities) SetQualities(value []PrintQuality)() {
     m.qualities = value
 }
 // SetRightMargins sets the rightMargins property value. A list of supported right margins(in microns) for the printer.
@@ -1150,11 +1150,11 @@ func (m *PrinterCapabilities) SetRightMargins(value []int32)() {
     m.rightMargins = value
 }
 // SetScalings sets the scalings property value. Supported print scalings.
-func (m *PrinterCapabilities) SetScalings(value []string)() {
+func (m *PrinterCapabilities) SetScalings(value []PrintScaling)() {
     m.scalings = value
 }
 // SetSupportedColorConfigurations sets the supportedColorConfigurations property value. The supportedColorConfigurations property
-func (m *PrinterCapabilities) SetSupportedColorConfigurations(value []string)() {
+func (m *PrinterCapabilities) SetSupportedColorConfigurations(value []PrintColorConfiguration)() {
     m.supportedColorConfigurations = value
 }
 // SetSupportedCopiesPerJob sets the supportedCopiesPerJob property value. The supportedCopiesPerJob property
@@ -1166,11 +1166,11 @@ func (m *PrinterCapabilities) SetSupportedDocumentMimeTypes(value []string)() {
     m.supportedDocumentMimeTypes = value
 }
 // SetSupportedDuplexConfigurations sets the supportedDuplexConfigurations property value. The supportedDuplexConfigurations property
-func (m *PrinterCapabilities) SetSupportedDuplexConfigurations(value []string)() {
+func (m *PrinterCapabilities) SetSupportedDuplexConfigurations(value []PrintDuplexConfiguration)() {
     m.supportedDuplexConfigurations = value
 }
 // SetSupportedFinishings sets the supportedFinishings property value. The supportedFinishings property
-func (m *PrinterCapabilities) SetSupportedFinishings(value []string)() {
+func (m *PrinterCapabilities) SetSupportedFinishings(value []PrintFinishing)() {
     m.supportedFinishings = value
 }
 // SetSupportedMediaColors sets the supportedMediaColors property value. The supportedMediaColors property
@@ -1182,11 +1182,11 @@ func (m *PrinterCapabilities) SetSupportedMediaSizes(value []string)() {
     m.supportedMediaSizes = value
 }
 // SetSupportedMediaTypes sets the supportedMediaTypes property value. The supportedMediaTypes property
-func (m *PrinterCapabilities) SetSupportedMediaTypes(value []string)() {
+func (m *PrinterCapabilities) SetSupportedMediaTypes(value []PrintMediaType)() {
     m.supportedMediaTypes = value
 }
 // SetSupportedOrientations sets the supportedOrientations property value. The supportedOrientations property
-func (m *PrinterCapabilities) SetSupportedOrientations(value []string)() {
+func (m *PrinterCapabilities) SetSupportedOrientations(value []PrintOrientation)() {
     m.supportedOrientations = value
 }
 // SetSupportedOutputBins sets the supportedOutputBins property value. The supportedOutputBins property
@@ -1198,11 +1198,11 @@ func (m *PrinterCapabilities) SetSupportedPagesPerSheet(value IntegerRangeable)(
     m.supportedPagesPerSheet = value
 }
 // SetSupportedPresentationDirections sets the supportedPresentationDirections property value. The supportedPresentationDirections property
-func (m *PrinterCapabilities) SetSupportedPresentationDirections(value []string)() {
+func (m *PrinterCapabilities) SetSupportedPresentationDirections(value []PrintPresentationDirection)() {
     m.supportedPresentationDirections = value
 }
 // SetSupportedPrintQualities sets the supportedPrintQualities property value. The supportedPrintQualities property
-func (m *PrinterCapabilities) SetSupportedPrintQualities(value []string)() {
+func (m *PrinterCapabilities) SetSupportedPrintQualities(value []PrintQuality)() {
     m.supportedPrintQualities = value
 }
 // SetSupportsFitPdfToPage sets the supportsFitPdfToPage property value. True if the printer supports scaling PDF pages to match the print media size; false otherwise.

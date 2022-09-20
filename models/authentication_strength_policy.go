@@ -9,7 +9,7 @@ import (
 type AuthenticationStrengthPolicy struct {
     Entity
     // The allowedCombinations property
-    allowedCombinations []string
+    allowedCombinations []AuthenticationMethodModes
     // The combinationConfigurations property
     combinationConfigurations []AuthenticationCombinationConfigurationable
     // The createdDateTime property
@@ -39,7 +39,7 @@ func CreateAuthenticationStrengthPolicyFromDiscriminatorValue(parseNode i878a80d
     return NewAuthenticationStrengthPolicy(), nil
 }
 // GetAllowedCombinations gets the allowedCombinations property value. The allowedCombinations property
-func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]string) {
+func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]AuthenticationMethodModes) {
     return m.allowedCombinations
 }
 // GetCombinationConfigurations gets the combinationConfigurations property value. The combinationConfigurations property
@@ -62,14 +62,14 @@ func (m *AuthenticationStrengthPolicy) GetDisplayName()(*string) {
 func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedCombinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseAuthenticationMethodModes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]AuthenticationMethodModes, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*AuthenticationMethodModes))
             }
             m.SetAllowedCombinations(res)
         }
@@ -170,7 +170,7 @@ func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388
         return err
     }
     if m.GetAllowedCombinations() != nil {
-        err = writer.WriteCollectionOfStringValues("allowedCombinations", m.GetAllowedCombinations())
+        err = writer.WriteCollectionOfStringValues("allowedCombinations", SerializeAuthenticationMethodModes(m.GetAllowedCombinations()))
         if err != nil {
             return err
         }
@@ -226,7 +226,7 @@ func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAllowedCombinations sets the allowedCombinations property value. The allowedCombinations property
-func (m *AuthenticationStrengthPolicy) SetAllowedCombinations(value []string)() {
+func (m *AuthenticationStrengthPolicy) SetAllowedCombinations(value []AuthenticationMethodModes)() {
     m.allowedCombinations = value
 }
 // SetCombinationConfigurations sets the combinationConfigurations property value. The combinationConfigurations property

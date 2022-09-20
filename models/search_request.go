@@ -17,7 +17,7 @@ type SearchRequest struct {
     // This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
     enableTopResults *bool
     // One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-    entityTypes []string
+    entityTypes []EntityType
     // Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
     fields []string
     // Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
@@ -75,7 +75,7 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     return m.enableTopResults
 }
 // GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-func (m *SearchRequest) GetEntityTypes()([]string) {
+func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     return m.entityTypes
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -134,14 +134,14 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["entityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseEntityType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]EntityType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*EntityType))
             }
             m.SetEntityTypes(res)
         }
@@ -346,7 +346,7 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetEntityTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("entityTypes", m.GetEntityTypes())
+        err := writer.WriteCollectionOfStringValues("entityTypes", SerializeEntityType(m.GetEntityTypes()))
         if err != nil {
             return err
         }
@@ -450,7 +450,7 @@ func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     m.enableTopResults = value
 }
 // SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-func (m *SearchRequest) SetEntityTypes(value []string)() {
+func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     m.entityTypes = value
 }
 // SetFields sets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.

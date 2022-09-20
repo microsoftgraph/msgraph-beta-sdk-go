@@ -14,6 +14,8 @@ type SignIn struct {
     appId *string
     // A list of conditional access policies that are triggered by the corresponding sign-in activity.
     appliedConditionalAccessPolicies []AppliedConditionalAccessPolicyable
+    // The appliedEventListeners property
+    appliedEventListeners []AppliedAuthenticationEventListenerable
     // Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
     authenticationContextClassReferences []AuthenticationContextable
     // The result of the authentication attempt and additional details on the authentication method.
@@ -154,6 +156,10 @@ func (m *SignIn) GetAppId()(*string) {
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
     return m.appliedConditionalAccessPolicies
 }
+// GetAppliedEventListeners gets the appliedEventListeners property value. The appliedEventListeners property
+func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable) {
+    return m.appliedEventListeners
+}
 // GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationContextable) {
     return m.authenticationContextClassReferences
@@ -256,6 +262,20 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
                 res[i] = v.(AppliedConditionalAccessPolicyable)
             }
             m.SetAppliedConditionalAccessPolicies(res)
+        }
+        return nil
+    }
+    res["appliedEventListeners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAppliedAuthenticationEventListenerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AppliedAuthenticationEventListenerable, len(val))
+            for i, v := range val {
+                res[i] = v.(AppliedAuthenticationEventListenerable)
+            }
+            m.SetAppliedEventListeners(res)
         }
         return nil
     }
@@ -1055,6 +1075,16 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetAppliedEventListeners() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppliedEventListeners()))
+        for i, v := range m.GetAppliedEventListeners() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("appliedEventListeners", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAuthenticationContextClassReferences() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationContextClassReferences()))
         for i, v := range m.GetAuthenticationContextClassReferences() {
@@ -1446,6 +1476,10 @@ func (m *SignIn) SetAppId(value *string)() {
 // SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)() {
     m.appliedConditionalAccessPolicies = value
+}
+// SetAppliedEventListeners sets the appliedEventListeners property value. The appliedEventListeners property
+func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
+    m.appliedEventListeners = value
 }
 // SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) SetAuthenticationContextClassReferences(value []AuthenticationContextable)() {

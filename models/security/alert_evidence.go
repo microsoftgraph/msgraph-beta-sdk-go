@@ -18,7 +18,7 @@ type AlertEvidence struct {
     // Details about the remediation status.
     remediationStatusDetails *string
     // The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
-    roles []string
+    roles []EvidenceRole
     // Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
     tags []string
     // The verdict property
@@ -133,14 +133,14 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseEvidenceRole)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]EvidenceRole, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*EvidenceRole))
             }
             m.SetRoles(res)
         }
@@ -185,7 +185,7 @@ func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
     return m.remediationStatusDetails
 }
 // GetRoles gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
-func (m *AlertEvidence) GetRoles()([]string) {
+func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     return m.roles
 }
 // GetTags gets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
@@ -224,7 +224,7 @@ func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetRoles() != nil {
-        err := writer.WriteCollectionOfStringValues("roles", m.GetRoles())
+        err := writer.WriteCollectionOfStringValues("roles", SerializeEvidenceRole(m.GetRoles()))
         if err != nil {
             return err
         }
@@ -271,7 +271,7 @@ func (m *AlertEvidence) SetRemediationStatusDetails(value *string)() {
     m.remediationStatusDetails = value
 }
 // SetRoles sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
-func (m *AlertEvidence) SetRoles(value []string)() {
+func (m *AlertEvidence) SetRoles(value []EvidenceRole)() {
     m.roles = value
 }
 // SetTags sets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.

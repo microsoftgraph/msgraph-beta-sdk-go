@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationPolicyTemplate 
+// DeviceManagementConfigurationPolicyTemplate device Management Configuration Policy Template
 type DeviceManagementConfigurationPolicyTemplate struct {
     Entity
     // Allow unmanaged setting templates
@@ -32,7 +32,7 @@ type DeviceManagementConfigurationPolicyTemplate struct {
     // Template version. Valid values 1 to 2147483647. This property is read-only.
     version *int32
 }
-// NewDeviceManagementConfigurationPolicyTemplate instantiates a new DeviceManagementConfigurationPolicyTemplate and sets the default values.
+// NewDeviceManagementConfigurationPolicyTemplate instantiates a new deviceManagementConfigurationPolicyTemplate and sets the default values.
 func NewDeviceManagementConfigurationPolicyTemplate()(*DeviceManagementConfigurationPolicyTemplate) {
     m := &DeviceManagementConfigurationPolicyTemplate{
         Entity: *NewEntity(),

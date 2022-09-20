@@ -20,7 +20,7 @@ type IosUpdateConfiguration struct {
     // Is setting enabled in UI
     isEnabled *bool
     // Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
-    scheduledInstallDays []string
+    scheduledInstallDays []DayOfWeek
     // Update schedule type for iOS software updates.
     updateScheduleType *IosSoftwareUpdateScheduleType
     // UTC Time Offset indicated in minutes
@@ -127,14 +127,14 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["scheduledInstallDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]DayOfWeek, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*DayOfWeek))
             }
             m.SetScheduledInstallDays(res)
         }
@@ -167,7 +167,7 @@ func (m *IosUpdateConfiguration) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
 // GetScheduledInstallDays gets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
-func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]string) {
+func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]DayOfWeek) {
     return m.scheduledInstallDays
 }
 // GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for iOS software updates.
@@ -225,7 +225,7 @@ func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     if m.GetScheduledInstallDays() != nil {
-        err = writer.WriteCollectionOfStringValues("scheduledInstallDays", m.GetScheduledInstallDays())
+        err = writer.WriteCollectionOfStringValues("scheduledInstallDays", SerializeDayOfWeek(m.GetScheduledInstallDays()))
         if err != nil {
             return err
         }
@@ -270,7 +270,7 @@ func (m *IosUpdateConfiguration) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
 // SetScheduledInstallDays sets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
-func (m *IosUpdateConfiguration) SetScheduledInstallDays(value []string)() {
+func (m *IosUpdateConfiguration) SetScheduledInstallDays(value []DayOfWeek)() {
     m.scheduledInstallDays = value
 }
 // SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type for iOS software updates.

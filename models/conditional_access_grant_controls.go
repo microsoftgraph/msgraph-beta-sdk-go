@@ -11,7 +11,7 @@ type ConditionalAccessGrantControls struct {
     // The authenticationStrength property
     authenticationStrength AuthenticationStrengthPolicyable
     // List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-    builtInControls []string
+    builtInControls []ConditionalAccessGrantControl
     // List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
     customAuthenticationFactors []string
     // The OdataType property
@@ -43,7 +43,7 @@ func (m *ConditionalAccessGrantControls) GetAuthenticationStrength()(Authenticat
     return m.authenticationStrength
 }
 // GetBuiltInControls gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]string) {
+func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]ConditionalAccessGrantControl) {
     return m.builtInControls
 }
 // GetCustomAuthenticationFactors gets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
@@ -64,14 +64,14 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["builtInControls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessGrantControl)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]ConditionalAccessGrantControl, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*ConditionalAccessGrantControl))
             }
             m.SetBuiltInControls(res)
         }
@@ -148,7 +148,7 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i878a80d2330e89d268963
         }
     }
     if m.GetBuiltInControls() != nil {
-        err := writer.WriteCollectionOfStringValues("builtInControls", m.GetBuiltInControls())
+        err := writer.WriteCollectionOfStringValues("builtInControls", SerializeConditionalAccessGrantControl(m.GetBuiltInControls()))
         if err != nil {
             return err
         }
@@ -194,7 +194,7 @@ func (m *ConditionalAccessGrantControls) SetAuthenticationStrength(value Authent
     m.authenticationStrength = value
 }
 // SetBuiltInControls sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []string)() {
+func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []ConditionalAccessGrantControl)() {
     m.builtInControls = value
 }
 // SetCustomAuthenticationFactors sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).

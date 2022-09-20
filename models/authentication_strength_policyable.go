@@ -9,7 +9,7 @@ import (
 type AuthenticationStrengthPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedCombinations()([]string)
+    GetAllowedCombinations()([]AuthenticationMethodModes)
     GetCombinationConfigurations()([]AuthenticationCombinationConfigurationable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
@@ -17,7 +17,7 @@ type AuthenticationStrengthPolicyable interface {
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPolicyType()(*AuthenticationStrengthPolicyType)
     GetRequirementsSatisfied()(*AuthenticationStrengthRequirements)
-    SetAllowedCombinations(value []string)()
+    SetAllowedCombinations(value []AuthenticationMethodModes)()
     SetCombinationConfigurations(value []AuthenticationCombinationConfigurationable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()

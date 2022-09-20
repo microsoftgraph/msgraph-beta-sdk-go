@@ -23,7 +23,7 @@ type PrinterDocumentConfiguration struct {
     // The feedOrientation property
     feedOrientation *PrinterFeedOrientation
     // The finishings property
-    finishings []string
+    finishings []PrintFinishing
     // The fitPdfToPage property
     fitPdfToPage *bool
     // The inputBin property
@@ -170,14 +170,14 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]PrintFinishing, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*PrintFinishing))
             }
             m.SetFinishings(res)
         }
@@ -320,7 +320,7 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetFinishings gets the finishings property value. The finishings property
-func (m *PrinterDocumentConfiguration) GetFinishings()([]string) {
+func (m *PrinterDocumentConfiguration) GetFinishings()([]PrintFinishing) {
     return m.finishings
 }
 // GetFitPdfToPage gets the fitPdfToPage property value. The fitPdfToPage property
@@ -424,7 +424,7 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
+        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
         if err != nil {
             return err
         }
@@ -556,7 +556,7 @@ func (m *PrinterDocumentConfiguration) SetFeedOrientation(value *PrinterFeedOrie
     m.feedOrientation = value
 }
 // SetFinishings sets the finishings property value. The finishings property
-func (m *PrinterDocumentConfiguration) SetFinishings(value []string)() {
+func (m *PrinterDocumentConfiguration) SetFinishings(value []PrintFinishing)() {
     m.finishings = value
 }
 // SetFitPdfToPage sets the fitPdfToPage property value. The fitPdfToPage property

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicyAssignment provides operations to manage the collection of accessReviewDecision entities.
+// CloudPcProvisioningPolicyAssignment provides operations to manage the collection of activityStatistics entities.
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
     // The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.

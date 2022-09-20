@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting 
+// OnlineMeeting provides operations to manage the commsApplication singleton.
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -14,14 +14,12 @@ type OnlineMeeting struct {
     allowAttendeeToEnableMic *bool
     // Specifies who can be a presenter in a meeting.
     allowedPresenters *OnlineMeetingPresenters
-    // Specifies the mode of meeting chat.
-    allowMeetingChat *MeetingChatMode
     // Indicates if Teams reactions are enabled for the meeting.
     allowTeamworkReactions *bool
     // The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     alternativeRecording []byte
     // The anonymizeIdentityForRoles property
-    anonymizeIdentityForRoles []string
+    anonymizeIdentityForRoles []OnlineMeetingRole
     // The attendance reports of an online meeting. Read-only.
     attendanceReports []MeetingAttendanceReportable
     // The content stream of the attendee report of a Teams live event. Read-only.
@@ -31,7 +29,7 @@ type OnlineMeeting struct {
     // Settings related to a live event.
     broadcastSettings BroadcastMeetingSettingsable
     // The capabilities property
-    capabilities []string
+    capabilities []MeetingCapabilities
     // The chat information associated with this online meeting.
     chatInfo ChatInfoable
     // The meeting creation time in UTC. Read-only.
@@ -75,7 +73,7 @@ type OnlineMeeting struct {
     // The virtualAppointment property
     virtualAppointment VirtualAppointmentable
 }
-// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
@@ -100,10 +98,6 @@ func (m *OnlineMeeting) GetAllowAttendeeToEnableMic()(*bool) {
 func (m *OnlineMeeting) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     return m.allowedPresenters
 }
-// GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat.
-func (m *OnlineMeeting) GetAllowMeetingChat()(*MeetingChatMode) {
-    return m.allowMeetingChat
-}
 // GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
     return m.allowTeamworkReactions
@@ -113,7 +107,7 @@ func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
     return m.alternativeRecording
 }
 // GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
-func (m *OnlineMeeting) GetAnonymizeIdentityForRoles()([]string) {
+func (m *OnlineMeeting) GetAnonymizeIdentityForRoles()([]OnlineMeetingRole) {
     return m.anonymizeIdentityForRoles
 }
 // GetAttendanceReports gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
@@ -133,7 +127,7 @@ func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     return m.broadcastSettings
 }
 // GetCapabilities gets the capabilities property value. The capabilities property
-func (m *OnlineMeeting) GetCapabilities()([]string) {
+func (m *OnlineMeeting) GetCapabilities()([]MeetingCapabilities) {
     return m.capabilities
 }
 // GetChatInfo gets the chatInfo property value. The chat information associated with this online meeting.
@@ -185,16 +179,6 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["allowMeetingChat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingChatMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowMeetingChat(val.(*MeetingChatMode))
-        }
-        return nil
-    }
     res["allowTeamworkReactions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -216,14 +200,14 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["anonymizeIdentityForRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseOnlineMeetingRole)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]OnlineMeetingRole, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*OnlineMeetingRole))
             }
             m.SetAnonymizeIdentityForRoles(res)
         }
@@ -274,14 +258,14 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseMeetingCapabilities)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]MeetingCapabilities, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*MeetingCapabilities))
             }
             m.SetCapabilities(res)
         }
@@ -596,13 +580,6 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    if m.GetAllowMeetingChat() != nil {
-        cast := (*m.GetAllowMeetingChat()).String()
-        err = writer.WriteStringValue("allowMeetingChat", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteBoolValue("allowTeamworkReactions", m.GetAllowTeamworkReactions())
         if err != nil {
@@ -616,7 +593,7 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetAnonymizeIdentityForRoles() != nil {
-        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", m.GetAnonymizeIdentityForRoles())
+        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", SerializeOnlineMeetingRole(m.GetAnonymizeIdentityForRoles()))
         if err != nil {
             return err
         }
@@ -650,7 +627,7 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetCapabilities() != nil {
-        err = writer.WriteCollectionOfStringValues("capabilities", m.GetCapabilities())
+        err = writer.WriteCollectionOfStringValues("capabilities", SerializeMeetingCapabilities(m.GetCapabilities()))
         if err != nil {
             return err
         }
@@ -799,10 +776,6 @@ func (m *OnlineMeeting) SetAllowAttendeeToEnableMic(value *bool)() {
 func (m *OnlineMeeting) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
     m.allowedPresenters = value
 }
-// SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat.
-func (m *OnlineMeeting) SetAllowMeetingChat(value *MeetingChatMode)() {
-    m.allowMeetingChat = value
-}
 // SetAllowTeamworkReactions sets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
     m.allowTeamworkReactions = value
@@ -812,7 +785,7 @@ func (m *OnlineMeeting) SetAlternativeRecording(value []byte)() {
     m.alternativeRecording = value
 }
 // SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
-func (m *OnlineMeeting) SetAnonymizeIdentityForRoles(value []string)() {
+func (m *OnlineMeeting) SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)() {
     m.anonymizeIdentityForRoles = value
 }
 // SetAttendanceReports sets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
@@ -832,7 +805,7 @@ func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)
     m.broadcastSettings = value
 }
 // SetCapabilities sets the capabilities property value. The capabilities property
-func (m *OnlineMeeting) SetCapabilities(value []string)() {
+func (m *OnlineMeeting) SetCapabilities(value []MeetingCapabilities)() {
     m.capabilities = value
 }
 // SetChatInfo sets the chatInfo property value. The chat information associated with this online meeting.

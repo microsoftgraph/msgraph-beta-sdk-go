@@ -16,7 +16,7 @@ type OnPremisesAgent struct {
     // The status property
     status *AgentStatus
     // The supportedPublishingTypes property
-    supportedPublishingTypes []string
+    supportedPublishingTypes []OnPremisesPublishingType
 }
 // NewOnPremisesAgent instantiates a new OnPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
@@ -87,14 +87,14 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["supportedPublishingTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseOnPremisesPublishingType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]OnPremisesPublishingType, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*OnPremisesPublishingType))
             }
             m.SetSupportedPublishingTypes(res)
         }
@@ -111,7 +111,7 @@ func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     return m.status
 }
 // GetSupportedPublishingTypes gets the supportedPublishingTypes property value. The supportedPublishingTypes property
-func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]string) {
+func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
     return m.supportedPublishingTypes
 }
 // Serialize serializes information the current object
@@ -150,7 +150,7 @@ func (m *OnPremisesAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetSupportedPublishingTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("supportedPublishingTypes", m.GetSupportedPublishingTypes())
+        err = writer.WriteCollectionOfStringValues("supportedPublishingTypes", SerializeOnPremisesPublishingType(m.GetSupportedPublishingTypes()))
         if err != nil {
             return err
         }
@@ -174,6 +174,6 @@ func (m *OnPremisesAgent) SetStatus(value *AgentStatus)() {
     m.status = value
 }
 // SetSupportedPublishingTypes sets the supportedPublishingTypes property value. The supportedPublishingTypes property
-func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []string)() {
+func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []OnPremisesPublishingType)() {
     m.supportedPublishingTypes = value
 }

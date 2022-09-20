@@ -8,7 +8,7 @@ import (
 type BroadcastMeetingCaptionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Indicates whether caption is enabled for this Teams live event.
+    // Indicates whether captions are enabled for this Teams live event.
     isCaptionEnabled *bool
     // The OdataType property
     odataType *string
@@ -83,7 +83,7 @@ func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetIsCaptionEnabled gets the isCaptionEnabled property value. Indicates whether caption is enabled for this Teams live event.
+// GetIsCaptionEnabled gets the isCaptionEnabled property value. Indicates whether captions are enabled for this Teams live event.
 func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
     return m.isCaptionEnabled
 }
@@ -137,7 +137,7 @@ func (m *BroadcastMeetingCaptionSettings) Serialize(writer i878a80d2330e89d26896
 func (m *BroadcastMeetingCaptionSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetIsCaptionEnabled sets the isCaptionEnabled property value. Indicates whether caption is enabled for this Teams live event.
+// SetIsCaptionEnabled sets the isCaptionEnabled property value. Indicates whether captions are enabled for this Teams live event.
 func (m *BroadcastMeetingCaptionSettings) SetIsCaptionEnabled(value *bool)() {
     m.isCaptionEnabled = value
 }

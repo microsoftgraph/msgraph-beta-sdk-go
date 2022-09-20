@@ -19,7 +19,7 @@ type Property struct {
     // The isSearchable property
     isSearchable *bool
     // The labels property
-    labels []string
+    labels []Label
     // The name property
     name *string
     // The OdataType property
@@ -106,14 +106,14 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseLabel)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Label, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*Label))
             }
             m.SetLabels(res)
         }
@@ -168,7 +168,7 @@ func (m *Property) GetIsSearchable()(*bool) {
     return m.isSearchable
 }
 // GetLabels gets the labels property value. The labels property
-func (m *Property) GetLabels()([]string) {
+func (m *Property) GetLabels()([]Label) {
     return m.labels
 }
 // GetName gets the name property value. The name property
@@ -216,7 +216,7 @@ func (m *Property) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetLabels() != nil {
-        err := writer.WriteCollectionOfStringValues("labels", m.GetLabels())
+        err := writer.WriteCollectionOfStringValues("labels", SerializeLabel(m.GetLabels()))
         if err != nil {
             return err
         }
@@ -273,7 +273,7 @@ func (m *Property) SetIsSearchable(value *bool)() {
     m.isSearchable = value
 }
 // SetLabels sets the labels property value. The labels property
-func (m *Property) SetLabels(value []string)() {
+func (m *Property) SetLabels(value []Label)() {
     m.labels = value
 }
 // SetName sets the name property value. The name property

@@ -17,7 +17,7 @@ type HasPayloadLinkResultItem struct {
     // Key of the Payload, In the format of Guid.
     payloadId *string
     // The reason where the link comes from.
-    sources []string
+    sources []DeviceAndAppManagementAssignmentSource
 }
 // NewHasPayloadLinkResultItem instantiates a new hasPayloadLinkResultItem and sets the default values.
 func NewHasPayloadLinkResultItem()(*HasPayloadLinkResultItem) {
@@ -84,14 +84,14 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["sources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseDeviceAndAppManagementAssignmentSource)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]DeviceAndAppManagementAssignmentSource, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*DeviceAndAppManagementAssignmentSource))
             }
             m.SetSources(res)
         }
@@ -112,7 +112,7 @@ func (m *HasPayloadLinkResultItem) GetPayloadId()(*string) {
     return m.payloadId
 }
 // GetSources gets the sources property value. The reason where the link comes from.
-func (m *HasPayloadLinkResultItem) GetSources()([]string) {
+func (m *HasPayloadLinkResultItem) GetSources()([]DeviceAndAppManagementAssignmentSource) {
     return m.sources
 }
 // Serialize serializes information the current object
@@ -142,7 +142,7 @@ func (m *HasPayloadLinkResultItem) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     if m.GetSources() != nil {
-        err := writer.WriteCollectionOfStringValues("sources", m.GetSources())
+        err := writer.WriteCollectionOfStringValues("sources", SerializeDeviceAndAppManagementAssignmentSource(m.GetSources()))
         if err != nil {
             return err
         }
@@ -176,6 +176,6 @@ func (m *HasPayloadLinkResultItem) SetPayloadId(value *string)() {
     m.payloadId = value
 }
 // SetSources sets the sources property value. The reason where the link comes from.
-func (m *HasPayloadLinkResultItem) SetSources(value []string)() {
+func (m *HasPayloadLinkResultItem) SetSources(value []DeviceAndAppManagementAssignmentSource)() {
     m.sources = value
 }
