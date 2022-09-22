@@ -573,8 +573,8 @@ func (m *GraphBaseServiceClient) ConnectionsById(id string) *ie9b2b2a73483057a65
 	return ie9b2b2a73483057a6575063ce71086fbc54437022d4c53761e7a4a058d7dd091.NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter)
 }
 
-// NewGraphServiceClient instantiates a new GraphBaseServiceClient and sets the default values.
-func NewGraphServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *GraphBaseServiceClient {
+// NewBaseGraphServiceClient instantiates a new GraphBaseServiceClient and sets the default values.
+func NewBaseGraphServiceClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *GraphBaseServiceClient {
 	m := &GraphBaseServiceClient{}
 	m.pathParameters = make(map[string]string)
 	m.urlTemplate = "{+baseurl}"

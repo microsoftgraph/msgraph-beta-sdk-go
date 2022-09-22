@@ -1,9 +1,10 @@
-package msgraphbetasdkgo
+package tests
 
 import (
 	"context"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
+	"github.com/microsoftgraph/msgraph-beta-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -26,14 +27,21 @@ func (m *SimpleCredentials) GetToken(context.Context, policy.TokenRequestOptions
 
 func TestNewGraphServiceClientWithCredentialsInitializesAClient(t *testing.T) {
 	cred := NewSimpleCredentials("asdasd")
-	client, _ := NewGraphServiceClientWithCredentials(cred, []string{"Files.Read"})
+	client, _ := msgraphbetasdkgo.NewGraphServiceClientWithCredentials(cred, []string{"Files.Read"})
+
+	assert.NotNil(t, client)
+}
+
+func TestNewGraphServiceClientWithCredentialsAndHostsInitializesAClient(t *testing.T) {
+	cred := NewSimpleCredentials("asdasd")
+	client, _ := msgraphbetasdkgo.NewGraphServiceClientWithCredentialsAndHosts(cred, []string{"Files.Read"}, []string{"host1", "host2"})
 
 	assert.NotNil(t, client)
 }
 
 func TestClientAccessToGeneratedMethods(t *testing.T) {
 	cred := NewSimpleCredentials("asdasd")
-	client, _ := NewGraphServiceClientWithCredentials(cred, []string{"Files.Read"})
+	client, _ := msgraphbetasdkgo.NewGraphServiceClientWithCredentials(cred, []string{"Files.Read"})
 
 	assert.NotNil(t, client.Groups())
 }

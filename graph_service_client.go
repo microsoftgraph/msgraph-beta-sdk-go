@@ -11,14 +11,14 @@ type GraphServiceClient struct {
 	*GraphBaseServiceClient
 }
 
-func NewGraphClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
-	client := NewGraphServiceClient(adapter)
+func NewGraphServiceClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
+	client := NewBaseGraphServiceClient(adapter)
 	return &GraphServiceClient{
 		client,
 	}
 }
 
-// NewGraphServiceClientWithCredentials instantiates a new GraphBaseServiceClient with provided credentials and scope
+// NewGraphServiceClientWithCredentials instantiates a new GraphServiceClient with provided credentials and scopes
 func NewGraphServiceClientWithCredentials(credential azcore.TokenCredential, scopes []string) (*GraphServiceClient, error) {
 	auth, err := az.NewAzureIdentityAuthenticationProviderWithScopes(credential, scopes)
 	if err != nil {
@@ -30,7 +30,23 @@ func NewGraphServiceClientWithCredentials(credential azcore.TokenCredential, sco
 		return nil, err
 	}
 
-	client := NewGraphClient(adapter)
+	client := NewGraphServiceClient(adapter)
+	return client, nil
+}
+
+// NewGraphServiceClientWithCredentialsAndHosts instantiates a new GraphServiceClient with provided credentials , scopes and validhosts
+func NewGraphServiceClientWithCredentialsAndHosts(credential azcore.TokenCredential, scopes []string, validhosts []string) (*GraphServiceClient, error) {
+	auth, err := az.NewAzureIdentityAuthenticationProviderWithScopesAndValidHosts(credential, scopes, validhosts)
+	if err != nil {
+		return nil, err
+	}
+
+	adapter, err := NewGraphRequestAdapter(auth)
+	if err != nil {
+		return nil, err
+	}
+
+	client := NewGraphServiceClient(adapter)
 	return client, nil
 }
 
