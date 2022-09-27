@@ -17,7 +17,7 @@ type EmailThreatSubmissionPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters get emailThreatSubmissionPolicies from threatSubmission
+// EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters get a list of the emailThreatSubmissionPolicy objects and their properties.
 type EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type EmailThreatSubmissionPoliciesRequestBuilderPostRequestConfiguration struct 
 func NewEmailThreatSubmissionPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmailThreatSubmissionPoliciesRequestBuilder) {
     m := &EmailThreatSubmissionPoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/threatSubmission/emailThreatSubmissionPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/threatSubmission/emailThreatSubmissionPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewEmailThreatSubmissionPoliciesRequestBuilder(rawUrl string, requestAdapte
 func (m *EmailThreatSubmissionPoliciesRequestBuilder) Count()(*i44727f4732220760b9853e8eec7b514a67553406a2bf76d294336865c304992c.CountRequestBuilder) {
     return i44727f4732220760b9853e8eec7b514a67553406a2bf76d294336865c304992c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get emailThreatSubmissionPolicies from threatSubmission
+// CreateGetRequestInformation get a list of the emailThreatSubmissionPolicy objects and their properties.
 func (m *EmailThreatSubmissionPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get emailThreatSubmissionPolicies from threatSubmission
+// CreateGetRequestInformationWithRequestConfiguration get a list of the emailThreatSubmissionPolicy objects and their properties.
 func (m *EmailThreatSubmissionPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EmailThreatSubmissionPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *EmailThreatSubmissionPoliciesRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Get get emailThreatSubmissionPolicies from threatSubmission
+// Get get a list of the emailThreatSubmissionPolicy objects and their properties.
 func (m *EmailThreatSubmissionPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *EmailThreatSubmissionPoliciesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

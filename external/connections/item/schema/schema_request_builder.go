@@ -23,7 +23,7 @@ type SchemaRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SchemaRequestBuilderGetQueryParameters get schema from external
+// SchemaRequestBuilderGetQueryParameters retrieve the properties of a schema for an externalConnection.
 type SchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *SchemaRequestBuilder) CreateDeleteRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get schema from external
+// CreateGetRequestInformation retrieve the properties of a schema for an externalConnection.
 func (m *SchemaRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get schema from external
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of a schema for an externalConnection.
 func (m *SchemaRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,16 +101,17 @@ func (m *SchemaRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property schema in external
+// CreatePatchRequestInformation update the properties of a schema for an externalConnection.
 func (m *SchemaRequestBuilder) CreatePatchRequestInformation(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property schema in external
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a schema for an externalConnection.
 func (m *SchemaRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *SchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -134,7 +135,7 @@ func (m *SchemaRequestBuilder) Delete(ctx context.Context, requestConfiguration 
     }
     return nil
 }
-// Get get schema from external
+// Get retrieve the properties of a schema for an externalConnection.
 func (m *SchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -153,19 +154,22 @@ func (m *SchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *Sc
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable), nil
 }
-// Patch update the navigation property schema in external
-func (m *SchemaRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *SchemaRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the properties of a schema for an externalConnection.
+func (m *SchemaRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, requestConfiguration *SchemaRequestBuilderPatchRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.CreateSchemaFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Schemaable), nil
 }

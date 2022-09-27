@@ -8,6 +8,7 @@ import (
     i277b79a3b313ac8255d78ae90b5e9c683fe411d78cfeb5e1e83d31d38c270e05 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/getbyids"
     ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/getuserownedobjects"
     ic5b5428ae35afae2a32cefcf30c64f6ab1fbe0e8909656a8a35a1a32357418eb "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/validateproperties"
+    ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/count"
     if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/delta"
 )
 
@@ -22,12 +23,20 @@ type AdministrativeUnitsRequestBuilder struct {
 }
 // AdministrativeUnitsRequestBuilderGetQueryParameters retrieve a list of administrativeUnit objects.
 type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -51,7 +60,7 @@ type AdministrativeUnitsRequestBuilderPostRequestConfiguration struct {
 func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsRequestBuilder) {
     m := &AdministrativeUnitsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/administrativeUnits{?%24top*,%24search*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/administrativeUnits{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -65,6 +74,10 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count the Count property
+func (m *AdministrativeUnitsRequestBuilder) Count()(*ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191.CountRequestBuilder) {
+    return ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of administrativeUnit objects.
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

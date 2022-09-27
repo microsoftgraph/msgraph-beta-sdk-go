@@ -21,7 +21,7 @@ type ExternalSponsorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExternalSponsorsRequestBuilderGetQueryParameters get externalSponsors from identityGovernance
+// ExternalSponsorsRequestBuilderGetQueryParameters retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 type ExternalSponsorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -60,7 +60,7 @@ type ExternalSponsorsRequestBuilderPostRequestConfiguration struct {
 func NewExternalSponsorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalSponsorsRequestBuilder) {
     m := &ExternalSponsorsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/externalSponsors{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/externalSponsors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -79,11 +79,11 @@ func NewExternalSponsorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ExternalSponsorsRequestBuilder) Count()(*ia5d241124c155a82f1bc6c8974c36dc96711ea7783bcefab7e9d2a8a28d882df.CountRequestBuilder) {
     return ia5d241124c155a82f1bc6c8974c36dc96711ea7783bcefab7e9d2a8a28d882df.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get externalSponsors from identityGovernance
+// CreateGetRequestInformation retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 func (m *ExternalSponsorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get externalSponsors from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 func (m *ExternalSponsorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalSponsorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *ExternalSponsorsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get get externalSponsors from identityGovernance
+// Get retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 func (m *ExternalSponsorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExternalSponsorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

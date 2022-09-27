@@ -34,13 +34,6 @@ type EventItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EventItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EventItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // EventItemRequestBuilderGetQueryParameters get exceptionOccurrences from groups
 type EventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -56,13 +49,6 @@ type EventItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *EventItemRequestBuilderGetQueryParameters
-}
-// EventItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EventItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Accept the accept property
 func (m *EventItemRequestBuilder) Accept()(*i04fd641e5a747104f4e0952e98213abc3186667104445a5618d14edf07a6772f.AcceptRequestBuilder) {
@@ -110,22 +96,6 @@ func NewEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property exceptionOccurrences for groups
-func (m *EventItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property exceptionOccurrences for groups
-func (m *EventItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *EventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // CreateGetRequestInformation get exceptionOccurrences from groups
 func (m *EventItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
@@ -146,42 +116,9 @@ func (m *EventItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property exceptionOccurrences in groups
-func (m *EventItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property exceptionOccurrences in groups
-func (m *EventItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *EventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Decline the decline property
 func (m *EventItemRequestBuilder) Decline()(*i606eabc5b24235e1dfe5eda3ef9afb4b61fdb7829898669879ea22faca31f014.DeclineRequestBuilder) {
     return i606eabc5b24235e1dfe5eda3ef9afb4b61fdb7829898669879ea22faca31f014.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delete delete navigation property exceptionOccurrences for groups
-func (m *EventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EventItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // DismissReminder the dismissReminder property
 func (m *EventItemRequestBuilder) DismissReminder()(*i77956e6123d355433964150d0c3b33dbb67aa42ab7897ac20e593fe2645c189a.DismissReminderRequestBuilder) {
@@ -254,22 +191,6 @@ func (m *EventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
     return i49367fd7902603d0bb5c5b72858052db34b775a821866c9f83431b213d3b7416.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Patch update the navigation property exceptionOccurrences in groups
-func (m *EventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *EventItemRequestBuilderPatchRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // SingleValueExtendedProperties the singleValueExtendedProperties property
 func (m *EventItemRequestBuilder) SingleValueExtendedProperties()(*i6c23de99d6e19538949dd0a1167c1f38757696973c1e8a2653dccaeb0f21001e.SingleValueExtendedPropertiesRequestBuilder) {

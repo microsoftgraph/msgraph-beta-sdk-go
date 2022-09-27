@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to application.
+// Provides operations to manage the collection of accessReview entities.
 type AttributeFlowBehavior int
 
 const (

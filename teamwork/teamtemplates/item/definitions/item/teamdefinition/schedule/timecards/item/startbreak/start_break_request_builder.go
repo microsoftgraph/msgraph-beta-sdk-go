@@ -42,11 +42,11 @@ func NewStartBreakRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewStartBreakRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action startBreak
+// CreatePostRequestInformation start a break in a specific timeCard.
 func (m *StartBreakRequestBuilder) CreatePostRequestInformation(body StartBreakPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action startBreak
+// CreatePostRequestInformationWithRequestConfiguration start a break in a specific timeCard.
 func (m *StartBreakRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body StartBreakPostRequestBodyable, requestConfiguration *StartBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *StartBreakRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Post invoke action startBreak
+// Post start a break in a specific timeCard.
 func (m *StartBreakRequestBuilder) Post(ctx context.Context, body StartBreakPostRequestBodyable, requestConfiguration *StartBreakRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

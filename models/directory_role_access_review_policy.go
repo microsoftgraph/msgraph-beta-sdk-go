@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -26,16 +27,7 @@ func CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryRoleAccessReviewPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAccessReviewScheduleSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSettings(val.(AccessReviewScheduleSettingsable))
-        }
-        return nil
-    }
+    res["settings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAccessReviewScheduleSettingsFromDiscriminatorValue , m.SetSettings)
     return res
 }
 // GetSettings gets the settings property value. The settings property

@@ -16,7 +16,7 @@ type AddToReviewSetOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AddToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the sourceCollection to the specified reviewSet.
+// AddToReviewSetOperationRequestBuilderGetQueryParameters get the last addToReviewSetOperation object associated with a source collection. 
 type AddToReviewSetOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewAddToReviewSetOperationRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewAddToReviewSetOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation adds the results of the sourceCollection to the specified reviewSet.
+// CreateGetRequestInformation get the last addToReviewSetOperation object associated with a source collection. 
 func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration adds the results of the sourceCollection to the specified reviewSet.
+// CreateGetRequestInformationWithRequestConfiguration get the last addToReviewSetOperation object associated with a source collection. 
 func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AddToReviewSetOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get adds the results of the sourceCollection to the specified reviewSet.
+// Get get the last addToReviewSetOperation object associated with a source collection. 
 func (m *AddToReviewSetOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *AddToReviewSetOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.AddToReviewSetOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

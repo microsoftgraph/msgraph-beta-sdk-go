@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -62,168 +63,21 @@ func (m *IosDeviceFeaturesConfiguration) GetContentFilterSettings()(IosWebConten
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleDeviceFeaturesConfigurationBase.GetFieldDeserializers()
-    res["assetTagTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAssetTagTemplate(val)
-        }
-        return nil
-    }
-    res["contentFilterSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosWebContentFilterBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentFilterSettings(val.(IosWebContentFilterBaseable))
-        }
-        return nil
-    }
-    res["homeScreenDockIcons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIosHomeScreenItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IosHomeScreenItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(IosHomeScreenItemable)
-            }
-            m.SetHomeScreenDockIcons(res)
-        }
-        return nil
-    }
-    res["homeScreenGridHeight"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHomeScreenGridHeight(val)
-        }
-        return nil
-    }
-    res["homeScreenGridWidth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHomeScreenGridWidth(val)
-        }
-        return nil
-    }
-    res["homeScreenPages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIosHomeScreenPageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IosHomeScreenPageable, len(val))
-            for i, v := range val {
-                res[i] = v.(IosHomeScreenPageable)
-            }
-            m.SetHomeScreenPages(res)
-        }
-        return nil
-    }
-    res["identityCertificateForClientAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosCertificateProfileBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityCertificateForClientAuthentication(val.(IosCertificateProfileBaseable))
-        }
-        return nil
-    }
-    res["iosSingleSignOnExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosSingleSignOnExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIosSingleSignOnExtension(val.(IosSingleSignOnExtensionable))
-        }
-        return nil
-    }
-    res["lockScreenFootnote"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLockScreenFootnote(val)
-        }
-        return nil
-    }
-    res["notificationSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIosNotificationSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IosNotificationSettingsable, len(val))
-            for i, v := range val {
-                res[i] = v.(IosNotificationSettingsable)
-            }
-            m.SetNotificationSettings(res)
-        }
-        return nil
-    }
-    res["singleSignOnExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSingleSignOnExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSingleSignOnExtension(val.(SingleSignOnExtensionable))
-        }
-        return nil
-    }
-    res["singleSignOnExtensionPkinitCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosCertificateProfileBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSingleSignOnExtensionPkinitCertificate(val.(IosCertificateProfileBaseable))
-        }
-        return nil
-    }
-    res["singleSignOnSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosSingleSignOnSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSingleSignOnSettings(val.(IosSingleSignOnSettingsable))
-        }
-        return nil
-    }
-    res["wallpaperDisplayLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIosWallpaperDisplayLocation)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWallpaperDisplayLocation(val.(*IosWallpaperDisplayLocation))
-        }
-        return nil
-    }
-    res["wallpaperImage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWallpaperImage(val.(MimeContentable))
-        }
-        return nil
-    }
+    res["assetTagTemplate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAssetTagTemplate)
+    res["contentFilterSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosWebContentFilterBaseFromDiscriminatorValue , m.SetContentFilterSettings)
+    res["homeScreenDockIcons"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIosHomeScreenItemFromDiscriminatorValue , m.SetHomeScreenDockIcons)
+    res["homeScreenGridHeight"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetHomeScreenGridHeight)
+    res["homeScreenGridWidth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetHomeScreenGridWidth)
+    res["homeScreenPages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIosHomeScreenPageFromDiscriminatorValue , m.SetHomeScreenPages)
+    res["identityCertificateForClientAuthentication"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosCertificateProfileBaseFromDiscriminatorValue , m.SetIdentityCertificateForClientAuthentication)
+    res["iosSingleSignOnExtension"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosSingleSignOnExtensionFromDiscriminatorValue , m.SetIosSingleSignOnExtension)
+    res["lockScreenFootnote"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLockScreenFootnote)
+    res["notificationSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIosNotificationSettingsFromDiscriminatorValue , m.SetNotificationSettings)
+    res["singleSignOnExtension"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSingleSignOnExtensionFromDiscriminatorValue , m.SetSingleSignOnExtension)
+    res["singleSignOnExtensionPkinitCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosCertificateProfileBaseFromDiscriminatorValue , m.SetSingleSignOnExtensionPkinitCertificate)
+    res["singleSignOnSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosSingleSignOnSettingsFromDiscriminatorValue , m.SetSingleSignOnSettings)
+    res["wallpaperDisplayLocation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseIosWallpaperDisplayLocation , m.SetWallpaperDisplayLocation)
+    res["wallpaperImage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMimeContentFromDiscriminatorValue , m.SetWallpaperImage)
     return res
 }
 // GetHomeScreenDockIcons gets the homeScreenDockIcons property value. A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
@@ -297,10 +151,7 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
         }
     }
     if m.GetHomeScreenDockIcons() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeScreenDockIcons()))
-        for i, v := range m.GetHomeScreenDockIcons() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetHomeScreenDockIcons())
         err = writer.WriteCollectionOfObjectValues("homeScreenDockIcons", cast)
         if err != nil {
             return err
@@ -319,10 +170,7 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
         }
     }
     if m.GetHomeScreenPages() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeScreenPages()))
-        for i, v := range m.GetHomeScreenPages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetHomeScreenPages())
         err = writer.WriteCollectionOfObjectValues("homeScreenPages", cast)
         if err != nil {
             return err
@@ -347,10 +195,7 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
         }
     }
     if m.GetNotificationSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNotificationSettings()))
-        for i, v := range m.GetNotificationSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNotificationSettings())
         err = writer.WriteCollectionOfObjectValues("notificationSettings", cast)
         if err != nil {
             return err

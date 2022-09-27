@@ -41,11 +41,11 @@ func NewAddMembersByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewAddMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action addMembersById
+// CreatePostRequestInformation add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
 func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformation(body AddMembersByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addMembersById
+// CreatePostRequestInformationWithRequestConfiguration add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
 func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddMembersByIdPostRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action addMembersById
+// Post add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
 func (m *AddMembersByIdRequestBuilder) Post(ctx context.Context, body AddMembersByIdPostRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

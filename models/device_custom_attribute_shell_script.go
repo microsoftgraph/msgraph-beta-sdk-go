@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -83,176 +84,21 @@ func (m *DeviceCustomAttributeShellScript) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementScriptAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementScriptAssignmentable)
-            }
-            m.SetAssignments(res)
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["customAttributeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCustomAttributeName(val)
-        }
-        return nil
-    }
-    res["customAttributeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceCustomAttributeValueType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCustomAttributeType(val.(*DeviceCustomAttributeValueType))
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["deviceRunStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementScriptDeviceStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementScriptDeviceStateable)
-            }
-            m.SetDeviceRunStates(res)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileName(val)
-        }
-        return nil
-    }
-    res["groupAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementScriptGroupAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementScriptGroupAssignmentable)
-            }
-            m.SetGroupAssignments(res)
-        }
-        return nil
-    }
-    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetRoleScopeTagIds(res)
-        }
-        return nil
-    }
-    res["runAsAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRunAsAccountType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRunAsAccount(val.(*RunAsAccountType))
-        }
-        return nil
-    }
-    res["runSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRunSummary(val.(DeviceManagementScriptRunSummaryable))
-        }
-        return nil
-    }
-    res["scriptContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScriptContent(val)
-        }
-        return nil
-    }
-    res["userRunStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptUserStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementScriptUserStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementScriptUserStateable)
-            }
-            m.SetUserRunStates(res)
-        }
-        return nil
-    }
+    res["assignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementScriptAssignmentFromDiscriminatorValue , m.SetAssignments)
+    res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
+    res["customAttributeName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomAttributeName)
+    res["customAttributeType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceCustomAttributeValueType , m.SetCustomAttributeType)
+    res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
+    res["deviceRunStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue , m.SetDeviceRunStates)
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["fileName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFileName)
+    res["groupAssignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue , m.SetGroupAssignments)
+    res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
+    res["roleScopeTagIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetRoleScopeTagIds)
+    res["runAsAccount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseRunAsAccountType , m.SetRunAsAccount)
+    res["runSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue , m.SetRunSummary)
+    res["scriptContent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetScriptContent)
+    res["userRunStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementScriptUserStateFromDiscriminatorValue , m.SetUserRunStates)
     return res
 }
 // GetFileName gets the fileName property value. Script file name.
@@ -294,17 +140,8 @@ func (m *DeviceCustomAttributeShellScript) Serialize(writer i878a80d2330e89d2689
         return err
     }
     if m.GetAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
-        for i, v := range m.GetAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssignments())
         err = writer.WriteCollectionOfObjectValues("assignments", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
         }
@@ -329,10 +166,7 @@ func (m *DeviceCustomAttributeShellScript) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetDeviceRunStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceRunStates()))
-        for i, v := range m.GetDeviceRunStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeviceRunStates())
         err = writer.WriteCollectionOfObjectValues("deviceRunStates", cast)
         if err != nil {
             return err
@@ -351,17 +185,8 @@ func (m *DeviceCustomAttributeShellScript) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetGroupAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupAssignments()))
-        for i, v := range m.GetGroupAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetGroupAssignments())
         err = writer.WriteCollectionOfObjectValues("groupAssignments", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
@@ -392,10 +217,7 @@ func (m *DeviceCustomAttributeShellScript) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetUserRunStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRunStates()))
-        for i, v := range m.GetUserRunStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserRunStates())
         err = writer.WriteCollectionOfObjectValues("userRunStates", cast)
         if err != nil {
             return err

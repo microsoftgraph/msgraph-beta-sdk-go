@@ -18,7 +18,7 @@ type ManagementActionTenantDeploymentStatusesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters the tenant level status of management actions across managed tenants.
+// ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters get a list of the managementActionTenantDeploymentStatus objects and their properties.
 type ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -61,7 +61,7 @@ func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) ChangeDeploymen
 func NewManagementActionTenantDeploymentStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagementActionTenantDeploymentStatusesRequestBuilder) {
     m := &ManagementActionTenantDeploymentStatusesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -80,11 +80,11 @@ func NewManagementActionTenantDeploymentStatusesRequestBuilder(rawUrl string, re
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Count()(*id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.CountRequestBuilder) {
     return id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the tenant level status of management actions across managed tenants.
+// CreateGetRequestInformation get a list of the managementActionTenantDeploymentStatus objects and their properties.
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the tenant level status of management actions across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the managementActionTenantDeploymentStatus objects and their properties.
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreatePostReque
     }
     return requestInfo, nil
 }
-// Get the tenant level status of management actions across managed tenants.
+// Get get a list of the managementActionTenantDeploymentStatus objects and their properties.
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

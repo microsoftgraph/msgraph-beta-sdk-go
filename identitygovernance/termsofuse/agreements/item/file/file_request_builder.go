@@ -25,7 +25,7 @@ type FileRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileRequestBuilderGetQueryParameters default PDF linked to this agreement.
+// FileRequestBuilderGetQueryParameters retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
 type FileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -83,11 +83,11 @@ func (m *FileRequestBuilder) CreateDeleteRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation default PDF linked to this agreement.
+// CreateGetRequestInformation retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
 func (m *FileRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration default PDF linked to this agreement.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
 func (m *FileRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,6 +113,7 @@ func (m *FileRequestBuilder) CreatePatchRequestInformationWithRequestConfigurati
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -136,7 +137,7 @@ func (m *FileRequestBuilder) Delete(ctx context.Context, requestConfiguration *F
     }
     return nil
 }
-// Get default PDF linked to this agreement.
+// Get retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
 func (m *FileRequestBuilder) Get(ctx context.Context, requestConfiguration *FileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -171,18 +172,21 @@ func (m *FileRequestBuilder) LocalizationsById(id string)(*i8fe9d59a65a19bbc1b75
     return i8fe9d59a65a19bbc1b75e015b76ddca0eb2f1125b7d558d5fba9f481919fd3a1.NewAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property file in identityGovernance
-func (m *FileRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileable, requestConfiguration *FileRequestBuilderPatchRequestConfiguration)(error) {
+func (m *FileRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileable, requestConfiguration *FileRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAgreementFileFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileable), nil
 }

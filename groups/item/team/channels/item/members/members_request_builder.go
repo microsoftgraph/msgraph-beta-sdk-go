@@ -18,7 +18,7 @@ type MembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MembersRequestBuilderGetQueryParameters a collection of membership records associated with the channel.
+// MembersRequestBuilderGetQueryParameters retrieve a list of conversationMembers from a channel.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -61,7 +61,7 @@ func (m *MembersRequestBuilder) Add()(*i5bd402e02fa6874378fbe59ca1ed83775a9983ac
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembersRequestBuilder) {
     m := &MembersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/members{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -80,11 +80,11 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *MembersRequestBuilder) Count()(*if477ade9a6ecd16268db94c8ee1641dd652912e86c7af1c1fb55a795ee6a15d3.CountRequestBuilder) {
     return if477ade9a6ecd16268db94c8ee1641dd652912e86c7af1c1fb55a795ee6a15d3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of membership records associated with the channel.
+// CreateGetRequestInformation retrieve a list of conversationMembers from a channel.
 func (m *MembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of membership records associated with the channel.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of conversationMembers from a channel.
 func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,11 +100,11 @@ func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to members for groups
+// CreatePostRequestInformation add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 func (m *MembersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to members for groups
+// CreatePostRequestInformationWithRequestConfiguration add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 func (m *MembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *MembersRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get a collection of membership records associated with the channel.
+// Get retrieve a list of conversationMembers from a channel.
 func (m *MembersRequestBuilder) Get(ctx context.Context, requestConfiguration *MembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *MembersRequestBuilder) Get(ctx context.Context, requestConfiguration *M
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberCollectionResponseable), nil
 }
-// Post create new navigation property to members for groups
+// Post add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 func (m *MembersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

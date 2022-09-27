@@ -41,11 +41,11 @@ func NewUndoSoftDeleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewUndoSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action undoSoftDelete
+// CreatePostRequestInformation undo soft deletion of a single message or a message reply in a channel or a chat.
 func (m *UndoSoftDeleteRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action undoSoftDelete
+// CreatePostRequestInformationWithRequestConfiguration undo soft deletion of a single message or a message reply in a channel or a chat.
 func (m *UndoSoftDeleteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UndoSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *UndoSoftDeleteRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Post invoke action undoSoftDelete
+// Post undo soft deletion of a single message or a message reply in a channel or a chat.
 func (m *UndoSoftDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *UndoSoftDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

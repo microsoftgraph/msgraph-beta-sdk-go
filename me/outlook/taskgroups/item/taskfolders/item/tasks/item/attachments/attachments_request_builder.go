@@ -18,7 +18,7 @@ type AttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttachmentsRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// AttachmentsRequestBuilderGetQueryParameters get a list of attachment objects attached to an Outlook task.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ type AttachmentsRequestBuilderPostRequestConfiguration struct {
 func NewAttachmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttachmentsRequestBuilder) {
     m := &AttachmentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}/attachments{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -74,11 +74,11 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AttachmentsRequestBuilder) Count()(*ia36213dce0044ea282695e672c1e657ef96bfd75f9649655fb4b3f5cc8e62c14.CountRequestBuilder) {
     return ia36213dce0044ea282695e672c1e657ef96bfd75f9649655fb4b3f5cc8e62c14.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// CreateGetRequestInformation get a list of attachment objects attached to an Outlook task.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get a list of attachment objects attached to an Outlook task.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,11 +94,11 @@ func (m *AttachmentsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to attachments for me
+// CreatePostRequestInformation use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to attachments for me
+// CreatePostRequestInformationWithRequestConfiguration use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 func (m *AttachmentsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *AttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,7 +116,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*ie3776531d346baa2824058be12a0c792a49d8ab64ec66eec6def91f979cce0af.CreateUploadSessionRequestBuilder) {
     return ie3776531d346baa2824058be12a0c792a49d8ab64ec66eec6def91f979cce0af.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// Get get a list of attachment objects attached to an Outlook task.
 func (m *AttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -135,7 +135,7 @@ func (m *AttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable), nil
 }
-// Post create new navigation property to attachments for me
+// Post use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 func (m *AttachmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *AttachmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

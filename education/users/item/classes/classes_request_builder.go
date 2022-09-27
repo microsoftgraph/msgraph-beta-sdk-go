@@ -17,7 +17,7 @@ type ClassesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ClassesRequestBuilderGetQueryParameters classes to which the user belongs. Nullable.
+// ClassesRequestBuilderGetQueryParameters retrieve a collection of educationClass resources.
 type ClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type ClassesRequestBuilderGetRequestConfiguration struct {
 func NewClassesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesRequestBuilder) {
     m := &ClassesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/users/{educationUser%2Did}/classes{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/users/{educationUser%2Did}/classes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ClassesRequestBuilder) Count()(*ibbaa431e44c67cf61df35734d8769ee56148f1fee6ac4799ea5c0a81e0d13040.CountRequestBuilder) {
     return ibbaa431e44c67cf61df35734d8769ee56148f1fee6ac4799ea5c0a81e0d13040.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation classes to which the user belongs. Nullable.
+// CreateGetRequestInformation retrieve a collection of educationClass resources.
 func (m *ClassesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration classes to which the user belongs. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a collection of educationClass resources.
 func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get classes to which the user belongs. Nullable.
+// Get retrieve a collection of educationClass resources.
 func (m *ClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

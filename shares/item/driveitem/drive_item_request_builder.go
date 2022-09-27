@@ -17,7 +17,7 @@ type DriveItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DriveItemRequestBuilderGetQueryParameters used to access the underlying driveItem
+// DriveItemRequestBuilderGetQueryParameters access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -56,11 +56,11 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *DriveItemRequestBuilder) Content()(*ifbd16b1852336f5c7bb6cdbc24c1601afa394c84ae7519b4ee51c43af9336c7e.ContentRequestBuilder) {
     return ifbd16b1852336f5c7bb6cdbc24c1601afa394c84ae7519b4ee51c43af9336c7e.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation used to access the underlying driveItem
+// CreateGetRequestInformation access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 func (m *DriveItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration used to access the underlying driveItem
+// CreateGetRequestInformationWithRequestConfiguration access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 func (m *DriveItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -76,7 +76,7 @@ func (m *DriveItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get used to access the underlying driveItem
+// Get access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 func (m *DriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

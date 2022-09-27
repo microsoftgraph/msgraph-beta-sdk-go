@@ -113,6 +113,7 @@ func (m *AgreementFileLocalizationItemRequestBuilder) CreatePatchRequestInformat
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -156,20 +157,23 @@ func (m *AgreementFileLocalizationItemRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable), nil
 }
 // Patch update the navigation property localizations in identityGovernance
-func (m *AgreementFileLocalizationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *AgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *AgreementFileLocalizationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *AgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAgreementFileLocalizationFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable), nil
 }
 // Versions the versions property
 func (m *AgreementFileLocalizationItemRequestBuilder) Versions()(*i587ece02a048c49625420585a2da1af3238545d089e84aa4cb94f3ee8a575011.VersionsRequestBuilder) {

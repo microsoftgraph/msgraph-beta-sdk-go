@@ -34,13 +34,6 @@ type EventItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EventItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EventItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // EventItemRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 type EventItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
@@ -54,13 +47,6 @@ type EventItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *EventItemRequestBuilderGetQueryParameters
-}
-// EventItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type EventItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Accept the accept property
 func (m *EventItemRequestBuilder) Accept()(*icfd497893f32ed18238b56e923f2694e380178d8d31c557b6d402ac7914cdcc4.AcceptRequestBuilder) {
@@ -108,22 +94,6 @@ func NewEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property instances for users
-func (m *EventItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property instances for users
-func (m *EventItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *EventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // CreateGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 func (m *EventItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
@@ -144,42 +114,9 @@ func (m *EventItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property instances in users
-func (m *EventItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property instances in users
-func (m *EventItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *EventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Decline the decline property
 func (m *EventItemRequestBuilder) Decline()(*i88663444369e0125d1e82990dcc795b203c3bddcb45380d0623ad46de2711b1c.DeclineRequestBuilder) {
     return i88663444369e0125d1e82990dcc795b203c3bddcb45380d0623ad46de2711b1c.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Delete delete navigation property instances for users
-func (m *EventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EventItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // DismissReminder the dismissReminder property
 func (m *EventItemRequestBuilder) DismissReminder()(*i0ae57be6544be5491d8f07f6c22d1d5c1194c936a08b56655250cefa18825664.DismissReminderRequestBuilder) {
@@ -252,22 +189,6 @@ func (m *EventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
     return i1885f611e03764b8e68cc9f8559186312be120f673f0301a0bf9b18540733a34.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Patch update the navigation property instances in users
-func (m *EventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *EventItemRequestBuilderPatchRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // SingleValueExtendedProperties the singleValueExtendedProperties property
 func (m *EventItemRequestBuilder) SingleValueExtendedProperties()(*i431d82cb500dd73f3ac073c0b45bb7d45c76c3b3e52f053fbcc6418322c4663a.SingleValueExtendedPropertiesRequestBuilder) {

@@ -36,6 +36,8 @@ type AdministrativeUnitItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // AdministrativeUnitItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an administrativeUnit object. Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
 type AdministrativeUnitItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -67,7 +69,7 @@ func (m *AdministrativeUnitItemRequestBuilder) CheckMemberObjects()(*ib099fb6305
 func NewAdministrativeUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitItemRequestBuilder) {
     m := &AdministrativeUnitItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24select}";
+    m.urlTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -128,6 +130,7 @@ func (m *AdministrativeUnitItemRequestBuilder) CreatePatchRequestInformationWith
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -209,20 +212,23 @@ func (m *AdministrativeUnitItemRequestBuilder) MembersById(id string)(*ide3d9701
     return ide3d97019bbb4651e57fb602931f7d0fab23c99c26f2f79b556726ee7c595db8.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the properties of an administrativeUnit object.
-func (m *AdministrativeUnitItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *AdministrativeUnitItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAdministrativeUnitFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
 // Restore the restore property
 func (m *AdministrativeUnitItemRequestBuilder) Restore()(*i4e5a3bd6a5396f5b0939bfce85a44230296cab8d3446ee6e3a5a29204173428d.RestoreRequestBuilder) {

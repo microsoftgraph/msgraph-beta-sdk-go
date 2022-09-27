@@ -30,6 +30,8 @@ type DirectoryRoleTemplateItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // DirectoryRoleTemplateItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a directoryroletemplate object.
 type DirectoryRoleTemplateItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -61,7 +63,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) CheckMemberObjects()(*i385093f
 func NewDirectoryRoleTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleTemplateItemRequestBuilder) {
     m := &DirectoryRoleTemplateItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directoryRoleTemplates/{directoryRoleTemplate%2Did}{?%24select}";
+    m.urlTemplate = "{+baseurl}/directoryRoleTemplates/{directoryRoleTemplate%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -122,6 +124,7 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) CreatePatchRequestInformationW
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -173,20 +176,23 @@ func (m *DirectoryRoleTemplateItemRequestBuilder) GetMemberObjects()(*i1ff63b415
     return i1ff63b415e315d04703f6c2c7e54fc5e3002e5a1b4d0cab74e10f9ac6d90bf6e.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update entity in directoryRoleTemplates
-func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *DirectoryRoleTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryRoleTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable), nil
 }
 // Restore the restore property
 func (m *DirectoryRoleTemplateItemRequestBuilder) Restore()(*i794ec9bbf31af9f4ef213a94300299f42c65fec1d605adcb17effb7dec394f16.RestoreRequestBuilder) {

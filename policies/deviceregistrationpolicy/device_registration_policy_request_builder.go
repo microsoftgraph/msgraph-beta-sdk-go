@@ -16,7 +16,7 @@ type DeviceRegistrationPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DeviceRegistrationPolicyRequestBuilderGetQueryParameters get deviceRegistrationPolicy from policies
+// DeviceRegistrationPolicyRequestBuilderGetQueryParameters read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 type DeviceRegistrationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,11 +58,11 @@ func NewDeviceRegistrationPolicyRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceRegistrationPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get deviceRegistrationPolicy from policies
+// CreateGetRequestInformation read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 func (m *DeviceRegistrationPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get deviceRegistrationPolicy from policies
+// CreateGetRequestInformationWithRequestConfiguration read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 func (m *DeviceRegistrationPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,6 +88,7 @@ func (m *DeviceRegistrationPolicyRequestBuilder) CreatePatchRequestInformationWi
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -95,7 +96,7 @@ func (m *DeviceRegistrationPolicyRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// Get get deviceRegistrationPolicy from policies
+// Get read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 func (m *DeviceRegistrationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -115,18 +116,21 @@ func (m *DeviceRegistrationPolicyRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable), nil
 }
 // Patch update the navigation property deviceRegistrationPolicy in policies
-func (m *DeviceRegistrationPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable, requestConfiguration *DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration)(error) {
+func (m *DeviceRegistrationPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable, requestConfiguration *DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceRegistrationPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable), nil
 }

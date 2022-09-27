@@ -17,7 +17,7 @@ type ResourceActionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ResourceActionsRequestBuilderGetQueryParameters operations that an authorized principal are allowed to perform.
+// ResourceActionsRequestBuilderGetQueryParameters get a list of the unifiedRbacResourceAction objects and their properties.
 type ResourceActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ResourceActionsRequestBuilderPostRequestConfiguration struct {
 func NewResourceActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceActionsRequestBuilder) {
     m := &ResourceActionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewResourceActionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ResourceActionsRequestBuilder) Count()(*i5a86c84d5b5c75ca6bf0603f87b8c731cf5421ad1f9849b2e378f3174cf52bec.CountRequestBuilder) {
     return i5a86c84d5b5c75ca6bf0603f87b8c731cf5421ad1f9849b2e378f3174cf52bec.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation operations that an authorized principal are allowed to perform.
+// CreateGetRequestInformation get a list of the unifiedRbacResourceAction objects and their properties.
 func (m *ResourceActionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration operations that an authorized principal are allowed to perform.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the unifiedRbacResourceAction objects and their properties.
 func (m *ResourceActionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ResourceActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ResourceActionsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get operations that an authorized principal are allowed to perform.
+// Get get a list of the unifiedRbacResourceAction objects and their properties.
 func (m *ResourceActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceActionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

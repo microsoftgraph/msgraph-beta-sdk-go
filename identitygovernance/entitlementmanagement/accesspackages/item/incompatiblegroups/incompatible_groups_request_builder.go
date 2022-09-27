@@ -18,7 +18,7 @@ type IncompatibleGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IncompatibleGroupsRequestBuilderGetQueryParameters the groups whose members are ineligible to be assigned this access package.
+// IncompatibleGroupsRequestBuilderGetQueryParameters retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 type IncompatibleGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type IncompatibleGroupsRequestBuilderGetRequestConfiguration struct {
 func NewIncompatibleGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncompatibleGroupsRequestBuilder) {
     m := &IncompatibleGroupsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewIncompatibleGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *IncompatibleGroupsRequestBuilder) Count()(*i2e19a02a8c19124167abd1e79ace5e94698d2ab3900fe155b0e3230ee40944a0.CountRequestBuilder) {
     return i2e19a02a8c19124167abd1e79ace5e94698d2ab3900fe155b0e3230ee40944a0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the groups whose members are ineligible to be assigned this access package.
+// CreateGetRequestInformation retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the groups whose members are ineligible to be assigned this access package.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get the groups whose members are ineligible to be assigned this access package.
+// Get retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
 func (m *IncompatibleGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

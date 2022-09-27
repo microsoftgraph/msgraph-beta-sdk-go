@@ -19,7 +19,7 @@ type ChannelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChannelsRequestBuilderGetQueryParameters the collection of channels and messages associated with the team.
+// ChannelsRequestBuilderGetQueryParameters retrieve the list of channels in this team.
 type ChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -62,7 +62,7 @@ func (m *ChannelsRequestBuilder) AllMessages()(*if41e648f81d94baeca0ee00a77ef485
 func NewChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChannelsRequestBuilder) {
     m := &ChannelsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -81,11 +81,11 @@ func NewChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ChannelsRequestBuilder) Count()(*i2d132a8d947bd5b4f37b7a9e8dec57db1847f39e4745abe7c0ca86e754e44d9b.CountRequestBuilder) {
     return i2d132a8d947bd5b4f37b7a9e8dec57db1847f39e4745abe7c0ca86e754e44d9b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of channels and messages associated with the team.
+// CreateGetRequestInformation retrieve the list of channels in this team.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of channels and messages associated with the team.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of channels in this team.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,11 +101,11 @@ func (m *ChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to channels for teamTemplateDefinition
+// CreatePostRequestInformation create a new channel in a team, as specified in the request body.
 func (m *ChannelsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to channels for teamTemplateDefinition
+// CreatePostRequestInformationWithRequestConfiguration create a new channel in a team, as specified in the request body.
 func (m *ChannelsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ChannelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +119,7 @@ func (m *ChannelsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get the collection of channels and messages associated with the team.
+// Get retrieve the list of channels in this team.
 func (m *ChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ChannelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *ChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *
 func (m *ChannelsRequestBuilder) GetAllMessages()(*i7ad11ec9b3bd801da07b9403e8dbab839f266cf3f69900fc2b60f65d8e9d9260.GetAllMessagesRequestBuilder) {
     return i7ad11ec9b3bd801da07b9403e8dbab839f266cf3f69900fc2b60f65d8e9d9260.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post create new navigation property to channels for teamTemplateDefinition
+// Post create a new channel in a team, as specified in the request body.
 func (m *ChannelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ChannelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type OperationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OperationsRequestBuilderGetQueryParameters the async operations on the device.
+// OperationsRequestBuilderGetQueryParameters get a list of the operations that are running on a Microsoft Teams-enabled device.
 type OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type OperationsRequestBuilderPostRequestConfiguration struct {
 func NewOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OperationsRequestBuilder) {
     m := &OperationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *OperationsRequestBuilder) Count()(*id965e61b26f299fbcc3a44e28d5c951937068906e0a3188423f57611f1653b29.CountRequestBuilder) {
     return id965e61b26f299fbcc3a44e28d5c951937068906e0a3188423f57611f1653b29.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the async operations on the device.
+// CreateGetRequestInformation get a list of the operations that are running on a Microsoft Teams-enabled device.
 func (m *OperationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the async operations on the device.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the operations that are running on a Microsoft Teams-enabled device.
 func (m *OperationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OperationsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get the async operations on the device.
+// Get get a list of the operations that are running on a Microsoft Teams-enabled device.
 func (m *OperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceOperationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

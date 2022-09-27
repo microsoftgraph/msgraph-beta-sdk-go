@@ -17,7 +17,7 @@ type AwardsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AwardsRequestBuilderGetQueryParameters represents the details of awards or honors associated with a person.
+// AwardsRequestBuilderGetQueryParameters retrieve a list of personAward objects from a user's profile.
 type AwardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AwardsRequestBuilderPostRequestConfiguration struct {
 func NewAwardsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AwardsRequestBuilder) {
     m := &AwardsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/profile/awards{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/profile/awards{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAwardsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AwardsRequestBuilder) Count()(*ic3b42056df47c064420fd5177ece372d0aace4f08f62cd1c6bc84675ac7284f3.CountRequestBuilder) {
     return ic3b42056df47c064420fd5177ece372d0aace4f08f62cd1c6bc84675ac7284f3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the details of awards or honors associated with a person.
+// CreateGetRequestInformation retrieve a list of personAward objects from a user's profile.
 func (m *AwardsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the details of awards or honors associated with a person.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of personAward objects from a user's profile.
 func (m *AwardsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AwardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *AwardsRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to awards for me
+// CreatePostRequestInformation create a new personAward object in a user's profile.
 func (m *AwardsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to awards for me
+// CreatePostRequestInformationWithRequestConfiguration create a new personAward object in a user's profile.
 func (m *AwardsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *AwardsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AwardsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get represents the details of awards or honors associated with a person.
+// Get retrieve a list of personAward objects from a user's profile.
 func (m *AwardsRequestBuilder) Get(ctx context.Context, requestConfiguration *AwardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *AwardsRequestBuilder) Get(ctx context.Context, requestConfiguration *Aw
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardCollectionResponseable), nil
 }
-// Post create new navigation property to awards for me
+// Post create a new personAward object in a user's profile.
 func (m *AwardsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *AwardsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

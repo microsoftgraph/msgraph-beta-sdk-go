@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -36,46 +37,10 @@ func (m *CloudPcOrganizationSettings) GetEnableMEMAutoEnroll()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["enableMEMAutoEnroll"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableMEMAutoEnroll(val)
-        }
-        return nil
-    }
-    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcOperatingSystem)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOsVersion(val.(*CloudPcOperatingSystem))
-        }
-        return nil
-    }
-    res["userAccountType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcUserAccountType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserAccountType(val.(*CloudPcUserAccountType))
-        }
-        return nil
-    }
-    res["windowsSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsSettings(val.(CloudPcWindowsSettingsable))
-        }
-        return nil
-    }
+    res["enableMEMAutoEnroll"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableMEMAutoEnroll)
+    res["osVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcOperatingSystem , m.SetOsVersion)
+    res["userAccountType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcUserAccountType , m.SetUserAccountType)
+    res["windowsSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue , m.SetWindowsSettings)
     return res
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.

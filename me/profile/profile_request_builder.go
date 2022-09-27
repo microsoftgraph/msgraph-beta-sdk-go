@@ -61,7 +61,7 @@ type ProfileRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ProfileRequestBuilderGetQueryParameters represents properties that are descriptive of a user in a tenant.
+// ProfileRequestBuilderGetQueryParameters retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
 type ProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -178,11 +178,11 @@ func NewProfileRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property profile for me
+// CreateDeleteRequestInformation deletes a profile object from a user's account.
 func (m *ProfileRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property profile for me
+// CreateDeleteRequestInformationWithRequestConfiguration deletes a profile object from a user's account.
 func (m *ProfileRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ProfileRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -194,11 +194,11 @@ func (m *ProfileRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents properties that are descriptive of a user in a tenant.
+// CreateGetRequestInformation retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
 func (m *ProfileRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents properties that are descriptive of a user in a tenant.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
 func (m *ProfileRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -224,6 +224,7 @@ func (m *ProfileRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -231,7 +232,7 @@ func (m *ProfileRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Delete delete navigation property profile for me
+// Delete deletes a profile object from a user's account.
 func (m *ProfileRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProfileRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -277,7 +278,7 @@ func (m *ProfileRequestBuilder) EmailsById(id string)(*i31cef5d667451b5423d56367
     }
     return i31cef5d667451b5423d5636714b09b3604e36345dba29f9ef24b76262d978aa5.NewItemEmailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get represents properties that are descriptive of a user in a tenant.
+// Get retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
 func (m *ProfileRequestBuilder) Get(ctx context.Context, requestConfiguration *ProfileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -357,20 +358,23 @@ func (m *ProfileRequestBuilder) NotesById(id string)(*ifa892d3191635eb436fe2e0ea
     return ifa892d3191635eb436fe2e0ead51770cb25545dd430d2739450e3a0ab2fcff3a.NewPersonAnnotationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property profile in me
-func (m *ProfileRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable, requestConfiguration *ProfileRequestBuilderPatchRequestConfiguration)(error) {
+func (m *ProfileRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable, requestConfiguration *ProfileRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateProfileFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable), nil
 }
 // Patents the patents property
 func (m *ProfileRequestBuilder) Patents()(*i2669dd5ed2aedac6dfd0c6508f784eed419fc338e30b07f910bb466760259fd1.PatentsRequestBuilder) {

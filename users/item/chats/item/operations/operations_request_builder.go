@@ -17,7 +17,7 @@ type OperationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OperationsRequestBuilderGetQueryParameters a collection of all the Teams async operations that ran or are running on the chat. Nullable.
+// OperationsRequestBuilderGetQueryParameters list all Teams async operations that ran or are running on the specified chat.
 type OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type OperationsRequestBuilderPostRequestConfiguration struct {
 func NewOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OperationsRequestBuilder) {
     m := &OperationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/operations{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *OperationsRequestBuilder) Count()(*ia46ea7acd4b0129815a86428f41ebc25531e855e90ec4c4cfb0617e9929d334a.CountRequestBuilder) {
     return ia46ea7acd4b0129815a86428f41ebc25531e855e90ec4c4cfb0617e9929d334a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.
+// CreateGetRequestInformation list all Teams async operations that ran or are running on the specified chat.
 func (m *OperationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of all the Teams async operations that ran or are running on the chat. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration list all Teams async operations that ran or are running on the specified chat.
 func (m *OperationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OperationsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get a collection of all the Teams async operations that ran or are running on the chat. Nullable.
+// Get list all Teams async operations that ran or are running on the specified chat.
 func (m *OperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAsyncOperationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

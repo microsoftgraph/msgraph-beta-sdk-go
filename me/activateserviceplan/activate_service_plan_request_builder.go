@@ -41,11 +41,11 @@ func NewActivateServicePlanRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewActivateServicePlanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action activateServicePlan
+// CreatePostRequestInformation activate a service plan with a given `servicePlanId` and `skuId` for a given user.
 func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformation(body ActivateServicePlanPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action activateServicePlan
+// CreatePostRequestInformationWithRequestConfiguration activate a service plan with a given `servicePlanId` and `skuId` for a given user.
 func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Post invoke action activateServicePlan
+// Post activate a service plan with a given `servicePlanId` and `skuId` for a given user.
 func (m *ActivateServicePlanRequestBuilder) Post(ctx context.Context, body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

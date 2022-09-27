@@ -42,11 +42,11 @@ func NewMakePermanentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewMakePermanentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action makePermanent
+// CreatePostRequestInformation make the role assignment permanent.
 func (m *MakePermanentRequestBuilder) CreatePostRequestInformation(body MakePermanentPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action makePermanent
+// CreatePostRequestInformationWithRequestConfiguration make the role assignment permanent.
 func (m *MakePermanentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MakePermanentPostRequestBodyable, requestConfiguration *MakePermanentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *MakePermanentRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Post invoke action makePermanent
+// Post make the role assignment permanent.
 func (m *MakePermanentRequestBuilder) Post(ctx context.Context, body MakePermanentPostRequestBodyable, requestConfiguration *MakePermanentRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

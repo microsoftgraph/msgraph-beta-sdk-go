@@ -17,7 +17,7 @@ type FollowingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FollowingRequestBuilderGetQueryParameters the list of items the user is following. Only in OneDrive for Business.
+// FollowingRequestBuilderGetQueryParameters list the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
 type FollowingRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type FollowingRequestBuilderGetRequestConfiguration struct {
 func NewFollowingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FollowingRequestBuilder) {
     m := &FollowingRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/drives/{drive%2Did}/following{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/drives/{drive%2Did}/following{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewFollowingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *FollowingRequestBuilder) Count()(*iffffc86a4fc03637c0f3c22e8cc700c9d1b9ea2a82dca54a5ce11a2b05eb9d56.CountRequestBuilder) {
     return iffffc86a4fc03637c0f3c22e8cc700c9d1b9ea2a82dca54a5ce11a2b05eb9d56.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of items the user is following. Only in OneDrive for Business.
+// CreateGetRequestInformation list the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
 func (m *FollowingRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of items the user is following. Only in OneDrive for Business.
+// CreateGetRequestInformationWithRequestConfiguration list the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
 func (m *FollowingRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FollowingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *FollowingRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get the list of items the user is following. Only in OneDrive for Business.
+// Get list the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
 func (m *FollowingRequestBuilder) Get(ctx context.Context, requestConfiguration *FollowingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

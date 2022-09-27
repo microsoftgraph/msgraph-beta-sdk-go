@@ -18,7 +18,7 @@ type PrintersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PrintersRequestBuilderGetQueryParameters the list of printers registered in the tenant.
+// PrintersRequestBuilderGetQueryParameters retrieve the list of **printers** that are registered in the tenant.
 type PrintersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type PrintersRequestBuilderPostRequestConfiguration struct {
 func NewPrintersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersRequestBuilder) {
     m := &PrintersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/printers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/printers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -80,11 +80,11 @@ func (m *PrintersRequestBuilder) Count()(*i2bfcf69a040d0541df35e0f4f2b9a58406220
 func (m *PrintersRequestBuilder) Create()(*i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.CreateRequestBuilder) {
     return i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.NewCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of printers registered in the tenant.
+// CreateGetRequestInformation retrieve the list of **printers** that are registered in the tenant.
 func (m *PrintersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of printers registered in the tenant.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of **printers** that are registered in the tenant.
 func (m *PrintersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrintersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *PrintersRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get the list of printers registered in the tenant.
+// Get retrieve the list of **printers** that are registered in the tenant.
 func (m *PrintersRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

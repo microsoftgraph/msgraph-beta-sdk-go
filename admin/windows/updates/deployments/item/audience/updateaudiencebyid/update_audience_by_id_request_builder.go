@@ -41,11 +41,11 @@ func NewUpdateAudienceByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateAudienceByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action updateAudienceById
+// CreatePostRequestInformation update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. You can also use the method updateAudience to update the **deploymentAudience**.
 func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformation(body UpdateAudienceByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateAudienceById
+// CreatePostRequestInformationWithRequestConfiguration update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. You can also use the method updateAudience to update the **deploymentAudience**.
 func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAudienceByIdPostRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Post invoke action updateAudienceById
+// Post update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist. If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset. You can also use the method updateAudience to update the **deploymentAudience**.
 func (m *UpdateAudienceByIdRequestBuilder) Post(ctx context.Context, body UpdateAudienceByIdPostRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

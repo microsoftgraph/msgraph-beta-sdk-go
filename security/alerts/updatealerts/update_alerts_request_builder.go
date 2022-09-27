@@ -41,11 +41,11 @@ func NewUpdateAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action updateAlerts
+// CreatePostRequestInformation update multiple alerts in one request instead of multiple requests.
 func (m *UpdateAlertsRequestBuilder) CreatePostRequestInformation(body UpdateAlertsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateAlerts
+// CreatePostRequestInformationWithRequestConfiguration update multiple alerts in one request instead of multiple requests.
 func (m *UpdateAlertsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAlertsPostRequestBodyable, requestConfiguration *UpdateAlertsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *UpdateAlertsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Post invoke action updateAlerts
+// Post update multiple alerts in one request instead of multiple requests.
 func (m *UpdateAlertsRequestBuilder) Post(ctx context.Context, body UpdateAlertsPostRequestBodyable, requestConfiguration *UpdateAlertsRequestBuilderPostRequestConfiguration)(UpdateAlertsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

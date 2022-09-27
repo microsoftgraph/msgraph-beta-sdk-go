@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -26,20 +27,7 @@ func CreateAuthenticationMethodsRootFromDiscriminatorValue(parseNode i878a80d233
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["userRegistrationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationDetailsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserRegistrationDetailsable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserRegistrationDetailsable)
-            }
-            m.SetUserRegistrationDetails(res)
-        }
-        return nil
-    }
+    res["userRegistrationDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserRegistrationDetailsFromDiscriminatorValue , m.SetUserRegistrationDetails)
     return res
 }
 // GetUserRegistrationDetails gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
@@ -53,10 +41,7 @@ func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     if m.GetUserRegistrationDetails() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRegistrationDetails()))
-        for i, v := range m.GetUserRegistrationDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserRegistrationDetails())
         err = writer.WriteCollectionOfObjectValues("userRegistrationDetails", cast)
         if err != nil {
             return err

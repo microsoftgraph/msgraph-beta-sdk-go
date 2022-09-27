@@ -18,7 +18,7 @@ type DeletedTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DeletedTeamsRequestBuilderGetQueryParameters a collection of deleted teams.
+// DeletedTeamsRequestBuilderGetQueryParameters get a list of the deletedTeam objects and their properties.
 type DeletedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type DeletedTeamsRequestBuilderPostRequestConfiguration struct {
 func NewDeletedTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsRequestBuilder) {
     m := &DeletedTeamsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teamwork/deletedTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewDeletedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedTeamsRequestBuilder) Count()(*iac4883066b853657ce40ba22eef7f68529ed8b1b2a46d427e4913442e919f215.CountRequestBuilder) {
     return iac4883066b853657ce40ba22eef7f68529ed8b1b2a46d427e4913442e919f215.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of deleted teams.
+// CreateGetRequestInformation get a list of the deletedTeam objects and their properties.
 func (m *DeletedTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of deleted teams.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the deletedTeam objects and their properties.
 func (m *DeletedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *DeletedTeamsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get a collection of deleted teams.
+// Get get a list of the deletedTeam objects and their properties.
 func (m *DeletedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

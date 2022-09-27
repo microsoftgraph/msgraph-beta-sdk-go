@@ -119,6 +119,7 @@ func (m *SettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -166,20 +167,23 @@ func (m *SettingsRequestBuilder) ItemInsights()(*ic53be0a6e3ccdb0f71da58981f0730
     return ic53be0a6e3ccdb0f71da58981f07304dc4c0f2a8b10ba9bc9eedcc0fbb71c379.NewItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property settings in users
-func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable, requestConfiguration *SettingsRequestBuilderPatchRequestConfiguration)(error) {
+func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable, requestConfiguration *SettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable), nil
 }
 // RegionalAndLanguageSettings the regionalAndLanguageSettings property
 func (m *SettingsRequestBuilder) RegionalAndLanguageSettings()(*i9e63b9aece244b092e835c3c7715d420a6cb488defd0c4ce5f26e2bba05dbda1.RegionalAndLanguageSettingsRequestBuilder) {

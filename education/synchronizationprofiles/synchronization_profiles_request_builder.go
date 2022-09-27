@@ -17,7 +17,7 @@ type SynchronizationProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SynchronizationProfilesRequestBuilderGetQueryParameters get synchronizationProfiles from education
+// SynchronizationProfilesRequestBuilderGetQueryParameters retrieve the collection of school data synchronization profiles in the tenant.
 type SynchronizationProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SynchronizationProfilesRequestBuilderPostRequestConfiguration struct {
 func NewSynchronizationProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SynchronizationProfilesRequestBuilder) {
     m := &SynchronizationProfilesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/synchronizationProfiles{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/synchronizationProfiles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSynchronizationProfilesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *SynchronizationProfilesRequestBuilder) Count()(*i923700aa900530b57d67c4ece645b4c786f7de1e0a36867efd98f11f0da43e2a.CountRequestBuilder) {
     return i923700aa900530b57d67c4ece645b4c786f7de1e0a36867efd98f11f0da43e2a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get synchronizationProfiles from education
+// CreateGetRequestInformation retrieve the collection of school data synchronization profiles in the tenant.
 func (m *SynchronizationProfilesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get synchronizationProfiles from education
+// CreateGetRequestInformationWithRequestConfiguration retrieve the collection of school data synchronization profiles in the tenant.
 func (m *SynchronizationProfilesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SynchronizationProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SynchronizationProfilesRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get get synchronizationProfiles from education
+// Get retrieve the collection of school data synchronization profiles in the tenant.
 func (m *SynchronizationProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

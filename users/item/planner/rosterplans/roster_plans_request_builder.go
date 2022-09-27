@@ -17,7 +17,7 @@ type RosterPlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RosterPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
+// RosterPlansRequestBuilderGetQueryParameters get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
 type RosterPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type RosterPlansRequestBuilderGetRequestConfiguration struct {
 func NewRosterPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RosterPlansRequestBuilder) {
     m := &RosterPlansRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/rosterPlans{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/rosterPlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewRosterPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *RosterPlansRequestBuilder) Count()(*ib69cc1c6bb06d87109c482969c7a0419c54d0ce9d67ea6c8822fc98ab3ead77d.CountRequestBuilder) {
     return ib69cc1c6bb06d87109c482969c7a0419c54d0ce9d67ea6c8822fc98ab3ead77d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
+// CreateGetRequestInformation get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
 func (m *RosterPlansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
+// CreateGetRequestInformationWithRequestConfiguration get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
 func (m *RosterPlansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RosterPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *RosterPlansRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
+// Get get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
 func (m *RosterPlansRequestBuilder) Get(ctx context.Context, requestConfiguration *RosterPlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

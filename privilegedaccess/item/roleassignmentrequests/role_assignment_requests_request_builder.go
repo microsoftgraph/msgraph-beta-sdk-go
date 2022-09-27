@@ -56,7 +56,7 @@ type RoleAssignmentRequestsRequestBuilderPostRequestConfiguration struct {
 func NewRoleAssignmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleAssignmentRequestsRequestBuilder) {
     m := &RoleAssignmentRequestsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleAssignmentRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleAssignmentRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -95,11 +95,11 @@ func (m *RoleAssignmentRequestsRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to roleAssignmentRequests for privilegedAccess
+// CreatePostRequestInformation create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
 func (m *RoleAssignmentRequestsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to roleAssignmentRequests for privilegedAccess
+// CreatePostRequestInformationWithRequestConfiguration create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
 func (m *RoleAssignmentRequestsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, requestConfiguration *RoleAssignmentRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,7 +132,7 @@ func (m *RoleAssignmentRequestsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestCollectionResponseable), nil
 }
-// Post create new navigation property to roleAssignmentRequests for privilegedAccess
+// Post create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
 func (m *RoleAssignmentRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, requestConfiguration *RoleAssignmentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -51,120 +52,17 @@ func (m *DeviceManagementPartner) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["groupsRequiringPartnerEnrollment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementPartnerAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementPartnerAssignmentable)
-            }
-            m.SetGroupsRequiringPartnerEnrollment(res)
-        }
-        return nil
-    }
-    res["isConfigured"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsConfigured(val)
-        }
-        return nil
-    }
-    res["lastHeartbeatDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastHeartbeatDateTime(val)
-        }
-        return nil
-    }
-    res["partnerAppType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementPartnerAppType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerAppType(val.(*DeviceManagementPartnerAppType))
-        }
-        return nil
-    }
-    res["partnerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementPartnerTenantState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerState(val.(*DeviceManagementPartnerTenantState))
-        }
-        return nil
-    }
-    res["singleTenantAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSingleTenantAppId(val)
-        }
-        return nil
-    }
-    res["whenPartnerDevicesWillBeMarkedAsNonCompliant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliant(val)
-        }
-        return nil
-    }
-    res["whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(val)
-        }
-        return nil
-    }
-    res["whenPartnerDevicesWillBeRemoved"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWhenPartnerDevicesWillBeRemoved(val)
-        }
-        return nil
-    }
-    res["whenPartnerDevicesWillBeRemovedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWhenPartnerDevicesWillBeRemovedDateTime(val)
-        }
-        return nil
-    }
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["groupsRequiringPartnerEnrollment"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue , m.SetGroupsRequiringPartnerEnrollment)
+    res["isConfigured"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsConfigured)
+    res["lastHeartbeatDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastHeartbeatDateTime)
+    res["partnerAppType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementPartnerAppType , m.SetPartnerAppType)
+    res["partnerState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementPartnerTenantState , m.SetPartnerState)
+    res["singleTenantAppId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSingleTenantAppId)
+    res["whenPartnerDevicesWillBeMarkedAsNonCompliant"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliant)
+    res["whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime)
+    res["whenPartnerDevicesWillBeRemoved"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetWhenPartnerDevicesWillBeRemoved)
+    res["whenPartnerDevicesWillBeRemovedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetWhenPartnerDevicesWillBeRemovedDateTime)
     return res
 }
 // GetGroupsRequiringPartnerEnrollment gets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
@@ -220,10 +118,7 @@ func (m *DeviceManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     if m.GetGroupsRequiringPartnerEnrollment() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupsRequiringPartnerEnrollment()))
-        for i, v := range m.GetGroupsRequiringPartnerEnrollment() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetGroupsRequiringPartnerEnrollment())
         err = writer.WriteCollectionOfObjectValues("groupsRequiringPartnerEnrollment", cast)
         if err != nil {
             return err

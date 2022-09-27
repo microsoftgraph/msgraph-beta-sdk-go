@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the commsApplication singleton.
+// Provides operations to manage the collection of accessReview entities.
 type RecordingStatus int
 
 const (

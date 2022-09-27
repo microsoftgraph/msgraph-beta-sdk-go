@@ -18,7 +18,7 @@ type MailFoldersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MailFoldersRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
+// MailFoldersRequestBuilderGetQueryParameters get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 type MailFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -53,7 +53,7 @@ type MailFoldersRequestBuilderPostRequestConfiguration struct {
 func NewMailFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MailFoldersRequestBuilder) {
     m := &MailFoldersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/mailFolders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/me/mailFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -72,11 +72,11 @@ func NewMailFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *MailFoldersRequestBuilder) Count()(*i91f8e5751807dc5f42e54184049bc6de352f7d8534b432733cddf58028d7a739.CountRequestBuilder) {
     return i91f8e5751807dc5f42e54184049bc6de352f7d8534b432733cddf58028d7a739.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the user's mail folders. Read-only. Nullable.
+// CreateGetRequestInformation get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 func (m *MailFoldersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's mail folders. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 func (m *MailFoldersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MailFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,11 +92,11 @@ func (m *MailFoldersRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to mailFolders for me
+// CreatePostRequestInformation use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 func (m *MailFoldersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to mailFolders for me
+// CreatePostRequestInformationWithRequestConfiguration use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 func (m *MailFoldersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable, requestConfiguration *MailFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *MailFoldersRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *MailFoldersRequestBuilder) Delta()(*ida684cc509215d4d1b8a561ad90df09a07dcec1a948e1dd533f07b4be618fbf8.DeltaRequestBuilder) {
     return ida684cc509215d4d1b8a561ad90df09a07dcec1a948e1dd533f07b4be618fbf8.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the user's mail folders. Read-only. Nullable.
+// Get get all the mail folders in the specified user's mailbox, including any mail search folders. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
 func (m *MailFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *MailFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -133,7 +133,7 @@ func (m *MailFoldersRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderCollectionResponseable), nil
 }
-// Post create new navigation property to mailFolders for me
+// Post use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 func (m *MailFoldersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable, requestConfiguration *MailFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

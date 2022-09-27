@@ -23,7 +23,7 @@ type ItemInsightsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemInsightsRequestBuilderGetQueryParameters the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
+// ItemInsightsRequestBuilderGetQueryParameters get the user-customizable privacy settings for itemInsights and meeting hours insights.
 type ItemInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *ItemInsightsRequestBuilder) CreateDeleteRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
+// CreateGetRequestInformation get the user-customizable privacy settings for itemInsights and meeting hours insights.
 func (m *ItemInsightsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
+// CreateGetRequestInformationWithRequestConfiguration get the user-customizable privacy settings for itemInsights and meeting hours insights.
 func (m *ItemInsightsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ItemInsightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,16 +101,17 @@ func (m *ItemInsightsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property itemInsights in me
+// CreatePatchRequestInformation update the privacy settings for itemInsights and meeting hours insights of a user.
 func (m *ItemInsightsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property itemInsights in me
+// CreatePatchRequestInformationWithRequestConfiguration update the privacy settings for itemInsights and meeting hours insights of a user.
 func (m *ItemInsightsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, requestConfiguration *ItemInsightsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -134,7 +135,7 @@ func (m *ItemInsightsRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get the user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
+// Get get the user-customizable privacy settings for itemInsights and meeting hours insights.
 func (m *ItemInsightsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -153,19 +154,22 @@ func (m *ItemInsightsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable), nil
 }
-// Patch update the navigation property itemInsights in me
-func (m *ItemInsightsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, requestConfiguration *ItemInsightsRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the privacy settings for itemInsights and meeting hours insights of a user.
+func (m *ItemInsightsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, requestConfiguration *ItemInsightsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserInsightsSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInsightsSettingsable), nil
 }

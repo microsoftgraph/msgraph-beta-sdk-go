@@ -41,11 +41,11 @@ func NewUnhideForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewUnhideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action unhideForUser
+// CreatePostRequestInformation unhide a chat for a user.
 func (m *UnhideForUserRequestBuilder) CreatePostRequestInformation(body UnhideForUserPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unhideForUser
+// CreatePostRequestInformationWithRequestConfiguration unhide a chat for a user.
 func (m *UnhideForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnhideForUserPostRequestBodyable, requestConfiguration *UnhideForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *UnhideForUserRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Post invoke action unhideForUser
+// Post unhide a chat for a user.
 func (m *UnhideForUserRequestBuilder) Post(ctx context.Context, body UnhideForUserPostRequestBodyable, requestConfiguration *UnhideForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type QueriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// QueriesRequestBuilderGetQueryParameters represents queries within the review set.
+// QueriesRequestBuilderGetQueryParameters get the list of queries associated with an eDiscovery review set.
 type QueriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type QueriesRequestBuilderPostRequestConfiguration struct {
 func NewQueriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*QueriesRequestBuilder) {
     m := &QueriesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewQueriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *QueriesRequestBuilder) Count()(*ib445c82941cadc82b27b9969641db7b29233937612482fa27c0173ef3a265eee.CountRequestBuilder) {
     return ib445c82941cadc82b27b9969641db7b29233937612482fa27c0173ef3a265eee.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents queries within the review set.
+// CreateGetRequestInformation get the list of queries associated with an eDiscovery review set.
 func (m *QueriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents queries within the review set.
+// CreateGetRequestInformationWithRequestConfiguration get the list of queries associated with an eDiscovery review set.
 func (m *QueriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *QueriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *QueriesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to queries for security
+// CreatePostRequestInformation create a new ediscoveryReviewSetQuery object.
 func (m *QueriesRequestBuilder) CreatePostRequestInformation(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to queries for security
+// CreatePostRequestInformationWithRequestConfiguration create a new ediscoveryReviewSetQuery object.
 func (m *QueriesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable, requestConfiguration *QueriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *QueriesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get represents queries within the review set.
+// Get get the list of queries associated with an eDiscovery review set.
 func (m *QueriesRequestBuilder) Get(ctx context.Context, requestConfiguration *QueriesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *QueriesRequestBuilder) Get(ctx context.Context, requestConfiguration *Q
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryCollectionResponseable), nil
 }
-// Post create new navigation property to queries for security
+// Post create a new ediscoveryReviewSetQuery object.
 func (m *QueriesRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable, requestConfiguration *QueriesRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

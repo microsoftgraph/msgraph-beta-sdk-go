@@ -18,7 +18,7 @@ type IdentityProvidersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IdentityProvidersRequestBuilderGetQueryParameters represents entry point for identity provider base.
+// IdentityProvidersRequestBuilderGetQueryParameters get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
 type IdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -61,7 +61,7 @@ func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*i3bd7c0c10f5
 func NewIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityProvidersRequestBuilder) {
     m := &IdentityProvidersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/identityProviders{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identity/identityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -80,11 +80,11 @@ func NewIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *IdentityProvidersRequestBuilder) Count()(*i3c5cbe912885cd2c32ffa82b57c4b96eaabc8095d25ed6435de8fd512d5c0c9c.CountRequestBuilder) {
     return i3c5cbe912885cd2c32ffa82b57c4b96eaabc8095d25ed6435de8fd512d5c0c9c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents entry point for identity provider base.
+// CreateGetRequestInformation get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
 func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents entry point for identity provider base.
+// CreateGetRequestInformationWithRequestConfiguration get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
 func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,11 +100,11 @@ func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to identityProviders for identity
+// CreatePostRequestInformation create an identity provider resource that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 func (m *IdentityProvidersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to identityProviders for identity
+// CreatePostRequestInformationWithRequestConfiguration create an identity provider resource that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 func (m *IdentityProvidersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *IdentityProvidersRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get represents entry point for identity provider base.
+// Get get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
 func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable), nil
 }
-// Post create new navigation property to identityProviders for identity
+// Post create an identity provider resource that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 func (m *IdentityProvidersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

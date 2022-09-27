@@ -17,7 +17,7 @@ type DelegatedAdminCustomersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DelegatedAdminCustomersRequestBuilderGetQueryParameters the customer who has a delegated admin relationship with a Microsoft partner.
+// DelegatedAdminCustomersRequestBuilderGetQueryParameters get a list of the delegatedAdminCustomer objects and their properties.
 type DelegatedAdminCustomersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type DelegatedAdminCustomersRequestBuilderPostRequestConfiguration struct {
 func NewDelegatedAdminCustomersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DelegatedAdminCustomersRequestBuilder) {
     m := &DelegatedAdminCustomersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/delegatedAdminCustomers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/delegatedAdminCustomers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewDelegatedAdminCustomersRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *DelegatedAdminCustomersRequestBuilder) Count()(*i7c74507a45241d79a518a8cb78586cabc128c1bfce91340d1c19620bada7d6d7.CountRequestBuilder) {
     return i7c74507a45241d79a518a8cb78586cabc128c1bfce91340d1c19620bada7d6d7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the customer who has a delegated admin relationship with a Microsoft partner.
+// CreateGetRequestInformation get a list of the delegatedAdminCustomer objects and their properties.
 func (m *DelegatedAdminCustomersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the customer who has a delegated admin relationship with a Microsoft partner.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the delegatedAdminCustomer objects and their properties.
 func (m *DelegatedAdminCustomersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DelegatedAdminCustomersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *DelegatedAdminCustomersRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get the customer who has a delegated admin relationship with a Microsoft partner.
+// Get get a list of the delegatedAdminCustomer objects and their properties.
 func (m *DelegatedAdminCustomersRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminCustomersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminCustomerCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

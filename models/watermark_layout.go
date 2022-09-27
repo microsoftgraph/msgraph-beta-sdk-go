@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the evaluateApplication method.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type WatermarkLayout int
 
 const (

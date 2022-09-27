@@ -18,7 +18,7 @@ type MessagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MessagesRequestBuilderGetQueryParameters the collection of messages in the mailFolder.
+// MessagesRequestBuilderGetQueryParameters list all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type MessagesRequestBuilderPostRequestConfiguration struct {
 func NewMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessagesRequestBuilder) {
     m := &MessagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *MessagesRequestBuilder) Count()(*ib922ae246bfd6982b830b0c8a20293f2979ee9407cc8ae3591c0444af40415fb.CountRequestBuilder) {
     return ib922ae246bfd6982b830b0c8a20293f2979ee9407cc8ae3591c0444af40415fb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of messages in the mailFolder.
+// CreateGetRequestInformation list all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
 func (m *MessagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of messages in the mailFolder.
+// CreateGetRequestInformationWithRequestConfiguration list all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
 func (m *MessagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to messages for me
+// CreatePostRequestInformation use this API to create a new Message in a mailfolder.
 func (m *MessagesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to messages for me
+// CreatePostRequestInformationWithRequestConfiguration use this API to create a new Message in a mailfolder.
 func (m *MessagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 func (m *MessagesRequestBuilder) Delta()(*idfedab60866b220b249e34f7b6e59ca554bf0dffd9f95479fc46a5a8723191e4.DeltaRequestBuilder) {
     return idfedab60866b220b249e34f7b6e59ca554bf0dffd9f95479fc46a5a8723191e4.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the collection of messages in the mailFolder.
+// Get list all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
 func (m *MessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *MessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable), nil
 }
-// Post create new navigation property to messages for me
+// Post use this API to create a new Message in a mailfolder.
 func (m *MessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

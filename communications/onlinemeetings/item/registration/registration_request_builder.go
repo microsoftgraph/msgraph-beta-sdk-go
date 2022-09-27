@@ -25,7 +25,7 @@ type RegistrationRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RegistrationRequestBuilderGetQueryParameters the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// RegistrationRequestBuilderGetQueryParameters get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 type RegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -67,11 +67,11 @@ func NewRegistrationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property registration for communications
+// CreateDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property registration for communications
+// CreateDeleteRequestInformationWithRequestConfiguration disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *RegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -83,11 +83,11 @@ func (m *RegistrationRequestBuilder) CreateDeleteRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// CreateGetRequestInformation get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// CreateGetRequestInformationWithRequestConfiguration get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,16 +103,17 @@ func (m *RegistrationRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property registration in communications
+// CreatePatchRequestInformation update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property registration in communications
+// CreatePatchRequestInformationWithRequestConfiguration update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, requestConfiguration *RegistrationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -135,7 +136,7 @@ func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*ib42277fe4c
     }
     return ib42277fe4ce873d430664e5be2d00e9af9e96d89e8f7d228c9a3066373657e75.NewMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete delete navigation property registration for communications
+// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) Delete(ctx context.Context, requestConfiguration *RegistrationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -151,7 +152,7 @@ func (m *RegistrationRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// Get get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 func (m *RegistrationRequestBuilder) Get(ctx context.Context, requestConfiguration *RegistrationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -170,19 +171,22 @@ func (m *RegistrationRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable), nil
 }
-// Patch update the navigation property registration in communications
-func (m *RegistrationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, requestConfiguration *RegistrationRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+func (m *RegistrationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, requestConfiguration *RegistrationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMeetingRegistrationFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable), nil
 }

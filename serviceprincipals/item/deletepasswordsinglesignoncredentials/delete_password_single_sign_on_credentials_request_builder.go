@@ -41,11 +41,11 @@ func NewDeletePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action deletePasswordSingleSignOnCredentials
+// CreatePostRequestInformation delete single sign-on credentials using a password for a user or group.
 func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(body DeletePasswordSingleSignOnCredentialsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action deletePasswordSingleSignOnCredentials
+// CreatePostRequestInformationWithRequestConfiguration delete single sign-on credentials using a password for a user or group.
 func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *DeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// Post invoke action deletePasswordSingleSignOnCredentials
+// Post delete single sign-on credentials using a password for a user or group.
 func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body DeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *DeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

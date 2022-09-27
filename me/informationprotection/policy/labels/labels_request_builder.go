@@ -21,7 +21,7 @@ type LabelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LabelsRequestBuilderGetQueryParameters get labels from me
+// LabelsRequestBuilderGetQueryParameters get a collection of information protection labels available to the user or to the organization.
 type LabelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -60,7 +60,7 @@ type LabelsRequestBuilderPostRequestConfiguration struct {
 func NewLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRequestBuilder) {
     m := &LabelsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/informationProtection/policy/labels{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/informationProtection/policy/labels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -79,11 +79,11 @@ func NewLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *LabelsRequestBuilder) Count()(*ib470781a8a5e1b02a13e8da61551165f143f7bd30847d6dd93ebd2668e16371b.CountRequestBuilder) {
     return ib470781a8a5e1b02a13e8da61551165f143f7bd30847d6dd93ebd2668e16371b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get labels from me
+// CreateGetRequestInformation get a collection of information protection labels available to the user or to the organization.
 func (m *LabelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get labels from me
+// CreateGetRequestInformationWithRequestConfiguration get a collection of information protection labels available to the user or to the organization.
 func (m *LabelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,7 +133,7 @@ func (m *LabelsRequestBuilder) EvaluateRemoval()(*ifbb3e1e672049193601dce7ec1938
 func (m *LabelsRequestBuilder) ExtractLabel()(*iabff15acfeb1cae45775785ffb30c23869c92518718d8e058fafb9594de6abc7.ExtractLabelRequestBuilder) {
     return iabff15acfeb1cae45775785ffb30c23869c92518718d8e058fafb9594de6abc7.NewExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get labels from me
+// Get get a collection of information protection labels available to the user or to the organization.
 func (m *LabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

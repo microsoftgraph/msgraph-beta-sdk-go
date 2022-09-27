@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -34,36 +35,9 @@ func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpd
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsUpdateCatalogItem.GetFieldDeserializers()
-    res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsQualityUpdateClassification)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClassification(val.(*WindowsQualityUpdateClassification))
-        }
-        return nil
-    }
-    res["isExpeditable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsExpeditable(val)
-        }
-        return nil
-    }
-    res["kbArticleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKbArticleId(val)
-        }
-        return nil
-    }
+    res["classification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsQualityUpdateClassification , m.SetClassification)
+    res["isExpeditable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsExpeditable)
+    res["kbArticleId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKbArticleId)
     return res
 }
 // GetIsExpeditable gets the isExpeditable property value. Flag indicating if update qualifies for expedite

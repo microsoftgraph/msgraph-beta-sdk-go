@@ -46,18 +46,11 @@ type CalendarViewRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *CalendarViewRequestBuilderGetQueryParameters
 }
-// CalendarViewRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type CalendarViewRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewCalendarViewRequestBuilderInternal instantiates a new CalendarViewRequestBuilder and sets the default values.
 func NewCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarViewRequestBuilder) {
     m := &CalendarViewRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/calendar/calendarView{?startDateTime*,endDateTime*,%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/calendar/calendarView{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -96,24 +89,6 @@ func (m *CalendarViewRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to calendarView for groups
-func (m *CalendarViewRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to calendarView for groups
-func (m *CalendarViewRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *CalendarViewRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Delta provides operations to call the delta method.
 func (m *CalendarViewRequestBuilder) Delta()(*i0b7254a6167ea2e3fbf194d3ad0ef78e66a8397f080bd0c26b0e2ba581474d52.DeltaRequestBuilder) {
     return i0b7254a6167ea2e3fbf194d3ad0ef78e66a8397f080bd0c26b0e2ba581474d52.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -136,23 +111,4 @@ func (m *CalendarViewRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
-}
-// Post create new navigation property to calendarView for groups
-func (m *CalendarViewRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *CalendarViewRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEventFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }

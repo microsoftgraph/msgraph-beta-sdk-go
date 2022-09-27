@@ -17,7 +17,7 @@ type AppManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AppManagementPoliciesRequestBuilderGetQueryParameters the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// AppManagementPoliciesRequestBuilderGetQueryParameters retrieve a list of appManagementPolicy objects.
 type AppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AppManagementPoliciesRequestBuilderPostRequestConfiguration struct {
 func NewAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesRequestBuilder) {
     m := &AppManagementPoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/appManagementPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/appManagementPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *AppManagementPoliciesRequestBuilder) Count()(*i7f7c5d9642909cd26525cc2916fe42bbbbaa2f6b5d2374a1774ed7aef7582bc0.CountRequestBuilder) {
     return i7f7c5d9642909cd26525cc2916fe42bbbbaa2f6b5d2374a1774ed7aef7582bc0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// CreateGetRequestInformation retrieve a list of appManagementPolicy objects.
 func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of appManagementPolicy objects.
 func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to appManagementPolicies for policies
+// CreatePostRequestInformation create an appManagementPolicy object.
 func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to appManagementPolicies for policies
+// CreatePostRequestInformationWithRequestConfiguration create an appManagementPolicy object.
 func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+// Get retrieve a list of appManagementPolicy objects.
 func (m *AppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *AppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable), nil
 }
-// Post create new navigation property to appManagementPolicies for policies
+// Post create an appManagementPolicy object.
 func (m *AppManagementPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

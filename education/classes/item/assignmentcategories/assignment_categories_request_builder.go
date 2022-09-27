@@ -18,7 +18,7 @@ type AssignmentCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AssignmentCategoriesRequestBuilderGetQueryParameters all categories associated with this class. Nullable.
+// AssignmentCategoriesRequestBuilderGetQueryParameters retrieve a list of educationCategory objects.
 type AssignmentCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type AssignmentCategoriesRequestBuilderPostRequestConfiguration struct {
 func NewAssignmentCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssignmentCategoriesRequestBuilder) {
     m := &AssignmentCategoriesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignmentCategories{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignmentCategories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewAssignmentCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *AssignmentCategoriesRequestBuilder) Count()(*i8a5e7296ad550b3e4aed508c6f1e83f661e0e51f3420ee241c664f9e083b1e02.CountRequestBuilder) {
     return i8a5e7296ad550b3e4aed508c6f1e83f661e0e51f3420ee241c664f9e083b1e02.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all categories associated with this class. Nullable.
+// CreateGetRequestInformation retrieve a list of educationCategory objects.
 func (m *AssignmentCategoriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all categories associated with this class. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of educationCategory objects.
 func (m *AssignmentCategoriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AssignmentCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *AssignmentCategoriesRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to assignmentCategories for education
+// CreatePostRequestInformation creates a new educationCategory on an educationClass.
 func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to assignmentCategories for education
+// CreatePostRequestInformationWithRequestConfiguration creates a new educationCategory on an educationClass.
 func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, requestConfiguration *AssignmentCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformationWithReq
 func (m *AssignmentCategoriesRequestBuilder) Delta()(*i1c6c9d864a42e056527be944bb84769eeb04493572a388ecb16f6f2efab7a722.DeltaRequestBuilder) {
     return i1c6c9d864a42e056527be944bb84769eeb04493572a388ecb16f6f2efab7a722.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get all categories associated with this class. Nullable.
+// Get retrieve a list of educationCategory objects.
 func (m *AssignmentCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *AssignmentCategoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *AssignmentCategoriesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryCollectionResponseable), nil
 }
-// Post create new navigation property to assignmentCategories for education
+// Post creates a new educationCategory on an educationClass.
 func (m *AssignmentCategoriesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, requestConfiguration *AssignmentCategoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

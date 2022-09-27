@@ -42,11 +42,11 @@ func NewClockOutRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewClockOutRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action clockOut
+// CreatePostRequestInformation clock out to end an open timeCard.
 func (m *ClockOutRequestBuilder) CreatePostRequestInformation(body ClockOutPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action clockOut
+// CreatePostRequestInformationWithRequestConfiguration clock out to end an open timeCard.
 func (m *ClockOutRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClockOutPostRequestBodyable, requestConfiguration *ClockOutRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *ClockOutRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action clockOut
+// Post clock out to end an open timeCard.
 func (m *ClockOutRequestBuilder) Post(ctx context.Context, body ClockOutPostRequestBodyable, requestConfiguration *ClockOutRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

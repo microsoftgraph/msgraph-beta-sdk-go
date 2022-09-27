@@ -17,7 +17,7 @@ type MembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MembersRequestBuilderGetQueryParameters retrieves the members of the plannerRoster.
+// MembersRequestBuilderGetQueryParameters get the list of plannerRosterMembers from a plannerRoster.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type MembersRequestBuilderPostRequestConfiguration struct {
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembersRequestBuilder) {
     m := &MembersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}/members{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/planner/rosters/{plannerRoster%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *MembersRequestBuilder) Count()(*i3a9dd6238b6a34ebc34f60ad048aaab5eb2fb5d6be1f7e61b9014bba2e556064.CountRequestBuilder) {
     return i3a9dd6238b6a34ebc34f60ad048aaab5eb2fb5d6be1f7e61b9014bba2e556064.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieves the members of the plannerRoster.
+// CreateGetRequestInformation get the list of plannerRosterMembers from a plannerRoster.
 func (m *MembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration retrieves the members of the plannerRoster.
+// CreateGetRequestInformationWithRequestConfiguration get the list of plannerRosterMembers from a plannerRoster.
 func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to members for planner
+// CreatePostRequestInformation add a member to the plannerRoster object.
 func (m *MembersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to members for planner
+// CreatePostRequestInformationWithRequestConfiguration add a member to the plannerRoster object.
 func (m *MembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *MembersRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get retrieves the members of the plannerRoster.
+// Get get the list of plannerRosterMembers from a plannerRoster.
 func (m *MembersRequestBuilder) Get(ctx context.Context, requestConfiguration *MembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *MembersRequestBuilder) Get(ctx context.Context, requestConfiguration *M
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberCollectionResponseable), nil
 }
-// Post create new navigation property to members for planner
+// Post add a member to the plannerRoster object.
 func (m *MembersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type StepsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// StepsRequestBuilderGetQueryParameters get steps from roleManagement
+// StepsRequestBuilderGetQueryParameters in Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
 type StepsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type StepsRequestBuilderPostRequestConfiguration struct {
 func NewStepsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*StepsRequestBuilder) {
     m := &StepsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/directory/roleAssignmentApprovals/{approval%2Did}/steps{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/directory/roleAssignmentApprovals/{approval%2Did}/steps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewStepsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *StepsRequestBuilder) Count()(*id81d300535230e7ebd52140bc1b359318999938b12d58d2169e0db0437e9753b.CountRequestBuilder) {
     return id81d300535230e7ebd52140bc1b359318999938b12d58d2169e0db0437e9753b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get steps from roleManagement
+// CreateGetRequestInformation in Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
 func (m *StepsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get steps from roleManagement
+// CreateGetRequestInformationWithRequestConfiguration in Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
 func (m *StepsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *StepsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *StepsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get get steps from roleManagement
+// Get in Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
 func (m *StepsRequestBuilder) Get(ctx context.Context, requestConfiguration *StepsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

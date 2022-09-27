@@ -17,7 +17,7 @@ type LearningContentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LearningContentsRequestBuilderGetQueryParameters learning catalog items for the provider.
+// LearningContentsRequestBuilderGetQueryParameters get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
 type LearningContentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type LearningContentsRequestBuilderPostRequestConfiguration struct {
 func NewLearningContentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LearningContentsRequestBuilder) {
     m := &LearningContentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewLearningContentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *LearningContentsRequestBuilder) Count()(*idf1118fd10ad43c70b36e5e2d255fa06a9fe666eded522b362a4941188354d7c.CountRequestBuilder) {
     return idf1118fd10ad43c70b36e5e2d255fa06a9fe666eded522b362a4941188354d7c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation learning catalog items for the provider.
+// CreateGetRequestInformation get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
 func (m *LearningContentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration learning catalog items for the provider.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
 func (m *LearningContentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LearningContentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *LearningContentsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get learning catalog items for the provider.
+// Get get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
 func (m *LearningContentsRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningContentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -41,11 +41,11 @@ func NewExportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewExportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action export
+// CreatePostRequestInformation initiate an export from a **reviewSet**.  For details, see Export documents from a review set in Advanced eDiscovery.
 func (m *ExportRequestBuilder) CreatePostRequestInformation(body ExportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action export
+// CreatePostRequestInformationWithRequestConfiguration initiate an export from a **reviewSet**.  For details, see Export documents from a review set in Advanced eDiscovery.
 func (m *ExportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExportPostRequestBodyable, requestConfiguration *ExportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ExportRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post invoke action export
+// Post initiate an export from a **reviewSet**.  For details, see Export documents from a review set in Advanced eDiscovery.
 func (m *ExportRequestBuilder) Post(ctx context.Context, body ExportPostRequestBodyable, requestConfiguration *ExportRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type ManagementTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ManagementTemplatesRequestBuilderGetQueryParameters the collection of baseline management templates across managed tenants.
+// ManagementTemplatesRequestBuilderGetQueryParameters get a list of the managementTemplate objects and their properties.
 type ManagementTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ManagementTemplatesRequestBuilderPostRequestConfiguration struct {
 func NewManagementTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagementTemplatesRequestBuilder) {
     m := &ManagementTemplatesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplates{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewManagementTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ManagementTemplatesRequestBuilder) Count()(*i3f20891a0eb29b8c5307e6b8a7dd7dd2e13f57998aa63947b87bebe25a5eff32.CountRequestBuilder) {
     return i3f20891a0eb29b8c5307e6b8a7dd7dd2e13f57998aa63947b87bebe25a5eff32.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of baseline management templates across managed tenants.
+// CreateGetRequestInformation get a list of the managementTemplate objects and their properties.
 func (m *ManagementTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of baseline management templates across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the managementTemplate objects and their properties.
 func (m *ManagementTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagementTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ManagementTemplatesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get the collection of baseline management templates across managed tenants.
+// Get get a list of the managementTemplate objects and their properties.
 func (m *ManagementTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagementTemplatesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

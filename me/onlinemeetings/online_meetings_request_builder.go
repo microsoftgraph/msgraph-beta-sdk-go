@@ -57,7 +57,7 @@ type OnlineMeetingsRequestBuilderPostRequestConfiguration struct {
 func NewOnlineMeetingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsRequestBuilder) {
     m := &OnlineMeetingsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/onlineMeetings{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/onlineMeetings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -100,11 +100,11 @@ func (m *OnlineMeetingsRequestBuilder) CreateGetRequestInformationWithRequestCon
 func (m *OnlineMeetingsRequestBuilder) CreateOrGet()(*i1cfcbff3c27e672b5c8e43ea058b6ee8ddbf421e990ae7f4e680d84861f9bbb7.CreateOrGetRequestBuilder) {
     return i1cfcbff3c27e672b5c8e43ea058b6ee8ddbf421e990ae7f4e680d84861f9bbb7.NewCreateOrGetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreatePostRequestInformation create new navigation property to onlineMeetings for me
+// CreatePostRequestInformation create an online meeting on behalf of a user.
 func (m *OnlineMeetingsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to onlineMeetings for me
+// CreatePostRequestInformationWithRequestConfiguration create an online meeting on behalf of a user.
 func (m *OnlineMeetingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *OnlineMeetingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,7 +137,7 @@ func (m *OnlineMeetingsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable), nil
 }
-// Post create new navigation property to onlineMeetings for me
+// Post create an online meeting on behalf of a user.
 func (m *OnlineMeetingsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *OnlineMeetingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -66,76 +67,13 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetEnableExpedite
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["advancedThreatProtectionAutoPopulateOnboardingBlob"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionAutoPopulateOnboardingBlob(val)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionOffboardingBlob"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionOffboardingBlob(val)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionOffboardingFilename"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionOffboardingFilename(val)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionOnboardingBlob"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionOnboardingBlob(val)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionOnboardingFilename"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionOnboardingFilename(val)
-        }
-        return nil
-    }
-    res["allowSampleSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowSampleSharing(val)
-        }
-        return nil
-    }
-    res["enableExpeditedTelemetryReporting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableExpeditedTelemetryReporting(val)
-        }
-        return nil
-    }
+    res["advancedThreatProtectionAutoPopulateOnboardingBlob"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAdvancedThreatProtectionAutoPopulateOnboardingBlob)
+    res["advancedThreatProtectionOffboardingBlob"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAdvancedThreatProtectionOffboardingBlob)
+    res["advancedThreatProtectionOffboardingFilename"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAdvancedThreatProtectionOffboardingFilename)
+    res["advancedThreatProtectionOnboardingBlob"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAdvancedThreatProtectionOnboardingBlob)
+    res["advancedThreatProtectionOnboardingFilename"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAdvancedThreatProtectionOnboardingFilename)
+    res["allowSampleSharing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowSampleSharing)
+    res["enableExpeditedTelemetryReporting"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableExpeditedTelemetryReporting)
     return res
 }
 // Serialize serializes information the current object

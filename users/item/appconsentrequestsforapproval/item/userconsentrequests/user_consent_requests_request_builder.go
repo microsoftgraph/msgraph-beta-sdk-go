@@ -18,7 +18,7 @@ type UserConsentRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserConsentRequestsRequestBuilderGetQueryParameters a list of pending user consent requests. Supports $filter (eq).
+// UserConsentRequestsRequestBuilderGetQueryParameters retrieve a collection of userConsentRequest objects and their properties.
 type UserConsentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type UserConsentRequestsRequestBuilderPostRequestConfiguration struct {
 func NewUserConsentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserConsentRequestsRequestBuilder) {
     m := &UserConsentRequestsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewUserConsentRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *UserConsentRequestsRequestBuilder) Count()(*iaf295b5873d8c00250b1f6ec152b73902d07556cbea1f631848e31f7dbcb81af.CountRequestBuilder) {
     return iaf295b5873d8c00250b1f6ec152b73902d07556cbea1f631848e31f7dbcb81af.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a list of pending user consent requests. Supports $filter (eq).
+// CreateGetRequestInformation retrieve a collection of userConsentRequest objects and their properties.
 func (m *UserConsentRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of pending user consent requests. Supports $filter (eq).
+// CreateGetRequestInformationWithRequestConfiguration retrieve a collection of userConsentRequest objects and their properties.
 func (m *UserConsentRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserConsentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *UserConsentRequestsRequestBuilder) CreatePostRequestInformationWithRequ
 func (m *UserConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ibc2e70f0c5bb35eaf67fdce3a87f6acd62ee93bec43a0874b5c26854f3408528.FilterByCurrentUserWithOnRequestBuilder) {
     return ibc2e70f0c5bb35eaf67fdce3a87f6acd62ee93bec43a0874b5c26854f3408528.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get a list of pending user consent requests. Supports $filter (eq).
+// Get retrieve a collection of userConsentRequest objects and their properties.
 func (m *UserConsentRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserConsentRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

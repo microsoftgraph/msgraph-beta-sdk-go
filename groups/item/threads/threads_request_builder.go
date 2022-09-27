@@ -17,7 +17,7 @@ type ThreadsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ThreadsRequestBuilderGetQueryParameters the group's conversation threads. Nullable.
+// ThreadsRequestBuilderGetQueryParameters get all the threads of a group. Note: You can also get all the threads of a conversation.
 type ThreadsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,7 +52,7 @@ type ThreadsRequestBuilderPostRequestConfiguration struct {
 func NewThreadsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreadsRequestBuilder) {
     m := &ThreadsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/threads{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/threads{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -71,11 +71,11 @@ func NewThreadsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ThreadsRequestBuilder) Count()(*i70fadce5fa84b53c468c5bb101ab6b7c9751d0cde039d4dfc8145455d7a25c69.CountRequestBuilder) {
     return i70fadce5fa84b53c468c5bb101ab6b7c9751d0cde039d4dfc8145455d7a25c69.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the group's conversation threads. Nullable.
+// CreateGetRequestInformation get all the threads of a group. Note: You can also get all the threads of a conversation.
 func (m *ThreadsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the group's conversation threads. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get all the threads of a group. Note: You can also get all the threads of a conversation.
 func (m *ThreadsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ThreadsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,11 +91,11 @@ func (m *ThreadsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to threads for groups
+// CreatePostRequestInformation start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group. Use reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation.
 func (m *ThreadsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to threads for groups
+// CreatePostRequestInformationWithRequestConfiguration start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group. Use reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation.
 func (m *ThreadsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ThreadsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *ThreadsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get the group's conversation threads. Nullable.
+// Get get all the threads of a group. Note: You can also get all the threads of a conversation.
 func (m *ThreadsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreadsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *ThreadsRequestBuilder) Get(ctx context.Context, requestConfiguration *T
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable), nil
 }
-// Post create new navigation property to threads for groups
+// Post start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group. Use reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation.
 func (m *ThreadsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ThreadsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

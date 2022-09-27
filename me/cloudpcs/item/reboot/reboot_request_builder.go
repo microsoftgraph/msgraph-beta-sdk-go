@@ -41,11 +41,11 @@ func NewRebootRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewRebootRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action reboot
+// CreatePostRequestInformation reboot a specific Cloud PC.
 func (m *RebootRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action reboot
+// CreatePostRequestInformationWithRequestConfiguration reboot a specific Cloud PC.
 func (m *RebootRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RebootRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *RebootRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post invoke action reboot
+// Post reboot a specific Cloud PC.
 func (m *RebootRequestBuilder) Post(ctx context.Context, requestConfiguration *RebootRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

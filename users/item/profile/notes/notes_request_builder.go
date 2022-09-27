@@ -17,7 +17,7 @@ type NotesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// NotesRequestBuilderGetQueryParameters represents notes that a user has added to their profile.
+// NotesRequestBuilderGetQueryParameters retrieve a list of personAnnotation objects from a user's profile.
 type NotesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type NotesRequestBuilderPostRequestConfiguration struct {
 func NewNotesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotesRequestBuilder) {
     m := &NotesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/notes{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/notes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewNotesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *NotesRequestBuilder) Count()(*ic2822fda08dabc7fd8b7b4966cfd511de83965cd9f5096fd0c1642fc65563825.CountRequestBuilder) {
     return ic2822fda08dabc7fd8b7b4966cfd511de83965cd9f5096fd0c1642fc65563825.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents notes that a user has added to their profile.
+// CreateGetRequestInformation retrieve a list of personAnnotation objects from a user's profile.
 func (m *NotesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents notes that a user has added to their profile.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of personAnnotation objects from a user's profile.
 func (m *NotesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NotesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *NotesRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to notes for users
+// CreatePostRequestInformation create a new personAnnotation object in a user's profile.
 func (m *NotesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to notes for users
+// CreatePostRequestInformationWithRequestConfiguration create a new personAnnotation object in a user's profile.
 func (m *NotesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *NotesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *NotesRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get represents notes that a user has added to their profile.
+// Get retrieve a list of personAnnotation objects from a user's profile.
 func (m *NotesRequestBuilder) Get(ctx context.Context, requestConfiguration *NotesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *NotesRequestBuilder) Get(ctx context.Context, requestConfiguration *Not
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationCollectionResponseable), nil
 }
-// Post create new navigation property to notes for users
+// Post create a new personAnnotation object in a user's profile.
 func (m *NotesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *NotesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

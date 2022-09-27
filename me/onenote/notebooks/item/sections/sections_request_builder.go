@@ -17,7 +17,7 @@ type SectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SectionsRequestBuilderGetQueryParameters the sections in the notebook. Read-only. Nullable.
+// SectionsRequestBuilderGetQueryParameters retrieve a list of section objects from the specified notebook.
 type SectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SectionsRequestBuilderPostRequestConfiguration struct {
 func NewSectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SectionsRequestBuilder) {
     m := &SectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/onenote/notebooks/{notebook%2Did}/sections{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/onenote/notebooks/{notebook%2Did}/sections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *SectionsRequestBuilder) Count()(*i37bcc684e3234801aee1463cb3e5024901535fda18a8555dc828995dd367e558.CountRequestBuilder) {
     return i37bcc684e3234801aee1463cb3e5024901535fda18a8555dc828995dd367e558.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the sections in the notebook. Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of section objects from the specified notebook.
 func (m *SectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the sections in the notebook. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of section objects from the specified notebook.
 func (m *SectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *SectionsRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to sections for me
+// CreatePostRequestInformation create a new section in the specified notebook.
 func (m *SectionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to sections for me
+// CreatePostRequestInformationWithRequestConfiguration create a new section in the specified notebook.
 func (m *SectionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, requestConfiguration *SectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SectionsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get the sections in the notebook. Read-only. Nullable.
+// Get retrieve a list of section objects from the specified notebook.
 func (m *SectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *SectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionCollectionResponseable), nil
 }
-// Post create new navigation property to sections for me
+// Post create a new section in the specified notebook.
 func (m *SectionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, requestConfiguration *SectionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

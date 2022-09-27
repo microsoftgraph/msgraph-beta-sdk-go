@@ -16,13 +16,6 @@ type UserConfigurationItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserConfigurationItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type UserConfigurationItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // UserConfigurationItemRequestBuilderGetQueryParameters get userConfigurations from users
 type UserConfigurationItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
@@ -36,13 +29,6 @@ type UserConfigurationItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *UserConfigurationItemRequestBuilderGetQueryParameters
-}
-// UserConfigurationItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type UserConfigurationItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewUserConfigurationItemRequestBuilderInternal instantiates a new UserConfigurationItemRequestBuilder and sets the default values.
 func NewUserConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserConfigurationItemRequestBuilder) {
@@ -62,22 +48,6 @@ func NewUserConfigurationItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CreateDeleteRequestInformation delete navigation property userConfigurations for users
-func (m *UserConfigurationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userConfigurations for users
-func (m *UserConfigurationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *UserConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
 }
 // CreateGetRequestInformation get userConfigurations from users
 func (m *UserConfigurationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -99,39 +69,6 @@ func (m *UserConfigurationItemRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property userConfigurations in users
-func (m *UserConfigurationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userConfigurations in users
-func (m *UserConfigurationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable, requestConfiguration *UserConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Delete delete navigation property userConfigurations for users
-func (m *UserConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
-}
 // Get get userConfigurations from users
 func (m *UserConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -150,20 +87,4 @@ func (m *UserConfigurationItemRequestBuilder) Get(ctx context.Context, requestCo
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable), nil
-}
-// Patch update the navigation property userConfigurations in users
-func (m *UserConfigurationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable, requestConfiguration *UserConfigurationItemRequestBuilderPatchRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }

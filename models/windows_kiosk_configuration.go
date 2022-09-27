@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -48,118 +49,16 @@ func (m *WindowsKioskConfiguration) GetEdgeKioskEnablePublicBrowsing()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["edgeKioskEnablePublicBrowsing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEdgeKioskEnablePublicBrowsing(val)
-        }
-        return nil
-    }
-    res["kioskBrowserBlockedUrlExceptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetKioskBrowserBlockedUrlExceptions(res)
-        }
-        return nil
-    }
-    res["kioskBrowserBlockedURLs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetKioskBrowserBlockedURLs(res)
-        }
-        return nil
-    }
-    res["kioskBrowserDefaultUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskBrowserDefaultUrl(val)
-        }
-        return nil
-    }
-    res["kioskBrowserEnableEndSessionButton"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskBrowserEnableEndSessionButton(val)
-        }
-        return nil
-    }
-    res["kioskBrowserEnableHomeButton"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskBrowserEnableHomeButton(val)
-        }
-        return nil
-    }
-    res["kioskBrowserEnableNavigationButtons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskBrowserEnableNavigationButtons(val)
-        }
-        return nil
-    }
-    res["kioskBrowserRestartOnIdleTimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskBrowserRestartOnIdleTimeInMinutes(val)
-        }
-        return nil
-    }
-    res["kioskProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsKioskProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsKioskProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsKioskProfileable)
-            }
-            m.SetKioskProfiles(res)
-        }
-        return nil
-    }
-    res["windowsKioskForceUpdateSchedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsKioskForceUpdateScheduleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsKioskForceUpdateSchedule(val.(WindowsKioskForceUpdateScheduleable))
-        }
-        return nil
-    }
+    res["edgeKioskEnablePublicBrowsing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEdgeKioskEnablePublicBrowsing)
+    res["kioskBrowserBlockedUrlExceptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetKioskBrowserBlockedUrlExceptions)
+    res["kioskBrowserBlockedURLs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetKioskBrowserBlockedURLs)
+    res["kioskBrowserDefaultUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskBrowserDefaultUrl)
+    res["kioskBrowserEnableEndSessionButton"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskBrowserEnableEndSessionButton)
+    res["kioskBrowserEnableHomeButton"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskBrowserEnableHomeButton)
+    res["kioskBrowserEnableNavigationButtons"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskBrowserEnableNavigationButtons)
+    res["kioskBrowserRestartOnIdleTimeInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetKioskBrowserRestartOnIdleTimeInMinutes)
+    res["kioskProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsKioskProfileFromDiscriminatorValue , m.SetKioskProfiles)
+    res["windowsKioskForceUpdateSchedule"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsKioskForceUpdateScheduleFromDiscriminatorValue , m.SetWindowsKioskForceUpdateSchedule)
     return res
 }
 // GetKioskBrowserBlockedUrlExceptions gets the kioskBrowserBlockedUrlExceptions property value. Specify URLs that the kiosk browser is allowed to navigate to
@@ -253,10 +152,7 @@ func (m *WindowsKioskConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetKioskProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskProfiles()))
-        for i, v := range m.GetKioskProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetKioskProfiles())
         err = writer.WriteCollectionOfObjectValues("kioskProfiles", cast)
         if err != nil {
             return err

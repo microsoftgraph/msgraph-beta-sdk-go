@@ -17,7 +17,7 @@ type UserCredentialUsageDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserCredentialUsageDetailsRequestBuilderGetQueryParameters represents the self-service password reset (SSPR) usage for a given tenant.
+// UserCredentialUsageDetailsRequestBuilderGetQueryParameters get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
 type UserCredentialUsageDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type UserCredentialUsageDetailsRequestBuilderPostRequestConfiguration struct {
 func NewUserCredentialUsageDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserCredentialUsageDetailsRequestBuilder) {
     m := &UserCredentialUsageDetailsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/userCredentialUsageDetails{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/reports/userCredentialUsageDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewUserCredentialUsageDetailsRequestBuilder(rawUrl string, requestAdapter i
 func (m *UserCredentialUsageDetailsRequestBuilder) Count()(*i3832d903e857110465a7593ec6f32ff759b9de549b2e91a16194ab7b2fa15bb6.CountRequestBuilder) {
     return i3832d903e857110465a7593ec6f32ff759b9de549b2e91a16194ab7b2fa15bb6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the self-service password reset (SSPR) usage for a given tenant.
+// CreateGetRequestInformation get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the self-service password reset (SSPR) usage for a given tenant.
+// CreateGetRequestInformationWithRequestConfiguration get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserCredentialUsageDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// Get represents the self-service password reset (SSPR) usage for a given tenant.
+// Get get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
 func (m *UserCredentialUsageDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

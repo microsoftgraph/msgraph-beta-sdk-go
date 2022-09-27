@@ -41,11 +41,11 @@ func NewPromoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPromoteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action promote
+// CreatePostRequestInformation promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
 func (m *PromoteRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action promote
+// CreatePostRequestInformationWithRequestConfiguration promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
 func (m *PromoteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *PromoteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *PromoteRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Post invoke action promote
+// Post promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
 func (m *PromoteRequestBuilder) Post(ctx context.Context, requestConfiguration *PromoteRequestBuilderPostRequestConfiguration)(PromoteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

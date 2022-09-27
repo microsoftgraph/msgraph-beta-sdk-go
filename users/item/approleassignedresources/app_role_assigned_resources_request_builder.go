@@ -17,7 +17,7 @@ type AppRoleAssignedResourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AppRoleAssignedResourcesRequestBuilderGetQueryParameters get appRoleAssignedResources from users
+// AppRoleAssignedResourcesRequestBuilderGetQueryParameters get the service principals to which the user has an app role assignment either directly or through group membership.
 type AppRoleAssignedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type AppRoleAssignedResourcesRequestBuilderGetRequestConfiguration struct {
 func NewAppRoleAssignedResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRoleAssignedResourcesRequestBuilder) {
     m := &AppRoleAssignedResourcesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/appRoleAssignedResources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/appRoleAssignedResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewAppRoleAssignedResourcesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *AppRoleAssignedResourcesRequestBuilder) Count()(*i7860702c01506437861943d7e90f1d421f14ed537a0a02f92e01b59ee6cf8c60.CountRequestBuilder) {
     return i7860702c01506437861943d7e90f1d421f14ed537a0a02f92e01b59ee6cf8c60.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get appRoleAssignedResources from users
+// CreateGetRequestInformation get the service principals to which the user has an app role assignment either directly or through group membership.
 func (m *AppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get appRoleAssignedResources from users
+// CreateGetRequestInformationWithRequestConfiguration get the service principals to which the user has an app role assignment either directly or through group membership.
 func (m *AppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *AppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get get appRoleAssignedResources from users
+// Get get the service principals to which the user has an app role assignment either directly or through group membership.
 func (m *AppRoleAssignedResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

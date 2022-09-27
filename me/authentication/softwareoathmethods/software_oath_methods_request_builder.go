@@ -17,7 +17,7 @@ type SoftwareOathMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SoftwareOathMethodsRequestBuilderGetQueryParameters get softwareOathMethods from me
+// SoftwareOathMethodsRequestBuilderGetQueryParameters retrieve a list of a user's software OATH token authentication method objects and their properties.
 type SoftwareOathMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,18 +45,11 @@ type SoftwareOathMethodsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SoftwareOathMethodsRequestBuilderGetQueryParameters
 }
-// SoftwareOathMethodsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type SoftwareOathMethodsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewSoftwareOathMethodsRequestBuilderInternal instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.
 func NewSoftwareOathMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SoftwareOathMethodsRequestBuilder) {
     m := &SoftwareOathMethodsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/authentication/softwareOathMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/authentication/softwareOathMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +68,11 @@ func NewSoftwareOathMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *SoftwareOathMethodsRequestBuilder) Count()(*i55d73ef1cff5f3d2fa76406706ef9d8755f2c2ec805c97c5308f988a88b9a36d.CountRequestBuilder) {
     return i55d73ef1cff5f3d2fa76406706ef9d8755f2c2ec805c97c5308f988a88b9a36d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get softwareOathMethods from me
+// CreateGetRequestInformation retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get softwareOathMethods from me
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SoftwareOathMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,25 +88,7 @@ func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to softwareOathMethods for me
-func (m *SoftwareOathMethodsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to softwareOathMethods for me
-func (m *SoftwareOathMethodsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodable, requestConfiguration *SoftwareOathMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Get get softwareOathMethods from me
+// Get retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *SoftwareOathMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *SoftwareOathMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -131,23 +106,4 @@ func (m *SoftwareOathMethodsRequestBuilder) Get(ctx context.Context, requestConf
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodCollectionResponseable), nil
-}
-// Post create new navigation property to softwareOathMethods for me
-func (m *SoftwareOathMethodsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodable, requestConfiguration *SoftwareOathMethodsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodable), nil
 }

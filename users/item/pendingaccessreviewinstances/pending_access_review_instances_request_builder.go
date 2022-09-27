@@ -18,7 +18,7 @@ type PendingAccessReviewInstancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PendingAccessReviewInstancesRequestBuilderGetQueryParameters navigation property to get list of access reviews pending approval by reviewer.
+// PendingAccessReviewInstancesRequestBuilderGetQueryParameters retrieve the accessReviewInstance objects pending approval by the calling user. A list of zero or more accessReviewInstance objects are returned, of which the calling user is an assigned reviewer.
 type PendingAccessReviewInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type PendingAccessReviewInstancesRequestBuilderPostRequestConfiguration struct {
 func NewPendingAccessReviewInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PendingAccessReviewInstancesRequestBuilder) {
     m := &PendingAccessReviewInstancesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewPendingAccessReviewInstancesRequestBuilder(rawUrl string, requestAdapter
 func (m *PendingAccessReviewInstancesRequestBuilder) Count()(*ie1b8baf49b32dcd5706df66fa583c0923ab3644a3d5b419e4fb6f068ead3289c.CountRequestBuilder) {
     return ie1b8baf49b32dcd5706df66fa583c0923ab3644a3d5b419e4fb6f068ead3289c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation navigation property to get list of access reviews pending approval by reviewer.
+// CreateGetRequestInformation retrieve the accessReviewInstance objects pending approval by the calling user. A list of zero or more accessReviewInstance objects are returned, of which the calling user is an assigned reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration navigation property to get list of access reviews pending approval by reviewer.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the accessReviewInstance objects pending approval by the calling user. A list of zero or more accessReviewInstance objects are returned, of which the calling user is an assigned reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PendingAccessReviewInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformatio
 func (m *PendingAccessReviewInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*icd140e8bb1f02a61e278e575e81ce28edf4932c7b2fb84262231e6126e50d6e0.FilterByCurrentUserWithOnRequestBuilder) {
     return icd140e8bb1f02a61e278e575e81ce28edf4932c7b2fb84262231e6126e50d6e0.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get navigation property to get list of access reviews pending approval by reviewer.
+// Get retrieve the accessReviewInstance objects pending approval by the calling user. A list of zero or more accessReviewInstance objects are returned, of which the calling user is an assigned reviewer.
 func (m *PendingAccessReviewInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *PendingAccessReviewInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

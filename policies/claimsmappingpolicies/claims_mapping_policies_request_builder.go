@@ -17,7 +17,7 @@ type ClaimsMappingPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ClaimsMappingPoliciesRequestBuilderGetQueryParameters the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// ClaimsMappingPoliciesRequestBuilderGetQueryParameters get a list of claimsMappingPolicy objects.
 type ClaimsMappingPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ClaimsMappingPoliciesRequestBuilderPostRequestConfiguration struct {
 func NewClaimsMappingPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClaimsMappingPoliciesRequestBuilder) {
     m := &ClaimsMappingPoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/claimsMappingPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/claimsMappingPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewClaimsMappingPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ClaimsMappingPoliciesRequestBuilder) Count()(*icfc7f72451ad3840501321d874cbd8dcb462a9f70518ba19d84e6d51f4323cfe.CountRequestBuilder) {
     return icfc7f72451ad3840501321d874cbd8dcb462a9f70518ba19d84e6d51f4323cfe.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// CreateGetRequestInformation get a list of claimsMappingPolicy objects.
 func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// CreateGetRequestInformationWithRequestConfiguration get a list of claimsMappingPolicy objects.
 func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to claimsMappingPolicies for policies
+// CreatePostRequestInformation create a new claimsMappingPolicy object.
 func (m *ClaimsMappingPoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to claimsMappingPolicies for policies
+// CreatePostRequestInformationWithRequestConfiguration create a new claimsMappingPolicy object.
 func (m *ClaimsMappingPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable, requestConfiguration *ClaimsMappingPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ClaimsMappingPoliciesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get the claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+// Get get a list of claimsMappingPolicy objects.
 func (m *ClaimsMappingPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ClaimsMappingPoliciesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable), nil
 }
-// Post create new navigation property to claimsMappingPolicies for policies
+// Post create a new claimsMappingPolicy object.
 func (m *ClaimsMappingPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable, requestConfiguration *ClaimsMappingPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

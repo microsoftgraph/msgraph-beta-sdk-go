@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -104,266 +105,30 @@ func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionRealTi
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSEndpointProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["advancedThreatProtectionAutomaticSampleSubmission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionAutomaticSampleSubmission(val.(*Enablement))
-        }
-        return nil
-    }
-    res["advancedThreatProtectionCloudDelivered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionCloudDelivered(val.(*Enablement))
-        }
-        return nil
-    }
-    res["advancedThreatProtectionDiagnosticDataCollection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionDiagnosticDataCollection(val.(*Enablement))
-        }
-        return nil
-    }
-    res["advancedThreatProtectionExcludedExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetAdvancedThreatProtectionExcludedExtensions(res)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionExcludedFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetAdvancedThreatProtectionExcludedFiles(res)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionExcludedFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetAdvancedThreatProtectionExcludedFolders(res)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionExcludedProcesses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetAdvancedThreatProtectionExcludedProcesses(res)
-        }
-        return nil
-    }
-    res["advancedThreatProtectionRealTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdvancedThreatProtectionRealTime(val.(*Enablement))
-        }
-        return nil
-    }
-    res["fileVaultAllowDeferralUntilSignOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultAllowDeferralUntilSignOut(val)
-        }
-        return nil
-    }
-    res["fileVaultDisablePromptAtSignOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultDisablePromptAtSignOut(val)
-        }
-        return nil
-    }
-    res["fileVaultEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultEnabled(val)
-        }
-        return nil
-    }
-    res["fileVaultHidePersonalRecoveryKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultHidePersonalRecoveryKey(val)
-        }
-        return nil
-    }
-    res["fileVaultInstitutionalRecoveryKeyCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultInstitutionalRecoveryKeyCertificate(val)
-        }
-        return nil
-    }
-    res["fileVaultInstitutionalRecoveryKeyCertificateFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultInstitutionalRecoveryKeyCertificateFileName(val)
-        }
-        return nil
-    }
-    res["fileVaultNumberOfTimesUserCanIgnore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultNumberOfTimesUserCanIgnore(val)
-        }
-        return nil
-    }
-    res["fileVaultPersonalRecoveryKeyHelpMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultPersonalRecoveryKeyHelpMessage(val)
-        }
-        return nil
-    }
-    res["fileVaultPersonalRecoveryKeyRotationInMonths"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultPersonalRecoveryKeyRotationInMonths(val)
-        }
-        return nil
-    }
-    res["fileVaultSelectedRecoveryKeyTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSFileVaultRecoveryKeyTypes)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileVaultSelectedRecoveryKeyTypes(val.(*MacOSFileVaultRecoveryKeyTypes))
-        }
-        return nil
-    }
-    res["firewallApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMacOSFirewallApplicationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MacOSFirewallApplicationable, len(val))
-            for i, v := range val {
-                res[i] = v.(MacOSFirewallApplicationable)
-            }
-            m.SetFirewallApplications(res)
-        }
-        return nil
-    }
-    res["firewallBlockAllIncoming"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallBlockAllIncoming(val)
-        }
-        return nil
-    }
-    res["firewallEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallEnabled(val)
-        }
-        return nil
-    }
-    res["firewallEnableStealthMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirewallEnableStealthMode(val)
-        }
-        return nil
-    }
-    res["gatekeeperAllowedAppSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSGatekeeperAppSources)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGatekeeperAllowedAppSource(val.(*MacOSGatekeeperAppSources))
-        }
-        return nil
-    }
-    res["gatekeeperBlockOverride"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGatekeeperBlockOverride(val)
-        }
-        return nil
-    }
+    res["advancedThreatProtectionAutomaticSampleSubmission"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetAdvancedThreatProtectionAutomaticSampleSubmission)
+    res["advancedThreatProtectionCloudDelivered"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetAdvancedThreatProtectionCloudDelivered)
+    res["advancedThreatProtectionDiagnosticDataCollection"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetAdvancedThreatProtectionDiagnosticDataCollection)
+    res["advancedThreatProtectionExcludedExtensions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAdvancedThreatProtectionExcludedExtensions)
+    res["advancedThreatProtectionExcludedFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAdvancedThreatProtectionExcludedFiles)
+    res["advancedThreatProtectionExcludedFolders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAdvancedThreatProtectionExcludedFolders)
+    res["advancedThreatProtectionExcludedProcesses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAdvancedThreatProtectionExcludedProcesses)
+    res["advancedThreatProtectionRealTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetAdvancedThreatProtectionRealTime)
+    res["fileVaultAllowDeferralUntilSignOut"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFileVaultAllowDeferralUntilSignOut)
+    res["fileVaultDisablePromptAtSignOut"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFileVaultDisablePromptAtSignOut)
+    res["fileVaultEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFileVaultEnabled)
+    res["fileVaultHidePersonalRecoveryKey"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFileVaultHidePersonalRecoveryKey)
+    res["fileVaultInstitutionalRecoveryKeyCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetFileVaultInstitutionalRecoveryKeyCertificate)
+    res["fileVaultInstitutionalRecoveryKeyCertificateFileName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFileVaultInstitutionalRecoveryKeyCertificateFileName)
+    res["fileVaultNumberOfTimesUserCanIgnore"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetFileVaultNumberOfTimesUserCanIgnore)
+    res["fileVaultPersonalRecoveryKeyHelpMessage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFileVaultPersonalRecoveryKeyHelpMessage)
+    res["fileVaultPersonalRecoveryKeyRotationInMonths"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetFileVaultPersonalRecoveryKeyRotationInMonths)
+    res["fileVaultSelectedRecoveryKeyTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSFileVaultRecoveryKeyTypes , m.SetFileVaultSelectedRecoveryKeyTypes)
+    res["firewallApplications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMacOSFirewallApplicationFromDiscriminatorValue , m.SetFirewallApplications)
+    res["firewallBlockAllIncoming"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallBlockAllIncoming)
+    res["firewallEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallEnabled)
+    res["firewallEnableStealthMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFirewallEnableStealthMode)
+    res["gatekeeperAllowedAppSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSGatekeeperAppSources , m.SetGatekeeperAllowedAppSource)
+    res["gatekeeperBlockOverride"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetGatekeeperBlockOverride)
     return res
 }
 // GetFileVaultAllowDeferralUntilSignOut gets the fileVaultAllowDeferralUntilSignOut property value. Optional. If set to true, the user can defer the enabling of FileVault until they sign out.
@@ -550,10 +315,7 @@ func (m *MacOSEndpointProtectionConfiguration) Serialize(writer i878a80d2330e89d
         }
     }
     if m.GetFirewallApplications() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFirewallApplications()))
-        for i, v := range m.GetFirewallApplications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetFirewallApplications())
         err = writer.WriteCollectionOfObjectValues("firewallApplications", cast)
         if err != nil {
             return err

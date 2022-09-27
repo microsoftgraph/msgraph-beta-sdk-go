@@ -27,7 +27,7 @@ type TermStoreRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TermStoreRequestBuilderGetQueryParameters the termStore under this site.
+// TermStoreRequestBuilderGetQueryParameters read the properties and relationships of a store object.
 type TermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,11 +85,11 @@ func (m *TermStoreRequestBuilder) CreateDeleteRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the termStore under this site.
+// CreateGetRequestInformation read the properties and relationships of a store object.
 func (m *TermStoreRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the termStore under this site.
+// CreateGetRequestInformationWithRequestConfiguration read the properties and relationships of a store object.
 func (m *TermStoreRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TermStoreRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,6 +115,7 @@ func (m *TermStoreRequestBuilder) CreatePatchRequestInformationWithRequestConfig
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -138,7 +139,7 @@ func (m *TermStoreRequestBuilder) Delete(ctx context.Context, requestConfigurati
     }
     return nil
 }
-// Get the termStore under this site.
+// Get read the properties and relationships of a store object.
 func (m *TermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration *TermStoreRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -173,20 +174,23 @@ func (m *TermStoreRequestBuilder) GroupsById(id string)(*i5e455a1dbba3c96e48c6a2
     return i5e455a1dbba3c96e48c6a219266ef918910ae70b87a393ccfbad933a417aa9bd.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property termStore in sites
-func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, requestConfiguration *TermStoreRequestBuilderPatchRequestConfiguration)(error) {
+func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, requestConfiguration *TermStoreRequestBuilderPatchRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.CreateStoreFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable), nil
 }
 // Sets the sets property
 func (m *TermStoreRequestBuilder) Sets()(*ibf00d4d648db9648140aeb93e5baf4efca2cb1040cc9a118acaa2453be406461.SetsRequestBuilder) {

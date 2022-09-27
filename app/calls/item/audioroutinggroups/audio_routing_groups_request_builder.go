@@ -17,7 +17,7 @@ type AudioRoutingGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AudioRoutingGroupsRequestBuilderGetQueryParameters get audioRoutingGroups from app
+// AudioRoutingGroupsRequestBuilderGetQueryParameters retrieve a list of **audioRoutingGroup** objects.
 type AudioRoutingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AudioRoutingGroupsRequestBuilderPostRequestConfiguration struct {
 func NewAudioRoutingGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AudioRoutingGroupsRequestBuilder) {
     m := &AudioRoutingGroupsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/app/calls/{call%2Did}/audioRoutingGroups{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/app/calls/{call%2Did}/audioRoutingGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *AudioRoutingGroupsRequestBuilder) Count()(*i11715b8818155c9d80b1c1fa43566f6f5415b9bdffc412604b682a6cd1f77ba4.CountRequestBuilder) {
     return i11715b8818155c9d80b1c1fa43566f6f5415b9bdffc412604b682a6cd1f77ba4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get audioRoutingGroups from app
+// CreateGetRequestInformation retrieve a list of **audioRoutingGroup** objects.
 func (m *AudioRoutingGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get audioRoutingGroups from app
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of **audioRoutingGroup** objects.
 func (m *AudioRoutingGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AudioRoutingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *AudioRoutingGroupsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to audioRoutingGroups for app
+// CreatePostRequestInformation create a new **audioRoutingGroup**.
 func (m *AudioRoutingGroupsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to audioRoutingGroups for app
+// CreatePostRequestInformationWithRequestConfiguration create a new **audioRoutingGroup**.
 func (m *AudioRoutingGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, requestConfiguration *AudioRoutingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AudioRoutingGroupsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get get audioRoutingGroups from app
+// Get retrieve a list of **audioRoutingGroup** objects.
 func (m *AudioRoutingGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *AudioRoutingGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *AudioRoutingGroupsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable), nil
 }
-// Post create new navigation property to audioRoutingGroups for app
+// Post create a new **audioRoutingGroup**.
 func (m *AudioRoutingGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, requestConfiguration *AudioRoutingGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

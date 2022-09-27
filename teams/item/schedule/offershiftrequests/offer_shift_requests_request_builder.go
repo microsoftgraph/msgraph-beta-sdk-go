@@ -17,7 +17,7 @@ type OfferShiftRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OfferShiftRequestsRequestBuilderGetQueryParameters get offerShiftRequests from teams
+// OfferShiftRequestsRequestBuilderGetQueryParameters retrieve the properties and relationships of all offerShiftRequest objects in a team.
 type OfferShiftRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type OfferShiftRequestsRequestBuilderPostRequestConfiguration struct {
 func NewOfferShiftRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OfferShiftRequestsRequestBuilder) {
     m := &OfferShiftRequestsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/schedule/offerShiftRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teams/{team%2Did}/schedule/offerShiftRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewOfferShiftRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *OfferShiftRequestsRequestBuilder) Count()(*i8cbe1fa39b5341589733017de1883bacef32817cf49873209eaf4f185c05c725.CountRequestBuilder) {
     return i8cbe1fa39b5341589733017de1883bacef32817cf49873209eaf4f185c05c725.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get offerShiftRequests from teams
+// CreateGetRequestInformation retrieve the properties and relationships of all offerShiftRequest objects in a team.
 func (m *OfferShiftRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get offerShiftRequests from teams
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of all offerShiftRequest objects in a team.
 func (m *OfferShiftRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OfferShiftRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OfferShiftRequestsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get get offerShiftRequests from teams
+// Get retrieve the properties and relationships of all offerShiftRequest objects in a team.
 func (m *OfferShiftRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *OfferShiftRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfferShiftRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

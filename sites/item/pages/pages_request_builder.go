@@ -17,7 +17,7 @@ type PagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PagesRequestBuilderGetQueryParameters the collection of pages in the SitePages list in this site.
+// PagesRequestBuilderGetQueryParameters get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination).
 type PagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type PagesRequestBuilderPostRequestConfiguration struct {
 func NewPagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PagesRequestBuilder) {
     m := &PagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/pages{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/pages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewPagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *PagesRequestBuilder) Count()(*i57ecd2ebf14b18c4c2aa82fbb7ba3d4cfd181a36dd29e9e8ef32460a57cab850.CountRequestBuilder) {
     return i57ecd2ebf14b18c4c2aa82fbb7ba3d4cfd181a36dd29e9e8ef32460a57cab850.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of pages in the SitePages list in this site.
+// CreateGetRequestInformation get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination).
 func (m *PagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of pages in the SitePages list in this site.
+// CreateGetRequestInformationWithRequestConfiguration get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination).
 func (m *PagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *PagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to pages for sites
+// CreatePostRequestInformation create a new [sitePage][] in the site pages [list][] in a [site][].
 func (m *PagesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to pages for sites
+// CreatePostRequestInformationWithRequestConfiguration create a new [sitePage][] in the site pages [list][] in a [site][].
 func (m *PagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *PagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PagesRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get the collection of pages in the SitePages list in this site.
+// Get get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination).
 func (m *PagesRequestBuilder) Get(ctx context.Context, requestConfiguration *PagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *PagesRequestBuilder) Get(ctx context.Context, requestConfiguration *Pag
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageCollectionResponseable), nil
 }
-// Post create new navigation property to pages for sites
+// Post create a new [sitePage][] in the site pages [list][] in a [site][].
 func (m *PagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, requestConfiguration *PagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -41,11 +41,11 @@ func NewMarkChatUnreadForUserRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewMarkChatUnreadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action markChatUnreadForUser
+// CreatePostRequestInformation mark a chat as unread for a user.
 func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformation(body MarkChatUnreadForUserPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action markChatUnreadForUser
+// CreatePostRequestInformationWithRequestConfiguration mark a chat as unread for a user.
 func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkChatUnreadForUserPostRequestBodyable, requestConfiguration *MarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Post invoke action markChatUnreadForUser
+// Post mark a chat as unread for a user.
 func (m *MarkChatUnreadForUserRequestBuilder) Post(ctx context.Context, body MarkChatUnreadForUserPostRequestBodyable, requestConfiguration *MarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type ManagedDeviceComplianceTrendsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ManagedDeviceComplianceTrendsRequestBuilderGetQueryParameters trend insights for device compliance across managed tenants.
+// ManagedDeviceComplianceTrendsRequestBuilderGetQueryParameters get a list of the managedDeviceComplianceTrend objects and their properties.
 type ManagedDeviceComplianceTrendsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ManagedDeviceComplianceTrendsRequestBuilderPostRequestConfiguration struct 
 func NewManagedDeviceComplianceTrendsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDeviceComplianceTrendsRequestBuilder) {
     m := &ManagedDeviceComplianceTrendsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedDeviceComplianceTrends{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedDeviceComplianceTrends{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewManagedDeviceComplianceTrendsRequestBuilder(rawUrl string, requestAdapte
 func (m *ManagedDeviceComplianceTrendsRequestBuilder) Count()(*i6eb8cf68aa254044712978282e44d7b1f00a3ad6c3576a179231e8f9ff9752b9.CountRequestBuilder) {
     return i6eb8cf68aa254044712978282e44d7b1f00a3ad6c3576a179231e8f9ff9752b9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation trend insights for device compliance across managed tenants.
+// CreateGetRequestInformation get a list of the managedDeviceComplianceTrend objects and their properties.
 func (m *ManagedDeviceComplianceTrendsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration trend insights for device compliance across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the managedDeviceComplianceTrend objects and their properties.
 func (m *ManagedDeviceComplianceTrendsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagedDeviceComplianceTrendsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ManagedDeviceComplianceTrendsRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Get trend insights for device compliance across managed tenants.
+// Get get a list of the managedDeviceComplianceTrend objects and their properties.
 func (m *ManagedDeviceComplianceTrendsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDeviceComplianceTrendsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedDeviceComplianceTrendCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

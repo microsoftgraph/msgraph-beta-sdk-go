@@ -17,7 +17,7 @@ type SwapShiftsChangeRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SwapShiftsChangeRequestsRequestBuilderGetQueryParameters get swapShiftsChangeRequests from teamwork
+// SwapShiftsChangeRequestsRequestBuilderGetQueryParameters retrieve a list of swapShiftsChangeRequest objects in the team.
 type SwapShiftsChangeRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration struct {
 func NewSwapShiftsChangeRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SwapShiftsChangeRequestsRequestBuilder) {
     m := &SwapShiftsChangeRequestsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/swapShiftsChangeRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/swapShiftsChangeRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSwapShiftsChangeRequestsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *SwapShiftsChangeRequestsRequestBuilder) Count()(*i50c6cd5a7d99871c21a2729ca9acd933232b0d57ac06fb647a1f5a5aab7b8415.CountRequestBuilder) {
     return i50c6cd5a7d99871c21a2729ca9acd933232b0d57ac06fb647a1f5a5aab7b8415.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get swapShiftsChangeRequests from teamwork
+// CreateGetRequestInformation retrieve a list of swapShiftsChangeRequest objects in the team.
 func (m *SwapShiftsChangeRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get swapShiftsChangeRequests from teamwork
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of swapShiftsChangeRequest objects in the team.
 func (m *SwapShiftsChangeRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *SwapShiftsChangeRequestsRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to swapShiftsChangeRequests for teamwork
+// CreatePostRequestInformation create an instance of a swapShiftsChangeRequest object.
 func (m *SwapShiftsChangeRequestsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to swapShiftsChangeRequests for teamwork
+// CreatePostRequestInformationWithRequestConfiguration create an instance of a swapShiftsChangeRequest object.
 func (m *SwapShiftsChangeRequestsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SwapShiftsChangeRequestsRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// Get get swapShiftsChangeRequests from teamwork
+// Get retrieve a list of swapShiftsChangeRequest objects in the team.
 func (m *SwapShiftsChangeRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *SwapShiftsChangeRequestsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable), nil
 }
-// Post create new navigation property to swapShiftsChangeRequests for teamwork
+// Post create an instance of a swapShiftsChangeRequest object.
 func (m *SwapShiftsChangeRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

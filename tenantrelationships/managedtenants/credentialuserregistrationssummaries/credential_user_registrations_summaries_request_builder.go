@@ -17,7 +17,7 @@ type CredentialUserRegistrationsSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+// CredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters get a list of the credentialUserRegistrationsSummary objects and their properties.
 type CredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type CredentialUserRegistrationsSummariesRequestBuilderPostRequestConfiguration 
 func NewCredentialUserRegistrationsSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CredentialUserRegistrationsSummariesRequestBuilder) {
     m := &CredentialUserRegistrationsSummariesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/credentialUserRegistrationsSummaries{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/credentialUserRegistrationsSummaries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewCredentialUserRegistrationsSummariesRequestBuilder(rawUrl string, reques
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) Count()(*i24f4eb51f717c3034d4688f6ba15526e13c45a6c6e98a9701f1318efcd704d4b.CountRequestBuilder) {
     return i24f4eb51f717c3034d4688f6ba15526e13c45a6c6e98a9701f1318efcd704d4b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+// CreateGetRequestInformation get a list of the credentialUserRegistrationsSummary objects and their properties.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the credentialUserRegistrationsSummary objects and their properties.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Get summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+// Get get a list of the credentialUserRegistrationsSummary objects and their properties.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

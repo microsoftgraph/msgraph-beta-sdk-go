@@ -18,7 +18,7 @@ type TokenIssuancePoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TokenIssuancePoliciesRequestBuilderGetQueryParameters get tokenIssuancePolicies from applications
+// TokenIssuancePoliciesRequestBuilderGetQueryParameters list the tokenIssuancePolicy objects that are assigned to an application.
 type TokenIssuancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type TokenIssuancePoliciesRequestBuilderGetRequestConfiguration struct {
 func NewTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TokenIssuancePoliciesRequestBuilder) {
     m := &TokenIssuancePoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *TokenIssuancePoliciesRequestBuilder) Count()(*ie49adee9e95fdfe4bbe54d8bc31762b53264aae9ff3da9125bc85cc00e122756.CountRequestBuilder) {
     return ie49adee9e95fdfe4bbe54d8bc31762b53264aae9ff3da9125bc85cc00e122756.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get tokenIssuancePolicies from applications
+// CreateGetRequestInformation list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get tokenIssuancePolicies from applications
+// CreateGetRequestInformationWithRequestConfiguration list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Get get tokenIssuancePolicies from applications
+// Get list the tokenIssuancePolicy objects that are assigned to an application.
 func (m *TokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *TokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

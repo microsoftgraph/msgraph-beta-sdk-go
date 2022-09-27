@@ -16,7 +16,7 @@ type AdministrativeUnitRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdministrativeUnitRequestBuilderGetQueryParameters get administrativeUnit from education
+// AdministrativeUnitRequestBuilderGetQueryParameters retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
 type AdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewAdministrativeUnitRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get administrativeUnit from education
+// CreateGetRequestInformation retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get administrativeUnit from education
+// CreateGetRequestInformationWithRequestConfiguration retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get get administrativeUnit from education
+// Get retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
 func (m *AdministrativeUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

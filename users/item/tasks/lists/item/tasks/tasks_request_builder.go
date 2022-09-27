@@ -18,7 +18,7 @@ type TasksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TasksRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
+// TasksRequestBuilderGetQueryParameters get the baseTask resources from the tasks navigation property of a specific baseTaskList.
 type TasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type TasksRequestBuilderPostRequestConfiguration struct {
 func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TasksRequestBuilder) {
     m := &TasksRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/tasks/lists/{baseTaskList%2Did}/tasks{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/tasks/lists/{baseTaskList%2Did}/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *TasksRequestBuilder) Count()(*iaf489fc8d1cf77fcd3b2a9c7f102eea45054d990942499e982b0af876ac4db03.CountRequestBuilder) {
     return iaf489fc8d1cf77fcd3b2a9c7f102eea45054d990942499e982b0af876ac4db03.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the tasks in this task list. Read-only. Nullable.
+// CreateGetRequestInformation get the baseTask resources from the tasks navigation property of a specific baseTaskList.
 func (m *TasksRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the tasks in this task list. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get the baseTask resources from the tasks navigation property of a specific baseTaskList.
 func (m *TasksRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *TasksRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to tasks for users
+// CreatePostRequestInformation create a new baseTask object in a specific baseTaskList.
 func (m *TasksRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to tasks for users
+// CreatePostRequestInformationWithRequestConfiguration create a new baseTask object in a specific baseTaskList.
 func (m *TasksRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *TasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *TasksRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
 func (m *TasksRequestBuilder) Delta()(*i9154f0de18a7f8096e9c20a027a4ebe4152f7f911708ee30031d711ff4ae59d6.DeltaRequestBuilder) {
     return i9154f0de18a7f8096e9c20a027a4ebe4152f7f911708ee30031d711ff4ae59d6.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the tasks in this task list. Read-only. Nullable.
+// Get get the baseTask resources from the tasks navigation property of a specific baseTaskList.
 func (m *TasksRequestBuilder) Get(ctx context.Context, requestConfiguration *TasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *TasksRequestBuilder) Get(ctx context.Context, requestConfiguration *Tas
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskCollectionResponseable), nil
 }
-// Post create new navigation property to tasks for users
+// Post create a new baseTask object in a specific baseTaskList.
 func (m *TasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *TasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -19,7 +19,7 @@ type DecisionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DecisionsRequestBuilderGetQueryParameters each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// DecisionsRequestBuilderGetQueryParameters get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
 type DecisionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -58,7 +58,7 @@ type DecisionsRequestBuilderPostRequestConfiguration struct {
 func NewDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DecisionsRequestBuilder) {
     m := &DecisionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/stages/{accessReviewStage%2Did}/decisions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/stages/{accessReviewStage%2Did}/decisions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -77,11 +77,11 @@ func NewDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *DecisionsRequestBuilder) Count()(*i70a67c9bda57418efe444654150198c90d36f3d86badcd635b3425bad3f728cd.CountRequestBuilder) {
     return i70a67c9bda57418efe444654150198c90d36f3d86badcd635b3425bad3f728cd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// CreateGetRequestInformation get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
 func (m *DecisionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// CreateGetRequestInformationWithRequestConfiguration get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
 func (m *DecisionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +119,7 @@ func (m *DecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 func (m *DecisionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i85682efd2cb643ec7f30dc92ad9189ca19a97613e2a4cfff688e762ccc78a402.FilterByCurrentUserWithOnRequestBuilder) {
     return i85682efd2cb643ec7f30dc92ad9189ca19a97613e2a4cfff688e762ccc78a402.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// Get get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
 func (m *DecisionsRequestBuilder) Get(ctx context.Context, requestConfiguration *DecisionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

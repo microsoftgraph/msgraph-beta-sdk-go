@@ -41,11 +41,11 @@ func NewTroubleshootRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewTroubleshootRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action troubleshoot
+// CreatePostRequestInformation troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
 func (m *TroubleshootRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action troubleshoot
+// CreatePostRequestInformationWithRequestConfiguration troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
 func (m *TroubleshootRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *TroubleshootRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *TroubleshootRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Post invoke action troubleshoot
+// Post troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
 func (m *TroubleshootRequestBuilder) Post(ctx context.Context, requestConfiguration *TroubleshootRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type StaffMembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// StaffMembersRequestBuilderGetQueryParameters all the staff members that provide services in this business. Read-only. Nullable.
+// StaffMembersRequestBuilderGetQueryParameters get a list of bookingStaffMember objects in the specified bookingBusiness.
 type StaffMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type StaffMembersRequestBuilderPostRequestConfiguration struct {
 func NewStaffMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*StaffMembersRequestBuilder) {
     m := &StaffMembersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/staffMembers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/staffMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewStaffMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *StaffMembersRequestBuilder) Count()(*i87f851e36690005e389b0e5106444f77dbd294652263f95c5fc04fb6328d4a2d.CountRequestBuilder) {
     return i87f851e36690005e389b0e5106444f77dbd294652263f95c5fc04fb6328d4a2d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.
+// CreateGetRequestInformation get a list of bookingStaffMember objects in the specified bookingBusiness.
 func (m *StaffMembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all the staff members that provide services in this business. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get a list of bookingStaffMember objects in the specified bookingBusiness.
 func (m *StaffMembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *StaffMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *StaffMembersRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to staffMembers for bookingBusinesses
+// CreatePostRequestInformation create a new staff member in the specified bookingBusiness.
 func (m *StaffMembersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to staffMembers for bookingBusinesses
+// CreatePostRequestInformationWithRequestConfiguration create a new staff member in the specified bookingBusiness.
 func (m *StaffMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable, requestConfiguration *StaffMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *StaffMembersRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get all the staff members that provide services in this business. Read-only. Nullable.
+// Get get a list of bookingStaffMember objects in the specified bookingBusiness.
 func (m *StaffMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *StaffMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *StaffMembersRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberCollectionResponseable), nil
 }
-// Post create new navigation property to staffMembers for bookingBusinesses
+// Post create a new staff member in the specified bookingBusiness.
 func (m *StaffMembersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable, requestConfiguration *StaffMembersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingStaffMemberable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

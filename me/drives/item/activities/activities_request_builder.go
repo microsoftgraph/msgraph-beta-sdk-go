@@ -17,7 +17,7 @@ type ActivitiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ActivitiesRequestBuilderGetQueryParameters the list of recent activities that took place under this drive.
+// ActivitiesRequestBuilderGetQueryParameters list the recent activities that took place on an item or under a hierarchy.
 type ActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ActivitiesRequestBuilderPostRequestConfiguration struct {
 func NewActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivitiesRequestBuilder) {
     m := &ActivitiesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/drives/{drive%2Did}/activities{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/drives/{drive%2Did}/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ActivitiesRequestBuilder) Count()(*i32dceb95d77d2c549bb5a42feeaa59314fc757c7b04a8be218b4db4f1af33414.CountRequestBuilder) {
     return i32dceb95d77d2c549bb5a42feeaa59314fc757c7b04a8be218b4db4f1af33414.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of recent activities that took place under this drive.
+// CreateGetRequestInformation list the recent activities that took place on an item or under a hierarchy.
 func (m *ActivitiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of recent activities that took place under this drive.
+// CreateGetRequestInformationWithRequestConfiguration list the recent activities that took place on an item or under a hierarchy.
 func (m *ActivitiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ActivitiesRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get the list of recent activities that took place under this drive.
+// Get list the recent activities that took place on an item or under a hierarchy.
 func (m *ActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

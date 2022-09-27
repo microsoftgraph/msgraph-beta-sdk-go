@@ -17,7 +17,7 @@ type OperationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OperationsRequestBuilderGetQueryParameters returns a list of case caseOperation objects for this case.
+// OperationsRequestBuilderGetQueryParameters get a list of the caseOperation objects and their properties.
 type OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type OperationsRequestBuilderPostRequestConfiguration struct {
 func NewOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OperationsRequestBuilder) {
     m := &OperationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/operations{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *OperationsRequestBuilder) Count()(*id9dfcfbea2c31d868a0295bb68c88171f14a52d9b53f80ed6b99c3e0b68464d0.CountRequestBuilder) {
     return id9dfcfbea2c31d868a0295bb68c88171f14a52d9b53f80ed6b99c3e0b68464d0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation returns a list of case caseOperation objects for this case.
+// CreateGetRequestInformation get a list of the caseOperation objects and their properties.
 func (m *OperationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration returns a list of case caseOperation objects for this case.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the caseOperation objects and their properties.
 func (m *OperationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OperationsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get returns a list of case caseOperation objects for this case.
+// Get get a list of the caseOperation objects and their properties.
 func (m *OperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -28,13 +28,6 @@ type CalendarRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CalendarRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type CalendarRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // CalendarRequestBuilderGetQueryParameters the group's calendar. Read-only.
 type CalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
@@ -109,22 +102,6 @@ func NewCalendarRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property calendar for groups
-func (m *CalendarRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property calendar for groups
-func (m *CalendarRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *CalendarRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // CreateGetRequestInformation the group's calendar. Read-only.
 func (m *CalendarRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
@@ -155,28 +132,13 @@ func (m *CalendarRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Delete delete navigation property calendar for groups
-func (m *CalendarRequestBuilder) Delete(ctx context.Context, requestConfiguration *CalendarRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Events the events property
 func (m *CalendarRequestBuilder) Events()(*i06cb71e1758c94dc508ff81b35d70e6b87e40dc3c43fc277a55fc5b07c51c025.EventsRequestBuilder) {
@@ -232,20 +194,23 @@ func (m *CalendarRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i2
     return i2b0a7eca3f232e3b28e09ce2398345a2762596c5fc5f1b3b203b447ca9d62dcd.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property calendar in groups
-func (m *CalendarRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *CalendarRequestBuilderPatchRequestConfiguration)(error) {
+func (m *CalendarRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *CalendarRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCalendarFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable), nil
 }
 // SingleValueExtendedProperties the singleValueExtendedProperties property
 func (m *CalendarRequestBuilder) SingleValueExtendedProperties()(*ie357553e3f2994fd5e3a6ab96e22c5c927c07c3e3c999ee4350aca9434117b9c.SingleValueExtendedPropertiesRequestBuilder) {

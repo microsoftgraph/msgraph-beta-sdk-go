@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -59,136 +60,19 @@ func (m *BitLockerSystemDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionM
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BitLockerSystemDrivePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["encryptionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBitLockerEncryptionMethod)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEncryptionMethod(val.(*BitLockerEncryptionMethod))
-        }
-        return nil
-    }
-    res["minimumPinLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumPinLength(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["prebootRecoveryEnableMessageAndUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrebootRecoveryEnableMessageAndUrl(val)
-        }
-        return nil
-    }
-    res["prebootRecoveryMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrebootRecoveryMessage(val)
-        }
-        return nil
-    }
-    res["prebootRecoveryUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrebootRecoveryUrl(val)
-        }
-        return nil
-    }
-    res["recoveryOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateBitLockerRecoveryOptionsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecoveryOptions(val.(BitLockerRecoveryOptionsable))
-        }
-        return nil
-    }
-    res["startupAuthenticationBlockWithoutTpmChip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartupAuthenticationBlockWithoutTpmChip(val)
-        }
-        return nil
-    }
-    res["startupAuthenticationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartupAuthenticationRequired(val)
-        }
-        return nil
-    }
-    res["startupAuthenticationTpmKeyUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConfigurationUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartupAuthenticationTpmKeyUsage(val.(*ConfigurationUsage))
-        }
-        return nil
-    }
-    res["startupAuthenticationTpmPinAndKeyUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConfigurationUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartupAuthenticationTpmPinAndKeyUsage(val.(*ConfigurationUsage))
-        }
-        return nil
-    }
-    res["startupAuthenticationTpmPinUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConfigurationUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartupAuthenticationTpmPinUsage(val.(*ConfigurationUsage))
-        }
-        return nil
-    }
-    res["startupAuthenticationTpmUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConfigurationUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartupAuthenticationTpmUsage(val.(*ConfigurationUsage))
-        }
-        return nil
-    }
+    res["encryptionMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseBitLockerEncryptionMethod , m.SetEncryptionMethod)
+    res["minimumPinLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumPinLength)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["prebootRecoveryEnableMessageAndUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPrebootRecoveryEnableMessageAndUrl)
+    res["prebootRecoveryMessage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPrebootRecoveryMessage)
+    res["prebootRecoveryUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPrebootRecoveryUrl)
+    res["recoveryOptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateBitLockerRecoveryOptionsFromDiscriminatorValue , m.SetRecoveryOptions)
+    res["startupAuthenticationBlockWithoutTpmChip"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStartupAuthenticationBlockWithoutTpmChip)
+    res["startupAuthenticationRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStartupAuthenticationRequired)
+    res["startupAuthenticationTpmKeyUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseConfigurationUsage , m.SetStartupAuthenticationTpmKeyUsage)
+    res["startupAuthenticationTpmPinAndKeyUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseConfigurationUsage , m.SetStartupAuthenticationTpmPinAndKeyUsage)
+    res["startupAuthenticationTpmPinUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseConfigurationUsage , m.SetStartupAuthenticationTpmPinUsage)
+    res["startupAuthenticationTpmUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseConfigurationUsage , m.SetStartupAuthenticationTpmUsage)
     return res
 }
 // GetMinimumPinLength gets the minimumPinLength property value. Indicates the minimum length of startup pin. Valid values 4 to 20

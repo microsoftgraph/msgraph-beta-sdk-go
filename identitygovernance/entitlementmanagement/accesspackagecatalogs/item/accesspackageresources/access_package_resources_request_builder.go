@@ -17,7 +17,7 @@ type AccessPackageResourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AccessPackageResourcesRequestBuilderGetQueryParameters get accessPackageResources from identityGovernance
+// AccessPackageResourcesRequestBuilderGetQueryParameters retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 type AccessPackageResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AccessPackageResourcesRequestBuilderPostRequestConfiguration struct {
 func NewAccessPackageResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessPackageResourcesRequestBuilder) {
     m := &AccessPackageResourcesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageResources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAccessPackageResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *AccessPackageResourcesRequestBuilder) Count()(*i7086257c7f5980d266202deed594df5cf1b81dd8dc10d92125ee3f6f270b1c94.CountRequestBuilder) {
     return i7086257c7f5980d266202deed594df5cf1b81dd8dc10d92125ee3f6f270b1c94.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get accessPackageResources from identityGovernance
+// CreateGetRequestInformation retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get accessPackageResources from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackageResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageResourcesRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get get accessPackageResources from identityGovernance
+// Get retrieve a list of accessPackageResource objects in an accessPackageCatalog.  To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
 func (m *AccessPackageResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessPackageResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

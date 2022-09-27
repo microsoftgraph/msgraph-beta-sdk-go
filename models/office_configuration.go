@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -41,54 +42,10 @@ func (m *OfficeConfiguration) GetClientConfigurations()([]OfficeClientConfigurat
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["clientConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOfficeClientConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OfficeClientConfigurationable, len(val))
-            for i, v := range val {
-                res[i] = v.(OfficeClientConfigurationable)
-            }
-            m.SetClientConfigurations(res)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["tenantCheckinStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOfficeClientCheckinStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OfficeClientCheckinStatusable, len(val))
-            for i, v := range val {
-                res[i] = v.(OfficeClientCheckinStatusable)
-            }
-            m.SetTenantCheckinStatuses(res)
-        }
-        return nil
-    }
-    res["tenantUserCheckinSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateOfficeUserCheckinSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantUserCheckinSummary(val.(OfficeUserCheckinSummaryable))
-        }
-        return nil
-    }
+    res["clientConfigurations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOfficeClientConfigurationFromDiscriminatorValue , m.SetClientConfigurations)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["tenantCheckinStatuses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOfficeClientCheckinStatusFromDiscriminatorValue , m.SetTenantCheckinStatuses)
+    res["tenantUserCheckinSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateOfficeUserCheckinSummaryFromDiscriminatorValue , m.SetTenantUserCheckinSummary)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -106,10 +63,7 @@ func (m *OfficeConfiguration) GetTenantUserCheckinSummary()(OfficeUserCheckinSum
 // Serialize serializes information the current object
 func (m *OfficeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetClientConfigurations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClientConfigurations()))
-        for i, v := range m.GetClientConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetClientConfigurations())
         err := writer.WriteCollectionOfObjectValues("clientConfigurations", cast)
         if err != nil {
             return err
@@ -122,10 +76,7 @@ func (m *OfficeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     if m.GetTenantCheckinStatuses() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenantCheckinStatuses()))
-        for i, v := range m.GetTenantCheckinStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTenantCheckinStatuses())
         err := writer.WriteCollectionOfObjectValues("tenantCheckinStatuses", cast)
         if err != nil {
             return err

@@ -8,8 +8,8 @@ import (
     i333d6f9a741c3d5a480f865640824913e1d39a4f963c2996d7ea72d256982497 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/messages"
     i4ad34eca47734839e8f53f40764e58d20c0fbe82d07d8c99c4cf16e673f94744 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/filesfolder"
     i631c20279400a42cb0370c8a4e9dce994084ef3e904135e7554a6a147a0f1fca "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/tabs"
-    i679aa5902f34fb9715d89efbc9fe9e801d4c719405dc2a0ffe5a54246077386e "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/doesuserhaveaccesswithuseridwithtenantidwithuserprincipalname"
     i6c9d6929d528c57b7530e4c7ae3c03f6d0ff37641fc7e5cd78172e8694c52bae "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/members"
+    i891c49a34cc56dd5245ad0989e45f20dbd39d6b3074748967a288ba8d58b5498 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/doesuserhaveaccessuseriduseridtenantidtenantiduserprincipalnameuserprincipalname"
     i986a3581495b0790d68981ec3716f0056dc76285626fdb17199382ffee423549 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/provisionemail"
     ib561d834d22205ebff2aa6a622af4c78e2c30bb0b546cd7f2250aaf1efdaf952 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/removeemail"
     ic21326d9ae9d99ddfceaf659dfe0d9021db60a2cbccb17dae4176bca430d5d8a "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item/definitions/item/teamdefinition/primarychannel/completemigration"
@@ -36,7 +36,7 @@ type PrimaryChannelRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrimaryChannelRequestBuilderGetQueryParameters the general channel for the team.
+// PrimaryChannelRequestBuilderGetQueryParameters get the default channel, **General**, of a team.
 type PrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -98,11 +98,11 @@ func (m *PrimaryChannelRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the general channel for the team.
+// CreateGetRequestInformation get the default channel, **General**, of a team.
 func (m *PrimaryChannelRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the general channel for the team.
+// CreateGetRequestInformationWithRequestConfiguration get the default channel, **General**, of a team.
 func (m *PrimaryChannelRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrimaryChannelRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,6 +128,7 @@ func (m *PrimaryChannelRequestBuilder) CreatePatchRequestInformationWithRequestC
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -151,15 +152,15 @@ func (m *PrimaryChannelRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *PrimaryChannelRequestBuilder) DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName()(*i679aa5902f34fb9715d89efbc9fe9e801d4c719405dc2a0ffe5a54246077386e.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder) {
-    return i679aa5902f34fb9715d89efbc9fe9e801d4c719405dc2a0ffe5a54246077386e.NewDoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *PrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*i891c49a34cc56dd5245ad0989e45f20dbd39d6b3074748967a288ba8d58b5498.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return i891c49a34cc56dd5245ad0989e45f20dbd39d6b3074748967a288ba8d58b5498.NewDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FilesFolder the filesFolder property
 func (m *PrimaryChannelRequestBuilder) FilesFolder()(*i4ad34eca47734839e8f53f40764e58d20c0fbe82d07d8c99c4cf16e673f94744.FilesFolderRequestBuilder) {
     return i4ad34eca47734839e8f53f40764e58d20c0fbe82d07d8c99c4cf16e673f94744.NewFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the general channel for the team.
+// Get get the default channel, **General**, of a team.
 func (m *PrimaryChannelRequestBuilder) Get(ctx context.Context, requestConfiguration *PrimaryChannelRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -209,20 +210,23 @@ func (m *PrimaryChannelRequestBuilder) MessagesById(id string)(*ia7d932909630914
     return ia7d932909630914f913d2e6c611f9494b1f8d0cc08d1238548115b7116d835bf.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property primaryChannel in teamwork
-func (m *PrimaryChannelRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *PrimaryChannelRequestBuilderPatchRequestConfiguration)(error) {
+func (m *PrimaryChannelRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *PrimaryChannelRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChannelFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
 }
 // ProvisionEmail the provisionEmail property
 func (m *PrimaryChannelRequestBuilder) ProvisionEmail()(*i986a3581495b0790d68981ec3716f0056dc76285626fdb17199382ffee423549.ProvisionEmailRequestBuilder) {

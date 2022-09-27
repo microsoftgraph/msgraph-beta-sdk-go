@@ -17,7 +17,7 @@ type SimulationAutomationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SimulationAutomationsRequestBuilderGetQueryParameters represents simulation automations created to run on a tenant.
+// SimulationAutomationsRequestBuilderGetQueryParameters get a list of attack simulation automations for a tenant.
 type SimulationAutomationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SimulationAutomationsRequestBuilderPostRequestConfiguration struct {
 func NewSimulationAutomationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SimulationAutomationsRequestBuilder) {
     m := &SimulationAutomationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/attackSimulation/simulationAutomations{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/attackSimulation/simulationAutomations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSimulationAutomationsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *SimulationAutomationsRequestBuilder) Count()(*ibdef5b5b54051d81f7a1cd30758c4af25399ca147f2a43a03aa08cb584bb2da7.CountRequestBuilder) {
     return ibdef5b5b54051d81f7a1cd30758c4af25399ca147f2a43a03aa08cb584bb2da7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents simulation automations created to run on a tenant.
+// CreateGetRequestInformation get a list of attack simulation automations for a tenant.
 func (m *SimulationAutomationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents simulation automations created to run on a tenant.
+// CreateGetRequestInformationWithRequestConfiguration get a list of attack simulation automations for a tenant.
 func (m *SimulationAutomationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SimulationAutomationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SimulationAutomationsRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get represents simulation automations created to run on a tenant.
+// Get get a list of attack simulation automations for a tenant.
 func (m *SimulationAutomationsRequestBuilder) Get(ctx context.Context, requestConfiguration *SimulationAutomationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SimulationAutomationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -8,6 +8,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i263e3a49923c8b3d5d4677d4bffaef4520d3839dbb9e191c0ead10a25a4595b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/delta"
     i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/getbyids"
+    idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/count"
     ife4ab247d2377531ea11bb4c8a0ab1e2b8f2156beb597f561bf1f7d9bd436500 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/validateproperties"
 )
 
@@ -22,12 +23,20 @@ type ContactsRequestBuilder struct {
 }
 // ContactsRequestBuilderGetQueryParameters get the list of organizational contacts for this organization.
 type ContactsRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -51,7 +60,7 @@ type ContactsRequestBuilderPostRequestConfiguration struct {
 func NewContactsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactsRequestBuilder) {
     m := &ContactsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/contacts{?%24top*,%24search*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/contacts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -65,6 +74,10 @@ func NewContactsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContactsRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count the Count property
+func (m *ContactsRequestBuilder) Count()(*idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.CountRequestBuilder) {
+    return idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of organizational contacts for this organization.
 func (m *ContactsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

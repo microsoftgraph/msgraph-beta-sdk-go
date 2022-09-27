@@ -24,7 +24,7 @@ type SettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SettingsRequestBuilderGetQueryParameters get settings from compliance
+// SettingsRequestBuilderGetQueryParameters read the properties and relationships of an eDiscovery caseSettings object.
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *SettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get settings from compliance
+// CreateGetRequestInformation read the properties and relationships of an eDiscovery caseSettings object.
 func (m *SettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get settings from compliance
+// CreateGetRequestInformationWithRequestConfiguration read the properties and relationships of an eDiscovery caseSettings object.
 func (m *SettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,16 +102,17 @@ func (m *SettingsRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property settings in compliance
+// CreatePatchRequestInformation update the properties of a an eDiscovery caseSettings object.
 func (m *SettingsRequestBuilder) CreatePatchRequestInformation(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property settings in compliance
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a an eDiscovery caseSettings object.
 func (m *SettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, requestConfiguration *SettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -135,7 +136,7 @@ func (m *SettingsRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// Get get settings from compliance
+// Get read the properties and relationships of an eDiscovery caseSettings object.
 func (m *SettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *SettingsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -154,21 +155,24 @@ func (m *SettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable), nil
 }
-// Patch update the navigation property settings in compliance
-func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, requestConfiguration *SettingsRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the properties of a an eDiscovery caseSettings object.
+func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, requestConfiguration *SettingsRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCaseSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseSettingsable), nil
 }
 // ResetToDefault the resetToDefault property
 func (m *SettingsRequestBuilder) ResetToDefault()(*i121b330b32b21fc63e6f5a8dbcdb026f0240914b98757485a760fd62236e7fc5.ResetToDefaultRequestBuilder) {

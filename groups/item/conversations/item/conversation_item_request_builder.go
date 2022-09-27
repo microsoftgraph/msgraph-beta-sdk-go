@@ -39,13 +39,6 @@ type ConversationItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ConversationItemRequestBuilderGetQueryParameters
 }
-// ConversationItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ConversationItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewConversationItemRequestBuilderInternal instantiates a new ConversationItemRequestBuilder and sets the default values.
 func NewConversationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConversationItemRequestBuilder) {
     m := &ConversationItemRequestBuilder{
@@ -101,23 +94,6 @@ func (m *ConversationItemRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property conversations in groups
-func (m *ConversationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property conversations in groups
-func (m *ConversationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable, requestConfiguration *ConversationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Delete delete navigation property conversations for groups
 func (m *ConversationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConversationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -152,22 +128,6 @@ func (m *ConversationItemRequestBuilder) Get(ctx context.Context, requestConfigu
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable), nil
-}
-// Patch update the navigation property conversations in groups
-func (m *ConversationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable, requestConfiguration *ConversationItemRequestBuilderPatchRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Threads the threads property
 func (m *ConversationItemRequestBuilder) Threads()(*ib0a099a62d88914244b884aeac4def41542598b94888e8b880f89b32021cccbb.ThreadsRequestBuilder) {

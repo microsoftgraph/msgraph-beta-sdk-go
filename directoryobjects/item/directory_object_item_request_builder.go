@@ -30,6 +30,8 @@ type DirectoryObjectItemRequestBuilderDeleteRequestConfiguration struct {
 }
 // DirectoryObjectItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a directoryObject object.
 type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -61,7 +63,7 @@ func (m *DirectoryObjectItemRequestBuilder) CheckMemberObjects()(*i3e65d17a52d9e
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
     m := &DirectoryObjectItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select}";
+    m.urlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -122,6 +124,7 @@ func (m *DirectoryObjectItemRequestBuilder) CreatePatchRequestInformationWithReq
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -173,20 +176,23 @@ func (m *DirectoryObjectItemRequestBuilder) GetMemberObjects()(*i3862728ee9f421a
     return i3862728ee9f421a8cc73557f4e6e38099fbb72d6624451de105fef3ae94552fd.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update entity in directoryObjects
-func (m *DirectoryObjectItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DirectoryObjectItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *DirectoryObjectItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DirectoryObjectItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryObjectFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
 // Restore the restore property
 func (m *DirectoryObjectItemRequestBuilder) Restore()(*i0639a56de300c8838fa264733c3d5834218f249aaab32ced8d97be5126cacf72.RestoreRequestBuilder) {

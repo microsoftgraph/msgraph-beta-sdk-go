@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryRoleTemplate 
+// DirectoryRoleTemplate provides operations to manage the collection of activityStatistics entities.
 type DirectoryRoleTemplate struct {
     DirectoryObject
     // The description to set for the directory role. Read-only.
@@ -12,7 +13,7 @@ type DirectoryRoleTemplate struct {
     // The display name to set for the directory role. Read-only.
     displayName *string
 }
-// NewDirectoryRoleTemplate instantiates a new DirectoryRoleTemplate and sets the default values.
+// NewDirectoryRoleTemplate instantiates a new directoryRoleTemplate and sets the default values.
 func NewDirectoryRoleTemplate()(*DirectoryRoleTemplate) {
     m := &DirectoryRoleTemplate{
         DirectoryObject: *NewDirectoryObject(),
@@ -36,26 +37,8 @@ func (m *DirectoryRoleTemplate) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectoryRoleTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
+    res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     return res
 }
 // Serialize serializes information the current object

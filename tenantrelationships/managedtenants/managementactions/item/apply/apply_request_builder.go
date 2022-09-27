@@ -42,11 +42,11 @@ func NewApplyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action apply
+// CreatePostRequestInformation applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
 func (m *ApplyRequestBuilder) CreatePostRequestInformation(body ApplyPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action apply
+// CreatePostRequestInformationWithRequestConfiguration applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
 func (m *ApplyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApplyPostRequestBodyable, requestConfiguration *ApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *ApplyRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Post invoke action apply
+// Post applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
 func (m *ApplyRequestBuilder) Post(ctx context.Context, body ApplyPostRequestBodyable, requestConfiguration *ApplyRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

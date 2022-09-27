@@ -17,7 +17,7 @@ type SchedulingGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SchedulingGroupsRequestBuilderGetQueryParameters the logical grouping of users in the schedule (usually by role).
+// SchedulingGroupsRequestBuilderGetQueryParameters get the list of schedulingGroups in this schedule.
 type SchedulingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,7 +54,7 @@ type SchedulingGroupsRequestBuilderPostRequestConfiguration struct {
 func NewSchedulingGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SchedulingGroupsRequestBuilder) {
     m := &SchedulingGroupsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/schedulingGroups{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/schedulingGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -73,11 +73,11 @@ func NewSchedulingGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *SchedulingGroupsRequestBuilder) Count()(*i64105ea6b2c8881be23e2b89dd4f4e75b64051e2223ac398c44d0284a3ca20c9.CountRequestBuilder) {
     return i64105ea6b2c8881be23e2b89dd4f4e75b64051e2223ac398c44d0284a3ca20c9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the logical grouping of users in the schedule (usually by role).
+// CreateGetRequestInformation get the list of schedulingGroups in this schedule.
 func (m *SchedulingGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the logical grouping of users in the schedule (usually by role).
+// CreateGetRequestInformationWithRequestConfiguration get the list of schedulingGroups in this schedule.
 func (m *SchedulingGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SchedulingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,11 +93,11 @@ func (m *SchedulingGroupsRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to schedulingGroups for groups
+// CreatePostRequestInformation create a new schedulingGroup.
 func (m *SchedulingGroupsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to schedulingGroups for groups
+// CreatePostRequestInformationWithRequestConfiguration create a new schedulingGroup.
 func (m *SchedulingGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, requestConfiguration *SchedulingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *SchedulingGroupsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get the logical grouping of users in the schedule (usually by role).
+// Get get the list of schedulingGroups in this schedule.
 func (m *SchedulingGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *SchedulingGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *SchedulingGroupsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupCollectionResponseable), nil
 }
-// Post create new navigation property to schedulingGroups for groups
+// Post create a new schedulingGroup.
 func (m *SchedulingGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, requestConfiguration *SchedulingGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchedulingGroupable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

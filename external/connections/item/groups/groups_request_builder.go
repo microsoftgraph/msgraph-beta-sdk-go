@@ -56,7 +56,7 @@ type GroupsRequestBuilderPostRequestConfiguration struct {
 func NewGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsRequestBuilder) {
     m := &GroupsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/groups{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}/groups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -95,11 +95,11 @@ func (m *GroupsRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to groups for external
+// CreatePostRequestInformation create a new externalGroup object.
 func (m *GroupsRequestBuilder) CreatePostRequestInformation(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to groups for external
+// CreatePostRequestInformationWithRequestConfiguration create a new externalGroup object.
 func (m *GroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable, requestConfiguration *GroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,7 +132,7 @@ func (m *GroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *Gr
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupCollectionResponseable), nil
 }
-// Post create new navigation property to groups for external
+// Post create a new externalGroup object.
 func (m *GroupsRequestBuilder) Post(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable, requestConfiguration *GroupsRequestBuilderPostRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

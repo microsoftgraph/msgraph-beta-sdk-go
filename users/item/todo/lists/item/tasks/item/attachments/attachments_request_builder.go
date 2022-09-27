@@ -18,7 +18,7 @@ type AttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttachmentsRequestBuilderGetQueryParameters a collection of file attachments for the task.
+// AttachmentsRequestBuilderGetQueryParameters get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -53,7 +53,7 @@ type AttachmentsRequestBuilderPostRequestConfiguration struct {
 func NewAttachmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttachmentsRequestBuilder) {
     m := &AttachmentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -72,11 +72,11 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AttachmentsRequestBuilder) Count()(*i78a58c9bb0e48273804c7bb9c37871e5db3b62e24969eb67e26d4229815887cb.CountRequestBuilder) {
     return i78a58c9bb0e48273804c7bb9c37871e5db3b62e24969eb67e26d4229815887cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of file attachments for the task.
+// CreateGetRequestInformation get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of file attachments for the task.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,11 +92,11 @@ func (m *AttachmentsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to attachments for users
+// CreatePostRequestInformation add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to attachments for users
+// CreatePostRequestInformationWithRequestConfiguration add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 func (m *AttachmentsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseable, requestConfiguration *AttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*i277f88a14299fabf3d7796681e30092dbf160a91321be00a63c2f42f871201d8.CreateUploadSessionRequestBuilder) {
     return i277f88a14299fabf3d7796681e30092dbf160a91321be00a63c2f42f871201d8.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get a collection of file attachments for the task.
+// Get get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
 func (m *AttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -133,7 +133,7 @@ func (m *AttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseCollectionResponseable), nil
 }
-// Post create new navigation property to attachments for users
+// Post add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
 func (m *AttachmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseable, requestConfiguration *AttachmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

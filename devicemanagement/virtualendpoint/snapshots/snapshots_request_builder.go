@@ -19,7 +19,7 @@ type SnapshotsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SnapshotsRequestBuilderGetQueryParameters cloud PC snapshots.
+// SnapshotsRequestBuilderGetQueryParameters get a list of cloudPcSnapshot objects and their properties.
 type SnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -58,7 +58,7 @@ type SnapshotsRequestBuilderPostRequestConfiguration struct {
 func NewSnapshotsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SnapshotsRequestBuilder) {
     m := &SnapshotsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -77,11 +77,11 @@ func NewSnapshotsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *SnapshotsRequestBuilder) Count()(*iee7cb8e10b1f05880345830ba3bc948bc6bb2cd4066c619ef94c52bfb0fa8ffc.CountRequestBuilder) {
     return iee7cb8e10b1f05880345830ba3bc948bc6bb2cd4066c619ef94c52bfb0fa8ffc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation cloud PC snapshots.
+// CreateGetRequestInformation get a list of cloudPcSnapshot objects and their properties.
 func (m *SnapshotsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration cloud PC snapshots.
+// CreateGetRequestInformationWithRequestConfiguration get a list of cloudPcSnapshot objects and their properties.
 func (m *SnapshotsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SnapshotsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +115,7 @@ func (m *SnapshotsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get cloud PC snapshots.
+// Get get a list of cloudPcSnapshot objects and their properties.
 func (m *SnapshotsRequestBuilder) Get(ctx context.Context, requestConfiguration *SnapshotsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -18,7 +18,7 @@ type ClassesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ClassesRequestBuilderGetQueryParameters classes taught at the school. Nullable.
+// ClassesRequestBuilderGetQueryParameters retrieve a list of classes owned by a school.
 type ClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type ClassesRequestBuilderGetRequestConfiguration struct {
 func NewClassesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesRequestBuilder) {
     m := &ClassesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}/classes{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}/classes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ClassesRequestBuilder) Count()(*i3d74e6f522ebcf67a89d51ffa78066eadb31a2c7d004b2f456cb012d97d17b3b.CountRequestBuilder) {
     return i3d74e6f522ebcf67a89d51ffa78066eadb31a2c7d004b2f456cb012d97d17b3b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation classes taught at the school. Nullable.
+// CreateGetRequestInformation retrieve a list of classes owned by a school.
 func (m *ClassesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration classes taught at the school. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of classes owned by a school.
 func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get classes taught at the school. Nullable.
+// Get retrieve a list of classes owned by a school.
 func (m *ClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

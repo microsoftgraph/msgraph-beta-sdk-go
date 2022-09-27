@@ -17,7 +17,7 @@ type ResourceNamespacesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ResourceNamespacesRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
+// ResourceNamespacesRequestBuilderGetQueryParameters get a list of the unifiedRbacResourceNamespace objects and their properties.
 type ResourceNamespacesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ResourceNamespacesRequestBuilderPostRequestConfiguration struct {
 func NewResourceNamespacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceNamespacesRequestBuilder) {
     m := &ResourceNamespacesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/directory/resourceNamespaces{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/directory/resourceNamespaces{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewResourceNamespacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ResourceNamespacesRequestBuilder) Count()(*i88dcb4c042d21f2d0b70ba22382aebbe42e196cc8ba05456815419d78949b132.CountRequestBuilder) {
     return i88dcb4c042d21f2d0b70ba22382aebbe42e196cc8ba05456815419d78949b132.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get resourceNamespaces from roleManagement
+// CreateGetRequestInformation get a list of the unifiedRbacResourceNamespace objects and their properties.
 func (m *ResourceNamespacesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get resourceNamespaces from roleManagement
+// CreateGetRequestInformationWithRequestConfiguration get a list of the unifiedRbacResourceNamespace objects and their properties.
 func (m *ResourceNamespacesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ResourceNamespacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ResourceNamespacesRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get get resourceNamespaces from roleManagement
+// Get get a list of the unifiedRbacResourceNamespace objects and their properties.
 func (m *ResourceNamespacesRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceNamespacesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

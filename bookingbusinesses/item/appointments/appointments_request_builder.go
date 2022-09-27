@@ -17,7 +17,7 @@ type AppointmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AppointmentsRequestBuilderGetQueryParameters all the appointments of this business. Read-only. Nullable.
+// AppointmentsRequestBuilderGetQueryParameters get a list of bookingAppointment objects for the specified bookingBusiness.
 type AppointmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AppointmentsRequestBuilderPostRequestConfiguration struct {
 func NewAppointmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppointmentsRequestBuilder) {
     m := &AppointmentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/appointments{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/appointments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAppointmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *AppointmentsRequestBuilder) Count()(*icb06d8049ae1a45c39c28c4526db095a1d9bc565e15fd9eb8fbd08c4a39ac525.CountRequestBuilder) {
     return icb06d8049ae1a45c39c28c4526db095a1d9bc565e15fd9eb8fbd08c4a39ac525.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all the appointments of this business. Read-only. Nullable.
+// CreateGetRequestInformation get a list of bookingAppointment objects for the specified bookingBusiness.
 func (m *AppointmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all the appointments of this business. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get a list of bookingAppointment objects for the specified bookingBusiness.
 func (m *AppointmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppointmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *AppointmentsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to appointments for bookingBusinesses
+// CreatePostRequestInformation create a new bookingAppointment for the specified bookingBusiness.
 func (m *AppointmentsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to appointments for bookingBusinesses
+// CreatePostRequestInformationWithRequestConfiguration create a new bookingAppointment for the specified bookingBusiness.
 func (m *AppointmentsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, requestConfiguration *AppointmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AppointmentsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get all the appointments of this business. Read-only. Nullable.
+// Get get a list of bookingAppointment objects for the specified bookingBusiness.
 func (m *AppointmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *AppointmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *AppointmentsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentCollectionResponseable), nil
 }
-// Post create new navigation property to appointments for bookingBusinesses
+// Post create a new bookingAppointment for the specified bookingBusiness.
 func (m *AppointmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, requestConfiguration *AppointmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

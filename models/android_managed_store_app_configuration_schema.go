@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -34,44 +35,9 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetExampleJson()([]byte) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["exampleJson"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExampleJson(val)
-        }
-        return nil
-    }
-    res["nestedSchemaItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidManagedStoreAppConfigurationSchemaItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(AndroidManagedStoreAppConfigurationSchemaItemable)
-            }
-            m.SetNestedSchemaItems(res)
-        }
-        return nil
-    }
-    res["schemaItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidManagedStoreAppConfigurationSchemaItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(AndroidManagedStoreAppConfigurationSchemaItemable)
-            }
-            m.SetSchemaItems(res)
-        }
-        return nil
-    }
+    res["exampleJson"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetExampleJson)
+    res["nestedSchemaItems"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue , m.SetNestedSchemaItems)
+    res["schemaItems"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue , m.SetSchemaItems)
     return res
 }
 // GetNestedSchemaItems gets the nestedSchemaItems property value. Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
@@ -95,20 +61,14 @@ func (m *AndroidManagedStoreAppConfigurationSchema) Serialize(writer i878a80d233
         }
     }
     if m.GetNestedSchemaItems() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNestedSchemaItems()))
-        for i, v := range m.GetNestedSchemaItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetNestedSchemaItems())
         err = writer.WriteCollectionOfObjectValues("nestedSchemaItems", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSchemaItems() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchemaItems()))
-        for i, v := range m.GetSchemaItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSchemaItems())
         err = writer.WriteCollectionOfObjectValues("schemaItems", cast)
         if err != nil {
             return err

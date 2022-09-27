@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -37,30 +38,8 @@ func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) GetA
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowedOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationOptionDefinitionTemplateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementConfigurationOptionDefinitionTemplateable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationOptionDefinitionTemplateable)
-            }
-            m.SetAllowedOptions(res)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
+    res["allowedOptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementConfigurationOptionDefinitionTemplateFromDiscriminatorValue , m.SetAllowedOptions)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -70,10 +49,7 @@ func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) GetO
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAllowedOptions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllowedOptions()))
-        for i, v := range m.GetAllowedOptions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAllowedOptions())
         err := writer.WriteCollectionOfObjectValues("allowedOptions", cast)
         if err != nil {
             return err

@@ -17,7 +17,7 @@ type EmailThreatsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EmailThreatsRequestBuilderGetQueryParameters get emailThreats from threatSubmission
+// EmailThreatsRequestBuilderGetQueryParameters get a list of the emailThreatSubmission objects and their properties.
 type EmailThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type EmailThreatsRequestBuilderPostRequestConfiguration struct {
 func NewEmailThreatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmailThreatsRequestBuilder) {
     m := &EmailThreatsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/threatSubmission/emailThreats{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/threatSubmission/emailThreats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewEmailThreatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *EmailThreatsRequestBuilder) Count()(*if7786a4bb305329b99528a11e403cd83268730514b24c6a85aa67eba23c5dd3d.CountRequestBuilder) {
     return if7786a4bb305329b99528a11e403cd83268730514b24c6a85aa67eba23c5dd3d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get emailThreats from threatSubmission
+// CreateGetRequestInformation get a list of the emailThreatSubmission objects and their properties.
 func (m *EmailThreatsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get emailThreats from threatSubmission
+// CreateGetRequestInformationWithRequestConfiguration get a list of the emailThreatSubmission objects and their properties.
 func (m *EmailThreatsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EmailThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *EmailThreatsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to emailThreats for threatSubmission
+// CreatePostRequestInformation create a new emailThreatSubmission object.
 func (m *EmailThreatsRequestBuilder) CreatePostRequestInformation(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to emailThreats for threatSubmission
+// CreatePostRequestInformationWithRequestConfiguration create a new emailThreatSubmission object.
 func (m *EmailThreatsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, requestConfiguration *EmailThreatsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *EmailThreatsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get get emailThreats from threatSubmission
+// Get get a list of the emailThreatSubmission objects and their properties.
 func (m *EmailThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *EmailThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *EmailThreatsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionCollectionResponseable), nil
 }
-// Post create new navigation property to emailThreats for threatSubmission
+// Post create a new emailThreatSubmission object.
 func (m *EmailThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, requestConfiguration *EmailThreatsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EmailThreatSubmissionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
