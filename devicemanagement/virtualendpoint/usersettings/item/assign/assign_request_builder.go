@@ -41,11 +41,11 @@ func NewAssignRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action assign
+// CreatePostRequestInformation assign a cloudPcUserSetting to user groups.
 func (m *AssignRequestBuilder) CreatePostRequestInformation(body AssignPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action assign
+// CreatePostRequestInformationWithRequestConfiguration assign a cloudPcUserSetting to user groups.
 func (m *AssignRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignPostRequestBodyable, requestConfiguration *AssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *AssignRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post invoke action assign
+// Post assign a cloudPcUserSetting to user groups.
 func (m *AssignRequestBuilder) Post(ctx context.Context, body AssignPostRequestBodyable, requestConfiguration *AssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

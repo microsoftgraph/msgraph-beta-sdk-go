@@ -17,7 +17,7 @@ type AttendanceRecordsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttendanceRecordsRequestBuilderGetQueryParameters list of attendance records of an attendance report. Read-only.
+// AttendanceRecordsRequestBuilderGetQueryParameters get a list of attendanceRecord objects and their properties.
 type AttendanceRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AttendanceRecordsRequestBuilderPostRequestConfiguration struct {
 func NewAttendanceRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttendanceRecordsRequestBuilder) {
     m := &AttendanceRecordsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAttendanceRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *AttendanceRecordsRequestBuilder) Count()(*i670e68e9aa32c4eb1df897105004faa01e5f072ef894cfc979ae22f9304463ef.CountRequestBuilder) {
     return i670e68e9aa32c4eb1df897105004faa01e5f072ef894cfc979ae22f9304463ef.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list of attendance records of an attendance report. Read-only.
+// CreateGetRequestInformation get a list of attendanceRecord objects and their properties.
 func (m *AttendanceRecordsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of attendance records of an attendance report. Read-only.
+// CreateGetRequestInformationWithRequestConfiguration get a list of attendanceRecord objects and their properties.
 func (m *AttendanceRecordsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttendanceRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AttendanceRecordsRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get list of attendance records of an attendance report. Read-only.
+// Get get a list of attendanceRecord objects and their properties.
 func (m *AttendanceRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttendanceRecordsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

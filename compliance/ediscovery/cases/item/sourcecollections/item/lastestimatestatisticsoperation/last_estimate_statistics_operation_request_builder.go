@@ -16,7 +16,7 @@ type LastEstimateStatisticsOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters the last estimate operation associated with the sourceCollection.
+// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last estimateStatisticsOperation object associated with a source collection. 
 type LastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewLastEstimateStatisticsOperationRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the last estimate operation associated with the sourceCollection.
+// CreateGetRequestInformation get the last estimateStatisticsOperation object associated with a source collection. 
 func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the last estimate operation associated with the sourceCollection.
+// CreateGetRequestInformationWithRequestConfiguration get the last estimateStatisticsOperation object associated with a source collection. 
 func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,7 +71,7 @@ func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Get the last estimate operation associated with the sourceCollection.
+// Get get the last estimateStatisticsOperation object associated with a source collection. 
 func (m *LastEstimateStatisticsOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.EstimateStatisticsOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

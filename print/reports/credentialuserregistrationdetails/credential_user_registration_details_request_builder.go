@@ -17,7 +17,7 @@ type CredentialUserRegistrationDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters get a list of credentialUserRegistrationDetails objects for a given tenant.
 type CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type CredentialUserRegistrationDetailsRequestBuilderPostRequestConfiguration str
 func NewCredentialUserRegistrationDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CredentialUserRegistrationDetailsRequestBuilder) {
     m := &CredentialUserRegistrationDetailsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/credentialUserRegistrationDetails{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/reports/credentialUserRegistrationDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewCredentialUserRegistrationDetailsRequestBuilder(rawUrl string, requestAd
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Count()(*i0c8164fd38bc91944f29c5289c18edaa1736eb1523289a73c6d21d45ff479b8e.CountRequestBuilder) {
     return i0c8164fd38bc91944f29c5289c18edaa1736eb1523289a73c6d21d45ff479b8e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// CreateGetRequestInformation get a list of credentialUserRegistrationDetails objects for a given tenant.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// CreateGetRequestInformationWithRequestConfiguration get a list of credentialUserRegistrationDetails objects for a given tenant.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Get details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+// Get get a list of credentialUserRegistrationDetails objects for a given tenant.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

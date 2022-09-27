@@ -17,7 +17,7 @@ type GalleryImagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GalleryImagesRequestBuilderGetQueryParameters the gallery image resource on Cloud PC.
+// GalleryImagesRequestBuilderGetQueryParameters list the properties and relationships of the cloudPcGalleryImage objects.
 type GalleryImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type GalleryImagesRequestBuilderPostRequestConfiguration struct {
 func NewGalleryImagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GalleryImagesRequestBuilder) {
     m := &GalleryImagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/galleryImages{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/galleryImages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewGalleryImagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *GalleryImagesRequestBuilder) Count()(*ie4aa81f8cf873da121d8298365c51c5545174302a545cbd0019f16efa131c5b3.CountRequestBuilder) {
     return ie4aa81f8cf873da121d8298365c51c5545174302a545cbd0019f16efa131c5b3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the gallery image resource on Cloud PC.
+// CreateGetRequestInformation list the properties and relationships of the cloudPcGalleryImage objects.
 func (m *GalleryImagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the gallery image resource on Cloud PC.
+// CreateGetRequestInformationWithRequestConfiguration list the properties and relationships of the cloudPcGalleryImage objects.
 func (m *GalleryImagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GalleryImagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *GalleryImagesRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get the gallery image resource on Cloud PC.
+// Get list the properties and relationships of the cloudPcGalleryImage objects.
 func (m *GalleryImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *GalleryImagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcGalleryImageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

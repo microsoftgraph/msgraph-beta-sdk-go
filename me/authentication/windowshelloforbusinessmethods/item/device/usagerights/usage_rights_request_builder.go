@@ -17,7 +17,7 @@ type UsageRightsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UsageRightsRequestBuilderGetQueryParameters represents the usage rights a device has been granted.
+// UsageRightsRequestBuilderGetQueryParameters retrieve a list of usageRight objects for a given device.
 type UsageRightsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type UsageRightsRequestBuilderPostRequestConfiguration struct {
 func NewUsageRightsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsageRightsRequestBuilder) {
     m := &UsageRightsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod%2Did}/device/usageRights{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod%2Did}/device/usageRights{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewUsageRightsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *UsageRightsRequestBuilder) Count()(*ia22e4f9c58eba2158ede33b8addc20dda57f34099778b9332c9ad0faddedd77c.CountRequestBuilder) {
     return ia22e4f9c58eba2158ede33b8addc20dda57f34099778b9332c9ad0faddedd77c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the usage rights a device has been granted.
+// CreateGetRequestInformation retrieve a list of usageRight objects for a given device.
 func (m *UsageRightsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the usage rights a device has been granted.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of usageRight objects for a given device.
 func (m *UsageRightsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UsageRightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UsageRightsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get represents the usage rights a device has been granted.
+// Get retrieve a list of usageRight objects for a given device.
 func (m *UsageRightsRequestBuilder) Get(ctx context.Context, requestConfiguration *UsageRightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

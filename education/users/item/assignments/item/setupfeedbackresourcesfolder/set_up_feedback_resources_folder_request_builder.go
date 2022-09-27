@@ -42,11 +42,11 @@ func NewSetUpFeedbackResourcesFolderRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewSetUpFeedbackResourcesFolderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action setUpFeedbackResourcesFolder
+// CreatePostRequestInformation create a SharePoint folder to upload feedback files for a given educationSubmission. The teacher determines the resources to upload in the feedback resources folder of a submission.
 func (m *SetUpFeedbackResourcesFolderRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setUpFeedbackResourcesFolder
+// CreatePostRequestInformationWithRequestConfiguration create a SharePoint folder to upload feedback files for a given educationSubmission. The teacher determines the resources to upload in the feedback resources folder of a submission.
 func (m *SetUpFeedbackResourcesFolderRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SetUpFeedbackResourcesFolderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *SetUpFeedbackResourcesFolderRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Post invoke action setUpFeedbackResourcesFolder
+// Post create a SharePoint folder to upload feedback files for a given educationSubmission. The teacher determines the resources to upload in the feedback resources folder of a submission.
 func (m *SetUpFeedbackResourcesFolderRequestBuilder) Post(ctx context.Context, requestConfiguration *SetUpFeedbackResourcesFolderRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

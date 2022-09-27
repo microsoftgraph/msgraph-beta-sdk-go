@@ -17,7 +17,7 @@ type WorkflowsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WorkflowsRequestBuilderGetQueryParameters deleted workflows that end up in the deletedItemsContainer.
+// WorkflowsRequestBuilderGetQueryParameters get a list of the deleted workflow objects and their properties.
 type WorkflowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type WorkflowsRequestBuilderPostRequestConfiguration struct {
 func NewWorkflowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WorkflowsRequestBuilder) {
     m := &WorkflowsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/deletedItems/workflows{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/deletedItems/workflows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewWorkflowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *WorkflowsRequestBuilder) Count()(*ie0e86b60890e37548fb2835ee1594f92378b27c14eb24b08189500af5a243120.CountRequestBuilder) {
     return ie0e86b60890e37548fb2835ee1594f92378b27c14eb24b08189500af5a243120.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation deleted workflows that end up in the deletedItemsContainer.
+// CreateGetRequestInformation get a list of the deleted workflow objects and their properties.
 func (m *WorkflowsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration deleted workflows that end up in the deletedItemsContainer.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the deleted workflow objects and their properties.
 func (m *WorkflowsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WorkflowsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get deleted workflows that end up in the deletedItemsContainer.
+// Get get a list of the deleted workflow objects and their properties.
 func (m *WorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkflowsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

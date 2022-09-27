@@ -17,7 +17,7 @@ type UrlThreatsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UrlThreatsRequestBuilderGetQueryParameters get urlThreats from security
+// UrlThreatsRequestBuilderGetQueryParameters get a list of the urlThreatSubmission objects and their properties.
 type UrlThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type UrlThreatsRequestBuilderPostRequestConfiguration struct {
 func NewUrlThreatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UrlThreatsRequestBuilder) {
     m := &UrlThreatsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/threatSubmission/urlThreats{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/threatSubmission/urlThreats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewUrlThreatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *UrlThreatsRequestBuilder) Count()(*ie450fb3277d41c6b9cb0f1655d1855c165c9879065891530f1836ca8761988fd.CountRequestBuilder) {
     return ie450fb3277d41c6b9cb0f1655d1855c165c9879065891530f1836ca8761988fd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get urlThreats from security
+// CreateGetRequestInformation get a list of the urlThreatSubmission objects and their properties.
 func (m *UrlThreatsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get urlThreats from security
+// CreateGetRequestInformationWithRequestConfiguration get a list of the urlThreatSubmission objects and their properties.
 func (m *UrlThreatsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UrlThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *UrlThreatsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to urlThreats for security
+// CreatePostRequestInformation create a new urlThreatSubmission object.
 func (m *UrlThreatsRequestBuilder) CreatePostRequestInformation(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to urlThreats for security
+// CreatePostRequestInformationWithRequestConfiguration create a new urlThreatSubmission object.
 func (m *UrlThreatsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, requestConfiguration *UrlThreatsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UrlThreatsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get get urlThreats from security
+// Get get a list of the urlThreatSubmission objects and their properties.
 func (m *UrlThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *UrlThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *UrlThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionCollectionResponseable), nil
 }
-// Post create new navigation property to urlThreats for security
+// Post create a new urlThreatSubmission object.
 func (m *UrlThreatsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, requestConfiguration *UrlThreatsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

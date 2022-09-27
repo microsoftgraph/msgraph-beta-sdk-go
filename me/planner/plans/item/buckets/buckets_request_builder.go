@@ -17,7 +17,7 @@ type BucketsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BucketsRequestBuilderGetQueryParameters collection of buckets in the plan. Read-only. Nullable.
+// BucketsRequestBuilderGetQueryParameters retrieve a list of plannerBucket objects contained by a plannerPlan object.
 type BucketsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type BucketsRequestBuilderPostRequestConfiguration struct {
 func NewBucketsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsRequestBuilder) {
     m := &BucketsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/planner/plans/{plannerPlan%2Did}/buckets{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/planner/plans/{plannerPlan%2Did}/buckets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewBucketsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *BucketsRequestBuilder) Count()(*icf004667234726103d904914806270ac860991a59f3e1c5e1d47c8094822833a.CountRequestBuilder) {
     return icf004667234726103d904914806270ac860991a59f3e1c5e1d47c8094822833a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation collection of buckets in the plan. Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of plannerBucket objects contained by a plannerPlan object.
 func (m *BucketsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of buckets in the plan. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of plannerBucket objects contained by a plannerPlan object.
 func (m *BucketsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BucketsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *BucketsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get collection of buckets in the plan. Read-only. Nullable.
+// Get retrieve a list of plannerBucket objects contained by a plannerPlan object.
 func (m *BucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

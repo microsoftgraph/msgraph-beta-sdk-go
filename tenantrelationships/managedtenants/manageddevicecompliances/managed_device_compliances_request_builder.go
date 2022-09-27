@@ -17,7 +17,7 @@ type ManagedDeviceCompliancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ManagedDeviceCompliancesRequestBuilderGetQueryParameters the collection of compliance for managed devices across managed tenants.
+// ManagedDeviceCompliancesRequestBuilderGetQueryParameters get a list of the managedDeviceCompliance objects and their properties.
 type ManagedDeviceCompliancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ManagedDeviceCompliancesRequestBuilderPostRequestConfiguration struct {
 func NewManagedDeviceCompliancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDeviceCompliancesRequestBuilder) {
     m := &ManagedDeviceCompliancesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedDeviceCompliances{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managedDeviceCompliances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewManagedDeviceCompliancesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ManagedDeviceCompliancesRequestBuilder) Count()(*i3bf8dbfb83602e20444979ba9c78e52ea94b90644489913c51394f57458616ad.CountRequestBuilder) {
     return i3bf8dbfb83602e20444979ba9c78e52ea94b90644489913c51394f57458616ad.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of compliance for managed devices across managed tenants.
+// CreateGetRequestInformation get a list of the managedDeviceCompliance objects and their properties.
 func (m *ManagedDeviceCompliancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of compliance for managed devices across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the managedDeviceCompliance objects and their properties.
 func (m *ManagedDeviceCompliancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagedDeviceCompliancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ManagedDeviceCompliancesRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// Get the collection of compliance for managed devices across managed tenants.
+// Get get a list of the managedDeviceCompliance objects and their properties.
 func (m *ManagedDeviceCompliancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDeviceCompliancesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedDeviceComplianceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

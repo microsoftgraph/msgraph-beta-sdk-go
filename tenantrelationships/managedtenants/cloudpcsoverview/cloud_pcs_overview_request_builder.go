@@ -17,7 +17,7 @@ type CloudPcsOverviewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CloudPcsOverviewRequestBuilderGetQueryParameters overview of cloud PC information across managed tenants.
+// CloudPcsOverviewRequestBuilderGetQueryParameters get a list of the cloudPcOverview objects and their properties.
 type CloudPcsOverviewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type CloudPcsOverviewRequestBuilderPostRequestConfiguration struct {
 func NewCloudPcsOverviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPcsOverviewRequestBuilder) {
     m := &CloudPcsOverviewRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewCloudPcsOverviewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *CloudPcsOverviewRequestBuilder) Count()(*ie31bdb5d2437521047ba3a81672e2bb99eb562289c79cc40b79e1896bb9133f7.CountRequestBuilder) {
     return ie31bdb5d2437521047ba3a81672e2bb99eb562289c79cc40b79e1896bb9133f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation overview of cloud PC information across managed tenants.
+// CreateGetRequestInformation get a list of the cloudPcOverview objects and their properties.
 func (m *CloudPcsOverviewRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration overview of cloud PC information across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the cloudPcOverview objects and their properties.
 func (m *CloudPcsOverviewRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CloudPcsOverviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CloudPcsOverviewRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get overview of cloud PC information across managed tenants.
+// Get get a list of the cloudPcOverview objects and their properties.
 func (m *CloudPcsOverviewRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPcsOverviewRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcOverviewCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

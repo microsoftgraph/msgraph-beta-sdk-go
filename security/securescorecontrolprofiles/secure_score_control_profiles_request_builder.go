@@ -17,7 +17,7 @@ type SecureScoreControlProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SecureScoreControlProfilesRequestBuilderGetQueryParameters get secureScoreControlProfiles from security
+// SecureScoreControlProfilesRequestBuilderGetQueryParameters retrieves a list of secureScoreControlProfile objects for a tenant.
 type SecureScoreControlProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SecureScoreControlProfilesRequestBuilderPostRequestConfiguration struct {
 func NewSecureScoreControlProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecureScoreControlProfilesRequestBuilder) {
     m := &SecureScoreControlProfilesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/secureScoreControlProfiles{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/secureScoreControlProfiles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSecureScoreControlProfilesRequestBuilder(rawUrl string, requestAdapter i
 func (m *SecureScoreControlProfilesRequestBuilder) Count()(*i45b0ed8628ab3a7c04eda579108b9b64a77983a213380ff4b7b6096ff27d0a53.CountRequestBuilder) {
     return i45b0ed8628ab3a7c04eda579108b9b64a77983a213380ff4b7b6096ff27d0a53.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get secureScoreControlProfiles from security
+// CreateGetRequestInformation retrieves a list of secureScoreControlProfile objects for a tenant.
 func (m *SecureScoreControlProfilesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get secureScoreControlProfiles from security
+// CreateGetRequestInformationWithRequestConfiguration retrieves a list of secureScoreControlProfile objects for a tenant.
 func (m *SecureScoreControlProfilesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SecureScoreControlProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SecureScoreControlProfilesRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// Get get secureScoreControlProfiles from security
+// Get retrieves a list of secureScoreControlProfile objects for a tenant.
 func (m *SecureScoreControlProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *SecureScoreControlProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecureScoreControlProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

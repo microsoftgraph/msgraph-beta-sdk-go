@@ -42,11 +42,11 @@ func NewAddLargeGalleryViewRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewAddLargeGalleryViewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action addLargeGalleryView
+// CreatePostRequestInformation add the large gallery view to a call.
 func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformation(body AddLargeGalleryViewPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addLargeGalleryView
+// CreatePostRequestInformationWithRequestConfiguration add the large gallery view to a call.
 func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddLargeGalleryViewPostRequestBodyable, requestConfiguration *AddLargeGalleryViewRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Post invoke action addLargeGalleryView
+// Post add the large gallery view to a call.
 func (m *AddLargeGalleryViewRequestBuilder) Post(ctx context.Context, body AddLargeGalleryViewPostRequestBodyable, requestConfiguration *AddLargeGalleryViewRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AddLargeGalleryViewOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

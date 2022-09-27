@@ -19,7 +19,7 @@ type UserProcessingResultsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserProcessingResultsRequestBuilderGetQueryParameters the associated individual user execution.
+// UserProcessingResultsRequestBuilderGetQueryParameters get user processing results of a workflow run object.
 type UserProcessingResultsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -58,7 +58,7 @@ type UserProcessingResultsRequestBuilderPostRequestConfiguration struct {
 func NewUserProcessingResultsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserProcessingResultsRequestBuilder) {
     m := &UserProcessingResultsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -77,11 +77,11 @@ func NewUserProcessingResultsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *UserProcessingResultsRequestBuilder) Count()(*iaab90b0b81f1a6f083045a3652ce78b4a66a271f719b1c959c6ae56fadcc306a.CountRequestBuilder) {
     return iaab90b0b81f1a6f083045a3652ce78b4a66a271f719b1c959c6ae56fadcc306a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the associated individual user execution.
+// CreateGetRequestInformation get user processing results of a workflow run object.
 func (m *UserProcessingResultsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the associated individual user execution.
+// CreateGetRequestInformationWithRequestConfiguration get user processing results of a workflow run object.
 func (m *UserProcessingResultsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +115,7 @@ func (m *UserProcessingResultsRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get the associated individual user execution.
+// Get get user processing results of a workflow run object.
 func (m *UserProcessingResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserProcessingResultsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.UserProcessingResultCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

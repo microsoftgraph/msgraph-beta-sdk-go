@@ -1,16 +1,17 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeletedTeam 
+// DeletedTeam provides operations to manage the collection of activityStatistics entities.
 type DeletedTeam struct {
     Entity
     // The channels those are either shared with this deleted team or created in this deleted team.
     channels []Channelable
 }
-// NewDeletedTeam instantiates a new DeletedTeam and sets the default values.
+// NewDeletedTeam instantiates a new deletedTeam and sets the default values.
 func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),
@@ -30,20 +31,7 @@ func (m *DeletedTeam) GetChannels()([]Channelable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeletedTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["channels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Channelable, len(val))
-            for i, v := range val {
-                res[i] = v.(Channelable)
-            }
-            m.SetChannels(res)
-        }
-        return nil
-    }
+    res["channels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue , m.SetChannels)
     return res
 }
 // Serialize serializes information the current object
@@ -53,10 +41,7 @@ func (m *DeletedTeam) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         return err
     }
     if m.GetChannels() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChannels()))
-        for i, v := range m.GetChannels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetChannels())
         err = writer.WriteCollectionOfObjectValues("channels", cast)
         if err != nil {
             return err

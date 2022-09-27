@@ -41,11 +41,11 @@ func NewDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewDeleteTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action deleteTiIndicators
+// CreatePostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformation(body DeleteTiIndicatorsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action deleteTiIndicators
+// CreatePostRequestInformationWithRequestConfiguration delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeleteTiIndicatorsPostRequestBodyable, requestConfiguration *DeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Post invoke action deleteTiIndicators
+// Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 func (m *DeleteTiIndicatorsRequestBuilder) Post(ctx context.Context, body DeleteTiIndicatorsPostRequestBodyable, requestConfiguration *DeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(DeleteTiIndicatorsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

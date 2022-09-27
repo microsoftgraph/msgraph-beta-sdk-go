@@ -41,11 +41,11 @@ func NewAcquireAccessTokenRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAcquireAccessTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action acquireAccessToken
+// CreatePostRequestInformation acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
 func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformation(body AcquireAccessTokenPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action acquireAccessToken
+// CreatePostRequestInformationWithRequestConfiguration acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
 func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AcquireAccessTokenPostRequestBodyable, requestConfiguration *AcquireAccessTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Post invoke action acquireAccessToken
+// Post acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
 func (m *AcquireAccessTokenRequestBuilder) Post(ctx context.Context, body AcquireAccessTokenPostRequestBodyable, requestConfiguration *AcquireAccessTokenRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

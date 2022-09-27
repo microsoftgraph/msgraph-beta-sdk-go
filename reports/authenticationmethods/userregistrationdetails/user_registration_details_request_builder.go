@@ -17,7 +17,7 @@ type UserRegistrationDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserRegistrationDetailsRequestBuilderGetQueryParameters represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+// UserRegistrationDetailsRequestBuilderGetQueryParameters get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
 type UserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type UserRegistrationDetailsRequestBuilderPostRequestConfiguration struct {
 func NewUserRegistrationDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserRegistrationDetailsRequestBuilder) {
     m := &UserRegistrationDetailsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports/authenticationMethods/userRegistrationDetails{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/reports/authenticationMethods/userRegistrationDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewUserRegistrationDetailsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *UserRegistrationDetailsRequestBuilder) Count()(*i501cb9eb401946b680810896dd8cb75448c2b390f07a236f1db2c2934728f5e3.CountRequestBuilder) {
     return i501cb9eb401946b680810896dd8cb75448c2b390f07a236f1db2c2934728f5e3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+// CreateGetRequestInformation get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
 func (m *UserRegistrationDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+// CreateGetRequestInformationWithRequestConfiguration get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
 func (m *UserRegistrationDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserRegistrationDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UserRegistrationDetailsRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+// Get get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
 func (m *UserRegistrationDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserRegistrationDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationDetailsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

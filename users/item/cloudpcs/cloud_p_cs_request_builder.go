@@ -17,7 +17,7 @@ type CloudPCsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CloudPCsRequestBuilderGetQueryParameters get cloudPCs from users
+// CloudPCsRequestBuilderGetQueryParameters list the cloudPC devices that are attributed to the signed-in user. 
 type CloudPCsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type CloudPCsRequestBuilderPostRequestConfiguration struct {
 func NewCloudPCsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCsRequestBuilder) {
     m := &CloudPCsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/cloudPCs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewCloudPCsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *CloudPCsRequestBuilder) Count()(*ib459b6387bc4579ca91ce63549c3249fe477d7a68dca9049d2a334d8f3c114b0.CountRequestBuilder) {
     return ib459b6387bc4579ca91ce63549c3249fe477d7a68dca9049d2a334d8f3c114b0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get cloudPCs from users
+// CreateGetRequestInformation list the cloudPC devices that are attributed to the signed-in user. 
 func (m *CloudPCsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get cloudPCs from users
+// CreateGetRequestInformationWithRequestConfiguration list the cloudPC devices that are attributed to the signed-in user. 
 func (m *CloudPCsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CloudPCsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CloudPCsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get cloudPCs from users
+// Get list the cloudPC devices that are attributed to the signed-in user. 
 func (m *CloudPCsRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

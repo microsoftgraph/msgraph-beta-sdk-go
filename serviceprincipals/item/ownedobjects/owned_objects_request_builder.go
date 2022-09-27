@@ -21,7 +21,7 @@ type OwnedObjectsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// OwnedObjectsRequestBuilderGetQueryParameters directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// OwnedObjectsRequestBuilderGetQueryParameters retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
 type OwnedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ func (m *OwnedObjectsRequestBuilder) Application()(*ic9213a91056269d46044c3d272d
 func NewOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnedObjectsRequestBuilder) {
     m := &OwnedObjectsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/ownedObjects{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/ownedObjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OwnedObjectsRequestBuilder) Count()(*i56c59dca0958c7e4544d9406366ddb1a4747561d1d8ebe793dff6b9c73fe3f96.CountRequestBuilder) {
     return i56c59dca0958c7e4544d9406366ddb1a4747561d1d8ebe793dff6b9c73fe3f96.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
 func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
 func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,7 +100,7 @@ func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfi
 func (m *OwnedObjectsRequestBuilder) Endpoint()(*i8bbbcf96afb909a4b9175c65e9efc752c3d426ed8dac3672190658251a65cc73.EndpointRequestBuilder) {
     return i8bbbcf96afb909a4b9175c65e9efc752c3d426ed8dac3672190658251a65cc73.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// Get retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
 func (m *OwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

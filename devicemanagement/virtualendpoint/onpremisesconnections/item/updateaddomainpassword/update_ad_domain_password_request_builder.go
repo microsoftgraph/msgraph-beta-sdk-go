@@ -41,11 +41,11 @@ func NewUpdateAdDomainPasswordRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateAdDomainPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action updateAdDomainPassword
+// CreatePostRequestInformation update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
 func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformation(body UpdateAdDomainPasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateAdDomainPassword
+// CreatePostRequestInformationWithRequestConfiguration update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
 func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *UpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Post invoke action updateAdDomainPassword
+// Post update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
 func (m *UpdateAdDomainPasswordRequestBuilder) Post(ctx context.Context, body UpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *UpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

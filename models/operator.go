@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the validateComplianceScript method.
+// Provides operations to manage the collection of activityStatistics entities.
 type Operator int
 
 const (

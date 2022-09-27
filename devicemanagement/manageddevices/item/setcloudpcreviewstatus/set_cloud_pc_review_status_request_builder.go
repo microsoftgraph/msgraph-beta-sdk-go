@@ -41,11 +41,11 @@ func NewSetCloudPcReviewStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewSetCloudPcReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action setCloudPcReviewStatus
+// CreatePostRequestInformation set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
 func (m *SetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformation(body SetCloudPcReviewStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setCloudPcReviewStatus
+// CreatePostRequestInformationWithRequestConfiguration set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
 func (m *SetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *SetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *SetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Post invoke action setCloudPcReviewStatus
+// Post set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
 func (m *SetCloudPcReviewStatusRequestBuilder) Post(ctx context.Context, body SetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *SetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -41,11 +41,11 @@ func NewResetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewResetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action reset
+// CreatePostRequestInformation reset the sync of a specific school data synchronization profile in the tenant.
 func (m *ResetRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action reset
+// CreatePostRequestInformationWithRequestConfiguration reset the sync of a specific school data synchronization profile in the tenant.
 func (m *ResetRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ResetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *ResetRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Post invoke action reset
+// Post reset the sync of a specific school data synchronization profile in the tenant.
 func (m *ResetRequestBuilder) Post(ctx context.Context, requestConfiguration *ResetRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

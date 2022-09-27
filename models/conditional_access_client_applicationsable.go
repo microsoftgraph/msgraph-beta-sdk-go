@@ -11,7 +11,9 @@ type ConditionalAccessClientApplicationsable interface {
     GetExcludeServicePrincipals()([]string)
     GetIncludeServicePrincipals()([]string)
     GetOdataType()(*string)
+    GetServicePrincipalFilter()(ConditionalAccessFilterable)
     SetExcludeServicePrincipals(value []string)()
     SetIncludeServicePrincipals(value []string)()
     SetOdataType(value *string)()
+    SetServicePrincipalFilter(value ConditionalAccessFilterable)()
 }

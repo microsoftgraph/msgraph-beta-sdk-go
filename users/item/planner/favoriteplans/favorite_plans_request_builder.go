@@ -17,7 +17,7 @@ type FavoritePlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FavoritePlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+// FavoritePlansRequestBuilderGetQueryParameters retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
 type FavoritePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type FavoritePlansRequestBuilderGetRequestConfiguration struct {
 func NewFavoritePlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FavoritePlansRequestBuilder) {
     m := &FavoritePlansRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/favoritePlans{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner/favoritePlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewFavoritePlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *FavoritePlansRequestBuilder) Count()(*i6e798cb62d48269e63cd78c9159cd198e2c890347a287f36f0d2142a35eb42c1.CountRequestBuilder) {
     return i6e798cb62d48269e63cd78c9159cd198e2c890347a287f36f0d2142a35eb42c1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+// CreateGetRequestInformation retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
 func (m *FavoritePlansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
 func (m *FavoritePlansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FavoritePlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *FavoritePlansRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+// Get retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
 func (m *FavoritePlansRequestBuilder) Get(ctx context.Context, requestConfiguration *FavoritePlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

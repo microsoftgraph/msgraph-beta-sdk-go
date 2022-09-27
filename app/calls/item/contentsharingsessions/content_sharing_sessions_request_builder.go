@@ -17,7 +17,7 @@ type ContentSharingSessionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ContentSharingSessionsRequestBuilderGetQueryParameters get contentSharingSessions from app
+// ContentSharingSessionsRequestBuilderGetQueryParameters retrieve a list of contentSharingSession objects in a call.
 type ContentSharingSessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ContentSharingSessionsRequestBuilderPostRequestConfiguration struct {
 func NewContentSharingSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContentSharingSessionsRequestBuilder) {
     m := &ContentSharingSessionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/app/calls/{call%2Did}/contentSharingSessions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/app/calls/{call%2Did}/contentSharingSessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewContentSharingSessionsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ContentSharingSessionsRequestBuilder) Count()(*i68341c8bce89cd129fe768442df3396b0d82f6a0aed9f38f83498fec363f4003.CountRequestBuilder) {
     return i68341c8bce89cd129fe768442df3396b0d82f6a0aed9f38f83498fec363f4003.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get contentSharingSessions from app
+// CreateGetRequestInformation retrieve a list of contentSharingSession objects in a call.
 func (m *ContentSharingSessionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get contentSharingSessions from app
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of contentSharingSession objects in a call.
 func (m *ContentSharingSessionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContentSharingSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ContentSharingSessionsRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get get contentSharingSessions from app
+// Get retrieve a list of contentSharingSession objects in a call.
 func (m *ContentSharingSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ContentSharingSessionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentSharingSessionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

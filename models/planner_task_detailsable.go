@@ -10,10 +10,12 @@ type PlannerTaskDetailsable interface {
     PlannerDeltaable
     GetChecklist()(PlannerChecklistItemsable)
     GetDescription()(*string)
+    GetNotes()(ItemBodyable)
     GetPreviewType()(*PlannerPreviewType)
     GetReferences()(PlannerExternalReferencesable)
     SetChecklist(value PlannerChecklistItemsable)()
     SetDescription(value *string)()
+    SetNotes(value ItemBodyable)()
     SetPreviewType(value *PlannerPreviewType)()
     SetReferences(value PlannerExternalReferencesable)()
 }

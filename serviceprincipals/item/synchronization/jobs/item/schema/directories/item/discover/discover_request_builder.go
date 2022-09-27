@@ -42,11 +42,11 @@ func NewDiscoverRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewDiscoverRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action discover
+// CreatePostRequestInformation discover the latest schema definition for provisioning to an application. 
 func (m *DiscoverRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action discover
+// CreatePostRequestInformationWithRequestConfiguration discover the latest schema definition for provisioning to an application. 
 func (m *DiscoverRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *DiscoverRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *DiscoverRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action discover
+// Post discover the latest schema definition for provisioning to an application. 
 func (m *DiscoverRequestBuilder) Post(ctx context.Context, requestConfiguration *DiscoverRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

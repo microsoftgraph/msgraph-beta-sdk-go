@@ -41,11 +41,11 @@ func NewSendActivityNotificationToRecipientsRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewSendActivityNotificationToRecipientsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action sendActivityNotificationToRecipients
+// CreatePostRequestInformation send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 func (m *SendActivityNotificationToRecipientsRequestBuilder) CreatePostRequestInformation(body SendActivityNotificationToRecipientsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action sendActivityNotificationToRecipients
+// CreatePostRequestInformationWithRequestConfiguration send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 func (m *SendActivityNotificationToRecipientsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendActivityNotificationToRecipientsPostRequestBodyable, requestConfiguration *SendActivityNotificationToRecipientsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *SendActivityNotificationToRecipientsRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Post invoke action sendActivityNotificationToRecipients
+// Post send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 func (m *SendActivityNotificationToRecipientsRequestBuilder) Post(ctx context.Context, body SendActivityNotificationToRecipientsPostRequestBodyable, requestConfiguration *SendActivityNotificationToRecipientsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

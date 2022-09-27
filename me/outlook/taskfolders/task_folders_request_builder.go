@@ -17,7 +17,7 @@ type TaskFoldersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TaskFoldersRequestBuilderGetQueryParameters get taskFolders from me
+// TaskFoldersRequestBuilderGetQueryParameters get all the Outlook task folders in the user's mailbox.
 type TaskFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,7 +52,7 @@ type TaskFoldersRequestBuilderPostRequestConfiguration struct {
 func NewTaskFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskFoldersRequestBuilder) {
     m := &TaskFoldersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/outlook/taskFolders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/me/outlook/taskFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -71,11 +71,11 @@ func NewTaskFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *TaskFoldersRequestBuilder) Count()(*ic9ff0913db9062d6c495308f57d098b7e344ee4bfe660dccc04bd095982fe103.CountRequestBuilder) {
     return ic9ff0913db9062d6c495308f57d098b7e344ee4bfe660dccc04bd095982fe103.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get taskFolders from me
+// CreateGetRequestInformation get all the Outlook task folders in the user's mailbox.
 func (m *TaskFoldersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get taskFolders from me
+// CreateGetRequestInformationWithRequestConfiguration get all the Outlook task folders in the user's mailbox.
 func (m *TaskFoldersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *TaskFoldersRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get get taskFolders from me
+// Get get all the Outlook task folders in the user's mailbox.
 func (m *TaskFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

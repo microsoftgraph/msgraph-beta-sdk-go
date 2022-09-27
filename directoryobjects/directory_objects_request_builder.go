@@ -7,6 +7,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/getuserownedobjects"
     ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/validateproperties"
+    if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/count"
     if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/getbyids"
 )
 
@@ -21,12 +22,20 @@ type DirectoryObjectsRequestBuilder struct {
 }
 // DirectoryObjectsRequestBuilderGetQueryParameters get entities from directoryObjects
 type DirectoryObjectsRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }
@@ -50,7 +59,7 @@ type DirectoryObjectsRequestBuilderPostRequestConfiguration struct {
 func NewDirectoryObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectsRequestBuilder) {
     m := &DirectoryObjectsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directoryObjects{?%24top*,%24search*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/directoryObjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -64,6 +73,10 @@ func NewDirectoryObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectsRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count the Count property
+func (m *DirectoryObjectsRequestBuilder) Count()(*if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.CountRequestBuilder) {
+    return if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from directoryObjects
 func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

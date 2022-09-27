@@ -42,11 +42,11 @@ func NewBulkReprovisionCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewBulkReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action bulkReprovisionCloudPc
+// CreatePostRequestInformation bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformation(body BulkReprovisionCloudPcPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action bulkReprovisionCloudPc
+// CreatePostRequestInformationWithRequestConfiguration bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Post invoke action bulkReprovisionCloudPc
+// Post bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 func (m *BulkReprovisionCloudPcRequestBuilder) Post(ctx context.Context, body BulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

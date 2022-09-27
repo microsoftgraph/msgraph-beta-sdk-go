@@ -17,7 +17,7 @@ type ServicePrincipalRiskDetectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters represents information about detected at-risk service principals in an Azure AD tenant.
+// ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of servicePrincipalRiskDetection objects.
 type ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ServicePrincipalRiskDetectionsRequestBuilderPostRequestConfiguration struct
 func NewServicePrincipalRiskDetectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalRiskDetectionsRequestBuilder) {
     m := &ServicePrincipalRiskDetectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityProtection/servicePrincipalRiskDetections{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityProtection/servicePrincipalRiskDetections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewServicePrincipalRiskDetectionsRequestBuilder(rawUrl string, requestAdapt
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) Count()(*i2a7c5b962a0301daf3d885c22f0964c1c24132187b7ee1638c6b00926beff25a.CountRequestBuilder) {
     return i2a7c5b962a0301daf3d885c22f0964c1c24132187b7ee1638c6b00926beff25a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents information about detected at-risk service principals in an Azure AD tenant.
+// CreateGetRequestInformation retrieve the properties of a collection of servicePrincipalRiskDetection objects.
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents information about detected at-risk service principals in an Azure AD tenant.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of a collection of servicePrincipalRiskDetection objects.
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Get represents information about detected at-risk service principals in an Azure AD tenant.
+// Get retrieve the properties of a collection of servicePrincipalRiskDetection objects.
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

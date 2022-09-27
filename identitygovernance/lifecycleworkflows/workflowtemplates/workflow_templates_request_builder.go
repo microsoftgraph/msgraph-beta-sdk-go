@@ -17,7 +17,7 @@ type WorkflowTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WorkflowTemplatesRequestBuilderGetQueryParameters the workflow templates in the lifecycle workflow instance.
+// WorkflowTemplatesRequestBuilderGetQueryParameters get a list of the workflowTemplate objects and their properties.
 type WorkflowTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type WorkflowTemplatesRequestBuilderPostRequestConfiguration struct {
 func NewWorkflowTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WorkflowTemplatesRequestBuilder) {
     m := &WorkflowTemplatesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflowTemplates{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflowTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewWorkflowTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *WorkflowTemplatesRequestBuilder) Count()(*if6ece7ea331db83e4795476f2756a27c588cfb11310dd93e3d89d0477f0c8672.CountRequestBuilder) {
     return if6ece7ea331db83e4795476f2756a27c588cfb11310dd93e3d89d0477f0c8672.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the workflow templates in the lifecycle workflow instance.
+// CreateGetRequestInformation get a list of the workflowTemplate objects and their properties.
 func (m *WorkflowTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the workflow templates in the lifecycle workflow instance.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the workflowTemplate objects and their properties.
 func (m *WorkflowTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkflowTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WorkflowTemplatesRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get the workflow templates in the lifecycle workflow instance.
+// Get get a list of the workflowTemplate objects and their properties.
 func (m *WorkflowTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkflowTemplatesRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

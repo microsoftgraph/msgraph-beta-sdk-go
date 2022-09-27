@@ -41,11 +41,11 @@ func NewRenameRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewRenameRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action rename
+// CreatePostRequestInformation rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
 func (m *RenameRequestBuilder) CreatePostRequestInformation(body RenamePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action rename
+// CreatePostRequestInformationWithRequestConfiguration rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
 func (m *RenameRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RenamePostRequestBodyable, requestConfiguration *RenameRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *RenameRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Post invoke action rename
+// Post rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
 func (m *RenameRequestBuilder) Post(ctx context.Context, body RenamePostRequestBodyable, requestConfiguration *RenameRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

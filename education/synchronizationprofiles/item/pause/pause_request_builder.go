@@ -41,11 +41,11 @@ func NewPauseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewPauseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action pause
+// CreatePostRequestInformation pause the sync of a specific school data synchronization profile in the tenant.
 func (m *PauseRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action pause
+// CreatePostRequestInformationWithRequestConfiguration pause the sync of a specific school data synchronization profile in the tenant.
 func (m *PauseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *PauseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -57,7 +57,7 @@ func (m *PauseRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Post invoke action pause
+// Post pause the sync of a specific school data synchronization profile in the tenant.
 func (m *PauseRequestBuilder) Post(ctx context.Context, requestConfiguration *PauseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
