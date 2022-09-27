@@ -17,7 +17,7 @@ type DeviceCompliancePolicySettingStateSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters summary information for device compliance policy setting states across managed tenants.
+// DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
 type DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type DeviceCompliancePolicySettingStateSummariesRequestBuilderPostRequestConfigu
 func NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
     m := &DeviceCompliancePolicySettingStateSummariesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewDeviceCompliancePolicySettingStateSummariesRequestBuilder(rawUrl string,
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Count()(*if1edd47d08b097c27bc827091cc41d48788f587da25946f8efb6fc254e726a6f.CountRequestBuilder) {
     return if1edd47d08b097c27bc827091cc41d48788f587da25946f8efb6fc254e726a6f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation summary information for device compliance policy setting states across managed tenants.
+// CreateGetRequestInformation get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration summary information for device compliance policy setting states across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// Get summary information for device compliance policy setting states across managed tenants.
+// Get get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

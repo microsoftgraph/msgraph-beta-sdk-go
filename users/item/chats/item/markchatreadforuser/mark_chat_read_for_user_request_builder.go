@@ -41,11 +41,11 @@ func NewMarkChatReadForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewMarkChatReadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action markChatReadForUser
+// CreatePostRequestInformation mark a chat as read for a user.
 func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformation(body MarkChatReadForUserPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action markChatReadForUser
+// CreatePostRequestInformationWithRequestConfiguration mark a chat as read for a user.
 func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkChatReadForUserPostRequestBodyable, requestConfiguration *MarkChatReadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Post invoke action markChatReadForUser
+// Post mark a chat as read for a user.
 func (m *MarkChatReadForUserRequestBuilder) Post(ctx context.Context, body MarkChatReadForUserPostRequestBodyable, requestConfiguration *MarkChatReadForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

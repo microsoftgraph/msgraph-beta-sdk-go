@@ -31,26 +31,8 @@ func (m *RevokeLicensesPostRequestBody) GetAdditionalData()(map[string]interface
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RevokeLicensesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["notifyManagedDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNotifyManagedDevices(val)
-        }
-        return nil
-    }
-    res["revokeUntrackedLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRevokeUntrackedLicenses(val)
-        }
-        return nil
-    }
+    res["notifyManagedDevices"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetNotifyManagedDevices)
+    res["revokeUntrackedLicenses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRevokeUntrackedLicenses)
     return res
 }
 // GetNotifyManagedDevices gets the notifyManagedDevices property value. The notifyManagedDevices property

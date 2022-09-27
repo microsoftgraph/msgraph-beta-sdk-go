@@ -8,13 +8,13 @@ import (
 type IdentitySet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The Identity of the Application. This property is read-only.
+    // Optional. The application associated with this action.
     application Identityable
-    // The Identity of the Device. This property is read-only.
+    // Optional. The device associated with this action.
     device Identityable
     // The OdataType property
     odataType *string
-    // The Identity of the User. This property is read-only.
+    // Optional. The user associated with this action.
     user Identityable
 }
 // NewIdentitySet instantiates a new identitySet and sets the default values.
@@ -60,64 +60,28 @@ func CreateIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *IdentitySet) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetApplication gets the application property value. The Identity of the Application. This property is read-only.
+// GetApplication gets the application property value. Optional. The application associated with this action.
 func (m *IdentitySet) GetApplication()(Identityable) {
     return m.application
 }
-// GetDevice gets the device property value. The Identity of the Device. This property is read-only.
+// GetDevice gets the device property value. Optional. The device associated with this action.
 func (m *IdentitySet) GetDevice()(Identityable) {
     return m.device
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplication(val.(Identityable))
-        }
-        return nil
-    }
-    res["device"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDevice(val.(Identityable))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUser(val.(Identityable))
-        }
-        return nil
-    }
+    res["application"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentityFromDiscriminatorValue , m.SetApplication)
+    res["device"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentityFromDiscriminatorValue , m.SetDevice)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["user"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentityFromDiscriminatorValue , m.SetUser)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdentitySet) GetOdataType()(*string) {
     return m.odataType
 }
-// GetUser gets the user property value. The Identity of the User. This property is read-only.
+// GetUser gets the user property value. Optional. The user associated with this action.
 func (m *IdentitySet) GetUser()(Identityable) {
     return m.user
 }
@@ -159,11 +123,11 @@ func (m *IdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *IdentitySet) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetApplication sets the application property value. The Identity of the Application. This property is read-only.
+// SetApplication sets the application property value. Optional. The application associated with this action.
 func (m *IdentitySet) SetApplication(value Identityable)() {
     m.application = value
 }
-// SetDevice sets the device property value. The Identity of the Device. This property is read-only.
+// SetDevice sets the device property value. Optional. The device associated with this action.
 func (m *IdentitySet) SetDevice(value Identityable)() {
     m.device = value
 }
@@ -171,7 +135,7 @@ func (m *IdentitySet) SetDevice(value Identityable)() {
 func (m *IdentitySet) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetUser sets the user property value. The Identity of the User. This property is read-only.
+// SetUser sets the user property value. Optional. The user associated with this action.
 func (m *IdentitySet) SetUser(value Identityable)() {
     m.user = value
 }

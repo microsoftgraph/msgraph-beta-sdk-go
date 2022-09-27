@@ -45,74 +45,12 @@ func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyDefinitionFile.GetFieldDeserializers()
-    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContent(val)
-        }
-        return nil
-    }
-    res["defaultLanguageCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefaultLanguageCode(val)
-        }
-        return nil
-    }
-    res["groupPolicyOperations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyOperationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]GroupPolicyOperationable, len(val))
-            for i, v := range val {
-                res[i] = v.(GroupPolicyOperationable)
-            }
-            m.SetGroupPolicyOperations(res)
-        }
-        return nil
-    }
-    res["groupPolicyUploadedLanguageFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]GroupPolicyUploadedLanguageFileable, len(val))
-            for i, v := range val {
-                res[i] = v.(GroupPolicyUploadedLanguageFileable)
-            }
-            m.SetGroupPolicyUploadedLanguageFiles(res)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseGroupPolicyUploadedDefinitionFileStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(*GroupPolicyUploadedDefinitionFileStatus))
-        }
-        return nil
-    }
-    res["uploadDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUploadDateTime(val)
-        }
-        return nil
-    }
+    res["content"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetContent)
+    res["defaultLanguageCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDefaultLanguageCode)
+    res["groupPolicyOperations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateGroupPolicyOperationFromDiscriminatorValue , m.SetGroupPolicyOperations)
+    res["groupPolicyUploadedLanguageFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue , m.SetGroupPolicyUploadedLanguageFiles)
+    res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseGroupPolicyUploadedDefinitionFileStatus , m.SetStatus)
+    res["uploadDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetUploadDateTime)
     return res
 }
 // GetGroupPolicyOperations gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
@@ -150,20 +88,14 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d268
         }
     }
     if m.GetGroupPolicyOperations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupPolicyOperations()))
-        for i, v := range m.GetGroupPolicyOperations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetGroupPolicyOperations())
         err = writer.WriteCollectionOfObjectValues("groupPolicyOperations", cast)
         if err != nil {
             return err
         }
     }
     if m.GetGroupPolicyUploadedLanguageFiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupPolicyUploadedLanguageFiles()))
-        for i, v := range m.GetGroupPolicyUploadedLanguageFiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetGroupPolicyUploadedLanguageFiles())
         err = writer.WriteCollectionOfObjectValues("groupPolicyUploadedLanguageFiles", cast)
         if err != nil {
             return err

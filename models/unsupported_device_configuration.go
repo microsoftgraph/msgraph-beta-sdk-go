@@ -32,30 +32,8 @@ func (m *UnsupportedDeviceConfiguration) GetDetails()([]UnsupportedDeviceConfigu
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnsupportedDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnsupportedDeviceConfigurationDetailFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnsupportedDeviceConfigurationDetailable, len(val))
-            for i, v := range val {
-                res[i] = v.(UnsupportedDeviceConfigurationDetailable)
-            }
-            m.SetDetails(res)
-        }
-        return nil
-    }
-    res["originalEntityTypeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOriginalEntityTypeName(val)
-        }
-        return nil
-    }
+    res["details"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUnsupportedDeviceConfigurationDetailFromDiscriminatorValue , m.SetDetails)
+    res["originalEntityTypeName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOriginalEntityTypeName)
     return res
 }
 // GetOriginalEntityTypeName gets the originalEntityTypeName property value. The type of entity that would be returned otherwise.
@@ -69,10 +47,7 @@ func (m *UnsupportedDeviceConfiguration) Serialize(writer i878a80d2330e89d268963
         return err
     }
     if m.GetDetails() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetails()))
-        for i, v := range m.GetDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDetails())
         err = writer.WriteCollectionOfObjectValues("details", cast)
         if err != nil {
             return err

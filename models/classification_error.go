@@ -30,20 +30,7 @@ func (m *ClassificationError) GetDetails()([]ClassifcationErrorBaseable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassificationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ClassifcationErrorBase.GetFieldDeserializers()
-    res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateClassifcationErrorBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ClassifcationErrorBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(ClassifcationErrorBaseable)
-            }
-            m.SetDetails(res)
-        }
-        return nil
-    }
+    res["details"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateClassifcationErrorBaseFromDiscriminatorValue , m.SetDetails)
     return res
 }
 // Serialize serializes information the current object
@@ -53,10 +40,7 @@ func (m *ClassificationError) Serialize(writer i878a80d2330e89d26896388a3f487eef
         return err
     }
     if m.GetDetails() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetails()))
-        for i, v := range m.GetDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDetails())
         err = writer.WriteCollectionOfObjectValues("details", cast)
         if err != nil {
             return err

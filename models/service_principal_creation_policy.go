@@ -34,44 +34,9 @@ func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreatio
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["excludes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ServicePrincipalCreationConditionSetable, len(val))
-            for i, v := range val {
-                res[i] = v.(ServicePrincipalCreationConditionSetable)
-            }
-            m.SetExcludes(res)
-        }
-        return nil
-    }
-    res["includes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ServicePrincipalCreationConditionSetable, len(val))
-            for i, v := range val {
-                res[i] = v.(ServicePrincipalCreationConditionSetable)
-            }
-            m.SetIncludes(res)
-        }
-        return nil
-    }
-    res["isBuiltIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsBuiltIn(val)
-        }
-        return nil
-    }
+    res["excludes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue , m.SetExcludes)
+    res["includes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateServicePrincipalCreationConditionSetFromDiscriminatorValue , m.SetIncludes)
+    res["isBuiltIn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsBuiltIn)
     return res
 }
 // GetIncludes gets the includes property value. The includes property
@@ -89,20 +54,14 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i878a80d2330e89d268963
         return err
     }
     if m.GetExcludes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludes()))
-        for i, v := range m.GetExcludes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetExcludes())
         err = writer.WriteCollectionOfObjectValues("excludes", cast)
         if err != nil {
             return err
         }
     }
     if m.GetIncludes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludes()))
-        for i, v := range m.GetIncludes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIncludes())
         err = writer.WriteCollectionOfObjectValues("includes", cast)
         if err != nil {
             return err

@@ -26,20 +26,7 @@ func CreateUserExperienceAnalyticsOverviewFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsInsightFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserExperienceAnalyticsInsightable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsInsightable)
-            }
-            m.SetInsights(res)
-        }
-        return nil
-    }
+    res["insights"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsInsightFromDiscriminatorValue , m.SetInsights)
     return res
 }
 // GetInsights gets the insights property value. The user experience analytics insights.
@@ -53,10 +40,7 @@ func (m *UserExperienceAnalyticsOverview) Serialize(writer i878a80d2330e89d26896
         return err
     }
     if m.GetInsights() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInsights()))
-        for i, v := range m.GetInsights() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetInsights())
         err = writer.WriteCollectionOfObjectValues("insights", cast)
         if err != nil {
             return err

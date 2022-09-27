@@ -26,20 +26,7 @@ func CreateDeviceManagementSettingAppConstraintFromDiscriminatorValue(parseNode 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingAppConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
-    res["supportedTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetSupportedTypes(res)
-        }
-        return nil
-    }
+    res["supportedTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSupportedTypes)
     return res
 }
 // GetSupportedTypes gets the supportedTypes property value. Acceptable app types to allow for this setting

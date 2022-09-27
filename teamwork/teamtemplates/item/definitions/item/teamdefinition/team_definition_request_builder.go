@@ -52,7 +52,7 @@ type TeamDefinitionRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamDefinitionRequestBuilderGetQueryParameters get teamDefinition from teamwork
+// TeamDefinitionRequestBuilderGetQueryParameters get the properties of the team associated with a teamTemplateDefinition object.
 type TeamDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -152,11 +152,11 @@ func (m *TeamDefinitionRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get teamDefinition from teamwork
+// CreateGetRequestInformation get the properties of the team associated with a teamTemplateDefinition object.
 func (m *TeamDefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get teamDefinition from teamwork
+// CreateGetRequestInformationWithRequestConfiguration get the properties of the team associated with a teamTemplateDefinition object.
 func (m *TeamDefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TeamDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -182,6 +182,7 @@ func (m *TeamDefinitionRequestBuilder) CreatePatchRequestInformationWithRequestC
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -205,7 +206,7 @@ func (m *TeamDefinitionRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get get teamDefinition from teamwork
+// Get get the properties of the team associated with a teamTemplateDefinition object.
 func (m *TeamDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -304,20 +305,23 @@ func (m *TeamDefinitionRequestBuilder) OwnersById(id string)(*i7e4d4d36436389cdf
     return i7e4d4d36436389cdf78b45b9f02b8cd1a5ef85de40c5216c53ee78522c28a378.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property teamDefinition in teamwork
-func (m *TeamDefinitionRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamDefinitionRequestBuilderPatchRequestConfiguration)(error) {
+func (m *TeamDefinitionRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamDefinitionRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable), nil
 }
 // PermissionGrants the permissionGrants property
 func (m *TeamDefinitionRequestBuilder) PermissionGrants()(*idd8eb4f3af20f81bb6e8ca724655fadb0c315db26afc70374c50396c30fc3426.PermissionGrantsRequestBuilder) {

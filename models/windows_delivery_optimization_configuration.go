@@ -82,180 +82,23 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetDeliveryOptimizationMode()
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDeliveryOptimizationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["backgroundDownloadFromHttpDelayInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBackgroundDownloadFromHttpDelayInSeconds(val)
-        }
-        return nil
-    }
-    res["bandwidthMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeliveryOptimizationBandwidthFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBandwidthMode(val.(DeliveryOptimizationBandwidthable))
-        }
-        return nil
-    }
-    res["cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds(val)
-        }
-        return nil
-    }
-    res["cacheServerForegroundDownloadFallbackToHttpDelayInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds(val)
-        }
-        return nil
-    }
-    res["cacheServerHostNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetCacheServerHostNames(res)
-        }
-        return nil
-    }
-    res["deliveryOptimizationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsDeliveryOptimizationMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeliveryOptimizationMode(val.(*WindowsDeliveryOptimizationMode))
-        }
-        return nil
-    }
-    res["foregroundDownloadFromHttpDelayInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetForegroundDownloadFromHttpDelayInSeconds(val)
-        }
-        return nil
-    }
-    res["groupIdSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeliveryOptimizationGroupIdSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGroupIdSource(val.(DeliveryOptimizationGroupIdSourceable))
-        }
-        return nil
-    }
-    res["maximumCacheAgeInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumCacheAgeInDays(val)
-        }
-        return nil
-    }
-    res["maximumCacheSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeliveryOptimizationMaxCacheSizeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumCacheSize(val.(DeliveryOptimizationMaxCacheSizeable))
-        }
-        return nil
-    }
-    res["minimumBatteryPercentageAllowedToUpload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumBatteryPercentageAllowedToUpload(val)
-        }
-        return nil
-    }
-    res["minimumDiskSizeAllowedToPeerInGigabytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumDiskSizeAllowedToPeerInGigabytes(val)
-        }
-        return nil
-    }
-    res["minimumFileSizeToCacheInMegabytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumFileSizeToCacheInMegabytes(val)
-        }
-        return nil
-    }
-    res["minimumRamAllowedToPeerInGigabytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumRamAllowedToPeerInGigabytes(val)
-        }
-        return nil
-    }
-    res["modifyCacheLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetModifyCacheLocation(val)
-        }
-        return nil
-    }
-    res["restrictPeerSelectionBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeliveryOptimizationRestrictPeerSelectionByOptions)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestrictPeerSelectionBy(val.(*DeliveryOptimizationRestrictPeerSelectionByOptions))
-        }
-        return nil
-    }
-    res["vpnPeerCaching"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVpnPeerCaching(val.(*Enablement))
-        }
-        return nil
-    }
+    res["backgroundDownloadFromHttpDelayInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetBackgroundDownloadFromHttpDelayInSeconds)
+    res["bandwidthMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeliveryOptimizationBandwidthFromDiscriminatorValue , m.SetBandwidthMode)
+    res["cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds)
+    res["cacheServerForegroundDownloadFallbackToHttpDelayInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds)
+    res["cacheServerHostNames"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetCacheServerHostNames)
+    res["deliveryOptimizationMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsDeliveryOptimizationMode , m.SetDeliveryOptimizationMode)
+    res["foregroundDownloadFromHttpDelayInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetForegroundDownloadFromHttpDelayInSeconds)
+    res["groupIdSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeliveryOptimizationGroupIdSourceFromDiscriminatorValue , m.SetGroupIdSource)
+    res["maximumCacheAgeInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumCacheAgeInDays)
+    res["maximumCacheSize"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeliveryOptimizationMaxCacheSizeFromDiscriminatorValue , m.SetMaximumCacheSize)
+    res["minimumBatteryPercentageAllowedToUpload"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumBatteryPercentageAllowedToUpload)
+    res["minimumDiskSizeAllowedToPeerInGigabytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumDiskSizeAllowedToPeerInGigabytes)
+    res["minimumFileSizeToCacheInMegabytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumFileSizeToCacheInMegabytes)
+    res["minimumRamAllowedToPeerInGigabytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumRamAllowedToPeerInGigabytes)
+    res["modifyCacheLocation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetModifyCacheLocation)
+    res["restrictPeerSelectionBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeliveryOptimizationRestrictPeerSelectionByOptions , m.SetRestrictPeerSelectionBy)
+    res["vpnPeerCaching"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetVpnPeerCaching)
     return res
 }
 // GetForegroundDownloadFromHttpDelayInSeconds gets the foregroundDownloadFromHttpDelayInSeconds property value. Specifies number of seconds to delay an HTTP source in a foreground download that is allowed to use peer-to-peer (0-86400). Valid values 0 to 86400

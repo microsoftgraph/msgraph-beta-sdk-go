@@ -57,74 +57,12 @@ func (m *SubmissionResult) GetDetectedUrls()([]string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionResultCategory)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCategory(val.(*SubmissionResultCategory))
-        }
-        return nil
-    }
-    res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubmissionResultDetail)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDetail(val.(*SubmissionResultDetail))
-        }
-        return nil
-    }
-    res["detectedFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSubmissionDetectedFileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SubmissionDetectedFileable, len(val))
-            for i, v := range val {
-                res[i] = v.(SubmissionDetectedFileable)
-            }
-            m.SetDetectedFiles(res)
-        }
-        return nil
-    }
-    res["detectedUrls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetDetectedUrls(res)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["userMailboxSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserMailboxSetting)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserMailboxSetting(val.(*UserMailboxSetting))
-        }
-        return nil
-    }
+    res["category"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSubmissionResultCategory , m.SetCategory)
+    res["detail"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSubmissionResultDetail , m.SetDetail)
+    res["detectedFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSubmissionDetectedFileFromDiscriminatorValue , m.SetDetectedFiles)
+    res["detectedUrls"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetDetectedUrls)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["userMailboxSetting"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseUserMailboxSetting , m.SetUserMailboxSetting)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -152,10 +90,7 @@ func (m *SubmissionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     if m.GetDetectedFiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetectedFiles()))
-        for i, v := range m.GetDetectedFiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDetectedFiles())
         err := writer.WriteCollectionOfObjectValues("detectedFiles", cast)
         if err != nil {
             return err

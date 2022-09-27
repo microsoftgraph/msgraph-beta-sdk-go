@@ -71,116 +71,17 @@ func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*VpnService
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["airPrintExceptionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServiceExceptionAction)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAirPrintExceptionAction(val.(*VpnServiceExceptionAction))
-        }
-        return nil
-    }
-    res["allowAllCaptiveNetworkPlugins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowAllCaptiveNetworkPlugins(val)
-        }
-        return nil
-    }
-    res["allowCaptiveWebSheet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowCaptiveWebSheet(val)
-        }
-        return nil
-    }
-    res["allowedCaptiveNetworkPlugins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSpecifiedCaptiveNetworkPluginsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedCaptiveNetworkPlugins(val.(SpecifiedCaptiveNetworkPluginsable))
-        }
-        return nil
-    }
-    res["cellularExceptionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServiceExceptionAction)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCellularExceptionAction(val.(*VpnServiceExceptionAction))
-        }
-        return nil
-    }
-    res["natKeepAliveIntervalInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNatKeepAliveIntervalInSeconds(val)
-        }
-        return nil
-    }
-    res["natKeepAliveOffloadEnable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNatKeepAliveOffloadEnable(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["tunnelConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnTunnelConfigurationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTunnelConfiguration(val.(*VpnTunnelConfigurationType))
-        }
-        return nil
-    }
-    res["userToggleEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserToggleEnabled(val)
-        }
-        return nil
-    }
-    res["voicemailExceptionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServiceExceptionAction)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVoicemailExceptionAction(val.(*VpnServiceExceptionAction))
-        }
-        return nil
-    }
+    res["airPrintExceptionAction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnServiceExceptionAction , m.SetAirPrintExceptionAction)
+    res["allowAllCaptiveNetworkPlugins"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowAllCaptiveNetworkPlugins)
+    res["allowCaptiveWebSheet"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowCaptiveWebSheet)
+    res["allowedCaptiveNetworkPlugins"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSpecifiedCaptiveNetworkPluginsFromDiscriminatorValue , m.SetAllowedCaptiveNetworkPlugins)
+    res["cellularExceptionAction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnServiceExceptionAction , m.SetCellularExceptionAction)
+    res["natKeepAliveIntervalInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetNatKeepAliveIntervalInSeconds)
+    res["natKeepAliveOffloadEnable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetNatKeepAliveOffloadEnable)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["tunnelConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnTunnelConfigurationType , m.SetTunnelConfiguration)
+    res["userToggleEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUserToggleEnabled)
+    res["voicemailExceptionAction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnServiceExceptionAction , m.SetVoicemailExceptionAction)
     return res
 }
 // GetNatKeepAliveIntervalInSeconds gets the natKeepAliveIntervalInSeconds property value. Specifies how often in seconds to send a network address translation keepalive package through the VPN

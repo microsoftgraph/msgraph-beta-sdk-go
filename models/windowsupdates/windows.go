@@ -27,16 +27,7 @@ func CreateWindowsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["updates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateUpdatesFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdates(val.(Updatesable))
-        }
-        return nil
-    }
+    res["updates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUpdatesFromDiscriminatorValue , m.SetUpdates)
     return res
 }
 // GetUpdates gets the updates property value. Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.

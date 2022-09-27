@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkflowVersion provides operations to manage the collection of activityStatistics entities.
+// WorkflowVersion provides operations to manage the collection of accessReviewDecision entities.
 type WorkflowVersion struct {
     WorkflowBase
     // The version of the workflow.
@@ -26,16 +26,7 @@ func CreateWorkflowVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkflowVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WorkflowBase.GetFieldDeserializers()
-    res["versionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersionNumber(val)
-        }
-        return nil
-    }
+    res["versionNumber"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetVersionNumber)
     return res
 }
 // GetVersionNumber gets the versionNumber property value. The version of the workflow.

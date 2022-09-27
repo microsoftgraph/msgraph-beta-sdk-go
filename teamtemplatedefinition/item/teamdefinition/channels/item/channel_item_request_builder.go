@@ -8,11 +8,11 @@ import (
     i114446cf99a8c2cab55bcbf7f2812842087ff6ca04506525cbbf85ce10ad446f "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/completemigration"
     i1c9c72c64b9c5ca81a6efda3dc7072b3f4cb5b3f98708515c54c1c12dec7505b "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/provisionemail"
     i246c4ec01a943d4243f06f13bbfe1a15d8c228da1fc81cf229f9ec621ba80240 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/sharedwithteams"
+    i2e5332869b3935b69006e2b5f7d4416c38293be14ea94f95bad97617032c19fb "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/doesuserhaveaccessuseriduseridtenantidtenantiduserprincipalnameuserprincipalname"
     i47858a15ced41c8104f1ef7358992df4ba49d645d7708a39273d75a019712385 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/members"
     i4e10bca7b4f870ae0a347ba6e7e1c528dfdb0e44eef9a2d70bcb50d97293a1d0 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/removeemail"
     i6383d2cbaddc4d7b219cfa9bf48792d718da8865ec877ab5b534465b502783e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/messages"
     i7706307c366a954d91d65bba26a3e94b73712ee892f8681752855e64913dfa20 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/tabs"
-    ie8c4a918ff88a0918f527abcd74950d71382c31473e67fd6a3f78ae1aa11d731 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/doesuserhaveaccesswithuseridwithtenantidwithuserprincipalname"
     if0ae075362be61b54b851f5e3dcee513aefe3e48fb64b811fee0b92f22fcad37 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/filesfolder"
     i1d05f633e15dab3a5e1b1925f12035ca899bf3f9e81f95defb8461288635b434 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/members/item"
     i27483dcc8990bc921343302a8443441ac849b164d100d2c5f412a17939549bdc "github.com/microsoftgraph/msgraph-beta-sdk-go/teamtemplatedefinition/item/teamdefinition/channels/item/tabs/item"
@@ -128,6 +128,7 @@ func (m *ChannelItemRequestBuilder) CreatePatchRequestInformationWithRequestConf
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -151,9 +152,9 @@ func (m *ChannelItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *ChannelItemRequestBuilder) DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName()(*ie8c4a918ff88a0918f527abcd74950d71382c31473e67fd6a3f78ae1aa11d731.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder) {
-    return ie8c4a918ff88a0918f527abcd74950d71382c31473e67fd6a3f78ae1aa11d731.NewDoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+// DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName provides operations to call the doesUserHaveAccess method.
+func (m *ChannelItemRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*i2e5332869b3935b69006e2b5f7d4416c38293be14ea94f95bad97617032c19fb.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
+    return i2e5332869b3935b69006e2b5f7d4416c38293be14ea94f95bad97617032c19fb.NewDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FilesFolder the filesFolder property
 func (m *ChannelItemRequestBuilder) FilesFolder()(*if0ae075362be61b54b851f5e3dcee513aefe3e48fb64b811fee0b92f22fcad37.FilesFolderRequestBuilder) {
@@ -209,20 +210,23 @@ func (m *ChannelItemRequestBuilder) MessagesById(id string)(*ibb2bf6e047ded610dd
     return ibb2bf6e047ded610dd544ab8cddad89da97080cd28b501343c7f361845040a3b.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property channels in teamTemplateDefinition
-func (m *ChannelItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ChannelItemRequestBuilderPatchRequestConfiguration)(error) {
+func (m *ChannelItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, requestConfiguration *ChannelItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChannelFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
 }
 // ProvisionEmail the provisionEmail property
 func (m *ChannelItemRequestBuilder) ProvisionEmail()(*i1c9c72c64b9c5ca81a6efda3dc7072b3f4cb5b3f98708515c54c1c12dec7505b.ProvisionEmailRequestBuilder) {

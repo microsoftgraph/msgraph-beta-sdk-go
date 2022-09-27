@@ -17,7 +17,7 @@ type EntriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EntriesRequestBuilderGetQueryParameters lists the content that you can approve for deployment. Read-only.
+// EntriesRequestBuilderGetQueryParameters get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from **catalogEntry**. 
 type EntriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type EntriesRequestBuilderPostRequestConfiguration struct {
 func NewEntriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntriesRequestBuilder) {
     m := &EntriesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/admin/windows/updates/catalog/entries{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/admin/windows/updates/catalog/entries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewEntriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *EntriesRequestBuilder) Count()(*ib71d01af5a44a7809d6d98eff36d296eec5309c9d46e82ba8f33d272cc58824d.CountRequestBuilder) {
     return ib71d01af5a44a7809d6d98eff36d296eec5309c9d46e82ba8f33d272cc58824d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation lists the content that you can approve for deployment. Read-only.
+// CreateGetRequestInformation get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from **catalogEntry**. 
 func (m *EntriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration lists the content that you can approve for deployment. Read-only.
+// CreateGetRequestInformationWithRequestConfiguration get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from **catalogEntry**. 
 func (m *EntriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EntriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *EntriesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get lists the content that you can approve for deployment. Read-only.
+// Get get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from **catalogEntry**. 
 func (m *EntriesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntriesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CatalogEntryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

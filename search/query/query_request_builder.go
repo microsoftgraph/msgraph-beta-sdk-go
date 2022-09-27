@@ -41,11 +41,11 @@ func NewQueryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewQueryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action query
+// CreatePostRequestInformation run a specified search query. Search results are provided in the response.
 func (m *QueryRequestBuilder) CreatePostRequestInformation(body QueryPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action query
+// CreatePostRequestInformationWithRequestConfiguration run a specified search query. Search results are provided in the response.
 func (m *QueryRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *QueryRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Post invoke action query
+// Post run a specified search query. Search results are provided in the response.
 func (m *QueryRequestBuilder) Post(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(QueryResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

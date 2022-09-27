@@ -17,7 +17,7 @@ type JoinedTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// JoinedTeamsRequestBuilderGetQueryParameters the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// JoinedTeamsRequestBuilderGetQueryParameters get the teams in Microsoft Teams that the user is a direct member of.
 type JoinedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type JoinedTeamsRequestBuilderGetRequestConfiguration struct {
 func NewJoinedTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*JoinedTeamsRequestBuilder) {
     m := &JoinedTeamsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *JoinedTeamsRequestBuilder) Count()(*i9a38fee1963cbc3b8e85034ee4b9d2bec530c454aac6f0c8b6004e31347f3bf0.CountRequestBuilder) {
     return i9a38fee1963cbc3b8e85034ee4b9d2bec530c454aac6f0c8b6004e31347f3bf0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// CreateGetRequestInformation get the teams in Microsoft Teams that the user is a direct member of.
 func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get the teams in Microsoft Teams that the user is a direct member of.
 func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// Get get the teams in Microsoft Teams that the user is a direct member of.
 func (m *JoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

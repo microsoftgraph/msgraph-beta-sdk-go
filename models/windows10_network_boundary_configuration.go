@@ -26,16 +26,7 @@ func CreateWindows10NetworkBoundaryConfigurationFromDiscriminatorValue(parseNode
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10NetworkBoundaryConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["windowsNetworkIsolationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsNetworkIsolationPolicy(val.(WindowsNetworkIsolationPolicyable))
-        }
-        return nil
-    }
+    res["windowsNetworkIsolationPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue , m.SetWindowsNetworkIsolationPolicy)
     return res
 }
 // GetWindowsNetworkIsolationPolicy gets the windowsNetworkIsolationPolicy property value. Windows Network Isolation Policy

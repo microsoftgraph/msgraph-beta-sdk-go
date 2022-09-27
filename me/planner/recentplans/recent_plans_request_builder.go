@@ -17,7 +17,7 @@ type RecentPlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RecentPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// RecentPlansRequestBuilderGetQueryParameters retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 type RecentPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type RecentPlansRequestBuilderGetRequestConfiguration struct {
 func NewRecentPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RecentPlansRequestBuilder) {
     m := &RecentPlansRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/planner/recentPlans{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/planner/recentPlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewRecentPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *RecentPlansRequestBuilder) Count()(*i912f6686d01f7a5dacbdea0281c62073db85b07996dacda84f674f711c652c6f.CountRequestBuilder) {
     return i912f6686d01f7a5dacbdea0281c62073db85b07996dacda84f674f711c652c6f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// CreateGetRequestInformation retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 func (m *RecentPlansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 func (m *RecentPlansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RecentPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *RecentPlansRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// Get retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
 func (m *RecentPlansRequestBuilder) Get(ctx context.Context, requestConfiguration *RecentPlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

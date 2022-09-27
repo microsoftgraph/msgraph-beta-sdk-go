@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ColumnLink provides operations to manage the collection of activityStatistics entities.
+// ColumnLink provides operations to manage the collection of accessReviewDecision entities.
 type ColumnLink struct {
     Entity
     // The name of the column  in this content type.
@@ -26,16 +26,7 @@ func CreateColumnLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ColumnLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetName(val)
-        }
-        return nil
-    }
+    res["name"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetName)
     return res
 }
 // GetName gets the name property value. The name of the column  in this content type.

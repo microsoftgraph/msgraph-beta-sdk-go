@@ -38,96 +38,13 @@ func CreateMacOSExtensionsConfigurationFromDiscriminatorValue(parseNode i878a80d
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSExtensionsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["kernelExtensionAllowedTeamIdentifiers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetKernelExtensionAllowedTeamIdentifiers(res)
-        }
-        return nil
-    }
-    res["kernelExtensionOverridesAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKernelExtensionOverridesAllowed(val)
-        }
-        return nil
-    }
-    res["kernelExtensionsAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMacOSKernelExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MacOSKernelExtensionable, len(val))
-            for i, v := range val {
-                res[i] = v.(MacOSKernelExtensionable)
-            }
-            m.SetKernelExtensionsAllowed(res)
-        }
-        return nil
-    }
-    res["systemExtensionsAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMacOSSystemExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MacOSSystemExtensionable, len(val))
-            for i, v := range val {
-                res[i] = v.(MacOSSystemExtensionable)
-            }
-            m.SetSystemExtensionsAllowed(res)
-        }
-        return nil
-    }
-    res["systemExtensionsAllowedTeamIdentifiers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetSystemExtensionsAllowedTeamIdentifiers(res)
-        }
-        return nil
-    }
-    res["systemExtensionsAllowedTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMacOSSystemExtensionTypeMappingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MacOSSystemExtensionTypeMappingable, len(val))
-            for i, v := range val {
-                res[i] = v.(MacOSSystemExtensionTypeMappingable)
-            }
-            m.SetSystemExtensionsAllowedTypes(res)
-        }
-        return nil
-    }
-    res["systemExtensionsBlockOverride"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSystemExtensionsBlockOverride(val)
-        }
-        return nil
-    }
+    res["kernelExtensionAllowedTeamIdentifiers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetKernelExtensionAllowedTeamIdentifiers)
+    res["kernelExtensionOverridesAllowed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKernelExtensionOverridesAllowed)
+    res["kernelExtensionsAllowed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMacOSKernelExtensionFromDiscriminatorValue , m.SetKernelExtensionsAllowed)
+    res["systemExtensionsAllowed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMacOSSystemExtensionFromDiscriminatorValue , m.SetSystemExtensionsAllowed)
+    res["systemExtensionsAllowedTeamIdentifiers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSystemExtensionsAllowedTeamIdentifiers)
+    res["systemExtensionsAllowedTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMacOSSystemExtensionTypeMappingFromDiscriminatorValue , m.SetSystemExtensionsAllowedTypes)
+    res["systemExtensionsBlockOverride"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSystemExtensionsBlockOverride)
     return res
 }
 // GetKernelExtensionAllowedTeamIdentifiers gets the kernelExtensionAllowedTeamIdentifiers property value. All kernel extensions validly signed by the team identifiers in this list will be allowed to load.
@@ -177,20 +94,14 @@ func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetKernelExtensionsAllowed() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKernelExtensionsAllowed()))
-        for i, v := range m.GetKernelExtensionsAllowed() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetKernelExtensionsAllowed())
         err = writer.WriteCollectionOfObjectValues("kernelExtensionsAllowed", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSystemExtensionsAllowed() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSystemExtensionsAllowed()))
-        for i, v := range m.GetSystemExtensionsAllowed() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSystemExtensionsAllowed())
         err = writer.WriteCollectionOfObjectValues("systemExtensionsAllowed", cast)
         if err != nil {
             return err
@@ -203,10 +114,7 @@ func (m *MacOSExtensionsConfiguration) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetSystemExtensionsAllowedTypes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSystemExtensionsAllowedTypes()))
-        for i, v := range m.GetSystemExtensionsAllowedTypes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSystemExtensionsAllowedTypes())
         err = writer.WriteCollectionOfObjectValues("systemExtensionsAllowedTypes", cast)
         if err != nil {
             return err

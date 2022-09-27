@@ -31,20 +31,7 @@ func (m *Catalog) GetEntries()([]CatalogEntryable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Catalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["entries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCatalogEntryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CatalogEntryable, len(val))
-            for i, v := range val {
-                res[i] = v.(CatalogEntryable)
-            }
-            m.SetEntries(res)
-        }
-        return nil
-    }
+    res["entries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCatalogEntryFromDiscriminatorValue , m.SetEntries)
     return res
 }
 // Serialize serializes information the current object
@@ -54,10 +41,7 @@ func (m *Catalog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         return err
     }
     if m.GetEntries() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEntries()))
-        for i, v := range m.GetEntries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEntries())
         err = writer.WriteCollectionOfObjectValues("entries", cast)
         if err != nil {
             return err

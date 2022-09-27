@@ -18,7 +18,7 @@ type TimeCardsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TimeCardsRequestBuilderGetQueryParameters get timeCards from groups
+// TimeCardsRequestBuilderGetQueryParameters retrieve a list of timeCard entries in a schedule.
 type TimeCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -61,7 +61,7 @@ func (m *TimeCardsRequestBuilder) ClockIn()(*i073c9fd82799e041a36392bf2460562dcd
 func NewTimeCardsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TimeCardsRequestBuilder) {
     m := &TimeCardsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/timeCards{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/timeCards{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -80,11 +80,11 @@ func NewTimeCardsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *TimeCardsRequestBuilder) Count()(*i2bd0748b5b97385be16fac35c35d9f92feed8f8be3a8184684c8ebaa77797309.CountRequestBuilder) {
     return i2bd0748b5b97385be16fac35c35d9f92feed8f8be3a8184684c8ebaa77797309.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get timeCards from groups
+// CreateGetRequestInformation retrieve a list of timeCard entries in a schedule.
 func (m *TimeCardsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get timeCards from groups
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of timeCard entries in a schedule.
 func (m *TimeCardsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TimeCardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *TimeCardsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get get timeCards from groups
+// Get retrieve a list of timeCard entries in a schedule.
 func (m *TimeCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *TimeCardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

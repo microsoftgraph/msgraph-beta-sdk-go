@@ -54,80 +54,13 @@ func (m *MacOSSoftwareUpdateConfiguration) GetCustomUpdateTimeWindows()([]Custom
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["allOtherUpdateBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateBehavior)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllOtherUpdateBehavior(val.(*MacOSSoftwareUpdateBehavior))
-        }
-        return nil
-    }
-    res["configDataUpdateBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateBehavior)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConfigDataUpdateBehavior(val.(*MacOSSoftwareUpdateBehavior))
-        }
-        return nil
-    }
-    res["criticalUpdateBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateBehavior)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCriticalUpdateBehavior(val.(*MacOSSoftwareUpdateBehavior))
-        }
-        return nil
-    }
-    res["customUpdateTimeWindows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCustomUpdateTimeWindowFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CustomUpdateTimeWindowable, len(val))
-            for i, v := range val {
-                res[i] = v.(CustomUpdateTimeWindowable)
-            }
-            m.SetCustomUpdateTimeWindows(res)
-        }
-        return nil
-    }
-    res["firmwareUpdateBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateBehavior)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirmwareUpdateBehavior(val.(*MacOSSoftwareUpdateBehavior))
-        }
-        return nil
-    }
-    res["updateScheduleType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateScheduleType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdateScheduleType(val.(*MacOSSoftwareUpdateScheduleType))
-        }
-        return nil
-    }
-    res["updateTimeWindowUtcOffsetInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdateTimeWindowUtcOffsetInMinutes(val)
-        }
-        return nil
-    }
+    res["allOtherUpdateBehavior"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSSoftwareUpdateBehavior , m.SetAllOtherUpdateBehavior)
+    res["configDataUpdateBehavior"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSSoftwareUpdateBehavior , m.SetConfigDataUpdateBehavior)
+    res["criticalUpdateBehavior"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSSoftwareUpdateBehavior , m.SetCriticalUpdateBehavior)
+    res["customUpdateTimeWindows"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCustomUpdateTimeWindowFromDiscriminatorValue , m.SetCustomUpdateTimeWindows)
+    res["firmwareUpdateBehavior"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSSoftwareUpdateBehavior , m.SetFirmwareUpdateBehavior)
+    res["updateScheduleType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSSoftwareUpdateScheduleType , m.SetUpdateScheduleType)
+    res["updateTimeWindowUtcOffsetInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetUpdateTimeWindowUtcOffsetInMinutes)
     return res
 }
 // GetFirmwareUpdateBehavior gets the firmwareUpdateBehavior property value. Update behavior options for macOS software updates.
@@ -170,10 +103,7 @@ func (m *MacOSSoftwareUpdateConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetCustomUpdateTimeWindows() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomUpdateTimeWindows()))
-        for i, v := range m.GetCustomUpdateTimeWindows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCustomUpdateTimeWindows())
         err = writer.WriteCollectionOfObjectValues("customUpdateTimeWindows", cast)
         if err != nil {
             return err

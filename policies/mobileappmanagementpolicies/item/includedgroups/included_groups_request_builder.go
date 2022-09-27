@@ -18,7 +18,7 @@ type IncludedGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IncludedGroupsRequestBuilderGetQueryParameters azure AD groups under the scope of the mobility management application if appliesTo is selected
+// IncludedGroupsRequestBuilderGetQueryParameters get the list of groups that are included in a mobile app management policy.
 type IncludedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -50,7 +50,7 @@ type IncludedGroupsRequestBuilderGetRequestConfiguration struct {
 func NewIncludedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncludedGroupsRequestBuilder) {
     m := &IncludedGroupsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -69,11 +69,11 @@ func NewIncludedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *IncludedGroupsRequestBuilder) Count()(*ic5b7d6629b4a5c986e3a9357b5228149ea2d4a33d343593c8d1d7ec0756e4fb4.CountRequestBuilder) {
     return ic5b7d6629b4a5c986e3a9357b5228149ea2d4a33d343593c8d1d7ec0756e4fb4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation azure AD groups under the scope of the mobility management application if appliesTo is selected
+// CreateGetRequestInformation get the list of groups that are included in a mobile app management policy.
 func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration azure AD groups under the scope of the mobility management application if appliesTo is selected
+// CreateGetRequestInformationWithRequestConfiguration get the list of groups that are included in a mobile app management policy.
 func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get azure AD groups under the scope of the mobility management application if appliesTo is selected
+// Get get the list of groups that are included in a mobile app management policy.
 func (m *IncludedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

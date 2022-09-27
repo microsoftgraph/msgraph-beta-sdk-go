@@ -41,11 +41,11 @@ func NewResizeCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewResizeCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action resizeCloudPc
+// CreatePostRequestInformation upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformation(body ResizeCloudPcPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action resizeCloudPc
+// CreatePostRequestInformationWithRequestConfiguration upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ResizeCloudPcPostRequestBodyable, requestConfiguration *ResizeCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Post invoke action resizeCloudPc
+// Post upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 func (m *ResizeCloudPcRequestBuilder) Post(ctx context.Context, body ResizeCloudPcPostRequestBodyable, requestConfiguration *ResizeCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

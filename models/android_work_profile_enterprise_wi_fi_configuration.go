@@ -52,110 +52,16 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetEapType()(*AndroidEap
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidWorkProfileWiFiConfiguration.GetFieldDeserializers()
-    res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiAuthenticationMethod)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationMethod(val.(*WiFiAuthenticationMethod))
-        }
-        return nil
-    }
-    res["eapType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidEapType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEapType(val.(*AndroidEapType))
-        }
-        return nil
-    }
-    res["identityCertificateForClientAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAndroidWorkProfileCertificateProfileBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityCertificateForClientAuthentication(val.(AndroidWorkProfileCertificateProfileBaseable))
-        }
-        return nil
-    }
-    res["innerAuthenticationProtocolForEapTtls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInnerAuthenticationProtocolForEapTtls(val.(*NonEapAuthenticationMethodForEapTtlsType))
-        }
-        return nil
-    }
-    res["innerAuthenticationProtocolForPeap"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForPeap)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInnerAuthenticationProtocolForPeap(val.(*NonEapAuthenticationMethodForPeap))
-        }
-        return nil
-    }
-    res["outerIdentityPrivacyTemporaryValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOuterIdentityPrivacyTemporaryValue(val)
-        }
-        return nil
-    }
-    res["proxyAutomaticConfigurationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxyAutomaticConfigurationUrl(val)
-        }
-        return nil
-    }
-    res["proxySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiProxySetting)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxySettings(val.(*WiFiProxySetting))
-        }
-        return nil
-    }
-    res["rootCertificateForServerValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAndroidWorkProfileTrustedRootCertificateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRootCertificateForServerValidation(val.(AndroidWorkProfileTrustedRootCertificateable))
-        }
-        return nil
-    }
-    res["trustedServerCertificateNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetTrustedServerCertificateNames(res)
-        }
-        return nil
-    }
+    res["authenticationMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWiFiAuthenticationMethod , m.SetAuthenticationMethod)
+    res["eapType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidEapType , m.SetEapType)
+    res["identityCertificateForClientAuthentication"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAndroidWorkProfileCertificateProfileBaseFromDiscriminatorValue , m.SetIdentityCertificateForClientAuthentication)
+    res["innerAuthenticationProtocolForEapTtls"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType , m.SetInnerAuthenticationProtocolForEapTtls)
+    res["innerAuthenticationProtocolForPeap"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseNonEapAuthenticationMethodForPeap , m.SetInnerAuthenticationProtocolForPeap)
+    res["outerIdentityPrivacyTemporaryValue"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOuterIdentityPrivacyTemporaryValue)
+    res["proxyAutomaticConfigurationUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProxyAutomaticConfigurationUrl)
+    res["proxySettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWiFiProxySetting , m.SetProxySettings)
+    res["rootCertificateForServerValidation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAndroidWorkProfileTrustedRootCertificateFromDiscriminatorValue , m.SetRootCertificateForServerValidation)
+    res["trustedServerCertificateNames"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetTrustedServerCertificateNames)
     return res
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.

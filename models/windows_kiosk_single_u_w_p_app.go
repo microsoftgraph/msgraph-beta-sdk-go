@@ -26,16 +26,7 @@ func CreateWindowsKioskSingleUWPAppFromDiscriminatorValue(parseNode i878a80d2330
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskSingleUWPApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskAppConfiguration.GetFieldDeserializers()
-    res["uwpApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsKioskUWPAppFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUwpApp(val.(WindowsKioskUWPAppable))
-        }
-        return nil
-    }
+    res["uwpApp"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsKioskUWPAppFromDiscriminatorValue , m.SetUwpApp)
     return res
 }
 // GetUwpApp gets the uwpApp property value. The uwpApp property

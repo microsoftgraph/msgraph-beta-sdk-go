@@ -48,26 +48,8 @@ func CreateDeviceHealthScriptTimeScheduleFromDiscriminatorValue(parseNode i878a8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptTimeSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceHealthScriptRunSchedule.GetFieldDeserializers()
-    res["time"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTime(val)
-        }
-        return nil
-    }
-    res["useUtc"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUseUtc(val)
-        }
-        return nil
-    }
+    res["time"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeOnlyValue(m.SetTime)
+    res["useUtc"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUseUtc)
     return res
 }
 // GetTime gets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.

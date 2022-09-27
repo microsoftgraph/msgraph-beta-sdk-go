@@ -28,26 +28,8 @@ func CreateDeviceManagementSettingStringLengthConstraintFromDiscriminatorValue(p
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingStringLengthConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
-    res["maximumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumLength(val)
-        }
-        return nil
-    }
-    res["minimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumLength(val)
-        }
-        return nil
-    }
+    res["maximumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumLength)
+    res["minimumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMinimumLength)
     return res
 }
 // GetMaximumLength gets the maximumLength property value. The maximum permitted string length

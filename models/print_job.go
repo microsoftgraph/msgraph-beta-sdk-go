@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintJob provides operations to manage the collection of activityStatistics entities.
+// PrintJob provides operations to manage the collection of accessReviewDecision entities.
 type PrintJob struct {
     Entity
     // A group of settings that a printer should use to print a job.
@@ -14,6 +14,8 @@ type PrintJob struct {
     createdBy UserIdentityable
     // The DateTimeOffset when the job was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The displayName property
+    displayName *string
     // The documents property
     documents []PrintDocumentable
     // If true, document can be fetched by printer.
@@ -52,6 +54,10 @@ func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
 func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
+// GetDisplayName gets the displayName property value. The displayName property
+func (m *PrintJob) GetDisplayName()(*string) {
+    return m.displayName
+}
 // GetDocuments gets the documents property value. The documents property
 func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     return m.documents
@@ -59,104 +65,16 @@ func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePrintJobConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConfiguration(val.(PrintJobConfigurationable))
-        }
-        return nil
-    }
-    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedBy(val.(UserIdentityable))
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["documents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePrintDocumentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintDocumentable, len(val))
-            for i, v := range val {
-                res[i] = v.(PrintDocumentable)
-            }
-            m.SetDocuments(res)
-        }
-        return nil
-    }
-    res["isFetchable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsFetchable(val)
-        }
-        return nil
-    }
-    res["redirectedFrom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRedirectedFrom(val)
-        }
-        return nil
-    }
-    res["redirectedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRedirectedTo(val)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePrintJobStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(PrintJobStatusable))
-        }
-        return nil
-    }
-    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePrintTaskFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PrintTaskable, len(val))
-            for i, v := range val {
-                res[i] = v.(PrintTaskable)
-            }
-            m.SetTasks(res)
-        }
-        return nil
-    }
+    res["configuration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePrintJobConfigurationFromDiscriminatorValue , m.SetConfiguration)
+    res["createdBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserIdentityFromDiscriminatorValue , m.SetCreatedBy)
+    res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["documents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePrintDocumentFromDiscriminatorValue , m.SetDocuments)
+    res["isFetchable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsFetchable)
+    res["redirectedFrom"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRedirectedFrom)
+    res["redirectedTo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRedirectedTo)
+    res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePrintJobStatusFromDiscriminatorValue , m.SetStatus)
+    res["tasks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePrintTaskFromDiscriminatorValue , m.SetTasks)
     return res
 }
 // GetIsFetchable gets the isFetchable property value. If true, document can be fetched by printer.
@@ -203,11 +121,14 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
-    if m.GetDocuments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocuments()))
-        for i, v := range m.GetDocuments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+    {
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
         }
+    }
+    if m.GetDocuments() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDocuments())
         err = writer.WriteCollectionOfObjectValues("documents", cast)
         if err != nil {
             return err
@@ -238,10 +159,7 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetTasks() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
-        for i, v := range m.GetTasks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTasks())
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
             return err
@@ -260,6 +178,10 @@ func (m *PrintJob) SetCreatedBy(value UserIdentityable)() {
 // SetCreatedDateTime sets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
 func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
+}
+// SetDisplayName sets the displayName property value. The displayName property
+func (m *PrintJob) SetDisplayName(value *string)() {
+    m.displayName = value
 }
 // SetDocuments sets the documents property value. The documents property
 func (m *PrintJob) SetDocuments(value []PrintDocumentable)() {

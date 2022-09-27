@@ -41,11 +41,11 @@ func NewRemoveMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action removeMembers
+// CreatePostRequestInformation remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
 func (m *RemoveMembersRequestBuilder) CreatePostRequestInformation(body RemoveMembersPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action removeMembers
+// CreatePostRequestInformationWithRequestConfiguration remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
 func (m *RemoveMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveMembersPostRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *RemoveMembersRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Post invoke action removeMembers
+// Post remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
 func (m *RemoveMembersRequestBuilder) Post(ctx context.Context, body RemoveMembersPostRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

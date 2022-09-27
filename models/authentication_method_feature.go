@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the usersRegisteredByFeature method.
+// Provides operations to manage the collection of accessReview entities.
 type AuthenticationMethodFeature int
 
 const (

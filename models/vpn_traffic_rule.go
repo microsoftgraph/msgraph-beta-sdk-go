@@ -63,132 +63,17 @@ func (m *VpnTrafficRule) GetClaims()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppId(val)
-        }
-        return nil
-    }
-    res["appType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnTrafficRuleAppType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppType(val.(*VpnTrafficRuleAppType))
-        }
-        return nil
-    }
-    res["claims"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClaims(val)
-        }
-        return nil
-    }
-    res["localAddressRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIPv4RangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IPv4Rangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IPv4Rangeable)
-            }
-            m.SetLocalAddressRanges(res)
-        }
-        return nil
-    }
-    res["localPortRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateNumberRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]NumberRangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(NumberRangeable)
-            }
-            m.SetLocalPortRanges(res)
-        }
-        return nil
-    }
-    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetName(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["protocols"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProtocols(val)
-        }
-        return nil
-    }
-    res["remoteAddressRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIPv4RangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IPv4Rangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IPv4Rangeable)
-            }
-            m.SetRemoteAddressRanges(res)
-        }
-        return nil
-    }
-    res["remotePortRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateNumberRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]NumberRangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(NumberRangeable)
-            }
-            m.SetRemotePortRanges(res)
-        }
-        return nil
-    }
-    res["routingPolicyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnTrafficRuleRoutingPolicyType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRoutingPolicyType(val.(*VpnTrafficRuleRoutingPolicyType))
-        }
-        return nil
-    }
+    res["appId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAppId)
+    res["appType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnTrafficRuleAppType , m.SetAppType)
+    res["claims"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetClaims)
+    res["localAddressRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIPv4RangeFromDiscriminatorValue , m.SetLocalAddressRanges)
+    res["localPortRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateNumberRangeFromDiscriminatorValue , m.SetLocalPortRanges)
+    res["name"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetName)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["protocols"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetProtocols)
+    res["remoteAddressRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIPv4RangeFromDiscriminatorValue , m.SetRemoteAddressRanges)
+    res["remotePortRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateNumberRangeFromDiscriminatorValue , m.SetRemotePortRanges)
+    res["routingPolicyType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnTrafficRuleRoutingPolicyType , m.SetRoutingPolicyType)
     return res
 }
 // GetLocalAddressRanges gets the localAddressRanges property value. Local address range. This collection can contain a maximum of 500 elements.
@@ -245,20 +130,14 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetLocalAddressRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalAddressRanges()))
-        for i, v := range m.GetLocalAddressRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetLocalAddressRanges())
         err := writer.WriteCollectionOfObjectValues("localAddressRanges", cast)
         if err != nil {
             return err
         }
     }
     if m.GetLocalPortRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalPortRanges()))
-        for i, v := range m.GetLocalPortRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetLocalPortRanges())
         err := writer.WriteCollectionOfObjectValues("localPortRanges", cast)
         if err != nil {
             return err
@@ -283,20 +162,14 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     if m.GetRemoteAddressRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteAddressRanges()))
-        for i, v := range m.GetRemoteAddressRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRemoteAddressRanges())
         err := writer.WriteCollectionOfObjectValues("remoteAddressRanges", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRemotePortRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemotePortRanges()))
-        for i, v := range m.GetRemotePortRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRemotePortRanges())
         err := writer.WriteCollectionOfObjectValues("remotePortRanges", cast)
         if err != nil {
             return err

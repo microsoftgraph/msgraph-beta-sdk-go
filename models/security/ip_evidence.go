@@ -26,16 +26,7 @@ func CreateIpEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IpEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
-    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIpAddress(val)
-        }
-        return nil
-    }
+    res["ipAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetIpAddress)
     return res
 }
 // GetIpAddress gets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.

@@ -79,148 +79,17 @@ func (m *IdentityContainer) GetCustomAuthenticationExtensions()([]CustomAuthenti
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["apiConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityApiConnectorFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityApiConnectorable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityApiConnectorable)
-            }
-            m.SetApiConnectors(res)
-        }
-        return nil
-    }
-    res["authenticationEventListeners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationEventListenerFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationEventListenerable, len(val))
-            for i, v := range val {
-                res[i] = v.(AuthenticationEventListenerable)
-            }
-            m.SetAuthenticationEventListeners(res)
-        }
-        return nil
-    }
-    res["b2cUserFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateB2cIdentityUserFlowFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]B2cIdentityUserFlowable, len(val))
-            for i, v := range val {
-                res[i] = v.(B2cIdentityUserFlowable)
-            }
-            m.SetB2cUserFlows(res)
-        }
-        return nil
-    }
-    res["b2xUserFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateB2xIdentityUserFlowFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]B2xIdentityUserFlowable, len(val))
-            for i, v := range val {
-                res[i] = v.(B2xIdentityUserFlowable)
-            }
-            m.SetB2xUserFlows(res)
-        }
-        return nil
-    }
-    res["conditionalAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConditionalAccessRootFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConditionalAccess(val.(ConditionalAccessRootable))
-        }
-        return nil
-    }
-    res["continuousAccessEvaluationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContinuousAccessEvaluationPolicy(val.(ContinuousAccessEvaluationPolicyable))
-        }
-        return nil
-    }
-    res["customAuthenticationExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCustomAuthenticationExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CustomAuthenticationExtensionable, len(val))
-            for i, v := range val {
-                res[i] = v.(CustomAuthenticationExtensionable)
-            }
-            m.SetCustomAuthenticationExtensions(res)
-        }
-        return nil
-    }
-    res["identityProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityProviderBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityProviderBaseable)
-            }
-            m.SetIdentityProviders(res)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["userFlowAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityUserFlowAttributeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityUserFlowAttributeable)
-            }
-            m.SetUserFlowAttributes(res)
-        }
-        return nil
-    }
-    res["userFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IdentityUserFlowable, len(val))
-            for i, v := range val {
-                res[i] = v.(IdentityUserFlowable)
-            }
-            m.SetUserFlows(res)
-        }
-        return nil
-    }
+    res["apiConnectors"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityApiConnectorFromDiscriminatorValue , m.SetApiConnectors)
+    res["authenticationEventListeners"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationEventListenerFromDiscriminatorValue , m.SetAuthenticationEventListeners)
+    res["b2cUserFlows"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateB2cIdentityUserFlowFromDiscriminatorValue , m.SetB2cUserFlows)
+    res["b2xUserFlows"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateB2xIdentityUserFlowFromDiscriminatorValue , m.SetB2xUserFlows)
+    res["conditionalAccess"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessRootFromDiscriminatorValue , m.SetConditionalAccess)
+    res["continuousAccessEvaluationPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue , m.SetContinuousAccessEvaluationPolicy)
+    res["customAuthenticationExtensions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCustomAuthenticationExtensionFromDiscriminatorValue , m.SetCustomAuthenticationExtensions)
+    res["identityProviders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue , m.SetIdentityProviders)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["userFlowAttributes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityUserFlowAttributeFromDiscriminatorValue , m.SetUserFlowAttributes)
+    res["userFlows"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityUserFlowFromDiscriminatorValue , m.SetUserFlows)
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. Represents entry point for identity provider base.
@@ -242,40 +111,28 @@ func (m *IdentityContainer) GetUserFlows()([]IdentityUserFlowable) {
 // Serialize serializes information the current object
 func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetApiConnectors() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApiConnectors()))
-        for i, v := range m.GetApiConnectors() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetApiConnectors())
         err := writer.WriteCollectionOfObjectValues("apiConnectors", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAuthenticationEventListeners() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationEventListeners()))
-        for i, v := range m.GetAuthenticationEventListeners() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAuthenticationEventListeners())
         err := writer.WriteCollectionOfObjectValues("authenticationEventListeners", cast)
         if err != nil {
             return err
         }
     }
     if m.GetB2cUserFlows() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2cUserFlows()))
-        for i, v := range m.GetB2cUserFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetB2cUserFlows())
         err := writer.WriteCollectionOfObjectValues("b2cUserFlows", cast)
         if err != nil {
             return err
         }
     }
     if m.GetB2xUserFlows() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2xUserFlows()))
-        for i, v := range m.GetB2xUserFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetB2xUserFlows())
         err := writer.WriteCollectionOfObjectValues("b2xUserFlows", cast)
         if err != nil {
             return err
@@ -294,20 +151,14 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     if m.GetCustomAuthenticationExtensions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomAuthenticationExtensions()))
-        for i, v := range m.GetCustomAuthenticationExtensions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCustomAuthenticationExtensions())
         err := writer.WriteCollectionOfObjectValues("customAuthenticationExtensions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetIdentityProviders() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIdentityProviders()))
-        for i, v := range m.GetIdentityProviders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIdentityProviders())
         err := writer.WriteCollectionOfObjectValues("identityProviders", cast)
         if err != nil {
             return err
@@ -320,20 +171,14 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     if m.GetUserFlowAttributes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowAttributes()))
-        for i, v := range m.GetUserFlowAttributes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserFlowAttributes())
         err := writer.WriteCollectionOfObjectValues("userFlowAttributes", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserFlows() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlows()))
-        for i, v := range m.GetUserFlows() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserFlows())
         err := writer.WriteCollectionOfObjectValues("userFlows", cast)
         if err != nil {
             return err

@@ -32,30 +32,8 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Ge
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingInstanceTemplate.GetFieldDeserializers()
-    res["allowUnmanagedValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowUnmanagedValues(val)
-        }
-        return nil
-    }
-    res["groupSettingCollectionValueTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationGroupSettingValueTemplateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementConfigurationGroupSettingValueTemplateable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationGroupSettingValueTemplateable)
-            }
-            m.SetGroupSettingCollectionValueTemplate(res)
-        }
-        return nil
-    }
+    res["allowUnmanagedValues"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowUnmanagedValues)
+    res["groupSettingCollectionValueTemplate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementConfigurationGroupSettingValueTemplateFromDiscriminatorValue , m.SetGroupSettingCollectionValueTemplate)
     return res
 }
 // GetGroupSettingCollectionValueTemplate gets the groupSettingCollectionValueTemplate property value. Group Setting Collection Value Template
@@ -75,10 +53,7 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Se
         }
     }
     if m.GetGroupSettingCollectionValueTemplate() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGroupSettingCollectionValueTemplate()))
-        for i, v := range m.GetGroupSettingCollectionValueTemplate() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetGroupSettingCollectionValueTemplate())
         err = writer.WriteCollectionOfObjectValues("groupSettingCollectionValueTemplate", cast)
         if err != nil {
             return err

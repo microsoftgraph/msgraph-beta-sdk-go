@@ -42,11 +42,11 @@ func NewUnassignTagRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewUnassignTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action unassignTag
+// CreatePostRequestInformation un-assigns the tenant tag from the specified managed tenants.
 func (m *UnassignTagRequestBuilder) CreatePostRequestInformation(body UnassignTagPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unassignTag
+// CreatePostRequestInformationWithRequestConfiguration un-assigns the tenant tag from the specified managed tenants.
 func (m *UnassignTagRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnassignTagPostRequestBodyable, requestConfiguration *UnassignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *UnassignTagRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Post invoke action unassignTag
+// Post un-assigns the tenant tag from the specified managed tenants.
 func (m *UnassignTagRequestBuilder) Post(ctx context.Context, body UnassignTagPostRequestBodyable, requestConfiguration *UnassignTagRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

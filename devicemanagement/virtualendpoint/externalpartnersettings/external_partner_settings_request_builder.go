@@ -17,7 +17,7 @@ type ExternalPartnerSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExternalPartnerSettingsRequestBuilderGetQueryParameters the external partner settings on a Cloud PC.
+// ExternalPartnerSettingsRequestBuilderGetQueryParameters get a list of the cloudPcExternalPartnerSetting objects and their properties.
 type ExternalPartnerSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ExternalPartnerSettingsRequestBuilderPostRequestConfiguration struct {
 func NewExternalPartnerSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalPartnerSettingsRequestBuilder) {
     m := &ExternalPartnerSettingsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/externalPartnerSettings{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/externalPartnerSettings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewExternalPartnerSettingsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ExternalPartnerSettingsRequestBuilder) Count()(*ic76c46ccd4aeeee631ef390a41acaec7b8bc2f7550bae3700f82e48bafab3450.CountRequestBuilder) {
     return ic76c46ccd4aeeee631ef390a41acaec7b8bc2f7550bae3700f82e48bafab3450.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the external partner settings on a Cloud PC.
+// CreateGetRequestInformation get a list of the cloudPcExternalPartnerSetting objects and their properties.
 func (m *ExternalPartnerSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the external partner settings on a Cloud PC.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the cloudPcExternalPartnerSetting objects and their properties.
 func (m *ExternalPartnerSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalPartnerSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ExternalPartnerSettingsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to externalPartnerSettings for deviceManagement
+// CreatePostRequestInformation create a new cloudPcExternalPartnerSetting object.
 func (m *ExternalPartnerSettingsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to externalPartnerSettings for deviceManagement
+// CreatePostRequestInformationWithRequestConfiguration create a new cloudPcExternalPartnerSetting object.
 func (m *ExternalPartnerSettingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, requestConfiguration *ExternalPartnerSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ExternalPartnerSettingsRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get the external partner settings on a Cloud PC.
+// Get get a list of the cloudPcExternalPartnerSetting objects and their properties.
 func (m *ExternalPartnerSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExternalPartnerSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ExternalPartnerSettingsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingCollectionResponseable), nil
 }
-// Post create new navigation property to externalPartnerSettings for deviceManagement
+// Post create a new cloudPcExternalPartnerSetting object.
 func (m *ExternalPartnerSettingsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, requestConfiguration *ExternalPartnerSettingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

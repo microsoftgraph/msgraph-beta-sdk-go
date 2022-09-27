@@ -28,26 +28,8 @@ func CreateWinGetAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WinGetApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
-    res["installExperience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWinGetAppInstallExperienceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInstallExperience(val.(WinGetAppInstallExperienceable))
-        }
-        return nil
-    }
-    res["packageIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPackageIdentifier(val)
-        }
-        return nil
-    }
+    res["installExperience"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWinGetAppInstallExperienceFromDiscriminatorValue , m.SetInstallExperience)
+    res["packageIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPackageIdentifier)
     return res
 }
 // GetInstallExperience gets the installExperience property value. The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.

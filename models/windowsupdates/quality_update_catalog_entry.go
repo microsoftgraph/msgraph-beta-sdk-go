@@ -28,26 +28,8 @@ func CreateQualityUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d233
 // GetFieldDeserializers the deserialization information for the current model
 func (m *QualityUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SoftwareUpdateCatalogEntry.GetFieldDeserializers()
-    res["isExpeditable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsExpeditable(val)
-        }
-        return nil
-    }
-    res["qualityUpdateClassification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseQualityUpdateClassification)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQualityUpdateClassification(val.(*QualityUpdateClassification))
-        }
-        return nil
-    }
+    res["isExpeditable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsExpeditable)
+    res["qualityUpdateClassification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseQualityUpdateClassification , m.SetQualityUpdateClassification)
     return res
 }
 // GetIsExpeditable gets the isExpeditable property value. Indicates whether the content can be deployed as an expedited quality update. Read-only.

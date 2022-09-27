@@ -17,7 +17,7 @@ type CertificationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CertificationsRequestBuilderGetQueryParameters represents the details of certifications associated with a person.
+// CertificationsRequestBuilderGetQueryParameters retrieve a list of personCertification objects from a user's profile.
 type CertificationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type CertificationsRequestBuilderPostRequestConfiguration struct {
 func NewCertificationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CertificationsRequestBuilder) {
     m := &CertificationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/profile/certifications{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/profile/certifications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewCertificationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *CertificationsRequestBuilder) Count()(*icb835871aea8d9a37a093fc3c13249cafed087619a325ff439102bdafdadfc97.CountRequestBuilder) {
     return icb835871aea8d9a37a093fc3c13249cafed087619a325ff439102bdafdadfc97.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the details of certifications associated with a person.
+// CreateGetRequestInformation retrieve a list of personCertification objects from a user's profile.
 func (m *CertificationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the details of certifications associated with a person.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of personCertification objects from a user's profile.
 func (m *CertificationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CertificationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *CertificationsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to certifications for me
+// CreatePostRequestInformation create a new personCertification object in a user's profile.
 func (m *CertificationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to certifications for me
+// CreatePostRequestInformationWithRequestConfiguration create a new personCertification object in a user's profile.
 func (m *CertificationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, requestConfiguration *CertificationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CertificationsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get represents the details of certifications associated with a person.
+// Get retrieve a list of personCertification objects from a user's profile.
 func (m *CertificationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *CertificationsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationCollectionResponseable), nil
 }
-// Post create new navigation property to certifications for me
+// Post create a new personCertification object in a user's profile.
 func (m *CertificationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, requestConfiguration *CertificationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

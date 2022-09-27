@@ -34,36 +34,9 @@ func (m *IosEduDeviceConfiguration) GetDeviceCertificateSettings()(IosEduCertifi
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosEduDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["deviceCertificateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosEduCertificateSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceCertificateSettings(val.(IosEduCertificateSettingsable))
-        }
-        return nil
-    }
-    res["studentCertificateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosEduCertificateSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStudentCertificateSettings(val.(IosEduCertificateSettingsable))
-        }
-        return nil
-    }
-    res["teacherCertificateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosEduCertificateSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTeacherCertificateSettings(val.(IosEduCertificateSettingsable))
-        }
-        return nil
-    }
+    res["deviceCertificateSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosEduCertificateSettingsFromDiscriminatorValue , m.SetDeviceCertificateSettings)
+    res["studentCertificateSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosEduCertificateSettingsFromDiscriminatorValue , m.SetStudentCertificateSettings)
+    res["teacherCertificateSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosEduCertificateSettingsFromDiscriminatorValue , m.SetTeacherCertificateSettings)
     return res
 }
 // GetStudentCertificateSettings gets the studentCertificateSettings property value. The Trusted Root and PFX certificates for Student

@@ -17,7 +17,7 @@ type ConnectorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ConnectorsRequestBuilderGetQueryParameters the connectors that are associated with the printer.
+// ConnectorsRequestBuilderGetQueryParameters retrieve a list of **connectors** associated with the printer.
 type ConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type ConnectorsRequestBuilderGetRequestConfiguration struct {
 func NewConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectorsRequestBuilder) {
     m := &ConnectorsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/printers/{printer%2Did}/connectors{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/printers/{printer%2Did}/connectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ConnectorsRequestBuilder) Count()(*i30b2a32a4f2c41a727ac9844e73e0f7374932b46447bb6346a27760dbe26b305.CountRequestBuilder) {
     return i30b2a32a4f2c41a727ac9844e73e0f7374932b46447bb6346a27760dbe26b305.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the connectors that are associated with the printer.
+// CreateGetRequestInformation retrieve a list of **connectors** associated with the printer.
 func (m *ConnectorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the connectors that are associated with the printer.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of **connectors** associated with the printer.
 func (m *ConnectorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *ConnectorsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get the connectors that are associated with the printer.
+// Get retrieve a list of **connectors** associated with the printer.
 func (m *ConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

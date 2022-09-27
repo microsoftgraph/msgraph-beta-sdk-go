@@ -42,44 +42,9 @@ func (m *DeviceConfigurationConflictSummary) GetDeviceCheckinsImpacted()(*int32)
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["conflictingDeviceConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSettingSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SettingSourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(SettingSourceable)
-            }
-            m.SetConflictingDeviceConfigurations(res)
-        }
-        return nil
-    }
-    res["contributingSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetContributingSettings(res)
-        }
-        return nil
-    }
-    res["deviceCheckinsImpacted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceCheckinsImpacted(val)
-        }
-        return nil
-    }
+    res["conflictingDeviceConfigurations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSettingSourceFromDiscriminatorValue , m.SetConflictingDeviceConfigurations)
+    res["contributingSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetContributingSettings)
+    res["deviceCheckinsImpacted"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDeviceCheckinsImpacted)
     return res
 }
 // Serialize serializes information the current object
@@ -89,10 +54,7 @@ func (m *DeviceConfigurationConflictSummary) Serialize(writer i878a80d2330e89d26
         return err
     }
     if m.GetConflictingDeviceConfigurations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConflictingDeviceConfigurations()))
-        for i, v := range m.GetConflictingDeviceConfigurations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetConflictingDeviceConfigurations())
         err = writer.WriteCollectionOfObjectValues("conflictingDeviceConfigurations", cast)
         if err != nil {
             return err

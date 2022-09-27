@@ -70,212 +70,21 @@ func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfileable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["alerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Alertable, len(val))
-            for i, v := range val {
-                res[i] = v.(Alertable)
-            }
-            m.SetAlerts(res)
-        }
-        return nil
-    }
-    res["attackSimulation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAttackSimulationRootFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAttackSimulation(val.(AttackSimulationRootable))
-        }
-        return nil
-    }
-    res["cloudAppSecurityProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudAppSecurityProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudAppSecurityProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudAppSecurityProfileable)
-            }
-            m.SetCloudAppSecurityProfiles(res)
-        }
-        return nil
-    }
-    res["domainSecurityProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDomainSecurityProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DomainSecurityProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(DomainSecurityProfileable)
-            }
-            m.SetDomainSecurityProfiles(res)
-        }
-        return nil
-    }
-    res["fileSecurityProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateFileSecurityProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]FileSecurityProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(FileSecurityProfileable)
-            }
-            m.SetFileSecurityProfiles(res)
-        }
-        return nil
-    }
-    res["hostSecurityProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateHostSecurityProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]HostSecurityProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(HostSecurityProfileable)
-            }
-            m.SetHostSecurityProfiles(res)
-        }
-        return nil
-    }
-    res["ipSecurityProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIpSecurityProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IpSecurityProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(IpSecurityProfileable)
-            }
-            m.SetIpSecurityProfiles(res)
-        }
-        return nil
-    }
-    res["providerStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSecurityProviderStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SecurityProviderStatusable, len(val))
-            for i, v := range val {
-                res[i] = v.(SecurityProviderStatusable)
-            }
-            m.SetProviderStatus(res)
-        }
-        return nil
-    }
-    res["providerTenantSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateProviderTenantSettingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProviderTenantSettingable, len(val))
-            for i, v := range val {
-                res[i] = v.(ProviderTenantSettingable)
-            }
-            m.SetProviderTenantSettings(res)
-        }
-        return nil
-    }
-    res["secureScoreControlProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSecureScoreControlProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SecureScoreControlProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(SecureScoreControlProfileable)
-            }
-            m.SetSecureScoreControlProfiles(res)
-        }
-        return nil
-    }
-    res["secureScores"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSecureScoreFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SecureScoreable, len(val))
-            for i, v := range val {
-                res[i] = v.(SecureScoreable)
-            }
-            m.SetSecureScores(res)
-        }
-        return nil
-    }
-    res["securityActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSecurityActionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SecurityActionable, len(val))
-            for i, v := range val {
-                res[i] = v.(SecurityActionable)
-            }
-            m.SetSecurityActions(res)
-        }
-        return nil
-    }
-    res["subjectRightsRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSubjectRightsRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SubjectRightsRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(SubjectRightsRequestable)
-            }
-            m.SetSubjectRightsRequests(res)
-        }
-        return nil
-    }
-    res["tiIndicators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTiIndicatorFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TiIndicatorable, len(val))
-            for i, v := range val {
-                res[i] = v.(TiIndicatorable)
-            }
-            m.SetTiIndicators(res)
-        }
-        return nil
-    }
-    res["userSecurityProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserSecurityProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserSecurityProfileable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserSecurityProfileable)
-            }
-            m.SetUserSecurityProfiles(res)
-        }
-        return nil
-    }
+    res["alerts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue , m.SetAlerts)
+    res["attackSimulation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAttackSimulationRootFromDiscriminatorValue , m.SetAttackSimulation)
+    res["cloudAppSecurityProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudAppSecurityProfileFromDiscriminatorValue , m.SetCloudAppSecurityProfiles)
+    res["domainSecurityProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDomainSecurityProfileFromDiscriminatorValue , m.SetDomainSecurityProfiles)
+    res["fileSecurityProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateFileSecurityProfileFromDiscriminatorValue , m.SetFileSecurityProfiles)
+    res["hostSecurityProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateHostSecurityProfileFromDiscriminatorValue , m.SetHostSecurityProfiles)
+    res["ipSecurityProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIpSecurityProfileFromDiscriminatorValue , m.SetIpSecurityProfiles)
+    res["providerStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSecurityProviderStatusFromDiscriminatorValue , m.SetProviderStatus)
+    res["providerTenantSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateProviderTenantSettingFromDiscriminatorValue , m.SetProviderTenantSettings)
+    res["secureScoreControlProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSecureScoreControlProfileFromDiscriminatorValue , m.SetSecureScoreControlProfiles)
+    res["secureScores"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSecureScoreFromDiscriminatorValue , m.SetSecureScores)
+    res["securityActions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSecurityActionFromDiscriminatorValue , m.SetSecurityActions)
+    res["subjectRightsRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSubjectRightsRequestFromDiscriminatorValue , m.SetSubjectRightsRequests)
+    res["tiIndicators"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTiIndicatorFromDiscriminatorValue , m.SetTiIndicators)
+    res["userSecurityProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserSecurityProfileFromDiscriminatorValue , m.SetUserSecurityProfiles)
     return res
 }
 // GetFileSecurityProfiles gets the fileSecurityProfiles property value. The fileSecurityProfiles property
@@ -329,10 +138,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         return err
     }
     if m.GetAlerts() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
-        for i, v := range m.GetAlerts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAlerts())
         err = writer.WriteCollectionOfObjectValues("alerts", cast)
         if err != nil {
             return err
@@ -345,130 +151,91 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetCloudAppSecurityProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudAppSecurityProfiles()))
-        for i, v := range m.GetCloudAppSecurityProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCloudAppSecurityProfiles())
         err = writer.WriteCollectionOfObjectValues("cloudAppSecurityProfiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetDomainSecurityProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDomainSecurityProfiles()))
-        for i, v := range m.GetDomainSecurityProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDomainSecurityProfiles())
         err = writer.WriteCollectionOfObjectValues("domainSecurityProfiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetFileSecurityProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFileSecurityProfiles()))
-        for i, v := range m.GetFileSecurityProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetFileSecurityProfiles())
         err = writer.WriteCollectionOfObjectValues("fileSecurityProfiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetHostSecurityProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHostSecurityProfiles()))
-        for i, v := range m.GetHostSecurityProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetHostSecurityProfiles())
         err = writer.WriteCollectionOfObjectValues("hostSecurityProfiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetIpSecurityProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIpSecurityProfiles()))
-        for i, v := range m.GetIpSecurityProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIpSecurityProfiles())
         err = writer.WriteCollectionOfObjectValues("ipSecurityProfiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetProviderStatus() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProviderStatus()))
-        for i, v := range m.GetProviderStatus() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetProviderStatus())
         err = writer.WriteCollectionOfObjectValues("providerStatus", cast)
         if err != nil {
             return err
         }
     }
     if m.GetProviderTenantSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProviderTenantSettings()))
-        for i, v := range m.GetProviderTenantSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetProviderTenantSettings())
         err = writer.WriteCollectionOfObjectValues("providerTenantSettings", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSecureScoreControlProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecureScoreControlProfiles()))
-        for i, v := range m.GetSecureScoreControlProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSecureScoreControlProfiles())
         err = writer.WriteCollectionOfObjectValues("secureScoreControlProfiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSecureScores() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecureScores()))
-        for i, v := range m.GetSecureScores() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSecureScores())
         err = writer.WriteCollectionOfObjectValues("secureScores", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSecurityActions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecurityActions()))
-        for i, v := range m.GetSecurityActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSecurityActions())
         err = writer.WriteCollectionOfObjectValues("securityActions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSubjectRightsRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjectRightsRequests()))
-        for i, v := range m.GetSubjectRightsRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSubjectRightsRequests())
         err = writer.WriteCollectionOfObjectValues("subjectRightsRequests", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTiIndicators() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTiIndicators()))
-        for i, v := range m.GetTiIndicators() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTiIndicators())
         err = writer.WriteCollectionOfObjectValues("tiIndicators", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserSecurityProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserSecurityProfiles()))
-        for i, v := range m.GetUserSecurityProfiles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserSecurityProfiles())
         err = writer.WriteCollectionOfObjectValues("userSecurityProfiles", cast)
         if err != nil {
             return err

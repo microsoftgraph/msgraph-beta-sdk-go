@@ -17,7 +17,7 @@ type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+// PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
 type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,18 +45,11 @@ type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters
 }
-// PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
     m := &PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/authentication/passwordlessMicrosoftAuthenticatorMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/authentication/passwordlessMicrosoftAuthenticatorMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +68,11 @@ func NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, r
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Count()(*i9265aa7b6a9721ed01e5afd8dc599669d2d72de8f0831449b61ba5f76c7e899d.CountRequestBuilder) {
     return i9265aa7b6a9721ed01e5afd8dc599669d2d72de8f0831449b61ba5f76c7e899d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+// CreateGetRequestInformation retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,25 +88,7 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to passwordlessMicrosoftAuthenticatorMethods for me
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to passwordlessMicrosoftAuthenticatorMethods for me
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Get represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+// Get retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -131,23 +106,4 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Get(ctx contex
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable), nil
-}
-// Post create new navigation property to passwordlessMicrosoftAuthenticatorMethods for me
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable), nil
 }

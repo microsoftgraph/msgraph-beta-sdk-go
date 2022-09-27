@@ -28,26 +28,8 @@ func CreateAcronymFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
-    res["standsFor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStandsFor(val)
-        }
-        return nil
-    }
-    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAnswerState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetState(val.(*AnswerState))
-        }
-        return nil
-    }
+    res["standsFor"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetStandsFor)
+    res["state"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAnswerState , m.SetState)
     return res
 }
 // GetStandsFor gets the standsFor property value. What the acronym stands for.

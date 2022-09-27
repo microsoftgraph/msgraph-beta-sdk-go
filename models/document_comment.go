@@ -32,30 +32,8 @@ func (m *DocumentComment) GetContent()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContent(val)
-        }
-        return nil
-    }
-    res["replies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDocumentCommentReplyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DocumentCommentReplyable, len(val))
-            for i, v := range val {
-                res[i] = v.(DocumentCommentReplyable)
-            }
-            m.SetReplies(res)
-        }
-        return nil
-    }
+    res["content"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetContent)
+    res["replies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDocumentCommentReplyFromDiscriminatorValue , m.SetReplies)
     return res
 }
 // GetReplies gets the replies property value. The replies property
@@ -75,10 +53,7 @@ func (m *DocumentComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetReplies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReplies()))
-        for i, v := range m.GetReplies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetReplies())
         err = writer.WriteCollectionOfObjectValues("replies", cast)
         if err != nil {
             return err

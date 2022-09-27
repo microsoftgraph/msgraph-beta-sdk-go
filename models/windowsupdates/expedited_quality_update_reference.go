@@ -30,16 +30,7 @@ func (m *ExpeditedQualityUpdateReference) GetEquivalentContent()(*EquivalentCont
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExpeditedQualityUpdateReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.QualityUpdateReference.GetFieldDeserializers()
-    res["equivalentContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEquivalentContentOption)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEquivalentContent(val.(*EquivalentContentOption))
-        }
-        return nil
-    }
+    res["equivalentContent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEquivalentContentOption , m.SetEquivalentContent)
     return res
 }
 // Serialize serializes information the current object

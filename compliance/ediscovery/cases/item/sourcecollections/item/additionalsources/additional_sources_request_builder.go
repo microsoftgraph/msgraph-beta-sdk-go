@@ -17,7 +17,7 @@ type AdditionalSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdditionalSourcesRequestBuilderGetQueryParameters adds an additional source to the sourceCollection.
+// AdditionalSourcesRequestBuilderGetQueryParameters get a list of additional dataSource objects associated with a source collection.
 type AdditionalSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AdditionalSourcesRequestBuilderPostRequestConfiguration struct {
 func NewAdditionalSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdditionalSourcesRequestBuilder) {
     m := &AdditionalSourcesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/additionalSources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/additionalSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAdditionalSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *AdditionalSourcesRequestBuilder) Count()(*ieecf87da0dde99fb7484ecceaf9fa0b70262bf387ef71a2995261c47e70d4062.CountRequestBuilder) {
     return ieecf87da0dde99fb7484ecceaf9fa0b70262bf387ef71a2995261c47e70d4062.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation adds an additional source to the sourceCollection.
+// CreateGetRequestInformation get a list of additional dataSource objects associated with a source collection.
 func (m *AdditionalSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration adds an additional source to the sourceCollection.
+// CreateGetRequestInformationWithRequestConfiguration get a list of additional dataSource objects associated with a source collection.
 func (m *AdditionalSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdditionalSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AdditionalSourcesRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get adds an additional source to the sourceCollection.
+// Get get a list of additional dataSource objects associated with a source collection.
 func (m *AdditionalSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *AdditionalSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

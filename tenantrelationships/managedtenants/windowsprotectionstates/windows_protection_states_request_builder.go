@@ -17,7 +17,7 @@ type WindowsProtectionStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WindowsProtectionStatesRequestBuilderGetQueryParameters the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// WindowsProtectionStatesRequestBuilderGetQueryParameters get a list of the windowsProtectionState objects and their properties.
 type WindowsProtectionStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type WindowsProtectionStatesRequestBuilderPostRequestConfiguration struct {
 func NewWindowsProtectionStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsProtectionStatesRequestBuilder) {
     m := &WindowsProtectionStatesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/windowsProtectionStates{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/windowsProtectionStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewWindowsProtectionStatesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *WindowsProtectionStatesRequestBuilder) Count()(*i9408837d526651b794f2b8b63f2a738d97c292579676650cbd9ef06a29aca1bf.CountRequestBuilder) {
     return i9408837d526651b794f2b8b63f2a738d97c292579676650cbd9ef06a29aca1bf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// CreateGetRequestInformation get a list of the windowsProtectionState objects and their properties.
 func (m *WindowsProtectionStatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the windowsProtectionState objects and their properties.
 func (m *WindowsProtectionStatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WindowsProtectionStatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WindowsProtectionStatesRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// Get get a list of the windowsProtectionState objects and their properties.
 func (m *WindowsProtectionStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsProtectionStatesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.WindowsProtectionStateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

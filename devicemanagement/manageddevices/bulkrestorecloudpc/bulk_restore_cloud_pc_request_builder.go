@@ -42,11 +42,11 @@ func NewBulkRestoreCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewBulkRestoreCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action bulkRestoreCloudPc
+// CreatePostRequestInformation restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
 func (m *BulkRestoreCloudPcRequestBuilder) CreatePostRequestInformation(body BulkRestoreCloudPcPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action bulkRestoreCloudPc
+// CreatePostRequestInformationWithRequestConfiguration restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
 func (m *BulkRestoreCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BulkRestoreCloudPcPostRequestBodyable, requestConfiguration *BulkRestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *BulkRestoreCloudPcRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Post invoke action bulkRestoreCloudPc
+// Post restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
 func (m *BulkRestoreCloudPcRequestBuilder) Post(ctx context.Context, body BulkRestoreCloudPcPostRequestBodyable, requestConfiguration *BulkRestoreCloudPcRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

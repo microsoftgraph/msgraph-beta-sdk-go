@@ -39,56 +39,11 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetAdditionalData
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["templateDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTemplateDisplayName(val)
-        }
-        return nil
-    }
-    res["templateDisplayVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTemplateDisplayVersion(val)
-        }
-        return nil
-    }
-    res["templateFamily"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementConfigurationTemplateFamily)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTemplateFamily(val.(*DeviceManagementConfigurationTemplateFamily))
-        }
-        return nil
-    }
-    res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTemplateId(val)
-        }
-        return nil
-    }
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["templateDisplayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTemplateDisplayName)
+    res["templateDisplayVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTemplateDisplayVersion)
+    res["templateFamily"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementConfigurationTemplateFamily , m.SetTemplateFamily)
+    res["templateId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTemplateId)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -115,18 +70,6 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateId()(*
 func (m *DeviceManagementConfigurationPolicyTemplateReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("templateDisplayName", m.GetTemplateDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("templateDisplayVersion", m.GetTemplateDisplayVersion())
         if err != nil {
             return err
         }

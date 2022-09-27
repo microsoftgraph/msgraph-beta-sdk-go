@@ -23,6 +23,8 @@ type VirtualEndpoint struct {
     organizationSettings CloudPcOrganizationSettingsable
     // Cloud PC provisioning policy.
     provisioningPolicies []CloudPcProvisioningPolicyable
+    // The reports property
+    reports CloudPcReportsable
     // Cloud PC service plans.
     servicePlans []CloudPcServicePlanable
     // Cloud PC snapshots.
@@ -64,170 +66,19 @@ func (m *VirtualEndpoint) GetExternalPartnerSettings()([]CloudPcExternalPartnerS
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["auditEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcAuditEventFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcAuditEventable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcAuditEventable)
-            }
-            m.SetAuditEvents(res)
-        }
-        return nil
-    }
-    res["cloudPCs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPCFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPCable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPCable)
-            }
-            m.SetCloudPCs(res)
-        }
-        return nil
-    }
-    res["deviceImages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcDeviceImageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcDeviceImageable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcDeviceImageable)
-            }
-            m.SetDeviceImages(res)
-        }
-        return nil
-    }
-    res["externalPartnerSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcExternalPartnerSettingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcExternalPartnerSettingable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcExternalPartnerSettingable)
-            }
-            m.SetExternalPartnerSettings(res)
-        }
-        return nil
-    }
-    res["galleryImages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcGalleryImageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcGalleryImageable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcGalleryImageable)
-            }
-            m.SetGalleryImages(res)
-        }
-        return nil
-    }
-    res["onPremisesConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcOnPremisesConnectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcOnPremisesConnectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcOnPremisesConnectionable)
-            }
-            m.SetOnPremisesConnections(res)
-        }
-        return nil
-    }
-    res["organizationSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCloudPcOrganizationSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOrganizationSettings(val.(CloudPcOrganizationSettingsable))
-        }
-        return nil
-    }
-    res["provisioningPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcProvisioningPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcProvisioningPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcProvisioningPolicyable)
-            }
-            m.SetProvisioningPolicies(res)
-        }
-        return nil
-    }
-    res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcServicePlanFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcServicePlanable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcServicePlanable)
-            }
-            m.SetServicePlans(res)
-        }
-        return nil
-    }
-    res["snapshots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcSnapshotFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcSnapshotable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcSnapshotable)
-            }
-            m.SetSnapshots(res)
-        }
-        return nil
-    }
-    res["supportedRegions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcSupportedRegionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcSupportedRegionable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcSupportedRegionable)
-            }
-            m.SetSupportedRegions(res)
-        }
-        return nil
-    }
-    res["userSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcUserSettingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcUserSettingable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcUserSettingable)
-            }
-            m.SetUserSettings(res)
-        }
-        return nil
-    }
+    res["auditEvents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcAuditEventFromDiscriminatorValue , m.SetAuditEvents)
+    res["cloudPCs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPCFromDiscriminatorValue , m.SetCloudPCs)
+    res["deviceImages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcDeviceImageFromDiscriminatorValue , m.SetDeviceImages)
+    res["externalPartnerSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcExternalPartnerSettingFromDiscriminatorValue , m.SetExternalPartnerSettings)
+    res["galleryImages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcGalleryImageFromDiscriminatorValue , m.SetGalleryImages)
+    res["onPremisesConnections"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcOnPremisesConnectionFromDiscriminatorValue , m.SetOnPremisesConnections)
+    res["organizationSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcOrganizationSettingsFromDiscriminatorValue , m.SetOrganizationSettings)
+    res["provisioningPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcProvisioningPolicyFromDiscriminatorValue , m.SetProvisioningPolicies)
+    res["reports"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcReportsFromDiscriminatorValue , m.SetReports)
+    res["servicePlans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcServicePlanFromDiscriminatorValue , m.SetServicePlans)
+    res["snapshots"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcSnapshotFromDiscriminatorValue , m.SetSnapshots)
+    res["supportedRegions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcSupportedRegionFromDiscriminatorValue , m.SetSupportedRegions)
+    res["userSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcUserSettingFromDiscriminatorValue , m.SetUserSettings)
     return res
 }
 // GetGalleryImages gets the galleryImages property value. The gallery image resource on Cloud PC.
@@ -245,6 +96,10 @@ func (m *VirtualEndpoint) GetOrganizationSettings()(CloudPcOrganizationSettingsa
 // GetProvisioningPolicies gets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicyable) {
     return m.provisioningPolicies
+}
+// GetReports gets the reports property value. The reports property
+func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
+    return m.reports
 }
 // GetServicePlans gets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
@@ -269,60 +124,42 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     if m.GetAuditEvents() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuditEvents()))
-        for i, v := range m.GetAuditEvents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAuditEvents())
         err = writer.WriteCollectionOfObjectValues("auditEvents", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCloudPCs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCs()))
-        for i, v := range m.GetCloudPCs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCloudPCs())
         err = writer.WriteCollectionOfObjectValues("cloudPCs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceImages() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceImages()))
-        for i, v := range m.GetDeviceImages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeviceImages())
         err = writer.WriteCollectionOfObjectValues("deviceImages", cast)
         if err != nil {
             return err
         }
     }
     if m.GetExternalPartnerSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalPartnerSettings()))
-        for i, v := range m.GetExternalPartnerSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetExternalPartnerSettings())
         err = writer.WriteCollectionOfObjectValues("externalPartnerSettings", cast)
         if err != nil {
             return err
         }
     }
     if m.GetGalleryImages() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGalleryImages()))
-        for i, v := range m.GetGalleryImages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetGalleryImages())
         err = writer.WriteCollectionOfObjectValues("galleryImages", cast)
         if err != nil {
             return err
         }
     }
     if m.GetOnPremisesConnections() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesConnections()))
-        for i, v := range m.GetOnPremisesConnections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOnPremisesConnections())
         err = writer.WriteCollectionOfObjectValues("onPremisesConnections", cast)
         if err != nil {
             return err
@@ -335,50 +172,41 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetProvisioningPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioningPolicies()))
-        for i, v := range m.GetProvisioningPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetProvisioningPolicies())
         err = writer.WriteCollectionOfObjectValues("provisioningPolicies", cast)
         if err != nil {
             return err
         }
     }
-    if m.GetServicePlans() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePlans()))
-        for i, v := range m.GetServicePlans() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+    {
+        err = writer.WriteObjectValue("reports", m.GetReports())
+        if err != nil {
+            return err
         }
+    }
+    if m.GetServicePlans() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetServicePlans())
         err = writer.WriteCollectionOfObjectValues("servicePlans", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSnapshots() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSnapshots()))
-        for i, v := range m.GetSnapshots() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSnapshots())
         err = writer.WriteCollectionOfObjectValues("snapshots", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSupportedRegions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSupportedRegions()))
-        for i, v := range m.GetSupportedRegions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSupportedRegions())
         err = writer.WriteCollectionOfObjectValues("supportedRegions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserSettings()))
-        for i, v := range m.GetUserSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserSettings())
         err = writer.WriteCollectionOfObjectValues("userSettings", cast)
         if err != nil {
             return err
@@ -417,6 +245,10 @@ func (m *VirtualEndpoint) SetOrganizationSettings(value CloudPcOrganizationSetti
 // SetProvisioningPolicies sets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)() {
     m.provisioningPolicies = value
+}
+// SetReports sets the reports property value. The reports property
+func (m *VirtualEndpoint) SetReports(value CloudPcReportsable)() {
+    m.reports = value
 }
 // SetServicePlans sets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {

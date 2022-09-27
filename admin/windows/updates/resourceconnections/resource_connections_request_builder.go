@@ -17,7 +17,7 @@ type ResourceConnectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ResourceConnectionsRequestBuilderGetQueryParameters service connections to external resources such as analytics workspaces.
+// ResourceConnectionsRequestBuilderGetQueryParameters get a list of the resourceConnection objects and their properties.
 type ResourceConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ResourceConnectionsRequestBuilderPostRequestConfiguration struct {
 func NewResourceConnectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceConnectionsRequestBuilder) {
     m := &ResourceConnectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/admin/windows/updates/resourceConnections{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/admin/windows/updates/resourceConnections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewResourceConnectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ResourceConnectionsRequestBuilder) Count()(*ic5008f2ec9f3804779bca64c17296c9404282af98339cd88a74c5f55f7d7008d.CountRequestBuilder) {
     return ic5008f2ec9f3804779bca64c17296c9404282af98339cd88a74c5f55f7d7008d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation service connections to external resources such as analytics workspaces.
+// CreateGetRequestInformation get a list of the resourceConnection objects and their properties.
 func (m *ResourceConnectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration service connections to external resources such as analytics workspaces.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the resourceConnection objects and their properties.
 func (m *ResourceConnectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ResourceConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ResourceConnectionsRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to resourceConnections for admin
+// CreatePostRequestInformation create a new operationalInsightsConnection object.
 func (m *ResourceConnectionsRequestBuilder) CreatePostRequestInformation(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to resourceConnections for admin
+// CreatePostRequestInformationWithRequestConfiguration create a new operationalInsightsConnection object.
 func (m *ResourceConnectionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, requestConfiguration *ResourceConnectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ResourceConnectionsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get service connections to external resources such as analytics workspaces.
+// Get get a list of the resourceConnection objects and their properties.
 func (m *ResourceConnectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceConnectionsRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ResourceConnectionsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionCollectionResponseable), nil
 }
-// Post create new navigation property to resourceConnections for admin
+// Post create a new operationalInsightsConnection object.
 func (m *ResourceConnectionsRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, requestConfiguration *ResourceConnectionsRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

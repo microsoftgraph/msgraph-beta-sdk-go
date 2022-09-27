@@ -32,26 +32,8 @@ func (m *StrongAuthenticationDetail) GetEncryptedPinHashHistory()([]byte) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StrongAuthenticationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["encryptedPinHashHistory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEncryptedPinHashHistory(val)
-        }
-        return nil
-    }
-    res["proofupTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProofupTime(val)
-        }
-        return nil
-    }
+    res["encryptedPinHashHistory"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetEncryptedPinHashHistory)
+    res["proofupTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetProofupTime)
     return res
 }
 // GetProofupTime gets the proofupTime property value. The proofupTime property

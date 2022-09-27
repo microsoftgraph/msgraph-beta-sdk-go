@@ -17,7 +17,7 @@ type TimeOffRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TimeOffRequestsRequestBuilderGetQueryParameters get timeOffRequests from teamwork
+// TimeOffRequestsRequestBuilderGetQueryParameters retrieve a list of timeoffrequest objects in the team.
 type TimeOffRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,7 +54,7 @@ type TimeOffRequestsRequestBuilderPostRequestConfiguration struct {
 func NewTimeOffRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TimeOffRequestsRequestBuilder) {
     m := &TimeOffRequestsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -73,11 +73,11 @@ func NewTimeOffRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *TimeOffRequestsRequestBuilder) Count()(*i2dbb16f06979c5d2ee0f2112220687bc55f623acbf52fe23f3b0ca70cd8afc24.CountRequestBuilder) {
     return i2dbb16f06979c5d2ee0f2112220687bc55f623acbf52fe23f3b0ca70cd8afc24.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get timeOffRequests from teamwork
+// CreateGetRequestInformation retrieve a list of timeoffrequest objects in the team.
 func (m *TimeOffRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get timeOffRequests from teamwork
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of timeoffrequest objects in the team.
 func (m *TimeOffRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TimeOffRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *TimeOffRequestsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get get timeOffRequests from teamwork
+// Get retrieve a list of timeoffrequest objects in the team.
 func (m *TimeOffRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *TimeOffRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

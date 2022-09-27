@@ -27,16 +27,7 @@ func CreateUserExperienceAnalyticsScoreHistoryFromDiscriminatorValue(parseNode i
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsScoreHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["startupDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartupDateTime(val)
-        }
-        return nil
-    }
+    res["startupDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetStartupDateTime)
     return res
 }
 // GetStartupDateTime gets the startupDateTime property value. The user experience analytics device startup date time.

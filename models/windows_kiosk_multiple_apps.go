@@ -46,60 +46,11 @@ func (m *WindowsKioskMultipleApps) GetDisallowDesktopApps()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskMultipleApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskAppConfiguration.GetFieldDeserializers()
-    res["allowAccessToDownloadsFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowAccessToDownloadsFolder(val)
-        }
-        return nil
-    }
-    res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsKioskAppBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsKioskAppBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsKioskAppBaseable)
-            }
-            m.SetApps(res)
-        }
-        return nil
-    }
-    res["disallowDesktopApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisallowDesktopApps(val)
-        }
-        return nil
-    }
-    res["showTaskBar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetShowTaskBar(val)
-        }
-        return nil
-    }
-    res["startMenuLayoutXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStartMenuLayoutXml(val)
-        }
-        return nil
-    }
+    res["allowAccessToDownloadsFolder"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowAccessToDownloadsFolder)
+    res["apps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsKioskAppBaseFromDiscriminatorValue , m.SetApps)
+    res["disallowDesktopApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDisallowDesktopApps)
+    res["showTaskBar"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShowTaskBar)
+    res["startMenuLayoutXml"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetStartMenuLayoutXml)
     return res
 }
 // GetShowTaskBar gets the showTaskBar property value. This setting allows the admin to specify whether the Task Bar is shown or not.
@@ -123,10 +74,7 @@ func (m *WindowsKioskMultipleApps) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     if m.GetApps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApps()))
-        for i, v := range m.GetApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetApps())
         err = writer.WriteCollectionOfObjectValues("apps", cast)
         if err != nil {
             return err

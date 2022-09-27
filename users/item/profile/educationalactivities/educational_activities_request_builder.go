@@ -17,7 +17,7 @@ type EducationalActivitiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EducationalActivitiesRequestBuilderGetQueryParameters represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// EducationalActivitiesRequestBuilderGetQueryParameters retrieve a list of educationalActivity objects from a user's profile.
 type EducationalActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type EducationalActivitiesRequestBuilderPostRequestConfiguration struct {
 func NewEducationalActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationalActivitiesRequestBuilder) {
     m := &EducationalActivitiesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/educationalActivities{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/educationalActivities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewEducationalActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *EducationalActivitiesRequestBuilder) Count()(*i6bbe842dbc7cd58896256ca35d3c7012758c2ddab6854466a3926301ab068ec6.CountRequestBuilder) {
     return i6bbe842dbc7cd58896256ca35d3c7012758c2ddab6854466a3926301ab068ec6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// CreateGetRequestInformation retrieve a list of educationalActivity objects from a user's profile.
 func (m *EducationalActivitiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of educationalActivity objects from a user's profile.
 func (m *EducationalActivitiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EducationalActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *EducationalActivitiesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to educationalActivities for users
+// CreatePostRequestInformation create a new educationalActivity in a user's profile.
 func (m *EducationalActivitiesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to educationalActivities for users
+// CreatePostRequestInformationWithRequestConfiguration create a new educationalActivity in a user's profile.
 func (m *EducationalActivitiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *EducationalActivitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *EducationalActivitiesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// Get retrieve a list of educationalActivity objects from a user's profile.
 func (m *EducationalActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *EducationalActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *EducationalActivitiesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityCollectionResponseable), nil
 }
-// Post create new navigation property to educationalActivities for users
+// Post create a new educationalActivity in a user's profile.
 func (m *EducationalActivitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *EducationalActivitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

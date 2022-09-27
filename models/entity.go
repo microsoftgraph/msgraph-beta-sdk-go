@@ -490,6 +490,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPCConnectivityIssue(), nil
                     case "#microsoft.graph.cloudPcDeviceImage":
                         return NewCloudPcDeviceImage(), nil
+                    case "#microsoft.graph.cloudPcExportJob":
+                        return NewCloudPcExportJob(), nil
                     case "#microsoft.graph.cloudPcExternalPartnerSetting":
                         return NewCloudPcExternalPartnerSetting(), nil
                     case "#microsoft.graph.cloudPcGalleryImage":
@@ -502,6 +504,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcProvisioningPolicy(), nil
                     case "#microsoft.graph.cloudPcProvisioningPolicyAssignment":
                         return NewCloudPcProvisioningPolicyAssignment(), nil
+                    case "#microsoft.graph.cloudPcReports":
+                        return NewCloudPcReports(), nil
                     case "#microsoft.graph.cloudPcServicePlan":
                         return NewCloudPcServicePlan(), nil
                     case "#microsoft.graph.cloudPcSnapshot":
@@ -532,6 +536,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConditionalAccessPolicy(), nil
                     case "#microsoft.graph.conditionalAccessRoot":
                         return NewConditionalAccessRoot(), nil
+                    case "#microsoft.graph.conditionalAccessTemplate":
+                        return NewConditionalAccessTemplate(), nil
                     case "#microsoft.graph.configManagerCollection":
                         return NewConfigManagerCollection(), nil
                     case "#microsoft.graph.connectedOrganization":
@@ -2725,26 +2731,8 @@ func (m *Entity) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Entity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetId(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
+    res["id"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetId)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
 // GetId gets the id property value. The id property

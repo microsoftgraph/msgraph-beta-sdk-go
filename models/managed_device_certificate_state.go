@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceCertificateState provides operations to manage the collection of activityStatistics entities.
+// ManagedDeviceCertificateState provides operations to manage the collection of accessReview entities.
 type ManagedDeviceCertificateState struct {
     Entity
     // Extended key usage
@@ -161,246 +161,30 @@ func (m *ManagedDeviceCertificateState) GetDevicePlatform()(*DevicePlatformType)
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceCertificateState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["certificateEnhancedKeyUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateEnhancedKeyUsage(val)
-        }
-        return nil
-    }
-    res["certificateErrorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateErrorCode(val)
-        }
-        return nil
-    }
-    res["certificateExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateExpirationDateTime(val)
-        }
-        return nil
-    }
-    res["certificateIssuanceDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateIssuanceDateTime(val)
-        }
-        return nil
-    }
-    res["certificateIssuanceState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateIssuanceStates)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateIssuanceState(val.(*CertificateIssuanceStates))
-        }
-        return nil
-    }
-    res["certificateIssuer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateIssuer(val)
-        }
-        return nil
-    }
-    res["certificateKeyLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateKeyLength(val)
-        }
-        return nil
-    }
-    res["certificateKeyStorageProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKeyStorageProviderOption)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateKeyStorageProvider(val.(*KeyStorageProviderOption))
-        }
-        return nil
-    }
-    res["certificateKeyUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKeyUsages)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateKeyUsage(val.(*KeyUsages))
-        }
-        return nil
-    }
-    res["certificateLastIssuanceStateChangedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateLastIssuanceStateChangedDateTime(val)
-        }
-        return nil
-    }
-    res["certificateProfileDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateProfileDisplayName(val)
-        }
-        return nil
-    }
-    res["certificateRevokeStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateRevocationStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateRevokeStatus(val.(*CertificateRevocationStatus))
-        }
-        return nil
-    }
-    res["certificateSerialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateSerialNumber(val)
-        }
-        return nil
-    }
-    res["certificateSubjectAlternativeNameFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectAlternativeNameType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateSubjectAlternativeNameFormat(val.(*SubjectAlternativeNameType))
-        }
-        return nil
-    }
-    res["certificateSubjectAlternativeNameFormatString"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateSubjectAlternativeNameFormatString(val)
-        }
-        return nil
-    }
-    res["certificateSubjectNameFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectNameFormat)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateSubjectNameFormat(val.(*SubjectNameFormat))
-        }
-        return nil
-    }
-    res["certificateSubjectNameFormatString"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateSubjectNameFormatString(val)
-        }
-        return nil
-    }
-    res["certificateThumbprint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateThumbprint(val)
-        }
-        return nil
-    }
-    res["certificateValidityPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateValidityPeriod(val)
-        }
-        return nil
-    }
-    res["certificateValidityPeriodUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCertificateValidityPeriodScale)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateValidityPeriodUnits(val.(*CertificateValidityPeriodScale))
-        }
-        return nil
-    }
-    res["deviceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceDisplayName(val)
-        }
-        return nil
-    }
-    res["devicePlatform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDevicePlatformType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDevicePlatform(val.(*DevicePlatformType))
-        }
-        return nil
-    }
-    res["lastCertificateStateChangeDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastCertificateStateChangeDateTime(val)
-        }
-        return nil
-    }
-    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserDisplayName(val)
-        }
-        return nil
-    }
+    res["certificateEnhancedKeyUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateEnhancedKeyUsage)
+    res["certificateErrorCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetCertificateErrorCode)
+    res["certificateExpirationDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCertificateExpirationDateTime)
+    res["certificateIssuanceDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCertificateIssuanceDateTime)
+    res["certificateIssuanceState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCertificateIssuanceStates , m.SetCertificateIssuanceState)
+    res["certificateIssuer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateIssuer)
+    res["certificateKeyLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetCertificateKeyLength)
+    res["certificateKeyStorageProvider"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseKeyStorageProviderOption , m.SetCertificateKeyStorageProvider)
+    res["certificateKeyUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseKeyUsages , m.SetCertificateKeyUsage)
+    res["certificateLastIssuanceStateChangedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCertificateLastIssuanceStateChangedDateTime)
+    res["certificateProfileDisplayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateProfileDisplayName)
+    res["certificateRevokeStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCertificateRevocationStatus , m.SetCertificateRevokeStatus)
+    res["certificateSerialNumber"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateSerialNumber)
+    res["certificateSubjectAlternativeNameFormat"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSubjectAlternativeNameType , m.SetCertificateSubjectAlternativeNameFormat)
+    res["certificateSubjectAlternativeNameFormatString"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateSubjectAlternativeNameFormatString)
+    res["certificateSubjectNameFormat"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSubjectNameFormat , m.SetCertificateSubjectNameFormat)
+    res["certificateSubjectNameFormatString"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateSubjectNameFormatString)
+    res["certificateThumbprint"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCertificateThumbprint)
+    res["certificateValidityPeriod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetCertificateValidityPeriod)
+    res["certificateValidityPeriodUnits"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCertificateValidityPeriodScale , m.SetCertificateValidityPeriodUnits)
+    res["deviceDisplayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDeviceDisplayName)
+    res["devicePlatform"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDevicePlatformType , m.SetDevicePlatform)
+    res["lastCertificateStateChangeDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastCertificateStateChangeDateTime)
+    res["userDisplayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUserDisplayName)
     return res
 }
 // GetLastCertificateStateChangeDateTime gets the lastCertificateStateChangeDateTime property value. Last certificate issuance state change

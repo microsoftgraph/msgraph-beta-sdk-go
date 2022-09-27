@@ -26,16 +26,7 @@ func CreatePayloadCompatibleAssignmentFilterFromDiscriminatorValue(parseNode i87
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PayloadCompatibleAssignmentFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceAndAppManagementAssignmentFilter.GetFieldDeserializers()
-    res["payloadType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAssignmentFilterPayloadType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPayloadType(val.(*AssignmentFilterPayloadType))
-        }
-        return nil
-    }
+    res["payloadType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAssignmentFilterPayloadType , m.SetPayloadType)
     return res
 }
 // GetPayloadType gets the payloadType property value. Represents the payload type AssignmentFilter is being assigned to.

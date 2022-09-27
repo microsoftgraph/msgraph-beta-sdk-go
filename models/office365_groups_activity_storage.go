@@ -34,56 +34,11 @@ func CreateOffice365GroupsActivityStorageFromDiscriminatorValue(parseNode i878a8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["mailboxStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMailboxStorageUsedInBytes(val)
-        }
-        return nil
-    }
-    res["reportDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetDateOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReportDate(val)
-        }
-        return nil
-    }
-    res["reportPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReportPeriod(val)
-        }
-        return nil
-    }
-    res["reportRefreshDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetDateOnlyValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReportRefreshDate(val)
-        }
-        return nil
-    }
-    res["siteStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSiteStorageUsedInBytes(val)
-        }
-        return nil
-    }
+    res["mailboxStorageUsedInBytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetMailboxStorageUsedInBytes)
+    res["reportDate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetDateOnlyValue(m.SetReportDate)
+    res["reportPeriod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetReportPeriod)
+    res["reportRefreshDate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetDateOnlyValue(m.SetReportRefreshDate)
+    res["siteStorageUsedInBytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetSiteStorageUsedInBytes)
     return res
 }
 // GetMailboxStorageUsedInBytes gets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.

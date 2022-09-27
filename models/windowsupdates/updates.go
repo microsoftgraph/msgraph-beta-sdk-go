@@ -41,58 +41,10 @@ func (m *Updates) GetDeployments()([]Deploymentable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Updates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["catalog"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCatalogFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCatalog(val.(Catalogable))
-        }
-        return nil
-    }
-    res["deployments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeploymentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Deploymentable, len(val))
-            for i, v := range val {
-                res[i] = v.(Deploymentable)
-            }
-            m.SetDeployments(res)
-        }
-        return nil
-    }
-    res["resourceConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateResourceConnectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ResourceConnectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(ResourceConnectionable)
-            }
-            m.SetResourceConnections(res)
-        }
-        return nil
-    }
-    res["updatableAssets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUpdatableAssetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UpdatableAssetable, len(val))
-            for i, v := range val {
-                res[i] = v.(UpdatableAssetable)
-            }
-            m.SetUpdatableAssets(res)
-        }
-        return nil
-    }
+    res["catalog"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCatalogFromDiscriminatorValue , m.SetCatalog)
+    res["deployments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeploymentFromDiscriminatorValue , m.SetDeployments)
+    res["resourceConnections"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateResourceConnectionFromDiscriminatorValue , m.SetResourceConnections)
+    res["updatableAssets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUpdatableAssetFromDiscriminatorValue , m.SetUpdatableAssets)
     return res
 }
 // GetResourceConnections gets the resourceConnections property value. Service connections to external resources such as analytics workspaces.
@@ -116,30 +68,21 @@ func (m *Updates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     if m.GetDeployments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeployments()))
-        for i, v := range m.GetDeployments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeployments())
         err = writer.WriteCollectionOfObjectValues("deployments", cast)
         if err != nil {
             return err
         }
     }
     if m.GetResourceConnections() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceConnections()))
-        for i, v := range m.GetResourceConnections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetResourceConnections())
         err = writer.WriteCollectionOfObjectValues("resourceConnections", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUpdatableAssets() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUpdatableAssets()))
-        for i, v := range m.GetUpdatableAssets() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUpdatableAssets())
         err = writer.WriteCollectionOfObjectValues("updatableAssets", cast)
         if err != nil {
             return err

@@ -17,7 +17,7 @@ type PatentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PatentsRequestBuilderGetQueryParameters represents patents that a user has added to their profile.
+// PatentsRequestBuilderGetQueryParameters retrieve a list of itemPatent objects from a user's profile.
 type PatentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type PatentsRequestBuilderPostRequestConfiguration struct {
 func NewPatentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PatentsRequestBuilder) {
     m := &PatentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/profile/patents{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/profile/patents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewPatentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *PatentsRequestBuilder) Count()(*if8384a92eccc54a2dd247d2032724a1fc6c5826156e2d8c2b2c85762c4f28fd4.CountRequestBuilder) {
     return if8384a92eccc54a2dd247d2032724a1fc6c5826156e2d8c2b2c85762c4f28fd4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents patents that a user has added to their profile.
+// CreateGetRequestInformation retrieve a list of itemPatent objects from a user's profile.
 func (m *PatentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents patents that a user has added to their profile.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of itemPatent objects from a user's profile.
 func (m *PatentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PatentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *PatentsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to patents for me
+// CreatePostRequestInformation create a new itemPatent object within a user's profile.
 func (m *PatentsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to patents for me
+// CreatePostRequestInformationWithRequestConfiguration create a new itemPatent object within a user's profile.
 func (m *PatentsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *PatentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PatentsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get represents patents that a user has added to their profile.
+// Get retrieve a list of itemPatent objects from a user's profile.
 func (m *PatentsRequestBuilder) Get(ctx context.Context, requestConfiguration *PatentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *PatentsRequestBuilder) Get(ctx context.Context, requestConfiguration *P
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentCollectionResponseable), nil
 }
-// Post create new navigation property to patents for me
+// Post create a new itemPatent object within a user's profile.
 func (m *PatentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *PatentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

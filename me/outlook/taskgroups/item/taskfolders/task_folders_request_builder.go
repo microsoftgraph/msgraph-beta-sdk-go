@@ -17,7 +17,7 @@ type TaskFoldersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TaskFoldersRequestBuilderGetQueryParameters the collection of task folders in the task group. Read-only. Nullable.
+// TaskFoldersRequestBuilderGetQueryParameters get Outlook task folders in a specific outlookTaskGroup.
 type TaskFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,7 +52,7 @@ type TaskFoldersRequestBuilderPostRequestConfiguration struct {
 func NewTaskFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskFoldersRequestBuilder) {
     m := &TaskFoldersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/me/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -71,11 +71,11 @@ func NewTaskFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *TaskFoldersRequestBuilder) Count()(*i14e8a4a1d097a066e5ab28451fe7a7f393de13bb5e0319349bdcdc859699bb96.CountRequestBuilder) {
     return i14e8a4a1d097a066e5ab28451fe7a7f393de13bb5e0319349bdcdc859699bb96.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of task folders in the task group. Read-only. Nullable.
+// CreateGetRequestInformation get Outlook task folders in a specific outlookTaskGroup.
 func (m *TaskFoldersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of task folders in the task group. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get Outlook task folders in a specific outlookTaskGroup.
 func (m *TaskFoldersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *TaskFoldersRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get the collection of task folders in the task group. Read-only. Nullable.
+// Get get Outlook task folders in a specific outlookTaskGroup.
 func (m *TaskFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -37,34 +37,8 @@ func (m *Monitoring) GetAlertRules()([]AlertRuleable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Monitoring) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["alertRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAlertRecordFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AlertRecordable, len(val))
-            for i, v := range val {
-                res[i] = v.(AlertRecordable)
-            }
-            m.SetAlertRecords(res)
-        }
-        return nil
-    }
-    res["alertRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAlertRuleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AlertRuleable, len(val))
-            for i, v := range val {
-                res[i] = v.(AlertRuleable)
-            }
-            m.SetAlertRules(res)
-        }
-        return nil
-    }
+    res["alertRecords"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAlertRecordFromDiscriminatorValue , m.SetAlertRecords)
+    res["alertRules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAlertRuleFromDiscriminatorValue , m.SetAlertRules)
     return res
 }
 // Serialize serializes information the current object
@@ -74,20 +48,14 @@ func (m *Monitoring) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         return err
     }
     if m.GetAlertRecords() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertRecords()))
-        for i, v := range m.GetAlertRecords() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAlertRecords())
         err = writer.WriteCollectionOfObjectValues("alertRecords", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAlertRules() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlertRules()))
-        for i, v := range m.GetAlertRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAlertRules())
         err = writer.WriteCollectionOfObjectValues("alertRules", cast)
         if err != nil {
             return err

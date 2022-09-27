@@ -42,56 +42,11 @@ func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*OnlineMeetingPresen
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LabelActionBase.GetFieldDeserializers()
-    res["allowedForwarders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingForwarders)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedForwarders(val.(*OnlineMeetingForwarders))
-        }
-        return nil
-    }
-    res["allowedPresenters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingPresenters)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedPresenters(val.(*OnlineMeetingPresenters))
-        }
-        return nil
-    }
-    res["isCopyToClipboardEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsCopyToClipboardEnabled(val)
-        }
-        return nil
-    }
-    res["isLobbyEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsLobbyEnabled(val)
-        }
-        return nil
-    }
-    res["lobbyBypassSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateLobbyBypassSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLobbyBypassSettings(val.(LobbyBypassSettingsable))
-        }
-        return nil
-    }
+    res["allowedForwarders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOnlineMeetingForwarders , m.SetAllowedForwarders)
+    res["allowedPresenters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOnlineMeetingPresenters , m.SetAllowedPresenters)
+    res["isCopyToClipboardEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsCopyToClipboardEnabled)
+    res["isLobbyEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsLobbyEnabled)
+    res["lobbyBypassSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateLobbyBypassSettingsFromDiscriminatorValue , m.SetLobbyBypassSettings)
     return res
 }
 // GetIsCopyToClipboardEnabled gets the isCopyToClipboardEnabled property value. The isCopyToClipboardEnabled property

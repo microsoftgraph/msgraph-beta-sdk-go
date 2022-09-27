@@ -27,20 +27,7 @@ func CreateTriggersRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TriggersRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["retentionEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRetentionEventFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RetentionEventable, len(val))
-            for i, v := range val {
-                res[i] = v.(RetentionEventable)
-            }
-            m.SetRetentionEvents(res)
-        }
-        return nil
-    }
+    res["retentionEvents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRetentionEventFromDiscriminatorValue , m.SetRetentionEvents)
     return res
 }
 // GetRetentionEvents gets the retentionEvents property value. The retentionEvents property
@@ -54,10 +41,7 @@ func (m *TriggersRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         return err
     }
     if m.GetRetentionEvents() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRetentionEvents()))
-        for i, v := range m.GetRetentionEvents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRetentionEvents())
         err = writer.WriteCollectionOfObjectValues("retentionEvents", cast)
         if err != nil {
             return err

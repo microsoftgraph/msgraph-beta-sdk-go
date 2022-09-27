@@ -67,50 +67,10 @@ func (m *DlpEvaluationInput) GetDiscoveredSensitiveTypes()([]DiscoveredSensitive
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessScope)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccessScope(val.(*AccessScope))
-        }
-        return nil
-    }
-    res["currentLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCurrentLabelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCurrentLabel(val.(CurrentLabelable))
-        }
-        return nil
-    }
-    res["discoveredSensitiveTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDiscoveredSensitiveTypeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DiscoveredSensitiveTypeable, len(val))
-            for i, v := range val {
-                res[i] = v.(DiscoveredSensitiveTypeable)
-            }
-            m.SetDiscoveredSensitiveTypes(res)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
+    res["accessScope"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAccessScope , m.SetAccessScope)
+    res["currentLabel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCurrentLabelFromDiscriminatorValue , m.SetCurrentLabel)
+    res["discoveredSensitiveTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDiscoveredSensitiveTypeFromDiscriminatorValue , m.SetDiscoveredSensitiveTypes)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -133,10 +93,7 @@ func (m *DlpEvaluationInput) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     if m.GetDiscoveredSensitiveTypes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDiscoveredSensitiveTypes()))
-        for i, v := range m.GetDiscoveredSensitiveTypes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDiscoveredSensitiveTypes())
         err := writer.WriteCollectionOfObjectValues("discoveredSensitiveTypes", cast)
         if err != nil {
             return err

@@ -38,36 +38,9 @@ func (m *VppTokenRevokeLicensesActionResult) GetFailedLicensesCount()(*int32) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VppTokenRevokeLicensesActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VppTokenActionResult.GetFieldDeserializers()
-    res["actionFailureReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVppTokenActionFailureReason)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetActionFailureReason(val.(*VppTokenActionFailureReason))
-        }
-        return nil
-    }
-    res["failedLicensesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFailedLicensesCount(val)
-        }
-        return nil
-    }
-    res["totalLicensesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalLicensesCount(val)
-        }
-        return nil
-    }
+    res["actionFailureReason"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVppTokenActionFailureReason , m.SetActionFailureReason)
+    res["failedLicensesCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetFailedLicensesCount)
+    res["totalLicensesCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetTotalLicensesCount)
     return res
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. A count of the number of licenses that were attempted to revoke.

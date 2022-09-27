@@ -17,7 +17,7 @@ type AppliesToRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AppliesToRequestBuilderGetQueryParameters get appliesTo from policies
+// AppliesToRequestBuilderGetQueryParameters list application and service principal objects assigned an appManagementPolicy policy object.
 type AppliesToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type AppliesToRequestBuilderGetRequestConfiguration struct {
 func NewAppliesToRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppliesToRequestBuilder) {
     m := &AppliesToRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}/appliesTo{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}/appliesTo{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewAppliesToRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *AppliesToRequestBuilder) Count()(*if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c.CountRequestBuilder) {
     return if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get appliesTo from policies
+// CreateGetRequestInformation list application and service principal objects assigned an appManagementPolicy policy object.
 func (m *AppliesToRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get appliesTo from policies
+// CreateGetRequestInformationWithRequestConfiguration list application and service principal objects assigned an appManagementPolicy policy object.
 func (m *AppliesToRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *AppliesToRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get appliesTo from policies
+// Get list application and service principal objects assigned an appManagementPolicy policy object.
 func (m *AppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

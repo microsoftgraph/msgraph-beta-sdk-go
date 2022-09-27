@@ -18,7 +18,7 @@ type DeviceImagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DeviceImagesRequestBuilderGetQueryParameters the image resource on Cloud PC.
+// DeviceImagesRequestBuilderGetQueryParameters list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
 type DeviceImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type DeviceImagesRequestBuilderPostRequestConfiguration struct {
 func NewDeviceImagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceImagesRequestBuilder) {
     m := &DeviceImagesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewDeviceImagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeviceImagesRequestBuilder) Count()(*i994da25c7b7896b3b9f06ade176260a40842298af18e721d0c64ce97cb96a5b4.CountRequestBuilder) {
     return i994da25c7b7896b3b9f06ade176260a40842298af18e721d0c64ce97cb96a5b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the image resource on Cloud PC.
+// CreateGetRequestInformation list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
 func (m *DeviceImagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the image resource on Cloud PC.
+// CreateGetRequestInformationWithRequestConfiguration list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
 func (m *DeviceImagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeviceImagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,11 +96,11 @@ func (m *DeviceImagesRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to deviceImages for deviceManagement
+// CreatePostRequestInformation create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
 func (m *DeviceImagesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceImages for deviceManagement
+// CreatePostRequestInformationWithRequestConfiguration create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
 func (m *DeviceImagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *DeviceImagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *DeviceImagesRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get the image resource on Cloud PC.
+// Get list the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
 func (m *DeviceImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceImagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *DeviceImagesRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *DeviceImagesRequestBuilder) GetSourceImages()(*i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.GetSourceImagesRequestBuilder) {
     return i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.NewGetSourceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post create new navigation property to deviceImages for deviceManagement
+// Post create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
 func (m *DeviceImagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *DeviceImagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type ErrorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ErrorsRequestBuilderGetQueryParameters all errors associated with this synchronization profile.
+// ErrorsRequestBuilderGetQueryParameters get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 type ErrorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ErrorsRequestBuilderPostRequestConfiguration struct {
 func NewErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ErrorsRequestBuilder) {
     m := &ErrorsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/errors{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/errors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewErrorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *ErrorsRequestBuilder) Count()(*i5c9b03ce7e10ac460f62aecbdfa9d4bd2a34e1b2defc6ad1090d2e2695437d75.CountRequestBuilder) {
     return i5c9b03ce7e10ac460f62aecbdfa9d4bd2a34e1b2defc6ad1090d2e2695437d75.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all errors associated with this synchronization profile.
+// CreateGetRequestInformation get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 func (m *ErrorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all errors associated with this synchronization profile.
+// CreateGetRequestInformationWithRequestConfiguration get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 func (m *ErrorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ErrorsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get all errors associated with this synchronization profile.
+// Get get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 func (m *ErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

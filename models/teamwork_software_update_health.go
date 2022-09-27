@@ -51,76 +51,13 @@ func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(Te
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["adminAgentSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdminAgentSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
-        }
-        return nil
-    }
-    res["companyPortalSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCompanyPortalSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
-        }
-        return nil
-    }
-    res["firmwareSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirmwareSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["operatingSystemSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOperatingSystemSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
-        }
-        return nil
-    }
-    res["partnerAgentSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerAgentSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
-        }
-        return nil
-    }
-    res["teamsClientSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTeamsClientSoftwareUpdateStatus(val.(TeamworkSoftwareUpdateStatusable))
-        }
-        return nil
-    }
+    res["adminAgentSoftwareUpdateStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue , m.SetAdminAgentSoftwareUpdateStatus)
+    res["companyPortalSoftwareUpdateStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue , m.SetCompanyPortalSoftwareUpdateStatus)
+    res["firmwareSoftwareUpdateStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue , m.SetFirmwareSoftwareUpdateStatus)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["operatingSystemSoftwareUpdateStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue , m.SetOperatingSystemSoftwareUpdateStatus)
+    res["partnerAgentSoftwareUpdateStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue , m.SetPartnerAgentSoftwareUpdateStatus)
+    res["teamsClientSoftwareUpdateStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue , m.SetTeamsClientSoftwareUpdateStatus)
     return res
 }
 // GetFirmwareSoftwareUpdateStatus gets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.

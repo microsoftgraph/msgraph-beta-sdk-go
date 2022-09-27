@@ -26,16 +26,7 @@ func CreateDeliveryOptimizationGroupIdSourceOptionsFromDiscriminatorValue(parseN
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeliveryOptimizationGroupIdSourceOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationGroupIdSource.GetFieldDeserializers()
-    res["groupIdSourceOption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeliveryOptimizationGroupIdOptionsType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGroupIdSourceOption(val.(*DeliveryOptimizationGroupIdOptionsType))
-        }
-        return nil
-    }
+    res["groupIdSourceOption"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeliveryOptimizationGroupIdOptionsType , m.SetGroupIdSourceOption)
     return res
 }
 // GetGroupIdSourceOption gets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.

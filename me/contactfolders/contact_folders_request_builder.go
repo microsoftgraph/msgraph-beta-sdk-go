@@ -18,7 +18,7 @@ type ContactFoldersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ContactFoldersRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
+// ContactFoldersRequestBuilderGetQueryParameters get all the contact folders in the signed-in user's mailbox.
 type ContactFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -53,7 +53,7 @@ type ContactFoldersRequestBuilderPostRequestConfiguration struct {
 func NewContactFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContactFoldersRequestBuilder) {
     m := &ContactFoldersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/contactFolders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+    m.urlTemplate = "{+baseurl}/me/contactFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -72,11 +72,11 @@ func NewContactFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ContactFoldersRequestBuilder) Count()(*ic667f7135b4c6ffd99761e0181730ab9459f5588f19c40c8b5f3036e03463d1f.CountRequestBuilder) {
     return ic667f7135b4c6ffd99761e0181730ab9459f5588f19c40c8b5f3036e03463d1f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the user's contacts folders. Read-only. Nullable.
+// CreateGetRequestInformation get all the contact folders in the signed-in user's mailbox.
 func (m *ContactFoldersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's contacts folders. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get all the contact folders in the signed-in user's mailbox.
 func (m *ContactFoldersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContactFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,11 +92,11 @@ func (m *ContactFoldersRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to contactFolders for me
+// CreatePostRequestInformation create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
 func (m *ContactFoldersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to contactFolders for me
+// CreatePostRequestInformationWithRequestConfiguration create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
 func (m *ContactFoldersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ContactFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *ContactFoldersRequestBuilder) CreatePostRequestInformationWithRequestCo
 func (m *ContactFoldersRequestBuilder) Delta()(*i5ae0c84bed601900b2220537e0f92b64e32bfd3f73db373901f2a872b1194897.DeltaRequestBuilder) {
     return i5ae0c84bed601900b2220537e0f92b64e32bfd3f73db373901f2a872b1194897.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the user's contacts folders. Read-only. Nullable.
+// Get get all the contact folders in the signed-in user's mailbox.
 func (m *ContactFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *ContactFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -133,7 +133,7 @@ func (m *ContactFoldersRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable), nil
 }
-// Post create new navigation property to contactFolders for me
+// Post create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
 func (m *ContactFoldersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ContactFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

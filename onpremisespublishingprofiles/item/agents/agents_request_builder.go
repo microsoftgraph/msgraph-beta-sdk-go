@@ -17,7 +17,7 @@ type AgentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AgentsRequestBuilderGetQueryParameters list of existing onPremisesAgent objects. Read-only. Nullable.
+// AgentsRequestBuilderGetQueryParameters retrieve a list of onPremisesAgent objects.
 type AgentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AgentsRequestBuilderPostRequestConfiguration struct {
 func NewAgentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgentsRequestBuilder) {
     m := &AgentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agents{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAgentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AgentsRequestBuilder) Count()(*ica7496b68708ee8e39b4750c28ca190a868636763162186b603b1868832cbd90.CountRequestBuilder) {
     return ica7496b68708ee8e39b4750c28ca190a868636763162186b603b1868832cbd90.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list of existing onPremisesAgent objects. Read-only. Nullable.
+// CreateGetRequestInformation retrieve a list of onPremisesAgent objects.
 func (m *AgentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of existing onPremisesAgent objects. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of onPremisesAgent objects.
 func (m *AgentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AgentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AgentsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get list of existing onPremisesAgent objects. Read-only. Nullable.
+// Get retrieve a list of onPremisesAgent objects.
 func (m *AgentsRequestBuilder) Get(ctx context.Context, requestConfiguration *AgentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

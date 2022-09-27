@@ -30,36 +30,9 @@ func CreateWin32LobAppProductCodeDetectionFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppProductCodeDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppDetection.GetFieldDeserializers()
-    res["productCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProductCode(val)
-        }
-        return nil
-    }
-    res["productVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProductVersion(val)
-        }
-        return nil
-    }
-    res["productVersionOperator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWin32LobAppDetectionOperator)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProductVersionOperator(val.(*Win32LobAppDetectionOperator))
-        }
-        return nil
-    }
+    res["productCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProductCode)
+    res["productVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProductVersion)
+    res["productVersionOperator"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWin32LobAppDetectionOperator , m.SetProductVersionOperator)
     return res
 }
 // GetProductCode gets the productCode property value. The product code of Win32 Line of Business (LoB) app.

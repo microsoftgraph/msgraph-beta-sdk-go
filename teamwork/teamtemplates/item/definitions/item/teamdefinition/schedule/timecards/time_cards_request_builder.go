@@ -18,7 +18,7 @@ type TimeCardsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TimeCardsRequestBuilderGetQueryParameters get timeCards from teamwork
+// TimeCardsRequestBuilderGetQueryParameters retrieve a list of timeCard entries in a schedule.
 type TimeCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -61,7 +61,7 @@ func (m *TimeCardsRequestBuilder) ClockIn()(*ied539b408379d4d1a6dcc5027e8b07f165
 func NewTimeCardsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TimeCardsRequestBuilder) {
     m := &TimeCardsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -80,11 +80,11 @@ func NewTimeCardsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *TimeCardsRequestBuilder) Count()(*idd851f2a7c77a1b56ce07f49128ca8f2eba1cf4a98e0737e270345dd645700d1.CountRequestBuilder) {
     return idd851f2a7c77a1b56ce07f49128ca8f2eba1cf4a98e0737e270345dd645700d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get timeCards from teamwork
+// CreateGetRequestInformation retrieve a list of timeCard entries in a schedule.
 func (m *TimeCardsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get timeCards from teamwork
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of timeCard entries in a schedule.
 func (m *TimeCardsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TimeCardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *TimeCardsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get get timeCards from teamwork
+// Get retrieve a list of timeCard entries in a schedule.
 func (m *TimeCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *TimeCardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilterOperatorSchema 
+// FilterOperatorSchema provides operations to manage the collection of activityStatistics entities.
 type FilterOperatorSchema struct {
     Entity
     // The arity property
@@ -34,40 +34,9 @@ func (m *FilterOperatorSchema) GetArity()(*ScopeOperatorType) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["arity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseScopeOperatorType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetArity(val.(*ScopeOperatorType))
-        }
-        return nil
-    }
-    res["multivaluedComparisonType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseScopeOperatorMultiValuedComparisonType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMultivaluedComparisonType(val.(*ScopeOperatorMultiValuedComparisonType))
-        }
-        return nil
-    }
-    res["supportedAttributeTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAttributeType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AttributeType, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AttributeType))
-            }
-            m.SetSupportedAttributeTypes(res)
-        }
-        return nil
-    }
+    res["arity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseScopeOperatorType , m.SetArity)
+    res["multivaluedComparisonType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseScopeOperatorMultiValuedComparisonType , m.SetMultivaluedComparisonType)
+    res["supportedAttributeTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseAttributeType , m.SetSupportedAttributeTypes)
     return res
 }
 // GetMultivaluedComparisonType gets the multivaluedComparisonType property value. The multivaluedComparisonType property

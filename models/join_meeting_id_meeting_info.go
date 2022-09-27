@@ -28,26 +28,8 @@ func CreateJoinMeetingIdMeetingInfoFromDiscriminatorValue(parseNode i878a80d2330
 // GetFieldDeserializers the deserialization information for the current model
 func (m *JoinMeetingIdMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingInfo.GetFieldDeserializers()
-    res["joinMeetingId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetJoinMeetingId(val)
-        }
-        return nil
-    }
-    res["passcode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasscode(val)
-        }
-        return nil
-    }
+    res["joinMeetingId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetJoinMeetingId)
+    res["passcode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPasscode)
     return res
 }
 // GetJoinMeetingId gets the joinMeetingId property value. The ID used to join the meeting.

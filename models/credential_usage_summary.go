@@ -44,46 +44,10 @@ func (m *CredentialUsageSummary) GetFeature()(*FeatureType) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUsageAuthMethod)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthMethod(val.(*UsageAuthMethod))
-        }
-        return nil
-    }
-    res["failureActivityCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFailureActivityCount(val)
-        }
-        return nil
-    }
-    res["feature"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFeatureType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFeature(val.(*FeatureType))
-        }
-        return nil
-    }
-    res["successfulActivityCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSuccessfulActivityCount(val)
-        }
-        return nil
-    }
+    res["authMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseUsageAuthMethod , m.SetAuthMethod)
+    res["failureActivityCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetFailureActivityCount)
+    res["feature"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseFeatureType , m.SetFeature)
+    res["successfulActivityCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetSuccessfulActivityCount)
     return res
 }
 // GetSuccessfulActivityCount gets the successfulActivityCount property value. Provides the count of successful registrations or resets.

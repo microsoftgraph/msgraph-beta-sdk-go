@@ -30,48 +30,9 @@ func CreateUserExperienceAnalyticsRegressionSummaryFromDiscriminatorValue(parseN
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsRegressionSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["manufacturerRegression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserExperienceAnalyticsMetricable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsMetricable)
-            }
-            m.SetManufacturerRegression(res)
-        }
-        return nil
-    }
-    res["modelRegression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserExperienceAnalyticsMetricable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsMetricable)
-            }
-            m.SetModelRegression(res)
-        }
-        return nil
-    }
-    res["operatingSystemRegression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UserExperienceAnalyticsMetricable, len(val))
-            for i, v := range val {
-                res[i] = v.(UserExperienceAnalyticsMetricable)
-            }
-            m.SetOperatingSystemRegression(res)
-        }
-        return nil
-    }
+    res["manufacturerRegression"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue , m.SetManufacturerRegression)
+    res["modelRegression"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue , m.SetModelRegression)
+    res["operatingSystemRegression"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue , m.SetOperatingSystemRegression)
     return res
 }
 // GetManufacturerRegression gets the manufacturerRegression property value. The metric values for the user experience analytics Manufacturer regression.
@@ -93,30 +54,21 @@ func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i878a80d2330
         return err
     }
     if m.GetManufacturerRegression() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManufacturerRegression()))
-        for i, v := range m.GetManufacturerRegression() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManufacturerRegression())
         err = writer.WriteCollectionOfObjectValues("manufacturerRegression", cast)
         if err != nil {
             return err
         }
     }
     if m.GetModelRegression() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetModelRegression()))
-        for i, v := range m.GetModelRegression() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetModelRegression())
         err = writer.WriteCollectionOfObjectValues("modelRegression", cast)
         if err != nil {
             return err
         }
     }
     if m.GetOperatingSystemRegression() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperatingSystemRegression()))
-        for i, v := range m.GetOperatingSystemRegression() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOperatingSystemRegression())
         err = writer.WriteCollectionOfObjectValues("operatingSystemRegression", cast)
         if err != nil {
             return err

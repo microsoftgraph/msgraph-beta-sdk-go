@@ -118,284 +118,33 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetEnablePreAuthentication()(*bo
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsWifiConfiguration.GetFieldDeserializers()
-    res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiAuthenticationMethod)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationMethod(val.(*WiFiAuthenticationMethod))
-        }
-        return nil
-    }
-    res["authenticationPeriodInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationPeriodInSeconds(val)
-        }
-        return nil
-    }
-    res["authenticationRetryDelayPeriodInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationRetryDelayPeriodInSeconds(val)
-        }
-        return nil
-    }
-    res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWifiAuthenticationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationType(val.(*WifiAuthenticationType))
-        }
-        return nil
-    }
-    res["cacheCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCacheCredentials(val)
-        }
-        return nil
-    }
-    res["disableUserPromptForServerValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisableUserPromptForServerValidation(val)
-        }
-        return nil
-    }
-    res["eapolStartPeriodInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEapolStartPeriodInSeconds(val)
-        }
-        return nil
-    }
-    res["eapType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEapType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEapType(val.(*EapType))
-        }
-        return nil
-    }
-    res["enablePairwiseMasterKeyCaching"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnablePairwiseMasterKeyCaching(val)
-        }
-        return nil
-    }
-    res["enablePreAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnablePreAuthentication(val)
-        }
-        return nil
-    }
-    res["identityCertificateForClientAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsCertificateProfileBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityCertificateForClientAuthentication(val.(WindowsCertificateProfileBaseable))
-        }
-        return nil
-    }
-    res["innerAuthenticationProtocolForEAPTTLS"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInnerAuthenticationProtocolForEAPTTLS(val.(*NonEapAuthenticationMethodForEapTtlsType))
-        }
-        return nil
-    }
-    res["maximumAuthenticationFailures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumAuthenticationFailures(val)
-        }
-        return nil
-    }
-    res["maximumAuthenticationTimeoutInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumAuthenticationTimeoutInSeconds(val)
-        }
-        return nil
-    }
-    res["maximumEAPOLStartMessages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumEAPOLStartMessages(val)
-        }
-        return nil
-    }
-    res["maximumNumberOfPairwiseMasterKeysInCache"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumNumberOfPairwiseMasterKeysInCache(val)
-        }
-        return nil
-    }
-    res["maximumPairwiseMasterKeyCacheTimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumPairwiseMasterKeyCacheTimeInMinutes(val)
-        }
-        return nil
-    }
-    res["maximumPreAuthenticationAttempts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumPreAuthenticationAttempts(val)
-        }
-        return nil
-    }
-    res["networkSingleSignOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkSingleSignOnType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNetworkSingleSignOn(val.(*NetworkSingleSignOnType))
-        }
-        return nil
-    }
-    res["outerIdentityPrivacyTemporaryValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOuterIdentityPrivacyTemporaryValue(val)
-        }
-        return nil
-    }
-    res["performServerValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPerformServerValidation(val)
-        }
-        return nil
-    }
-    res["promptForAdditionalAuthenticationCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPromptForAdditionalAuthenticationCredentials(val)
-        }
-        return nil
-    }
-    res["requireCryptographicBinding"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRequireCryptographicBinding(val)
-        }
-        return nil
-    }
-    res["rootCertificateForClientValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindows81TrustedRootCertificateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRootCertificateForClientValidation(val.(Windows81TrustedRootCertificateable))
-        }
-        return nil
-    }
-    res["rootCertificatesForServerValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindows81TrustedRootCertificateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Windows81TrustedRootCertificateable, len(val))
-            for i, v := range val {
-                res[i] = v.(Windows81TrustedRootCertificateable)
-            }
-            m.SetRootCertificatesForServerValidation(res)
-        }
-        return nil
-    }
-    res["trustedServerCertificateNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetTrustedServerCertificateNames(res)
-        }
-        return nil
-    }
-    res["userBasedVirtualLan"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserBasedVirtualLan(val)
-        }
-        return nil
-    }
+    res["authenticationMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWiFiAuthenticationMethod , m.SetAuthenticationMethod)
+    res["authenticationPeriodInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAuthenticationPeriodInSeconds)
+    res["authenticationRetryDelayPeriodInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetAuthenticationRetryDelayPeriodInSeconds)
+    res["authenticationType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWifiAuthenticationType , m.SetAuthenticationType)
+    res["cacheCredentials"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCacheCredentials)
+    res["disableUserPromptForServerValidation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDisableUserPromptForServerValidation)
+    res["eapolStartPeriodInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetEapolStartPeriodInSeconds)
+    res["eapType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEapType , m.SetEapType)
+    res["enablePairwiseMasterKeyCaching"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnablePairwiseMasterKeyCaching)
+    res["enablePreAuthentication"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnablePreAuthentication)
+    res["identityCertificateForClientAuthentication"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsCertificateProfileBaseFromDiscriminatorValue , m.SetIdentityCertificateForClientAuthentication)
+    res["innerAuthenticationProtocolForEAPTTLS"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseNonEapAuthenticationMethodForEapTtlsType , m.SetInnerAuthenticationProtocolForEAPTTLS)
+    res["maximumAuthenticationFailures"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumAuthenticationFailures)
+    res["maximumAuthenticationTimeoutInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumAuthenticationTimeoutInSeconds)
+    res["maximumEAPOLStartMessages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumEAPOLStartMessages)
+    res["maximumNumberOfPairwiseMasterKeysInCache"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumNumberOfPairwiseMasterKeysInCache)
+    res["maximumPairwiseMasterKeyCacheTimeInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumPairwiseMasterKeyCacheTimeInMinutes)
+    res["maximumPreAuthenticationAttempts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMaximumPreAuthenticationAttempts)
+    res["networkSingleSignOn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseNetworkSingleSignOnType , m.SetNetworkSingleSignOn)
+    res["outerIdentityPrivacyTemporaryValue"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOuterIdentityPrivacyTemporaryValue)
+    res["performServerValidation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPerformServerValidation)
+    res["promptForAdditionalAuthenticationCredentials"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPromptForAdditionalAuthenticationCredentials)
+    res["requireCryptographicBinding"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequireCryptographicBinding)
+    res["rootCertificateForClientValidation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindows81TrustedRootCertificateFromDiscriminatorValue , m.SetRootCertificateForClientValidation)
+    res["rootCertificatesForServerValidation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindows81TrustedRootCertificateFromDiscriminatorValue , m.SetRootCertificatesForServerValidation)
+    res["trustedServerCertificateNames"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetTrustedServerCertificateNames)
+    res["userBasedVirtualLan"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUserBasedVirtualLan)
     return res
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Specify identity certificate for client authentication.
@@ -622,10 +371,7 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) Serialize(writer i878a80d2330e89
         }
     }
     if m.GetRootCertificatesForServerValidation() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRootCertificatesForServerValidation()))
-        for i, v := range m.GetRootCertificatesForServerValidation() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRootCertificatesForServerValidation())
         err = writer.WriteCollectionOfObjectValues("rootCertificatesForServerValidation", cast)
         if err != nil {
             return err

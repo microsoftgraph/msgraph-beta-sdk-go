@@ -26,16 +26,7 @@ func CreateAccessPackageResourceAttributeQuestionFromDiscriminatorValue(parseNod
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceAttributeQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessPackageResourceAttributeSource.GetFieldDeserializers()
-    res["question"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAccessPackageQuestionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQuestion(val.(AccessPackageQuestionable))
-        }
-        return nil
-    }
+    res["question"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAccessPackageQuestionFromDiscriminatorValue , m.SetQuestion)
     return res
 }
 // GetQuestion gets the question property value. The question asked in order to get the value of the attribute

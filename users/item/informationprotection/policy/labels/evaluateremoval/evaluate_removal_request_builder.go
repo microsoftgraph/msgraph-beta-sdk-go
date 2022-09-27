@@ -41,11 +41,11 @@ func NewEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action evaluateRemoval
+// CreatePostRequestInformation indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
 func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(body EvaluateRemovalPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action evaluateRemoval
+// CreatePostRequestInformationWithRequestConfiguration indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
 func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateRemovalPostRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,7 +59,7 @@ func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Post invoke action evaluateRemoval
+// Post indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
 func (m *EvaluateRemovalRequestBuilder) Post(ctx context.Context, body EvaluateRemovalPostRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(EvaluateRemovalResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

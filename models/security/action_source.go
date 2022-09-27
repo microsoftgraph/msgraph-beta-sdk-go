@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to call the evaluateApplication method.
+// Provides operations to manage the collection of activityStatistics entities.
 type ActionSource int
 
 const (

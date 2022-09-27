@@ -30,16 +30,7 @@ func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason)
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
-    res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlayPromptCompletionReason)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCompletionReason(val.(*PlayPromptCompletionReason))
-        }
-        return nil
-    }
+    res["completionReason"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePlayPromptCompletionReason , m.SetCompletionReason)
     return res
 }
 // Serialize serializes information the current object

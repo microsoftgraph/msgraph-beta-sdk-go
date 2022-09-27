@@ -28,30 +28,8 @@ func CreateAndroidForWorkImportedPFXCertificateProfileFromDiscriminatorValue(par
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidCertificateProfileBase.GetFieldDeserializers()
-    res["intendedPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIntendedPurpose)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIntendedPurpose(val.(*IntendedPurpose))
-        }
-        return nil
-    }
-    res["managedDeviceCertificateStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceCertificateStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedDeviceCertificateStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedDeviceCertificateStateable)
-            }
-            m.SetManagedDeviceCertificateStates(res)
-        }
-        return nil
-    }
+    res["intendedPurpose"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseIntendedPurpose , m.SetIntendedPurpose)
+    res["managedDeviceCertificateStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedDeviceCertificateStateFromDiscriminatorValue , m.SetManagedDeviceCertificateStates)
     return res
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
@@ -76,10 +54,7 @@ func (m *AndroidForWorkImportedPFXCertificateProfile) Serialize(writer i878a80d2
         }
     }
     if m.GetManagedDeviceCertificateStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceCertificateStates()))
-        for i, v := range m.GetManagedDeviceCertificateStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedDeviceCertificateStates())
         err = writer.WriteCollectionOfObjectValues("managedDeviceCertificateStates", cast)
         if err != nil {
             return err

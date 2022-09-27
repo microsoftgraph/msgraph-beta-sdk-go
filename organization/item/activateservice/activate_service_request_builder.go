@@ -41,11 +41,11 @@ func NewActivateServiceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewActivateServiceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action activateService
+// CreatePostRequestInformation activate a service for an organization.
 func (m *ActivateServiceRequestBuilder) CreatePostRequestInformation(body ActivateServicePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action activateService
+// CreatePostRequestInformationWithRequestConfiguration activate a service for an organization.
 func (m *ActivateServiceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateServicePostRequestBodyable, requestConfiguration *ActivateServiceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ActivateServiceRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Post invoke action activateService
+// Post activate a service for an organization.
 func (m *ActivateServiceRequestBuilder) Post(ctx context.Context, body ActivateServicePostRequestBodyable, requestConfiguration *ActivateServiceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -36,30 +36,8 @@ func (m *AndroidManagedStoreAppAssignmentSettings) GetAutoUpdateMode()(*AndroidM
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
-    res["androidManagedStoreAppTrackIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetAndroidManagedStoreAppTrackIds(res)
-        }
-        return nil
-    }
-    res["autoUpdateMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidManagedStoreAutoUpdateMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAutoUpdateMode(val.(*AndroidManagedStoreAutoUpdateMode))
-        }
-        return nil
-    }
+    res["androidManagedStoreAppTrackIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAndroidManagedStoreAppTrackIds)
+    res["autoUpdateMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidManagedStoreAutoUpdateMode , m.SetAutoUpdateMode)
     return res
 }
 // Serialize serializes information the current object

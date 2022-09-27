@@ -40,70 +40,12 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetConfigurat
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingApplicability.GetFieldDeserializers()
-    res["configurationServiceProviderVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConfigurationServiceProviderVersion(val)
-        }
-        return nil
-    }
-    res["maximumSupportedVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMaximumSupportedVersion(val)
-        }
-        return nil
-    }
-    res["minimumSupportedVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumSupportedVersion(val)
-        }
-        return nil
-    }
-    res["requiredAzureAdTrustType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementConfigurationAzureAdTrustType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRequiredAzureAdTrustType(val.(*DeviceManagementConfigurationAzureAdTrustType))
-        }
-        return nil
-    }
-    res["requiresAzureAd"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRequiresAzureAd(val)
-        }
-        return nil
-    }
-    res["windowsSkus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseDeviceManagementConfigurationWindowsSkus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementConfigurationWindowsSkus, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DeviceManagementConfigurationWindowsSkus))
-            }
-            m.SetWindowsSkus(res)
-        }
-        return nil
-    }
+    res["configurationServiceProviderVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetConfigurationServiceProviderVersion)
+    res["maximumSupportedVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMaximumSupportedVersion)
+    res["minimumSupportedVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumSupportedVersion)
+    res["requiredAzureAdTrustType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementConfigurationAzureAdTrustType , m.SetRequiredAzureAdTrustType)
+    res["requiresAzureAd"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequiresAzureAd)
+    res["windowsSkus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseDeviceManagementConfigurationWindowsSkus , m.SetWindowsSkus)
     return res
 }
 // GetMaximumSupportedVersion gets the maximumSupportedVersion property value. Maximum supported version of Windows

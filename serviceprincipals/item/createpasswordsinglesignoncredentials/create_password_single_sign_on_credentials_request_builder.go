@@ -42,11 +42,11 @@ func NewCreatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewCreatePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action createPasswordSingleSignOnCredentials
+// CreatePostRequestInformation create single sign-on credentials using a password for a user or group.
 func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(body CreatePasswordSingleSignOnCredentialsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createPasswordSingleSignOnCredentials
+// CreatePostRequestInformationWithRequestConfiguration create single sign-on credentials using a password for a user or group.
 func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *CreatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// Post invoke action createPasswordSingleSignOnCredentials
+// Post create single sign-on credentials using a password for a user or group.
 func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body CreatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *CreatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
