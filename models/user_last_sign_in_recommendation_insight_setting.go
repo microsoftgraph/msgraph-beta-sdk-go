@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -28,26 +29,8 @@ func CreateUserLastSignInRecommendationInsightSettingFromDiscriminatorValue(pars
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserLastSignInRecommendationInsightSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewRecommendationInsightSetting.GetFieldDeserializers()
-    res["recommendationLookBackDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecommendationLookBackDuration(val)
-        }
-        return nil
-    }
-    res["signInScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserSignInRecommendationScope)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSignInScope(val.(*UserSignInRecommendationScope))
-        }
-        return nil
-    }
+    res["recommendationLookBackDuration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetRecommendationLookBackDuration)
+    res["signInScope"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseUserSignInRecommendationScope , m.SetSignInScope)
     return res
 }
 // GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.

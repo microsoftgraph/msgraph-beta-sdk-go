@@ -17,7 +17,7 @@ type ApplicationSignInDetailedSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters represents a detailed summary of an application sign-in.
+// ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters retrieve the applicationSignInDetailedSummary objects.
 type ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ApplicationSignInDetailedSummaryRequestBuilderPostRequestConfiguration stru
 func NewApplicationSignInDetailedSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationSignInDetailedSummaryRequestBuilder) {
     m := &ApplicationSignInDetailedSummaryRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl string, requestAda
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Count()(*i92ebba0e89c3613014ed17f6f0080154a4a6c08f9694be112ad48866fc3ac92e.CountRequestBuilder) {
     return i92ebba0e89c3613014ed17f6f0080154a4a6c08f9694be112ad48866fc3ac92e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents a detailed summary of an application sign-in.
+// CreateGetRequestInformation retrieve the applicationSignInDetailedSummary objects.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents a detailed summary of an application sign-in.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the applicationSignInDetailedSummary objects.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationSignInDetailedSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Get represents a detailed summary of an application sign-in.
+// Get retrieve the applicationSignInDetailedSummary objects.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplicationSignInDetailedSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

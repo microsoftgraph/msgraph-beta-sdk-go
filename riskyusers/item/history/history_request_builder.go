@@ -17,7 +17,7 @@ type HistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// HistoryRequestBuilderGetQueryParameters get history from riskyUsers
+// HistoryRequestBuilderGetQueryParameters get the risk history of a riskyUser resource.
 type HistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type HistoryRequestBuilderPostRequestConfiguration struct {
 func NewHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HistoryRequestBuilder) {
     m := &HistoryRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/riskyUsers/{riskyUser%2Did}/history{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/riskyUsers/{riskyUser%2Did}/history{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewHistoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *HistoryRequestBuilder) Count()(*ie70c8d82293d94e87620df7ca4647960b8d82301eef3458e88c04776f7cc9690.CountRequestBuilder) {
     return ie70c8d82293d94e87620df7ca4647960b8d82301eef3458e88c04776f7cc9690.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get history from riskyUsers
+// CreateGetRequestInformation get the risk history of a riskyUser resource.
 func (m *HistoryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get history from riskyUsers
+// CreateGetRequestInformationWithRequestConfiguration get the risk history of a riskyUser resource.
 func (m *HistoryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *HistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *HistoryRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get get history from riskyUsers
+// Get get the risk history of a riskyUser resource.
 func (m *HistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *HistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -12,8 +12,10 @@ type ConditionalAccessRootable interface {
     GetAuthenticationStrengths()(AuthenticationStrengthRootable)
     GetNamedLocations()([]NamedLocationable)
     GetPolicies()([]ConditionalAccessPolicyable)
+    GetTemplates()([]ConditionalAccessTemplateable)
     SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)()
     SetAuthenticationStrengths(value AuthenticationStrengthRootable)()
     SetNamedLocations(value []NamedLocationable)()
     SetPolicies(value []ConditionalAccessPolicyable)()
+    SetTemplates(value []ConditionalAccessTemplateable)()
 }

@@ -19,7 +19,7 @@ type RunsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RunsRequestBuilderGetQueryParameters get runs from identityGovernance
+// RunsRequestBuilderGetQueryParameters get a list of the run objects and their properties for a lifecycle workflow.
 type RunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -58,7 +58,7 @@ type RunsRequestBuilderPostRequestConfiguration struct {
 func NewRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RunsRequestBuilder) {
     m := &RunsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -77,11 +77,11 @@ func NewRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *RunsRequestBuilder) Count()(*iee93674e2590f70266abadc849f22e04166fc9990ff210d5aff4ea07fda95ab4.CountRequestBuilder) {
     return iee93674e2590f70266abadc849f22e04166fc9990ff210d5aff4ea07fda95ab4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get runs from identityGovernance
+// CreateGetRequestInformation get a list of the run objects and their properties for a lifecycle workflow.
 func (m *RunsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get runs from identityGovernance
+// CreateGetRequestInformationWithRequestConfiguration get a list of the run objects and their properties for a lifecycle workflow.
 func (m *RunsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +115,7 @@ func (m *RunsRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// Get get runs from identityGovernance
+// Get get a list of the run objects and their properties for a lifecycle workflow.
 func (m *RunsRequestBuilder) Get(ctx context.Context, requestConfiguration *RunsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.RunCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

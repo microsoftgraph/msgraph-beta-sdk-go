@@ -17,7 +17,7 @@ type SupportedRegionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SupportedRegionsRequestBuilderGetQueryParameters cloud PC supported regions.
+// SupportedRegionsRequestBuilderGetQueryParameters list the supported regions that are available for creating Cloud PC connections.
 type SupportedRegionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SupportedRegionsRequestBuilderPostRequestConfiguration struct {
 func NewSupportedRegionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SupportedRegionsRequestBuilder) {
     m := &SupportedRegionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/supportedRegions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/supportedRegions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSupportedRegionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *SupportedRegionsRequestBuilder) Count()(*i99d8270aa92a7955338656bf8691c1f8186706d66f9ca611c79ba270548e1313.CountRequestBuilder) {
     return i99d8270aa92a7955338656bf8691c1f8186706d66f9ca611c79ba270548e1313.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation cloud PC supported regions.
+// CreateGetRequestInformation list the supported regions that are available for creating Cloud PC connections.
 func (m *SupportedRegionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration cloud PC supported regions.
+// CreateGetRequestInformationWithRequestConfiguration list the supported regions that are available for creating Cloud PC connections.
 func (m *SupportedRegionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SupportedRegionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SupportedRegionsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get cloud PC supported regions.
+// Get list the supported regions that are available for creating Cloud PC connections.
 func (m *SupportedRegionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SupportedRegionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSupportedRegionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

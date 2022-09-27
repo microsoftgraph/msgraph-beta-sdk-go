@@ -17,7 +17,7 @@ type MobileAppManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MobileAppManagementPoliciesRequestBuilderGetQueryParameters the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// MobileAppManagementPoliciesRequestBuilderGetQueryParameters get a list of the mobilityManagementPolicy objects and their properties.
 type MobileAppManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type MobileAppManagementPoliciesRequestBuilderPostRequestConfiguration struct {
 func NewMobileAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesRequestBuilder) {
     m := &MobileAppManagementPoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/mobileAppManagementPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/mobileAppManagementPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewMobileAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter 
 func (m *MobileAppManagementPoliciesRequestBuilder) Count()(*i3bfcedbcdd0a68811feb546929b792a26162461eca3cacb136582bb5eb936ec1.CountRequestBuilder) {
     return i3bfcedbcdd0a68811feb546929b792a26162461eca3cacb136582bb5eb936ec1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// CreateGetRequestInformation get a list of the mobilityManagementPolicy objects and their properties.
 func (m *MobileAppManagementPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the mobilityManagementPolicy objects and their properties.
 func (m *MobileAppManagementPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MobileAppManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *MobileAppManagementPoliciesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// Get the policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+// Get get a list of the mobilityManagementPolicy objects and their properties.
 func (m *MobileAppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

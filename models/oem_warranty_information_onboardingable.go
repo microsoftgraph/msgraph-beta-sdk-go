@@ -11,7 +11,4 @@ type OemWarrantyInformationOnboardingable interface {
     GetAvailable()(*bool)
     GetEnabled()(*bool)
     GetOemName()(*string)
-    SetAvailable(value *bool)()
-    SetEnabled(value *bool)()
-    SetOemName(value *string)()
 }

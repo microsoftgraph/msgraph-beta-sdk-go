@@ -17,7 +17,7 @@ type HistoryDefinitionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// HistoryDefinitionsRequestBuilderGetQueryParameters represents a collection of access review history data and the scopes used to collect that data.
+// HistoryDefinitionsRequestBuilderGetQueryParameters retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 type HistoryDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type HistoryDefinitionsRequestBuilderPostRequestConfiguration struct {
 func NewHistoryDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HistoryDefinitionsRequestBuilder) {
     m := &HistoryDefinitionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/historyDefinitions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/historyDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewHistoryDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *HistoryDefinitionsRequestBuilder) Count()(*i6e1169622aade145ce6165d11a40cca845fecc0a973ceed3c28102c0fc6dfe1a.CountRequestBuilder) {
     return i6e1169622aade145ce6165d11a40cca845fecc0a973ceed3c28102c0fc6dfe1a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents a collection of access review history data and the scopes used to collect that data.
+// CreateGetRequestInformation retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents a collection of access review history data and the scopes used to collect that data.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *HistoryDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to historyDefinitions for identityGovernance
+// CreatePostRequestInformation create a new accessReviewHistoryDefinition object.
 func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to historyDefinitions for identityGovernance
+// CreatePostRequestInformationWithRequestConfiguration create a new accessReviewHistoryDefinition object.
 func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, requestConfiguration *HistoryDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get represents a collection of access review history data and the scopes used to collect that data.
+// Get retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
 func (m *HistoryDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *HistoryDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *HistoryDefinitionsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionCollectionResponseable), nil
 }
-// Post create new navigation property to historyDefinitions for identityGovernance
+// Post create a new accessReviewHistoryDefinition object.
 func (m *HistoryDefinitionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, requestConfiguration *HistoryDefinitionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

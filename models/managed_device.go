@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -381,968 +382,41 @@ func (m *ManagedDevice) GetExchangeLastSuccessfulSyncDateTime()(*i336074805fc853
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["aadRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAadRegistered(val)
-        }
-        return nil
-    }
-    res["activationLockBypassCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetActivationLockBypassCode(val)
-        }
-        return nil
-    }
-    res["androidSecurityPatchLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAndroidSecurityPatchLevel(val)
-        }
-        return nil
-    }
-    res["assignmentFilterEvaluationStatusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AssignmentFilterEvaluationStatusDetailsable, len(val))
-            for i, v := range val {
-                res[i] = v.(AssignmentFilterEvaluationStatusDetailsable)
-            }
-            m.SetAssignmentFilterEvaluationStatusDetails(res)
-        }
-        return nil
-    }
-    res["autopilotEnrolled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAutopilotEnrolled(val)
-        }
-        return nil
-    }
-    res["azureActiveDirectoryDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAzureActiveDirectoryDeviceId(val)
-        }
-        return nil
-    }
-    res["azureADDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAzureADDeviceId(val)
-        }
-        return nil
-    }
-    res["azureADRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAzureADRegistered(val)
-        }
-        return nil
-    }
-    res["bootstrapTokenEscrowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBootstrapTokenEscrowed(val)
-        }
-        return nil
-    }
-    res["chassisType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChassisType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetChassisType(val.(*ChassisType))
-        }
-        return nil
-    }
-    res["chromeOSDeviceInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateChromeOSDevicePropertyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ChromeOSDevicePropertyable, len(val))
-            for i, v := range val {
-                res[i] = v.(ChromeOSDevicePropertyable)
-            }
-            m.SetChromeOSDeviceInfo(res)
-        }
-        return nil
-    }
-    res["cloudPcRemoteActionResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcRemoteActionResultFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcRemoteActionResultable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcRemoteActionResultable)
-            }
-            m.SetCloudPcRemoteActionResults(res)
-        }
-        return nil
-    }
-    res["complianceGracePeriodExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetComplianceGracePeriodExpirationDateTime(val)
-        }
-        return nil
-    }
-    res["complianceState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseComplianceState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetComplianceState(val.(*ComplianceState))
-        }
-        return nil
-    }
-    res["configurationManagerClientEnabledFeatures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConfigurationManagerClientEnabledFeatures(val.(ConfigurationManagerClientEnabledFeaturesable))
-        }
-        return nil
-    }
-    res["configurationManagerClientHealthState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConfigurationManagerClientHealthStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConfigurationManagerClientHealthState(val.(ConfigurationManagerClientHealthStateable))
-        }
-        return nil
-    }
-    res["configurationManagerClientInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConfigurationManagerClientInformationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConfigurationManagerClientInformation(val.(ConfigurationManagerClientInformationable))
-        }
-        return nil
-    }
-    res["detectedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDetectedAppFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DetectedAppable, len(val))
-            for i, v := range val {
-                res[i] = v.(DetectedAppable)
-            }
-            m.SetDetectedApps(res)
-        }
-        return nil
-    }
-    res["deviceActionResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceActionResultFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceActionResultable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceActionResultable)
-            }
-            m.SetDeviceActionResults(res)
-        }
-        return nil
-    }
-    res["deviceCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceCategoryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceCategory(val.(DeviceCategoryable))
-        }
-        return nil
-    }
-    res["deviceCategoryDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceCategoryDisplayName(val)
-        }
-        return nil
-    }
-    res["deviceCompliancePolicyStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicyStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceCompliancePolicyStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceCompliancePolicyStateable)
-            }
-            m.SetDeviceCompliancePolicyStates(res)
-        }
-        return nil
-    }
-    res["deviceConfigurationStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceConfigurationStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceConfigurationStateable)
-            }
-            m.SetDeviceConfigurationStates(res)
-        }
-        return nil
-    }
-    res["deviceEnrollmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceEnrollmentType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceEnrollmentType(val.(*DeviceEnrollmentType))
-        }
-        return nil
-    }
-    res["deviceFirmwareConfigurationInterfaceManaged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceFirmwareConfigurationInterfaceManaged(val)
-        }
-        return nil
-    }
-    res["deviceHealthAttestationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceHealthAttestationStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceHealthAttestationState(val.(DeviceHealthAttestationStateable))
-        }
-        return nil
-    }
-    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceName(val)
-        }
-        return nil
-    }
-    res["deviceRegistrationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceRegistrationState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceRegistrationState(val.(*DeviceRegistrationState))
-        }
-        return nil
-    }
-    res["deviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceType(val.(*DeviceType))
-        }
-        return nil
-    }
-    res["easActivated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEasActivated(val)
-        }
-        return nil
-    }
-    res["easActivationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEasActivationDateTime(val)
-        }
-        return nil
-    }
-    res["easDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEasDeviceId(val)
-        }
-        return nil
-    }
-    res["emailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEmailAddress(val)
-        }
-        return nil
-    }
-    res["enrolledDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnrolledDateTime(val)
-        }
-        return nil
-    }
-    res["enrollmentProfileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnrollmentProfileName(val)
-        }
-        return nil
-    }
-    res["ethernetMacAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEthernetMacAddress(val)
-        }
-        return nil
-    }
-    res["exchangeAccessState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementExchangeAccessState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExchangeAccessState(val.(*DeviceManagementExchangeAccessState))
-        }
-        return nil
-    }
-    res["exchangeAccessStateReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceManagementExchangeAccessStateReason)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExchangeAccessStateReason(val.(*DeviceManagementExchangeAccessStateReason))
-        }
-        return nil
-    }
-    res["exchangeLastSuccessfulSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExchangeLastSuccessfulSyncDateTime(val)
-        }
-        return nil
-    }
-    res["freeStorageSpaceInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFreeStorageSpaceInBytes(val)
-        }
-        return nil
-    }
-    res["hardwareInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateHardwareInformationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHardwareInformation(val.(HardwareInformationable))
-        }
-        return nil
-    }
-    res["iccid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIccid(val)
-        }
-        return nil
-    }
-    res["imei"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetImei(val)
-        }
-        return nil
-    }
-    res["isEncrypted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsEncrypted(val)
-        }
-        return nil
-    }
-    res["isSupervised"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSupervised(val)
-        }
-        return nil
-    }
-    res["jailBroken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetJailBroken(val)
-        }
-        return nil
-    }
-    res["joinType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseJoinType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetJoinType(val.(*JoinType))
-        }
-        return nil
-    }
-    res["lastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastSyncDateTime(val)
-        }
-        return nil
-    }
-    res["logCollectionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceLogCollectionResponseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceLogCollectionResponseable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceLogCollectionResponseable)
-            }
-            m.SetLogCollectionRequests(res)
-        }
-        return nil
-    }
-    res["lostModeState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLostModeState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLostModeState(val.(*LostModeState))
-        }
-        return nil
-    }
-    res["managedDeviceMobileAppConfigurationStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedDeviceMobileAppConfigurationStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedDeviceMobileAppConfigurationStateable)
-            }
-            m.SetManagedDeviceMobileAppConfigurationStates(res)
-        }
-        return nil
-    }
-    res["managedDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedDeviceName(val)
-        }
-        return nil
-    }
-    res["managedDeviceOwnerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedDeviceOwnerType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedDeviceOwnerType(val.(*ManagedDeviceOwnerType))
-        }
-        return nil
-    }
-    res["managementAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagementAgentType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagementAgent(val.(*ManagementAgentType))
-        }
-        return nil
-    }
-    res["managementCertificateExpirationDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagementCertificateExpirationDate(val)
-        }
-        return nil
-    }
-    res["managementFeatures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedDeviceManagementFeatures)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagementFeatures(val.(*ManagedDeviceManagementFeatures))
-        }
-        return nil
-    }
-    res["managementState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagementState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagementState(val.(*ManagementState))
-        }
-        return nil
-    }
-    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManufacturer(val)
-        }
-        return nil
-    }
-    res["meid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMeid(val)
-        }
-        return nil
-    }
-    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetModel(val)
-        }
-        return nil
-    }
-    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNotes(val)
-        }
-        return nil
-    }
-    res["operatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOperatingSystem(val)
-        }
-        return nil
-    }
-    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOsVersion(val)
-        }
-        return nil
-    }
-    res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOwnerType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOwnerType(val.(*OwnerType))
-        }
-        return nil
-    }
-    res["partnerReportedThreatState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedDevicePartnerReportedHealthState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerReportedThreatState(val.(*ManagedDevicePartnerReportedHealthState))
-        }
-        return nil
-    }
-    res["phoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPhoneNumber(val)
-        }
-        return nil
-    }
-    res["physicalMemoryInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPhysicalMemoryInBytes(val)
-        }
-        return nil
-    }
-    res["preferMdmOverGroupPolicyAppliedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreferMdmOverGroupPolicyAppliedDateTime(val)
-        }
-        return nil
-    }
-    res["processorArchitecture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseManagedDeviceArchitecture)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProcessorArchitecture(val.(*ManagedDeviceArchitecture))
-        }
-        return nil
-    }
-    res["remoteAssistanceSessionErrorDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRemoteAssistanceSessionErrorDetails(val)
-        }
-        return nil
-    }
-    res["remoteAssistanceSessionUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRemoteAssistanceSessionUrl(val)
-        }
-        return nil
-    }
-    res["requireUserEnrollmentApproval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRequireUserEnrollmentApproval(val)
-        }
-        return nil
-    }
-    res["retireAfterDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRetireAfterDateTime(val)
-        }
-        return nil
-    }
-    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetRoleScopeTagIds(res)
-        }
-        return nil
-    }
-    res["securityBaselineStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSecurityBaselineStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SecurityBaselineStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(SecurityBaselineStateable)
-            }
-            m.SetSecurityBaselineStates(res)
-        }
-        return nil
-    }
-    res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSerialNumber(val)
-        }
-        return nil
-    }
-    res["skuFamily"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSkuFamily(val)
-        }
-        return nil
-    }
-    res["skuNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSkuNumber(val)
-        }
-        return nil
-    }
-    res["specificationVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSpecificationVersion(val)
-        }
-        return nil
-    }
-    res["subscriberCarrier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSubscriberCarrier(val)
-        }
-        return nil
-    }
-    res["totalStorageSpaceInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTotalStorageSpaceInBytes(val)
-        }
-        return nil
-    }
-    res["udid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUdid(val)
-        }
-        return nil
-    }
-    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserDisplayName(val)
-        }
-        return nil
-    }
-    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserId(val)
-        }
-        return nil
-    }
-    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserPrincipalName(val)
-        }
-        return nil
-    }
-    res["users"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUserFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Userable, len(val))
-            for i, v := range val {
-                res[i] = v.(Userable)
-            }
-            m.SetUsers(res)
-        }
-        return nil
-    }
-    res["usersLoggedOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateLoggedOnUserFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]LoggedOnUserable, len(val))
-            for i, v := range val {
-                res[i] = v.(LoggedOnUserable)
-            }
-            m.SetUsersLoggedOn(res)
-        }
-        return nil
-    }
-    res["wiFiMacAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWiFiMacAddress(val)
-        }
-        return nil
-    }
-    res["windowsActiveMalwareCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsActiveMalwareCount(val)
-        }
-        return nil
-    }
-    res["windowsProtectionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindowsProtectionStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsProtectionState(val.(WindowsProtectionStateable))
-        }
-        return nil
-    }
-    res["windowsRemediatedMalwareCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsRemediatedMalwareCount(val)
-        }
-        return nil
-    }
+    res["assignmentFilterEvaluationStatusDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue , m.SetAssignmentFilterEvaluationStatusDetails)
+    res["chassisType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseChassisType , m.SetChassisType)
+    res["chromeOSDeviceInfo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateChromeOSDevicePropertyFromDiscriminatorValue , m.SetChromeOSDeviceInfo)
+    res["cloudPcRemoteActionResults"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcRemoteActionResultFromDiscriminatorValue , m.SetCloudPcRemoteActionResults)
+    res["complianceState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseComplianceState , m.SetComplianceState)
+    res["configurationManagerClientHealthState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConfigurationManagerClientHealthStateFromDiscriminatorValue , m.SetConfigurationManagerClientHealthState)
+    res["configurationManagerClientInformation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConfigurationManagerClientInformationFromDiscriminatorValue , m.SetConfigurationManagerClientInformation)
+    res["detectedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDetectedAppFromDiscriminatorValue , m.SetDetectedApps)
+    res["deviceCategory"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceCategoryFromDiscriminatorValue , m.SetDeviceCategory)
+    res["deviceCompliancePolicyStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceCompliancePolicyStateFromDiscriminatorValue , m.SetDeviceCompliancePolicyStates)
+    res["deviceConfigurationStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceConfigurationStateFromDiscriminatorValue , m.SetDeviceConfigurationStates)
+    res["deviceEnrollmentType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceEnrollmentType , m.SetDeviceEnrollmentType)
+    res["deviceFirmwareConfigurationInterfaceManaged"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDeviceFirmwareConfigurationInterfaceManaged)
+    res["deviceRegistrationState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceRegistrationState , m.SetDeviceRegistrationState)
+    res["deviceType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceType , m.SetDeviceType)
+    res["exchangeAccessState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementExchangeAccessState , m.SetExchangeAccessState)
+    res["exchangeAccessStateReason"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementExchangeAccessStateReason , m.SetExchangeAccessStateReason)
+    res["joinType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseJoinType , m.SetJoinType)
+    res["logCollectionRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceLogCollectionResponseFromDiscriminatorValue , m.SetLogCollectionRequests)
+    res["lostModeState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseLostModeState , m.SetLostModeState)
+    res["managedDeviceMobileAppConfigurationStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationStateFromDiscriminatorValue , m.SetManagedDeviceMobileAppConfigurationStates)
+    res["managedDeviceName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetManagedDeviceName)
+    res["managedDeviceOwnerType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedDeviceOwnerType , m.SetManagedDeviceOwnerType)
+    res["managementAgent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagementAgentType , m.SetManagementAgent)
+    res["managementFeatures"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedDeviceManagementFeatures , m.SetManagementFeatures)
+    res["managementState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagementState , m.SetManagementState)
+    res["notes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetNotes)
+    res["ownerType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOwnerType , m.SetOwnerType)
+    res["partnerReportedThreatState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedDevicePartnerReportedHealthState , m.SetPartnerReportedThreatState)
+    res["processorArchitecture"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedDeviceArchitecture , m.SetProcessorArchitecture)
+    res["roleScopeTagIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetRoleScopeTagIds)
+    res["securityBaselineStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSecurityBaselineStateFromDiscriminatorValue , m.SetSecurityBaselineStates)
+    res["skuFamily"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSkuFamily)
+    res["users"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserFromDiscriminatorValue , m.SetUsers)
+    res["windowsProtectionState"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsProtectionStateFromDiscriminatorValue , m.SetWindowsProtectionState)
     return res
 }
 // GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
@@ -1559,60 +633,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteBoolValue("aadRegistered", m.GetAadRegistered())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("activationLockBypassCode", m.GetActivationLockBypassCode())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("androidSecurityPatchLevel", m.GetAndroidSecurityPatchLevel())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetAssignmentFilterEvaluationStatusDetails() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentFilterEvaluationStatusDetails()))
-        for i, v := range m.GetAssignmentFilterEvaluationStatusDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssignmentFilterEvaluationStatusDetails())
         err = writer.WriteCollectionOfObjectValues("assignmentFilterEvaluationStatusDetails", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("autopilotEnrolled", m.GetAutopilotEnrolled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("azureActiveDirectoryDeviceId", m.GetAzureActiveDirectoryDeviceId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("azureADDeviceId", m.GetAzureADDeviceId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("azureADRegistered", m.GetAzureADRegistered())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("bootstrapTokenEscrowed", m.GetBootstrapTokenEscrowed())
         if err != nil {
             return err
         }
@@ -1625,27 +648,15 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetChromeOSDeviceInfo() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChromeOSDeviceInfo()))
-        for i, v := range m.GetChromeOSDeviceInfo() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetChromeOSDeviceInfo())
         err = writer.WriteCollectionOfObjectValues("chromeOSDeviceInfo", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCloudPcRemoteActionResults() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcRemoteActionResults()))
-        for i, v := range m.GetCloudPcRemoteActionResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCloudPcRemoteActionResults())
         err = writer.WriteCollectionOfObjectValues("cloudPcRemoteActionResults", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("complianceGracePeriodExpirationDateTime", m.GetComplianceGracePeriodExpirationDateTime())
         if err != nil {
             return err
         }
@@ -1653,12 +664,6 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetComplianceState() != nil {
         cast := (*m.GetComplianceState()).String()
         err = writer.WriteStringValue("complianceState", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("configurationManagerClientEnabledFeatures", m.GetConfigurationManagerClientEnabledFeatures())
         if err != nil {
             return err
         }
@@ -1676,21 +681,8 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetDetectedApps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDetectedApps()))
-        for i, v := range m.GetDetectedApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDetectedApps())
         err = writer.WriteCollectionOfObjectValues("detectedApps", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDeviceActionResults() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceActionResults()))
-        for i, v := range m.GetDeviceActionResults() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("deviceActionResults", cast)
         if err != nil {
             return err
         }
@@ -1701,27 +693,15 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("deviceCategoryDisplayName", m.GetDeviceCategoryDisplayName())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetDeviceCompliancePolicyStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceCompliancePolicyStates()))
-        for i, v := range m.GetDeviceCompliancePolicyStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeviceCompliancePolicyStates())
         err = writer.WriteCollectionOfObjectValues("deviceCompliancePolicyStates", cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceConfigurationStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceConfigurationStates()))
-        for i, v := range m.GetDeviceConfigurationStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeviceConfigurationStates())
         err = writer.WriteCollectionOfObjectValues("deviceConfigurationStates", cast)
         if err != nil {
             return err
@@ -1740,18 +720,6 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("deviceHealthAttestationState", m.GetDeviceHealthAttestationState())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("deviceName", m.GetDeviceName())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetDeviceRegistrationState() != nil {
         cast := (*m.GetDeviceRegistrationState()).String()
         err = writer.WriteStringValue("deviceRegistrationState", &cast)
@@ -1762,48 +730,6 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetDeviceType() != nil {
         cast := (*m.GetDeviceType()).String()
         err = writer.WriteStringValue("deviceType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("easActivated", m.GetEasActivated())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("easActivationDateTime", m.GetEasActivationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("easDeviceId", m.GetEasDeviceId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("emailAddress", m.GetEmailAddress())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("enrolledDateTime", m.GetEnrolledDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("enrollmentProfileName", m.GetEnrollmentProfileName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("ethernetMacAddress", m.GetEthernetMacAddress())
         if err != nil {
             return err
         }
@@ -1822,54 +748,6 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("exchangeLastSuccessfulSyncDateTime", m.GetExchangeLastSuccessfulSyncDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt64Value("freeStorageSpaceInBytes", m.GetFreeStorageSpaceInBytes())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("hardwareInformation", m.GetHardwareInformation())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("iccid", m.GetIccid())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("imei", m.GetImei())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isEncrypted", m.GetIsEncrypted())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isSupervised", m.GetIsSupervised())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("jailBroken", m.GetJailBroken())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetJoinType() != nil {
         cast := (*m.GetJoinType()).String()
         err = writer.WriteStringValue("joinType", &cast)
@@ -1877,17 +755,8 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("lastSyncDateTime", m.GetLastSyncDateTime())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetLogCollectionRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLogCollectionRequests()))
-        for i, v := range m.GetLogCollectionRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetLogCollectionRequests())
         err = writer.WriteCollectionOfObjectValues("logCollectionRequests", cast)
         if err != nil {
             return err
@@ -1901,10 +770,7 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetManagedDeviceMobileAppConfigurationStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceMobileAppConfigurationStates()))
-        for i, v := range m.GetManagedDeviceMobileAppConfigurationStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedDeviceMobileAppConfigurationStates())
         err = writer.WriteCollectionOfObjectValues("managedDeviceMobileAppConfigurationStates", cast)
         if err != nil {
             return err
@@ -1930,12 +796,6 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("managementCertificateExpirationDate", m.GetManagementCertificateExpirationDate())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetManagementFeatures() != nil {
         cast := (*m.GetManagementFeatures()).String()
         err = writer.WriteStringValue("managementFeatures", &cast)
@@ -1951,37 +811,7 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("manufacturer", m.GetManufacturer())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("meid", m.GetMeid())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("model", m.GetModel())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("notes", m.GetNotes())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("operatingSystem", m.GetOperatingSystem())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("osVersion", m.GetOsVersion())
         if err != nil {
             return err
         }
@@ -2000,51 +830,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("phoneNumber", m.GetPhoneNumber())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt64Value("physicalMemoryInBytes", m.GetPhysicalMemoryInBytes())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("preferMdmOverGroupPolicyAppliedDateTime", m.GetPreferMdmOverGroupPolicyAppliedDateTime())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetProcessorArchitecture() != nil {
         cast := (*m.GetProcessorArchitecture()).String()
         err = writer.WriteStringValue("processorArchitecture", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("remoteAssistanceSessionErrorDetails", m.GetRemoteAssistanceSessionErrorDetails())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("remoteAssistanceSessionUrl", m.GetRemoteAssistanceSessionUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("requireUserEnrollmentApproval", m.GetRequireUserEnrollmentApproval())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("retireAfterDateTime", m.GetRetireAfterDateTime())
         if err != nil {
             return err
         }
@@ -2056,17 +844,8 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetSecurityBaselineStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSecurityBaselineStates()))
-        for i, v := range m.GetSecurityBaselineStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSecurityBaselineStates())
         err = writer.WriteCollectionOfObjectValues("securityBaselineStates", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("serialNumber", m.GetSerialNumber())
         if err != nil {
             return err
         }
@@ -2077,82 +856,9 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteInt32Value("skuNumber", m.GetSkuNumber())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("specificationVersion", m.GetSpecificationVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("subscriberCarrier", m.GetSubscriberCarrier())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt64Value("totalStorageSpaceInBytes", m.GetTotalStorageSpaceInBytes())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("udid", m.GetUdid())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("userDisplayName", m.GetUserDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("userId", m.GetUserId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetUsers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUsers()))
-        for i, v := range m.GetUsers() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUsers())
         err = writer.WriteCollectionOfObjectValues("users", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetUsersLoggedOn() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUsersLoggedOn()))
-        for i, v := range m.GetUsersLoggedOn() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("usersLoggedOn", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("wiFiMacAddress", m.GetWiFiMacAddress())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("windowsActiveMalwareCount", m.GetWindowsActiveMalwareCount())
         if err != nil {
             return err
         }
@@ -2163,49 +869,11 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    {
-        err = writer.WriteInt32Value("windowsRemediatedMalwareCount", m.GetWindowsRemediatedMalwareCount())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetAadRegistered sets the aadRegistered property value. Whether the device is Azure Active Directory registered. This property is read-only.
-func (m *ManagedDevice) SetAadRegistered(value *bool)() {
-    m.aadRegistered = value
-}
-// SetActivationLockBypassCode sets the activationLockBypassCode property value. Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
-func (m *ManagedDevice) SetActivationLockBypassCode(value *string)() {
-    m.activationLockBypassCode = value
-}
-// SetAndroidSecurityPatchLevel sets the androidSecurityPatchLevel property value. Android security patch level. This property is read-only.
-func (m *ManagedDevice) SetAndroidSecurityPatchLevel(value *string)() {
-    m.androidSecurityPatchLevel = value
 }
 // SetAssignmentFilterEvaluationStatusDetails sets the assignmentFilterEvaluationStatusDetails property value. Managed device mobile app configuration states for this device.
 func (m *ManagedDevice) SetAssignmentFilterEvaluationStatusDetails(value []AssignmentFilterEvaluationStatusDetailsable)() {
     m.assignmentFilterEvaluationStatusDetails = value
-}
-// SetAutopilotEnrolled sets the autopilotEnrolled property value. Reports if the managed device is enrolled via auto-pilot. This property is read-only.
-func (m *ManagedDevice) SetAutopilotEnrolled(value *bool)() {
-    m.autopilotEnrolled = value
-}
-// SetAzureActiveDirectoryDeviceId sets the azureActiveDirectoryDeviceId property value. The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
-func (m *ManagedDevice) SetAzureActiveDirectoryDeviceId(value *string)() {
-    m.azureActiveDirectoryDeviceId = value
-}
-// SetAzureADDeviceId sets the azureADDeviceId property value. The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
-func (m *ManagedDevice) SetAzureADDeviceId(value *string)() {
-    m.azureADDeviceId = value
-}
-// SetAzureADRegistered sets the azureADRegistered property value. Whether the device is Azure Active Directory registered. This property is read-only.
-func (m *ManagedDevice) SetAzureADRegistered(value *bool)() {
-    m.azureADRegistered = value
-}
-// SetBootstrapTokenEscrowed sets the bootstrapTokenEscrowed property value. Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
-func (m *ManagedDevice) SetBootstrapTokenEscrowed(value *bool)() {
-    m.bootstrapTokenEscrowed = value
 }
 // SetChassisType sets the chassisType property value. Chassis type.
 func (m *ManagedDevice) SetChassisType(value *ChassisType)() {
@@ -2219,17 +887,9 @@ func (m *ManagedDevice) SetChromeOSDeviceInfo(value []ChromeOSDevicePropertyable
 func (m *ManagedDevice) SetCloudPcRemoteActionResults(value []CloudPcRemoteActionResultable)() {
     m.cloudPcRemoteActionResults = value
 }
-// SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires. This property is read-only.
-func (m *ManagedDevice) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.complianceGracePeriodExpirationDateTime = value
-}
 // SetComplianceState sets the complianceState property value. Compliance state.
 func (m *ManagedDevice) SetComplianceState(value *ComplianceState)() {
     m.complianceState = value
-}
-// SetConfigurationManagerClientEnabledFeatures sets the configurationManagerClientEnabledFeatures property value. ConfigrMgr client enabled features. This property is read-only.
-func (m *ManagedDevice) SetConfigurationManagerClientEnabledFeatures(value ConfigurationManagerClientEnabledFeaturesable)() {
-    m.configurationManagerClientEnabledFeatures = value
 }
 // SetConfigurationManagerClientHealthState sets the configurationManagerClientHealthState property value. Configuration manager client health state, valid only for devices managed by MDM/ConfigMgr Agent
 func (m *ManagedDevice) SetConfigurationManagerClientHealthState(value ConfigurationManagerClientHealthStateable)() {
@@ -2243,17 +903,9 @@ func (m *ManagedDevice) SetConfigurationManagerClientInformation(value Configura
 func (m *ManagedDevice) SetDetectedApps(value []DetectedAppable)() {
     m.detectedApps = value
 }
-// SetDeviceActionResults sets the deviceActionResults property value. List of ComplexType deviceActionResult objects. This property is read-only.
-func (m *ManagedDevice) SetDeviceActionResults(value []DeviceActionResultable)() {
-    m.deviceActionResults = value
-}
 // SetDeviceCategory sets the deviceCategory property value. Device category
 func (m *ManagedDevice) SetDeviceCategory(value DeviceCategoryable)() {
     m.deviceCategory = value
-}
-// SetDeviceCategoryDisplayName sets the deviceCategoryDisplayName property value. Device category display name. This property is read-only.
-func (m *ManagedDevice) SetDeviceCategoryDisplayName(value *string)() {
-    m.deviceCategoryDisplayName = value
 }
 // SetDeviceCompliancePolicyStates sets the deviceCompliancePolicyStates property value. Device compliance policy states for this device.
 func (m *ManagedDevice) SetDeviceCompliancePolicyStates(value []DeviceCompliancePolicyStateable)() {
@@ -2271,14 +923,6 @@ func (m *ManagedDevice) SetDeviceEnrollmentType(value *DeviceEnrollmentType)() {
 func (m *ManagedDevice) SetDeviceFirmwareConfigurationInterfaceManaged(value *bool)() {
     m.deviceFirmwareConfigurationInterfaceManaged = value
 }
-// SetDeviceHealthAttestationState sets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
-func (m *ManagedDevice) SetDeviceHealthAttestationState(value DeviceHealthAttestationStateable)() {
-    m.deviceHealthAttestationState = value
-}
-// SetDeviceName sets the deviceName property value. Name of the device. This property is read-only.
-func (m *ManagedDevice) SetDeviceName(value *string)() {
-    m.deviceName = value
-}
 // SetDeviceRegistrationState sets the deviceRegistrationState property value. Device registration status.
 func (m *ManagedDevice) SetDeviceRegistrationState(value *DeviceRegistrationState)() {
     m.deviceRegistrationState = value
@@ -2286,34 +930,6 @@ func (m *ManagedDevice) SetDeviceRegistrationState(value *DeviceRegistrationStat
 // SetDeviceType sets the deviceType property value. Device type.
 func (m *ManagedDevice) SetDeviceType(value *DeviceType)() {
     m.deviceType = value
-}
-// SetEasActivated sets the easActivated property value. Whether the device is Exchange ActiveSync activated. This property is read-only.
-func (m *ManagedDevice) SetEasActivated(value *bool)() {
-    m.easActivated = value
-}
-// SetEasActivationDateTime sets the easActivationDateTime property value. Exchange ActivationSync activation time of the device. This property is read-only.
-func (m *ManagedDevice) SetEasActivationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.easActivationDateTime = value
-}
-// SetEasDeviceId sets the easDeviceId property value. Exchange ActiveSync Id of the device. This property is read-only.
-func (m *ManagedDevice) SetEasDeviceId(value *string)() {
-    m.easDeviceId = value
-}
-// SetEmailAddress sets the emailAddress property value. Email(s) for the user associated with the device. This property is read-only.
-func (m *ManagedDevice) SetEmailAddress(value *string)() {
-    m.emailAddress = value
-}
-// SetEnrolledDateTime sets the enrolledDateTime property value. Enrollment time of the device. This property is read-only.
-func (m *ManagedDevice) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.enrolledDateTime = value
-}
-// SetEnrollmentProfileName sets the enrollmentProfileName property value. Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.
-func (m *ManagedDevice) SetEnrollmentProfileName(value *string)() {
-    m.enrollmentProfileName = value
-}
-// SetEthernetMacAddress sets the ethernetMacAddress property value. Ethernet MAC. This property is read-only.
-func (m *ManagedDevice) SetEthernetMacAddress(value *string)() {
-    m.ethernetMacAddress = value
 }
 // SetExchangeAccessState sets the exchangeAccessState property value. Device Exchange Access State.
 func (m *ManagedDevice) SetExchangeAccessState(value *DeviceManagementExchangeAccessState)() {
@@ -2323,45 +939,9 @@ func (m *ManagedDevice) SetExchangeAccessState(value *DeviceManagementExchangeAc
 func (m *ManagedDevice) SetExchangeAccessStateReason(value *DeviceManagementExchangeAccessStateReason)() {
     m.exchangeAccessStateReason = value
 }
-// SetExchangeLastSuccessfulSyncDateTime sets the exchangeLastSuccessfulSyncDateTime property value. Last time the device contacted Exchange. This property is read-only.
-func (m *ManagedDevice) SetExchangeLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.exchangeLastSuccessfulSyncDateTime = value
-}
-// SetFreeStorageSpaceInBytes sets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) SetFreeStorageSpaceInBytes(value *int64)() {
-    m.freeStorageSpaceInBytes = value
-}
-// SetHardwareInformation sets the hardwareInformation property value. The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.
-func (m *ManagedDevice) SetHardwareInformation(value HardwareInformationable)() {
-    m.hardwareInformation = value
-}
-// SetIccid sets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
-func (m *ManagedDevice) SetIccid(value *string)() {
-    m.iccid = value
-}
-// SetImei sets the imei property value. IMEI. This property is read-only.
-func (m *ManagedDevice) SetImei(value *string)() {
-    m.imei = value
-}
-// SetIsEncrypted sets the isEncrypted property value. Device encryption status. This property is read-only.
-func (m *ManagedDevice) SetIsEncrypted(value *bool)() {
-    m.isEncrypted = value
-}
-// SetIsSupervised sets the isSupervised property value. Device supervised status. This property is read-only.
-func (m *ManagedDevice) SetIsSupervised(value *bool)() {
-    m.isSupervised = value
-}
-// SetJailBroken sets the jailBroken property value. whether the device is jail broken or rooted. This property is read-only.
-func (m *ManagedDevice) SetJailBroken(value *string)() {
-    m.jailBroken = value
-}
 // SetJoinType sets the joinType property value. Device enrollment join type.
 func (m *ManagedDevice) SetJoinType(value *JoinType)() {
     m.joinType = value
-}
-// SetLastSyncDateTime sets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. This property is read-only.
-func (m *ManagedDevice) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
 }
 // SetLogCollectionRequests sets the logCollectionRequests property value. List of log collection requests
 func (m *ManagedDevice) SetLogCollectionRequests(value []DeviceLogCollectionResponseable)() {
@@ -2387,10 +967,6 @@ func (m *ManagedDevice) SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)
 func (m *ManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
     m.managementAgent = value
 }
-// SetManagementCertificateExpirationDate sets the managementCertificateExpirationDate property value. Reports device management certificate expiration date. This property is read-only.
-func (m *ManagedDevice) SetManagementCertificateExpirationDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.managementCertificateExpirationDate = value
-}
 // SetManagementFeatures sets the managementFeatures property value. Device management features.
 func (m *ManagedDevice) SetManagementFeatures(value *ManagedDeviceManagementFeatures)() {
     m.managementFeatures = value
@@ -2399,29 +975,9 @@ func (m *ManagedDevice) SetManagementFeatures(value *ManagedDeviceManagementFeat
 func (m *ManagedDevice) SetManagementState(value *ManagementState)() {
     m.managementState = value
 }
-// SetManufacturer sets the manufacturer property value. Manufacturer of the device. This property is read-only.
-func (m *ManagedDevice) SetManufacturer(value *string)() {
-    m.manufacturer = value
-}
-// SetMeid sets the meid property value. MEID. This property is read-only.
-func (m *ManagedDevice) SetMeid(value *string)() {
-    m.meid = value
-}
-// SetModel sets the model property value. Model of the device. This property is read-only.
-func (m *ManagedDevice) SetModel(value *string)() {
-    m.model = value
-}
 // SetNotes sets the notes property value. Notes on the device created by IT Admin
 func (m *ManagedDevice) SetNotes(value *string)() {
     m.notes = value
-}
-// SetOperatingSystem sets the operatingSystem property value. Operating system of the device. Windows, iOS, etc. This property is read-only.
-func (m *ManagedDevice) SetOperatingSystem(value *string)() {
-    m.operatingSystem = value
-}
-// SetOsVersion sets the osVersion property value. Operating system version of the device. This property is read-only.
-func (m *ManagedDevice) SetOsVersion(value *string)() {
-    m.osVersion = value
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *ManagedDevice) SetOwnerType(value *OwnerType)() {
@@ -2431,37 +987,9 @@ func (m *ManagedDevice) SetOwnerType(value *OwnerType)() {
 func (m *ManagedDevice) SetPartnerReportedThreatState(value *ManagedDevicePartnerReportedHealthState)() {
     m.partnerReportedThreatState = value
 }
-// SetPhoneNumber sets the phoneNumber property value. Phone number of the device. This property is read-only.
-func (m *ManagedDevice) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
-}
-// SetPhysicalMemoryInBytes sets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
-func (m *ManagedDevice) SetPhysicalMemoryInBytes(value *int64)() {
-    m.physicalMemoryInBytes = value
-}
-// SetPreferMdmOverGroupPolicyAppliedDateTime sets the preferMdmOverGroupPolicyAppliedDateTime property value. Reports the DateTime the preferMdmOverGroupPolicy setting was set.  When set, the Intune MDM settings will override Group Policy settings if there is a conflict. Read Only. This property is read-only.
-func (m *ManagedDevice) SetPreferMdmOverGroupPolicyAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.preferMdmOverGroupPolicyAppliedDateTime = value
-}
 // SetProcessorArchitecture sets the processorArchitecture property value. Processor architecture
 func (m *ManagedDevice) SetProcessorArchitecture(value *ManagedDeviceArchitecture)() {
     m.processorArchitecture = value
-}
-// SetRemoteAssistanceSessionErrorDetails sets the remoteAssistanceSessionErrorDetails property value. An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
-func (m *ManagedDevice) SetRemoteAssistanceSessionErrorDetails(value *string)() {
-    m.remoteAssistanceSessionErrorDetails = value
-}
-// SetRemoteAssistanceSessionUrl sets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. This property is read-only.
-func (m *ManagedDevice) SetRemoteAssistanceSessionUrl(value *string)() {
-    m.remoteAssistanceSessionUrl = value
-}
-// SetRequireUserEnrollmentApproval sets the requireUserEnrollmentApproval property value. Reports if the managed iOS device is user approval enrollment. This property is read-only.
-func (m *ManagedDevice) SetRequireUserEnrollmentApproval(value *bool)() {
-    m.requireUserEnrollmentApproval = value
-}
-// SetRetireAfterDateTime sets the retireAfterDateTime property value. Indicates the time after when a device will be auto retired because of scheduled action. This property is read-only.
-func (m *ManagedDevice) SetRetireAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.retireAfterDateTime = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tag IDs for this Device instance.
 func (m *ManagedDevice) SetRoleScopeTagIds(value []string)() {
@@ -2471,67 +999,15 @@ func (m *ManagedDevice) SetRoleScopeTagIds(value []string)() {
 func (m *ManagedDevice) SetSecurityBaselineStates(value []SecurityBaselineStateable)() {
     m.securityBaselineStates = value
 }
-// SetSerialNumber sets the serialNumber property value. SerialNumber. This property is read-only.
-func (m *ManagedDevice) SetSerialNumber(value *string)() {
-    m.serialNumber = value
-}
 // SetSkuFamily sets the skuFamily property value. Device sku family
 func (m *ManagedDevice) SetSkuFamily(value *string)() {
     m.skuFamily = value
-}
-// SetSkuNumber sets the skuNumber property value. Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
-func (m *ManagedDevice) SetSkuNumber(value *int32)() {
-    m.skuNumber = value
-}
-// SetSpecificationVersion sets the specificationVersion property value. Specification version. This property is read-only.
-func (m *ManagedDevice) SetSpecificationVersion(value *string)() {
-    m.specificationVersion = value
-}
-// SetSubscriberCarrier sets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
-func (m *ManagedDevice) SetSubscriberCarrier(value *string)() {
-    m.subscriberCarrier = value
-}
-// SetTotalStorageSpaceInBytes sets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
-func (m *ManagedDevice) SetTotalStorageSpaceInBytes(value *int64)() {
-    m.totalStorageSpaceInBytes = value
-}
-// SetUdid sets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.
-func (m *ManagedDevice) SetUdid(value *string)() {
-    m.udid = value
-}
-// SetUserDisplayName sets the userDisplayName property value. User display name. This property is read-only.
-func (m *ManagedDevice) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
-}
-// SetUserId sets the userId property value. Unique Identifier for the user associated with the device. This property is read-only.
-func (m *ManagedDevice) SetUserId(value *string)() {
-    m.userId = value
-}
-// SetUserPrincipalName sets the userPrincipalName property value. Device user principal name. This property is read-only.
-func (m *ManagedDevice) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
 }
 // SetUsers sets the users property value. The primary users associated with the managed device.
 func (m *ManagedDevice) SetUsers(value []Userable)() {
     m.users = value
 }
-// SetUsersLoggedOn sets the usersLoggedOn property value. Indicates the last logged on users of a device. This property is read-only.
-func (m *ManagedDevice) SetUsersLoggedOn(value []LoggedOnUserable)() {
-    m.usersLoggedOn = value
-}
-// SetWiFiMacAddress sets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
-func (m *ManagedDevice) SetWiFiMacAddress(value *string)() {
-    m.wiFiMacAddress = value
-}
-// SetWindowsActiveMalwareCount sets the windowsActiveMalwareCount property value. Count of active malware for this windows device. This property is read-only.
-func (m *ManagedDevice) SetWindowsActiveMalwareCount(value *int32)() {
-    m.windowsActiveMalwareCount = value
-}
 // SetWindowsProtectionState sets the windowsProtectionState property value. The device protection status. This property is read-only.
 func (m *ManagedDevice) SetWindowsProtectionState(value WindowsProtectionStateable)() {
     m.windowsProtectionState = value
-}
-// SetWindowsRemediatedMalwareCount sets the windowsRemediatedMalwareCount property value. Count of remediated malware for this windows device. This property is read-only.
-func (m *ManagedDevice) SetWindowsRemediatedMalwareCount(value *int32)() {
-    m.windowsRemediatedMalwareCount = value
 }

@@ -17,7 +17,7 @@ type ServiceManagementDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ServiceManagementDetailsRequestBuilderGetQueryParameters contains the management details of a service in the customer tenant that's managed by delegated administration.
+// ServiceManagementDetailsRequestBuilderGetQueryParameters get a list of the delegatedAdminServiceManagementDetail objects and their properties.
 type ServiceManagementDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ServiceManagementDetailsRequestBuilderPostRequestConfiguration struct {
 func NewServiceManagementDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceManagementDetailsRequestBuilder) {
     m := &ServiceManagementDetailsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer%2Did}/serviceManagementDetails{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer%2Did}/serviceManagementDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewServiceManagementDetailsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ServiceManagementDetailsRequestBuilder) Count()(*id9cedd800cc800bd2491ff0556928ca0fc98731567b0d3bd7ee862242e0b0894.CountRequestBuilder) {
     return id9cedd800cc800bd2491ff0556928ca0fc98731567b0d3bd7ee862242e0b0894.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation contains the management details of a service in the customer tenant that's managed by delegated administration.
+// CreateGetRequestInformation get a list of the delegatedAdminServiceManagementDetail objects and their properties.
 func (m *ServiceManagementDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration contains the management details of a service in the customer tenant that's managed by delegated administration.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the delegatedAdminServiceManagementDetail objects and their properties.
 func (m *ServiceManagementDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ServiceManagementDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ServiceManagementDetailsRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// Get contains the management details of a service in the customer tenant that's managed by delegated administration.
+// Get get a list of the delegatedAdminServiceManagementDetail objects and their properties.
 func (m *ServiceManagementDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceManagementDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

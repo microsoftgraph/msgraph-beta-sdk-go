@@ -12,6 +12,7 @@ import (
     i23a63a02c83d28d72ce351404f7169106e8b8114b7d9d0ca4052db2a624e6273 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/usersettings"
     i5b2233e79dc3147871fe57df3812d50c932074cfced41065bb12f77e2edec21e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/auditevents"
     i641f590b75b18bc875786f11f8c01028ef7a86284da618ffc6636c5f70071b7c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/geteffectivepermissions"
+    i7797f67c8b714660406fd3191cfbb22f837ba6075cc7a38889ec3a97de75f7d4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/reports"
     i8d3de0aa309e67af3900939f40971eff6bb1f2ef4f7cece48df22e29e1c1a98e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/externalpartnersettings"
     ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/onpremisesconnections"
     id4ffcadce3c6a0158b09f7c80fb182d7adea4c0b1e976947864d2f4a6310302e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/organizationsettings"
@@ -165,6 +166,7 @@ func (m *VirtualEndpointRequestBuilder) CreatePatchRequestInformationWithRequest
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -276,20 +278,23 @@ func (m *VirtualEndpointRequestBuilder) OrganizationSettings()(*id4ffcadce3c6a01
     return id4ffcadce3c6a0158b09f7c80fb182d7adea4c0b1e976947864d2f4a6310302e.NewOrganizationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property virtualEndpoint in deviceManagement
-func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, requestConfiguration *VirtualEndpointRequestBuilderPatchRequestConfiguration)(error) {
+func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, requestConfiguration *VirtualEndpointRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVirtualEndpointFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable), nil
 }
 // ProvisioningPolicies the provisioningPolicies property
 func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*if4100d044fd5ea8af7d00890548b33d7f96329a5a6d63f806c3f7705cafc3c7b.ProvisioningPoliciesRequestBuilder) {
@@ -305,6 +310,10 @@ func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*i6c
         urlTplParams["cloudPcProvisioningPolicy%2Did"] = id
     }
     return i6c86691f21aa3210591c58f278b27fee3b5fb3a866b020940f913e3f9a20a060.NewCloudPcProvisioningPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Reports the reports property
+func (m *VirtualEndpointRequestBuilder) Reports()(*i7797f67c8b714660406fd3191cfbb22f837ba6075cc7a38889ec3a97de75f7d4.ReportsRequestBuilder) {
+    return i7797f67c8b714660406fd3191cfbb22f837ba6075cc7a38889ec3a97de75f7d4.NewReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ServicePlans the servicePlans property
 func (m *VirtualEndpointRequestBuilder) ServicePlans()(*i037f17d0e70c36a0446de251c289230e77400d9881a7f0256320f00dfe653b5f.ServicePlansRequestBuilder) {

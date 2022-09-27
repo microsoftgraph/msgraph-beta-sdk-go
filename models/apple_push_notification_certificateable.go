@@ -19,7 +19,6 @@ type ApplePushNotificationCertificateable interface {
     GetTopicIdentifier()(*string)
     SetAppleIdentifier(value *string)()
     SetCertificate(value *string)()
-    SetCertificateSerialNumber(value *string)()
     SetCertificateUploadFailureReason(value *string)()
     SetCertificateUploadStatus(value *string)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

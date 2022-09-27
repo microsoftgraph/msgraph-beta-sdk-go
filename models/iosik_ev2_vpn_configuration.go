@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -122,236 +123,29 @@ func (m *IosikEv2VpnConfiguration) GetEnableUseInternalSubnetAttributes()(*bool)
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosikEv2VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosVpnConfiguration.GetFieldDeserializers()
-    res["allowDefaultChildSecurityAssociationParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowDefaultChildSecurityAssociationParameters(val)
-        }
-        return nil
-    }
-    res["allowDefaultSecurityAssociationParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowDefaultSecurityAssociationParameters(val)
-        }
-        return nil
-    }
-    res["alwaysOnConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAlwaysOnConfiguration(val.(AppleVpnAlwaysOnConfigurationable))
-        }
-        return nil
-    }
-    res["childSecurityAssociationParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetChildSecurityAssociationParameters(val.(IosVpnSecurityAssociationParametersable))
-        }
-        return nil
-    }
-    res["clientAuthenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnClientAuthenticationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClientAuthenticationType(val.(*VpnClientAuthenticationType))
-        }
-        return nil
-    }
-    res["deadPeerDetectionRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnDeadPeerDetectionRate)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeadPeerDetectionRate(val.(*VpnDeadPeerDetectionRate))
-        }
-        return nil
-    }
-    res["disableMobilityAndMultihoming"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisableMobilityAndMultihoming(val)
-        }
-        return nil
-    }
-    res["disableRedirect"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisableRedirect(val)
-        }
-        return nil
-    }
-    res["enableAlwaysOnConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableAlwaysOnConfiguration(val)
-        }
-        return nil
-    }
-    res["enableCertificateRevocationCheck"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableCertificateRevocationCheck(val)
-        }
-        return nil
-    }
-    res["enableEAP"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableEAP(val)
-        }
-        return nil
-    }
-    res["enablePerfectForwardSecrecy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnablePerfectForwardSecrecy(val)
-        }
-        return nil
-    }
-    res["enableUseInternalSubnetAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableUseInternalSubnetAttributes(val)
-        }
-        return nil
-    }
-    res["localIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnLocalIdentifier)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLocalIdentifier(val.(*VpnLocalIdentifier))
-        }
-        return nil
-    }
-    res["mtuSizeInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMtuSizeInBytes(val)
-        }
-        return nil
-    }
-    res["remoteIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRemoteIdentifier(val)
-        }
-        return nil
-    }
-    res["securityAssociationParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurityAssociationParameters(val.(IosVpnSecurityAssociationParametersable))
-        }
-        return nil
-    }
-    res["serverCertificateCommonName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetServerCertificateCommonName(val)
-        }
-        return nil
-    }
-    res["serverCertificateIssuerCommonName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetServerCertificateIssuerCommonName(val)
-        }
-        return nil
-    }
-    res["serverCertificateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVpnServerCertificateType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetServerCertificateType(val.(*VpnServerCertificateType))
-        }
-        return nil
-    }
-    res["sharedSecret"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSharedSecret(val)
-        }
-        return nil
-    }
-    res["tlsMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTlsMaximumVersion(val)
-        }
-        return nil
-    }
-    res["tlsMinimumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTlsMinimumVersion(val)
-        }
-        return nil
-    }
+    res["allowDefaultChildSecurityAssociationParameters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowDefaultChildSecurityAssociationParameters)
+    res["allowDefaultSecurityAssociationParameters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowDefaultSecurityAssociationParameters)
+    res["alwaysOnConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue , m.SetAlwaysOnConfiguration)
+    res["childSecurityAssociationParameters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue , m.SetChildSecurityAssociationParameters)
+    res["clientAuthenticationType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnClientAuthenticationType , m.SetClientAuthenticationType)
+    res["deadPeerDetectionRate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnDeadPeerDetectionRate , m.SetDeadPeerDetectionRate)
+    res["disableMobilityAndMultihoming"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDisableMobilityAndMultihoming)
+    res["disableRedirect"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDisableRedirect)
+    res["enableAlwaysOnConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableAlwaysOnConfiguration)
+    res["enableCertificateRevocationCheck"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableCertificateRevocationCheck)
+    res["enableEAP"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableEAP)
+    res["enablePerfectForwardSecrecy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnablePerfectForwardSecrecy)
+    res["enableUseInternalSubnetAttributes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableUseInternalSubnetAttributes)
+    res["localIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnLocalIdentifier , m.SetLocalIdentifier)
+    res["mtuSizeInBytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMtuSizeInBytes)
+    res["remoteIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRemoteIdentifier)
+    res["securityAssociationParameters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue , m.SetSecurityAssociationParameters)
+    res["serverCertificateCommonName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetServerCertificateCommonName)
+    res["serverCertificateIssuerCommonName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetServerCertificateIssuerCommonName)
+    res["serverCertificateType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseVpnServerCertificateType , m.SetServerCertificateType)
+    res["sharedSecret"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSharedSecret)
+    res["tlsMaximumVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTlsMaximumVersion)
+    res["tlsMinimumVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTlsMinimumVersion)
     return res
 }
 // GetLocalIdentifier gets the localIdentifier property value. The type of VPN local identifier

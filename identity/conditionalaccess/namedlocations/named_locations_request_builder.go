@@ -17,7 +17,7 @@ type NamedLocationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// NamedLocationsRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified named locations.
+// NamedLocationsRequestBuilderGetQueryParameters get a list of namedLocation objects.
 type NamedLocationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type NamedLocationsRequestBuilderPostRequestConfiguration struct {
 func NewNamedLocationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NamedLocationsRequestBuilder) {
     m := &NamedLocationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/conditionalAccess/namedLocations{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identity/conditionalAccess/namedLocations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewNamedLocationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *NamedLocationsRequestBuilder) Count()(*i80d410dbb44835ea8405c6bde4c9ef24ab94f0c4ec41b4a4d93ff14fffa03993.CountRequestBuilder) {
     return i80d410dbb44835ea8405c6bde4c9ef24ab94f0c4ec41b4a4d93ff14fffa03993.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified named locations.
+// CreateGetRequestInformation get a list of namedLocation objects.
 func (m *NamedLocationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns a collection of the specified named locations.
+// CreateGetRequestInformationWithRequestConfiguration get a list of namedLocation objects.
 func (m *NamedLocationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NamedLocationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *NamedLocationsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to namedLocations for identity
+// CreatePostRequestInformation create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
 func (m *NamedLocationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to namedLocations for identity
+// CreatePostRequestInformationWithRequestConfiguration create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
 func (m *NamedLocationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *NamedLocationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *NamedLocationsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Returns a collection of the specified named locations.
+// Get get a list of namedLocation objects.
 func (m *NamedLocationsRequestBuilder) Get(ctx context.Context, requestConfiguration *NamedLocationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *NamedLocationsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationCollectionResponseable), nil
 }
-// Post create new navigation property to namedLocations for identity
+// Post create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
 func (m *NamedLocationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *NamedLocationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

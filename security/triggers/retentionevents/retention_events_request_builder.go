@@ -17,7 +17,7 @@ type RetentionEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RetentionEventsRequestBuilderGetQueryParameters get retentionEvents from security
+// RetentionEventsRequestBuilderGetQueryParameters get a list of the retentionEvent objects and their properties.
 type RetentionEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type RetentionEventsRequestBuilderPostRequestConfiguration struct {
 func NewRetentionEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RetentionEventsRequestBuilder) {
     m := &RetentionEventsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/triggers/retentionEvents{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/security/triggers/retentionEvents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewRetentionEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *RetentionEventsRequestBuilder) Count()(*i8216301996e99a84678528cd1e6d6a1f09d1a5738695c6518ee27a4dbd079645.CountRequestBuilder) {
     return i8216301996e99a84678528cd1e6d6a1f09d1a5738695c6518ee27a4dbd079645.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get retentionEvents from security
+// CreateGetRequestInformation get a list of the retentionEvent objects and their properties.
 func (m *RetentionEventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get retentionEvents from security
+// CreateGetRequestInformationWithRequestConfiguration get a list of the retentionEvent objects and their properties.
 func (m *RetentionEventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RetentionEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *RetentionEventsRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to retentionEvents for security
+// CreatePostRequestInformation create a new retentionEvent object.
 func (m *RetentionEventsRequestBuilder) CreatePostRequestInformation(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to retentionEvents for security
+// CreatePostRequestInformationWithRequestConfiguration create a new retentionEvent object.
 func (m *RetentionEventsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, requestConfiguration *RetentionEventsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RetentionEventsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get get retentionEvents from security
+// Get get a list of the retentionEvent objects and their properties.
 func (m *RetentionEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *RetentionEventsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *RetentionEventsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventCollectionResponseable), nil
 }
-// Post create new navigation property to retentionEvents for security
+// Post create a new retentionEvent object.
 func (m *RetentionEventsRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, requestConfiguration *RetentionEventsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

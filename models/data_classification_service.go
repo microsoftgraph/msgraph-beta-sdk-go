@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataClassificationService provides operations to manage the dataClassificationService singleton.
+// DataClassificationService 
 type DataClassificationService struct {
     Entity
     // The classifyFileJobs property
@@ -26,7 +27,7 @@ type DataClassificationService struct {
     // The sensitivityLabels property
     sensitivityLabels []SensitivityLabelable
 }
-// NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
+// NewDataClassificationService instantiates a new DataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),
@@ -66,132 +67,15 @@ func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUplo
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["classifyFileJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]JobResponseBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(JobResponseBaseable)
-            }
-            m.SetClassifyFileJobs(res)
-        }
-        return nil
-    }
-    res["classifyTextJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]JobResponseBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(JobResponseBaseable)
-            }
-            m.SetClassifyTextJobs(res)
-        }
-        return nil
-    }
-    res["evaluateDlpPoliciesJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]JobResponseBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(JobResponseBaseable)
-            }
-            m.SetEvaluateDlpPoliciesJobs(res)
-        }
-        return nil
-    }
-    res["evaluateLabelJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]JobResponseBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(JobResponseBaseable)
-            }
-            m.SetEvaluateLabelJobs(res)
-        }
-        return nil
-    }
-    res["exactMatchDataStores"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateExactMatchDataStoreFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ExactMatchDataStoreable, len(val))
-            for i, v := range val {
-                res[i] = v.(ExactMatchDataStoreable)
-            }
-            m.SetExactMatchDataStores(res)
-        }
-        return nil
-    }
-    res["exactMatchUploadAgents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateExactMatchUploadAgentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ExactMatchUploadAgentable, len(val))
-            for i, v := range val {
-                res[i] = v.(ExactMatchUploadAgentable)
-            }
-            m.SetExactMatchUploadAgents(res)
-        }
-        return nil
-    }
-    res["jobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]JobResponseBaseable, len(val))
-            for i, v := range val {
-                res[i] = v.(JobResponseBaseable)
-            }
-            m.SetJobs(res)
-        }
-        return nil
-    }
-    res["sensitiveTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSensitiveTypeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SensitiveTypeable, len(val))
-            for i, v := range val {
-                res[i] = v.(SensitiveTypeable)
-            }
-            m.SetSensitiveTypes(res)
-        }
-        return nil
-    }
-    res["sensitivityLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SensitivityLabelable, len(val))
-            for i, v := range val {
-                res[i] = v.(SensitivityLabelable)
-            }
-            m.SetSensitivityLabels(res)
-        }
-        return nil
-    }
+    res["classifyFileJobs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue , m.SetClassifyFileJobs)
+    res["classifyTextJobs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue , m.SetClassifyTextJobs)
+    res["evaluateDlpPoliciesJobs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue , m.SetEvaluateDlpPoliciesJobs)
+    res["evaluateLabelJobs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue , m.SetEvaluateLabelJobs)
+    res["exactMatchDataStores"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateExactMatchDataStoreFromDiscriminatorValue , m.SetExactMatchDataStores)
+    res["exactMatchUploadAgents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateExactMatchUploadAgentFromDiscriminatorValue , m.SetExactMatchUploadAgents)
+    res["jobs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue , m.SetJobs)
+    res["sensitiveTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSensitiveTypeFromDiscriminatorValue , m.SetSensitiveTypes)
+    res["sensitivityLabels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue , m.SetSensitivityLabels)
     return res
 }
 // GetJobs gets the jobs property value. The jobs property
@@ -213,90 +97,63 @@ func (m *DataClassificationService) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     if m.GetClassifyFileJobs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClassifyFileJobs()))
-        for i, v := range m.GetClassifyFileJobs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetClassifyFileJobs())
         err = writer.WriteCollectionOfObjectValues("classifyFileJobs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetClassifyTextJobs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClassifyTextJobs()))
-        for i, v := range m.GetClassifyTextJobs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetClassifyTextJobs())
         err = writer.WriteCollectionOfObjectValues("classifyTextJobs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetEvaluateDlpPoliciesJobs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvaluateDlpPoliciesJobs()))
-        for i, v := range m.GetEvaluateDlpPoliciesJobs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEvaluateDlpPoliciesJobs())
         err = writer.WriteCollectionOfObjectValues("evaluateDlpPoliciesJobs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetEvaluateLabelJobs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEvaluateLabelJobs()))
-        for i, v := range m.GetEvaluateLabelJobs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEvaluateLabelJobs())
         err = writer.WriteCollectionOfObjectValues("evaluateLabelJobs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetExactMatchDataStores() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExactMatchDataStores()))
-        for i, v := range m.GetExactMatchDataStores() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetExactMatchDataStores())
         err = writer.WriteCollectionOfObjectValues("exactMatchDataStores", cast)
         if err != nil {
             return err
         }
     }
     if m.GetExactMatchUploadAgents() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExactMatchUploadAgents()))
-        for i, v := range m.GetExactMatchUploadAgents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetExactMatchUploadAgents())
         err = writer.WriteCollectionOfObjectValues("exactMatchUploadAgents", cast)
         if err != nil {
             return err
         }
     }
     if m.GetJobs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetJobs()))
-        for i, v := range m.GetJobs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetJobs())
         err = writer.WriteCollectionOfObjectValues("jobs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSensitiveTypes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensitiveTypes()))
-        for i, v := range m.GetSensitiveTypes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSensitiveTypes())
         err = writer.WriteCollectionOfObjectValues("sensitiveTypes", cast)
         if err != nil {
             return err
         }
     }
     if m.GetSensitivityLabels() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensitivityLabels()))
-        for i, v := range m.GetSensitivityLabels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSensitivityLabels())
         err = writer.WriteCollectionOfObjectValues("sensitivityLabels", cast)
         if err != nil {
             return err

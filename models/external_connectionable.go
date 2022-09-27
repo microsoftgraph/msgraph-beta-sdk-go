@@ -23,5 +23,4 @@ type ExternalConnectionable interface {
     SetName(value *string)()
     SetOperations(value []ConnectionOperationable)()
     SetSchema(value Schemaable)()
-    SetState(value *ConnectionState)()
 }

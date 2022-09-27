@@ -17,7 +17,7 @@ type PasswordMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PasswordMethodsRequestBuilderGetQueryParameters represents the details of the password authentication method registered to a user for authentication.
+// PasswordMethodsRequestBuilderGetQueryParameters retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password.
 type PasswordMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type PasswordMethodsRequestBuilderPostRequestConfiguration struct {
 func NewPasswordMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PasswordMethodsRequestBuilder) {
     m := &PasswordMethodsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/authentication/passwordMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/authentication/passwordMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewPasswordMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *PasswordMethodsRequestBuilder) Count()(*i3fdd8d3c6463c9bfb6200a763d5437b48cb194d3856d40b3923d56bf889d8eb7.CountRequestBuilder) {
     return i3fdd8d3c6463c9bfb6200a763d5437b48cb194d3856d40b3923d56bf889d8eb7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents the details of the password authentication method registered to a user for authentication.
+// CreateGetRequestInformation retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password.
 func (m *PasswordMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the details of the password authentication method registered to a user for authentication.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password.
 func (m *PasswordMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PasswordMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PasswordMethodsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get represents the details of the password authentication method registered to a user for authentication.
+// Get retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password.
 func (m *PasswordMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *PasswordMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

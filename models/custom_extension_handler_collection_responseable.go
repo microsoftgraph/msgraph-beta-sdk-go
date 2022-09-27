@@ -6,10 +6,8 @@ import (
 
 // CustomExtensionHandlerCollectionResponseable 
 type CustomExtensionHandlerCollectionResponseable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOdataNextLink()(*string)
     GetValue()([]CustomExtensionHandlerable)
-    SetOdataNextLink(value *string)()
     SetValue(value []CustomExtensionHandlerable)()
 }

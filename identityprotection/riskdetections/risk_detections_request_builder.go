@@ -17,7 +17,7 @@ type RiskDetectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RiskDetectionsRequestBuilderGetQueryParameters risk detection in Azure AD Identity Protection and the associated information about the detection.
+// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of **riskDetection** objects.
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type RiskDetectionsRequestBuilderPostRequestConfiguration struct {
 func NewRiskDetectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskDetectionsRequestBuilder) {
     m := &RiskDetectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityProtection/riskDetections{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityProtection/riskDetections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *RiskDetectionsRequestBuilder) Count()(*ib369a15539518621174d77b4aa391102f994b50483d88a9c145f42ce0c4017ab.CountRequestBuilder) {
     return ib369a15539518621174d77b4aa391102f994b50483d88a9c145f42ce0c4017ab.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation risk detection in Azure AD Identity Protection and the associated information about the detection.
+// CreateGetRequestInformation retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration risk detection in Azure AD Identity Protection and the associated information about the detection.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get risk detection in Azure AD Identity Protection and the associated information about the detection.
+// Get retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

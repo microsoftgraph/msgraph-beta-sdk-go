@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -32,34 +33,8 @@ func (m *Tasks) GetAlltasks()([]BaseTaskable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Tasks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["alltasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBaseTaskFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BaseTaskable, len(val))
-            for i, v := range val {
-                res[i] = v.(BaseTaskable)
-            }
-            m.SetAlltasks(res)
-        }
-        return nil
-    }
-    res["lists"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateBaseTaskListFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]BaseTaskListable, len(val))
-            for i, v := range val {
-                res[i] = v.(BaseTaskListable)
-            }
-            m.SetLists(res)
-        }
-        return nil
-    }
+    res["alltasks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBaseTaskFromDiscriminatorValue , m.SetAlltasks)
+    res["lists"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBaseTaskListFromDiscriminatorValue , m.SetLists)
     return res
 }
 // GetLists gets the lists property value. The task lists in the users mailbox.
@@ -73,20 +48,14 @@ func (m *Tasks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         return err
     }
     if m.GetAlltasks() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlltasks()))
-        for i, v := range m.GetAlltasks() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAlltasks())
         err = writer.WriteCollectionOfObjectValues("alltasks", cast)
         if err != nil {
             return err
         }
     }
     if m.GetLists() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLists()))
-        for i, v := range m.GetLists() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetLists())
         err = writer.WriteCollectionOfObjectValues("lists", cast)
         if err != nil {
             return err

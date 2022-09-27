@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -38,36 +39,6 @@ func (m *OemWarrantyInformationOnboarding) GetEnabled()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["available"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAvailable(val)
-        }
-        return nil
-    }
-    res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnabled(val)
-        }
-        return nil
-    }
-    res["oemName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOemName(val)
-        }
-        return nil
-    }
     return res
 }
 // GetOemName gets the oemName property value. OEM name. This property is read-only.
@@ -80,35 +51,5 @@ func (m *OemWarrantyInformationOnboarding) Serialize(writer i878a80d2330e89d2689
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteBoolValue("available", m.GetAvailable())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("enabled", m.GetEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("oemName", m.GetOemName())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetAvailable sets the available property value. Specifies whether warranty API is available. This property is read-only.
-func (m *OemWarrantyInformationOnboarding) SetAvailable(value *bool)() {
-    m.available = value
-}
-// SetEnabled sets the enabled property value. Specifies whether warranty query is enabled for given OEM. This property is read-only.
-func (m *OemWarrantyInformationOnboarding) SetEnabled(value *bool)() {
-    m.enabled = value
-}
-// SetOemName sets the oemName property value. OEM name. This property is read-only.
-func (m *OemWarrantyInformationOnboarding) SetOemName(value *string)() {
-    m.oemName = value
 }

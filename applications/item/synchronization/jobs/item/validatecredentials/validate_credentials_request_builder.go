@@ -41,11 +41,11 @@ func NewValidateCredentialsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewValidateCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action validateCredentials
+// CreatePostRequestInformation validate that the credentials are valid in the tenant.
 func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformation(body ValidateCredentialsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action validateCredentials
+// CreatePostRequestInformationWithRequestConfiguration validate that the credentials are valid in the tenant.
 func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateCredentialsPostRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Post invoke action validateCredentials
+// Post validate that the credentials are valid in the tenant.
 func (m *ValidateCredentialsRequestBuilder) Post(ctx context.Context, body ValidateCredentialsPostRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

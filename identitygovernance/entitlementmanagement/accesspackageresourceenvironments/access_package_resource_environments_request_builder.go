@@ -17,7 +17,7 @@ type AccessPackageResourceEnvironmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters a reference to the geolocation environment in which a resource is located.
+// AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters retrieve a list of accessPackageResourceEnvironment objects and their properties.
 type AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type AccessPackageResourceEnvironmentsRequestBuilderPostRequestConfiguration str
 func NewAccessPackageResourceEnvironmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessPackageResourceEnvironmentsRequestBuilder) {
     m := &AccessPackageResourceEnvironmentsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceEnvironments{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceEnvironments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewAccessPackageResourceEnvironmentsRequestBuilder(rawUrl string, requestAd
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) Count()(*ied182edcf62383eee44274e363517ab0eff03ffd96359e912649ecc89ea856cb.CountRequestBuilder) {
     return ied182edcf62383eee44274e363517ab0eff03ffd96359e912649ecc89ea856cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a reference to the geolocation environment in which a resource is located.
+// CreateGetRequestInformation retrieve a list of accessPackageResourceEnvironment objects and their properties.
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a reference to the geolocation environment in which a resource is located.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of accessPackageResourceEnvironment objects and their properties.
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Get a reference to the geolocation environment in which a resource is located.
+// Get retrieve a list of accessPackageResourceEnvironment objects and their properties.
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

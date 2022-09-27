@@ -17,7 +17,7 @@ type SkillsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SkillsRequestBuilderGetQueryParameters represents detailed information about skills associated with a user in various services.
+// SkillsRequestBuilderGetQueryParameters retrieve a list of skillProficiency objects in a user's profile.
 type SkillsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type SkillsRequestBuilderPostRequestConfiguration struct {
 func NewSkillsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SkillsRequestBuilder) {
     m := &SkillsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/profile/skills{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/profile/skills{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewSkillsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *SkillsRequestBuilder) Count()(*ie663667b80b3426e36670bc137afebf0d16c20ab7cd42e8bfd60b996d99dc506.CountRequestBuilder) {
     return ie663667b80b3426e36670bc137afebf0d16c20ab7cd42e8bfd60b996d99dc506.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents detailed information about skills associated with a user in various services.
+// CreateGetRequestInformation retrieve a list of skillProficiency objects in a user's profile.
 func (m *SkillsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents detailed information about skills associated with a user in various services.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of skillProficiency objects in a user's profile.
 func (m *SkillsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SkillsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *SkillsRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to skills for me
+// CreatePostRequestInformation use this API to create a new skillProficiency object in a user's profile.
 func (m *SkillsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to skills for me
+// CreatePostRequestInformationWithRequestConfiguration use this API to create a new skillProficiency object in a user's profile.
 func (m *SkillsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *SkillsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SkillsRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get represents detailed information about skills associated with a user in various services.
+// Get retrieve a list of skillProficiency objects in a user's profile.
 func (m *SkillsRequestBuilder) Get(ctx context.Context, requestConfiguration *SkillsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *SkillsRequestBuilder) Get(ctx context.Context, requestConfiguration *Sk
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyCollectionResponseable), nil
 }
-// Post create new navigation property to skills for me
+// Post use this API to create a new skillProficiency object in a user's profile.
 func (m *SkillsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *SkillsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

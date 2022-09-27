@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -55,100 +56,11 @@ func (m *DeviceManagementReusablePolicySetting) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["referencingConfigurationPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementConfigurationPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationPolicyable)
-            }
-            m.SetReferencingConfigurationPolicies(res)
-        }
-        return nil
-    }
-    res["referencingConfigurationPolicyCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReferencingConfigurationPolicyCount(val)
-        }
-        return nil
-    }
-    res["settingDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSettingDefinitionId(val)
-        }
-        return nil
-    }
-    res["settingInstance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingInstanceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSettingInstance(val.(DeviceManagementConfigurationSettingInstanceable))
-        }
-        return nil
-    }
-    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersion(val)
-        }
-        return nil
-    }
+    res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["referencingConfigurationPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue , m.SetReferencingConfigurationPolicies)
+    res["settingDefinitionId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSettingDefinitionId)
+    res["settingInstance"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceManagementConfigurationSettingInstanceFromDiscriminatorValue , m.SetSettingInstance)
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. date and time when reusable setting was last modified. This property is read-only.
@@ -182,12 +94,6 @@ func (m *DeviceManagementReusablePolicySetting) Serialize(writer i878a80d2330e89
         return err
     }
     {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -199,24 +105,9 @@ func (m *DeviceManagementReusablePolicySetting) Serialize(writer i878a80d2330e89
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetReferencingConfigurationPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReferencingConfigurationPolicies()))
-        for i, v := range m.GetReferencingConfigurationPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetReferencingConfigurationPolicies())
         err = writer.WriteCollectionOfObjectValues("referencingConfigurationPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("referencingConfigurationPolicyCount", m.GetReferencingConfigurationPolicyCount())
         if err != nil {
             return err
         }
@@ -233,17 +124,7 @@ func (m *DeviceManagementReusablePolicySetting) Serialize(writer i878a80d2330e89
             return err
         }
     }
-    {
-        err = writer.WriteInt32Value("version", m.GetVersion())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetCreatedDateTime sets the createdDateTime property value. reusable setting creation date and time. This property is read-only.
-func (m *DeviceManagementReusablePolicySetting) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
 }
 // SetDescription sets the description property value. reusable setting description supplied by user.
 func (m *DeviceManagementReusablePolicySetting) SetDescription(value *string)() {
@@ -253,17 +134,9 @@ func (m *DeviceManagementReusablePolicySetting) SetDescription(value *string)() 
 func (m *DeviceManagementReusablePolicySetting) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. date and time when reusable setting was last modified. This property is read-only.
-func (m *DeviceManagementReusablePolicySetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
-}
 // SetReferencingConfigurationPolicies sets the referencingConfigurationPolicies property value. configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementReusablePolicySetting) SetReferencingConfigurationPolicies(value []DeviceManagementConfigurationPolicyable)() {
     m.referencingConfigurationPolicies = value
-}
-// SetReferencingConfigurationPolicyCount sets the referencingConfigurationPolicyCount property value. count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
-func (m *DeviceManagementReusablePolicySetting) SetReferencingConfigurationPolicyCount(value *int32)() {
-    m.referencingConfigurationPolicyCount = value
 }
 // SetSettingDefinitionId sets the settingDefinitionId property value. setting definition id associated with this reusable setting.
 func (m *DeviceManagementReusablePolicySetting) SetSettingDefinitionId(value *string)() {
@@ -272,8 +145,4 @@ func (m *DeviceManagementReusablePolicySetting) SetSettingDefinitionId(value *st
 // SetSettingInstance sets the settingInstance property value. reusable setting configuration instance
 func (m *DeviceManagementReusablePolicySetting) SetSettingInstance(value DeviceManagementConfigurationSettingInstanceable)() {
     m.settingInstance = value
-}
-// SetVersion sets the version property value. version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
-func (m *DeviceManagementReusablePolicySetting) SetVersion(value *int32)() {
-    m.version = value
 }

@@ -17,7 +17,7 @@ type CustomQuestionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CustomQuestionsRequestBuilderGetQueryParameters all the custom questions of this business. Read-only. Nullable.
+// CustomQuestionsRequestBuilderGetQueryParameters get the bookingCustomQuestion resources associated with a bookingBusiness.
 type CustomQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type CustomQuestionsRequestBuilderPostRequestConfiguration struct {
 func NewCustomQuestionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomQuestionsRequestBuilder) {
     m := &CustomQuestionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customQuestions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customQuestions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewCustomQuestionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *CustomQuestionsRequestBuilder) Count()(*i1f5b68f4036dcd3817ab75e214491f0ae2ac9306e40aefd54c7599c6ef197f34.CountRequestBuilder) {
     return i1f5b68f4036dcd3817ab75e214491f0ae2ac9306e40aefd54c7599c6ef197f34.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation all the custom questions of this business. Read-only. Nullable.
+// CreateGetRequestInformation get the bookingCustomQuestion resources associated with a bookingBusiness.
 func (m *CustomQuestionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration all the custom questions of this business. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get the bookingCustomQuestion resources associated with a bookingBusiness.
 func (m *CustomQuestionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CustomQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CustomQuestionsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get all the custom questions of this business. Read-only. Nullable.
+// Get get the bookingCustomQuestion resources associated with a bookingBusiness.
 func (m *CustomQuestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomQuestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

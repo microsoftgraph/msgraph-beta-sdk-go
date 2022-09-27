@@ -41,11 +41,11 @@ func NewReprovisionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewReprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action reprovision
+// CreatePostRequestInformation reprovision a specific Cloud PC.
 func (m *ReprovisionRequestBuilder) CreatePostRequestInformation(body ReprovisionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action reprovision
+// CreatePostRequestInformationWithRequestConfiguration reprovision a specific Cloud PC.
 func (m *ReprovisionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ReprovisionPostRequestBodyable, requestConfiguration *ReprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ReprovisionRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Post invoke action reprovision
+// Post reprovision a specific Cloud PC.
 func (m *ReprovisionRequestBuilder) Post(ctx context.Context, body ReprovisionPostRequestBodyable, requestConfiguration *ReprovisionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

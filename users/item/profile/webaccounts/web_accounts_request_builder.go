@@ -17,7 +17,7 @@ type WebAccountsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WebAccountsRequestBuilderGetQueryParameters represents web accounts the user has indicated they use or has added to their user profile.
+// WebAccountsRequestBuilderGetQueryParameters retrieve a list of webAccounts objects from the user's profile.
 type WebAccountsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type WebAccountsRequestBuilderPostRequestConfiguration struct {
 func NewWebAccountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WebAccountsRequestBuilder) {
     m := &WebAccountsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/webAccounts{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/profile/webAccounts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewWebAccountsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *WebAccountsRequestBuilder) Count()(*i6a739302591d7ef4907e519a38084a5d58ecf013d501e884991b9f74547f061c.CountRequestBuilder) {
     return i6a739302591d7ef4907e519a38084a5d58ecf013d501e884991b9f74547f061c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation represents web accounts the user has indicated they use or has added to their user profile.
+// CreateGetRequestInformation retrieve a list of webAccounts objects from the user's profile.
 func (m *WebAccountsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents web accounts the user has indicated they use or has added to their user profile.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of webAccounts objects from the user's profile.
 func (m *WebAccountsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WebAccountsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *WebAccountsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to webAccounts for users
+// CreatePostRequestInformation create a new webAccount object in a user's profile.
 func (m *WebAccountsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to webAccounts for users
+// CreatePostRequestInformationWithRequestConfiguration create a new webAccount object in a user's profile.
 func (m *WebAccountsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, requestConfiguration *WebAccountsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WebAccountsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get represents web accounts the user has indicated they use or has added to their user profile.
+// Get retrieve a list of webAccounts objects from the user's profile.
 func (m *WebAccountsRequestBuilder) Get(ctx context.Context, requestConfiguration *WebAccountsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *WebAccountsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountCollectionResponseable), nil
 }
-// Post create new navigation property to webAccounts for users
+// Post create a new webAccount object in a user's profile.
 func (m *WebAccountsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, requestConfiguration *WebAccountsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

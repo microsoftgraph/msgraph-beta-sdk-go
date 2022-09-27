@@ -15,5 +15,4 @@ type RoleScopeTagable interface {
     SetAssignments(value []RoleScopeTagAutoAssignmentable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetIsBuiltIn(value *bool)()
 }

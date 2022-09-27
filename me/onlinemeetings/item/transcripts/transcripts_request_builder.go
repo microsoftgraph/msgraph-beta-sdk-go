@@ -17,7 +17,7 @@ type TranscriptsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TranscriptsRequestBuilderGetQueryParameters the transcripts of an online meeting. Read-only.
+// TranscriptsRequestBuilderGetQueryParameters retrieve the list of callTranscript objects associated with an onlineMeeting.
 type TranscriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type TranscriptsRequestBuilderPostRequestConfiguration struct {
 func NewTranscriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TranscriptsRequestBuilder) {
     m := &TranscriptsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/transcripts{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/transcripts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewTranscriptsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *TranscriptsRequestBuilder) Count()(*i1c6b0a54104474f09a704351603493a27f1cbc65a57f3c5f0a19dbe670613071.CountRequestBuilder) {
     return i1c6b0a54104474f09a704351603493a27f1cbc65a57f3c5f0a19dbe670613071.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the transcripts of an online meeting. Read-only.
+// CreateGetRequestInformation retrieve the list of callTranscript objects associated with an onlineMeeting.
 func (m *TranscriptsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the transcripts of an online meeting. Read-only.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of callTranscript objects associated with an onlineMeeting.
 func (m *TranscriptsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TranscriptsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TranscriptsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get the transcripts of an online meeting. Read-only.
+// Get retrieve the list of callTranscript objects associated with an onlineMeeting.
 func (m *TranscriptsRequestBuilder) Get(ctx context.Context, requestConfiguration *TranscriptsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -19,7 +19,7 @@ type RiskyUsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RiskyUsersRequestBuilderGetQueryParameters users that are flagged as at-risk by Azure AD Identity Protection.
+// RiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a collection of **riskyUser** objects.
 type RiskyUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -62,7 +62,7 @@ func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*i0d24887ad1424b46fdf5a1
 func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersRequestBuilder) {
     m := &RiskyUsersRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityProtection/riskyUsers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityProtection/riskyUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -81,11 +81,11 @@ func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *RiskyUsersRequestBuilder) Count()(*iae05aaaedd9fb6fe6a4b91f7c5862ca13d272f03849d9ea53cf90acf281bb95c.CountRequestBuilder) {
     return iae05aaaedd9fb6fe6a4b91f7c5862ca13d272f03849d9ea53cf90acf281bb95c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
+// CreateGetRequestInformation retrieve the properties and relationships of a collection of **riskyUser** objects.
 func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration users that are flagged as at-risk by Azure AD Identity Protection.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of a collection of **riskyUser** objects.
 func (m *RiskyUsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformationWithRequestConfig
 func (m *RiskyUsersRequestBuilder) Dismiss()(*i6b4cbdd3c802c9249b42efb0eed9d285216ec8b1a67757dcf9ce82340b5e095e.DismissRequestBuilder) {
     return i6b4cbdd3c802c9249b42efb0eed9d285216ec8b1a67757dcf9ce82340b5e095e.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get users that are flagged as at-risk by Azure AD Identity Protection.
+// Get retrieve the properties and relationships of a collection of **riskyUser** objects.
 func (m *RiskyUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type TabsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TabsRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
+// TabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team. 
 type TabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type TabsRequestBuilderPostRequestConfiguration struct {
 func NewTabsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TabsRequestBuilder) {
     m := &TabsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel/tabs{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel/tabs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewTabsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *TabsRequestBuilder) Count()(*ifafd8bc98d12b8416eb7b0a7714187f67e82fba8ddd961697b3d3312bdcce558.CountRequestBuilder) {
     return ifafd8bc98d12b8416eb7b0a7714187f67e82fba8ddd961697b3d3312bdcce558.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of all the tabs in the channel. A navigation property.
+// CreateGetRequestInformation retrieve the list of tabs in the specified channel within a team. 
 func (m *TabsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of all the tabs in the channel. A navigation property.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the list of tabs in the specified channel within a team. 
 func (m *TabsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TabsRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// Get a collection of all the tabs in the channel. A navigation property.
+// Get retrieve the list of tabs in the specified channel within a team. 
 func (m *TabsRequestBuilder) Get(ctx context.Context, requestConfiguration *TabsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

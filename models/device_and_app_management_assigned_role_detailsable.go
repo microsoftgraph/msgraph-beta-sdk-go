@@ -12,6 +12,4 @@ type DeviceAndAppManagementAssignedRoleDetailsable interface {
     GetRoleAssignmentIds()([]string)
     GetRoleDefinitionIds()([]string)
     SetOdataType(value *string)()
-    SetRoleAssignmentIds(value []string)()
-    SetRoleDefinitionIds(value []string)()
 }

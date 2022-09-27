@@ -17,7 +17,7 @@ type MobileDeviceManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters get mobileDeviceManagementPolicies from policies
+// MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters get a list of the mobilityManagementPolicy objects and their properties.
 type MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration struct
 func NewMobileDeviceManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileDeviceManagementPoliciesRequestBuilder) {
     m := &MobileDeviceManagementPoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/mobileDeviceManagementPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/mobileDeviceManagementPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewMobileDeviceManagementPoliciesRequestBuilder(rawUrl string, requestAdapt
 func (m *MobileDeviceManagementPoliciesRequestBuilder) Count()(*i28d9a3afc0aa4fda6ad0c03b50b2bc5d89f5fcb87662d328075727f59f5be6c2.CountRequestBuilder) {
     return i28d9a3afc0aa4fda6ad0c03b50b2bc5d89f5fcb87662d328075727f59f5be6c2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get mobileDeviceManagementPolicies from policies
+// CreateGetRequestInformation get a list of the mobilityManagementPolicy objects and their properties.
 func (m *MobileDeviceManagementPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get mobileDeviceManagementPolicies from policies
+// CreateGetRequestInformationWithRequestConfiguration get a list of the mobilityManagementPolicy objects and their properties.
 func (m *MobileDeviceManagementPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Get get mobileDeviceManagementPolicies from policies
+// Get get a list of the mobilityManagementPolicy objects and their properties.
 func (m *MobileDeviceManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

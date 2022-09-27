@@ -15,7 +15,5 @@ type ResourceOperationable interface {
     GetResourceName()(*string)
     SetActionName(value *string)()
     SetDescription(value *string)()
-    SetEnabledForScopeValidation(value *bool)()
-    SetResource(value *string)()
     SetResourceName(value *string)()
 }

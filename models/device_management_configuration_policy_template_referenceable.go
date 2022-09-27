@@ -14,8 +14,6 @@ type DeviceManagementConfigurationPolicyTemplateReferenceable interface {
     GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily)
     GetTemplateId()(*string)
     SetOdataType(value *string)()
-    SetTemplateDisplayName(value *string)()
-    SetTemplateDisplayVersion(value *string)()
     SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)()
     SetTemplateId(value *string)()
 }

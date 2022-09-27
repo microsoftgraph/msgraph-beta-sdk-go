@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -44,70 +45,12 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetDefaultLocale()(*string) 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
-    res["brandingOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnrollmentNotificationBrandingOptions)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrandingOptions(val.(*EnrollmentNotificationBrandingOptions))
-        }
-        return nil
-    }
-    res["defaultLocale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefaultLocale(val)
-        }
-        return nil
-    }
-    res["notificationMessageTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNotificationMessageTemplateId(val)
-        }
-        return nil
-    }
-    res["notificationTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetNotificationTemplates(res)
-        }
-        return nil
-    }
-    res["platformType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnrollmentRestrictionPlatformType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlatformType(val.(*EnrollmentRestrictionPlatformType))
-        }
-        return nil
-    }
-    res["templateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnrollmentNotificationTemplateType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTemplateType(val.(*EnrollmentNotificationTemplateType))
-        }
-        return nil
-    }
+    res["brandingOptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnrollmentNotificationBrandingOptions , m.SetBrandingOptions)
+    res["defaultLocale"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDefaultLocale)
+    res["notificationMessageTemplateId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetNotificationMessageTemplateId)
+    res["notificationTemplates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetNotificationTemplates)
+    res["platformType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnrollmentRestrictionPlatformType , m.SetPlatformType)
+    res["templateType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnrollmentNotificationTemplateType , m.SetTemplateType)
     return res
 }
 // GetNotificationMessageTemplateId gets the notificationMessageTemplateId property value. Notification Message Template Id

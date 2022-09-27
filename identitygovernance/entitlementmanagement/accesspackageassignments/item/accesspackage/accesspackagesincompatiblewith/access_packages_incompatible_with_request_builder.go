@@ -17,7 +17,7 @@ type AccessPackagesIncompatibleWithRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters the access packages that are incompatible with this package. Read-only.
+// AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
 type AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -49,7 +49,7 @@ type AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration struct 
 func NewAccessPackagesIncompatibleWithRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessPackagesIncompatibleWithRequestBuilder) {
     m := &AccessPackagesIncompatibleWithRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackage/accessPackagesIncompatibleWith{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackage/accessPackagesIncompatibleWith{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -68,11 +68,11 @@ func NewAccessPackagesIncompatibleWithRequestBuilder(rawUrl string, requestAdapt
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Count()(*if0964b618a7bada7f965136034cf5b6009ba6a5b6bf3ade8cdf09f819d7d80d1.CountRequestBuilder) {
     return if0964b618a7bada7f965136034cf5b6009ba6a5b6bf3ade8cdf09f819d7d80d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the access packages that are incompatible with this package. Read-only.
+// CreateGetRequestInformation retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the access packages that are incompatible with this package. Read-only.
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,7 +88,7 @@ func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Get the access packages that are incompatible with this package. Read-only.
+// Get retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

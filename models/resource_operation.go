@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -46,56 +47,9 @@ func (m *ResourceOperation) GetEnabledForScopeValidation()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["actionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetActionName(val)
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["enabledForScopeValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnabledForScopeValidation(val)
-        }
-        return nil
-    }
-    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResource(val)
-        }
-        return nil
-    }
-    res["resourceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceName(val)
-        }
-        return nil
-    }
+    res["actionName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetActionName)
+    res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
+    res["resourceName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetResourceName)
     return res
 }
 // GetResource gets the resource property value. Resource category to which this Operation belongs. This property is read-only.
@@ -125,18 +79,6 @@ func (m *ResourceOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteBoolValue("enabledForScopeValidation", m.GetEnabledForScopeValidation())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("resource", m.GetResource())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("resourceName", m.GetResourceName())
         if err != nil {
             return err
@@ -151,14 +93,6 @@ func (m *ResourceOperation) SetActionName(value *string)() {
 // SetDescription sets the description property value. Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
 func (m *ResourceOperation) SetDescription(value *string)() {
     m.description = value
-}
-// SetEnabledForScopeValidation sets the enabledForScopeValidation property value. Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
-func (m *ResourceOperation) SetEnabledForScopeValidation(value *bool)() {
-    m.enabledForScopeValidation = value
-}
-// SetResource sets the resource property value. Resource category to which this Operation belongs. This property is read-only.
-func (m *ResourceOperation) SetResource(value *string)() {
-    m.resource = value
 }
 // SetResourceName sets the resourceName property value. Name of the Resource this operation is performed on.
 func (m *ResourceOperation) SetResourceName(value *string)() {

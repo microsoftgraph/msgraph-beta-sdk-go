@@ -14,6 +14,5 @@ type DeviceConfigurationAssignmentable interface {
     GetTarget()(DeviceAndAppManagementAssignmentTargetable)
     SetIntent(value *DeviceConfigAssignmentIntent)()
     SetSource(value *DeviceAndAppManagementAssignmentSource)()
-    SetSourceId(value *string)()
     SetTarget(value DeviceAndAppManagementAssignmentTargetable)()
 }

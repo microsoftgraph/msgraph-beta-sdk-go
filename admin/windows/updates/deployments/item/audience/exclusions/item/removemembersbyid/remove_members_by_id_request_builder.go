@@ -41,11 +41,11 @@ func NewRemoveMembersByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action removeMembersById
+// CreatePostRequestInformation remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
 func (m *RemoveMembersByIdRequestBuilder) CreatePostRequestInformation(body RemoveMembersByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action removeMembersById
+// CreatePostRequestInformationWithRequestConfiguration remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
 func (m *RemoveMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveMembersByIdPostRequestBodyable, requestConfiguration *RemoveMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *RemoveMembersByIdRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Post invoke action removeMembersById
+// Post remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
 func (m *RemoveMembersByIdRequestBuilder) Post(ctx context.Context, body RemoveMembersByIdPostRequestBodyable, requestConfiguration *RemoveMembersByIdRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

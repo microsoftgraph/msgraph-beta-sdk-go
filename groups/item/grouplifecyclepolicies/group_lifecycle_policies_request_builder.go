@@ -18,7 +18,7 @@ type GroupLifecyclePoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GroupLifecyclePoliciesRequestBuilderGetQueryParameters the collection of lifecycle policies for this group. Read-only. Nullable.
+// GroupLifecyclePoliciesRequestBuilderGetQueryParameters retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 type GroupLifecyclePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,7 +57,7 @@ type GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration struct {
 func NewGroupLifecyclePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupLifecyclePoliciesRequestBuilder) {
     m := &GroupLifecyclePoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -76,11 +76,11 @@ func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*i52c0fd4afda9ce1c2acfe3243b4d73285db937c44edaf90736e497bd5752d2b4.CountRequestBuilder) {
     return i52c0fd4afda9ce1c2acfe3243b4d73285db937c44edaf90736e497bd5752d2b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of lifecycle policies for this group. Read-only. Nullable.
+// CreateGetRequestInformation retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of lifecycle policies for this group. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get the collection of lifecycle policies for this group. Read-only. Nullable.
+// Get retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 func (m *GroupLifecyclePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

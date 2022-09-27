@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -57,86 +58,14 @@ func (m *BitLockerRecoveryOptions) GetEnableRecoveryInformationSaveToStore()(*bo
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BitLockerRecoveryOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["blockDataRecoveryAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBlockDataRecoveryAgent(val)
-        }
-        return nil
-    }
-    res["enableBitLockerAfterRecoveryInformationToStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableBitLockerAfterRecoveryInformationToStore(val)
-        }
-        return nil
-    }
-    res["enableRecoveryInformationSaveToStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableRecoveryInformationSaveToStore(val)
-        }
-        return nil
-    }
-    res["hideRecoveryOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHideRecoveryOptions(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["recoveryInformationToStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBitLockerRecoveryInformationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecoveryInformationToStore(val.(*BitLockerRecoveryInformationType))
-        }
-        return nil
-    }
-    res["recoveryKeyUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConfigurationUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecoveryKeyUsage(val.(*ConfigurationUsage))
-        }
-        return nil
-    }
-    res["recoveryPasswordUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConfigurationUsage)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecoveryPasswordUsage(val.(*ConfigurationUsage))
-        }
-        return nil
-    }
+    res["blockDataRecoveryAgent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockDataRecoveryAgent)
+    res["enableBitLockerAfterRecoveryInformationToStore"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableBitLockerAfterRecoveryInformationToStore)
+    res["enableRecoveryInformationSaveToStore"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableRecoveryInformationSaveToStore)
+    res["hideRecoveryOptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetHideRecoveryOptions)
+    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["recoveryInformationToStore"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseBitLockerRecoveryInformationType , m.SetRecoveryInformationToStore)
+    res["recoveryKeyUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseConfigurationUsage , m.SetRecoveryKeyUsage)
+    res["recoveryPasswordUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseConfigurationUsage , m.SetRecoveryPasswordUsage)
     return res
 }
 // GetHideRecoveryOptions gets the hideRecoveryOptions property value. Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.

@@ -27,9 +27,7 @@ type DeviceManagementConfigurationPolicyTemplateable interface {
     SetDisplayVersion(value *string)()
     SetLifecycleState(value *DeviceManagementTemplateLifecycleState)()
     SetPlatforms(value *DeviceManagementConfigurationPlatforms)()
-    SetSettingTemplateCount(value *int32)()
     SetSettingTemplates(value []DeviceManagementConfigurationSettingTemplateable)()
     SetTechnologies(value *DeviceManagementConfigurationTechnologies)()
     SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)()
-    SetVersion(value *int32)()
 }

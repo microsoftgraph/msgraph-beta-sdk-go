@@ -38,5 +38,4 @@ type ExternalConnectionable interface {
     SetQuota(value ConnectionQuotaable)()
     SetSchema(value Schemaable)()
     SetSearchSettings(value SearchSettingsable)()
-    SetState(value *ConnectionState)()
 }

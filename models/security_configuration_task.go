@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -50,84 +51,13 @@ func (m *SecurityConfigurationTask) GetEndpointSecurityPolicyProfile()(*Endpoint
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceAppManagementTask.GetFieldDeserializers()
-    res["applicablePlatform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndpointSecurityConfigurationApplicablePlatform)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicablePlatform(val.(*EndpointSecurityConfigurationApplicablePlatform))
-        }
-        return nil
-    }
-    res["endpointSecurityPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndpointSecurityConfigurationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEndpointSecurityPolicy(val.(*EndpointSecurityConfigurationType))
-        }
-        return nil
-    }
-    res["endpointSecurityPolicyProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndpointSecurityConfigurationProfileType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEndpointSecurityPolicyProfile(val.(*EndpointSecurityConfigurationProfileType))
-        }
-        return nil
-    }
-    res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInsights(val)
-        }
-        return nil
-    }
-    res["intendedSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]KeyValuePairable, len(val))
-            for i, v := range val {
-                res[i] = v.(KeyValuePairable)
-            }
-            m.SetIntendedSettings(res)
-        }
-        return nil
-    }
-    res["managedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedDeviceCount(val)
-        }
-        return nil
-    }
-    res["managedDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateVulnerableManagedDeviceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]VulnerableManagedDeviceable, len(val))
-            for i, v := range val {
-                res[i] = v.(VulnerableManagedDeviceable)
-            }
-            m.SetManagedDevices(res)
-        }
-        return nil
-    }
+    res["applicablePlatform"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEndpointSecurityConfigurationApplicablePlatform , m.SetApplicablePlatform)
+    res["endpointSecurityPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEndpointSecurityConfigurationType , m.SetEndpointSecurityPolicy)
+    res["endpointSecurityPolicyProfile"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEndpointSecurityConfigurationProfileType , m.SetEndpointSecurityPolicyProfile)
+    res["insights"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetInsights)
+    res["intendedSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue , m.SetIntendedSettings)
+    res["managedDeviceCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetManagedDeviceCount)
+    res["managedDevices"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateVulnerableManagedDeviceFromDiscriminatorValue , m.SetManagedDevices)
     return res
 }
 // GetInsights gets the insights property value. Information about the mitigation.
@@ -180,10 +110,7 @@ func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetIntendedSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIntendedSettings()))
-        for i, v := range m.GetIntendedSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetIntendedSettings())
         err = writer.WriteCollectionOfObjectValues("intendedSettings", cast)
         if err != nil {
             return err
@@ -196,10 +123,7 @@ func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetManagedDevices() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDevices()))
-        for i, v := range m.GetManagedDevices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedDevices())
         err = writer.WriteCollectionOfObjectValues("managedDevices", cast)
         if err != nil {
             return err

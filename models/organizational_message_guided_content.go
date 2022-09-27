@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -34,60 +35,11 @@ func CreateOrganizationalMessageGuidedContentFromDiscriminatorValue(parseNode i8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageGuidedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["logo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateOrganizationalMessageLogoGuideFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLogo(val.(OrganizationalMessageLogoGuideable))
-        }
-        return nil
-    }
-    res["placementDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOrganizationalMessagePlacementDetailFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OrganizationalMessagePlacementDetailable, len(val))
-            for i, v := range val {
-                res[i] = v.(OrganizationalMessagePlacementDetailable)
-            }
-            m.SetPlacementDetails(res)
-        }
-        return nil
-    }
-    res["scenario"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOrganizationalMessageScenario)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScenario(val.(*OrganizationalMessageScenario))
-        }
-        return nil
-    }
-    res["surface"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOrganizationalMessageSurface)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSurface(val.(*OrganizationalMessageSurface))
-        }
-        return nil
-    }
-    res["theme"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOrganizationalMessageTheme)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTheme(val.(*OrganizationalMessageTheme))
-        }
-        return nil
-    }
+    res["logo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateOrganizationalMessageLogoGuideFromDiscriminatorValue , m.SetLogo)
+    res["placementDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOrganizationalMessagePlacementDetailFromDiscriminatorValue , m.SetPlacementDetails)
+    res["scenario"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOrganizationalMessageScenario , m.SetScenario)
+    res["surface"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOrganizationalMessageSurface , m.SetSurface)
+    res["theme"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOrganizationalMessageTheme , m.SetTheme)
     return res
 }
 // GetLogo gets the logo property value. Example of the logo that will be displayed to customers and its size requirements
@@ -123,10 +75,7 @@ func (m *OrganizationalMessageGuidedContent) Serialize(writer i878a80d2330e89d26
         }
     }
     if m.GetPlacementDetails() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlacementDetails()))
-        for i, v := range m.GetPlacementDetails() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPlacementDetails())
         err = writer.WriteCollectionOfObjectValues("placementDetails", cast)
         if err != nil {
             return err

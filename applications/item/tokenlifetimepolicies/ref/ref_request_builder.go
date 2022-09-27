@@ -16,7 +16,7 @@ type RefRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RefRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this application. Supports $expand.
+// RefRequestBuilderGetQueryParameters list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 type RefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,7 +51,7 @@ type RefRequestBuilderPostRequestConfiguration struct {
 func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RefRequestBuilder) {
     m := &RefRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/$ref{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby}";
+    m.urlTemplate = "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -66,11 +66,11 @@ func NewRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     urlParams["request-raw-url"] = rawUrl
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the tokenLifetimePolicies assigned to this application. Supports $expand.
+// CreateGetRequestInformation list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 func (m *RefRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the tokenLifetimePolicies assigned to this application. Supports $expand.
+// CreateGetRequestInformationWithRequestConfiguration list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 func (m *RefRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -86,11 +86,11 @@ func (m *RefRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property ref to tokenLifetimePolicies for applications
+// CreatePostRequestInformation assign a tokenLifetimePolicy to an application or servicePrincipal.
 func (m *RefRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property ref to tokenLifetimePolicies for applications
+// CreatePostRequestInformationWithRequestConfiguration assign a tokenLifetimePolicy to an application or servicePrincipal.
 func (m *RefRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *RefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,7 +103,7 @@ func (m *RefRequestBuilder) CreatePostRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Get the tokenLifetimePolicies assigned to this application. Supports $expand.
+// Get list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
 func (m *RefRequestBuilder) Get(ctx context.Context, requestConfiguration *RefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *RefRequestBuilder) Get(ctx context.Context, requestConfiguration *RefRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to tokenLifetimePolicies for applications
+// Post assign a tokenLifetimePolicy to an application or servicePrincipal.
 func (m *RefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *RefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

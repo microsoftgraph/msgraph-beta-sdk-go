@@ -17,7 +17,7 @@ type WorkflowsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// WorkflowsRequestBuilderGetQueryParameters the workflows in the lifecycle workflows instance.
+// WorkflowsRequestBuilderGetQueryParameters get the workflow resources from the workflows navigation property.
 type WorkflowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type WorkflowsRequestBuilderPostRequestConfiguration struct {
 func NewWorkflowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WorkflowsRequestBuilder) {
     m := &WorkflowsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewWorkflowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *WorkflowsRequestBuilder) Count()(*i232c536cbd7acac29d00b8d6ec5a3015194eba1fdeb0bf1040a1cd327b940a44.CountRequestBuilder) {
     return i232c536cbd7acac29d00b8d6ec5a3015194eba1fdeb0bf1040a1cd327b940a44.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the workflows in the lifecycle workflows instance.
+// CreateGetRequestInformation get the workflow resources from the workflows navigation property.
 func (m *WorkflowsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the workflows in the lifecycle workflows instance.
+// CreateGetRequestInformationWithRequestConfiguration get the workflow resources from the workflows navigation property.
 func (m *WorkflowsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *WorkflowsRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to workflows for identityGovernance
+// CreatePostRequestInformation create a new workflow object.
 func (m *WorkflowsRequestBuilder) CreatePostRequestInformation(body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to workflows for identityGovernance
+// CreatePostRequestInformationWithRequestConfiguration create a new workflow object.
 func (m *WorkflowsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, requestConfiguration *WorkflowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WorkflowsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Get the workflows in the lifecycle workflows instance.
+// Get get the workflow resources from the workflows navigation property.
 func (m *WorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkflowsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *WorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowCollectionResponseable), nil
 }
-// Post create new navigation property to workflows for identityGovernance
+// Post create a new workflow object.
 func (m *WorkflowsRequestBuilder) Post(ctx context.Context, body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, requestConfiguration *WorkflowsRequestBuilderPostRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

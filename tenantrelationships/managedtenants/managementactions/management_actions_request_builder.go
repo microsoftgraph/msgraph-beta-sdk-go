@@ -17,7 +17,7 @@ type ManagementActionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ManagementActionsRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
+// ManagementActionsRequestBuilderGetQueryParameters get a list of the managementAction objects and their properties.
 type ManagementActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ManagementActionsRequestBuilderPostRequestConfiguration struct {
 func NewManagementActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagementActionsRequestBuilder) {
     m := &ManagementActionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/managementActions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewManagementActionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ManagementActionsRequestBuilder) Count()(*i245e7cd63ecb8fffeb09e9e65ea6711c3c5e11924380654dbc97766faee9b324.CountRequestBuilder) {
     return i245e7cd63ecb8fffeb09e9e65ea6711c3c5e11924380654dbc97766faee9b324.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of baseline management actions across managed tenants.
+// CreateGetRequestInformation get a list of the managementAction objects and their properties.
 func (m *ManagementActionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of baseline management actions across managed tenants.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the managementAction objects and their properties.
 func (m *ManagementActionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagementActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ManagementActionsRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get the collection of baseline management actions across managed tenants.
+// Get get a list of the managementAction objects and their properties.
 func (m *ManagementActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagementActionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

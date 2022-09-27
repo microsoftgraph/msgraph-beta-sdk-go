@@ -42,11 +42,11 @@ func NewEvaluateDynamicMembershipRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateDynamicMembershipRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action evaluateDynamicMembership
+// CreatePostRequestInformation evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
 func (m *EvaluateDynamicMembershipRequestBuilder) CreatePostRequestInformation(body EvaluateDynamicMembershipPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action evaluateDynamicMembership
+// CreatePostRequestInformationWithRequestConfiguration evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
 func (m *EvaluateDynamicMembershipRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateDynamicMembershipPostRequestBodyable, requestConfiguration *EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *EvaluateDynamicMembershipRequestBuilder) CreatePostRequestInformationWi
     }
     return requestInfo, nil
 }
-// Post invoke action evaluateDynamicMembership
+// Post evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
 func (m *EvaluateDynamicMembershipRequestBuilder) Post(ctx context.Context, body EvaluateDynamicMembershipPostRequestBodyable, requestConfiguration *EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluateDynamicMembershipResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

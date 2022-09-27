@@ -23,7 +23,7 @@ type ContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ContactMergeSuggestionsRequestBuilderGetQueryParameters the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+// ContactMergeSuggestionsRequestBuilderGetQueryParameters read the properties and relationships of a contactMergeSuggestions object.
 type ContactMergeSuggestionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *ContactMergeSuggestionsRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+// CreateGetRequestInformation read the properties and relationships of a contactMergeSuggestions object.
 func (m *ContactMergeSuggestionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+// CreateGetRequestInformationWithRequestConfiguration read the properties and relationships of a contactMergeSuggestions object.
 func (m *ContactMergeSuggestionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,16 +101,17 @@ func (m *ContactMergeSuggestionsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property contactMergeSuggestions in users
+// CreatePatchRequestInformation update the properties of a contactMergeSuggestions object.
 func (m *ContactMergeSuggestionsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property contactMergeSuggestions in users
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a contactMergeSuggestions object.
 func (m *ContactMergeSuggestionsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -134,7 +135,7 @@ func (m *ContactMergeSuggestionsRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+// Get read the properties and relationships of a contactMergeSuggestions object.
 func (m *ContactMergeSuggestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -153,19 +154,22 @@ func (m *ContactMergeSuggestionsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable), nil
 }
-// Patch update the navigation property contactMergeSuggestions in users
-func (m *ContactMergeSuggestionsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(error) {
+// Patch update the properties of a contactMergeSuggestions object.
+func (m *ContactMergeSuggestionsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateContactMergeSuggestionsFromDiscriminatorValue, errorMapping)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable), nil
 }

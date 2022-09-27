@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -64,56 +65,10 @@ func (m *Windows81VpnConfiguration) GetEnableSplitTunneling()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsVpnConfiguration.GetFieldDeserializers()
-    res["applyOnlyToWindows81"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplyOnlyToWindows81(val)
-        }
-        return nil
-    }
-    res["connectionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsVpnConnectionType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConnectionType(val.(*WindowsVpnConnectionType))
-        }
-        return nil
-    }
-    res["enableSplitTunneling"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableSplitTunneling(val)
-        }
-        return nil
-    }
-    res["loginGroupOrDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLoginGroupOrDomain(val)
-        }
-        return nil
-    }
-    res["proxyServer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWindows81VpnProxyServerFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxyServer(val.(Windows81VpnProxyServerable))
-        }
-        return nil
-    }
+    res["connectionType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsVpnConnectionType , m.SetConnectionType)
+    res["enableSplitTunneling"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableSplitTunneling)
+    res["loginGroupOrDomain"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLoginGroupOrDomain)
+    res["proxyServer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindows81VpnProxyServerFromDiscriminatorValue , m.SetProxyServer)
     return res
 }
 // GetLoginGroupOrDomain gets the loginGroupOrDomain property value. Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
@@ -129,12 +84,6 @@ func (m *Windows81VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     err := m.WindowsVpnConfiguration.Serialize(writer)
     if err != nil {
         return err
-    }
-    {
-        err = writer.WriteBoolValue("applyOnlyToWindows81", m.GetApplyOnlyToWindows81())
-        if err != nil {
-            return err
-        }
     }
     if m.GetConnectionType() != nil {
         cast := (*m.GetConnectionType()).String()
@@ -162,10 +111,6 @@ func (m *Windows81VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     return nil
-}
-// SetApplyOnlyToWindows81 sets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
-func (m *Windows81VpnConfiguration) SetApplyOnlyToWindows81(value *bool)() {
-    m.applyOnlyToWindows81 = value
 }
 // SetConnectionType sets the connectionType property value. Windows VPN connection type.
 func (m *Windows81VpnConfiguration) SetConnectionType(value *WindowsVpnConnectionType)() {

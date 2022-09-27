@@ -41,11 +41,11 @@ func NewActivateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action activate
+// CreatePostRequestInformation activate (run on-demand) a workflow object.
 func (m *ActivateRequestBuilder) CreatePostRequestInformation(body ActivatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action activate
+// CreatePostRequestInformationWithRequestConfiguration activate (run on-demand) a workflow object.
 func (m *ActivateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivatePostRequestBodyable, requestConfiguration *ActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,7 +58,7 @@ func (m *ActivateRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Post invoke action activate
+// Post activate (run on-demand) a workflow object.
 func (m *ActivateRequestBuilder) Post(ctx context.Context, body ActivatePostRequestBodyable, requestConfiguration *ActivateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -17,7 +17,7 @@ type FileThreatsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FileThreatsRequestBuilderGetQueryParameters get fileThreats from threatSubmission
+// FileThreatsRequestBuilderGetQueryParameters get a list of the fileThreatSubmission objects and their properties.
 type FileThreatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type FileThreatsRequestBuilderPostRequestConfiguration struct {
 func NewFileThreatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileThreatsRequestBuilder) {
     m := &FileThreatsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/threatSubmission/fileThreats{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/threatSubmission/fileThreats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewFileThreatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *FileThreatsRequestBuilder) Count()(*i7462ffd91859b2acf6a64a779472a243b4e4acd7a1be8e143c411eb30fdbe8c9.CountRequestBuilder) {
     return i7462ffd91859b2acf6a64a779472a243b4e4acd7a1be8e143c411eb30fdbe8c9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get fileThreats from threatSubmission
+// CreateGetRequestInformation get a list of the fileThreatSubmission objects and their properties.
 func (m *FileThreatsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get fileThreats from threatSubmission
+// CreateGetRequestInformationWithRequestConfiguration get a list of the fileThreatSubmission objects and their properties.
 func (m *FileThreatsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FileThreatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *FileThreatsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get get fileThreats from threatSubmission
+// Get get a list of the fileThreatSubmission objects and their properties.
 func (m *FileThreatsRequestBuilder) Get(ctx context.Context, requestConfiguration *FileThreatsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FileThreatSubmissionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

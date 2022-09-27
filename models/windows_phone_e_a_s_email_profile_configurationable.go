@@ -19,7 +19,6 @@ type WindowsPhoneEASEmailProfileConfigurationable interface {
     GetSyncContacts()(*bool)
     GetSyncTasks()(*bool)
     SetAccountName(value *string)()
-    SetApplyOnlyToWindowsPhone81(value *bool)()
     SetDurationOfEmailToSync(value *EmailSyncDuration)()
     SetEmailAddressSource(value *UserEmailSource)()
     SetEmailSyncSchedule(value *EmailSyncSchedule)()

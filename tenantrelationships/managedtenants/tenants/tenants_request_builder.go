@@ -17,7 +17,7 @@ type TenantsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TenantsRequestBuilderGetQueryParameters the collection of tenants associated with the managing entity.
+// TenantsRequestBuilderGetQueryParameters get a list of the tenant objects and their properties.
 type TenantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type TenantsRequestBuilderPostRequestConfiguration struct {
 func NewTenantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantsRequestBuilder) {
     m := &TenantsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewTenantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *TenantsRequestBuilder) Count()(*ic257ca4ca9662c8889aa36a5874281ea4aed9de017f9275c6a5c9ce0d202e4d7.CountRequestBuilder) {
     return ic257ca4ca9662c8889aa36a5874281ea4aed9de017f9275c6a5c9ce0d202e4d7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of tenants associated with the managing entity.
+// CreateGetRequestInformation get a list of the tenant objects and their properties.
 func (m *TenantsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of tenants associated with the managing entity.
+// CreateGetRequestInformationWithRequestConfiguration get a list of the tenant objects and their properties.
 func (m *TenantsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TenantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TenantsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get the collection of tenants associated with the managing entity.
+// Get get a list of the tenant objects and their properties.
 func (m *TenantsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

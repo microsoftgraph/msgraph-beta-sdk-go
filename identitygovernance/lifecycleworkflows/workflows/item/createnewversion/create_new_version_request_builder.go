@@ -42,11 +42,11 @@ func NewCreateNewVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewCreateNewVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action createNewVersion
+// CreatePostRequestInformation create a new version of the workflow object.
 func (m *CreateNewVersionRequestBuilder) CreatePostRequestInformation(body CreateNewVersionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createNewVersion
+// CreatePostRequestInformationWithRequestConfiguration create a new version of the workflow object.
 func (m *CreateNewVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateNewVersionPostRequestBodyable, requestConfiguration *CreateNewVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *CreateNewVersionRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Post invoke action createNewVersion
+// Post create a new version of the workflow object.
 func (m *CreateNewVersionRequestBuilder) Post(ctx context.Context, body CreateNewVersionPostRequestBodyable, requestConfiguration *CreateNewVersionRequestBuilderPostRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

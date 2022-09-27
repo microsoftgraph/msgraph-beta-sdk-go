@@ -17,7 +17,7 @@ type ActivityBasedTimeoutPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ActivityBasedTimeoutPoliciesRequestBuilderGetQueryParameters the policy that controls the idle time out for web sessions for applications.
+// ActivityBasedTimeoutPoliciesRequestBuilderGetQueryParameters get a list of activityBasedTimeoutPolicy objects.
 type ActivityBasedTimeoutPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -56,7 +56,7 @@ type ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration struct {
 func NewActivityBasedTimeoutPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ActivityBasedTimeoutPoliciesRequestBuilder) {
     m := &ActivityBasedTimeoutPoliciesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/activityBasedTimeoutPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/policies/activityBasedTimeoutPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -75,11 +75,11 @@ func NewActivityBasedTimeoutPoliciesRequestBuilder(rawUrl string, requestAdapter
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Count()(*icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.CountRequestBuilder) {
     return icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the policy that controls the idle time out for web sessions for applications.
+// CreateGetRequestInformation get a list of activityBasedTimeoutPolicy objects.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy that controls the idle time out for web sessions for applications.
+// CreateGetRequestInformationWithRequestConfiguration get a list of activityBasedTimeoutPolicy objects.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,11 +95,11 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to activityBasedTimeoutPolicies for policies
+// CreatePostRequestInformation create a new activityBasedTimeoutPolicy object.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to activityBasedTimeoutPolicies for policies
+// CreatePostRequestInformationWithRequestConfiguration create a new activityBasedTimeoutPolicy object.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Get the policy that controls the idle time out for web sessions for applications.
+// Get get a list of activityBasedTimeoutPolicy objects.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -132,7 +132,7 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyCollectionResponseable), nil
 }
-// Post create new navigation property to activityBasedTimeoutPolicies for policies
+// Post create a new activityBasedTimeoutPolicy object.
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

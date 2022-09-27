@@ -42,11 +42,11 @@ func NewUploadPkcs12RequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewUploadPkcs12RequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action uploadPkcs12
+// CreatePostRequestInformation upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
 func (m *UploadPkcs12RequestBuilder) CreatePostRequestInformation(body UploadPkcs12PostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action uploadPkcs12
+// CreatePostRequestInformationWithRequestConfiguration upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
 func (m *UploadPkcs12RequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadPkcs12PostRequestBodyable, requestConfiguration *UploadPkcs12RequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -60,7 +60,7 @@ func (m *UploadPkcs12RequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Post invoke action uploadPkcs12
+// Post upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
 func (m *UploadPkcs12RequestBuilder) Post(ctx context.Context, body UploadPkcs12PostRequestBodyable, requestConfiguration *UploadPkcs12RequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
