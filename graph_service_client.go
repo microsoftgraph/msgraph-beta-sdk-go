@@ -8,13 +8,13 @@ import (
 )
 
 type GraphServiceClient struct {
-	*GraphBaseServiceClient
+	GraphBaseServiceClient
 }
 
 func NewGraphServiceClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
 	client := NewBaseGraphServiceClient(adapter)
 	return &GraphServiceClient{
-		client,
+		*client,
 	}
 }
 
