@@ -12,7 +12,7 @@ type GraphServiceClient struct {
 }
 
 func NewGraphServiceClient(adapter abstractions.RequestAdapter) *GraphServiceClient {
-	client := NewBaseGraphServiceClient(adapter)
+	client := NewGraphBaseServiceClient(adapter)
 	return &GraphServiceClient{
 		*client,
 	}
