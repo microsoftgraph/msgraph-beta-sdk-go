@@ -119,7 +119,7 @@ import (
     "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-result, err := client.Users().Get(nil)
+result, err := client.Users().Get(context.Background(), nil)
 if err != nil {
     fmt.Printf("Error getting users: ")
     printOdataError(err error)
