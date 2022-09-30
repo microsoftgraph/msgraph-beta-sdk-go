@@ -6,7 +6,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.1.3
 	github.com/microsoft/kiota-abstractions-go v0.11.0
 	github.com/microsoft/kiota-authentication-azure-go v0.4.1
-	github.com/microsoft/kiota-serialization-json-go v0.7.1
+	github.com/microsoft/kiota-serialization-json-go v0.7.2
 	github.com/microsoft/kiota-serialization-text-go v0.6.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.29.0
 	github.com/stretchr/testify v1.8.0
