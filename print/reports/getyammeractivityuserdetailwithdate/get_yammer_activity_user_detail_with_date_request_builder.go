@@ -46,11 +46,7 @@ func NewGetYammerActivityUserDetailWithDateRequestBuilder(rawUrl string, request
     return NewGetYammerActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getYammerActivityUserDetail
-func (m *GetYammerActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getYammerActivityUserDetail
-func (m *GetYammerActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetYammerActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetYammerActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetYammerActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -63,7 +59,7 @@ func (m *GetYammerActivityUserDetailWithDateRequestBuilder) CreateGetRequestInfo
 }
 // Get invoke function getYammerActivityUserDetail
 func (m *GetYammerActivityUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

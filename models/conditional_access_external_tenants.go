@@ -9,7 +9,7 @@ import (
 type ConditionalAccessExternalTenants struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The membershipKind property
+    // Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
     membershipKind *ConditionalAccessExternalTenantsMembershipKind
     // The OdataType property
     odataType *string
@@ -58,7 +58,7 @@ func (m *ConditionalAccessExternalTenants) GetFieldDeserializers()(map[string]fu
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
-// GetMembershipKind gets the membershipKind property value. The membershipKind property
+// GetMembershipKind gets the membershipKind property value. Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
 func (m *ConditionalAccessExternalTenants) GetMembershipKind()(*ConditionalAccessExternalTenantsMembershipKind) {
     return m.membershipKind
 }
@@ -93,7 +93,7 @@ func (m *ConditionalAccessExternalTenants) Serialize(writer i878a80d2330e89d2689
 func (m *ConditionalAccessExternalTenants) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetMembershipKind sets the membershipKind property value. The membershipKind property
+// SetMembershipKind sets the membershipKind property value. Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
 func (m *ConditionalAccessExternalTenants) SetMembershipKind(value *ConditionalAccessExternalTenantsMembershipKind)() {
     m.membershipKind = value
 }

@@ -66,11 +66,7 @@ func NewAndroidForWorkAppConfigurationSchemaItemRequestBuilder(rawUrl string, re
     return NewAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property androidForWorkAppConfigurationSchemas for deviceManagement
-func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property androidForWorkAppConfigurationSchemas for deviceManagement
-func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateDeleteReq
     return requestInfo, nil
 }
 // CreateGetRequestInformation android for Work app configuration schema entities.
-func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration android for Work app configuration schema entities.
-func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreateGetReques
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property androidForWorkAppConfigurationSchemas in deviceManagement
-func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property androidForWorkAppConfigurationSchemas in deviceManagement
-func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) CreatePatchRequ
 }
 // Delete delete navigation property androidForWorkAppConfigurationSchemas for deviceManagement
 func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Delete(ctx cont
 }
 // Get android for Work app configuration schema entities.
 func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Get(ctx context
 }
 // Patch update the navigation property androidForWorkAppConfigurationSchemas in deviceManagement
 func (m *AndroidForWorkAppConfigurationSchemaItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

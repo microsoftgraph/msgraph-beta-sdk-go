@@ -65,11 +65,7 @@ func (m *UserConfigurationsRequestBuilder) Count()(*i7699ef7d76343195f0c39a7eb2c
     return i7699ef7d76343195f0c39a7eb2c9462e08c0ec3e145bc133c1fccbeaf7fd1f25.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get userConfigurations from me
-func (m *UserConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get userConfigurations from me
-func (m *UserConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserConfigurationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *UserConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -86,7 +82,7 @@ func (m *UserConfigurationsRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get get userConfigurations from me
 func (m *UserConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

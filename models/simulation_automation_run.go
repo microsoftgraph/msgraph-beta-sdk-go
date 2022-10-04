@@ -15,7 +15,7 @@ type SimulationAutomationRun struct {
     simulationId *string
     // Date and time when the run starts in an attack simulation automation.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
+    // Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
     status *SimulationAutomationRunStatus
 }
 // NewSimulationAutomationRun instantiates a new simulationAutomationRun and sets the default values.
@@ -52,7 +52,7 @@ func (m *SimulationAutomationRun) GetSimulationId()(*string) {
 func (m *SimulationAutomationRun) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetStatus gets the status property value. Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
+// GetStatus gets the status property value. Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
 func (m *SimulationAutomationRun) GetStatus()(*SimulationAutomationRunStatus) {
     return m.status
 }
@@ -101,7 +101,7 @@ func (m *SimulationAutomationRun) SetSimulationId(value *string)() {
 func (m *SimulationAutomationRun) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetStatus sets the status property value. Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
+// SetStatus sets the status property value. Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
 func (m *SimulationAutomationRun) SetStatus(value *SimulationAutomationRunStatus)() {
     m.status = value
 }

@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Simulation provides operations to manage the collection of accessReview entities.
+// Simulation provides operations to manage the collection of activityStatistics entities.
 type Simulation struct {
     Entity
     // The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
@@ -25,7 +25,7 @@ type Simulation struct {
     description *string
     // Display name of the attack simulation and training campaign. Supports $filter and $orderby.
     displayName *string
-    // Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+    // Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
     isAutomated *bool
     // Identity of the user who most recently modified the attack simulation and training campaign.
     lastModifiedBy EmailIdentityable
@@ -105,7 +105,7 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     res["status"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSimulationStatus , m.SetStatus)
     return res
 }
-// GetIsAutomated gets the isAutomated property value. Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+// GetIsAutomated gets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) GetIsAutomated()(*bool) {
     return m.isAutomated
 }
@@ -267,7 +267,7 @@ func (m *Simulation) SetDescription(value *string)() {
 func (m *Simulation) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetIsAutomated sets the isAutomated property value. Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+// SetIsAutomated sets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) SetIsAutomated(value *bool)() {
     m.isAutomated = value
 }

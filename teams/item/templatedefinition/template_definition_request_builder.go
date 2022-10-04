@@ -52,11 +52,7 @@ func NewTemplateDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewTemplateDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get templateDefinition from teams
-func (m *TemplateDefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get templateDefinition from teams
-func (m *TemplateDefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TemplateDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TemplateDefinitionRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TemplateDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TemplateDefinitionRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get get templateDefinition from teams
 func (m *TemplateDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplateDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

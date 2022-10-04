@@ -6,15 +6,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LearningContent provides operations to manage the collection of activityStatistics entities.
+// LearningContent provides operations to manage the collection of accessReviewDecision entities.
 type LearningContent struct {
     Entity
     // Keywords, topics, and other tags associated with the learning content. Optional.
     additionalTags []string
     // The content web URL for the learning content. Required.
     contentWebUrl *string
-    // The author, creator, or contributor of the learning content. Optional.
-    contributor *string
+    // The contributors property
+    contributors []string
     // The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description or summary for the learning content. Optional.
@@ -67,9 +67,9 @@ func (m *LearningContent) GetAdditionalTags()([]string) {
 func (m *LearningContent) GetContentWebUrl()(*string) {
     return m.contentWebUrl
 }
-// GetContributor gets the contributor property value. The author, creator, or contributor of the learning content. Optional.
-func (m *LearningContent) GetContributor()(*string) {
-    return m.contributor
+// GetContributors gets the contributors property value. The contributors property
+func (m *LearningContent) GetContributors()([]string) {
+    return m.contributors
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 func (m *LearningContent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -92,7 +92,7 @@ func (m *LearningContent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     res := m.Entity.GetFieldDeserializers()
     res["additionalTags"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAdditionalTags)
     res["contentWebUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetContentWebUrl)
-    res["contributor"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetContributor)
+    res["contributors"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetContributors)
     res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
     res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
     res["duration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetISODurationValue(m.SetDuration)
@@ -172,8 +172,8 @@ func (m *LearningContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("contributor", m.GetContributor())
+    if m.GetContributors() != nil {
+        err = writer.WriteCollectionOfStringValues("contributors", m.GetContributors())
         if err != nil {
             return err
         }
@@ -278,9 +278,9 @@ func (m *LearningContent) SetAdditionalTags(value []string)() {
 func (m *LearningContent) SetContentWebUrl(value *string)() {
     m.contentWebUrl = value
 }
-// SetContributor sets the contributor property value. The author, creator, or contributor of the learning content. Optional.
-func (m *LearningContent) SetContributor(value *string)() {
-    m.contributor = value
+// SetContributors sets the contributors property value. The contributors property
+func (m *LearningContent) SetContributors(value []string)() {
+    m.contributors = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 func (m *LearningContent) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

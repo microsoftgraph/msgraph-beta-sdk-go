@@ -69,11 +69,7 @@ func (m *SalesCreditMemoLinesRequestBuilder) Count()(*i37ffb3e4e725e9a3d8882927d
     return i37ffb3e4e725e9a3d8882927d640b0cb0b1e19e2df6504dcbbfb5be1be337a6e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get salesCreditMemoLines from financials
-func (m *SalesCreditMemoLinesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get salesCreditMemoLines from financials
-func (m *SalesCreditMemoLinesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SalesCreditMemoLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SalesCreditMemoLinesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SalesCreditMemoLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SalesCreditMemoLinesRequestBuilder) CreateGetRequestInformationWithRequ
 }
 // Get get salesCreditMemoLines from financials
 func (m *SalesCreditMemoLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *SalesCreditMemoLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

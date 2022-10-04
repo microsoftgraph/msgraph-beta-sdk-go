@@ -5,16 +5,16 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelHealthThreshold entity that represents the health thresholds of a health metric.
+// MicrosoftTunnelHealthThreshold entity that represents the health thresholds of a health metric
 type MicrosoftTunnelHealthThreshold struct {
     Entity
-    // The default threshold for being healthy
+    // The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.
     defaultHealthyThreshold *int64
-    // The default threshold for being unhealthy
+    // The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.
     defaultUnhealthyThreshold *int64
-    // The threshold for being healthy
+    // The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.
     healthyThreshold *int64
-    // The threshold for being unhealthy
+    // The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
     unhealthyThreshold *int64
 }
 // NewMicrosoftTunnelHealthThreshold instantiates a new microsoftTunnelHealthThreshold and sets the default values.
@@ -30,11 +30,11 @@ func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
 func CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelHealthThreshold(), nil
 }
-// GetDefaultHealthyThreshold gets the defaultHealthyThreshold property value. The default threshold for being healthy
+// GetDefaultHealthyThreshold gets the defaultHealthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultHealthyThreshold()(*int64) {
     return m.defaultHealthyThreshold
 }
-// GetDefaultUnhealthyThreshold gets the defaultUnhealthyThreshold property value. The default threshold for being unhealthy
+// GetDefaultUnhealthyThreshold gets the defaultUnhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) {
     return m.defaultUnhealthyThreshold
 }
@@ -47,11 +47,11 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
     res["unhealthyThreshold"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetUnhealthyThreshold)
     return res
 }
-// GetHealthyThreshold gets the healthyThreshold property value. The threshold for being healthy
+// GetHealthyThreshold gets the healthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
     return m.healthyThreshold
 }
-// GetUnhealthyThreshold gets the unhealthyThreshold property value. The threshold for being unhealthy
+// GetUnhealthyThreshold gets the unhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
     return m.unhealthyThreshold
 }
@@ -87,19 +87,19 @@ func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetDefaultHealthyThreshold sets the defaultHealthyThreshold property value. The default threshold for being healthy
+// SetDefaultHealthyThreshold sets the defaultHealthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultHealthyThreshold(value *int64)() {
     m.defaultHealthyThreshold = value
 }
-// SetDefaultUnhealthyThreshold sets the defaultUnhealthyThreshold property value. The default threshold for being unhealthy
+// SetDefaultUnhealthyThreshold sets the defaultUnhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultUnhealthyThreshold(value *int64)() {
     m.defaultUnhealthyThreshold = value
 }
-// SetHealthyThreshold sets the healthyThreshold property value. The threshold for being healthy
+// SetHealthyThreshold sets the healthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) SetHealthyThreshold(value *int64)() {
     m.healthyThreshold = value
 }
-// SetUnhealthyThreshold sets the unhealthyThreshold property value. The threshold for being unhealthy
+// SetUnhealthyThreshold sets the unhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
 func (m *MicrosoftTunnelHealthThreshold) SetUnhealthyThreshold(value *int64)() {
     m.unhealthyThreshold = value
 }

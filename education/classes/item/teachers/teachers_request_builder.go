@@ -70,11 +70,7 @@ func (m *TeachersRequestBuilder) Count()(*i3bfc3573df07ff30291cdb2dc838daf277edc
     return i3bfc3573df07ff30291cdb2dc838daf277edcd978141d13dc5d70e18259eb96e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
-func (m *TeachersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
-func (m *TeachersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TeachersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TeachersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TeachersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *TeachersRequestBuilder) CreateGetRequestInformationWithRequestConfigura
 }
 // Get retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
 func (m *TeachersRequestBuilder) Get(ctx context.Context, requestConfiguration *TeachersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

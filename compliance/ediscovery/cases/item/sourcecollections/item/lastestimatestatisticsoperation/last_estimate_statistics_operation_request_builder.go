@@ -52,11 +52,7 @@ func NewLastEstimateStatisticsOperationRequestBuilder(rawUrl string, requestAdap
     return NewLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get the last estimateStatisticsOperation object associated with a source collection. 
-func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the last estimateStatisticsOperation object associated with a source collection. 
-func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformat
 }
 // Get get the last estimateStatisticsOperation object associated with a source collection. 
 func (m *LastEstimateStatisticsOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.EstimateStatisticsOperationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -61,11 +61,7 @@ func NewFilterOperatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function filterOperators
-func (m *FilterOperatorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function filterOperators
-func (m *FilterOperatorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FilterOperatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *FilterOperatorsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *FilterOperatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,7 +78,7 @@ func (m *FilterOperatorsRequestBuilder) CreateGetRequestInformationWithRequestCo
 }
 // Get invoke function filterOperators
 func (m *FilterOperatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *FilterOperatorsRequestBuilderGetRequestConfiguration)(FilterOperatorsResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

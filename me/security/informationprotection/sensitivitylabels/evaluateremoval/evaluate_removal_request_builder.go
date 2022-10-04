@@ -42,17 +42,13 @@ func NewEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(body EvaluateRemovalPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateRemovalPostRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(ctx context.Context, body EvaluateRemovalPostRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestC
 }
 // Post invoke action evaluateRemoval
 func (m *EvaluateRemovalRequestBuilder) Post(ctx context.Context, body EvaluateRemovalPostRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(EvaluateRemovalResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

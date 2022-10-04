@@ -42,11 +42,7 @@ func NewUnblockManagedAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewUnblockManagedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation unblocks the managed app user from app check-in.
-func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration unblocks the managed app user from app check-in.
-func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformationWithReque
 }
 // Post unblocks the managed app user from app check-in.
 func (m *UnblockManagedAppsRequestBuilder) Post(ctx context.Context, requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

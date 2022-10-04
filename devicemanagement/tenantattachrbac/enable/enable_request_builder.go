@@ -42,16 +42,12 @@ func NewEnableRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewEnableRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action enable
-func (m *EnableRequestBuilder) CreatePostRequestInformation(body EnablePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action enable
-func (m *EnableRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnablePostRequestBodyable, requestConfiguration *EnableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EnableRequestBuilder) CreatePostRequestInformation(ctx context.Context, body EnablePostRequestBodyable, requestConfiguration *EnableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *EnableRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post invoke action enable
 func (m *EnableRequestBuilder) Post(ctx context.Context, body EnablePostRequestBodyable, requestConfiguration *EnableRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

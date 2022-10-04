@@ -45,11 +45,7 @@ func NewScopedForResourceWithResourceRequestBuilder(rawUrl string, requestAdapte
     return NewScopedForResourceWithResourceRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function scopedForResource
-func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function scopedForResource
-func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -63,7 +59,7 @@ func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformatio
 }
 // Get invoke function scopedForResource
 func (m *ScopedForResourceWithResourceRequestBuilder) Get(ctx context.Context, requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(ScopedForResourceWithResourceResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

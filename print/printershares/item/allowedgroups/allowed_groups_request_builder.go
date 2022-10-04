@@ -70,11 +70,7 @@ func (m *AllowedGroupsRequestBuilder) Count()(*ice63a0896e7300bba382f59d6fae674e
     return ice63a0896e7300bba382f59d6fae674e4e16292694ac6eaae9015035b7dad9ed.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConf
 }
 // Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *AllowedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *AllowedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

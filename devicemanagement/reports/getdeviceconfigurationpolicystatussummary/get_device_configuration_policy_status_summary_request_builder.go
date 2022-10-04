@@ -42,16 +42,12 @@ func NewGetDeviceConfigurationPolicyStatusSummaryRequestBuilder(rawUrl string, r
     return NewGetDeviceConfigurationPolicyStatusSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getDeviceConfigurationPolicyStatusSummary
-func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequestInformation(body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action getDeviceConfigurationPolicyStatusSummary
-func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequ
 }
 // Post invoke action getDeviceConfigurationPolicyStatusSummary
 func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) Post(ctx context.Context, body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

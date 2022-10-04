@@ -42,16 +42,12 @@ func NewValidateCredentialsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewValidateCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action validateCredentials
-func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformation(body ValidateCredentialsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action validateCredentials
-func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateCredentialsPostRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ValidateCredentialsPostRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformationWithRequ
 }
 // Post invoke action validateCredentials
 func (m *ValidateCredentialsRequestBuilder) Post(ctx context.Context, body ValidateCredentialsPostRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

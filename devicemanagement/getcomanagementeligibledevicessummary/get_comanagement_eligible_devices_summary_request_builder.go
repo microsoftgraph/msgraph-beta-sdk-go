@@ -43,11 +43,7 @@ func NewGetComanagementEligibleDevicesSummaryRequestBuilder(rawUrl string, reque
     return NewGetComanagementEligibleDevicesSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function getComanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getComanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetComanagementEligibleDevicesSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetComanagementEligibleDevicesSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -61,7 +57,7 @@ func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestIn
 }
 // Get invoke function getComanagementEligibleDevicesSummary
 func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *GetComanagementEligibleDevicesSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagementEligibleDevicesSummaryable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

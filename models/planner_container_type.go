@@ -2,17 +2,18 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type PlannerContainerType int
 
 const (
     GROUP_PLANNERCONTAINERTYPE PlannerContainerType = iota
     UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
     ROSTER_PLANNERCONTAINERTYPE
+    PROJECT_PLANNERCONTAINERTYPE
 )
 
 func (i PlannerContainerType) String() string {
-    return []string{"group", "unknownFutureValue", "roster"}[i]
+    return []string{"group", "unknownFutureValue", "roster", "project"}[i]
 }
 func ParsePlannerContainerType(v string) (interface{}, error) {
     result := GROUP_PLANNERCONTAINERTYPE
@@ -23,6 +24,8 @@ func ParsePlannerContainerType(v string) (interface{}, error) {
             result = UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
         case "roster":
             result = ROSTER_PLANNERCONTAINERTYPE
+        case "project":
+            result = PROJECT_PLANNERCONTAINERTYPE
         default:
             return 0, errors.New("Unknown PlannerContainerType value: " + v)
     }

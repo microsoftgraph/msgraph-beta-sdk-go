@@ -13,7 +13,7 @@ type RecommendedAction struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // Potential improvement in security score of the tenant from the recommended action.
+    // Potential improvement in the tenant security score from the recommended action.
     potentialScoreImpact *float64
     // Title of the recommended action.
     title *string
@@ -52,7 +52,7 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(i878a80d2330
 func (m *RecommendedAction) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
+// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in the tenant security score from the recommended action.
 func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
     return m.potentialScoreImpact
 }
@@ -106,7 +106,7 @@ func (m *RecommendedAction) SetAdditionalData(value map[string]interface{})() {
 func (m *RecommendedAction) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
+// SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in the tenant security score from the recommended action.
 func (m *RecommendedAction) SetPotentialScoreImpact(value *float64)() {
     m.potentialScoreImpact = value
 }

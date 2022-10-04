@@ -43,17 +43,13 @@ func NewCreateNewVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewCreateNewVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation create a new version of the workflow object.
-func (m *CreateNewVersionRequestBuilder) CreatePostRequestInformation(body CreateNewVersionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create a new version of the workflow object.
-func (m *CreateNewVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateNewVersionPostRequestBodyable, requestConfiguration *CreateNewVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateNewVersionRequestBuilder) CreatePostRequestInformation(ctx context.Context, body CreateNewVersionPostRequestBodyable, requestConfiguration *CreateNewVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *CreateNewVersionRequestBuilder) CreatePostRequestInformationWithRequest
 }
 // Post create a new version of the workflow object.
 func (m *CreateNewVersionRequestBuilder) Post(ctx context.Context, body CreateNewVersionPostRequestBodyable, requestConfiguration *CreateNewVersionRequestBuilderPostRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

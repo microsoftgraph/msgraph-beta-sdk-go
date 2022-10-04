@@ -52,11 +52,7 @@ func NewParentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewParentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation returns the parent tag of the specified tag.
-func (m *ParentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration returns the parent tag of the specified tag.
-func (m *ParentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ParentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ParentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ParentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ParentRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
 }
 // Get returns the parent tag of the specified tag.
 func (m *ParentRequestBuilder) Get(ctx context.Context, requestConfiguration *ParentRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

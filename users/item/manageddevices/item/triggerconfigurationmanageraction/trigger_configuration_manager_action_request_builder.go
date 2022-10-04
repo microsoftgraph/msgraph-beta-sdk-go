@@ -42,16 +42,12 @@ func NewTriggerConfigurationManagerActionRequestBuilder(rawUrl string, requestAd
     return NewTriggerConfigurationManagerActionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformation(body TriggerConfigurationManagerActionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TriggerConfigurationManagerActionPostRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformation(ctx context.Context, body TriggerConfigurationManagerActionPostRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInfor
 }
 // Post trigger action on ConfigurationManager client
 func (m *TriggerConfigurationManagerActionRequestBuilder) Post(ctx context.Context, body TriggerConfigurationManagerActionPostRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

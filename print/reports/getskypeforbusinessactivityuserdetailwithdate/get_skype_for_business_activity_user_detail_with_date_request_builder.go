@@ -46,11 +46,7 @@ func NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder(rawUrl strin
     return NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getSkypeForBusinessActivityUserDetail
-func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSkypeForBusinessActivityUserDetail
-func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -63,7 +59,7 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetR
 }
 // Get invoke function getSkypeForBusinessActivityUserDetail
 func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

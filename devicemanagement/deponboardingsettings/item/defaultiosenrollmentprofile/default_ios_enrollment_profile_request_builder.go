@@ -52,11 +52,7 @@ func NewDefaultIosEnrollmentProfileRequestBuilder(rawUrl string, requestAdapter 
     return NewDefaultIosEnrollmentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation default iOS Enrollment Profile
-func (m *DefaultIosEnrollmentProfileRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration default iOS Enrollment Profile
-func (m *DefaultIosEnrollmentProfileRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DefaultIosEnrollmentProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DefaultIosEnrollmentProfileRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DefaultIosEnrollmentProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *DefaultIosEnrollmentProfileRequestBuilder) CreateGetRequestInformationW
 }
 // Get default iOS Enrollment Profile
 func (m *DefaultIosEnrollmentProfileRequestBuilder) Get(ctx context.Context, requestConfiguration *DefaultIosEnrollmentProfileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepIOSEnrollmentProfileable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

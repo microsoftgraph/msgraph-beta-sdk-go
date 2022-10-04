@@ -60,11 +60,7 @@ func NewGetStorageAccountsWithSubscriptionIdRequestBuilder(rawUrl string, reques
     return NewGetStorageAccountsWithSubscriptionIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getStorageAccounts
-func (m *GetStorageAccountsWithSubscriptionIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getStorageAccounts
-func (m *GetStorageAccountsWithSubscriptionIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetStorageAccountsWithSubscriptionIdRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -81,7 +77,7 @@ func (m *GetStorageAccountsWithSubscriptionIdRequestBuilder) CreateGetRequestInf
 }
 // Get invoke function getStorageAccounts
 func (m *GetStorageAccountsWithSubscriptionIdRequestBuilder) Get(ctx context.Context, requestConfiguration *GetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration)(GetStorageAccountsWithSubscriptionIdResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

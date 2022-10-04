@@ -9,7 +9,7 @@ import (
 type AttackSimulationRepeatOffender struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // User in an attack simulation and training campaign.
+    // The user in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
     // The OdataType property
     odataType *string
@@ -33,7 +33,7 @@ func CreateAttackSimulationRepeatOffenderFromDiscriminatorValue(parseNode i878a8
 func (m *AttackSimulationRepeatOffender) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAttackSimulationUser gets the attackSimulationUser property value. User in an attack simulation and training campaign.
+// GetAttackSimulationUser gets the attackSimulationUser property value. The user in an attack simulation and training campaign.
 func (m *AttackSimulationRepeatOffender) GetAttackSimulationUser()(AttackSimulationUserable) {
     return m.attackSimulationUser
 }
@@ -85,7 +85,7 @@ func (m *AttackSimulationRepeatOffender) Serialize(writer i878a80d2330e89d268963
 func (m *AttackSimulationRepeatOffender) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAttackSimulationUser sets the attackSimulationUser property value. User in an attack simulation and training campaign.
+// SetAttackSimulationUser sets the attackSimulationUser property value. The user in an attack simulation and training campaign.
 func (m *AttackSimulationRepeatOffender) SetAttackSimulationUser(value AttackSimulationUserable)() {
     m.attackSimulationUser = value
 }

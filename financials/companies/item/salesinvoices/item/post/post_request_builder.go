@@ -42,11 +42,7 @@ func NewPostRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewPostRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action post
-func (m *PostRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action post
-func (m *PostRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *PostRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PostRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *PostRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *PostRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
 }
 // Post invoke action post
 func (m *PostRequestBuilder) Post(ctx context.Context, requestConfiguration *PostRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

@@ -52,11 +52,7 @@ func NewAddToReviewSetOperationRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewAddToReviewSetOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get the last addToReviewSetOperation object associated with a source collection. 
-func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the last addToReviewSetOperation object associated with a source collection. 
-func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AddToReviewSetOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AddToReviewSetOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformationWithR
 }
 // Get get the last addToReviewSetOperation object associated with a source collection. 
 func (m *AddToReviewSetOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *AddToReviewSetOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.AddToReviewSetOperationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

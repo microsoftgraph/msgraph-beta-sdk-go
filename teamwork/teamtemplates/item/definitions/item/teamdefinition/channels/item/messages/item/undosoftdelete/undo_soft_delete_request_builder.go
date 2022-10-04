@@ -42,11 +42,7 @@ func NewUndoSoftDeleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewUndoSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation undo soft deletion of a single message or a message reply in a channel or a chat.
-func (m *UndoSoftDeleteRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration undo soft deletion of a single message or a message reply in a channel or a chat.
-func (m *UndoSoftDeleteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UndoSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UndoSoftDeleteRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UndoSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *UndoSoftDeleteRequestBuilder) CreatePostRequestInformationWithRequestCo
 }
 // Post undo soft deletion of a single message or a message reply in a channel or a chat.
 func (m *UndoSoftDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *UndoSoftDeleteRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

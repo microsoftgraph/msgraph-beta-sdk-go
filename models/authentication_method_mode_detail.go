@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodModeDetail provides operations to manage the collection of activityStatistics entities.
+// AuthenticationMethodModeDetail 
 type AuthenticationMethodModeDetail struct {
     Entity
     // The authenticationMethod property
@@ -13,7 +13,7 @@ type AuthenticationMethodModeDetail struct {
     // The displayName property
     displayName *string
 }
-// NewAuthenticationMethodModeDetail instantiates a new authenticationMethodModeDetail and sets the default values.
+// NewAuthenticationMethodModeDetail instantiates a new AuthenticationMethodModeDetail and sets the default values.
 func NewAuthenticationMethodModeDetail()(*AuthenticationMethodModeDetail) {
     m := &AuthenticationMethodModeDetail{
         Entity: *NewEntity(),

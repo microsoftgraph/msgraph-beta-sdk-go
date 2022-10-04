@@ -50,11 +50,7 @@ func NewUserConfigurationItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewUserConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get userConfigurations from users
-func (m *UserConfigurationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get userConfigurations from users
-func (m *UserConfigurationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserConfigurationItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *UserConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -71,7 +67,7 @@ func (m *UserConfigurationItemRequestBuilder) CreateGetRequestInformationWithReq
 }
 // Get get userConfigurations from users
 func (m *UserConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

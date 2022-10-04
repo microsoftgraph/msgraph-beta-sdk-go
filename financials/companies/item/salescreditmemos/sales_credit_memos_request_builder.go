@@ -69,11 +69,7 @@ func (m *SalesCreditMemosRequestBuilder) Count()(*ia900f94ddce36c893bb2a2923ec96
     return ia900f94ddce36c893bb2a2923ec96eb28e638b88cde3ed83bb1d30821a9dffe9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get salesCreditMemos from financials
-func (m *SalesCreditMemosRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get salesCreditMemos from financials
-func (m *SalesCreditMemosRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SalesCreditMemosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SalesCreditMemosRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SalesCreditMemosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SalesCreditMemosRequestBuilder) CreateGetRequestInformationWithRequestC
 }
 // Get get salesCreditMemos from financials
 func (m *SalesCreditMemosRequestBuilder) Get(ctx context.Context, requestConfiguration *SalesCreditMemosRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -69,11 +69,7 @@ func (m *JoinedTeamsRequestBuilder) Count()(*ie2427fbf30e2be206b8b45f2d84b6f2375
     return ie2427fbf30e2be206b8b45f2d84b6f2375c83691d1e91b2144f664aecf08187a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the teams in Microsoft Teams that the user is a direct member of.
-func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the teams in Microsoft Teams that the user is a direct member of.
-func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get get the teams in Microsoft Teams that the user is a direct member of.
 func (m *JoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

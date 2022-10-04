@@ -60,11 +60,7 @@ func NewGetScopesForUserWithUseridRequestBuilder(rawUrl string, requestAdapter i
     return NewGetScopesForUserWithUseridRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getScopesForUser
-func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getScopesForUser
-func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetScopesForUserWithUseridRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetScopesForUserWithUseridRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -81,7 +77,7 @@ func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformationWi
 }
 // Get invoke function getScopesForUser
 func (m *GetScopesForUserWithUseridRequestBuilder) Get(ctx context.Context, requestConfiguration *GetScopesForUserWithUseridRequestBuilderGetRequestConfiguration)(GetScopesForUserWithUseridResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

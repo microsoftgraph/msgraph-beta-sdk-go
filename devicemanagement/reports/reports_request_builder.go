@@ -53,6 +53,7 @@ import (
     icef6de0280daff5ea2bb1854119e785ff95cb81abf14b3546d97c564e7d27123 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getwindowsqualityupdatealertsperpolicyperdevicereport"
     id1df61af1e3874f797c91e9607c99dfd3cb6f0dbf128a90ab44536b912adf005 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpoliciesreportfordevice"
     id7b1135fd80c87263a81483b65064413c7251dd0137f48118d1471f835eefab4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getfailedmobileappsreport"
+    idb8bea4a603e0e6d6c5b6a880a8fa55f58151f4ad0fc9465122a375eec8aa927 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getmobileapplicationmanagementappregistrationsummaryreport"
     idc692bbd177fe7be2a1d1da6b8436f4433611cc7abff49f069c1a2e0e027e466 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getunhealthyfirewallsummaryreport"
     idf207024cf64a316ff9c7fa94616461d390fe5977d0687432c3309d78ba029ac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getpolicynoncompliancesummaryreport"
     ie6deaed0072be9659d87a74fe95df383a715951d0aea4be5ba203ca890b3c041 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getactivemalwaresummaryreport"
@@ -141,11 +142,7 @@ func NewReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property reports for deviceManagement
-func (m *ReportsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property reports for deviceManagement
-func (m *ReportsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReportsRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -157,11 +154,7 @@ func (m *ReportsRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     return requestInfo, nil
 }
 // CreateGetRequestInformation reports singleton
-func (m *ReportsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration reports singleton
-func (m *ReportsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReportsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -177,17 +170,13 @@ func (m *ReportsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property reports in deviceManagement
-func (m *ReportsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property reports in deviceManagement
-func (m *ReportsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReportsRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -196,7 +185,7 @@ func (m *ReportsRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
 }
 // Delete delete navigation property reports for deviceManagement
 func (m *ReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ReportsRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -227,7 +216,7 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*if607fcbf4c23ed3b14db
 }
 // Get reports singleton
 func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -392,6 +381,10 @@ func (m *ReportsRequestBuilder) GetHistoricalReport()(*ib6f9fa86536428e22220c67d
 func (m *ReportsRequestBuilder) GetMalwareSummaryReport()(*i08ed1bcbc2935e740bb1a75a82536d462055f7eb6c3b9f8c54f292796af881e9.GetMalwareSummaryReportRequestBuilder) {
     return i08ed1bcbc2935e740bb1a75a82536d462055f7eb6c3b9f8c54f292796af881e9.NewGetMalwareSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// GetMobileApplicationManagementAppRegistrationSummaryReport the getMobileApplicationManagementAppRegistrationSummaryReport property
+func (m *ReportsRequestBuilder) GetMobileApplicationManagementAppRegistrationSummaryReport()(*idb8bea4a603e0e6d6c5b6a880a8fa55f58151f4ad0fc9465122a375eec8aa927.GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder) {
+    return idb8bea4a603e0e6d6c5b6a880a8fa55f58151f4ad0fc9465122a375eec8aa927.NewGetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetNoncompliantDevicesAndSettingsReport the getNoncompliantDevicesAndSettingsReport property
 func (m *ReportsRequestBuilder) GetNoncompliantDevicesAndSettingsReport()(*ifd91eed2e9e34bace676422bed143e114cf0500c85fd495dbb81c9d6c7393570.GetNoncompliantDevicesAndSettingsReportRequestBuilder) {
     return ifd91eed2e9e34bace676422bed143e114cf0500c85fd495dbb81c9d6c7393570.NewGetNoncompliantDevicesAndSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -470,7 +463,7 @@ func (m *ReportsRequestBuilder) GetZebraFotaDeploymentReport()(*i2fd8397e3f98434
 }
 // Patch update the navigation property reports in deviceManagement
 func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

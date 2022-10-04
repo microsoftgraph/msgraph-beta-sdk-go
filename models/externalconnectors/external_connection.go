@@ -6,12 +6,12 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalConnection provides operations to manage the collection of activityStatistics entities.
+// ExternalConnection provides operations to manage the collection of accessReview entities.
 type ExternalConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Collects configurable settings related to activities involving connector content.
     activitySettings ActivitySettingsable
-    // The complianceSettings property
+    // The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.
     complianceSettings ComplianceSettingsable
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
     configuration Configurationable
@@ -19,7 +19,7 @@ type ExternalConnection struct {
     connectorId *string
     // Description of the connection displayed in the Microsoft 365 admin center. Optional.
     description *string
-    // The enabledContentExperiences property
+    // The list of content experiences the connection will participate in. Possible values are search and compliance.
     enabledContentExperiences *ContentExperienceType
     // The groups property
     groups []ExternalGroupable
@@ -57,7 +57,7 @@ func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *ExternalConnection) GetActivitySettings()(ActivitySettingsable) {
     return m.activitySettings
 }
-// GetComplianceSettings gets the complianceSettings property value. The complianceSettings property
+// GetComplianceSettings gets the complianceSettings property value. The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.
 func (m *ExternalConnection) GetComplianceSettings()(ComplianceSettingsable) {
     return m.complianceSettings
 }
@@ -73,7 +73,7 @@ func (m *ExternalConnection) GetConnectorId()(*string) {
 func (m *ExternalConnection) GetDescription()(*string) {
     return m.description
 }
-// GetEnabledContentExperiences gets the enabledContentExperiences property value. The enabledContentExperiences property
+// GetEnabledContentExperiences gets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search and compliance.
 func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceType) {
     return m.enabledContentExperiences
 }
@@ -233,7 +233,7 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *ExternalConnection) SetActivitySettings(value ActivitySettingsable)() {
     m.activitySettings = value
 }
-// SetComplianceSettings sets the complianceSettings property value. The complianceSettings property
+// SetComplianceSettings sets the complianceSettings property value. The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.
 func (m *ExternalConnection) SetComplianceSettings(value ComplianceSettingsable)() {
     m.complianceSettings = value
 }
@@ -249,7 +249,7 @@ func (m *ExternalConnection) SetConnectorId(value *string)() {
 func (m *ExternalConnection) SetDescription(value *string)() {
     m.description = value
 }
-// SetEnabledContentExperiences sets the enabledContentExperiences property value. The enabledContentExperiences property
+// SetEnabledContentExperiences sets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search and compliance.
 func (m *ExternalConnection) SetEnabledContentExperiences(value *ContentExperienceType)() {
     m.enabledContentExperiences = value
 }

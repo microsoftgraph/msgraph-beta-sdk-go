@@ -15,7 +15,7 @@ type AttackSimulationUser struct {
     email *string
     // The OdataType property
     odataType *string
-    // This is the id property value of the user resource that represents the user in the Azure AD tenant.
+    // This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
     userId *string
 }
 // NewAttackSimulationUser instantiates a new attackSimulationUser and sets the default values.
@@ -56,7 +56,7 @@ func (m *AttackSimulationUser) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *AttackSimulationUser) GetOdataType()(*string) {
     return m.odataType
 }
-// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
+// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
 func (m *AttackSimulationUser) GetUserId()(*string) {
     return m.userId
 }
@@ -110,7 +110,7 @@ func (m *AttackSimulationUser) SetEmail(value *string)() {
 func (m *AttackSimulationUser) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetUserId sets the userId property value. This is the id property value of the user resource that represents the user in the Azure AD tenant.
+// SetUserId sets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
 func (m *AttackSimulationUser) SetUserId(value *string)() {
     m.userId = value
 }

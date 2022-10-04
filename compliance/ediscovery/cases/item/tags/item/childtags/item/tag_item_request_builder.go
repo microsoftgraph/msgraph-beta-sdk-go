@@ -52,11 +52,7 @@ func NewTagItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation returns the tags that are a child of a tag.
-func (m *TagItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration returns the tags that are a child of a tag.
-func (m *TagItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TagItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TagItemRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
 }
 // Get returns the tags that are a child of a tag.
 func (m *TagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TagItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

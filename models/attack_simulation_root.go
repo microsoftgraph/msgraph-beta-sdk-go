@@ -8,7 +8,7 @@ import (
 // AttackSimulationRoot 
 type AttackSimulationRoot struct {
     Entity
-    // Represents simulation automations created to run on a tenant.
+    // Represents simulation automation created to run on a tenant.
     simulationAutomations []SimulationAutomationable
     // Represents an attack simulation training campaign in a tenant.
     simulations []Simulationable
@@ -33,7 +33,7 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
     res["simulations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSimulationFromDiscriminatorValue , m.SetSimulations)
     return res
 }
-// GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automations created to run on a tenant.
+// GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomationable) {
     return m.simulationAutomations
 }
@@ -63,7 +63,7 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automations created to run on a tenant.
+// SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
 func (m *AttackSimulationRoot) SetSimulationAutomations(value []SimulationAutomationable)() {
     m.simulationAutomations = value
 }

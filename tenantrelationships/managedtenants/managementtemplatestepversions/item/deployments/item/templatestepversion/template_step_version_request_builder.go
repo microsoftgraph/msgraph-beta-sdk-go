@@ -52,11 +52,7 @@ func NewTemplateStepVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewTemplateStepVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get templateStepVersion from tenantRelationships
-func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get templateStepVersion from tenantRelationships
-func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TemplateStepVersionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TemplateStepVersionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformationWithReque
 }
 // Get get templateStepVersion from tenantRelationships
 func (m *TemplateStepVersionRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplateStepVersionRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

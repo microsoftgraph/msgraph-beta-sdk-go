@@ -43,17 +43,13 @@ func NewProvisionOnDemandRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewProvisionOnDemandRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
-func (m *ProvisionOnDemandRequestBuilder) CreatePostRequestInformation(body ProvisionOnDemandPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
-func (m *ProvisionOnDemandRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ProvisionOnDemandPostRequestBodyable, requestConfiguration *ProvisionOnDemandRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ProvisionOnDemandRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ProvisionOnDemandPostRequestBodyable, requestConfiguration *ProvisionOnDemandRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *ProvisionOnDemandRequestBuilder) CreatePostRequestInformationWithReques
 }
 // Post select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
 func (m *ProvisionOnDemandRequestBuilder) Post(ctx context.Context, body ProvisionOnDemandPostRequestBodyable, requestConfiguration *ProvisionOnDemandRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringKeyStringValuePairable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

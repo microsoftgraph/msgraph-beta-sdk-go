@@ -52,11 +52,7 @@ func NewPerformedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewPerformedByRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation represents an identity used to identify who is responsible for the activity.
-func (m *PerformedByRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration represents an identity used to identify who is responsible for the activity.
-func (m *PerformedByRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PerformedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PerformedByRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PerformedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *PerformedByRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get represents an identity used to identify who is responsible for the activity.
 func (m *PerformedByRequestBuilder) Get(ctx context.Context, requestConfiguration *PerformedByRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Identityable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

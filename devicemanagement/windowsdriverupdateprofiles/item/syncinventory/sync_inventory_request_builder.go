@@ -42,11 +42,7 @@ func NewSyncInventoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewSyncInventoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation sync the driver inventory of a WindowsDriverUpdateProfile.
-func (m *SyncInventoryRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration sync the driver inventory of a WindowsDriverUpdateProfile.
-func (m *SyncInventoryRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SyncInventoryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SyncInventoryRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SyncInventoryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *SyncInventoryRequestBuilder) CreatePostRequestInformationWithRequestCon
 }
 // Post sync the driver inventory of a WindowsDriverUpdateProfile.
 func (m *SyncInventoryRequestBuilder) Post(ctx context.Context, requestConfiguration *SyncInventoryRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

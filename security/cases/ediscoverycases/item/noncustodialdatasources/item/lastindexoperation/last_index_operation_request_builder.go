@@ -52,11 +52,7 @@ func NewLastIndexOperationRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewLastIndexOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation operation entity that represents the latest indexing for the non-custodial data source.
-func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration operation entity that represents the latest indexing for the non-custodial data source.
-func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get operation entity that represents the latest indexing for the non-custodial data source.
 func (m *LastIndexOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *LastIndexOperationRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryIndexOperationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

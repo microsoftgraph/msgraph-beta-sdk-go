@@ -42,17 +42,13 @@ func NewGetRoleScopeTagsByIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewGetRoleScopeTagsByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getRoleScopeTagsById
-func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformation(body GetRoleScopeTagsByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action getRoleScopeTagsById
-func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetRoleScopeTagsByIdPostRequestBodyable, requestConfiguration *GetRoleScopeTagsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetRoleScopeTagsByIdPostRequestBodyable, requestConfiguration *GetRoleScopeTagsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformationWithReq
 }
 // Post invoke action getRoleScopeTagsById
 func (m *GetRoleScopeTagsByIdRequestBuilder) Post(ctx context.Context, body GetRoleScopeTagsByIdPostRequestBodyable, requestConfiguration *GetRoleScopeTagsByIdRequestBuilderPostRequestConfiguration)(GetRoleScopeTagsByIdResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

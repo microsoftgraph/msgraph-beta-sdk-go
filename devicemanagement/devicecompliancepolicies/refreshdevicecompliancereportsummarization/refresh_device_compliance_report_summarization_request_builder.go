@@ -42,11 +42,7 @@ func NewRefreshDeviceComplianceReportSummarizationRequestBuilder(rawUrl string, 
     return NewRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action refreshDeviceComplianceReportSummarization
-func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action refreshDeviceComplianceReportSummarization
-func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) CreatePostReq
 }
 // Post invoke action refreshDeviceComplianceReportSummarization
 func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) Post(ctx context.Context, requestConfiguration *RefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

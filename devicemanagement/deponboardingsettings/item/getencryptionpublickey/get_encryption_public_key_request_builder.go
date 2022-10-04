@@ -42,11 +42,7 @@ func NewGetEncryptionPublicKeyRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewGetEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,7 +56,7 @@ func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformationWithRe
 }
 // Get get a public key to use to encrypt the Apple device enrollment program token
 func (m *GetEncryptionPublicKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration)(GetEncryptionPublicKeyResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

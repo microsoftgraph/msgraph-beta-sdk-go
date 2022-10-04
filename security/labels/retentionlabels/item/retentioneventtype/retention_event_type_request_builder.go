@@ -52,11 +52,7 @@ func NewRetentionEventTypeRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewRetentionEventTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get retentionEventType from security
-func (m *RetentionEventTypeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get retentionEventType from security
-func (m *RetentionEventTypeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RetentionEventTypeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RetentionEventTypeRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RetentionEventTypeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *RetentionEventTypeRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get get retentionEventType from security
 func (m *RetentionEventTypeRequestBuilder) Get(ctx context.Context, requestConfiguration *RetentionEventTypeRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

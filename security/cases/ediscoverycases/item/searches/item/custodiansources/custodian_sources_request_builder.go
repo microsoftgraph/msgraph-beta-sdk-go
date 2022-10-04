@@ -69,11 +69,7 @@ func (m *CustodianSourcesRequestBuilder) Count()(*i768571355953cd7458d8e94f12512
     return i768571355953cd7458d8e94f125123b608b49dd0f8f1928d850d7daeca587a1d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of custodial data sources associated with an eDiscovery search.
-func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the list of custodial data sources associated with an eDiscovery search.
-func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformationWithRequestC
 }
 // Get get the list of custodial data sources associated with an eDiscovery search.
 func (m *CustodianSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -20,6 +20,8 @@ type ZebraFotaDeploymentSettings struct {
     downloadRuleNetworkType *ZebraFotaNetworkType
     // Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
     downloadRuleStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).
+    firmwareTargetArtifactDescription *string
     // Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
     firmwareTargetBoardSupportPackageVersion *string
     // Target OS Version (e.g.: '8.1.0'). Required only for custom update type.
@@ -88,6 +90,7 @@ func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i8
     res["deviceModel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDeviceModel)
     res["downloadRuleNetworkType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseZebraFotaNetworkType , m.SetDownloadRuleNetworkType)
     res["downloadRuleStartDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetDownloadRuleStartDateTime)
+    res["firmwareTargetArtifactDescription"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFirmwareTargetArtifactDescription)
     res["firmwareTargetBoardSupportPackageVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFirmwareTargetBoardSupportPackageVersion)
     res["firmwareTargetOsVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFirmwareTargetOsVersion)
     res["firmwareTargetPatch"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFirmwareTargetPatch)
@@ -100,6 +103,10 @@ func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i8
     res["timeZoneOffsetInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetTimeZoneOffsetInMinutes)
     res["updateType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseZebraFotaUpdateType , m.SetUpdateType)
     return res
+}
+// GetFirmwareTargetArtifactDescription gets the firmwareTargetArtifactDescription property value. A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).
+func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetArtifactDescription()(*string) {
+    return m.firmwareTargetArtifactDescription
 }
 // GetFirmwareTargetBoardSupportPackageVersion gets the firmwareTargetBoardSupportPackageVersion property value. Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetBoardSupportPackageVersion()(*string) {
@@ -174,6 +181,12 @@ func (m *ZebraFotaDeploymentSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteTimeValue("downloadRuleStartDateTime", m.GetDownloadRuleStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("firmwareTargetArtifactDescription", m.GetFirmwareTargetArtifactDescription())
         if err != nil {
             return err
         }
@@ -277,6 +290,10 @@ func (m *ZebraFotaDeploymentSettings) SetDownloadRuleNetworkType(value *ZebraFot
 // SetDownloadRuleStartDateTime sets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
 func (m *ZebraFotaDeploymentSettings) SetDownloadRuleStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.downloadRuleStartDateTime = value
+}
+// SetFirmwareTargetArtifactDescription sets the firmwareTargetArtifactDescription property value. A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).
+func (m *ZebraFotaDeploymentSettings) SetFirmwareTargetArtifactDescription(value *string)() {
+    m.firmwareTargetArtifactDescription = value
 }
 // SetFirmwareTargetBoardSupportPackageVersion sets the firmwareTargetBoardSupportPackageVersion property value. Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
 func (m *ZebraFotaDeploymentSettings) SetFirmwareTargetBoardSupportPackageVersion(value *string)() {

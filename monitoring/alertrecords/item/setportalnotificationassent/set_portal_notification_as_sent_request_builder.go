@@ -42,11 +42,7 @@ func NewSetPortalNotificationAsSentRequestBuilder(rawUrl string, requestAdapter 
     return NewSetPortalNotificationAsSentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action setPortalNotificationAsSent
-func (m *SetPortalNotificationAsSentRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action setPortalNotificationAsSent
-func (m *SetPortalNotificationAsSentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetPortalNotificationAsSentRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *SetPortalNotificationAsSentRequestBuilder) CreatePostRequestInformation
 }
 // Post invoke action setPortalNotificationAsSent
 func (m *SetPortalNotificationAsSentRequestBuilder) Post(ctx context.Context, requestConfiguration *SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

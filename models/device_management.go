@@ -241,6 +241,12 @@ type DeviceManagement struct {
     troubleshootingEvents []DeviceManagementTroubleshootingEventable
     // When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.
     unlicensedAdminstratorsEnabled *bool
+    // The user experience analytics anomaly entity contains anomaly details.
+    userExperienceAnalyticsAnomaly []UserExperienceAnalyticsAnomalyable
+    // The user experience analytics anomaly entity contains device details.
+    userExperienceAnalyticsAnomalyDevice []UserExperienceAnalyticsAnomalyDeviceable
+    // The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
+    userExperienceAnalyticsAnomalySeverityOverview UserExperienceAnalyticsAnomalySeverityOverviewable
     // User experience analytics appHealth Application Performance
     userExperienceAnalyticsAppHealthApplicationPerformance []UserExperienceAnalyticsAppHealthApplicationPerformanceable
     // User experience analytics appHealth Application Performance by App Version
@@ -730,6 +736,9 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
     res["termsAndConditions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTermsAndConditionsFromDiscriminatorValue , m.SetTermsAndConditions)
     res["troubleshootingEvents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue , m.SetTroubleshootingEvents)
     res["unlicensedAdminstratorsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUnlicensedAdminstratorsEnabled)
+    res["userExperienceAnalyticsAnomaly"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsAnomalyFromDiscriminatorValue , m.SetUserExperienceAnalyticsAnomaly)
+    res["userExperienceAnalyticsAnomalyDevice"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsAnomalyDeviceFromDiscriminatorValue , m.SetUserExperienceAnalyticsAnomalyDevice)
+    res["userExperienceAnalyticsAnomalySeverityOverview"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserExperienceAnalyticsAnomalySeverityOverviewFromDiscriminatorValue , m.SetUserExperienceAnalyticsAnomalySeverityOverview)
     res["userExperienceAnalyticsAppHealthApplicationPerformance"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsAppHealthApplicationPerformanceFromDiscriminatorValue , m.SetUserExperienceAnalyticsAppHealthApplicationPerformance)
     res["userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionFromDiscriminatorValue , m.SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion)
     res["userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsFromDiscriminatorValue , m.SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails)
@@ -1013,6 +1022,18 @@ func (m *DeviceManagement) GetTroubleshootingEvents()([]DeviceManagementTroubles
 // GetUnlicensedAdminstratorsEnabled gets the unlicensedAdminstratorsEnabled property value. When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.
 func (m *DeviceManagement) GetUnlicensedAdminstratorsEnabled()(*bool) {
     return m.unlicensedAdminstratorsEnabled
+}
+// GetUserExperienceAnalyticsAnomaly gets the userExperienceAnalyticsAnomaly property value. The user experience analytics anomaly entity contains anomaly details.
+func (m *DeviceManagement) GetUserExperienceAnalyticsAnomaly()([]UserExperienceAnalyticsAnomalyable) {
+    return m.userExperienceAnalyticsAnomaly
+}
+// GetUserExperienceAnalyticsAnomalyDevice gets the userExperienceAnalyticsAnomalyDevice property value. The user experience analytics anomaly entity contains device details.
+func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalyDevice()([]UserExperienceAnalyticsAnomalyDeviceable) {
+    return m.userExperienceAnalyticsAnomalyDevice
+}
+// GetUserExperienceAnalyticsAnomalySeverityOverview gets the userExperienceAnalyticsAnomalySeverityOverview property value. The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
+func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalySeverityOverview()(UserExperienceAnalyticsAnomalySeverityOverviewable) {
+    return m.userExperienceAnalyticsAnomalySeverityOverview
 }
 // GetUserExperienceAnalyticsAppHealthApplicationPerformance gets the userExperienceAnalyticsAppHealthApplicationPerformance property value. User experience analytics appHealth Application Performance
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerformance()([]UserExperienceAnalyticsAppHealthApplicationPerformanceable) {
@@ -2013,6 +2034,26 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetUserExperienceAnalyticsAnomaly() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserExperienceAnalyticsAnomaly())
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsAnomaly", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserExperienceAnalyticsAnomalyDevice() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserExperienceAnalyticsAnomalyDevice())
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsAnomalyDevice", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("userExperienceAnalyticsAnomalySeverityOverview", m.GetUserExperienceAnalyticsAnomalySeverityOverview())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserExperienceAnalyticsAppHealthApplicationPerformance() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserExperienceAnalyticsAppHealthApplicationPerformance())
         err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsAppHealthApplicationPerformance", cast)
@@ -2872,6 +2913,18 @@ func (m *DeviceManagement) SetTroubleshootingEvents(value []DeviceManagementTrou
 // SetUnlicensedAdminstratorsEnabled sets the unlicensedAdminstratorsEnabled property value. When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.
 func (m *DeviceManagement) SetUnlicensedAdminstratorsEnabled(value *bool)() {
     m.unlicensedAdminstratorsEnabled = value
+}
+// SetUserExperienceAnalyticsAnomaly sets the userExperienceAnalyticsAnomaly property value. The user experience analytics anomaly entity contains anomaly details.
+func (m *DeviceManagement) SetUserExperienceAnalyticsAnomaly(value []UserExperienceAnalyticsAnomalyable)() {
+    m.userExperienceAnalyticsAnomaly = value
+}
+// SetUserExperienceAnalyticsAnomalyDevice sets the userExperienceAnalyticsAnomalyDevice property value. The user experience analytics anomaly entity contains device details.
+func (m *DeviceManagement) SetUserExperienceAnalyticsAnomalyDevice(value []UserExperienceAnalyticsAnomalyDeviceable)() {
+    m.userExperienceAnalyticsAnomalyDevice = value
+}
+// SetUserExperienceAnalyticsAnomalySeverityOverview sets the userExperienceAnalyticsAnomalySeverityOverview property value. The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
+func (m *DeviceManagement) SetUserExperienceAnalyticsAnomalySeverityOverview(value UserExperienceAnalyticsAnomalySeverityOverviewable)() {
+    m.userExperienceAnalyticsAnomalySeverityOverview = value
 }
 // SetUserExperienceAnalyticsAppHealthApplicationPerformance sets the userExperienceAnalyticsAppHealthApplicationPerformance property value. User experience analytics appHealth Application Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthApplicationPerformance(value []UserExperienceAnalyticsAppHealthApplicationPerformanceable)() {

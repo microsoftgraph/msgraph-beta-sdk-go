@@ -69,11 +69,7 @@ func (m *SettingDefinitionsRequestBuilder) Count()(*id614f3b044953f5288ac5dc6c55
     return id614f3b044953f5288ac5dc6c559964809cecc3b2c83e281af6723211a9021b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list of related Setting Definitions. This property is read-only.
-func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration list of related Setting Definitions. This property is read-only.
-func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SettingDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SettingDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get list of related Setting Definitions. This property is read-only.
 func (m *SettingDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SettingDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

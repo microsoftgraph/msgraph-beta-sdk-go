@@ -11,9 +11,9 @@ type MicrosoftTunnelServer struct {
     Entity
     // The digest of the current agent image running on this server
     agentImageDigest *string
-    // The MicrosoftTunnelServer's display name
+    // The display name for the server. This property is required when a server is created and cannot be cleared during updates.
     displayName *string
-    // When the MicrosoftTunnelServer last checked in
+    // Indicates when the server last checked in
     lastCheckinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The digest of the current server image running on this server
     serverImageDigest *string
@@ -37,7 +37,7 @@ func CreateMicrosoftTunnelServerFromDiscriminatorValue(parseNode i878a80d2330e89
 func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
     return m.agentImageDigest
 }
-// GetDisplayName gets the displayName property value. The MicrosoftTunnelServer's display name
+// GetDisplayName gets the displayName property value. The display name for the server. This property is required when a server is created and cannot be cleared during updates.
 func (m *MicrosoftTunnelServer) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -51,7 +51,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(i878a80d
     res["tunnelServerHealthStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMicrosoftTunnelServerHealthStatus , m.SetTunnelServerHealthStatus)
     return res
 }
-// GetLastCheckinDateTime gets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
+// GetLastCheckinDateTime gets the lastCheckinDateTime property value. Indicates when the server last checked in
 func (m *MicrosoftTunnelServer) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastCheckinDateTime
 }
@@ -106,11 +106,11 @@ func (m *MicrosoftTunnelServer) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *MicrosoftTunnelServer) SetAgentImageDigest(value *string)() {
     m.agentImageDigest = value
 }
-// SetDisplayName sets the displayName property value. The MicrosoftTunnelServer's display name
+// SetDisplayName sets the displayName property value. The display name for the server. This property is required when a server is created and cannot be cleared during updates.
 func (m *MicrosoftTunnelServer) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetLastCheckinDateTime sets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
+// SetLastCheckinDateTime sets the lastCheckinDateTime property value. Indicates when the server last checked in
 func (m *MicrosoftTunnelServer) SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastCheckinDateTime = value
 }

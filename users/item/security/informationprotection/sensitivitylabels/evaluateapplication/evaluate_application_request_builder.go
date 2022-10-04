@@ -42,17 +42,13 @@ func NewEvaluateApplicationRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewEvaluateApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action evaluateApplication
-func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformation(body EvaluateApplicationPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action evaluateApplication
-func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateApplicationPostRequestBodyable, requestConfiguration *EvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformation(ctx context.Context, body EvaluateApplicationPostRequestBodyable, requestConfiguration *EvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformationWithRequ
 }
 // Post invoke action evaluateApplication
 func (m *EvaluateApplicationRequestBuilder) Post(ctx context.Context, body EvaluateApplicationPostRequestBodyable, requestConfiguration *EvaluateApplicationRequestBuilderPostRequestConfiguration)(EvaluateApplicationResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

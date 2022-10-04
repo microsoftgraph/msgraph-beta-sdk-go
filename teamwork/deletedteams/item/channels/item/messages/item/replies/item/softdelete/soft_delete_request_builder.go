@@ -42,11 +42,7 @@ func NewSoftDeleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation delete a single message or a message reply in a channel or a chat.
-func (m *SoftDeleteRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration delete a single message or a message reply in a channel or a chat.
-func (m *SoftDeleteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SoftDeleteRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *SoftDeleteRequestBuilder) CreatePostRequestInformationWithRequestConfig
 }
 // Post delete a single message or a message reply in a channel or a chat.
 func (m *SoftDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *SoftDeleteRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

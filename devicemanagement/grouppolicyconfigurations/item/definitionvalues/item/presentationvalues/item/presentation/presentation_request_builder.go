@@ -52,11 +52,7 @@ func NewPresentationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewPresentationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the group policy presentation associated with the presentation value.
-func (m *PresentationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the group policy presentation associated with the presentation value.
-func (m *PresentationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PresentationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PresentationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PresentationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *PresentationRequestBuilder) CreateGetRequestInformationWithRequestConfi
 }
 // Get the group policy presentation associated with the presentation value.
 func (m *PresentationRequestBuilder) Get(ctx context.Context, requestConfiguration *PresentationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

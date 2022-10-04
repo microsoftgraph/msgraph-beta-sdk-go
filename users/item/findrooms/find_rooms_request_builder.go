@@ -57,11 +57,7 @@ func NewFindRoomsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewFindRoomsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function findRooms
-func (m *FindRoomsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function findRooms
-func (m *FindRoomsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FindRoomsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *FindRoomsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *FindRoomsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -78,7 +74,7 @@ func (m *FindRoomsRequestBuilder) CreateGetRequestInformationWithRequestConfigur
 }
 // Get invoke function findRooms
 func (m *FindRoomsRequestBuilder) Get(ctx context.Context, requestConfiguration *FindRoomsRequestBuilderGetRequestConfiguration)(FindRoomsResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

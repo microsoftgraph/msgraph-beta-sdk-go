@@ -18,15 +18,15 @@ type UserSimulationDetails struct {
     compromisedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of trainings in progress by a user in an attack simulation and training campaign.
     inProgressTrainingsCount *int32
-    // Flag representing if user was compromised in an attack simulation and training campaign.
+    // Indicates whether a user was compromised in an attack simulation and training campaign.
     isCompromised *bool
     // The OdataType property
     odataType *string
-    // Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+    // Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
     reportedPhishDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of simulation events of a user in the attack simulation and training campaign.
     simulationEvents []UserSimulationEventInfoable
-    // User in an attack simulation and training campaign.
+    // The user in an attack simulation and training campaign.
     simulationUser AttackSimulationUserable
     // List of training events of a user in the attack simulation and training campaign.
     trainingEvents []UserTrainingEventInfoable
@@ -79,7 +79,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
     return m.inProgressTrainingsCount
 }
-// GetIsCompromised gets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
+// GetIsCompromised gets the isCompromised property value. Indicates whether a user was compromised in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
     return m.isCompromised
 }
@@ -87,7 +87,7 @@ func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
 func (m *UserSimulationDetails) GetOdataType()(*string) {
     return m.odataType
 }
-// GetReportedPhishDateTime gets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+// GetReportedPhishDateTime gets the reportedPhishDateTime property value. Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
 func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.reportedPhishDateTime
 }
@@ -95,7 +95,7 @@ func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987ab
 func (m *UserSimulationDetails) GetSimulationEvents()([]UserSimulationEventInfoable) {
     return m.simulationEvents
 }
-// GetSimulationUser gets the simulationUser property value. User in an attack simulation and training campaign.
+// GetSimulationUser gets the simulationUser property value. The user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetSimulationUser()(AttackSimulationUserable) {
     return m.simulationUser
 }
@@ -195,7 +195,7 @@ func (m *UserSimulationDetails) SetCompromisedDateTime(value *i336074805fc853987
 func (m *UserSimulationDetails) SetInProgressTrainingsCount(value *int32)() {
     m.inProgressTrainingsCount = value
 }
-// SetIsCompromised sets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
+// SetIsCompromised sets the isCompromised property value. Indicates whether a user was compromised in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetIsCompromised(value *bool)() {
     m.isCompromised = value
 }
@@ -203,7 +203,7 @@ func (m *UserSimulationDetails) SetIsCompromised(value *bool)() {
 func (m *UserSimulationDetails) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetReportedPhishDateTime sets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+// SetReportedPhishDateTime sets the reportedPhishDateTime property value. Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
 func (m *UserSimulationDetails) SetReportedPhishDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.reportedPhishDateTime = value
 }
@@ -211,7 +211,7 @@ func (m *UserSimulationDetails) SetReportedPhishDateTime(value *i336074805fc8539
 func (m *UserSimulationDetails) SetSimulationEvents(value []UserSimulationEventInfoable)() {
     m.simulationEvents = value
 }
-// SetSimulationUser sets the simulationUser property value. User in an attack simulation and training campaign.
+// SetSimulationUser sets the simulationUser property value. The user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetSimulationUser(value AttackSimulationUserable)() {
     m.simulationUser = value
 }

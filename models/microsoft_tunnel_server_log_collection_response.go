@@ -21,7 +21,7 @@ type MicrosoftTunnelServerLogCollectionResponse struct {
     sizeInBytes *int64
     // The start time of the logs collected
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Enum type that represent the status of log collection.
+    // Enum type that represent the status of log collection
     status *MicrosoftTunnelLogCollectionStatus
 }
 // NewMicrosoftTunnelServerLogCollectionResponse instantiates a new microsoftTunnelServerLogCollectionResponse and sets the default values.
@@ -73,7 +73,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int64) {
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetStatus gets the status property value. Enum type that represent the status of log collection.
+// GetStatus gets the status property value. Enum type that represent the status of log collection
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetStatus()(*MicrosoftTunnelLogCollectionStatus) {
     return m.status
 }
@@ -152,7 +152,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) SetSizeInBytes(value *int64
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetStatus sets the status property value. Enum type that represent the status of log collection.
+// SetStatus sets the status property value. Enum type that represent the status of log collection
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetStatus(value *MicrosoftTunnelLogCollectionStatus)() {
     m.status = value
 }

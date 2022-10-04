@@ -42,16 +42,12 @@ func NewUpdateDeviceProfileAssignmentRequestBuilder(rawUrl string, requestAdapte
     return NewUpdateDeviceProfileAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformation(body UpdateDeviceProfileAssignmentPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateDeviceProfileAssignmentPostRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformation(ctx context.Context, body UpdateDeviceProfileAssignmentPostRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformati
 }
 // Post invoke action updateDeviceProfileAssignment
 func (m *UpdateDeviceProfileAssignmentRequestBuilder) Post(ctx context.Context, body UpdateDeviceProfileAssignmentPostRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

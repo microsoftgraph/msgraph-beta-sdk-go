@@ -69,11 +69,7 @@ func (m *AppliesToRequestBuilder) Count()(*if5895666d1421d52567c1846a02713b3c4e3
     return if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list application and service principal objects assigned an appManagementPolicy policy object.
-func (m *AppliesToRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration list application and service principal objects assigned an appManagementPolicy policy object.
-func (m *AppliesToRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AppliesToRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *AppliesToRequestBuilder) CreateGetRequestInformationWithRequestConfigur
 }
 // Get list application and service principal objects assigned an appManagementPolicy policy object.
 func (m *AppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

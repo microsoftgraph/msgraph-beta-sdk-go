@@ -52,11 +52,7 @@ func NewParentListRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewParentListRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the list which contains the task.
-func (m *ParentListRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the list which contains the task.
-func (m *ParentListRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ParentListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ParentListRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ParentListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ParentListRequestBuilder) CreateGetRequestInformationWithRequestConfigu
 }
 // Get the list which contains the task.
 func (m *ParentListRequestBuilder) Get(ctx context.Context, requestConfiguration *ParentListRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

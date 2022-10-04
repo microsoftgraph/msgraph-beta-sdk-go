@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CloudPcOverview provides operations to manage the collection of activityStatistics entities.
+// CloudPcOverview provides operations to manage the collection of accessReview entities.
 type CloudPcOverview struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
@@ -42,13 +42,13 @@ type CloudPcOverview struct {
     tenantDisplayName *string
     // The tenantId property
     tenantId *string
-    // The totalBusinessLicenses property
+    // The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
     totalBusinessLicenses *int32
     // The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
     totalCloudPcConnectionStatus *int32
     // The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
     totalCloudPcStatus *int32
-    // The totalEnterpriseLicenses property
+    // The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
     totalEnterpriseLicenses *int32
 }
 // NewCloudPcOverview instantiates a new cloudPcOverview and sets the default values.
@@ -153,7 +153,7 @@ func (m *CloudPcOverview) GetTenantDisplayName()(*string) {
 func (m *CloudPcOverview) GetTenantId()(*string) {
     return m.tenantId
 }
-// GetTotalBusinessLicenses gets the totalBusinessLicenses property value. The totalBusinessLicenses property
+// GetTotalBusinessLicenses gets the totalBusinessLicenses property value. The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
 func (m *CloudPcOverview) GetTotalBusinessLicenses()(*int32) {
     return m.totalBusinessLicenses
 }
@@ -165,7 +165,7 @@ func (m *CloudPcOverview) GetTotalCloudPcConnectionStatus()(*int32) {
 func (m *CloudPcOverview) GetTotalCloudPcStatus()(*int32) {
     return m.totalCloudPcStatus
 }
-// GetTotalEnterpriseLicenses gets the totalEnterpriseLicenses property value. The totalEnterpriseLicenses property
+// GetTotalEnterpriseLicenses gets the totalEnterpriseLicenses property value. The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
 func (m *CloudPcOverview) GetTotalEnterpriseLicenses()(*int32) {
     return m.totalEnterpriseLicenses
 }
@@ -361,7 +361,7 @@ func (m *CloudPcOverview) SetTenantDisplayName(value *string)() {
 func (m *CloudPcOverview) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// SetTotalBusinessLicenses sets the totalBusinessLicenses property value. The totalBusinessLicenses property
+// SetTotalBusinessLicenses sets the totalBusinessLicenses property value. The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
 func (m *CloudPcOverview) SetTotalBusinessLicenses(value *int32)() {
     m.totalBusinessLicenses = value
 }
@@ -373,7 +373,7 @@ func (m *CloudPcOverview) SetTotalCloudPcConnectionStatus(value *int32)() {
 func (m *CloudPcOverview) SetTotalCloudPcStatus(value *int32)() {
     m.totalCloudPcStatus = value
 }
-// SetTotalEnterpriseLicenses sets the totalEnterpriseLicenses property value. The totalEnterpriseLicenses property
+// SetTotalEnterpriseLicenses sets the totalEnterpriseLicenses property value. The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
 func (m *CloudPcOverview) SetTotalEnterpriseLicenses(value *int32)() {
     m.totalEnterpriseLicenses = value
 }

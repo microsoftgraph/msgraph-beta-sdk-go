@@ -52,11 +52,7 @@ func NewAlertItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewAlertItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the list of related alerts. Supports $expand.
-func (m *AlertItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the list of related alerts. Supports $expand.
-func (m *AlertItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AlertItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *AlertItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
 }
 // Get the list of related alerts. Supports $expand.
 func (m *AlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Alertable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

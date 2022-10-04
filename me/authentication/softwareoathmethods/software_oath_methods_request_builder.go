@@ -69,11 +69,7 @@ func (m *SoftwareOathMethodsRequestBuilder) Count()(*i55d73ef1cff5f3d2fa76406706
     return i55d73ef1cff5f3d2fa76406706ef9d8755f2c2ec805c97c5308f988a88b9a36d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of a user's software OATH token authentication method objects and their properties.
-func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a user's software OATH token authentication method objects and their properties.
-func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SoftwareOathMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SoftwareOathMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformationWithReque
 }
 // Get retrieve a list of a user's software OATH token authentication method objects and their properties.
 func (m *SoftwareOathMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *SoftwareOathMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

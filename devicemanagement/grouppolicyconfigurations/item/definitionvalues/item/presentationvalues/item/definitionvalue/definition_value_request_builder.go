@@ -52,11 +52,7 @@ func NewDefinitionValueRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewDefinitionValueRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the group policy definition value associated with the presentation value.
-func (m *DefinitionValueRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the group policy definition value associated with the presentation value.
-func (m *DefinitionValueRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DefinitionValueRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DefinitionValueRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DefinitionValueRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *DefinitionValueRequestBuilder) CreateGetRequestInformationWithRequestCo
 }
 // Get the group policy definition value associated with the presentation value.
 func (m *DefinitionValueRequestBuilder) Get(ctx context.Context, requestConfiguration *DefinitionValueRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionValueable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

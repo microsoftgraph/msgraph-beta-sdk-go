@@ -42,16 +42,12 @@ func NewActivateServicePlanRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewActivateServicePlanRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation activate a service plan with a given `servicePlanId` and `skuId` for a given user.
-func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformation(body ActivateServicePlanPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration activate a service plan with a given `servicePlanId` and `skuId` for a given user.
-func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformationWithRequ
 }
 // Post activate a service plan with a given `servicePlanId` and `skuId` for a given user.
 func (m *ActivateServicePlanRequestBuilder) Post(ctx context.Context, body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

@@ -11,7 +11,7 @@ type ConditionalAccessUsers struct {
     additionalData map[string]interface{}
     // Group IDs excluded from scope of policy.
     excludeGroups []string
-    // The excludeGuestsOrExternalUsers property
+    // Internal guests or external users excluded in the policy scope. Optionally populated.
     excludeGuestsOrExternalUsers ConditionalAccessGuestsOrExternalUsersable
     // Role IDs excluded from scope of policy.
     excludeRoles []string
@@ -19,7 +19,7 @@ type ConditionalAccessUsers struct {
     excludeUsers []string
     // Group IDs in scope of policy unless explicitly excluded, or All.
     includeGroups []string
-    // The includeGuestsOrExternalUsers property
+    // Internal guests or external users included in the policy scope. Optionally populated.
     includeGuestsOrExternalUsers ConditionalAccessGuestsOrExternalUsersable
     // Role IDs in scope of policy unless explicitly excluded, or All.
     includeRoles []string
@@ -49,7 +49,7 @@ func (m *ConditionalAccessUsers) GetAdditionalData()(map[string]interface{}) {
 func (m *ConditionalAccessUsers) GetExcludeGroups()([]string) {
     return m.excludeGroups
 }
-// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+// GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded in the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) GetExcludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
     return m.excludeGuestsOrExternalUsers
 }
@@ -79,7 +79,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
 func (m *ConditionalAccessUsers) GetIncludeGroups()([]string) {
     return m.includeGroups
 }
-// GetIncludeGuestsOrExternalUsers gets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+// GetIncludeGuestsOrExternalUsers gets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) GetIncludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
     return m.includeGuestsOrExternalUsers
 }
@@ -167,7 +167,7 @@ func (m *ConditionalAccessUsers) SetAdditionalData(value map[string]interface{})
 func (m *ConditionalAccessUsers) SetExcludeGroups(value []string)() {
     m.excludeGroups = value
 }
-// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+// SetExcludeGuestsOrExternalUsers sets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded in the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) SetExcludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
     m.excludeGuestsOrExternalUsers = value
 }
@@ -183,7 +183,7 @@ func (m *ConditionalAccessUsers) SetExcludeUsers(value []string)() {
 func (m *ConditionalAccessUsers) SetIncludeGroups(value []string)() {
     m.includeGroups = value
 }
-// SetIncludeGuestsOrExternalUsers sets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+// SetIncludeGuestsOrExternalUsers sets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
 func (m *ConditionalAccessUsers) SetIncludeGuestsOrExternalUsers(value ConditionalAccessGuestsOrExternalUsersable)() {
     m.includeGuestsOrExternalUsers = value
 }

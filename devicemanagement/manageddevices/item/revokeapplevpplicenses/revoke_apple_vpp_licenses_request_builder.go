@@ -42,11 +42,7 @@ func NewRevokeAppleVppLicensesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewRevokeAppleVppLicensesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation revoke all Apple Vpp licenses for a device
-func (m *RevokeAppleVppLicensesRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration revoke all Apple Vpp licenses for a device
-func (m *RevokeAppleVppLicensesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RevokeAppleVppLicensesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RevokeAppleVppLicensesRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RevokeAppleVppLicensesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RevokeAppleVppLicensesRequestBuilder) CreatePostRequestInformationWithR
 }
 // Post revoke all Apple Vpp licenses for a device
 func (m *RevokeAppleVppLicensesRequestBuilder) Post(ctx context.Context, requestConfiguration *RevokeAppleVppLicensesRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

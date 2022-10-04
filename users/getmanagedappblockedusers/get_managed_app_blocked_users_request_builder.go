@@ -57,11 +57,7 @@ func NewGetManagedAppBlockedUsersRequestBuilder(rawUrl string, requestAdapter i2
     return NewGetManagedAppBlockedUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function getManagedAppBlockedUsers
-func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getManagedAppBlockedUsers
-func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -78,7 +74,7 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformationWit
 }
 // Get invoke function getManagedAppBlockedUsers
 func (m *GetManagedAppBlockedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(GetManagedAppBlockedUsersResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

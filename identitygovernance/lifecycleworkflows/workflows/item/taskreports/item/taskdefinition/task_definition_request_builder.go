@@ -52,11 +52,7 @@ func NewTaskDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewTaskDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the taskDefinition associated with the related lifecycle workflow task.
-func (m *TaskDefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the taskDefinition associated with the related lifecycle workflow task.
-func (m *TaskDefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TaskDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TaskDefinitionRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TaskDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *TaskDefinitionRequestBuilder) CreateGetRequestInformationWithRequestCon
 }
 // Get the taskDefinition associated with the related lifecycle workflow task.
 func (m *TaskDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskDefinitionRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskDefinitionable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

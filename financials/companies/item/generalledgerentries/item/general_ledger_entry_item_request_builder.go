@@ -57,11 +57,7 @@ func NewGeneralLedgerEntryItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewGeneralLedgerEntryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get generalLedgerEntries from financials
-func (m *GeneralLedgerEntryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get generalLedgerEntries from financials
-func (m *GeneralLedgerEntryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GeneralLedgerEntryItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -78,7 +74,7 @@ func (m *GeneralLedgerEntryItemRequestBuilder) CreateGetRequestInformationWithRe
 }
 // Get get generalLedgerEntries from financials
 func (m *GeneralLedgerEntryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -28,6 +28,8 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
     passwordRequiredType *AndroidWorkProfileRequiredPasswordType
     // Number of sign in failures allowed before factory reset. Valid values 1 to 16
     passwordSignInFailureCountBeforeFactoryReset *int32
+    // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+    requiredPasswordComplexity *AndroidRequiredPasswordComplexity
     // Require the Android Verify apps feature is turned on.
     securityRequireVerifyApps *bool
     // Enable lockdown mode for always-on VPN.
@@ -92,6 +94,8 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
     workProfilePasswordRequiredType *AndroidWorkProfileRequiredPasswordType
     // Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
     workProfilePasswordSignInFailureCountBeforeFactoryReset *int32
+    // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+    workProfileRequiredPasswordComplexity *AndroidRequiredPasswordComplexity
     // Password is required or not for work profile
     workProfileRequirePassword *bool
 }
@@ -121,6 +125,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(m
     res["passwordPreviousPasswordBlockCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordPreviousPasswordBlockCount)
     res["passwordRequiredType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidWorkProfileRequiredPasswordType , m.SetPasswordRequiredType)
     res["passwordSignInFailureCountBeforeFactoryReset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordSignInFailureCountBeforeFactoryReset)
+    res["requiredPasswordComplexity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidRequiredPasswordComplexity , m.SetRequiredPasswordComplexity)
     res["securityRequireVerifyApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityRequireVerifyApps)
     res["vpnAlwaysOnPackageIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetVpnAlwaysOnPackageIdentifier)
     res["vpnEnableAlwaysOnLockdownMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetVpnEnableAlwaysOnLockdownMode)
@@ -153,6 +158,7 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetFieldDeserializers()(m
     res["workProfilePasswordPreviousPasswordBlockCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordPreviousPasswordBlockCount)
     res["workProfilePasswordRequiredType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidWorkProfileRequiredPasswordType , m.SetWorkProfilePasswordRequiredType)
     res["workProfilePasswordSignInFailureCountBeforeFactoryReset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset)
+    res["workProfileRequiredPasswordComplexity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidRequiredPasswordComplexity , m.SetWorkProfileRequiredPasswordComplexity)
     res["workProfileRequirePassword"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWorkProfileRequirePassword)
     return res
 }
@@ -195,6 +201,10 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetPasswordRequiredType()
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     return m.passwordSignInFailureCountBeforeFactoryReset
+}
+// GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
+    return m.requiredPasswordComplexity
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
@@ -324,6 +334,10 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfilePasswordReq
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     return m.workProfilePasswordSignInFailureCountBeforeFactoryReset
 }
+// GetWorkProfileRequiredPasswordComplexity gets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
+    return m.workProfileRequiredPasswordComplexity
+}
 // GetWorkProfileRequirePassword gets the workProfileRequirePassword property value. Password is required or not for work profile
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) GetWorkProfileRequirePassword()(*bool) {
     return m.workProfileRequirePassword
@@ -391,6 +405,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
     }
     {
         err = writer.WriteInt32Value("passwordSignInFailureCountBeforeFactoryReset", m.GetPasswordSignInFailureCountBeforeFactoryReset())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRequiredPasswordComplexity() != nil {
+        cast := (*m.GetRequiredPasswordComplexity()).String()
+        err = writer.WriteStringValue("requiredPasswordComplexity", &cast)
         if err != nil {
             return err
         }
@@ -590,6 +611,13 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) Serialize(writer i878a80d
             return err
         }
     }
+    if m.GetWorkProfileRequiredPasswordComplexity() != nil {
+        cast := (*m.GetWorkProfileRequiredPasswordComplexity()).String()
+        err = writer.WriteStringValue("workProfileRequiredPasswordComplexity", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("workProfileRequirePassword", m.GetWorkProfileRequirePassword())
         if err != nil {
@@ -637,6 +665,10 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetPasswordRequiredType(v
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
     m.passwordSignInFailureCountBeforeFactoryReset = value
+}
+// SetRequiredPasswordComplexity sets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
+    m.requiredPasswordComplexity = value
 }
 // SetSecurityRequireVerifyApps sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetSecurityRequireVerifyApps(value *bool)() {
@@ -765,6 +797,10 @@ func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfilePasswordReq
 // SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset sets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
     m.workProfilePasswordSignInFailureCountBeforeFactoryReset = value
+}
+// SetWorkProfileRequiredPasswordComplexity sets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfileRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
+    m.workProfileRequiredPasswordComplexity = value
 }
 // SetWorkProfileRequirePassword sets the workProfileRequirePassword property value. Password is required or not for work profile
 func (m *AndroidWorkProfileGeneralDeviceConfiguration) SetWorkProfileRequirePassword(value *bool)() {

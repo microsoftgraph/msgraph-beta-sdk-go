@@ -10,13 +10,13 @@ import (
 type AttackSimulationInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Specifies the date time of the attack simulation.
+    // The date and time of the attack simulation.
     attackSimDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies the duration (in time) for the attack simulation
+    // The duration (in time) for the attack simulation.
     attackSimDurationTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Specifies the activity id for the attack simulation.
+    // The activity ID for the attack simulation.
     attackSimId *string
-    // Specifies the user id of the user who got the attack simulation email
+    // The unique identifier for the user who got the attack simulation email.
     attackSimUserId *string
     // The OdataType property
     odataType *string
@@ -38,19 +38,19 @@ func CreateAttackSimulationInfoFromDiscriminatorValue(parseNode i878a80d2330e89d
 func (m *AttackSimulationInfo) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAttackSimDateTime gets the attackSimDateTime property value. Specifies the date time of the attack simulation.
+// GetAttackSimDateTime gets the attackSimDateTime property value. The date and time of the attack simulation.
 func (m *AttackSimulationInfo) GetAttackSimDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.attackSimDateTime
 }
-// GetAttackSimDurationTime gets the attackSimDurationTime property value. Specifies the duration (in time) for the attack simulation
+// GetAttackSimDurationTime gets the attackSimDurationTime property value. The duration (in time) for the attack simulation.
 func (m *AttackSimulationInfo) GetAttackSimDurationTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.attackSimDurationTime
 }
-// GetAttackSimId gets the attackSimId property value. Specifies the activity id for the attack simulation.
+// GetAttackSimId gets the attackSimId property value. The activity ID for the attack simulation.
 func (m *AttackSimulationInfo) GetAttackSimId()(*string) {
     return m.attackSimId
 }
-// GetAttackSimUserId gets the attackSimUserId property value. Specifies the user id of the user who got the attack simulation email
+// GetAttackSimUserId gets the attackSimUserId property value. The unique identifier for the user who got the attack simulation email.
 func (m *AttackSimulationInfo) GetAttackSimUserId()(*string) {
     return m.attackSimUserId
 }
@@ -112,19 +112,19 @@ func (m *AttackSimulationInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
 func (m *AttackSimulationInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAttackSimDateTime sets the attackSimDateTime property value. Specifies the date time of the attack simulation.
+// SetAttackSimDateTime sets the attackSimDateTime property value. The date and time of the attack simulation.
 func (m *AttackSimulationInfo) SetAttackSimDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.attackSimDateTime = value
 }
-// SetAttackSimDurationTime sets the attackSimDurationTime property value. Specifies the duration (in time) for the attack simulation
+// SetAttackSimDurationTime sets the attackSimDurationTime property value. The duration (in time) for the attack simulation.
 func (m *AttackSimulationInfo) SetAttackSimDurationTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.attackSimDurationTime = value
 }
-// SetAttackSimId sets the attackSimId property value. Specifies the activity id for the attack simulation.
+// SetAttackSimId sets the attackSimId property value. The activity ID for the attack simulation.
 func (m *AttackSimulationInfo) SetAttackSimId(value *string)() {
     m.attackSimId = value
 }
-// SetAttackSimUserId sets the attackSimUserId property value. Specifies the user id of the user who got the attack simulation email
+// SetAttackSimUserId sets the attackSimUserId property value. The unique identifier for the user who got the attack simulation email.
 func (m *AttackSimulationInfo) SetAttackSimUserId(value *string)() {
     m.attackSimUserId = value
 }
