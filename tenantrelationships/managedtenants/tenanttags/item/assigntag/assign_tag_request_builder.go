@@ -43,17 +43,13 @@ func NewAssignTagRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewAssignTagRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation assign the tenant tag to the specified managed tenants.
-func (m *AssignTagRequestBuilder) CreatePostRequestInformation(body AssignTagPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration assign the tenant tag to the specified managed tenants.
-func (m *AssignTagRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignTagPostRequestBodyable, requestConfiguration *AssignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignTagRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AssignTagPostRequestBodyable, requestConfiguration *AssignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *AssignTagRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 }
 // Post assign the tenant tag to the specified managed tenants.
 func (m *AssignTagRequestBuilder) Post(ctx context.Context, body AssignTagPostRequestBodyable, requestConfiguration *AssignTagRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

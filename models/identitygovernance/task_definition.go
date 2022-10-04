@@ -15,9 +15,9 @@ type TaskDefinition struct {
     continueOnError *bool
     // The description of the taskDefinition.
     description *string
-    // The display name of the taskDefinition.
+    // The display name of the taskDefinition`.
     displayName *string
-    // The parameters that must be supplied when creating a task.
+    // The parameters that must be supplied when creating a workflow task object.
     parameters []Parameterable
     // The version number of the taskDefinition. New records are pushed when we add support for new parameters.
     version *int32
@@ -47,7 +47,7 @@ func (m *TaskDefinition) GetContinueOnError()(*bool) {
 func (m *TaskDefinition) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The display name of the taskDefinition.
+// GetDisplayName gets the displayName property value. The display name of the taskDefinition`.
 func (m *TaskDefinition) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -62,7 +62,7 @@ func (m *TaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     res["version"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetVersion)
     return res
 }
-// GetParameters gets the parameters property value. The parameters that must be supplied when creating a task.
+// GetParameters gets the parameters property value. The parameters that must be supplied when creating a workflow task object.
 func (m *TaskDefinition) GetParameters()([]Parameterable) {
     return m.parameters
 }
@@ -128,11 +128,11 @@ func (m *TaskDefinition) SetContinueOnError(value *bool)() {
 func (m *TaskDefinition) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The display name of the taskDefinition.
+// SetDisplayName sets the displayName property value. The display name of the taskDefinition`.
 func (m *TaskDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetParameters sets the parameters property value. The parameters that must be supplied when creating a task.
+// SetParameters sets the parameters property value. The parameters that must be supplied when creating a workflow task object.
 func (m *TaskDefinition) SetParameters(value []Parameterable)() {
     m.parameters = value
 }

@@ -69,11 +69,7 @@ func (m *RosterPlansRequestBuilder) Count()(*i074934971709d946b2c4ad51e9260037fb
     return i074934971709d946b2c4ad51e9260037fbb21d0b44ebd6c06ea811e626ad6565.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
-func (m *RosterPlansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
-func (m *RosterPlansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RosterPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RosterPlansRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RosterPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *RosterPlansRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
 func (m *RosterPlansRequestBuilder) Get(ctx context.Context, requestConfiguration *RosterPlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

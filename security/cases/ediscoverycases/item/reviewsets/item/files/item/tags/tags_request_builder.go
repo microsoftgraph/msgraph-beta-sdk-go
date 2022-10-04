@@ -69,11 +69,7 @@ func (m *TagsRequestBuilder) Count()(*i89aad5d3bbd836e994e6fc70aa1990daeff19d2eb
     return i89aad5d3bbd836e994e6fc70aa1990daeff19d2eb03c89888f1aa71bfdd972c1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation tags associated with the file.
-func (m *TagsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration tags associated with the file.
-func (m *TagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TagsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *TagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
 }
 // Get tags associated with the file.
 func (m *TagsRequestBuilder) Get(ctx context.Context, requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

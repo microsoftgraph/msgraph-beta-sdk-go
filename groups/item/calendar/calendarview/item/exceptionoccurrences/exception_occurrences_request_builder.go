@@ -68,11 +68,7 @@ func (m *ExceptionOccurrencesRequestBuilder) Count()(*ie215ef124bfb2a011f0901204
     return ie215ef124bfb2a011f090120476261ac24117d44b729aed8ac0a4b06100bb73d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get exceptionOccurrences from groups
-func (m *ExceptionOccurrencesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get exceptionOccurrences from groups
-func (m *ExceptionOccurrencesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExceptionOccurrencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExceptionOccurrencesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ExceptionOccurrencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -93,7 +89,7 @@ func (m *ExceptionOccurrencesRequestBuilder) Delta()(*iddc3e5fd9666aa72799be6b8f
 }
 // Get get exceptionOccurrences from groups
 func (m *ExceptionOccurrencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExceptionOccurrencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

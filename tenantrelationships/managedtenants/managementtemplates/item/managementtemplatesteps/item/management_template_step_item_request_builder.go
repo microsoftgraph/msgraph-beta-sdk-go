@@ -52,11 +52,7 @@ func NewManagementTemplateStepItemRequestBuilder(rawUrl string, requestAdapter i
     return NewManagementTemplateStepItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get managementTemplateSteps from tenantRelationships
-func (m *ManagementTemplateStepItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get managementTemplateSteps from tenantRelationships
-func (m *ManagementTemplateStepItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagementTemplateStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagementTemplateStepItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ManagementTemplateStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ManagementTemplateStepItemRequestBuilder) CreateGetRequestInformationWi
 }
 // Get get managementTemplateSteps from tenantRelationships
 func (m *ManagementTemplateStepItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagementTemplateStepItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -42,11 +42,7 @@ func NewReuploadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewReuploadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation reupload a cloudPcDeviceImage object that failed to upload.
-func (m *ReuploadRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration reupload a cloudPcDeviceImage object that failed to upload.
-func (m *ReuploadRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *ReuploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReuploadRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ReuploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *ReuploadRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 }
 // Post reupload a cloudPcDeviceImage object that failed to upload.
 func (m *ReuploadRequestBuilder) Post(ctx context.Context, requestConfiguration *ReuploadRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

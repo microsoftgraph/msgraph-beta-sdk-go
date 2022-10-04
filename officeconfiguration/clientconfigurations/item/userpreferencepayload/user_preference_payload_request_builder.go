@@ -49,11 +49,7 @@ func NewUserPreferencePayloadRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewUserPreferencePayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserPreferencePayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserPreferencePayloadRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *UserPreferencePayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *UserPreferencePayloadRequestBuilder) CreateGetRequestInformationWithReq
     return requestInfo, nil
 }
 // CreatePutRequestInformation preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *UserPreferencePayloadRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UserPreferencePayloadRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *UserPreferencePayloadRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *UserPreferencePayloadRequestBuilder) CreatePutRequestInformationWithReq
 }
 // Get preference settings JSON string in binary format, these values can be overridden by the user.
 func (m *UserPreferencePayloadRequestBuilder) Get(ctx context.Context, requestConfiguration *UserPreferencePayloadRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *UserPreferencePayloadRequestBuilder) Get(ctx context.Context, requestCo
 }
 // Put preference settings JSON string in binary format, these values can be overridden by the user.
 func (m *UserPreferencePayloadRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *UserPreferencePayloadRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

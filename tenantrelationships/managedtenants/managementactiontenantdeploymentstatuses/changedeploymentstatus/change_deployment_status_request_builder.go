@@ -43,17 +43,13 @@ func NewChangeDeploymentStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewChangeDeploymentStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformation(body ChangeDeploymentStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeDeploymentStatusPostRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ChangeDeploymentStatusPostRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformationWithR
 }
 // Post invoke action changeDeploymentStatus
 func (m *ChangeDeploymentStatusRequestBuilder) Post(ctx context.Context, body ChangeDeploymentStatusPostRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

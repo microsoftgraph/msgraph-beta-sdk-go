@@ -42,17 +42,13 @@ func NewRequestSignupUrlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewRequestSignupUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action requestSignupUrl
-func (m *RequestSignupUrlRequestBuilder) CreatePostRequestInformation(body RequestSignupUrlPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action requestSignupUrl
-func (m *RequestSignupUrlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RequestSignupUrlPostRequestBodyable, requestConfiguration *RequestSignupUrlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RequestSignupUrlRequestBuilder) CreatePostRequestInformation(ctx context.Context, body RequestSignupUrlPostRequestBodyable, requestConfiguration *RequestSignupUrlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *RequestSignupUrlRequestBuilder) CreatePostRequestInformationWithRequest
 }
 // Post invoke action requestSignupUrl
 func (m *RequestSignupUrlRequestBuilder) Post(ctx context.Context, body RequestSignupUrlPostRequestBodyable, requestConfiguration *RequestSignupUrlRequestBuilderPostRequestConfiguration)(RequestSignupUrlResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

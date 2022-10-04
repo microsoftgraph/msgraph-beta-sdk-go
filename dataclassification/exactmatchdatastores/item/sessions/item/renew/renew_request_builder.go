@@ -43,11 +43,7 @@ func NewRenewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewRenewRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action renew
-func (m *RenewRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action renew
-func (m *RenewRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RenewRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RenewRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RenewRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -61,7 +57,7 @@ func (m *RenewRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
 }
 // Post invoke action renew
 func (m *RenewRequestBuilder) Post(ctx context.Context, requestConfiguration *RenewRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchSessionable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

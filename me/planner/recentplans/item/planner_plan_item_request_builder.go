@@ -52,11 +52,7 @@ func NewPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
-func (m *PlannerPlanItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
-func (m *PlannerPlanItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlannerPlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PlannerPlanItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PlannerPlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *PlannerPlanItemRequestBuilder) CreateGetRequestInformationWithRequestCo
 }
 // Get read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 func (m *PlannerPlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PlannerPlanItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

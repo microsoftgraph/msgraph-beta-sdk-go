@@ -69,11 +69,7 @@ func (m *SalesQuoteLinesRequestBuilder) Count()(*i28d7f926198301b9aee8d6c41282d6
     return i28d7f926198301b9aee8d6c41282d6e070864c013a6fdb9734c3a87a30135876.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get salesQuoteLines from financials
-func (m *SalesQuoteLinesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get salesQuoteLines from financials
-func (m *SalesQuoteLinesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SalesQuoteLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SalesQuoteLinesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SalesQuoteLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SalesQuoteLinesRequestBuilder) CreateGetRequestInformationWithRequestCo
 }
 // Get get salesQuoteLines from financials
 func (m *SalesQuoteLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *SalesQuoteLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

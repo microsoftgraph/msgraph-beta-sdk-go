@@ -24,6 +24,8 @@ type VirtualEndpoint struct {
     organizationSettings CloudPcOrganizationSettingsable
     // Cloud PC provisioning policy.
     provisioningPolicies []CloudPcProvisioningPolicyable
+    // The reports property
+    reports CloudPcReportsable
     // Cloud PC service plans.
     servicePlans []CloudPcServicePlanable
     // Cloud PC snapshots.
@@ -73,6 +75,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     res["onPremisesConnections"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcOnPremisesConnectionFromDiscriminatorValue , m.SetOnPremisesConnections)
     res["organizationSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcOrganizationSettingsFromDiscriminatorValue , m.SetOrganizationSettings)
     res["provisioningPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcProvisioningPolicyFromDiscriminatorValue , m.SetProvisioningPolicies)
+    res["reports"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcReportsFromDiscriminatorValue , m.SetReports)
     res["servicePlans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcServicePlanFromDiscriminatorValue , m.SetServicePlans)
     res["snapshots"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcSnapshotFromDiscriminatorValue , m.SetSnapshots)
     res["supportedRegions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcSupportedRegionFromDiscriminatorValue , m.SetSupportedRegions)
@@ -94,6 +97,10 @@ func (m *VirtualEndpoint) GetOrganizationSettings()(CloudPcOrganizationSettingsa
 // GetProvisioningPolicies gets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicyable) {
     return m.provisioningPolicies
+}
+// GetReports gets the reports property value. The reports property
+func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
+    return m.reports
 }
 // GetServicePlans gets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
@@ -172,6 +179,12 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("reports", m.GetReports())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServicePlans() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetServicePlans())
         err = writer.WriteCollectionOfObjectValues("servicePlans", cast)
@@ -233,6 +246,10 @@ func (m *VirtualEndpoint) SetOrganizationSettings(value CloudPcOrganizationSetti
 // SetProvisioningPolicies sets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)() {
     m.provisioningPolicies = value
+}
+// SetReports sets the reports property value. The reports property
+func (m *VirtualEndpoint) SetReports(value CloudPcReportsable)() {
+    m.reports = value
 }
 // SetServicePlans sets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {

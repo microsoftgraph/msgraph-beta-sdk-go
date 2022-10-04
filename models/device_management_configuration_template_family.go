@@ -22,12 +22,14 @@ const (
     ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
     ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Template Family for EnrollmentConfiguration
+    ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for Baseline
     BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "baseline"}[i]
+    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "enrollmentConfiguration", "baseline"}[i]
 }
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
@@ -48,6 +50,8 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (interface{}, er
             result = ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "endpointSecurityApplicationControl":
             result = ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "enrollmentConfiguration":
+            result = ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "baseline":
             result = BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:

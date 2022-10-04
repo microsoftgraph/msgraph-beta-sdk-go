@@ -20,7 +20,7 @@ type UserTrainingContentEventInfo struct {
     odataType *string
     // The operating system, platform, and device details of the user for the training event.
     osPlatformDeviceDetails *string
-    // Potential improvement in security posture of the tenant after completion of the training by the user.
+    // Potential improvement in the tenant security posture after completion of the training by the user.
     potentialScoreImpact *float64
 }
 // NewUserTrainingContentEventInfo instantiates a new userTrainingContentEventInfo and sets the default values.
@@ -71,7 +71,7 @@ func (m *UserTrainingContentEventInfo) GetOdataType()(*string) {
 func (m *UserTrainingContentEventInfo) GetOsPlatformDeviceDetails()(*string) {
     return m.osPlatformDeviceDetails
 }
-// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security posture of the tenant after completion of the training by the user.
+// GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in the tenant security posture after completion of the training by the user.
 func (m *UserTrainingContentEventInfo) GetPotentialScoreImpact()(*float64) {
     return m.potentialScoreImpact
 }
@@ -145,7 +145,7 @@ func (m *UserTrainingContentEventInfo) SetOdataType(value *string)() {
 func (m *UserTrainingContentEventInfo) SetOsPlatformDeviceDetails(value *string)() {
     m.osPlatformDeviceDetails = value
 }
-// SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in security posture of the tenant after completion of the training by the user.
+// SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in the tenant security posture after completion of the training by the user.
 func (m *UserTrainingContentEventInfo) SetPotentialScoreImpact(value *float64)() {
     m.potentialScoreImpact = value
 }

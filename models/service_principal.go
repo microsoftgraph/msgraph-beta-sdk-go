@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipal provides operations to manage the collection of accessReview entities.
+// ServicePrincipal provides operations to manage the collection of activityStatistics entities.
 type ServicePrincipal struct {
     DirectoryObject
     // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
@@ -93,7 +93,7 @@ type ServicePrincipal struct {
     preferredTokenSigningKeyThumbprint *string
     // The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
     publishedPermissionScopes []PermissionScopeable
-    // The publisherName property
+    // The name of the Azure AD tenant that published the application.
     publisherName *string
     // The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
     replyUrls []string
@@ -364,7 +364,7 @@ func (m *ServicePrincipal) GetPreferredTokenSigningKeyThumbprint()(*string) {
 func (m *ServicePrincipal) GetPublishedPermissionScopes()([]PermissionScopeable) {
     return m.publishedPermissionScopes
 }
-// GetPublisherName gets the publisherName property value. The publisherName property
+// GetPublisherName gets the publisherName property value. The name of the Azure AD tenant that published the application.
 func (m *ServicePrincipal) GetPublisherName()(*string) {
     return m.publisherName
 }
@@ -954,7 +954,7 @@ func (m *ServicePrincipal) SetPreferredTokenSigningKeyThumbprint(value *string)(
 func (m *ServicePrincipal) SetPublishedPermissionScopes(value []PermissionScopeable)() {
     m.publishedPermissionScopes = value
 }
-// SetPublisherName sets the publisherName property value. The publisherName property
+// SetPublisherName sets the publisherName property value. The name of the Azure AD tenant that published the application.
 func (m *ServicePrincipal) SetPublisherName(value *string)() {
     m.publisherName = value
 }

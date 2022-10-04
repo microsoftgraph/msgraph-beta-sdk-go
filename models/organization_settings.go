@@ -8,7 +8,7 @@ import (
 // OrganizationSettings 
 type OrganizationSettings struct {
     Entity
-    // The contactInsights property
+    // Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
     contactInsights InsightsSettingsable
     // Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
     itemInsights InsightsSettingsable
@@ -32,7 +32,7 @@ func NewOrganizationSettings()(*OrganizationSettings) {
 func CreateOrganizationSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationSettings(), nil
 }
-// GetContactInsights gets the contactInsights property value. The contactInsights property
+// GetContactInsights gets the contactInsights property value. Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
 func (m *OrganizationSettings) GetContactInsights()(InsightsSettingsable) {
     return m.contactInsights
 }
@@ -101,7 +101,7 @@ func (m *OrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetContactInsights sets the contactInsights property value. The contactInsights property
+// SetContactInsights sets the contactInsights property value. Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
 func (m *OrganizationSettings) SetContactInsights(value InsightsSettingsable)() {
     m.contactInsights = value
 }

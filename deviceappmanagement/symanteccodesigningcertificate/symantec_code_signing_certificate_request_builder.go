@@ -66,11 +66,7 @@ func NewSymantecCodeSigningCertificateRequestBuilder(rawUrl string, requestAdapt
     return NewSymantecCodeSigningCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property symantecCodeSigningCertificate for deviceAppManagement
-func (m *SymantecCodeSigningCertificateRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property symantecCodeSigningCertificate for deviceAppManagement
-func (m *SymantecCodeSigningCertificateRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SymantecCodeSigningCertificateRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,11 +78,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) CreateDeleteRequestInform
     return requestInfo, nil
 }
 // CreateGetRequestInformation the WinPhone Symantec Code Signing Certificate.
-func (m *SymantecCodeSigningCertificateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the WinPhone Symantec Code Signing Certificate.
-func (m *SymantecCodeSigningCertificateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SymantecCodeSigningCertificateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -102,17 +94,13 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) CreateGetRequestInformati
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property symantecCodeSigningCertificate in deviceAppManagement
-func (m *SymantecCodeSigningCertificateRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property symantecCodeSigningCertificate in deviceAppManagement
-func (m *SymantecCodeSigningCertificateRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SymantecCodeSigningCertificateRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +109,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) CreatePatchRequestInforma
 }
 // Delete delete navigation property symantecCodeSigningCertificate for deviceAppManagement
 func (m *SymantecCodeSigningCertificateRequestBuilder) Delete(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -137,7 +125,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) Delete(ctx context.Contex
 }
 // Get the WinPhone Symantec Code Signing Certificate.
 func (m *SymantecCodeSigningCertificateRequestBuilder) Get(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -156,7 +144,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) Get(ctx context.Context, 
 }
 // Patch update the navigation property symantecCodeSigningCertificate in deviceAppManagement
 func (m *SymantecCodeSigningCertificateRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

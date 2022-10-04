@@ -49,11 +49,7 @@ func NewExtractedTextContentRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewExtractedTextContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get extractedTextContent for the navigation property files from security
-func (m *ExtractedTextContentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get extractedTextContent for the navigation property files from security
-func (m *ExtractedTextContentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExtractedTextContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExtractedTextContentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ExtractedTextContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *ExtractedTextContentRequestBuilder) CreateGetRequestInformationWithRequ
     return requestInfo, nil
 }
 // CreatePutRequestInformation update extractedTextContent for the navigation property files in security
-func (m *ExtractedTextContentRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration update extractedTextContent for the navigation property files in security
-func (m *ExtractedTextContentRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *ExtractedTextContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExtractedTextContentRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ExtractedTextContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *ExtractedTextContentRequestBuilder) CreatePutRequestInformationWithRequ
 }
 // Get get extractedTextContent for the navigation property files from security
 func (m *ExtractedTextContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ExtractedTextContentRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *ExtractedTextContentRequestBuilder) Get(ctx context.Context, requestCon
 }
 // Put update extractedTextContent for the navigation property files in security
 func (m *ExtractedTextContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ExtractedTextContentRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

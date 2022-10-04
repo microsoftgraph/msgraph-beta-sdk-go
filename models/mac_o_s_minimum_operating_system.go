@@ -11,28 +11,30 @@ type MacOSMinimumOperatingSystem struct {
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
-    // Mac OS 10.10 or later.
+    // When TRUE, indicates macOS 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_10 *bool
-    // Mac OS 10.11 or later.
+    // When TRUE, indicates macOS 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_11 *bool
-    // Mac OS 10.12 or later.
+    // When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_12 *bool
-    // Mac OS 10.13 or later.
+    // When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_13 *bool
-    // Mac OS 10.14 or later.
+    // When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_14 *bool
-    // Mac OS 10.15 or later.
+    // When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_15 *bool
-    // Mac OS 10.7 or later.
+    // When TRUE, indicates macOS 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_7 *bool
-    // Mac OS 10.8 or later.
+    // When TRUE, indicates macOS 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_8 *bool
-    // Mac OS 10.9 or later.
+    // When TRUE, indicates macOS 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v10_9 *bool
-    // Mac OS 11.0 or later.
+    // When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v11_0 *bool
-    // Mac OS 12.0 or later.
+    // When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
     v12_0 *bool
+    // When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+    v13_0 *bool
 }
 // NewMacOSMinimumOperatingSystem instantiates a new macOSMinimumOperatingSystem and sets the default values.
 func NewMacOSMinimumOperatingSystem()(*MacOSMinimumOperatingSystem) {
@@ -66,55 +68,60 @@ func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i8
     res["v10_9"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetV10_9)
     res["v11_0"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetV11_0)
     res["v12_0"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetV12_0)
+    res["v13_0"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetV13_0)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSMinimumOperatingSystem) GetOdataType()(*string) {
     return m.odataType
 }
-// GetV10_10 gets the v10_10 property value. Mac OS 10.10 or later.
+// GetV10_10 gets the v10_10 property value. When TRUE, indicates macOS 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_10()(*bool) {
     return m.v10_10
 }
-// GetV10_11 gets the v10_11 property value. Mac OS 10.11 or later.
+// GetV10_11 gets the v10_11 property value. When TRUE, indicates macOS 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_11()(*bool) {
     return m.v10_11
 }
-// GetV10_12 gets the v10_12 property value. Mac OS 10.12 or later.
+// GetV10_12 gets the v10_12 property value. When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_12()(*bool) {
     return m.v10_12
 }
-// GetV10_13 gets the v10_13 property value. Mac OS 10.13 or later.
+// GetV10_13 gets the v10_13 property value. When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_13()(*bool) {
     return m.v10_13
 }
-// GetV10_14 gets the v10_14 property value. Mac OS 10.14 or later.
+// GetV10_14 gets the v10_14 property value. When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_14()(*bool) {
     return m.v10_14
 }
-// GetV10_15 gets the v10_15 property value. Mac OS 10.15 or later.
+// GetV10_15 gets the v10_15 property value. When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_15()(*bool) {
     return m.v10_15
 }
-// GetV10_7 gets the v10_7 property value. Mac OS 10.7 or later.
+// GetV10_7 gets the v10_7 property value. When TRUE, indicates macOS 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_7()(*bool) {
     return m.v10_7
 }
-// GetV10_8 gets the v10_8 property value. Mac OS 10.8 or later.
+// GetV10_8 gets the v10_8 property value. When TRUE, indicates macOS 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_8()(*bool) {
     return m.v10_8
 }
-// GetV10_9 gets the v10_9 property value. Mac OS 10.9 or later.
+// GetV10_9 gets the v10_9 property value. When TRUE, indicates macOS 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV10_9()(*bool) {
     return m.v10_9
 }
-// GetV11_0 gets the v11_0 property value. Mac OS 11.0 or later.
+// GetV11_0 gets the v11_0 property value. When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV11_0()(*bool) {
     return m.v11_0
 }
-// GetV12_0 gets the v12_0 property value. Mac OS 12.0 or later.
+// GetV12_0 gets the v12_0 property value. When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) GetV12_0()(*bool) {
     return m.v12_0
+}
+// GetV13_0 gets the v13_0 property value. When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+func (m *MacOSMinimumOperatingSystem) GetV13_0()(*bool) {
+    return m.v13_0
 }
 // Serialize serializes information the current object
 func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -191,6 +198,12 @@ func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err := writer.WriteBoolValue("v13_0", m.GetV13_0())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -206,47 +219,51 @@ func (m *MacOSMinimumOperatingSystem) SetAdditionalData(value map[string]interfa
 func (m *MacOSMinimumOperatingSystem) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetV10_10 sets the v10_10 property value. Mac OS 10.10 or later.
+// SetV10_10 sets the v10_10 property value. When TRUE, indicates macOS 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_10(value *bool)() {
     m.v10_10 = value
 }
-// SetV10_11 sets the v10_11 property value. Mac OS 10.11 or later.
+// SetV10_11 sets the v10_11 property value. When TRUE, indicates macOS 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_11(value *bool)() {
     m.v10_11 = value
 }
-// SetV10_12 sets the v10_12 property value. Mac OS 10.12 or later.
+// SetV10_12 sets the v10_12 property value. When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_12(value *bool)() {
     m.v10_12 = value
 }
-// SetV10_13 sets the v10_13 property value. Mac OS 10.13 or later.
+// SetV10_13 sets the v10_13 property value. When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_13(value *bool)() {
     m.v10_13 = value
 }
-// SetV10_14 sets the v10_14 property value. Mac OS 10.14 or later.
+// SetV10_14 sets the v10_14 property value. When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_14(value *bool)() {
     m.v10_14 = value
 }
-// SetV10_15 sets the v10_15 property value. Mac OS 10.15 or later.
+// SetV10_15 sets the v10_15 property value. When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_15(value *bool)() {
     m.v10_15 = value
 }
-// SetV10_7 sets the v10_7 property value. Mac OS 10.7 or later.
+// SetV10_7 sets the v10_7 property value. When TRUE, indicates macOS 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_7(value *bool)() {
     m.v10_7 = value
 }
-// SetV10_8 sets the v10_8 property value. Mac OS 10.8 or later.
+// SetV10_8 sets the v10_8 property value. When TRUE, indicates macOS 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_8(value *bool)() {
     m.v10_8 = value
 }
-// SetV10_9 sets the v10_9 property value. Mac OS 10.9 or later.
+// SetV10_9 sets the v10_9 property value. When TRUE, indicates macOS 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV10_9(value *bool)() {
     m.v10_9 = value
 }
-// SetV11_0 sets the v11_0 property value. Mac OS 11.0 or later.
+// SetV11_0 sets the v11_0 property value. When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV11_0(value *bool)() {
     m.v11_0 = value
 }
-// SetV12_0 sets the v12_0 property value. Mac OS 12.0 or later.
+// SetV12_0 sets the v12_0 property value. When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
 func (m *MacOSMinimumOperatingSystem) SetV12_0(value *bool)() {
     m.v12_0 = value
+}
+// SetV13_0 sets the v13_0 property value. When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+func (m *MacOSMinimumOperatingSystem) SetV13_0(value *bool)() {
+    m.v13_0 = value
 }

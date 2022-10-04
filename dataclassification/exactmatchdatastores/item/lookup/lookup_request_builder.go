@@ -42,17 +42,13 @@ func NewLookupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewLookupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action lookup
-func (m *LookupRequestBuilder) CreatePostRequestInformation(body LookupPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action lookup
-func (m *LookupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body LookupPostRequestBodyable, requestConfiguration *LookupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LookupRequestBuilder) CreatePostRequestInformation(ctx context.Context, body LookupPostRequestBodyable, requestConfiguration *LookupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *LookupRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post invoke action lookup
 func (m *LookupRequestBuilder) Post(ctx context.Context, body LookupPostRequestBodyable, requestConfiguration *LookupRequestBuilderPostRequestConfiguration)(LookupResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

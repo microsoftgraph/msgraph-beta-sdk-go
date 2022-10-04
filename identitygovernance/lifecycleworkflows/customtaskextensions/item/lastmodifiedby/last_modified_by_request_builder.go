@@ -52,11 +52,7 @@ func NewLastModifiedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewLastModifiedByRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the unique identifier of the Azure AD user that modified the custom task extension last.
-func (m *LastModifiedByRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the unique identifier of the Azure AD user that modified the custom task extension last.
-func (m *LastModifiedByRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastModifiedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LastModifiedByRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LastModifiedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *LastModifiedByRequestBuilder) CreateGetRequestInformationWithRequestCon
 }
 // Get the unique identifier of the Azure AD user that modified the custom task extension last.
 func (m *LastModifiedByRequestBuilder) Get(ctx context.Context, requestConfiguration *LastModifiedByRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

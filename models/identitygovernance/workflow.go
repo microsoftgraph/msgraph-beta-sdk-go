@@ -12,7 +12,7 @@ type Workflow struct {
     WorkflowBase
     // The time and date a workflow is deleted. Supports $filter(lt,gt) and $orderby.
     deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The unique identifier of the Azure AD identity that last modified the workflow object..
+    // The unique identifier of the Azure AD identity that last modified the workflow object.
     executionScope []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
     // Identifier used for individually addressing a specific workflow. Supports $filter(eq).
     id *string
@@ -50,7 +50,7 @@ func CreateWorkflowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.deletedDateTime
 }
-// GetExecutionScope gets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object..
+// GetExecutionScope gets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object.
 func (m *Workflow) GetExecutionScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
     return m.executionScope
 }
@@ -189,7 +189,7 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *Workflow) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.deletedDateTime = value
 }
-// SetExecutionScope sets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object..
+// SetExecutionScope sets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object.
 func (m *Workflow) SetExecutionScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     m.executionScope = value
 }

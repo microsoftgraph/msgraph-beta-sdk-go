@@ -42,16 +42,12 @@ func NewChangeUserAccountTypeRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewChangeUserAccountTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation change the account type of the user on a specific Cloud PC.
-func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformation(body ChangeUserAccountTypePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration change the account type of the user on a specific Cloud PC.
-func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeUserAccountTypePostRequestBodyable, requestConfiguration *ChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ChangeUserAccountTypePostRequestBodyable, requestConfiguration *ChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformationWithRe
 }
 // Post change the account type of the user on a specific Cloud PC.
 func (m *ChangeUserAccountTypeRequestBuilder) Post(ctx context.Context, body ChangeUserAccountTypePostRequestBodyable, requestConfiguration *ChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

@@ -6,16 +6,18 @@ import (
 type MicrosoftTunnelLogCollectionStatus int
 
 const (
-    // Log collection is in progress
+    // Indicates that the log collection is in progress
     PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS MicrosoftTunnelLogCollectionStatus = iota
-    // Log collection is completed
+    // Indicates that the log collection is completed
     COMPLETED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
-    // Log collection has failed
+    // Indicates that the log collection has failed
     FAILED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
+    // Placeholder value for future expansion enums
+    UNKNOWNFUTUREVALUE_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
 )
 
 func (i MicrosoftTunnelLogCollectionStatus) String() string {
-    return []string{"pending", "completed", "failed"}[i]
+    return []string{"pending", "completed", "failed", "unknownFutureValue"}[i]
 }
 func ParseMicrosoftTunnelLogCollectionStatus(v string) (interface{}, error) {
     result := PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
@@ -26,6 +28,8 @@ func ParseMicrosoftTunnelLogCollectionStatus(v string) (interface{}, error) {
             result = COMPLETED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
         case "failed":
             result = FAILED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
         default:
             return 0, errors.New("Unknown MicrosoftTunnelLogCollectionStatus value: " + v)
     }

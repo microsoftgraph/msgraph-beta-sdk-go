@@ -57,11 +57,7 @@ func NewGetManagedDevicesWithFailedOrPendingAppsRequestBuilder(rawUrl string, re
     return NewGetManagedDevicesWithFailedOrPendingAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation retrieves the list of devices with failed or pending apps
-func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieves the list of devices with failed or pending apps
-func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -78,7 +74,7 @@ func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) CreateGetReques
 }
 // Get retrieves the list of devices with failed or pending apps
 func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(GetManagedDevicesWithFailedOrPendingAppsResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -52,11 +52,7 @@ func NewIntendedDeploymentProfileRequestBuilder(rawUrl string, requestAdapter i2
     return NewIntendedDeploymentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation deployment profile intended to be assigned to the Windows autopilot device.
-func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration deployment profile intended to be assigned to the Windows autopilot device.
-func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IntendedDeploymentProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IntendedDeploymentProfileRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformationWit
 }
 // Get deployment profile intended to be assigned to the Windows autopilot device.
 func (m *IntendedDeploymentProfileRequestBuilder) Get(ctx context.Context, requestConfiguration *IntendedDeploymentProfileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

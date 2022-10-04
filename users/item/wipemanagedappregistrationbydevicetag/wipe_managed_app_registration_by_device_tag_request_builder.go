@@ -42,16 +42,12 @@ func NewWipeManagedAppRegistrationByDeviceTagRequestBuilder(rawUrl string, reque
     return NewWipeManagedAppRegistrationByDeviceTagRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation issues a wipe operation on an app registration with specified device tag.
-func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) CreatePostRequestInformation(body WipeManagedAppRegistrationByDeviceTagPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration issues a wipe operation on an app registration with specified device tag.
-func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeManagedAppRegistrationByDeviceTagPostRequestBodyable, requestConfiguration *WipeManagedAppRegistrationByDeviceTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) CreatePostRequestInformation(ctx context.Context, body WipeManagedAppRegistrationByDeviceTagPostRequestBodyable, requestConfiguration *WipeManagedAppRegistrationByDeviceTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) CreatePostRequestI
 }
 // Post issues a wipe operation on an app registration with specified device tag.
 func (m *WipeManagedAppRegistrationByDeviceTagRequestBuilder) Post(ctx context.Context, body WipeManagedAppRegistrationByDeviceTagPostRequestBodyable, requestConfiguration *WipeManagedAppRegistrationByDeviceTagRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

@@ -58,6 +58,7 @@ import (
     i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessagedetails"
     i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configmanagercollections"
     i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversiondeviceid"
+    i4984668279ed8876cf46248c619567ca3892e61be4b166dd0c78c4f08260b1ac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/postorganizationalmessagetenantconsent"
     i4bd812738dda41107da4619109b291325f5d780358395b89fe5c82aad759ae99 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/monitoring"
     i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmodelscores"
     i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsworkfromanywheremodelperformance"
@@ -92,6 +93,7 @@ import (
     i7a555a75335cb9d717ad246494b3cccf65d4ba988b41e42e9cb8c2fee3bfd31f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceoperations"
     i7bbe59add940b047fb4915bc2d373a95d5f636a1c3a60312ac7d01bddbc4ee42 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelhealththresholds"
     i7d2a149d9d011731691dd153f225979e19f163bf4360e1259693e20d7bccfaf0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmetrichistory"
+    i7dbcf5ce27f9bb2c599126b3dba947db924e4c704d82001c4bdc4e49ce7e385f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/getorganizationalmessagetenantconsent"
     i7e94b13ab484d489531e932fa60a1fc8593394421fb0573d41f489216a4d1881 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthdeviceappimpact"
     i7f539b5d0a42468004c84b364a2ae5e678aacaf1e6cef8edbceb6f9720bc91c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions"
     i7f61c70ea2f2f7b8282c6bc875f49be5553df3b84a88282940a6d7d632dc0455 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicestartuphistory"
@@ -99,10 +101,12 @@ import (
     i883482678f2a2f0423c5c68caf5a82bf8337f568b3cd6468d6cc2d5e6c084235 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsresourceperformance"
     i88a41d6a6b9d6f5d95b1375089cd36d4423cd8f3f1ccf1b08a32ace2e08042f3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthruntimedetails"
     i88c5051d5413e2a50dfc8d7dad02241a69e5952b2a13f0ee5c43d5d21fb1e17c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsoverview"
+    i8ae0cf333ed7c0de31759e37e570f524a4e36df9e080ada0178b5cf6b0a34a81 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/updateorganizationalmessagetenantconsent"
     i8b59cbe498bdd43bba238c8505dc901d4f1eab37af0f92a99abc825f62c5cedb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurationrestrictedappsviolations"
     i8b68ddcfc0e1b786a9ceec8a51661bd858daecd6cf9d82c16f0af0eaefe928be "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/enableunlicensedadminstrators"
     i8ce752b735630d1938ba83b1413f1f2a6b47900296c801c0885117449dcdfb03 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/rolescopetags"
     i8f1b9cb53250cc6f80b90b1773e988f7fd6c9be2f104ced70a79bd26b7f2636d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/autopilotevents"
+    i8fdcd93594e2f489cd427ccdef6580ba0ea5250e1de421fdc4f886557c2fc76b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsanomalydevice"
     i924450e3357285a481d60a94f9399519371e2c7764359c292ad23e2af5dfe4c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdeviceperformance"
     i92a42d01d17455bc0e0451361cb652c93db258538e900291294610aa540f414b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/zebrafotadeployments"
     i9454c3ec04f2c7df3ea0d011686892dbd5605be5b323336d457c9746de64b58b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelsites"
@@ -110,6 +114,7 @@ import (
     i9936a8568039e56943f066cd2897ee9e81bb175bc3caaae1539aa34d424a4157 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/domainjoinconnectors"
     i998652e1299f15a8b348de562e778ef7d149b6c22767a912ce84a6ee3c2fe2d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/getassignmentfiltersstatusdetails"
     i99d9a524d7a8704a79b86768e95d94ab558ba2c422105dc823147c9ce9c3c9e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/termsandconditions"
+    i9a13ea3d326f53f7e924d1adf534cbd60dc1c39e17bacdcc504a5f4995c7051f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsanomaly"
     i9a2e165b703011f518b95c3d30e23d94f063f3895d69b4c103293ba9019680a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidforworkenrollmentprofiles"
     i9e479031ba8de6e85dc52ac8315cd8522b7b5745abc2e95384031836737a5b1d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps"
     i9fc465b5a8565316b3a09db0e1646313af06d3ec1486a04762bbfd6657caf903 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/geteffectivepermissions"
@@ -190,6 +195,7 @@ import (
     i0fa4fe7e52bd9e6fe61758ccb28bd98616000dc0773a966cd7b7a09fdade9a76 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicymigrationreports/item"
     i1005756f6f557eed7bb1626c7031fedcb67d61eb9653f994789e7535183b7213 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelsites/item"
     i10af5fa01c92472f6e866e9250270e127760d60e918527fe49cc649a2ad4c3c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templatesettings/item"
+    i119c932c30236bab01a8848f0ed565137c79b79805b04325825a352fcfd0add9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsanomalydevice/item"
     i13ec2dc955bd2031b7c41de8836ca991ee20d48a59d434edd922344937f73177 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/zebrafotadeployments/item"
     i14e77edfb7aabf297aafe34cf0e371c2ffb0536ecae98ba988fc808ae0fb45d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/zebrafotaartifacts/item"
     i170fcfb6f7df141f639f83b57290340c6a4b7ce5c5502e6850f8fa3b399c2ebd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdeviceperformance/item"
@@ -287,6 +293,7 @@ import (
     iba229db39ae603170e2b51b246613530e06cbd7649ed03f8be88cc4d02410dd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item"
     ic14886561878f11e91ced382b17c086323a017287f722a50db11012f73d5b9f6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/termsandconditions/item"
     ic2bd65e0c7afcdf7f604db4f873328a2a71809652f3c7ce01a16054fef075e83 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configurationpolicies/item"
+    ic2f0f668c8bc09f27eb487b7d090834348e0e51259d54e89080d0c8a3656d363 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsanomaly/item"
     ic5d558eaada98180598cc19a99bfac93aa6f720f6dbc364a9d4349cee7beb577 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceaccessprofiles/item"
     ic6fdd851c4655d49f63a57983f59dcf3ee5726ee6644e86e726fc382d34da937 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancemanagementpartners/item"
     ic8d8483197953e41c857cec1dd8f8b035af76fd8ccee3730a059e905b38d5a80 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmetrichistory/item"
@@ -747,11 +754,7 @@ func NewDeviceManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewDeviceManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get deviceManagement
-func (m *DeviceManagementRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get deviceManagement
-func (m *DeviceManagementRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeviceManagementRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeviceManagementRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -767,17 +770,13 @@ func (m *DeviceManagementRequestBuilder) CreateGetRequestInformationWithRequestC
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update deviceManagement
-func (m *DeviceManagementRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update deviceManagement
-func (m *DeviceManagementRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeviceManagementRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -1148,7 +1147,7 @@ func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPolicy()(*i72062f459a
 }
 // Get get deviceManagement
 func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -1188,6 +1187,10 @@ func (m *DeviceManagementRequestBuilder) GetEffectivePermissions()(*i9fc465b5a85
 // GetEffectivePermissionsWithScope provides operations to call the getEffectivePermissions method.
 func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.GetEffectivePermissionsWithScopeRequestBuilder) {
     return i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.NewGetEffectivePermissionsWithScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter, scope);
+}
+// GetOrganizationalMessageTenantConsent provides operations to call the getOrganizationalMessageTenantConsent method.
+func (m *DeviceManagementRequestBuilder) GetOrganizationalMessageTenantConsent()(*i7dbcf5ce27f9bb2c599126b3dba947db924e4c704d82001c4bdc4e49ce7e385f.GetOrganizationalMessageTenantConsentRequestBuilder) {
+    return i7dbcf5ce27f9bb2c599126b3dba947db924e4c704d82001c4bdc4e49ce7e385f.NewGetOrganizationalMessageTenantConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetRoleScopeTagsByIdsWithIds provides operations to call the getRoleScopeTagsByIds method.
 func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByIdsWithIds(ids *string)(*if3725d86243c74aefb922ce3d9a0524f440a1a4a7747d2ca7eb3303e88cb032d.GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
@@ -1601,7 +1604,7 @@ func (m *DeviceManagementRequestBuilder) OrganizationalMessageGuidedContentsById
 }
 // Patch update deviceManagement
 func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -1617,6 +1620,10 @@ func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable), nil
+}
+// PostOrganizationalMessageTenantConsent the postOrganizationalMessageTenantConsent property
+func (m *DeviceManagementRequestBuilder) PostOrganizationalMessageTenantConsent()(*i4984668279ed8876cf46248c619567ca3892e61be4b166dd0c78c4f08260b1ac.PostOrganizationalMessageTenantConsentRequestBuilder) {
+    return i4984668279ed8876cf46248c619567ca3892e61be4b166dd0c78c4f08260b1ac.NewPostOrganizationalMessageTenantConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RemoteActionAudits the remoteActionAudits property
 func (m *DeviceManagementRequestBuilder) RemoteActionAudits()(*icc453491aa85e95c9367a8608bae36cdb55e1bd1c0061d126c9a65e366a9ff28.RemoteActionAuditsRequestBuilder) {
@@ -1866,6 +1873,40 @@ func (m *DeviceManagementRequestBuilder) TroubleshootingEventsById(id string)(*i
         urlTplParams["deviceManagementTroubleshootingEvent%2Did"] = id
     }
     return i3f73ae7f42ec4e4c711aefe6d686e5f4cff1343578a3d57e140420be1212f1f2.NewDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// UpdateOrganizationalMessageTenantConsent the updateOrganizationalMessageTenantConsent property
+func (m *DeviceManagementRequestBuilder) UpdateOrganizationalMessageTenantConsent()(*i8ae0cf333ed7c0de31759e37e570f524a4e36df9e080ada0178b5cf6b0a34a81.UpdateOrganizationalMessageTenantConsentRequestBuilder) {
+    return i8ae0cf333ed7c0de31759e37e570f524a4e36df9e080ada0178b5cf6b0a34a81.NewUpdateOrganizationalMessageTenantConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UserExperienceAnalyticsAnomaly the userExperienceAnalyticsAnomaly property
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomaly()(*i9a13ea3d326f53f7e924d1adf534cbd60dc1c39e17bacdcc504a5f4995c7051f.UserExperienceAnalyticsAnomalyRequestBuilder) {
+    return i9a13ea3d326f53f7e924d1adf534cbd60dc1c39e17bacdcc504a5f4995c7051f.NewUserExperienceAnalyticsAnomalyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UserExperienceAnalyticsAnomalyById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAnomaly.item collection
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyById(id string)(*ic2f0f668c8bc09f27eb487b7d090834348e0e51259d54e89080d0c8a3656d363.UserExperienceAnalyticsAnomalyItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["userExperienceAnalyticsAnomaly%2Did"] = id
+    }
+    return ic2f0f668c8bc09f27eb487b7d090834348e0e51259d54e89080d0c8a3656d363.NewUserExperienceAnalyticsAnomalyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// UserExperienceAnalyticsAnomalyDevice the userExperienceAnalyticsAnomalyDevice property
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDevice()(*i8fdcd93594e2f489cd427ccdef6580ba0ea5250e1de421fdc4f886557c2fc76b.UserExperienceAnalyticsAnomalyDeviceRequestBuilder) {
+    return i8fdcd93594e2f489cd427ccdef6580ba0ea5250e1de421fdc4f886557c2fc76b.NewUserExperienceAnalyticsAnomalyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UserExperienceAnalyticsAnomalyDeviceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAnomalyDevice.item collection
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDeviceById(id string)(*i119c932c30236bab01a8848f0ed565137c79b79805b04325825a352fcfd0add9.UserExperienceAnalyticsAnomalyDeviceItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["userExperienceAnalyticsAnomalyDevice%2Did"] = id
+    }
+    return i119c932c30236bab01a8848f0ed565137c79b79805b04325825a352fcfd0add9.NewUserExperienceAnalyticsAnomalyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformance the userExperienceAnalyticsAppHealthApplicationPerformance property
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformance()(*i005a2443c6ebd6edec9907aacffd1e6acd51caafefcf6fc9d0557935fd3a0c2b.UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) {

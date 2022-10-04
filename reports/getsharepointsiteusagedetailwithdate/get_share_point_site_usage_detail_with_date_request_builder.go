@@ -46,11 +46,7 @@ func NewGetSharePointSiteUsageDetailWithDateRequestBuilder(rawUrl string, reques
     return NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getSharePointSiteUsageDetail
-func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointSiteUsageDetail
-func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -63,7 +59,7 @@ func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInf
 }
 // Get invoke function getSharePointSiteUsageDetail
 func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

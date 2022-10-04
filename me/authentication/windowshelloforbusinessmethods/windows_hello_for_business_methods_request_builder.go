@@ -69,11 +69,7 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) Count()(*ie11455112354981
     return ie11455112354981d03b7819172c214663e4ba8de7c5cf9c62aae3900e3444ee3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
-func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformati
 }
 // Get get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

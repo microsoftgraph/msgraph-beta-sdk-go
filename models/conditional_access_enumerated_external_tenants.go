@@ -8,7 +8,7 @@ import (
 // ConditionalAccessEnumeratedExternalTenants 
 type ConditionalAccessEnumeratedExternalTenants struct {
     ConditionalAccessExternalTenants
-    // The members property
+    // Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
     members []string
 }
 // NewConditionalAccessEnumeratedExternalTenants instantiates a new ConditionalAccessEnumeratedExternalTenants and sets the default values.
@@ -30,7 +30,7 @@ func (m *ConditionalAccessEnumeratedExternalTenants) GetFieldDeserializers()(map
     res["members"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetMembers)
     return res
 }
-// GetMembers gets the members property value. The members property
+// GetMembers gets the members property value. Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
 func (m *ConditionalAccessEnumeratedExternalTenants) GetMembers()([]string) {
     return m.members
 }
@@ -48,7 +48,7 @@ func (m *ConditionalAccessEnumeratedExternalTenants) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetMembers sets the members property value. The members property
+// SetMembers sets the members property value. Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
 func (m *ConditionalAccessEnumeratedExternalTenants) SetMembers(value []string)() {
     m.members = value
 }

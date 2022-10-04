@@ -57,11 +57,7 @@ func (m *FilesFolderRequestBuilder) Content()(*if4ee89d85631c5b1ac1015fe20c02305
     return if4ee89d85631c5b1ac1015fe20c023057e6e07fa861b26d6f998b51938fbb8b1.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the metadata for the location where the files of a channel are stored.
-func (m *FilesFolderRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the metadata for the location where the files of a channel are stored.
-func (m *FilesFolderRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *FilesFolderRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -78,7 +74,7 @@ func (m *FilesFolderRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get get the metadata for the location where the files of a channel are stored.
 func (m *FilesFolderRequestBuilder) Get(ctx context.Context, requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

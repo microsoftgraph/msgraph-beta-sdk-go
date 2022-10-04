@@ -69,11 +69,7 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Count()(*i64a9
     return i64a95688aba3f8daa031a76499d4e9264c8a3125b44b58f8fd2e8b0439cc117f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetReque
 }
 // Get retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

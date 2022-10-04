@@ -69,11 +69,7 @@ func (m *TransitiveReportsRequestBuilder) Count()(*i2bd744a7bf85e3809a4e0bb09c47
     return i2bd744a7bf85e3809a4e0bb09c47ae158c1c392b749c0b42d837d081d57d0efc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the transitive reports for a user. Read-only.
-func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the transitive reports for a user. Read-only.
-func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TransitiveReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TransitiveReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *TransitiveReportsRequestBuilder) CreateGetRequestInformationWithRequest
 }
 // Get the transitive reports for a user. Read-only.
 func (m *TransitiveReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *TransitiveReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

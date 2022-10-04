@@ -70,11 +70,7 @@ func (m *ClaimsMappingPoliciesRequestBuilder) Count()(*i0438131ff8ba54925db4c29a
     return i0438131ff8ba54925db4c29af39223414dce78d26ebc13f6de96410d1c3938e7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformationWithReq
 }
 // Get list the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 func (m *ClaimsMappingPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

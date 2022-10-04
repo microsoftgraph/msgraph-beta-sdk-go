@@ -16,7 +16,7 @@ type AttackSimulationSimulationUserCoverage struct {
     clickCount *int32
     // Number of compromising actions by the user in attack simulation and training campaigns.
     compromisedCount *int32
-    // Date and time of latest attack simulation and training campaign that the user was included in.
+    // Date and time of the latest attack simulation and training campaign that the user was included in.
     latestSimulationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
     odataType *string
@@ -63,7 +63,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
     res["simulationCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSimulationCount)
     return res
 }
-// GetLatestSimulationDateTime gets the latestSimulationDateTime property value. Date and time of latest attack simulation and training campaign that the user was included in.
+// GetLatestSimulationDateTime gets the latestSimulationDateTime property value. Date and time of the latest attack simulation and training campaign that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) GetLatestSimulationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.latestSimulationDateTime
 }
@@ -137,7 +137,7 @@ func (m *AttackSimulationSimulationUserCoverage) SetClickCount(value *int32)() {
 func (m *AttackSimulationSimulationUserCoverage) SetCompromisedCount(value *int32)() {
     m.compromisedCount = value
 }
-// SetLatestSimulationDateTime sets the latestSimulationDateTime property value. Date and time of latest attack simulation and training campaign that the user was included in.
+// SetLatestSimulationDateTime sets the latestSimulationDateTime property value. Date and time of the latest attack simulation and training campaign that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) SetLatestSimulationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.latestSimulationDateTime = value
 }

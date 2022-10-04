@@ -46,11 +46,7 @@ func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(rawUrl strin
     return NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getSuggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSuggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -64,7 +60,7 @@ func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetR
 }
 // Get invoke function getSuggestedEnrollmentLimit
 func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SuggestedEnrollmentLimitable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

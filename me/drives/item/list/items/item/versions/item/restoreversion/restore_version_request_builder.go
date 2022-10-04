@@ -42,11 +42,7 @@ func NewRestoreVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewRestoreVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action restoreVersion
-func (m *RestoreVersionRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action restoreVersion
-func (m *RestoreVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RestoreVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RestoreVersionRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RestoreVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RestoreVersionRequestBuilder) CreatePostRequestInformationWithRequestCo
 }
 // Post invoke action restoreVersion
 func (m *RestoreVersionRequestBuilder) Post(ctx context.Context, requestConfiguration *RestoreVersionRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

@@ -70,11 +70,7 @@ func (m *AppManagementPoliciesRequestBuilder) Count()(*i494befe9e10024b14b7a34c1
     return i494befe9e10024b14b7a34c156ca01699d6c87fdb1afdafa57b3483cbc4b0025.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the appManagementPolicy applied to this application.
-func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the appManagementPolicy applied to this application.
-func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformationWithReq
 }
 // Get the appManagementPolicy applied to this application.
 func (m *AppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

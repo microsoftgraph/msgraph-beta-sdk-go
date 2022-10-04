@@ -42,11 +42,7 @@ func NewGetGlobalScriptHighestAvailableVersionRequestBuilder(rawUrl string, requ
     return NewGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation update the Proprietary Device Health Script
-func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration update the Proprietary Device Health Script
-func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,7 +56,7 @@ func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequest
 }
 // Post update the Proprietary Device Health Script
 func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) Post(ctx context.Context, requestConfiguration *GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration)(GetGlobalScriptHighestAvailableVersionResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

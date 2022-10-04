@@ -42,11 +42,7 @@ func NewIsSignedUpRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewIsSignedUpRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function isSignedUp
-func (m *IsSignedUpRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function isSignedUp
-func (m *IsSignedUpRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IsSignedUpRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IsSignedUpRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IsSignedUpRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,7 +56,7 @@ func (m *IsSignedUpRequestBuilder) CreateGetRequestInformationWithRequestConfigu
 }
 // Get invoke function isSignedUp
 func (m *IsSignedUpRequestBuilder) Get(ctx context.Context, requestConfiguration *IsSignedUpRequestBuilderGetRequestConfiguration)(IsSignedUpResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

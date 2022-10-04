@@ -69,11 +69,7 @@ func (m *AgreementAcceptancesRequestBuilder) Count()(*i47c9811e3b0c7ac2b97c97418
     return i47c9811e3b0c7ac2b97c97418bddc2e09594bc15c35dad9e39a27fdf876c953b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve the signed-in user's agreementAcceptance objects.
-func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve the signed-in user's agreementAcceptance objects.
-func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformationWithRequ
 }
 // Get retrieve the signed-in user's agreementAcceptance objects.
 func (m *AgreementAcceptancesRequestBuilder) Get(ctx context.Context, requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

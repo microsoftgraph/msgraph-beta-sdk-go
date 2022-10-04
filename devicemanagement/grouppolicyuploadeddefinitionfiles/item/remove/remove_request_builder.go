@@ -42,11 +42,7 @@ func NewRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action remove
-func (m *RemoveRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action remove
-func (m *RemoveRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RemoveRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post invoke action remove
 func (m *RemoveRequestBuilder) Post(ctx context.Context, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

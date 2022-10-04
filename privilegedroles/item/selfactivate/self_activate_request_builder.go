@@ -43,17 +43,13 @@ func NewSelfActivateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewSelfActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation activate the role that is assigned to the requester.
-func (m *SelfActivateRequestBuilder) CreatePostRequestInformation(body SelfActivatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration activate the role that is assigned to the requester.
-func (m *SelfActivateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SelfActivatePostRequestBodyable, requestConfiguration *SelfActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SelfActivateRequestBuilder) CreatePostRequestInformation(ctx context.Context, body SelfActivatePostRequestBodyable, requestConfiguration *SelfActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *SelfActivateRequestBuilder) CreatePostRequestInformationWithRequestConf
 }
 // Post activate the role that is assigned to the requester.
 func (m *SelfActivateRequestBuilder) Post(ctx context.Context, body SelfActivatePostRequestBodyable, requestConfiguration *SelfActivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -8,25 +8,25 @@ import (
 // MicrosoftTunnelSite entity that represents a Microsoft Tunnel site
 type MicrosoftTunnelSite struct {
     Entity
-    // The MicrosoftTunnelSite's description
+    // The site's description (optional)
     description *string
-    // The MicrosoftTunnelSite's display name
+    // The display name for the site. This property is required when a site is created.
     displayName *string
     // When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.
     enableCertificatePinning *bool
-    // The MicrosoftTunnelSite's Internal Network Access Probe URL
+    // The site's Internal Network Access Probe URL
     internalNetworkProbeUrl *string
     // The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
     microsoftTunnelConfiguration MicrosoftTunnelConfigurationable
     // A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
     microsoftTunnelServers []MicrosoftTunnelServerable
-    // The MicrosoftTunnelSite's public domain name or IP address
+    // The site's public domain name or IP address
     publicAddress *string
-    // List of Scope Tags for this Entity instance.
+    // List of Scope Tags for this Entity instance
     roleScopeTagIds []string
     // The site's automatic upgrade setting. True for automatic upgrades, false for manual control
     upgradeAutomatically *bool
-    // True if an upgrade is available
+    // The site provides the state of when an upgrade is available
     upgradeAvailable *bool
     // The site's upgrade window end time of day
     upgradeWindowEndTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
@@ -48,11 +48,11 @@ func NewMicrosoftTunnelSite()(*MicrosoftTunnelSite) {
 func CreateMicrosoftTunnelSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelSite(), nil
 }
-// GetDescription gets the description property value. The MicrosoftTunnelSite's description
+// GetDescription gets the description property value. The site's description (optional)
 func (m *MicrosoftTunnelSite) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The MicrosoftTunnelSite's display name
+// GetDisplayName gets the displayName property value. The display name for the site. This property is required when a site is created.
 func (m *MicrosoftTunnelSite) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -78,7 +78,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(i878a80d23
     res["upgradeWindowUtcOffsetInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetUpgradeWindowUtcOffsetInMinutes)
     return res
 }
-// GetInternalNetworkProbeUrl gets the internalNetworkProbeUrl property value. The MicrosoftTunnelSite's Internal Network Access Probe URL
+// GetInternalNetworkProbeUrl gets the internalNetworkProbeUrl property value. The site's Internal Network Access Probe URL
 func (m *MicrosoftTunnelSite) GetInternalNetworkProbeUrl()(*string) {
     return m.internalNetworkProbeUrl
 }
@@ -90,11 +90,11 @@ func (m *MicrosoftTunnelSite) GetMicrosoftTunnelConfiguration()(MicrosoftTunnelC
 func (m *MicrosoftTunnelSite) GetMicrosoftTunnelServers()([]MicrosoftTunnelServerable) {
     return m.microsoftTunnelServers
 }
-// GetPublicAddress gets the publicAddress property value. The MicrosoftTunnelSite's public domain name or IP address
+// GetPublicAddress gets the publicAddress property value. The site's public domain name or IP address
 func (m *MicrosoftTunnelSite) GetPublicAddress()(*string) {
     return m.publicAddress
 }
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
 func (m *MicrosoftTunnelSite) GetRoleScopeTagIds()([]string) {
     return m.roleScopeTagIds
 }
@@ -102,7 +102,7 @@ func (m *MicrosoftTunnelSite) GetRoleScopeTagIds()([]string) {
 func (m *MicrosoftTunnelSite) GetUpgradeAutomatically()(*bool) {
     return m.upgradeAutomatically
 }
-// GetUpgradeAvailable gets the upgradeAvailable property value. True if an upgrade is available
+// GetUpgradeAvailable gets the upgradeAvailable property value. The site provides the state of when an upgrade is available
 func (m *MicrosoftTunnelSite) GetUpgradeAvailable()(*bool) {
     return m.upgradeAvailable
 }
@@ -205,11 +205,11 @@ func (m *MicrosoftTunnelSite) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetDescription sets the description property value. The MicrosoftTunnelSite's description
+// SetDescription sets the description property value. The site's description (optional)
 func (m *MicrosoftTunnelSite) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The MicrosoftTunnelSite's display name
+// SetDisplayName sets the displayName property value. The display name for the site. This property is required when a site is created.
 func (m *MicrosoftTunnelSite) SetDisplayName(value *string)() {
     m.displayName = value
 }
@@ -217,7 +217,7 @@ func (m *MicrosoftTunnelSite) SetDisplayName(value *string)() {
 func (m *MicrosoftTunnelSite) SetEnableCertificatePinning(value *bool)() {
     m.enableCertificatePinning = value
 }
-// SetInternalNetworkProbeUrl sets the internalNetworkProbeUrl property value. The MicrosoftTunnelSite's Internal Network Access Probe URL
+// SetInternalNetworkProbeUrl sets the internalNetworkProbeUrl property value. The site's Internal Network Access Probe URL
 func (m *MicrosoftTunnelSite) SetInternalNetworkProbeUrl(value *string)() {
     m.internalNetworkProbeUrl = value
 }
@@ -229,11 +229,11 @@ func (m *MicrosoftTunnelSite) SetMicrosoftTunnelConfiguration(value MicrosoftTun
 func (m *MicrosoftTunnelSite) SetMicrosoftTunnelServers(value []MicrosoftTunnelServerable)() {
     m.microsoftTunnelServers = value
 }
-// SetPublicAddress sets the publicAddress property value. The MicrosoftTunnelSite's public domain name or IP address
+// SetPublicAddress sets the publicAddress property value. The site's public domain name or IP address
 func (m *MicrosoftTunnelSite) SetPublicAddress(value *string)() {
     m.publicAddress = value
 }
-// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
 func (m *MicrosoftTunnelSite) SetRoleScopeTagIds(value []string)() {
     m.roleScopeTagIds = value
 }
@@ -241,7 +241,7 @@ func (m *MicrosoftTunnelSite) SetRoleScopeTagIds(value []string)() {
 func (m *MicrosoftTunnelSite) SetUpgradeAutomatically(value *bool)() {
     m.upgradeAutomatically = value
 }
-// SetUpgradeAvailable sets the upgradeAvailable property value. True if an upgrade is available
+// SetUpgradeAvailable sets the upgradeAvailable property value. The site provides the state of when an upgrade is available
 func (m *MicrosoftTunnelSite) SetUpgradeAvailable(value *bool)() {
     m.upgradeAvailable = value
 }

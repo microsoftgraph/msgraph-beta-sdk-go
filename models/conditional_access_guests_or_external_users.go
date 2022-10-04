@@ -9,7 +9,7 @@ import (
 type ConditionalAccessGuestsOrExternalUsers struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The externalTenants property
+    // The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.
     externalTenants ConditionalAccessExternalTenantsable
     // The guestOrExternalUserTypes property
     guestOrExternalUserTypes *ConditionalAccessGuestOrExternalUserTypes
@@ -33,7 +33,7 @@ func CreateConditionalAccessGuestsOrExternalUsersFromDiscriminatorValue(parseNod
 func (m *ConditionalAccessGuestsOrExternalUsers) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetExternalTenants gets the externalTenants property value. The externalTenants property
+// GetExternalTenants gets the externalTenants property value. The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.
 func (m *ConditionalAccessGuestsOrExternalUsers) GetExternalTenants()(ConditionalAccessExternalTenantsable) {
     return m.externalTenants
 }
@@ -86,7 +86,7 @@ func (m *ConditionalAccessGuestsOrExternalUsers) Serialize(writer i878a80d2330e8
 func (m *ConditionalAccessGuestsOrExternalUsers) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetExternalTenants sets the externalTenants property value. The externalTenants property
+// SetExternalTenants sets the externalTenants property value. The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.
 func (m *ConditionalAccessGuestsOrExternalUsers) SetExternalTenants(value ConditionalAccessExternalTenantsable)() {
     m.externalTenants = value
 }

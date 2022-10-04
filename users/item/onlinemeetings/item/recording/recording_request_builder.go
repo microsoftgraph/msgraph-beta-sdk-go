@@ -49,11 +49,7 @@ func NewRecordingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RecordingRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *RecordingRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     return requestInfo, nil
 }
 // CreatePutRequestInformation the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *RecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RecordingRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *RecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *RecordingRequestBuilder) CreatePutRequestInformationWithRequestConfigur
 }
 // Get the content stream of the recording of a Teams live event. Read-only.
 func (m *RecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *RecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *RecordingRequestBuilder) Get(ctx context.Context, requestConfiguration 
 }
 // Put the content stream of the recording of a Teams live event. Read-only.
 func (m *RecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *RecordingRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

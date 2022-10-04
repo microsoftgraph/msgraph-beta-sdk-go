@@ -42,11 +42,7 @@ func NewRotateFileVaultKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewRotateFileVaultKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action rotateFileVaultKey
-func (m *RotateFileVaultKeyRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action rotateFileVaultKey
-func (m *RotateFileVaultKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *RotateFileVaultKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RotateFileVaultKeyRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *RotateFileVaultKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *RotateFileVaultKeyRequestBuilder) CreatePostRequestInformationWithReque
 }
 // Post invoke action rotateFileVaultKey
 func (m *RotateFileVaultKeyRequestBuilder) Post(ctx context.Context, requestConfiguration *RotateFileVaultKeyRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

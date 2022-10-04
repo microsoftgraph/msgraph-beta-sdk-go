@@ -6,10 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// LifecycleManagementSettings provides operations to manage the collection of accessReview entities.
+// LifecycleManagementSettings provides operations to manage the collection of activityStatistics entities.
 type LifecycleManagementSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
+    // The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
     workflowScheduleIntervalInHours *int32
 }
 // NewLifecycleManagementSettings instantiates a new lifecycleManagementSettings and sets the default values.
@@ -31,7 +31,7 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
     res["workflowScheduleIntervalInHours"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkflowScheduleIntervalInHours)
     return res
 }
-// GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
+// GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
 func (m *LifecycleManagementSettings) GetWorkflowScheduleIntervalInHours()(*int32) {
     return m.workflowScheduleIntervalInHours
 }
@@ -49,7 +49,7 @@ func (m *LifecycleManagementSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetWorkflowScheduleIntervalInHours sets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
+// SetWorkflowScheduleIntervalInHours sets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
 func (m *LifecycleManagementSettings) SetWorkflowScheduleIntervalInHours(value *int32)() {
     m.workflowScheduleIntervalInHours = value
 }

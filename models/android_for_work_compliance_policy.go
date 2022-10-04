@@ -32,6 +32,8 @@ type AndroidForWorkCompliancePolicy struct {
     passwordRequiredType *AndroidRequiredPasswordType
     // Number of sign-in failures allowed before factory reset. Valid values 1 to 16
     passwordSignInFailureCountBeforeFactoryReset *int32
+    // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+    requiredPasswordComplexity *AndroidRequiredPasswordComplexity
     // Devices must not be jailbroken or rooted.
     securityBlockJailbrokenDevices *bool
     // Disable USB debugging on Android devices.
@@ -91,6 +93,7 @@ func (m *AndroidForWorkCompliancePolicy) GetFieldDeserializers()(map[string]func
     res["passwordRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasswordRequired)
     res["passwordRequiredType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidRequiredPasswordType , m.SetPasswordRequiredType)
     res["passwordSignInFailureCountBeforeFactoryReset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordSignInFailureCountBeforeFactoryReset)
+    res["requiredPasswordComplexity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidRequiredPasswordComplexity , m.SetRequiredPasswordComplexity)
     res["securityBlockJailbrokenDevices"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityBlockJailbrokenDevices)
     res["securityDisableUsbDebugging"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityDisableUsbDebugging)
     res["securityPreventInstallAppsFromUnknownSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityPreventInstallAppsFromUnknownSources)
@@ -143,6 +146,10 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordRequiredType()(*AndroidRequi
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign-in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkCompliancePolicy) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     return m.passwordSignInFailureCountBeforeFactoryReset
+}
+// GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+func (m *AndroidForWorkCompliancePolicy) GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
+    return m.requiredPasswordComplexity
 }
 // GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bool) {
@@ -268,6 +275,13 @@ func (m *AndroidForWorkCompliancePolicy) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetRequiredPasswordComplexity() != nil {
+        cast := (*m.GetRequiredPasswordComplexity()).String()
+        err = writer.WriteStringValue("requiredPasswordComplexity", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("securityBlockJailbrokenDevices", m.GetSecurityBlockJailbrokenDevices())
         if err != nil {
@@ -384,6 +398,10 @@ func (m *AndroidForWorkCompliancePolicy) SetPasswordRequiredType(value *AndroidR
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign-in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkCompliancePolicy) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
     m.passwordSignInFailureCountBeforeFactoryReset = value
+}
+// SetRequiredPasswordComplexity sets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+func (m *AndroidForWorkCompliancePolicy) SetRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
+    m.requiredPasswordComplexity = value
 }
 // SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityBlockJailbrokenDevices(value *bool)() {

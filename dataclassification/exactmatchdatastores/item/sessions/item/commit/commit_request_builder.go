@@ -42,11 +42,7 @@ func NewCommitRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewCommitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action commit
-func (m *CommitRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action commit
-func (m *CommitRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *CommitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CommitRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *CommitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *CommitRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post invoke action commit
 func (m *CommitRequestBuilder) Post(ctx context.Context, requestConfiguration *CommitRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

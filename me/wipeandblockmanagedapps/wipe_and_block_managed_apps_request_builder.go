@@ -42,11 +42,7 @@ func NewWipeAndBlockManagedAppsRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewWipeAndBlockManagedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation blocks the managed app user from app check-in.
-func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration blocks the managed app user from app check-in.
-func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *WipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *WipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformationWith
 }
 // Post blocks the managed app user from app check-in.
 func (m *WipeAndBlockManagedAppsRequestBuilder) Post(ctx context.Context, requestConfiguration *WipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

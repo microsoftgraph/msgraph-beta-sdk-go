@@ -20,6 +20,7 @@ type MacOSMinimumOperatingSystemable interface {
     GetV10_9()(*bool)
     GetV11_0()(*bool)
     GetV12_0()(*bool)
+    GetV13_0()(*bool)
     SetOdataType(value *string)()
     SetV10_10(value *bool)()
     SetV10_11(value *bool)()
@@ -32,4 +33,5 @@ type MacOSMinimumOperatingSystemable interface {
     SetV10_9(value *bool)()
     SetV11_0(value *bool)()
     SetV12_0(value *bool)()
+    SetV13_0(value *bool)()
 }

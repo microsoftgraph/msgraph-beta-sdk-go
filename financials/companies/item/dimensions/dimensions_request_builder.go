@@ -69,11 +69,7 @@ func (m *DimensionsRequestBuilder) Count()(*ie702f4d19db705339c05b127b2e5e1e4175
     return ie702f4d19db705339c05b127b2e5e1e41756d433e29387af42801fa12c8f051a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get dimensions from financials
-func (m *DimensionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get dimensions from financials
-func (m *DimensionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DimensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DimensionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DimensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *DimensionsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
 }
 // Get get dimensions from financials
 func (m *DimensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *DimensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DimensionCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

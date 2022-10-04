@@ -25,6 +25,8 @@ type DeviceManagementConfigurationPolicy struct {
     name *string
     // Supported platform types.
     platforms *DeviceManagementConfigurationPlatforms
+    // Indicates the priority of each policies that are selected by the admin during enrollment process
+    priorityMetaData DeviceManagementPriorityMetaDataable
     // List of Scope Tags for this Entity instance.
     roleScopeTagIds []string
     // Number of settings
@@ -76,6 +78,7 @@ func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string
     res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
     res["name"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetName)
     res["platforms"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementConfigurationPlatforms , m.SetPlatforms)
+    res["priorityMetaData"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceManagementPriorityMetaDataFromDiscriminatorValue , m.SetPriorityMetaData)
     res["roleScopeTagIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetRoleScopeTagIds)
     res["settingCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSettingCount)
     res["settings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingFromDiscriminatorValue , m.SetSettings)
@@ -98,6 +101,10 @@ func (m *DeviceManagementConfigurationPolicy) GetName()(*string) {
 // GetPlatforms gets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicy) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     return m.platforms
+}
+// GetPriorityMetaData gets the priorityMetaData property value. Indicates the priority of each policies that are selected by the admin during enrollment process
+func (m *DeviceManagementConfigurationPolicy) GetPriorityMetaData()(DeviceManagementPriorityMetaDataable) {
+    return m.priorityMetaData
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceManagementConfigurationPolicy) GetRoleScopeTagIds()([]string) {
@@ -169,6 +176,12 @@ func (m *DeviceManagementConfigurationPolicy) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("priorityMetaData", m.GetPriorityMetaData())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
@@ -234,6 +247,10 @@ func (m *DeviceManagementConfigurationPolicy) SetName(value *string)() {
 // SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicy) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     m.platforms = value
+}
+// SetPriorityMetaData sets the priorityMetaData property value. Indicates the priority of each policies that are selected by the admin during enrollment process
+func (m *DeviceManagementConfigurationPolicy) SetPriorityMetaData(value DeviceManagementPriorityMetaDataable)() {
+    m.priorityMetaData = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceManagementConfigurationPolicy) SetRoleScopeTagIds(value []string)() {

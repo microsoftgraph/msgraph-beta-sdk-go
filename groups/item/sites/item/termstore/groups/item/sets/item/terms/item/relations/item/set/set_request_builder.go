@@ -52,11 +52,7 @@ func NewSetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     return NewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the [set] in which the relation is relevant.
-func (m *SetRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the [set] in which the relation is relevant.
-func (m *SetRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SetRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SetRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *SetRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(
 }
 // Get the [set] in which the relation is relevant.
 func (m *SetRequestBuilder) Get(ctx context.Context, requestConfiguration *SetRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

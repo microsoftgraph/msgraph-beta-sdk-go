@@ -69,11 +69,7 @@ func (m *DefinitionsRequestBuilder) Count()(*i0ab3ee2283ec00b94db4849389b043ef9f
     return i0ab3ee2283ec00b94db4849389b043ef9f83fe0ce5aacb487b6c724976348248.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the group policy definitions associated with the file.
-func (m *DefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the group policy definitions associated with the file.
-func (m *DefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DefinitionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *DefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get the group policy definitions associated with the file.
 func (m *DefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

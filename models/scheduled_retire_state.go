@@ -6,9 +6,9 @@ import (
 type ScheduledRetireState int
 
 const (
-    // Cancel retire.
+    // CancelRetire
     CANCELRETIRE_SCHEDULEDRETIRESTATE ScheduledRetireState = iota
-    // Retire these devices.
+    // ConfirmRetire
     CONFIRMRETIRE_SCHEDULEDRETIRESTATE
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_SCHEDULEDRETIRESTATE

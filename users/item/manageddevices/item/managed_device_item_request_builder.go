@@ -15,6 +15,7 @@ import (
     i1443aae9c03729a2846287e12ec51c60f2fcf8b160378feeeb93a607f140550a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/cleanwindowsdevice"
     i1868d182d5fc9971d12e89f687d24afd220b971669c2a3ca28b0153484943026 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/shutdown"
     i1a2c5f8ed2e88c9f4bbc42d1bfa4b2c5d073f119152a10b4b129dfbe7d2a285d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/getoemwarranty"
+    i2259a177ae98cddf05e52b4b79681b6f509ba8b0e322e11c44327a52e4023185 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/enrollnowaction"
     i2b2643552578b57de1982c2b63e86ffdc342052fcd3810982705fe32f7ff4917 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/syncdevice"
     i33634be37bdeb06eea71e0090c6a79f402d72ef80000527b54246bdca02cebf1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/disable"
     i39cdf1e9f523efcaeac5364e8b420fd9fb42101199a12dd136dbd692cf97b084 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/reprovisioncloudpc"
@@ -155,11 +156,7 @@ func NewManagedDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewManagedDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateDeleteRequestInformation delete navigation property managedDevices for users
-func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managedDevices for users
-func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ManagedDeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedDeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -175,11 +172,7 @@ func (m *ManagedDeviceItemRequestBuilder) CreateDeviceLogCollectionRequest()(*ib
     return ib66cb64667854c2a0e7d0db75f68649e40b4c02fcac6575b6c9ccf277ab9effe.NewCreateDeviceLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the managed devices associated with the user.
-func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the managed devices associated with the user.
-func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagedDeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ManagedDeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -195,17 +188,13 @@ func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformationWithRequest
     return requestInfo, nil
 }
 // CreatePatchRequestInformation update the navigation property managedDevices in users
-func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property managedDevices in users
-func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDeviceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDeviceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -218,7 +207,7 @@ func (m *ManagedDeviceItemRequestBuilder) CreateRemoteHelpSession()(*i1110055695
 }
 // Delete delete navigation property managedDevices for users
 func (m *ManagedDeviceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -301,9 +290,13 @@ func (m *ManagedDeviceItemRequestBuilder) DisableLostMode()(*i7d2e9c178f5e0b6fb0
 func (m *ManagedDeviceItemRequestBuilder) EnableLostMode()(*id0295aec7d10d18caa37f46306bc3f11adff870f41a1bb3f9739c917285dfb0e.EnableLostModeRequestBuilder) {
     return id0295aec7d10d18caa37f46306bc3f11adff870f41a1bb3f9739c917285dfb0e.NewEnableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// EnrollNowAction the enrollNowAction property
+func (m *ManagedDeviceItemRequestBuilder) EnrollNowAction()(*i2259a177ae98cddf05e52b4b79681b6f509ba8b0e322e11c44327a52e4023185.EnrollNowActionRequestBuilder) {
+    return i2259a177ae98cddf05e52b4b79681b6f509ba8b0e322e11c44327a52e4023185.NewEnrollNowActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get the managed devices associated with the user.
 func (m *ManagedDeviceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDeviceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -384,7 +377,7 @@ func (m *ManagedDeviceItemRequestBuilder) OverrideComplianceState()(*i3bbd017aa7
 }
 // Patch update the navigation property managedDevices in users
 func (m *ManagedDeviceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDeviceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

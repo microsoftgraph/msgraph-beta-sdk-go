@@ -55,11 +55,7 @@ func (m *ProfilePhotoItemRequestBuilder) Content()(*ia79dc29675f4521ddcee6a34425
     return ia79dc29675f4521ddcee6a34425a0085d9bcf1456f675e8382494cb585621b8a.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get photos from users
-func (m *ProfilePhotoItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get photos from users
-func (m *ProfilePhotoItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ProfilePhotoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ProfilePhotoItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ProfilePhotoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -76,7 +72,7 @@ func (m *ProfilePhotoItemRequestBuilder) CreateGetRequestInformationWithRequestC
 }
 // Get get photos from users
 func (m *ProfilePhotoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ProfilePhotoItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -42,11 +42,7 @@ func NewCancelSecurityActionRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewCancelSecurityActionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation cancel a security operation.
-func (m *CancelSecurityActionRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration cancel a security operation.
-func (m *CancelSecurityActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *CancelSecurityActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CancelSecurityActionRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *CancelSecurityActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *CancelSecurityActionRequestBuilder) CreatePostRequestInformationWithReq
 }
 // Post cancel a security operation.
 func (m *CancelSecurityActionRequestBuilder) Post(ctx context.Context, requestConfiguration *CancelSecurityActionRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

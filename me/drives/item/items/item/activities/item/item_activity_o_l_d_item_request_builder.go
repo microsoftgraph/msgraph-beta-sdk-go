@@ -52,11 +52,7 @@ func NewItemActivityOLDItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformationWithReque
 }
 // Get the list of recent activities that took place on this item.
 func (m *ItemActivityOLDItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

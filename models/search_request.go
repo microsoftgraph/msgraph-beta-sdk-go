@@ -33,6 +33,8 @@ type SearchRequest struct {
     region *string
     // Provides the search result templates options for rendering connectors search results.
     resultTemplateOptions ResultTemplateOptionable
+    // The sharePointOneDriveOptions property
+    sharePointOneDriveOptions SharePointOneDriveOptionsable
     // The size of the page to be retrieved. Optional.
     size *int32
     // Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
@@ -94,6 +96,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["queryAlterationOptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSearchAlterationOptionsFromDiscriminatorValue , m.SetQueryAlterationOptions)
     res["region"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRegion)
     res["resultTemplateOptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateResultTemplateOptionFromDiscriminatorValue , m.SetResultTemplateOptions)
+    res["sharePointOneDriveOptions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSharePointOneDriveOptionsFromDiscriminatorValue , m.SetSharePointOneDriveOptions)
     res["size"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSize)
     res["sortProperties"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSortPropertyFromDiscriminatorValue , m.SetSortProperties)
     res["stored_fields"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetStored_fields)
@@ -127,6 +130,10 @@ func (m *SearchRequest) GetRegion()(*string) {
 // GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
 func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
     return m.resultTemplateOptions
+}
+// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+func (m *SearchRequest) GetSharePointOneDriveOptions()(SharePointOneDriveOptionsable) {
+    return m.sharePointOneDriveOptions
 }
 // GetSize gets the size property value. The size of the page to be retrieved. Optional.
 func (m *SearchRequest) GetSize()(*int32) {
@@ -220,6 +227,12 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteObjectValue("sharePointOneDriveOptions", m.GetSharePointOneDriveOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
@@ -303,6 +316,10 @@ func (m *SearchRequest) SetRegion(value *string)() {
 // SetResultTemplateOptions sets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
 func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)() {
     m.resultTemplateOptions = value
+}
+// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+func (m *SearchRequest) SetSharePointOneDriveOptions(value SharePointOneDriveOptionsable)() {
+    m.sharePointOneDriveOptions = value
 }
 // SetSize sets the size property value. The size of the page to be retrieved. Optional.
 func (m *SearchRequest) SetSize(value *int32)() {

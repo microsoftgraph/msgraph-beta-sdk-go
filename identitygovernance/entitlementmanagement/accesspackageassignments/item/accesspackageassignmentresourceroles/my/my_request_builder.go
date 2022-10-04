@@ -61,11 +61,7 @@ func NewMyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c9
     return NewMyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function My
-func (m *MyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function My
-func (m *MyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MyRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,7 +78,7 @@ func (m *MyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(r
 }
 // Get invoke function My
 func (m *MyRequestBuilder) Get(ctx context.Context, requestConfiguration *MyRequestBuilderGetRequestConfiguration)(MyResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

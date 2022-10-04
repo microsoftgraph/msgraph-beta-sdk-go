@@ -42,11 +42,7 @@ func NewCanSignUpRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewCanSignUpRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function canSignUp
-func (m *CanSignUpRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function canSignUp
-func (m *CanSignUpRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CanSignUpRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CanSignUpRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CanSignUpRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,7 +56,7 @@ func (m *CanSignUpRequestBuilder) CreateGetRequestInformationWithRequestConfigur
 }
 // Get invoke function canSignUp
 func (m *CanSignUpRequestBuilder) Get(ctx context.Context, requestConfiguration *CanSignUpRequestBuilderGetRequestConfiguration)(CanSignUpResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

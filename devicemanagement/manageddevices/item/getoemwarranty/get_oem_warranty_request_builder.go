@@ -43,11 +43,7 @@ func NewGetOemWarrantyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewGetOemWarrantyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function getOemWarranty
-func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOemWarranty
-func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetOemWarrantyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetOemWarrantyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -61,7 +57,7 @@ func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformationWithRequestCon
 }
 // Get invoke function getOemWarranty
 func (m *GetOemWarrantyRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOemWarrantyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

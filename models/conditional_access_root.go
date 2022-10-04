@@ -16,6 +16,8 @@ type ConditionalAccessRoot struct {
     namedLocations []NamedLocationable
     // Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
     policies []ConditionalAccessPolicyable
+    // The templates property
+    templates []ConditionalAccessTemplateable
 }
 // NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
@@ -45,6 +47,7 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
     res["authenticationStrengths"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAuthenticationStrengthRootFromDiscriminatorValue , m.SetAuthenticationStrengths)
     res["namedLocations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue , m.SetNamedLocations)
     res["policies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue , m.SetPolicies)
+    res["templates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConditionalAccessTemplateFromDiscriminatorValue , m.SetTemplates)
     return res
 }
 // GetNamedLocations gets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
@@ -54,6 +57,10 @@ func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
 // GetPolicies gets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *ConditionalAccessRoot) GetPolicies()([]ConditionalAccessPolicyable) {
     return m.policies
+}
+// GetTemplates gets the templates property value. The templates property
+func (m *ConditionalAccessRoot) GetTemplates()([]ConditionalAccessTemplateable) {
+    return m.templates
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,6 +95,13 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetTemplates() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTemplates())
+        err = writer.WriteCollectionOfObjectValues("templates", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
@@ -105,4 +119,8 @@ func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
 // SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicyable)() {
     m.policies = value
+}
+// SetTemplates sets the templates property value. The templates property
+func (m *ConditionalAccessRoot) SetTemplates(value []ConditionalAccessTemplateable)() {
+    m.templates = value
 }

@@ -42,11 +42,7 @@ func NewSetDefaultProfileRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewSetDefaultProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action setDefaultProfile
-func (m *SetDefaultProfileRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action setDefaultProfile
-func (m *SetDefaultProfileRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SetDefaultProfileRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetDefaultProfileRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SetDefaultProfileRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *SetDefaultProfileRequestBuilder) CreatePostRequestInformationWithReques
 }
 // Post invoke action setDefaultProfile
 func (m *SetDefaultProfileRequestBuilder) Post(ctx context.Context, requestConfiguration *SetDefaultProfileRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

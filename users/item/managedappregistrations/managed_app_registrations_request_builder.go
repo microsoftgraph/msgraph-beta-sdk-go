@@ -69,11 +69,7 @@ func (m *ManagedAppRegistrationsRequestBuilder) Count()(*i2d2b4df87e4c8025fbb8c6
     return i2d2b4df87e4c8025fbb8c61317ab2b6cc7eea6f3afdddbff0c9b7e441002d045.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration zero or more managed app registrations that belong to the user.
-func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformationWithR
 }
 // Get zero or more managed app registrations that belong to the user.
 func (m *ManagedAppRegistrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

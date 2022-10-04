@@ -18,7 +18,7 @@ type UserTrainingStatusInfo struct {
     displayName *string
     // The OdataType property
     odataType *string
-    // Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+    // The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
     trainingStatus *TrainingStatus
 }
 // NewUserTrainingStatusInfo instantiates a new userTrainingStatusInfo and sets the default values.
@@ -64,7 +64,7 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
 func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTrainingStatus gets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+// GetTrainingStatus gets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
     return m.trainingStatus
 }
@@ -129,7 +129,7 @@ func (m *UserTrainingStatusInfo) SetDisplayName(value *string)() {
 func (m *UserTrainingStatusInfo) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTrainingStatus sets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+// SetTrainingStatus sets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) SetTrainingStatus(value *TrainingStatus)() {
     m.trainingStatus = value
 }

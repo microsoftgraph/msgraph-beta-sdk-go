@@ -13,7 +13,7 @@ type AttackSimulationTrainingUserCoverage struct {
     attackSimulationUser AttackSimulationUserable
     // The OdataType property
     odataType *string
-    // List of assigned trainings' and their statuses for the user.
+    // List of assigned trainings and their statuses for the user.
     userTrainings []UserTrainingStatusInfoable
 }
 // NewAttackSimulationTrainingUserCoverage instantiates a new attackSimulationTrainingUserCoverage and sets the default values.
@@ -49,7 +49,7 @@ func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[strin
 func (m *AttackSimulationTrainingUserCoverage) GetOdataType()(*string) {
     return m.odataType
 }
-// GetUserTrainings gets the userTrainings property value. List of assigned trainings' and their statuses for the user.
+// GetUserTrainings gets the userTrainings property value. List of assigned trainings and their statuses for the user.
 func (m *AttackSimulationTrainingUserCoverage) GetUserTrainings()([]UserTrainingStatusInfoable) {
     return m.userTrainings
 }
@@ -94,7 +94,7 @@ func (m *AttackSimulationTrainingUserCoverage) SetAttackSimulationUser(value Att
 func (m *AttackSimulationTrainingUserCoverage) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetUserTrainings sets the userTrainings property value. List of assigned trainings' and their statuses for the user.
+// SetUserTrainings sets the userTrainings property value. List of assigned trainings and their statuses for the user.
 func (m *AttackSimulationTrainingUserCoverage) SetUserTrainings(value []UserTrainingStatusInfoable)() {
     m.userTrainings = value
 }

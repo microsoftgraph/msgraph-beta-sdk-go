@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application provides operations to manage the collection of activityStatistics entities.
+// Application provides operations to manage the collection of accessReviewDecision entities.
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
@@ -77,6 +77,8 @@ type Application struct {
     samlMetadataUrl *string
     // References application or service contact information from a Service or Asset Management database. Nullable.
     serviceManagementReference *string
+    // The servicePrincipalLockConfiguration property
+    servicePrincipalLockConfiguration ServicePrincipalLockConfigurationable
     // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
     signInAudience *string
     // Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
@@ -206,6 +208,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     res["requiredResourceAccess"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRequiredResourceAccessFromDiscriminatorValue , m.SetRequiredResourceAccess)
     res["samlMetadataUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSamlMetadataUrl)
     res["serviceManagementReference"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetServiceManagementReference)
+    res["servicePrincipalLockConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateServicePrincipalLockConfigurationFromDiscriminatorValue , m.SetServicePrincipalLockConfiguration)
     res["signInAudience"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSignInAudience)
     res["spa"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSpaApplicationFromDiscriminatorValue , m.SetSpa)
     res["synchronization"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSynchronizationFromDiscriminatorValue , m.SetSynchronization)
@@ -298,6 +301,10 @@ func (m *Application) GetSamlMetadataUrl()(*string) {
 // GetServiceManagementReference gets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
 func (m *Application) GetServiceManagementReference()(*string) {
     return m.serviceManagementReference
+}
+// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. The servicePrincipalLockConfiguration property
+func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable) {
+    return m.servicePrincipalLockConfiguration
 }
 // GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
 func (m *Application) GetSignInAudience()(*string) {
@@ -563,6 +570,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("servicePrincipalLockConfiguration", m.GetServicePrincipalLockConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("signInAudience", m.GetSignInAudience())
         if err != nil {
             return err
@@ -767,6 +780,10 @@ func (m *Application) SetSamlMetadataUrl(value *string)() {
 // SetServiceManagementReference sets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
 func (m *Application) SetServiceManagementReference(value *string)() {
     m.serviceManagementReference = value
+}
+// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. The servicePrincipalLockConfiguration property
+func (m *Application) SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)() {
+    m.servicePrincipalLockConfiguration = value
 }
 // SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
 func (m *Application) SetSignInAudience(value *string)() {

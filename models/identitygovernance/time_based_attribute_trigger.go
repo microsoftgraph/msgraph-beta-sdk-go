@@ -8,7 +8,7 @@ import (
 // TimeBasedAttributeTrigger 
 type TimeBasedAttributeTrigger struct {
     WorkflowExecutionTrigger
-    // How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date.
+    // How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -60 and 60 days.
     offsetInDays *int32
     // The timeBasedAttribute property
     timeBasedAttribute *WorkflowTriggerTimeBasedAttribute
@@ -33,7 +33,7 @@ func (m *TimeBasedAttributeTrigger) GetFieldDeserializers()(map[string]func(i878
     res["timeBasedAttribute"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWorkflowTriggerTimeBasedAttribute , m.SetTimeBasedAttribute)
     return res
 }
-// GetOffsetInDays gets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date.
+// GetOffsetInDays gets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -60 and 60 days.
 func (m *TimeBasedAttributeTrigger) GetOffsetInDays()(*int32) {
     return m.offsetInDays
 }
@@ -62,7 +62,7 @@ func (m *TimeBasedAttributeTrigger) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetOffsetInDays sets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date.
+// SetOffsetInDays sets the offsetInDays property value. How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -60 and 60 days.
 func (m *TimeBasedAttributeTrigger) SetOffsetInDays(value *int32)() {
     m.offsetInDays = value
 }

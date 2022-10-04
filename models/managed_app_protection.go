@@ -70,6 +70,8 @@ type ManagedAppProtection struct {
     minimumWipeAppVersion *string
     // Versions less than or equal to the specified version will wipe the managed app and the associated company data.
     minimumWipeOsVersion *string
+    // Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
+    mobileThreatDefensePartnerPriority *MobileThreatDefensePartnerPriority
     // An admin initiated action to be applied on a managed app.
     mobileThreatDefenseRemediationAction *ManagedAppRemediationAction
     // Restrict managed app notification
@@ -230,6 +232,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
     res["minimumWarningOsVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWarningOsVersion)
     res["minimumWipeAppVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWipeAppVersion)
     res["minimumWipeOsVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWipeOsVersion)
+    res["mobileThreatDefensePartnerPriority"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMobileThreatDefensePartnerPriority , m.SetMobileThreatDefensePartnerPriority)
     res["mobileThreatDefenseRemediationAction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedAppRemediationAction , m.SetMobileThreatDefenseRemediationAction)
     res["notificationRestriction"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseManagedAppNotificationRestriction , m.SetNotificationRestriction)
     res["organizationalCredentialsRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetOrganizationalCredentialsRequired)
@@ -309,6 +312,10 @@ func (m *ManagedAppProtection) GetMinimumWipeAppVersion()(*string) {
 // GetMinimumWipeOsVersion gets the minimumWipeOsVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
 func (m *ManagedAppProtection) GetMinimumWipeOsVersion()(*string) {
     return m.minimumWipeOsVersion
+}
+// GetMobileThreatDefensePartnerPriority gets the mobileThreatDefensePartnerPriority property value. Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
+func (m *ManagedAppProtection) GetMobileThreatDefensePartnerPriority()(*MobileThreatDefensePartnerPriority) {
+    return m.mobileThreatDefensePartnerPriority
 }
 // GetMobileThreatDefenseRemediationAction gets the mobileThreatDefenseRemediationAction property value. An admin initiated action to be applied on a managed app.
 func (m *ManagedAppProtection) GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction) {
@@ -567,6 +574,13 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetMobileThreatDefensePartnerPriority() != nil {
+        cast := (*m.GetMobileThreatDefensePartnerPriority()).String()
+        err = writer.WriteStringValue("mobileThreatDefensePartnerPriority", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMobileThreatDefenseRemediationAction() != nil {
         cast := (*m.GetMobileThreatDefenseRemediationAction()).String()
         err = writer.WriteStringValue("mobileThreatDefenseRemediationAction", &cast)
@@ -779,6 +793,10 @@ func (m *ManagedAppProtection) SetMinimumWipeAppVersion(value *string)() {
 // SetMinimumWipeOsVersion sets the minimumWipeOsVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
 func (m *ManagedAppProtection) SetMinimumWipeOsVersion(value *string)() {
     m.minimumWipeOsVersion = value
+}
+// SetMobileThreatDefensePartnerPriority sets the mobileThreatDefensePartnerPriority property value. Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
+func (m *ManagedAppProtection) SetMobileThreatDefensePartnerPriority(value *MobileThreatDefensePartnerPriority)() {
+    m.mobileThreatDefensePartnerPriority = value
 }
 // SetMobileThreatDefenseRemediationAction sets the mobileThreatDefenseRemediationAction property value. An admin initiated action to be applied on a managed app.
 func (m *ManagedAppProtection) SetMobileThreatDefenseRemediationAction(value *ManagedAppRemediationAction)() {

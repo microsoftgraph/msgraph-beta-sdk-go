@@ -60,11 +60,7 @@ func NewGetPlatformSupportedPropertiesWithPlatformRequestBuilder(rawUrl string, 
     return NewGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // CreateGetRequestInformation invoke function getPlatformSupportedProperties
-func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function getPlatformSupportedProperties
-func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -81,7 +77,7 @@ func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequ
 }
 // Get invoke function getPlatformSupportedProperties
 func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) Get(ctx context.Context, requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

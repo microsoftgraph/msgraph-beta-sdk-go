@@ -69,11 +69,7 @@ func (m *CustodianSourcesRequestBuilder) Count()(*i539132aff03bd07c90f1ae65e7353
     return i539132aff03bd07c90f1ae65e7353e42b785dc0839746a24c0947eee05521354.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of dataSource objects associated with a source collection.
-func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the list of dataSource objects associated with a source collection.
-func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *CustodianSourcesRequestBuilder) CreateGetRequestInformationWithRequestC
 }
 // Get get the list of dataSource objects associated with a source collection.
 func (m *CustodianSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CustodianSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

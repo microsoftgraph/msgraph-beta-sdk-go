@@ -43,17 +43,13 @@ func NewMuteAllRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewMuteAllRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation mute all participants in the call.
-func (m *MuteAllRequestBuilder) CreatePostRequestInformation(body MuteAllPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration mute all participants in the call.
-func (m *MuteAllRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MuteAllPostRequestBodyable, requestConfiguration *MuteAllRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MuteAllRequestBuilder) CreatePostRequestInformation(ctx context.Context, body MuteAllPostRequestBodyable, requestConfiguration *MuteAllRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *MuteAllRequestBuilder) CreatePostRequestInformationWithRequestConfigura
 }
 // Post mute all participants in the call.
 func (m *MuteAllRequestBuilder) Post(ctx context.Context, body MuteAllPostRequestBodyable, requestConfiguration *MuteAllRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MuteParticipantsOperationable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

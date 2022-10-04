@@ -69,11 +69,7 @@ func (m *AccessPackagesIncompatibleWithRequestBuilder) Count()(*i7431c9e5f44a60b
     return i7431c9e5f44a60b4708bbe79ece0a8e2a8ad6e53b0097da902e8b196e50a8b3b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
-func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
-func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformati
 }
 // Get retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

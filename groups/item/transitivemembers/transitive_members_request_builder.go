@@ -79,11 +79,7 @@ func (m *TransitiveMembersRequestBuilder) Count()(*i09c8ec187be02eb8c582ed81e1e6
     return i09c8ec187be02eb8c582ed81e1e61003595821ab2bbae63fbe3cc6f03af340cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the direct and transitive members of a group. Nullable.
-func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the direct and transitive members of a group. Nullable.
-func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -104,7 +100,7 @@ func (m *TransitiveMembersRequestBuilder) Device()(*i798ff338a423619b5a9f4a247c4
 }
 // Get the direct and transitive members of a group. Nullable.
 func (m *TransitiveMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

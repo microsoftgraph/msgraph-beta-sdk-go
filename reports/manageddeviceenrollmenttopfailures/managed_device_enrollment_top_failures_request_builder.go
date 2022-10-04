@@ -43,11 +43,7 @@ func NewManagedDeviceEnrollmentTopFailuresRequestBuilder(rawUrl string, requestA
     return NewManagedDeviceEnrollmentTopFailuresRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function managedDeviceEnrollmentTopFailures
-func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration invoke function managedDeviceEnrollmentTopFailures
-func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagedDeviceEnrollmentTopFailuresRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ManagedDeviceEnrollmentTopFailuresRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -61,7 +57,7 @@ func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) CreateGetRequestInfor
 }
 // Get invoke function managedDeviceEnrollmentTopFailures
 func (m *ManagedDeviceEnrollmentTopFailuresRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDeviceEnrollmentTopFailuresRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -2,62 +2,70 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type RemoteAction int
 
 const (
-    // User initiates an unknown action.
+    // Indicate user initiates an unknown action.
     UNKNOWN_REMOTEACTION RemoteAction = iota
-    // User initiates an action to factory reset a device. 
+    // Indicate user initiates an action to factory reset a device. 
     FACTORYRESET_REMOTEACTION
-    // User initiates an action to remove company data from a device. 
+    // Indicate user initiates an action to remove company data from a device. 
     REMOVECOMPANYDATA_REMOTEACTION
-    // User initiates an action to remove the passcode of an iOS device, or reset the passcode of Android / Windows device. 
+    // Indicate user initiates an action to remove the passcode of an iOS device, or reset the passcode of Android / Windows device. 
     RESETPASSCODE_REMOTEACTION
-    // User initiates an action to remote lock a device.
+    // Indicate user initiates an action to remote lock a device.
     REMOTELOCK_REMOTEACTION
-    // User initiates an action to enable lost mode on a supervised iOS device.
+    // Indicate user initiates an action to enable lost mode on a supervised iOS device.
     ENABLELOSTMODE_REMOTEACTION
-    // User initiates an action to disable lost mode on a supervised iOS device.
+    // Indicate user initiates an action to disable lost mode on a supervised iOS device.
     DISABLELOSTMODE_REMOTEACTION
-    // User initiates an action to locate a supervised iOS device.
+    // Indicate user initiates an action to locate a supervised iOS device.
     LOCATEDEVICE_REMOTEACTION
-    // User initiates an action to reboot a Windows device.
+    // Indicate user initiates an action to reboot the device.
     REBOOTNOW_REMOTEACTION
-    // User initiates an action to reset the pin for passport for work on windows phone device.
+    // Indicate user initiates an action to reset the pin for passport for work on windows phone device.
     RECOVERPASSCODE_REMOTEACTION
-    // User initiates an action to clean up windows device.
+    // Indicate user initiates an action to clean up windows device.
     CLEANWINDOWSDEVICE_REMOTEACTION
-    // User initiates an action to log out current user on shared apple device.
+    // Indicate user initiates an action to log out current user on shared apple device.
     LOGOUTSHAREDAPPLEDEVICEACTIVEUSER_REMOTEACTION
-    // User initiates an action to run quick scan on device.
+    // Indicate user initiates an action to run quick scan on device.
     QUICKSCAN_REMOTEACTION
-    // User initiates an action to run full scan on device.
+    // Indicate user initiates an action to run full scan on device.
     FULLSCAN_REMOTEACTION
-    // User initiates an action to update malware signatures on device.
+    // Indicate user initiates an action to update malware signatures on device.
     WINDOWSDEFENDERUPDATESIGNATURES_REMOTEACTION
-    // User initiates an action remote wipe device with keeping enrollment data.
+    // Indicate user initiates an action remote wipe device with keeping enrollment data.
     FACTORYRESETKEEPENROLLMENTDATA_REMOTEACTION
-    // User initiates an action to update account on device.
+    // Indicate user initiates an action to update account on device.
     UPDATEDEVICEACCOUNT_REMOTEACTION
-    // User initiates an action to automatice redeploy the device
+    // Indicate user initiates an action to automatic redeploy the device
     AUTOMATICREDEPLOYMENT_REMOTEACTION
-    // User initiates an action to shut down the device.
+    // Indicate user initiates an action to shut down the device.
     SHUTDOWN_REMOTEACTION
-    // User initiates an action to Rotate BitLockerKeys on the device.
+    // Indicate user initiates an action to Rotate BitLockerKeys on the device.
     ROTATEBITLOCKERKEYS_REMOTEACTION
-    // User initiates an action to Rotate FileVaultKey on mac.
+    // Indicate user initiates an action to Rotate FileVaultKey on mac.
     ROTATEFILEVAULTKEY_REMOTEACTION
-    // User initiates an action to Get FileVaultKey on mac.
+    // Indicate user initiates an action to Get FileVaultKey on mac.
     GETFILEVAULTKEY_REMOTEACTION
-    // User initiates an action to Set Device Name on the device.
+    // Indicate user initiates an action to Set Device Name on the device.
     SETDEVICENAME_REMOTEACTION
-    // User initiates an action to Activate eSIM on the device.
+    // Indicate user initiates an action to Activate eSIM on the device.
     ACTIVATEDEVICEESIM_REMOTEACTION
+    // Indicate user initiates an action to deprovision the device.
+    DEPROVISION_REMOTEACTION
+    // Indicate user initiates an action to disable the device.
+    DISABLE_REMOTEACTION
+    // Indicate user initiates an action to reenable the device.
+    REENABLE_REMOTEACTION
+    // Indicate user initiates an action to move the device to a new organizational unit.
+    MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit"}[i]
 }
 func ParseRemoteAction(v string) (interface{}, error) {
     result := UNKNOWN_REMOTEACTION
@@ -110,6 +118,14 @@ func ParseRemoteAction(v string) (interface{}, error) {
             result = SETDEVICENAME_REMOTEACTION
         case "activateDeviceEsim":
             result = ACTIVATEDEVICEESIM_REMOTEACTION
+        case "deprovision":
+            result = DEPROVISION_REMOTEACTION
+        case "disable":
+            result = DISABLE_REMOTEACTION
+        case "reenable":
+            result = REENABLE_REMOTEACTION
+        case "moveDeviceToOrganizationalUnit":
+            result = MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
         default:
             return 0, errors.New("Unknown RemoteAction value: " + v)
     }

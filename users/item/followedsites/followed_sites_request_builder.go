@@ -69,11 +69,7 @@ func (m *FollowedSitesRequestBuilder) Count()(*i8be7a7a8f38bd0e2fe26e6249634793e
     return i8be7a7a8f38bd0e2fe26e6249634793ebfe69e49a62e492acc5b4bf0ccd5040b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list the sites that have been followed by the signed in user.
-func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration list the sites that have been followed by the signed in user.
-func (m *FollowedSitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *FollowedSitesRequestBuilder) CreateGetRequestInformationWithRequestConf
 }
 // Get list the sites that have been followed by the signed in user.
 func (m *FollowedSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

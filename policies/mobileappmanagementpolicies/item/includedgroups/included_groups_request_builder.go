@@ -70,11 +70,7 @@ func (m *IncludedGroupsRequestBuilder) Count()(*ic5b7d6629b4a5c986e3a9357b522814
     return ic5b7d6629b4a5c986e3a9357b5228149ea2d4a33d343593c8d1d7ec0756e4fb4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of groups that are included in a mobile app management policy.
-func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the list of groups that are included in a mobile app management policy.
-func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -91,7 +87,7 @@ func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformationWithRequestCon
 }
 // Get get the list of groups that are included in a mobile app management policy.
 func (m *IncludedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

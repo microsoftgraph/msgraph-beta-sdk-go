@@ -43,17 +43,13 @@ func NewClassifyExactMatchesRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewClassifyExactMatchesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action classifyExactMatches
-func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformation(body ClassifyExactMatchesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action classifyExactMatches
-func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClassifyExactMatchesPostRequestBodyable, requestConfiguration *ClassifyExactMatchesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ClassifyExactMatchesPostRequestBodyable, requestConfiguration *ClassifyExactMatchesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -62,7 +58,7 @@ func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformationWithReq
 }
 // Post invoke action classifyExactMatches
 func (m *ClassifyExactMatchesRequestBuilder) Post(ctx context.Context, body ClassifyExactMatchesPostRequestBodyable, requestConfiguration *ClassifyExactMatchesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchClassificationResultable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -69,11 +69,7 @@ func (m *SalesOrdersRequestBuilder) Count()(*i1f89f498c2caceb9974c5c362ff78bf09d
     return i1f89f498c2caceb9974c5c362ff78bf09d2d2e296af2ef12c0b43bc52e2509ba.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get salesOrders from financials
-func (m *SalesOrdersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get salesOrders from financials
-func (m *SalesOrdersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SalesOrdersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SalesOrdersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SalesOrdersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *SalesOrdersRequestBuilder) CreateGetRequestInformationWithRequestConfig
 }
 // Get get salesOrders from financials
 func (m *SalesOrdersRequestBuilder) Get(ctx context.Context, requestConfiguration *SalesOrdersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

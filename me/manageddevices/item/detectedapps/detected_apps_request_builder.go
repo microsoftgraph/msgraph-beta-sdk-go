@@ -69,11 +69,7 @@ func (m *DetectedAppsRequestBuilder) Count()(*ic1176dd1d195997af637141f66a82b0f7
     return ic1176dd1d195997af637141f66a82b0f7c30d1244c4a177ffbe7dacd028b4f05.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation all applications currently installed on the device
-func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration all applications currently installed on the device
-func (m *DetectedAppsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DetectedAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DetectedAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *DetectedAppsRequestBuilder) CreateGetRequestInformationWithRequestConfi
 }
 // Get all applications currently installed on the device
 func (m *DetectedAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *DetectedAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

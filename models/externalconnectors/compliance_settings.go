@@ -9,7 +9,7 @@ import (
 type ComplianceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The eDiscoveryResultTemplates property
+    // Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
     eDiscoveryResultTemplates []DisplayTemplateable
     // The OdataType property
     odataType *string
@@ -31,7 +31,7 @@ func CreateComplianceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *ComplianceSettings) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetEDiscoveryResultTemplates gets the eDiscoveryResultTemplates property value. The eDiscoveryResultTemplates property
+// GetEDiscoveryResultTemplates gets the eDiscoveryResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
 func (m *ComplianceSettings) GetEDiscoveryResultTemplates()([]DisplayTemplateable) {
     return m.eDiscoveryResultTemplates
 }
@@ -73,7 +73,7 @@ func (m *ComplianceSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *ComplianceSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetEDiscoveryResultTemplates sets the eDiscoveryResultTemplates property value. The eDiscoveryResultTemplates property
+// SetEDiscoveryResultTemplates sets the eDiscoveryResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
 func (m *ComplianceSettings) SetEDiscoveryResultTemplates(value []DisplayTemplateable)() {
     m.eDiscoveryResultTemplates = value
 }

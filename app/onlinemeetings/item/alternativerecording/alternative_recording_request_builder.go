@@ -49,11 +49,7 @@ func NewAlternativeRecordingRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewAlternativeRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AlternativeRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AlternativeRecordingRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AlternativeRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *AlternativeRecordingRequestBuilder) CreateGetRequestInformationWithRequ
     return requestInfo, nil
 }
 // CreatePutRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *AlternativeRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AlternativeRecordingRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *AlternativeRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *AlternativeRecordingRequestBuilder) CreatePutRequestInformationWithRequ
 }
 // Get the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 func (m *AlternativeRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *AlternativeRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *AlternativeRecordingRequestBuilder) Get(ctx context.Context, requestCon
 }
 // Put the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 func (m *AlternativeRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *AlternativeRecordingRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

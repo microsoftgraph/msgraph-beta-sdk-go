@@ -42,11 +42,7 @@ func NewUnshareForSchoolDataSyncServiceRequestBuilder(rawUrl string, requestAdap
     return NewUnshareForSchoolDataSyncServiceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action unshareForSchoolDataSyncService
-func (m *UnshareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action unshareForSchoolDataSyncService
-func (m *UnshareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnshareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnshareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *UnshareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *UnshareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInforma
 }
 // Post invoke action unshareForSchoolDataSyncService
 func (m *UnshareForSchoolDataSyncServiceRequestBuilder) Post(ctx context.Context, requestConfiguration *UnshareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

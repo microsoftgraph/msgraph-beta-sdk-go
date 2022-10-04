@@ -52,11 +52,7 @@ func NewLinkedEligibleRoleAssignmentRequestBuilder(rawUrl string, requestAdapter
     return NewLinkedEligibleRoleAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
-func (m *LinkedEligibleRoleAssignmentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
-func (m *LinkedEligibleRoleAssignmentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *LinkedEligibleRoleAssignmentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *LinkedEligibleRoleAssignmentRequestBuilder) CreateGetRequestInformation
 }
 // Get read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 func (m *LinkedEligibleRoleAssignmentRequestBuilder) Get(ctx context.Context, requestConfiguration *LinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

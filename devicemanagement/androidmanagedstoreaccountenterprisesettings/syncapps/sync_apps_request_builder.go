@@ -42,11 +42,7 @@ func NewSyncAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSyncAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action syncApps
-func (m *SyncAppsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration invoke action syncApps
-func (m *SyncAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *SyncAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SyncAppsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SyncAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -59,7 +55,7 @@ func (m *SyncAppsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 }
 // Post invoke action syncApps
 func (m *SyncAppsRequestBuilder) Post(ctx context.Context, requestConfiguration *SyncAppsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }

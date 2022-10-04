@@ -69,11 +69,7 @@ func (m *PurchaseInvoicesRequestBuilder) Count()(*i13ae22bc33deeff5a472a65721737
     return i13ae22bc33deeff5a472a6572173713cfdaa73df4bda3ac1f1552ec20dc11d28.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get purchaseInvoices from financials
-func (m *PurchaseInvoicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get purchaseInvoices from financials
-func (m *PurchaseInvoicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PurchaseInvoicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PurchaseInvoicesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PurchaseInvoicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *PurchaseInvoicesRequestBuilder) CreateGetRequestInformationWithRequestC
 }
 // Get get purchaseInvoices from financials
 func (m *PurchaseInvoicesRequestBuilder) Get(ctx context.Context, requestConfiguration *PurchaseInvoicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

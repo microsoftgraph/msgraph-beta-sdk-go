@@ -42,16 +42,12 @@ func NewExportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewExportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation initiate an export from a **reviewSet**.  For details, see Export documents from a review set in eDiscovery (Premium).
-func (m *ExportRequestBuilder) CreatePostRequestInformation(body ExportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration initiate an export from a **reviewSet**.  For details, see Export documents from a review set in eDiscovery (Premium).
-func (m *ExportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExportPostRequestBodyable, requestConfiguration *ExportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExportRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ExportPostRequestBodyable, requestConfiguration *ExportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *ExportRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post initiate an export from a **reviewSet**.  For details, see Export documents from a review set in eDiscovery (Premium).
 func (m *ExportRequestBuilder) Post(ctx context.Context, body ExportPostRequestBodyable, requestConfiguration *ExportRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

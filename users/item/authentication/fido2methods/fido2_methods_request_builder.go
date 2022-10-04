@@ -69,11 +69,7 @@ func (m *Fido2MethodsRequestBuilder) Count()(*i24d8d042c34e6c85fd6d9165b1a6f89bc
     return i24d8d042c34e6c85fd6d9165b1a6f89bcb1c0adbd2b3e47c9b6fa49a5377c685.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
-func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
-func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *Fido2MethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *Fido2MethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformationWithRequestConfi
 }
 // Get retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
 func (m *Fido2MethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *Fido2MethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Fido2AuthenticationMethodCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

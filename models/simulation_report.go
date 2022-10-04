@@ -13,7 +13,7 @@ type SimulationReport struct {
     odataType *string
     // Overview of an attack simulation and training campaign.
     overview SimulationReportOverviewable
-    // Represents users of a tenant and their online actions in an attack simulation and training campaign.
+    // The tenant users and their online actions in an attack simulation and training campaign.
     simulationUsers []UserSimulationDetailsable
 }
 // NewSimulationReport instantiates a new simulationReport and sets the default values.
@@ -49,7 +49,7 @@ func (m *SimulationReport) GetOdataType()(*string) {
 func (m *SimulationReport) GetOverview()(SimulationReportOverviewable) {
     return m.overview
 }
-// GetSimulationUsers gets the simulationUsers property value. Represents users of a tenant and their online actions in an attack simulation and training campaign.
+// GetSimulationUsers gets the simulationUsers property value. The tenant users and their online actions in an attack simulation and training campaign.
 func (m *SimulationReport) GetSimulationUsers()([]UserSimulationDetailsable) {
     return m.simulationUsers
 }
@@ -94,7 +94,7 @@ func (m *SimulationReport) SetOdataType(value *string)() {
 func (m *SimulationReport) SetOverview(value SimulationReportOverviewable)() {
     m.overview = value
 }
-// SetSimulationUsers sets the simulationUsers property value. Represents users of a tenant and their online actions in an attack simulation and training campaign.
+// SetSimulationUsers sets the simulationUsers property value. The tenant users and their online actions in an attack simulation and training campaign.
 func (m *SimulationReport) SetSimulationUsers(value []UserSimulationDetailsable)() {
     m.simulationUsers = value
 }

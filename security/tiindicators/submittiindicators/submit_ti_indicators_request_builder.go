@@ -42,17 +42,13 @@ func NewSubmitTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewSubmitTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-func (m *SubmitTiIndicatorsRequestBuilder) CreatePostRequestInformation(body SubmitTiIndicatorsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-func (m *SubmitTiIndicatorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SubmitTiIndicatorsPostRequestBodyable, requestConfiguration *SubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SubmitTiIndicatorsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body SubmitTiIndicatorsPostRequestBodyable, requestConfiguration *SubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers["Accept"] = "application/json"
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -61,7 +57,7 @@ func (m *SubmitTiIndicatorsRequestBuilder) CreatePostRequestInformationWithReque
 }
 // Post upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 func (m *SubmitTiIndicatorsRequestBuilder) Post(ctx context.Context, body SubmitTiIndicatorsPostRequestBodyable, requestConfiguration *SubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(SubmitTiIndicatorsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }

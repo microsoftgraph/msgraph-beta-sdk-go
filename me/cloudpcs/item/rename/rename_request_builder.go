@@ -42,16 +42,12 @@ func NewRenameRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewRenameRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
-func (m *RenameRequestBuilder) CreatePostRequestInformation(body RenamePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
-func (m *RenameRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RenamePostRequestBodyable, requestConfiguration *RenameRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RenameRequestBuilder) CreatePostRequestInformation(ctx context.Context, body RenamePostRequestBodyable, requestConfiguration *RenameRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *RenameRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
 }
 // Post rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
 func (m *RenameRequestBuilder) Post(ctx context.Context, body RenamePostRequestBodyable, requestConfiguration *RenameRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

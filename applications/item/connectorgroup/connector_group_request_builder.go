@@ -53,11 +53,7 @@ func NewConnectorGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewConnectorGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ConnectorGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ConnectorGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -74,7 +70,7 @@ func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformationWithRequestCon
 }
 // Get the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 func (m *ConnectorGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectorGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

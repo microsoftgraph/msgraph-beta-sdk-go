@@ -49,11 +49,7 @@ func NewPictureRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewPictureRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get picture for the navigation property companyInformation from financials
-func (m *PictureRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get picture for the navigation property companyInformation from financials
-func (m *PictureRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PictureRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PictureRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PictureRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -65,11 +61,7 @@ func (m *PictureRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     return requestInfo, nil
 }
 // CreatePutRequestInformation update picture for the navigation property companyInformation in financials
-func (m *PictureRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePutRequestInformationWithRequestConfiguration update picture for the navigation property companyInformation in financials
-func (m *PictureRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *PictureRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PictureRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *PictureRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -83,7 +75,7 @@ func (m *PictureRequestBuilder) CreatePutRequestInformationWithRequestConfigurat
 }
 // Get get picture for the navigation property companyInformation from financials
 func (m *PictureRequestBuilder) Get(ctx context.Context, requestConfiguration *PictureRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -102,7 +94,7 @@ func (m *PictureRequestBuilder) Get(ctx context.Context, requestConfiguration *P
 }
 // Put update picture for the navigation property companyInformation in financials
 func (m *PictureRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *PictureRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

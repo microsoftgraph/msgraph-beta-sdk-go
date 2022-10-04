@@ -65,11 +65,7 @@ func (m *PhotosRequestBuilder) Count()(*i3dd87cba366903c9c6533640439e283fd33cd24
     return i3dd87cba366903c9c6533640439e283fd33cd24524dadfecfe203eaad1b8e6ad.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get photos from users
-func (m *PhotosRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get photos from users
-func (m *PhotosRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PhotosRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -86,7 +82,7 @@ func (m *PhotosRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
 }
 // Get get photos from users
 func (m *PhotosRequestBuilder) Get(ctx context.Context, requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

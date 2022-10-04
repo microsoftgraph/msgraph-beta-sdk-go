@@ -61,11 +61,7 @@ func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestA
     return NewGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
-func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
-func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -82,7 +78,7 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInfor
 }
 // Get report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
 func (m *GetCredentialUserRegistrationCountRequestBuilder) Get(ctx context.Context, requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(GetCredentialUserRegistrationCountResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -17,6 +17,8 @@ type DeviceAndAppManagementAssignmentFilter struct {
     displayName *string
     // Last modified time of the Assignment Filter.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Associated assignments for a specific filter
+    payloads []PayloadByFilterable
     // Supported platform types.
     platform *DevicePlatformType
     // RoleScopeTags of the Assignment Filter.
@@ -74,6 +76,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
     res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
+    res["payloads"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePayloadByFilterFromDiscriminatorValue , m.SetPayloads)
     res["platform"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDevicePlatformType , m.SetPlatform)
     res["roleScopeTags"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetRoleScopeTags)
     res["rule"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRule)
@@ -82,6 +85,10 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
+}
+// GetPayloads gets the payloads property value. Associated assignments for a specific filter
+func (m *DeviceAndAppManagementAssignmentFilter) GetPayloads()([]PayloadByFilterable) {
+    return m.payloads
 }
 // GetPlatform gets the platform property value. Supported platform types.
 func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformType) {
@@ -125,6 +132,13 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    if m.GetPayloads() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPayloads())
+        err = writer.WriteCollectionOfObjectValues("payloads", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatform() != nil {
         cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
@@ -161,6 +175,10 @@ func (m *DeviceAndAppManagementAssignmentFilter) SetDisplayName(value *string)()
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
+}
+// SetPayloads sets the payloads property value. Associated assignments for a specific filter
+func (m *DeviceAndAppManagementAssignmentFilter) SetPayloads(value []PayloadByFilterable)() {
+    m.payloads = value
 }
 // SetPlatform sets the platform property value. Supported platform types.
 func (m *DeviceAndAppManagementAssignmentFilter) SetPlatform(value *DevicePlatformType)() {

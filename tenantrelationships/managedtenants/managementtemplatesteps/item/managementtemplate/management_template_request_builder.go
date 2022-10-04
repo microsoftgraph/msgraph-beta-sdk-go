@@ -52,11 +52,7 @@ func NewManagementTemplateRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewManagementTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get managementTemplate from tenantRelationships
-func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get managementTemplate from tenantRelationships
-func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ManagementTemplateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ManagementTemplateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -73,7 +69,7 @@ func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformationWithReques
 }
 // Get get managementTemplate from tenantRelationships
 func (m *ManagementTemplateRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagementTemplateRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }

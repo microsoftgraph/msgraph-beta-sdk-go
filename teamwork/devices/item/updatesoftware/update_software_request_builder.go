@@ -42,16 +42,12 @@ func NewUpdateSoftwareRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewUpdateSoftwareRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
-func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformation(body UpdateSoftwarePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
-func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateSoftwarePostRequestBodyable, requestConfiguration *UpdateSoftwareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformation(ctx context.Context, body UpdateSoftwarePostRequestBodyable, requestConfiguration *UpdateSoftwareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -60,7 +56,7 @@ func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformationWithRequestCo
 }
 // Post update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
 func (m *UpdateSoftwareRequestBuilder) Post(ctx context.Context, body UpdateSoftwarePostRequestBodyable, requestConfiguration *UpdateSoftwareRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }

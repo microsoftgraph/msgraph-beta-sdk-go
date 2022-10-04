@@ -69,11 +69,7 @@ func (m *AppRoleAssignedResourcesRequestBuilder) Count()(*ieca463632c0fd589698f0
     return ieca463632c0fd589698f007a3f3b183abc6fa061364149a878318cb108a9107a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the service principals to which the user has an app role assignment either directly or through group membership.
-func (m *AppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get the service principals to which the user has an app role assignment either directly or through group membership.
-func (m *AppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -90,7 +86,7 @@ func (m *AppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformationWith
 }
 // Get get the service principals to which the user has an app role assignment either directly or through group membership.
 func (m *AppRoleAssignedResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
