@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+## [0.43.0] - 2022-10-04
+
+### Changed
+
+- Weekly generation.
+- BREAKING removed overloads to get request information.
+
 ## [0.42.1] - 2022-09-28
 
 ### Changed
