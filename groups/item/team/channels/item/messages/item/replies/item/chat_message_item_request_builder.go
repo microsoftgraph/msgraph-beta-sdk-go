@@ -6,8 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i1b5cfbe06219c97215ed8274af5df39a212f1b36842d0eaa2d5e6cf0368ccb1a "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/channels/item/messages/item/replies/item/hostedcontents"
+    ib342ed5de5f3313ed34a0c25d4650dae59cda3b8925bad25a5097b5f4818eeae "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/channels/item/messages/item/replies/item/setreaction"
     ib8b0294cfd5978cc4fb6b33aac1647869fcdab118c4796f78479df943fc59cfe "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/channels/item/messages/item/replies/item/undosoftdelete"
     ieb2efef0d726a3aa37d5e32181d8d5d138a3dd616e809edac6480b5f1ed768e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/channels/item/messages/item/replies/item/softdelete"
+    if920a3a3959f75cdc7ed697e8002d77001ca50af615ac21cdb72b62093fee607 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/channels/item/messages/item/replies/item/unsetreaction"
     icfd5a5df51bdf1324d4492d863afa49d051b0a0de6d4263cee746464b33b27da "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/team/channels/item/messages/item/replies/item/hostedcontents/item"
 )
 
@@ -180,6 +182,10 @@ func (m *ChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
+// SetReaction the setReaction property
+func (m *ChatMessageItemRequestBuilder) SetReaction()(*ib342ed5de5f3313ed34a0c25d4650dae59cda3b8925bad25a5097b5f4818eeae.SetReactionRequestBuilder) {
+    return ib342ed5de5f3313ed34a0c25d4650dae59cda3b8925bad25a5097b5f4818eeae.NewSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // SoftDelete the softDelete property
 func (m *ChatMessageItemRequestBuilder) SoftDelete()(*ieb2efef0d726a3aa37d5e32181d8d5d138a3dd616e809edac6480b5f1ed768e5.SoftDeleteRequestBuilder) {
     return ieb2efef0d726a3aa37d5e32181d8d5d138a3dd616e809edac6480b5f1ed768e5.NewSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -187,4 +193,8 @@ func (m *ChatMessageItemRequestBuilder) SoftDelete()(*ieb2efef0d726a3aa37d5e3218
 // UndoSoftDelete the undoSoftDelete property
 func (m *ChatMessageItemRequestBuilder) UndoSoftDelete()(*ib8b0294cfd5978cc4fb6b33aac1647869fcdab118c4796f78479df943fc59cfe.UndoSoftDeleteRequestBuilder) {
     return ib8b0294cfd5978cc4fb6b33aac1647869fcdab118c4796f78479df943fc59cfe.NewUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UnsetReaction the unsetReaction property
+func (m *ChatMessageItemRequestBuilder) UnsetReaction()(*if920a3a3959f75cdc7ed697e8002d77001ca50af615ac21cdb72b62093fee607.UnsetReactionRequestBuilder) {
+    return if920a3a3959f75cdc7ed697e8002d77001ca50af615ac21cdb72b62093fee607.NewUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

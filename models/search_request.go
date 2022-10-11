@@ -17,7 +17,7 @@ type SearchRequest struct {
     contentSources []string
     // This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
     enableTopResults *bool
-    // One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+    // One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
     entityTypes []EntityType
     // Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
     fields []string
@@ -29,11 +29,11 @@ type SearchRequest struct {
     query SearchQueryable
     // Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
     queryAlterationOptions SearchAlterationOptionsable
-    // The region property
+    // Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.
     region *string
     // Provides the search result templates options for rendering connectors search results.
     resultTemplateOptions ResultTemplateOptionable
-    // The sharePointOneDriveOptions property
+    // Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
     sharePointOneDriveOptions SharePointOneDriveOptionsable
     // The size of the page to be retrieved. Optional.
     size *int32
@@ -77,7 +77,7 @@ func (m *SearchRequest) GetContentSources()([]string) {
 func (m *SearchRequest) GetEnableTopResults()(*bool) {
     return m.enableTopResults
 }
-// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
 func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     return m.entityTypes
 }
@@ -123,7 +123,7 @@ func (m *SearchRequest) GetQuery()(SearchQueryable) {
 func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable) {
     return m.queryAlterationOptions
 }
-// GetRegion gets the region property value. The region property
+// GetRegion gets the region property value. Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.
 func (m *SearchRequest) GetRegion()(*string) {
     return m.region
 }
@@ -131,7 +131,7 @@ func (m *SearchRequest) GetRegion()(*string) {
 func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
     return m.resultTemplateOptions
 }
-// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
 func (m *SearchRequest) GetSharePointOneDriveOptions()(SharePointOneDriveOptionsable) {
     return m.sharePointOneDriveOptions
 }
@@ -285,7 +285,7 @@ func (m *SearchRequest) SetContentSources(value []string)() {
 func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     m.enableTopResults = value
 }
-// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
 func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     m.entityTypes = value
 }
@@ -309,7 +309,7 @@ func (m *SearchRequest) SetQuery(value SearchQueryable)() {
 func (m *SearchRequest) SetQueryAlterationOptions(value SearchAlterationOptionsable)() {
     m.queryAlterationOptions = value
 }
-// SetRegion sets the region property value. The region property
+// SetRegion sets the region property value. Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.
 func (m *SearchRequest) SetRegion(value *string)() {
     m.region = value
 }
@@ -317,7 +317,7 @@ func (m *SearchRequest) SetRegion(value *string)() {
 func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)() {
     m.resultTemplateOptions = value
 }
-// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
 func (m *SearchRequest) SetSharePointOneDriveOptions(value SharePointOneDriveOptionsable)() {
     m.sharePointOneDriveOptions = value
 }

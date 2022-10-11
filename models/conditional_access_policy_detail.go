@@ -11,11 +11,11 @@ type ConditionalAccessPolicyDetail struct {
     additionalData map[string]interface{}
     // The conditions property
     conditions ConditionalAccessConditionSetable
-    // The grantControls property
+    // Represents grant controls that must be fulfilled for the policy.
     grantControls ConditionalAccessGrantControlsable
     // The OdataType property
     odataType *string
-    // The sessionControls property
+    // Represents a complex type of session controls that is enforced after sign-in.
     sessionControls ConditionalAccessSessionControlsable
 }
 // NewConditionalAccessPolicyDetail instantiates a new conditionalAccessPolicyDetail and sets the default values.
@@ -48,7 +48,7 @@ func (m *ConditionalAccessPolicyDetail) GetFieldDeserializers()(map[string]func(
     res["sessionControls"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateConditionalAccessSessionControlsFromDiscriminatorValue , m.SetSessionControls)
     return res
 }
-// GetGrantControls gets the grantControls property value. The grantControls property
+// GetGrantControls gets the grantControls property value. Represents grant controls that must be fulfilled for the policy.
 func (m *ConditionalAccessPolicyDetail) GetGrantControls()(ConditionalAccessGrantControlsable) {
     return m.grantControls
 }
@@ -56,7 +56,7 @@ func (m *ConditionalAccessPolicyDetail) GetGrantControls()(ConditionalAccessGran
 func (m *ConditionalAccessPolicyDetail) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSessionControls gets the sessionControls property value. The sessionControls property
+// GetSessionControls gets the sessionControls property value. Represents a complex type of session controls that is enforced after sign-in.
 func (m *ConditionalAccessPolicyDetail) GetSessionControls()(ConditionalAccessSessionControlsable) {
     return m.sessionControls
 }
@@ -102,7 +102,7 @@ func (m *ConditionalAccessPolicyDetail) SetAdditionalData(value map[string]inter
 func (m *ConditionalAccessPolicyDetail) SetConditions(value ConditionalAccessConditionSetable)() {
     m.conditions = value
 }
-// SetGrantControls sets the grantControls property value. The grantControls property
+// SetGrantControls sets the grantControls property value. Represents grant controls that must be fulfilled for the policy.
 func (m *ConditionalAccessPolicyDetail) SetGrantControls(value ConditionalAccessGrantControlsable)() {
     m.grantControls = value
 }
@@ -110,7 +110,7 @@ func (m *ConditionalAccessPolicyDetail) SetGrantControls(value ConditionalAccess
 func (m *ConditionalAccessPolicyDetail) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSessionControls sets the sessionControls property value. The sessionControls property
+// SetSessionControls sets the sessionControls property value. Represents a complex type of session controls that is enforced after sign-in.
 func (m *ConditionalAccessPolicyDetail) SetSessionControls(value ConditionalAccessSessionControlsable)() {
     m.sessionControls = value
 }

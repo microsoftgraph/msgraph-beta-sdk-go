@@ -17,7 +17,7 @@ type TemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TemplatesRequestBuilderGetQueryParameters get templates from identity
+// TemplatesRequestBuilderGetQueryParameters get a list of the conditionalAccessTemplate objects and their properties.
 type TemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *TemplatesRequestBuilder) Count()(*i3f4502e8572cb570c359231650823cccebb152eb5297774864c4bc755a2dee51.CountRequestBuilder) {
     return i3f4502e8572cb570c359231650823cccebb152eb5297774864c4bc755a2dee51.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get templates from identity
+// CreateGetRequestInformation get a list of the conditionalAccessTemplate objects and their properties.
 func (m *TemplatesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *TemplatesRequestBuilder) CreatePostRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// Get get templates from identity
+// Get get a list of the conditionalAccessTemplate objects and their properties.
 func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Casts the previous resource to application.
 type AttributeMappingSourceType int
 
 const (

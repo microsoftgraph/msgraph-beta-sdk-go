@@ -9,7 +9,7 @@ import (
 type SharePointOneDriveOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The includeContent property
+    // The type of search content. The possible values are: privateContent, sharedContent. Read-only.
     includeContent *SearchContent
     // The OdataType property
     odataType *string
@@ -38,7 +38,7 @@ func (m *SharePointOneDriveOptions) GetFieldDeserializers()(map[string]func(i878
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
-// GetIncludeContent gets the includeContent property value. The includeContent property
+// GetIncludeContent gets the includeContent property value. The type of search content. The possible values are: privateContent, sharedContent. Read-only.
 func (m *SharePointOneDriveOptions) GetIncludeContent()(*SearchContent) {
     return m.includeContent
 }
@@ -73,7 +73,7 @@ func (m *SharePointOneDriveOptions) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *SharePointOneDriveOptions) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetIncludeContent sets the includeContent property value. The includeContent property
+// SetIncludeContent sets the includeContent property value. The type of search content. The possible values are: privateContent, sharedContent. Read-only.
 func (m *SharePointOneDriveOptions) SetIncludeContent(value *SearchContent)() {
     m.includeContent = value
 }

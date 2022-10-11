@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResource 
+// AccessPackageResource provides operations to manage the collection of accessReview entities.
 type AccessPackageResource struct {
     Entity
     // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
@@ -17,7 +17,7 @@ type AccessPackageResource struct {
     accessPackageResourceScopes []AccessPackageResourceScopeable
     // The name of the user or application that first added this resource. Read-only.
     addedBy *string
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Contains information about the attributes to be collected from the requestor and sent to the resource application.
     attributes []AccessPackageResourceAttributeable
@@ -25,7 +25,7 @@ type AccessPackageResource struct {
     description *string
     // The display name of the resource, such as the application name, group name or site name.
     displayName *string
-    // True if the resource is not yet available for assignment.
+    // True if the resource is not yet available for assignment. Read-only.
     isPendingOnboarding *bool
     // The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
     originId *string
@@ -65,7 +65,7 @@ func (m *AccessPackageResource) GetAccessPackageResourceScopes()([]AccessPackage
 func (m *AccessPackageResource) GetAddedBy()(*string) {
     return m.addedBy
 }
-// GetAddedOn gets the addedOn property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetAddedOn gets the addedOn property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResource) GetAddedOn()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.addedOn
 }
@@ -99,7 +99,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
     res["url"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUrl)
     return res
 }
-// GetIsPendingOnboarding gets the isPendingOnboarding property value. True if the resource is not yet available for assignment.
+// GetIsPendingOnboarding gets the isPendingOnboarding property value. True if the resource is not yet available for assignment. Read-only.
 func (m *AccessPackageResource) GetIsPendingOnboarding()(*bool) {
     return m.isPendingOnboarding
 }
@@ -224,7 +224,7 @@ func (m *AccessPackageResource) SetAccessPackageResourceScopes(value []AccessPac
 func (m *AccessPackageResource) SetAddedBy(value *string)() {
     m.addedBy = value
 }
-// SetAddedOn sets the addedOn property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetAddedOn sets the addedOn property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResource) SetAddedOn(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.addedOn = value
 }
@@ -240,7 +240,7 @@ func (m *AccessPackageResource) SetDescription(value *string)() {
 func (m *AccessPackageResource) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetIsPendingOnboarding sets the isPendingOnboarding property value. True if the resource is not yet available for assignment.
+// SetIsPendingOnboarding sets the isPendingOnboarding property value. True if the resource is not yet available for assignment. Read-only.
 func (m *AccessPackageResource) SetIsPendingOnboarding(value *bool)() {
     m.isPendingOnboarding = value
 }

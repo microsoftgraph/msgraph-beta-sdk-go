@@ -17,7 +17,7 @@ type TagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TagsRequestBuilderGetQueryParameters get a list of the tags objects and their properties.
+// TagsRequestBuilderGetQueryParameters get a list of the tag objects and their properties.
 type TagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *TagsRequestBuilder) Count()(*i7fe1735f1198b59ef76a54571b0ab3cbc13fcd5ed5b76a8a9f8542504585c40c.CountRequestBuilder) {
     return i7fe1735f1198b59ef76a54571b0ab3cbc13fcd5ed5b76a8a9f8542504585c40c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get a list of the tags objects and their properties.
+// CreateGetRequestInformation get a list of the tag objects and their properties.
 func (m *TagsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *TagsRequestBuilder) CreatePostRequestInformation(ctx context.Context, b
     }
     return requestInfo, nil
 }
-// Get get a list of the tags objects and their properties.
+// Get get a list of the tag objects and their properties.
 func (m *TagsRequestBuilder) Get(ctx context.Context, requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

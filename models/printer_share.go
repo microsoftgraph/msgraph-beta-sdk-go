@@ -19,7 +19,7 @@ type PrinterShare struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The printer that this printer share is related to.
     printer Printerable
-    // The viewPoint property
+    // Additional data for a printer share as viewed by the signed-in user.
     viewPoint PrinterShareViewpointable
 }
 // NewPrinterShare instantiates a new PrinterShare and sets the default values.
@@ -66,7 +66,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 func (m *PrinterShare) GetPrinter()(Printerable) {
     return m.printer
 }
-// GetViewPoint gets the viewPoint property value. The viewPoint property
+// GetViewPoint gets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
 func (m *PrinterShare) GetViewPoint()(PrinterShareViewpointable) {
     return m.viewPoint
 }
@@ -136,7 +136,7 @@ func (m *PrinterShare) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97
 func (m *PrinterShare) SetPrinter(value Printerable)() {
     m.printer = value
 }
-// SetViewPoint sets the viewPoint property value. The viewPoint property
+// SetViewPoint sets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
 func (m *PrinterShare) SetViewPoint(value PrinterShareViewpointable)() {
     m.viewPoint = value
 }

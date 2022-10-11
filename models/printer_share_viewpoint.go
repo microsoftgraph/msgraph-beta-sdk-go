@@ -10,7 +10,7 @@ import (
 type PrinterShareViewpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The lastUsedDateTime property
+    // Date and time when the printer was last used by the signed-in user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastUsedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
     odataType *string
@@ -39,7 +39,7 @@ func (m *PrinterShareViewpoint) GetFieldDeserializers()(map[string]func(i878a80d
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
-// GetLastUsedDateTime gets the lastUsedDateTime property value. The lastUsedDateTime property
+// GetLastUsedDateTime gets the lastUsedDateTime property value. Date and time when the printer was last used by the signed-in user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PrinterShareViewpoint) GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastUsedDateTime
 }
@@ -73,7 +73,7 @@ func (m *PrinterShareViewpoint) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *PrinterShareViewpoint) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetLastUsedDateTime sets the lastUsedDateTime property value. The lastUsedDateTime property
+// SetLastUsedDateTime sets the lastUsedDateTime property value. Date and time when the printer was last used by the signed-in user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PrinterShareViewpoint) SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastUsedDateTime = value
 }
