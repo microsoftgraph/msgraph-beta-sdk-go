@@ -2,7 +2,7 @@ package ediscovery
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of accessReview entities.
 type DataSourceContainerStatus int
 
 const (

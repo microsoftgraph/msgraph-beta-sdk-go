@@ -8,29 +8,24 @@ import (
 
 // GetSubscriptionsResponse provides operations to call the getSubscriptions method.
 type GetSubscriptionsResponse struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
     // The value property
     value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSubscriptionable
 }
 // NewGetSubscriptionsResponse instantiates a new getSubscriptionsResponse and sets the default values.
 func NewGetSubscriptionsResponse()(*GetSubscriptionsResponse) {
     m := &GetSubscriptionsResponse{
+        BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
     }
-    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGetSubscriptionsResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGetSubscriptionsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetSubscriptionsResponse(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetSubscriptionsResponse) GetAdditionalData()(map[string]interface{}) {
-    return m.additionalData
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetSubscriptionsResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPcSubscriptionFromDiscriminatorValue , m.SetValue)
     return res
 }
@@ -40,24 +35,18 @@ func (m *GetSubscriptionsResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b
 }
 // Serialize serializes information the current object
 func (m *GetSubscriptionsResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
+    if err != nil {
+        return err
+    }
     if m.GetValue() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetValue())
-        err := writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        err = writer.WriteCollectionOfObjectValues("value", cast)
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GetSubscriptionsResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
 }
 // SetValue sets the value property value. The value property
 func (m *GetSubscriptionsResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSubscriptionable)() {

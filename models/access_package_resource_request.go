@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRequest provides operations to manage the collection of activityStatistics entities.
+// AccessPackageResourceRequest provides operations to manage the collection of accessReviewDecision entities.
 type AccessPackageResourceRequest struct {
     Entity
     // The accessPackageResource property
@@ -27,7 +27,7 @@ type AccessPackageResourceRequest struct {
     requestState *string
     // The requestStatus property
     requestStatus *string
-    // Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
+    // Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.
     requestType *string
 }
 // NewAccessPackageResourceRequest instantiates a new accessPackageResourceRequest and sets the default values.
@@ -94,7 +94,7 @@ func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
 func (m *AccessPackageResourceRequest) GetRequestStatus()(*string) {
     return m.requestStatus
 }
-// GetRequestType gets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
+// GetRequestType gets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.
 func (m *AccessPackageResourceRequest) GetRequestType()(*string) {
     return m.requestType
 }
@@ -202,7 +202,7 @@ func (m *AccessPackageResourceRequest) SetRequestState(value *string)() {
 func (m *AccessPackageResourceRequest) SetRequestStatus(value *string)() {
     m.requestStatus = value
 }
-// SetRequestType sets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
+// SetRequestType sets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.
 func (m *AccessPackageResourceRequest) SetRequestType(value *string)() {
     m.requestType = value
 }

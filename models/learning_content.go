@@ -6,14 +6,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LearningContent provides operations to manage the collection of accessReviewDecision entities.
+// LearningContent provides operations to manage the collection of accessReview entities.
 type LearningContent struct {
     Entity
     // Keywords, topics, and other tags associated with the learning content. Optional.
     additionalTags []string
     // The content web URL for the learning content. Required.
     contentWebUrl *string
-    // The contributors property
+    // The authors, creators, or contributors of the learning content. Optional.
     contributors []string
     // The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -67,7 +67,7 @@ func (m *LearningContent) GetAdditionalTags()([]string) {
 func (m *LearningContent) GetContentWebUrl()(*string) {
     return m.contentWebUrl
 }
-// GetContributors gets the contributors property value. The contributors property
+// GetContributors gets the contributors property value. The authors, creators, or contributors of the learning content. Optional.
 func (m *LearningContent) GetContributors()([]string) {
     return m.contributors
 }
@@ -278,7 +278,7 @@ func (m *LearningContent) SetAdditionalTags(value []string)() {
 func (m *LearningContent) SetContentWebUrl(value *string)() {
     m.contentWebUrl = value
 }
-// SetContributors sets the contributors property value. The contributors property
+// SetContributors sets the contributors property value. The authors, creators, or contributors of the learning content. Optional.
 func (m *LearningContent) SetContributors(value []string)() {
     m.contributors = value
 }

@@ -23,6 +23,10 @@ type WorkflowBase struct {
     displayName *string
     // Defines when and for who the workflow will run.
     executionConditions WorkflowExecutionConditionsable
+    // Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
+    isEnabled *bool
+    // If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+    isSchedulingEnabled *bool
     // The user who last modified the workflow.
     lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
     // When the workflow was last modified.
@@ -102,11 +106,21 @@ func (m *WorkflowBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     res["executionConditions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWorkflowExecutionConditionsFromDiscriminatorValue , m.SetExecutionConditions)
+    res["isEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsEnabled)
+    res["isSchedulingEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSchedulingEnabled)
     res["lastModifiedBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserFromDiscriminatorValue , m.SetLastModifiedBy)
     res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     res["tasks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTaskFromDiscriminatorValue , m.SetTasks)
     return res
+}
+// GetIsEnabled gets the isEnabled property value. Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
+func (m *WorkflowBase) GetIsEnabled()(*bool) {
+    return m.isEnabled
+}
+// GetIsSchedulingEnabled gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+func (m *WorkflowBase) GetIsSchedulingEnabled()(*bool) {
+    return m.isSchedulingEnabled
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the workflow.
 func (m *WorkflowBase) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
@@ -159,6 +173,18 @@ func (m *WorkflowBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteObjectValue("executionConditions", m.GetExecutionConditions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isSchedulingEnabled", m.GetIsSchedulingEnabled())
         if err != nil {
             return err
         }
@@ -223,6 +249,14 @@ func (m *WorkflowBase) SetDisplayName(value *string)() {
 // SetExecutionConditions sets the executionConditions property value. Defines when and for who the workflow will run.
 func (m *WorkflowBase) SetExecutionConditions(value WorkflowExecutionConditionsable)() {
     m.executionConditions = value
+}
+// SetIsEnabled sets the isEnabled property value. Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
+func (m *WorkflowBase) SetIsEnabled(value *bool)() {
+    m.isEnabled = value
+}
+// SetIsSchedulingEnabled sets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+func (m *WorkflowBase) SetIsSchedulingEnabled(value *bool)() {
+    m.isSchedulingEnabled = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the workflow.
 func (m *WorkflowBase) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {

@@ -12,7 +12,7 @@ type PlannerTaskDetails struct {
     checklist PlannerChecklistItemsable
     // Description of the task.
     description *string
-    // The notes property
+    // Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
     notes ItemBodyable
     // This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
     previewType *PlannerPreviewType
@@ -50,7 +50,7 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     res["references"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerExternalReferencesFromDiscriminatorValue , m.SetReferences)
     return res
 }
-// GetNotes gets the notes property value. The notes property
+// GetNotes gets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
 func (m *PlannerTaskDetails) GetNotes()(ItemBodyable) {
     return m.notes
 }
@@ -109,7 +109,7 @@ func (m *PlannerTaskDetails) SetChecklist(value PlannerChecklistItemsable)() {
 func (m *PlannerTaskDetails) SetDescription(value *string)() {
     m.description = value
 }
-// SetNotes sets the notes property value. The notes property
+// SetNotes sets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
 func (m *PlannerTaskDetails) SetNotes(value ItemBodyable)() {
     m.notes = value
 }

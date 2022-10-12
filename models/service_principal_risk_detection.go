@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalRiskDetection provides operations to manage the collection of accessReviewDecision entities.
+// ServicePrincipalRiskDetection provides operations to manage the collection of accessReview entities.
 type ServicePrincipalRiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.

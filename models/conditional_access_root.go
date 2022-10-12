@@ -16,7 +16,7 @@ type ConditionalAccessRoot struct {
     namedLocations []NamedLocationable
     // Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
     policies []ConditionalAccessPolicyable
-    // The templates property
+    // Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
     templates []ConditionalAccessTemplateable
 }
 // NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
@@ -58,7 +58,7 @@ func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
 func (m *ConditionalAccessRoot) GetPolicies()([]ConditionalAccessPolicyable) {
     return m.policies
 }
-// GetTemplates gets the templates property value. The templates property
+// GetTemplates gets the templates property value. Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
 func (m *ConditionalAccessRoot) GetTemplates()([]ConditionalAccessTemplateable) {
     return m.templates
 }
@@ -120,7 +120,7 @@ func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
 func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicyable)() {
     m.policies = value
 }
-// SetTemplates sets the templates property value. The templates property
+// SetTemplates sets the templates property value. Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
 func (m *ConditionalAccessRoot) SetTemplates(value []ConditionalAccessTemplateable)() {
     m.templates = value
 }
