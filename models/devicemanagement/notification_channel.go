@@ -9,13 +9,13 @@ import (
 type NotificationChannel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The notificationChannelType property
+    // The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
     notificationChannelType *NotificationChannelType
-    // The notificationReceivers property
+    // Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
     notificationReceivers []NotificationReceiverable
     // The OdataType property
     odataType *string
-    // The receivers property
+    // The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
     receivers []string
 }
 // NewNotificationChannel instantiates a new notificationChannel and sets the default values.
@@ -44,11 +44,11 @@ func (m *NotificationChannel) GetFieldDeserializers()(map[string]func(i878a80d23
     res["receivers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetReceivers)
     return res
 }
-// GetNotificationChannelType gets the notificationChannelType property value. The notificationChannelType property
+// GetNotificationChannelType gets the notificationChannelType property value. The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
 func (m *NotificationChannel) GetNotificationChannelType()(*NotificationChannelType) {
     return m.notificationChannelType
 }
-// GetNotificationReceivers gets the notificationReceivers property value. The notificationReceivers property
+// GetNotificationReceivers gets the notificationReceivers property value. Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
 func (m *NotificationChannel) GetNotificationReceivers()([]NotificationReceiverable) {
     return m.notificationReceivers
 }
@@ -56,7 +56,7 @@ func (m *NotificationChannel) GetNotificationReceivers()([]NotificationReceivera
 func (m *NotificationChannel) GetOdataType()(*string) {
     return m.odataType
 }
-// GetReceivers gets the receivers property value. The receivers property
+// GetReceivers gets the receivers property value. The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
 func (m *NotificationChannel) GetReceivers()([]string) {
     return m.receivers
 }
@@ -100,11 +100,11 @@ func (m *NotificationChannel) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *NotificationChannel) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetNotificationChannelType sets the notificationChannelType property value. The notificationChannelType property
+// SetNotificationChannelType sets the notificationChannelType property value. The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
 func (m *NotificationChannel) SetNotificationChannelType(value *NotificationChannelType)() {
     m.notificationChannelType = value
 }
-// SetNotificationReceivers sets the notificationReceivers property value. The notificationReceivers property
+// SetNotificationReceivers sets the notificationReceivers property value. Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
 func (m *NotificationChannel) SetNotificationReceivers(value []NotificationReceiverable)() {
     m.notificationReceivers = value
 }
@@ -112,7 +112,7 @@ func (m *NotificationChannel) SetNotificationReceivers(value []NotificationRecei
 func (m *NotificationChannel) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetReceivers sets the receivers property value. The receivers property
+// SetReceivers sets the receivers property value. The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
 func (m *NotificationChannel) SetReceivers(value []string)() {
     m.receivers = value
 }

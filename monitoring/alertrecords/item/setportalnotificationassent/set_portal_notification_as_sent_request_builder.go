@@ -41,7 +41,7 @@ func NewSetPortalNotificationAsSentRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewSetPortalNotificationAsSentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action setPortalNotificationAsSent
+// CreatePostRequestInformation set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
 func (m *SetPortalNotificationAsSentRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -53,7 +53,7 @@ func (m *SetPortalNotificationAsSentRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// Post invoke action setPortalNotificationAsSent
+// Post set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
 func (m *SetPortalNotificationAsSentRequestBuilder) Post(ctx context.Context, requestConfiguration *SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -9,17 +9,17 @@ import (
 // AuthenticationStrengthPolicy 
 type AuthenticationStrengthPolicy struct {
     Entity
-    // The allowedCombinations property
+    // A collection of authentication method modes that are required be used to satify this authentication strength.
     allowedCombinations []AuthenticationMethodModes
-    // The combinationConfigurations property
+    // Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
     combinationConfigurations []AuthenticationCombinationConfigurationable
-    // The createdDateTime property
+    // The datetime when this policy was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
+    // The human-readable description of this policy.
     description *string
-    // The displayName property
+    // The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
     displayName *string
-    // The modifiedDateTime property
+    // The datetime when this policy was last modified.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The policyType property
     policyType *AuthenticationStrengthPolicyType
@@ -39,23 +39,23 @@ func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
 func CreateAuthenticationStrengthPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationStrengthPolicy(), nil
 }
-// GetAllowedCombinations gets the allowedCombinations property value. The allowedCombinations property
+// GetAllowedCombinations gets the allowedCombinations property value. A collection of authentication method modes that are required be used to satify this authentication strength.
 func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]AuthenticationMethodModes) {
     return m.allowedCombinations
 }
-// GetCombinationConfigurations gets the combinationConfigurations property value. The combinationConfigurations property
+// GetCombinationConfigurations gets the combinationConfigurations property value. Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 func (m *AuthenticationStrengthPolicy) GetCombinationConfigurations()([]AuthenticationCombinationConfigurationable) {
     return m.combinationConfigurations
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The datetime when this policy was created.
 func (m *AuthenticationStrengthPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The human-readable description of this policy.
 func (m *AuthenticationStrengthPolicy) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
 func (m *AuthenticationStrengthPolicy) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -72,7 +72,7 @@ func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i
     res["requirementsSatisfied"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAuthenticationStrengthRequirements , m.SetRequirementsSatisfied)
     return res
 }
-// GetModifiedDateTime gets the modifiedDateTime property value. The modifiedDateTime property
+// GetModifiedDateTime gets the modifiedDateTime property value. The datetime when this policy was last modified.
 func (m *AuthenticationStrengthPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.modifiedDateTime
 }
@@ -143,27 +143,27 @@ func (m *AuthenticationStrengthPolicy) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAllowedCombinations sets the allowedCombinations property value. The allowedCombinations property
+// SetAllowedCombinations sets the allowedCombinations property value. A collection of authentication method modes that are required be used to satify this authentication strength.
 func (m *AuthenticationStrengthPolicy) SetAllowedCombinations(value []AuthenticationMethodModes)() {
     m.allowedCombinations = value
 }
-// SetCombinationConfigurations sets the combinationConfigurations property value. The combinationConfigurations property
+// SetCombinationConfigurations sets the combinationConfigurations property value. Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
 func (m *AuthenticationStrengthPolicy) SetCombinationConfigurations(value []AuthenticationCombinationConfigurationable)() {
     m.combinationConfigurations = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The datetime when this policy was created.
 func (m *AuthenticationStrengthPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The human-readable description of this policy.
 func (m *AuthenticationStrengthPolicy) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
 func (m *AuthenticationStrengthPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetModifiedDateTime sets the modifiedDateTime property value. The modifiedDateTime property
+// SetModifiedDateTime sets the modifiedDateTime property value. The datetime when this policy was last modified.
 func (m *AuthenticationStrengthPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.modifiedDateTime = value
 }

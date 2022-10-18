@@ -17,7 +17,7 @@ type AuthenticationMethodModesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AuthenticationMethodModesRequestBuilderGetQueryParameters get authenticationMethodModes from identity
+// AuthenticationMethodModesRequestBuilderGetQueryParameters get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.
 type AuthenticationMethodModesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewAuthenticationMethodModesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *AuthenticationMethodModesRequestBuilder) Count()(*i54c7fedec737a45fbae89a8837cb2bc9b74be39b877ebd88931459eaa421f1c1.CountRequestBuilder) {
     return i54c7fedec737a45fbae89a8837cb2bc9b74be39b877ebd88931459eaa421f1c1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get authenticationMethodModes from identity
+// CreateGetRequestInformation get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.
 func (m *AuthenticationMethodModesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodModesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *AuthenticationMethodModesRequestBuilder) CreatePostRequestInformation(c
     }
     return requestInfo, nil
 }
-// Get get authenticationMethodModes from identity
+// Get get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.
 func (m *AuthenticationMethodModesRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodModesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModeDetailCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

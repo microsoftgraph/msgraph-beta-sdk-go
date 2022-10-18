@@ -9,11 +9,12 @@ const (
     NOTSTARTED_CLOUDPCEXPORTJOBSTATUS CloudPcExportJobStatus = iota
     INPROGRESS_CLOUDPCEXPORTJOBSTATUS
     COMPLETED_CLOUDPCEXPORTJOBSTATUS
+    FAILED_CLOUDPCEXPORTJOBSTATUS
     UNKNOWNFUTUREVALUE_CLOUDPCEXPORTJOBSTATUS
 )
 
 func (i CloudPcExportJobStatus) String() string {
-    return []string{"notStarted", "inProgress", "completed", "unknownFutureValue"}[i]
+    return []string{"notStarted", "inProgress", "completed", "failed", "unknownFutureValue"}[i]
 }
 func ParseCloudPcExportJobStatus(v string) (interface{}, error) {
     result := NOTSTARTED_CLOUDPCEXPORTJOBSTATUS
@@ -24,6 +25,8 @@ func ParseCloudPcExportJobStatus(v string) (interface{}, error) {
             result = INPROGRESS_CLOUDPCEXPORTJOBSTATUS
         case "completed":
             result = COMPLETED_CLOUDPCEXPORTJOBSTATUS
+        case "failed":
+            result = FAILED_CLOUDPCEXPORTJOBSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCEXPORTJOBSTATUS
         default:

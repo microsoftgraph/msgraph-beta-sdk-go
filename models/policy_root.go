@@ -21,7 +21,7 @@ type PolicyRoot struct {
     authenticationFlowsPolicy AuthenticationFlowsPolicyable
     // The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
     authenticationMethodsPolicy AuthenticationMethodsPolicyable
-    // The authenticationStrengthPolicies property
+    // The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
     authenticationStrengthPolicies []AuthenticationStrengthPolicyable
     // The policy that controls Azure AD authorization settings.
     authorizationPolicy []AuthorizationPolicyable
@@ -107,7 +107,7 @@ func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyabl
 func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable) {
     return m.authenticationMethodsPolicy
 }
-// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
 func (m *PolicyRoot) GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable) {
     return m.authenticationStrengthPolicies
 }
@@ -450,7 +450,7 @@ func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolic
 func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)() {
     m.authenticationMethodsPolicy = value
 }
-// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authenticationStrengthPolicies property
+// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
 func (m *PolicyRoot) SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)() {
     m.authenticationStrengthPolicies = value
 }

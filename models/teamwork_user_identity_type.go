@@ -15,10 +15,11 @@ const (
     PHONEUSER_TEAMWORKUSERIDENTITYTYPE
     UNKNOWNFUTUREVALUE_TEAMWORKUSERIDENTITYTYPE
     EMAILUSER_TEAMWORKUSERIDENTITYTYPE
+    AZURECOMMUNICATIONSERVICESUSER_TEAMWORKUSERIDENTITYTYPE
 )
 
 func (i TeamworkUserIdentityType) String() string {
-    return []string{"aadUser", "onPremiseAadUser", "anonymousGuest", "federatedUser", "personalMicrosoftAccountUser", "skypeUser", "phoneUser", "unknownFutureValue", "emailUser"}[i]
+    return []string{"aadUser", "onPremiseAadUser", "anonymousGuest", "federatedUser", "personalMicrosoftAccountUser", "skypeUser", "phoneUser", "unknownFutureValue", "emailUser", "azureCommunicationServicesUser"}[i]
 }
 func ParseTeamworkUserIdentityType(v string) (interface{}, error) {
     result := AADUSER_TEAMWORKUSERIDENTITYTYPE
@@ -41,6 +42,8 @@ func ParseTeamworkUserIdentityType(v string) (interface{}, error) {
             result = UNKNOWNFUTUREVALUE_TEAMWORKUSERIDENTITYTYPE
         case "emailUser":
             result = EMAILUSER_TEAMWORKUSERIDENTITYTYPE
+        case "azureCommunicationServicesUser":
+            result = AZURECOMMUNICATIONSERVICESUSER_TEAMWORKUSERIDENTITYTYPE
         default:
             return 0, errors.New("Unknown TeamworkUserIdentityType value: " + v)
     }

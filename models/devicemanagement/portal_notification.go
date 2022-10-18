@@ -9,23 +9,23 @@ import (
 type PortalNotification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The alertImpact property
+    // The associated alert impact.
     alertImpact AlertImpactable
-    // The alertRecordId property
+    // The associated alert record ID.
     alertRecordId *string
-    // The alertRuleId property
+    // The associated alert rule ID.
     alertRuleId *string
-    // The alertRuleName property
+    // The associated alert rule name.
     alertRuleName *string
-    // The alertRuleTemplate property
+    // The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
     alertRuleTemplate *AlertRuleTemplate
-    // The id property
+    // The unique identifier for the portal notification.
     id *string
-    // The isPortalNotificationSent property
+    // If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.
     isPortalNotificationSent *bool
     // The OdataType property
     odataType *string
-    // The severity property
+    // The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
     severity *RuleSeverityType
 }
 // NewPortalNotification instantiates a new portalNotification and sets the default values.
@@ -45,23 +45,23 @@ func CreatePortalNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *PortalNotification) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAlertImpact gets the alertImpact property value. The alertImpact property
+// GetAlertImpact gets the alertImpact property value. The associated alert impact.
 func (m *PortalNotification) GetAlertImpact()(AlertImpactable) {
     return m.alertImpact
 }
-// GetAlertRecordId gets the alertRecordId property value. The alertRecordId property
+// GetAlertRecordId gets the alertRecordId property value. The associated alert record ID.
 func (m *PortalNotification) GetAlertRecordId()(*string) {
     return m.alertRecordId
 }
-// GetAlertRuleId gets the alertRuleId property value. The alertRuleId property
+// GetAlertRuleId gets the alertRuleId property value. The associated alert rule ID.
 func (m *PortalNotification) GetAlertRuleId()(*string) {
     return m.alertRuleId
 }
-// GetAlertRuleName gets the alertRuleName property value. The alertRuleName property
+// GetAlertRuleName gets the alertRuleName property value. The associated alert rule name.
 func (m *PortalNotification) GetAlertRuleName()(*string) {
     return m.alertRuleName
 }
-// GetAlertRuleTemplate gets the alertRuleTemplate property value. The alertRuleTemplate property
+// GetAlertRuleTemplate gets the alertRuleTemplate property value. The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
 func (m *PortalNotification) GetAlertRuleTemplate()(*AlertRuleTemplate) {
     return m.alertRuleTemplate
 }
@@ -79,11 +79,11 @@ func (m *PortalNotification) GetFieldDeserializers()(map[string]func(i878a80d233
     res["severity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseRuleSeverityType , m.SetSeverity)
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The unique identifier for the portal notification.
 func (m *PortalNotification) GetId()(*string) {
     return m.id
 }
-// GetIsPortalNotificationSent gets the isPortalNotificationSent property value. The isPortalNotificationSent property
+// GetIsPortalNotificationSent gets the isPortalNotificationSent property value. If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.
 func (m *PortalNotification) GetIsPortalNotificationSent()(*bool) {
     return m.isPortalNotificationSent
 }
@@ -91,7 +91,7 @@ func (m *PortalNotification) GetIsPortalNotificationSent()(*bool) {
 func (m *PortalNotification) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSeverity gets the severity property value. The severity property
+// GetSeverity gets the severity property value. The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
 func (m *PortalNotification) GetSeverity()(*RuleSeverityType) {
     return m.severity
 }
@@ -165,31 +165,31 @@ func (m *PortalNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *PortalNotification) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAlertImpact sets the alertImpact property value. The alertImpact property
+// SetAlertImpact sets the alertImpact property value. The associated alert impact.
 func (m *PortalNotification) SetAlertImpact(value AlertImpactable)() {
     m.alertImpact = value
 }
-// SetAlertRecordId sets the alertRecordId property value. The alertRecordId property
+// SetAlertRecordId sets the alertRecordId property value. The associated alert record ID.
 func (m *PortalNotification) SetAlertRecordId(value *string)() {
     m.alertRecordId = value
 }
-// SetAlertRuleId sets the alertRuleId property value. The alertRuleId property
+// SetAlertRuleId sets the alertRuleId property value. The associated alert rule ID.
 func (m *PortalNotification) SetAlertRuleId(value *string)() {
     m.alertRuleId = value
 }
-// SetAlertRuleName sets the alertRuleName property value. The alertRuleName property
+// SetAlertRuleName sets the alertRuleName property value. The associated alert rule name.
 func (m *PortalNotification) SetAlertRuleName(value *string)() {
     m.alertRuleName = value
 }
-// SetAlertRuleTemplate sets the alertRuleTemplate property value. The alertRuleTemplate property
+// SetAlertRuleTemplate sets the alertRuleTemplate property value. The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
 func (m *PortalNotification) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
     m.alertRuleTemplate = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The unique identifier for the portal notification.
 func (m *PortalNotification) SetId(value *string)() {
     m.id = value
 }
-// SetIsPortalNotificationSent sets the isPortalNotificationSent property value. The isPortalNotificationSent property
+// SetIsPortalNotificationSent sets the isPortalNotificationSent property value. If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.
 func (m *PortalNotification) SetIsPortalNotificationSent(value *bool)() {
     m.isPortalNotificationSent = value
 }
@@ -197,7 +197,7 @@ func (m *PortalNotification) SetIsPortalNotificationSent(value *bool)() {
 func (m *PortalNotification) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSeverity sets the severity property value. The severity property
+// SetSeverity sets the severity property value. The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
 func (m *PortalNotification) SetSeverity(value *RuleSeverityType)() {
     m.severity = value
 }

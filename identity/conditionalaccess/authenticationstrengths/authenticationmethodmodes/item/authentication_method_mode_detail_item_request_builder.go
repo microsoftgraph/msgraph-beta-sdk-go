@@ -23,7 +23,7 @@ type AuthenticationMethodModeDetailItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters get authenticationMethodModes from identity
+// AuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters names and descriptions of all valid authentication method modes in the system.
 type AuthenticationMethodModeDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *AuthenticationMethodModeDetailItemRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get authenticationMethodModes from identity
+// CreateGetRequestInformation names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationMethodModeDetailItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *AuthenticationMethodModeDetailItemRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get get authenticationMethodModes from identity
+// Get names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationMethodModeDetailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModeDetailable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

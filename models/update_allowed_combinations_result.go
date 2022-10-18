@@ -9,15 +9,15 @@ import (
 type UpdateAllowedCombinationsResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The additionalInformation property
+    // Information about why the updateAllowedCombinations action was successful or failed.
     additionalInformation *string
-    // The conditionalAccessReferences property
+    // References to existing Conditional Access policies that use this authentication strength.
     conditionalAccessReferences []string
-    // The currentCombinations property
+    // The list of current authentication method combinations allowed by the authentication strength.
     currentCombinations []AuthenticationMethodModes
     // The OdataType property
     odataType *string
-    // The previousCombinations property
+    // The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
     previousCombinations []AuthenticationMethodModes
 }
 // NewUpdateAllowedCombinationsResult instantiates a new updateAllowedCombinationsResult and sets the default values.
@@ -37,15 +37,15 @@ func CreateUpdateAllowedCombinationsResultFromDiscriminatorValue(parseNode i878a
 func (m *UpdateAllowedCombinationsResult) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAdditionalInformation gets the additionalInformation property value. The additionalInformation property
+// GetAdditionalInformation gets the additionalInformation property value. Information about why the updateAllowedCombinations action was successful or failed.
 func (m *UpdateAllowedCombinationsResult) GetAdditionalInformation()(*string) {
     return m.additionalInformation
 }
-// GetConditionalAccessReferences gets the conditionalAccessReferences property value. The conditionalAccessReferences property
+// GetConditionalAccessReferences gets the conditionalAccessReferences property value. References to existing Conditional Access policies that use this authentication strength.
 func (m *UpdateAllowedCombinationsResult) GetConditionalAccessReferences()([]string) {
     return m.conditionalAccessReferences
 }
-// GetCurrentCombinations gets the currentCombinations property value. The currentCombinations property
+// GetCurrentCombinations gets the currentCombinations property value. The list of current authentication method combinations allowed by the authentication strength.
 func (m *UpdateAllowedCombinationsResult) GetCurrentCombinations()([]AuthenticationMethodModes) {
     return m.currentCombinations
 }
@@ -63,7 +63,7 @@ func (m *UpdateAllowedCombinationsResult) GetFieldDeserializers()(map[string]fun
 func (m *UpdateAllowedCombinationsResult) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPreviousCombinations gets the previousCombinations property value. The previousCombinations property
+// GetPreviousCombinations gets the previousCombinations property value. The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
 func (m *UpdateAllowedCombinationsResult) GetPreviousCombinations()([]AuthenticationMethodModes) {
     return m.previousCombinations
 }
@@ -111,15 +111,15 @@ func (m *UpdateAllowedCombinationsResult) Serialize(writer i878a80d2330e89d26896
 func (m *UpdateAllowedCombinationsResult) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAdditionalInformation sets the additionalInformation property value. The additionalInformation property
+// SetAdditionalInformation sets the additionalInformation property value. Information about why the updateAllowedCombinations action was successful or failed.
 func (m *UpdateAllowedCombinationsResult) SetAdditionalInformation(value *string)() {
     m.additionalInformation = value
 }
-// SetConditionalAccessReferences sets the conditionalAccessReferences property value. The conditionalAccessReferences property
+// SetConditionalAccessReferences sets the conditionalAccessReferences property value. References to existing Conditional Access policies that use this authentication strength.
 func (m *UpdateAllowedCombinationsResult) SetConditionalAccessReferences(value []string)() {
     m.conditionalAccessReferences = value
 }
-// SetCurrentCombinations sets the currentCombinations property value. The currentCombinations property
+// SetCurrentCombinations sets the currentCombinations property value. The list of current authentication method combinations allowed by the authentication strength.
 func (m *UpdateAllowedCombinationsResult) SetCurrentCombinations(value []AuthenticationMethodModes)() {
     m.currentCombinations = value
 }
@@ -127,7 +127,7 @@ func (m *UpdateAllowedCombinationsResult) SetCurrentCombinations(value []Authent
 func (m *UpdateAllowedCombinationsResult) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPreviousCombinations sets the previousCombinations property value. The previousCombinations property
+// SetPreviousCombinations sets the previousCombinations property value. The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
 func (m *UpdateAllowedCombinationsResult) SetPreviousCombinations(value []AuthenticationMethodModes)() {
     m.previousCombinations = value
 }

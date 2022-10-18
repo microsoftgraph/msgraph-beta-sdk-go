@@ -25,7 +25,7 @@ type RegistrationRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RegistrationRequestBuilderGetQueryParameters get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// RegistrationRequestBuilderGetQueryParameters get the externalMeetingRegistration details associated with an onlineMeeting.
 type RegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -79,7 +79,7 @@ func (m *RegistrationRequestBuilder) CreateDeleteRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// CreateGetRequestInformation get the externalMeetingRegistration details associated with an onlineMeeting.
 func (m *RegistrationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RegistrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,7 +140,7 @@ func (m *RegistrationRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+// Get get the externalMeetingRegistration details associated with an onlineMeeting.
 func (m *RegistrationRequestBuilder) Get(ctx context.Context, requestConfiguration *RegistrationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

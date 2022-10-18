@@ -8,11 +8,11 @@ import (
 // AuthenticationStrengthRoot 
 type AuthenticationStrengthRoot struct {
     Entity
-    // The authenticationCombinations property
+    // A collection of all valid authentication method combinations in the system.
     authenticationCombinations []AuthenticationMethodModes
-    // The authenticationMethodModes property
+    // Names and descriptions of all valid authentication method modes in the system.
     authenticationMethodModes []AuthenticationMethodModeDetailable
-    // The policies property
+    // A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
     policies []AuthenticationStrengthPolicyable
 }
 // NewAuthenticationStrengthRoot instantiates a new AuthenticationStrengthRoot and sets the default values.
@@ -28,11 +28,11 @@ func NewAuthenticationStrengthRoot()(*AuthenticationStrengthRoot) {
 func CreateAuthenticationStrengthRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationStrengthRoot(), nil
 }
-// GetAuthenticationCombinations gets the authenticationCombinations property value. The authenticationCombinations property
+// GetAuthenticationCombinations gets the authenticationCombinations property value. A collection of all valid authentication method combinations in the system.
 func (m *AuthenticationStrengthRoot) GetAuthenticationCombinations()([]AuthenticationMethodModes) {
     return m.authenticationCombinations
 }
-// GetAuthenticationMethodModes gets the authenticationMethodModes property value. The authenticationMethodModes property
+// GetAuthenticationMethodModes gets the authenticationMethodModes property value. Names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationStrengthRoot) GetAuthenticationMethodModes()([]AuthenticationMethodModeDetailable) {
     return m.authenticationMethodModes
 }
@@ -44,7 +44,7 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
     res["policies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationStrengthPolicyFromDiscriminatorValue , m.SetPolicies)
     return res
 }
-// GetPolicies gets the policies property value. The policies property
+// GetPolicies gets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *AuthenticationStrengthRoot) GetPolicies()([]AuthenticationStrengthPolicyable) {
     return m.policies
 }
@@ -76,15 +76,15 @@ func (m *AuthenticationStrengthRoot) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAuthenticationCombinations sets the authenticationCombinations property value. The authenticationCombinations property
+// SetAuthenticationCombinations sets the authenticationCombinations property value. A collection of all valid authentication method combinations in the system.
 func (m *AuthenticationStrengthRoot) SetAuthenticationCombinations(value []AuthenticationMethodModes)() {
     m.authenticationCombinations = value
 }
-// SetAuthenticationMethodModes sets the authenticationMethodModes property value. The authenticationMethodModes property
+// SetAuthenticationMethodModes sets the authenticationMethodModes property value. Names and descriptions of all valid authentication method modes in the system.
 func (m *AuthenticationStrengthRoot) SetAuthenticationMethodModes(value []AuthenticationMethodModeDetailable)() {
     m.authenticationMethodModes = value
 }
-// SetPolicies sets the policies property value. The policies property
+// SetPolicies sets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *AuthenticationStrengthRoot) SetPolicies(value []AuthenticationStrengthPolicyable)() {
     m.policies = value
 }

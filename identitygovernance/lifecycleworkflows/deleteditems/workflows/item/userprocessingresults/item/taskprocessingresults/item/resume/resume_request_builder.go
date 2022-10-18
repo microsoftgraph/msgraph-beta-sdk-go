@@ -41,7 +41,7 @@ func NewResumeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewResumeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action resume
+// CreatePostRequestInformation resume a task processing result that's `inProgress`. An Azure Logic Apps system-assigned managed identity calls this API.
 func (m *ResumeRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ResumePostRequestBodyable, requestConfiguration *ResumeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -54,7 +54,7 @@ func (m *ResumeRequestBuilder) CreatePostRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// Post invoke action resume
+// Post resume a task processing result that's `inProgress`. An Azure Logic Apps system-assigned managed identity calls this API.
 func (m *ResumeRequestBuilder) Post(ctx context.Context, body ResumePostRequestBodyable, requestConfiguration *ResumeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

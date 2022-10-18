@@ -24,7 +24,7 @@ type AlertRecordItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlertRecordItemRequestBuilderGetQueryParameters get alertRecords from monitoring
+// AlertRecordItemRequestBuilderGetQueryParameters the collection of records of alert events.
 type AlertRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *AlertRecordItemRequestBuilder) CreateDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get alertRecords from monitoring
+// CreateGetRequestInformation the collection of records of alert events.
 func (m *AlertRecordItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AlertRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,7 +124,7 @@ func (m *AlertRecordItemRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// Get get alertRecords from monitoring
+// Get the collection of records of alert events.
 func (m *AlertRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRecordItemRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

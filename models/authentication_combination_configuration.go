@@ -8,7 +8,7 @@ import (
 // AuthenticationCombinationConfiguration 
 type AuthenticationCombinationConfiguration struct {
     Entity
-    // The appliesToCombinations property
+    // Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
     appliesToCombinations []AuthenticationMethodModes
 }
 // NewAuthenticationCombinationConfiguration instantiates a new AuthenticationCombinationConfiguration and sets the default values.
@@ -42,7 +42,7 @@ func CreateAuthenticationCombinationConfigurationFromDiscriminatorValue(parseNod
     }
     return NewAuthenticationCombinationConfiguration(), nil
 }
-// GetAppliesToCombinations gets the appliesToCombinations property value. The appliesToCombinations property
+// GetAppliesToCombinations gets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 func (m *AuthenticationCombinationConfiguration) GetAppliesToCombinations()([]AuthenticationMethodModes) {
     return m.appliesToCombinations
 }
@@ -66,7 +66,7 @@ func (m *AuthenticationCombinationConfiguration) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetAppliesToCombinations sets the appliesToCombinations property value. The appliesToCombinations property
+// SetAppliesToCombinations sets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 func (m *AuthenticationCombinationConfiguration) SetAppliesToCombinations(value []AuthenticationMethodModes)() {
     m.appliesToCombinations = value
 }

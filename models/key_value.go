@@ -9,11 +9,11 @@ import (
 type KeyValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+    // Key.
     key *string
     // The OdataType property
     odataType *string
-    // Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+    // Value.
     value *string
 }
 // NewKeyValue instantiates a new keyValue and sets the default values.
@@ -41,7 +41,7 @@ func (m *KeyValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     res["value"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetValue)
     return res
 }
-// GetKey gets the key property value. Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+// GetKey gets the key property value. Key.
 func (m *KeyValue) GetKey()(*string) {
     return m.key
 }
@@ -49,7 +49,7 @@ func (m *KeyValue) GetKey()(*string) {
 func (m *KeyValue) GetOdataType()(*string) {
     return m.odataType
 }
-// GetValue gets the value property value. Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+// GetValue gets the value property value. Value.
 func (m *KeyValue) GetValue()(*string) {
     return m.value
 }
@@ -85,7 +85,7 @@ func (m *KeyValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 func (m *KeyValue) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetKey sets the key property value. Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+// SetKey sets the key property value. Key.
 func (m *KeyValue) SetKey(value *string)() {
     m.key = value
 }
@@ -93,7 +93,7 @@ func (m *KeyValue) SetKey(value *string)() {
 func (m *KeyValue) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetValue sets the value property value. Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+// SetValue sets the value property value. Value.
 func (m *KeyValue) SetValue(value *string)() {
     m.value = value
 }

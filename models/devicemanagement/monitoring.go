@@ -9,9 +9,9 @@ import (
 // Monitoring 
 type Monitoring struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The alertRecords property
+    // The collection of records of alert events.
     alertRecords []AlertRecordable
-    // The alertRules property
+    // The collection of alert rules.
     alertRules []AlertRuleable
 }
 // NewMonitoring instantiates a new monitoring and sets the default values.
@@ -27,11 +27,11 @@ func NewMonitoring()(*Monitoring) {
 func CreateMonitoringFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMonitoring(), nil
 }
-// GetAlertRecords gets the alertRecords property value. The alertRecords property
+// GetAlertRecords gets the alertRecords property value. The collection of records of alert events.
 func (m *Monitoring) GetAlertRecords()([]AlertRecordable) {
     return m.alertRecords
 }
-// GetAlertRules gets the alertRules property value. The alertRules property
+// GetAlertRules gets the alertRules property value. The collection of alert rules.
 func (m *Monitoring) GetAlertRules()([]AlertRuleable) {
     return m.alertRules
 }
@@ -64,11 +64,11 @@ func (m *Monitoring) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetAlertRecords sets the alertRecords property value. The alertRecords property
+// SetAlertRecords sets the alertRecords property value. The collection of records of alert events.
 func (m *Monitoring) SetAlertRecords(value []AlertRecordable)() {
     m.alertRecords = value
 }
-// SetAlertRules sets the alertRules property value. The alertRules property
+// SetAlertRules sets the alertRules property value. The collection of alert rules.
 func (m *Monitoring) SetAlertRules(value []AlertRuleable)() {
     m.alertRules = value
 }

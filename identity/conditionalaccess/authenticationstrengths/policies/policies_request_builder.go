@@ -18,7 +18,7 @@ type PoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PoliciesRequestBuilderGetQueryParameters get policies from identity
+// PoliciesRequestBuilderGetQueryParameters a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *PoliciesRequestBuilder) Count()(*ic4907ccf5d0d131fe8960fe08f97a4f1634f0840c0aec4c43a7a7f0bd1cb8bba.CountRequestBuilder) {
     return ic4907ccf5d0d131fe8960fe08f97a4f1634f0840c0aec4c43a7a7f0bd1cb8bba.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get policies from identity
+// CreateGetRequestInformation a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *PoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *PoliciesRequestBuilder) CreatePostRequestInformation(ctx context.Contex
 func (m *PoliciesRequestBuilder) FindByMethodModeWithAuthenticationMethodModes(authenticationMethodModes *string)(*i0fe42cd8bc5b04c15dd1281c2eb3ecd6f0d0e1c9d251eab3a5f8f1858e8afae2.FindByMethodModeWithAuthenticationMethodModesRequestBuilder) {
     return i0fe42cd8bc5b04c15dd1281c2eb3ecd6f0d0e1c9d251eab3a5f8f1858e8afae2.NewFindByMethodModeWithAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter, authenticationMethodModes);
 }
-// Get get policies from identity
+// Get a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
 func (m *PoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *PoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

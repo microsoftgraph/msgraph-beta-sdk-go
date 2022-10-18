@@ -9,13 +9,13 @@ import (
 // AnalyzedMessageEvidence 
 type AnalyzedMessageEvidence struct {
     AlertEvidence
-    // Direction of the email relative to your network. The possible values are: Inbound, Outbound or Intraorg.
+    // Direction of the email relative to your network. The possible values are: inbound, outbound or intraorg.
     antiSpamDirection *string
     // Number of attachments in the email.
     attachmentsCount *int64
-    // Delivery action of the email. The possible values are: Delivered, DeliveredAsSpam, Junked, Blocked, or Replaced.
+    // Delivery action of the email. The possible values are: delivered, deliveredAsSpam, junked, blocked, or replaced.
     deliveryAction *string
-    // Location where the email was delivered. The possible values are: Inbox, External, JunkFolder, Quarantine, Failed, Dropped, DeletedFolder or Forwarded.
+    // Location where the email was delivered. The possible values are: inbox, external, junkFolder, quarantine, failed, dropped, deletedFolder or forwarded.
     deliveryLocation *string
     // Public-facing identifier for the email that is set by the sending email system.
     internetMessageId *string
@@ -59,7 +59,7 @@ func NewAnalyzedMessageEvidence()(*AnalyzedMessageEvidence) {
 func CreateAnalyzedMessageEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnalyzedMessageEvidence(), nil
 }
-// GetAntiSpamDirection gets the antiSpamDirection property value. Direction of the email relative to your network. The possible values are: Inbound, Outbound or Intraorg.
+// GetAntiSpamDirection gets the antiSpamDirection property value. Direction of the email relative to your network. The possible values are: inbound, outbound or intraorg.
 func (m *AnalyzedMessageEvidence) GetAntiSpamDirection()(*string) {
     return m.antiSpamDirection
 }
@@ -67,11 +67,11 @@ func (m *AnalyzedMessageEvidence) GetAntiSpamDirection()(*string) {
 func (m *AnalyzedMessageEvidence) GetAttachmentsCount()(*int64) {
     return m.attachmentsCount
 }
-// GetDeliveryAction gets the deliveryAction property value. Delivery action of the email. The possible values are: Delivered, DeliveredAsSpam, Junked, Blocked, or Replaced.
+// GetDeliveryAction gets the deliveryAction property value. Delivery action of the email. The possible values are: delivered, deliveredAsSpam, junked, blocked, or replaced.
 func (m *AnalyzedMessageEvidence) GetDeliveryAction()(*string) {
     return m.deliveryAction
 }
-// GetDeliveryLocation gets the deliveryLocation property value. Location where the email was delivered. The possible values are: Inbox, External, JunkFolder, Quarantine, Failed, Dropped, DeletedFolder or Forwarded.
+// GetDeliveryLocation gets the deliveryLocation property value. Location where the email was delivered. The possible values are: inbox, external, junkFolder, quarantine, failed, dropped, deletedFolder or forwarded.
 func (m *AnalyzedMessageEvidence) GetDeliveryLocation()(*string) {
     return m.deliveryLocation
 }
@@ -270,7 +270,7 @@ func (m *AnalyzedMessageEvidence) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetAntiSpamDirection sets the antiSpamDirection property value. Direction of the email relative to your network. The possible values are: Inbound, Outbound or Intraorg.
+// SetAntiSpamDirection sets the antiSpamDirection property value. Direction of the email relative to your network. The possible values are: inbound, outbound or intraorg.
 func (m *AnalyzedMessageEvidence) SetAntiSpamDirection(value *string)() {
     m.antiSpamDirection = value
 }
@@ -278,11 +278,11 @@ func (m *AnalyzedMessageEvidence) SetAntiSpamDirection(value *string)() {
 func (m *AnalyzedMessageEvidence) SetAttachmentsCount(value *int64)() {
     m.attachmentsCount = value
 }
-// SetDeliveryAction sets the deliveryAction property value. Delivery action of the email. The possible values are: Delivered, DeliveredAsSpam, Junked, Blocked, or Replaced.
+// SetDeliveryAction sets the deliveryAction property value. Delivery action of the email. The possible values are: delivered, deliveredAsSpam, junked, blocked, or replaced.
 func (m *AnalyzedMessageEvidence) SetDeliveryAction(value *string)() {
     m.deliveryAction = value
 }
-// SetDeliveryLocation sets the deliveryLocation property value. Location where the email was delivered. The possible values are: Inbox, External, JunkFolder, Quarantine, Failed, Dropped, DeletedFolder or Forwarded.
+// SetDeliveryLocation sets the deliveryLocation property value. Location where the email was delivered. The possible values are: inbox, external, junkFolder, quarantine, failed, dropped, deletedFolder or forwarded.
 func (m *AnalyzedMessageEvidence) SetDeliveryLocation(value *string)() {
     m.deliveryLocation = value
 }
