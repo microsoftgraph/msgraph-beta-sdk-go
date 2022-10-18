@@ -10,7 +10,7 @@ type ConditionalAccessRoot struct {
     Entity
     // Read-only. Nullable. Returns a collection of the specified authentication context class references.
     authenticationContextClassReferences []AuthenticationContextClassReferenceable
-    // The authenticationStrengths property
+    // Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
     authenticationStrengths AuthenticationStrengthRootable
     // Read-only. Nullable. Returns a collection of the specified named locations.
     namedLocations []NamedLocationable
@@ -36,7 +36,7 @@ func CreateConditionalAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89
 func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable) {
     return m.authenticationContextClassReferences
 }
-// GetAuthenticationStrengths gets the authenticationStrengths property value. The authenticationStrengths property
+// GetAuthenticationStrengths gets the authenticationStrengths property value. Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
 func (m *ConditionalAccessRoot) GetAuthenticationStrengths()(AuthenticationStrengthRootable) {
     return m.authenticationStrengths
 }
@@ -108,7 +108,7 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *ConditionalAccessRoot) SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)() {
     m.authenticationContextClassReferences = value
 }
-// SetAuthenticationStrengths sets the authenticationStrengths property value. The authenticationStrengths property
+// SetAuthenticationStrengths sets the authenticationStrengths property value. Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
 func (m *ConditionalAccessRoot) SetAuthenticationStrengths(value AuthenticationStrengthRootable)() {
     m.authenticationStrengths = value
 }

@@ -18,7 +18,7 @@ type AlertRecordsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AlertRecordsRequestBuilderGetQueryParameters get alertRecords from deviceManagement
+// AlertRecordsRequestBuilderGetQueryParameters get a list of the alertRecord objects and their properties.
 type AlertRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewAlertRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *AlertRecordsRequestBuilder) Count()(*iecb2dea4b2eb6cf8b6f19476fdc1efa40f73b7b08b87ecba0cc17cfabdf9b4a2.CountRequestBuilder) {
     return iecb2dea4b2eb6cf8b6f19476fdc1efa40f73b7b08b87ecba0cc17cfabdf9b4a2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get alertRecords from deviceManagement
+// CreateGetRequestInformation get a list of the alertRecord objects and their properties.
 func (m *AlertRecordsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AlertRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,7 +106,7 @@ func (m *AlertRecordsRequestBuilder) CreatePostRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// Get get alertRecords from deviceManagement
+// Get get a list of the alertRecord objects and their properties.
 func (m *AlertRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRecordsRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

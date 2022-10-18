@@ -9,11 +9,11 @@ import (
 type AlertImpact struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The aggregationType property
+    // The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
     aggregationType *AggregationType
     // The OdataType property
     odataType *string
-    // The value property
+    // The number value of the impact.
     value *int32
 }
 // NewAlertImpact instantiates a new alertImpact and sets the default values.
@@ -33,7 +33,7 @@ func CreateAlertImpactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *AlertImpact) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAggregationType gets the aggregationType property value. The aggregationType property
+// GetAggregationType gets the aggregationType property value. The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
 func (m *AlertImpact) GetAggregationType()(*AggregationType) {
     return m.aggregationType
 }
@@ -49,7 +49,7 @@ func (m *AlertImpact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *AlertImpact) GetOdataType()(*string) {
     return m.odataType
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The number value of the impact.
 func (m *AlertImpact) GetValue()(*int32) {
     return m.value
 }
@@ -86,7 +86,7 @@ func (m *AlertImpact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *AlertImpact) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAggregationType sets the aggregationType property value. The aggregationType property
+// SetAggregationType sets the aggregationType property value. The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
 func (m *AlertImpact) SetAggregationType(value *AggregationType)() {
     m.aggregationType = value
 }
@@ -94,7 +94,7 @@ func (m *AlertImpact) SetAggregationType(value *AggregationType)() {
 func (m *AlertImpact) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The number value of the impact.
 func (m *AlertImpact) SetValue(value *int32)() {
     m.value = value
 }

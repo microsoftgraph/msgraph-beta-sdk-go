@@ -14,11 +14,11 @@ type AuthorizationPolicy struct {
     allowedToUseSSPR *bool
     // Indicates whether a user can join the tenant by email validation.
     allowEmailVerifiedUsersToJoinOrganization *bool
-    // Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+    // Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.
     allowInvitesFrom *AllowInvitesFrom
-    // The allowUserConsentForRiskyApps property
+    // Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
     allowUserConsentForRiskyApps *bool
-    // To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+    // To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
     blockMsolPowerShell *bool
     // The defaultUserRoleOverrides property
     defaultUserRoleOverrides []DefaultUserRoleOverrideable
@@ -56,15 +56,15 @@ func (m *AuthorizationPolicy) GetAllowedToUseSSPR()(*bool) {
 func (m *AuthorizationPolicy) GetAllowEmailVerifiedUsersToJoinOrganization()(*bool) {
     return m.allowEmailVerifiedUsersToJoinOrganization
 }
-// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.
 func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
     return m.allowInvitesFrom
 }
-// GetAllowUserConsentForRiskyApps gets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+// GetAllowUserConsentForRiskyApps gets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
 func (m *AuthorizationPolicy) GetAllowUserConsentForRiskyApps()(*bool) {
     return m.allowUserConsentForRiskyApps
 }
-// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) GetBlockMsolPowerShell()(*bool) {
     return m.blockMsolPowerShell
 }
@@ -192,15 +192,15 @@ func (m *AuthorizationPolicy) SetAllowedToUseSSPR(value *bool)() {
 func (m *AuthorizationPolicy) SetAllowEmailVerifiedUsersToJoinOrganization(value *bool)() {
     m.allowEmailVerifiedUsersToJoinOrganization = value
 }
-// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.
 func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
     m.allowInvitesFrom = value
 }
-// SetAllowUserConsentForRiskyApps sets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+// SetAllowUserConsentForRiskyApps sets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
 func (m *AuthorizationPolicy) SetAllowUserConsentForRiskyApps(value *bool)() {
     m.allowUserConsentForRiskyApps = value
 }
-// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
     m.blockMsolPowerShell = value
 }

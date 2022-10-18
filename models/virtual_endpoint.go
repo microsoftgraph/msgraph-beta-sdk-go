@@ -12,6 +12,8 @@ type VirtualEndpoint struct {
     auditEvents []CloudPcAuditEventable
     // Cloud managed virtual desktops.
     cloudPCs []CloudPCable
+    // Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+    crossCloudGovernmentOrganizationMapping CloudPcCrossCloudGovernmentOrganizationMappingable
     // The image resource on Cloud PC.
     deviceImages []CloudPcDeviceImageable
     // The external partner settings on a Cloud PC.
@@ -56,6 +58,10 @@ func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEventable) {
 func (m *VirtualEndpoint) GetCloudPCs()([]CloudPCable) {
     return m.cloudPCs
 }
+// GetCrossCloudGovernmentOrganizationMapping gets the crossCloudGovernmentOrganizationMapping property value. Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+func (m *VirtualEndpoint) GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable) {
+    return m.crossCloudGovernmentOrganizationMapping
+}
 // GetDeviceImages gets the deviceImages property value. The image resource on Cloud PC.
 func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
     return m.deviceImages
@@ -69,6 +75,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     res := m.Entity.GetFieldDeserializers()
     res["auditEvents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcAuditEventFromDiscriminatorValue , m.SetAuditEvents)
     res["cloudPCs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPCFromDiscriminatorValue , m.SetCloudPCs)
+    res["crossCloudGovernmentOrganizationMapping"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcCrossCloudGovernmentOrganizationMappingFromDiscriminatorValue , m.SetCrossCloudGovernmentOrganizationMapping)
     res["deviceImages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcDeviceImageFromDiscriminatorValue , m.SetDeviceImages)
     res["externalPartnerSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcExternalPartnerSettingFromDiscriminatorValue , m.SetExternalPartnerSettings)
     res["galleryImages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcGalleryImageFromDiscriminatorValue , m.SetGalleryImages)
@@ -134,6 +141,12 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetCloudPCs() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCloudPCs())
         err = writer.WriteCollectionOfObjectValues("cloudPCs", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("crossCloudGovernmentOrganizationMapping", m.GetCrossCloudGovernmentOrganizationMapping())
         if err != nil {
             return err
         }
@@ -222,6 +235,10 @@ func (m *VirtualEndpoint) SetAuditEvents(value []CloudPcAuditEventable)() {
 // SetCloudPCs sets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) SetCloudPCs(value []CloudPCable)() {
     m.cloudPCs = value
+}
+// SetCrossCloudGovernmentOrganizationMapping sets the crossCloudGovernmentOrganizationMapping property value. Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+func (m *VirtualEndpoint) SetCrossCloudGovernmentOrganizationMapping(value CloudPcCrossCloudGovernmentOrganizationMappingable)() {
+    m.crossCloudGovernmentOrganizationMapping = value
 }
 // SetDeviceImages sets the deviceImages property value. The image resource on Cloud PC.
 func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImageable)() {

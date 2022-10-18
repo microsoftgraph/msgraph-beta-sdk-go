@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignIn 
+// SignIn provides operations to manage the auditLogRoot singleton.
 type SignIn struct {
     Entity
     // The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
@@ -17,6 +17,10 @@ type SignIn struct {
     appliedConditionalAccessPolicies []AppliedConditionalAccessPolicyable
     // The appliedEventListeners property
     appliedEventListeners []AppliedAuthenticationEventListenerable
+    // The authenticationAppDeviceDetails property
+    authenticationAppDeviceDetails AuthenticationAppDeviceDetailsable
+    // The authenticationAppPolicyEvaluationDetails property
+    authenticationAppPolicyEvaluationDetails []AuthenticationAppPolicyDetailsable
     // Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
     authenticationContextClassReferences []AuthenticationContextable
     // The result of the authentication attempt and additional details on the authentication method.
@@ -132,7 +136,7 @@ type SignIn struct {
     // Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
     userType *SignInUserType
 }
-// NewSignIn instantiates a new SignIn and sets the default values.
+// NewSignIn instantiates a new signIn and sets the default values.
 func NewSignIn()(*SignIn) {
     m := &SignIn{
         Entity: *NewEntity(),
@@ -160,6 +164,14 @@ func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAcces
 // GetAppliedEventListeners gets the appliedEventListeners property value. The appliedEventListeners property
 func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable) {
     return m.appliedEventListeners
+}
+// GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. The authenticationAppDeviceDetails property
+func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable) {
+    return m.authenticationAppDeviceDetails
+}
+// GetAuthenticationAppPolicyEvaluationDetails gets the authenticationAppPolicyEvaluationDetails property value. The authenticationAppPolicyEvaluationDetails property
+func (m *SignIn) GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable) {
+    return m.authenticationAppPolicyEvaluationDetails
 }
 // GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationContextable) {
@@ -236,6 +248,8 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     res["appId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAppId)
     res["appliedConditionalAccessPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppliedConditionalAccessPolicyFromDiscriminatorValue , m.SetAppliedConditionalAccessPolicies)
     res["appliedEventListeners"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppliedAuthenticationEventListenerFromDiscriminatorValue , m.SetAppliedEventListeners)
+    res["authenticationAppDeviceDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue , m.SetAuthenticationAppDeviceDetails)
+    res["authenticationAppPolicyEvaluationDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationAppPolicyDetailsFromDiscriminatorValue , m.SetAuthenticationAppPolicyEvaluationDetails)
     res["authenticationContextClassReferences"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationContextFromDiscriminatorValue , m.SetAuthenticationContextClassReferences)
     res["authenticationDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuthenticationDetailFromDiscriminatorValue , m.SetAuthenticationDetails)
     res["authenticationMethodsUsed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAuthenticationMethodsUsed)
@@ -483,6 +497,19 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetAppliedEventListeners() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAppliedEventListeners())
         err = writer.WriteCollectionOfObjectValues("appliedEventListeners", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("authenticationAppDeviceDetails", m.GetAuthenticationAppDeviceDetails())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAuthenticationAppPolicyEvaluationDetails() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAuthenticationAppPolicyEvaluationDetails())
+        err = writer.WriteCollectionOfObjectValues("authenticationAppPolicyEvaluationDetails", cast)
         if err != nil {
             return err
         }
@@ -864,6 +891,14 @@ func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalA
 // SetAppliedEventListeners sets the appliedEventListeners property value. The appliedEventListeners property
 func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
     m.appliedEventListeners = value
+}
+// SetAuthenticationAppDeviceDetails sets the authenticationAppDeviceDetails property value. The authenticationAppDeviceDetails property
+func (m *SignIn) SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)() {
+    m.authenticationAppDeviceDetails = value
+}
+// SetAuthenticationAppPolicyEvaluationDetails sets the authenticationAppPolicyEvaluationDetails property value. The authenticationAppPolicyEvaluationDetails property
+func (m *SignIn) SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)() {
+    m.authenticationAppPolicyEvaluationDetails = value
 }
 // SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) SetAuthenticationContextClassReferences(value []AuthenticationContextable)() {

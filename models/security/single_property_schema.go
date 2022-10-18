@@ -9,11 +9,11 @@ import (
 type SinglePropertySchema struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The name property
+    // The name of the property.
     name *string
     // The OdataType property
     odataType *string
-    // The type property
+    // The type of the property.
     type_escaped *string
 }
 // NewSinglePropertySchema instantiates a new singlePropertySchema and sets the default values.
@@ -41,7 +41,7 @@ func (m *SinglePropertySchema) GetFieldDeserializers()(map[string]func(i878a80d2
     res["type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetType)
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the property.
 func (m *SinglePropertySchema) GetName()(*string) {
     return m.name
 }
@@ -49,7 +49,7 @@ func (m *SinglePropertySchema) GetName()(*string) {
 func (m *SinglePropertySchema) GetOdataType()(*string) {
     return m.odataType
 }
-// GetType gets the type property value. The type property
+// GetType gets the type property value. The type of the property.
 func (m *SinglePropertySchema) GetType()(*string) {
     return m.type_escaped
 }
@@ -85,7 +85,7 @@ func (m *SinglePropertySchema) Serialize(writer i878a80d2330e89d26896388a3f487ee
 func (m *SinglePropertySchema) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the property.
 func (m *SinglePropertySchema) SetName(value *string)() {
     m.name = value
 }
@@ -93,7 +93,7 @@ func (m *SinglePropertySchema) SetName(value *string)() {
 func (m *SinglePropertySchema) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetType sets the type property value. The type property
+// SetType sets the type property value. The type of the property.
 func (m *SinglePropertySchema) SetType(value *string)() {
     m.type_escaped = value
 }

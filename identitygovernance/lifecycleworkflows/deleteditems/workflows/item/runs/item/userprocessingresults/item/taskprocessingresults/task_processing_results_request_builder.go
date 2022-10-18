@@ -17,7 +17,7 @@ type TaskProcessingResultsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TaskProcessingResultsRequestBuilderGetQueryParameters the associated individual task execution.
+// TaskProcessingResultsRequestBuilderGetQueryParameters get the taskProcessingResult resources for a userProcessingResult from a run.
 type TaskProcessingResultsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewTaskProcessingResultsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *TaskProcessingResultsRequestBuilder) Count()(*ie2712ed7643a18f10d84c14db78e5f2fc787bb763ec7e40b3c60168331b009e8.CountRequestBuilder) {
     return ie2712ed7643a18f10d84c14db78e5f2fc787bb763ec7e40b3c60168331b009e8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the associated individual task execution.
+// CreateGetRequestInformation get the taskProcessingResult resources for a userProcessingResult from a run.
 func (m *TaskProcessingResultsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TaskProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *TaskProcessingResultsRequestBuilder) CreatePostRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// Get the associated individual task execution.
+// Get get the taskProcessingResult resources for a userProcessingResult from a run.
 func (m *TaskProcessingResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskProcessingResultsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskProcessingResultCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

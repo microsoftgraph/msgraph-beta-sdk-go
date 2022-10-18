@@ -9,13 +9,13 @@ import (
 type RuleThreshold struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The aggregation property
+    // Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
     aggregation *AggregationType
     // The OdataType property
     odataType *string
-    // The operator property
+    // Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
     operator *OperatorType
-    // The target property
+    // The target threshold value.
     target *int32
 }
 // NewRuleThreshold instantiates a new ruleThreshold and sets the default values.
@@ -35,7 +35,7 @@ func CreateRuleThresholdFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 func (m *RuleThreshold) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAggregation gets the aggregation property value. The aggregation property
+// GetAggregation gets the aggregation property value. Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
 func (m *RuleThreshold) GetAggregation()(*AggregationType) {
     return m.aggregation
 }
@@ -52,11 +52,11 @@ func (m *RuleThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 func (m *RuleThreshold) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOperator gets the operator property value. The operator property
+// GetOperator gets the operator property value. Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
 func (m *RuleThreshold) GetOperator()(*OperatorType) {
     return m.operator
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. The target threshold value.
 func (m *RuleThreshold) GetTarget()(*int32) {
     return m.target
 }
@@ -100,7 +100,7 @@ func (m *RuleThreshold) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *RuleThreshold) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAggregation sets the aggregation property value. The aggregation property
+// SetAggregation sets the aggregation property value. Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
 func (m *RuleThreshold) SetAggregation(value *AggregationType)() {
     m.aggregation = value
 }
@@ -108,11 +108,11 @@ func (m *RuleThreshold) SetAggregation(value *AggregationType)() {
 func (m *RuleThreshold) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOperator sets the operator property value. The operator property
+// SetOperator sets the operator property value. Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
 func (m *RuleThreshold) SetOperator(value *OperatorType)() {
     m.operator = value
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. The target threshold value.
 func (m *RuleThreshold) SetTarget(value *int32)() {
     m.target = value
 }

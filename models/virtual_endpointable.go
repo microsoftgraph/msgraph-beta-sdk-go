@@ -10,6 +10,7 @@ type VirtualEndpointable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuditEvents()([]CloudPcAuditEventable)
     GetCloudPCs()([]CloudPCable)
+    GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable)
     GetDeviceImages()([]CloudPcDeviceImageable)
     GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable)
     GetGalleryImages()([]CloudPcGalleryImageable)
@@ -23,6 +24,7 @@ type VirtualEndpointable interface {
     GetUserSettings()([]CloudPcUserSettingable)
     SetAuditEvents(value []CloudPcAuditEventable)()
     SetCloudPCs(value []CloudPCable)()
+    SetCrossCloudGovernmentOrganizationMapping(value CloudPcCrossCloudGovernmentOrganizationMappingable)()
     SetDeviceImages(value []CloudPcDeviceImageable)()
     SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)()
     SetGalleryImages(value []CloudPcGalleryImageable)()

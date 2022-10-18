@@ -23,7 +23,7 @@ type AlertRuleItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlertRuleItemRequestBuilderGetQueryParameters get alertRules from deviceManagement
+// AlertRuleItemRequestBuilderGetQueryParameters the collection of alert rules.
 type AlertRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *AlertRuleItemRequestBuilder) CreateDeleteRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get alertRules from deviceManagement
+// CreateGetRequestInformation the collection of alert rules.
 func (m *AlertRuleItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AlertRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *AlertRuleItemRequestBuilder) Delete(ctx context.Context, requestConfigu
     }
     return nil
 }
-// Get get alertRules from deviceManagement
+// Get the collection of alert rules.
 func (m *AlertRuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRuleItemRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRuleable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

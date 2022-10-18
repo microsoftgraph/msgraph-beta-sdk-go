@@ -9,15 +9,15 @@ import (
 // AlertRule provides operations to manage the collection of accessReviewDecision entities.
 type AlertRule struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The alertRuleTemplate property
+    // The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
     alertRuleTemplate *AlertRuleTemplate
-    // The description property
+    // The rule description.
     description *string
-    // The displayName property
+    // The display name of the rule.
     displayName *string
-    // The enabled property
+    // The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
     enabled *bool
-    // The isSystemRule property
+    // Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only
     isSystemRule *bool
     // The notificationChannels property
     notificationChannels []NotificationChannelable
@@ -39,19 +39,19 @@ func NewAlertRule()(*AlertRule) {
 func CreateAlertRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlertRule(), nil
 }
-// GetAlertRuleTemplate gets the alertRuleTemplate property value. The alertRuleTemplate property
+// GetAlertRuleTemplate gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
 func (m *AlertRule) GetAlertRuleTemplate()(*AlertRuleTemplate) {
     return m.alertRuleTemplate
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The rule description.
 func (m *AlertRule) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the rule.
 func (m *AlertRule) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetEnabled gets the enabled property value. The enabled property
+// GetEnabled gets the enabled property value. The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
 func (m *AlertRule) GetEnabled()(*bool) {
     return m.enabled
 }
@@ -68,7 +68,7 @@ func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     res["threshold"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateRuleThresholdFromDiscriminatorValue , m.SetThreshold)
     return res
 }
-// GetIsSystemRule gets the isSystemRule property value. The isSystemRule property
+// GetIsSystemRule gets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only
 func (m *AlertRule) GetIsSystemRule()(*bool) {
     return m.isSystemRule
 }
@@ -143,23 +143,23 @@ func (m *AlertRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetAlertRuleTemplate sets the alertRuleTemplate property value. The alertRuleTemplate property
+// SetAlertRuleTemplate sets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
 func (m *AlertRule) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
     m.alertRuleTemplate = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The rule description.
 func (m *AlertRule) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the rule.
 func (m *AlertRule) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetEnabled sets the enabled property value. The enabled property
+// SetEnabled sets the enabled property value. The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
 func (m *AlertRule) SetEnabled(value *bool)() {
     m.enabled = value
 }
-// SetIsSystemRule sets the isSystemRule property value. The isSystemRule property
+// SetIsSystemRule sets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only
 func (m *AlertRule) SetIsSystemRule(value *bool)() {
     m.isSystemRule = value
 }

@@ -23,7 +23,7 @@ type LabelPolicySettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelPolicySettingsRequestBuilderGetQueryParameters read the Microsoft Purview Information Protection policy settings for the user or organization.
+// LabelPolicySettingsRequestBuilderGetQueryParameters read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 type LabelPolicySettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *LabelPolicySettingsRequestBuilder) CreateDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read the Microsoft Purview Information Protection policy settings for the user or organization.
+// CreateGetRequestInformation read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 func (m *LabelPolicySettingsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LabelPolicySettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *LabelPolicySettingsRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get read the Microsoft Purview Information Protection policy settings for the user or organization.
+// Get read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 func (m *LabelPolicySettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelPolicySettingsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionPolicySettingable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

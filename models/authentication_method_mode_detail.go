@@ -10,7 +10,7 @@ type AuthenticationMethodModeDetail struct {
     Entity
     // The authenticationMethod property
     authenticationMethod *BaseAuthenticationMethod
-    // The displayName property
+    // The display name of this mode
     displayName *string
 }
 // NewAuthenticationMethodModeDetail instantiates a new AuthenticationMethodModeDetail and sets the default values.
@@ -30,7 +30,7 @@ func CreateAuthenticationMethodModeDetailFromDiscriminatorValue(parseNode i878a8
 func (m *AuthenticationMethodModeDetail) GetAuthenticationMethod()(*BaseAuthenticationMethod) {
     return m.authenticationMethod
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of this mode
 func (m *AuthenticationMethodModeDetail) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -66,7 +66,7 @@ func (m *AuthenticationMethodModeDetail) Serialize(writer i878a80d2330e89d268963
 func (m *AuthenticationMethodModeDetail) SetAuthenticationMethod(value *BaseAuthenticationMethod)() {
     m.authenticationMethod = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of this mode
 func (m *AuthenticationMethodModeDetail) SetDisplayName(value *string)() {
     m.displayName = value
 }

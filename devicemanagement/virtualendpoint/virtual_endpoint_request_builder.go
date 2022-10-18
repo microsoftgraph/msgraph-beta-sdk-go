@@ -14,6 +14,7 @@ import (
     i641f590b75b18bc875786f11f8c01028ef7a86284da618ffc6636c5f70071b7c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/geteffectivepermissions"
     i7797f67c8b714660406fd3191cfbb22f837ba6075cc7a38889ec3a97de75f7d4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/reports"
     i8d3de0aa309e67af3900939f40971eff6bb1f2ef4f7cece48df22e29e1c1a98e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/externalpartnersettings"
+    ib721ddefcd2a7684894eea8d4d1e9352a78b6805ab7b3f6f328db56575d44444 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/crosscloudgovernmentorganizationmapping"
     ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/onpremisesconnections"
     id4ffcadce3c6a0158b09f7c80fb182d7adea4c0b1e976947864d2f4a6310302e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/organizationsettings"
     idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/supportedregions"
@@ -161,6 +162,10 @@ func (m *VirtualEndpointRequestBuilder) CreatePatchRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// CrossCloudGovernmentOrganizationMapping the crossCloudGovernmentOrganizationMapping property
+func (m *VirtualEndpointRequestBuilder) CrossCloudGovernmentOrganizationMapping()(*ib721ddefcd2a7684894eea8d4d1e9352a78b6805ab7b3f6f328db56575d44444.CrossCloudGovernmentOrganizationMappingRequestBuilder) {
+    return ib721ddefcd2a7684894eea8d4d1e9352a78b6805ab7b3f6f328db56575d44444.NewCrossCloudGovernmentOrganizationMappingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property virtualEndpoint for deviceManagement
 func (m *VirtualEndpointRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration)(error) {

@@ -17,7 +17,7 @@ type TeamTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TeamTemplatesRequestBuilderGetQueryParameters list the teamTemplateDefinition objects associated with a teamTemplate. 
+// TeamTemplatesRequestBuilderGetQueryParameters get the list of teamTemplate objects that are available for a tenant. 
 type TeamTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewTeamTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *TeamTemplatesRequestBuilder) Count()(*i92481035f8075e40a791aea8a6dfcc4ca817d0cff2cfe81a204cbefd98f6df18.CountRequestBuilder) {
     return i92481035f8075e40a791aea8a6dfcc4ca817d0cff2cfe81a204cbefd98f6df18.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list the teamTemplateDefinition objects associated with a teamTemplate. 
+// CreateGetRequestInformation get the list of teamTemplate objects that are available for a tenant. 
 func (m *TeamTemplatesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *TeamTemplatesRequestBuilder) CreatePostRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// Get list the teamTemplateDefinition objects associated with a teamTemplate. 
+// Get get the list of teamTemplate objects that are available for a tenant. 
 func (m *TeamTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

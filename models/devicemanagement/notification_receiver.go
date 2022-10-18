@@ -9,9 +9,9 @@ import (
 type NotificationReceiver struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The contactInformation property
+    // The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
     contactInformation *string
-    // The locale property
+    // Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
     locale *string
     // The OdataType property
     odataType *string
@@ -33,7 +33,7 @@ func CreateNotificationReceiverFromDiscriminatorValue(parseNode i878a80d2330e89d
 func (m *NotificationReceiver) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetContactInformation gets the contactInformation property value. The contactInformation property
+// GetContactInformation gets the contactInformation property value. The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
 func (m *NotificationReceiver) GetContactInformation()(*string) {
     return m.contactInformation
 }
@@ -45,7 +45,7 @@ func (m *NotificationReceiver) GetFieldDeserializers()(map[string]func(i878a80d2
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
-// GetLocale gets the locale property value. The locale property
+// GetLocale gets the locale property value. Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
 func (m *NotificationReceiver) GetLocale()(*string) {
     return m.locale
 }
@@ -85,11 +85,11 @@ func (m *NotificationReceiver) Serialize(writer i878a80d2330e89d26896388a3f487ee
 func (m *NotificationReceiver) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetContactInformation sets the contactInformation property value. The contactInformation property
+// SetContactInformation sets the contactInformation property value. The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
 func (m *NotificationReceiver) SetContactInformation(value *string)() {
     m.contactInformation = value
 }
-// SetLocale sets the locale property value. The locale property
+// SetLocale sets the locale property value. Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
 func (m *NotificationReceiver) SetLocale(value *string)() {
     m.locale = value
 }
