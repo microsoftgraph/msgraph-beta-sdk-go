@@ -9,7 +9,7 @@ import (
 type OrganizationalMessageLogo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png, unknownFutureValue.
+    // The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo
     contentType *OrganizationalMessageLogoType
     // The binary contents of the logo. This is null when logoCdnUrl is used to send the logo
     logo []byte
@@ -35,7 +35,7 @@ func CreateOrganizationalMessageLogoFromDiscriminatorValue(parseNode i878a80d233
 func (m *OrganizationalMessageLogo) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetContentType gets the contentType property value. The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png, unknownFutureValue.
+// GetContentType gets the contentType property value. The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo
 func (m *OrganizationalMessageLogo) GetContentType()(*OrganizationalMessageLogoType) {
     return m.contentType
 }
@@ -99,7 +99,7 @@ func (m *OrganizationalMessageLogo) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *OrganizationalMessageLogo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetContentType sets the contentType property value. The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png, unknownFutureValue.
+// SetContentType sets the contentType property value. The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo
 func (m *OrganizationalMessageLogo) SetContentType(value *OrganizationalMessageLogoType)() {
     m.contentType = value
 }

@@ -15,21 +15,21 @@ type OrganizationalMessageDetail struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time of when the message will stop being displayed to clients
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice, unknownFutureValue.
+    // The frequency at which a client will see the message
     frequency *OrganizationalMessageFrequency
     // The date and time of when the message was last modified
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates the scenario for the message. Possible values are: onboarding, lifecycle, unknownFutureValue.
+    // Indicates the scenario for the message
     scenario *OrganizationalMessageScenario
     // The date and time of when the message will start being displayed to clients
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled, unknownFutureValue.
+    // Indicates the deployment status of the message
     status *OrganizationalMessageStatus
-    // Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding, unknownFutureValue.
+    // Indicates the area where content will be displayed to customers
     surface *OrganizationalMessageSurface
     // The groups of devices that will receive the message. This also contains a list of excluded groups that will not receive the message regardless of the device being part of an included group
     targeting OrganizationalMessageTargetingable
-    // Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows, explore, unknownFutureValue.
+    // Indicates the theme for the experience
     theme *OrganizationalMessageTheme
     // The statistics containing how the message was interacted with by clients. This includes the number of impressions, clicks, and dismisses from targeted clients.
     userEngagementStatistics OrganizationalMessageInsightsable
@@ -79,7 +79,7 @@ func (m *OrganizationalMessageDetail) GetFieldDeserializers()(map[string]func(i8
     res["variant"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetVariant)
     return res
 }
-// GetFrequency gets the frequency property value. The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice, unknownFutureValue.
+// GetFrequency gets the frequency property value. The frequency at which a client will see the message
 func (m *OrganizationalMessageDetail) GetFrequency()(*OrganizationalMessageFrequency) {
     return m.frequency
 }
@@ -87,7 +87,7 @@ func (m *OrganizationalMessageDetail) GetFrequency()(*OrganizationalMessageFrequ
 func (m *OrganizationalMessageDetail) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
 }
-// GetScenario gets the scenario property value. Indicates the scenario for the message. Possible values are: onboarding, lifecycle, unknownFutureValue.
+// GetScenario gets the scenario property value. Indicates the scenario for the message
 func (m *OrganizationalMessageDetail) GetScenario()(*OrganizationalMessageScenario) {
     return m.scenario
 }
@@ -95,11 +95,11 @@ func (m *OrganizationalMessageDetail) GetScenario()(*OrganizationalMessageScenar
 func (m *OrganizationalMessageDetail) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startDateTime
 }
-// GetStatus gets the status property value. Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled, unknownFutureValue.
+// GetStatus gets the status property value. Indicates the deployment status of the message
 func (m *OrganizationalMessageDetail) GetStatus()(*OrganizationalMessageStatus) {
     return m.status
 }
-// GetSurface gets the surface property value. Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding, unknownFutureValue.
+// GetSurface gets the surface property value. Indicates the area where content will be displayed to customers
 func (m *OrganizationalMessageDetail) GetSurface()(*OrganizationalMessageSurface) {
     return m.surface
 }
@@ -107,7 +107,7 @@ func (m *OrganizationalMessageDetail) GetSurface()(*OrganizationalMessageSurface
 func (m *OrganizationalMessageDetail) GetTargeting()(OrganizationalMessageTargetingable) {
     return m.targeting
 }
-// GetTheme gets the theme property value. Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows, explore, unknownFutureValue.
+// GetTheme gets the theme property value. Indicates the theme for the experience
 func (m *OrganizationalMessageDetail) GetTheme()(*OrganizationalMessageTheme) {
     return m.theme
 }
@@ -222,7 +222,7 @@ func (m *OrganizationalMessageDetail) SetCreatedDateTime(value *i336074805fc8539
 func (m *OrganizationalMessageDetail) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// SetFrequency sets the frequency property value. The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice, unknownFutureValue.
+// SetFrequency sets the frequency property value. The frequency at which a client will see the message
 func (m *OrganizationalMessageDetail) SetFrequency(value *OrganizationalMessageFrequency)() {
     m.frequency = value
 }
@@ -230,7 +230,7 @@ func (m *OrganizationalMessageDetail) SetFrequency(value *OrganizationalMessageF
 func (m *OrganizationalMessageDetail) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// SetScenario sets the scenario property value. Indicates the scenario for the message. Possible values are: onboarding, lifecycle, unknownFutureValue.
+// SetScenario sets the scenario property value. Indicates the scenario for the message
 func (m *OrganizationalMessageDetail) SetScenario(value *OrganizationalMessageScenario)() {
     m.scenario = value
 }
@@ -238,11 +238,11 @@ func (m *OrganizationalMessageDetail) SetScenario(value *OrganizationalMessageSc
 func (m *OrganizationalMessageDetail) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// SetStatus sets the status property value. Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled, unknownFutureValue.
+// SetStatus sets the status property value. Indicates the deployment status of the message
 func (m *OrganizationalMessageDetail) SetStatus(value *OrganizationalMessageStatus)() {
     m.status = value
 }
-// SetSurface sets the surface property value. Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding, unknownFutureValue.
+// SetSurface sets the surface property value. Indicates the area where content will be displayed to customers
 func (m *OrganizationalMessageDetail) SetSurface(value *OrganizationalMessageSurface)() {
     m.surface = value
 }
@@ -250,7 +250,7 @@ func (m *OrganizationalMessageDetail) SetSurface(value *OrganizationalMessageSur
 func (m *OrganizationalMessageDetail) SetTargeting(value OrganizationalMessageTargetingable)() {
     m.targeting = value
 }
-// SetTheme sets the theme property value. Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows, explore, unknownFutureValue.
+// SetTheme sets the theme property value. Indicates the theme for the experience
 func (m *OrganizationalMessageDetail) SetTheme(value *OrganizationalMessageTheme)() {
     m.theme = value
 }

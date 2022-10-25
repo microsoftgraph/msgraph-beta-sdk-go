@@ -41,7 +41,7 @@ func NewGetRemoteConnectionHistoricalReportsRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetRemoteConnectionHistoricalReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getRemoteConnectionHistoricalReports
+// CreatePostRequestInformation get the remote connection history records of a Cloud PC during a given period.
 func (m *GetRemoteConnectionHistoricalReportsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetRemoteConnectionHistoricalReportsPostRequestBodyable, requestConfiguration *GetRemoteConnectionHistoricalReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -54,7 +54,7 @@ func (m *GetRemoteConnectionHistoricalReportsRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Post invoke action getRemoteConnectionHistoricalReports
+// Post get the remote connection history records of a Cloud PC during a given period.
 func (m *GetRemoteConnectionHistoricalReportsRequestBuilder) Post(ctx context.Context, body GetRemoteConnectionHistoricalReportsPostRequestBodyable, requestConfiguration *GetRemoteConnectionHistoricalReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

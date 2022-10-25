@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedTenantAlert 
+// ManagedTenantAlert provides operations to manage the collection of activityStatistics entities.
 type ManagedTenantAlert struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The alertData property
@@ -49,7 +49,7 @@ type ManagedTenantAlert struct {
     // The title property
     title *string
 }
-// NewManagedTenantAlert instantiates a new ManagedTenantAlert and sets the default values.
+// NewManagedTenantAlert instantiates a new managedTenantAlert and sets the default values.
 func NewManagedTenantAlert()(*ManagedTenantAlert) {
     m := &ManagedTenantAlert{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
