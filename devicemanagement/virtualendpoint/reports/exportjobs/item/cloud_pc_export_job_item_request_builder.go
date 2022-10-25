@@ -23,7 +23,7 @@ type CloudPcExportJobItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CloudPcExportJobItemRequestBuilderGetQueryParameters get exportJobs from deviceManagement
+// CloudPcExportJobItemRequestBuilderGetQueryParameters the export jobs created for downloading reports.
 type CloudPcExportJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,7 +77,7 @@ func (m *CloudPcExportJobItemRequestBuilder) CreateDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get exportJobs from deviceManagement
+// CreateGetRequestInformation the export jobs created for downloading reports.
 func (m *CloudPcExportJobItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CloudPcExportJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *CloudPcExportJobItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Get get exportJobs from deviceManagement
+// Get the export jobs created for downloading reports.
 func (m *CloudPcExportJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPcExportJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

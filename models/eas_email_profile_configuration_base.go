@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EasEmailProfileConfigurationBase 
+// EasEmailProfileConfigurationBase apple device features configuration profile.
 type EasEmailProfileConfigurationBase struct {
     DeviceConfiguration
     // Custom domain name value used while generating an email profile before installing on the device.
@@ -17,7 +17,7 @@ type EasEmailProfileConfigurationBase struct {
     // Possible values for username source or email source.
     usernameSource *UserEmailSource
 }
-// NewEasEmailProfileConfigurationBase instantiates a new EasEmailProfileConfigurationBase and sets the default values.
+// NewEasEmailProfileConfigurationBase instantiates a new easEmailProfileConfigurationBase and sets the default values.
 func NewEasEmailProfileConfigurationBase()(*EasEmailProfileConfigurationBase) {
     m := &EasEmailProfileConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),

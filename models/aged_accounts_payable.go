@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgedAccountsPayable 
+// AgedAccountsPayable provides operations to manage the collection of activityStatistics entities.
 type AgedAccountsPayable struct {
     Entity
     // The agedAsOfDate property
@@ -29,7 +29,7 @@ type AgedAccountsPayable struct {
     // The vendorNumber property
     vendorNumber *string
 }
-// NewAgedAccountsPayable instantiates a new AgedAccountsPayable and sets the default values.
+// NewAgedAccountsPayable instantiates a new agedAccountsPayable and sets the default values.
 func NewAgedAccountsPayable()(*AgedAccountsPayable) {
     m := &AgedAccountsPayable{
         Entity: *NewEntity(),

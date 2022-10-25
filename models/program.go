@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Program 
+// Program provides operations to manage the collection of activityStatistics entities.
 type Program struct {
     Entity
     // Controls associated with the program.
@@ -15,7 +15,7 @@ type Program struct {
     // The name of the program.  Required on create.
     displayName *string
 }
-// NewProgram instantiates a new Program and sets the default values.
+// NewProgram instantiates a new program and sets the default values.
 func NewProgram()(*Program) {
     m := &Program{
         Entity: *NewEntity(),
