@@ -17,7 +17,7 @@ type ExportJobsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExportJobsRequestBuilderGetQueryParameters get exportJobs from deviceManagement
+// ExportJobsRequestBuilderGetQueryParameters the export jobs created for downloading reports.
 type ExportJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewExportJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ExportJobsRequestBuilder) Count()(*ie0974d0964a6a4304681de9be9a46f8b596f0566c88093c20853273c42b2eaa8.CountRequestBuilder) {
     return ie0974d0964a6a4304681de9be9a46f8b596f0566c88093c20853273c42b2eaa8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get exportJobs from deviceManagement
+// CreateGetRequestInformation the export jobs created for downloading reports.
 func (m *ExportJobsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ExportJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *ExportJobsRequestBuilder) CreateGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to exportJobs for deviceManagement
+// CreatePostRequestInformation create a new cloudPcExportJob object.
 func (m *ExportJobsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobable, requestConfiguration *ExportJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *ExportJobsRequestBuilder) CreatePostRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// Get get exportJobs from deviceManagement
+// Get the export jobs created for downloading reports.
 func (m *ExportJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExportJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *ExportJobsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobCollectionResponseable), nil
 }
-// Post create new navigation property to exportJobs for deviceManagement
+// Post create a new cloudPcExportJob object.
 func (m *ExportJobsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobable, requestConfiguration *ExportJobsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -41,7 +41,7 @@ func NewMoveToCatalogRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewMoveToCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action moveToCatalog
+// CreatePostRequestInformation in Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog. The resources in the access package must be present in the target catalog.
 func (m *MoveToCatalogRequestBuilder) CreatePostRequestInformation(ctx context.Context, body MoveToCatalogPostRequestBodyable, requestConfiguration *MoveToCatalogRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -54,7 +54,7 @@ func (m *MoveToCatalogRequestBuilder) CreatePostRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// Post invoke action moveToCatalog
+// Post in Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog. The resources in the access package must be present in the target catalog.
 func (m *MoveToCatalogRequestBuilder) Post(ctx context.Context, body MoveToCatalogPostRequestBodyable, requestConfiguration *MoveToCatalogRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

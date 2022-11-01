@@ -119,6 +119,7 @@ import (
     id1b5f80bb654118e8428176f73bc7413eb087dc72b5acfe75aa4b6d09d7405b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getonedriveactivityuserdetailwithperiod"
     id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getteamsdeviceusageuserdetailwithdate"
     id819e13d5d8b37a469ab265d456430d17b707e1443609d80dec1be87354e1230 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getmailboxusagemailboxcountswithperiod"
+    id9c67fbf3e5b18ce81ffee38c9715eb874037620524b1e44114d6f244986dab1 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/dailyprintusage"
     ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getsharepointactivityuserdetailwithdate"
     ie14903a7ed9a3dee9cbc3334e7ce7a1476f522c78051624951404accb2167f9e "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getm365appplatformusercountswithperiod"
     ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/usercredentialusagedetails"
@@ -146,6 +147,7 @@ import (
     i81f53b8b26ae53be90ad15f1e85f74bb88ada9cad7e6d8f0b3cb9ce23e2e0f46 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/dailyprintusagesummariesbyprinter/item"
     i9d3332b918775296ebe9eb5ed2e432af9b61c784aceacaca03a043c49a0ff6db "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagebyprinter/item"
     i9e0e6696a72655a2583635eb551d9445661402ca5fa5c8f22f82920d3cbae9a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagesummariesbyprinter/item"
+    iafb7bcf97ebde4e961ac9c604c210a588695171ec8fc5b466449ac1be57077be "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/dailyprintusage/item"
     ib41269879aaaaafe023559bee72eced006e67c0981359cdf0e53448af198f4bc "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/applicationsignindetailedsummary/item"
     id64618d3ddc94c3dc7162d9da67abd3172a3d1bf99f56c9991906d6421e665be "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/dailyprintusagebyprinter/item"
     ie40751cac1559213f1bbd658ede6043abd8ffd3463aa7abc8847eea9e36a36f8 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/monthlyprintusagesummariesbyuser/item"
@@ -267,6 +269,21 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)
         urlTplParams["credentialUserRegistrationDetails%2Did"] = id
     }
     return ie8dfbe0f2a10d928f186e8a85be8a433fa4f6ef763d02998cd4f197b915e90ce.NewCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// DailyPrintUsage the dailyPrintUsage property
+func (m *ReportsRequestBuilder) DailyPrintUsage()(*id9c67fbf3e5b18ce81ffee38c9715eb874037620524b1e44114d6f244986dab1.DailyPrintUsageRequestBuilder) {
+    return id9c67fbf3e5b18ce81ffee38c9715eb874037620524b1e44114d6f244986dab1.NewDailyPrintUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DailyPrintUsageById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsage.item collection
+func (m *ReportsRequestBuilder) DailyPrintUsageById(id string)(*iafb7bcf97ebde4e961ac9c604c210a588695171ec8fc5b466449ac1be57077be.PrintUsageItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["printUsage%2Did"] = id
+    }
+    return iafb7bcf97ebde4e961ac9c604c210a588695171ec8fc5b466449ac1be57077be.NewPrintUsageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DailyPrintUsageByPrinter the dailyPrintUsageByPrinter property
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*i3c5eb35d4514961f4cbfafd47ac65dc5ed997312a3e247f4b53d8004051d0194.DailyPrintUsageByPrinterRequestBuilder) {

@@ -41,7 +41,7 @@ func NewGetTotalAggregatedRemoteConnectionReportsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetTotalAggregatedRemoteConnectionReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getTotalAggregatedRemoteConnectionReports
+// CreatePostRequestInformation get the total aggregated remote connection usage of a Cloud PC during a given time span.
 func (m *GetTotalAggregatedRemoteConnectionReportsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetTotalAggregatedRemoteConnectionReportsPostRequestBodyable, requestConfiguration *GetTotalAggregatedRemoteConnectionReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -54,7 +54,7 @@ func (m *GetTotalAggregatedRemoteConnectionReportsRequestBuilder) CreatePostRequ
     }
     return requestInfo, nil
 }
-// Post invoke action getTotalAggregatedRemoteConnectionReports
+// Post get the total aggregated remote connection usage of a Cloud PC during a given time span.
 func (m *GetTotalAggregatedRemoteConnectionReportsRequestBuilder) Post(ctx context.Context, body GetTotalAggregatedRemoteConnectionReportsPostRequestBodyable, requestConfiguration *GetTotalAggregatedRemoteConnectionReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -14,6 +14,8 @@ type ReportRoot struct {
     authenticationMethods AuthenticationMethodsRootable
     // Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
     credentialUserRegistrationDetails []CredentialUserRegistrationDetailsable
+    // The dailyPrintUsage property
+    dailyPrintUsage []PrintUsageable
     // The dailyPrintUsageByPrinter property
     dailyPrintUsageByPrinter []PrintUsageByPrinterable
     // The dailyPrintUsageByUser property
@@ -60,6 +62,10 @@ func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
     return m.credentialUserRegistrationDetails
 }
+// GetDailyPrintUsage gets the dailyPrintUsage property value. The dailyPrintUsage property
+func (m *ReportRoot) GetDailyPrintUsage()([]PrintUsageable) {
+    return m.dailyPrintUsage
+}
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     return m.dailyPrintUsageByPrinter
@@ -82,6 +88,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     res["applicationSignInDetailedSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateApplicationSignInDetailedSummaryFromDiscriminatorValue , m.SetApplicationSignInDetailedSummary)
     res["authenticationMethods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAuthenticationMethodsRootFromDiscriminatorValue , m.SetAuthenticationMethods)
     res["credentialUserRegistrationDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCredentialUserRegistrationDetailsFromDiscriminatorValue , m.SetCredentialUserRegistrationDetails)
+    res["dailyPrintUsage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePrintUsageFromDiscriminatorValue , m.SetDailyPrintUsage)
     res["dailyPrintUsageByPrinter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue , m.SetDailyPrintUsageByPrinter)
     res["dailyPrintUsageByUser"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePrintUsageByUserFromDiscriminatorValue , m.SetDailyPrintUsageByUser)
     res["dailyPrintUsageSummariesByPrinter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue , m.SetDailyPrintUsageSummariesByPrinter)
@@ -140,6 +147,13 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetCredentialUserRegistrationDetails() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCredentialUserRegistrationDetails())
         err = writer.WriteCollectionOfObjectValues("credentialUserRegistrationDetails", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDailyPrintUsage() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDailyPrintUsage())
+        err = writer.WriteCollectionOfObjectValues("dailyPrintUsage", cast)
         if err != nil {
             return err
         }
@@ -226,6 +240,10 @@ func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootabl
 // SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)() {
     m.credentialUserRegistrationDetails = value
+}
+// SetDailyPrintUsage sets the dailyPrintUsage property value. The dailyPrintUsage property
+func (m *ReportRoot) SetDailyPrintUsage(value []PrintUsageable)() {
+    m.dailyPrintUsage = value
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {

@@ -5,13 +5,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRbacResourceAction provides operations to manage the collection of accessReviewDecision entities.
+// UnifiedRbacResourceAction provides operations to manage the collection of activityStatistics entities.
 type UnifiedRbacResourceAction struct {
     Entity
     // HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
     actionVerb *string
+    // The authenticationContextId property
+    authenticationContextId *string
     // Description for the action. Supports $filter (eq).
     description *string
+    // The isAuthenticationContextSettable property
+    isAuthenticationContextSettable *bool
     // Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
     name *string
     // The resourceScope property
@@ -36,6 +40,10 @@ func CreateUnifiedRbacResourceActionFromDiscriminatorValue(parseNode i878a80d233
 func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
     return m.actionVerb
 }
+// GetAuthenticationContextId gets the authenticationContextId property value. The authenticationContextId property
+func (m *UnifiedRbacResourceAction) GetAuthenticationContextId()(*string) {
+    return m.authenticationContextId
+}
 // GetDescription gets the description property value. Description for the action. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
     return m.description
@@ -44,11 +52,17 @@ func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
 func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionVerb"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetActionVerb)
+    res["authenticationContextId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAuthenticationContextId)
     res["description"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDescription)
+    res["isAuthenticationContextSettable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsAuthenticationContextSettable)
     res["name"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetName)
     res["resourceScope"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUnifiedRbacResourceScopeFromDiscriminatorValue , m.SetResourceScope)
     res["resourceScopeId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetResourceScopeId)
     return res
+}
+// GetIsAuthenticationContextSettable gets the isAuthenticationContextSettable property value. The isAuthenticationContextSettable property
+func (m *UnifiedRbacResourceAction) GetIsAuthenticationContextSettable()(*bool) {
+    return m.isAuthenticationContextSettable
 }
 // GetName gets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) GetName()(*string) {
@@ -75,7 +89,19 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("authenticationContextId", m.GetAuthenticationContextId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isAuthenticationContextSettable", m.GetIsAuthenticationContextSettable())
         if err != nil {
             return err
         }
@@ -104,9 +130,17 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
 func (m *UnifiedRbacResourceAction) SetActionVerb(value *string)() {
     m.actionVerb = value
 }
+// SetAuthenticationContextId sets the authenticationContextId property value. The authenticationContextId property
+func (m *UnifiedRbacResourceAction) SetAuthenticationContextId(value *string)() {
+    m.authenticationContextId = value
+}
 // SetDescription sets the description property value. Description for the action. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) SetDescription(value *string)() {
     m.description = value
+}
+// SetIsAuthenticationContextSettable sets the isAuthenticationContextSettable property value. The isAuthenticationContextSettable property
+func (m *UnifiedRbacResourceAction) SetIsAuthenticationContextSettable(value *bool)() {
+    m.isAuthenticationContextSettable = value
 }
 // SetName sets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) SetName(value *string)() {

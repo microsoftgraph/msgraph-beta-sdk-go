@@ -30,7 +30,7 @@ type ReportsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ReportsRequestBuilderGetQueryParameters get reports from deviceManagement
+// ReportsRequestBuilderGetQueryParameters cloud PC related reports.
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -84,7 +84,7 @@ func (m *ReportsRequestBuilder) CreateDeleteRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get reports from deviceManagement
+// CreateGetRequestInformation cloud PC related reports.
 func (m *ReportsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,7 +145,7 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*ie2ea01ca6f1a0dce0c2c
     }
     return ie2ea01ca6f1a0dce0c2cb6a13a16a43889baea0dedb63d5685be60340e932e58.NewCloudPcExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get reports from deviceManagement
+// Get cloud PC related reports.
 func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

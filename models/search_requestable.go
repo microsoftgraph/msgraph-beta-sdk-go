@@ -10,6 +10,7 @@ type SearchRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAggregationFilters()([]string)
     GetAggregations()([]AggregationOptionable)
+    GetCollapseProperties()([]CollapsePropertyable)
     GetContentSources()([]string)
     GetEnableTopResults()(*bool)
     GetEntityTypes()([]EntityType)
@@ -27,6 +28,7 @@ type SearchRequestable interface {
     GetTrimDuplicates()(*bool)
     SetAggregationFilters(value []string)()
     SetAggregations(value []AggregationOptionable)()
+    SetCollapseProperties(value []CollapsePropertyable)()
     SetContentSources(value []string)()
     SetEnableTopResults(value *bool)()
     SetEntityTypes(value []EntityType)()
