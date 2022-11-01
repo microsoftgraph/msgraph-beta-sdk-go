@@ -29,6 +29,20 @@ type ManagedTenant struct {
     managedDeviceCompliances []ManagedDeviceComplianceable
     // Trend insights for device compliance across managed tenants.
     managedDeviceComplianceTrends []ManagedDeviceComplianceTrendable
+    // The managedTenantAlertLogs property
+    managedTenantAlertLogs []ManagedTenantAlertLogable
+    // The managedTenantAlertRuleDefinitions property
+    managedTenantAlertRuleDefinitions []ManagedTenantAlertRuleDefinitionable
+    // The managedTenantAlertRules property
+    managedTenantAlertRules []ManagedTenantAlertRuleable
+    // The managedTenantAlerts property
+    managedTenantAlerts []ManagedTenantAlertable
+    // The managedTenantApiNotifications property
+    managedTenantApiNotifications []ManagedTenantApiNotificationable
+    // The managedTenantEmailNotifications property
+    managedTenantEmailNotifications []ManagedTenantEmailNotificationable
+    // The managedTenantTicketingEndpoints property
+    managedTenantTicketingEndpoints []ManagedTenantTicketingEndpointable
     // The collection of baseline management actions across managed tenants.
     managementActions []ManagementActionable
     // The tenant level status of management actions across managed tenants.
@@ -118,6 +132,13 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["deviceCompliancePolicySettingStateSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue , m.SetDeviceCompliancePolicySettingStateSummaries)
     res["managedDeviceCompliances"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedDeviceComplianceFromDiscriminatorValue , m.SetManagedDeviceCompliances)
     res["managedDeviceComplianceTrends"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedDeviceComplianceTrendFromDiscriminatorValue , m.SetManagedDeviceComplianceTrends)
+    res["managedTenantAlertLogs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertLogFromDiscriminatorValue , m.SetManagedTenantAlertLogs)
+    res["managedTenantAlertRuleDefinitions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertRuleDefinitionFromDiscriminatorValue , m.SetManagedTenantAlertRuleDefinitions)
+    res["managedTenantAlertRules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertRuleFromDiscriminatorValue , m.SetManagedTenantAlertRules)
+    res["managedTenantAlerts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertFromDiscriminatorValue , m.SetManagedTenantAlerts)
+    res["managedTenantApiNotifications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantApiNotificationFromDiscriminatorValue , m.SetManagedTenantApiNotifications)
+    res["managedTenantEmailNotifications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantEmailNotificationFromDiscriminatorValue , m.SetManagedTenantEmailNotifications)
+    res["managedTenantTicketingEndpoints"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantTicketingEndpointFromDiscriminatorValue , m.SetManagedTenantTicketingEndpoints)
     res["managementActions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementActionFromDiscriminatorValue , m.SetManagementActions)
     res["managementActionTenantDeploymentStatuses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue , m.SetManagementActionTenantDeploymentStatuses)
     res["managementIntents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementIntentFromDiscriminatorValue , m.SetManagementIntents)
@@ -142,6 +163,34 @@ func (m *ManagedTenant) GetManagedDeviceCompliances()([]ManagedDeviceCompliancea
 // GetManagedDeviceComplianceTrends gets the managedDeviceComplianceTrends property value. Trend insights for device compliance across managed tenants.
 func (m *ManagedTenant) GetManagedDeviceComplianceTrends()([]ManagedDeviceComplianceTrendable) {
     return m.managedDeviceComplianceTrends
+}
+// GetManagedTenantAlertLogs gets the managedTenantAlertLogs property value. The managedTenantAlertLogs property
+func (m *ManagedTenant) GetManagedTenantAlertLogs()([]ManagedTenantAlertLogable) {
+    return m.managedTenantAlertLogs
+}
+// GetManagedTenantAlertRuleDefinitions gets the managedTenantAlertRuleDefinitions property value. The managedTenantAlertRuleDefinitions property
+func (m *ManagedTenant) GetManagedTenantAlertRuleDefinitions()([]ManagedTenantAlertRuleDefinitionable) {
+    return m.managedTenantAlertRuleDefinitions
+}
+// GetManagedTenantAlertRules gets the managedTenantAlertRules property value. The managedTenantAlertRules property
+func (m *ManagedTenant) GetManagedTenantAlertRules()([]ManagedTenantAlertRuleable) {
+    return m.managedTenantAlertRules
+}
+// GetManagedTenantAlerts gets the managedTenantAlerts property value. The managedTenantAlerts property
+func (m *ManagedTenant) GetManagedTenantAlerts()([]ManagedTenantAlertable) {
+    return m.managedTenantAlerts
+}
+// GetManagedTenantApiNotifications gets the managedTenantApiNotifications property value. The managedTenantApiNotifications property
+func (m *ManagedTenant) GetManagedTenantApiNotifications()([]ManagedTenantApiNotificationable) {
+    return m.managedTenantApiNotifications
+}
+// GetManagedTenantEmailNotifications gets the managedTenantEmailNotifications property value. The managedTenantEmailNotifications property
+func (m *ManagedTenant) GetManagedTenantEmailNotifications()([]ManagedTenantEmailNotificationable) {
+    return m.managedTenantEmailNotifications
+}
+// GetManagedTenantTicketingEndpoints gets the managedTenantTicketingEndpoints property value. The managedTenantTicketingEndpoints property
+func (m *ManagedTenant) GetManagedTenantTicketingEndpoints()([]ManagedTenantTicketingEndpointable) {
+    return m.managedTenantTicketingEndpoints
 }
 // GetManagementActions gets the managementActions property value. The collection of baseline management actions across managed tenants.
 func (m *ManagedTenant) GetManagementActions()([]ManagementActionable) {
@@ -275,6 +324,55 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetManagedDeviceComplianceTrends() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedDeviceComplianceTrends())
         err = writer.WriteCollectionOfObjectValues("managedDeviceComplianceTrends", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedTenantAlertLogs() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlertLogs())
+        err = writer.WriteCollectionOfObjectValues("managedTenantAlertLogs", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedTenantAlertRuleDefinitions() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlertRuleDefinitions())
+        err = writer.WriteCollectionOfObjectValues("managedTenantAlertRuleDefinitions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedTenantAlertRules() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlertRules())
+        err = writer.WriteCollectionOfObjectValues("managedTenantAlertRules", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedTenantAlerts() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlerts())
+        err = writer.WriteCollectionOfObjectValues("managedTenantAlerts", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedTenantApiNotifications() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantApiNotifications())
+        err = writer.WriteCollectionOfObjectValues("managedTenantApiNotifications", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedTenantEmailNotifications() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantEmailNotifications())
+        err = writer.WriteCollectionOfObjectValues("managedTenantEmailNotifications", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedTenantTicketingEndpoints() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantTicketingEndpoints())
+        err = writer.WriteCollectionOfObjectValues("managedTenantTicketingEndpoints", cast)
         if err != nil {
             return err
         }
@@ -425,6 +523,34 @@ func (m *ManagedTenant) SetManagedDeviceCompliances(value []ManagedDeviceComplia
 // SetManagedDeviceComplianceTrends sets the managedDeviceComplianceTrends property value. Trend insights for device compliance across managed tenants.
 func (m *ManagedTenant) SetManagedDeviceComplianceTrends(value []ManagedDeviceComplianceTrendable)() {
     m.managedDeviceComplianceTrends = value
+}
+// SetManagedTenantAlertLogs sets the managedTenantAlertLogs property value. The managedTenantAlertLogs property
+func (m *ManagedTenant) SetManagedTenantAlertLogs(value []ManagedTenantAlertLogable)() {
+    m.managedTenantAlertLogs = value
+}
+// SetManagedTenantAlertRuleDefinitions sets the managedTenantAlertRuleDefinitions property value. The managedTenantAlertRuleDefinitions property
+func (m *ManagedTenant) SetManagedTenantAlertRuleDefinitions(value []ManagedTenantAlertRuleDefinitionable)() {
+    m.managedTenantAlertRuleDefinitions = value
+}
+// SetManagedTenantAlertRules sets the managedTenantAlertRules property value. The managedTenantAlertRules property
+func (m *ManagedTenant) SetManagedTenantAlertRules(value []ManagedTenantAlertRuleable)() {
+    m.managedTenantAlertRules = value
+}
+// SetManagedTenantAlerts sets the managedTenantAlerts property value. The managedTenantAlerts property
+func (m *ManagedTenant) SetManagedTenantAlerts(value []ManagedTenantAlertable)() {
+    m.managedTenantAlerts = value
+}
+// SetManagedTenantApiNotifications sets the managedTenantApiNotifications property value. The managedTenantApiNotifications property
+func (m *ManagedTenant) SetManagedTenantApiNotifications(value []ManagedTenantApiNotificationable)() {
+    m.managedTenantApiNotifications = value
+}
+// SetManagedTenantEmailNotifications sets the managedTenantEmailNotifications property value. The managedTenantEmailNotifications property
+func (m *ManagedTenant) SetManagedTenantEmailNotifications(value []ManagedTenantEmailNotificationable)() {
+    m.managedTenantEmailNotifications = value
+}
+// SetManagedTenantTicketingEndpoints sets the managedTenantTicketingEndpoints property value. The managedTenantTicketingEndpoints property
+func (m *ManagedTenant) SetManagedTenantTicketingEndpoints(value []ManagedTenantTicketingEndpointable)() {
+    m.managedTenantTicketingEndpoints = value
 }
 // SetManagementActions sets the managementActions property value. The collection of baseline management actions across managed tenants.
 func (m *ManagedTenant) SetManagementActions(value []ManagementActionable)() {

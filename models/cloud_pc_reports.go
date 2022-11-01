@@ -8,7 +8,7 @@ import (
 // CloudPcReports 
 type CloudPcReports struct {
     Entity
-    // The exportJobs property
+    // The export jobs created for downloading reports.
     exportJobs []CloudPcExportJobable
 }
 // NewCloudPcReports instantiates a new CloudPcReports and sets the default values.
@@ -24,7 +24,7 @@ func NewCloudPcReports()(*CloudPcReports) {
 func CreateCloudPcReportsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcReports(), nil
 }
-// GetExportJobs gets the exportJobs property value. The exportJobs property
+// GetExportJobs gets the exportJobs property value. The export jobs created for downloading reports.
 func (m *CloudPcReports) GetExportJobs()([]CloudPcExportJobable) {
     return m.exportJobs
 }
@@ -49,7 +49,7 @@ func (m *CloudPcReports) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetExportJobs sets the exportJobs property value. The exportJobs property
+// SetExportJobs sets the exportJobs property value. The export jobs created for downloading reports.
 func (m *CloudPcReports) SetExportJobs(value []CloudPcExportJobable)() {
     m.exportJobs = value
 }

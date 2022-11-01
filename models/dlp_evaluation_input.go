@@ -7,8 +7,6 @@ import (
 
 // DlpEvaluationInput 
 type DlpEvaluationInput struct {
-    // The accessScope property
-    accessScope *AccessScope
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The currentLabel property
@@ -49,10 +47,6 @@ func CreateDlpEvaluationInputFromDiscriminatorValue(parseNode i878a80d2330e89d26
     }
     return NewDlpEvaluationInput(), nil
 }
-// GetAccessScope gets the accessScope property value. The accessScope property
-func (m *DlpEvaluationInput) GetAccessScope()(*AccessScope) {
-    return m.accessScope
-}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpEvaluationInput) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
@@ -68,7 +62,6 @@ func (m *DlpEvaluationInput) GetDiscoveredSensitiveTypes()([]DiscoveredSensitive
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessScope"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAccessScope , m.SetAccessScope)
     res["currentLabel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCurrentLabelFromDiscriminatorValue , m.SetCurrentLabel)
     res["discoveredSensitiveTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDiscoveredSensitiveTypeFromDiscriminatorValue , m.SetDiscoveredSensitiveTypes)
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
@@ -80,13 +73,6 @@ func (m *DlpEvaluationInput) GetOdataType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *DlpEvaluationInput) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetAccessScope() != nil {
-        cast := (*m.GetAccessScope()).String()
-        err := writer.WriteStringValue("accessScope", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err := writer.WriteObjectValue("currentLabel", m.GetCurrentLabel())
         if err != nil {
@@ -113,10 +99,6 @@ func (m *DlpEvaluationInput) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     return nil
-}
-// SetAccessScope sets the accessScope property value. The accessScope property
-func (m *DlpEvaluationInput) SetAccessScope(value *AccessScope)() {
-    m.accessScope = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpEvaluationInput) SetAdditionalData(value map[string]interface{})() {

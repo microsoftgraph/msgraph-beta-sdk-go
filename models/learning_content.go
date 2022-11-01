@@ -19,7 +19,7 @@ type LearningContent struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description or summary for the learning content. Optional.
     description *string
-    // The duration of the learning content in seconds. Optional.
+    // The duration of the learning content in seconds. The value is represented in ISO 8601 format for durations. Optional.
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Unique external content ID for the learning content. Required.
     externalId *string
@@ -79,7 +79,7 @@ func (m *LearningContent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
 func (m *LearningContent) GetDescription()(*string) {
     return m.description
 }
-// GetDuration gets the duration property value. The duration of the learning content in seconds. Optional.
+// GetDuration gets the duration property value. The duration of the learning content in seconds. The value is represented in ISO 8601 format for durations. Optional.
 func (m *LearningContent) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.duration
 }
@@ -290,7 +290,7 @@ func (m *LearningContent) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *LearningContent) SetDescription(value *string)() {
     m.description = value
 }
-// SetDuration sets the duration property value. The duration of the learning content in seconds. Optional.
+// SetDuration sets the duration property value. The duration of the learning content in seconds. The value is represented in ISO 8601 format for durations. Optional.
 func (m *LearningContent) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.duration = value
 }

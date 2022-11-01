@@ -26,7 +26,7 @@ type VirtualEndpoint struct {
     organizationSettings CloudPcOrganizationSettingsable
     // Cloud PC provisioning policy.
     provisioningPolicies []CloudPcProvisioningPolicyable
-    // The reports property
+    // Cloud PC related reports.
     reports CloudPcReportsable
     // Cloud PC service plans.
     servicePlans []CloudPcServicePlanable
@@ -105,7 +105,7 @@ func (m *VirtualEndpoint) GetOrganizationSettings()(CloudPcOrganizationSettingsa
 func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicyable) {
     return m.provisioningPolicies
 }
-// GetReports gets the reports property value. The reports property
+// GetReports gets the reports property value. Cloud PC related reports.
 func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
     return m.reports
 }
@@ -264,7 +264,7 @@ func (m *VirtualEndpoint) SetOrganizationSettings(value CloudPcOrganizationSetti
 func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)() {
     m.provisioningPolicies = value
 }
-// SetReports sets the reports property value. The reports property
+// SetReports sets the reports property value. Cloud PC related reports.
 func (m *VirtualEndpoint) SetReports(value CloudPcReportsable)() {
     m.reports = value
 }

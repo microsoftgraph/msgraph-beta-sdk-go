@@ -9,21 +9,21 @@ import (
 // CloudPcExportJob 
 type CloudPcExportJob struct {
     Entity
-    // The expirationDateTime property
+    // The date time when the export job expires.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The exportJobStatus property
+    // The status of the export job.The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
     exportJobStatus *CloudPcExportJobStatus
-    // The exportUrl property
+    // The storage account url of the exported report, it can be used to download the file.
     exportUrl *string
-    // The filter property
+    // The filter applied on the report.
     filter *string
-    // The format property
+    // The format of the exported report.
     format *string
-    // The reportName property
+    // The report name.The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
     reportName *CloudPcReportName
-    // The requestDateTime property
+    // The date time when the export job was requested.
     requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The select property
+    // The selected columns of the report.
     select_escaped []string
 }
 // NewCloudPcExportJob instantiates a new CloudPcExportJob and sets the default values.
@@ -39,15 +39,15 @@ func NewCloudPcExportJob()(*CloudPcExportJob) {
 func CreateCloudPcExportJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcExportJob(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The date time when the export job expires.
 func (m *CloudPcExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expirationDateTime
 }
-// GetExportJobStatus gets the exportJobStatus property value. The exportJobStatus property
+// GetExportJobStatus gets the exportJobStatus property value. The status of the export job.The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
 func (m *CloudPcExportJob) GetExportJobStatus()(*CloudPcExportJobStatus) {
     return m.exportJobStatus
 }
-// GetExportUrl gets the exportUrl property value. The exportUrl property
+// GetExportUrl gets the exportUrl property value. The storage account url of the exported report, it can be used to download the file.
 func (m *CloudPcExportJob) GetExportUrl()(*string) {
     return m.exportUrl
 }
@@ -64,23 +64,23 @@ func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
     res["select"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSelect)
     return res
 }
-// GetFilter gets the filter property value. The filter property
+// GetFilter gets the filter property value. The filter applied on the report.
 func (m *CloudPcExportJob) GetFilter()(*string) {
     return m.filter
 }
-// GetFormat gets the format property value. The format property
+// GetFormat gets the format property value. The format of the exported report.
 func (m *CloudPcExportJob) GetFormat()(*string) {
     return m.format
 }
-// GetReportName gets the reportName property value. The reportName property
+// GetReportName gets the reportName property value. The report name.The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
 func (m *CloudPcExportJob) GetReportName()(*CloudPcReportName) {
     return m.reportName
 }
-// GetRequestDateTime gets the requestDateTime property value. The requestDateTime property
+// GetRequestDateTime gets the requestDateTime property value. The date time when the export job was requested.
 func (m *CloudPcExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.requestDateTime
 }
-// GetSelect gets the select property value. The select property
+// GetSelect gets the select property value. The selected columns of the report.
 func (m *CloudPcExportJob) GetSelect()([]string) {
     return m.select_escaped
 }
@@ -142,35 +142,35 @@ func (m *CloudPcExportJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The date time when the export job expires.
 func (m *CloudPcExportJob) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// SetExportJobStatus sets the exportJobStatus property value. The exportJobStatus property
+// SetExportJobStatus sets the exportJobStatus property value. The status of the export job.The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
 func (m *CloudPcExportJob) SetExportJobStatus(value *CloudPcExportJobStatus)() {
     m.exportJobStatus = value
 }
-// SetExportUrl sets the exportUrl property value. The exportUrl property
+// SetExportUrl sets the exportUrl property value. The storage account url of the exported report, it can be used to download the file.
 func (m *CloudPcExportJob) SetExportUrl(value *string)() {
     m.exportUrl = value
 }
-// SetFilter sets the filter property value. The filter property
+// SetFilter sets the filter property value. The filter applied on the report.
 func (m *CloudPcExportJob) SetFilter(value *string)() {
     m.filter = value
 }
-// SetFormat sets the format property value. The format property
+// SetFormat sets the format property value. The format of the exported report.
 func (m *CloudPcExportJob) SetFormat(value *string)() {
     m.format = value
 }
-// SetReportName sets the reportName property value. The reportName property
+// SetReportName sets the reportName property value. The report name.The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
 func (m *CloudPcExportJob) SetReportName(value *CloudPcReportName)() {
     m.reportName = value
 }
-// SetRequestDateTime sets the requestDateTime property value. The requestDateTime property
+// SetRequestDateTime sets the requestDateTime property value. The date time when the export job was requested.
 func (m *CloudPcExportJob) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.requestDateTime = value
 }
-// SetSelect sets the select property value. The select property
+// SetSelect sets the select property value. The selected columns of the report.
 func (m *CloudPcExportJob) SetSelect(value []string)() {
     m.select_escaped = value
 }

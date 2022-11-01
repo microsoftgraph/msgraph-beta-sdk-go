@@ -8,7 +8,7 @@ import (
 // ExternalIdentitiesPolicy 
 type ExternalIdentitiesPolicy struct {
     PolicyBase
-    // Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
+    // Reserved for future use.
     allowDeletedIdentitiesDataRemoval *bool
     // Defines whether external users can leave the guest tenant. If set to false, self-service controls are disabled, and the admin of the guest tenant must manually remove the external user from the guest tenant. When the external user leaves the tenant, their data in the guest tenant is first soft-deleted then permanently deleted in 30 days.
     allowExternalIdentitiesToLeave *bool
@@ -26,7 +26,7 @@ func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
 func CreateExternalIdentitiesPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalIdentitiesPolicy(), nil
 }
-// GetAllowDeletedIdentitiesDataRemoval gets the allowDeletedIdentitiesDataRemoval property value. Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
+// GetAllowDeletedIdentitiesDataRemoval gets the allowDeletedIdentitiesDataRemoval property value. Reserved for future use.
 func (m *ExternalIdentitiesPolicy) GetAllowDeletedIdentitiesDataRemoval()(*bool) {
     return m.allowDeletedIdentitiesDataRemoval
 }
@@ -61,7 +61,7 @@ func (m *ExternalIdentitiesPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAllowDeletedIdentitiesDataRemoval sets the allowDeletedIdentitiesDataRemoval property value. Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
+// SetAllowDeletedIdentitiesDataRemoval sets the allowDeletedIdentitiesDataRemoval property value. Reserved for future use.
 func (m *ExternalIdentitiesPolicy) SetAllowDeletedIdentitiesDataRemoval(value *bool)() {
     m.allowDeletedIdentitiesDataRemoval = value
 }

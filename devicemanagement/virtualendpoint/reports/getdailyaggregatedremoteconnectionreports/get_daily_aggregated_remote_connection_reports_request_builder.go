@@ -41,7 +41,7 @@ func NewGetDailyAggregatedRemoteConnectionReportsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetDailyAggregatedRemoteConnectionReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getDailyAggregatedRemoteConnectionReports
+// CreatePostRequestInformation get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
 func (m *GetDailyAggregatedRemoteConnectionReportsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetDailyAggregatedRemoteConnectionReportsPostRequestBodyable, requestConfiguration *GetDailyAggregatedRemoteConnectionReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -54,7 +54,7 @@ func (m *GetDailyAggregatedRemoteConnectionReportsRequestBuilder) CreatePostRequ
     }
     return requestInfo, nil
 }
-// Post invoke action getDailyAggregatedRemoteConnectionReports
+// Post get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
 func (m *GetDailyAggregatedRemoteConnectionReportsRequestBuilder) Post(ctx context.Context, body GetDailyAggregatedRemoteConnectionReportsPostRequestBodyable, requestConfiguration *GetDailyAggregatedRemoteConnectionReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

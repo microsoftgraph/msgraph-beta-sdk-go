@@ -13,6 +13,8 @@ type SearchRequest struct {
     aggregationFilters []string
     // Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
     aggregations []AggregationOptionable
+    // The collapseProperties property
+    collapseProperties []CollapsePropertyable
     // Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
     contentSources []string
     // This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
@@ -69,6 +71,10 @@ func (m *SearchRequest) GetAggregationFilters()([]string) {
 func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
     return m.aggregations
 }
+// GetCollapseProperties gets the collapseProperties property value. The collapseProperties property
+func (m *SearchRequest) GetCollapseProperties()([]CollapsePropertyable) {
+    return m.collapseProperties
+}
 // GetContentSources gets the contentSources property value. Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
 func (m *SearchRequest) GetContentSources()([]string) {
     return m.contentSources
@@ -86,6 +92,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aggregationFilters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAggregationFilters)
     res["aggregations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAggregationOptionFromDiscriminatorValue , m.SetAggregations)
+    res["collapseProperties"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCollapsePropertyFromDiscriminatorValue , m.SetCollapseProperties)
     res["contentSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetContentSources)
     res["enableTopResults"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableTopResults)
     res["entityTypes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseEntityType , m.SetEntityTypes)
@@ -162,6 +169,13 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetAggregations() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAggregations())
         err := writer.WriteCollectionOfObjectValues("aggregations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCollapseProperties() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCollapseProperties())
+        err := writer.WriteCollectionOfObjectValues("collapseProperties", cast)
         if err != nil {
             return err
         }
@@ -276,6 +290,10 @@ func (m *SearchRequest) SetAggregationFilters(value []string)() {
 // SetAggregations sets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
 func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
     m.aggregations = value
+}
+// SetCollapseProperties sets the collapseProperties property value. The collapseProperties property
+func (m *SearchRequest) SetCollapseProperties(value []CollapsePropertyable)() {
+    m.collapseProperties = value
 }
 // SetContentSources sets the contentSources property value. Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
 func (m *SearchRequest) SetContentSources(value []string)() {
