@@ -70,7 +70,7 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i7c166e3dace7c9a5c6fe3d94b2c860c1160268dbd090017608ae4063b69d67d0.EndpointRequestBuilder) {
     return i7c166e3dace7c9a5c6fe3d94b2c860c1160268dbd090017608ae4063b69d67d0.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -93,11 +93,11 @@ func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*i5329e8e3950856467bc69ef749d1d4c9a2327ec40d08ee9760e4300f45e7e845.ServicePrincipalRequestBuilder) {
     return i5329e8e3950856467bc69ef749d1d4c9a2327ec40d08ee9760e4300f45e7e845.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *DirectoryObjectItemRequestBuilder) User()(*i088a4fe9f2980e46b580efd14724a53935885ad76314b23a9eeb9755635ca99d.UserRequestBuilder) {
     return i088a4fe9f2980e46b580efd14724a53935885ad76314b23a9eeb9755635ca99d.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

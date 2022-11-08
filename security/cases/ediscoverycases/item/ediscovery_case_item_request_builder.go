@@ -63,7 +63,7 @@ type EdiscoveryCaseItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Close the close property
+// Close provides operations to call the close method.
 func (m *EdiscoveryCaseItemRequestBuilder) Close()(*i111108be478a5c65efb26bd98fba3812504bcf09fab98bec275c9bfb036c6e76.CloseRequestBuilder) {
     return i111108be478a5c65efb26bd98fba3812504bcf09fab98bec275c9bfb036c6e76.NewCloseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -128,11 +128,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) CreatePatchRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// Custodians the custodians property
+// Custodians provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Custodians()(*i4d72be7dec3a86e988334df48fc2a5a60b7080974462a5c3b6f245eb595546e4.CustodiansRequestBuilder) {
     return i4d72be7dec3a86e988334df48fc2a5a60b7080974462a5c3b6f245eb595546e4.NewCustodiansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustodiansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.custodians.item collection
+// CustodiansById provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) CustodiansById(id string)(*i50da0783ccd2492dd0029e547a26126c7a1fa0a518a1a7604e4700345a64d387.EdiscoveryCustodianItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -178,11 +178,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseable), nil
 }
-// LegalHolds the legalHolds property
+// LegalHolds provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) LegalHolds()(*i85c8e42d130da558580b9a46e52a3077a2dcdfb85df42f3dc3771e5e54494092.LegalHoldsRequestBuilder) {
     return i85c8e42d130da558580b9a46e52a3077a2dcdfb85df42f3dc3771e5e54494092.NewLegalHoldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LegalHoldsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.legalHolds.item collection
+// LegalHoldsById provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) LegalHoldsById(id string)(*i8cab881a3513cc272eec2a3472e709a6bdc7a3974398acf13e4a2281a871cc9f.EdiscoveryHoldPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -193,11 +193,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) LegalHoldsById(id string)(*i8cab881a3
     }
     return i8cab881a3513cc272eec2a3472e709a6bdc7a3974398acf13e4a2281a871cc9f.NewEdiscoveryHoldPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// NoncustodialDataSources the noncustodialDataSources property
+// NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) NoncustodialDataSources()(*if55b3465b5d38c970f2ab12abe1f658e1c8eaaba08efeed80e2df798315efd0d.NoncustodialDataSourcesRequestBuilder) {
     return if55b3465b5d38c970f2ab12abe1f658e1c8eaaba08efeed80e2df798315efd0d.NewNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NoncustodialDataSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.noncustodialDataSources.item collection
+// NoncustodialDataSourcesById provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*i07e34a8004c952f926f66ce45ec267fb3e980eebe9e100ac4d9d587e26f4f10e.EdiscoveryNoncustodialDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,11 +208,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) NoncustodialDataSourcesById(id string
     }
     return i07e34a8004c952f926f66ce45ec267fb3e980eebe9e100ac4d9d587e26f4f10e.NewEdiscoveryNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Operations()(*i6a31f80a06495660e3184b68a5c151df035e02a18ac99cfd059d1236423c6758.OperationsRequestBuilder) {
     return i6a31f80a06495660e3184b68a5c151df035e02a18ac99cfd059d1236423c6758.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) OperationsById(id string)(*i165a308de50d35f4c393d5346bd98bf82a032c98d62cf3853110ba65de984b2f.CaseOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -242,15 +242,15 @@ func (m *EdiscoveryCaseItemRequestBuilder) Patch(ctx context.Context, body i084f
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseable), nil
 }
-// Reopen the reopen property
+// Reopen provides operations to call the reopen method.
 func (m *EdiscoveryCaseItemRequestBuilder) Reopen()(*i9c4817aecd1c7b6fe339c7ee61c758e77ffb79c46bd4b2c82da6fc313c8559f9.ReopenRequestBuilder) {
     return i9c4817aecd1c7b6fe339c7ee61c758e77ffb79c46bd4b2c82da6fc313c8559f9.NewReopenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReviewSets the reviewSets property
+// ReviewSets provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) ReviewSets()(*iadbc9b9b01faf8819d968fb41fc7969583e10daeca4d6ca26b40b4ce48622a4f.ReviewSetsRequestBuilder) {
     return iadbc9b9b01faf8819d968fb41fc7969583e10daeca4d6ca26b40b4ce48622a4f.NewReviewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReviewSetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.reviewSets.item collection
+// ReviewSetsById provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) ReviewSetsById(id string)(*if1715e408bc3525e0632493a6e5ae7e31a098303838372aef02b23c1a27e00f5.EdiscoveryReviewSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -261,11 +261,11 @@ func (m *EdiscoveryCaseItemRequestBuilder) ReviewSetsById(id string)(*if1715e408
     }
     return if1715e408bc3525e0632493a6e5ae7e31a098303838372aef02b23c1a27e00f5.NewEdiscoveryReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Searches the searches property
+// Searches provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Searches()(*i6a6026b47c385592c13309b70526fe02801e107051c3ddd78444baca8e547380.SearchesRequestBuilder) {
     return i6a6026b47c385592c13309b70526fe02801e107051c3ddd78444baca8e547380.NewSearchesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SearchesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.searches.item collection
+// SearchesById provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) SearchesById(id string)(*i7f2c94cccb75af6bdb0124a47a951ae1e97dcddd956b0615ac4e2d6d698ec11b.EdiscoverySearchItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -276,15 +276,15 @@ func (m *EdiscoveryCaseItemRequestBuilder) SearchesById(id string)(*i7f2c94cccb7
     }
     return i7f2c94cccb75af6bdb0124a47a951ae1e97dcddd956b0615ac4e2d6d698ec11b.NewEdiscoverySearchItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Settings()(*idd68d7a96e6d4b3e6a6836e7a6e2e4ddfb4db1c4e2cbd40a89f985851fe47c7a.SettingsRequestBuilder) {
     return idd68d7a96e6d4b3e6a6836e7a6e2e4ddfb4db1c4e2cbd40a89f985851fe47c7a.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Tags the tags property
+// Tags provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) Tags()(*i729fc921d5b80a60d8f1623b0a50e0190155d43bb1437138a638905bcd343eb4.TagsRequestBuilder) {
     return i729fc921d5b80a60d8f1623b0a50e0190155d43bb1437138a638905bcd343eb4.NewTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.tags.item collection
+// TagsById provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.
 func (m *EdiscoveryCaseItemRequestBuilder) TagsById(id string)(*i98eb84e02e294af8e8f8b700991ad14c1cb72bf5681fa872dd1d942a0bca0877.EdiscoveryReviewTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

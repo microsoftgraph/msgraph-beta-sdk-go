@@ -57,7 +57,7 @@ func NewAttachmentBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAttachmentBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the Content property
+// Content provides operations to manage the media for the user entity.
 func (m *AttachmentBaseItemRequestBuilder) Content()(*ib302b44d8f49bd355db16b70f5a192c5c96bffb773b565e1baf2c7cad3a7131d.ContentRequestBuilder) {
     return ib302b44d8f49bd355db16b70f5a192c5c96bffb773b565e1baf2c7cad3a7131d.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

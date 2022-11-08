@@ -78,7 +78,7 @@ func NewDeviceHealthScriptsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceHealthScriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DeviceHealthScriptsRequestBuilder) Count()(*ic4de1ae6615c5df9eec3108346be9478c79d3a7aa8645c40d6f5091d453580f1.CountRequestBuilder) {
     return ic4de1ae6615c5df9eec3108346be9478c79d3a7aa8645c40d6f5091d453580f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -112,7 +112,7 @@ func (m *DeviceHealthScriptsRequestBuilder) CreatePostRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// EnableGlobalScripts the enableGlobalScripts property
+// EnableGlobalScripts provides operations to call the enableGlobalScripts method.
 func (m *DeviceHealthScriptsRequestBuilder) EnableGlobalScripts()(*i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714.EnableGlobalScriptsRequestBuilder) {
     return i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714.NewEnableGlobalScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

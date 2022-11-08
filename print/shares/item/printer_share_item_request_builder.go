@@ -51,7 +51,7 @@ type PrinterShareItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AllowedGroups the allowedGroups property
+// AllowedGroups provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
 func (m *PrinterShareItemRequestBuilder) AllowedGroups()(*ia38aafee6e99eed8fcd1a421defe593236a7b1a6baa17cc46600d14ef087a65c.AllowedGroupsRequestBuilder) {
     return ia38aafee6e99eed8fcd1a421defe593236a7b1a6baa17cc46600d14ef087a65c.NewAllowedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -66,7 +66,7 @@ func (m *PrinterShareItemRequestBuilder) AllowedGroupsById(id string)(*i1b0dc3d8
     }
     return i1b0dc3d82dc74991ad8da4b7860c60dd3dc1a8f7519f5cb192f56c71e52f1fe2.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AllowedUsers the allowedUsers property
+// AllowedUsers provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.
 func (m *PrinterShareItemRequestBuilder) AllowedUsers()(*i83d84a5570e033ee2154c9058ba94b73e02d2477c15f7f62129d78cf94bf25e1.AllowedUsersRequestBuilder) {
     return i83d84a5570e033ee2154c9058ba94b73e02d2477c15f7f62129d78cf94bf25e1.NewAllowedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -196,7 +196,7 @@ func (m *PrinterShareItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable), nil
 }
-// Printer the printer property
+// Printer provides operations to manage the printer property of the microsoft.graph.printerShare entity.
 func (m *PrinterShareItemRequestBuilder) Printer()(*i599f577b7cc2b4c7ec4cac4c88c7a0ac038b8dd35e1dd9006d8902495994d7a6.PrinterRequestBuilder) {
     return i599f577b7cc2b4c7ec4cac4c88c7a0ac038b8dd35e1dd9006d8902495994d7a6.NewPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

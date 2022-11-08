@@ -124,7 +124,7 @@ func (m *DeviceConfigurationGroupAssignmentItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// DeviceConfiguration the deviceConfiguration property
+// DeviceConfiguration provides operations to manage the deviceConfiguration property of the microsoft.graph.deviceConfigurationGroupAssignment entity.
 func (m *DeviceConfigurationGroupAssignmentItemRequestBuilder) DeviceConfiguration()(*i95a8c439e37c9280a9ab5786fe953a6bf828c96103b01d58a35e9254cef90495.DeviceConfigurationRequestBuilder) {
     return i95a8c439e37c9280a9ab5786fe953a6bf828c96103b01d58a35e9254cef90495.NewDeviceConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -48,7 +48,7 @@ type GroupLifecyclePolicyItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddGroup the addGroup property
+// AddGroup provides operations to call the addGroup method.
 func (m *GroupLifecyclePolicyItemRequestBuilder) AddGroup()(*id578b75b638e2d1c100ab43bcd9857ac1ced07788ea32ad127ea9e8eacad0056.AddGroupRequestBuilder) {
     return id578b75b638e2d1c100ab43bcd9857ac1ced07788ea32ad127ea9e8eacad0056.NewAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable), nil
 }
-// RemoveGroup the removeGroup property
+// RemoveGroup provides operations to call the removeGroup method.
 func (m *GroupLifecyclePolicyItemRequestBuilder) RemoveGroup()(*i60f6140206d27f9a4f4fb8d44cd9fd8a17cc02e9b38e6d641ae34ca5c2027fab.RemoveGroupRequestBuilder) {
     return i60f6140206d27f9a4f4fb8d44cd9fd8a17cc02e9b38e6d641ae34ca5c2027fab.NewRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

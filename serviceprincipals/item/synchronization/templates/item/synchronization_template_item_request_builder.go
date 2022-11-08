@@ -162,7 +162,7 @@ func (m *SynchronizationTemplateItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable), nil
 }
-// Schema the schema property
+// Schema provides operations to manage the schema property of the microsoft.graph.synchronizationTemplate entity.
 func (m *SynchronizationTemplateItemRequestBuilder) Schema()(*ic786589eec9c5d23746e4a3b8e0a25bfa05426c00662610d742e6a27d5569d1e.SchemaRequestBuilder) {
     return ic786589eec9c5d23746e4a3b8e0a25bfa05426c00662610d742e6a27d5569d1e.NewSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

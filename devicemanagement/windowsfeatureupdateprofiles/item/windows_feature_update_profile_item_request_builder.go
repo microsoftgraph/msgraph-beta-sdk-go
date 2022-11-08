@@ -49,15 +49,15 @@ type WindowsFeatureUpdateProfileItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *WindowsFeatureUpdateProfileItemRequestBuilder) Assign()(*i17ae4c396051acc3d8969fe0d510a15f08f74b0af97608557d2125c16de1bb7d.AssignRequestBuilder) {
     return i17ae4c396051acc3d8969fe0d510a15f08f74b0af97608557d2125c16de1bb7d.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.windowsFeatureUpdateProfile entity.
 func (m *WindowsFeatureUpdateProfileItemRequestBuilder) Assignments()(*ib9f19a8a1ed79d6335dbd9524123a1a111e94345212d4f98f256d4d77fb64865.AssignmentsRequestBuilder) {
     return ib9f19a8a1ed79d6335dbd9524123a1a111e94345212d4f98f256d4d77fb64865.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsFeatureUpdateProfiles.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsFeatureUpdateProfile entity.
 func (m *WindowsFeatureUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*i9fc8cb618d1d2cb2bd52c185cd35fcf810ea303a5692d3f159788228e6d3514f.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -54,15 +54,15 @@ type ManagedTenantAlertItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddUserInputLog the addUserInputLog property
+// AddUserInputLog provides operations to call the addUserInputLog method.
 func (m *ManagedTenantAlertItemRequestBuilder) AddUserInputLog()(*i171a62c77cd8ebd0854e4fee5c43c3cca55e79bef9ab9f674eeb4dfafae99604.AddUserInputLogRequestBuilder) {
     return i171a62c77cd8ebd0854e4fee5c43c3cca55e79bef9ab9f674eeb4dfafae99604.NewAddUserInputLogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlertLogs the alertLogs property
+// AlertLogs provides operations to manage the alertLogs property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantAlertItemRequestBuilder) AlertLogs()(*ice5d0a0c9f28f0658e650420c1a7d47baabe48282bf796f55df19e6b657622c1.AlertLogsRequestBuilder) {
     return ice5d0a0c9f28f0658e650420c1a7d47baabe48282bf796f55df19e6b657622c1.NewAlertLogsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlertLogsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedTenantAlerts.item.alertLogs.item collection
+// AlertLogsById provides operations to manage the alertLogs property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantAlertItemRequestBuilder) AlertLogsById(id string)(*ic2e4e4f0c5637f5037a0ef064cabd45dfebe1dfe1b7dcef00bdabe0ec09a33f0.ManagedTenantAlertLogItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -73,15 +73,15 @@ func (m *ManagedTenantAlertItemRequestBuilder) AlertLogsById(id string)(*ic2e4e4
     }
     return ic2e4e4f0c5637f5037a0ef064cabd45dfebe1dfe1b7dcef00bdabe0ec09a33f0.NewManagedTenantAlertLogItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AlertRule the alertRule property
+// AlertRule provides operations to manage the alertRule property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantAlertItemRequestBuilder) AlertRule()(*i571d9b61ab93d9226d395e33aecf0e06edac249ad78d4fb79d84b85c8f90c266.AlertRuleRequestBuilder) {
     return i571d9b61ab93d9226d395e33aecf0e06edac249ad78d4fb79d84b85c8f90c266.NewAlertRuleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApiNotifications the apiNotifications property
+// ApiNotifications provides operations to manage the apiNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantAlertItemRequestBuilder) ApiNotifications()(*i60e373ca5c04e149e8654932f54488d564794d69b9651981fde072c0212412be.ApiNotificationsRequestBuilder) {
     return i60e373ca5c04e149e8654932f54488d564794d69b9651981fde072c0212412be.NewApiNotificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApiNotificationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedTenantAlerts.item.apiNotifications.item collection
+// ApiNotificationsById provides operations to manage the apiNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantAlertItemRequestBuilder) ApiNotificationsById(id string)(*i8f92ba0e5ef437ca43460fb8e680765aab203d4827686fdba9c37d3c0b84636c.ManagedTenantApiNotificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -169,11 +169,11 @@ func (m *ManagedTenantAlertItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// EmailNotifications the emailNotifications property
+// EmailNotifications provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantAlertItemRequestBuilder) EmailNotifications()(*if129da66a0e17df3a9b75cd67958633a9890cb813547ef2ef3fdd7ab713b7458.EmailNotificationsRequestBuilder) {
     return if129da66a0e17df3a9b75cd67958633a9890cb813547ef2ef3fdd7ab713b7458.NewEmailNotificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EmailNotificationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedTenantAlerts.item.emailNotifications.item collection
+// EmailNotificationsById provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.
 func (m *ManagedTenantAlertItemRequestBuilder) EmailNotificationsById(id string)(*ia0f01951766d8ccc820cd97f356272fa1a2df144cf5e32890e27bc99d35d0167.ManagedTenantEmailNotificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

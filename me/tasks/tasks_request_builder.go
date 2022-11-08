@@ -50,11 +50,11 @@ type TasksRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alltasks the alltasks property
+// Alltasks provides operations to manage the alltasks property of the microsoft.graph.tasks entity.
 func (m *TasksRequestBuilder) Alltasks()(*ia6ef735a62a945621d8db303c1eacb067631d21aeeac70fd7e0840b247fde0c8.AlltasksRequestBuilder) {
     return ia6ef735a62a945621d8db303c1eacb067631d21aeeac70fd7e0840b247fde0c8.NewAlltasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlltasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.tasks.alltasks.item collection
+// AlltasksById provides operations to manage the alltasks property of the microsoft.graph.tasks entity.
 func (m *TasksRequestBuilder) AlltasksById(id string)(*ia89bac89f613c3439bdaa1e311170874de6412a33958f10fc8ebff4867de2c9f.BaseTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,11 +161,11 @@ func (m *TasksRequestBuilder) Get(ctx context.Context, requestConfiguration *Tas
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Tasksable), nil
 }
-// Lists the lists property
+// Lists provides operations to manage the lists property of the microsoft.graph.tasks entity.
 func (m *TasksRequestBuilder) Lists()(*i0547ee3e08e53cc027a223aa7f369152b2039f2e5648d6fae7ba4bc984c0558f.ListsRequestBuilder) {
     return i0547ee3e08e53cc027a223aa7f369152b2039f2e5648d6fae7ba4bc984c0558f.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ListsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.tasks.lists.item collection
+// ListsById provides operations to manage the lists property of the microsoft.graph.tasks entity.
 func (m *TasksRequestBuilder) ListsById(id string)(*if70f683c3e64fe64a69f4976d941da4e450d893bc89b8a5019620d5a319578c6.BaseTaskListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -71,11 +71,11 @@ func NewContactFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewContactFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Contacts the contacts property
+// Contacts provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) Contacts()(*i147e6fb8b2bcf39ee199590249db2ecee28f7c975393ffcb830f025926dbd88c.ContactsRequestBuilder) {
     return i147e6fb8b2bcf39ee199590249db2ecee28f7c975393ffcb830f025926dbd88c.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContactsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.contactFolders.item.childFolders.item.contacts.item collection
+// ContactsById provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) ContactsById(id string)(*i49acd1883e0dc334bb2f049b419b35c46baeadba192d92345f1d33e834bb7f93.ContactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -163,11 +163,11 @@ func (m *ContactFolderItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) MultiValueExtendedProperties()(*i70e69e3d99aad2354270856e113c2473d4df686e8010f3a0d12dfc635a4890db.MultiValueExtendedPropertiesRequestBuilder) {
     return i70e69e3d99aad2354270856e113c2473d4df686e8010f3a0d12dfc635a4890db.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.contactFolders.item.childFolders.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i4fe953901040256e83f553396dd7370606f863f1d37918710b178c43cbbd073b.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -197,11 +197,11 @@ func (m *ContactFolderItemRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable), nil
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) SingleValueExtendedProperties()(*i07be5face02e2c1a4d150e0406cf2f38f7e750ce2acecd71ed70f2826713c15f.SingleValueExtendedPropertiesRequestBuilder) {
     return i07be5face02e2c1a4d150e0406cf2f38f7e750ce2acecd71ed70f2826713c15f.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.contactFolders.item.childFolders.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.
 func (m *ContactFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ie305967796e678e5afc3f1a1a2600b8c5957abaecacbf74640d6682fea2f20e4.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

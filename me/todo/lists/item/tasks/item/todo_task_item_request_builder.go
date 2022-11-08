@@ -56,11 +56,11 @@ type TodoTaskItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) Attachments()(*i94c464ae9becaf7479cf2935acbe8a764ff170c65f1299d8c2f8152ac0ef8388.AttachmentsRequestBuilder) {
     return i94c464ae9becaf7479cf2935acbe8a764ff170c65f1299d8c2f8152ac0ef8388.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) AttachmentsById(id string)(*ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.AttachmentBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,11 +71,11 @@ func (m *TodoTaskItemRequestBuilder) AttachmentsById(id string)(*ie4fa256cb1392f
     }
     return ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.NewAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AttachmentSessions the attachmentSessions property
+// AttachmentSessions provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) AttachmentSessions()(*i9ac6ffef48c0d16af625b1cc43c9a117dc8983e6f0457047611dfe061f21a24b.AttachmentSessionsRequestBuilder) {
     return i9ac6ffef48c0d16af625b1cc43c9a117dc8983e6f0457047611dfe061f21a24b.NewAttachmentSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentSessionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.attachmentSessions.item collection
+// AttachmentSessionsById provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*i87ee5bc633819ad2b48229ea64c8ee26fe5d521912a1bf87f7bb378baec3c015.AttachmentSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -86,11 +86,11 @@ func (m *TodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*i87ee5bc
     }
     return i87ee5bc633819ad2b48229ea64c8ee26fe5d521912a1bf87f7bb378baec3c015.NewAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ChecklistItems the checklistItems property
+// ChecklistItems provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) ChecklistItems()(*i3adc90057c795befd8028e54019c8fc8d20d74d0cdd16cef85704caf4cba6c78.ChecklistItemsRequestBuilder) {
     return i3adc90057c795befd8028e54019c8fc8d20d74d0cdd16cef85704caf4cba6c78.NewChecklistItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChecklistItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.checklistItems.item collection
+// ChecklistItemsById provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) ChecklistItemsById(id string)(*i18fbd397aecd69882835c79225e981ebfe516d7af8083583884fb5e571c16f72.ChecklistItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -178,11 +178,11 @@ func (m *TodoTaskItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) Extensions()(*ie7794ee0bc0caebd554d994f150a0b208c084c890b7636d17ca1336d19fff68c.ExtensionsRequestBuilder) {
     return ie7794ee0bc0caebd554d994f150a0b208c084c890b7636d17ca1336d19fff68c.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) ExtensionsById(id string)(*i6918a4356d3d8463417391beae7e08e9b5cea2610411228e7577257cbc0e08e8.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -212,11 +212,11 @@ func (m *TodoTaskItemRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskable), nil
 }
-// LinkedResources the linkedResources property
+// LinkedResources provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) LinkedResources()(*i4b453bade987cdc7d78bf2dbba94d4dbc45a5e405d3622a58a4d26c09b49e08a.LinkedResourcesRequestBuilder) {
     return i4b453bade987cdc7d78bf2dbba94d4dbc45a5e405d3622a58a4d26c09b49e08a.NewLinkedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LinkedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.linkedResources.item collection
+// LinkedResourcesById provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) LinkedResourcesById(id string)(*i6ffb4522698e1ae7e78c00250910de6f003132aa52ac20af42871bdf610bd8fa.LinkedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -35,7 +35,7 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// Application the application property
+// Application casts the previous resource to application.
 func (m *DirectoryObjectItemRequestBuilder) Application()(*i520f291610420b3871baf9bba5a6c0b306ef0f218c3b811d10951a6557fd7a03.ApplicationRequestBuilder) {
     return i520f291610420b3871baf9bba5a6c0b306ef0f218c3b811d10951a6557fd7a03.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -93,11 +93,11 @@ func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// Group the group property
+// Group casts the previous resource to group.
 func (m *DirectoryObjectItemRequestBuilder) Group()(*i64aedaa2434f4098d2b0d1d0102350c73b36feef7db4172b09da51d711c16396.GroupRequestBuilder) {
     return i64aedaa2434f4098d2b0d1d0102350c73b36feef7db4172b09da51d711c16396.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*ic91aadbab4219c0ce09ba39833fccc65aac54f1b06b356bcea3a77107d415427.ServicePrincipalRequestBuilder) {
     return ic91aadbab4219c0ce09ba39833fccc65aac54f1b06b356bcea3a77107d415427.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

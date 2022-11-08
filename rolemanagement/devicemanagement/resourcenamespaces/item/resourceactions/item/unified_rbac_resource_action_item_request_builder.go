@@ -162,7 +162,7 @@ func (m *UnifiedRbacResourceActionItemRequestBuilder) Patch(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable), nil
 }
-// ResourceScope the resourceScope property
+// ResourceScope provides operations to manage the resourceScope property of the microsoft.graph.unifiedRbacResourceAction entity.
 func (m *UnifiedRbacResourceActionItemRequestBuilder) ResourceScope()(*i4989c00ad2d7b7796102be2b57e39f7db863a0d4e9e76463298798a1c2fac685.ResourceScopeRequestBuilder) {
     return i4989c00ad2d7b7796102be2b57e39f7db863a0d4e9e76463298798a1c2fac685.NewResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

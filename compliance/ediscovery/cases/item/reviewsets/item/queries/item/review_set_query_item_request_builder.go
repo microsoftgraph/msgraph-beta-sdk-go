@@ -47,7 +47,7 @@ type ReviewSetQueryItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyTags the applyTags property
+// ApplyTags provides operations to call the applyTags method.
 func (m *ReviewSetQueryItemRequestBuilder) ApplyTags()(*ia08c7b640ac1596c868212ad7eaed47d765fdf3dc85cd183467b68f95b7547b9.ApplyTagsRequestBuilder) {
     return ia08c7b640ac1596c868212ad7eaed47d765fdf3dc85cd183467b68f95b7547b9.NewApplyTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

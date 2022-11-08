@@ -52,7 +52,7 @@ func NewFilesFolderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewFilesFolderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the teamwork entity.
 func (m *FilesFolderRequestBuilder) Content()(*i13fd83fe84e0503148708142860b4539a2b075a15b15dfed9f395d1c4b9b3b6b.ContentRequestBuilder) {
     return i13fd83fe84e0503148708142860b4539a2b075a15b15dfed9f395d1c4b9b3b6b.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

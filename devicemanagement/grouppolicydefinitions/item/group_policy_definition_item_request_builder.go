@@ -52,7 +52,7 @@ type GroupPolicyDefinitionItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Category the category property
+// Category provides operations to manage the category property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionItemRequestBuilder) Category()(*ib5e5e1e82d57aaa3cb2752c79932c323ee118f915bbc0dc5e5ab7600a66a7f27.CategoryRequestBuilder) {
     return ib5e5e1e82d57aaa3cb2752c79932c323ee118f915bbc0dc5e5ab7600a66a7f27.NewCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -117,7 +117,7 @@ func (m *GroupPolicyDefinitionItemRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// DefinitionFile the definitionFile property
+// DefinitionFile provides operations to manage the definitionFile property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionItemRequestBuilder) DefinitionFile()(*i91fccd52e0d78587541f985ebb0b59be750da1e83e56b1da10b05e4eb4dc73ac.DefinitionFileRequestBuilder) {
     return i91fccd52e0d78587541f985ebb0b59be750da1e83e56b1da10b05e4eb4dc73ac.NewDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -156,7 +156,7 @@ func (m *GroupPolicyDefinitionItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable), nil
 }
-// NextVersionDefinition the nextVersionDefinition property
+// NextVersionDefinition provides operations to manage the nextVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionItemRequestBuilder) NextVersionDefinition()(*i0084c64e69f2de1db99e3db4eebd9d8a41444eb2f0f9d19cc03286f0b896875a.NextVersionDefinitionRequestBuilder) {
     return i0084c64e69f2de1db99e3db4eebd9d8a41444eb2f0f9d19cc03286f0b896875a.NewNextVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -179,11 +179,11 @@ func (m *GroupPolicyDefinitionItemRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable), nil
 }
-// Presentations the presentations property
+// Presentations provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionItemRequestBuilder) Presentations()(*ia5547c0682358c94012164a326f029053ec5f1ddfbb91573107909f094b955bc.PresentationsRequestBuilder) {
     return ia5547c0682358c94012164a326f029053ec5f1ddfbb91573107909f094b955bc.NewPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PresentationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitions.item.presentations.item collection
+// PresentationsById provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionItemRequestBuilder) PresentationsById(id string)(*i755dd99b2492e3a413ac1208e4de2ede29dfb284de02d498fb55c3247fe139f0.GroupPolicyPresentationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -194,7 +194,7 @@ func (m *GroupPolicyDefinitionItemRequestBuilder) PresentationsById(id string)(*
     }
     return i755dd99b2492e3a413ac1208e4de2ede29dfb284de02d498fb55c3247fe139f0.NewGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PreviousVersionDefinition the previousVersionDefinition property
+// PreviousVersionDefinition provides operations to manage the previousVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *GroupPolicyDefinitionItemRequestBuilder) PreviousVersionDefinition()(*ide1c03ea82181c831c7c8a172c8a94f8d4edd80cc28a64d3a11e7c2c58c4ab3e.PreviousVersionDefinitionRequestBuilder) {
     return ide1c03ea82181c831c7c8a172c8a94f8d4edd80cc28a64d3a11e7c2c58c4ab3e.NewPreviousVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

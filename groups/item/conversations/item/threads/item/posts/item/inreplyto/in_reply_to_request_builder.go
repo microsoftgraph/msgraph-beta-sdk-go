@@ -44,11 +44,11 @@ type InReplyToRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *InReplyToRequestBuilderGetQueryParameters
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) Attachments()(*i340b1e7815d335dd75428026204f77ed63767269b5f30448456d513e1be7aee1.AttachmentsRequestBuilder) {
     return i340b1e7815d335dd75428026204f77ed63767269b5f30448456d513e1be7aee1.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item.threads.item.posts.item.inReplyTo.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) AttachmentsById(id string)(*i4d4f4736b20b533874b21d43afdeb8387415582e42ec98e9b5f3a0834591f636.AttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -94,11 +94,11 @@ func (m *InReplyToRequestBuilder) CreateGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) Extensions()(*ifa5655936308bf17dffd49a6bd3ba8b75023a0ad8079ecd7ed031e904d94a8e2.ExtensionsRequestBuilder) {
     return ifa5655936308bf17dffd49a6bd3ba8b75023a0ad8079ecd7ed031e904d94a8e2.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item.threads.item.posts.item.inReplyTo.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) ExtensionsById(id string)(*ibdb87644e5d9ad4b691e589620d652f65dd8e136822c1a12d53aa5971dd79ace.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -109,7 +109,7 @@ func (m *InReplyToRequestBuilder) ExtensionsById(id string)(*ibdb87644e5d9ad4b69
     }
     return ibdb87644e5d9ad4b691e589620d652f65dd8e136822c1a12d53aa5971dd79ace.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Forward the forward property
+// Forward provides operations to call the forward method.
 func (m *InReplyToRequestBuilder) Forward()(*i235cd8bebbce382226651ea1277f498ee89c8f0f383184bfadf8d37fbd548d80.ForwardRequestBuilder) {
     return i235cd8bebbce382226651ea1277f498ee89c8f0f383184bfadf8d37fbd548d80.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -132,11 +132,11 @@ func (m *InReplyToRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable), nil
 }
-// Mentions the mentions property
+// Mentions provides operations to manage the mentions property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) Mentions()(*i96a63a39bd69c9fa664b91c15cc7805f22764600de5c802e46d1cc329315cce5.MentionsRequestBuilder) {
     return i96a63a39bd69c9fa664b91c15cc7805f22764600de5c802e46d1cc329315cce5.NewMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MentionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item.threads.item.posts.item.inReplyTo.mentions.item collection
+// MentionsById provides operations to manage the mentions property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) MentionsById(id string)(*i627ac24b1c5154b00c54703eaed3391660a6f1b701cbc4e8f4cafc57218df556.MentionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -147,11 +147,11 @@ func (m *InReplyToRequestBuilder) MentionsById(id string)(*i627ac24b1c5154b00c54
     }
     return i627ac24b1c5154b00c54703eaed3391660a6f1b701cbc4e8f4cafc57218df556.NewMentionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) MultiValueExtendedProperties()(*i01a68f9780cd1f46a79f2dc863055bd2c5fd0b52d8fbc97136600da9a39be794.MultiValueExtendedPropertiesRequestBuilder) {
     return i01a68f9780cd1f46a79f2dc863055bd2c5fd0b52d8fbc97136600da9a39be794.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item.threads.item.posts.item.inReplyTo.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) MultiValueExtendedPropertiesById(id string)(*id25bdfa22a85826c2d415ddac3ea84ff50c4050e7452b38f37b55fbaa6e42145.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -162,15 +162,15 @@ func (m *InReplyToRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
     }
     return id25bdfa22a85826c2d415ddac3ea84ff50c4050e7452b38f37b55fbaa6e42145.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Reply the reply property
+// Reply provides operations to call the reply method.
 func (m *InReplyToRequestBuilder) Reply()(*i96f246ed552519bb033453ca223a1f6da6e5f2067b722bc22ab9f8838083c5b8.ReplyRequestBuilder) {
     return i96f246ed552519bb033453ca223a1f6da6e5f2067b722bc22ab9f8838083c5b8.NewReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) SingleValueExtendedProperties()(*i1d2403878bf8da0493447df951161dbafd3178e061d2670a89a318f9bfc06ad6.SingleValueExtendedPropertiesRequestBuilder) {
     return i1d2403878bf8da0493447df951161dbafd3178e061d2670a89a318f9bfc06ad6.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item.threads.item.posts.item.inReplyTo.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
 func (m *InReplyToRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i5ae608db00267db06b6efd5d156fb58202137670bc8f0b2db988c7647811c893.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -54,11 +54,11 @@ type SignInsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConfirmCompromised the confirmCompromised property
+// ConfirmCompromised provides operations to call the confirmCompromised method.
 func (m *SignInsRequestBuilder) ConfirmCompromised()(*id44e69b8036d6a15ead0c93057d04c7396cd796f454fb27e874db77848072ee3.ConfirmCompromisedRequestBuilder) {
     return id44e69b8036d6a15ead0c93057d04c7396cd796f454fb27e874db77848072ee3.NewConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConfirmSafe the confirmSafe property
+// ConfirmSafe provides operations to call the confirmSafe method.
 func (m *SignInsRequestBuilder) ConfirmSafe()(*i2347e5a20a9dc9a4dd3b2758968d20ec7ef5a788f06ba027e6e7e86b7d0b88fa.ConfirmSafeRequestBuilder) {
     return i2347e5a20a9dc9a4dd3b2758968d20ec7ef5a788f06ba027e6e7e86b7d0b88fa.NewConfirmSafeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -81,7 +81,7 @@ func NewSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewSignInsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SignInsRequestBuilder) Count()(*i5653e33c82683fa7dacb28a1228bc06acb2bc9c6f1d0280a2d5559607e137677.CountRequestBuilder) {
     return i5653e33c82683fa7dacb28a1228bc06acb2bc9c6f1d0280a2d5559607e137677.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

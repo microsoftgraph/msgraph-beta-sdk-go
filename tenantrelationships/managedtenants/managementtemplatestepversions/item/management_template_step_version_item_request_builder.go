@@ -50,7 +50,7 @@ type ManagementTemplateStepVersionItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AcceptedFor the acceptedFor property
+// AcceptedFor provides operations to manage the acceptedFor property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
 func (m *ManagementTemplateStepVersionItemRequestBuilder) AcceptedFor()(*if87b436cc3a02d65f692ca138fd98075e7ec8cbf48477638ecdd006f2b0afb25.AcceptedForRequestBuilder) {
     return if87b436cc3a02d65f692ca138fd98075e7ec8cbf48477638ecdd006f2b0afb25.NewAcceptedForRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -131,11 +131,11 @@ func (m *ManagementTemplateStepVersionItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Deployments the deployments property
+// Deployments provides operations to manage the deployments property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
 func (m *ManagementTemplateStepVersionItemRequestBuilder) Deployments()(*idc9c9c72187536762e55249e42165f88e95d633f6ef070b6e7d829abb6ab1f0e.DeploymentsRequestBuilder) {
     return idc9c9c72187536762e55249e42165f88e95d633f6ef070b6e7d829abb6ab1f0e.NewDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeploymentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateStepVersions.item.deployments.item collection
+// DeploymentsById provides operations to manage the deployments property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
 func (m *ManagementTemplateStepVersionItemRequestBuilder) DeploymentsById(id string)(*i0ba3e5fdbb0b3586ca7fde15d259d4e5860a38c09cc28ffd1bc9850dfeacf5ac.ManagementTemplateStepDeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -184,7 +184,7 @@ func (m *ManagementTemplateStepVersionItemRequestBuilder) Patch(ctx context.Cont
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable), nil
 }
-// TemplateStep the templateStep property
+// TemplateStep provides operations to manage the templateStep property of the microsoft.graph.managedTenants.managementTemplateStepVersion entity.
 func (m *ManagementTemplateStepVersionItemRequestBuilder) TemplateStep()(*i37f8fd44c4b8d4efac150369caf9889b3af38351154a940eccfc4e1b186fd7fe.TemplateStepRequestBuilder) {
     return i37f8fd44c4b8d4efac150369caf9889b3af38351154a940eccfc4e1b186fd7fe.NewTemplateStepRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

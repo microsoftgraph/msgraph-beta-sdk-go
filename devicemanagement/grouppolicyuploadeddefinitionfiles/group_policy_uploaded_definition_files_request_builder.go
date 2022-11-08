@@ -71,7 +71,7 @@ func NewGroupPolicyUploadedDefinitionFilesRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *GroupPolicyUploadedDefinitionFilesRequestBuilder) Count()(*i7b9ccd93b5f452b0fdd2deaf68e093e1efca9dd75617e53c093c0f6e2bc15e07.CountRequestBuilder) {
     return i7b9ccd93b5f452b0fdd2deaf68e093e1efca9dd75617e53c093c0f6e2bc15e07.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

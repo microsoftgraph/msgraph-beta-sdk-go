@@ -144,7 +144,7 @@ func (m *PermissionItemRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// Grant the grant property
+// Grant provides operations to call the grant method.
 func (m *PermissionItemRequestBuilder) Grant()(*i2da9741879fde5589343cc8bce0557e25e59aaaa552edec7bd67f3a678b7e1b4.GrantRequestBuilder) {
     return i2da9741879fde5589343cc8bce0557e25e59aaaa552edec7bd67f3a678b7e1b4.NewGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *PermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// RevokeGrants the revokeGrants property
+// RevokeGrants provides operations to call the revokeGrants method.
 func (m *PermissionItemRequestBuilder) RevokeGrants()(*i444f9b90bf907ea4b59894eb60588a42ef38ce2d7617ab3e9213ea49cf7fd7a6.RevokeGrantsRequestBuilder) {
     return i444f9b90bf907ea4b59894eb60588a42ef38ce2d7617ab3e9213ea49cf7fd7a6.NewRevokeGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

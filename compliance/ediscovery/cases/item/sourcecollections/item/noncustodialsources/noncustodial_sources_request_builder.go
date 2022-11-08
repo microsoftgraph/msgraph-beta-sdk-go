@@ -64,7 +64,7 @@ func NewNoncustodialSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewNoncustodialSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *NoncustodialSourcesRequestBuilder) Count()(*i0722e783ca51bb6f74dbc59fa13d1f0c31f7ca586213c42764ea12604bf0dea8.CountRequestBuilder) {
     return i0722e783ca51bb6f74dbc59fa13d1f0c31f7ca586213c42764ea12604bf0dea8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

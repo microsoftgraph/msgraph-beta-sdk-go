@@ -48,7 +48,7 @@ type AccessPackageResourceRequestItemRequestBuilderPatchRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageResource the accessPackageResource property
+// AccessPackageResource provides operations to manage the accessPackageResource property of the microsoft.graph.accessPackageResourceRequest entity.
 func (m *AccessPackageResourceRequestItemRequestBuilder) AccessPackageResource()(*idee36e2a92d311e871fe140e3debc444d07adc7b584e73537f9f5267d172aa4a.AccessPackageResourceRequestBuilder) {
     return idee36e2a92d311e871fe140e3debc444d07adc7b584e73537f9f5267d172aa4a.NewAccessPackageResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *AccessPackageResourceRequestItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRequestable), nil
 }
-// Requestor the requestor property
+// Requestor provides operations to manage the requestor property of the microsoft.graph.accessPackageResourceRequest entity.
 func (m *AccessPackageResourceRequestItemRequestBuilder) Requestor()(*i79b3e82fceb4e0fa73c96aad20b07f5d374301bffccfb9babdfc97acf169dc7d.RequestorRequestBuilder) {
     return i79b3e82fceb4e0fa73c96aad20b07f5d374301bffccfb9babdfc97acf169dc7d.NewRequestorRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

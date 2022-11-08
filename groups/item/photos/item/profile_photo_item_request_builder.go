@@ -50,7 +50,7 @@ func NewProfilePhotoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewProfilePhotoItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the Content property
+// Content provides operations to manage the media for the group entity.
 func (m *ProfilePhotoItemRequestBuilder) Content()(*i4dc13d7b30f2ad4ca33be60734059c60101df56302790116da53a704a3cf6c7e.ContentRequestBuilder) {
     return i4dc13d7b30f2ad4ca33be60734059c60101df56302790116da53a704a3cf6c7e.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

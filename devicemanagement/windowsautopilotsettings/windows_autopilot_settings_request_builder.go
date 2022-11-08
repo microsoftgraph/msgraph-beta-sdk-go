@@ -162,7 +162,7 @@ func (m *WindowsAutopilotSettingsRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable), nil
 }
-// Sync the sync property
+// Sync provides operations to call the sync method.
 func (m *WindowsAutopilotSettingsRequestBuilder) Sync()(*i3e780a8cdd7999bf2c9e7ebf8132a00bd1e240130c17fbc2eea78e7255260b22.SyncRequestBuilder) {
     return i3e780a8cdd7999bf2c9e7ebf8132a00bd1e240130c17fbc2eea78e7255260b22.NewSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

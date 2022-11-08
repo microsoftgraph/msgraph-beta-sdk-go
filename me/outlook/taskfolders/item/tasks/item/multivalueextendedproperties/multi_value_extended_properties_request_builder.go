@@ -71,7 +71,7 @@ func NewMultiValueExtendedPropertiesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewMultiValueExtendedPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MultiValueExtendedPropertiesRequestBuilder) Count()(*i8c680e47cc1e5033747fd364e12c64d08d421fbcf86b84e3d6654eba0d74979e.CountRequestBuilder) {
     return i8c680e47cc1e5033747fd364e12c64d08d421fbcf86b84e3d6654eba0d74979e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

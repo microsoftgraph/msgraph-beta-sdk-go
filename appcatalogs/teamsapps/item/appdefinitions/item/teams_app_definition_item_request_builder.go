@@ -49,11 +49,11 @@ type TeamsAppDefinitionItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Bot the bot property
+// Bot provides operations to manage the bot property of the microsoft.graph.teamsAppDefinition entity.
 func (m *TeamsAppDefinitionItemRequestBuilder) Bot()(*i70a313db942b6cd8128b15e8f9fd04ec94d45d6f6d1c4bdc0549bf835c924839.BotRequestBuilder) {
     return i70a313db942b6cd8128b15e8f9fd04ec94d45d6f6d1c4bdc0549bf835c924839.NewBotRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ColorIcon the colorIcon property
+// ColorIcon provides operations to manage the colorIcon property of the microsoft.graph.teamsAppDefinition entity.
 func (m *TeamsAppDefinitionItemRequestBuilder) ColorIcon()(*ia3e0b072cb9321984c40211dda87e697eba677add731b8392fc56327e9fc7804.ColorIconRequestBuilder) {
     return ia3e0b072cb9321984c40211dda87e697eba677add731b8392fc56327e9fc7804.NewColorIconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -153,7 +153,7 @@ func (m *TeamsAppDefinitionItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppDefinitionable), nil
 }
-// OutlineIcon the outlineIcon property
+// OutlineIcon provides operations to manage the outlineIcon property of the microsoft.graph.teamsAppDefinition entity.
 func (m *TeamsAppDefinitionItemRequestBuilder) OutlineIcon()(*i45dd01c435823b066ae0f5c4101f12f2084a102fdf5f75da7c53314a014c1b3c.OutlineIconRequestBuilder) {
     return i45dd01c435823b066ae0f5c4101f12f2084a102fdf5f75da7c53314a014c1b3c.NewOutlineIconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

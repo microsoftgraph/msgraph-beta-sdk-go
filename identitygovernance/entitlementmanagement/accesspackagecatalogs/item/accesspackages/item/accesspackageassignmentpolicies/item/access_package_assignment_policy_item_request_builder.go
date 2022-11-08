@@ -50,11 +50,11 @@ type AccessPackageAssignmentPolicyItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackage the accessPackage property
+// AccessPackage provides operations to manage the accessPackage property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) AccessPackage()(*ifd3953adab3bebd69e9e2aed07e2d1014215a1b46a238b7ed27e134fd02b5894.AccessPackageRequestBuilder) {
     return ifd3953adab3bebd69e9e2aed07e2d1014215a1b46a238b7ed27e134fd02b5894.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageCatalog the accessPackageCatalog property
+// AccessPackageCatalog provides operations to manage the accessPackageCatalog property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) AccessPackageCatalog()(*i9dd63cabf4abf8f0af63f2f863eada65ea820c66c393b77049b31bf06b33d37c.AccessPackageCatalogRequestBuilder) {
     return i9dd63cabf4abf8f0af63f2f863eada65ea820c66c393b77049b31bf06b33d37c.NewAccessPackageCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -119,11 +119,11 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// CustomExtensionHandlers the customExtensionHandlers property
+// CustomExtensionHandlers provides operations to manage the customExtensionHandlers property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionHandlers()(*i140167987225bf14e9310e107dd220e6b03e0235de69f121428e1d39fa6234a6.CustomExtensionHandlersRequestBuilder) {
     return i140167987225bf14e9310e107dd220e6b03e0235de69f121428e1d39fa6234a6.NewCustomExtensionHandlersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustomExtensionHandlersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageCatalogs.item.accessPackages.item.accessPackageAssignmentPolicies.item.customExtensionHandlers.item collection
+// CustomExtensionHandlersById provides operations to manage the customExtensionHandlers property of the microsoft.graph.accessPackageAssignmentPolicy entity.
 func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionHandlersById(id string)(*id35b34fa0c51a0c37f6604eda4b012cb3f56695f22b4e3d78e97d857aadba2c7.CustomExtensionHandlerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -47,7 +47,7 @@ type ActivityHistoryItemItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activity the activity property
+// Activity provides operations to manage the activity property of the microsoft.graph.activityHistoryItem entity.
 func (m *ActivityHistoryItemItemRequestBuilder) Activity()(*i4eb2dabfb34e364071230428c3f13b123c6c2b1de9a744725920e0ecddc9252e.ActivityRequestBuilder) {
     return i4eb2dabfb34e364071230428c3f13b123c6c2b1de9a744725920e0ecddc9252e.NewActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

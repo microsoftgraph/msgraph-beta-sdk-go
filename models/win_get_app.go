@@ -10,6 +10,8 @@ type WinGetApp struct {
     MobileApp
     // The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.
     installExperience WinGetAppInstallExperienceable
+    // Hash of package metadata properties used to validate that the application matches the metadata in the source repository.
+    manifestHash *string
     // The PackageIdentifier from the WinGet source repository REST API. This also maps to the Id when using the WinGet client command line application. Required at creation time, cannot be modified on existing objects.
     packageIdentifier *string
 }
@@ -30,12 +32,17 @@ func CreateWinGetAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 func (m *WinGetApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["installExperience"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWinGetAppInstallExperienceFromDiscriminatorValue , m.SetInstallExperience)
+    res["manifestHash"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetManifestHash)
     res["packageIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPackageIdentifier)
     return res
 }
 // GetInstallExperience gets the installExperience property value. The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.
 func (m *WinGetApp) GetInstallExperience()(WinGetAppInstallExperienceable) {
     return m.installExperience
+}
+// GetManifestHash gets the manifestHash property value. Hash of package metadata properties used to validate that the application matches the metadata in the source repository.
+func (m *WinGetApp) GetManifestHash()(*string) {
+    return m.manifestHash
 }
 // GetPackageIdentifier gets the packageIdentifier property value. The PackageIdentifier from the WinGet source repository REST API. This also maps to the Id when using the WinGet client command line application. Required at creation time, cannot be modified on existing objects.
 func (m *WinGetApp) GetPackageIdentifier()(*string) {
@@ -54,6 +61,12 @@ func (m *WinGetApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteStringValue("manifestHash", m.GetManifestHash())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("packageIdentifier", m.GetPackageIdentifier())
         if err != nil {
             return err
@@ -64,6 +77,10 @@ func (m *WinGetApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 // SetInstallExperience sets the installExperience property value. The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.
 func (m *WinGetApp) SetInstallExperience(value WinGetAppInstallExperienceable)() {
     m.installExperience = value
+}
+// SetManifestHash sets the manifestHash property value. Hash of package metadata properties used to validate that the application matches the metadata in the source repository.
+func (m *WinGetApp) SetManifestHash(value *string)() {
+    m.manifestHash = value
 }
 // SetPackageIdentifier sets the packageIdentifier property value. The PackageIdentifier from the WinGet source repository REST API. This also maps to the Id when using the WinGet client command line application. Required at creation time, cannot be modified on existing objects.
 func (m *WinGetApp) SetPackageIdentifier(value *string)() {

@@ -53,7 +53,7 @@ type TimeCardsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClockIn the clockIn property
+// ClockIn provides operations to call the clockIn method.
 func (m *TimeCardsRequestBuilder) ClockIn()(*ied539b408379d4d1a6dcc5027e8b07f1655112d0fc01c84ee16472e080b6ea97.ClockInRequestBuilder) {
     return ied539b408379d4d1a6dcc5027e8b07f1655112d0fc01c84ee16472e080b6ea97.NewClockInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -76,7 +76,7 @@ func NewTimeCardsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewTimeCardsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TimeCardsRequestBuilder) Count()(*idd851f2a7c77a1b56ce07f49128ca8f2eba1cf4a98e0737e270345dd645700d1.CountRequestBuilder) {
     return idd851f2a7c77a1b56ce07f49128ca8f2eba1cf4a98e0737e270345dd645700d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

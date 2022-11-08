@@ -71,7 +71,7 @@ func NewDomainJoinConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewDomainJoinConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DomainJoinConnectorsRequestBuilder) Count()(*i44abecabf2b753ca559198a3e866b575e399b9be7db4d1577ef0eaffc672b595.CountRequestBuilder) {
     return i44abecabf2b753ca559198a3e866b575e399b9be7db4d1577ef0eaffc672b595.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

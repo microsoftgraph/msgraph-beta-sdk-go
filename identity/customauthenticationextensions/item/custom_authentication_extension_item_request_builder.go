@@ -162,7 +162,7 @@ func (m *CustomAuthenticationExtensionItemRequestBuilder) Patch(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable), nil
 }
-// ValidateAuthenticationConfiguration the validateAuthenticationConfiguration property
+// ValidateAuthenticationConfiguration provides operations to call the validateAuthenticationConfiguration method.
 func (m *CustomAuthenticationExtensionItemRequestBuilder) ValidateAuthenticationConfiguration()(*i0d2fc0d2bf2d83b056070a630e70736dc1520550b97da929e6276afbd24fc680.ValidateAuthenticationConfigurationRequestBuilder) {
     return i0d2fc0d2bf2d83b056070a630e70736dc1520550b97da929e6276afbd24fc680.NewValidateAuthenticationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

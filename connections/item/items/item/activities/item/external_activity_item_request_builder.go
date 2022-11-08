@@ -162,7 +162,7 @@ func (m *ExternalActivityItemRequestBuilder) Patch(ctx context.Context, body ie9
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityable), nil
 }
-// PerformedBy the performedBy property
+// PerformedBy provides operations to manage the performedBy property of the microsoft.graph.externalConnectors.externalActivity entity.
 func (m *ExternalActivityItemRequestBuilder) PerformedBy()(*ida0925fdafb232127abaeadfcf7ea5ce67f0a46543d97215b2d8abca3c97a248.PerformedByRequestBuilder) {
     return ida0925fdafb232127abaeadfcf7ea5ce67f0a46543d97215b2d8abca3c97a248.NewPerformedByRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

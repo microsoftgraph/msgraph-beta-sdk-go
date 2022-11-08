@@ -162,7 +162,7 @@ func (m *RoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleAssignmentable), nil
 }
-// RoleDefinition the roleDefinition property
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.roleAssignment entity.
 func (m *RoleAssignmentItemRequestBuilder) RoleDefinition()(*i472301695bfcbfd32a3f6c65bc29a66ffa03befd55082919e5712db25fc0b728.RoleDefinitionRequestBuilder) {
     return i472301695bfcbfd32a3f6c65bc29a66ffa03befd55082919e5712db25fc0b728.NewRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

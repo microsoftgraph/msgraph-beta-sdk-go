@@ -75,7 +75,7 @@ func NewLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *LabelsRequestBuilder) Count()(*i899f24d803ea2e82f81f82cb89b445d890b85146bdccb8d94b936dd1f2312fd9.CountRequestBuilder) {
     return i899f24d803ea2e82f81f82cb89b445d890b85146bdccb8d94b936dd1f2312fd9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -109,19 +109,19 @@ func (m *LabelsRequestBuilder) CreatePostRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// EvaluateApplication the evaluateApplication property
+// EvaluateApplication provides operations to call the evaluateApplication method.
 func (m *LabelsRequestBuilder) EvaluateApplication()(*ife1e0da99801d9046825648970ce58a1561136c8db63462e111d9f32f40f7682.EvaluateApplicationRequestBuilder) {
     return ife1e0da99801d9046825648970ce58a1561136c8db63462e111d9f32f40f7682.NewEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EvaluateClassificationResults the evaluateClassificationResults property
+// EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
 func (m *LabelsRequestBuilder) EvaluateClassificationResults()(*i815af1b5d2ba5bd7e5f98cda3daead6e66346dba70155ed163a163a6576409e5.EvaluateClassificationResultsRequestBuilder) {
     return i815af1b5d2ba5bd7e5f98cda3daead6e66346dba70155ed163a163a6576409e5.NewEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EvaluateRemoval the evaluateRemoval property
+// EvaluateRemoval provides operations to call the evaluateRemoval method.
 func (m *LabelsRequestBuilder) EvaluateRemoval()(*i8e9df7f67db474152e4a3949333d711503813269c2462b73b7c3fb524a46b0d5.EvaluateRemovalRequestBuilder) {
     return i8e9df7f67db474152e4a3949333d711503813269c2462b73b7c3fb524a46b0d5.NewEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtractLabel the extractLabel property
+// ExtractLabel provides operations to call the extractLabel method.
 func (m *LabelsRequestBuilder) ExtractLabel()(*id5310ddb400c09ed63cd8fa70c110b08804c18ed5839cdc5def5070ee8be4a53.ExtractLabelRequestBuilder) {
     return id5310ddb400c09ed63cd8fa70c110b08804c18ed5839cdc5def5070ee8be4a53.NewExtractLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

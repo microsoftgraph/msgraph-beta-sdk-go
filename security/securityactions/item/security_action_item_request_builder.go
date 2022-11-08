@@ -47,7 +47,7 @@ type SecurityActionItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CancelSecurityAction the cancelSecurityAction property
+// CancelSecurityAction provides operations to call the cancelSecurityAction method.
 func (m *SecurityActionItemRequestBuilder) CancelSecurityAction()(*ic986fc4744ac2327a648b0ac9a8f38244dea035e7dfbf613a625886852dce6f0.CancelSecurityActionRequestBuilder) {
     return ic986fc4744ac2327a648b0ac9a8f38244dea035e7dfbf613a625886852dce6f0.NewCancelSecurityActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

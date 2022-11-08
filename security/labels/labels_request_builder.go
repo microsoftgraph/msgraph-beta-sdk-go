@@ -163,11 +163,11 @@ func (m *LabelsRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802b
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.LabelsRootable), nil
 }
-// RetentionLabels the retentionLabels property
+// RetentionLabels provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
 func (m *LabelsRequestBuilder) RetentionLabels()(*ic40796a39cda324c247bb9cce6ecb6232c79c5e71e016dc5ae0728771eeb0cfa.RetentionLabelsRequestBuilder) {
     return ic40796a39cda324c247bb9cce6ecb6232c79c5e71e016dc5ae0728771eeb0cfa.NewRetentionLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RetentionLabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.labels.retentionLabels.item collection
+// RetentionLabelsById provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
 func (m *LabelsRequestBuilder) RetentionLabelsById(id string)(*ib4fe0576e92038cab5a3d484d4fc2274a018e3bb2fd0e96da3a729fa35b56a9a.RetentionLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

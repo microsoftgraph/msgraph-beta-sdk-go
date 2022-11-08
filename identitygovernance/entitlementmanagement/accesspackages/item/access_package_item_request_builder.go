@@ -59,11 +59,11 @@ type AccessPackageItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageAssignmentPolicies the accessPackageAssignmentPolicies property
+// AccessPackageAssignmentPolicies provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) AccessPackageAssignmentPolicies()(*i76ccc4db9daa784ae822d619ad983c2223a197dcc8d1fde6c1f4e9a639bf2bf2.AccessPackageAssignmentPoliciesRequestBuilder) {
     return i76ccc4db9daa784ae822d619ad983c2223a197dcc8d1fde6c1f4e9a639bf2bf2.NewAccessPackageAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageAssignmentPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.accessPackageAssignmentPolicies.item collection
+// AccessPackageAssignmentPoliciesById provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) AccessPackageAssignmentPoliciesById(id string)(*i32cd1387ebc6076b2999c52277e7c8235a84ad82ab68b7e7f5c3787e7e50ad58.AccessPackageAssignmentPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -74,15 +74,15 @@ func (m *AccessPackageItemRequestBuilder) AccessPackageAssignmentPoliciesById(id
     }
     return i32cd1387ebc6076b2999c52277e7c8235a84ad82ab68b7e7f5c3787e7e50ad58.NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageCatalog the accessPackageCatalog property
+// AccessPackageCatalog provides operations to manage the accessPackageCatalog property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) AccessPackageCatalog()(*icf4fae5627b4c00615f25f4291b050076f3e43516464e10c1555e560fa24a900.AccessPackageCatalogRequestBuilder) {
     return icf4fae5627b4c00615f25f4291b050076f3e43516464e10c1555e560fa24a900.NewAccessPackageCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceRoleScopes the accessPackageResourceRoleScopes property
+// AccessPackageResourceRoleScopes provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) AccessPackageResourceRoleScopes()(*i7554110a94219c17393947ff9abe170d93bdfb30d153839818ba04ffcc76de4f.AccessPackageResourceRoleScopesRequestBuilder) {
     return i7554110a94219c17393947ff9abe170d93bdfb30d153839818ba04ffcc76de4f.NewAccessPackageResourceRoleScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceRoleScopesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.accessPackageResourceRoleScopes.item collection
+// AccessPackageResourceRoleScopesById provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) AccessPackageResourceRoleScopesById(id string)(*i6f598a4c0565fbb06735b2ed6cb90e45996b75462797a784a018e5156dc02b37.AccessPackageResourceRoleScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -93,11 +93,11 @@ func (m *AccessPackageItemRequestBuilder) AccessPackageResourceRoleScopesById(id
     }
     return i6f598a4c0565fbb06735b2ed6cb90e45996b75462797a784a018e5156dc02b37.NewAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackagesIncompatibleWith the accessPackagesIncompatibleWith property
+// AccessPackagesIncompatibleWith provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) AccessPackagesIncompatibleWith()(*idde732b29dba3e8a39bef8255c30333987cd56f4f2de35a68cc15f74a585f58f.AccessPackagesIncompatibleWithRequestBuilder) {
     return idde732b29dba3e8a39bef8255c30333987cd56f4f2de35a68cc15f74a585f58f.NewAccessPackagesIncompatibleWithRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackagesIncompatibleWithById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item.accessPackagesIncompatibleWith.item collection
+// AccessPackagesIncompatibleWithById provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) AccessPackagesIncompatibleWithById(id string)(*i1b0b6dccee25c45cfa4e69c60a7929eb9be56ec91385cab0b45c904775a1c060.AccessPackageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -204,11 +204,11 @@ func (m *AccessPackageItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable), nil
 }
-// GetApplicablePolicyRequirements the getApplicablePolicyRequirements property
+// GetApplicablePolicyRequirements provides operations to call the getApplicablePolicyRequirements method.
 func (m *AccessPackageItemRequestBuilder) GetApplicablePolicyRequirements()(*ifd34e90f17620729556c1246884066ebb12a7b35296a94b49e16baf9acf9aef9.GetApplicablePolicyRequirementsRequestBuilder) {
     return ifd34e90f17620729556c1246884066ebb12a7b35296a94b49e16baf9acf9aef9.NewGetApplicablePolicyRequirementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IncompatibleAccessPackages the incompatibleAccessPackages property
+// IncompatibleAccessPackages provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) IncompatibleAccessPackages()(*i2a44e775fb7f737b94d47f06032cc0ce0b4bfd2fbfa2463f91ebde6ab7f3db40.IncompatibleAccessPackagesRequestBuilder) {
     return i2a44e775fb7f737b94d47f06032cc0ce0b4bfd2fbfa2463f91ebde6ab7f3db40.NewIncompatibleAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -223,7 +223,7 @@ func (m *AccessPackageItemRequestBuilder) IncompatibleAccessPackagesById(id stri
     }
     return i62c3918d05bd24a32f20be566f2beb5a984d56ff052983f3f2d0b2b4b7a6659e.NewAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// IncompatibleGroups the incompatibleGroups property
+// IncompatibleGroups provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.
 func (m *AccessPackageItemRequestBuilder) IncompatibleGroups()(*i9f6aa13376612aa214454151aaed75311be92072af5b00d7314fae36adcdfa19.IncompatibleGroupsRequestBuilder) {
     return i9f6aa13376612aa214454151aaed75311be92072af5b00d7314fae36adcdfa19.NewIncompatibleGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -238,7 +238,7 @@ func (m *AccessPackageItemRequestBuilder) IncompatibleGroupsById(id string)(*if5
     }
     return if5122358f2125de5d7aac67a870d8a285d01b2414de16d1936714c8a51c64611.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MoveToCatalog the moveToCatalog property
+// MoveToCatalog provides operations to call the moveToCatalog method.
 func (m *AccessPackageItemRequestBuilder) MoveToCatalog()(*i6800518c2661eff9b527056bf72f183274f266ebd5a342f3608ffacb8f97ae59.MoveToCatalogRequestBuilder) {
     return i6800518c2661eff9b527056bf72f183274f266ebd5a342f3608ffacb8f97ae59.NewMoveToCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

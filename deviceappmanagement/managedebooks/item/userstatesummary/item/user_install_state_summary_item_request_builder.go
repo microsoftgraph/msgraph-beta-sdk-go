@@ -125,11 +125,11 @@ func (m *UserInstallStateSummaryItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// DeviceStates the deviceStates property
+// DeviceStates provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
 func (m *UserInstallStateSummaryItemRequestBuilder) DeviceStates()(*ice92a2364d3170e8246efb795ae426816c0c30666b13cbd604e704f89a673661.DeviceStatesRequestBuilder) {
     return ice92a2364d3170e8246efb795ae426816c0c30666b13cbd604e704f89a673661.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item.deviceStates.item collection
+// DeviceStatesById provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
 func (m *UserInstallStateSummaryItemRequestBuilder) DeviceStatesById(id string)(*idc329a0e0b09b202736e7f9a9174d125e0d5561944e9e3f9cae9eb436a61c885.DeviceInstallStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

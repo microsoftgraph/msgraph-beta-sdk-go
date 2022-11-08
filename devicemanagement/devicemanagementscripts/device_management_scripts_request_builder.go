@@ -72,7 +72,7 @@ func NewDeviceManagementScriptsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DeviceManagementScriptsRequestBuilder) Count()(*if4ad84baad914e7a4e809d7c85fe277720da0040e268a47525f6eb39dc188f3f.CountRequestBuilder) {
     return if4ad84baad914e7a4e809d7c85fe277720da0040e268a47525f6eb39dc188f3f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *DeviceManagementScriptsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptCollectionResponseable), nil
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *DeviceManagementScriptsRequestBuilder) HasPayloadLinks()(*if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba.HasPayloadLinksRequestBuilder) {
     return if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

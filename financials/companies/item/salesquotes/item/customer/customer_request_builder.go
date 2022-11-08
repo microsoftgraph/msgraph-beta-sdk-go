@@ -113,7 +113,7 @@ func (m *CustomerRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// Currency the currency property
+// Currency provides operations to manage the currency property of the microsoft.graph.customer entity.
 func (m *CustomerRequestBuilder) Currency()(*ib58754f5f881c18c2ca269060f3c317c3e83390e76c1e4954a4189eafd5a1b00.CurrencyRequestBuilder) {
     return ib58754f5f881c18c2ca269060f3c317c3e83390e76c1e4954a4189eafd5a1b00.NewCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -171,19 +171,19 @@ func (m *CustomerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable), nil
 }
-// PaymentMethod the paymentMethod property
+// PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.customer entity.
 func (m *CustomerRequestBuilder) PaymentMethod()(*i445b9c1ee90b7ab7d181e9c15900d2b91ea25a60a19e1ee6a8debec4f8cd03ac.PaymentMethodRequestBuilder) {
     return i445b9c1ee90b7ab7d181e9c15900d2b91ea25a60a19e1ee6a8debec4f8cd03ac.NewPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PaymentTerm the paymentTerm property
+// PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.customer entity.
 func (m *CustomerRequestBuilder) PaymentTerm()(*iffdec760f3c54ce22b9dc5d12ed1b2e7732775989305f129ef3195fdce81c9b1.PaymentTermRequestBuilder) {
     return iffdec760f3c54ce22b9dc5d12ed1b2e7732775989305f129ef3195fdce81c9b1.NewPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Picture the picture property
+// Picture provides operations to manage the picture property of the microsoft.graph.customer entity.
 func (m *CustomerRequestBuilder) Picture()(*iebaeaed891e22099adf873e93af393ea2aba7272bbd1ac49f83516156aa12d5f.PictureRequestBuilder) {
     return iebaeaed891e22099adf873e93af393ea2aba7272bbd1ac49f83516156aa12d5f.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuotes.item.customer.picture.item collection
+// PictureById provides operations to manage the picture property of the microsoft.graph.customer entity.
 func (m *CustomerRequestBuilder) PictureById(id string)(*i8c51fa21e9b36e89ccacc38a9d1a3e0afa5a8da00d040cf69890bb1f7021acd0.PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -194,7 +194,7 @@ func (m *CustomerRequestBuilder) PictureById(id string)(*i8c51fa21e9b36e89ccacc3
     }
     return i8c51fa21e9b36e89ccacc38a9d1a3e0afa5a8da00d040cf69890bb1f7021acd0.NewPictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ShipmentMethod the shipmentMethod property
+// ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.
 func (m *CustomerRequestBuilder) ShipmentMethod()(*i2ebe271486d7f7838cffeceeac4ee6021f58fd55eedf712c59486a0e92d13c99.ShipmentMethodRequestBuilder) {
     return i2ebe271486d7f7838cffeceeac4ee6021f58fd55eedf712c59486a0e92d13c99.NewShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

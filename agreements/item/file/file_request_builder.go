@@ -144,11 +144,11 @@ func (m *FileRequestBuilder) Get(ctx context.Context, requestConfiguration *File
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileable), nil
 }
-// Localizations the localizations property
+// Localizations provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
 func (m *FileRequestBuilder) Localizations()(*i2358a7b294dbfc5af99c78f6f0b89ef669d5ed55f5c176e931b1de31f3be7a3f.LocalizationsRequestBuilder) {
     return i2358a7b294dbfc5af99c78f6f0b89ef669d5ed55f5c176e931b1de31f3be7a3f.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LocalizationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.agreements.item.file.localizations.item collection
+// LocalizationsById provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
 func (m *FileRequestBuilder) LocalizationsById(id string)(*i56d60d06da3a58c57524bb6ec4cf3035a69ad1a68d0bf2782a6baa9716c68dc3.AgreementFileLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

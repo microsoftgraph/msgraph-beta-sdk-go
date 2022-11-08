@@ -78,7 +78,7 @@ func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateDownloadUrl the createDownloadUrl property
+// CreateDownloadUrl provides operations to call the createDownloadUrl method.
 func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateDownloadUrl()(*i13f3f68be66f036d33530efc7a5d9052d9fa6837e19e2cd8a9c062d886076e77.CreateDownloadUrlRequestBuilder) {
     return i13f3f68be66f036d33530efc7a5d9052d9fa6837e19e2cd8a9c062d886076e77.NewCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

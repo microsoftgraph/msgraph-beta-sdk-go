@@ -71,7 +71,7 @@ func NewPrivilegedAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PrivilegedAccessRequestBuilder) Count()(*i33e50cc01be8c6c67441f26b0bb23deefa0c91771fa3556b23c303d09f88b1e0.CountRequestBuilder) {
     return i33e50cc01be8c6c67441f26b0bb23deefa0c91771fa3556b23c303d09f88b1e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

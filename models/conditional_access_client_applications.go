@@ -15,7 +15,7 @@ type ConditionalAccessClientApplications struct {
     includeServicePrincipals []string
     // The OdataType property
     odataType *string
-    // The servicePrincipalFilter property
+    // Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
     servicePrincipalFilter ConditionalAccessFilterable
 }
 // NewConditionalAccessClientApplications instantiates a new conditionalAccessClientApplications and sets the default values.
@@ -56,7 +56,7 @@ func (m *ConditionalAccessClientApplications) GetIncludeServicePrincipals()([]st
 func (m *ConditionalAccessClientApplications) GetOdataType()(*string) {
     return m.odataType
 }
-// GetServicePrincipalFilter gets the servicePrincipalFilter property value. The servicePrincipalFilter property
+// GetServicePrincipalFilter gets the servicePrincipalFilter property value. Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
 func (m *ConditionalAccessClientApplications) GetServicePrincipalFilter()(ConditionalAccessFilterable) {
     return m.servicePrincipalFilter
 }
@@ -110,7 +110,7 @@ func (m *ConditionalAccessClientApplications) SetIncludeServicePrincipals(value 
 func (m *ConditionalAccessClientApplications) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetServicePrincipalFilter sets the servicePrincipalFilter property value. The servicePrincipalFilter property
+// SetServicePrincipalFilter sets the servicePrincipalFilter property value. Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
 func (m *ConditionalAccessClientApplications) SetServicePrincipalFilter(value ConditionalAccessFilterable)() {
     m.servicePrincipalFilter = value
 }

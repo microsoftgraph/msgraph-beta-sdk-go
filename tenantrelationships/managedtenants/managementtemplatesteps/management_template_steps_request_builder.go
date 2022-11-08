@@ -71,7 +71,7 @@ func NewManagementTemplateStepsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateStepsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagementTemplateStepsRequestBuilder) Count()(*i26d5b1880a86f704042ebc451efba4263b7920316670affaff0d29e68dc95275.CountRequestBuilder) {
     return i26d5b1880a86f704042ebc451efba4263b7920316670affaff0d29e68dc95275.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

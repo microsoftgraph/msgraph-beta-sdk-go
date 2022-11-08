@@ -164,15 +164,15 @@ func (m *UserProcessingResultItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.UserProcessingResultable), nil
 }
-// Subject the subject property
+// Subject provides operations to manage the subject property of the microsoft.graph.identityGovernance.userProcessingResult entity.
 func (m *UserProcessingResultItemRequestBuilder) Subject()(*i7edbb14eb39f5e92ae55881515b8e70aa1eb8bbcccba8b3bf6eadb12d546ad9b.SubjectRequestBuilder) {
     return i7edbb14eb39f5e92ae55881515b8e70aa1eb8bbcccba8b3bf6eadb12d546ad9b.NewSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskProcessingResults the taskProcessingResults property
+// TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.userProcessingResult entity.
 func (m *UserProcessingResultItemRequestBuilder) TaskProcessingResults()(*ib19d830507ff97cf0babed1059c7543ac569c08763f7cc86e884685115d26f1e.TaskProcessingResultsRequestBuilder) {
     return ib19d830507ff97cf0babed1059c7543ac569c08763f7cc86e884685115d26f1e.NewTaskProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskProcessingResultsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.userProcessingResults.item.taskProcessingResults.item collection
+// TaskProcessingResultsById provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.userProcessingResult entity.
 func (m *UserProcessingResultItemRequestBuilder) TaskProcessingResultsById(id string)(*i1e2124c4e131f144b5fa18af4a4f95fc0d6e8a5d3ac950b5704ed76684a1ab89.TaskProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -50,11 +50,11 @@ type MonitoringRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlertRecords the alertRecords property
+// AlertRecords provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
 func (m *MonitoringRequestBuilder) AlertRecords()(*ic3d08d978344fb190fcda69c1207e348d81a12d1378f59743c4eb0a373d59241.AlertRecordsRequestBuilder) {
     return ic3d08d978344fb190fcda69c1207e348d81a12d1378f59743c4eb0a373d59241.NewAlertRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlertRecordsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.monitoring.alertRecords.item collection
+// AlertRecordsById provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
 func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*i02f8f62eebb75f1ad1675a31e20ad38f03048f2bfb47f3cc693479b68046a5bd.AlertRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -65,11 +65,11 @@ func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*i02f8f62eebb75f1
     }
     return i02f8f62eebb75f1ad1675a31e20ad38f03048f2bfb47f3cc693479b68046a5bd.NewAlertRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AlertRules the alertRules property
+// AlertRules provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
 func (m *MonitoringRequestBuilder) AlertRules()(*ifc74b0db7564744a90ac3bf936445eee7e085edd8a741c1b0e64d66141e0002e.AlertRulesRequestBuilder) {
     return ifc74b0db7564744a90ac3bf936445eee7e085edd8a741c1b0e64d66141e0002e.NewAlertRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlertRulesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.monitoring.alertRules.item collection
+// AlertRulesById provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
 func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*i7321368ae7ef7cee965f460ecaba8d359d9ed7610180962fe193dcf9275a0564.AlertRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

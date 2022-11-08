@@ -65,7 +65,7 @@ func NewMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MemberOfRequestBuilder) Count()(*i058187af73e5b6ae69208f574a4c9a441521964962bca750c5f562c68c6a4245.CountRequestBuilder) {
     return i058187af73e5b6ae69208f574a4c9a441521964962bca750c5f562c68c6a4245.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *MemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *MemberOfRequestBuilder) Ref()(*i1f049d54066b8800554eb806ac0aebaab84a97e3504c74850fec2030e2a5343f.RefRequestBuilder) {
     return i1f049d54066b8800554eb806ac0aebaab84a97e3504c74850fec2030e2a5343f.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

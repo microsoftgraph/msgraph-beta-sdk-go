@@ -48,11 +48,11 @@ type AnalyticsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivityStatistics the activityStatistics property
+// ActivityStatistics provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
 func (m *AnalyticsRequestBuilder) ActivityStatistics()(*i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.ActivityStatisticsRequestBuilder) {
     return i1e115a2335fb5f8e1a3c2d7951ef09c80693c57808f289e045697fac9b94114c.NewActivityStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ActivityStatisticsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.analytics.activityStatistics.item collection
+// ActivityStatisticsById provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
 func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*id6997470f1b3bd19a012dcb244feea61a131d50848d1a2c2f237431259e158a3.ActivityStatisticsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

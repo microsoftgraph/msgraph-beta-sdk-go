@@ -72,7 +72,7 @@ func NewTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TemplatesRequestBuilder) Count()(*i4366a30a7fd9d4d2ef671e4fab6fb6a085c05dba72c80eb34b9da07bdad3ee0e.CountRequestBuilder) {
     return i4366a30a7fd9d4d2ef671e4fab6fb6a085c05dba72c80eb34b9da07bdad3ee0e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateCollectionResponseable), nil
 }
-// ImportOffice365DeviceConfigurationPolicies the importOffice365DeviceConfigurationPolicies property
+// ImportOffice365DeviceConfigurationPolicies provides operations to call the importOffice365DeviceConfigurationPolicies method.
 func (m *TemplatesRequestBuilder) ImportOffice365DeviceConfigurationPolicies()(*i560d2568ac9c5fe44d67759153b33140715eef5920cf17e2360ae62cdbe1a369.ImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
     return i560d2568ac9c5fe44d67759153b33140715eef5920cf17e2360ae62cdbe1a369.NewImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

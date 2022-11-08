@@ -144,11 +144,11 @@ func (m *UserActivityItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable), nil
 }
-// HistoryItems the historyItems property
+// HistoryItems provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
 func (m *UserActivityItemRequestBuilder) HistoryItems()(*ie1c601e4dd41fcae7e31389e8b73ce53bb8c0805a770acfe995c746bee0a9d7a.HistoryItemsRequestBuilder) {
     return ie1c601e4dd41fcae7e31389e8b73ce53bb8c0805a770acfe995c746bee0a9d7a.NewHistoryItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HistoryItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.activities.item.historyItems.item collection
+// HistoryItemsById provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
 func (m *UserActivityItemRequestBuilder) HistoryItemsById(id string)(*id4fb8186962ae843968f84a2402cea3d6de0930370a8e765edcd9813e3e72aff.ActivityHistoryItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

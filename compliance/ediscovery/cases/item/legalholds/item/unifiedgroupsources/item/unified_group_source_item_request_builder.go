@@ -143,7 +143,7 @@ func (m *UnifiedGroupSourceItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable), nil
 }
-// Group the group property
+// Group provides operations to manage the group property of the microsoft.graph.ediscovery.unifiedGroupSource entity.
 func (m *UnifiedGroupSourceItemRequestBuilder) Group()(*i0cdb2a2d0cdf4370500776bf4838432b20465784dc1a7c61c2292a8f5eec5862.GroupRequestBuilder) {
     return i0cdb2a2d0cdf4370500776bf4838432b20465784dc1a7c61c2292a8f5eec5862.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

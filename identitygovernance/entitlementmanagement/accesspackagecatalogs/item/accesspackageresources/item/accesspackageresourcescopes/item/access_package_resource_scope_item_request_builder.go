@@ -47,7 +47,7 @@ type AccessPackageResourceScopeItemRequestBuilderPatchRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageResource the accessPackageResource property
+// AccessPackageResource provides operations to manage the accessPackageResource property of the microsoft.graph.accessPackageResourceScope entity.
 func (m *AccessPackageResourceScopeItemRequestBuilder) AccessPackageResource()(*i1a43158164c7f1c54ba0a8f598ddb0893bc7e6470920bc9cdb96b37f3d1a3e26.AccessPackageResourceRequestBuilder) {
     return i1a43158164c7f1c54ba0a8f598ddb0893bc7e6470920bc9cdb96b37f3d1a3e26.NewAccessPackageResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

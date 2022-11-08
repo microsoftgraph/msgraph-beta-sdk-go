@@ -63,7 +63,7 @@ type CaseItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Close the close property
+// Close provides operations to call the close method.
 func (m *CaseItemRequestBuilder) Close()(*icbe808dca9f215e46a201507bb9fd3d6682ffd22c4228bd2934fa6d092ec2013.CloseRequestBuilder) {
     return icbe808dca9f215e46a201507bb9fd3d6682ffd22c4228bd2934fa6d092ec2013.NewCloseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -128,11 +128,11 @@ func (m *CaseItemRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// Custodians the custodians property
+// Custodians provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) Custodians()(*i7ee9cd47ece1636db5f23d48461a1f54657a90bc6e0ee26ce62b3d5e84e35d9a.CustodiansRequestBuilder) {
     return i7ee9cd47ece1636db5f23d48461a1f54657a90bc6e0ee26ce62b3d5e84e35d9a.NewCustodiansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustodiansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.custodians.item collection
+// CustodiansById provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) CustodiansById(id string)(*i6f12c740d8ad4a07e1c35e99570b5c006a24cd6710fc2378825d45f2cebe46e6.CustodianItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -178,11 +178,11 @@ func (m *CaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable), nil
 }
-// LegalHolds the legalHolds property
+// LegalHolds provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) LegalHolds()(*i7e8c62f91304400acff09ffefec4fe5fc66f1640b9a230f33487eb271fea144f.LegalHoldsRequestBuilder) {
     return i7e8c62f91304400acff09ffefec4fe5fc66f1640b9a230f33487eb271fea144f.NewLegalHoldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LegalHoldsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item collection
+// LegalHoldsById provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) LegalHoldsById(id string)(*ia8b23b6ab36c2b10209f024c3f8396df9a37f4b7c7dbf0cdcc02383064607d36.LegalHoldItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -193,11 +193,11 @@ func (m *CaseItemRequestBuilder) LegalHoldsById(id string)(*ia8b23b6ab36c2b10209
     }
     return ia8b23b6ab36c2b10209f024c3f8396df9a37f4b7c7dbf0cdcc02383064607d36.NewLegalHoldItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// NoncustodialDataSources the noncustodialDataSources property
+// NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) NoncustodialDataSources()(*ibce968213312dcf70b6cebf357574ebaff57289bb8d2d5537d0fd2e4c8f604ea.NoncustodialDataSourcesRequestBuilder) {
     return ibce968213312dcf70b6cebf357574ebaff57289bb8d2d5537d0fd2e4c8f604ea.NewNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NoncustodialDataSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.noncustodialDataSources.item collection
+// NoncustodialDataSourcesById provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*i2d904c4ba0f64303f7ec694166a350f070305a6d3282664966c3c7ee03bee849.NoncustodialDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,11 +208,11 @@ func (m *CaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*i2d904c
     }
     return i2d904c4ba0f64303f7ec694166a350f070305a6d3282664966c3c7ee03bee849.NewNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) Operations()(*i2ba9e3b5dde4370f9d4ee21032c5d1cf837c8172fdd1c29a522a55e73f42e955.OperationsRequestBuilder) {
     return i2ba9e3b5dde4370f9d4ee21032c5d1cf837c8172fdd1c29a522a55e73f42e955.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) OperationsById(id string)(*i85cba7b9ace1e93810a0e9c5210f57fed67ca0ac127d57c09a74eadcbfe393df.CaseOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -242,15 +242,15 @@ func (m *CaseItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable), nil
 }
-// Reopen the reopen property
+// Reopen provides operations to call the reopen method.
 func (m *CaseItemRequestBuilder) Reopen()(*i01f2133292f0b08e5c7ad62ad1a919908e250568ad80f9fa7990e01a1a4675da.ReopenRequestBuilder) {
     return i01f2133292f0b08e5c7ad62ad1a919908e250568ad80f9fa7990e01a1a4675da.NewReopenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReviewSets the reviewSets property
+// ReviewSets provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) ReviewSets()(*ie37f7b6846339f3be72955eebac7b1a5f9a9b0e6768d7276f5894199b0fc4e64.ReviewSetsRequestBuilder) {
     return ie37f7b6846339f3be72955eebac7b1a5f9a9b0e6768d7276f5894199b0fc4e64.NewReviewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReviewSetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.reviewSets.item collection
+// ReviewSetsById provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) ReviewSetsById(id string)(*i6c4f9c432182d1a8383e210ea7282204df1fd76b96287e8d3e0ac99ac798c705.ReviewSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -261,15 +261,15 @@ func (m *CaseItemRequestBuilder) ReviewSetsById(id string)(*i6c4f9c432182d1a8383
     }
     return i6c4f9c432182d1a8383e210ea7282204df1fd76b96287e8d3e0ac99ac798c705.NewReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) Settings()(*ib38135aba802e63a95783cb40679431dfd8b0b006b136ce2cf392d13cbcf39b3.SettingsRequestBuilder) {
     return ib38135aba802e63a95783cb40679431dfd8b0b006b136ce2cf392d13cbcf39b3.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SourceCollections the sourceCollections property
+// SourceCollections provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) SourceCollections()(*i5a4461258b51ae222704978e5dc6e8b0f90af958cbbfe0291aa23989e511468b.SourceCollectionsRequestBuilder) {
     return i5a4461258b51ae222704978e5dc6e8b0f90af958cbbfe0291aa23989e511468b.NewSourceCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SourceCollectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.sourceCollections.item collection
+// SourceCollectionsById provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) SourceCollectionsById(id string)(*i700c8523a708bdda9b2320cf511ec749704101f5da23584bcca53db2919ad351.SourceCollectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -280,11 +280,11 @@ func (m *CaseItemRequestBuilder) SourceCollectionsById(id string)(*i700c8523a708
     }
     return i700c8523a708bdda9b2320cf511ec749704101f5da23584bcca53db2919ad351.NewSourceCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Tags the tags property
+// Tags provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) Tags()(*ibf27493a3efa3e33589ec8953bae196df0f5b31cd7f0010efe7b3550bdd8d64b.TagsRequestBuilder) {
     return ibf27493a3efa3e33589ec8953bae196df0f5b31cd7f0010efe7b3550bdd8d64b.NewTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.tags.item collection
+// TagsById provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
 func (m *CaseItemRequestBuilder) TagsById(id string)(*i71c6b856224a9a329639e731310314e9aaa3c89985c5bf77e3adab5540d605e7.TagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

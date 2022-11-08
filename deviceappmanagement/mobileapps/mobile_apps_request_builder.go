@@ -77,7 +77,7 @@ func NewMobileAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MobileAppsRequestBuilder) Count()(*i149429e3eafc16419f958b84dc22e5575cc97c96b553de6bc0dbce71d8dadd3c.CountRequestBuilder) {
     return i149429e3eafc16419f958b84dc22e5575cc97c96b553de6bc0dbce71d8dadd3c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -138,15 +138,15 @@ func (m *MobileAppsRequestBuilder) GetMobileAppCountWithStatus(status *string)(*
 func (m *MobileAppsRequestBuilder) GetTopMobileAppsWithStatusWithCount(count *int64, status *string)(*i4125e00a7eb603812efbd75551680674e01278ff362db14d1fd91505cb275200.GetTopMobileAppsWithStatusWithCountRequestBuilder) {
     return i4125e00a7eb603812efbd75551680674e01278ff362db14d1fd91505cb275200.NewGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(m.pathParameters, m.requestAdapter, count, status);
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *MobileAppsRequestBuilder) HasPayloadLinks()(*i2f59ddb12d33939283eeb5185ecff0dbbce661e9e5c21c6508e809c2b051b944.HasPayloadLinksRequestBuilder) {
     return i2f59ddb12d33939283eeb5185ecff0dbbce661e9e5c21c6508e809c2b051b944.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ManagedMobileLobApp the managedMobileLobApp property
+// ManagedMobileLobApp casts the previous resource to managedMobileLobApp.
 func (m *MobileAppsRequestBuilder) ManagedMobileLobApp()(*i086ce4f71a728d4b38b48a7b436f5263afb5f1bd2c43d24188ace8c90c850640.ManagedMobileLobAppRequestBuilder) {
     return i086ce4f71a728d4b38b48a7b436f5263afb5f1bd2c43d24188ace8c90c850640.NewManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MobileLobApp the mobileLobApp property
+// MobileLobApp casts the previous resource to mobileLobApp.
 func (m *MobileAppsRequestBuilder) MobileLobApp()(*i953b63f91b8c549b6ab097bad0bfd0ac3087a3511b8dc0e7fc54c77eba2c6e1e.MobileLobAppRequestBuilder) {
     return i953b63f91b8c549b6ab097bad0bfd0ac3087a3511b8dc0e7fc54c77eba2c6e1e.NewMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -169,7 +169,7 @@ func (m *MobileAppsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable), nil
 }
-// ValidateXml the validateXml property
+// ValidateXml provides operations to call the validateXml method.
 func (m *MobileAppsRequestBuilder) ValidateXml()(*id2162c282756356f4cf3805ba782e3632722a8ad528000abd031c5fae5bc20fe.ValidateXmlRequestBuilder) {
     return id2162c282756356f4cf3805ba782e3632722a8ad528000abd031c5fae5bc20fe.NewValidateXmlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

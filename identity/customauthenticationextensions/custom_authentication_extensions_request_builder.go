@@ -72,7 +72,7 @@ func NewCustomAuthenticationExtensionsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewCustomAuthenticationExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CustomAuthenticationExtensionsRequestBuilder) Count()(*i924323b85f8a29524b92f659fdf5d58749deca6ce3d0b66ddeeff3afded869d6.CountRequestBuilder) {
     return i924323b85f8a29524b92f659fdf5d58749deca6ce3d0b66ddeeff3afded869d6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable), nil
 }
-// ValidateAuthenticationConfiguration the validateAuthenticationConfiguration property
+// ValidateAuthenticationConfiguration provides operations to call the validateAuthenticationConfiguration method.
 func (m *CustomAuthenticationExtensionsRequestBuilder) ValidateAuthenticationConfiguration()(*i9783b75ee359d9ad456c7897b6fd7fbb0f920c373404f3680539793a1c9509bf.ValidateAuthenticationConfigurationRequestBuilder) {
     return i9783b75ee359d9ad456c7897b6fd7fbb0f920c373404f3680539793a1c9509bf.NewValidateAuthenticationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

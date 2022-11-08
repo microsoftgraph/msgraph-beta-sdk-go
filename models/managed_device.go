@@ -87,11 +87,11 @@ type ManagedDevice struct {
     exchangeAccessStateReason *DeviceManagementExchangeAccessStateReason
     // Last time the device contacted Exchange. This property is read-only.
     exchangeLastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Free Storage in Bytes. This property is read-only.
+    // Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
     freeStorageSpaceInBytes *int64
-    // The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.
+    // The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. Return default value in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
     hardwareInformation HardwareInformationable
-    // Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+    // Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
     iccid *string
     // IMEI. This property is read-only.
     imei *string
@@ -129,7 +129,7 @@ type ManagedDevice struct {
     meid *string
     // Model of the device. This property is read-only.
     model *string
-    // Notes on the device created by IT Admin
+    // Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
     notes *string
     // Operating system of the device. Windows, iOS, etc. This property is read-only.
     operatingSystem *string
@@ -141,7 +141,7 @@ type ManagedDevice struct {
     partnerReportedThreatState *ManagedDevicePartnerReportedHealthState
     // Phone number of the device. This property is read-only.
     phoneNumber *string
-    // Total Memory in Bytes. This property is read-only.
+    // Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
     physicalMemoryInBytes *int64
     // Reports the DateTime the preferMdmOverGroupPolicy setting was set.  When set, the Intune MDM settings will override Group Policy settings if there is a conflict. Read Only. This property is read-only.
     preferMdmOverGroupPolicyAppliedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -163,7 +163,7 @@ type ManagedDevice struct {
     serialNumber *string
     // Device sku family
     skuFamily *string
-    // Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+    // Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
     skuNumber *int32
     // Specification version. This property is read-only.
     specificationVersion *string
@@ -171,7 +171,7 @@ type ManagedDevice struct {
     subscriberCarrier *string
     // Total Storage in Bytes. This property is read-only.
     totalStorageSpaceInBytes *int64
-    // Unique Device Identifier for iOS and macOS devices. This property is read-only.
+    // Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
     udid *string
     // User display name. This property is read-only.
     userDisplayName *string
@@ -475,15 +475,15 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["windowsRemediatedMalwareCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWindowsRemediatedMalwareCount)
     return res
 }
-// GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
+// GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
 func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int64) {
     return m.freeStorageSpaceInBytes
 }
-// GetHardwareInformation gets the hardwareInformation property value. The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.
+// GetHardwareInformation gets the hardwareInformation property value. The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. Return default value in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetHardwareInformation()(HardwareInformationable) {
     return m.hardwareInformation
 }
-// GetIccid gets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+// GetIccid gets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetIccid()(*string) {
     return m.iccid
 }
@@ -559,7 +559,7 @@ func (m *ManagedDevice) GetMeid()(*string) {
 func (m *ManagedDevice) GetModel()(*string) {
     return m.model
 }
-// GetNotes gets the notes property value. Notes on the device created by IT Admin
+// GetNotes gets the notes property value. Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
 func (m *ManagedDevice) GetNotes()(*string) {
     return m.notes
 }
@@ -583,7 +583,7 @@ func (m *ManagedDevice) GetPartnerReportedThreatState()(*ManagedDevicePartnerRep
 func (m *ManagedDevice) GetPhoneNumber()(*string) {
     return m.phoneNumber
 }
-// GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
+// GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
 func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int64) {
     return m.physicalMemoryInBytes
 }
@@ -627,7 +627,7 @@ func (m *ManagedDevice) GetSerialNumber()(*string) {
 func (m *ManagedDevice) GetSkuFamily()(*string) {
     return m.skuFamily
 }
-// GetSkuNumber gets the skuNumber property value. Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+// GetSkuNumber gets the skuNumber property value. Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) GetSkuNumber()(*int32) {
     return m.skuNumber
 }
@@ -643,7 +643,7 @@ func (m *ManagedDevice) GetSubscriberCarrier()(*string) {
 func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
     return m.totalStorageSpaceInBytes
 }
-// GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.
+// GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) GetUdid()(*string) {
     return m.udid
 }
@@ -1083,15 +1083,15 @@ func (m *ManagedDevice) SetExchangeAccessStateReason(value *DeviceManagementExch
 func (m *ManagedDevice) SetExchangeLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.exchangeLastSuccessfulSyncDateTime = value
 }
-// SetFreeStorageSpaceInBytes sets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
+// SetFreeStorageSpaceInBytes sets the freeStorageSpaceInBytes property value. Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
 func (m *ManagedDevice) SetFreeStorageSpaceInBytes(value *int64)() {
     m.freeStorageSpaceInBytes = value
 }
-// SetHardwareInformation sets the hardwareInformation property value. The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.
+// SetHardwareInformation sets the hardwareInformation property value. The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. Return default value in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetHardwareInformation(value HardwareInformationable)() {
     m.hardwareInformation = value
 }
-// SetIccid sets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+// SetIccid sets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetIccid(value *string)() {
     m.iccid = value
 }
@@ -1167,7 +1167,7 @@ func (m *ManagedDevice) SetMeid(value *string)() {
 func (m *ManagedDevice) SetModel(value *string)() {
     m.model = value
 }
-// SetNotes sets the notes property value. Notes on the device created by IT Admin
+// SetNotes sets the notes property value. Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
 func (m *ManagedDevice) SetNotes(value *string)() {
     m.notes = value
 }
@@ -1191,7 +1191,7 @@ func (m *ManagedDevice) SetPartnerReportedThreatState(value *ManagedDevicePartne
 func (m *ManagedDevice) SetPhoneNumber(value *string)() {
     m.phoneNumber = value
 }
-// SetPhysicalMemoryInBytes sets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
+// SetPhysicalMemoryInBytes sets the physicalMemoryInBytes property value. Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
 func (m *ManagedDevice) SetPhysicalMemoryInBytes(value *int64)() {
     m.physicalMemoryInBytes = value
 }
@@ -1235,7 +1235,7 @@ func (m *ManagedDevice) SetSerialNumber(value *string)() {
 func (m *ManagedDevice) SetSkuFamily(value *string)() {
     m.skuFamily = value
 }
-// SetSkuNumber sets the skuNumber property value. Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+// SetSkuNumber sets the skuNumber property value. Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) SetSkuNumber(value *int32)() {
     m.skuNumber = value
 }
@@ -1251,7 +1251,7 @@ func (m *ManagedDevice) SetSubscriberCarrier(value *string)() {
 func (m *ManagedDevice) SetTotalStorageSpaceInBytes(value *int64)() {
     m.totalStorageSpaceInBytes = value
 }
-// SetUdid sets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.
+// SetUdid sets the udid property value. Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
 func (m *ManagedDevice) SetUdid(value *string)() {
     m.udid = value
 }

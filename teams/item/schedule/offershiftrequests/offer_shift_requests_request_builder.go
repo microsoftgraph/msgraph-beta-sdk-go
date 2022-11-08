@@ -71,7 +71,7 @@ func NewOfferShiftRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewOfferShiftRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OfferShiftRequestsRequestBuilder) Count()(*i8cbe1fa39b5341589733017de1883bacef32817cf49873209eaf4f185c05c725.CountRequestBuilder) {
     return i8cbe1fa39b5341589733017de1883bacef32817cf49873209eaf4f185c05c725.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

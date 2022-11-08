@@ -65,7 +65,7 @@ func NewUserFlowIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UserFlowIdentityProvidersRequestBuilder) Count()(*ifd8e3433cf23d063beca03199da97ae8f05d7164ba72b225cee8185b403f71f9.CountRequestBuilder) {
     return ifd8e3433cf23d063beca03199da97ae8f05d7164ba72b225cee8185b403f71f9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *UserFlowIdentityProvidersRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of identityContainer entities.
 func (m *UserFlowIdentityProvidersRequestBuilder) Ref()(*ic5c1a88dc5fc77efaac004a516d8984d4cd2f0c4875f51c372a13b2debc9f05e.RefRequestBuilder) {
     return ic5c1a88dc5fc77efaac004a516d8984d4cd2f0c4875f51c372a13b2debc9f05e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

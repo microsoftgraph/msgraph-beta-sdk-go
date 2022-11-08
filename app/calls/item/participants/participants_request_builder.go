@@ -73,7 +73,7 @@ func NewParticipantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewParticipantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ParticipantsRequestBuilder) Count()(*i4b4d6f19f11d5bb38c222ff758c52e11208508b662432c0d4da6e28c37562d97.CountRequestBuilder) {
     return i4b4d6f19f11d5bb38c222ff758c52e11208508b662432c0d4da6e28c37562d97.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -126,11 +126,11 @@ func (m *ParticipantsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParticipantCollectionResponseable), nil
 }
-// Invite the invite property
+// Invite provides operations to call the invite method.
 func (m *ParticipantsRequestBuilder) Invite()(*i0847722142ea83144d48d36b0651881a597bd1305d87685fde6ee4ad4e70ab84.InviteRequestBuilder) {
     return i0847722142ea83144d48d36b0651881a597bd1305d87685fde6ee4ad4e70ab84.NewInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MuteAll the muteAll property
+// MuteAll provides operations to call the muteAll method.
 func (m *ParticipantsRequestBuilder) MuteAll()(*i77b9a0e637e9266858d90c2a08c687f60d32aae51e61e962ac14febecb8906ba.MuteAllRequestBuilder) {
     return i77b9a0e637e9266858d90c2a08c687f60d32aae51e61e962ac14febecb8906ba.NewMuteAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

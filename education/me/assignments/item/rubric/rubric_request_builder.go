@@ -162,7 +162,7 @@ func (m *RubricRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of educationRoot entities.
 func (m *RubricRequestBuilder) Ref()(*i87dc2088a98c02aba606d5c57e5ec91ad6e8ce5f2d8f6a534d2d819a0f64f2fd.RefRequestBuilder) {
     return i87dc2088a98c02aba606d5c57e5ec91ad6e8ce5f2d8f6a534d2d819a0f64f2fd.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

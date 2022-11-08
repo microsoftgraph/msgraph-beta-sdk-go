@@ -57,11 +57,11 @@ type IdentityRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApiConnectors the apiConnectors property
+// ApiConnectors provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ApiConnectors()(*i11f22886c33eed99dd85e4d242bbf0976ec471e9e441cfa6a58b5864040bd094.ApiConnectorsRequestBuilder) {
     return i11f22886c33eed99dd85e4d242bbf0976ec471e9e441cfa6a58b5864040bd094.NewApiConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApiConnectorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.apiConnectors.item collection
+// ApiConnectorsById provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*id9b7138b09b41c1638c96829912584afe356128a86a38484a5041a342124094b.IdentityApiConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -72,11 +72,11 @@ func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*id9b7138b09b41c16
     }
     return id9b7138b09b41c1638c96829912584afe356128a86a38484a5041a342124094b.NewIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AuthenticationEventListeners the authenticationEventListeners property
+// AuthenticationEventListeners provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) AuthenticationEventListeners()(*ief24c82e2119211d350c80136b97d6bf10b3d0e78a9681394a143089f017cd94.AuthenticationEventListenersRequestBuilder) {
     return ief24c82e2119211d350c80136b97d6bf10b3d0e78a9681394a143089f017cd94.NewAuthenticationEventListenersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AuthenticationEventListenersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.authenticationEventListeners.item collection
+// AuthenticationEventListenersById provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) AuthenticationEventListenersById(id string)(*i7551a396b27b3ddf77a579c78cd05a221708f29814c2e58a262ae86fdfccebc3.AuthenticationEventListenerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -87,11 +87,11 @@ func (m *IdentityRequestBuilder) AuthenticationEventListenersById(id string)(*i7
     }
     return i7551a396b27b3ddf77a579c78cd05a221708f29814c2e58a262ae86fdfccebc3.NewAuthenticationEventListenerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// B2cUserFlows the b2cUserFlows property
+// B2cUserFlows provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2cUserFlows()(*i6635ff8f2aa1c074739a0c7312e2c31642186b9aadaa7290a91096bd632e192d.B2cUserFlowsRequestBuilder) {
     return i6635ff8f2aa1c074739a0c7312e2c31642186b9aadaa7290a91096bd632e192d.NewB2cUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// B2cUserFlowsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item collection
+// B2cUserFlowsById provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*i66a685596e55f332f9dea7615db3653de9c5945d4f7b70187e76b70ed8344761.B2cIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -102,11 +102,11 @@ func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*i66a685596e55f332f
     }
     return i66a685596e55f332f9dea7615db3653de9c5945d4f7b70187e76b70ed8344761.NewB2cIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// B2xUserFlows the b2xUserFlows property
+// B2xUserFlows provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2xUserFlows()(*ie614621c7e356610a3cda4707ec623ea542f5d84eaede8bc6ac868a655447bc5.B2xUserFlowsRequestBuilder) {
     return ie614621c7e356610a3cda4707ec623ea542f5d84eaede8bc6ac868a655447bc5.NewB2xUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// B2xUserFlowsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item collection
+// B2xUserFlowsById provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*i056de954ae8d2bd3c37cd62ab74e2a653c76cc631e79df2abe7d5423b433ad7f.B2xIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -117,7 +117,7 @@ func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*i056de954ae8d2bd3c
     }
     return i056de954ae8d2bd3c37cd62ab74e2a653c76cc631e79df2abe7d5423b433ad7f.NewB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ConditionalAccess the conditionalAccess property
+// ConditionalAccess provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ConditionalAccess()(*ic34e66a722321196953b295f6b75e587885dec11e8a616d1a3f940a14b88d50e.ConditionalAccessRequestBuilder) {
     return ic34e66a722321196953b295f6b75e587885dec11e8a616d1a3f940a14b88d50e.NewConditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -140,7 +140,7 @@ func NewIdentityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContinuousAccessEvaluationPolicy the continuousAccessEvaluationPolicy property
+// ContinuousAccessEvaluationPolicy provides operations to manage the continuousAccessEvaluationPolicy property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) ContinuousAccessEvaluationPolicy()(*i5f1ee64209aad8370602f56501934370194f1248216e73d51b8543369c558033.ContinuousAccessEvaluationPolicyRequestBuilder) {
     return i5f1ee64209aad8370602f56501934370194f1248216e73d51b8543369c558033.NewContinuousAccessEvaluationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -174,11 +174,11 @@ func (m *IdentityRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// CustomAuthenticationExtensions the customAuthenticationExtensions property
+// CustomAuthenticationExtensions provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) CustomAuthenticationExtensions()(*icdc246cecb641b30952ec0f2ae5ae755c0633e4f5bb05dbfce622920c1245205.CustomAuthenticationExtensionsRequestBuilder) {
     return icdc246cecb641b30952ec0f2ae5ae755c0633e4f5bb05dbfce622920c1245205.NewCustomAuthenticationExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustomAuthenticationExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.customAuthenticationExtensions.item collection
+// CustomAuthenticationExtensionsById provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) CustomAuthenticationExtensionsById(id string)(*i5948d5a09fb22b5b488a63253dae6b777e5fbf71f13cd243e618c0155cad10c1.CustomAuthenticationExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,11 +208,11 @@ func (m *IdentityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable), nil
 }
-// IdentityProviders the identityProviders property
+// IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) IdentityProviders()(*if8e62443e000757279f6963237e640c3a2f6bf54d567fb126a582ea7bac48a91.IdentityProvidersRequestBuilder) {
     return if8e62443e000757279f6963237e640c3a2f6bf54d567fb126a582ea7bac48a91.NewIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IdentityProvidersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.identityProviders.item collection
+// IdentityProvidersById provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*i4064b0ed26ff7ac321cce776d8d90a08dbeca0d51fec9f75ba0ee4621fd09ffa.IdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -242,11 +242,11 @@ func (m *IdentityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable), nil
 }
-// UserFlowAttributes the userFlowAttributes property
+// UserFlowAttributes provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) UserFlowAttributes()(*iaa68fab70e5038f618ea9044bb8a9fbc651b67c06a35357c7b18c20d63880c85.UserFlowAttributesRequestBuilder) {
     return iaa68fab70e5038f618ea9044bb8a9fbc651b67c06a35357c7b18c20d63880c85.NewUserFlowAttributesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserFlowAttributesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.userFlowAttributes.item collection
+// UserFlowAttributesById provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*i96fbb19ece75424f3a1291715def826b0b7091a7b004df122cb970e740300385.IdentityUserFlowAttributeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -257,11 +257,11 @@ func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*i96fbb19ece7
     }
     return i96fbb19ece75424f3a1291715def826b0b7091a7b004df122cb970e740300385.NewIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserFlows the userFlows property
+// UserFlows provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) UserFlows()(*i96c0428619bb9ada314a888efda4bc4c3bb5c55513e2cfaa28f956e608f98c45.UserFlowsRequestBuilder) {
     return i96c0428619bb9ada314a888efda4bc4c3bb5c55513e2cfaa28f956e608f98c45.NewUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserFlowsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.userFlows.item collection
+// UserFlowsById provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
 func (m *IdentityRequestBuilder) UserFlowsById(id string)(*i80b7576b721756e8211e557cb66927cff088fae6e30a6b5990e694f8c8938b4d.IdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -125,7 +125,7 @@ func (m *ItemActivityOLDItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// DriveItem the driveItem property
+// DriveItem provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.
 func (m *ItemActivityOLDItemRequestBuilder) DriveItem()(*id57ddfa44a0aed91a3df77a90fbb3a10cb95b6f08d697f96271f1e0f9e378801.DriveItemRequestBuilder) {
     return id57ddfa44a0aed91a3df77a90fbb3a10cb95b6f08d697f96271f1e0f9e378801.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -148,7 +148,7 @@ func (m *ItemActivityOLDItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable), nil
 }
-// ListItem the listItem property
+// ListItem provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.
 func (m *ItemActivityOLDItemRequestBuilder) ListItem()(*i5b93e50a6005ebe8dde4ac268bf9a606f5b845336d5fc48fcb55d2f000001ccd.ListItemRequestBuilder) {
     return i5b93e50a6005ebe8dde4ac268bf9a606f5b845336d5fc48fcb55d2f000001ccd.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

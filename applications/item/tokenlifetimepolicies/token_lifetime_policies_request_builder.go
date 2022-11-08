@@ -65,7 +65,7 @@ func NewTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TokenLifetimePoliciesRequestBuilder) Count()(*i7172932d27c2888b978db0643e94013f907c99d8c714b0bb22b775b8b20ea6d8.CountRequestBuilder) {
     return i7172932d27c2888b978db0643e94013f907c99d8c714b0bb22b775b8b20ea6d8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *TokenLifetimePoliciesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenLifetimePolicyCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of application entities.
 func (m *TokenLifetimePoliciesRequestBuilder) Ref()(*ie62257f70fec21b9cd339074053fd870d0aec476a2e4106cdb8c727bb20e2bbf.RefRequestBuilder) {
     return ie62257f70fec21b9cd339074053fd870d0aec476a2e4106cdb8c727bb20e2bbf.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

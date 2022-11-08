@@ -127,7 +127,7 @@ func (m *CompanyInformationItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanyInformationable), nil
 }
-// Picture the picture property
+// Picture provides operations to manage the media for the financials entity.
 func (m *CompanyInformationItemRequestBuilder) Picture()(*i8e768a92c484ff61bbb3e35f051945edb4c04836dda4fb3c30a162c5a927adce.PictureRequestBuilder) {
     return i8e768a92c484ff61bbb3e35f051945edb4c04836dda4fb3c30a162c5a927adce.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

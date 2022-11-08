@@ -72,7 +72,7 @@ func NewDirectoryRoleTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DirectoryRoleTemplatesRequestBuilder) Count()(*i3f8034c8f6f2b58468d7d887066b5af2d36cab6daa3877702f6e2742abf25509.CountRequestBuilder) {
     return i3f8034c8f6f2b58468d7d887066b5af2d36cab6daa3877702f6e2742abf25509.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,11 +125,11 @@ func (m *DirectoryRoleTemplatesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *DirectoryRoleTemplatesRequestBuilder) GetByIds()(*ife18911f94e8d446d0a26f38b8cd124d5a68379523a1dc16ae8198cdf21a7152.GetByIdsRequestBuilder) {
     return ife18911f94e8d446d0a26f38b8cd124d5a68379523a1dc16ae8198cdf21a7152.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *DirectoryRoleTemplatesRequestBuilder) GetUserOwnedObjects()(*i88743b6fef8c46b4b91459762f36ac5865d91e9f7d82bba7253d32e67ee18285.GetUserOwnedObjectsRequestBuilder) {
     return i88743b6fef8c46b4b91459762f36ac5865d91e9f7d82bba7253d32e67ee18285.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -152,7 +152,7 @@ func (m *DirectoryRoleTemplatesRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *DirectoryRoleTemplatesRequestBuilder) ValidateProperties()(*i511bfb2a85de68e20bc06bcac26d677c94a462d0cde3590a23a44f1b87fb080e.ValidatePropertiesRequestBuilder) {
     return i511bfb2a85de68e20bc06bcac26d677c94a462d0cde3590a23a44f1b87fb080e.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

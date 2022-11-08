@@ -71,7 +71,7 @@ func NewCategorySummariesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCategorySummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CategorySummariesRequestBuilder) Count()(*ie68ff3990cecb2ca8862cb3db82e89acc6502332e7aa3cc319407e0db6bfa785.CountRequestBuilder) {
     return ie68ff3990cecb2ca8862cb3db82e89acc6502332e7aa3cc319407e0db6bfa785.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewSharedWithTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewSharedWithTeamsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SharedWithTeamsRequestBuilder) Count()(*i0af9b21c05b0b738fd8933a487f17ba2df389cdd80162223711ce96ee442cc5f.CountRequestBuilder) {
     return i0af9b21c05b0b738fd8933a487f17ba2df389cdd80162223711ce96ee442cc5f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

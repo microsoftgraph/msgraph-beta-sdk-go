@@ -10,7 +10,7 @@ type EducationFeedbackResourceOutcome struct {
     EducationOutcome
     // The actual feedback resource.
     feedbackResource EducationResourceable
-    // The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
+    // The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
     resourceStatus *EducationFeedbackResourceOutcomeStatus
 }
 // NewEducationFeedbackResourceOutcome instantiates a new EducationFeedbackResourceOutcome and sets the default values.
@@ -37,7 +37,7 @@ func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]fu
     res["resourceStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEducationFeedbackResourceOutcomeStatus , m.SetResourceStatus)
     return res
 }
-// GetResourceStatus gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
+// GetResourceStatus gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
 func (m *EducationFeedbackResourceOutcome) GetResourceStatus()(*EducationFeedbackResourceOutcomeStatus) {
     return m.resourceStatus
 }
@@ -66,7 +66,7 @@ func (m *EducationFeedbackResourceOutcome) Serialize(writer i878a80d2330e89d2689
 func (m *EducationFeedbackResourceOutcome) SetFeedbackResource(value EducationResourceable)() {
     m.feedbackResource = value
 }
-// SetResourceStatus sets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
+// SetResourceStatus sets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
 func (m *EducationFeedbackResourceOutcome) SetResourceStatus(value *EducationFeedbackResourceOutcomeStatus)() {
     m.resourceStatus = value
 }

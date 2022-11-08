@@ -163,11 +163,11 @@ func (m *OutboundSharedUserProfileUserItemRequestBuilder) Patch(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutboundSharedUserProfileable), nil
 }
-// Tenants the tenants property
+// Tenants provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
 func (m *OutboundSharedUserProfileUserItemRequestBuilder) Tenants()(*i49ddd37d26248284ea64a19067478e30c75ede845247b7b5de9cf41e742ed1d4.TenantsRequestBuilder) {
     return i49ddd37d26248284ea64a19067478e30c75ede845247b7b5de9cf41e742ed1d4.NewTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TenantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.outboundSharedUserProfiles.item.tenants.item collection
+// TenantsById provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
 func (m *OutboundSharedUserProfileUserItemRequestBuilder) TenantsById(id string)(*i3a7f0a2cf3e5cbb22ae18d4d09233b740418e3869d44c3de04c038c8644da19a.TenantReferenceTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

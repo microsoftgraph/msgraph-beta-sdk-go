@@ -14,10 +14,12 @@ type TargetedManagedAppConfigurationable interface {
     GetDeployedAppCount()(*int32)
     GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable)
     GetIsAssigned()(*bool)
+    GetTargetedAppManagementLevels()(*AppManagementLevel)
     SetAppGroupType(value *TargetedManagedAppGroupType)()
     SetApps(value []ManagedMobileAppable)()
     SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
     SetDeployedAppCount(value *int32)()
     SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)()
     SetIsAssigned(value *bool)()
+    SetTargetedAppManagementLevels(value *AppManagementLevel)()
 }

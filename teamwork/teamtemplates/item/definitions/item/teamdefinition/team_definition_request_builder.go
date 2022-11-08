@@ -75,11 +75,11 @@ type TeamDefinitionRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AllChannels the allChannels property
+// AllChannels provides operations to manage the allChannels property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) AllChannels()(*ib7c606576e4e69504542006e2c028ab719af041c2e7098893d6b02cbd478aa1a.AllChannelsRequestBuilder) {
     return ib7c606576e4e69504542006e2c028ab719af041c2e7098893d6b02cbd478aa1a.NewAllChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AllChannelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.allChannels.item collection
+// AllChannelsById provides operations to manage the allChannels property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) AllChannelsById(id string)(*i3889d2f0c3a1510a1a66b9ba6c2b0933c7a3bcaf53bbba2ddd3b239f035d7f28.ChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -90,15 +90,15 @@ func (m *TeamDefinitionRequestBuilder) AllChannelsById(id string)(*i3889d2f0c3a1
     }
     return i3889d2f0c3a1510a1a66b9ba6c2b0933c7a3bcaf53bbba2ddd3b239f035d7f28.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Archive the archive property
+// Archive provides operations to call the archive method.
 func (m *TeamDefinitionRequestBuilder) Archive()(*i02827de57fc02ff264f5b78291aed174984d1ae923d83cad8769b4029940370d.ArchiveRequestBuilder) {
     return i02827de57fc02ff264f5b78291aed174984d1ae923d83cad8769b4029940370d.NewArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Channels the channels property
+// Channels provides operations to manage the channels property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Channels()(*i01d3aa843ae55b558a2b07553f07f64752ef3df3702ad3d7b8793ffb00396a65.ChannelsRequestBuilder) {
     return i01d3aa843ae55b558a2b07553f07f64752ef3df3702ad3d7b8793ffb00396a65.NewChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChannelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.channels.item collection
+// ChannelsById provides operations to manage the channels property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) ChannelsById(id string)(*ie8cb256548eb8dad15b6ef4c0cab173de139c711fcaa31cfed2fe7f96b01f6da.ChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -109,11 +109,11 @@ func (m *TeamDefinitionRequestBuilder) ChannelsById(id string)(*ie8cb256548eb8da
     }
     return ie8cb256548eb8dad15b6ef4c0cab173de139c711fcaa31cfed2fe7f96b01f6da.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Clone the clone property
+// Clone provides operations to call the clone method.
 func (m *TeamDefinitionRequestBuilder) Clone()(*i2a7f69c3331e3c6294d302c3ad63b0a41d71b202349cff9ed9a8d8ecd034b44a.CloneRequestBuilder) {
     return i2a7f69c3331e3c6294d302c3ad63b0a41d71b202349cff9ed9a8d8ecd034b44a.NewCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CompleteMigration the completeMigration property
+// CompleteMigration provides operations to call the completeMigration method.
 func (m *TeamDefinitionRequestBuilder) CompleteMigration()(*i0a90aaedc4ec0357018e9c2c0cab288bb6c455b33774c505e84776dc302ae93b.CompleteMigrationRequestBuilder) {
     return i0a90aaedc4ec0357018e9c2c0cab288bb6c455b33774c505e84776dc302ae93b.NewCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -213,15 +213,15 @@ func (m *TeamDefinitionRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable), nil
 }
-// Group the group property
+// Group provides operations to manage the group property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Group()(*ifc067f4e589cefa2364cf2fdea7c0d912114e35cd455211e039c99099fff6cd7.GroupRequestBuilder) {
     return ifc067f4e589cefa2364cf2fdea7c0d912114e35cd455211e039c99099fff6cd7.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IncomingChannels the incomingChannels property
+// IncomingChannels provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) IncomingChannels()(*if079ea5274977b63dafe8ecfd81ee0f8d821b54c97860ddc6871e92826aa2cd2.IncomingChannelsRequestBuilder) {
     return if079ea5274977b63dafe8ecfd81ee0f8d821b54c97860ddc6871e92826aa2cd2.NewIncomingChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IncomingChannelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.incomingChannels.item collection
+// IncomingChannelsById provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) IncomingChannelsById(id string)(*ia68eea7f7d3ae5be8bc92fbc161d990e62e9bf7bf3abc49e71e57b22d7caa906.ChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -232,11 +232,11 @@ func (m *TeamDefinitionRequestBuilder) IncomingChannelsById(id string)(*ia68eea7
     }
     return ia68eea7f7d3ae5be8bc92fbc161d990e62e9bf7bf3abc49e71e57b22d7caa906.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// InstalledApps the installedApps property
+// InstalledApps provides operations to manage the installedApps property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) InstalledApps()(*i9a85f226e9945a36b36dd1100ab1ac9605fd15848e758e3d548dd310910a4956.InstalledAppsRequestBuilder) {
     return i9a85f226e9945a36b36dd1100ab1ac9605fd15848e758e3d548dd310910a4956.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InstalledAppsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.installedApps.item collection
+// InstalledAppsById provides operations to manage the installedApps property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) InstalledAppsById(id string)(*id8449ae82a8cb950e7e986f802d77a2bb5517fecdb97252c8b2d852a8b8d6be8.TeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -247,11 +247,11 @@ func (m *TeamDefinitionRequestBuilder) InstalledAppsById(id string)(*id8449ae82a
     }
     return id8449ae82a8cb950e7e986f802d77a2bb5517fecdb97252c8b2d852a8b8d6be8.NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Members()(*iaddb69d8d018d1f468b174e8ccf6d25ad974f32bc2cdfd002572d4137eedee31.MembersRequestBuilder) {
     return iaddb69d8d018d1f468b174e8ccf6d25ad974f32bc2cdfd002572d4137eedee31.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.members.item collection
+// MembersById provides operations to manage the members property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) MembersById(id string)(*id02a445d39ef4c7c31a05602b15e6ad28934f29331a3445cba2bbfad8a762c93.ConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -262,11 +262,11 @@ func (m *TeamDefinitionRequestBuilder) MembersById(id string)(*id02a445d39ef4c7c
     }
     return id02a445d39ef4c7c31a05602b15e6ad28934f29331a3445cba2bbfad8a762c93.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Operations()(*i376d33ab52594655903baee2658a8eb0bf72bb812582ddc80179eb8c7d21b5b8.OperationsRequestBuilder) {
     return i376d33ab52594655903baee2658a8eb0bf72bb812582ddc80179eb8c7d21b5b8.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) OperationsById(id string)(*i6d22d87adbe6cf435cd0da761d8283b2dc15f49542c5286f8b9f9ec36928db0b.TeamsAsyncOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -277,11 +277,11 @@ func (m *TeamDefinitionRequestBuilder) OperationsById(id string)(*i6d22d87adbe6c
     }
     return i6d22d87adbe6cf435cd0da761d8283b2dc15f49542c5286f8b9f9ec36928db0b.NewTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Owners the owners property
+// Owners provides operations to manage the owners property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Owners()(*idd660ed291c330794dad096d9900331057bb0e375c05b85770ed2ca4160ae59b.OwnersRequestBuilder) {
     return idd660ed291c330794dad096d9900331057bb0e375c05b85770ed2ca4160ae59b.NewOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OwnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.owners.item collection
+// OwnersById provides operations to manage the owners property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) OwnersById(id string)(*i7e4d4d36436389cdf78b45b9f02b8cd1a5ef85de40c5216c53ee78522c28a378.UserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -311,11 +311,11 @@ func (m *TeamDefinitionRequestBuilder) Patch(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable), nil
 }
-// PermissionGrants the permissionGrants property
+// PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) PermissionGrants()(*idd8eb4f3af20f81bb6e8ca724655fadb0c315db26afc70374c50396c30fc3426.PermissionGrantsRequestBuilder) {
     return idd8eb4f3af20f81bb6e8ca724655fadb0c315db26afc70374c50396c30fc3426.NewPermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PermissionGrantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.permissionGrants.item collection
+// PermissionGrantsById provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) PermissionGrantsById(id string)(*i437166336ffe89fceeb3cefa21796bb4f65c33c32a109635ef3d5c3b454575b7.ResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -326,27 +326,27 @@ func (m *TeamDefinitionRequestBuilder) PermissionGrantsById(id string)(*i4371663
     }
     return i437166336ffe89fceeb3cefa21796bb4f65c33c32a109635ef3d5c3b454575b7.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Photo the photo property
+// Photo provides operations to manage the photo property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Photo()(*i25b9b2ebc0ed8d31a86396cbdbd79766d0ca6dc180ea2b668b808395bf6c8123.PhotoRequestBuilder) {
     return i25b9b2ebc0ed8d31a86396cbdbd79766d0ca6dc180ea2b668b808395bf6c8123.NewPhotoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PrimaryChannel the primaryChannel property
+// PrimaryChannel provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) PrimaryChannel()(*id38e0ba36d910f19e4fc968aa8b080b63f2d11d6468dd7081171ef13731130d0.PrimaryChannelRequestBuilder) {
     return id38e0ba36d910f19e4fc968aa8b080b63f2d11d6468dd7081171ef13731130d0.NewPrimaryChannelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Schedule the schedule property
+// Schedule provides operations to manage the schedule property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Schedule()(*i05e01a7cd1bdf5d9551e8b84bdd1a356ddb3c0d149efa3714e485a9f1d4af3c9.ScheduleRequestBuilder) {
     return i05e01a7cd1bdf5d9551e8b84bdd1a356ddb3c0d149efa3714e485a9f1d4af3c9.NewScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SendActivityNotification the sendActivityNotification property
+// SendActivityNotification provides operations to call the sendActivityNotification method.
 func (m *TeamDefinitionRequestBuilder) SendActivityNotification()(*if242908686e9e1f4e68815352ea8307d79622cd4b14f82a6502a5f6a79538135.SendActivityNotificationRequestBuilder) {
     return if242908686e9e1f4e68815352ea8307d79622cd4b14f82a6502a5f6a79538135.NewSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Tags the tags property
+// Tags provides operations to manage the tags property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Tags()(*id2b7ebf24efdc65e80ff4b484b3fd25479ad08bd49549a9e2c06dbc09108e511.TagsRequestBuilder) {
     return id2b7ebf24efdc65e80ff4b484b3fd25479ad08bd49549a9e2c06dbc09108e511.NewTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.tags.item collection
+// TagsById provides operations to manage the tags property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) TagsById(id string)(*if60812fddb6d72c19abd42431bc16adc7721cdf0863a1508844f5af1ce97d9f5.TeamworkTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -357,15 +357,15 @@ func (m *TeamDefinitionRequestBuilder) TagsById(id string)(*if60812fddb6d72c19ab
     }
     return if60812fddb6d72c19abd42431bc16adc7721cdf0863a1508844f5af1ce97d9f5.NewTeamworkTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Template the template property
+// Template provides operations to manage the template property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) Template()(*ia890ddcd803e7ea023c874df73637cb89437966a6dbdedf95b71ef5e9f846efb.TemplateRequestBuilder) {
     return ia890ddcd803e7ea023c874df73637cb89437966a6dbdedf95b71ef5e9f846efb.NewTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TemplateDefinition the templateDefinition property
+// TemplateDefinition provides operations to manage the templateDefinition property of the microsoft.graph.team entity.
 func (m *TeamDefinitionRequestBuilder) TemplateDefinition()(*i8737cc3ee7299342142e7b5ad2bd5bb05f79251a72340e78dec8f8375e92c91d.TemplateDefinitionRequestBuilder) {
     return i8737cc3ee7299342142e7b5ad2bd5bb05f79251a72340e78dec8f8375e92c91d.NewTemplateDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Unarchive the unarchive property
+// Unarchive provides operations to call the unarchive method.
 func (m *TeamDefinitionRequestBuilder) Unarchive()(*i30cd0e56846ce0bc314e66260e3ff08cecb87b28b88b48a48644621a804f7dc0.UnarchiveRequestBuilder) {
     return i30cd0e56846ce0bc314e66260e3ff08cecb87b28b88b48a48644621a804f7dc0.NewUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

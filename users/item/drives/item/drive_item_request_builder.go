@@ -61,11 +61,11 @@ type DriveItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activities the activities property
+// Activities provides operations to manage the activities property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Activities()(*i2614d5d0103e56ecf04c6c4fd0f822c8bb4169f41348567e3129b7e490bdcb9a.ActivitiesRequestBuilder) {
     return i2614d5d0103e56ecf04c6c4fd0f822c8bb4169f41348567e3129b7e490bdcb9a.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.drives.item.activities.item collection
+// ActivitiesById provides operations to manage the activities property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) ActivitiesById(id string)(*ief65e8da1020d322385dee0b5f53ad802d59fc0ca77551c7f83c8a51a474e0ab.ItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -76,11 +76,11 @@ func (m *DriveItemRequestBuilder) ActivitiesById(id string)(*ief65e8da1020d32238
     }
     return ief65e8da1020d322385dee0b5f53ad802d59fc0ca77551c7f83c8a51a474e0ab.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Bundles the bundles property
+// Bundles provides operations to manage the bundles property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Bundles()(*iab65ab63810b85ddf181f3ceb253e41e673d177c55f9296e466f666d335ba752.BundlesRequestBuilder) {
     return iab65ab63810b85ddf181f3ceb253e41e673d177c55f9296e466f666d335ba752.NewBundlesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BundlesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.drives.item.bundles.item collection
+// BundlesById provides operations to manage the bundles property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) BundlesById(id string)(*i0b052b85d2b65a8720c50aace6ba162194917e9b48b1ec21fb26a7b992f49f80.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -168,11 +168,11 @@ func (m *DriveItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
     }
     return nil
 }
-// Following the following property
+// Following provides operations to manage the following property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Following()(*i692dc1e6a84b3d3b12e09ff20f40b589907efa560331c264538bc5f6da13ea56.FollowingRequestBuilder) {
     return i692dc1e6a84b3d3b12e09ff20f40b589907efa560331c264538bc5f6da13ea56.NewFollowingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FollowingById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.drives.item.following.item collection
+// FollowingById provides operations to manage the following property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) FollowingById(id string)(*i60852f04cfab9b91ef97b49ef3045833e87b151e085eaab1766d4f0badec40b4.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,11 +202,11 @@ func (m *DriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable), nil
 }
-// Items the items property
+// Items provides operations to manage the items property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Items()(*i9e8763d19a0b58b31ba068155ad48ccdd03e35f21e9127fbc08402fba4782f21.ItemsRequestBuilder) {
     return i9e8763d19a0b58b31ba068155ad48ccdd03e35f21e9127fbc08402fba4782f21.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.drives.item.items.item collection
+// ItemsById provides operations to manage the items property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) ItemsById(id string)(*i0b84d05595dd5ab19113571f05d199f7f8beafb687e2428e652e75b880a8ae37.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -217,7 +217,7 @@ func (m *DriveItemRequestBuilder) ItemsById(id string)(*i0b84d05595dd5ab19113571
     }
     return i0b84d05595dd5ab19113571f05d199f7f8beafb687e2428e652e75b880a8ae37.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// List the list property
+// List provides operations to manage the list property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) List()(*i8fbeebc4eccf2cac5b307c6dad40201406826338e23db27d5b7087fb1c511a33.ListRequestBuilder) {
     return i8fbeebc4eccf2cac5b307c6dad40201406826338e23db27d5b7087fb1c511a33.NewListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -244,7 +244,7 @@ func (m *DriveItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
 func (m *DriveItemRequestBuilder) Recent()(*ie9dfbaaf9ea9c76631f653acff17130b359159e7c2a776a1a54cddc7f6167506.RecentRequestBuilder) {
     return ie9dfbaaf9ea9c76631f653acff17130b359159e7c2a776a1a54cddc7f6167506.NewRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Root the root property
+// Root provides operations to manage the root property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Root()(*i6d6ca41bea7345d62c2fc6e26c5908930f4248e99145e3f29e99138769e35ea0.RootRequestBuilder) {
     return i6d6ca41bea7345d62c2fc6e26c5908930f4248e99145e3f29e99138769e35ea0.NewRootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -256,11 +256,11 @@ func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*i945b7af17e70a5c153ccf
 func (m *DriveItemRequestBuilder) SharedWithMe()(*i487f0b8b175da4af103a9145d96acb6aae9893982d8774d3214a8a384cbe2a11.SharedWithMeRequestBuilder) {
     return i487f0b8b175da4af103a9145d96acb6aae9893982d8774d3214a8a384cbe2a11.NewSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Special the special property
+// Special provides operations to manage the special property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) Special()(*i9db81101a247c2f318c6dc980b57fdc41219ff102a02f4565abf58a7bd25bc02.SpecialRequestBuilder) {
     return i9db81101a247c2f318c6dc980b57fdc41219ff102a02f4565abf58a7bd25bc02.NewSpecialRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SpecialById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.drives.item.special.item collection
+// SpecialById provides operations to manage the special property of the microsoft.graph.drive entity.
 func (m *DriveItemRequestBuilder) SpecialById(id string)(*i1710ef6dc790d2d92c9e3a08bd60c6151b7b10afd1f76d824029788ceef4b4d6.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

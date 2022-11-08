@@ -72,7 +72,7 @@ func NewWindowsAutopilotDeploymentProfilesRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Count()(*i061aa266e677c87fd3e19f56a6b194f1fa946735eef0e8ca883b5432d037899d.CountRequestBuilder) {
     return i061aa266e677c87fd3e19f56a6b194f1fa946735eef0e8ca883b5432d037899d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileCollectionResponseable), nil
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) HasPayloadLinks()(*ifbfe4e409b366cfd880e674e55ae37852c68132f4109dbac0ba62d28be4f0868.HasPayloadLinksRequestBuilder) {
     return ifbfe4e409b366cfd880e674e55ae37852c68132f4109dbac0ba62d28be4f0868.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

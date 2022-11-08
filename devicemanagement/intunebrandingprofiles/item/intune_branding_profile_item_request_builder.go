@@ -49,15 +49,15 @@ type IntuneBrandingProfileItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *IntuneBrandingProfileItemRequestBuilder) Assign()(*iabf54a6528230cc6fd8becb59f999d1ad986020b16420c27db539498922c2851.AssignRequestBuilder) {
     return iabf54a6528230cc6fd8becb59f999d1ad986020b16420c27db539498922c2851.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.
 func (m *IntuneBrandingProfileItemRequestBuilder) Assignments()(*id933fdbaba7880973435cc8cf621ae774d7ea0758e1ed6de778e48418e22e695.AssignmentsRequestBuilder) {
     return id933fdbaba7880973435cc8cf621ae774d7ea0758e1ed6de778e48418e22e695.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intuneBrandingProfiles.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.
 func (m *IntuneBrandingProfileItemRequestBuilder) AssignmentsById(id string)(*i43e2d15146d44703f2826df7d20b0717eda3da488c1e8099cae91884e38e54c4.IntuneBrandingProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

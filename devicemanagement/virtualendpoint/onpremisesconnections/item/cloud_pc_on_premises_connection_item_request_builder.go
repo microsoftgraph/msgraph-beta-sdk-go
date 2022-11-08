@@ -163,11 +163,11 @@ func (m *CloudPcOnPremisesConnectionItemRequestBuilder) Patch(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable), nil
 }
-// RunHealthChecks the runHealthChecks property
+// RunHealthChecks provides operations to call the runHealthChecks method.
 func (m *CloudPcOnPremisesConnectionItemRequestBuilder) RunHealthChecks()(*i747483174c0e61425ce1a618854ba8ca6d202a33166c1334d75d025ab520f858.RunHealthChecksRequestBuilder) {
     return i747483174c0e61425ce1a618854ba8ca6d202a33166c1334d75d025ab520f858.NewRunHealthChecksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateAdDomainPassword the updateAdDomainPassword property
+// UpdateAdDomainPassword provides operations to call the updateAdDomainPassword method.
 func (m *CloudPcOnPremisesConnectionItemRequestBuilder) UpdateAdDomainPassword()(*if44fdd10cc1f6f4d9584fbcc1424ba5392d6f3eda6f11879e38028e5a1ea53bf.UpdateAdDomainPasswordRequestBuilder) {
     return if44fdd10cc1f6f4d9584fbcc1424ba5392d6f3eda6f11879e38028e5a1ea53bf.NewUpdateAdDomainPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewTelecomExpenseManagementPartnersRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewTelecomExpenseManagementPartnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TelecomExpenseManagementPartnersRequestBuilder) Count()(*i5bb0f0e30557fe1162278f4861f5e9f0f251e51e5bc8bf8159ea7741f2f5dd21.CountRequestBuilder) {
     return i5bb0f0e30557fe1162278f4861f5e9f0f251e51e5bc8bf8159ea7741f2f5dd21.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

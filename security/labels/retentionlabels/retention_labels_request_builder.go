@@ -71,7 +71,7 @@ func NewRetentionLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewRetentionLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RetentionLabelsRequestBuilder) Count()(*ibb74bd771dab049d43daff2d0cc2589c23071879371a73763b9e5eea11f71467.CountRequestBuilder) {
     return ibb74bd771dab049d43daff2d0cc2589c23071879371a73763b9e5eea11f71467.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

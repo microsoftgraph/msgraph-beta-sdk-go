@@ -67,7 +67,7 @@ func NewDriveItemVersionItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewDriveItemVersionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the user entity.
 func (m *DriveItemVersionItemRequestBuilder) Content()(*i253d15527084f80301461b66e836cec59870997537c2efebd8fe93b629bbb709.ContentRequestBuilder) {
     return i253d15527084f80301461b66e836cec59870997537c2efebd8fe93b629bbb709.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *DriveItemVersionItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable), nil
 }
-// RestoreVersion the restoreVersion property
+// RestoreVersion provides operations to call the restoreVersion method.
 func (m *DriveItemVersionItemRequestBuilder) RestoreVersion()(*i6da1b86c5c479472a917972bbd3f8cbdb5592319f8acc0f0ba0c5526bcec4a39.RestoreVersionRequestBuilder) {
     return i6da1b86c5c479472a917972bbd3f8cbdb5592319f8acc0f0ba0c5526bcec4a39.NewRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

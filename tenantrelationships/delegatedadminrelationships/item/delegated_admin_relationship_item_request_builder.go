@@ -52,11 +52,11 @@ type DelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessAssignments the accessAssignments property
+// AccessAssignments provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
 func (m *DelegatedAdminRelationshipItemRequestBuilder) AccessAssignments()(*iac4781d78e0362023abac407b248abb8996da024ec94a9413fc9a3d80755d0ea.AccessAssignmentsRequestBuilder) {
     return iac4781d78e0362023abac407b248abb8996da024ec94a9413fc9a3d80755d0ea.NewAccessAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.delegatedAdminRelationships.item.accessAssignments.item collection
+// AccessAssignmentsById provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
 func (m *DelegatedAdminRelationshipItemRequestBuilder) AccessAssignmentsById(id string)(*ic1a2347ea4abb46ab983c9d6ee916f3a9af60bf8f4caf7afae2666a77def3567.DelegatedAdminAccessAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -163,11 +163,11 @@ func (m *DelegatedAdminRelationshipItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable), nil
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.delegatedAdminRelationship entity.
 func (m *DelegatedAdminRelationshipItemRequestBuilder) Operations()(*ia0161922114d3b8c7cd781d7f9c4106c03db7e9ef8ea72513b4c54b5e9354ba5.OperationsRequestBuilder) {
     return ia0161922114d3b8c7cd781d7f9c4106c03db7e9ef8ea72513b4c54b5e9354ba5.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.delegatedAdminRelationships.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.delegatedAdminRelationship entity.
 func (m *DelegatedAdminRelationshipItemRequestBuilder) OperationsById(id string)(*i5f3e9a785873705d5204dd08bc17b79ce358f2fd632fbe5eb537c2a5d7fc7ef6.DelegatedAdminRelationshipOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -197,11 +197,11 @@ func (m *DelegatedAdminRelationshipItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable), nil
 }
-// Requests the requests property
+// Requests provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.
 func (m *DelegatedAdminRelationshipItemRequestBuilder) Requests()(*i4fa8edb0c045897c1eedba2d597f16b1fbe1eba86c010bbb3f99622813ad295e.RequestsRequestBuilder) {
     return i4fa8edb0c045897c1eedba2d597f16b1fbe1eba86c010bbb3f99622813ad295e.NewRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.delegatedAdminRelationships.item.requests.item collection
+// RequestsById provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.
 func (m *DelegatedAdminRelationshipItemRequestBuilder) RequestsById(id string)(*i0580a758f5bfbd03e74223f96f6b1bdb17dd6ffec4a223b1f1fabb8a627a42b4.DelegatedAdminRelationshipRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

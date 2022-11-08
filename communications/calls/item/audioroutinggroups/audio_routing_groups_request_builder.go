@@ -71,7 +71,7 @@ func NewAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAudioRoutingGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AudioRoutingGroupsRequestBuilder) Count()(*ib898ea4f2a3a722cbcc2e19966acb4e33c0886f3be4b862b30f88522260b0065.CountRequestBuilder) {
     return ib898ea4f2a3a722cbcc2e19966acb4e33c0886f3be4b862b30f88522260b0065.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

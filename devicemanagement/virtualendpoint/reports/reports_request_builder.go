@@ -130,11 +130,11 @@ func (m *ReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// ExportJobs the exportJobs property
+// ExportJobs provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
 func (m *ReportsRequestBuilder) ExportJobs()(*ie41435632a5520fecdaee112e828e6671b343b789c3194f59d9f0f509c06ef75.ExportJobsRequestBuilder) {
     return ie41435632a5520fecdaee112e828e6671b343b789c3194f59d9f0f509c06ef75.NewExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExportJobsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.reports.exportJobs.item collection
+// ExportJobsById provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
 func (m *ReportsRequestBuilder) ExportJobsById(id string)(*ie2ea01ca6f1a0dce0c2cb6a13a16a43889baea0dedb63d5685be60340e932e58.CloudPcExportJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -164,7 +164,7 @@ func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable), nil
 }
-// GetDailyAggregatedRemoteConnectionReports the getDailyAggregatedRemoteConnectionReports property
+// GetDailyAggregatedRemoteConnectionReports provides operations to call the getDailyAggregatedRemoteConnectionReports method.
 func (m *ReportsRequestBuilder) GetDailyAggregatedRemoteConnectionReports()(*i95b7c8af0745b2a1da9f540d5a777c99385bcebf02b4080501f89dbd40107ba3.GetDailyAggregatedRemoteConnectionReportsRequestBuilder) {
     return i95b7c8af0745b2a1da9f540d5a777c99385bcebf02b4080501f89dbd40107ba3.NewGetDailyAggregatedRemoteConnectionReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -176,11 +176,11 @@ func (m *ReportsRequestBuilder) GetRealTimeRemoteConnectionLatencyWithCloudPcId(
 func (m *ReportsRequestBuilder) GetRealTimeRemoteConnectionStatusWithCloudPcId(cloudPcId *string)(*if50a57cae97cf86969f33dc48050fe5aeee7579c3225b782f7c05a91663bb493.GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder) {
     return if50a57cae97cf86969f33dc48050fe5aeee7579c3225b782f7c05a91663bb493.NewGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, cloudPcId);
 }
-// GetRemoteConnectionHistoricalReports the getRemoteConnectionHistoricalReports property
+// GetRemoteConnectionHistoricalReports provides operations to call the getRemoteConnectionHistoricalReports method.
 func (m *ReportsRequestBuilder) GetRemoteConnectionHistoricalReports()(*i6c63539b2ea836874719dad8cf88a5233e911e2374f162838afedeb7a9351a84.GetRemoteConnectionHistoricalReportsRequestBuilder) {
     return i6c63539b2ea836874719dad8cf88a5233e911e2374f162838afedeb7a9351a84.NewGetRemoteConnectionHistoricalReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetTotalAggregatedRemoteConnectionReports the getTotalAggregatedRemoteConnectionReports property
+// GetTotalAggregatedRemoteConnectionReports provides operations to call the getTotalAggregatedRemoteConnectionReports method.
 func (m *ReportsRequestBuilder) GetTotalAggregatedRemoteConnectionReports()(*ie187a9a51e2529ea4c837ede8a8e6f91dfdb9cfe062f4562b9c42cd6c2d7385f.GetTotalAggregatedRemoteConnectionReportsRequestBuilder) {
     return ie187a9a51e2529ea4c837ede8a8e6f91dfdb9cfe062f4562b9c42cd6c2d7385f.NewGetTotalAggregatedRemoteConnectionReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

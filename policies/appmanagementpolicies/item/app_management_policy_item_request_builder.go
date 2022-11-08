@@ -48,11 +48,11 @@ type AppManagementPolicyItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppliesTo the appliesTo property
+// AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
 func (m *AppManagementPolicyItemRequestBuilder) AppliesTo()(*i39246f205a7ceced8c7ecbef8cbfa15757785cd1d0f62de6ca5bd4e8c035342d.AppliesToRequestBuilder) {
     return i39246f205a7ceced8c7ecbef8cbfa15757785cd1d0f62de6ca5bd4e8c035342d.NewAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppliesToById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.appManagementPolicies.item.appliesTo.item collection
+// AppliesToById provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
 func (m *AppManagementPolicyItemRequestBuilder) AppliesToById(id string)(*i5bfe18ce550e877199a23bfc74000f1842df32fb36e78ada04700c468505c5e2.DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

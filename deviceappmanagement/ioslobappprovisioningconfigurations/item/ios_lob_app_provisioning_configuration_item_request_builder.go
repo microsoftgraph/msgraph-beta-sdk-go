@@ -55,15 +55,15 @@ type IosLobAppProvisioningConfigurationItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) Assign()(*ia3ce539b9f79e09109b9926ad281d97d40b25705ecefa910e2bfd8db0c875c85.AssignRequestBuilder) {
     return ia3ce539b9f79e09109b9926ad281d97d40b25705ecefa910e2bfd8db0c875c85.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) Assignments()(*ie78372adfad521ab316f12bda3bf095efac22a79d88a6727c101e09421a58567.AssignmentsRequestBuilder) {
     return ie78372adfad521ab316f12bda3bf095efac22a79d88a6727c101e09421a58567.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.iosLobAppProvisioningConfigurations.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) AssignmentsById(id string)(*ia1a84f1e276568c2aeb23fcbd50f8de951fa5878159c134fa0228aec984ff3c0.IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -151,11 +151,11 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// DeviceStatuses the deviceStatuses property
+// DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) DeviceStatuses()(*if9007b7e9e190f805a646bbd1f3e6ae76781048bd465090c2016244c10d7e0e5.DeviceStatusesRequestBuilder) {
     return if9007b7e9e190f805a646bbd1f3e6ae76781048bd465090c2016244c10d7e0e5.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.iosLobAppProvisioningConfigurations.item.deviceStatuses.item collection
+// DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) DeviceStatusesById(id string)(*i072136c315e8186c0ff2a10126695a2fb03cdd14dfc2acf41de66f1f1caba3d8.ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,11 +185,11 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable), nil
 }
-// GroupAssignments the groupAssignments property
+// GroupAssignments provides operations to manage the groupAssignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) GroupAssignments()(*i5131d1ed5fbac3ef96a626337be97ffb49d1383128e9d493a6940ceb8833b3a0.GroupAssignmentsRequestBuilder) {
     return i5131d1ed5fbac3ef96a626337be97ffb49d1383128e9d493a6940ceb8833b3a0.NewGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.iosLobAppProvisioningConfigurations.item.groupAssignments.item collection
+// GroupAssignmentsById provides operations to manage the groupAssignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) GroupAssignmentsById(id string)(*i11301c42fede611eafd37db9196e74ba08d3d72e93b62bd910672a1181aa6c19.MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -219,11 +219,11 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) Patch(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable), nil
 }
-// UserStatuses the userStatuses property
+// UserStatuses provides operations to manage the userStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) UserStatuses()(*i36927486fc4ece174ed7ee7d23b6d06925d565134b4116881a5a149b17667929.UserStatusesRequestBuilder) {
     return i36927486fc4ece174ed7ee7d23b6d06925d565134b4116881a5a149b17667929.NewUserStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.iosLobAppProvisioningConfigurations.item.userStatuses.item collection
+// UserStatusesById provides operations to manage the userStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) UserStatusesById(id string)(*i6393c179ab957b9b86c9cd839a5d7820fb3ce75696832f0ef436bd70a8a4196d.ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

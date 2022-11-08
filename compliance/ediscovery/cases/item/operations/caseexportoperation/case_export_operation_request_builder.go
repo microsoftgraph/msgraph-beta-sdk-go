@@ -64,7 +64,7 @@ func NewCaseExportOperationRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewCaseExportOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CaseExportOperationRequestBuilder) Count()(*ifa2ffed906c3062285b6633cd027242f57f8f39ec2ad27066de17476d5b03829.CountRequestBuilder) {
     return ifa2ffed906c3062285b6633cd027242f57f8f39ec2ad27066de17476d5b03829.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -125,11 +125,11 @@ func (m *WindowsProtectionStateRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// DetectedMalwareState the detectedMalwareState property
+// DetectedMalwareState provides operations to manage the detectedMalwareState property of the microsoft.graph.windowsProtectionState entity.
 func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareState()(*ie5a21a289c69d0520cf727b18e1210b27ad00a74204a1098b82dc048990cdcaf.DetectedMalwareStateRequestBuilder) {
     return ie5a21a289c69d0520cf727b18e1210b27ad00a74204a1098b82dc048990cdcaf.NewDetectedMalwareStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DetectedMalwareStateById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.comanagedDevices.item.windowsProtectionState.detectedMalwareState.item collection
+// DetectedMalwareStateById provides operations to manage the detectedMalwareState property of the microsoft.graph.windowsProtectionState entity.
 func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id string)(*ic07efac206ddf8ee27f1dbd67d1c2cfb5d2f7f7fdcfcedf76c1de7dc9a00cc6b.WindowsDeviceMalwareStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

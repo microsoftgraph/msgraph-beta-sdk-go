@@ -191,10 +191,6 @@ type DeviceManagement struct {
     notificationMessageTemplates []NotificationMessageTemplateable
     // List of OEM Warranty Statuses
     oemWarrantyInformationOnboarding []OemWarrantyInformationOnboardingable
-    // A list of OrganizationalMessageDetails
-    organizationalMessageDetails []OrganizationalMessageDetailable
-    // A list of OrganizationalMessageGuidedContents
-    organizationalMessageGuidedContents []OrganizationalMessageGuidedContentable
     // The list of device remote action audits with the tenant.
     remoteActionAudits []RemoteActionAuditable
     // The remote assist partners.
@@ -315,8 +311,6 @@ type DeviceManagement struct {
     userExperienceAnalyticsNotAutopilotReadyDevice []UserExperienceAnalyticsNotAutopilotReadyDeviceable
     // User experience analytics overview
     userExperienceAnalyticsOverview UserExperienceAnalyticsOverviewable
-    // User experience analytics regression summary
-    userExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummaryable
     // User experience analytics remote connection
     userExperienceAnalyticsRemoteConnection []UserExperienceAnalyticsRemoteConnectionable
     // User experience analytics resource performance
@@ -711,8 +705,6 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
     res["ndesConnectors"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateNdesConnectorFromDiscriminatorValue , m.SetNdesConnectors)
     res["notificationMessageTemplates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateNotificationMessageTemplateFromDiscriminatorValue , m.SetNotificationMessageTemplates)
     res["oemWarrantyInformationOnboarding"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOemWarrantyInformationOnboardingFromDiscriminatorValue , m.SetOemWarrantyInformationOnboarding)
-    res["organizationalMessageDetails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOrganizationalMessageDetailFromDiscriminatorValue , m.SetOrganizationalMessageDetails)
-    res["organizationalMessageGuidedContents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOrganizationalMessageGuidedContentFromDiscriminatorValue , m.SetOrganizationalMessageGuidedContents)
     res["remoteActionAudits"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRemoteActionAuditFromDiscriminatorValue , m.SetRemoteActionAudits)
     res["remoteAssistancePartners"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRemoteAssistancePartnerFromDiscriminatorValue , m.SetRemoteAssistancePartners)
     res["remoteAssistanceSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateRemoteAssistanceSettingsFromDiscriminatorValue , m.SetRemoteAssistanceSettings)
@@ -773,7 +765,6 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
     res["userExperienceAnalyticsModelScores"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsModelScoresFromDiscriminatorValue , m.SetUserExperienceAnalyticsModelScores)
     res["userExperienceAnalyticsNotAutopilotReadyDevice"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue , m.SetUserExperienceAnalyticsNotAutopilotReadyDevice)
     res["userExperienceAnalyticsOverview"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserExperienceAnalyticsOverviewFromDiscriminatorValue , m.SetUserExperienceAnalyticsOverview)
-    res["userExperienceAnalyticsRegressionSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserExperienceAnalyticsRegressionSummaryFromDiscriminatorValue , m.SetUserExperienceAnalyticsRegressionSummary)
     res["userExperienceAnalyticsRemoteConnection"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue , m.SetUserExperienceAnalyticsRemoteConnection)
     res["userExperienceAnalyticsResourcePerformance"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsResourcePerformanceFromDiscriminatorValue , m.SetUserExperienceAnalyticsResourcePerformance)
     res["userExperienceAnalyticsScoreHistory"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserExperienceAnalyticsScoreHistoryFromDiscriminatorValue , m.SetUserExperienceAnalyticsScoreHistory)
@@ -922,14 +913,6 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
 // GetOemWarrantyInformationOnboarding gets the oemWarrantyInformationOnboarding property value. List of OEM Warranty Statuses
 func (m *DeviceManagement) GetOemWarrantyInformationOnboarding()([]OemWarrantyInformationOnboardingable) {
     return m.oemWarrantyInformationOnboarding
-}
-// GetOrganizationalMessageDetails gets the organizationalMessageDetails property value. A list of OrganizationalMessageDetails
-func (m *DeviceManagement) GetOrganizationalMessageDetails()([]OrganizationalMessageDetailable) {
-    return m.organizationalMessageDetails
-}
-// GetOrganizationalMessageGuidedContents gets the organizationalMessageGuidedContents property value. A list of OrganizationalMessageGuidedContents
-func (m *DeviceManagement) GetOrganizationalMessageGuidedContents()([]OrganizationalMessageGuidedContentable) {
-    return m.organizationalMessageGuidedContents
 }
 // GetRemoteActionAudits gets the remoteActionAudits property value. The list of device remote action audits with the tenant.
 func (m *DeviceManagement) GetRemoteActionAudits()([]RemoteActionAuditable) {
@@ -1170,10 +1153,6 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsNotAutopilotReadyDevice()([
 // GetUserExperienceAnalyticsOverview gets the userExperienceAnalyticsOverview property value. User experience analytics overview
 func (m *DeviceManagement) GetUserExperienceAnalyticsOverview()(UserExperienceAnalyticsOverviewable) {
     return m.userExperienceAnalyticsOverview
-}
-// GetUserExperienceAnalyticsRegressionSummary gets the userExperienceAnalyticsRegressionSummary property value. User experience analytics regression summary
-func (m *DeviceManagement) GetUserExperienceAnalyticsRegressionSummary()(UserExperienceAnalyticsRegressionSummaryable) {
-    return m.userExperienceAnalyticsRegressionSummary
 }
 // GetUserExperienceAnalyticsRemoteConnection gets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection
 func (m *DeviceManagement) GetUserExperienceAnalyticsRemoteConnection()([]UserExperienceAnalyticsRemoteConnectionable) {
@@ -1871,20 +1850,6 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetOrganizationalMessageDetails() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOrganizationalMessageDetails())
-        err = writer.WriteCollectionOfObjectValues("organizationalMessageDetails", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetOrganizationalMessageGuidedContents() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOrganizationalMessageGuidedContents())
-        err = writer.WriteCollectionOfObjectValues("organizationalMessageGuidedContents", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRemoteActionAudits() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRemoteActionAudits())
         err = writer.WriteCollectionOfObjectValues("remoteActionAudits", cast)
@@ -2283,12 +2248,6 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteObjectValue("userExperienceAnalyticsOverview", m.GetUserExperienceAnalyticsOverview())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("userExperienceAnalyticsRegressionSummary", m.GetUserExperienceAnalyticsRegressionSummary())
         if err != nil {
             return err
         }
@@ -2814,14 +2773,6 @@ func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationM
 func (m *DeviceManagement) SetOemWarrantyInformationOnboarding(value []OemWarrantyInformationOnboardingable)() {
     m.oemWarrantyInformationOnboarding = value
 }
-// SetOrganizationalMessageDetails sets the organizationalMessageDetails property value. A list of OrganizationalMessageDetails
-func (m *DeviceManagement) SetOrganizationalMessageDetails(value []OrganizationalMessageDetailable)() {
-    m.organizationalMessageDetails = value
-}
-// SetOrganizationalMessageGuidedContents sets the organizationalMessageGuidedContents property value. A list of OrganizationalMessageGuidedContents
-func (m *DeviceManagement) SetOrganizationalMessageGuidedContents(value []OrganizationalMessageGuidedContentable)() {
-    m.organizationalMessageGuidedContents = value
-}
 // SetRemoteActionAudits sets the remoteActionAudits property value. The list of device remote action audits with the tenant.
 func (m *DeviceManagement) SetRemoteActionAudits(value []RemoteActionAuditable)() {
     m.remoteActionAudits = value
@@ -3061,10 +3012,6 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsNotAutopilotReadyDevice(val
 // SetUserExperienceAnalyticsOverview sets the userExperienceAnalyticsOverview property value. User experience analytics overview
 func (m *DeviceManagement) SetUserExperienceAnalyticsOverview(value UserExperienceAnalyticsOverviewable)() {
     m.userExperienceAnalyticsOverview = value
-}
-// SetUserExperienceAnalyticsRegressionSummary sets the userExperienceAnalyticsRegressionSummary property value. User experience analytics regression summary
-func (m *DeviceManagement) SetUserExperienceAnalyticsRegressionSummary(value UserExperienceAnalyticsRegressionSummaryable)() {
-    m.userExperienceAnalyticsRegressionSummary = value
 }
 // SetUserExperienceAnalyticsRemoteConnection sets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection
 func (m *DeviceManagement) SetUserExperienceAnalyticsRemoteConnection(value []UserExperienceAnalyticsRemoteConnectionable)() {

@@ -66,7 +66,7 @@ func NewServiceAnnouncementAttachmentItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementAttachmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the admin entity.
 func (m *ServiceAnnouncementAttachmentItemRequestBuilder) Content()(*i45dad0032403d1cc9f0d6bbbbb315904e10035d4984958ff746b2665c985732c.ContentRequestBuilder) {
     return i45dad0032403d1cc9f0d6bbbbb315904e10035d4984958ff746b2665c985732c.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -51,11 +51,11 @@ type PlannerPlanItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Buckets the buckets property
+// Buckets provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
 func (m *PlannerPlanItemRequestBuilder) Buckets()(*i7f32c8600fba087de63366d04d6a91133de5eb15cc714e59e9b52da81d22e625.BucketsRequestBuilder) {
     return i7f32c8600fba087de63366d04d6a91133de5eb15cc714e59e9b52da81d22e625.NewBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BucketsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.plans.item.buckets.item collection
+// BucketsById provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
 func (m *PlannerPlanItemRequestBuilder) BucketsById(id string)(*idc1207cd8d6e320b81e1409a0b623173b16fb91fb19f9b2bb157cb6a48e81f31.PlannerBucketItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -143,7 +143,7 @@ func (m *PlannerPlanItemRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// Details the details property
+// Details provides operations to manage the details property of the microsoft.graph.plannerPlan entity.
 func (m *PlannerPlanItemRequestBuilder) Details()(*i8cb10bb42e61599c30ec5017f0b00ab5984278f06af175479b58591c35f64949.DetailsRequestBuilder) {
     return i8cb10bb42e61599c30ec5017f0b00ab5984278f06af175479b58591c35f64949.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -185,11 +185,11 @@ func (m *PlannerPlanItemRequestBuilder) Patch(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
 func (m *PlannerPlanItemRequestBuilder) Tasks()(*i2384bedae2e9031e0b5b957d6ea5b97c0307e4152dd8400b958d7144f30aa99b.TasksRequestBuilder) {
     return i2384bedae2e9031e0b5b957d6ea5b97c0307e4152dd8400b958d7144f30aa99b.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.plans.item.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
 func (m *PlannerPlanItemRequestBuilder) TasksById(id string)(*i7cbb1bc13f4b8092b298fd3268ab6d635d1a77fae8856cb9a8febf4dea9a059b.PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

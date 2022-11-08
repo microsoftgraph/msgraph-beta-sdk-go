@@ -88,11 +88,11 @@ func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// OrgContact the orgContact property
+// OrgContact casts the previous resource to orgContact.
 func (m *DirectoryObjectItemRequestBuilder) OrgContact()(*ib52bd15ea5e01c27cb41a5b3fd48bd0b31b2a68009db4dfe62a343110a0c9cd6.OrgContactRequestBuilder) {
     return ib52bd15ea5e01c27cb41a5b3fd48bd0b31b2a68009db4dfe62a343110a0c9cd6.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *DirectoryObjectItemRequestBuilder) User()(*i4b911389473a38ffe8c08b98ee6e4577b393b6fdbc664fc6c53c2c6447470192.UserRequestBuilder) {
     return i4b911389473a38ffe8c08b98ee6e4577b393b6fdbc664fc6c53c2c6447470192.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

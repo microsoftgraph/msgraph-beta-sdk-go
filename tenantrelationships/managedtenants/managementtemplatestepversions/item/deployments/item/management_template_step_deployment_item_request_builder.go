@@ -48,7 +48,7 @@ type ManagementTemplateStepDeploymentItemRequestBuilderPatchRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChangeDeploymentStatus the changeDeploymentStatus property
+// ChangeDeploymentStatus provides operations to call the changeDeploymentStatus method.
 func (m *ManagementTemplateStepDeploymentItemRequestBuilder) ChangeDeploymentStatus()(*i292bc174445bb031191872cc10983f77784919321510ef2a04f2f2500dce8edc.ChangeDeploymentStatusRequestBuilder) {
     return i292bc174445bb031191872cc10983f77784919321510ef2a04f2f2500dce8edc.NewChangeDeploymentStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *ManagementTemplateStepDeploymentItemRequestBuilder) Patch(ctx context.C
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable), nil
 }
-// TemplateStepVersion the templateStepVersion property
+// TemplateStepVersion provides operations to manage the templateStepVersion property of the microsoft.graph.managedTenants.managementTemplateStepDeployment entity.
 func (m *ManagementTemplateStepDeploymentItemRequestBuilder) TemplateStepVersion()(*id724e484a929997f8cf6269cb24daacc42844c715261f0beba74711a20c3009b.TemplateStepVersionRequestBuilder) {
     return id724e484a929997f8cf6269cb24daacc42844c715261f0beba74711a20c3009b.NewTemplateStepVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

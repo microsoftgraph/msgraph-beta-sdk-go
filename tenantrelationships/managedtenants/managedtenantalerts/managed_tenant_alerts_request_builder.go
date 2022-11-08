@@ -71,7 +71,7 @@ func NewManagedTenantAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedTenantAlertsRequestBuilder) Count()(*ib4b219f6103998f13b3aa96d6dcfc93df7532eaef71da4c947607d0abbbbadc9.CountRequestBuilder) {
     return ib4b219f6103998f13b3aa96d6dcfc93df7532eaef71da4c947607d0abbbbadc9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

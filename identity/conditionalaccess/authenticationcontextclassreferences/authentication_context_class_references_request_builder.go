@@ -71,7 +71,7 @@ func NewAuthenticationContextClassReferencesRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationContextClassReferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AuthenticationContextClassReferencesRequestBuilder) Count()(*i5339488e82ea60759a866bc3a5fa53f685c409004db37e930e4c5ffc16e6cfbf.CountRequestBuilder) {
     return i5339488e82ea60759a866bc3a5fa53f685c409004db37e930e4c5ffc16e6cfbf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

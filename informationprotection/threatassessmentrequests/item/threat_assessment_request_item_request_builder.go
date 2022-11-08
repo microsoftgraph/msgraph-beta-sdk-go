@@ -163,11 +163,11 @@ func (m *ThreatAssessmentRequestItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentRequestable), nil
 }
-// Results the results property
+// Results provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
 func (m *ThreatAssessmentRequestItemRequestBuilder) Results()(*id6831cc7f80026a72507811df1df7e7493811bee33aa372f1c39d6f0f65d5621.ResultsRequestBuilder) {
     return id6831cc7f80026a72507811df1df7e7493811bee33aa372f1c39d6f0f65d5621.NewResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResultsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.threatAssessmentRequests.item.results.item collection
+// ResultsById provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
 func (m *ThreatAssessmentRequestItemRequestBuilder) ResultsById(id string)(*i49b97f74066b80fc2f06e1a623b395eb4de07f58502cf70313d6e6838b92b518.ThreatAssessmentResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

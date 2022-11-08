@@ -60,11 +60,11 @@ type CalendarItemRequestBuilderPatchRequestConfiguration struct {
 func (m *CalendarItemRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ife78aa1675e428b35acac9c3d51963dd3aa40c64cd0973840b3ba47dc64b5df6.AllowedCalendarSharingRolesWithUserRequestBuilder) {
     return ife78aa1675e428b35acac9c3d51963dd3aa40c64cd0973840b3ba47dc64b5df6.NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user);
 }
-// CalendarPermissions the calendarPermissions property
+// CalendarPermissions provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) CalendarPermissions()(*i1e3d1947b13aae3f970d296ef71a4efc9e040742b37371ed6c138c0e253b1bf4.CalendarPermissionsRequestBuilder) {
     return i1e3d1947b13aae3f970d296ef71a4efc9e040742b37371ed6c138c0e253b1bf4.NewCalendarPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CalendarPermissionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendars.item.calendarPermissions.item collection
+// CalendarPermissionsById provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) CalendarPermissionsById(id string)(*id86c8a2a7201c8af159055ea250d6a414ff1975b2f7042526a50a2700d86486d.CalendarPermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,11 +75,11 @@ func (m *CalendarItemRequestBuilder) CalendarPermissionsById(id string)(*id86c8a
     }
     return id86c8a2a7201c8af159055ea250d6a414ff1975b2f7042526a50a2700d86486d.NewCalendarPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CalendarView the calendarView property
+// CalendarView provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) CalendarView()(*i583738b29cef42ce350c32e40b7980bf07bc18ac8bde87fb209297b7485e7533.CalendarViewRequestBuilder) {
     return i583738b29cef42ce350c32e40b7980bf07bc18ac8bde87fb209297b7485e7533.NewCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CalendarViewById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendars.item.calendarView.item collection
+// CalendarViewById provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) CalendarViewById(id string)(*i4e566b1ce953f539e8901716dfe774ae3102813087a55a1aa73d94bf3d010178.EventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -167,11 +167,11 @@ func (m *CalendarItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Events the events property
+// Events provides operations to manage the events property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) Events()(*ied8df54815613d8a9050657a30d013ad8f4a43920a2fecbb829a53e69f7ef01a.EventsRequestBuilder) {
     return ied8df54815613d8a9050657a30d013ad8f4a43920a2fecbb829a53e69f7ef01a.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendars.item.events.item collection
+// EventsById provides operations to manage the events property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) EventsById(id string)(*i00da9d0223281912e3c155074179db42ccbaa07b1ce54f8636bc10641c22665f.EventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -201,15 +201,15 @@ func (m *CalendarItemRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable), nil
 }
-// GetSchedule the getSchedule property
+// GetSchedule provides operations to call the getSchedule method.
 func (m *CalendarItemRequestBuilder) GetSchedule()(*i472232d154eda28ab8efd7fd9d2cc15ad8f3f68df3d90d6a2763b48e0a0fb5d2.GetScheduleRequestBuilder) {
     return i472232d154eda28ab8efd7fd9d2cc15ad8f3f68df3d90d6a2763b48e0a0fb5d2.NewGetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) MultiValueExtendedProperties()(*ieb8d5dbdf577b51a4d75e40f7dc370bdfc82658f15e893321d1709a963ed78e2.MultiValueExtendedPropertiesRequestBuilder) {
     return ieb8d5dbdf577b51a4d75e40f7dc370bdfc82658f15e893321d1709a963ed78e2.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendars.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i5a21f9744b199c1e3416254b970e7ad0211ea0e94c465251fdcf1915a650f97e.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -239,11 +239,11 @@ func (m *CalendarItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable), nil
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) SingleValueExtendedProperties()(*ia34d5d2f8afdb98de85287585fbda3c10ce8763f60cf66a9c81a18f05aa37a17.SingleValueExtendedPropertiesRequestBuilder) {
     return ia34d5d2f8afdb98de85287585fbda3c10ce8763f60cf66a9c81a18f05aa37a17.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendars.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
 func (m *CalendarItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i285827c984f3b6bedeb07253a041706200e08a011dabe8ea34a88c14953200bc.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -162,7 +162,7 @@ func (m *SiteSourceItemRequestBuilder) Patch(ctx context.Context, body ic154d683
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable), nil
 }
-// Site the site property
+// Site provides operations to manage the site property of the microsoft.graph.ediscovery.siteSource entity.
 func (m *SiteSourceItemRequestBuilder) Site()(*i4e41d9c5e297debb2be0312b1a3e41fa719aa0a75fa2b4f4457afdb7529da306.SiteRequestBuilder) {
     return i4e41d9c5e297debb2be0312b1a3e41fa719aa0a75fa2b4f4457afdb7529da306.NewSiteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

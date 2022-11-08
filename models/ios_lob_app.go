@@ -17,7 +17,7 @@ type IosLobApp struct {
     bundleId *string
     // The expiration time.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The identity version.
+    // The identity version. This property is being deprecated in 2211(November 2022)
     identityVersion *string
     // The value for the minimum applicable operating system.
     minimumSupportedOperatingSystem IosMinimumOperatingSystemable
@@ -65,7 +65,7 @@ func (m *IosLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     res["versionNumber"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetVersionNumber)
     return res
 }
-// GetIdentityVersion gets the identityVersion property value. The identity version.
+// GetIdentityVersion gets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022)
 func (m *IosLobApp) GetIdentityVersion()(*string) {
     return m.identityVersion
 }
@@ -143,7 +143,7 @@ func (m *IosLobApp) SetBundleId(value *string)() {
 func (m *IosLobApp) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// SetIdentityVersion sets the identityVersion property value. The identity version.
+// SetIdentityVersion sets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022)
 func (m *IosLobApp) SetIdentityVersion(value *string)() {
     m.identityVersion = value
 }

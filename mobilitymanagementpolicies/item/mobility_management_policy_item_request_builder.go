@@ -144,7 +144,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
 }
-// IncludedGroups the includedGroups property
+// IncludedGroups provides operations to manage the includedGroups property of the microsoft.graph.mobilityManagementPolicy entity.
 func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*if51f113f9b8f51d0bb7f59d550d6f72655016f1d80edcaa011d6f30f596d0379.IncludedGroupsRequestBuilder) {
     return if51f113f9b8f51d0bb7f59d550d6f72655016f1d80edcaa011d6f30f596d0379.NewIncludedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

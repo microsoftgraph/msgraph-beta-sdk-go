@@ -56,7 +56,7 @@ type AccessReviewItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyDecisions the applyDecisions property
+// ApplyDecisions provides operations to call the applyDecisions method.
 func (m *AccessReviewItemRequestBuilder) ApplyDecisions()(*ic27c7952d00624c2da5fd2be5a0a7aacc4f5e7a14917639e6c7f5b726f99ce45.ApplyDecisionsRequestBuilder) {
     return ic27c7952d00624c2da5fd2be5a0a7aacc4f5e7a14917639e6c7f5b726f99ce45.NewApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -121,11 +121,11 @@ func (m *AccessReviewItemRequestBuilder) CreatePatchRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// Decisions the decisions property
+// Decisions provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) Decisions()(*i8ab53548eb87e2b488fd6dda1768c4ad29fd4e638c24a409daf072d07ff44804.DecisionsRequestBuilder) {
     return i8ab53548eb87e2b488fd6dda1768c4ad29fd4e638c24a409daf072d07ff44804.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.instances.item.decisions.item collection
+// DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*id3fe44f01780fcde4c699a6a202fc6e147e89515315aba30b2594c57bab487ac.AccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,11 +171,11 @@ func (m *AccessReviewItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable), nil
 }
-// MyDecisions the myDecisions property
+// MyDecisions provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) MyDecisions()(*i65c01fa596a41558434812572afb4c05db36b5cfbea9355b7b2d68eba6548691.MyDecisionsRequestBuilder) {
     return i65c01fa596a41558434812572afb4c05db36b5cfbea9355b7b2d68eba6548691.NewMyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MyDecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.instances.item.myDecisions.item collection
+// MyDecisionsById provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*i8daa9a485197443d7a67077ab2f41041a6f8236cb9437bc2446ae5f14432ea51.AccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -205,15 +205,15 @@ func (m *AccessReviewItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable), nil
 }
-// ResetDecisions the resetDecisions property
+// ResetDecisions provides operations to call the resetDecisions method.
 func (m *AccessReviewItemRequestBuilder) ResetDecisions()(*i582c25d0b7cb97c8a565f6cf5d70558f6ba5b94d6324ffe4eadbd370e08df083.ResetDecisionsRequestBuilder) {
     return i582c25d0b7cb97c8a565f6cf5d70558f6ba5b94d6324ffe4eadbd370e08df083.NewResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Reviewers the reviewers property
+// Reviewers provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) Reviewers()(*i7bc12143e353b4d4f5d4853894578fef285042b09d3a2bf02a3b93e71752ac83.ReviewersRequestBuilder) {
     return i7bc12143e353b4d4f5d4853894578fef285042b09d3a2bf02a3b93e71752ac83.NewReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReviewersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.accessReviews.item.instances.item.reviewers.item collection
+// ReviewersById provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*i701f07b747d69019caad4740f3b1724263906917267c5af3244d67f4509f2b99.AccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -224,11 +224,11 @@ func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*i701f07b747d6
     }
     return i701f07b747d69019caad4740f3b1724263906917267c5af3244d67f4509f2b99.NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SendReminder the sendReminder property
+// SendReminder provides operations to call the sendReminder method.
 func (m *AccessReviewItemRequestBuilder) SendReminder()(*i961781b3050f29063663fdf5b0570296ccb6be6f13a899851a5ba688dca06f3c.SendReminderRequestBuilder) {
     return i961781b3050f29063663fdf5b0570296ccb6be6f13a899851a5ba688dca06f3c.NewSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Stop the stop property
+// Stop provides operations to call the stop method.
 func (m *AccessReviewItemRequestBuilder) Stop()(*i427417357745b8948faf1189b247d6d7532aaf80f445dbe4ae64088c48d587ef.StopRequestBuilder) {
     return i427417357745b8948faf1189b247d6d7532aaf80f445dbe4ae64088c48d587ef.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

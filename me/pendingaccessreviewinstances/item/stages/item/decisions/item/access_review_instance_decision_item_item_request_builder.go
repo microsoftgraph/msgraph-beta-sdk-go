@@ -145,11 +145,11 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
-// Insights the insights property
+// Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*i424c28d4b6a8f146c2d150e2ca15984a57629f32092c8310627145b59ff8c3bb.InsightsRequestBuilder) {
     return i424c28d4b6a8f146c2d150e2ca15984a57629f32092c8310627145b59ff8c3bb.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InsightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.stages.item.decisions.item.insights.item collection
+// InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*i33a5dcc3ca7967ac3285118d5fed423e4335b2bead2cdd71e253726f7902f3df.GovernanceInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -160,7 +160,7 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id str
     }
     return i33a5dcc3ca7967ac3285118d5fed423e4335b2bead2cdd71e253726f7902f3df.NewGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instance the instance property
+// Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*i343e1bd4aa6917629271bed7a21a7c877f4e7e45eb6dd61b16f3197b16e2dc07.InstanceRequestBuilder) {
     return i343e1bd4aa6917629271bed7a21a7c877f4e7e45eb6dd61b16f3197b16e2dc07.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

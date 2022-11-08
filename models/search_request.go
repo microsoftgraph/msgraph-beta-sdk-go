@@ -13,7 +13,7 @@ type SearchRequest struct {
     aggregationFilters []string
     // Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
     aggregations []AggregationOptionable
-    // The collapseProperties property
+    // Contains the ordered collection of fields and limit to collapse results. Optional.
     collapseProperties []CollapsePropertyable
     // Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
     contentSources []string
@@ -71,7 +71,7 @@ func (m *SearchRequest) GetAggregationFilters()([]string) {
 func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
     return m.aggregations
 }
-// GetCollapseProperties gets the collapseProperties property value. The collapseProperties property
+// GetCollapseProperties gets the collapseProperties property value. Contains the ordered collection of fields and limit to collapse results. Optional.
 func (m *SearchRequest) GetCollapseProperties()([]CollapsePropertyable) {
     return m.collapseProperties
 }
@@ -291,7 +291,7 @@ func (m *SearchRequest) SetAggregationFilters(value []string)() {
 func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
     m.aggregations = value
 }
-// SetCollapseProperties sets the collapseProperties property value. The collapseProperties property
+// SetCollapseProperties sets the collapseProperties property value. Contains the ordered collection of fields and limit to collapse results. Optional.
 func (m *SearchRequest) SetCollapseProperties(value []CollapsePropertyable)() {
     m.collapseProperties = value
 }

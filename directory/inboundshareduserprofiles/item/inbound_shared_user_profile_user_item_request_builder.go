@@ -125,7 +125,7 @@ func (m *InboundSharedUserProfileUserItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// ExportPersonalData the exportPersonalData property
+// ExportPersonalData provides operations to call the exportPersonalData method.
 func (m *InboundSharedUserProfileUserItemRequestBuilder) ExportPersonalData()(*i03f81bc977f9d90efbd1427f3444ba111baf8b4fe1f097fb2522abf9ca22efc4.ExportPersonalDataRequestBuilder) {
     return i03f81bc977f9d90efbd1427f3444ba111baf8b4fe1f097fb2522abf9ca22efc4.NewExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *InboundSharedUserProfileUserItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable), nil
 }
-// RemovePersonalData the removePersonalData property
+// RemovePersonalData provides operations to call the removePersonalData method.
 func (m *InboundSharedUserProfileUserItemRequestBuilder) RemovePersonalData()(*i2a5ab3f902913f407fab17927469dfb7cf3909152c8e32eaa79d54021bc94cb3.RemovePersonalDataRequestBuilder) {
     return i2a5ab3f902913f407fab17927469dfb7cf3909152c8e32eaa79d54021bc94cb3.NewRemovePersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

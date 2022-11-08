@@ -58,7 +58,7 @@ type DeletedItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Application the application property
+// Application casts the previous resource to application.
 func (m *DeletedItemsRequestBuilder) Application()(*ifd1aec9b29d58b8b58e8239f298c349cd212a89eb493ad01299f5fbb91de0bc5.ApplicationRequestBuilder) {
     return ifd1aec9b29d58b8b58e8239f298c349cd212a89eb493ad01299f5fbb91de0bc5.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -81,7 +81,7 @@ func NewDeletedItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DeletedItemsRequestBuilder) Count()(*i582b3dfc89fb8335c62d5c1b642f724197229635d5f263e6cc636b61190df708.CountRequestBuilder) {
     return i582b3dfc89fb8335c62d5c1b642f724197229635d5f263e6cc636b61190df708.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -134,15 +134,15 @@ func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *DeletedItemsRequestBuilder) GetByIds()(*ie1025c6f61e31a1860f913437eacc721e9877d2b918c5dd29552da8ecb803f5f.GetByIdsRequestBuilder) {
     return ie1025c6f61e31a1860f913437eacc721e9877d2b918c5dd29552da8ecb803f5f.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *DeletedItemsRequestBuilder) GetUserOwnedObjects()(*i4389b9aaa346a5fdf53bb167cf00b6bdc4aa52db66b0adf49337c8a1c78f8a32.GetUserOwnedObjectsRequestBuilder) {
     return i4389b9aaa346a5fdf53bb167cf00b6bdc4aa52db66b0adf49337c8a1c78f8a32.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Group the group property
+// Group casts the previous resource to group.
 func (m *DeletedItemsRequestBuilder) Group()(*i2589430a289fe8e95a7acdf2d80ee9813ad5587a9980306516875cdabb3a3cb4.GroupRequestBuilder) {
     return i2589430a289fe8e95a7acdf2d80ee9813ad5587a9980306516875cdabb3a3cb4.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -165,11 +165,11 @@ func (m *DeletedItemsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *DeletedItemsRequestBuilder) User()(*i42ef6142cdf65b13c8c619b92627f1ec8b7b6fce8f4b66e55c2b57da753f54e6.UserRequestBuilder) {
     return i42ef6142cdf65b13c8c619b92627f1ec8b7b6fce8f4b66e55c2b57da753f54e6.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *DeletedItemsRequestBuilder) ValidateProperties()(*i59e6d9a924e0e45d290fd3bf7915868207b145fc6d55661a4adb34ab83d49d96.ValidatePropertiesRequestBuilder) {
     return i59e6d9a924e0e45d290fd3bf7915868207b145fc6d55661a4adb34ab83d49d96.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

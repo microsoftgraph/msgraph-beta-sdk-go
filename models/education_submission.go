@@ -37,6 +37,8 @@ type EducationSubmission struct {
     unsubmittedBy IdentitySetable
     // Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     unsubmittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The deep link URL for the given submission.
+    webUrl *string
 }
 // NewEducationSubmission instantiates a new educationSubmission and sets the default values.
 func NewEducationSubmission()(*EducationSubmission) {
@@ -68,6 +70,7 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
     res["submittedResources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEducationSubmissionResourceFromDiscriminatorValue , m.SetSubmittedResources)
     res["unsubmittedBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentitySetFromDiscriminatorValue , m.SetUnsubmittedBy)
     res["unsubmittedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetUnsubmittedDateTime)
+    res["webUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWebUrl)
     return res
 }
 // GetOutcomes gets the outcomes property value. The outcomes property
@@ -125,6 +128,10 @@ func (m *EducationSubmission) GetUnsubmittedBy()(IdentitySetable) {
 // GetUnsubmittedDateTime gets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) GetUnsubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.unsubmittedDateTime
+}
+// GetWebUrl gets the webUrl property value. The deep link URL for the given submission.
+func (m *EducationSubmission) GetWebUrl()(*string) {
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *EducationSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -216,4 +223,8 @@ func (m *EducationSubmission) SetUnsubmittedBy(value IdentitySetable)() {
 // SetUnsubmittedDateTime sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) SetUnsubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.unsubmittedDateTime = value
+}
+// SetWebUrl sets the webUrl property value. The deep link URL for the given submission.
+func (m *EducationSubmission) SetWebUrl(value *string)() {
+    m.webUrl = value
 }

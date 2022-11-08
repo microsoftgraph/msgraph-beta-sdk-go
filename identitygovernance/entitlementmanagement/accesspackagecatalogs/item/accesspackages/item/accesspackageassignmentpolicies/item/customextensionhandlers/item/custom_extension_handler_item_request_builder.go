@@ -108,7 +108,7 @@ func (m *CustomExtensionHandlerItemRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// CustomExtension the customExtension property
+// CustomExtension provides operations to manage the customExtension property of the microsoft.graph.customExtensionHandler entity.
 func (m *CustomExtensionHandlerItemRequestBuilder) CustomExtension()(*iabfcd4aa1e8d707811862a1abced8bb5506a10fc0ae9e8939eee93cfb5a0a0ae.CustomExtensionRequestBuilder) {
     return iabfcd4aa1e8d707811862a1abced8bb5506a10fc0ae9e8939eee93cfb5a0a0ae.NewCustomExtensionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

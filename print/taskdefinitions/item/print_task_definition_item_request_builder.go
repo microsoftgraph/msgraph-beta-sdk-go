@@ -163,11 +163,11 @@ func (m *PrintTaskDefinitionItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable), nil
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
 func (m *PrintTaskDefinitionItemRequestBuilder) Tasks()(*i0658204420f270898164672bcf0ad783cb9040def79f53ee0bb1f781a08c0a01.TasksRequestBuilder) {
     return i0658204420f270898164672bcf0ad783cb9040def79f53ee0bb1f781a08c0a01.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.taskDefinitions.item.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
 func (m *PrintTaskDefinitionItemRequestBuilder) TasksById(id string)(*ifd3d74db05ab2d2b732e8715f4ecc54eb181605b3a2b569ac6da8b52e96a53de.PrintTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

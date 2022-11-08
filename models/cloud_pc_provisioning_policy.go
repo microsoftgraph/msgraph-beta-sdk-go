@@ -36,6 +36,8 @@ type CloudPcProvisioningPolicy struct {
     microsoftManagedDesktop MicrosoftManagedDesktopable
     // The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
     onPremisesConnectionId *string
+    // The provisioningType property
+    provisioningType *CloudPcProvisioningType
     // Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
     windowsSettings CloudPcWindowsSettingsable
 }
@@ -93,6 +95,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
     res["managedBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcManagementService , m.SetManagedBy)
     res["microsoftManagedDesktop"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMicrosoftManagedDesktopFromDiscriminatorValue , m.SetMicrosoftManagedDesktop)
     res["onPremisesConnectionId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOnPremisesConnectionId)
+    res["provisioningType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcProvisioningType , m.SetProvisioningType)
     res["windowsSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue , m.SetWindowsSettings)
     return res
 }
@@ -127,6 +130,10 @@ func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(MicrosoftManage
 // GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
 func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
     return m.onPremisesConnectionId
+}
+// GetProvisioningType gets the provisioningType property value. The provisioningType property
+func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningType) {
+    return m.provisioningType
 }
 // GetWindowsSettings gets the windowsSettings property value. Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
 func (m *CloudPcProvisioningPolicy) GetWindowsSettings()(CloudPcWindowsSettingsable) {
@@ -225,6 +232,13 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetProvisioningType() != nil {
+        cast := (*m.GetProvisioningType()).String()
+        err = writer.WriteStringValue("provisioningType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("windowsSettings", m.GetWindowsSettings())
         if err != nil {
@@ -288,6 +302,10 @@ func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value MicrosoftMa
 // SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
 func (m *CloudPcProvisioningPolicy) SetOnPremisesConnectionId(value *string)() {
     m.onPremisesConnectionId = value
+}
+// SetProvisioningType sets the provisioningType property value. The provisioningType property
+func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioningType)() {
+    m.provisioningType = value
 }
 // SetWindowsSettings sets the windowsSettings property value. Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
 func (m *CloudPcProvisioningPolicy) SetWindowsSettings(value CloudPcWindowsSettingsable)() {

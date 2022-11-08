@@ -121,11 +121,11 @@ func (m *ConversationItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Conversationable), nil
 }
-// Threads the threads property
+// Threads provides operations to manage the threads property of the microsoft.graph.conversation entity.
 func (m *ConversationItemRequestBuilder) Threads()(*ib0a099a62d88914244b884aeac4def41542598b94888e8b880f89b32021cccbb.ThreadsRequestBuilder) {
     return ib0a099a62d88914244b884aeac4def41542598b94888e8b880f89b32021cccbb.NewThreadsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ThreadsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item.threads.item collection
+// ThreadsById provides operations to manage the threads property of the microsoft.graph.conversation entity.
 func (m *ConversationItemRequestBuilder) ThreadsById(id string)(*ib06676f6537e247d08c9358507a95f68ed06f5e18c1d982ba7887cc155c623cf.ConversationThreadItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

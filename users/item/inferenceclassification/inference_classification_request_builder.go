@@ -107,11 +107,11 @@ func (m *InferenceClassificationRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable), nil
 }
-// Overrides the overrides property
+// Overrides provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
 func (m *InferenceClassificationRequestBuilder) Overrides()(*id2b8745d495fa57cb37d6ec2b2ad4477cd2a732ebb46b37733cd6ddfb47a6a28.OverridesRequestBuilder) {
     return id2b8745d495fa57cb37d6ec2b2ad4477cd2a732ebb46b37733cd6ddfb47a6a28.NewOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OverridesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.inferenceClassification.overrides.item collection
+// OverridesById provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
 func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*i5c8691165bfe683ce2cc48511c7ca17543dd1520c91c446453327d3c98491d3f.InferenceClassificationOverrideItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

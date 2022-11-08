@@ -73,7 +73,7 @@ func NewDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DecisionsRequestBuilder) Count()(*ieed406f9ffcd9b99bdf32ffe0fd5566ba8d3046955f484f1ce74f8b4f3af0c1d.CountRequestBuilder) {
     return ieed406f9ffcd9b99bdf32ffe0fd5566ba8d3046955f484f1ce74f8b4f3af0c1d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *DecisionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
-// RecordAllDecisions the recordAllDecisions property
+// RecordAllDecisions provides operations to call the recordAllDecisions method.
 func (m *DecisionsRequestBuilder) RecordAllDecisions()(*if028154c48017b9e0a9f60c1756a16e85188d02f3e8f5c5246b4fdc0ff47779e.RecordAllDecisionsRequestBuilder) {
     return if028154c48017b9e0a9f60c1756a16e85188d02f3e8f5c5246b4fdc0ff47779e.NewRecordAllDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

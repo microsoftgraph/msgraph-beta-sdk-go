@@ -48,11 +48,11 @@ type MeetingAttendanceReportRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttendanceRecords the attendanceRecords property
+// AttendanceRecords provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
 func (m *MeetingAttendanceReportRequestBuilder) AttendanceRecords()(*ic8d1e73b838628a2a668999f85b9be7af0e19be8fd9d11c94220af5cd3d17bda.AttendanceRecordsRequestBuilder) {
     return ic8d1e73b838628a2a668999f85b9be7af0e19be8fd9d11c94220af5cd3d17bda.NewAttendanceRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceRecordsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.onlineMeetings.item.meetingAttendanceReport.attendanceRecords.item collection
+// AttendanceRecordsById provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
 func (m *MeetingAttendanceReportRequestBuilder) AttendanceRecordsById(id string)(*i65cd6d9920c88c0e2abae681f99c8693da577b6963269856646d6b6a1c27dc6c.AttendanceRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

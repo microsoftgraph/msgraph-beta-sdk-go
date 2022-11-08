@@ -163,11 +163,11 @@ func (m *PrivilegedApprovalItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable), nil
 }
-// Request the request property
+// Request provides operations to manage the request property of the microsoft.graph.privilegedApproval entity.
 func (m *PrivilegedApprovalItemRequestBuilder) Request()(*i729985b448a781ec295f2739833cf0337eefbe1ea2cbb88da3cfe679b9eaa144.RequestRequestBuilder) {
     return i729985b448a781ec295f2739833cf0337eefbe1ea2cbb88da3cfe679b9eaa144.NewRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleInfo the roleInfo property
+// RoleInfo provides operations to manage the roleInfo property of the microsoft.graph.privilegedApproval entity.
 func (m *PrivilegedApprovalItemRequestBuilder) RoleInfo()(*icabadae564a2179c7440bf1946d7104ec3e921c8ba84f19c0f5398af00d4e66f.RoleInfoRequestBuilder) {
     return icabadae564a2179c7440bf1946d7104ec3e921c8ba84f19c0f5398af00d4e66f.NewRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

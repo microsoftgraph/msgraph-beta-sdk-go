@@ -50,7 +50,7 @@ type JournalItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.journal entity.
 func (m *JournalItemRequestBuilder) Account()(*i7cca032aba7817ce573097d7ffcda7fe783e88b72b9694a811a3aea09de04886.AccountRequestBuilder) {
     return i7cca032aba7817ce573097d7ffcda7fe783e88b72b9694a811a3aea09de04886.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -150,11 +150,11 @@ func (m *JournalItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable), nil
 }
-// JournalLines the journalLines property
+// JournalLines provides operations to manage the journalLines property of the microsoft.graph.journal entity.
 func (m *JournalItemRequestBuilder) JournalLines()(*ic60d487aadcbb1c18a607e1ab79a5536b13c438e08f09a3b9d0d1a41c5a73a9f.JournalLinesRequestBuilder) {
     return ic60d487aadcbb1c18a607e1ab79a5536b13c438e08f09a3b9d0d1a41c5a73a9f.NewJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// JournalLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.journals.item.journalLines.item collection
+// JournalLinesById provides operations to manage the journalLines property of the microsoft.graph.journal entity.
 func (m *JournalItemRequestBuilder) JournalLinesById(id string)(*i22450797f858de15c310b162f7fd2d8ec26e3cdc4d1257d1de65a2cc0de71163.JournalLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -184,7 +184,7 @@ func (m *JournalItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable), nil
 }
-// Post the post property
+// Post provides operations to call the post method.
 func (m *JournalItemRequestBuilder) Post()(*if8219da59c227d3b7810fa9438c16450ddb8cb36ddb34695d876359a43e349fc.PostRequestBuilder) {
     return if8219da59c227d3b7810fa9438c16450ddb8cb36ddb34695d876359a43e349fc.NewPostRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

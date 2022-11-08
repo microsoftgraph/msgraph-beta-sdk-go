@@ -72,7 +72,7 @@ func NewPrivilegedRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PrivilegedRoleAssignmentsRequestBuilder) Count()(*i2f83555cb91735e5ecd91446fcf0652b75e277d66aa860251673234a3da10b74.CountRequestBuilder) {
     return i2f83555cb91735e5ecd91446fcf0652b75e277d66aa860251673234a3da10b74.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

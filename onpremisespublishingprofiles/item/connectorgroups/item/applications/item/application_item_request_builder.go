@@ -87,7 +87,7 @@ func (m *ApplicationItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable), nil
 }
-// Logo the logo property
+// Logo provides operations to manage the media for the onPremisesPublishingProfile entity.
 func (m *ApplicationItemRequestBuilder) Logo()(*i0657163b1581d3d3baa8f40ed8acc532597d42ed8fa25afe40eeedcb99f4ef44.LogoRequestBuilder) {
     return i0657163b1581d3d3baa8f40ed8acc532597d42ed8fa25afe40eeedcb99f4ef44.NewLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

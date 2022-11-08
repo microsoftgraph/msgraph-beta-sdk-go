@@ -125,11 +125,11 @@ func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// DeviceComplianceSettingStates the deviceComplianceSettingStates property
+// DeviceComplianceSettingStates provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
 func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeviceComplianceSettingStates()(*i37ad49c0bc6d68e963fdf65f7323a0821e118797dfc71b7300af4b5c7388c030.DeviceComplianceSettingStatesRequestBuilder) {
     return i37ad49c0bc6d68e963fdf65f7323a0821e118797dfc71b7300af4b5c7388c030.NewDeviceComplianceSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceComplianceSettingStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicySettingStateSummaries.item.deviceComplianceSettingStates.item collection
+// DeviceComplianceSettingStatesById provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
 func (m *DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) DeviceComplianceSettingStatesById(id string)(*i623eaf2a0acafba67f551c159b5f0c09a5a15743477194b11a435ff9831edaa1.DeviceComplianceSettingStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

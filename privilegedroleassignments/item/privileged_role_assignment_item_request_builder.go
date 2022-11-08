@@ -145,11 +145,11 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
-// MakeEligible the makeEligible property
+// MakeEligible provides operations to call the makeEligible method.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakeEligible()(*iaea252828cfd0bc8915348077699bb4a6d57de37db1f39571a36aa9d242ade3c.MakeEligibleRequestBuilder) {
     return iaea252828cfd0bc8915348077699bb4a6d57de37db1f39571a36aa9d242ade3c.NewMakeEligibleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MakePermanent the makePermanent property
+// MakePermanent provides operations to call the makePermanent method.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakePermanent()(*i360fd14cb1918888dde8889252044616ef9e8bae14b63f8ac32974d2ab3ab93f.MakePermanentRequestBuilder) {
     return i360fd14cb1918888dde8889252044616ef9e8bae14b63f8ac32974d2ab3ab93f.NewMakePermanentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -172,7 +172,7 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
-// RoleInfo the roleInfo property
+// RoleInfo provides operations to manage the roleInfo property of the microsoft.graph.privilegedRoleAssignment entity.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) RoleInfo()(*ie1054a1b9157187681bd433f8846c01e56b7924bf3c589f1ade883924304dc7d.RoleInfoRequestBuilder) {
     return ie1054a1b9157187681bd433f8846c01e56b7924bf3c589f1ade883924304dc7d.NewRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

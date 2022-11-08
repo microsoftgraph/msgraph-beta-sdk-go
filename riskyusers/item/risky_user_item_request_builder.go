@@ -144,11 +144,11 @@ func (m *RiskyUserItemRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable), nil
 }
-// History the history property
+// History provides operations to manage the history property of the microsoft.graph.riskyUser entity.
 func (m *RiskyUserItemRequestBuilder) History()(*i814e52de0212eaf7e0b74a145db2f49f68a8270e12b3bd0f91d2a298462b1674.HistoryRequestBuilder) {
     return i814e52de0212eaf7e0b74a145db2f49f68a8270e12b3bd0f91d2a298462b1674.NewHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HistoryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.riskyUsers.item.history.item collection
+// HistoryById provides operations to manage the history property of the microsoft.graph.riskyUser entity.
 func (m *RiskyUserItemRequestBuilder) HistoryById(id string)(*i6a16a7a28a55308dcb96ec1b969c37a3e03428984c4b8e41b74db966fd5f9974.RiskyUserHistoryItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

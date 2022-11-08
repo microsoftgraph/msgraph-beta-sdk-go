@@ -2,7 +2,7 @@ package windowsupdates
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the admin singleton.
 type SafeguardCategory int
 
 const (

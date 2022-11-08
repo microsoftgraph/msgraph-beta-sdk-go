@@ -124,7 +124,7 @@ func (m *AccessReviewHistoryInstanceItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// GenerateDownloadUri the generateDownloadUri property
+// GenerateDownloadUri provides operations to call the generateDownloadUri method.
 func (m *AccessReviewHistoryInstanceItemRequestBuilder) GenerateDownloadUri()(*ia7efd0402d1b0ec1c1e1556939330495b010bf73c843650cde0ba68d98498dff.GenerateDownloadUriRequestBuilder) {
     return ia7efd0402d1b0ec1c1e1556939330495b010bf73c843650cde0ba68d98498dff.NewGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -41,7 +41,7 @@ type SalesInvoiceLineItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.salesInvoiceLine entity.
 func (m *SalesInvoiceLineItemRequestBuilder) Account()(*i5bf5ed2d27196d70c782258c42de17c53f56d182ad44fbc1913d06482b3591c0.AccountRequestBuilder) {
     return i5bf5ed2d27196d70c782258c42de17c53f56d182ad44fbc1913d06482b3591c0.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -113,7 +113,7 @@ func (m *SalesInvoiceLineItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable), nil
 }
-// Item the item property
+// Item provides operations to manage the item property of the microsoft.graph.salesInvoiceLine entity.
 func (m *SalesInvoiceLineItemRequestBuilder) Item()(*ib69cde7301996a358ae976e81507afcf8668d412fa17e463f66aec420d110715.ItemRequestBuilder) {
     return ib69cde7301996a358ae976e81507afcf8668d412fa17e463f66aec420d110715.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

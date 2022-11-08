@@ -125,11 +125,11 @@ func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Disable the disable property
+// Disable provides operations to call the disable method.
 func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Disable()(*ia4101f7c03671dbe9e186fb7780ddc57b13b32ffba5901a1e744ec3b67d3b442.DisableRequestBuilder) {
     return ia4101f7c03671dbe9e186fb7780ddc57b13b32ffba5901a1e744ec3b67d3b442.NewDisableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Enable the enable property
+// Enable provides operations to call the enable method.
 func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Enable()(*ia3d1361f46182d3550e67aa93c4815afd1bb111a192b4fae107e1737a85945f2.EnableRequestBuilder) {
     return ia3d1361f46182d3550e67aa93c4815afd1bb111a192b4fae107e1737a85945f2.NewEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -144,7 +144,7 @@ func (m *TenantItemRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// OffboardTenant the offboardTenant property
+// OffboardTenant provides operations to call the offboardTenant method.
 func (m *TenantItemRequestBuilder) OffboardTenant()(*ieacd2868d372b805c81fe3e286b012abdf87e755ce0974ebd6f6b405aa61a3c7.OffboardTenantRequestBuilder) {
     return ieacd2868d372b805c81fe3e286b012abdf87e755ce0974ebd6f6b405aa61a3c7.NewOffboardTenantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *TenantItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// ResetTenantOnboardingStatus the resetTenantOnboardingStatus property
+// ResetTenantOnboardingStatus provides operations to call the resetTenantOnboardingStatus method.
 func (m *TenantItemRequestBuilder) ResetTenantOnboardingStatus()(*i5524eb05c952c0394dcd1ba4dc13d4d487550e8ebf4b41fd1d50d543d2995877.ResetTenantOnboardingStatusRequestBuilder) {
     return i5524eb05c952c0394dcd1ba4dc13d4d487550e8ebf4b41fd1d50d543d2995877.NewResetTenantOnboardingStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

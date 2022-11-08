@@ -165,19 +165,19 @@ func (m *TaskReportItemRequestBuilder) Patch(ctx context.Context, body i45fdec8a
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskReportable), nil
 }
-// Task the task property
+// Task provides operations to manage the task property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *TaskReportItemRequestBuilder) Task()(*ia379df8d0de4facca429fcdd55daee71844134ec616ecdfafe26eab8eca35c7c.TaskRequestBuilder) {
     return ia379df8d0de4facca429fcdd55daee71844134ec616ecdfafe26eab8eca35c7c.NewTaskRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskDefinition the taskDefinition property
+// TaskDefinition provides operations to manage the taskDefinition property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *TaskReportItemRequestBuilder) TaskDefinition()(*i09052f251999ca5e831874e9f0047636105951952e0b034dbc16cdacf315cd19.TaskDefinitionRequestBuilder) {
     return i09052f251999ca5e831874e9f0047636105951952e0b034dbc16cdacf315cd19.NewTaskDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskProcessingResults the taskProcessingResults property
+// TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *TaskReportItemRequestBuilder) TaskProcessingResults()(*i16178973816365198d3575679646645ecf3e2efb25f3b48dc85d11848de9b56c.TaskProcessingResultsRequestBuilder) {
     return i16178973816365198d3575679646645ecf3e2efb25f3b48dc85d11848de9b56c.NewTaskProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskProcessingResultsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.taskReports.item.taskProcessingResults.item collection
+// TaskProcessingResultsById provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.
 func (m *TaskReportItemRequestBuilder) TaskProcessingResultsById(id string)(*iba944031b532ffd4354cda8054c73a4278ba2392cc286a69333aaff31788ea3c.TaskProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

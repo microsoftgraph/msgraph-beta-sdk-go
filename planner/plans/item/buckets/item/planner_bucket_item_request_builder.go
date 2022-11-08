@@ -163,11 +163,11 @@ func (m *PlannerBucketItemRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketable), nil
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
 func (m *PlannerBucketItemRequestBuilder) Tasks()(*ia64564e5ec6a1f8a143de583e45104fbcc03f02cfdce7b643aacf360a1301c9d.TasksRequestBuilder) {
     return ia64564e5ec6a1f8a143de583e45104fbcc03f02cfdce7b643aacf360a1301c9d.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.plans.item.buckets.item.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
 func (m *PlannerBucketItemRequestBuilder) TasksById(id string)(*i3ce608689327250bfdfda840d55171bffc05b8fde9164363ea87ff20f0a43b16.PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

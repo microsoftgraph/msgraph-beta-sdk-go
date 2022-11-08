@@ -50,11 +50,11 @@ type UpdatableAssetItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddMembers the addMembers property
+// AddMembers provides operations to call the addMembers method.
 func (m *UpdatableAssetItemRequestBuilder) AddMembers()(*ifc8dbf4c7bb3139df094118028d894b3c2fe3e806928f785bbdb075f9b3bdd30.AddMembersRequestBuilder) {
     return ifc8dbf4c7bb3139df094118028d894b3c2fe3e806928f785bbdb075f9b3bdd30.NewAddMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AddMembersById the addMembersById property
+// AddMembersById provides operations to call the addMembersById method.
 func (m *UpdatableAssetItemRequestBuilder) AddMembersById()(*if5b9e1eb167428c60d8d89243391809ca2bc35cef00dccf12369fa9f3ace9034.AddMembersByIdRequestBuilder) {
     return if5b9e1eb167428c60d8d89243391809ca2bc35cef00dccf12369fa9f3ace9034.NewAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *UpdatableAssetItemRequestBuilder) Patch(ctx context.Context, body i1737
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// RemoveMembers the removeMembers property
+// RemoveMembers provides operations to call the removeMembers method.
 func (m *UpdatableAssetItemRequestBuilder) RemoveMembers()(*i036a96dd679fc230c2396989d4e6a39b911781ed8e110cc21f27007c879d2f63.RemoveMembersRequestBuilder) {
     return i036a96dd679fc230c2396989d4e6a39b911781ed8e110cc21f27007c879d2f63.NewRemoveMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RemoveMembersById the removeMembersById property
+// RemoveMembersById provides operations to call the removeMembersById method.
 func (m *UpdatableAssetItemRequestBuilder) RemoveMembersById()(*ida486b6c56c543fd1af1b52a3d374120b86f5531d75ee389d9feb7d39678db8d.RemoveMembersByIdRequestBuilder) {
     return ida486b6c56c543fd1af1b52a3d374120b86f5531d75ee389d9feb7d39678db8d.NewRemoveMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

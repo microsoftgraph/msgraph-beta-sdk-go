@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TaskDefinition provides operations to manage the collection of activityStatistics entities.
+// TaskDefinition provides operations to manage the collection of accessReview entities.
 type TaskDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category property
@@ -15,11 +15,11 @@ type TaskDefinition struct {
     continueOnError *bool
     // The description of the taskDefinition.
     description *string
-    // The display name of the taskDefinition`.
+    // The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
     displayName *string
-    // The parameters that must be supplied when creating a workflow task object.
+    // The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
     parameters []Parameterable
-    // The version number of the taskDefinition. New records are pushed when we add support for new parameters.
+    // The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
     version *int32
 }
 // NewTaskDefinition instantiates a new taskDefinition and sets the default values.
@@ -47,7 +47,7 @@ func (m *TaskDefinition) GetContinueOnError()(*bool) {
 func (m *TaskDefinition) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The display name of the taskDefinition`.
+// GetDisplayName gets the displayName property value. The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
 func (m *TaskDefinition) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -62,11 +62,11 @@ func (m *TaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     res["version"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetVersion)
     return res
 }
-// GetParameters gets the parameters property value. The parameters that must be supplied when creating a workflow task object.
+// GetParameters gets the parameters property value. The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
 func (m *TaskDefinition) GetParameters()([]Parameterable) {
     return m.parameters
 }
-// GetVersion gets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.
+// GetVersion gets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
 func (m *TaskDefinition) GetVersion()(*int32) {
     return m.version
 }
@@ -128,15 +128,15 @@ func (m *TaskDefinition) SetContinueOnError(value *bool)() {
 func (m *TaskDefinition) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The display name of the taskDefinition`.
+// SetDisplayName sets the displayName property value. The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
 func (m *TaskDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetParameters sets the parameters property value. The parameters that must be supplied when creating a workflow task object.
+// SetParameters sets the parameters property value. The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
 func (m *TaskDefinition) SetParameters(value []Parameterable)() {
     m.parameters = value
 }
-// SetVersion sets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.
+// SetVersion sets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
 func (m *TaskDefinition) SetVersion(value *int32)() {
     m.version = value
 }

@@ -72,7 +72,7 @@ func NewResourceAccessProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewResourceAccessProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ResourceAccessProfilesRequestBuilder) Count()(*ic797799502c717949364218e65e0f8dbd4122c0c934f8ae98af86c3c5a4ca526.CountRequestBuilder) {
     return ic797799502c717949364218e65e0f8dbd4122c0c934f8ae98af86c3c5a4ca526.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *ResourceAccessProfilesRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable), nil
 }
-// QueryByPlatformType the queryByPlatformType property
+// QueryByPlatformType provides operations to call the queryByPlatformType method.
 func (m *ResourceAccessProfilesRequestBuilder) QueryByPlatformType()(*id874778243b5d2f2bb9ad9959305bafa80d745556f941a159c77399717295578.QueryByPlatformTypeRequestBuilder) {
     return id874778243b5d2f2bb9ad9959305bafa80d745556f941a159c77399717295578.NewQueryByPlatformTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

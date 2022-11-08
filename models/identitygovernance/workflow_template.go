@@ -6,14 +6,14 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// WorkflowTemplate provides operations to manage the collection of activityStatistics entities.
+// WorkflowTemplate provides operations to manage the collection of accessReview entities.
 type WorkflowTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category property
     category *LifecycleWorkflowCategory
     // The description of the workflowTemplate.
     description *string
-    // The display name of the workflowTemplate. Supports  orderby.
+    // The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.
     displayName *string
     // Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
     executionConditions WorkflowExecutionConditionsable
@@ -41,7 +41,7 @@ func (m *WorkflowTemplate) GetCategory()(*LifecycleWorkflowCategory) {
 func (m *WorkflowTemplate) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. The display name of the workflowTemplate. Supports  orderby.
+// GetDisplayName gets the displayName property value. The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.
 func (m *WorkflowTemplate) GetDisplayName()(*string) {
     return m.displayName
 }
@@ -111,7 +111,7 @@ func (m *WorkflowTemplate) SetCategory(value *LifecycleWorkflowCategory)() {
 func (m *WorkflowTemplate) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. The display name of the workflowTemplate. Supports  orderby.
+// SetDisplayName sets the displayName property value. The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.
 func (m *WorkflowTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }

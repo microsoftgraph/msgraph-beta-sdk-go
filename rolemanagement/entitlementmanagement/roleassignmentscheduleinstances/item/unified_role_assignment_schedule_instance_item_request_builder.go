@@ -47,7 +47,7 @@ type UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderPatchRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivatedUsing the activatedUsing property
+// ActivatedUsing provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleInstance entity.
 func (m *UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder) ActivatedUsing()(*i8187ad8031625910f8d46cce20855184385e2d1f62b2bf94423227537d5ad4f5.ActivatedUsingRequestBuilder) {
     return i8187ad8031625910f8d46cce20855184385e2d1f62b2bf94423227537d5ad4f5.NewActivatedUsingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

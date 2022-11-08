@@ -125,11 +125,11 @@ func (m *DeviceManagementScriptUserStateItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// DeviceRunStates the deviceRunStates property
+// DeviceRunStates provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
 func (m *DeviceManagementScriptUserStateItemRequestBuilder) DeviceRunStates()(*ifd1bf279198b839ec72474df900f0c04817d6d3a21974bd2488fff512cf333c5.DeviceRunStatesRequestBuilder) {
     return ifd1bf279198b839ec72474df900f0c04817d6d3a21974bd2488fff512cf333c5.NewDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceRunStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item.userRunStates.item.deviceRunStates.item collection
+// DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
 func (m *DeviceManagementScriptUserStateItemRequestBuilder) DeviceRunStatesById(id string)(*ie02f7444f17b405ab81813464bbea986673c2874d7fd7541205713b2b2c0e066.DeviceManagementScriptDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

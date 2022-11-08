@@ -47,7 +47,7 @@ type ManagedTenantApiNotificationItemRequestBuilderPatchRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alert the alert property
+// Alert provides operations to manage the alert property of the microsoft.graph.managedTenants.managedTenantApiNotification entity.
 func (m *ManagedTenantApiNotificationItemRequestBuilder) Alert()(*if150be05690b31f92bcc3a29cc2a2fb0e5141d2e662d7b3e669125bcdc8419aa.AlertRequestBuilder) {
     return if150be05690b31f92bcc3a29cc2a2fb0e5141d2e662d7b3e669125bcdc8419aa.NewAlertRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

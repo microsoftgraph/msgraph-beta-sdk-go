@@ -19,8 +19,6 @@ type UserExperienceAnalyticsAnomalySeverityOverview struct {
     mediumSeverityAnomalyCount *int32
     // The OdataType property
     odataType *string
-    // The number of anomalies which have been detected with undefined severity. Valid values -2147483648 to 2147483647
-    otherSeverityAnomalyCount *int32
 }
 // NewUserExperienceAnalyticsAnomalySeverityOverview instantiates a new userExperienceAnalyticsAnomalySeverityOverview and sets the default values.
 func NewUserExperienceAnalyticsAnomalySeverityOverview()(*UserExperienceAnalyticsAnomalySeverityOverview) {
@@ -47,7 +45,6 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetFieldDeserializers()
     res["lowSeverityAnomalyCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetLowSeverityAnomalyCount)
     res["mediumSeverityAnomalyCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetMediumSeverityAnomalyCount)
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["otherSeverityAnomalyCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetOtherSeverityAnomalyCount)
     return res
 }
 // GetHighSeverityAnomalyCount gets the highSeverityAnomalyCount property value. The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
@@ -69,10 +66,6 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetMediumSeverityAnomal
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetOdataType()(*string) {
     return m.odataType
-}
-// GetOtherSeverityAnomalyCount gets the otherSeverityAnomalyCount property value. The number of anomalies which have been detected with undefined severity. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetOtherSeverityAnomalyCount()(*int32) {
-    return m.otherSeverityAnomalyCount
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -102,12 +95,6 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) Serialize(writer i878a8
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteInt32Value("otherSeverityAnomalyCount", m.GetOtherSeverityAnomalyCount())
         if err != nil {
             return err
         }
@@ -143,8 +130,4 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetMediumSeverityAnomal
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetOdataType(value *string)() {
     m.odataType = value
-}
-// SetOtherSeverityAnomalyCount sets the otherSeverityAnomalyCount property value. The number of anomalies which have been detected with undefined severity. Valid values -2147483648 to 2147483647
-func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetOtherSeverityAnomalyCount(value *int32)() {
-    m.otherSeverityAnomalyCount = value
 }

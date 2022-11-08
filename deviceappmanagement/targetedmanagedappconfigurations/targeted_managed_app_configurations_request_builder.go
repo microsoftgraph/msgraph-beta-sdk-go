@@ -72,7 +72,7 @@ func NewTargetedManagedAppConfigurationsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewTargetedManagedAppConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TargetedManagedAppConfigurationsRequestBuilder) Count()(*id5aacb0e7f92c24759a0617762ff2708662658dcb1418460a3e5e828312144ca.CountRequestBuilder) {
     return id5aacb0e7f92c24759a0617762ff2708662658dcb1418460a3e5e828312144ca.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *TargetedManagedAppConfigurationsRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationCollectionResponseable), nil
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *TargetedManagedAppConfigurationsRequestBuilder) HasPayloadLinks()(*i63c441d9d593382f1c0a0eab4d77625eba0d17603d57d02eb4d09e74ba042fa1.HasPayloadLinksRequestBuilder) {
     return i63c441d9d593382f1c0a0eab4d77625eba0d17603d57d02eb4d09e74ba042fa1.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

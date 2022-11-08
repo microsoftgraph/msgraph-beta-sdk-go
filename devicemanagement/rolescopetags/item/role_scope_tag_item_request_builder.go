@@ -49,15 +49,15 @@ type RoleScopeTagItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *RoleScopeTagItemRequestBuilder) Assign()(*i75b21611d6b6b96c1c95e37193e653d7c1be7468679cf5785af829f0827b9b05.AssignRequestBuilder) {
     return i75b21611d6b6b96c1c95e37193e653d7c1be7468679cf5785af829f0827b9b05.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.roleScopeTag entity.
 func (m *RoleScopeTagItemRequestBuilder) Assignments()(*iab305975e356746fe6505f00637e9813ac95de45da8b925112b990b92d6b0f57.AssignmentsRequestBuilder) {
     return iab305975e356746fe6505f00637e9813ac95de45da8b925112b990b92d6b0f57.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleScopeTags.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.roleScopeTag entity.
 func (m *RoleScopeTagItemRequestBuilder) AssignmentsById(id string)(*ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147.RoleScopeTagAutoAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

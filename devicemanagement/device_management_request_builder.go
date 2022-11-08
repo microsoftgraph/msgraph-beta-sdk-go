@@ -14,7 +14,6 @@ import (
     i07f3d961099ef67a3461c2a7c22256a9a4e212a860280569ab7520faa618a475 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancesettings"
     i08923e6cb04538143ef467f61d1f68f42feb51236dd85ea051561286101056b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancepolicies"
     i08aace5d722a25be94c3870519ce5be0f606f406a71f189a8969a6c597840d66 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthmodelperformance"
-    i0b08a420df2118d05af20d0f8785ea74e30b982b250b80259c4d9d9c2ea441e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessageguidedcontents"
     i1026eee1563c445d573818d7c0ee3bbb4f859572fbfce275bbc01b981ffe3d67 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles"
     i1139b32380c25d76d1f7979a554c41b83234dd62c3aaf7e0c39d3286ad87e5e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/iosupdatestatuses"
     i123f7e3613b14bdb6583793a8d2b8201841844975e8b2a4040cf377652ad4f4f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthdeviceruntimehistory"
@@ -55,10 +54,8 @@ import (
     i3f9e02dc418faa1121caa625af488a2db2444f528d0dd315716c1fb4c073311a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reusablesettings"
     i3fe987324a6f52269c1192e32d6ec0f12410e6c6a2ed63c186118a915711286a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/advancedthreatprotectiononboardingstatesummary"
     i40a8e00e460bc3f161887071f058de9d337d7e495f1a3d7661c7d8bc98dcb6ae "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/mobileapptroubleshootingevents"
-    i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessagedetails"
     i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configmanagercollections"
     i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversiondeviceid"
-    i4984668279ed8876cf46248c619567ca3892e61be4b166dd0c78c4f08260b1ac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/postorganizationalmessagetenantconsent"
     i4bd812738dda41107da4619109b291325f5d780358395b89fe5c82aad759ae99 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/monitoring"
     i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmodelscores"
     i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsworkfromanywheremodelperformance"
@@ -66,6 +63,7 @@ import (
     i55139c400853ec6e1af6368a1a2538acbc596e77745144404d3c250b5c92d58e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/zebrafotaartifacts"
     i57d8944d5d121692c68b51d3cea46fbd31ef9f0bc139c17120d42d194ee625b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyosversion"
     i5829b09916b668f7826693dac476ee85ff6f59fd831d0581a362c02cf68ea11c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports"
+    i5ec9ad00dc103f2cd00029e488beec3bcf2d698f0e5f7aeded1c94e7e61bec0d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticssummarizeddevicescopes"
     i5f58ba6045ddf9c581c89a15216e6de9c93354bea6dff2f3826b7bb2a3a51626 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversion"
     i669feef35963a9c2d23562bc2c60c4e6542a5845da77448eeffe024b2202b51e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/enablelegacypcmanagement"
     i66b975d6894f1203db9ffb8c9762fa16d80c6baa183597bc8820e565f9c9c96b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementpartners"
@@ -93,7 +91,6 @@ import (
     i7a555a75335cb9d717ad246494b3cccf65d4ba988b41e42e9cb8c2fee3bfd31f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceoperations"
     i7bbe59add940b047fb4915bc2d373a95d5f636a1c3a60312ac7d01bddbc4ee42 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelhealththresholds"
     i7d2a149d9d011731691dd153f225979e19f163bf4360e1259693e20d7bccfaf0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmetrichistory"
-    i7dbcf5ce27f9bb2c599126b3dba947db924e4c704d82001c4bdc4e49ce7e385f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/getorganizationalmessagetenantconsent"
     i7e94b13ab484d489531e932fa60a1fc8593394421fb0573d41f489216a4d1881 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthdeviceappimpact"
     i7f539b5d0a42468004c84b364a2ae5e678aacaf1e6cef8edbceb6f9720bc91c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitions"
     i7f61c70ea2f2f7b8282c6bc875f49be5553df3b84a88282940a6d7d632dc0455 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicestartuphistory"
@@ -101,7 +98,6 @@ import (
     i883482678f2a2f0423c5c68caf5a82bf8337f568b3cd6468d6cc2d5e6c084235 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsresourceperformance"
     i88a41d6a6b9d6f5d95b1375089cd36d4423cd8f3f1ccf1b08a32ace2e08042f3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthruntimedetails"
     i88c5051d5413e2a50dfc8d7dad02241a69e5952b2a13f0ee5c43d5d21fb1e17c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsoverview"
-    i8ae0cf333ed7c0de31759e37e570f524a4e36df9e080ada0178b5cf6b0a34a81 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/updateorganizationalmessagetenantconsent"
     i8b59cbe498bdd43bba238c8505dc901d4f1eab37af0f92a99abc825f62c5cedb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurationrestrictedappsviolations"
     i8b68ddcfc0e1b786a9ceec8a51661bd858daecd6cf9d82c16f0af0eaefe928be "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/enableunlicensedadminstrators"
     i8ce752b735630d1938ba83b1413f1f2a6b47900296c801c0885117449dcdfb03 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/rolescopetags"
@@ -143,7 +139,6 @@ import (
     ibaf75e6ff925ba6893ac5d3039caefb7154e02b28d12b7c348ece101ee2484f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthappimpact"
     ibfc8a5ec1c711335082cb03eef0eb2f54be6f6d4cff933fd5bffc10e8c7ea600 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthoverview"
     ic2a9ed500673be487b8503728b91d88bb4b21222bd95eb0b51677dc15f5ff4bf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthosperformance"
-    ic537cdf04b5e2518221f4cd689a053d604afdaa8d926facb50651e9f867ff848 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsregressionsummary"
     ic54aa06ba42909b1d71447297b34dd206aa75bcdd954e9b6c63c1d081ae8e712 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/notificationmessagetemplates"
     ic655b111c74ee435976a382d33c4b527c9041ef54a599f854975c7652a4a82b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyuploadeddefinitionfiles"
     ica6064af0424b6b8862e69568c28ebf7b5b34ee7f807a05d1e641c71bb4b027a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidmanagedstoreappconfigurationschemas"
@@ -206,7 +201,6 @@ import (
     i21d5ff7c7bad73fe610934541fdd0b62baddc6b6bfb19642899dbba4768af420 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancepolicysettingstatesummaries/item"
     i22df34f1d011439270aa80f1c0df83a47bfccd829bdadb118ad00be372bcbacd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/telecomexpensemanagementpartners/item"
     i24abb123826461a00a90764243200f8c9d00edda2d377fe0fd0c2b0f81719f76 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsmalwareinformation/item"
-    i260b62087efaed4c7beb6bd358d7f35fb41a3ce9b5e7efe7cc44f0f80c9a30a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessagedetails/item"
     i26fb1c650b48073e6ced464ef92267c0a24a7434e6d374d8d672ab39dd6c708f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/datasharingconsents/item"
     i27102a1f55f0e4f532da32f9fd084200fff4b915619203ac19778e277550113e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsinformationprotectionapplearningsummaries/item"
     i2b74d96ff84d5fe2d4dd32bbda034d0939a6963d72ec6bdc6385dbd2c7be7399 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthdeviceperformancedetails/item"
@@ -233,7 +227,6 @@ import (
     i513d8d8b74c87b48fc53b5b81415678490500a8a5edc7915f7f4248e0c1935d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/embeddedsimactivationcodepools/item"
     i5185a0e6534a11cca51f4633f60a197ce736badd66d35bc2dd5699838abba41c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicescopes/item"
     i54e65d93ef820122e89e6a29edbe82bf7f240dd7ea821ef8e67e1ae5f80ebb88 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item"
-    i55ec3779a1db9f0bea7c8292fdcd25a7d32847ef391ba112febdcea320afb855 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessageguidedcontents/item"
     i56bc149ad6993ba047897a1c8c1431979f381d0fcc715b60c2384b165dd578fd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item"
     i5a9df32f03feecaa0c953174fcd18381b26be2d3cb4e5f0c407cf4926db7f232 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/appleuserinitiatedenrollmentprofiles/item"
     i5d8d3d68e99a3b659b85753837fbb9b6148adb3f7d3a84c58ae6fbe4e9060c0e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddeviceencryptionstates/item"
@@ -354,15 +347,15 @@ type DeviceManagementRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AdvancedThreatProtectionOnboardingStateSummary the advancedThreatProtectionOnboardingStateSummary property
+// AdvancedThreatProtectionOnboardingStateSummary provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AdvancedThreatProtectionOnboardingStateSummary()(*i3fe987324a6f52269c1192e32d6ec0f12410e6c6a2ed63c186118a915711286a.AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) {
     return i3fe987324a6f52269c1192e32d6ec0f12410e6c6a2ed63c186118a915711286a.NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AndroidDeviceOwnerEnrollmentProfiles the androidDeviceOwnerEnrollmentProfiles property
+// AndroidDeviceOwnerEnrollmentProfiles provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfiles()(*i2ab586119f087d614141b2f047795882e5c3f497db07b3e73654784057c5de00.AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) {
     return i2ab586119f087d614141b2f047795882e5c3f497db07b3e73654784057c5de00.NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AndroidDeviceOwnerEnrollmentProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.androidDeviceOwnerEnrollmentProfiles.item collection
+// AndroidDeviceOwnerEnrollmentProfilesById provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfilesById(id string)(*if892e5a2640903bf869aa649d0e67cb55f625fa06d99799db8c4b5369628a55a.AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -373,11 +366,11 @@ func (m *DeviceManagementRequestBuilder) AndroidDeviceOwnerEnrollmentProfilesByI
     }
     return if892e5a2640903bf869aa649d0e67cb55f625fa06d99799db8c4b5369628a55a.NewAndroidDeviceOwnerEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AndroidForWorkAppConfigurationSchemas the androidForWorkAppConfigurationSchemas property
+// AndroidForWorkAppConfigurationSchemas provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemas()(*i1899f273cb7d75c805f92a61a8b5d3418a24b0929c342114483a4e2cd0f53f47.AndroidForWorkAppConfigurationSchemasRequestBuilder) {
     return i1899f273cb7d75c805f92a61a8b5d3418a24b0929c342114483a4e2cd0f53f47.NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AndroidForWorkAppConfigurationSchemasById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.androidForWorkAppConfigurationSchemas.item collection
+// AndroidForWorkAppConfigurationSchemasById provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemasById(id string)(*i02dd7655ef39ba36ce138d77c2c8c397525439bbce2b78c95317c7fd7d331438.AndroidForWorkAppConfigurationSchemaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -388,11 +381,11 @@ func (m *DeviceManagementRequestBuilder) AndroidForWorkAppConfigurationSchemasBy
     }
     return i02dd7655ef39ba36ce138d77c2c8c397525439bbce2b78c95317c7fd7d331438.NewAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AndroidForWorkEnrollmentProfiles the androidForWorkEnrollmentProfiles property
+// AndroidForWorkEnrollmentProfiles provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfiles()(*i9a2e165b703011f518b95c3d30e23d94f063f3895d69b4c103293ba9019680a1.AndroidForWorkEnrollmentProfilesRequestBuilder) {
     return i9a2e165b703011f518b95c3d30e23d94f063f3895d69b4c103293ba9019680a1.NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AndroidForWorkEnrollmentProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.androidForWorkEnrollmentProfiles.item collection
+// AndroidForWorkEnrollmentProfilesById provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfilesById(id string)(*ia03637e30b7398dd2b66cc4089a2b973fbbe15afa5a861397f98d0d6c66badfb.AndroidForWorkEnrollmentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -403,19 +396,19 @@ func (m *DeviceManagementRequestBuilder) AndroidForWorkEnrollmentProfilesById(id
     }
     return ia03637e30b7398dd2b66cc4089a2b973fbbe15afa5a861397f98d0d6c66badfb.NewAndroidForWorkEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AndroidForWorkSettings the androidForWorkSettings property
+// AndroidForWorkSettings provides operations to manage the androidForWorkSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidForWorkSettings()(*ief5a78b77c4318683c9519cdb963b9938f0f6fe88c93a0644b54a84a29db4709.AndroidForWorkSettingsRequestBuilder) {
     return ief5a78b77c4318683c9519cdb963b9938f0f6fe88c93a0644b54a84a29db4709.NewAndroidForWorkSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AndroidManagedStoreAccountEnterpriseSettings the androidManagedStoreAccountEnterpriseSettings property
+// AndroidManagedStoreAccountEnterpriseSettings provides operations to manage the androidManagedStoreAccountEnterpriseSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAccountEnterpriseSettings()(*icdc7c59e5f3bfb4e13d92ce14030df1b80a845c93bb0132d5b563c3c52a45bc1.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) {
     return icdc7c59e5f3bfb4e13d92ce14030df1b80a845c93bb0132d5b563c3c52a45bc1.NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AndroidManagedStoreAppConfigurationSchemas the androidManagedStoreAppConfigurationSchemas property
+// AndroidManagedStoreAppConfigurationSchemas provides operations to manage the androidManagedStoreAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSchemas()(*ica6064af0424b6b8862e69568c28ebf7b5b34ee7f807a05d1e641c71bb4b027a.AndroidManagedStoreAppConfigurationSchemasRequestBuilder) {
     return ica6064af0424b6b8862e69568c28ebf7b5b34ee7f807a05d1e641c71bb4b027a.NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AndroidManagedStoreAppConfigurationSchemasById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.androidManagedStoreAppConfigurationSchemas.item collection
+// AndroidManagedStoreAppConfigurationSchemasById provides operations to manage the androidManagedStoreAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSchemasById(id string)(*i1cdc7cc84d917a6052b880686d5d011e52cd661d539d40056fcee49a0e1e65d2.AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -426,15 +419,15 @@ func (m *DeviceManagementRequestBuilder) AndroidManagedStoreAppConfigurationSche
     }
     return i1cdc7cc84d917a6052b880686d5d011e52cd661d539d40056fcee49a0e1e65d2.NewAndroidManagedStoreAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ApplePushNotificationCertificate the applePushNotificationCertificate property
+// ApplePushNotificationCertificate provides operations to manage the applePushNotificationCertificate property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ApplePushNotificationCertificate()(*ie773f83fece9c703e3412c58e1afa19262ce0d0822fa67d1f4cfddc1f29bf775.ApplePushNotificationCertificateRequestBuilder) {
     return ie773f83fece9c703e3412c58e1afa19262ce0d0822fa67d1f4cfddc1f29bf775.NewApplePushNotificationCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppleUserInitiatedEnrollmentProfiles the appleUserInitiatedEnrollmentProfiles property
+// AppleUserInitiatedEnrollmentProfiles provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfiles()(*i1bc6896cb08fc7f56435274501a3a76a1099e291e44546e88c2bce91101b8b2f.AppleUserInitiatedEnrollmentProfilesRequestBuilder) {
     return i1bc6896cb08fc7f56435274501a3a76a1099e291e44546e88c2bce91101b8b2f.NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppleUserInitiatedEnrollmentProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.appleUserInitiatedEnrollmentProfiles.item collection
+// AppleUserInitiatedEnrollmentProfilesById provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfilesById(id string)(*i5a9df32f03feecaa0c953174fcd18381b26be2d3cb4e5f0c407cf4926db7f232.AppleUserInitiatedEnrollmentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -445,11 +438,11 @@ func (m *DeviceManagementRequestBuilder) AppleUserInitiatedEnrollmentProfilesByI
     }
     return i5a9df32f03feecaa0c953174fcd18381b26be2d3cb4e5f0c407cf4926db7f232.NewAppleUserInitiatedEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AssignmentFilters the assignmentFilters property
+// AssignmentFilters provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AssignmentFilters()(*idc1167457cf42053a65c78bf687c3c251bf9a20748b41407e35d9bdb3f00e722.AssignmentFiltersRequestBuilder) {
     return idc1167457cf42053a65c78bf687c3c251bf9a20748b41407e35d9bdb3f00e722.NewAssignmentFiltersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentFiltersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.assignmentFilters.item collection
+// AssignmentFiltersById provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AssignmentFiltersById(id string)(*i4921766653fb6d6581315a6bac40ace23d4fa67112682337afd4f4d80daa8e6e.DeviceAndAppManagementAssignmentFilterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -460,11 +453,11 @@ func (m *DeviceManagementRequestBuilder) AssignmentFiltersById(id string)(*i4921
     }
     return i4921766653fb6d6581315a6bac40ace23d4fa67112682337afd4f4d80daa8e6e.NewDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AuditEvents the auditEvents property
+// AuditEvents provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AuditEvents()(*i2963a1d6ad23ef25227a6aed40cc3841e34b4be45ea659c2cf058bd677824517.AuditEventsRequestBuilder) {
     return i2963a1d6ad23ef25227a6aed40cc3841e34b4be45ea659c2cf058bd677824517.NewAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AuditEventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.auditEvents.item collection
+// AuditEventsById provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AuditEventsById(id string)(*i83297487e58de6085c4e92098dab9b4ceff489f0d35618539853cb8dd47a1e2b.AuditEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -475,11 +468,11 @@ func (m *DeviceManagementRequestBuilder) AuditEventsById(id string)(*i83297487e5
     }
     return i83297487e58de6085c4e92098dab9b4ceff489f0d35618539853cb8dd47a1e2b.NewAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AutopilotEvents the autopilotEvents property
+// AutopilotEvents provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AutopilotEvents()(*i8f1b9cb53250cc6f80b90b1773e988f7fd6c9be2f104ced70a79bd26b7f2636d.AutopilotEventsRequestBuilder) {
     return i8f1b9cb53250cc6f80b90b1773e988f7fd6c9be2f104ced70a79bd26b7f2636d.NewAutopilotEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AutopilotEventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.autopilotEvents.item collection
+// AutopilotEventsById provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) AutopilotEventsById(id string)(*i938055cbc53dfa55bdbcaf12d8411c6b106c31f811751e39169825a02c14a9bc.DeviceManagementAutopilotEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -490,11 +483,11 @@ func (m *DeviceManagementRequestBuilder) AutopilotEventsById(id string)(*i938055
     }
     return i938055cbc53dfa55bdbcaf12d8411c6b106c31f811751e39169825a02c14a9bc.NewDeviceManagementAutopilotEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CartToClassAssociations the cartToClassAssociations property
+// CartToClassAssociations provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CartToClassAssociations()(*i706c92efe09bc616b81eca179b4ec8eb88868a1e24fb7cf3ef8fa2ac7876d92c.CartToClassAssociationsRequestBuilder) {
     return i706c92efe09bc616b81eca179b4ec8eb88868a1e24fb7cf3ef8fa2ac7876d92c.NewCartToClassAssociationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CartToClassAssociationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.cartToClassAssociations.item collection
+// CartToClassAssociationsById provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CartToClassAssociationsById(id string)(*i311dcf32af87f69b13484f8d3ae407e9dbcff9569e7c4f65fa908cb7a969f827.CartToClassAssociationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -505,11 +498,11 @@ func (m *DeviceManagementRequestBuilder) CartToClassAssociationsById(id string)(
     }
     return i311dcf32af87f69b13484f8d3ae407e9dbcff9569e7c4f65fa908cb7a969f827.NewCartToClassAssociationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Categories the categories property
+// Categories provides operations to manage the categories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Categories()(*i698fc1acac03b10c8e5911642e806c706c487dac204b59138f67b7fff1edfb33.CategoriesRequestBuilder) {
     return i698fc1acac03b10c8e5911642e806c706c487dac204b59138f67b7fff1edfb33.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.categories.item collection
+// CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CategoriesById(id string)(*i42ae1105b0246e9a456e6d0afec5cf6528d55be977e44bb09accd8e34610ddcf.DeviceManagementSettingCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -520,11 +513,11 @@ func (m *DeviceManagementRequestBuilder) CategoriesById(id string)(*i42ae1105b02
     }
     return i42ae1105b0246e9a456e6d0afec5cf6528d55be977e44bb09accd8e34610ddcf.NewDeviceManagementSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CertificateConnectorDetails the certificateConnectorDetails property
+// CertificateConnectorDetails provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CertificateConnectorDetails()(*i1d87a3a584aae1fabd51d5ae96cf69a6f863220a5e422c3ce7503d671a16fb5a.CertificateConnectorDetailsRequestBuilder) {
     return i1d87a3a584aae1fabd51d5ae96cf69a6f863220a5e422c3ce7503d671a16fb5a.NewCertificateConnectorDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CertificateConnectorDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.certificateConnectorDetails.item collection
+// CertificateConnectorDetailsById provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CertificateConnectorDetailsById(id string)(*ib23d1e55b895893141866237ae0eabe9751a0fa9fd5dbaeebfa53645a3879947.CertificateConnectorDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -535,11 +528,11 @@ func (m *DeviceManagementRequestBuilder) CertificateConnectorDetailsById(id stri
     }
     return ib23d1e55b895893141866237ae0eabe9751a0fa9fd5dbaeebfa53645a3879947.NewCertificateConnectorDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ChromeOSOnboardingSettings the chromeOSOnboardingSettings property
+// ChromeOSOnboardingSettings provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettings()(*ib4068623404324166e6f8ef567c5e371cae71c3137885b44d28d9c362b1dae01.ChromeOSOnboardingSettingsRequestBuilder) {
     return ib4068623404324166e6f8ef567c5e371cae71c3137885b44d28d9c362b1dae01.NewChromeOSOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChromeOSOnboardingSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.chromeOSOnboardingSettings.item collection
+// ChromeOSOnboardingSettingsById provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettingsById(id string)(*ie6ada197ab6f772f96177844615befc613858a10ad10fb8278ab7f3979670058.ChromeOSOnboardingSettingsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -550,11 +543,11 @@ func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettingsById(id strin
     }
     return ie6ada197ab6f772f96177844615befc613858a10ad10fb8278ab7f3979670058.NewChromeOSOnboardingSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CloudPCConnectivityIssues the cloudPCConnectivityIssues property
+// CloudPCConnectivityIssues provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssues()(*i786b0e3095c151f06daf164c0a83a8047e041917775b7735ef061fff3fe4474c.CloudPCConnectivityIssuesRequestBuilder) {
     return i786b0e3095c151f06daf164c0a83a8047e041917775b7735ef061fff3fe4474c.NewCloudPCConnectivityIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CloudPCConnectivityIssuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.cloudPCConnectivityIssues.item collection
+// CloudPCConnectivityIssuesById provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssuesById(id string)(*i6632c96399c63889476408e3c5af2a212bb2964cf4b03d596c256eca9bc9faf8.CloudPCConnectivityIssueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -565,11 +558,11 @@ func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssuesById(id string
     }
     return i6632c96399c63889476408e3c5af2a212bb2964cf4b03d596c256eca9bc9faf8.NewCloudPCConnectivityIssueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ComanagedDevices the comanagedDevices property
+// ComanagedDevices provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagedDevices()(*ia0d27d3c7fc06a1a6f2eef19ca5ef71eaede4d6af6cb97b957223a2c7c5ec4ce.ComanagedDevicesRequestBuilder) {
     return ia0d27d3c7fc06a1a6f2eef19ca5ef71eaede4d6af6cb97b957223a2c7c5ec4ce.NewComanagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ComanagedDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.comanagedDevices.item collection
+// ComanagedDevicesById provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagedDevicesById(id string)(*i56bc149ad6993ba047897a1c8c1431979f381d0fcc715b60c2384b165dd578fd.ManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -580,11 +573,11 @@ func (m *DeviceManagementRequestBuilder) ComanagedDevicesById(id string)(*i56bc1
     }
     return i56bc149ad6993ba047897a1c8c1431979f381d0fcc715b60c2384b165dd578fd.NewManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ComanagementEligibleDevices the comanagementEligibleDevices property
+// ComanagementEligibleDevices provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevices()(*ida02017e81fab8cb7fdbc26dd41903047556371b16523bbb0a9c0eaa338cee0d.ComanagementEligibleDevicesRequestBuilder) {
     return ida02017e81fab8cb7fdbc26dd41903047556371b16523bbb0a9c0eaa338cee0d.NewComanagementEligibleDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ComanagementEligibleDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.comanagementEligibleDevices.item collection
+// ComanagementEligibleDevicesById provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevicesById(id string)(*i358b32d4a242e0819a5b42f92a95b9871da36353d1ebee4731a493fe022829fa.ComanagementEligibleDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -595,11 +588,11 @@ func (m *DeviceManagementRequestBuilder) ComanagementEligibleDevicesById(id stri
     }
     return i358b32d4a242e0819a5b42f92a95b9871da36353d1ebee4731a493fe022829fa.NewComanagementEligibleDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ComplianceCategories the complianceCategories property
+// ComplianceCategories provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceCategories()(*i547e75c3751220b84b6d826399c69087ddca96b6bb141becda2daa5187b1f251.ComplianceCategoriesRequestBuilder) {
     return i547e75c3751220b84b6d826399c69087ddca96b6bb141becda2daa5187b1f251.NewComplianceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ComplianceCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.complianceCategories.item collection
+// ComplianceCategoriesById provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceCategoriesById(id string)(*i6af9f4ccfa0ca999a3babfd0053df361c89160bea2ecc7a6c21a97ef172aa80c.DeviceManagementConfigurationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -610,11 +603,11 @@ func (m *DeviceManagementRequestBuilder) ComplianceCategoriesById(id string)(*i6
     }
     return i6af9f4ccfa0ca999a3babfd0053df361c89160bea2ecc7a6c21a97ef172aa80c.NewDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ComplianceManagementPartners the complianceManagementPartners property
+// ComplianceManagementPartners provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceManagementPartners()(*ia6061502aa932ed88947fe6cae607fca4f325b2073303661045e6c8dbdbdc406.ComplianceManagementPartnersRequestBuilder) {
     return ia6061502aa932ed88947fe6cae607fca4f325b2073303661045e6c8dbdbdc406.NewComplianceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ComplianceManagementPartnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.complianceManagementPartners.item collection
+// ComplianceManagementPartnersById provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceManagementPartnersById(id string)(*ic6fdd851c4655d49f63a57983f59dcf3ee5726ee6644e86e726fc382d34da937.ComplianceManagementPartnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -625,11 +618,11 @@ func (m *DeviceManagementRequestBuilder) ComplianceManagementPartnersById(id str
     }
     return ic6fdd851c4655d49f63a57983f59dcf3ee5726ee6644e86e726fc382d34da937.NewComplianceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CompliancePolicies the compliancePolicies property
+// CompliancePolicies provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CompliancePolicies()(*i08923e6cb04538143ef467f61d1f68f42feb51236dd85ea051561286101056b9.CompliancePoliciesRequestBuilder) {
     return i08923e6cb04538143ef467f61d1f68f42feb51236dd85ea051561286101056b9.NewCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CompliancePoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item collection
+// CompliancePoliciesById provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) CompliancePoliciesById(id string)(*icf9aa82ba4af98edfe8da4424a420a69cbf1dd00ff51a90ea83a275bf404d3c8.DeviceManagementCompliancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -640,11 +633,11 @@ func (m *DeviceManagementRequestBuilder) CompliancePoliciesById(id string)(*icf9
     }
     return icf9aa82ba4af98edfe8da4424a420a69cbf1dd00ff51a90ea83a275bf404d3c8.NewDeviceManagementCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ComplianceSettings the complianceSettings property
+// ComplianceSettings provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceSettings()(*i07f3d961099ef67a3461c2a7c22256a9a4e212a860280569ab7520faa618a475.ComplianceSettingsRequestBuilder) {
     return i07f3d961099ef67a3461c2a7c22256a9a4e212a860280569ab7520faa618a475.NewComplianceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ComplianceSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.complianceSettings.item collection
+// ComplianceSettingsById provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ComplianceSettingsById(id string)(*i685c41ff74921eae05dae3a218808fa3c8f795bf0abae174ec2e122c83132113.DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -655,15 +648,15 @@ func (m *DeviceManagementRequestBuilder) ComplianceSettingsById(id string)(*i685
     }
     return i685c41ff74921eae05dae3a218808fa3c8f795bf0abae174ec2e122c83132113.NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ConditionalAccessSettings the conditionalAccessSettings property
+// ConditionalAccessSettings provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConditionalAccessSettings()(*i141145e1060f029069f273dddbb1a492048af9e65ce2a8acf3b06cdbe343c227.ConditionalAccessSettingsRequestBuilder) {
     return i141145e1060f029069f273dddbb1a492048af9e65ce2a8acf3b06cdbe343c227.NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConfigManagerCollections the configManagerCollections property
+// ConfigManagerCollections provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigManagerCollections()(*i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19.ConfigManagerCollectionsRequestBuilder) {
     return i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19.NewConfigManagerCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConfigManagerCollectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configManagerCollections.item collection
+// ConfigManagerCollectionsById provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigManagerCollectionsById(id string)(*i4d3c2eebcde4697ba8cab0ae6a9eaf92e376956d0d519b688aa4f984a09b703a.ConfigManagerCollectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -674,11 +667,11 @@ func (m *DeviceManagementRequestBuilder) ConfigManagerCollectionsById(id string)
     }
     return i4d3c2eebcde4697ba8cab0ae6a9eaf92e376956d0d519b688aa4f984a09b703a.NewConfigManagerCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ConfigurationCategories the configurationCategories property
+// ConfigurationCategories provides operations to manage the configurationCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationCategories()(*id32196fc55917b457bbd1871bdc6d139c27ae935705e050ba07ad3cbe488fddc.ConfigurationCategoriesRequestBuilder) {
     return id32196fc55917b457bbd1871bdc6d139c27ae935705e050ba07ad3cbe488fddc.NewConfigurationCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConfigurationCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationCategories.item collection
+// ConfigurationCategoriesById provides operations to manage the configurationCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationCategoriesById(id string)(*i7938e16bfba1522415a3ea97a96b0116bb7d6dff7b9cbdf07276804d44fbe1e2.DeviceManagementConfigurationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -689,11 +682,11 @@ func (m *DeviceManagementRequestBuilder) ConfigurationCategoriesById(id string)(
     }
     return i7938e16bfba1522415a3ea97a96b0116bb7d6dff7b9cbdf07276804d44fbe1e2.NewDeviceManagementConfigurationCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ConfigurationPolicies the configurationPolicies property
+// ConfigurationPolicies provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicies()(*ia507901fb898abb6b3ff4522b6115017a17f9faf692a44f363ee4f76f532df10.ConfigurationPoliciesRequestBuilder) {
     return ia507901fb898abb6b3ff4522b6115017a17f9faf692a44f363ee4f76f532df10.NewConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConfigurationPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicies.item collection
+// ConfigurationPoliciesById provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPoliciesById(id string)(*ic2bd65e0c7afcdf7f604db4f873328a2a71809652f3c7ce01a16054fef075e83.DeviceManagementConfigurationPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -704,11 +697,11 @@ func (m *DeviceManagementRequestBuilder) ConfigurationPoliciesById(id string)(*i
     }
     return ic2bd65e0c7afcdf7f604db4f873328a2a71809652f3c7ce01a16054fef075e83.NewDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ConfigurationPolicyTemplates the configurationPolicyTemplates property
+// ConfigurationPolicyTemplates provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplates()(*ife41ee09faee61fde4d6cac54db01aec08db7b9b350611c1c88a35757ca68e80.ConfigurationPolicyTemplatesRequestBuilder) {
     return ife41ee09faee61fde4d6cac54db01aec08db7b9b350611c1c88a35757ca68e80.NewConfigurationPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConfigurationPolicyTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicyTemplates.item collection
+// ConfigurationPolicyTemplatesById provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplatesById(id string)(*i650800eb43decec3395554b3c6a3e78cf0a1345893a4b7d62cc6263a5a90a5e5.DeviceManagementConfigurationPolicyTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -719,11 +712,11 @@ func (m *DeviceManagementRequestBuilder) ConfigurationPolicyTemplatesById(id str
     }
     return i650800eb43decec3395554b3c6a3e78cf0a1345893a4b7d62cc6263a5a90a5e5.NewDeviceManagementConfigurationPolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ConfigurationSettings the configurationSettings property
+// ConfigurationSettings provides operations to manage the configurationSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationSettings()(*i0471118b0053885405a49034a025010dbd75b4df16100f8050ee9f30934aac02.ConfigurationSettingsRequestBuilder) {
     return i0471118b0053885405a49034a025010dbd75b4df16100f8050ee9f30934aac02.NewConfigurationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConfigurationSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationSettings.item collection
+// ConfigurationSettingsById provides operations to manage the configurationSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ConfigurationSettingsById(id string)(*i64146fca9a2847630c4761f640949451e336dc823487a48f4fa6b80f975bfefe.DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -783,11 +776,11 @@ func (m *DeviceManagementRequestBuilder) CreatePatchRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// DataSharingConsents the dataSharingConsents property
+// DataSharingConsents provides operations to manage the dataSharingConsents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DataSharingConsents()(*icdd9231cfbc83a787e832dea344b20291cf7410fe49d42d0eecb5b8bd5acc410.DataSharingConsentsRequestBuilder) {
     return icdd9231cfbc83a787e832dea344b20291cf7410fe49d42d0eecb5b8bd5acc410.NewDataSharingConsentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DataSharingConsentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.dataSharingConsents.item collection
+// DataSharingConsentsById provides operations to manage the dataSharingConsents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DataSharingConsentsById(id string)(*i26fb1c650b48073e6ced464ef92267c0a24a7434e6d374d8d672ab39dd6c708f.DataSharingConsentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -798,11 +791,11 @@ func (m *DeviceManagementRequestBuilder) DataSharingConsentsById(id string)(*i26
     }
     return i26fb1c650b48073e6ced464ef92267c0a24a7434e6d374d8d672ab39dd6c708f.NewDataSharingConsentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DepOnboardingSettings the depOnboardingSettings property
+// DepOnboardingSettings provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DepOnboardingSettings()(*iebd87e7fafff068f7241a403fed246afef869694db39a83cfa732d873fa08c26.DepOnboardingSettingsRequestBuilder) {
     return iebd87e7fafff068f7241a403fed246afef869694db39a83cfa732d873fa08c26.NewDepOnboardingSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DepOnboardingSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.depOnboardingSettings.item collection
+// DepOnboardingSettingsById provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DepOnboardingSettingsById(id string)(*i6569cecd86fb68f7127a908d5e8001a4c12b86452145fcea8ce16b6b8f582654.DepOnboardingSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -813,11 +806,11 @@ func (m *DeviceManagementRequestBuilder) DepOnboardingSettingsById(id string)(*i
     }
     return i6569cecd86fb68f7127a908d5e8001a4c12b86452145fcea8ce16b6b8f582654.NewDepOnboardingSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DerivedCredentials the derivedCredentials property
+// DerivedCredentials provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DerivedCredentials()(*i04e8f3384b8235f952abe2d2fea9ebefec0cdc2b72fea81fdd18796edc52667e.DerivedCredentialsRequestBuilder) {
     return i04e8f3384b8235f952abe2d2fea9ebefec0cdc2b72fea81fdd18796edc52667e.NewDerivedCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DerivedCredentialsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.derivedCredentials.item collection
+// DerivedCredentialsById provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DerivedCredentialsById(id string)(*ifb0586ae8b6e18f17029a64d29eef03b6ab94fa47b8fb1b4e58af7b4233fc994.DeviceManagementDerivedCredentialSettingsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -828,11 +821,11 @@ func (m *DeviceManagementRequestBuilder) DerivedCredentialsById(id string)(*ifb0
     }
     return ifb0586ae8b6e18f17029a64d29eef03b6ab94fa47b8fb1b4e58af7b4233fc994.NewDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DetectedApps the detectedApps property
+// DetectedApps provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DetectedApps()(*i9e479031ba8de6e85dc52ac8315cd8522b7b5745abc2e95384031836737a5b1d.DetectedAppsRequestBuilder) {
     return i9e479031ba8de6e85dc52ac8315cd8522b7b5745abc2e95384031836737a5b1d.NewDetectedAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DetectedAppsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.detectedApps.item collection
+// DetectedAppsById provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DetectedAppsById(id string)(*i42adcf0c28b9ddb5710ccc9cf37285fad0c9bebdfd34a084e76ef7bf4091bf94.DetectedAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -843,11 +836,11 @@ func (m *DeviceManagementRequestBuilder) DetectedAppsById(id string)(*i42adcf0c2
     }
     return i42adcf0c28b9ddb5710ccc9cf37285fad0c9bebdfd34a084e76ef7bf4091bf94.NewDetectedAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceCategories the deviceCategories property
+// DeviceCategories provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCategories()(*ia735362824371466084214bc1d31147aaf70b3bb7b4bc5ae69ee755cdb3cb15c.DeviceCategoriesRequestBuilder) {
     return ia735362824371466084214bc1d31147aaf70b3bb7b4bc5ae69ee755cdb3cb15c.NewDeviceCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCategories.item collection
+// DeviceCategoriesById provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCategoriesById(id string)(*i67798682632afd49e37198586f074e784896d33251808177eab84fd5327b76ae.DeviceCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -858,11 +851,11 @@ func (m *DeviceManagementRequestBuilder) DeviceCategoriesById(id string)(*i67798
     }
     return i67798682632afd49e37198586f074e784896d33251808177eab84fd5327b76ae.NewDeviceCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceCompliancePolicies the deviceCompliancePolicies property
+// DeviceCompliancePolicies provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicies()(*i358b7a34135f775242bdf4c2e565d2d6445c815cd929fbf919e431687e5d64e0.DeviceCompliancePoliciesRequestBuilder) {
     return i358b7a34135f775242bdf4c2e565d2d6445c815cd929fbf919e431687e5d64e0.NewDeviceCompliancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceCompliancePoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicies.item collection
+// DeviceCompliancePoliciesById provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePoliciesById(id string)(*i752354ce069b29d0876274bd20462829bfea6c92b9d8e3ee13594ac32ac5c8dd.DeviceCompliancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -873,15 +866,15 @@ func (m *DeviceManagementRequestBuilder) DeviceCompliancePoliciesById(id string)
     }
     return i752354ce069b29d0876274bd20462829bfea6c92b9d8e3ee13594ac32ac5c8dd.NewDeviceCompliancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceCompliancePolicyDeviceStateSummary the deviceCompliancePolicyDeviceStateSummary property
+// DeviceCompliancePolicyDeviceStateSummary provides operations to manage the deviceCompliancePolicyDeviceStateSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicyDeviceStateSummary()(*iec5b8ff86b39d93b2c6f8e449985c4815dafb423ada830e104e0759f744fbcbc.DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
     return iec5b8ff86b39d93b2c6f8e449985c4815dafb423ada830e104e0759f744fbcbc.NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceCompliancePolicySettingStateSummaries the deviceCompliancePolicySettingStateSummaries property
+// DeviceCompliancePolicySettingStateSummaries provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummaries()(*ibaab16768160eaca07721cc64b8bd73ede4d7960679fb60dc1eeb325bac8ed70.DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
     return ibaab16768160eaca07721cc64b8bd73ede4d7960679fb60dc1eeb325bac8ed70.NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceCompliancePolicySettingStateSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicySettingStateSummaries.item collection
+// DeviceCompliancePolicySettingStateSummariesById provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummariesById(id string)(*i21d5ff7c7bad73fe610934541fdd0b62baddc6b6bfb19642899dbba4768af420.DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -892,11 +885,11 @@ func (m *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSumma
     }
     return i21d5ff7c7bad73fe610934541fdd0b62baddc6b6bfb19642899dbba4768af420.NewDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceComplianceScripts the deviceComplianceScripts property
+// DeviceComplianceScripts provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceComplianceScripts()(*i66cca6d16d49c190b84ca9bc191f2843f0d6e2701ee2b71abaee7d9132a568a4.DeviceComplianceScriptsRequestBuilder) {
     return i66cca6d16d49c190b84ca9bc191f2843f0d6e2701ee2b71abaee7d9132a568a4.NewDeviceComplianceScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceComplianceScriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceComplianceScripts.item collection
+// DeviceComplianceScriptsById provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceComplianceScriptsById(id string)(*i059fe0722303e2163a73df0ed3da319b1dc79b1b40e5cc14b3199d5c9ecac9ae.DeviceComplianceScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -907,11 +900,11 @@ func (m *DeviceManagementRequestBuilder) DeviceComplianceScriptsById(id string)(
     }
     return i059fe0722303e2163a73df0ed3da319b1dc79b1b40e5cc14b3199d5c9ecac9ae.NewDeviceComplianceScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceConfigurationConflictSummary the deviceConfigurationConflictSummary property
+// DeviceConfigurationConflictSummary provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummary()(*i057ddf0bfa04bffff1e0442afdc9f2dc27fe87304de9e6654fa745aa0b7b3e12.DeviceConfigurationConflictSummaryRequestBuilder) {
     return i057ddf0bfa04bffff1e0442afdc9f2dc27fe87304de9e6654fa745aa0b7b3e12.NewDeviceConfigurationConflictSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceConfigurationConflictSummaryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceConfigurationConflictSummary.item collection
+// DeviceConfigurationConflictSummaryById provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummaryById(id string)(*i35043c49d020f1939577baa4a50b58daf6bcd2adceabe7083a737bc49d79c75f.DeviceConfigurationConflictSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -922,15 +915,15 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummaryById(
     }
     return i35043c49d020f1939577baa4a50b58daf6bcd2adceabe7083a737bc49d79c75f.NewDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceConfigurationDeviceStateSummaries the deviceConfigurationDeviceStateSummaries property
+// DeviceConfigurationDeviceStateSummaries provides operations to manage the deviceConfigurationDeviceStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries()(*i2fc81b484971cb158984563ba7651a3c44994cb966235ce8a8b443af9e4ed631.DeviceConfigurationDeviceStateSummariesRequestBuilder) {
     return i2fc81b484971cb158984563ba7651a3c44994cb966235ce8a8b443af9e4ed631.NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceConfigurationRestrictedAppsViolations the deviceConfigurationRestrictedAppsViolations property
+// DeviceConfigurationRestrictedAppsViolations provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolations()(*i8b59cbe498bdd43bba238c8505dc901d4f1eab37af0f92a99abc825f62c5cedb.DeviceConfigurationRestrictedAppsViolationsRequestBuilder) {
     return i8b59cbe498bdd43bba238c8505dc901d4f1eab37af0f92a99abc825f62c5cedb.NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceConfigurationRestrictedAppsViolationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceConfigurationRestrictedAppsViolations.item collection
+// DeviceConfigurationRestrictedAppsViolationsById provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolationsById(id string)(*idd2e945546b6cc6c9e0ebeab70d17ee4bbac78f43174a9dc3ca71ec4db18e183.RestrictedAppsViolationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -941,15 +934,15 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolat
     }
     return idd2e945546b6cc6c9e0ebeab70d17ee4bbac78f43174a9dc3ca71ec4db18e183.NewRestrictedAppsViolationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceConfigurations the deviceConfigurations property
+// DeviceConfigurations provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurations()(*i06897cd84592b50e6e76477755f51f0fc302e5664c3a9d4325a123deb6d935d4.DeviceConfigurationsRequestBuilder) {
     return i06897cd84592b50e6e76477755f51f0fc302e5664c3a9d4325a123deb6d935d4.NewDeviceConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceConfigurationsAllManagedDeviceCertificateStates the deviceConfigurationsAllManagedDeviceCertificateStates property
+// DeviceConfigurationsAllManagedDeviceCertificateStates provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationsAllManagedDeviceCertificateStates()(*if5846307d7d49aff39a1b63a1e8c86d98714534c39b3fb728c1926d50fb78704.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) {
     return if5846307d7d49aff39a1b63a1e8c86d98714534c39b3fb728c1926d50fb78704.NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceConfigurationsAllManagedDeviceCertificateStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceConfigurationsAllManagedDeviceCertificateStates.item collection
+// DeviceConfigurationsAllManagedDeviceCertificateStatesById provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationsAllManagedDeviceCertificateStatesById(id string)(*if86324ca3d3b4becbe0d3c731f15fe0b5ae685109fc73527f165452606f75fa9.ManagedAllDeviceCertificateStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -960,7 +953,7 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationsAllManagedDeviceCer
     }
     return if86324ca3d3b4becbe0d3c731f15fe0b5ae685109fc73527f165452606f75fa9.NewManagedAllDeviceCertificateStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceConfigurations.item collection
+// DeviceConfigurationsById provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationsById(id string)(*i3578df72a1a39a50951f61e4b4d4ca5b19e9513d991d3717b1c739923f72fa16.DeviceConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -971,15 +964,15 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationsById(id string)(*i3
     }
     return i3578df72a1a39a50951f61e4b4d4ca5b19e9513d991d3717b1c739923f72fa16.NewDeviceConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceConfigurationUserStateSummaries the deviceConfigurationUserStateSummaries property
+// DeviceConfigurationUserStateSummaries provides operations to manage the deviceConfigurationUserStateSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationUserStateSummaries()(*i698892c0bf624db7b153330d1ec842bf28b7db8abe6c42fef0ccf570150ecd69.DeviceConfigurationUserStateSummariesRequestBuilder) {
     return i698892c0bf624db7b153330d1ec842bf28b7db8abe6c42fef0ccf570150ecd69.NewDeviceConfigurationUserStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceCustomAttributeShellScripts the deviceCustomAttributeShellScripts property
+// DeviceCustomAttributeShellScripts provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScripts()(*i2cd5bda9f593950fe63bb43c4377eb5e5ea12c83e98664b3bd72fe310af4990e.DeviceCustomAttributeShellScriptsRequestBuilder) {
     return i2cd5bda9f593950fe63bb43c4377eb5e5ea12c83e98664b3bd72fe310af4990e.NewDeviceCustomAttributeShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceCustomAttributeShellScriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCustomAttributeShellScripts.item collection
+// DeviceCustomAttributeShellScriptsById provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScriptsById(id string)(*i74f61baefc416a9f37b7bccbfc205a62a42b7ef4061740884ead0cd986f59afe.DeviceCustomAttributeShellScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -990,11 +983,11 @@ func (m *DeviceManagementRequestBuilder) DeviceCustomAttributeShellScriptsById(i
     }
     return i74f61baefc416a9f37b7bccbfc205a62a42b7ef4061740884ead0cd986f59afe.NewDeviceCustomAttributeShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceEnrollmentConfigurations the deviceEnrollmentConfigurations property
+// DeviceEnrollmentConfigurations provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurations()(*ida6e5d5d42f79af26c60ef013b6ed96c70c6a6bc2f945a534cef50bd3a19e691.DeviceEnrollmentConfigurationsRequestBuilder) {
     return ida6e5d5d42f79af26c60ef013b6ed96c70c6a6bc2f945a534cef50bd3a19e691.NewDeviceEnrollmentConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceEnrollmentConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceEnrollmentConfigurations.item collection
+// DeviceEnrollmentConfigurationsById provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurationsById(id string)(*ib6f585dc104c01583057b54d76b1fb0c1eafc958e07969fbf56c880f993d8ccb.DeviceEnrollmentConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1005,11 +998,11 @@ func (m *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurationsById(id s
     }
     return ib6f585dc104c01583057b54d76b1fb0c1eafc958e07969fbf56c880f993d8ccb.NewDeviceEnrollmentConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceHealthScripts the deviceHealthScripts property
+// DeviceHealthScripts provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceHealthScripts()(*iba07522ba7ac900bd7bfa7623d939c51b081efec89f93308c93f97f59526c931.DeviceHealthScriptsRequestBuilder) {
     return iba07522ba7ac900bd7bfa7623d939c51b081efec89f93308c93f97f59526c931.NewDeviceHealthScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceHealthScriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceHealthScripts.item collection
+// DeviceHealthScriptsById provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceHealthScriptsById(id string)(*i09f560f65de5a27707a35a1c085f8d385cb5513db1a04caa0933d28fffe1a4ee.DeviceHealthScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1020,11 +1013,11 @@ func (m *DeviceManagementRequestBuilder) DeviceHealthScriptsById(id string)(*i09
     }
     return i09f560f65de5a27707a35a1c085f8d385cb5513db1a04caa0933d28fffe1a4ee.NewDeviceHealthScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceManagementPartners the deviceManagementPartners property
+// DeviceManagementPartners provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementPartners()(*i66b975d6894f1203db9ffb8c9762fa16d80c6baa183597bc8820e565f9c9c96b.DeviceManagementPartnersRequestBuilder) {
     return i66b975d6894f1203db9ffb8c9762fa16d80c6baa183597bc8820e565f9c9c96b.NewDeviceManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceManagementPartnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceManagementPartners.item collection
+// DeviceManagementPartnersById provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementPartnersById(id string)(*i8cd70c374d8ba6b42e7bdb457ead4ef276229cd65860fa55a7ba0bcde7c13f5c.DeviceManagementPartnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1035,11 +1028,11 @@ func (m *DeviceManagementRequestBuilder) DeviceManagementPartnersById(id string)
     }
     return i8cd70c374d8ba6b42e7bdb457ead4ef276229cd65860fa55a7ba0bcde7c13f5c.NewDeviceManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceManagementScripts the deviceManagementScripts property
+// DeviceManagementScripts provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementScripts()(*i1ca99785037f2e43fa39d2e7c4e6664ba22567b6b45157790153760ec86814d1.DeviceManagementScriptsRequestBuilder) {
     return i1ca99785037f2e43fa39d2e7c4e6664ba22567b6b45157790153760ec86814d1.NewDeviceManagementScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceManagementScriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceManagementScripts.item collection
+// DeviceManagementScriptsById provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceManagementScriptsById(id string)(*i54e65d93ef820122e89e6a29edbe82bf7f240dd7ea821ef8e67e1ae5f80ebb88.DeviceManagementScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1050,11 +1043,11 @@ func (m *DeviceManagementRequestBuilder) DeviceManagementScriptsById(id string)(
     }
     return i54e65d93ef820122e89e6a29edbe82bf7f240dd7ea821ef8e67e1ae5f80ebb88.NewDeviceManagementScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceShellScripts the deviceShellScripts property
+// DeviceShellScripts provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceShellScripts()(*ia683a5a1665e6a223f3a0118037431de973ec4fa7d7b97390e84dfec5548718a.DeviceShellScriptsRequestBuilder) {
     return ia683a5a1665e6a223f3a0118037431de973ec4fa7d7b97390e84dfec5548718a.NewDeviceShellScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceShellScriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceShellScripts.item collection
+// DeviceShellScriptsById provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DeviceShellScriptsById(id string)(*iba229db39ae603170e2b51b246613530e06cbd7649ed03f8be88cc4d02410dd1.DeviceShellScriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1065,11 +1058,11 @@ func (m *DeviceManagementRequestBuilder) DeviceShellScriptsById(id string)(*iba2
     }
     return iba229db39ae603170e2b51b246613530e06cbd7649ed03f8be88cc4d02410dd1.NewDeviceShellScriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DomainJoinConnectors the domainJoinConnectors property
+// DomainJoinConnectors provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DomainJoinConnectors()(*i9936a8568039e56943f066cd2897ee9e81bb175bc3caaae1539aa34d424a4157.DomainJoinConnectorsRequestBuilder) {
     return i9936a8568039e56943f066cd2897ee9e81bb175bc3caaae1539aa34d424a4157.NewDomainJoinConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DomainJoinConnectorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.domainJoinConnectors.item collection
+// DomainJoinConnectorsById provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) DomainJoinConnectorsById(id string)(*i011d0c683ef6ee764268ded23d58414d3cee7a93c2c1525d2bb5656af411f1e1.DeviceManagementDomainJoinConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1080,11 +1073,11 @@ func (m *DeviceManagementRequestBuilder) DomainJoinConnectorsById(id string)(*i0
     }
     return i011d0c683ef6ee764268ded23d58414d3cee7a93c2c1525d2bb5656af411f1e1.NewDeviceManagementDomainJoinConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// EmbeddedSIMActivationCodePools the embeddedSIMActivationCodePools property
+// EmbeddedSIMActivationCodePools provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePools()(*ia5898a2f7be2217b80eb1d0f163a5e92140876048e060332cfd148379f0a3fe4.EmbeddedSIMActivationCodePoolsRequestBuilder) {
     return ia5898a2f7be2217b80eb1d0f163a5e92140876048e060332cfd148379f0a3fe4.NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EmbeddedSIMActivationCodePoolsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.embeddedSIMActivationCodePools.item collection
+// EmbeddedSIMActivationCodePoolsById provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePoolsById(id string)(*i513d8d8b74c87b48fc53b5b81415678490500a8a5edc7915f7f4248e0c1935d3.EmbeddedSIMActivationCodePoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1095,27 +1088,27 @@ func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePoolsById(id s
     }
     return i513d8d8b74c87b48fc53b5b81415678490500a8a5edc7915f7f4248e0c1935d3.NewEmbeddedSIMActivationCodePoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// EnableAndroidDeviceAdministratorEnrollment the enableAndroidDeviceAdministratorEnrollment property
+// EnableAndroidDeviceAdministratorEnrollment provides operations to call the enableAndroidDeviceAdministratorEnrollment method.
 func (m *DeviceManagementRequestBuilder) EnableAndroidDeviceAdministratorEnrollment()(*i21e64abb63355ddda113d965f4e4a0e1f9cb50b810afdefda17a9342eb6a7920.EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) {
     return i21e64abb63355ddda113d965f4e4a0e1f9cb50b810afdefda17a9342eb6a7920.NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EnableLegacyPcManagement the enableLegacyPcManagement property
+// EnableLegacyPcManagement provides operations to call the enableLegacyPcManagement method.
 func (m *DeviceManagementRequestBuilder) EnableLegacyPcManagement()(*i669feef35963a9c2d23562bc2c60c4e6542a5845da77448eeffe024b2202b51e.EnableLegacyPcManagementRequestBuilder) {
     return i669feef35963a9c2d23562bc2c60c4e6542a5845da77448eeffe024b2202b51e.NewEnableLegacyPcManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EnableUnlicensedAdminstrators the enableUnlicensedAdminstrators property
+// EnableUnlicensedAdminstrators provides operations to call the enableUnlicensedAdminstrators method.
 func (m *DeviceManagementRequestBuilder) EnableUnlicensedAdminstrators()(*i8b68ddcfc0e1b786a9ceec8a51661bd858daecd6cf9d82c16f0af0eaefe928be.EnableUnlicensedAdminstratorsRequestBuilder) {
     return i8b68ddcfc0e1b786a9ceec8a51661bd858daecd6cf9d82c16f0af0eaefe928be.NewEnableUnlicensedAdminstratorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EvaluateAssignmentFilter the evaluateAssignmentFilter property
+// EvaluateAssignmentFilter provides operations to call the evaluateAssignmentFilter method.
 func (m *DeviceManagementRequestBuilder) EvaluateAssignmentFilter()(*ia3e27b292c0794cd177af4a54db973a93eaa9a8afe86542fc52027f735f56297.EvaluateAssignmentFilterRequestBuilder) {
     return ia3e27b292c0794cd177af4a54db973a93eaa9a8afe86542fc52027f735f56297.NewEvaluateAssignmentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExchangeConnectors the exchangeConnectors property
+// ExchangeConnectors provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeConnectors()(*iefe3cca68aed1d1ec30796fdd2d77f7d0b8bde4259781e012141d0373e31d616.ExchangeConnectorsRequestBuilder) {
     return iefe3cca68aed1d1ec30796fdd2d77f7d0b8bde4259781e012141d0373e31d616.NewExchangeConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExchangeConnectorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.exchangeConnectors.item collection
+// ExchangeConnectorsById provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeConnectorsById(id string)(*i92cafcbae1c2bd55e3321444e20d514e2652e647f736e4345e83750865d58bb3.DeviceManagementExchangeConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1126,11 +1119,11 @@ func (m *DeviceManagementRequestBuilder) ExchangeConnectorsById(id string)(*i92c
     }
     return i92cafcbae1c2bd55e3321444e20d514e2652e647f736e4345e83750865d58bb3.NewDeviceManagementExchangeConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ExchangeOnPremisesPolicies the exchangeOnPremisesPolicies property
+// ExchangeOnPremisesPolicies provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPolicies()(*i3477ec0e76a581d4c30110fa035b62cdfaf7304bf2c7242a35a889d5b631eb32.ExchangeOnPremisesPoliciesRequestBuilder) {
     return i3477ec0e76a581d4c30110fa035b62cdfaf7304bf2c7242a35a889d5b631eb32.NewExchangeOnPremisesPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExchangeOnPremisesPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.exchangeOnPremisesPolicies.item collection
+// ExchangeOnPremisesPoliciesById provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPoliciesById(id string)(*i0a4269d340e42f686956c6802292256a70927b8c2df685cd18d18969d78b7fca.DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1141,7 +1134,7 @@ func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPoliciesById(id strin
     }
     return i0a4269d340e42f686956c6802292256a70927b8c2df685cd18d18969d78b7fca.NewDeviceManagementExchangeOnPremisesPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ExchangeOnPremisesPolicy the exchangeOnPremisesPolicy property
+// ExchangeOnPremisesPolicy provides operations to manage the exchangeOnPremisesPolicy property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ExchangeOnPremisesPolicy()(*i72062f459a5fffec8b646ec5ea269d8a517e5d4fa6a037393a75e9112866c452.ExchangeOnPremisesPolicyRequestBuilder) {
     return i72062f459a5fffec8b646ec5ea269d8a517e5d4fa6a037393a75e9112866c452.NewExchangeOnPremisesPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1168,7 +1161,7 @@ func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *DeviceManagementRequestBuilder) GetAssignedRoleDetails()(*ia423f658cb319455d87fcb906fc804761708cbfe9d8d576706c9865bd798e1af.GetAssignedRoleDetailsRequestBuilder) {
     return ia423f658cb319455d87fcb906fc804761708cbfe9d8d576706c9865bd798e1af.NewGetAssignedRoleDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetAssignmentFiltersStatusDetails the getAssignmentFiltersStatusDetails property
+// GetAssignmentFiltersStatusDetails provides operations to call the getAssignmentFiltersStatusDetails method.
 func (m *DeviceManagementRequestBuilder) GetAssignmentFiltersStatusDetails()(*i998652e1299f15a8b348de562e778ef7d149b6c22767a912ce84a6ee3c2fe2d7.GetAssignmentFiltersStatusDetailsRequestBuilder) {
     return i998652e1299f15a8b348de562e778ef7d149b6c22767a912ce84a6ee3c2fe2d7.NewGetAssignmentFiltersStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -1188,10 +1181,6 @@ func (m *DeviceManagementRequestBuilder) GetEffectivePermissions()(*i9fc465b5a85
 func (m *DeviceManagementRequestBuilder) GetEffectivePermissionsWithScope(scope *string)(*i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.GetEffectivePermissionsWithScopeRequestBuilder) {
     return i2ac2ce65fd2aee45de13a501baed8caeb3bf7574c7821fee17834fe715933533.NewGetEffectivePermissionsWithScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter, scope);
 }
-// GetOrganizationalMessageTenantConsent provides operations to call the getOrganizationalMessageTenantConsent method.
-func (m *DeviceManagementRequestBuilder) GetOrganizationalMessageTenantConsent()(*i7dbcf5ce27f9bb2c599126b3dba947db924e4c704d82001c4bdc4e49ce7e385f.GetOrganizationalMessageTenantConsentRequestBuilder) {
-    return i7dbcf5ce27f9bb2c599126b3dba947db924e4c704d82001c4bdc4e49ce7e385f.NewGetOrganizationalMessageTenantConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // GetRoleScopeTagsByIdsWithIds provides operations to call the getRoleScopeTagsByIds method.
 func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByIdsWithIds(ids *string)(*if3725d86243c74aefb922ce3d9a0524f440a1a4a7747d2ca7eb3303e88cb032d.GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
     return if3725d86243c74aefb922ce3d9a0524f440a1a4a7747d2ca7eb3303e88cb032d.NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter, ids);
@@ -1204,11 +1193,11 @@ func (m *DeviceManagementRequestBuilder) GetRoleScopeTagsByResourceWithResource(
 func (m *DeviceManagementRequestBuilder) GetSuggestedEnrollmentLimitWithEnrollmentType(enrollmentType *string)(*iee128a1b58b9f16a8f86d9f376dec81441a4724fc18ba05eb5abfbb94eed4de1.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) {
     return iee128a1b58b9f16a8f86d9f376dec81441a4724fc18ba05eb5abfbb94eed4de1.NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter, enrollmentType);
 }
-// GroupPolicyCategories the groupPolicyCategories property
+// GroupPolicyCategories provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyCategories()(*i23ce9f2660cd560209239fcd06f39ba1803005a6ddd865ba272b5925d9dce388.GroupPolicyCategoriesRequestBuilder) {
     return i23ce9f2660cd560209239fcd06f39ba1803005a6ddd865ba272b5925d9dce388.NewGroupPolicyCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupPolicyCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyCategories.item collection
+// GroupPolicyCategoriesById provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyCategoriesById(id string)(*ie185d0523ca3014f4ddef802e5b3757ba8676e9f188b1b9a221b93e30ba9bc61.GroupPolicyCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1219,11 +1208,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyCategoriesById(id string)(*i
     }
     return ie185d0523ca3014f4ddef802e5b3757ba8676e9f188b1b9a221b93e30ba9bc61.NewGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GroupPolicyConfigurations the groupPolicyConfigurations property
+// GroupPolicyConfigurations provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurations()(*icf53a42b6998fa85b218ab9a7bcd5021f3693e05c259bbef02cf451f2a77a4c6.GroupPolicyConfigurationsRequestBuilder) {
     return icf53a42b6998fa85b218ab9a7bcd5021f3693e05c259bbef02cf451f2a77a4c6.NewGroupPolicyConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupPolicyConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item collection
+// GroupPolicyConfigurationsById provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurationsById(id string)(*i343535e26f659fa35a174f3349c7b727e1a65ded28c76b221ed6438ddcf5eadd.GroupPolicyConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1234,11 +1223,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyConfigurationsById(id string
     }
     return i343535e26f659fa35a174f3349c7b727e1a65ded28c76b221ed6438ddcf5eadd.NewGroupPolicyConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GroupPolicyDefinitionFiles the groupPolicyDefinitionFiles property
+// GroupPolicyDefinitionFiles provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFiles()(*idbc91ce045321902f6398eb8cb8dc37a4220868083092caa3c8a905f587490b7.GroupPolicyDefinitionFilesRequestBuilder) {
     return idbc91ce045321902f6398eb8cb8dc37a4220868083092caa3c8a905f587490b7.NewGroupPolicyDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupPolicyDefinitionFilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitionFiles.item collection
+// GroupPolicyDefinitionFilesById provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFilesById(id string)(*ia0852800b0fb3f6f37f8bc0b3fdf0580fb1c740f41fb98716ac863309674ae78.GroupPolicyDefinitionFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1249,11 +1238,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionFilesById(id strin
     }
     return ia0852800b0fb3f6f37f8bc0b3fdf0580fb1c740f41fb98716ac863309674ae78.NewGroupPolicyDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GroupPolicyDefinitions the groupPolicyDefinitions property
+// GroupPolicyDefinitions provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitions()(*i7f539b5d0a42468004c84b364a2ae5e678aacaf1e6cef8edbceb6f9720bc91c6.GroupPolicyDefinitionsRequestBuilder) {
     return i7f539b5d0a42468004c84b364a2ae5e678aacaf1e6cef8edbceb6f9720bc91c6.NewGroupPolicyDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupPolicyDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitions.item collection
+// GroupPolicyDefinitionsById provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionsById(id string)(*i8096fa81f64bd2e8d8d73dc78a80f0c42bcae0d8f23714f193e9500016ba6523.GroupPolicyDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1264,11 +1253,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyDefinitionsById(id string)(*
     }
     return i8096fa81f64bd2e8d8d73dc78a80f0c42bcae0d8f23714f193e9500016ba6523.NewGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GroupPolicyMigrationReports the groupPolicyMigrationReports property
+// GroupPolicyMigrationReports provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReports()(*i9688a6a8de4b7a1cc66f3dfea67a44477381c1db41be85044fa90db8861b66bd.GroupPolicyMigrationReportsRequestBuilder) {
     return i9688a6a8de4b7a1cc66f3dfea67a44477381c1db41be85044fa90db8861b66bd.NewGroupPolicyMigrationReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupPolicyMigrationReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyMigrationReports.item collection
+// GroupPolicyMigrationReportsById provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReportsById(id string)(*i0fa4fe7e52bd9e6fe61758ccb28bd98616000dc0773a966cd7b7a09fdade9a76.GroupPolicyMigrationReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1279,11 +1268,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyMigrationReportsById(id stri
     }
     return i0fa4fe7e52bd9e6fe61758ccb28bd98616000dc0773a966cd7b7a09fdade9a76.NewGroupPolicyMigrationReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GroupPolicyObjectFiles the groupPolicyObjectFiles property
+// GroupPolicyObjectFiles provides operations to manage the groupPolicyObjectFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFiles()(*ie1b1de81a1614997b824f9a0658929c9d101e059bb7946472d00e70061999956.GroupPolicyObjectFilesRequestBuilder) {
     return ie1b1de81a1614997b824f9a0658929c9d101e059bb7946472d00e70061999956.NewGroupPolicyObjectFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupPolicyObjectFilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyObjectFiles.item collection
+// GroupPolicyObjectFilesById provides operations to manage the groupPolicyObjectFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFilesById(id string)(*ief6fb3ba84c0620c2b1d62c5d6fc1cd50f96bd78f9f15cbccf4ec4c72d2fb95a.GroupPolicyObjectFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1294,11 +1283,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFilesById(id string)(*
     }
     return ief6fb3ba84c0620c2b1d62c5d6fc1cd50f96bd78f9f15cbccf4ec4c72d2fb95a.NewGroupPolicyObjectFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GroupPolicyUploadedDefinitionFiles the groupPolicyUploadedDefinitionFiles property
+// GroupPolicyUploadedDefinitionFiles provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFiles()(*ic655b111c74ee435976a382d33c4b527c9041ef54a599f854975c7652a4a82b4.GroupPolicyUploadedDefinitionFilesRequestBuilder) {
     return ic655b111c74ee435976a382d33c4b527c9041ef54a599f854975c7652a4a82b4.NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupPolicyUploadedDefinitionFilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyUploadedDefinitionFiles.item collection
+// GroupPolicyUploadedDefinitionFilesById provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFilesById(id string)(*i0688f8f1b8b0e207ef4f894254d945a8088df78859fd09b3901a0852b9ada6bb.GroupPolicyUploadedDefinitionFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1309,11 +1298,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFilesById(
     }
     return i0688f8f1b8b0e207ef4f894254d945a8088df78859fd09b3901a0852b9ada6bb.NewGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ImportedDeviceIdentities the importedDeviceIdentities property
+// ImportedDeviceIdentities provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentities()(*i73ae9a38fc9c78be1d48a5912b96fba6b7ce2fc8eff8cd048aff1526f431ee86.ImportedDeviceIdentitiesRequestBuilder) {
     return i73ae9a38fc9c78be1d48a5912b96fba6b7ce2fc8eff8cd048aff1526f431ee86.NewImportedDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ImportedDeviceIdentitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.importedDeviceIdentities.item collection
+// ImportedDeviceIdentitiesById provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentitiesById(id string)(*i9ee6d9daa2455c3c10cbaad69605a08c5cdcca7ebb48e0f8876dca6c26d5df36.ImportedDeviceIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1324,11 +1313,11 @@ func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentitiesById(id string)
     }
     return i9ee6d9daa2455c3c10cbaad69605a08c5cdcca7ebb48e0f8876dca6c26d5df36.NewImportedDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ImportedWindowsAutopilotDeviceIdentities the importedWindowsAutopilotDeviceIdentities property
+// ImportedWindowsAutopilotDeviceIdentities provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentities()(*i25ab0a4486fc49777b565638e4b845f168d71787f0693dfabede8f4254978cc7.ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) {
     return i25ab0a4486fc49777b565638e4b845f168d71787f0693dfabede8f4254978cc7.NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ImportedWindowsAutopilotDeviceIdentitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.importedWindowsAutopilotDeviceIdentities.item collection
+// ImportedWindowsAutopilotDeviceIdentitiesById provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentitiesById(id string)(*id3982f36e4008f81f23380f3c05f6efc5f2c5671d99bbcc4a0828db5a9c238f1.ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1339,11 +1328,11 @@ func (m *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentitie
     }
     return id3982f36e4008f81f23380f3c05f6efc5f2c5671d99bbcc4a0828db5a9c238f1.NewImportedWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Intents the intents property
+// Intents provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Intents()(*id09e73ff6b4820eda2a801f7e76fec9f2893e9140b8174be0f0374f276e83bb0.IntentsRequestBuilder) {
     return id09e73ff6b4820eda2a801f7e76fec9f2893e9140b8174be0f0374f276e83bb0.NewIntentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IntentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item collection
+// IntentsById provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IntentsById(id string)(*ideae1e60e5b2c9161ec0b83bf721f666d688923d959356fca07160059aa4ea4e.DeviceManagementIntentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1354,11 +1343,11 @@ func (m *DeviceManagementRequestBuilder) IntentsById(id string)(*ideae1e60e5b2c9
     }
     return ideae1e60e5b2c9161ec0b83bf721f666d688923d959356fca07160059aa4ea4e.NewDeviceManagementIntentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// IntuneBrandingProfiles the intuneBrandingProfiles property
+// IntuneBrandingProfiles provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IntuneBrandingProfiles()(*i3f8b52c2608fe61191b0e4ac47b8157d99050ef8c7c169853c0ac0458b38b7f9.IntuneBrandingProfilesRequestBuilder) {
     return i3f8b52c2608fe61191b0e4ac47b8157d99050ef8c7c169853c0ac0458b38b7f9.NewIntuneBrandingProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IntuneBrandingProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intuneBrandingProfiles.item collection
+// IntuneBrandingProfilesById provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IntuneBrandingProfilesById(id string)(*i7bfe6a450b7d51e7e437f6cbabb6df38ec13aeca06b07cbb7f02329be8e9d0b6.IntuneBrandingProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1369,11 +1358,11 @@ func (m *DeviceManagementRequestBuilder) IntuneBrandingProfilesById(id string)(*
     }
     return i7bfe6a450b7d51e7e437f6cbabb6df38ec13aeca06b07cbb7f02329be8e9d0b6.NewIntuneBrandingProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// IosUpdateStatuses the iosUpdateStatuses property
+// IosUpdateStatuses provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IosUpdateStatuses()(*i1139b32380c25d76d1f7979a554c41b83234dd62c3aaf7e0c39d3286ad87e5e5.IosUpdateStatusesRequestBuilder) {
     return i1139b32380c25d76d1f7979a554c41b83234dd62c3aaf7e0c39d3286ad87e5e5.NewIosUpdateStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IosUpdateStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.iosUpdateStatuses.item collection
+// IosUpdateStatusesById provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) IosUpdateStatusesById(id string)(*i6f8f101cc298e3cd873d1c9d266e782c40b2432b9fdbcb9091d14702e771e748.IosUpdateDeviceStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1384,11 +1373,11 @@ func (m *DeviceManagementRequestBuilder) IosUpdateStatusesById(id string)(*i6f8f
     }
     return i6f8f101cc298e3cd873d1c9d266e782c40b2432b9fdbcb9091d14702e771e748.NewIosUpdateDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MacOSSoftwareUpdateAccountSummaries the macOSSoftwareUpdateAccountSummaries property
+// MacOSSoftwareUpdateAccountSummaries provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummaries()(*i6a993aa4c8af26efdbdc4b49b6bfafb240dc6d232dbe4a861229994ce0abb295.MacOSSoftwareUpdateAccountSummariesRequestBuilder) {
     return i6a993aa4c8af26efdbdc4b49b6bfafb240dc6d232dbe4a861229994ce0abb295.NewMacOSSoftwareUpdateAccountSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MacOSSoftwareUpdateAccountSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.macOSSoftwareUpdateAccountSummaries.item collection
+// MacOSSoftwareUpdateAccountSummariesById provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummariesById(id string)(*i9cec176902fc1992e8cde893d4430fbbd6ea6a339fc52521ab6adce1806d75f1.MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1399,11 +1388,11 @@ func (m *DeviceManagementRequestBuilder) MacOSSoftwareUpdateAccountSummariesById
     }
     return i9cec176902fc1992e8cde893d4430fbbd6ea6a339fc52521ab6adce1806d75f1.NewMacOSSoftwareUpdateAccountSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ManagedDeviceEncryptionStates the managedDeviceEncryptionStates property
+// ManagedDeviceEncryptionStates provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStates()(*i779a52aae2a2de32c6d22a901113cb0229d88da876d6c4dbe0af7284691cad65.ManagedDeviceEncryptionStatesRequestBuilder) {
     return i779a52aae2a2de32c6d22a901113cb0229d88da876d6c4dbe0af7284691cad65.NewManagedDeviceEncryptionStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ManagedDeviceEncryptionStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.managedDeviceEncryptionStates.item collection
+// ManagedDeviceEncryptionStatesById provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStatesById(id string)(*i5d8d3d68e99a3b659b85753837fbb9b6148adb3f7d3a84c58ae6fbe4e9060c0e.ManagedDeviceEncryptionStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1414,15 +1403,15 @@ func (m *DeviceManagementRequestBuilder) ManagedDeviceEncryptionStatesById(id st
     }
     return i5d8d3d68e99a3b659b85753837fbb9b6148adb3f7d3a84c58ae6fbe4e9060c0e.NewManagedDeviceEncryptionStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ManagedDeviceOverview the managedDeviceOverview property
+// ManagedDeviceOverview provides operations to manage the managedDeviceOverview property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDeviceOverview()(*i391c94feaa932fa1995271175690d35002a53d781469bfdf895e28bf9e948888.ManagedDeviceOverviewRequestBuilder) {
     return i391c94feaa932fa1995271175690d35002a53d781469bfdf895e28bf9e948888.NewManagedDeviceOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ManagedDevices the managedDevices property
+// ManagedDevices provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDevices()(*i78d574d6ad855ae77519cccb2b0ab9ecc25166c9fa35758769bc3033f5d54976.ManagedDevicesRequestBuilder) {
     return i78d574d6ad855ae77519cccb2b0ab9ecc25166c9fa35758769bc3033f5d54976.NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ManagedDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.managedDevices.item collection
+// ManagedDevicesById provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ManagedDevicesById(id string)(*i20842993f5395d21b68b1f55e71ad61952c23901f82261b1d7bff168473eb97c.ManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1433,11 +1422,11 @@ func (m *DeviceManagementRequestBuilder) ManagedDevicesById(id string)(*i2084299
     }
     return i20842993f5395d21b68b1f55e71ad61952c23901f82261b1d7bff168473eb97c.NewManagedDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MicrosoftTunnelConfigurations the microsoftTunnelConfigurations property
+// MicrosoftTunnelConfigurations provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurations()(*i70320bb8d336a98e48fc7169f597db2c4af8a822c2233182a324fe499d962e28.MicrosoftTunnelConfigurationsRequestBuilder) {
     return i70320bb8d336a98e48fc7169f597db2c4af8a822c2233182a324fe499d962e28.NewMicrosoftTunnelConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftTunnelConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.microsoftTunnelConfigurations.item collection
+// MicrosoftTunnelConfigurationsById provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurationsById(id string)(*iea47555c3b65ec64f1a627feff966e2819acb89ab04ca98b4a01385e1d6706c6.MicrosoftTunnelConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1448,11 +1437,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurationsById(id st
     }
     return iea47555c3b65ec64f1a627feff966e2819acb89ab04ca98b4a01385e1d6706c6.NewMicrosoftTunnelConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MicrosoftTunnelHealthThresholds the microsoftTunnelHealthThresholds property
+// MicrosoftTunnelHealthThresholds provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholds()(*i7bbe59add940b047fb4915bc2d373a95d5f636a1c3a60312ac7d01bddbc4ee42.MicrosoftTunnelHealthThresholdsRequestBuilder) {
     return i7bbe59add940b047fb4915bc2d373a95d5f636a1c3a60312ac7d01bddbc4ee42.NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftTunnelHealthThresholdsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.microsoftTunnelHealthThresholds.item collection
+// MicrosoftTunnelHealthThresholdsById provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholdsById(id string)(*i9b18c9645f9d681df092617fff14294781fb482951f57324320a246094841610.MicrosoftTunnelHealthThresholdItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1463,11 +1452,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelHealthThresholdsById(id 
     }
     return i9b18c9645f9d681df092617fff14294781fb482951f57324320a246094841610.NewMicrosoftTunnelHealthThresholdItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MicrosoftTunnelServerLogCollectionResponses the microsoftTunnelServerLogCollectionResponses property
+// MicrosoftTunnelServerLogCollectionResponses provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionResponses()(*i17fe4d69bfad61b41aff6c2c49601096d76256458d558fbb6127cf84732f87f8.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) {
     return i17fe4d69bfad61b41aff6c2c49601096d76256458d558fbb6127cf84732f87f8.NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftTunnelServerLogCollectionResponsesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.microsoftTunnelServerLogCollectionResponses.item collection
+// MicrosoftTunnelServerLogCollectionResponsesById provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionResponsesById(id string)(*ie0f0a9a809653b148b4637bea8da711d438e885cd1711f01e852225bb441f177.MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1478,11 +1467,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelServerLogCollectionRespo
     }
     return ie0f0a9a809653b148b4637bea8da711d438e885cd1711f01e852225bb441f177.NewMicrosoftTunnelServerLogCollectionResponseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MicrosoftTunnelSites the microsoftTunnelSites property
+// MicrosoftTunnelSites provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSites()(*i9454c3ec04f2c7df3ea0d011686892dbd5605be5b323336d457c9746de64b58b.MicrosoftTunnelSitesRequestBuilder) {
     return i9454c3ec04f2c7df3ea0d011686892dbd5605be5b323336d457c9746de64b58b.NewMicrosoftTunnelSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftTunnelSitesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.microsoftTunnelSites.item collection
+// MicrosoftTunnelSitesById provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSitesById(id string)(*i1005756f6f557eed7bb1626c7031fedcb67d61eb9653f994789e7535183b7213.MicrosoftTunnelSiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1493,11 +1482,11 @@ func (m *DeviceManagementRequestBuilder) MicrosoftTunnelSitesById(id string)(*i1
     }
     return i1005756f6f557eed7bb1626c7031fedcb67d61eb9653f994789e7535183b7213.NewMicrosoftTunnelSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MobileAppTroubleshootingEvents the mobileAppTroubleshootingEvents property
+// MobileAppTroubleshootingEvents provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEvents()(*i40a8e00e460bc3f161887071f058de9d337d7e495f1a3d7661c7d8bc98dcb6ae.MobileAppTroubleshootingEventsRequestBuilder) {
     return i40a8e00e460bc3f161887071f058de9d337d7e495f1a3d7661c7d8bc98dcb6ae.NewMobileAppTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MobileAppTroubleshootingEventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.mobileAppTroubleshootingEvents.item collection
+// MobileAppTroubleshootingEventsById provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEventsById(id string)(*i3db6175567512b577a023447df3b0627296f2e723c8444cb0274aeb95aba06c0.MobileAppTroubleshootingEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1508,11 +1497,11 @@ func (m *DeviceManagementRequestBuilder) MobileAppTroubleshootingEventsById(id s
     }
     return i3db6175567512b577a023447df3b0627296f2e723c8444cb0274aeb95aba06c0.NewMobileAppTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MobileThreatDefenseConnectors the mobileThreatDefenseConnectors property
+// MobileThreatDefenseConnectors provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectors()(*i074e42283e69f4dfb04fd66a65aa8dfa39fbf2fd5c5d611197e2e87679a760cc.MobileThreatDefenseConnectorsRequestBuilder) {
     return i074e42283e69f4dfb04fd66a65aa8dfa39fbf2fd5c5d611197e2e87679a760cc.NewMobileThreatDefenseConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MobileThreatDefenseConnectorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.mobileThreatDefenseConnectors.item collection
+// MobileThreatDefenseConnectorsById provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectorsById(id string)(*i60ad998c7dc9950655aee52ac45bca7b49a3b1860f7bb1443ad29a3fe43c5500.MobileThreatDefenseConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1523,15 +1512,15 @@ func (m *DeviceManagementRequestBuilder) MobileThreatDefenseConnectorsById(id st
     }
     return i60ad998c7dc9950655aee52ac45bca7b49a3b1860f7bb1443ad29a3fe43c5500.NewMobileThreatDefenseConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Monitoring the monitoring property
+// Monitoring provides operations to manage the monitoring property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Monitoring()(*i4bd812738dda41107da4619109b291325f5d780358395b89fe5c82aad759ae99.MonitoringRequestBuilder) {
     return i4bd812738dda41107da4619109b291325f5d780358395b89fe5c82aad759ae99.NewMonitoringRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NdesConnectors the ndesConnectors property
+// NdesConnectors provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NdesConnectors()(*ieecc9464554ab62dc03bd18e0632d6ca6bab183f34e272de77883f92cba059ec.NdesConnectorsRequestBuilder) {
     return ieecc9464554ab62dc03bd18e0632d6ca6bab183f34e272de77883f92cba059ec.NewNdesConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NdesConnectorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.ndesConnectors.item collection
+// NdesConnectorsById provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NdesConnectorsById(id string)(*ide87771b8a086be907d4533d5354e05d66d55a6342cb7f9663ecff1af7174fd6.NdesConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1542,11 +1531,11 @@ func (m *DeviceManagementRequestBuilder) NdesConnectorsById(id string)(*ide87771
     }
     return ide87771b8a086be907d4533d5354e05d66d55a6342cb7f9663ecff1af7174fd6.NewNdesConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// NotificationMessageTemplates the notificationMessageTemplates property
+// NotificationMessageTemplates provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*ic54aa06ba42909b1d71447297b34dd206aa75bcdd954e9b6c63c1d081ae8e712.NotificationMessageTemplatesRequestBuilder) {
     return ic54aa06ba42909b1d71447297b34dd206aa75bcdd954e9b6c63c1d081ae8e712.NewNotificationMessageTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NotificationMessageTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.notificationMessageTemplates.item collection
+// NotificationMessageTemplatesById provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) NotificationMessageTemplatesById(id string)(*i816c10ea42c24b57eeababf5be54d8e9dccb9d2153ae348d4cfcc0648299f316.NotificationMessageTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1557,11 +1546,11 @@ func (m *DeviceManagementRequestBuilder) NotificationMessageTemplatesById(id str
     }
     return i816c10ea42c24b57eeababf5be54d8e9dccb9d2153ae348d4cfcc0648299f316.NewNotificationMessageTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// OemWarrantyInformationOnboarding the oemWarrantyInformationOnboarding property
+// OemWarrantyInformationOnboarding provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboarding()(*i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.OemWarrantyInformationOnboardingRequestBuilder) {
     return i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.NewOemWarrantyInformationOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OemWarrantyInformationOnboardingById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.oemWarrantyInformationOnboarding.item collection
+// OemWarrantyInformationOnboardingById provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboardingById(id string)(*i2b80fe28d9f30f8b3299f4f1ee5b54048b597abcb77e37e4cba3907059257c35.OemWarrantyInformationOnboardingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1571,36 +1560,6 @@ func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboardingById(id
         urlTplParams["oemWarrantyInformationOnboarding%2Did"] = id
     }
     return i2b80fe28d9f30f8b3299f4f1ee5b54048b597abcb77e37e4cba3907059257c35.NewOemWarrantyInformationOnboardingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// OrganizationalMessageDetails the organizationalMessageDetails property
-func (m *DeviceManagementRequestBuilder) OrganizationalMessageDetails()(*i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2.OrganizationalMessageDetailsRequestBuilder) {
-    return i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2.NewOrganizationalMessageDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// OrganizationalMessageDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.organizationalMessageDetails.item collection
-func (m *DeviceManagementRequestBuilder) OrganizationalMessageDetailsById(id string)(*i260b62087efaed4c7beb6bd358d7f35fb41a3ce9b5e7efe7cc44f0f80c9a30a7.OrganizationalMessageDetailItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["organizationalMessageDetail%2Did"] = id
-    }
-    return i260b62087efaed4c7beb6bd358d7f35fb41a3ce9b5e7efe7cc44f0f80c9a30a7.NewOrganizationalMessageDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// OrganizationalMessageGuidedContents the organizationalMessageGuidedContents property
-func (m *DeviceManagementRequestBuilder) OrganizationalMessageGuidedContents()(*i0b08a420df2118d05af20d0f8785ea74e30b982b250b80259c4d9d9c2ea441e4.OrganizationalMessageGuidedContentsRequestBuilder) {
-    return i0b08a420df2118d05af20d0f8785ea74e30b982b250b80259c4d9d9c2ea441e4.NewOrganizationalMessageGuidedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// OrganizationalMessageGuidedContentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.organizationalMessageGuidedContents.item collection
-func (m *DeviceManagementRequestBuilder) OrganizationalMessageGuidedContentsById(id string)(*i55ec3779a1db9f0bea7c8292fdcd25a7d32847ef391ba112febdcea320afb855.OrganizationalMessageGuidedContentItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["organizationalMessageGuidedContent%2Did"] = id
-    }
-    return i55ec3779a1db9f0bea7c8292fdcd25a7d32847ef391ba112febdcea320afb855.NewOrganizationalMessageGuidedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update deviceManagement
 func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, error) {
@@ -1621,15 +1580,11 @@ func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable), nil
 }
-// PostOrganizationalMessageTenantConsent the postOrganizationalMessageTenantConsent property
-func (m *DeviceManagementRequestBuilder) PostOrganizationalMessageTenantConsent()(*i4984668279ed8876cf46248c619567ca3892e61be4b166dd0c78c4f08260b1ac.PostOrganizationalMessageTenantConsentRequestBuilder) {
-    return i4984668279ed8876cf46248c619567ca3892e61be4b166dd0c78c4f08260b1ac.NewPostOrganizationalMessageTenantConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RemoteActionAudits the remoteActionAudits property
+// RemoteActionAudits provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteActionAudits()(*icc453491aa85e95c9367a8608bae36cdb55e1bd1c0061d126c9a65e366a9ff28.RemoteActionAuditsRequestBuilder) {
     return icc453491aa85e95c9367a8608bae36cdb55e1bd1c0061d126c9a65e366a9ff28.NewRemoteActionAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RemoteActionAuditsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.remoteActionAudits.item collection
+// RemoteActionAuditsById provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteActionAuditsById(id string)(*id0684d655473f1428899e83132845fe3a90481fafc7e7a0451925f623c49b89f.RemoteActionAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1640,11 +1595,11 @@ func (m *DeviceManagementRequestBuilder) RemoteActionAuditsById(id string)(*id06
     }
     return id0684d655473f1428899e83132845fe3a90481fafc7e7a0451925f623c49b89f.NewRemoteActionAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RemoteAssistancePartners the remoteAssistancePartners property
+// RemoteAssistancePartners provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteAssistancePartners()(*i7068cdc544aff5d979972dad3d7ea36fa9f9d06f4c09c377aa58a2567cc6c58a.RemoteAssistancePartnersRequestBuilder) {
     return i7068cdc544aff5d979972dad3d7ea36fa9f9d06f4c09c377aa58a2567cc6c58a.NewRemoteAssistancePartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RemoteAssistancePartnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.remoteAssistancePartners.item collection
+// RemoteAssistancePartnersById provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteAssistancePartnersById(id string)(*i94a2aa2930d99f4e1d9a1e857ad4d34b3859eb482d570fd78fe8f603baf61888.RemoteAssistancePartnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1655,19 +1610,19 @@ func (m *DeviceManagementRequestBuilder) RemoteAssistancePartnersById(id string)
     }
     return i94a2aa2930d99f4e1d9a1e857ad4d34b3859eb482d570fd78fe8f603baf61888.NewRemoteAssistancePartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RemoteAssistanceSettings the remoteAssistanceSettings property
+// RemoteAssistanceSettings provides operations to manage the remoteAssistanceSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RemoteAssistanceSettings()(*ie61007dbf129f4db83e56bbd1d942a8ae248b7a0dee7650f8b895353ee9a7a37.RemoteAssistanceSettingsRequestBuilder) {
     return ie61007dbf129f4db83e56bbd1d942a8ae248b7a0dee7650f8b895353ee9a7a37.NewRemoteAssistanceSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Reports the reports property
+// Reports provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Reports()(*i5829b09916b668f7826693dac476ee85ff6f59fd831d0581a362c02cf68ea11c.ReportsRequestBuilder) {
     return i5829b09916b668f7826693dac476ee85ff6f59fd831d0581a362c02cf68ea11c.NewReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourceAccessProfiles the resourceAccessProfiles property
+// ResourceAccessProfiles provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceAccessProfiles()(*i76dbec3f4277cf99054b4e577f9e55b4178cdb6999a54fdbea51b39bd33ae365.ResourceAccessProfilesRequestBuilder) {
     return i76dbec3f4277cf99054b4e577f9e55b4178cdb6999a54fdbea51b39bd33ae365.NewResourceAccessProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourceAccessProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.resourceAccessProfiles.item collection
+// ResourceAccessProfilesById provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceAccessProfilesById(id string)(*ic5d558eaada98180598cc19a99bfac93aa6f720f6dbc364a9d4349cee7beb577.DeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1678,11 +1633,11 @@ func (m *DeviceManagementRequestBuilder) ResourceAccessProfilesById(id string)(*
     }
     return ic5d558eaada98180598cc19a99bfac93aa6f720f6dbc364a9d4349cee7beb577.NewDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ResourceOperations the resourceOperations property
+// ResourceOperations provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceOperations()(*i7a555a75335cb9d717ad246494b3cccf65d4ba988b41e42e9cb8c2fee3bfd31f.ResourceOperationsRequestBuilder) {
     return i7a555a75335cb9d717ad246494b3cccf65d4ba988b41e42e9cb8c2fee3bfd31f.NewResourceOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourceOperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.resourceOperations.item collection
+// ResourceOperationsById provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ResourceOperationsById(id string)(*i7a916bd254b4ebec7e09208366ac0d8bc249f87e51b0729d076cca602354faa9.ResourceOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1693,11 +1648,11 @@ func (m *DeviceManagementRequestBuilder) ResourceOperationsById(id string)(*i7a9
     }
     return i7a916bd254b4ebec7e09208366ac0d8bc249f87e51b0729d076cca602354faa9.NewResourceOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ReusablePolicySettings the reusablePolicySettings property
+// ReusablePolicySettings provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusablePolicySettings()(*ia7a47c45e2cbb20312fb519a815309845605a55db5dd0509cea519b3789b543c.ReusablePolicySettingsRequestBuilder) {
     return ia7a47c45e2cbb20312fb519a815309845605a55db5dd0509cea519b3789b543c.NewReusablePolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReusablePolicySettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reusablePolicySettings.item collection
+// ReusablePolicySettingsById provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusablePolicySettingsById(id string)(*i8913f08779f89ec0b601afb3c99274b756e55a6bbf38aaac52a61eb933363b22.DeviceManagementReusablePolicySettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1708,11 +1663,11 @@ func (m *DeviceManagementRequestBuilder) ReusablePolicySettingsById(id string)(*
     }
     return i8913f08779f89ec0b601afb3c99274b756e55a6bbf38aaac52a61eb933363b22.NewDeviceManagementReusablePolicySettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ReusableSettings the reusableSettings property
+// ReusableSettings provides operations to manage the reusableSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusableSettings()(*i3f9e02dc418faa1121caa625af488a2db2444f528d0dd315716c1fb4c073311a.ReusableSettingsRequestBuilder) {
     return i3f9e02dc418faa1121caa625af488a2db2444f528d0dd315716c1fb4c073311a.NewReusableSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReusableSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reusableSettings.item collection
+// ReusableSettingsById provides operations to manage the reusableSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ReusableSettingsById(id string)(*i49e489ceeacd033b4eac89ebc26ed550aa22b454be5ab19d8cd50479afef2f71.DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1723,11 +1678,11 @@ func (m *DeviceManagementRequestBuilder) ReusableSettingsById(id string)(*i49e48
     }
     return i49e489ceeacd033b4eac89ebc26ed550aa22b454be5ab19d8cd50479afef2f71.NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleAssignments the roleAssignments property
+// RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleAssignments()(*ie514a3c6a6dee151e51633f6e85205018f5596a0ceacc746dfa2540bd2105860.RoleAssignmentsRequestBuilder) {
     return ie514a3c6a6dee151e51633f6e85205018f5596a0ceacc746dfa2540bd2105860.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleAssignments.item collection
+// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*i997761497b5362f904a17cff0f2cd69ad57cbb67ef752069a8da2ff3ac752dc0.DeviceAndAppManagementRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1738,11 +1693,11 @@ func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*i997761
     }
     return i997761497b5362f904a17cff0f2cd69ad57cbb67ef752069a8da2ff3ac752dc0.NewDeviceAndAppManagementRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleDefinitions the roleDefinitions property
+// RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleDefinitions()(*ia1fd4ff5ac64fc3e7a6285c3c1f9fee6d35f33dadb2227eb95c3bb8ca75ce2ec.RoleDefinitionsRequestBuilder) {
     return ia1fd4ff5ac64fc3e7a6285c3c1f9fee6d35f33dadb2227eb95c3bb8ca75ce2ec.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleDefinitions.item collection
+// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*i708f38592cff2201d730d1293a99cf6b5dc50c9a7d224cf7dbfacdf0e0502028.RoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1753,11 +1708,11 @@ func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*i708f38
     }
     return i708f38592cff2201d730d1293a99cf6b5dc50c9a7d224cf7dbfacdf0e0502028.NewRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleScopeTags the roleScopeTags property
+// RoleScopeTags provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleScopeTags()(*i8ce752b735630d1938ba83b1413f1f2a6b47900296c801c0885117449dcdfb03.RoleScopeTagsRequestBuilder) {
     return i8ce752b735630d1938ba83b1413f1f2a6b47900296c801c0885117449dcdfb03.NewRoleScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleScopeTagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleScopeTags.item collection
+// RoleScopeTagsById provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) RoleScopeTagsById(id string)(*i4873b8a2bd4ce4c83f048bfab265644ff9859728154d3d9119043a093046ca39.RoleScopeTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1772,15 +1727,15 @@ func (m *DeviceManagementRequestBuilder) RoleScopeTagsById(id string)(*i4873b8a2
 func (m *DeviceManagementRequestBuilder) ScopedForResourceWithResource(resource *string)(*iffaf3f46b35aac55cff21b2949d7664cdbef11bed233ff2d8daebd301bd7e927.ScopedForResourceWithResourceRequestBuilder) {
     return iffaf3f46b35aac55cff21b2949d7664cdbef11bed233ff2d8daebd301bd7e927.NewScopedForResourceWithResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter, resource);
 }
-// SendCustomNotificationToCompanyPortal the sendCustomNotificationToCompanyPortal property
+// SendCustomNotificationToCompanyPortal provides operations to call the sendCustomNotificationToCompanyPortal method.
 func (m *DeviceManagementRequestBuilder) SendCustomNotificationToCompanyPortal()(*i06d1ae011e8e39ef827ff40796abc9d2030d40c8a2af4e27558dea50075ecb2e.SendCustomNotificationToCompanyPortalRequestBuilder) {
     return i06d1ae011e8e39ef827ff40796abc9d2030d40c8a2af4e27558dea50075ecb2e.NewSendCustomNotificationToCompanyPortalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingDefinitions the settingDefinitions property
+// SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) SettingDefinitions()(*id6a0a568a8b5391c0978e1306dd4c8009bb845bd12cae55656dc3ef30d881a4b.SettingDefinitionsRequestBuilder) {
     return id6a0a568a8b5391c0978e1306dd4c8009bb845bd12cae55656dc3ef30d881a4b.NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.settingDefinitions.item collection
+// SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) SettingDefinitionsById(id string)(*i1ae262e31358d7f73d23c13161259bab72a81c3b1794b4550b8e336ebf4d6ae5.DeviceManagementSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1791,15 +1746,15 @@ func (m *DeviceManagementRequestBuilder) SettingDefinitionsById(id string)(*i1ae
     }
     return i1ae262e31358d7f73d23c13161259bab72a81c3b1794b4550b8e336ebf4d6ae5.NewDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SoftwareUpdateStatusSummary the softwareUpdateStatusSummary property
+// SoftwareUpdateStatusSummary provides operations to manage the softwareUpdateStatusSummary property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*ie42b4206943697b25f90a4c473d00d5095b8af03a1d4a4008fb82a68e1703b2c.SoftwareUpdateStatusSummaryRequestBuilder) {
     return ie42b4206943697b25f90a4c473d00d5095b8af03a1d4a4008fb82a68e1703b2c.NewSoftwareUpdateStatusSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TelecomExpenseManagementPartners the telecomExpenseManagementPartners property
+// TelecomExpenseManagementPartners provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*i19482298e1fb0466e1115e7de1e415ed26381c37f318904d30585e948b2d23f5.TelecomExpenseManagementPartnersRequestBuilder) {
     return i19482298e1fb0466e1115e7de1e415ed26381c37f318904d30585e948b2d23f5.NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TelecomExpenseManagementPartnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.telecomExpenseManagementPartners.item collection
+// TelecomExpenseManagementPartnersById provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartnersById(id string)(*i22df34f1d011439270aa80f1c0df83a47bfccd829bdadb118ad00be372bcbacd.TelecomExpenseManagementPartnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1810,11 +1765,11 @@ func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartnersById(id
     }
     return i22df34f1d011439270aa80f1c0df83a47bfccd829bdadb118ad00be372bcbacd.NewTelecomExpenseManagementPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Templates the templates property
+// Templates provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) Templates()(*iff02fa8bd4683ed01f2fb946cf0925254fba094e60a47d198b5dcd279ddc17a8.TemplatesRequestBuilder) {
     return iff02fa8bd4683ed01f2fb946cf0925254fba094e60a47d198b5dcd279ddc17a8.NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templates.item collection
+// TemplatesById provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TemplatesById(id string)(*i310459afa8c1ac6a51b3e2b55399ba8a3dac3f0c14498726435f4b85589295c8.DeviceManagementTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1825,11 +1780,11 @@ func (m *DeviceManagementRequestBuilder) TemplatesById(id string)(*i310459afa8c1
     }
     return i310459afa8c1ac6a51b3e2b55399ba8a3dac3f0c14498726435f4b85589295c8.NewDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TemplateSettings the templateSettings property
+// TemplateSettings provides operations to manage the templateSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TemplateSettings()(*i6d947c2e3ece03962617b317b5a0dd34938e44e9f2974f07df300974388a10e4.TemplateSettingsRequestBuilder) {
     return i6d947c2e3ece03962617b317b5a0dd34938e44e9f2974f07df300974388a10e4.NewTemplateSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TemplateSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templateSettings.item collection
+// TemplateSettingsById provides operations to manage the templateSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TemplateSettingsById(id string)(*i10af5fa01c92472f6e866e9250270e127760d60e918527fe49cc649a2ad4c3c4.DeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1840,15 +1795,15 @@ func (m *DeviceManagementRequestBuilder) TemplateSettingsById(id string)(*i10af5
     }
     return i10af5fa01c92472f6e866e9250270e127760d60e918527fe49cc649a2ad4c3c4.NewDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TenantAttachRBAC the tenantAttachRBAC property
+// TenantAttachRBAC provides operations to manage the tenantAttachRBAC property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TenantAttachRBAC()(*i1d68e4e9e8ff41ffd42793189d4eb8e57e7e912e22788b57799280d4ccdb8d3c.TenantAttachRBACRequestBuilder) {
     return i1d68e4e9e8ff41ffd42793189d4eb8e57e7e912e22788b57799280d4ccdb8d3c.NewTenantAttachRBACRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TermsAndConditions the termsAndConditions property
+// TermsAndConditions provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TermsAndConditions()(*i99d9a524d7a8704a79b86768e95d94ab558ba2c422105dc823147c9ce9c3c9e1.TermsAndConditionsRequestBuilder) {
     return i99d9a524d7a8704a79b86768e95d94ab558ba2c422105dc823147c9ce9c3c9e1.NewTermsAndConditionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TermsAndConditionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.termsAndConditions.item collection
+// TermsAndConditionsById provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TermsAndConditionsById(id string)(*ic14886561878f11e91ced382b17c086323a017287f722a50db11012f73d5b9f6.TermsAndConditionsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1859,11 +1814,11 @@ func (m *DeviceManagementRequestBuilder) TermsAndConditionsById(id string)(*ic14
     }
     return ic14886561878f11e91ced382b17c086323a017287f722a50db11012f73d5b9f6.NewTermsAndConditionsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TroubleshootingEvents the troubleshootingEvents property
+// TroubleshootingEvents provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TroubleshootingEvents()(*i66c458cf61ce1962fc3b708fdff3d0e8454c4648d6d491d496c7e7757ae559f9.TroubleshootingEventsRequestBuilder) {
     return i66c458cf61ce1962fc3b708fdff3d0e8454c4648d6d491d496c7e7757ae559f9.NewTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TroubleshootingEventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.troubleshootingEvents.item collection
+// TroubleshootingEventsById provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) TroubleshootingEventsById(id string)(*i3f73ae7f42ec4e4c711aefe6d686e5f4cff1343578a3d57e140420be1212f1f2.DeviceManagementTroubleshootingEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1874,15 +1829,11 @@ func (m *DeviceManagementRequestBuilder) TroubleshootingEventsById(id string)(*i
     }
     return i3f73ae7f42ec4e4c711aefe6d686e5f4cff1343578a3d57e140420be1212f1f2.NewDeviceManagementTroubleshootingEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UpdateOrganizationalMessageTenantConsent the updateOrganizationalMessageTenantConsent property
-func (m *DeviceManagementRequestBuilder) UpdateOrganizationalMessageTenantConsent()(*i8ae0cf333ed7c0de31759e37e570f524a4e36df9e080ada0178b5cf6b0a34a81.UpdateOrganizationalMessageTenantConsentRequestBuilder) {
-    return i8ae0cf333ed7c0de31759e37e570f524a4e36df9e080ada0178b5cf6b0a34a81.NewUpdateOrganizationalMessageTenantConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UserExperienceAnalyticsAnomaly the userExperienceAnalyticsAnomaly property
+// UserExperienceAnalyticsAnomaly provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomaly()(*i9a13ea3d326f53f7e924d1adf534cbd60dc1c39e17bacdcc504a5f4995c7051f.UserExperienceAnalyticsAnomalyRequestBuilder) {
     return i9a13ea3d326f53f7e924d1adf534cbd60dc1c39e17bacdcc504a5f4995c7051f.NewUserExperienceAnalyticsAnomalyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAnomalyById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAnomaly.item collection
+// UserExperienceAnalyticsAnomalyById provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyById(id string)(*ic2f0f668c8bc09f27eb487b7d090834348e0e51259d54e89080d0c8a3656d363.UserExperienceAnalyticsAnomalyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1893,11 +1844,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyById(id s
     }
     return ic2f0f668c8bc09f27eb487b7d090834348e0e51259d54e89080d0c8a3656d363.NewUserExperienceAnalyticsAnomalyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAnomalyDevice the userExperienceAnalyticsAnomalyDevice property
+// UserExperienceAnalyticsAnomalyDevice provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDevice()(*i8fdcd93594e2f489cd427ccdef6580ba0ea5250e1de421fdc4f886557c2fc76b.UserExperienceAnalyticsAnomalyDeviceRequestBuilder) {
     return i8fdcd93594e2f489cd427ccdef6580ba0ea5250e1de421fdc4f886557c2fc76b.NewUserExperienceAnalyticsAnomalyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAnomalyDeviceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAnomalyDevice.item collection
+// UserExperienceAnalyticsAnomalyDeviceById provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDeviceById(id string)(*i119c932c30236bab01a8848f0ed565137c79b79805b04325825a352fcfd0add9.UserExperienceAnalyticsAnomalyDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1908,15 +1859,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAnomalyDeviceByI
     }
     return i119c932c30236bab01a8848f0ed565137c79b79805b04325825a352fcfd0add9.NewUserExperienceAnalyticsAnomalyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformance the userExperienceAnalyticsAppHealthApplicationPerformance property
+// UserExperienceAnalyticsAppHealthApplicationPerformance provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformance()(*i005a2443c6ebd6edec9907aacffd1e6acd51caafefcf6fc9d0557935fd3a0c2b.UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder) {
     return i005a2443c6ebd6edec9907aacffd1e6acd51caafefcf6fc9d0557935fd3a0c2b.NewUserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion()(*i5f58ba6045ddf9c581c89a15216e6de9c93354bea6dff2f3826b7bb2a3a51626.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder) {
     return i5f58ba6045ddf9c581c89a15216e6de9c93354bea6dff2f3826b7bb2a3a51626.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.item collection
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionById(id string)(*i42c4a6403e9673e97bfc4422ae03c403e61a7a38b2c72b9c76b6abcfcb6e6a4c.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1927,11 +1878,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return i42c4a6403e9673e97bfc4422ae03c403e61a7a38b2c72b9c76b6abcfcb6e6a4c.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails()(*ie67a9444a8c40718f8bebb0b99ff567e6f7868e49be0666982b979fa5bc464e1.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder) {
     return ie67a9444a8c40718f8bebb0b99ff567e6f7868e49be0666982b979fa5bc464e1.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.item collection
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsById(id string)(*if273c669f062bb735089008c1ed4cf0d7173c4ce20f6a17f95e6d16614f258a0.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1942,11 +1893,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return if273c669f062bb735089008c1ed4cf0d7173c4ce20f6a17f95e6d16614f258a0.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId()(*i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder) {
     return i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.item collection
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById(id string)(*if17e2a5956a56b638a2e3705539e3fffab23e071699aea798a74f6960d1c2d94.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1957,7 +1908,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return if17e2a5956a56b638a2e3705539e3fffab23e071699aea798a74f6960d1c2d94.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformance.item collection
+// UserExperienceAnalyticsAppHealthApplicationPerformanceById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceById(id string)(*i3d07a1f6100ed36c14d2a9afa7264f0e89c09496ae196019939d092988af9317.UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1968,11 +1919,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return i3d07a1f6100ed36c14d2a9afa7264f0e89c09496ae196019939d092988af9317.NewUserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion()(*i57d8944d5d121692c68b51d3cea46fbd31ef9f0bc139c17120d42d194ee625b8.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder) {
     return i57d8944d5d121692c68b51d3cea46fbd31ef9f0bc139c17120d42d194ee625b8.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.item collection
+// UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionById provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionById(id string)(*i2e815a5c6e9dfc246f309684f9aef8108854d113d200832548b4785f6611a26d.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1983,11 +1934,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     }
     return i2e815a5c6e9dfc246f309684f9aef8108854d113d200832548b4785f6611a26d.NewUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthDeviceModelPerformance the userExperienceAnalyticsAppHealthDeviceModelPerformance property
+// UserExperienceAnalyticsAppHealthDeviceModelPerformance provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceModelPerformance()(*iac85fdc4d4c5a6facf25c261f53927b57dd41212b70608740b7429daec51ff9a.UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder) {
     return iac85fdc4d4c5a6facf25c261f53927b57dd41212b70608740b7429daec51ff9a.NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthDeviceModelPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthDeviceModelPerformance.item collection
+// UserExperienceAnalyticsAppHealthDeviceModelPerformanceById provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceModelPerformanceById(id string)(*i73dab6f6e887b9d34b84afcebc35c6e7506bc402e5cafe3b10c6f1f156d29978.UserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -1998,11 +1949,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceM
     }
     return i73dab6f6e887b9d34b84afcebc35c6e7506bc402e5cafe3b10c6f1f156d29978.NewUserExperienceAnalyticsAppHealthDeviceModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthDevicePerformance the userExperienceAnalyticsAppHealthDevicePerformance property
+// UserExperienceAnalyticsAppHealthDevicePerformance provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformance()(*ieaf224c013e93a8608f8e8b726a70b0e09c491c50acf61b9dab5266e4ffe4044.UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) {
     return ieaf224c013e93a8608f8e8b726a70b0e09c491c50acf61b9dab5266e4ffe4044.NewUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthDevicePerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthDevicePerformance.item collection
+// UserExperienceAnalyticsAppHealthDevicePerformanceById provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceById(id string)(*i3783802133ccf9e7e6d97b637992b7d774a508c396aec38c6e5f063b6eca6035.UserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2013,11 +1964,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceP
     }
     return i3783802133ccf9e7e6d97b637992b7d774a508c396aec38c6e5f063b6eca6035.NewUserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthDevicePerformanceDetails the userExperienceAnalyticsAppHealthDevicePerformanceDetails property
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetails provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformanceDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*i80f0984d215fdad0cad56f17f7310410074df5f310ffe9a468a9b8493c29990b.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder) {
     return i80f0984d215fdad0cad56f17f7310410074df5f310ffe9a468a9b8493c29990b.NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthDevicePerformanceDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthDevicePerformanceDetails.item collection
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetailsById provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformanceDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDevicePerformanceDetailsById(id string)(*i2b74d96ff84d5fe2d4dd32bbda034d0939a6963d72ec6bdc6385dbd2c7be7399.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2028,11 +1979,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthDeviceP
     }
     return i2b74d96ff84d5fe2d4dd32bbda034d0939a6963d72ec6bdc6385dbd2c7be7399.NewUserExperienceAnalyticsAppHealthDevicePerformanceDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthOSVersionPerformance the userExperienceAnalyticsAppHealthOSVersionPerformance property
+// UserExperienceAnalyticsAppHealthOSVersionPerformance provides operations to manage the userExperienceAnalyticsAppHealthOSVersionPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersionPerformance()(*id3e0876e40cd48ccf5e9a480b8e8697ba244031b08e7cdbb1deab6a8c19e09b3.UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder) {
     return id3e0876e40cd48ccf5e9a480b8e8697ba244031b08e7cdbb1deab6a8c19e09b3.NewUserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthOSVersionPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthOSVersionPerformance.item collection
+// UserExperienceAnalyticsAppHealthOSVersionPerformanceById provides operations to manage the userExperienceAnalyticsAppHealthOSVersionPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersionPerformanceById(id string)(*ib1e4c4046564be8827bfafc9e379a1703afbd70eb2578fac07ef96f73ea86ac0.UserExperienceAnalyticsAppHealthOSVersionPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2043,15 +1994,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOSVersi
     }
     return ib1e4c4046564be8827bfafc9e379a1703afbd70eb2578fac07ef96f73ea86ac0.NewUserExperienceAnalyticsAppHealthOSVersionPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsAppHealthOverview the userExperienceAnalyticsAppHealthOverview property
+// UserExperienceAnalyticsAppHealthOverview provides operations to manage the userExperienceAnalyticsAppHealthOverview property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthOverview()(*ibfc8a5ec1c711335082cb03eef0eb2f54be6f6d4cff933fd5bffc10e8c7ea600.UserExperienceAnalyticsAppHealthOverviewRequestBuilder) {
     return ibfc8a5ec1c711335082cb03eef0eb2f54be6f6d4cff933fd5bffc10e8c7ea600.NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBaselines the userExperienceAnalyticsBaselines property
+// UserExperienceAnalyticsBaselines provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselines()(*ia291617a9649be4f230468b1c89a252ce7b942f02b7e37628224eccdaca2a415.UserExperienceAnalyticsBaselinesRequestBuilder) {
     return ia291617a9649be4f230468b1c89a252ce7b942f02b7e37628224eccdaca2a415.NewUserExperienceAnalyticsBaselinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBaselinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsBaselines.item collection
+// UserExperienceAnalyticsBaselinesById provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselinesById(id string)(*i1b77b48454aa415d7ce0b5f4928deafee62200e8985d414410b6088a9de9c043.UserExperienceAnalyticsBaselineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2062,11 +2013,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBaselinesById(id
     }
     return i1b77b48454aa415d7ce0b5f4928deafee62200e8985d414410b6088a9de9c043.NewUserExperienceAnalyticsBaselineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthAppImpact the userExperienceAnalyticsBatteryHealthAppImpact property
+// UserExperienceAnalyticsBatteryHealthAppImpact provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthAppImpact()(*ibaf75e6ff925ba6893ac5d3039caefb7154e02b28d12b7c348ece101ee2484f7.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder) {
     return ibaf75e6ff925ba6893ac5d3039caefb7154e02b28d12b7c348ece101ee2484f7.NewUserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthAppImpactById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsBatteryHealthAppImpact.item collection
+// UserExperienceAnalyticsBatteryHealthAppImpactById provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthAppImpactById(id string)(*iea2136c9efe9f595fda9dd774b5a528113d691185aad21c67cdf4eddb31b0323.UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2077,15 +2028,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthApp
     }
     return iea2136c9efe9f595fda9dd774b5a528113d691185aad21c67cdf4eddb31b0323.NewUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthCapacityDetails the userExperienceAnalyticsBatteryHealthCapacityDetails property
+// UserExperienceAnalyticsBatteryHealthCapacityDetails provides operations to manage the userExperienceAnalyticsBatteryHealthCapacityDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthCapacityDetails()(*i3b366af3ede4dca5403c504832feec65350dc7178e1b13c3b775552a8b7741a8.UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder) {
     return i3b366af3ede4dca5403c504832feec65350dc7178e1b13c3b775552a8b7741a8.NewUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthDeviceAppImpact the userExperienceAnalyticsBatteryHealthDeviceAppImpact property
+// UserExperienceAnalyticsBatteryHealthDeviceAppImpact provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceAppImpact()(*i7e94b13ab484d489531e932fa60a1fc8593394421fb0573d41f489216a4d1881.UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder) {
     return i7e94b13ab484d489531e932fa60a1fc8593394421fb0573d41f489216a4d1881.NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthDeviceAppImpactById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsBatteryHealthDeviceAppImpact.item collection
+// UserExperienceAnalyticsBatteryHealthDeviceAppImpactById provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceAppImpactById(id string)(*i60952b68325201881256adae46e8a26a404fa5ed91c10522ce53875fab613126.UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2096,11 +2047,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     }
     return i60952b68325201881256adae46e8a26a404fa5ed91c10522ce53875fab613126.NewUserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthDevicePerformance the userExperienceAnalyticsBatteryHealthDevicePerformance property
+// UserExperienceAnalyticsBatteryHealthDevicePerformance provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDevicePerformance()(*i3cda4e7781037fa799025466b994cb6f2e65ff75bcde886167cef1f8939ac4f2.UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) {
     return i3cda4e7781037fa799025466b994cb6f2e65ff75bcde886167cef1f8939ac4f2.NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthDevicePerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsBatteryHealthDevicePerformance.item collection
+// UserExperienceAnalyticsBatteryHealthDevicePerformanceById provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDevicePerformanceById(id string)(*ie8027474a6306436a4328d9118a1b9b47c55f35ac05021de286e70864a83a95e.UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2111,11 +2062,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     }
     return ie8027474a6306436a4328d9118a1b9b47c55f35ac05021de286e70864a83a95e.NewUserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*i123f7e3613b14bdb6583793a8d2b8201841844975e8b2a4040cf377652ad4f4f.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder) {
     return i123f7e3613b14bdb6583793a8d2b8201841844975e8b2a4040cf377652ad4f4f.NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.item collection
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryById provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryById(id string)(*i88e6712a7daac143364eead4daa3edb15ba31bd1e9d81eb435c31339a5a17482.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2126,11 +2077,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthDev
     }
     return i88e6712a7daac143364eead4daa3edb15ba31bd1e9d81eb435c31339a5a17482.NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthModelPerformance the userExperienceAnalyticsBatteryHealthModelPerformance property
+// UserExperienceAnalyticsBatteryHealthModelPerformance provides operations to manage the userExperienceAnalyticsBatteryHealthModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthModelPerformance()(*i08aace5d722a25be94c3870519ce5be0f606f406a71f189a8969a6c597840d66.UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder) {
     return i08aace5d722a25be94c3870519ce5be0f606f406a71f189a8969a6c597840d66.NewUserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthModelPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsBatteryHealthModelPerformance.item collection
+// UserExperienceAnalyticsBatteryHealthModelPerformanceById provides operations to manage the userExperienceAnalyticsBatteryHealthModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthModelPerformanceById(id string)(*i76c7c23049a1948c3f35e8b1ed0746cdb1c9b0dbdf6eb1f3a858fe7ba9e76f33.UserExperienceAnalyticsBatteryHealthModelPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2141,11 +2092,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthMod
     }
     return i76c7c23049a1948c3f35e8b1ed0746cdb1c9b0dbdf6eb1f3a858fe7ba9e76f33.NewUserExperienceAnalyticsBatteryHealthModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthOsPerformance the userExperienceAnalyticsBatteryHealthOsPerformance property
+// UserExperienceAnalyticsBatteryHealthOsPerformance provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsPerformance()(*ic2a9ed500673be487b8503728b91d88bb4b21222bd95eb0b51677dc15f5ff4bf.UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder) {
     return ic2a9ed500673be487b8503728b91d88bb4b21222bd95eb0b51677dc15f5ff4bf.NewUserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthOsPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsBatteryHealthOsPerformance.item collection
+// UserExperienceAnalyticsBatteryHealthOsPerformanceById provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsPerformanceById(id string)(*id9eb3b7184b68f007634fca6e0f02f641b4f01952d369cdc9fc3e187f02369a5.UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2156,15 +2107,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthOsP
     }
     return id9eb3b7184b68f007634fca6e0f02f641b4f01952d369cdc9fc3e187f02369a5.NewUserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsBatteryHealthRuntimeDetails the userExperienceAnalyticsBatteryHealthRuntimeDetails property
+// UserExperienceAnalyticsBatteryHealthRuntimeDetails provides operations to manage the userExperienceAnalyticsBatteryHealthRuntimeDetails property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsBatteryHealthRuntimeDetails()(*i88a41d6a6b9d6f5d95b1375089cd36d4423cd8f3f1ccf1b08a32ace2e08042f3.UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder) {
     return i88a41d6a6b9d6f5d95b1375089cd36d4423cd8f3f1ccf1b08a32ace2e08042f3.NewUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsCategories the userExperienceAnalyticsCategories property
+// UserExperienceAnalyticsCategories provides operations to manage the userExperienceAnalyticsCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategories()(*iaffbe7a37a661d4aff2a2d2cfec2efb8f5ffd10bed0192adc2b30fa8af7fdcf1.UserExperienceAnalyticsCategoriesRequestBuilder) {
     return iaffbe7a37a661d4aff2a2d2cfec2efb8f5ffd10bed0192adc2b30fa8af7fdcf1.NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsCategories.item collection
+// UserExperienceAnalyticsCategoriesById provides operations to manage the userExperienceAnalyticsCategories property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategoriesById(id string)(*i99b191e1c40d19f35ca989940dd30ccb07115e86ad020a9720208a71e030bb29.UserExperienceAnalyticsCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2175,11 +2126,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsCategoriesById(i
     }
     return i99b191e1c40d19f35ca989940dd30ccb07115e86ad020a9720208a71e030bb29.NewUserExperienceAnalyticsCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceMetricHistory the userExperienceAnalyticsDeviceMetricHistory property
+// UserExperienceAnalyticsDeviceMetricHistory provides operations to manage the userExperienceAnalyticsDeviceMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHistory()(*i1d5f4d22867e26a8c778cb008d3e2e08b28fa156314980e96948ddf22fc773b1.UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) {
     return i1d5f4d22867e26a8c778cb008d3e2e08b28fa156314980e96948ddf22fc773b1.NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceMetricHistoryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDeviceMetricHistory.item collection
+// UserExperienceAnalyticsDeviceMetricHistoryById provides operations to manage the userExperienceAnalyticsDeviceMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHistoryById(id string)(*i43aefb3f489ba3c5dcc2b7dd3a9e2f011bab28f04c4334a661b7edf59a8a0e47.UserExperienceAnalyticsMetricHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2190,11 +2141,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceMetricHist
     }
     return i43aefb3f489ba3c5dcc2b7dd3a9e2f011bab28f04c4334a661b7edf59a8a0e47.NewUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDevicePerformance the userExperienceAnalyticsDevicePerformance property
+// UserExperienceAnalyticsDevicePerformance provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformance()(*i924450e3357285a481d60a94f9399519371e2c7764359c292ad23e2af5dfe4c0.UserExperienceAnalyticsDevicePerformanceRequestBuilder) {
     return i924450e3357285a481d60a94f9399519371e2c7764359c292ad23e2af5dfe4c0.NewUserExperienceAnalyticsDevicePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDevicePerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDevicePerformance.item collection
+// UserExperienceAnalyticsDevicePerformanceById provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformanceById(id string)(*i170fcfb6f7df141f639f83b57290340c6a4b7ce5c5502e6850f8fa3b399c2ebd.UserExperienceAnalyticsDevicePerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2205,15 +2156,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicePerformanc
     }
     return i170fcfb6f7df141f639f83b57290340c6a4b7ce5c5502e6850f8fa3b399c2ebd.NewUserExperienceAnalyticsDevicePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceScope the userExperienceAnalyticsDeviceScope property
+// UserExperienceAnalyticsDeviceScope provides operations to manage the userExperienceAnalyticsDeviceScope property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScope()(*i3d53c466fb3b796d2585f967eb9e1b17dcf8f714a4a60097e890dc3563256ef6.UserExperienceAnalyticsDeviceScopeRequestBuilder) {
     return i3d53c466fb3b796d2585f967eb9e1b17dcf8f714a4a60097e890dc3563256ef6.NewUserExperienceAnalyticsDeviceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceScopes the userExperienceAnalyticsDeviceScopes property
+// UserExperienceAnalyticsDeviceScopes provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScopes()(*ia9d62a7ea50646eed8e72a450577c3cdee5e309a8e59f1bdce4237a21e64e050.UserExperienceAnalyticsDeviceScopesRequestBuilder) {
     return ia9d62a7ea50646eed8e72a450577c3cdee5e309a8e59f1bdce4237a21e64e050.NewUserExperienceAnalyticsDeviceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceScopesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDeviceScopes.item collection
+// UserExperienceAnalyticsDeviceScopesById provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScopesById(id string)(*i5185a0e6534a11cca51f4633f60a197ce736badd66d35bc2dd5699838abba41c.UserExperienceAnalyticsDeviceScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2224,11 +2175,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScopesById
     }
     return i5185a0e6534a11cca51f4633f60a197ce736badd66d35bc2dd5699838abba41c.NewUserExperienceAnalyticsDeviceScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceScores the userExperienceAnalyticsDeviceScores property
+// UserExperienceAnalyticsDeviceScores provides operations to manage the userExperienceAnalyticsDeviceScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScores()(*iffb6c289f1dbf81ac71519e67c8e1b400ec95920a29536122e64e611965d51ba.UserExperienceAnalyticsDeviceScoresRequestBuilder) {
     return iffb6c289f1dbf81ac71519e67c8e1b400ec95920a29536122e64e611965d51ba.NewUserExperienceAnalyticsDeviceScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceScoresById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDeviceScores.item collection
+// UserExperienceAnalyticsDeviceScoresById provides operations to manage the userExperienceAnalyticsDeviceScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScoresById(id string)(*i6189b9e96af0214aefb0f87a16fee2c22ba3b32e425ae7da1bd110e8180772bd.UserExperienceAnalyticsDeviceScoresItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2239,11 +2190,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceScoresById
     }
     return i6189b9e96af0214aefb0f87a16fee2c22ba3b32e425ae7da1bd110e8180772bd.NewUserExperienceAnalyticsDeviceScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceStartupHistory the userExperienceAnalyticsDeviceStartupHistory property
+// UserExperienceAnalyticsDeviceStartupHistory provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHistory()(*i7f61c70ea2f2f7b8282c6bc875f49be5553df3b84a88282940a6d7d632dc0455.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) {
     return i7f61c70ea2f2f7b8282c6bc875f49be5553df3b84a88282940a6d7d632dc0455.NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceStartupHistoryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDeviceStartupHistory.item collection
+// UserExperienceAnalyticsDeviceStartupHistoryById provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHistoryById(id string)(*ie2bb3b598459cc9e02091728ea6868c1992a63da4c0bcfc6ec9e9365109402fe.UserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2254,11 +2205,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupHis
     }
     return ie2bb3b598459cc9e02091728ea6868c1992a63da4c0bcfc6ec9e9365109402fe.NewUserExperienceAnalyticsDeviceStartupHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceStartupProcesses the userExperienceAnalyticsDeviceStartupProcesses property
+// UserExperienceAnalyticsDeviceStartupProcesses provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcesses()(*i2805040d499995de0b089fa419b3a8f1e060a4a0981fabc5e22ebd9fbf34f6a9.UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) {
     return i2805040d499995de0b089fa419b3a8f1e060a4a0981fabc5e22ebd9fbf34f6a9.NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceStartupProcessesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDeviceStartupProcesses.item collection
+// UserExperienceAnalyticsDeviceStartupProcessesById provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessesById(id string)(*ia9ccf093ea8278fac25e51450e7d500826599c72ee56d7375264a7d6960e0e66.UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2269,11 +2220,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupPro
     }
     return ia9ccf093ea8278fac25e51450e7d500826599c72ee56d7375264a7d6960e0e66.NewUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceStartupProcessPerformance the userExperienceAnalyticsDeviceStartupProcessPerformance property
+// UserExperienceAnalyticsDeviceStartupProcessPerformance provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessPerformance()(*if8c065baddf282e16f72f4cb0dc067e98a5ad4e3790ee2a13bd13297a87ade01.UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) {
     return if8c065baddf282e16f72f4cb0dc067e98a5ad4e3790ee2a13bd13297a87ade01.NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDeviceStartupProcessPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDeviceStartupProcessPerformance.item collection
+// UserExperienceAnalyticsDeviceStartupProcessPerformanceById provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupProcessPerformanceById(id string)(*ib6ecebd18f42dfff4e5bd05df1fedf0983279f8d4b59244f6fe0cd703dedbc76.UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2284,11 +2235,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceStartupPro
     }
     return ib6ecebd18f42dfff4e5bd05df1fedf0983279f8d4b59244f6fe0cd703dedbc76.NewUserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsDevicesWithoutCloudIdentity the userExperienceAnalyticsDevicesWithoutCloudIdentity property
+// UserExperienceAnalyticsDevicesWithoutCloudIdentity provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCloudIdentity()(*ib5a74b4478a9f9735a8136b94a542ebbc851d3bf41a306abf71f2f76beb95cbb.UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) {
     return ib5a74b4478a9f9735a8136b94a542ebbc851d3bf41a306abf71f2f76beb95cbb.NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsDevicesWithoutCloudIdentityById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsDevicesWithoutCloudIdentity.item collection
+// UserExperienceAnalyticsDevicesWithoutCloudIdentityById provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCloudIdentityById(id string)(*ib84454323961957bca882a92bc1df9bfe130cfbf80c192479ef8f5d2e2518e82.UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2299,11 +2250,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCl
     }
     return ib84454323961957bca882a92bc1df9bfe130cfbf80c192479ef8f5d2e2518e82.NewUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsImpactingProcess the userExperienceAnalyticsImpactingProcess property
+// UserExperienceAnalyticsImpactingProcess provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcess()(*ide134990d0992074fdecf4e1b824a973440ed1fbb169350f01924aa28bea54b6.UserExperienceAnalyticsImpactingProcessRequestBuilder) {
     return ide134990d0992074fdecf4e1b824a973440ed1fbb169350f01924aa28bea54b6.NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsImpactingProcessById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsImpactingProcess.item collection
+// UserExperienceAnalyticsImpactingProcessById provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcessById(id string)(*i97a01509585cdcc3cc5a5d6e3ec225ca1450d7462986164a654e7ea51b4f5c31.UserExperienceAnalyticsImpactingProcessItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2314,11 +2265,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcess
     }
     return i97a01509585cdcc3cc5a5d6e3ec225ca1450d7462986164a654e7ea51b4f5c31.NewUserExperienceAnalyticsImpactingProcessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsMetricHistory the userExperienceAnalyticsMetricHistory property
+// UserExperienceAnalyticsMetricHistory provides operations to manage the userExperienceAnalyticsMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistory()(*i7d2a149d9d011731691dd153f225979e19f163bf4360e1259693e20d7bccfaf0.UserExperienceAnalyticsMetricHistoryRequestBuilder) {
     return i7d2a149d9d011731691dd153f225979e19f163bf4360e1259693e20d7bccfaf0.NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsMetricHistoryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsMetricHistory.item collection
+// UserExperienceAnalyticsMetricHistoryById provides operations to manage the userExperienceAnalyticsMetricHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistoryById(id string)(*ic8d8483197953e41c857cec1dd8f8b035af76fd8ccee3730a059e905b38d5a80.UserExperienceAnalyticsMetricHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2329,11 +2280,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsMetricHistoryByI
     }
     return ic8d8483197953e41c857cec1dd8f8b035af76fd8ccee3730a059e905b38d5a80.NewUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsModelScores the userExperienceAnalyticsModelScores property
+// UserExperienceAnalyticsModelScores provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScores()(*i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364.UserExperienceAnalyticsModelScoresRequestBuilder) {
     return i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364.NewUserExperienceAnalyticsModelScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsModelScoresById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsModelScores.item collection
+// UserExperienceAnalyticsModelScoresById provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScoresById(id string)(*i750e09f48b802b2daf28cbb36de8b53f2675b4a113be3d3058e98f90c352006e.UserExperienceAnalyticsModelScoresItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2344,11 +2295,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsModelScoresById(
     }
     return i750e09f48b802b2daf28cbb36de8b53f2675b4a113be3d3058e98f90c352006e.NewUserExperienceAnalyticsModelScoresItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsNotAutopilotReadyDevice the userExperienceAnalyticsNotAutopilotReadyDevice property
+// UserExperienceAnalyticsNotAutopilotReadyDevice provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotReadyDevice()(*ie065e034c29738dd8c2db58c7cbbd58629bea34129384672c22dbb57a33c96bf.UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) {
     return ie065e034c29738dd8c2db58c7cbbd58629bea34129384672c22dbb57a33c96bf.NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsNotAutopilotReadyDeviceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice.item collection
+// UserExperienceAnalyticsNotAutopilotReadyDeviceById provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotReadyDeviceById(id string)(*i9876096e88a5102e6ca754291f1f5979c7d516d6d8f326149313812a1b1a60e7.UserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2359,19 +2310,15 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsNotAutopilotRead
     }
     return i9876096e88a5102e6ca754291f1f5979c7d516d6d8f326149313812a1b1a60e7.NewUserExperienceAnalyticsNotAutopilotReadyDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsOverview the userExperienceAnalyticsOverview property
+// UserExperienceAnalyticsOverview provides operations to manage the userExperienceAnalyticsOverview property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsOverview()(*i88c5051d5413e2a50dfc8d7dad02241a69e5952b2a13f0ee5c43d5d21fb1e17c.UserExperienceAnalyticsOverviewRequestBuilder) {
     return i88c5051d5413e2a50dfc8d7dad02241a69e5952b2a13f0ee5c43d5d21fb1e17c.NewUserExperienceAnalyticsOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsRegressionSummary the userExperienceAnalyticsRegressionSummary property
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRegressionSummary()(*ic537cdf04b5e2518221f4cd689a053d604afdaa8d926facb50651e9f867ff848.UserExperienceAnalyticsRegressionSummaryRequestBuilder) {
-    return ic537cdf04b5e2518221f4cd689a053d604afdaa8d926facb50651e9f867ff848.NewUserExperienceAnalyticsRegressionSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// UserExperienceAnalyticsRemoteConnection the userExperienceAnalyticsRemoteConnection property
+// UserExperienceAnalyticsRemoteConnection provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnection()(*ib92c5abb71bfd48dd94b0aef1b0c3ea5734c010e8c73844aff32a102983e43b6.UserExperienceAnalyticsRemoteConnectionRequestBuilder) {
     return ib92c5abb71bfd48dd94b0aef1b0c3ea5734c010e8c73844aff32a102983e43b6.NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsRemoteConnectionById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsRemoteConnection.item collection
+// UserExperienceAnalyticsRemoteConnectionById provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnectionById(id string)(*if07623a60cc32688627bebcfbd9fc01df226641a673d8d5d80b5291ba743eed8.UserExperienceAnalyticsRemoteConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2382,11 +2329,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsRemoteConnection
     }
     return if07623a60cc32688627bebcfbd9fc01df226641a673d8d5d80b5291ba743eed8.NewUserExperienceAnalyticsRemoteConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsResourcePerformance the userExperienceAnalyticsResourcePerformance property
+// UserExperienceAnalyticsResourcePerformance provides operations to manage the userExperienceAnalyticsResourcePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerformance()(*i883482678f2a2f0423c5c68caf5a82bf8337f568b3cd6468d6cc2d5e6c084235.UserExperienceAnalyticsResourcePerformanceRequestBuilder) {
     return i883482678f2a2f0423c5c68caf5a82bf8337f568b3cd6468d6cc2d5e6c084235.NewUserExperienceAnalyticsResourcePerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsResourcePerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsResourcePerformance.item collection
+// UserExperienceAnalyticsResourcePerformanceById provides operations to manage the userExperienceAnalyticsResourcePerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerformanceById(id string)(*ib5d8d2120b4ba3bdecb682bdcb5e643a407d462be2c1c5c08a2fc656b8a940b5.UserExperienceAnalyticsResourcePerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2397,11 +2344,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsResourcePerforma
     }
     return ib5d8d2120b4ba3bdecb682bdcb5e643a407d462be2c1c5c08a2fc656b8a940b5.NewUserExperienceAnalyticsResourcePerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsScoreHistory the userExperienceAnalyticsScoreHistory property
+// UserExperienceAnalyticsScoreHistory provides operations to manage the userExperienceAnalyticsScoreHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistory()(*ia0518852643bc25bf19cbf9f4ba1a5ab4719edff23d1b4078b12da2dd71c52ed.UserExperienceAnalyticsScoreHistoryRequestBuilder) {
     return ia0518852643bc25bf19cbf9f4ba1a5ab4719edff23d1b4078b12da2dd71c52ed.NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsScoreHistoryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsScoreHistory.item collection
+// UserExperienceAnalyticsScoreHistoryById provides operations to manage the userExperienceAnalyticsScoreHistory property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistoryById(id string)(*i8479877ccc0e73bcdcb3625b809f9273898ae26c9c719baf381fae05e19e7e2a.UserExperienceAnalyticsScoreHistoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2412,19 +2359,23 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsScoreHistoryById
     }
     return i8479877ccc0e73bcdcb3625b809f9273898ae26c9c719baf381fae05e19e7e2a.NewUserExperienceAnalyticsScoreHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// UserExperienceAnalyticsSummarizedDeviceScopes provides operations to call the userExperienceAnalyticsSummarizedDeviceScopes method.
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsSummarizedDeviceScopes()(*i5ec9ad00dc103f2cd00029e488beec3bcf2d698f0e5f7aeded1c94e7e61bec0d.UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder) {
+    return i5ec9ad00dc103f2cd00029e488beec3bcf2d698f0e5f7aeded1c94e7e61bec0d.NewUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices()(*i701ebc156b671df9db9ac0d0f0cc0f8fdedc7d64d3dd3c6382ee057a3e1cfa29.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder) {
     return i701ebc156b671df9db9ac0d0f0cc0f8fdedc7d64d3dd3c6382ee057a3e1cfa29.NewUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property
+// UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric provides operations to manage the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*i68822963724651cf63f8e09f4865a7f9aacea28985fbf25998411c496de6dd94.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) {
     return i68822963724651cf63f8e09f4865a7f9aacea28985fbf25998411c496de6dd94.NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsWorkFromAnywhereMetrics the userExperienceAnalyticsWorkFromAnywhereMetrics property
+// UserExperienceAnalyticsWorkFromAnywhereMetrics provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereMetrics()(*i71ff36cd3fe036185279652e52cb108c1a3c3c5f76cd4cd5292950202f3a6912.UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder) {
     return i71ff36cd3fe036185279652e52cb108c1a3c3c5f76cd4cd5292950202f3a6912.NewUserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsWorkFromAnywhereMetricsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetrics.item collection
+// UserExperienceAnalyticsWorkFromAnywhereMetricsById provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereMetricsById(id string)(*i83698992c166b55c29828f0c880624c4406162edc2b708a75dc2b64eb808d8d4.UserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2435,11 +2386,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
     }
     return i83698992c166b55c29828f0c880624c4406162edc2b708a75dc2b64eb808d8d4.NewUserExperienceAnalyticsWorkFromAnywhereMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserExperienceAnalyticsWorkFromAnywhereModelPerformance the userExperienceAnalyticsWorkFromAnywhereModelPerformance property
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformance provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) {
     return i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserExperienceAnalyticsWorkFromAnywhereModelPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance.item collection
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformanceById provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformanceById(id string)(*i07aa9b8f1e0739e976f5b2fa8e4495ed75267a0d7be8e534032fff7e0056b6ab.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2450,11 +2401,11 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
     }
     return i07aa9b8f1e0739e976f5b2fa8e4495ed75267a0d7be8e534032fff7e0056b6ab.NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserPfxCertificates the userPfxCertificates property
+// UserPfxCertificates provides operations to manage the userPfxCertificates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserPfxCertificates()(*i16f8591309ff56925b8c7d68d14f1ef47ac78cbb7093a9c87ff620425ef7ac1b.UserPfxCertificatesRequestBuilder) {
     return i16f8591309ff56925b8c7d68d14f1ef47ac78cbb7093a9c87ff620425ef7ac1b.NewUserPfxCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserPfxCertificatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userPfxCertificates.item collection
+// UserPfxCertificatesById provides operations to manage the userPfxCertificates property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserPfxCertificatesById(id string)(*i9d87f71557c585726ed7fc095f1ffc24fe2cf2b7ab22c87a397c8a7283e7e41a.UserPFXCertificateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2469,15 +2420,15 @@ func (m *DeviceManagementRequestBuilder) UserPfxCertificatesById(id string)(*i9d
 func (m *DeviceManagementRequestBuilder) VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*ia0d432f78d4b88e8d5a1d4adc3e4e1d507a43f158f59b5d3fb750a6ad385f6ed.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
     return ia0d432f78d4b88e8d5a1d4adc3e4e1d507a43f158f59b5d3fb750a6ad385f6ed.NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, domainName);
 }
-// VirtualEndpoint the virtualEndpoint property
+// VirtualEndpoint provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) VirtualEndpoint()(*i13b9baa49d0e8746e4238e0061c041ff26ae5c60d1b2d029831f0eb6c44f74ea.VirtualEndpointRequestBuilder) {
     return i13b9baa49d0e8746e4238e0061c041ff26ae5c60d1b2d029831f0eb6c44f74ea.NewVirtualEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsAutopilotDeploymentProfiles the windowsAutopilotDeploymentProfiles property
+// WindowsAutopilotDeploymentProfiles provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfiles()(*i1026eee1563c445d573818d7c0ee3bbb4f859572fbfce275bbc01b981ffe3d67.WindowsAutopilotDeploymentProfilesRequestBuilder) {
     return i1026eee1563c445d573818d7c0ee3bbb4f859572fbfce275bbc01b981ffe3d67.NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsAutopilotDeploymentProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsAutopilotDeploymentProfiles.item collection
+// WindowsAutopilotDeploymentProfilesById provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfilesById(id string)(*icef6ad391dc2eba32bcd0eb933cdf8cd2784b454089f2f7a14031cdde0fe996a.WindowsAutopilotDeploymentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2488,11 +2439,11 @@ func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeploymentProfilesById(
     }
     return icef6ad391dc2eba32bcd0eb933cdf8cd2784b454089f2f7a14031cdde0fe996a.NewWindowsAutopilotDeploymentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsAutopilotDeviceIdentities the windowsAutopilotDeviceIdentities property
+// WindowsAutopilotDeviceIdentities provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities()(*i716688e32793efd9093ce1bb4d9a2c0e4932dc15b533f0d66d867386aacffcee.WindowsAutopilotDeviceIdentitiesRequestBuilder) {
     return i716688e32793efd9093ce1bb4d9a2c0e4932dc15b533f0d66d867386aacffcee.NewWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsAutopilotDeviceIdentitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsAutopilotDeviceIdentities.item collection
+// WindowsAutopilotDeviceIdentitiesById provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentitiesById(id string)(*i6703c39a9ba8d06a5d33a39d503dad3c54df8d819238c0f8925adc538ca705b8.WindowsAutopilotDeviceIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2503,15 +2454,15 @@ func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentitiesById(id
     }
     return i6703c39a9ba8d06a5d33a39d503dad3c54df8d819238c0f8925adc538ca705b8.NewWindowsAutopilotDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsAutopilotSettings the windowsAutopilotSettings property
+// WindowsAutopilotSettings provides operations to manage the windowsAutopilotSettings property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotSettings()(*id96351ec964b6d521cfadf892721f0936c7bbafe8e49f74eed57714356f61059.WindowsAutopilotSettingsRequestBuilder) {
     return id96351ec964b6d521cfadf892721f0936c7bbafe8e49f74eed57714356f61059.NewWindowsAutopilotSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsDriverUpdateProfiles the windowsDriverUpdateProfiles property
+// WindowsDriverUpdateProfiles provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfiles()(*i1a0da0de16255e8cfe707c10ba94297d7b7a3951b6f7f8221d6b0a18c4421c63.WindowsDriverUpdateProfilesRequestBuilder) {
     return i1a0da0de16255e8cfe707c10ba94297d7b7a3951b6f7f8221d6b0a18c4421c63.NewWindowsDriverUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsDriverUpdateProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsDriverUpdateProfiles.item collection
+// WindowsDriverUpdateProfilesById provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfilesById(id string)(*ia0faa57714111dca934e9fb5cb1eb0eefb49912efe5d080c1de048d44cfef081.WindowsDriverUpdateProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2522,11 +2473,11 @@ func (m *DeviceManagementRequestBuilder) WindowsDriverUpdateProfilesById(id stri
     }
     return ia0faa57714111dca934e9fb5cb1eb0eefb49912efe5d080c1de048d44cfef081.NewWindowsDriverUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsFeatureUpdateProfiles the windowsFeatureUpdateProfiles property
+// WindowsFeatureUpdateProfiles provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfiles()(*ib77564790275cb6c43c3756dcf004a1738785be1da3e9b51500ed8cc7cb56b90.WindowsFeatureUpdateProfilesRequestBuilder) {
     return ib77564790275cb6c43c3756dcf004a1738785be1da3e9b51500ed8cc7cb56b90.NewWindowsFeatureUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsFeatureUpdateProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsFeatureUpdateProfiles.item collection
+// WindowsFeatureUpdateProfilesById provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfilesById(id string)(*i617d0423710f2537b3635ba9d53c1bd7a9157220202f3a8e4fbca2c861c1e258.WindowsFeatureUpdateProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2537,11 +2488,11 @@ func (m *DeviceManagementRequestBuilder) WindowsFeatureUpdateProfilesById(id str
     }
     return i617d0423710f2537b3635ba9d53c1bd7a9157220202f3a8e4fbca2c861c1e258.NewWindowsFeatureUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsInformationProtectionAppLearningSummaries the windowsInformationProtectionAppLearningSummaries property
+// WindowsInformationProtectionAppLearningSummaries provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummaries()(*i189f99dec91abd82aef7848751c57e839d6d6fc5a62d539edbf6e8c791f6a740.WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
     return i189f99dec91abd82aef7848751c57e839d6d6fc5a62d539edbf6e8c791f6a740.NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsInformationProtectionAppLearningSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsInformationProtectionAppLearningSummaries.item collection
+// WindowsInformationProtectionAppLearningSummariesById provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummariesById(id string)(*i27102a1f55f0e4f532da32f9fd084200fff4b915619203ac19778e277550113e.WindowsInformationProtectionAppLearningSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2552,11 +2503,11 @@ func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearning
     }
     return i27102a1f55f0e4f532da32f9fd084200fff4b915619203ac19778e277550113e.NewWindowsInformationProtectionAppLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsInformationProtectionNetworkLearningSummaries the windowsInformationProtectionNetworkLearningSummaries property
+// WindowsInformationProtectionNetworkLearningSummaries provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummaries()(*i33d688df93b8c70495fe850caf189c38e5e988f24a6766129fade55ddca65b6f.WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) {
     return i33d688df93b8c70495fe850caf189c38e5e988f24a6766129fade55ddca65b6f.NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsInformationProtectionNetworkLearningSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsInformationProtectionNetworkLearningSummaries.item collection
+// WindowsInformationProtectionNetworkLearningSummariesById provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummariesById(id string)(*if620c3d79780bcb3c46f105b7213e737a29325f8a189f61bb06c0c5ee15a87d5.WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2567,11 +2518,11 @@ func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLear
     }
     return if620c3d79780bcb3c46f105b7213e737a29325f8a189f61bb06c0c5ee15a87d5.NewWindowsInformationProtectionNetworkLearningSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsMalwareInformation the windowsMalwareInformation property
+// WindowsMalwareInformation provides operations to manage the windowsMalwareInformation property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsMalwareInformation()(*if5272bcac44fcff2621a3e47727572ede92654ccd7e61f5b25dd0d9d4006ed3d.WindowsMalwareInformationRequestBuilder) {
     return if5272bcac44fcff2621a3e47727572ede92654ccd7e61f5b25dd0d9d4006ed3d.NewWindowsMalwareInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsMalwareInformationById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsMalwareInformation.item collection
+// WindowsMalwareInformationById provides operations to manage the windowsMalwareInformation property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsMalwareInformationById(id string)(*i24abb123826461a00a90764243200f8c9d00edda2d377fe0fd0c2b0f81719f76.WindowsMalwareInformationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2582,11 +2533,11 @@ func (m *DeviceManagementRequestBuilder) WindowsMalwareInformationById(id string
     }
     return i24abb123826461a00a90764243200f8c9d00edda2d377fe0fd0c2b0f81719f76.NewWindowsMalwareInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsQualityUpdateProfiles the windowsQualityUpdateProfiles property
+// WindowsQualityUpdateProfiles provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfiles()(*i6b90776fc7713600e69140028c329b70cbfb9d6ccf5ee1aef5e3cf636d655332.WindowsQualityUpdateProfilesRequestBuilder) {
     return i6b90776fc7713600e69140028c329b70cbfb9d6ccf5ee1aef5e3cf636d655332.NewWindowsQualityUpdateProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsQualityUpdateProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsQualityUpdateProfiles.item collection
+// WindowsQualityUpdateProfilesById provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfilesById(id string)(*ib050cd86e0741e99e937a8678c13a85350f5fec6c1269c9670b260d7a23da5c1.WindowsQualityUpdateProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2597,11 +2548,11 @@ func (m *DeviceManagementRequestBuilder) WindowsQualityUpdateProfilesById(id str
     }
     return ib050cd86e0741e99e937a8678c13a85350f5fec6c1269c9670b260d7a23da5c1.NewWindowsQualityUpdateProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WindowsUpdateCatalogItems the windowsUpdateCatalogItems property
+// WindowsUpdateCatalogItems provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItems()(*i3b162052a75fef65f13882f1eeccb1550a198abef19a1b5d84b7ae75bb995385.WindowsUpdateCatalogItemsRequestBuilder) {
     return i3b162052a75fef65f13882f1eeccb1550a198abef19a1b5d84b7ae75bb995385.NewWindowsUpdateCatalogItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WindowsUpdateCatalogItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsUpdateCatalogItems.item collection
+// WindowsUpdateCatalogItemsById provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItemsById(id string)(*i9fea153d6a3551291dec4a130a0963bc383859e53a5e3c3b2af3c352d0b0802f.WindowsUpdateCatalogItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2612,11 +2563,11 @@ func (m *DeviceManagementRequestBuilder) WindowsUpdateCatalogItemsById(id string
     }
     return i9fea153d6a3551291dec4a130a0963bc383859e53a5e3c3b2af3c352d0b0802f.NewWindowsUpdateCatalogItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ZebraFotaArtifacts the zebraFotaArtifacts property
+// ZebraFotaArtifacts provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaArtifacts()(*i55139c400853ec6e1af6368a1a2538acbc596e77745144404d3c250b5c92d58e.ZebraFotaArtifactsRequestBuilder) {
     return i55139c400853ec6e1af6368a1a2538acbc596e77745144404d3c250b5c92d58e.NewZebraFotaArtifactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ZebraFotaArtifactsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.zebraFotaArtifacts.item collection
+// ZebraFotaArtifactsById provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaArtifactsById(id string)(*i14e77edfb7aabf297aafe34cf0e371c2ffb0536ecae98ba988fc808ae0fb45d7.ZebraFotaArtifactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -2627,15 +2578,15 @@ func (m *DeviceManagementRequestBuilder) ZebraFotaArtifactsById(id string)(*i14e
     }
     return i14e77edfb7aabf297aafe34cf0e371c2ffb0536ecae98ba988fc808ae0fb45d7.NewZebraFotaArtifactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ZebraFotaConnector the zebraFotaConnector property
+// ZebraFotaConnector provides operations to manage the zebraFotaConnector property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaConnector()(*i2cc64e98c9d4c92b0fa320f0570f721807198ad20e9c1884f9f0b9b573d92d8a.ZebraFotaConnectorRequestBuilder) {
     return i2cc64e98c9d4c92b0fa320f0570f721807198ad20e9c1884f9f0b9b573d92d8a.NewZebraFotaConnectorRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ZebraFotaDeployments the zebraFotaDeployments property
+// ZebraFotaDeployments provides operations to manage the zebraFotaDeployments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaDeployments()(*i92a42d01d17455bc0e0451361cb652c93db258538e900291294610aa540f414b.ZebraFotaDeploymentsRequestBuilder) {
     return i92a42d01d17455bc0e0451361cb652c93db258538e900291294610aa540f414b.NewZebraFotaDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ZebraFotaDeploymentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.zebraFotaDeployments.item collection
+// ZebraFotaDeploymentsById provides operations to manage the zebraFotaDeployments property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) ZebraFotaDeploymentsById(id string)(*i13ec2dc955bd2031b7c41de8836ca991ee20d48a59d434edd922344937f73177.ZebraFotaDeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

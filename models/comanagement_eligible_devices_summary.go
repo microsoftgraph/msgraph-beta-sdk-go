@@ -21,6 +21,8 @@ type ComanagementEligibleDevicesSummary struct {
     needsOsUpdateCount *int32
     // The OdataType property
     odataType *string
+    // Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999
+    scheduledForEnrollmentCount *int32
 }
 // NewComanagementEligibleDevicesSummary instantiates a new comanagementEligibleDevicesSummary and sets the default values.
 func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary) {
@@ -60,6 +62,7 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
     res["ineligibleCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetIneligibleCount)
     res["needsOsUpdateCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetNeedsOsUpdateCount)
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["scheduledForEnrollmentCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetScheduledForEnrollmentCount)
     return res
 }
 // GetIneligibleCount gets the ineligibleCount property value. Count of devices ineligible for Co-Management
@@ -73,6 +76,10 @@ func (m *ComanagementEligibleDevicesSummary) GetNeedsOsUpdateCount()(*int32) {
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ComanagementEligibleDevicesSummary) GetOdataType()(*string) {
     return m.odataType
+}
+// GetScheduledForEnrollmentCount gets the scheduledForEnrollmentCount property value. Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999
+func (m *ComanagementEligibleDevicesSummary) GetScheduledForEnrollmentCount()(*int32) {
+    return m.scheduledForEnrollmentCount
 }
 // Serialize serializes information the current object
 func (m *ComanagementEligibleDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -113,6 +120,12 @@ func (m *ComanagementEligibleDevicesSummary) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err := writer.WriteInt32Value("scheduledForEnrollmentCount", m.GetScheduledForEnrollmentCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -147,4 +160,8 @@ func (m *ComanagementEligibleDevicesSummary) SetNeedsOsUpdateCount(value *int32)
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ComanagementEligibleDevicesSummary) SetOdataType(value *string)() {
     m.odataType = value
+}
+// SetScheduledForEnrollmentCount sets the scheduledForEnrollmentCount property value. Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999
+func (m *ComanagementEligibleDevicesSummary) SetScheduledForEnrollmentCount(value *int32)() {
+    m.scheduledForEnrollmentCount = value
 }

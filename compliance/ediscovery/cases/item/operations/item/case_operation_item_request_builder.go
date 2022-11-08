@@ -47,7 +47,7 @@ type CaseOperationItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CaseExportOperation the caseExportOperation property
+// CaseExportOperation casts the previous resource to caseExportOperation.
 func (m *CaseOperationItemRequestBuilder) CaseExportOperation()(*i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.CaseExportOperationRequestBuilder) {
     return i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

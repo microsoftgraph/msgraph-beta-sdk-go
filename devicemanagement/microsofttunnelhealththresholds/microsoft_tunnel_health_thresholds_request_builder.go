@@ -71,7 +71,7 @@ func NewMicrosoftTunnelHealthThresholdsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelHealthThresholdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MicrosoftTunnelHealthThresholdsRequestBuilder) Count()(*if5dd70834f288da0d7a62697463f30b96e4b9a47578bb341b3876211f6e5b8f1.CountRequestBuilder) {
     return if5dd70834f288da0d7a62697463f30b96e4b9a47578bb341b3876211f6e5b8f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

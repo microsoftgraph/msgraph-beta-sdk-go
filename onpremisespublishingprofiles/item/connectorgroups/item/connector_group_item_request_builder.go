@@ -50,11 +50,11 @@ type ConnectorGroupItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Applications the applications property
+// Applications provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
 func (m *ConnectorGroupItemRequestBuilder) Applications()(*i65f60af5b24192c2cf36c30b834edfc25784e306f7de673f8c1129eccf89bcdc.ApplicationsRequestBuilder) {
     return i65f60af5b24192c2cf36c30b834edfc25784e306f7de673f8c1129eccf89bcdc.NewApplicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApplicationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.applications.item collection
+// ApplicationsById provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
 func (m *ConnectorGroupItemRequestBuilder) ApplicationsById(id string)(*ia89622dbe24176b268f77a9bc06936b0458832e38a0d3a929aaeb22f16f585d1.ApplicationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,7 +161,7 @@ func (m *ConnectorGroupItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable), nil
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.connectorGroup entity.
 func (m *ConnectorGroupItemRequestBuilder) Members()(*i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.MembersRequestBuilder) {
     return i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

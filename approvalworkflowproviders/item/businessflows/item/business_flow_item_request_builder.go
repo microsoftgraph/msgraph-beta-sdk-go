@@ -162,7 +162,7 @@ func (m *BusinessFlowItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable), nil
 }
-// RecordDecisions the recordDecisions property
+// RecordDecisions provides operations to call the recordDecisions method.
 func (m *BusinessFlowItemRequestBuilder) RecordDecisions()(*ie12a6915e05d6a043d359c10b68f891491e9737ababf5b26608eccbcdf3d3be8.RecordDecisionsRequestBuilder) {
     return ie12a6915e05d6a043d359c10b68f891491e9737ababf5b26608eccbcdf3d3be8.NewRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -46,11 +46,11 @@ type CalendarGroupItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Calendars the calendars property
+// Calendars provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *CalendarGroupItemRequestBuilder) Calendars()(*ifade711c7d2924283c812e71262208baa8028dafdc5301dac9b787b67d06bdcb.CalendarsRequestBuilder) {
     return ifade711c7d2924283c812e71262208baa8028dafdc5301dac9b787b67d06bdcb.NewCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CalendarsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.calendarGroups.item.calendars.item collection
+// CalendarsById provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
 func (m *CalendarGroupItemRequestBuilder) CalendarsById(id string)(*ib0740006afc2efaa13e5a3695cf0deb65949f14e10d066d658f528334687356e.CalendarItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

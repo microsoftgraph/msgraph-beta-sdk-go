@@ -49,7 +49,7 @@ type DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Clone the clone property
+// Clone provides operations to call the clone method.
 func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) Clone()(*if265d81c2f0cf9dd01c87ec63f8843a097aa03080289938fb1e32e386d8e965c.CloneRequestBuilder) {
     return if265d81c2f0cf9dd01c87ec63f8843a097aa03080289938fb1e32e386d8e965c.NewCloneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable), nil
 }
-// ReferencingConfigurationPolicies the referencingConfigurationPolicies property
+// ReferencingConfigurationPolicies provides operations to manage the referencingConfigurationPolicies property of the microsoft.graph.deviceManagementReusablePolicySetting entity.
 func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) ReferencingConfigurationPolicies()(*i1fb6f604a131d7c169ff13705125709e219cf9738fee66eca2a318c9053ec2a5.ReferencingConfigurationPoliciesRequestBuilder) {
     return i1fb6f604a131d7c169ff13705125709e219cf9738fee66eca2a318c9053ec2a5.NewReferencingConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReferencingConfigurationPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item collection
+// ReferencingConfigurationPoliciesById provides operations to manage the referencingConfigurationPolicies property of the microsoft.graph.deviceManagementReusablePolicySetting entity.
 func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) ReferencingConfigurationPoliciesById(id string)(*i3f11bffb7dba7ee4ad416d2fb7daa8d13e95c1d6616fb962c02e09217e9c6cf7.DeviceManagementConfigurationPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

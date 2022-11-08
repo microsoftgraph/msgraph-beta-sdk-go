@@ -48,11 +48,11 @@ type AccessPackageResourceRoleScopeItemRequestBuilderPatchRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageResourceRole the accessPackageResourceRole property
+// AccessPackageResourceRole provides operations to manage the accessPackageResourceRole property of the microsoft.graph.accessPackageResourceRoleScope entity.
 func (m *AccessPackageResourceRoleScopeItemRequestBuilder) AccessPackageResourceRole()(*ib95896bfc1bc0d5e080c62f839eba0aaa1298a8430f3cc8f802299320c48c06e.AccessPackageResourceRoleRequestBuilder) {
     return ib95896bfc1bc0d5e080c62f839eba0aaa1298a8430f3cc8f802299320c48c06e.NewAccessPackageResourceRoleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceScope the accessPackageResourceScope property
+// AccessPackageResourceScope provides operations to manage the accessPackageResourceScope property of the microsoft.graph.accessPackageResourceRoleScope entity.
 func (m *AccessPackageResourceRoleScopeItemRequestBuilder) AccessPackageResourceScope()(*i25b9a44c221638f664f87658733d44d07581b80a3d15703860eda6c8bce634a8.AccessPackageResourceScopeRequestBuilder) {
     return i25b9a44c221638f664f87658733d44d07581b80a3d15703860eda6c8bce634a8.NewAccessPackageResourceScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

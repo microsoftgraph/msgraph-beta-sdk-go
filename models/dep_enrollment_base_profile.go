@@ -36,7 +36,7 @@ type DepEnrollmentBaseProfile struct {
     screenTimeScreenDisabled *bool
     // Indicates if siri setup pane is disabled
     siriDisabled *bool
-    // Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+    // Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
     supervisedModeEnabled *bool
     // Support department information
     supportDepartment *string
@@ -160,7 +160,7 @@ func (m *DepEnrollmentBaseProfile) GetScreenTimeScreenDisabled()(*bool) {
 func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
     return m.siriDisabled
 }
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
     return m.supervisedModeEnabled
 }
@@ -358,7 +358,7 @@ func (m *DepEnrollmentBaseProfile) SetScreenTimeScreenDisabled(value *bool)() {
 func (m *DepEnrollmentBaseProfile) SetSiriDisabled(value *bool)() {
     m.siriDisabled = value
 }
-// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) SetSupervisedModeEnabled(value *bool)() {
     m.supervisedModeEnabled = value
 }

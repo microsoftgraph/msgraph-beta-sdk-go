@@ -16,7 +16,7 @@ type TaskRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TaskRequestBuilderGetQueryParameters the related lifecycle workflow task.
+// TaskRequestBuilderGetQueryParameters the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 type TaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,7 +51,7 @@ func NewTaskRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the related lifecycle workflow task.
+// CreateGetRequestInformation the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 func (m *TaskRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TaskRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,7 +67,7 @@ func (m *TaskRequestBuilder) CreateGetRequestInformation(ctx context.Context, re
     }
     return requestInfo, nil
 }
-// Get the related lifecycle workflow task.
+// Get the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 func (m *TaskRequestBuilder) Get(ctx context.Context, requestConfiguration *TaskRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

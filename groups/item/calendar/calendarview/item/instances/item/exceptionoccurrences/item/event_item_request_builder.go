@@ -48,15 +48,15 @@ type EventItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *EventItemRequestBuilderGetQueryParameters
 }
-// Accept the accept property
+// Accept provides operations to call the accept method.
 func (m *EventItemRequestBuilder) Accept()(*i7a49f43f057f14be019e7094d2cdf879307e2d1ddf9bbcf6c8510ad4b02fdf60.AcceptRequestBuilder) {
     return i7a49f43f057f14be019e7094d2cdf879307e2d1ddf9bbcf6c8510ad4b02fdf60.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) Attachments()(*ia349e2bc849f8e17f5b91ed44e682b64884592ad964ba7eb2f3c0a308f81c1c3.AttachmentsRequestBuilder) {
     return ia349e2bc849f8e17f5b91ed44e682b64884592ad964ba7eb2f3c0a308f81c1c3.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.calendar.calendarView.item.instances.item.exceptionOccurrences.item.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) AttachmentsById(id string)(*i66d929b2b6c4d9d882ed4daa7f664ea4c0d12f84f181934f516b883de9e29f7d.AttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -67,11 +67,11 @@ func (m *EventItemRequestBuilder) AttachmentsById(id string)(*i66d929b2b6c4d9d88
     }
     return i66d929b2b6c4d9d882ed4daa7f664ea4c0d12f84f181934f516b883de9e29f7d.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Calendar the calendar property
+// Calendar provides operations to manage the calendar property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) Calendar()(*i62385dc821ac307d2ef5dca0c390c2821828649863fc960ae04a09b7cb027266.CalendarRequestBuilder) {
     return i62385dc821ac307d2ef5dca0c390c2821828649863fc960ae04a09b7cb027266.NewCalendarRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *EventItemRequestBuilder) Cancel()(*if54352e1a5a47c0ac23ffcd83973d4626320ecfc628e8c5999363e6a67d702c1.CancelRequestBuilder) {
     return if54352e1a5a47c0ac23ffcd83973d4626320ecfc628e8c5999363e6a67d702c1.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -110,19 +110,19 @@ func (m *EventItemRequestBuilder) CreateGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// Decline the decline property
+// Decline provides operations to call the decline method.
 func (m *EventItemRequestBuilder) Decline()(*i15c209653a211d9777ec2d1ed8b878b064e002f7ea48551614588ed56730cde9.DeclineRequestBuilder) {
     return i15c209653a211d9777ec2d1ed8b878b064e002f7ea48551614588ed56730cde9.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DismissReminder the dismissReminder property
+// DismissReminder provides operations to call the dismissReminder method.
 func (m *EventItemRequestBuilder) DismissReminder()(*i2b44d42cea3020c91d54fc71e978be6107fee41ea0e2504f321fb69b89fc65b5.DismissReminderRequestBuilder) {
     return i2b44d42cea3020c91d54fc71e978be6107fee41ea0e2504f321fb69b89fc65b5.NewDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) Extensions()(*if47277ffd8c37dd6ebbc7c51fa22abedbb69451d9158718fda225aafeac4c179.ExtensionsRequestBuilder) {
     return if47277ffd8c37dd6ebbc7c51fa22abedbb69451d9158718fda225aafeac4c179.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.calendar.calendarView.item.instances.item.exceptionOccurrences.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) ExtensionsById(id string)(*i9fe50f684237f9011738361bdb77d2f8b3a0aa38567f5e63ea60c806bbe30a4b.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -133,7 +133,7 @@ func (m *EventItemRequestBuilder) ExtensionsById(id string)(*i9fe50f684237f90117
     }
     return i9fe50f684237f9011738361bdb77d2f8b3a0aa38567f5e63ea60c806bbe30a4b.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Forward the forward property
+// Forward provides operations to call the forward method.
 func (m *EventItemRequestBuilder) Forward()(*i7c5ec3d3bd0ee25ec803487e7f108d0c536bd96aa5eed2ce4be483fb0b8a922a.ForwardRequestBuilder) {
     return i7c5ec3d3bd0ee25ec803487e7f108d0c536bd96aa5eed2ce4be483fb0b8a922a.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -156,11 +156,11 @@ func (m *EventItemRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) MultiValueExtendedProperties()(*i7964f486890ccf355de39769c25eb35ad46f79afe7172e18782b7be7ffc15ac5.MultiValueExtendedPropertiesRequestBuilder) {
     return i7964f486890ccf355de39769c25eb35ad46f79afe7172e18782b7be7ffc15ac5.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.calendar.calendarView.item.instances.item.exceptionOccurrences.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*iaaa5806f96fe89f94a648a8d174c122a6b9e05309a7ccf9bcc195cc6c8ad5868.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,11 +171,11 @@ func (m *EventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
     }
     return iaaa5806f96fe89f94a648a8d174c122a6b9e05309a7ccf9bcc195cc6c8ad5868.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) SingleValueExtendedProperties()(*i1c5922e79c6b3359cea7fd4593e78e5a6e27617ec8e29d178b2d579f194ee26c.SingleValueExtendedPropertiesRequestBuilder) {
     return i1c5922e79c6b3359cea7fd4593e78e5a6e27617ec8e29d178b2d579f194ee26c.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.calendar.calendarView.item.instances.item.exceptionOccurrences.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *EventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ib210197b72aa0ad39cf94d53249e84a44c98896b6f08d020e9b4b7a9874b9041.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -186,11 +186,11 @@ func (m *EventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*
     }
     return ib210197b72aa0ad39cf94d53249e84a44c98896b6f08d020e9b4b7a9874b9041.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SnoozeReminder the snoozeReminder property
+// SnoozeReminder provides operations to call the snoozeReminder method.
 func (m *EventItemRequestBuilder) SnoozeReminder()(*ie265499f2fa9a9a5fe299ea9a50b3be1c1aaf310bbdf3bc4c753e1ebddf0cc10.SnoozeReminderRequestBuilder) {
     return ie265499f2fa9a9a5fe299ea9a50b3be1c1aaf310bbdf3bc4c753e1ebddf0cc10.NewSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TentativelyAccept the tentativelyAccept property
+// TentativelyAccept provides operations to call the tentativelyAccept method.
 func (m *EventItemRequestBuilder) TentativelyAccept()(*i56f760d98dfc74d1875dedb098ecfcc9d7ea1d7fce874649b9e5697a384f6b1f.TentativelyAcceptRequestBuilder) {
     return i56f760d98dfc74d1875dedb098ecfcc9d7ea1d7fce874649b9e5697a384f6b1f.NewTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

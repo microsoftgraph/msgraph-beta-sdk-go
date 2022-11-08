@@ -54,11 +54,11 @@ type DeviceManagementTemplateItemRequestBuilderPatchRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Categories the categories property
+// Categories provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *DeviceManagementTemplateItemRequestBuilder) Categories()(*i52be5ec8508b6fa8d8f8557172cc0171c708d106947178250d59c1749dfacaae.CategoriesRequestBuilder) {
     return i52be5ec8508b6fa8d8f8557172cc0171c708d106947178250d59c1749dfacaae.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templates.item.categories.item collection
+// CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *DeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*i17905e8ecb64c4ebfd26149dfc5a13403bbe9a01c3c4e539d54e3c0f880637b3.DeviceManagementTemplateSettingCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -120,7 +120,7 @@ func (m *DeviceManagementTemplateItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreateInstance the createInstance property
+// CreateInstance provides operations to call the createInstance method.
 func (m *DeviceManagementTemplateItemRequestBuilder) CreateInstance()(*i5a59489a0b9d17cfe0d7e3e92257f9c9b9345bb2389513e892ab06a210c7842d.CreateInstanceRequestBuilder) {
     return i5a59489a0b9d17cfe0d7e3e92257f9c9b9345bb2389513e892ab06a210c7842d.NewCreateInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *DeviceManagementTemplateItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable), nil
 }
-// MigratableTo the migratableTo property
+// MigratableTo provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *DeviceManagementTemplateItemRequestBuilder) MigratableTo()(*i5a180acaf78e7d5e370fefd58c8ff553c81e7bd7ac1752ed93ec3e207aa02b1b.MigratableToRequestBuilder) {
     return i5a180acaf78e7d5e370fefd58c8ff553c81e7bd7ac1752ed93ec3e207aa02b1b.NewMigratableToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MigratableToById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templates.item.migratableTo.item collection
+// MigratableToById provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *DeviceManagementTemplateItemRequestBuilder) MigratableToById(id string)(*ibf9b83d9fefef8461c50c50942484eaf240cb4a55d3a43a374f84fcc1e8525c2.DeviceManagementTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -207,11 +207,11 @@ func (m *DeviceManagementTemplateItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable), nil
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *DeviceManagementTemplateItemRequestBuilder) Settings()(*iee353ad56f6c1b8862fce131f47548769bc3fed165f19876db52c9d9388a859c.SettingsRequestBuilder) {
     return iee353ad56f6c1b8862fce131f47548769bc3fed165f19876db52c9d9388a859c.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templates.item.settings.item collection
+// SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
 func (m *DeviceManagementTemplateItemRequestBuilder) SettingsById(id string)(*i073fa9ff1c690c5b660c4e3b78f5b6a09f71cdb4010b8ccb982b8206fe8485ef.DeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

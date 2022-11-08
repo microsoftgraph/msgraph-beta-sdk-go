@@ -71,7 +71,7 @@ func NewRemoteActionAuditsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteActionAuditsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RemoteActionAuditsRequestBuilder) Count()(*ie2d0f1ad3cfb84742dded290d132866aa9474f6a4361d871022e6fdc8b616c64.CountRequestBuilder) {
     return ie2d0f1ad3cfb84742dded290d132866aa9474f6a4361d871022e6fdc8b616c64.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

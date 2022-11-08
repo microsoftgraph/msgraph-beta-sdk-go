@@ -71,7 +71,7 @@ func NewManagedTenantTicketingEndpointsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantTicketingEndpointsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedTenantTicketingEndpointsRequestBuilder) Count()(*ifd6984d1e6346ba4e29dd6942dac63d7bb04e4ab922dbd1e6523d05d1cbd406f.CountRequestBuilder) {
     return ifd6984d1e6346ba4e29dd6942dac63d7bb04e4ab922dbd1e6523d05d1cbd406f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

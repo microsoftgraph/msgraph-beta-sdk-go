@@ -75,7 +75,7 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AdministrativeUnitsRequestBuilder) Count()(*ib910fc8e3ef31ccf35067c62fd0b776445b7ab73b338461ef5cf0a08778690a7.CountRequestBuilder) {
     return ib910fc8e3ef31ccf35067c62fd0b776445b7ab73b338461ef5cf0a08778690a7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -132,11 +132,11 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*i6fdf952a13d3bf5e2725a8748ddb345d4f83a1d2c1c529831cbbfaaf3599bda4.GetByIdsRequestBuilder) {
     return i6fdf952a13d3bf5e2725a8748ddb345d4f83a1d2c1c529831cbbfaaf3599bda4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*ib65039236519e98f2d3381a87efa569a52065c857d8bc16bb710d38c1c34c284.GetUserOwnedObjectsRequestBuilder) {
     return ib65039236519e98f2d3381a87efa569a52065c857d8bc16bb710d38c1c34c284.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -159,7 +159,7 @@ func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*ic6e781877101851bed034ecabc173993cfa8cb600356f6608ec0620dba3fedde.ValidatePropertiesRequestBuilder) {
     return ic6e781877101851bed034ecabc173993cfa8cb600356f6608ec0620dba3fedde.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

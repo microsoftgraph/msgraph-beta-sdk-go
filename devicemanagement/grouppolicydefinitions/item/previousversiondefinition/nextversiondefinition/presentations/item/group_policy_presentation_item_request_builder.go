@@ -108,7 +108,7 @@ func (m *GroupPolicyPresentationItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Definition the definition property
+// Definition provides operations to manage the definition property of the microsoft.graph.groupPolicyPresentation entity.
 func (m *GroupPolicyPresentationItemRequestBuilder) Definition()(*i27a1bc272b3deb03ab292b8ea3572f3d89c466e8a84108af4ad6eea78bd77cc2.DefinitionRequestBuilder) {
     return i27a1bc272b3deb03ab292b8ea3572f3d89c466e8a84108af4ad6eea78bd77cc2.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

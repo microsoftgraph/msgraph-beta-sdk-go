@@ -151,7 +151,7 @@ func (m *GovernanceResourceItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
-// Parent the parent property
+// Parent provides operations to manage the parent property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) Parent()(*ib0aaebf13ea4ba70136f557b80a4927156762d3a0220f350b4c9b1c42b2f0081.ParentRequestBuilder) {
     return ib0aaebf13ea4ba70136f557b80a4927156762d3a0220f350b4c9b1c42b2f0081.NewParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -174,11 +174,11 @@ func (m *GovernanceResourceItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
-// RoleAssignmentRequests the roleAssignmentRequests property
+// RoleAssignmentRequests provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequests()(*icd973db06be9431b2115931b7c6e087161e5e617bafd8a80b393a773795c6fa4.RoleAssignmentRequestsRequestBuilder) {
     return icd973db06be9431b2115931b7c6e087161e5e617bafd8a80b393a773795c6fa4.NewRoleAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.resources.item.roleAssignmentRequests.item collection
+// RoleAssignmentRequestsById provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequestsById(id string)(*i6a3c41cedb50c4351ee3bc74ef3af69a59935cb40e55ef89b828b0345e418a11.GovernanceRoleAssignmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -189,11 +189,11 @@ func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequestsById(id str
     }
     return i6a3c41cedb50c4351ee3bc74ef3af69a59935cb40e55ef89b828b0345e418a11.NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleAssignments the roleAssignments property
+// RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleAssignments()(*ib542076fdb1e7df91be849b5efcd3faf53db7fd9695526930016466566214990.RoleAssignmentsRequestBuilder) {
     return ib542076fdb1e7df91be849b5efcd3faf53db7fd9695526930016466566214990.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.resources.item.roleAssignments.item collection
+// RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentsById(id string)(*id6d5ee9260c4fa93ba637e63f200cf83913f46edc1e0a5aef9e499f9e0df0962.GovernanceRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -204,11 +204,11 @@ func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentsById(id string)(*i
     }
     return id6d5ee9260c4fa93ba637e63f200cf83913f46edc1e0a5aef9e499f9e0df0962.NewGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleDefinitions the roleDefinitions property
+// RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleDefinitions()(*i3605d902f92a6bea8a258127b9515b3d3c546eb9d658395d666d58b4d0c0f90e.RoleDefinitionsRequestBuilder) {
     return i3605d902f92a6bea8a258127b9515b3d3c546eb9d658395d666d58b4d0c0f90e.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.resources.item.roleDefinitions.item collection
+// RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleDefinitionsById(id string)(*i673d165f29308b156cf4f29128869e70ff180d4207ec74e37aa01db9557b80b0.GovernanceRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -219,11 +219,11 @@ func (m *GovernanceResourceItemRequestBuilder) RoleDefinitionsById(id string)(*i
     }
     return i673d165f29308b156cf4f29128869e70ff180d4207ec74e37aa01db9557b80b0.NewGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RoleSettings the roleSettings property
+// RoleSettings provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleSettings()(*i2e9006b5b06b12fded8deaf8708ce23ea064941fe87e92263a0b0bcd91c37adc.RoleSettingsRequestBuilder) {
     return i2e9006b5b06b12fded8deaf8708ce23ea064941fe87e92263a0b0bcd91c37adc.NewRoleSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedAccess.item.resources.item.roleSettings.item collection
+// RoleSettingsById provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
 func (m *GovernanceResourceItemRequestBuilder) RoleSettingsById(id string)(*i5906c03a7eaf4ae7a45bdb589b8d2bcaff6942303436db9394659bfc3f0f2e2c.GovernanceRoleSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

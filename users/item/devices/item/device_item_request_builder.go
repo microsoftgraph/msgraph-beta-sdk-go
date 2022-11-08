@@ -65,19 +65,19 @@ type DeviceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups the checkMemberGroups property
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *DeviceItemRequestBuilder) CheckMemberGroups()(*i6c404d58392755d5bc2022900737e6eb0513dd6c6ede8da370f111d117cc4ffa.CheckMemberGroupsRequestBuilder) {
     return i6c404d58392755d5bc2022900737e6eb0513dd6c6ede8da370f111d117cc4ffa.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CheckMemberObjects the checkMemberObjects property
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *DeviceItemRequestBuilder) CheckMemberObjects()(*i9cf2733b2fc19d0e3fcfbca2e47e90f59f781c75f0740d99d06d83a617c2cdb1.CheckMemberObjectsRequestBuilder) {
     return i9cf2733b2fc19d0e3fcfbca2e47e90f59f781c75f0740d99d06d83a617c2cdb1.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Commands the commands property
+// Commands provides operations to manage the commands property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) Commands()(*iaf34d7f762b2e74c284c42effd3462cff0e37f08a9f6986b076294804a2449ef.CommandsRequestBuilder) {
     return iaf34d7f762b2e74c284c42effd3462cff0e37f08a9f6986b076294804a2449ef.NewCommandsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CommandsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.commands.item collection
+// CommandsById provides operations to manage the commands property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) CommandsById(id string)(*i35eda896d73fbeb4732e5c4720890d6a590710f94bd582a4cff1752828a69af3.CommandItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -165,11 +165,11 @@ func (m *DeviceItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) Extensions()(*i7e864cabfa7df255cec98e1d19a04a50c2fa51c2eff7feff0b4ecebb21696f14.ExtensionsRequestBuilder) {
     return i7e864cabfa7df255cec98e1d19a04a50c2fa51c2eff7feff0b4ecebb21696f14.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) ExtensionsById(id string)(*i15521158ed5380a593e0fb66e3ea064f39b1577a2ac9b6eda66652739a42c3a7.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -199,19 +199,19 @@ func (m *DeviceItemRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
-// GetMemberGroups the getMemberGroups property
+// GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *DeviceItemRequestBuilder) GetMemberGroups()(*i17c4436168820ed9465c6ea216b9f889b64a2e73f84cc7d3493825322c62bca3.GetMemberGroupsRequestBuilder) {
     return i17c4436168820ed9465c6ea216b9f889b64a2e73f84cc7d3493825322c62bca3.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetMemberObjects the getMemberObjects property
+// GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *DeviceItemRequestBuilder) GetMemberObjects()(*i7e273b78e0c1827e680be4fa377056e00c9023d9db253f52dc7635e67462f2f3.GetMemberObjectsRequestBuilder) {
     return i7e273b78e0c1827e680be4fa377056e00c9023d9db253f52dc7635e67462f2f3.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MemberOf the memberOf property
+// MemberOf provides operations to manage the memberOf property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) MemberOf()(*i260a199d87e8fc8451c2cebd56f049767d3520abc7911b3280adebafc0b35c51.MemberOfRequestBuilder) {
     return i260a199d87e8fc8451c2cebd56f049767d3520abc7911b3280adebafc0b35c51.NewMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MemberOfById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.memberOf.item collection
+// MemberOfById provides operations to manage the memberOf property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) MemberOfById(id string)(*i7691315271fdbee9c1364b694cd1da63bf25ef5dbd68a8733beca60509601b78.DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -241,7 +241,7 @@ func (m *DeviceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
-// RegisteredOwners the registeredOwners property
+// RegisteredOwners provides operations to manage the registeredOwners property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) RegisteredOwners()(*i2429f93f2ffa433727c0848b6c9658e4d3cb648472c4eef955bc41768ebe93a3.RegisteredOwnersRequestBuilder) {
     return i2429f93f2ffa433727c0848b6c9658e4d3cb648472c4eef955bc41768ebe93a3.NewRegisteredOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -256,11 +256,11 @@ func (m *DeviceItemRequestBuilder) RegisteredOwnersById(id string)(*ie640d03df2e
     }
     return ie640d03df2e875a4b8e918f08a8bdd3c0ef7575f5ac82da96969e2d5c6834087.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RegisteredUsers the registeredUsers property
+// RegisteredUsers provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) RegisteredUsers()(*i287d87b2c8c4a2a503f874a4e31a649feb57022d3ab8f9697721d4c249a16bee.RegisteredUsersRequestBuilder) {
     return i287d87b2c8c4a2a503f874a4e31a649feb57022d3ab8f9697721d4c249a16bee.NewRegisteredUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RegisteredUsersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.registeredUsers.item collection
+// RegisteredUsersById provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) RegisteredUsersById(id string)(*i14cc2fa3b60c5ce229c289cfacee26146c0b595b94a01d4ba5e8f2bc380db01b.DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -271,15 +271,15 @@ func (m *DeviceItemRequestBuilder) RegisteredUsersById(id string)(*i14cc2fa3b60c
     }
     return i14cc2fa3b60c5ce229c289cfacee26146c0b595b94a01d4ba5e8f2bc380db01b.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *DeviceItemRequestBuilder) Restore()(*ib9741e8fd6f934777f637ee867cb5ea268b06ade444d82ba5c33f83a0a508199.RestoreRequestBuilder) {
     return ib9741e8fd6f934777f637ee867cb5ea268b06ade444d82ba5c33f83a0a508199.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TransitiveMemberOf the transitiveMemberOf property
+// TransitiveMemberOf provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) TransitiveMemberOf()(*i5cae329fa48ff3f1b1990c9cc80fbbfb85184e94b824d0858c03687f67950543.TransitiveMemberOfRequestBuilder) {
     return i5cae329fa48ff3f1b1990c9cc80fbbfb85184e94b824d0858c03687f67950543.NewTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TransitiveMemberOfById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.transitiveMemberOf.item collection
+// TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) TransitiveMemberOfById(id string)(*i12d469d8755e67463c108cc666b7d20d9dd4f29509dd9f4401df2c1bf22efaf7.DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -290,11 +290,11 @@ func (m *DeviceItemRequestBuilder) TransitiveMemberOfById(id string)(*i12d469d87
     }
     return i12d469d8755e67463c108cc666b7d20d9dd4f29509dd9f4401df2c1bf22efaf7.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UsageRights the usageRights property
+// UsageRights provides operations to manage the usageRights property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) UsageRights()(*i33ff2b6be6dfa57cc8a51bb78cd90fbe1626d3a8e3b5df364004aa3515144f2a.UsageRightsRequestBuilder) {
     return i33ff2b6be6dfa57cc8a51bb78cd90fbe1626d3a8e3b5df364004aa3515144f2a.NewUsageRightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UsageRightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.devices.item.usageRights.item collection
+// UsageRightsById provides operations to manage the usageRights property of the microsoft.graph.device entity.
 func (m *DeviceItemRequestBuilder) UsageRightsById(id string)(*i00aa926b8f1486da2206b774db04d1cd018936bae2dcf0db49162361f332101f.UsageRightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

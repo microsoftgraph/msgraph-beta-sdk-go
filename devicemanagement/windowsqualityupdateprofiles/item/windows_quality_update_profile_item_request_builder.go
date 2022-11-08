@@ -49,15 +49,15 @@ type WindowsQualityUpdateProfileItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *WindowsQualityUpdateProfileItemRequestBuilder) Assign()(*i36baea6ccabeba8dfb103008171c914e98a40320eea881bf06c1729f50cb81ce.AssignRequestBuilder) {
     return i36baea6ccabeba8dfb103008171c914e98a40320eea881bf06c1729f50cb81ce.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.windowsQualityUpdateProfile entity.
 func (m *WindowsQualityUpdateProfileItemRequestBuilder) Assignments()(*i2bb7d0bba9f4dacf992341819d973086e188fe4bac69df578a46624982bc73af.AssignmentsRequestBuilder) {
     return i2bb7d0bba9f4dacf992341819d973086e188fe4bac69df578a46624982bc73af.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsQualityUpdateProfiles.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsQualityUpdateProfile entity.
 func (m *WindowsQualityUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*i04d128338563166ddbb410fea932b830e3e2b8799a8d363b4dbb0797203fe43d.WindowsQualityUpdateProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

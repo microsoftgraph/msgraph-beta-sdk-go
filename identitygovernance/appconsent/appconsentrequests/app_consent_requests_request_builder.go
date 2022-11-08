@@ -72,7 +72,7 @@ func NewAppConsentRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAppConsentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AppConsentRequestsRequestBuilder) Count()(*i720c7932409d3a8163401c131ca4fde744b898d38224a88c2a3dfba7ed416792.CountRequestBuilder) {
     return i720c7932409d3a8163401c131ca4fde744b898d38224a88c2a3dfba7ed416792.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

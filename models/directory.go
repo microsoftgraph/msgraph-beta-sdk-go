@@ -24,6 +24,8 @@ type Directory struct {
     impactedResources []RecommendationResourceable
     // The inboundSharedUserProfiles property
     inboundSharedUserProfiles []InboundSharedUserProfileable
+    // The onPremisesSynchronization property
+    onPremisesSynchronization []OnPremisesDirectorySynchronizationable
     // The outboundSharedUserProfiles property
     outboundSharedUserProfiles []OutboundSharedUserProfileable
     // The recommendations property
@@ -79,6 +81,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     res["federationConfigurations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue , m.SetFederationConfigurations)
     res["impactedResources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRecommendationResourceFromDiscriminatorValue , m.SetImpactedResources)
     res["inboundSharedUserProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateInboundSharedUserProfileFromDiscriminatorValue , m.SetInboundSharedUserProfiles)
+    res["onPremisesSynchronization"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOnPremisesDirectorySynchronizationFromDiscriminatorValue , m.SetOnPremisesSynchronization)
     res["outboundSharedUserProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOutboundSharedUserProfileFromDiscriminatorValue , m.SetOutboundSharedUserProfiles)
     res["recommendations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateRecommendationFromDiscriminatorValue , m.SetRecommendations)
     res["sharedEmailDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSharedEmailDomainFromDiscriminatorValue , m.SetSharedEmailDomains)
@@ -91,6 +94,10 @@ func (m *Directory) GetImpactedResources()([]RecommendationResourceable) {
 // GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
 func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileable) {
     return m.inboundSharedUserProfiles
+}
+// GetOnPremisesSynchronization gets the onPremisesSynchronization property value. The onPremisesSynchronization property
+func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable) {
+    return m.onPremisesSynchronization
 }
 // GetOutboundSharedUserProfiles gets the outboundSharedUserProfiles property value. The outboundSharedUserProfiles property
 func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable) {
@@ -166,6 +173,13 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetOnPremisesSynchronization() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOnPremisesSynchronization())
+        err = writer.WriteCollectionOfObjectValues("onPremisesSynchronization", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOutboundSharedUserProfiles() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetOutboundSharedUserProfiles())
         err = writer.WriteCollectionOfObjectValues("outboundSharedUserProfiles", cast)
@@ -220,6 +234,10 @@ func (m *Directory) SetImpactedResources(value []RecommendationResourceable)() {
 // SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)() {
     m.inboundSharedUserProfiles = value
+}
+// SetOnPremisesSynchronization sets the onPremisesSynchronization property value. The onPremisesSynchronization property
+func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)() {
+    m.onPremisesSynchronization = value
 }
 // SetOutboundSharedUserProfiles sets the outboundSharedUserProfiles property value. The outboundSharedUserProfiles property
 func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)() {

@@ -145,11 +145,11 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
-// Insights the insights property
+// Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*ie8bf84382170ebfdd290195f52580ae4c67a2dcf564113dcd1f4ad3fd94e9099.InsightsRequestBuilder) {
     return ie8bf84382170ebfdd290195f52580ae4c67a2dcf564113dcd1f4ad3fd94e9099.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InsightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.stages.item.decisions.item.insights.item collection
+// InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*ia71ee22505200bcce8ee72552326e20f4be598dd49bf12cf3419521fa09c1652.GovernanceInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -160,7 +160,7 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id str
     }
     return ia71ee22505200bcce8ee72552326e20f4be598dd49bf12cf3419521fa09c1652.NewGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instance the instance property
+// Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*i77158ecfe474986193e0514d73460431c9ac10ef4186498ba791d9247cb3ff16.InstanceRequestBuilder) {
     return i77158ecfe474986193e0514d73460431c9ac10ef4186498ba791d9247cb3ff16.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

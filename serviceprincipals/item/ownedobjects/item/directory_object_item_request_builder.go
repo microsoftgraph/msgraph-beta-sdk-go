@@ -36,7 +36,7 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// Application the application property
+// Application casts the previous resource to application.
 func (m *DirectoryObjectItemRequestBuilder) Application()(*idb90d1c793660a22ee919e783129d2de5319d22080ee7cad9519b6b6993047de.ApplicationRequestBuilder) {
     return idb90d1c793660a22ee919e783129d2de5319d22080ee7cad9519b6b6993047de.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -75,7 +75,7 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*ief8d535b05a01ab45d0c9ca8fbcba7dc5b0a31a691b5d1481fc7b86a8c024c7a.EndpointRequestBuilder) {
     return ief8d535b05a01ab45d0c9ca8fbcba7dc5b0a31a691b5d1481fc7b86a8c024c7a.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -98,11 +98,11 @@ func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// Group the group property
+// Group casts the previous resource to group.
 func (m *DirectoryObjectItemRequestBuilder) Group()(*ie0ea409b1b12090f922a3e1b6729cf4c82dd054d68a0f71c47ceebac6ba438b9.GroupRequestBuilder) {
     return ie0ea409b1b12090f922a3e1b6729cf4c82dd054d68a0f71c47ceebac6ba438b9.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*ib2a1980a0a0d0ff18e50c56f14eb7e14470323235e807532543beb815124938e.ServicePrincipalRequestBuilder) {
     return ib2a1980a0a0d0ff18e50c56f14eb7e14470323235e807532543beb815124938e.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

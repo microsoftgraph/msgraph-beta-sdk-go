@@ -50,11 +50,11 @@ type OnPremisesAgentGroupItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Agents the agents property
+// Agents provides operations to manage the agents property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *OnPremisesAgentGroupItemRequestBuilder) Agents()(*i19ebc08305d8024aeb70498557d19e50b92342834c2372eba852ff8b2c7bc38c.AgentsRequestBuilder) {
     return i19ebc08305d8024aeb70498557d19e50b92342834c2372eba852ff8b2c7bc38c.NewAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AgentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.agents.item collection
+// AgentsById provides operations to manage the agents property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *OnPremisesAgentGroupItemRequestBuilder) AgentsById(id string)(*id6036572ca04fed5badd3bec64b71a79379dcd4ed352d04a4ca26efcc8fa4ed6.OnPremisesAgentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable), nil
 }
-// PublishedResources the publishedResources property
+// PublishedResources provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *OnPremisesAgentGroupItemRequestBuilder) PublishedResources()(*id42635c350598b69768841bef34ccba8e937a2ab99cff155b42e58eb7f4991e4.PublishedResourcesRequestBuilder) {
     return id42635c350598b69768841bef34ccba8e937a2ab99cff155b42e58eb7f4991e4.NewPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PublishedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.publishedResources.item collection
+// PublishedResourcesById provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
 func (m *OnPremisesAgentGroupItemRequestBuilder) PublishedResourcesById(id string)(*i3a56cac0ec805de8b5e133f140b642c0d2dc07a3691ad68c64879efefe4b9140.PublishedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

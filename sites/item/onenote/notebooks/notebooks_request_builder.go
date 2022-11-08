@@ -73,7 +73,7 @@ func NewNotebooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewNotebooksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *NotebooksRequestBuilder) Count()(*ic69d1a816f228a450898377dbaa67fb0ce71fdd5eda0c1ee697b63f9fab58fc8.CountRequestBuilder) {
     return ic69d1a816f228a450898377dbaa67fb0ce71fdd5eda0c1ee697b63f9fab58fc8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -126,7 +126,7 @@ func (m *NotebooksRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotebookCollectionResponseable), nil
 }
-// GetNotebookFromWebUrl the getNotebookFromWebUrl property
+// GetNotebookFromWebUrl provides operations to call the getNotebookFromWebUrl method.
 func (m *NotebooksRequestBuilder) GetNotebookFromWebUrl()(*i93397dfd96f8b0be00ec737ff1a2a7aac1f72d145c849a6013fe168c81f5032b.GetNotebookFromWebUrlRequestBuilder) {
     return i93397dfd96f8b0be00ec737ff1a2a7aac1f72d145c849a6013fe168c81f5032b.NewGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

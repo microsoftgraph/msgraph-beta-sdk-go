@@ -167,11 +167,11 @@ func (m *LegalHoldItemRequestBuilder) Patch(ctx context.Context, body ic154d683a
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable), nil
 }
-// SiteSources the siteSources property
+// SiteSources provides operations to manage the siteSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *LegalHoldItemRequestBuilder) SiteSources()(*i64f0e5258633a3c0c8d5bfc297b4e0736de72c5e3150a38d2fcd17dfb59e046b.SiteSourcesRequestBuilder) {
     return i64f0e5258633a3c0c8d5bfc297b4e0736de72c5e3150a38d2fcd17dfb59e046b.NewSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SiteSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item.siteSources.item collection
+// SiteSourcesById provides operations to manage the siteSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *LegalHoldItemRequestBuilder) SiteSourcesById(id string)(*ib34df5322945e42aea8a01751883e193d59745ac0c447872f1671eb484a06936.SiteSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -182,11 +182,11 @@ func (m *LegalHoldItemRequestBuilder) SiteSourcesById(id string)(*ib34df5322945e
     }
     return ib34df5322945e42aea8a01751883e193d59745ac0c447872f1671eb484a06936.NewSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UnifiedGroupSources the unifiedGroupSources property
+// UnifiedGroupSources provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *LegalHoldItemRequestBuilder) UnifiedGroupSources()(*iac7d03a0b596e8feddf3b195648c1f8d07225fc5a621d2181a8d3e15d43673a8.UnifiedGroupSourcesRequestBuilder) {
     return iac7d03a0b596e8feddf3b195648c1f8d07225fc5a621d2181a8d3e15d43673a8.NewUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UnifiedGroupSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item.unifiedGroupSources.item collection
+// UnifiedGroupSourcesById provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *LegalHoldItemRequestBuilder) UnifiedGroupSourcesById(id string)(*ifaf28029d98f7bf2244cb8a85e111bec3c46d219a6d9069d26a26ee3797ad760.UnifiedGroupSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -197,11 +197,11 @@ func (m *LegalHoldItemRequestBuilder) UnifiedGroupSourcesById(id string)(*ifaf28
     }
     return ifaf28029d98f7bf2244cb8a85e111bec3c46d219a6d9069d26a26ee3797ad760.NewUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserSources the userSources property
+// UserSources provides operations to manage the userSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *LegalHoldItemRequestBuilder) UserSources()(*i06b275b20ff5a31845bd4dd9892fec2b1653544d3b2bd2a68090be24b2058315.UserSourcesRequestBuilder) {
     return i06b275b20ff5a31845bd4dd9892fec2b1653544d3b2bd2a68090be24b2058315.NewUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.legalHolds.item.userSources.item collection
+// UserSourcesById provides operations to manage the userSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *LegalHoldItemRequestBuilder) UserSourcesById(id string)(*i6b88ba94cf868f1ba6788ff7bfac0991479b8eebedef91a91c1b16be7ca6d060.UserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

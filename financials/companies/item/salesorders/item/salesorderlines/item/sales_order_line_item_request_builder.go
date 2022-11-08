@@ -41,7 +41,7 @@ type SalesOrderLineItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.salesOrderLine entity.
 func (m *SalesOrderLineItemRequestBuilder) Account()(*ib49c97dbf4bd716bc89a234050d0ac7dd1df748d7754a9602d16995b6d3f7534.AccountRequestBuilder) {
     return ib49c97dbf4bd716bc89a234050d0ac7dd1df748d7754a9602d16995b6d3f7534.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -113,7 +113,7 @@ func (m *SalesOrderLineItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable), nil
 }
-// Item the item property
+// Item provides operations to manage the item property of the microsoft.graph.salesOrderLine entity.
 func (m *SalesOrderLineItemRequestBuilder) Item()(*i9f47c718ee0bf35bf4ebce85f57811acd150872b431d0536756e6b2436287ad7.ItemRequestBuilder) {
     return i9f47c718ee0bf35bf4ebce85f57811acd150872b431d0536756e6b2436287ad7.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

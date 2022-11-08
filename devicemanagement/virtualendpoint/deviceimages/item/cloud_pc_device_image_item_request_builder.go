@@ -162,7 +162,7 @@ func (m *CloudPcDeviceImageItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable), nil
 }
-// Reupload the reupload property
+// Reupload provides operations to call the reupload method.
 func (m *CloudPcDeviceImageItemRequestBuilder) Reupload()(*i6f9f07ee01f750e99fe7698694790f809ea40d7e5a800bc6568552c7183f82bf.ReuploadRequestBuilder) {
     return i6f9f07ee01f750e99fe7698694790f809ea40d7e5a800bc6568552c7183f82bf.NewReuploadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

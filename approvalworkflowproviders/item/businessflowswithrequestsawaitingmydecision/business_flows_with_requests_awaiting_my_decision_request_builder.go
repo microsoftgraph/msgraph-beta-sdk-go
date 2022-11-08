@@ -71,7 +71,7 @@ func NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Count()(*ia2a47d39f7acac39501993a83b159182bff063cd1d8626dbfb39cc2ce12693b0.CountRequestBuilder) {
     return ia2a47d39f7acac39501993a83b159182bff063cd1d8626dbfb39cc2ce12693b0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

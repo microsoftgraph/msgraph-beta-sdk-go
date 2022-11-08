@@ -20,6 +20,8 @@ type TargetedManagedAppConfiguration struct {
     deploymentSummary ManagedAppPolicyDeploymentSummaryable
     // Indicates if the policy is deployed to any inclusion groups or not.
     isAssigned *bool
+    // Management levels for apps
+    targetedAppManagementLevels *AppManagementLevel
 }
 // NewTargetedManagedAppConfiguration instantiates a new TargetedManagedAppConfiguration and sets the default values.
 func NewTargetedManagedAppConfiguration()(*TargetedManagedAppConfiguration) {
@@ -63,11 +65,16 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
     res["deployedAppCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDeployedAppCount)
     res["deploymentSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue , m.SetDeploymentSummary)
     res["isAssigned"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsAssigned)
+    res["targetedAppManagementLevels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAppManagementLevel , m.SetTargetedAppManagementLevels)
     return res
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppConfiguration) GetIsAssigned()(*bool) {
     return m.isAssigned
+}
+// GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. Management levels for apps
+func (m *TargetedManagedAppConfiguration) GetTargetedAppManagementLevels()(*AppManagementLevel) {
+    return m.targetedAppManagementLevels
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,6 +121,13 @@ func (m *TargetedManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    if m.GetTargetedAppManagementLevels() != nil {
+        cast := (*m.GetTargetedAppManagementLevels()).String()
+        err = writer.WriteStringValue("targetedAppManagementLevels", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppGroupType sets the appGroupType property value. Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
@@ -139,4 +153,8 @@ func (m *TargetedManagedAppConfiguration) SetDeploymentSummary(value ManagedAppP
 // SetIsAssigned sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppConfiguration) SetIsAssigned(value *bool)() {
     m.isAssigned = value
+}
+// SetTargetedAppManagementLevels sets the targetedAppManagementLevels property value. Management levels for apps
+func (m *TargetedManagedAppConfiguration) SetTargetedAppManagementLevels(value *AppManagementLevel)() {
+    m.targetedAppManagementLevels = value
 }

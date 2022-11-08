@@ -162,7 +162,7 @@ func (m *WindowsRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Windowsable), nil
 }
-// Updates the updates property
+// Updates provides operations to manage the updates property of the microsoft.graph.windowsUpdates.windows entity.
 func (m *WindowsRequestBuilder) Updates()(*i30f14f924d0f8ff6b537a3d4e9f25228fc972ee35e531adb5a8905cf7589ddf7.UpdatesRequestBuilder) {
     return i30f14f924d0f8ff6b537a3d4e9f25228fc972ee35e531adb5a8905cf7589ddf7.NewUpdatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

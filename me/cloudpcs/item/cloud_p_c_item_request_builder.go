@@ -55,7 +55,7 @@ type CloudPCItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChangeUserAccountType the changeUserAccountType property
+// ChangeUserAccountType provides operations to call the changeUserAccountType method.
 func (m *CloudPCItemRequestBuilder) ChangeUserAccountType()(*i0543ab08206c491078113b4b6ec824e6ea4dc3659ea1392f05efc163b50bac03.ChangeUserAccountTypeRequestBuilder) {
     return i0543ab08206c491078113b4b6ec824e6ea4dc3659ea1392f05efc163b50bac03.NewChangeUserAccountTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,7 +136,7 @@ func (m *CloudPCItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// EndGracePeriod the endGracePeriod property
+// EndGracePeriod provides operations to call the endGracePeriod method.
 func (m *CloudPCItemRequestBuilder) EndGracePeriod()(*ie1b3b83917cdcc75511ad5eb6d6dbf8d5c29ca730fb1a3e4c356599c7261e842.EndGracePeriodRequestBuilder) {
     return ie1b3b83917cdcc75511ad5eb6d6dbf8d5c29ca730fb1a3e4c356599c7261e842.NewEndGracePeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -186,23 +186,23 @@ func (m *CloudPCItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
 }
-// Reboot the reboot property
+// Reboot provides operations to call the reboot method.
 func (m *CloudPCItemRequestBuilder) Reboot()(*i3fc1b0e9b520291a737c5354479f5ce10f5650dd33030dfefdc4b6ee1d1af0a6.RebootRequestBuilder) {
     return i3fc1b0e9b520291a737c5354479f5ce10f5650dd33030dfefdc4b6ee1d1af0a6.NewRebootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Rename the rename property
+// Rename provides operations to call the rename method.
 func (m *CloudPCItemRequestBuilder) Rename()(*idd692d448454691ef652a1555dc60f805306ee63076a45f51d1f0e45253c9964.RenameRequestBuilder) {
     return idd692d448454691ef652a1555dc60f805306ee63076a45f51d1f0e45253c9964.NewRenameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Reprovision the reprovision property
+// Reprovision provides operations to call the reprovision method.
 func (m *CloudPCItemRequestBuilder) Reprovision()(*ie4696cde156288c3f3bd9ecdc93adfc93dc5d8beeb9cceac7e81177b09b725a3.ReprovisionRequestBuilder) {
     return ie4696cde156288c3f3bd9ecdc93adfc93dc5d8beeb9cceac7e81177b09b725a3.NewReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *CloudPCItemRequestBuilder) Restore()(*i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054.RestoreRequestBuilder) {
     return i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Troubleshoot the troubleshoot property
+// Troubleshoot provides operations to call the troubleshoot method.
 func (m *CloudPCItemRequestBuilder) Troubleshoot()(*i48833d47a3b49cc67b08b792c187d1d2e754160e7d01e8291dfc3500786630e6.TroubleshootRequestBuilder) {
     return i48833d47a3b49cc67b08b792c187d1d2e754160e7d01e8291dfc3500786630e6.NewTroubleshootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

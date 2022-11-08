@@ -144,11 +144,11 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Get(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable), nil
 }
-// MetricValues the metricValues property
+// MetricValues provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValues()(*i76d76df01534fbe41283b7237bc4b6635f2316d4abaf6113e056758ee16ef5cc.MetricValuesRequestBuilder) {
     return i76d76df01534fbe41283b7237bc4b6635f2316d4abaf6113e056758ee16ef5cc.NewMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MetricValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthOverview.metricValues.item collection
+// MetricValuesById provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesById(id string)(*i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.UserExperienceAnalyticsMetricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -39,6 +39,8 @@ type ChatMessage struct {
     locale *string
     // List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
     mentions []ChatMessageMentionable
+    // The messageHistory property
+    messageHistory []ChatMessageHistoryItemable
     // The messageType property
     messageType *ChatMessageType
     // User attribution of the message when bot sends a message on behalf of a user.
@@ -121,6 +123,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
     res["locale"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLocale)
     res["mentions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateChatMessageMentionFromDiscriminatorValue , m.SetMentions)
+    res["messageHistory"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateChatMessageHistoryItemFromDiscriminatorValue , m.SetMessageHistory)
     res["messageType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseChatMessageType , m.SetMessageType)
     res["onBehalfOf"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateChatMessageFromIdentitySetFromDiscriminatorValue , m.SetOnBehalfOf)
     res["policyViolation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateChatMessagePolicyViolationFromDiscriminatorValue , m.SetPolicyViolation)
@@ -159,6 +162,10 @@ func (m *ChatMessage) GetLocale()(*string) {
 // GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
 func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     return m.mentions
+}
+// GetMessageHistory gets the messageHistory property value. The messageHistory property
+func (m *ChatMessage) GetMessageHistory()([]ChatMessageHistoryItemable) {
+    return m.messageHistory
 }
 // GetMessageType gets the messageType property value. The messageType property
 func (m *ChatMessage) GetMessageType()(*ChatMessageType) {
@@ -296,6 +303,13 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetMessageHistory() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetMessageHistory())
+        err = writer.WriteCollectionOfObjectValues("messageHistory", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMessageType() != nil {
         cast := (*m.GetMessageType()).String()
         err = writer.WriteStringValue("messageType", &cast)
@@ -414,6 +428,10 @@ func (m *ChatMessage) SetLocale(value *string)() {
 // SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
 func (m *ChatMessage) SetMentions(value []ChatMessageMentionable)() {
     m.mentions = value
+}
+// SetMessageHistory sets the messageHistory property value. The messageHistory property
+func (m *ChatMessage) SetMessageHistory(value []ChatMessageHistoryItemable)() {
+    m.messageHistory = value
 }
 // SetMessageType sets the messageType property value. The messageType property
 func (m *ChatMessage) SetMessageType(value *ChatMessageType)() {

@@ -71,7 +71,7 @@ func NewNotificationMessageTemplatesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewNotificationMessageTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *NotificationMessageTemplatesRequestBuilder) Count()(*i7358ef1daf57b9f088fc0eb04e5b0d55b36ae0f1438e0a69f02ddb484522e7df.CountRequestBuilder) {
     return i7358ef1daf57b9f088fc0eb04e5b0d55b36ae0f1438e0a69f02ddb484522e7df.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -162,7 +162,7 @@ func (m *TermsAndConditionsGroupAssignmentItemRequestBuilder) Patch(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsGroupAssignmentable), nil
 }
-// TermsAndConditions the termsAndConditions property
+// TermsAndConditions provides operations to manage the termsAndConditions property of the microsoft.graph.termsAndConditionsGroupAssignment entity.
 func (m *TermsAndConditionsGroupAssignmentItemRequestBuilder) TermsAndConditions()(*i36a8a9ba4a7ed58edc29f67bae5bd1ac7cbe9420f37761664f39e93f76e2ea76.TermsAndConditionsRequestBuilder) {
     return i36a8a9ba4a7ed58edc29f67bae5bd1ac7cbe9420f37761664f39e93f76e2ea76.NewTermsAndConditionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -56,15 +56,15 @@ type OnlineMeetingItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlternativeRecording the alternativeRecording property
+// AlternativeRecording provides operations to manage the media for the user entity.
 func (m *OnlineMeetingItemRequestBuilder) AlternativeRecording()(*i9751454805a6089ded23da943214fdbe9028e1de749d44a87219eee6d363460e.AlternativeRecordingRequestBuilder) {
     return i9751454805a6089ded23da943214fdbe9028e1de749d44a87219eee6d363460e.NewAlternativeRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceReports the attendanceReports property
+// AttendanceReports provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReports()(*i520e7c5dd1b2e99f3cf76ee8e21c2e881be13a393c94622086fa442c45f27e8f.AttendanceReportsRequestBuilder) {
     return i520e7c5dd1b2e99f3cf76ee8e21c2e881be13a393c94622086fa442c45f27e8f.NewAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.onlineMeetings.item.attendanceReports.item collection
+// AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*id7c487e4aca56b8a93bfe6b7467589181f3783dae6bf5fc07a9339b86fdc342e.MeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,7 +75,7 @@ func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*id7c
     }
     return id7c487e4aca56b8a93bfe6b7467589181f3783dae6bf5fc07a9339b86fdc342e.NewMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AttendeeReport the attendeeReport property
+// AttendeeReport provides operations to manage the media for the user entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendeeReport()(*i98d7ddf881a02ae894ac70424b059f80f8d245996309997a347c38739b78710b.AttendeeReportRequestBuilder) {
     return i98d7ddf881a02ae894ac70424b059f80f8d245996309997a347c38739b78710b.NewAttendeeReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -175,7 +175,7 @@ func (m *OnlineMeetingItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
-// MeetingAttendanceReport the meetingAttendanceReport property
+// MeetingAttendanceReport provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) MeetingAttendanceReport()(*i47c2284118cc15348aa203315c0a4637fa39b84c65e76ecdc39fc175c32c90b9.MeetingAttendanceReportRequestBuilder) {
     return i47c2284118cc15348aa203315c0a4637fa39b84c65e76ecdc39fc175c32c90b9.NewMeetingAttendanceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -198,19 +198,19 @@ func (m *OnlineMeetingItemRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
-// Recording the recording property
+// Recording provides operations to manage the media for the user entity.
 func (m *OnlineMeetingItemRequestBuilder) Recording()(*i2a0e0d48f1a133f80557e834fceb9001d321597582147fa92c8d557b1e60c722.RecordingRequestBuilder) {
     return i2a0e0d48f1a133f80557e834fceb9001d321597582147fa92c8d557b1e60c722.NewRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Registration the registration property
+// Registration provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) Registration()(*i60f747f04da18ee740c2d7cec8aa333e174de51a71c041da85eebd852e1da259.RegistrationRequestBuilder) {
     return i60f747f04da18ee740c2d7cec8aa333e174de51a71c041da85eebd852e1da259.NewRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Transcripts the transcripts property
+// Transcripts provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) Transcripts()(*i637e5f11ab6a0348359da991cd3af4494645f065cc80ca54794bd4a94e21eab5.TranscriptsRequestBuilder) {
     return i637e5f11ab6a0348359da991cd3af4494645f065cc80ca54794bd4a94e21eab5.NewTranscriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TranscriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.onlineMeetings.item.transcripts.item collection
+// TranscriptsById provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*ib6386ca31a5eed83c6e42da470d03db28a79e495504bfb7719dca5c299d78f4f.CallTranscriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,7 +221,7 @@ func (m *OnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*ib6386ca31
     }
     return ib6386ca31a5eed83c6e42da470d03db28a79e495504bfb7719dca5c299d78f4f.NewCallTranscriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// VirtualAppointment the virtualAppointment property
+// VirtualAppointment provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) VirtualAppointment()(*ibb397ff063cfeb8d66586f5575db66957e02eb2a920735e9720ca3df8f70f83d.VirtualAppointmentRequestBuilder) {
     return ibb397ff063cfeb8d66586f5575db66957e02eb2a920735e9720ca3df8f70f83d.NewVirtualAppointmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

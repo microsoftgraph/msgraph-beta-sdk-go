@@ -71,7 +71,7 @@ func NewScheduledActionsForRuleRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewScheduledActionsForRuleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ScheduledActionsForRuleRequestBuilder) Count()(*if5efa7a50aa9a7e475f413a45e5ae14b73ddf106617eadace240ebeceac9f2c3.CountRequestBuilder) {
     return if5efa7a50aa9a7e475f413a45e5ae14b73ddf106617eadace240ebeceac9f2c3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

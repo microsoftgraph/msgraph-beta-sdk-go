@@ -72,7 +72,7 @@ func NewDeletedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DeletedTeamsRequestBuilder) Count()(*iac4883066b853657ce40ba22eef7f68529ed8b1b2a46d427e4913442e919f215.CountRequestBuilder) {
     return iac4883066b853657ce40ba22eef7f68529ed8b1b2a46d427e4913442e919f215.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

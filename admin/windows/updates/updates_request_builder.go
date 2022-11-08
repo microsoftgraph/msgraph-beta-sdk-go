@@ -53,7 +53,7 @@ type UpdatesRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Catalog the catalog property
+// Catalog provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *UpdatesRequestBuilder) Catalog()(*i0475d54fef399e8dd6955c2d001134c125fb7788ce83c57eedfc935bfa992080.CatalogRequestBuilder) {
     return i0475d54fef399e8dd6955c2d001134c125fb7788ce83c57eedfc935bfa992080.NewCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -134,11 +134,11 @@ func (m *UpdatesRequestBuilder) Delete(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// Deployments the deployments property
+// Deployments provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *UpdatesRequestBuilder) Deployments()(*i387197d5cc2dce8dbb3b5340ab9e1213cb3d3d425caddd84e7d1c7ddb338d669.DeploymentsRequestBuilder) {
     return i387197d5cc2dce8dbb3b5340ab9e1213cb3d3d425caddd84e7d1c7ddb338d669.NewDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeploymentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.deployments.item collection
+// DeploymentsById provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *UpdatesRequestBuilder) DeploymentsById(id string)(*ibf1ad675b59509c5f3216e9d430e98ab3b887534afb4bca984ab70b32d39075b.DeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -187,11 +187,11 @@ func (m *UpdatesRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable), nil
 }
-// ResourceConnections the resourceConnections property
+// ResourceConnections provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *UpdatesRequestBuilder) ResourceConnections()(*i7cae3c278653078cae7988a372360ebcb6c74f0411ceaac446eafc4ca93af9cd.ResourceConnectionsRequestBuilder) {
     return i7cae3c278653078cae7988a372360ebcb6c74f0411ceaac446eafc4ca93af9cd.NewResourceConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourceConnectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.resourceConnections.item collection
+// ResourceConnectionsById provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *UpdatesRequestBuilder) ResourceConnectionsById(id string)(*i9e5b5674962e012065869f341294454794369040a3317c85d1086b58099d937b.ResourceConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,11 +202,11 @@ func (m *UpdatesRequestBuilder) ResourceConnectionsById(id string)(*i9e5b5674962
     }
     return i9e5b5674962e012065869f341294454794369040a3317c85d1086b58099d937b.NewResourceConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UpdatableAssets the updatableAssets property
+// UpdatableAssets provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *UpdatesRequestBuilder) UpdatableAssets()(*id8360e8943a0ee251dee4de20317b335abdd17663b8ed227f06c1426f54dc863.UpdatableAssetsRequestBuilder) {
     return id8360e8943a0ee251dee4de20317b335abdd17663b8ed227f06c1426f54dc863.NewUpdatableAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdatableAssetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.updatableAssets.item collection
+// UpdatableAssetsById provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *UpdatesRequestBuilder) UpdatableAssetsById(id string)(*i6ba3b57fd9faa032676b28e7c1ba8fbcadca736ef31ae441fd9cb31c54634f6b.UpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

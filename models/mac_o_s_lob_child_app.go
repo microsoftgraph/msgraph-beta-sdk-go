@@ -5,17 +5,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSLobChildApp contains properties the MacOS LOB App in a bundle package
+// MacOSLobChildApp contains properties of a macOS .app in the package
 type MacOSLobChildApp struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The build number of MacOS Line of Business (LoB) app.
+    // The build number of the app.
     buildNumber *string
-    // The Identity Name.
+    // The bundleId of the app.
     bundleId *string
     // The OdataType property
     odataType *string
-    // The version number of MacOS Line of Business (LoB) app.
+    // The version number of the app.
     versionNumber *string
 }
 // NewMacOSLobChildApp instantiates a new macOSLobChildApp and sets the default values.
@@ -35,11 +35,11 @@ func CreateMacOSLobChildAppFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *MacOSLobChildApp) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetBuildNumber gets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
+// GetBuildNumber gets the buildNumber property value. The build number of the app.
 func (m *MacOSLobChildApp) GetBuildNumber()(*string) {
     return m.buildNumber
 }
-// GetBundleId gets the bundleId property value. The Identity Name.
+// GetBundleId gets the bundleId property value. The bundleId of the app.
 func (m *MacOSLobChildApp) GetBundleId()(*string) {
     return m.bundleId
 }
@@ -56,7 +56,7 @@ func (m *MacOSLobChildApp) GetFieldDeserializers()(map[string]func(i878a80d2330e
 func (m *MacOSLobChildApp) GetOdataType()(*string) {
     return m.odataType
 }
-// GetVersionNumber gets the versionNumber property value. The version number of MacOS Line of Business (LoB) app.
+// GetVersionNumber gets the versionNumber property value. The version number of the app.
 func (m *MacOSLobChildApp) GetVersionNumber()(*string) {
     return m.versionNumber
 }
@@ -98,11 +98,11 @@ func (m *MacOSLobChildApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *MacOSLobChildApp) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetBuildNumber sets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
+// SetBuildNumber sets the buildNumber property value. The build number of the app.
 func (m *MacOSLobChildApp) SetBuildNumber(value *string)() {
     m.buildNumber = value
 }
-// SetBundleId sets the bundleId property value. The Identity Name.
+// SetBundleId sets the bundleId property value. The bundleId of the app.
 func (m *MacOSLobChildApp) SetBundleId(value *string)() {
     m.bundleId = value
 }
@@ -110,7 +110,7 @@ func (m *MacOSLobChildApp) SetBundleId(value *string)() {
 func (m *MacOSLobChildApp) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetVersionNumber sets the versionNumber property value. The version number of MacOS Line of Business (LoB) app.
+// SetVersionNumber sets the versionNumber property value. The version number of the app.
 func (m *MacOSLobChildApp) SetVersionNumber(value *string)() {
     m.versionNumber = value
 }

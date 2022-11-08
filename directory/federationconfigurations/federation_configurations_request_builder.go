@@ -76,7 +76,7 @@ func NewFederationConfigurationsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewFederationConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *FederationConfigurationsRequestBuilder) Count()(*if1bc21dc41b088f141660ec8c155ee764b621b90b8e559a6b231aa713dfe754d.CountRequestBuilder) {
     return if1bc21dc41b088f141660ec8c155ee764b621b90b8e559a6b231aa713dfe754d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

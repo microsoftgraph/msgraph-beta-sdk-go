@@ -145,11 +145,11 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
-// Insights the insights property
+// Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*i67aaa727d73c164087ea2ce778b06cfa6a2637659c79b79f9aa2a76313e2af81.InsightsRequestBuilder) {
     return i67aaa727d73c164087ea2ce778b06cfa6a2637659c79b79f9aa2a76313e2af81.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InsightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.decisions.item.insights.item collection
+// InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*ie44e1255b972f859503eb871261f069d2ff1e5a0b64d5c67e3a2e405706b2c36.GovernanceInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -160,7 +160,7 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id str
     }
     return ie44e1255b972f859503eb871261f069d2ff1e5a0b64d5c67e3a2e405706b2c36.NewGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instance the instance property
+// Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*ifb44db4feb17e6296767ce4346bc33d57927ca8f62aa8ceadf20daf20778e8cc.InstanceRequestBuilder) {
     return ifb44db4feb17e6296767ce4346bc33d57927ca8f62aa8ceadf20daf20778e8cc.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

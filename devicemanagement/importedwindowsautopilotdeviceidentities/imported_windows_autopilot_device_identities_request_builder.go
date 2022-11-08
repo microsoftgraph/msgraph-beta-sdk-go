@@ -72,7 +72,7 @@ func NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Count()(*i611aa4102282c0f13028b90d38cf1cff4567e84626f417e14f811917b4228636.CountRequestBuilder) {
     return i611aa4102282c0f13028b90d38cf1cff4567e84626f417e14f811917b4228636.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Get(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable), nil
 }
-// Import_escaped the import property
+// Import_escaped provides operations to call the import method.
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Import_escaped()(*i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34.ImportRequestBuilder) {
     return i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34.NewImportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

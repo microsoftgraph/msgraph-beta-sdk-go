@@ -109,11 +109,11 @@ func (m *AuthorizationPolicyItemRequestBuilder) CreatePatchRequestInformation(ct
     }
     return requestInfo, nil
 }
-// DefaultUserRoleOverrides the defaultUserRoleOverrides property
+// DefaultUserRoleOverrides provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.
 func (m *AuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverrides()(*i04b2dcef167a2cae4f7fe917f68d75103bd1143f7e59881482a2a8dce2921570.DefaultUserRoleOverridesRequestBuilder) {
     return i04b2dcef167a2cae4f7fe917f68d75103bd1143f7e59881482a2a8dce2921570.NewDefaultUserRoleOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DefaultUserRoleOverridesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.authorizationPolicy.item.defaultUserRoleOverrides.item collection
+// DefaultUserRoleOverridesById provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.
 func (m *AuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverridesById(id string)(*if552963b64d01abf5402660068a63a336053e969fbe13841bbe4817b65852c68.DefaultUserRoleOverrideItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

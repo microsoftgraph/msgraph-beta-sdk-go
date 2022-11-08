@@ -71,7 +71,7 @@ func NewComanagementEligibleDevicesRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewComanagementEligibleDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ComanagementEligibleDevicesRequestBuilder) Count()(*i87063f42c0f588365586c95ca2c2af862950c819d1bb0211097800240c7d6d35.CountRequestBuilder) {
     return i87063f42c0f588365586c95ca2c2af862950c819d1bb0211097800240c7d6d35.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

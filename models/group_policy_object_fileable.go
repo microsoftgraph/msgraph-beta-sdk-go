@@ -14,9 +14,11 @@ type GroupPolicyObjectFileable interface {
     GetGroupPolicyObjectId()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOuDistinguishedName()(*string)
+    GetRoleScopeTagIds()([]string)
     SetContent(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetGroupPolicyObjectId(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOuDistinguishedName(value *string)()
+    SetRoleScopeTagIds(value []string)()
 }

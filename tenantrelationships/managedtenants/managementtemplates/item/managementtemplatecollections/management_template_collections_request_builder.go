@@ -64,7 +64,7 @@ func NewManagementTemplateCollectionsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateCollectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagementTemplateCollectionsRequestBuilder) Count()(*i999a5e0e8c717c32ff63a7921306ca0d74001ccd7f622d7de5cffa481b6c4246.CountRequestBuilder) {
     return i999a5e0e8c717c32ff63a7921306ca0d74001ccd7f622d7de5cffa481b6c4246.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

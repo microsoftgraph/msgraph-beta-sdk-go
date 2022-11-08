@@ -47,7 +47,7 @@ type ZebraFotaDeploymentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *ZebraFotaDeploymentItemRequestBuilder) Cancel()(*i81f9f9d1bf36681f68e2d4b78594e45826a0b117cdd7a64850049db421cad169.CancelRequestBuilder) {
     return i81f9f9d1bf36681f68e2d4b78594e45826a0b117cdd7a64850049db421cad169.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

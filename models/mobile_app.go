@@ -107,6 +107,8 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMacOSLobApp(), nil
                     case "#microsoft.graph.macOSMdatpApp":
                         return NewMacOSMdatpApp(), nil
+                    case "#microsoft.graph.macOSMicrosoftDefenderApp":
+                        return NewMacOSMicrosoftDefenderApp(), nil
                     case "#microsoft.graph.macOSMicrosoftEdgeApp":
                         return NewMacOSMicrosoftEdgeApp(), nil
                     case "#microsoft.graph.macOSOfficeSuiteApp":

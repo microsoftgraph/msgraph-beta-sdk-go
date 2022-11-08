@@ -73,11 +73,11 @@ type EntitlementManagementRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageAssignmentApprovals the accessPackageAssignmentApprovals property
+// AccessPackageAssignmentApprovals provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals()(*i4457cf48628c9e6d5d1e3963ea8a19dd7f20c98f2fd6035004babfeb7e44fbc8.AccessPackageAssignmentApprovalsRequestBuilder) {
     return i4457cf48628c9e6d5d1e3963ea8a19dd7f20c98f2fd6035004babfeb7e44fbc8.NewAccessPackageAssignmentApprovalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageAssignmentApprovalsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentApprovals.item collection
+// AccessPackageAssignmentApprovalsById provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsById(id string)(*ifa7e2fb3dcb6477dacae87733273579930d76bee0f987eee04a36237466ad30b.ApprovalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -88,11 +88,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsBy
     }
     return ifa7e2fb3dcb6477dacae87733273579930d76bee0f987eee04a36237466ad30b.NewApprovalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageAssignmentPolicies the accessPackageAssignmentPolicies property
+// AccessPackageAssignmentPolicies provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentPolicies()(*i511c33fd684f429fa206d02a10594bbfb5f9acceeb4f93b868ea9062ddbb0c0f.AccessPackageAssignmentPoliciesRequestBuilder) {
     return i511c33fd684f429fa206d02a10594bbfb5f9acceeb4f93b868ea9062ddbb0c0f.NewAccessPackageAssignmentPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageAssignmentPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.item collection
+// AccessPackageAssignmentPoliciesById provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentPoliciesById(id string)(*i259297720910df1e18cab41eaf6e93c6e506e2f6ead7e552913518ba4de7df35.AccessPackageAssignmentPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -103,11 +103,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentPoliciesByI
     }
     return i259297720910df1e18cab41eaf6e93c6e506e2f6ead7e552913518ba4de7df35.NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageAssignmentRequests the accessPackageAssignmentRequests property
+// AccessPackageAssignmentRequests provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentRequests()(*i824703be434261db4e58f4b65123444442b5ebe1eb3fb9b603f8864af564b622.AccessPackageAssignmentRequestsRequestBuilder) {
     return i824703be434261db4e58f4b65123444442b5ebe1eb3fb9b603f8864af564b622.NewAccessPackageAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageAssignmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item collection
+// AccessPackageAssignmentRequestsById provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentRequestsById(id string)(*i76c412e0065634c6fc606ecd0b6e09322c5b7f7b51446f949b2f794f2fc40926.AccessPackageAssignmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -118,11 +118,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentRequestsByI
     }
     return i76c412e0065634c6fc606ecd0b6e09322c5b7f7b51446f949b2f794f2fc40926.NewAccessPackageAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageAssignmentResourceRoles the accessPackageAssignmentResourceRoles property
+// AccessPackageAssignmentResourceRoles provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentResourceRoles()(*iba574113ccbfd66c0b718094a7417a26f2be8bc7a95f74bfffd609a4a5312cd1.AccessPackageAssignmentResourceRolesRequestBuilder) {
     return iba574113ccbfd66c0b718094a7417a26f2be8bc7a95f74bfffd609a4a5312cd1.NewAccessPackageAssignmentResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageAssignmentResourceRolesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item collection
+// AccessPackageAssignmentResourceRolesById provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentResourceRolesById(id string)(*i46b0d052826008fb4b9e2de18eaadb28b08fda0c4481c35e9fdf6c08800480a1.AccessPackageAssignmentResourceRoleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -133,11 +133,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentResourceRol
     }
     return i46b0d052826008fb4b9e2de18eaadb28b08fda0c4481c35e9fdf6c08800480a1.NewAccessPackageAssignmentResourceRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageAssignments the accessPackageAssignments property
+// AccessPackageAssignments provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignments()(*i288a3763f785b246d1da17397590bd077e283e82acf56e8c177d923272c52724.AccessPackageAssignmentsRequestBuilder) {
     return i288a3763f785b246d1da17397590bd077e283e82acf56e8c177d923272c52724.NewAccessPackageAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignments.item collection
+// AccessPackageAssignmentsById provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentsById(id string)(*ib0d512b118f91cf1bc458b5feacf403e01f72b051f66b4e84985a41cb52dab99.AccessPackageAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -148,11 +148,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentsById(id st
     }
     return ib0d512b118f91cf1bc458b5feacf403e01f72b051f66b4e84985a41cb52dab99.NewAccessPackageAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageCatalogs the accessPackageCatalogs property
+// AccessPackageCatalogs provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogs()(*i7b6be768761b0aa85e64ce3193b16f7637eb84e57ba59b80caa82554e9087b35.AccessPackageCatalogsRequestBuilder) {
     return i7b6be768761b0aa85e64ce3193b16f7637eb84e57ba59b80caa82554e9087b35.NewAccessPackageCatalogsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageCatalogsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageCatalogs.item collection
+// AccessPackageCatalogsById provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogsById(id string)(*i82310b3d54600cbafcfbb579b511cc82bb29ed7fb49516f06dce0fcc7951bdf0.AccessPackageCatalogItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -163,11 +163,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogsById(id strin
     }
     return i82310b3d54600cbafcfbb579b511cc82bb29ed7fb49516f06dce0fcc7951bdf0.NewAccessPackageCatalogItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageResourceEnvironments the accessPackageResourceEnvironments property
+// AccessPackageResourceEnvironments provides operations to manage the accessPackageResourceEnvironments property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceEnvironments()(*i0d1afe57eb8a36b53e5129a0b937776c5fcca08608b49a51664fbd3159daa08a.AccessPackageResourceEnvironmentsRequestBuilder) {
     return i0d1afe57eb8a36b53e5129a0b937776c5fcca08608b49a51664fbd3159daa08a.NewAccessPackageResourceEnvironmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceEnvironmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageResourceEnvironments.item collection
+// AccessPackageResourceEnvironmentsById provides operations to manage the accessPackageResourceEnvironments property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceEnvironmentsById(id string)(*id480c6778d8753dfd5aecaa8cfff24f904f1d9cfb89137f57d90578c37490dde.AccessPackageResourceEnvironmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -178,11 +178,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceEnvironmentsB
     }
     return id480c6778d8753dfd5aecaa8cfff24f904f1d9cfb89137f57d90578c37490dde.NewAccessPackageResourceEnvironmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageResourceRequests the accessPackageResourceRequests property
+// AccessPackageResourceRequests provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRequests()(*ieba606bbb218a20cbd99e9bc1e380a2e15b31da11df8da17e8bcdbcf42633d86.AccessPackageResourceRequestsRequestBuilder) {
     return ieba606bbb218a20cbd99e9bc1e380a2e15b31da11df8da17e8bcdbcf42633d86.NewAccessPackageResourceRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageResourceRequests.item collection
+// AccessPackageResourceRequestsById provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRequestsById(id string)(*if945e55d38fc375c56dbf90cf6e39a7d61a6cd01059d47fb2b23e38f45842f3e.AccessPackageResourceRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -193,11 +193,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRequestsById(
     }
     return if945e55d38fc375c56dbf90cf6e39a7d61a6cd01059d47fb2b23e38f45842f3e.NewAccessPackageResourceRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageResourceRoleScopes the accessPackageResourceRoleScopes property
+// AccessPackageResourceRoleScopes provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRoleScopes()(*i5c68f346a5bdbb8fe1dea52fb202c7346657f21eeba8976e031c861e4999a938.AccessPackageResourceRoleScopesRequestBuilder) {
     return i5c68f346a5bdbb8fe1dea52fb202c7346657f21eeba8976e031c861e4999a938.NewAccessPackageResourceRoleScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceRoleScopesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageResourceRoleScopes.item collection
+// AccessPackageResourceRoleScopesById provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRoleScopesById(id string)(*i73885afb0012ccafe2d98c7ad3770430abc8b68787e78c60063bf998dee8be11.AccessPackageResourceRoleScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,11 +208,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRoleScopesByI
     }
     return i73885afb0012ccafe2d98c7ad3770430abc8b68787e78c60063bf998dee8be11.NewAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackageResources the accessPackageResources property
+// AccessPackageResources provides operations to manage the accessPackageResources property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResources()(*if86a04543e04099c6faebfb83f2509f6287141cd5f4ff9c77352a589372a8f17.AccessPackageResourcesRequestBuilder) {
     return if86a04543e04099c6faebfb83f2509f6287141cd5f4ff9c77352a589372a8f17.NewAccessPackageResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageResources.item collection
+// AccessPackageResourcesById provides operations to manage the accessPackageResources property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourcesById(id string)(*ia3f92f11727041477c1ada6bfc08139cadda160d066f173db00cce4f8358bc50.AccessPackageResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -223,11 +223,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourcesById(id stri
     }
     return ia3f92f11727041477c1ada6bfc08139cadda160d066f173db00cce4f8358bc50.NewAccessPackageResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AccessPackages the accessPackages property
+// AccessPackages provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*ib411956083b5fb15c9a26abd5c5030d74fc10163e4c5a0f8d95848eca3093621.AccessPackagesRequestBuilder) {
     return ib411956083b5fb15c9a26abd5c5030d74fc10163e4c5a0f8d95848eca3093621.NewAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item collection
+// AccessPackagesById provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*i832824d2195e5d19b0fbdef0bb45eca79f632cf74d39d2b1535ca2c63e49b230.AccessPackageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -238,11 +238,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*i83
     }
     return i832824d2195e5d19b0fbdef0bb45eca79f632cf74d39d2b1535ca2c63e49b230.NewAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ConnectedOrganizations the connectedOrganizations property
+// ConnectedOrganizations provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) ConnectedOrganizations()(*i3d425a2bba157a442f755259375e0a18ff87074e6c0ec53bac6d292a43602107.ConnectedOrganizationsRequestBuilder) {
     return i3d425a2bba157a442f755259375e0a18ff87074e6c0ec53bac6d292a43602107.NewConnectedOrganizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConnectedOrganizationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.connectedOrganizations.item collection
+// ConnectedOrganizationsById provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id string)(*i6733f0715c511b6a99e8e8280d52d93704622cda212a0d03f6340a8c98c403e5.ConnectedOrganizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -368,15 +368,15 @@ func (m *EntitlementManagementRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementable), nil
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) Settings()(*i8d110cb2de6a3e3af2c3ad8f85fecae6316e989d5010ae9071a62d837f70c4f9.SettingsRequestBuilder) {
     return i8d110cb2de6a3e3af2c3ad8f85fecae6316e989d5010ae9071a62d837f70c4f9.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Subjects the subjects property
+// Subjects provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) Subjects()(*i0853d278ab36be8628eb824cda3062a667bc9eae8e6d729f54513994fc053dca.SubjectsRequestBuilder) {
     return i0853d278ab36be8628eb824cda3062a667bc9eae8e6d729f54513994fc053dca.NewSubjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubjectsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.subjects.item collection
+// SubjectsById provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) SubjectsById(id string)(*i2e7ef9a8ec2b913b75870ed15c53574b606714d508a7defd8dd58d613febe33d.AccessPackageSubjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

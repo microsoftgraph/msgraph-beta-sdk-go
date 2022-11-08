@@ -89,7 +89,7 @@ func (m *ComplianceRequestBuilder) CreatePatchRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// Ediscovery the ediscovery property
+// Ediscovery provides operations to manage the ediscovery property of the microsoft.graph.compliance entity.
 func (m *ComplianceRequestBuilder) Ediscovery()(*iefc21b71d5fceec4351c82c4647bc3423b0a1685f7c40af8a7b6cad3767759ae.EdiscoveryRequestBuilder) {
     return iefc21b71d5fceec4351c82c4647bc3423b0a1685f7c40af8a7b6cad3767759ae.NewEdiscoveryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

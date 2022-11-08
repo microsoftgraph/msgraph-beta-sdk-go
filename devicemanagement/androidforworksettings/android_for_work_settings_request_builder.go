@@ -50,7 +50,7 @@ type AndroidForWorkSettingsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CompleteSignup the completeSignup property
+// CompleteSignup provides operations to call the completeSignup method.
 func (m *AndroidForWorkSettingsRequestBuilder) CompleteSignup()(*i280e19d80d7a529d2b9933cf3044f19490e2f99605f9859eeb0710b5d4c6b359.CompleteSignupRequestBuilder) {
     return i280e19d80d7a529d2b9933cf3044f19490e2f99605f9859eeb0710b5d4c6b359.NewCompleteSignupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -169,15 +169,15 @@ func (m *AndroidForWorkSettingsRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable), nil
 }
-// RequestSignupUrl the requestSignupUrl property
+// RequestSignupUrl provides operations to call the requestSignupUrl method.
 func (m *AndroidForWorkSettingsRequestBuilder) RequestSignupUrl()(*i61c16d732624a212d9246ecf43fd01db8d4bc43debd10e8907b417795c13f8ff.RequestSignupUrlRequestBuilder) {
     return i61c16d732624a212d9246ecf43fd01db8d4bc43debd10e8907b417795c13f8ff.NewRequestSignupUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SyncApps the syncApps property
+// SyncApps provides operations to call the syncApps method.
 func (m *AndroidForWorkSettingsRequestBuilder) SyncApps()(*i97a07e45ebea436c88e03068b5e337121e7e6f6d82dd6f519d86bd92618a0817.SyncAppsRequestBuilder) {
     return i97a07e45ebea436c88e03068b5e337121e7e6f6d82dd6f519d86bd92618a0817.NewSyncAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Unbind the unbind property
+// Unbind provides operations to call the unbind method.
 func (m *AndroidForWorkSettingsRequestBuilder) Unbind()(*ibc8cdcda9d0880d123b6a234fd0980335960dc7e2f066cbce430ed5b5bd54ef8.UnbindRequestBuilder) {
     return ibc8cdcda9d0880d123b6a234fd0980335960dc7e2f066cbce430ed5b5bd54ef8.NewUnbindRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

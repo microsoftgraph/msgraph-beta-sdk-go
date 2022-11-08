@@ -146,7 +146,7 @@ func (m *GovernanceRoleAssignmentItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable), nil
 }
-// LinkedEligibleRoleAssignment the linkedEligibleRoleAssignment property
+// LinkedEligibleRoleAssignment provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *GovernanceRoleAssignmentItemRequestBuilder) LinkedEligibleRoleAssignment()(*i876c35d46b9a64c2df63f14dccb2bb5569ad62011606992b4ccad52c24a903e2.LinkedEligibleRoleAssignmentRequestBuilder) {
     return i876c35d46b9a64c2df63f14dccb2bb5569ad62011606992b4ccad52c24a903e2.NewLinkedEligibleRoleAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -169,15 +169,15 @@ func (m *GovernanceRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable), nil
 }
-// Resource the resource property
+// Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *GovernanceRoleAssignmentItemRequestBuilder) Resource()(*i2b3382986fdb739ba35f668f4bea4740948bbcfbe9514e3d2ab0b46b918dc370.ResourceRequestBuilder) {
     return i2b3382986fdb739ba35f668f4bea4740948bbcfbe9514e3d2ab0b46b918dc370.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinition the roleDefinition property
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *GovernanceRoleAssignmentItemRequestBuilder) RoleDefinition()(*if6d3831ffece50e2ac8c37f80430f901c45683848308491ebb6384930aba34c0.RoleDefinitionRequestBuilder) {
     return if6d3831ffece50e2ac8c37f80430f901c45683848308491ebb6384930aba34c0.NewRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Subject the subject property
+// Subject provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignment entity.
 func (m *GovernanceRoleAssignmentItemRequestBuilder) Subject()(*i97a2e84d66100d4dfb544e7b605b72a4492072e76020165241c6bd62b0aa2dc5.SubjectRequestBuilder) {
     return i97a2e84d66100d4dfb544e7b605b72a4492072e76020165241c6bd62b0aa2dc5.NewSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

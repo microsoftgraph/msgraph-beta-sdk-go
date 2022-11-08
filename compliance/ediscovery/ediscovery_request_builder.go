@@ -48,11 +48,11 @@ type EdiscoveryRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cases the cases property
+// Cases provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
 func (m *EdiscoveryRequestBuilder) Cases()(*i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.CasesRequestBuilder) {
     return i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CasesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item collection
+// CasesById provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
 func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.CaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

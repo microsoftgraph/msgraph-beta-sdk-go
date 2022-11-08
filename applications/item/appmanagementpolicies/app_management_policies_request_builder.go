@@ -65,7 +65,7 @@ func NewAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AppManagementPoliciesRequestBuilder) Count()(*i494befe9e10024b14b7a34c156ca01699d6c87fdb1afdafa57b3483cbc4b0025.CountRequestBuilder) {
     return i494befe9e10024b14b7a34c156ca01699d6c87fdb1afdafa57b3483cbc4b0025.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *AppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of application entities.
 func (m *AppManagementPoliciesRequestBuilder) Ref()(*if8d921a2197e1c2db547d5610111532d1766c5db9692b825698130064c138c12.RefRequestBuilder) {
     return if8d921a2197e1c2db547d5610111532d1766c5db9692b825698130064c138c12.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

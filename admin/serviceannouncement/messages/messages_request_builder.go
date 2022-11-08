@@ -58,7 +58,7 @@ type MessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Archive the archive property
+// Archive provides operations to call the archive method.
 func (m *MessagesRequestBuilder) Archive()(*icbd43ca604dd53bf065ea6257222903649f6b57753bfe458b714f37a75dca208.ArchiveRequestBuilder) {
     return icbd43ca604dd53bf065ea6257222903649f6b57753bfe458b714f37a75dca208.NewArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -81,7 +81,7 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MessagesRequestBuilder) Count()(*i1aa791957161149aab4db21f948fcd8c8275c9ea7c5c4177f0e7d036e3a941c6.CountRequestBuilder) {
     return i1aa791957161149aab4db21f948fcd8c8275c9ea7c5c4177f0e7d036e3a941c6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -115,7 +115,7 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// Favorite the favorite property
+// Favorite provides operations to call the favorite method.
 func (m *MessagesRequestBuilder) Favorite()(*i5f80f1e7991cbd0c6f9ff2d8c45c4858d507b7bba3f68978bb3fe6dc2af201eb.FavoriteRequestBuilder) {
     return i5f80f1e7991cbd0c6f9ff2d8c45c4858d507b7bba3f68978bb3fe6dc2af201eb.NewFavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -138,11 +138,11 @@ func (m *MessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceUpdateMessageCollectionResponseable), nil
 }
-// MarkRead the markRead property
+// MarkRead provides operations to call the markRead method.
 func (m *MessagesRequestBuilder) MarkRead()(*ib2da2e30bf0b9948932c34a14cde77af0959c19fa87f122e064fb88a21ea8e4e.MarkReadRequestBuilder) {
     return ib2da2e30bf0b9948932c34a14cde77af0959c19fa87f122e064fb88a21ea8e4e.NewMarkReadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MarkUnread the markUnread property
+// MarkUnread provides operations to call the markUnread method.
 func (m *MessagesRequestBuilder) MarkUnread()(*i7bd438807fb58b51e66ef1d0e2bdc47e74daeff3fe1a24ff3fe519435f47cf83.MarkUnreadRequestBuilder) {
     return i7bd438807fb58b51e66ef1d0e2bdc47e74daeff3fe1a24ff3fe519435f47cf83.NewMarkUnreadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -165,11 +165,11 @@ func (m *MessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceUpdateMessageable), nil
 }
-// Unarchive the unarchive property
+// Unarchive provides operations to call the unarchive method.
 func (m *MessagesRequestBuilder) Unarchive()(*icc1be3ce3319b01a9ddfc76049beefcc1ccda50b3e6821435cd16b349c738c4c.UnarchiveRequestBuilder) {
     return icc1be3ce3319b01a9ddfc76049beefcc1ccda50b3e6821435cd16b349c738c4c.NewUnarchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Unfavorite the unfavorite property
+// Unfavorite provides operations to call the unfavorite method.
 func (m *MessagesRequestBuilder) Unfavorite()(*i205a7b20019ec5ab2d4fd32c699b4ba886d1261919e1a47f2ecae1252cd1a112.UnfavoriteRequestBuilder) {
     return i205a7b20019ec5ab2d4fd32c699b4ba886d1261919e1a47f2ecae1252cd1a112.NewUnfavoriteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

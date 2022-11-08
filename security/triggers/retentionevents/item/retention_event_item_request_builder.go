@@ -162,7 +162,7 @@ func (m *RetentionEventItemRequestBuilder) Patch(ctx context.Context, body i084f
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventable), nil
 }
-// RetentionEventType the retentionEventType property
+// RetentionEventType provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionEvent entity.
 func (m *RetentionEventItemRequestBuilder) RetentionEventType()(*ifb1d3796871d070650a466cade5f4f5a8d3deabc60f884b0d052926674e916ec.RetentionEventTypeRequestBuilder) {
     return ifb1d3796871d070650a466cade5f4f5a8d3deabc60f884b0d052926674e916ec.NewRetentionEventTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

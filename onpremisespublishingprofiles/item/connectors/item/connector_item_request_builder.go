@@ -144,7 +144,7 @@ func (m *ConnectorItemRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable), nil
 }
-// MemberOf the memberOf property
+// MemberOf provides operations to manage the memberOf property of the microsoft.graph.connector entity.
 func (m *ConnectorItemRequestBuilder) MemberOf()(*i3a3e2d37a5e8e831e1673b56ee3dbbfed30a50f8cbae7888645579c7208daad8.MemberOfRequestBuilder) {
     return i3a3e2d37a5e8e831e1673b56ee3dbbfed30a50f8cbae7888645579c7208daad8.NewMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

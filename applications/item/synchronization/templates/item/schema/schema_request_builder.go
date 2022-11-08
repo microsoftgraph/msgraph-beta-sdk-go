@@ -128,11 +128,11 @@ func (m *SchemaRequestBuilder) Delete(ctx context.Context, requestConfiguration 
     }
     return nil
 }
-// Directories the directories property
+// Directories provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
 func (m *SchemaRequestBuilder) Directories()(*i3f8397838cdcbf421c948cec12bb6c8ae29443adfbfffafafcb0800257df0249.DirectoriesRequestBuilder) {
     return i3f8397838cdcbf421c948cec12bb6c8ae29443adfbfffafafcb0800257df0249.NewDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DirectoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.synchronization.templates.item.schema.directories.item collection
+// DirectoriesById provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
 func (m *SchemaRequestBuilder) DirectoriesById(id string)(*iffe98a2db6c23deb1db6d3a5137091a707788c003479b60e45e086d4e05d1658.DirectoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -170,7 +170,7 @@ func (m *SchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *Sc
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable), nil
 }
-// ParseExpression the parseExpression property
+// ParseExpression provides operations to call the parseExpression method.
 func (m *SchemaRequestBuilder) ParseExpression()(*i5b8f0ae1eb8c05092bdc285776ceda0a64242dbf7a6bd4a2dea538cb5922a020.ParseExpressionRequestBuilder) {
     return i5b8f0ae1eb8c05092bdc285776ceda0a64242dbf7a6bd4a2dea538cb5922a020.NewParseExpressionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

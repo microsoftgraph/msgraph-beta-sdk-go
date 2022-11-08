@@ -72,7 +72,7 @@ func NewIosManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *IosManagedAppProtectionsRequestBuilder) Count()(*i714f5cdac6c17be27e7f218c1afff3ceb2db34e8c35e6fddbbcfc20b0ac8ae9b.CountRequestBuilder) {
     return i714f5cdac6c17be27e7f218c1afff3ceb2db34e8c35e6fddbbcfc20b0ac8ae9b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *IosManagedAppProtectionsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionCollectionResponseable), nil
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *IosManagedAppProtectionsRequestBuilder) HasPayloadLinks()(*ied7d406e705d08cc80c65382fe67b4bd2f7ef60187e282e985f0e2680a380f79.HasPayloadLinksRequestBuilder) {
     return ied7d406e705d08cc80c65382fe67b4bd2f7ef60187e282e985f0e2680a380f79.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

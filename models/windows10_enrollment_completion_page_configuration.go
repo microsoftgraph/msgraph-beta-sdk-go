@@ -24,6 +24,8 @@ type Windows10EnrollmentCompletionPageConfiguration struct {
     disableUserStatusTrackingAfterFirstUser *bool
     // Set installation progress timeout in minutes
     installProgressTimeoutInMinutes *int32
+    // Allows quality updates installation during OOBE
+    installQualityUpdates *bool
     // Selected applications to track the installation status
     selectedMobileAppIds []string
     // Show or hide installation progress to user
@@ -83,6 +85,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()
     res["customErrorMessage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomErrorMessage)
     res["disableUserStatusTrackingAfterFirstUser"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDisableUserStatusTrackingAfterFirstUser)
     res["installProgressTimeoutInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetInstallProgressTimeoutInMinutes)
+    res["installQualityUpdates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetInstallQualityUpdates)
     res["selectedMobileAppIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSelectedMobileAppIds)
     res["showInstallationProgress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShowInstallationProgress)
     res["trackInstallProgressForAutopilotOnly"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetTrackInstallProgressForAutopilotOnly)
@@ -91,6 +94,10 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()
 // GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallProgressTimeoutInMinutes()(*int32) {
     return m.installProgressTimeoutInMinutes
+}
+// GetInstallQualityUpdates gets the installQualityUpdates property value. Allows quality updates installation during OOBE
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallQualityUpdates()(*bool) {
+    return m.installQualityUpdates
 }
 // GetSelectedMobileAppIds gets the selectedMobileAppIds property value. Selected applications to track the installation status
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetSelectedMobileAppIds()([]string) {
@@ -158,6 +165,12 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) Serialize(writer i878a8
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("installQualityUpdates", m.GetInstallQualityUpdates())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSelectedMobileAppIds() != nil {
         err = writer.WriteCollectionOfStringValues("selectedMobileAppIds", m.GetSelectedMobileAppIds())
         if err != nil {
@@ -209,6 +222,10 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) SetDisableUserStatusTra
 // SetInstallProgressTimeoutInMinutes sets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetInstallProgressTimeoutInMinutes(value *int32)() {
     m.installProgressTimeoutInMinutes = value
+}
+// SetInstallQualityUpdates sets the installQualityUpdates property value. Allows quality updates installation during OOBE
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetInstallQualityUpdates(value *bool)() {
+    m.installQualityUpdates = value
 }
 // SetSelectedMobileAppIds sets the selectedMobileAppIds property value. Selected applications to track the installation status
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetSelectedMobileAppIds(value []string)() {

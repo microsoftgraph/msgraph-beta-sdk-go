@@ -153,11 +153,11 @@ func (m *EducationSubmissionItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable), nil
 }
-// Outcomes the outcomes property
+// Outcomes provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
 func (m *EducationSubmissionItemRequestBuilder) Outcomes()(*ibcc8e1dc67b4ce1248f639c6349e995cf30c1f60e0a8a0f6a9268116b9d0bcc2.OutcomesRequestBuilder) {
     return ibcc8e1dc67b4ce1248f639c6349e995cf30c1f60e0a8a0f6a9268116b9d0bcc2.NewOutcomesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OutcomesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.assignments.item.submissions.item.outcomes.item collection
+// OutcomesById provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
 func (m *EducationSubmissionItemRequestBuilder) OutcomesById(id string)(*i1385c8c70a4568d699eec3bf9f510616b7cc7e4ff29e686c620650de2efd46c7.EducationOutcomeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -187,15 +187,15 @@ func (m *EducationSubmissionItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable), nil
 }
-// Reassign the reassign property
+// Reassign provides operations to call the reassign method.
 func (m *EducationSubmissionItemRequestBuilder) Reassign()(*ie320e3441c7e9ca041b3cf19bcb344f0d5b5f9f316e71bdad73de83948ecfd9d.ReassignRequestBuilder) {
     return ie320e3441c7e9ca041b3cf19bcb344f0d5b5f9f316e71bdad73de83948ecfd9d.NewReassignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Resources the resources property
+// Resources provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.
 func (m *EducationSubmissionItemRequestBuilder) Resources()(*id44a147cea37ad0c66060fd79a1e7b15bfef922b94b8f38814b921a5ddf5959b.ResourcesRequestBuilder) {
     return id44a147cea37ad0c66060fd79a1e7b15bfef922b94b8f38814b921a5ddf5959b.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.assignments.item.submissions.item.resources.item collection
+// ResourcesById provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.
 func (m *EducationSubmissionItemRequestBuilder) ResourcesById(id string)(*ic303354d0ebbaf25e55517d0e5a70f2d884d74d3f80686736f2592b8b57dc23f.EducationSubmissionResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -206,23 +206,23 @@ func (m *EducationSubmissionItemRequestBuilder) ResourcesById(id string)(*ic3033
     }
     return ic303354d0ebbaf25e55517d0e5a70f2d884d74d3f80686736f2592b8b57dc23f.NewEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Return_escaped the return property
+// Return_escaped provides operations to call the return method.
 func (m *EducationSubmissionItemRequestBuilder) Return_escaped()(*i0f5790d63826a04042952fe0a2e6ce4da66a243be29f0123091a6f2dd74240d6.ReturnRequestBuilder) {
     return i0f5790d63826a04042952fe0a2e6ce4da66a243be29f0123091a6f2dd74240d6.NewReturnRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetUpResourcesFolder the setUpResourcesFolder property
+// SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
 func (m *EducationSubmissionItemRequestBuilder) SetUpResourcesFolder()(*ibfa40cb573543c5c9e3abd6e7b436a68e2c2eb18727d422001d93fe33eacd8fc.SetUpResourcesFolderRequestBuilder) {
     return ibfa40cb573543c5c9e3abd6e7b436a68e2c2eb18727d422001d93fe33eacd8fc.NewSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Submit the submit property
+// Submit provides operations to call the submit method.
 func (m *EducationSubmissionItemRequestBuilder) Submit()(*i22195e779b2240c1f83dca2de3490bd1d1e13fa927f487556ff7ecbfd7b62375.SubmitRequestBuilder) {
     return i22195e779b2240c1f83dca2de3490bd1d1e13fa927f487556ff7ecbfd7b62375.NewSubmitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubmittedResources the submittedResources property
+// SubmittedResources provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
 func (m *EducationSubmissionItemRequestBuilder) SubmittedResources()(*icfec2a32428842d30df10f523da9e4fc526b8b7c836071866938ed6be3843d1f.SubmittedResourcesRequestBuilder) {
     return icfec2a32428842d30df10f523da9e4fc526b8b7c836071866938ed6be3843d1f.NewSubmittedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubmittedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.assignments.item.submissions.item.submittedResources.item collection
+// SubmittedResourcesById provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
 func (m *EducationSubmissionItemRequestBuilder) SubmittedResourcesById(id string)(*ie785db4b38f9f4ba6fc3e6cfb4164fd07a4b957a6f8e1b2b297b1e8dfeb71a05.EducationSubmissionResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -233,7 +233,7 @@ func (m *EducationSubmissionItemRequestBuilder) SubmittedResourcesById(id string
     }
     return ie785db4b38f9f4ba6fc3e6cfb4164fd07a4b957a6f8e1b2b297b1e8dfeb71a05.NewEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Unsubmit the unsubmit property
+// Unsubmit provides operations to call the unsubmit method.
 func (m *EducationSubmissionItemRequestBuilder) Unsubmit()(*ifbd6f6420c2c3a622cde0cdd389b1186926a6ad859deff11e8e961ce84edf272.UnsubmitRequestBuilder) {
     return ifbd6f6420c2c3a622cde0cdd389b1186926a6ad859deff11e8e961ce84edf272.NewUnsubmitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -48,7 +48,7 @@ type PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Cancel()(*ib239ddd157212e9b2de338617aed29750c7fa7cb6355343e0685a26014096aa8.CancelRequestBuilder) {
     return ib239ddd157212e9b2de338617aed29750c7fa7cb6355343e0685a26014096aa8.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable), nil
 }
-// RoleInfo the roleInfo property
+// RoleInfo provides operations to manage the roleInfo property of the microsoft.graph.privilegedRoleAssignmentRequest entity.
 func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) RoleInfo()(*ieff61d093ce682e939abbaecbc1b098cece4e7f58170d229e88f2f7f6b9511ee.RoleInfoRequestBuilder) {
     return ieff61d093ce682e939abbaecbc1b098cece4e7f58170d229e88f2f7f6b9511ee.NewRoleInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

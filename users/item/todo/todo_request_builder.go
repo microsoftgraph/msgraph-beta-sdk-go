@@ -144,11 +144,11 @@ func (m *TodoRequestBuilder) Get(ctx context.Context, requestConfiguration *Todo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Todoable), nil
 }
-// Lists the lists property
+// Lists provides operations to manage the lists property of the microsoft.graph.todo entity.
 func (m *TodoRequestBuilder) Lists()(*icea965fb6dc5282efc02707daa27370489b21ebab602d4276d9a11470c1396d9.ListsRequestBuilder) {
     return icea965fb6dc5282efc02707daa27370489b21ebab602d4276d9a11470c1396d9.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ListsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item collection
+// ListsById provides operations to manage the lists property of the microsoft.graph.todo entity.
 func (m *TodoRequestBuilder) ListsById(id string)(*i8507b6fa54bb3b204e7b86bada677645be39bdcd4ca9fab5590bb4c3a51d57c6.TodoTaskListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

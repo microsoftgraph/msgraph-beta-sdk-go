@@ -71,7 +71,7 @@ func NewMicrosoftTunnelSitesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MicrosoftTunnelSitesRequestBuilder) Count()(*ibae92102d4d1d2dcad354080a6c3d88f638968ac73a601238d89f5d798b717c9.CountRequestBuilder) {
     return ibae92102d4d1d2dcad354080a6c3d88f638968ac73a601238d89f5d798b717c9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

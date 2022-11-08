@@ -127,7 +127,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// ExternalSponsors the externalSponsors property
+// ExternalSponsors provides operations to manage the externalSponsors property of the microsoft.graph.connectedOrganization entity.
 func (m *ConnectedOrganizationItemRequestBuilder) ExternalSponsors()(*i82b6968db7b15686cbc987e9af89e40d6258324a85852e48f8f9c19a6729f0f0.ExternalSponsorsRequestBuilder) {
     return i82b6968db7b15686cbc987e9af89e40d6258324a85852e48f8f9c19a6729f0f0.NewExternalSponsorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -161,7 +161,7 @@ func (m *ConnectedOrganizationItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectedOrganizationable), nil
 }
-// InternalSponsors the internalSponsors property
+// InternalSponsors provides operations to manage the internalSponsors property of the microsoft.graph.connectedOrganization entity.
 func (m *ConnectedOrganizationItemRequestBuilder) InternalSponsors()(*iff0b6eadf2514d5b5b3edd06d302b534eec4f14682b130a9eb1d95c1c6ef4489.InternalSponsorsRequestBuilder) {
     return iff0b6eadf2514d5b5b3edd06d302b534eec4f14682b130a9eb1d95c1c6ef4489.NewInternalSponsorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

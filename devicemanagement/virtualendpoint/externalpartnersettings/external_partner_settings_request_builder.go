@@ -71,7 +71,7 @@ func NewExternalPartnerSettingsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewExternalPartnerSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ExternalPartnerSettingsRequestBuilder) Count()(*ic76c46ccd4aeeee631ef390a41acaec7b8bc2f7550bae3700f82e48bafab3450.CountRequestBuilder) {
     return ic76c46ccd4aeeee631ef390a41acaec7b8bc2f7550bae3700f82e48bafab3450.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -47,7 +47,7 @@ type DataSharingConsentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConsentToDataSharing the consentToDataSharing property
+// ConsentToDataSharing provides operations to call the consentToDataSharing method.
 func (m *DataSharingConsentItemRequestBuilder) ConsentToDataSharing()(*i3f5fa64fce6c85f80e1275e28c48dcc727e277551da9d2d8656ea64748f415ca.ConsentToDataSharingRequestBuilder) {
     return i3f5fa64fce6c85f80e1275e28c48dcc727e277551da9d2d8656ea64748f415ca.NewConsentToDataSharingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

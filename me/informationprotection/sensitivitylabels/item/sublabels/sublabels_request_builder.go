@@ -72,7 +72,7 @@ func NewSublabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewSublabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SublabelsRequestBuilder) Count()(*i690247c3ffe2ccc8463df035eb335ea77533f1e10187edba8980915cdfe01239.CountRequestBuilder) {
     return i690247c3ffe2ccc8463df035eb335ea77533f1e10187edba8980915cdfe01239.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -106,7 +106,7 @@ func (m *SublabelsRequestBuilder) CreatePostRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// Evaluate the evaluate property
+// Evaluate provides operations to call the evaluate method.
 func (m *SublabelsRequestBuilder) Evaluate()(*i5359a0fbdae1765de30d5ed7c4fdeb57d97844b0a65d808a37dc3029b1a57eb7.EvaluateRequestBuilder) {
     return i5359a0fbdae1765de30d5ed7c4fdeb57d97844b0a65d808a37dc3029b1a57eb7.NewEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -57,15 +57,15 @@ type InstanceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AcceptRecommendations the acceptRecommendations property
+// AcceptRecommendations provides operations to call the acceptRecommendations method.
 func (m *InstanceRequestBuilder) AcceptRecommendations()(*i33c7c5706a7b5c0bf13b40b705217aed59b2d5208c669fd999e36faa62df7d8d.AcceptRecommendationsRequestBuilder) {
     return i33c7c5706a7b5c0bf13b40b705217aed59b2d5208c669fd999e36faa62df7d8d.NewAcceptRecommendationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApplyDecisions the applyDecisions property
+// ApplyDecisions provides operations to call the applyDecisions method.
 func (m *InstanceRequestBuilder) ApplyDecisions()(*iebc762487b2890223499b50b54324ea41c534597ca8a925c094747c4cc9293ba.ApplyDecisionsRequestBuilder) {
     return iebc762487b2890223499b50b54324ea41c534597ca8a925c094747c4cc9293ba.NewApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BatchRecordDecisions the batchRecordDecisions property
+// BatchRecordDecisions provides operations to call the batchRecordDecisions method.
 func (m *InstanceRequestBuilder) BatchRecordDecisions()(*icd1d27bb795cd0bade6075661b23050cc531c7e953d93767d6867d925acd1153.BatchRecordDecisionsRequestBuilder) {
     return icd1d27bb795cd0bade6075661b23050cc531c7e953d93767d6867d925acd1153.NewBatchRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -88,11 +88,11 @@ func NewInstanceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewInstanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContactedReviewers the contactedReviewers property
+// ContactedReviewers provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
 func (m *InstanceRequestBuilder) ContactedReviewers()(*i8465856a57b39bfe6bbaee998f31cc1a6f95a416a097b32bdd5ae57760891e36.ContactedReviewersRequestBuilder) {
     return i8465856a57b39bfe6bbaee998f31cc1a6f95a416a097b32bdd5ae57760891e36.NewContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContactedReviewersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.decisions.item.instance.contactedReviewers.item collection
+// ContactedReviewersById provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
 func (m *InstanceRequestBuilder) ContactedReviewersById(id string)(*ib94b9ab817e6471af61b50e251fd606a0d13640a636ee601a4261fc8d3edd511.AccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -145,7 +145,7 @@ func (m *InstanceRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// Definition the definition property
+// Definition provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
 func (m *InstanceRequestBuilder) Definition()(*i19220c6873e6f178a0065161bbaa90caa6620ef6dd66a5ec4758b123ac469187.DefinitionRequestBuilder) {
     return i19220c6873e6f178a0065161bbaa90caa6620ef6dd66a5ec4758b123ac469187.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -203,19 +203,19 @@ func (m *InstanceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable), nil
 }
-// ResetDecisions the resetDecisions property
+// ResetDecisions provides operations to call the resetDecisions method.
 func (m *InstanceRequestBuilder) ResetDecisions()(*i03da4522f6ecfec1c06db2ac24e7752b8ccd635602f5fe82922c3a68e1d0dd7d.ResetDecisionsRequestBuilder) {
     return i03da4522f6ecfec1c06db2ac24e7752b8ccd635602f5fe82922c3a68e1d0dd7d.NewResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SendReminder the sendReminder property
+// SendReminder provides operations to call the sendReminder method.
 func (m *InstanceRequestBuilder) SendReminder()(*ia755ae82953cc4dc7511248e4432b31518b4ceb68464488197f488ec3a27c58f.SendReminderRequestBuilder) {
     return ia755ae82953cc4dc7511248e4432b31518b4ceb68464488197f488ec3a27c58f.NewSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Stages the stages property
+// Stages provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
 func (m *InstanceRequestBuilder) Stages()(*ic5796aa32538952c642db31a0c8fa19775f1f8e0f83c910a8e3adc526597e81c.StagesRequestBuilder) {
     return ic5796aa32538952c642db31a0c8fa19775f1f8e0f83c910a8e3adc526597e81c.NewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// StagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.decisions.item.instance.stages.item collection
+// StagesById provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
 func (m *InstanceRequestBuilder) StagesById(id string)(*i42bb427c442cb4d4ddf1c7f5ca19862ac0bb20430fb80b4f937cdc05437f296a.AccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -226,7 +226,7 @@ func (m *InstanceRequestBuilder) StagesById(id string)(*i42bb427c442cb4d4ddf1c7f
     }
     return i42bb427c442cb4d4ddf1c7f5ca19862ac0bb20430fb80b4f937cdc05437f296a.NewAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Stop the stop property
+// Stop provides operations to call the stop method.
 func (m *InstanceRequestBuilder) Stop()(*i74deae20af1cfa651b11f8e4117763fc91498e69766fedcf61e65d3873b58bd6.StopRequestBuilder) {
     return i74deae20af1cfa651b11f8e4117763fc91498e69766fedcf61e65d3873b58bd6.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

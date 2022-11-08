@@ -66,7 +66,7 @@ func NewHostedContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewHostedContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the Content property
+// Content provides operations to manage the media for the appCatalogs entity.
 func (m *HostedContentRequestBuilder) Content()(*ieaa9f6beec357cf167ed9fa53e0eb18037771cfcff37855e9e02f8054af914a3.ContentRequestBuilder) {
     return ieaa9f6beec357cf167ed9fa53e0eb18037771cfcff37855e9e02f8054af914a3.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

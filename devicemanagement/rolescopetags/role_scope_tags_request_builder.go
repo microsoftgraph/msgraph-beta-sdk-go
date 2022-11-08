@@ -73,7 +73,7 @@ func NewRoleScopeTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewRoleScopeTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RoleScopeTagsRequestBuilder) Count()(*i87e24dbe25af599aa1e532c37a185b0fc3836b1f20d55a440891f8edc915a488.CountRequestBuilder) {
     return i87e24dbe25af599aa1e532c37a185b0fc3836b1f20d55a440891f8edc915a488.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -126,7 +126,7 @@ func (m *RoleScopeTagsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagCollectionResponseable), nil
 }
-// GetRoleScopeTagsById the getRoleScopeTagsById property
+// GetRoleScopeTagsById provides operations to call the getRoleScopeTagsById method.
 func (m *RoleScopeTagsRequestBuilder) GetRoleScopeTagsById()(*i33808f02abca01e1267c66ae1677f591fa5a4d6e6c99557066e7ad9ab5bdeb72.GetRoleScopeTagsByIdRequestBuilder) {
     return i33808f02abca01e1267c66ae1677f591fa5a4d6e6c99557066e7ad9ab5bdeb72.NewGetRoleScopeTagsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

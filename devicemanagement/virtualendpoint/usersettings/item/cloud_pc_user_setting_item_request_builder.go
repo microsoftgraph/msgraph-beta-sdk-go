@@ -49,15 +49,15 @@ type CloudPcUserSettingItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *CloudPcUserSettingItemRequestBuilder) Assign()(*i9d6cd161b5702397f00796096fd7147b6055fb37bdf326a2e129a220db3b853a.AssignRequestBuilder) {
     return i9d6cd161b5702397f00796096fd7147b6055fb37bdf326a2e129a220db3b853a.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.cloudPcUserSetting entity.
 func (m *CloudPcUserSettingItemRequestBuilder) Assignments()(*ic3ffef09d5c574354c76821568bdea6b8c13e64ec87d1de847b78ba37bc10193.AssignmentsRequestBuilder) {
     return ic3ffef09d5c574354c76821568bdea6b8c13e64ec87d1de847b78ba37bc10193.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.userSettings.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.cloudPcUserSetting entity.
 func (m *CloudPcUserSettingItemRequestBuilder) AssignmentsById(id string)(*ibb7d5a14b18ba56a542032028c627fe3f293b78e14bb9cd30cce1fce050756f2.CloudPcUserSettingAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

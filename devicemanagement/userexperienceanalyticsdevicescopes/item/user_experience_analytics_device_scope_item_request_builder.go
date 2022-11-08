@@ -162,7 +162,7 @@ func (m *UserExperienceAnalyticsDeviceScopeItemRequestBuilder) Patch(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScopeable), nil
 }
-// TriggerDeviceScopeAction the triggerDeviceScopeAction property
+// TriggerDeviceScopeAction provides operations to call the triggerDeviceScopeAction method.
 func (m *UserExperienceAnalyticsDeviceScopeItemRequestBuilder) TriggerDeviceScopeAction()(*i1b893cf79868235cd75416988073a3b6cea99ff5c78d63eb8c765f7bc19b7e1d.TriggerDeviceScopeActionRequestBuilder) {
     return i1b893cf79868235cd75416988073a3b6cea99ff5c78d63eb8c765f7bc19b7e1d.NewTriggerDeviceScopeActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

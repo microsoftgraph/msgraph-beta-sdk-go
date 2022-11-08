@@ -16,7 +16,7 @@ type LastModifiedByRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LastModifiedByRequestBuilderGetQueryParameters the unique identifier of the Azure AD user that modified the custom task extension last.
+// LastModifiedByRequestBuilderGetQueryParameters the unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 type LastModifiedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,7 +51,7 @@ func NewLastModifiedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewLastModifiedByRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the unique identifier of the Azure AD user that modified the custom task extension last.
+// CreateGetRequestInformation the unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 func (m *LastModifiedByRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *LastModifiedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,7 +67,7 @@ func (m *LastModifiedByRequestBuilder) CreateGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// Get the unique identifier of the Azure AD user that modified the custom task extension last.
+// Get the unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 func (m *LastModifiedByRequestBuilder) Get(ctx context.Context, requestConfiguration *LastModifiedByRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

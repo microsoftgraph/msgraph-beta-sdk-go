@@ -52,11 +52,11 @@ type ManagedAppRegistrationItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppliedPolicies the appliedPolicies property
+// AppliedPolicies provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationItemRequestBuilder) AppliedPolicies()(*i56070fa6720bc0b45941309da76f8b33eaeab41361bc4d8deae7cf9b20365caa.AppliedPoliciesRequestBuilder) {
     return i56070fa6720bc0b45941309da76f8b33eaeab41361bc4d8deae7cf9b20365caa.NewAppliedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppliedPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection
+// AppliedPoliciesById provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationItemRequestBuilder) AppliedPoliciesById(id string)(*i1c13dfabdff5dc012fd7d12bf25406e90dff95d5a2f3f2db4980cf2baccac50e.ManagedAppPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -163,11 +163,11 @@ func (m *ManagedAppRegistrationItemRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable), nil
 }
-// IntendedPolicies the intendedPolicies property
+// IntendedPolicies provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationItemRequestBuilder) IntendedPolicies()(*if8c50fd03afc54f53eb9adc01674971598fcc5e91f81ad3c1573605a4ba9a43c.IntendedPoliciesRequestBuilder) {
     return if8c50fd03afc54f53eb9adc01674971598fcc5e91f81ad3c1573605a4ba9a43c.NewIntendedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IntendedPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedAppRegistrations.item.intendedPolicies.item collection
+// IntendedPoliciesById provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationItemRequestBuilder) IntendedPoliciesById(id string)(*id0b04ce4d5e56adfc6f008d1080876eacead82cead17447895ea3eb8353b96ac.ManagedAppPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -178,11 +178,11 @@ func (m *ManagedAppRegistrationItemRequestBuilder) IntendedPoliciesById(id strin
     }
     return id0b04ce4d5e56adfc6f008d1080876eacead82cead17447895ea3eb8353b96ac.NewManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationItemRequestBuilder) Operations()(*id957f7cf90d5e3cc168823ce7a8346428ac2a3905e6406e2ee0dc61e8312d433.OperationsRequestBuilder) {
     return id957f7cf90d5e3cc168823ce7a8346428ac2a3905e6406e2ee0dc61e8312d433.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedAppRegistrations.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
 func (m *ManagedAppRegistrationItemRequestBuilder) OperationsById(id string)(*i4188f43081529892f83979f26fa2b9dca74e78bf1260dae80736bc3d6815fb36.ManagedAppOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

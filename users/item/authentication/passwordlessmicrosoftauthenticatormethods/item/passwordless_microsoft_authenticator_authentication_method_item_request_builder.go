@@ -103,7 +103,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilde
     }
     return nil
 }
-// Device the device property
+// Device provides operations to manage the device property of the microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod entity.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder) Device()(*i59c2913777ceac2a52ded56e4b82e5a8a76f2723c7b2deaf830c86bc60e21796.DeviceRequestBuilder) {
     return i59c2913777ceac2a52ded56e4b82e5a8a76f2723c7b2deaf830c86bc60e21796.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

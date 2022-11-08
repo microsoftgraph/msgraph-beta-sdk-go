@@ -155,11 +155,11 @@ func (m *SubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*i2bf59a4d
 func (m *SubjectRightsRequestItemRequestBuilder) GetFinalReport()(*i958489264196dd08f36dd719f907da913cf1a6b619228f3d6bc8da52997d8449.GetFinalReportRequestBuilder) {
     return i958489264196dd08f36dd719f907da913cf1a6b619228f3d6bc8da52997d8449.NewGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Notes the notes property
+// Notes provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestItemRequestBuilder) Notes()(*i06e33bb086cbb5f9333cc1c8bb09529f00623800d8f148e19c13fab399be0e21.NotesRequestBuilder) {
     return i06e33bb086cbb5f9333cc1c8bb09529f00623800d8f148e19c13fab399be0e21.NewNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NotesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privacy.subjectRightsRequests.item.notes.item collection
+// NotesById provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestItemRequestBuilder) NotesById(id string)(*ibe7a5a69eee3e39fd9fd52c318c683abd357fbe438629376f053fbf8dafee6d9.AuthoredNoteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -189,7 +189,7 @@ func (m *SubjectRightsRequestItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable), nil
 }
-// Team the team property
+// Team provides operations to manage the team property of the microsoft.graph.subjectRightsRequest entity.
 func (m *SubjectRightsRequestItemRequestBuilder) Team()(*ia790ce0fe221c2e579ab27030d34081e5415f38f47af2263081eb369b2561ccd.TeamRequestBuilder) {
     return ia790ce0fe221c2e579ab27030d34081e5415f38f47af2263081eb369b2561ccd.NewTeamRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

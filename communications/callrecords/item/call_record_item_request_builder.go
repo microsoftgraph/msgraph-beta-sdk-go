@@ -163,11 +163,11 @@ func (m *CallRecordItemRequestBuilder) Patch(ctx context.Context, body iabe42a55
     }
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CallRecordable), nil
 }
-// Sessions the sessions property
+// Sessions provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
 func (m *CallRecordItemRequestBuilder) Sessions()(*i8da91d80f834afa257263f71267b10122fb002ee361fdcad0ffef83b9e5cf724.SessionsRequestBuilder) {
     return i8da91d80f834afa257263f71267b10122fb002ee361fdcad0ffef83b9e5cf724.NewSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SessionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.callRecords.item.sessions.item collection
+// SessionsById provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
 func (m *CallRecordItemRequestBuilder) SessionsById(id string)(*ic5dfb8f4b7db4be39da7edb542b78c201cb5a192410b1ee4562017341bf3fda3.SessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

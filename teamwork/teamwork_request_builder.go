@@ -98,11 +98,11 @@ func (m *TeamworkRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
-// DeletedTeams the deletedTeams property
+// DeletedTeams provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) DeletedTeams()(*i5f853021bcd09dc31bcfe1b81013b0b4476658eb54310db69fef8d76e06b714a.DeletedTeamsRequestBuilder) {
     return i5f853021bcd09dc31bcfe1b81013b0b4476658eb54310db69fef8d76e06b714a.NewDeletedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeletedTeamsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.deletedTeams.item collection
+// DeletedTeamsById provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) DeletedTeamsById(id string)(*ic86fd621ddc51f4cb681ecef66a6c6bbfecda42d24db8e141175f82fdabf74d2.DeletedTeamItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -113,11 +113,11 @@ func (m *TeamworkRequestBuilder) DeletedTeamsById(id string)(*ic86fd621ddc51f4cb
     }
     return ic86fd621ddc51f4cb681ecef66a6c6bbfecda42d24db8e141175f82fdabf74d2.NewDeletedTeamItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Devices the devices property
+// Devices provides operations to manage the devices property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) Devices()(*i3fce2babf7b4f0d1cb31c054814424b76c87dc90eadacea48f98134cc0ffe6e7.DevicesRequestBuilder) {
     return i3fce2babf7b4f0d1cb31c054814424b76c87dc90eadacea48f98134cc0ffe6e7.NewDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.devices.item collection
+// DevicesById provides operations to manage the devices property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) DevicesById(id string)(*i17ffe63fafac127289aa66b154f468d1a6a27dee2b4568c67bf179cbf15811a8.TeamworkDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -166,19 +166,19 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable), nil
 }
-// SendActivityNotificationToRecipients the sendActivityNotificationToRecipients property
+// SendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
 func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6.SendActivityNotificationToRecipientsRequestBuilder) {
     return id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6.NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TeamsAppSettings the teamsAppSettings property
+// TeamsAppSettings provides operations to manage the teamsAppSettings property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) TeamsAppSettings()(*idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d.TeamsAppSettingsRequestBuilder) {
     return idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d.NewTeamsAppSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TeamTemplates the teamTemplates property
+// TeamTemplates provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) TeamTemplates()(*ib14bcbfd4e3bccc76a4fe3dff4da7ebc6577392679e6ba6cd1710cd5c03eeba0.TeamTemplatesRequestBuilder) {
     return ib14bcbfd4e3bccc76a4fe3dff4da7ebc6577392679e6ba6cd1710cd5c03eeba0.NewTeamTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TeamTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item collection
+// TeamTemplatesById provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) TeamTemplatesById(id string)(*id6e8a1d6759febda5acd2ed7c5930f2db6a83ef4fdb4eddde327904716515370.TeamTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -189,11 +189,11 @@ func (m *TeamworkRequestBuilder) TeamTemplatesById(id string)(*id6e8a1d6759febda
     }
     return id6e8a1d6759febda5acd2ed7c5930f2db6a83ef4fdb4eddde327904716515370.NewTeamTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WorkforceIntegrations the workforceIntegrations property
+// WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45.WorkforceIntegrationsRequestBuilder) {
     return ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45.NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WorkforceIntegrationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.workforceIntegrations.item collection
+// WorkforceIntegrationsById provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
 func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i75138276537be7f359112029ca90eee1631bb436b9f9db869b58bf15fd0cd092.WorkforceIntegrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

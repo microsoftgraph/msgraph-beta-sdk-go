@@ -73,11 +73,11 @@ func NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceEnrollmentConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Count()(*i6992efcd94ba8b0cc9636caae8063573d29d848b73de7b23d24e39132cdee12d.CountRequestBuilder) {
     return i6992efcd94ba8b0cc9636caae8063573d29d848b73de7b23d24e39132cdee12d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateEnrollmentNotificationConfiguration the createEnrollmentNotificationConfiguration property
+// CreateEnrollmentNotificationConfiguration provides operations to call the createEnrollmentNotificationConfiguration method.
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateEnrollmentNotificationConfiguration()(*iba8addee060cd0c5c3f59329654170b84587c800dfe5aee10e49503c18c9627f.CreateEnrollmentNotificationConfigurationRequestBuilder) {
     return iba8addee060cd0c5c3f59329654170b84587c800dfe5aee10e49503c18c9627f.NewCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -130,7 +130,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable), nil
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) HasPayloadLinks()(*i51cb6449bd391c2d84a6c68c41a7de235fe9dcc5015fc92c3a5cce1b8addba7b.HasPayloadLinksRequestBuilder) {
     return i51cb6449bd391c2d84a6c68c41a7de235fe9dcc5015fc92c3a5cce1b8addba7b.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

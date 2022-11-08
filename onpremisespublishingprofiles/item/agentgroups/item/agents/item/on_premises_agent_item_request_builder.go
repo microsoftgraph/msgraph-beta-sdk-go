@@ -48,7 +48,7 @@ type OnPremisesAgentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AgentGroups the agentGroups property
+// AgentGroups provides operations to manage the agentGroups property of the microsoft.graph.onPremisesAgent entity.
 func (m *OnPremisesAgentItemRequestBuilder) AgentGroups()(*ic5b773b9a2f87a9a0d39beb8d04ff84c8d38fb9f333715e477637a7acdcebdc2.AgentGroupsRequestBuilder) {
     return ic5b773b9a2f87a9a0d39beb8d04ff84c8d38fb9f333715e477637a7acdcebdc2.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

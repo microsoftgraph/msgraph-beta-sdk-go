@@ -49,11 +49,11 @@ type AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.appleUserInitiatedEnrollmentProfile entity.
 func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) Assignments()(*i8f74274c95f6e543171df682273240e35174a6d9718f8eb24972864f87ab1031.AssignmentsRequestBuilder) {
     return i8f74274c95f6e543171df682273240e35174a6d9718f8eb24972864f87ab1031.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.appleUserInitiatedEnrollmentProfiles.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.appleUserInitiatedEnrollmentProfile entity.
 func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) AssignmentsById(id string)(*i3f2b91af36c1c85a91b2090f64ecc402fe3be3e6030dc816276efb34d3538a56.AppleEnrollmentProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,7 +179,7 @@ func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) Patch(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable), nil
 }
-// SetPriority the setPriority property
+// SetPriority provides operations to call the setPriority method.
 func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) SetPriority()(*i45dabbbe435eb6199c9451e73874575e112663a6cbcd76c6d70f2e7434ffb64d.SetPriorityRequestBuilder) {
     return i45dabbbe435eb6199c9451e73874575e112663a6cbcd76c6d70f2e7434ffb64d.NewSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

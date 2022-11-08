@@ -71,7 +71,7 @@ func NewAutopilotEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewAutopilotEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AutopilotEventsRequestBuilder) Count()(*i6fad0f52b9d55d417d29028ee9905b3193f6d049f0dc5fb80f0c9f600be508c4.CountRequestBuilder) {
     return i6fad0f52b9d55d417d29028ee9905b3193f6d049f0dc5fb80f0c9f600be508c4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

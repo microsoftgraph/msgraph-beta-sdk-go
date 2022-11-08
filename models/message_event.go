@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageEvent provides operations to manage the collection of accessReviewDecision entities.
+// MessageEvent 
 type MessageEvent struct {
     Entity
     // The dateTime property
@@ -16,7 +16,7 @@ type MessageEvent struct {
     // The eventType property
     eventType *MessageEventType
 }
-// NewMessageEvent instantiates a new messageEvent and sets the default values.
+// NewMessageEvent instantiates a new MessageEvent and sets the default values.
 func NewMessageEvent()(*MessageEvent) {
     m := &MessageEvent{
         Entity: *NewEntity(),

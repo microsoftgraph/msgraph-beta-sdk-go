@@ -57,11 +57,11 @@ type MeRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Assignments()(*i066e6c0b7a628617371533e62ce3ebdd3bb41009a8fbfe0051aebeee5a091763.AssignmentsRequestBuilder) {
     return i066e6c0b7a628617371533e62ce3ebdd3bb41009a8fbfe0051aebeee5a091763.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) AssignmentsById(id string)(*ieba30bd3da2220b37fa7fcf6200b1473597f54cc0733c3310394e58e26492403.EducationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -72,11 +72,11 @@ func (m *MeRequestBuilder) AssignmentsById(id string)(*ieba30bd3da2220b37fa7fcf6
     }
     return ieba30bd3da2220b37fa7fcf6200b1473597f54cc0733c3310394e58e26492403.NewEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Classes the classes property
+// Classes provides operations to manage the classes property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Classes()(*ia9901f126435d74fc86b3bf99ec52d925f16943c99de2d04f1f3f010f4c84fbc.ClassesRequestBuilder) {
     return ia9901f126435d74fc86b3bf99ec52d925f16943c99de2d04f1f3f010f4c84fbc.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ClassesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.classes.item collection
+// ClassesById provides operations to manage the classes property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) ClassesById(id string)(*i45b49c5a37e86013b854ac973ddf755ed5024fc1a6c2dda426383115a09e7f90.EducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,11 +202,11 @@ func (m *MeRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserable), nil
 }
-// Rubrics the rubrics property
+// Rubrics provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Rubrics()(*i1b5284c067c2acfcb9ec377599aa90647d0e8c253bdeac21d56033eae704633e.RubricsRequestBuilder) {
     return i1b5284c067c2acfcb9ec377599aa90647d0e8c253bdeac21d56033eae704633e.NewRubricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RubricsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.rubrics.item collection
+// RubricsById provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) RubricsById(id string)(*i719722077dd2c46836e8fc87facd02a34341429e3162704b105c41c28deda2b9.EducationRubricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -217,11 +217,11 @@ func (m *MeRequestBuilder) RubricsById(id string)(*i719722077dd2c46836e8fc87facd
     }
     return i719722077dd2c46836e8fc87facd02a34341429e3162704b105c41c28deda2b9.NewEducationRubricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Schools the schools property
+// Schools provides operations to manage the schools property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) Schools()(*i1197007b396c8142142d808832d472fa4a0ca1796dcda8056a9c759ced2a4005.SchoolsRequestBuilder) {
     return i1197007b396c8142142d808832d472fa4a0ca1796dcda8056a9c759ced2a4005.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SchoolsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.schools.item collection
+// SchoolsById provides operations to manage the schools property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) SchoolsById(id string)(*i19868cee8abfa86080d68db45779c91f9b2670f8887c97f48ef60e07b22031c2.EducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -232,11 +232,11 @@ func (m *MeRequestBuilder) SchoolsById(id string)(*i19868cee8abfa86080d68db45779
     }
     return i19868cee8abfa86080d68db45779c91f9b2670f8887c97f48ef60e07b22031c2.NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TaughtClasses the taughtClasses property
+// TaughtClasses provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) TaughtClasses()(*i5f4f009fc61fc7227f7443b57e61741a07864a630e39eba9bf7e097c583915e3.TaughtClassesRequestBuilder) {
     return i5f4f009fc61fc7227f7443b57e61741a07864a630e39eba9bf7e097c583915e3.NewTaughtClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaughtClassesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.taughtClasses.item collection
+// TaughtClassesById provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) TaughtClassesById(id string)(*i400d8aa2bba747bb59e46da289af76154496fa6c06cb9a12266b15362b1cfa5b.EducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -247,7 +247,7 @@ func (m *MeRequestBuilder) TaughtClassesById(id string)(*i400d8aa2bba747bb59e46d
     }
     return i400d8aa2bba747bb59e46da289af76154496fa6c06cb9a12266b15362b1cfa5b.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// User the user property
+// User provides operations to manage the user property of the microsoft.graph.educationUser entity.
 func (m *MeRequestBuilder) User()(*i5f1f4bf3151bbb3488a322f91d88a1e3277a2a2e390a895db3a6a5a0dafd3bd0.UserRequestBuilder) {
     return i5f1f4bf3151bbb3488a322f91d88a1e3277a2a2e390a895db3a6a5a0dafd3bd0.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

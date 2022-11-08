@@ -33,7 +33,7 @@ func NewOnPremisesAgentGroupItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *OnPremisesAgentGroupItemRequestBuilder) Ref()(*id272e963632b0f4867db1d0445dfd3041c9ff9ca8ca924ccd4ea20924973589f.RefRequestBuilder) {
     return id272e963632b0f4867db1d0445dfd3041c9ff9ca8ca924ccd4ea20924973589f.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

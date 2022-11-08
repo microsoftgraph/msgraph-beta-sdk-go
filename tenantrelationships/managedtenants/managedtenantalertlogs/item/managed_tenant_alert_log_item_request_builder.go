@@ -47,7 +47,7 @@ type ManagedTenantAlertLogItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alert the alert property
+// Alert provides operations to manage the alert property of the microsoft.graph.managedTenants.managedTenantAlertLog entity.
 func (m *ManagedTenantAlertLogItemRequestBuilder) Alert()(*iad0f51c7db287e7cfd3e460d3cbe8035bea5ebf1c5027871b8622f6ea9e75872.AlertRequestBuilder) {
     return iad0f51c7db287e7cfd3e460d3cbe8035bea5ebf1c5027871b8622f6ea9e75872.NewAlertRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

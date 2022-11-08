@@ -162,7 +162,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable), nil
 }
-// Policy the policy property
+// Policy provides operations to manage the policy property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus entity.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) Policy()(*i3e31f706fc76ba4e16c152454d85c280f8ac53d7c171bf7d0e1e53bb8e2eca1c.PolicyRequestBuilder) {
     return i3e31f706fc76ba4e16c152454d85c280f8ac53d7c171bf7d0e1e53bb8e2eca1c.NewPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

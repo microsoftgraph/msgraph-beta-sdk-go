@@ -72,11 +72,11 @@ func NewPrintersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PrintersRequestBuilder) Count()(*i2bfcf69a040d0541df35e0f4f2b9a58406220cca9db00d73533e68c3c93f1771.CountRequestBuilder) {
     return i2bfcf69a040d0541df35e0f4f2b9a58406220cca9db00d73533e68c3c93f1771.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Create the create property
+// Create provides operations to call the create method.
 func (m *PrintersRequestBuilder) Create()(*i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.CreateRequestBuilder) {
     return i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.NewCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

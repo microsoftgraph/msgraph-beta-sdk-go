@@ -71,7 +71,7 @@ func NewCachedReportConfigurationsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewCachedReportConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CachedReportConfigurationsRequestBuilder) Count()(*i3d8a6c45ce826c7e2d53a3d27dd8b4a14fa6b3b99b15552bdd25cf465a4c558c.CountRequestBuilder) {
     return i3d8a6c45ce826c7e2d53a3d27dd8b4a14fa6b3b99b15552bdd25cf465a4c558c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

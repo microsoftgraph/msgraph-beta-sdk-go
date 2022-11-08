@@ -162,7 +162,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Patch
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable), nil
 }
-// Wipe the wipe property
+// Wipe provides operations to call the wipe method.
 func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Wipe()(*i32cead955f53e67d98acbdce32f93ac20567841eba2d26ee53b382094e05fb6b.WipeRequestBuilder) {
     return i32cead955f53e67d98acbdce32f93ac20567841eba2d26ee53b382094e05fb6b.NewWipeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

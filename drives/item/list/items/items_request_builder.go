@@ -73,7 +73,7 @@ func NewItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ItemsRequestBuilder) Count()(*ifa0ce45a5539b3b6ee1fa29ffdb054beff1295a292d9ead00be50e63ba82cb0e.CountRequestBuilder) {
     return ifa0ce45a5539b3b6ee1fa29ffdb054beff1295a292d9ead00be50e63ba82cb0e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -72,7 +72,7 @@ func NewImportedAppleDeviceIdentitiesRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewImportedAppleDeviceIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ImportedAppleDeviceIdentitiesRequestBuilder) Count()(*ic993a2f6e8ac6912a5c900f61a9bbf488aaf4daf75a366e308bdfebdfe2bfce7.CountRequestBuilder) {
     return ic993a2f6e8ac6912a5c900f61a9bbf488aaf4daf75a366e308bdfebdfe2bfce7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *ImportedAppleDeviceIdentitiesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityCollectionResponseable), nil
 }
-// ImportAppleDeviceIdentityList the importAppleDeviceIdentityList property
+// ImportAppleDeviceIdentityList provides operations to call the importAppleDeviceIdentityList method.
 func (m *ImportedAppleDeviceIdentitiesRequestBuilder) ImportAppleDeviceIdentityList()(*i8f9b6ad5f0598cf0938cc32f8579da86887d78326a0f91c58da613e758555c9a.ImportAppleDeviceIdentityListRequestBuilder) {
     return i8f9b6ad5f0598cf0938cc32f8579da86887d78326a0f91c58da613e758555c9a.NewImportAppleDeviceIdentityListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

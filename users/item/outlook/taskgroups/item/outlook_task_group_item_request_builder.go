@@ -161,11 +161,11 @@ func (m *OutlookTaskGroupItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskGroupable), nil
 }
-// TaskFolders the taskFolders property
+// TaskFolders provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
 func (m *OutlookTaskGroupItemRequestBuilder) TaskFolders()(*i84e5204b6057266524dd3c5f1d89cc5397e3be53b9b6b2ff8da6fb9bcfc89145.TaskFoldersRequestBuilder) {
     return i84e5204b6057266524dd3c5f1d89cc5397e3be53b9b6b2ff8da6fb9bcfc89145.NewTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskFoldersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item.taskFolders.item collection
+// TaskFoldersById provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
 func (m *OutlookTaskGroupItemRequestBuilder) TaskFoldersById(id string)(*i9ff51a09dafb0317480e93c5051c0dab6aba16d2dd4fc769ca0378dfb685a890.OutlookTaskFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

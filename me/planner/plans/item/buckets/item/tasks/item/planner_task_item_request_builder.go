@@ -50,11 +50,11 @@ type PlannerTaskItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AssignedToTaskBoardFormat the assignedToTaskBoardFormat property
+// AssignedToTaskBoardFormat provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.
 func (m *PlannerTaskItemRequestBuilder) AssignedToTaskBoardFormat()(*i1d844ab675026ef72475a3f9514972d513c61a9b439d09f27404183be3a654b6.AssignedToTaskBoardFormatRequestBuilder) {
     return i1d844ab675026ef72475a3f9514972d513c61a9b439d09f27404183be3a654b6.NewAssignedToTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BucketTaskBoardFormat the bucketTaskBoardFormat property
+// BucketTaskBoardFormat provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.
 func (m *PlannerTaskItemRequestBuilder) BucketTaskBoardFormat()(*i892a2bc287a618b5f9958fc4fc9b5112506f1d650385e419e3e846edc3d8c707.BucketTaskBoardFormatRequestBuilder) {
     return i892a2bc287a618b5f9958fc4fc9b5112506f1d650385e419e3e846edc3d8c707.NewBucketTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -135,7 +135,7 @@ func (m *PlannerTaskItemRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// Details the details property
+// Details provides operations to manage the details property of the microsoft.graph.plannerTask entity.
 func (m *PlannerTaskItemRequestBuilder) Details()(*if25f560f624f4b8bd3a269ab0ea32d0665237d6ddee845f02a2a4588e217ed0a.DetailsRequestBuilder) {
     return if25f560f624f4b8bd3a269ab0ea32d0665237d6ddee845f02a2a4588e217ed0a.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -177,7 +177,7 @@ func (m *PlannerTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
 }
-// ProgressTaskBoardFormat the progressTaskBoardFormat property
+// ProgressTaskBoardFormat provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
 func (m *PlannerTaskItemRequestBuilder) ProgressTaskBoardFormat()(*i1510b8b3a732ee268cb2fabc4d61d6000892a9389860de8b5e0b3c713f07a3b9.ProgressTaskBoardFormatRequestBuilder) {
     return i1510b8b3a732ee268cb2fabc4d61d6000892a9389860de8b5e0b3c713f07a3b9.NewProgressTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

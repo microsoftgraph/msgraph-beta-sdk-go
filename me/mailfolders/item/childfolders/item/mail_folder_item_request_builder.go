@@ -77,7 +77,7 @@ func NewMailFolderItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewMailFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Copy the copy property
+// Copy provides operations to call the copy method.
 func (m *MailFolderItemRequestBuilder) Copy()(*i8bf275bcb2b72ef557ea76df40138eea43d6fe5cc455dea646a006eb63794ba7.CopyRequestBuilder) {
     return i8bf275bcb2b72ef557ea76df40138eea43d6fe5cc455dea646a006eb63794ba7.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -158,11 +158,11 @@ func (m *MailFolderItemRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable), nil
 }
-// MessageRules the messageRules property
+// MessageRules provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) MessageRules()(*i20323471007917bdc436a5e98a5435f8b85567d6037bf4ec43116efb3b760693.MessageRulesRequestBuilder) {
     return i20323471007917bdc436a5e98a5435f8b85567d6037bf4ec43116efb3b760693.NewMessageRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MessageRulesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.messageRules.item collection
+// MessageRulesById provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) MessageRulesById(id string)(*i5f2f96e331433d57bb5b5bb5869aab1146ca90b47e9b4b2227de837d509e382c.MessageRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -173,11 +173,11 @@ func (m *MailFolderItemRequestBuilder) MessageRulesById(id string)(*i5f2f96e3314
     }
     return i5f2f96e331433d57bb5b5bb5869aab1146ca90b47e9b4b2227de837d509e382c.NewMessageRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Messages the messages property
+// Messages provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) Messages()(*ib6b9fbf8fc19322cd1d97a9b341a04b2769756e40a7fb606ce2396269d370de6.MessagesRequestBuilder) {
     return ib6b9fbf8fc19322cd1d97a9b341a04b2769756e40a7fb606ce2396269d370de6.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MessagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.messages.item collection
+// MessagesById provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) MessagesById(id string)(*idaaad9420d5ebf955260ed772b7ed9e7a9fc50981c44e4d27397046a209061ef.MessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -188,15 +188,15 @@ func (m *MailFolderItemRequestBuilder) MessagesById(id string)(*idaaad9420d5ebf9
     }
     return idaaad9420d5ebf955260ed772b7ed9e7a9fc50981c44e4d27397046a209061ef.NewMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Move the move property
+// Move provides operations to call the move method.
 func (m *MailFolderItemRequestBuilder) Move()(*ib77a16ae7c22959db5b3bba418b751ab1fda0897865096b34ae85945b6658867.MoveRequestBuilder) {
     return ib77a16ae7c22959db5b3bba418b751ab1fda0897865096b34ae85945b6658867.NewMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) MultiValueExtendedProperties()(*if523bb7b979d21fbb6cc37a6aee81addad7dfe8ea6b865921e8b5046d293e140.MultiValueExtendedPropertiesRequestBuilder) {
     return if523bb7b979d21fbb6cc37a6aee81addad7dfe8ea6b865921e8b5046d293e140.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i47d376655b2ac0d9af61c10a25d81cc73a40c7f032cc1c74d6552b3bbb0c5886.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -226,11 +226,11 @@ func (m *MailFolderItemRequestBuilder) Patch(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable), nil
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) SingleValueExtendedProperties()(*i28f2d415431790e4d3995d262d107e5549e8bac7c7876a1b39a5b12e31615c63.SingleValueExtendedPropertiesRequestBuilder) {
     return i28f2d415431790e4d3995d262d107e5549e8bac7c7876a1b39a5b12e31615c63.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ib7183f48b6fdddbbefd94ef97f47df1553a4638b0158e566c2bec7e840156427.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -241,11 +241,11 @@ func (m *MailFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id stri
     }
     return ib7183f48b6fdddbbefd94ef97f47df1553a4638b0158e566c2bec7e840156427.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserConfigurations the userConfigurations property
+// UserConfigurations provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) UserConfigurations()(*i02e6471debcb7807132f708f49d6daf0d0cf58358182a96d5144da504afff26a.UserConfigurationsRequestBuilder) {
     return i02e6471debcb7807132f708f49d6daf0d0cf58358182a96d5144da504afff26a.NewUserConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.userConfigurations.item collection
+// UserConfigurationsById provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
 func (m *MailFolderItemRequestBuilder) UserConfigurationsById(id string)(*i0755f44dc88abe87ab886a42e331466483cef631113b7b4af78b74c6c7189b92.UserConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

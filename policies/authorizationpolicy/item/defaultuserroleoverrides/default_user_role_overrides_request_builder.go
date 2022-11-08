@@ -71,7 +71,7 @@ func NewDefaultUserRoleOverridesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewDefaultUserRoleOverridesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DefaultUserRoleOverridesRequestBuilder) Count()(*i78255ef2c28113eb7f96403c35ee50698f56198171845d0b383560c73aaed374.CountRequestBuilder) {
     return i78255ef2c28113eb7f96403c35ee50698f56198171845d0b383560c73aaed374.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

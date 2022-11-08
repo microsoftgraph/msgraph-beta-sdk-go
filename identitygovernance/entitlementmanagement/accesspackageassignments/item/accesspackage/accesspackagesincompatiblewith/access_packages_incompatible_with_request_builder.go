@@ -64,7 +64,7 @@ func NewAccessPackagesIncompatibleWithRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackagesIncompatibleWithRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Count()(*if0964b618a7bada7f965136034cf5b6009ba6a5b6bf3ade8cdf09f819d7d80d1.CountRequestBuilder) {
     return if0964b618a7bada7f965136034cf5b6009ba6a5b6bf3ade8cdf09f819d7d80d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

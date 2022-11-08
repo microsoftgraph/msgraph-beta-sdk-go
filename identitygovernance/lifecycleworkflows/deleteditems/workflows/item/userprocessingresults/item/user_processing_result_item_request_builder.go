@@ -164,15 +164,15 @@ func (m *UserProcessingResultItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.UserProcessingResultable), nil
 }
-// Subject the subject property
+// Subject provides operations to manage the subject property of the microsoft.graph.identityGovernance.userProcessingResult entity.
 func (m *UserProcessingResultItemRequestBuilder) Subject()(*iba146adb1a6fc7c32127eb8b5f7950b282426d497f7948ead0aee6f3bc360abb.SubjectRequestBuilder) {
     return iba146adb1a6fc7c32127eb8b5f7950b282426d497f7948ead0aee6f3bc360abb.NewSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskProcessingResults the taskProcessingResults property
+// TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.userProcessingResult entity.
 func (m *UserProcessingResultItemRequestBuilder) TaskProcessingResults()(*idb68f81fbac64757569990faf40c99041ec620512b386d92539a8565f910c237.TaskProcessingResultsRequestBuilder) {
     return idb68f81fbac64757569990faf40c99041ec620512b386d92539a8565f910c237.NewTaskProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskProcessingResultsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.deletedItems.workflows.item.userProcessingResults.item.taskProcessingResults.item collection
+// TaskProcessingResultsById provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.userProcessingResult entity.
 func (m *UserProcessingResultItemRequestBuilder) TaskProcessingResultsById(id string)(*iaed383fe76bfcbb2b262c9adaa05fd081b2359aa7d2f04d573808ddfc781f5b3.TaskProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

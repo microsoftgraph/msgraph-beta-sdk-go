@@ -71,7 +71,7 @@ func NewMobileAppTroubleshootingEventsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppTroubleshootingEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MobileAppTroubleshootingEventsRequestBuilder) Count()(*ib45501b61d0be91802da0f78c9a4c2c47e4489468e1d3e32ebe9b53f1c8fd5e0.CountRequestBuilder) {
     return ib45501b61d0be91802da0f78c9a4c2c47e4489468e1d3e32ebe9b53f1c8fd5e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

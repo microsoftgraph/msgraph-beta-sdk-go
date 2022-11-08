@@ -144,11 +144,11 @@ func (m *CertificateConnectorDetailsItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable), nil
 }
-// GetHealthMetrics the getHealthMetrics property
+// GetHealthMetrics provides operations to call the getHealthMetrics method.
 func (m *CertificateConnectorDetailsItemRequestBuilder) GetHealthMetrics()(*i7e1773f4927e9225f8c986534d86959f50bad1e76f4272d85d379daeb2d90bee.GetHealthMetricsRequestBuilder) {
     return i7e1773f4927e9225f8c986534d86959f50bad1e76f4272d85d379daeb2d90bee.NewGetHealthMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetHealthMetricTimeSeries the getHealthMetricTimeSeries property
+// GetHealthMetricTimeSeries provides operations to call the getHealthMetricTimeSeries method.
 func (m *CertificateConnectorDetailsItemRequestBuilder) GetHealthMetricTimeSeries()(*i258a858c85da90b801e765428af11e65bc154f922525178ab29e97c7a14c345e.GetHealthMetricTimeSeriesRequestBuilder) {
     return i258a858c85da90b801e765428af11e65bc154f922525178ab29e97c7a14c345e.NewGetHealthMetricTimeSeriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

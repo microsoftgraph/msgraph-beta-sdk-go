@@ -143,7 +143,7 @@ func (m *InvitationItemRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Invitationable), nil
 }
-// InvitedUser the invitedUser property
+// InvitedUser provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
 func (m *InvitationItemRequestBuilder) InvitedUser()(*i085e9f52b859515a2ccc8eaadcd266770af1fe5b2853d3f39372ab7919057f4c.InvitedUserRequestBuilder) {
     return i085e9f52b859515a2ccc8eaadcd266770af1fe5b2853d3f39372ab7919057f4c.NewInvitedUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

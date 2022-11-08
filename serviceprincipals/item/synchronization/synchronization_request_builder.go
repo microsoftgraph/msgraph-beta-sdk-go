@@ -52,7 +52,7 @@ type SynchronizationRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AcquireAccessToken the acquireAccessToken property
+// AcquireAccessToken provides operations to call the acquireAccessToken method.
 func (m *SynchronizationRequestBuilder) AcquireAccessToken()(*ie4e7228c8413ba04b04a7f1fac840439946274cff81aadbd7cf5252263fe1cc4.AcquireAccessTokenRequestBuilder) {
     return ie4e7228c8413ba04b04a7f1fac840439946274cff81aadbd7cf5252263fe1cc4.NewAcquireAccessTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -152,11 +152,11 @@ func (m *SynchronizationRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable), nil
 }
-// Jobs the jobs property
+// Jobs provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
 func (m *SynchronizationRequestBuilder) Jobs()(*i9f2b960ccd9a3439ea358b94aa154106d5794fdd4bdd4786b63fb9896b804094.JobsRequestBuilder) {
     return i9f2b960ccd9a3439ea358b94aa154106d5794fdd4bdd4786b63fb9896b804094.NewJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// JobsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.servicePrincipals.item.synchronization.jobs.item collection
+// JobsById provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
 func (m *SynchronizationRequestBuilder) JobsById(id string)(*ibe6466d39a6e0f7d78fef7ec330777772ce9e4942297f090c6e91a7b4f7da1a8.SynchronizationJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -190,11 +190,11 @@ func (m *SynchronizationRequestBuilder) Patch(ctx context.Context, body ie233ee7
 func (m *SynchronizationRequestBuilder) Ping()(*i441115fbd107244dd6504672d846ac2adcc602e6da088866d93d998f95107c40.PingRequestBuilder) {
     return i441115fbd107244dd6504672d846ac2adcc602e6da088866d93d998f95107c40.NewPingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Templates the templates property
+// Templates provides operations to manage the templates property of the microsoft.graph.synchronization entity.
 func (m *SynchronizationRequestBuilder) Templates()(*i8d4af922a9d1b5130f294d250ea800e845868ae335b95eccdbe95097a1393573.TemplatesRequestBuilder) {
     return i8d4af922a9d1b5130f294d250ea800e845868ae335b95eccdbe95097a1393573.NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.servicePrincipals.item.synchronization.templates.item collection
+// TemplatesById provides operations to manage the templates property of the microsoft.graph.synchronization entity.
 func (m *SynchronizationRequestBuilder) TemplatesById(id string)(*idbe71426e8a7cf17f46df86ea54d1a8d22e20242b9a4e0a5c7d1e8c8405dd581.SynchronizationTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

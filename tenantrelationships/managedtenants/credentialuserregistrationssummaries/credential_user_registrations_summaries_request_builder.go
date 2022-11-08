@@ -71,7 +71,7 @@ func NewCredentialUserRegistrationsSummariesRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewCredentialUserRegistrationsSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) Count()(*i24f4eb51f717c3034d4688f6ba15526e13c45a6c6e98a9701f1318efcd704d4b.CountRequestBuilder) {
     return i24f4eb51f717c3034d4688f6ba15526e13c45a6c6e98a9701f1318efcd704d4b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

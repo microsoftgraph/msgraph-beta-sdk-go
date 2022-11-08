@@ -53,15 +53,15 @@ type WindowsDriverUpdateProfileItemRequestBuilderPatchRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) Assign()(*i0d5104ae2038733f4a0ba840268b8369f6bc121826293eab58ba88947073f553.AssignRequestBuilder) {
     return i0d5104ae2038733f4a0ba840268b8369f6bc121826293eab58ba88947073f553.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.windowsDriverUpdateProfile entity.
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) Assignments()(*ifa4b3a3995a95d8ea842462ce1688b377028489725a54208f7a79be75071c764.AssignmentsRequestBuilder) {
     return ifa4b3a3995a95d8ea842462ce1688b377028489725a54208f7a79be75071c764.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsDriverUpdateProfiles.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsDriverUpdateProfile entity.
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*i823e1a7037c21e1cb6a062bc58c9b7f7aacc3516364a051cdbc689c661c6ff50.WindowsDriverUpdateProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -149,11 +149,11 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// DriverInventories the driverInventories property
+// DriverInventories provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) DriverInventories()(*i0227b9d371a89beb62067a796c02c0b39fdf080a3997ff8e2e1bccd0df359555.DriverInventoriesRequestBuilder) {
     return i0227b9d371a89beb62067a796c02c0b39fdf080a3997ff8e2e1bccd0df359555.NewDriverInventoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DriverInventoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsDriverUpdateProfiles.item.driverInventories.item collection
+// DriverInventoriesById provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) DriverInventoriesById(id string)(*i34e12a4e98dbefb122831ccf78a7c140934f5de1ca516a3631404c0f4718c186.WindowsDriverUpdateInventoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -164,7 +164,7 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) DriverInventoriesById(id 
     }
     return i34e12a4e98dbefb122831ccf78a7c140934f5de1ca516a3631404c0f4718c186.NewWindowsDriverUpdateInventoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ExecuteAction the executeAction property
+// ExecuteAction provides operations to call the executeAction method.
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) ExecuteAction()(*i7d322cde9c6dc3cbc3b99c3bd99e285cfd57d7d19bb515fe2fe8f2e1362010b9.ExecuteActionRequestBuilder) {
     return i7d322cde9c6dc3cbc3b99c3bd99e285cfd57d7d19bb515fe2fe8f2e1362010b9.NewExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -206,7 +206,7 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileable), nil
 }
-// SyncInventory the syncInventory property
+// SyncInventory provides operations to call the syncInventory method.
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) SyncInventory()(*idf402f71068be00c76511f89c1a60aaa1debfdf51df203d20c1f5ace9153aa77.SyncInventoryRequestBuilder) {
     return idf402f71068be00c76511f89c1a60aaa1debfdf51df203d20c1f5ace9153aa77.NewSyncInventoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -48,11 +48,11 @@ type IncidentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alerts the alerts property
+// Alerts provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
 func (m *IncidentItemRequestBuilder) Alerts()(*i98223e9a9b8ac9e549fa78880d86e78032af5c068d984e010dd91741733c9a44.AlertsRequestBuilder) {
     return i98223e9a9b8ac9e549fa78880d86e78032af5c068d984e010dd91741733c9a44.NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlertsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.incidents.item.alerts.item collection
+// AlertsById provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
 func (m *IncidentItemRequestBuilder) AlertsById(id string)(*ia173f77adc9078aa43f36dbd5d1534285a4c3c5567fd4b29c53ba03b9650354e.AlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

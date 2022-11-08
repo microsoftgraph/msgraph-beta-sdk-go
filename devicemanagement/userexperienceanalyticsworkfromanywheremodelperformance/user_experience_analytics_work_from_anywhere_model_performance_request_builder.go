@@ -71,7 +71,7 @@ func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) Count()(*ib1b7bbaed9be0d34a3a87f66323accafd0101e6d2ddb65a564734a096452d3b4.CountRequestBuilder) {
     return ib1b7bbaed9be0d34a3a87f66323accafd0101e6d2ddb65a564734a096452d3b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

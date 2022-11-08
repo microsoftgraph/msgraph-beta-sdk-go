@@ -74,7 +74,7 @@ func NewPermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PermissionGrantsRequestBuilder) Count()(*i1bb4e1d4a51cdfce1795942bf6ace9e4d8e432115535906e84421123aa1e8ddc.CountRequestBuilder) {
     return i1bb4e1d4a51cdfce1795942bf6ace9e4d8e432115535906e84421123aa1e8ddc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -127,11 +127,11 @@ func (m *PermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *PermissionGrantsRequestBuilder) GetByIds()(*iffb9c260ba9d63eee5182450dadd3de28b77c2b8af3a6cc26f571cbab72028d6.GetByIdsRequestBuilder) {
     return iffb9c260ba9d63eee5182450dadd3de28b77c2b8af3a6cc26f571cbab72028d6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *PermissionGrantsRequestBuilder) GetUserOwnedObjects()(*ibb6a288724e821f40dc14102c367fc3fba22080b0ce0999eec43058afc1eab51.GetUserOwnedObjectsRequestBuilder) {
     return ibb6a288724e821f40dc14102c367fc3fba22080b0ce0999eec43058afc1eab51.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -154,7 +154,7 @@ func (m *PermissionGrantsRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*i689e69bd83a8c361d2498a1f3fec702d372638399fa5ee7fe9fe8bc9298eac5c.ValidatePropertiesRequestBuilder) {
     return i689e69bd83a8c361d2498a1f3fec702d372638399fa5ee7fe9fe8bc9298eac5c.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

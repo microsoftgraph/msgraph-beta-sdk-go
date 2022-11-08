@@ -71,7 +71,7 @@ func NewReferencingConfigurationPoliciesRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewReferencingConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ReferencingConfigurationPoliciesRequestBuilder) Count()(*ia25aee78b5263b5865e23686b2b0d39eefeb0b8bf57d439a931cebacc8272ea5.CountRequestBuilder) {
     return ia25aee78b5263b5865e23686b2b0d39eefeb0b8bf57d439a931cebacc8272ea5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -64,7 +64,7 @@ func NewRosterPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewRosterPlansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RosterPlansRequestBuilder) Count()(*ib69cc1c6bb06d87109c482969c7a0419c54d0ce9d67ea6c8822fc98ab3ead77d.CountRequestBuilder) {
     return ib69cc1c6bb06d87109c482969c7a0419c54d0ce9d67ea6c8822fc98ab3ead77d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

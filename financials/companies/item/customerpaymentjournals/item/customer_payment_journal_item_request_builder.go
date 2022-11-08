@@ -49,7 +49,7 @@ type CustomerPaymentJournalItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.customerPaymentJournal entity.
 func (m *CustomerPaymentJournalItemRequestBuilder) Account()(*icf60ac8c8bdf6d2598e70cbc64335f3349b52f0906822aa33183ce7856795204.AccountRequestBuilder) {
     return icf60ac8c8bdf6d2598e70cbc64335f3349b52f0906822aa33183ce7856795204.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -114,11 +114,11 @@ func (m *CustomerPaymentJournalItemRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// CustomerPayments the customerPayments property
+// CustomerPayments provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
 func (m *CustomerPaymentJournalItemRequestBuilder) CustomerPayments()(*i158ee248967a0aa764abf30309015ccd5fc2a08a2aa5fc76ff38213f29e2782a.CustomerPaymentsRequestBuilder) {
     return i158ee248967a0aa764abf30309015ccd5fc2a08a2aa5fc76ff38213f29e2782a.NewCustomerPaymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustomerPaymentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.customerPaymentJournals.item.customerPayments.item collection
+// CustomerPaymentsById provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
 func (m *CustomerPaymentJournalItemRequestBuilder) CustomerPaymentsById(id string)(*ic37aafe0737f76d3603471c2e9ee70925625ac5cf40414bbe1b8b7acfcb5b74a.CustomerPaymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

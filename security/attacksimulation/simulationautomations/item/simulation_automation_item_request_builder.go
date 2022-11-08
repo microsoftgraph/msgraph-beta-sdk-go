@@ -163,11 +163,11 @@ func (m *SimulationAutomationItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SimulationAutomationable), nil
 }
-// Runs the runs property
+// Runs provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
 func (m *SimulationAutomationItemRequestBuilder) Runs()(*ib9663ab9c9e66482f168952a66294f5f24a925b386b70a447abce22da376f0ff.RunsRequestBuilder) {
     return ib9663ab9c9e66482f168952a66294f5f24a925b386b70a447abce22da376f0ff.NewRunsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RunsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.attackSimulation.simulationAutomations.item.runs.item collection
+// RunsById provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
 func (m *SimulationAutomationItemRequestBuilder) RunsById(id string)(*if7bd3d352788a194a1e1e2291a92ef8ab512583d9bb9d3e83bd0eaef68c9a562.SimulationAutomationRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

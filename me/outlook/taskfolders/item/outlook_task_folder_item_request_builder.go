@@ -146,11 +146,11 @@ func (m *OutlookTaskFolderItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
 func (m *OutlookTaskFolderItemRequestBuilder) MultiValueExtendedProperties()(*i99568de587864405cbb7ec5179efa3e533e234570ca91e410212ec1d04fe089c.MultiValueExtendedPropertiesRequestBuilder) {
     return i99568de587864405cbb7ec5179efa3e533e234570ca91e410212ec1d04fe089c.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.outlook.taskFolders.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
 func (m *OutlookTaskFolderItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i645e01811e5e9cf150ad7755ded1c4cca58e15173c57613b642c0c878c5c4224.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *OutlookTaskFolderItemRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
 func (m *OutlookTaskFolderItemRequestBuilder) SingleValueExtendedProperties()(*i44c0c086502e5c42f8c0b70140fda98b421c68cee2ad57dce93ec3e17b4a1a9a.SingleValueExtendedPropertiesRequestBuilder) {
     return i44c0c086502e5c42f8c0b70140fda98b421c68cee2ad57dce93ec3e17b4a1a9a.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.outlook.taskFolders.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.
 func (m *OutlookTaskFolderItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i7f227a30fb4ec3965178563ee0f1c3b874776270d21828095647c10a35379e25.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -195,11 +195,11 @@ func (m *OutlookTaskFolderItemRequestBuilder) SingleValueExtendedPropertiesById(
     }
     return i7f227a30fb4ec3965178563ee0f1c3b874776270d21828095647c10a35379e25.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
 func (m *OutlookTaskFolderItemRequestBuilder) Tasks()(*i43e25b1a2e7db024aa2c8195c093b9f95136385066d5a6b0e1a1718ccbb4941a.TasksRequestBuilder) {
     return i43e25b1a2e7db024aa2c8195c093b9f95136385066d5a6b0e1a1718ccbb4941a.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.outlook.taskFolders.item.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
 func (m *OutlookTaskFolderItemRequestBuilder) TasksById(id string)(*i4c149284b5e78d79fdca30504030b7dd8696f7b3a114850f0c0c50352668aeb9.OutlookTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

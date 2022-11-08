@@ -71,7 +71,7 @@ func NewJournalLinesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewJournalLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *JournalLinesRequestBuilder) Count()(*i793f694e6caf816277ab56256febfe75dfb2c8e20d17c8b2506f02a3d8fd8a35.CountRequestBuilder) {
     return i793f694e6caf816277ab56256febfe75dfb2c8e20d17c8b2506f02a3d8fd8a35.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

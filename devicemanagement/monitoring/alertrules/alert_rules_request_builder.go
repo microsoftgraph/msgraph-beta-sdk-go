@@ -71,7 +71,7 @@ func NewAlertRulesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewAlertRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AlertRulesRequestBuilder) Count()(*i427821354bfe1aa5df8bc0fa434692c4c4eb9714ac37e5b7f3f1aa4f968e894a.CountRequestBuilder) {
     return i427821354bfe1aa5df8bc0fa434692c4c4eb9714ac37e5b7f3f1aa4f968e894a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

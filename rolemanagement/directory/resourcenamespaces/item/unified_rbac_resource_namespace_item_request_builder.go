@@ -145,7 +145,7 @@ func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable), nil
 }
-// ImportResourceActions the importResourceActions property
+// ImportResourceActions provides operations to call the importResourceActions method.
 func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) ImportResourceActions()(*i57882143c214ec8547e9e29f83c78b6ba8a5a9e82bf6f8cf44bb035bec347ebb.ImportResourceActionsRequestBuilder) {
     return i57882143c214ec8547e9e29f83c78b6ba8a5a9e82bf6f8cf44bb035bec347ebb.NewImportResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable), nil
 }
-// ResourceActions the resourceActions property
+// ResourceActions provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
 func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActions()(*i23eeb299d8c7655a5b8f9d91dcc2657946c4c182d94ebf89a3ccfe073344b511.ResourceActionsRequestBuilder) {
     return i23eeb299d8c7655a5b8f9d91dcc2657946c4c182d94ebf89a3ccfe073344b511.NewResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourceActionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.resourceNamespaces.item.resourceActions.item collection
+// ResourceActionsById provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
 func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActionsById(id string)(*i0ba042109e088f641da71389cf2ee1d6834428aef79b7f6483d9fafa2f43ab7a.UnifiedRbacResourceActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

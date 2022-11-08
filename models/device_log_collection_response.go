@@ -9,6 +9,8 @@ import (
 // DeviceLogCollectionResponse windows Log Collection request entity.
 type DeviceLogCollectionResponse struct {
     Entity
+    // The User Principal Name (UPN) of the user that enrolled the device
+    enrolledByUser *string
     // The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
     errorCode *int64
     // The DateTime of the expiration of the logs
@@ -39,6 +41,10 @@ func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
 func CreateDeviceLogCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceLogCollectionResponse(), nil
 }
+// GetEnrolledByUser gets the enrolledByUser property value. The User Principal Name (UPN) of the user that enrolled the device
+func (m *DeviceLogCollectionResponse) GetEnrolledByUser()(*string) {
+    return m.enrolledByUser
+}
 // GetErrorCode gets the errorCode property value. The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *DeviceLogCollectionResponse) GetErrorCode()(*int64) {
     return m.errorCode
@@ -50,6 +56,7 @@ func (m *DeviceLogCollectionResponse) GetExpirationDateTimeUTC()(*i336074805fc85
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["enrolledByUser"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetEnrolledByUser)
     res["errorCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetErrorCode)
     res["expirationDateTimeUTC"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetExpirationDateTimeUTC)
     res["initiatedByUserPrincipalName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetInitiatedByUserPrincipalName)
@@ -89,6 +96,12 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteStringValue("enrolledByUser", m.GetEnrolledByUser())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteInt64Value("errorCode", m.GetErrorCode())
@@ -139,6 +152,10 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     return nil
+}
+// SetEnrolledByUser sets the enrolledByUser property value. The User Principal Name (UPN) of the user that enrolled the device
+func (m *DeviceLogCollectionResponse) SetEnrolledByUser(value *string)() {
+    m.enrolledByUser = value
 }
 // SetErrorCode sets the errorCode property value. The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *DeviceLogCollectionResponse) SetErrorCode(value *int64)() {

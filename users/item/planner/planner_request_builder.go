@@ -58,11 +58,11 @@ type PlannerRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// All the all property
+// All provides operations to manage the all property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) All()(*ibf58c71a094fcdfd1bc9c2e0c6c4a7f17629a13a38945c331ac2090bdd864963.AllRequestBuilder) {
     return ibf58c71a094fcdfd1bc9c2e0c6c4a7f17629a13a38945c331ac2090bdd864963.NewAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AllById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.all.item collection
+// AllById provides operations to manage the all property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) AllById(id string)(*iea71824a70bb4972dcddc0b056992a9f6c83b550f5c1191520345be2898bd0f2.PlannerDeltaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -150,11 +150,11 @@ func (m *PlannerRequestBuilder) Delete(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// FavoritePlans the favoritePlans property
+// FavoritePlans provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) FavoritePlans()(*iff81dee8c57e8cdf388de7660fa9d05ee375305f050c5322e7392b5cfa49e6b6.FavoritePlansRequestBuilder) {
     return iff81dee8c57e8cdf388de7660fa9d05ee375305f050c5322e7392b5cfa49e6b6.NewFavoritePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FavoritePlansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.favoritePlans.item collection
+// FavoritePlansById provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) FavoritePlansById(id string)(*ib8e4b0e29fa0bab4a12714aa2c4ba3540af7adea774b8f3bac0f193c1c83baa2.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -203,11 +203,11 @@ func (m *PlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable), nil
 }
-// Plans the plans property
+// Plans provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Plans()(*i4e26d6e5e4e60c41cf7e0126190c23e4d4b6ac317c46b74e7a26c14b6e1ee02d.PlansRequestBuilder) {
     return i4e26d6e5e4e60c41cf7e0126190c23e4d4b6ac317c46b74e7a26c14b6e1ee02d.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PlansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.plans.item collection
+// PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) PlansById(id string)(*i86f40f45c3011d5e68ca73d248500d11e56081a192959e8099e5577b8ee31efd.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -218,11 +218,11 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*i86f40f45c3011d5e68ca73d24
     }
     return i86f40f45c3011d5e68ca73d248500d11e56081a192959e8099e5577b8ee31efd.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RecentPlans the recentPlans property
+// RecentPlans provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RecentPlans()(*i9f3bb673ec53be741be4ac1dff78058797b2e863d80e66433c720e99f9bffdad.RecentPlansRequestBuilder) {
     return i9f3bb673ec53be741be4ac1dff78058797b2e863d80e66433c720e99f9bffdad.NewRecentPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RecentPlansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.recentPlans.item collection
+// RecentPlansById provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RecentPlansById(id string)(*i86017907c6216aa0164fd179d5714657602a4a6e42c45ca14763c542c6cbd85e.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -233,11 +233,11 @@ func (m *PlannerRequestBuilder) RecentPlansById(id string)(*i86017907c6216aa0164
     }
     return i86017907c6216aa0164fd179d5714657602a4a6e42c45ca14763c542c6cbd85e.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RosterPlans the rosterPlans property
+// RosterPlans provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RosterPlans()(*id046e247c84498d4c7ad4bea9771219a60d6b5fb6fbd69f7131a8e807b851816.RosterPlansRequestBuilder) {
     return id046e247c84498d4c7ad4bea9771219a60d6b5fb6fbd69f7131a8e807b851816.NewRosterPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RosterPlansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.rosterPlans.item collection
+// RosterPlansById provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RosterPlansById(id string)(*i723887d2b7bb1d5b453d57c98fe83989e90f0efdf4225427a652314064664806.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -248,11 +248,11 @@ func (m *PlannerRequestBuilder) RosterPlansById(id string)(*i723887d2b7bb1d5b453
     }
     return i723887d2b7bb1d5b453d57c98fe83989e90f0efdf4225427a652314064664806.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Tasks()(*i089c3d3abe24c51d75b3535dafe2c0f6501ace7e1bbade3c5349577c564a3642.TasksRequestBuilder) {
     return i089c3d3abe24c51d75b3535dafe2c0f6501ace7e1bbade3c5349577c564a3642.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.planner.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) TasksById(id string)(*i75445737f77febd8e8ab6f9ab4a51048a800000b3b33d3582945e735d9732587.PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

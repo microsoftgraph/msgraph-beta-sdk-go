@@ -54,7 +54,7 @@ type NoncustodialDataSourcesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyHold the applyHold property
+// ApplyHold provides operations to call the applyHold method.
 func (m *NoncustodialDataSourcesRequestBuilder) ApplyHold()(*i6be3c26afae412e709f8c29691ed322d7a709004190807c07df909b750acf5fb.ApplyHoldRequestBuilder) {
     return i6be3c26afae412e709f8c29691ed322d7a709004190807c07df909b750acf5fb.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -77,7 +77,7 @@ func NewNoncustodialDataSourcesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewNoncustodialDataSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *NoncustodialDataSourcesRequestBuilder) Count()(*i2655c75d22d63af166bb95ba5672f1f3b2ea384d07a46df39ab4549eb67926b3.CountRequestBuilder) {
     return i2655c75d22d63af166bb95ba5672f1f3b2ea384d07a46df39ab4549eb67926b3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *NoncustodialDataSourcesRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceable), nil
 }
-// RemoveHold the removeHold property
+// RemoveHold provides operations to call the removeHold method.
 func (m *NoncustodialDataSourcesRequestBuilder) RemoveHold()(*ifd3d9f64cbcf567f464389efaaaf04cd06578883272854f51583af1c0ebb48f9.RemoveHoldRequestBuilder) {
     return ifd3d9f64cbcf567f464389efaaaf04cd06578883272854f51583af1c0ebb48f9.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -163,11 +163,11 @@ func (m *SecurityBaselineStateItemRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineStateable), nil
 }
-// SettingStates the settingStates property
+// SettingStates provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
 func (m *SecurityBaselineStateItemRequestBuilder) SettingStates()(*i70aafda266ed48512d40299c2aeb1764c358fa5ac74245325656d31ccd11c080.SettingStatesRequestBuilder) {
     return i70aafda266ed48512d40299c2aeb1764c358fa5ac74245325656d31ccd11c080.NewSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.managedDevices.item.securityBaselineStates.item.settingStates.item collection
+// SettingStatesById provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
 func (m *SecurityBaselineStateItemRequestBuilder) SettingStatesById(id string)(*id053ea3d5bc635d6ccfc94bdc721142a88d882ac2c76384142b42f7c8eb43657.SecurityBaselineSettingStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

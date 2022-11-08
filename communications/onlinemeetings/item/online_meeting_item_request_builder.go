@@ -56,15 +56,15 @@ type OnlineMeetingItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlternativeRecording the alternativeRecording property
+// AlternativeRecording provides operations to manage the media for the cloudCommunications entity.
 func (m *OnlineMeetingItemRequestBuilder) AlternativeRecording()(*ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9.AlternativeRecordingRequestBuilder) {
     return ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9.NewAlternativeRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceReports the attendanceReports property
+// AttendanceReports provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReports()(*i973f10e60f8f0226efcd773b4162b5082a7c2927993ac09fbb3f58bd0fb4fa4d.AttendanceReportsRequestBuilder) {
     return i973f10e60f8f0226efcd773b4162b5082a7c2927993ac09fbb3f58bd0fb4fa4d.NewAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.attendanceReports.item collection
+// AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*ib99f82b2686be9ab3c0709927e690dd3df4c41d545906785c734827457ee1d56.MeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,7 +75,7 @@ func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*ib99
     }
     return ib99f82b2686be9ab3c0709927e690dd3df4c41d545906785c734827457ee1d56.NewMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AttendeeReport the attendeeReport property
+// AttendeeReport provides operations to manage the media for the cloudCommunications entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendeeReport()(*i3a2bfcc71796b9365b1b580ed5a11589b09828c31bbc6758b6afbd6ee2ee53a9.AttendeeReportRequestBuilder) {
     return i3a2bfcc71796b9365b1b580ed5a11589b09828c31bbc6758b6afbd6ee2ee53a9.NewAttendeeReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -175,7 +175,7 @@ func (m *OnlineMeetingItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
-// MeetingAttendanceReport the meetingAttendanceReport property
+// MeetingAttendanceReport provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) MeetingAttendanceReport()(*ie765355a32ec6cb4ba90da216a62ec4fb6b7b232eb3780cefe410dc49551bbe5.MeetingAttendanceReportRequestBuilder) {
     return ie765355a32ec6cb4ba90da216a62ec4fb6b7b232eb3780cefe410dc49551bbe5.NewMeetingAttendanceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -198,19 +198,19 @@ func (m *OnlineMeetingItemRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
-// Recording the recording property
+// Recording provides operations to manage the media for the cloudCommunications entity.
 func (m *OnlineMeetingItemRequestBuilder) Recording()(*ia176566273a5afb80848389bc0868b65818d8d6d3ab8bc727ddcd5d4015393f9.RecordingRequestBuilder) {
     return ia176566273a5afb80848389bc0868b65818d8d6d3ab8bc727ddcd5d4015393f9.NewRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Registration the registration property
+// Registration provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) Registration()(*i28844d8a5d325bb0845a1778d6df0388d975703f04633f34ffc2f4073b871389.RegistrationRequestBuilder) {
     return i28844d8a5d325bb0845a1778d6df0388d975703f04633f34ffc2f4073b871389.NewRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Transcripts the transcripts property
+// Transcripts provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) Transcripts()(*ibf215dcedc685523e33219b91fd02247c51376f20991fc707be93a6e0640d955.TranscriptsRequestBuilder) {
     return ibf215dcedc685523e33219b91fd02247c51376f20991fc707be93a6e0640d955.NewTranscriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TranscriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.transcripts.item collection
+// TranscriptsById provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*i1df49adb94e4624ec86cfc9e723c409892b4e3c93067331f6ac6280b4cd1c473.CallTranscriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,7 +221,7 @@ func (m *OnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*i1df49adb9
     }
     return i1df49adb94e4624ec86cfc9e723c409892b4e3c93067331f6ac6280b4cd1c473.NewCallTranscriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// VirtualAppointment the virtualAppointment property
+// VirtualAppointment provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) VirtualAppointment()(*ibc5e0e3096be23e911a3fdca31d7d21b8c3cc6a11a0e00e3e861fdc763ebedfd.VirtualAppointmentRequestBuilder) {
     return ibc5e0e3096be23e911a3fdca31d7d21b8c3cc6a11a0e00e3e861fdc763ebedfd.NewVirtualAppointmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -23,6 +23,7 @@ type EducationSubmissionable interface {
     GetSubmittedResources()([]EducationSubmissionResourceable)
     GetUnsubmittedBy()(IdentitySetable)
     GetUnsubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetWebUrl()(*string)
     SetOutcomes(value []EducationOutcomeable)()
     SetReassignedBy(value IdentitySetable)()
     SetReassignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -37,4 +38,5 @@ type EducationSubmissionable interface {
     SetSubmittedResources(value []EducationSubmissionResourceable)()
     SetUnsubmittedBy(value IdentitySetable)()
     SetUnsubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetWebUrl(value *string)()
 }

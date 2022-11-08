@@ -50,7 +50,7 @@ type ReviewSetItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddToReviewSet the addToReviewSet property
+// AddToReviewSet provides operations to call the addToReviewSet method.
 func (m *ReviewSetItemRequestBuilder) AddToReviewSet()(*i08b6f0b5a320f941f6b9e04f436d2deaf397e1da914e9bfb4309c34077c320f6.AddToReviewSetRequestBuilder) {
     return i08b6f0b5a320f941f6b9e04f436d2deaf397e1da914e9bfb4309c34077c320f6.NewAddToReviewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -131,7 +131,7 @@ func (m *ReviewSetItemRequestBuilder) Delete(ctx context.Context, requestConfigu
     }
     return nil
 }
-// Export the export property
+// Export provides operations to call the export method.
 func (m *ReviewSetItemRequestBuilder) Export()(*i331d9fcb9fb3723ce0d6251992ccb1b62085e60afae20de233674ebeb7e41db8.ExportRequestBuilder) {
     return i331d9fcb9fb3723ce0d6251992ccb1b62085e60afae20de233674ebeb7e41db8.NewExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *ReviewSetItemRequestBuilder) Patch(ctx context.Context, body ic154d683a
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable), nil
 }
-// Queries the queries property
+// Queries provides operations to manage the queries property of the microsoft.graph.ediscovery.reviewSet entity.
 func (m *ReviewSetItemRequestBuilder) Queries()(*i95d988bf764f142af2cbc9b71e126590844a8f1556f57902f7965dddff422bb5.QueriesRequestBuilder) {
     return i95d988bf764f142af2cbc9b71e126590844a8f1556f57902f7965dddff422bb5.NewQueriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// QueriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.reviewSets.item.queries.item collection
+// QueriesById provides operations to manage the queries property of the microsoft.graph.ediscovery.reviewSet entity.
 func (m *ReviewSetItemRequestBuilder) QueriesById(id string)(*iddd703417744884f23660dc02635324f3f6311317b830c6b4be8a93262f68548.ReviewSetQueryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

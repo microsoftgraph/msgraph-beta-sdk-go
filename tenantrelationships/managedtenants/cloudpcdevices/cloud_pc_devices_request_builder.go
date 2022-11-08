@@ -71,7 +71,7 @@ func NewCloudPcDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CloudPcDevicesRequestBuilder) Count()(*ib75ff662617501e9bb6d5f6781e007221311c2fe4391c211d0b9039673ace2bc.CountRequestBuilder) {
     return ib75ff662617501e9bb6d5f6781e007221311c2fe4391c211d0b9039673ace2bc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

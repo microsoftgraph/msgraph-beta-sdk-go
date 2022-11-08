@@ -71,7 +71,7 @@ func NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionNetworkLearningSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Count()(*i6b7ead16ec43ea627a8543f927ee7d1ac7dbe4ed6c0ad254a2859b19119da90b.CountRequestBuilder) {
     return i6b7ead16ec43ea627a8543f927ee7d1ac7dbe4ed6c0ad254a2859b19119da90b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

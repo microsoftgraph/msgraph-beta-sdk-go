@@ -50,11 +50,11 @@ type AuthenticationStrengthPolicyItemRequestBuilderPatchRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CombinationConfigurations the combinationConfigurations property
+// CombinationConfigurations provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
 func (m *AuthenticationStrengthPolicyItemRequestBuilder) CombinationConfigurations()(*icb24339ba786533219f957a096c57574d38841aa39f0439b672016839500f238.CombinationConfigurationsRequestBuilder) {
     return icb24339ba786533219f957a096c57574d38841aa39f0439b672016839500f238.NewCombinationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CombinationConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.conditionalAccess.authenticationStrengths.policies.item.combinationConfigurations.item collection
+// CombinationConfigurationsById provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.
 func (m *AuthenticationStrengthPolicyItemRequestBuilder) CombinationConfigurationsById(id string)(*ie1cceb13119cf3619f9f800d53862b1ce401f24f325294211305376b999c502e.AuthenticationCombinationConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,7 +180,7 @@ func (m *AuthenticationStrengthPolicyItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthPolicyable), nil
 }
-// UpdateAllowedCombinations the updateAllowedCombinations property
+// UpdateAllowedCombinations provides operations to call the updateAllowedCombinations method.
 func (m *AuthenticationStrengthPolicyItemRequestBuilder) UpdateAllowedCombinations()(*i842fbe6712200b2d2955595c045a78ee2e3b00e74271f87b681b4cc60ee5daa0.UpdateAllowedCombinationsRequestBuilder) {
     return i842fbe6712200b2d2955595c045a78ee2e3b00e74271f87b681b4cc60ee5daa0.NewUpdateAllowedCombinationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

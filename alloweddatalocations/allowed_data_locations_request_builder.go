@@ -71,7 +71,7 @@ func NewAllowedDataLocationsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedDataLocationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AllowedDataLocationsRequestBuilder) Count()(*i73991b2ef22211d884811241bcf1450635b1dbe828f54c6b7e8614664225dada.CountRequestBuilder) {
     return i73991b2ef22211d884811241bcf1450635b1dbe828f54c6b7e8614664225dada.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

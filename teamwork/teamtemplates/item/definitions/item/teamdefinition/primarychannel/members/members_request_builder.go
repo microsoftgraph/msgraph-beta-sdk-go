@@ -53,7 +53,7 @@ type MembersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Add the add property
+// Add provides operations to call the add method.
 func (m *MembersRequestBuilder) Add()(*ibae9d37b6319287695ea18e25de4bc465804b0a9632538aa13b566eed92aa282.AddRequestBuilder) {
     return ibae9d37b6319287695ea18e25de4bc465804b0a9632538aa13b566eed92aa282.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -76,7 +76,7 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MembersRequestBuilder) Count()(*i21abaeabd2a3bf6cc164f6154a9e3eef3a5888bd20b0b75a2e1ef4eb7f220ae9.CountRequestBuilder) {
     return i21abaeabd2a3bf6cc164f6154a9e3eef3a5888bd20b0b75a2e1ef4eb7f220ae9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

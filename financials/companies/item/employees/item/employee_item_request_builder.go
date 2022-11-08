@@ -163,11 +163,11 @@ func (m *EmployeeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Employeeable), nil
 }
-// Picture the picture property
+// Picture provides operations to manage the picture property of the microsoft.graph.employee entity.
 func (m *EmployeeItemRequestBuilder) Picture()(*i652ff1de6cfef015a3e309d14034175d4603ec679c441ab393763107684f5092.PictureRequestBuilder) {
     return i652ff1de6cfef015a3e309d14034175d4603ec679c441ab393763107684f5092.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.employees.item.picture.item collection
+// PictureById provides operations to manage the picture property of the microsoft.graph.employee entity.
 func (m *EmployeeItemRequestBuilder) PictureById(id string)(*i21ad81ddbdbb9cf5e4dea44bcc206f183c38f73a9ff898299ac31345baf7330a.PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

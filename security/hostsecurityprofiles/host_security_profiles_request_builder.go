@@ -71,7 +71,7 @@ func NewHostSecurityProfilesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewHostSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *HostSecurityProfilesRequestBuilder) Count()(*i9d96272cf8278ac9b785af481b23b74a0a5a695133f8488981e875817bc26eb5.CountRequestBuilder) {
     return i9d96272cf8278ac9b785af481b23b74a0a5a695133f8488981e875817bc26eb5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

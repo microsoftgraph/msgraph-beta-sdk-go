@@ -50,11 +50,11 @@ type ExactMatchSessionItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *ExactMatchSessionItemRequestBuilder) Cancel()(*ic6bdbe766584845439738d0d52856be660bd81209b30e8e329715ddadc6fbfd4.CancelRequestBuilder) {
     return ic6bdbe766584845439738d0d52856be660bd81209b30e8e329715ddadc6fbfd4.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Commit the commit property
+// Commit provides operations to call the commit method.
 func (m *ExactMatchSessionItemRequestBuilder) Commit()(*ie50d1404accfd9f1f2d095ca342c1d50a359ffc201c488ebc36605b1a52c8fe8.CommitRequestBuilder) {
     return ie50d1404accfd9f1f2d095ca342c1d50a359ffc201c488ebc36605b1a52c8fe8.NewCommitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *ExactMatchSessionItemRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchSessionable), nil
 }
-// Renew the renew property
+// Renew provides operations to call the renew method.
 func (m *ExactMatchSessionItemRequestBuilder) Renew()(*ib8b448373dd317e53420a2b8e592c4264bb8430dd86f1f8af1ff13cf0b07a30f.RenewRequestBuilder) {
     return ib8b448373dd317e53420a2b8e592c4264bb8430dd86f1f8af1ff13cf0b07a30f.NewRenewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UploadAgent the uploadAgent property
+// UploadAgent provides operations to manage the uploadAgent property of the microsoft.graph.exactMatchSession entity.
 func (m *ExactMatchSessionItemRequestBuilder) UploadAgent()(*i04990ccdcd19a339f57b3ab646603ac886a33f74477ab8d057f344a6c0b4713d.UploadAgentRequestBuilder) {
     return i04990ccdcd19a339f57b3ab646603ac886a33f74477ab8d057f344a6c0b4713d.NewUploadAgentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

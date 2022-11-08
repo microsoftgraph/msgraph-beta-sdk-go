@@ -143,7 +143,7 @@ func (m *OutlineIconRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable), nil
 }
-// HostedContent the hostedContent property
+// HostedContent provides operations to manage the hostedContent property of the microsoft.graph.teamsAppIcon entity.
 func (m *OutlineIconRequestBuilder) HostedContent()(*ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862.HostedContentRequestBuilder) {
     return ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862.NewHostedContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

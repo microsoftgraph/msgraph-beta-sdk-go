@@ -65,7 +65,7 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MembersRequestBuilder) Count()(*id9c2057c07f9eea32502b935abdd5097f1ed87a7a9d19f6ac34f8307627fbe8d.CountRequestBuilder) {
     return id9c2057c07f9eea32502b935abdd5097f1ed87a7a9d19f6ac34f8307627fbe8d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *MembersRequestBuilder) Get(ctx context.Context, requestConfiguration *M
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of educationRoot entities.
 func (m *MembersRequestBuilder) Ref()(*i89008a4b503c8ad071abad4ecf6221010f0aaa8cf6511592db7353068a1d9e8b.RefRequestBuilder) {
     return i89008a4b503c8ad071abad4ecf6221010f0aaa8cf6511592db7353068a1d9e8b.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

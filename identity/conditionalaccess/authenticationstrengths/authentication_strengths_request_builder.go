@@ -50,11 +50,11 @@ type AuthenticationStrengthsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationMethodModes the authenticationMethodModes property
+// AuthenticationMethodModes provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *AuthenticationStrengthsRequestBuilder) AuthenticationMethodModes()(*i1ae18e0e9da292b2ad347484d67b5f5431c31339e39ab70ae2414154fe008621.AuthenticationMethodModesRequestBuilder) {
     return i1ae18e0e9da292b2ad347484d67b5f5431c31339e39ab70ae2414154fe008621.NewAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AuthenticationMethodModesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.conditionalAccess.authenticationStrengths.authenticationMethodModes.item collection
+// AuthenticationMethodModesById provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *AuthenticationStrengthsRequestBuilder) AuthenticationMethodModesById(id string)(*i62af1e0b68f40453793fa45c578271f673697b4aaed26e0642d99442b50d4656.AuthenticationMethodModeDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *AuthenticationStrengthsRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationStrengthRootable), nil
 }
-// Policies the policies property
+// Policies provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *AuthenticationStrengthsRequestBuilder) Policies()(*i7fac19ff62f87e78800afbe47d58ad82ca2edd4d1022323c5a291949f49c64d4.PoliciesRequestBuilder) {
     return i7fac19ff62f87e78800afbe47d58ad82ca2edd4d1022323c5a291949f49c64d4.NewPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.conditionalAccess.authenticationStrengths.policies.item collection
+// PoliciesById provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
 func (m *AuthenticationStrengthsRequestBuilder) PoliciesById(id string)(*ie490c37e832691221d12185a86be2a2b6c2b300f1f51ea20d762a0cf30744096.AuthenticationStrengthPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

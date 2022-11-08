@@ -429,6 +429,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewBookingService(), nil
                     case "#microsoft.graph.bookingStaffMember":
                         return NewBookingStaffMember(), nil
+                    case "#microsoft.graph.browserSharedCookie":
+                        return NewBrowserSharedCookie(), nil
+                    case "#microsoft.graph.browserSite":
+                        return NewBrowserSite(), nil
+                    case "#microsoft.graph.browserSiteList":
+                        return NewBrowserSiteList(), nil
                     case "#microsoft.graph.builtInIdentityProvider":
                         return NewBuiltInIdentityProvider(), nil
                     case "#microsoft.graph.businessFlow":
@@ -511,6 +517,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcReports(), nil
                     case "#microsoft.graph.cloudPcServicePlan":
                         return NewCloudPcServicePlan(), nil
+                    case "#microsoft.graph.cloudPcSharedUseServicePlan":
+                        return NewCloudPcSharedUseServicePlan(), nil
                     case "#microsoft.graph.cloudPcSnapshot":
                         return NewCloudPcSnapshot(), nil
                     case "#microsoft.graph.cloudPcSupportedRegion":
@@ -937,6 +945,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEasEmailProfileConfigurationBase(), nil
                     case "#microsoft.graph.eBookInstallSummary":
                         return NewEBookInstallSummary(), nil
+                    case "#microsoft.graph.edge":
+                        return NewEdge(), nil
                     case "#microsoft.graph.editionUpgradeConfiguration":
                         return NewEditionUpgradeConfiguration(), nil
                     case "#microsoft.graph.educationalActivity":
@@ -1209,6 +1219,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewInsightsSettings(), nil
                     case "#microsoft.graph.internalDomainFederation":
                         return NewInternalDomainFederation(), nil
+                    case "#microsoft.graph.internetExplorerMode":
+                        return NewInternetExplorerMode(), nil
                     case "#microsoft.graph.intuneBrandingProfile":
                         return NewIntuneBrandingProfile(), nil
                     case "#microsoft.graph.intuneBrandingProfileAssignment":
@@ -1379,6 +1391,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOSLobApp(), nil
                     case "#microsoft.graph.macOSMdatpApp":
                         return NewMacOSMdatpApp(), nil
+                    case "#microsoft.graph.macOSMicrosoftDefenderApp":
+                        return NewMacOSMicrosoftDefenderApp(), nil
                     case "#microsoft.graph.macOSMicrosoftEdgeApp":
                         return NewMacOSMicrosoftEdgeApp(), nil
                     case "#microsoft.graph.macOSOfficeSuiteApp":
@@ -1643,6 +1657,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnPremisesAgentGroup(), nil
                     case "#microsoft.graph.onPremisesConditionalAccessSettings":
                         return NewOnPremisesConditionalAccessSettings(), nil
+                    case "#microsoft.graph.onPremisesDirectorySynchronization":
+                        return NewOnPremisesDirectorySynchronization(), nil
                     case "#microsoft.graph.onPremisesPublishingProfile":
                         return NewOnPremisesPublishingProfile(), nil
                     case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
@@ -1669,10 +1685,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOrganizationalBrandingLocalization(), nil
                     case "#microsoft.graph.organizationalBrandingProperties":
                         return NewOrganizationalBrandingProperties(), nil
-                    case "#microsoft.graph.organizationalMessageDetail":
-                        return NewOrganizationalMessageDetail(), nil
-                    case "#microsoft.graph.organizationalMessageGuidedContent":
-                        return NewOrganizationalMessageGuidedContent(), nil
                     case "#microsoft.graph.organizationSettings":
                         return NewOrganizationSettings(), nil
                     case "#microsoft.graph.orgContact":
@@ -2355,8 +2367,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserExperienceAnalyticsNotAutopilotReadyDevice(), nil
                     case "#microsoft.graph.userExperienceAnalyticsOverview":
                         return NewUserExperienceAnalyticsOverview(), nil
-                    case "#microsoft.graph.userExperienceAnalyticsRegressionSummary":
-                        return NewUserExperienceAnalyticsRegressionSummary(), nil
                     case "#microsoft.graph.userExperienceAnalyticsRemoteConnection":
                         return NewUserExperienceAnalyticsRemoteConnection(), nil
                     case "#microsoft.graph.userExperienceAnalyticsResourcePerformance":

@@ -64,7 +64,7 @@ func NewApiNotificationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewApiNotificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ApiNotificationsRequestBuilder) Count()(*ia38efb004a2fa52d62ab0ef53d2bdb90ceb91c63286bd21471c9a31598d5ff15.CountRequestBuilder) {
     return ia38efb004a2fa52d62ab0ef53d2bdb90ceb91c63286bd21471c9a31598d5ff15.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

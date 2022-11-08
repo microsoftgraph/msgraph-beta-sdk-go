@@ -33,7 +33,7 @@ type GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *GeneralLedgerEntryItemRequestBuilderGetQueryParameters
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.generalLedgerEntry entity.
 func (m *GeneralLedgerEntryItemRequestBuilder) Account()(*ibac8eb5e8bb42c7e8c92e7024b822d703e6c45c3d6f437550124c797d08fe88a.AccountRequestBuilder) {
     return ibac8eb5e8bb42c7e8c92e7024b822d703e6c45c3d6f437550124c797d08fe88a.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

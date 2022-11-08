@@ -64,7 +64,7 @@ func NewSalesQuoteLinesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewSalesQuoteLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SalesQuoteLinesRequestBuilder) Count()(*i28d7f926198301b9aee8d6c41282d6e070864c013a6fdb9734c3a87a30135876.CountRequestBuilder) {
     return i28d7f926198301b9aee8d6c41282d6e070864c013a6fdb9734c3a87a30135876.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -5,13 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserScopeTeamsAppInstallation provides operations to manage the collection of accessReview entities.
+// UserScopeTeamsAppInstallation 
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
     // The chat between the user and Teams app.
     chat Chatable
 }
-// NewUserScopeTeamsAppInstallation instantiates a new userScopeTeamsAppInstallation and sets the default values.
+// NewUserScopeTeamsAppInstallation instantiates a new UserScopeTeamsAppInstallation and sets the default values.
 func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
     m := &UserScopeTeamsAppInstallation{
         TeamsAppInstallation: *NewTeamsAppInstallation(),

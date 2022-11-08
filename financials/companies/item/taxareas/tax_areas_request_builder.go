@@ -71,7 +71,7 @@ func NewTaxAreasRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewTaxAreasRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TaxAreasRequestBuilder) Count()(*ia3302239bbd5f895d1eced4cdbb38b915d000bae9e843f86a4867435b185da1d.CountRequestBuilder) {
     return ia3302239bbd5f895d1eced4cdbb38b915d000bae9e843f86a4867435b185da1d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

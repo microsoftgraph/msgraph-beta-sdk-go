@@ -163,11 +163,11 @@ func (m *ParentGroupRequestBuilder) Patch(ctx context.Context, body i45fc41673b9
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable), nil
 }
-// Sets the sets property
+// Sets provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *ParentGroupRequestBuilder) Sets()(*i8c69aaf3adab4f0b324a95442b38d93a38163b6ec074c2a86e663899fd34d05e.SetsRequestBuilder) {
     return i8c69aaf3adab4f0b324a95442b38d93a38163b6ec074c2a86e663899fd34d05e.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.sites.item.termStore.sets.item.parentGroup.sets.item collection
+// SetsById provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
 func (m *ParentGroupRequestBuilder) SetsById(id string)(*i0a0e92e18b0593e3a95d5699de123575aac4a960385b6b2c37c67f3a607e03cb.SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

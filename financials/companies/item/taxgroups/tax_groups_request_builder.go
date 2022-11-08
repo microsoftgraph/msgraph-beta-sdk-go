@@ -71,7 +71,7 @@ func NewTaxGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewTaxGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TaxGroupsRequestBuilder) Count()(*iccf9d427ab61557bad6a8fa402747e9203e63c08edd661c92603b01d8ec100db.CountRequestBuilder) {
     return iccf9d427ab61557bad6a8fa402747e9203e63c08edd661c92603b01d8ec100db.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

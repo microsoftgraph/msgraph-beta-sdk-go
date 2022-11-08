@@ -162,7 +162,7 @@ func (m *ProgramControlItemRequestBuilder) Patch(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable), nil
 }
-// Program the program property
+// Program provides operations to manage the program property of the microsoft.graph.programControl entity.
 func (m *ProgramControlItemRequestBuilder) Program()(*ia12e99f87a71470550eb8cd69c3eb1c90774698064507f096add8f1085a7e9ff.ProgramRequestBuilder) {
     return ia12e99f87a71470550eb8cd69c3eb1c90774698064507f096add8f1085a7e9ff.NewProgramRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

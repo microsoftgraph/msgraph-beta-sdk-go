@@ -71,7 +71,7 @@ func NewUserExperienceAnalyticsScoreHistoryRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Count()(*ia80e1df779dac8351e2660637afeeff1a31d546134cf7e456d73b53ddec67b58.CountRequestBuilder) {
     return ia80e1df779dac8351e2660637afeeff1a31d546134cf7e456d73b53ddec67b58.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

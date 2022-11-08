@@ -72,7 +72,7 @@ func NewTenantGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewTenantGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TenantGroupsRequestBuilder) Count()(*ia08441d1849e327095c234a187264cbf5a076c3016bbc7c3a3f4b741b9a7f50a.CountRequestBuilder) {
     return ia08441d1849e327095c234a187264cbf5a076c3016bbc7c3a3f4b741b9a7f50a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *TenantGroupsRequestBuilder) Post(ctx context.Context, body i72d786f54cc
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable), nil
 }
-// TenantSearch the tenantSearch property
+// TenantSearch provides operations to call the tenantSearch method.
 func (m *TenantGroupsRequestBuilder) TenantSearch()(*i86e8e63e85de67171644c463e36cc57d3c920f484f6937360f52c82139946fb4.TenantSearchRequestBuilder) {
     return i86e8e63e85de67171644c463e36cc57d3c920f484f6937360f52c82139946fb4.NewTenantSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

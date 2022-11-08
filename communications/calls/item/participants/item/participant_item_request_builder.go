@@ -145,7 +145,7 @@ func (m *ParticipantItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Participantable), nil
 }
-// Mute the mute property
+// Mute provides operations to call the mute method.
 func (m *ParticipantItemRequestBuilder) Mute()(*ia5b12d15eecc588be0eed1311521b9ba320ef7fda01561b2189547174e3c053e.MuteRequestBuilder) {
     return ia5b12d15eecc588be0eed1311521b9ba320ef7fda01561b2189547174e3c053e.NewMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *ParticipantItemRequestBuilder) Patch(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Participantable), nil
 }
-// StartHoldMusic the startHoldMusic property
+// StartHoldMusic provides operations to call the startHoldMusic method.
 func (m *ParticipantItemRequestBuilder) StartHoldMusic()(*ib1e327aceeb5e9922727d013c2c01c946d786d4f0dd97da14c83069b74440142.StartHoldMusicRequestBuilder) {
     return ib1e327aceeb5e9922727d013c2c01c946d786d4f0dd97da14c83069b74440142.NewStartHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// StopHoldMusic the stopHoldMusic property
+// StopHoldMusic provides operations to call the stopHoldMusic method.
 func (m *ParticipantItemRequestBuilder) StopHoldMusic()(*i55fa04094b32357dee1cf11bcf0682026a81845621bd837b1130d0d8eff6f4b4.StopHoldMusicRequestBuilder) {
     return i55fa04094b32357dee1cf11bcf0682026a81845621bd837b1130d0d8eff6f4b4.NewStopHoldMusicRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

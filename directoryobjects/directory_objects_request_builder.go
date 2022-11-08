@@ -74,7 +74,7 @@ func NewDirectoryObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DirectoryObjectsRequestBuilder) Count()(*if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.CountRequestBuilder) {
     return if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -127,11 +127,11 @@ func (m *DirectoryObjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *DirectoryObjectsRequestBuilder) GetByIds()(*if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.GetByIdsRequestBuilder) {
     return if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *DirectoryObjectsRequestBuilder) GetUserOwnedObjects()(*i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f.GetUserOwnedObjectsRequestBuilder) {
     return i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -154,7 +154,7 @@ func (m *DirectoryObjectsRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a.ValidatePropertiesRequestBuilder) {
     return ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

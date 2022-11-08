@@ -51,11 +51,11 @@ type ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups the checkMemberGroups property
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberGroups()(*ifbc434c249b1be589c1ef306abd75c7ad26c524381020682e0ce18f99fec93a5.CheckMemberGroupsRequestBuilder) {
     return ifbc434c249b1be589c1ef306abd75c7ad26c524381020682e0ce18f99fec93a5.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CheckMemberObjects the checkMemberObjects property
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberObjects()(*i6a82658abd67828f034ed1af14d598f1d71d47cbef5c8e3e9283435209942ddc.CheckMemberObjectsRequestBuilder) {
     return i6a82658abd67828f034ed1af14d598f1d71d47cbef5c8e3e9283435209942ddc.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
-// GetMemberGroups the getMemberGroups property
+// GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberGroups()(*id79c8a095488c38cfa47beb73a334ed58f015b7c106f5b571d633a49400b7090.GetMemberGroupsRequestBuilder) {
     return id79c8a095488c38cfa47beb73a334ed58f015b7c106f5b571d633a49400b7090.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetMemberObjects the getMemberObjects property
+// GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberObjects()(*i2a254e51eb302104527e4cb7b70e6fba3a26bc1f673fb595a469e9e213b60230.GetMemberObjectsRequestBuilder) {
     return i2a254e51eb302104527e4cb7b70e6fba3a26bc1f673fb595a469e9e213b60230.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -182,7 +182,7 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Restore()(*i0fe519b4cee3d98fcef83ad87b8d65e904351820fb3dcc1b46fcf400bd19cfa1.RestoreRequestBuilder) {
     return i0fe519b4cee3d98fcef83ad87b8d65e904351820fb3dcc1b46fcf400bd19cfa1.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -66,7 +66,7 @@ func NewDirectReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewDirectReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DirectReportsRequestBuilder) Count()(*i6d646dfd420e86f0b1f9ae7248fb24c004b95664b8ecfda7f496d670fa3f8c6d.CountRequestBuilder) {
     return i6d646dfd420e86f0b1f9ae7248fb24c004b95664b8ecfda7f496d670fa3f8c6d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -105,11 +105,11 @@ func (m *DirectReportsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// OrgContact the orgContact property
+// OrgContact casts the previous resource to orgContact.
 func (m *DirectReportsRequestBuilder) OrgContact()(*i6faca5e5d78547c2176ea7db58ffd3232eb42bb0ae4b519563085a1cd76108b1.OrgContactRequestBuilder) {
     return i6faca5e5d78547c2176ea7db58ffd3232eb42bb0ae4b519563085a1cd76108b1.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *DirectReportsRequestBuilder) User()(*i7832be456efb2ba441891f1aa78ec3d4bf087036ed5319e3e1f8c91690bd4e10.UserRequestBuilder) {
     return i7832be456efb2ba441891f1aa78ec3d4bf087036ed5319e3e1f8c91690bd4e10.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

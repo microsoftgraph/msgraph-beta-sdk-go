@@ -41,7 +41,7 @@ type SalesCreditMemoLineItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.salesCreditMemoLine entity.
 func (m *SalesCreditMemoLineItemRequestBuilder) Account()(*id2c5ff2b49eab78f2b34cad646e49ae4754a34a20d78c44affcc140dd7675880.AccountRequestBuilder) {
     return id2c5ff2b49eab78f2b34cad646e49ae4754a34a20d78c44affcc140dd7675880.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -113,7 +113,7 @@ func (m *SalesCreditMemoLineItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineable), nil
 }
-// Item the item property
+// Item provides operations to manage the item property of the microsoft.graph.salesCreditMemoLine entity.
 func (m *SalesCreditMemoLineItemRequestBuilder) Item()(*i74a0fc59f11438423fbcf73df386b5f2e5fbf8b0b63de48b9452f2e52c37422b.ItemRequestBuilder) {
     return i74a0fc59f11438423fbcf73df386b5f2e5fbf8b0b63de48b9452f2e52c37422b.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -27,6 +27,8 @@ type GroupPolicyMigrationReport struct {
     migrationReadiness *GroupPolicyMigrationReadiness
     // The distinguished name of the OU.
     ouDistinguishedName *string
+    // The list of scope tags for the configuration.
+    roleScopeTagIds []string
     // The number of Group Policy Settings supported by Intune.
     supportedSettingsCount *int32
     // The Percentage of Group Policy Settings supported by Intune.
@@ -71,6 +73,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i87
     res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
     res["migrationReadiness"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseGroupPolicyMigrationReadiness , m.SetMigrationReadiness)
     res["ouDistinguishedName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOuDistinguishedName)
+    res["roleScopeTagIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetRoleScopeTagIds)
     res["supportedSettingsCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSupportedSettingsCount)
     res["supportedSettingsPercent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSupportedSettingsPercent)
     res["targetedInActiveDirectory"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetTargetedInActiveDirectory)
@@ -105,6 +108,10 @@ func (m *GroupPolicyMigrationReport) GetMigrationReadiness()(*GroupPolicyMigrati
 // GetOuDistinguishedName gets the ouDistinguishedName property value. The distinguished name of the OU.
 func (m *GroupPolicyMigrationReport) GetOuDistinguishedName()(*string) {
     return m.ouDistinguishedName
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. The list of scope tags for the configuration.
+func (m *GroupPolicyMigrationReport) GetRoleScopeTagIds()([]string) {
+    return m.roleScopeTagIds
 }
 // GetSupportedSettingsCount gets the supportedSettingsCount property value. The number of Group Policy Settings supported by Intune.
 func (m *GroupPolicyMigrationReport) GetSupportedSettingsCount()(*int32) {
@@ -188,6 +195,12 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    if m.GetRoleScopeTagIds() != nil {
+        err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("supportedSettingsCount", m.GetSupportedSettingsCount())
         if err != nil {
@@ -256,6 +269,10 @@ func (m *GroupPolicyMigrationReport) SetMigrationReadiness(value *GroupPolicyMig
 // SetOuDistinguishedName sets the ouDistinguishedName property value. The distinguished name of the OU.
 func (m *GroupPolicyMigrationReport) SetOuDistinguishedName(value *string)() {
     m.ouDistinguishedName = value
+}
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. The list of scope tags for the configuration.
+func (m *GroupPolicyMigrationReport) SetRoleScopeTagIds(value []string)() {
+    m.roleScopeTagIds = value
 }
 // SetSupportedSettingsCount sets the supportedSettingsCount property value. The number of Group Policy Settings supported by Intune.
 func (m *GroupPolicyMigrationReport) SetSupportedSettingsCount(value *int32)() {

@@ -127,11 +127,11 @@ func (m *BaseTaskListItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.baseTaskList entity.
 func (m *BaseTaskListItemRequestBuilder) Extensions()(*i4ccb45cf5449cde9a855293201a90fe08effc7897538cd8449eaf7dfd594f426.ExtensionsRequestBuilder) {
     return i4ccb45cf5449cde9a855293201a90fe08effc7897538cd8449eaf7dfd594f426.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.tasks.lists.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.baseTaskList entity.
 func (m *BaseTaskListItemRequestBuilder) ExtensionsById(id string)(*ic2a1728b965201eb2c4a49a6ab389aeb85905c2e8ce090860374209c717fee89.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *BaseTaskListItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable), nil
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.baseTaskList entity.
 func (m *BaseTaskListItemRequestBuilder) Tasks()(*if906077de45f7d96aa307bac6c10d92cebd86fa579e641ebdea67afbe15a2ad3.TasksRequestBuilder) {
     return if906077de45f7d96aa307bac6c10d92cebd86fa579e641ebdea67afbe15a2ad3.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.tasks.lists.item.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.baseTaskList entity.
 func (m *BaseTaskListItemRequestBuilder) TasksById(id string)(*i4dab3159909e3c80d30dfedfdf84f1d2a765e5adf19465bc164ad1721709364d.BaseTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

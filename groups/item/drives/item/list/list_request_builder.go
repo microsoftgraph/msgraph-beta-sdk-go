@@ -58,15 +58,15 @@ type ListRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activities the activities property
+// Activities provides operations to manage the activities property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) Activities()(*ia7fc35da0de2bd686f2aa5a8a1fdfc88ac3a5bbd57126d8a1bd0644eceb39752.ActivitiesRequestBuilder) {
     return ia7fc35da0de2bd686f2aa5a8a1fdfc88ac3a5bbd57126d8a1bd0644eceb39752.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Columns the columns property
+// Columns provides operations to manage the columns property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) Columns()(*i1271f32d5f7d3b0586f8de93a5b0535ce223cbfd2b48e6f411f71c399da18327.ColumnsRequestBuilder) {
     return i1271f32d5f7d3b0586f8de93a5b0535ce223cbfd2b48e6f411f71c399da18327.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ColumnsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.columns.item collection
+// ColumnsById provides operations to manage the columns property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) ColumnsById(id string)(*i649cdddb50a802c43dc3af1a06a94775bd06e4c17653045c20a5077da03ca95d.ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -96,11 +96,11 @@ func NewListRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewListRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContentTypes the contentTypes property
+// ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) ContentTypes()(*i43e0b5ce13128879f06e2b07e0ccd9f8dc1dafb84ac39aa8ef8923e069dc6a8b.ContentTypesRequestBuilder) {
     return i43e0b5ce13128879f06e2b07e0ccd9f8dc1dafb84ac39aa8ef8923e069dc6a8b.NewContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContentTypesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.contentTypes.item collection
+// ContentTypesById provides operations to manage the contentTypes property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) ContentTypesById(id string)(*i998c00f0ec1e2b40c5518299a0453c926896385255ff91e4bf3d2b7234a467a8.ContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -169,7 +169,7 @@ func (m *ListRequestBuilder) Delete(ctx context.Context, requestConfiguration *L
     }
     return nil
 }
-// Drive the drive property
+// Drive provides operations to manage the drive property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) Drive()(*ic55f9fa554d8a522a28b3fbd75b161bce003442994fcc35c64c623a12261a280.DriveRequestBuilder) {
     return ic55f9fa554d8a522a28b3fbd75b161bce003442994fcc35c64c623a12261a280.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -192,11 +192,11 @@ func (m *ListRequestBuilder) Get(ctx context.Context, requestConfiguration *List
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable), nil
 }
-// Items the items property
+// Items provides operations to manage the items property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) Items()(*idc21fe63ea818594f7f29929ecb8355791aa9fdd52478809de7eff177ca4c915.ItemsRequestBuilder) {
     return idc21fe63ea818594f7f29929ecb8355791aa9fdd52478809de7eff177ca4c915.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.items.item collection
+// ItemsById provides operations to manage the items property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) ItemsById(id string)(*iba31399dc8f34e424c8ebc1f280f4f9e3e58432f001227720cab229ef435deaa.ListItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -207,11 +207,11 @@ func (m *ListRequestBuilder) ItemsById(id string)(*iba31399dc8f34e424c8ebc1f280f
     }
     return iba31399dc8f34e424c8ebc1f280f4f9e3e58432f001227720cab229ef435deaa.NewListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) Operations()(*i923c78037243955d3854651774d2282943abed938d26a8809587cc4b58252199.OperationsRequestBuilder) {
     return i923c78037243955d3854651774d2282943abed938d26a8809587cc4b58252199.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) OperationsById(id string)(*iae2fd07cb5857ac5712f84db0ed1eab2184e2ab848fee6addbad50e8b44d0302.RichLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -241,11 +241,11 @@ func (m *ListRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba69
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable), nil
 }
-// Subscriptions the subscriptions property
+// Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) Subscriptions()(*i7bfd5cc8c38cfc387360207e15abdf3e46f2fcf5d71bc51b310a210e16307965.SubscriptionsRequestBuilder) {
     return i7bfd5cc8c38cfc387360207e15abdf3e46f2fcf5d71bc51b310a210e16307965.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubscriptionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.subscriptions.item collection
+// SubscriptionsById provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 func (m *ListRequestBuilder) SubscriptionsById(id string)(*ia7e7318eb558bf8bfc7b2e73993fafd19e3292f1d7b06c2efa414823b5a839db.SubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

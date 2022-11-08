@@ -126,11 +126,11 @@ func (m *RetentionLabelItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// DispositionReviewStages the dispositionReviewStages property
+// DispositionReviewStages provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
 func (m *RetentionLabelItemRequestBuilder) DispositionReviewStages()(*i9224452dc226ea305cb91b2a5cd70963b3a9a403abfcf1c642af3d6f45c9b771.DispositionReviewStagesRequestBuilder) {
     return i9224452dc226ea305cb91b2a5cd70963b3a9a403abfcf1c642af3d6f45c9b771.NewDispositionReviewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DispositionReviewStagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.labels.retentionLabels.item.dispositionReviewStages.item collection
+// DispositionReviewStagesById provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
 func (m *RetentionLabelItemRequestBuilder) DispositionReviewStagesById(id string)(*i9ef689bd0cbb8bd1212eda0bea54badef97e734ac5057dc23a6b676b8ffc49d0.DispositionReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,7 +179,7 @@ func (m *RetentionLabelItemRequestBuilder) Patch(ctx context.Context, body i084f
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable), nil
 }
-// RetentionEventType the retentionEventType property
+// RetentionEventType provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionLabel entity.
 func (m *RetentionLabelItemRequestBuilder) RetentionEventType()(*ib26ec3d2379f5136dbefe1caa94138b6a1e95580a4dddcb3d7b2520491e13808.RetentionEventTypeRequestBuilder) {
     return ib26ec3d2379f5136dbefe1caa94138b6a1e95580a4dddcb3d7b2520491e13808.NewRetentionEventTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

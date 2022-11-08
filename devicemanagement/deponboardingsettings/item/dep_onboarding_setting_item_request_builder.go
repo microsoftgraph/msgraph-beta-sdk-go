@@ -119,11 +119,11 @@ func (m *DepOnboardingSettingItemRequestBuilder) CreatePatchRequestInformation(c
     }
     return requestInfo, nil
 }
-// DefaultIosEnrollmentProfile the defaultIosEnrollmentProfile property
+// DefaultIosEnrollmentProfile provides operations to manage the defaultIosEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingItemRequestBuilder) DefaultIosEnrollmentProfile()(*ie8887b0ef7cf44f65a0cbcd3ff9572d708c15969aa877c22a6b342fba9ecacdd.DefaultIosEnrollmentProfileRequestBuilder) {
     return ie8887b0ef7cf44f65a0cbcd3ff9572d708c15969aa877c22a6b342fba9ecacdd.NewDefaultIosEnrollmentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DefaultMacOsEnrollmentProfile the defaultMacOsEnrollmentProfile property
+// DefaultMacOsEnrollmentProfile provides operations to manage the defaultMacOsEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingItemRequestBuilder) DefaultMacOsEnrollmentProfile()(*i8cbc14b32444f6bc2ca617287bc7edcc041b98aeb7e5731521363f58947dd8e5.DefaultMacOsEnrollmentProfileRequestBuilder) {
     return i8cbc14b32444f6bc2ca617287bc7edcc041b98aeb7e5731521363f58947dd8e5.NewDefaultMacOsEnrollmentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -143,11 +143,11 @@ func (m *DepOnboardingSettingItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// EnrollmentProfiles the enrollmentProfiles property
+// EnrollmentProfiles provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingItemRequestBuilder) EnrollmentProfiles()(*i176618c3c34968adb403c4d65ed7688ded2af2f955513bc66fab436b03d406aa.EnrollmentProfilesRequestBuilder) {
     return i176618c3c34968adb403c4d65ed7688ded2af2f955513bc66fab436b03d406aa.NewEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EnrollmentProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.depOnboardingSettings.item.enrollmentProfiles.item collection
+// EnrollmentProfilesById provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingItemRequestBuilder) EnrollmentProfilesById(id string)(*ia63cbab7405477c100c61aae973c313555d3f6ecfa0f50ec772d43ee157d7a9d.EnrollmentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -158,7 +158,7 @@ func (m *DepOnboardingSettingItemRequestBuilder) EnrollmentProfilesById(id strin
     }
     return ia63cbab7405477c100c61aae973c313555d3f6ecfa0f50ec772d43ee157d7a9d.NewEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GenerateEncryptionPublicKey the generateEncryptionPublicKey property
+// GenerateEncryptionPublicKey provides operations to call the generateEncryptionPublicKey method.
 func (m *DepOnboardingSettingItemRequestBuilder) GenerateEncryptionPublicKey()(*idc472b110ec13510663e8f300d42a723cb0feabc33f9afe042fd0354e0c25f91.GenerateEncryptionPublicKeyRequestBuilder) {
     return idc472b110ec13510663e8f300d42a723cb0feabc33f9afe042fd0354e0c25f91.NewGenerateEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -185,11 +185,11 @@ func (m *DepOnboardingSettingItemRequestBuilder) Get(ctx context.Context, reques
 func (m *DepOnboardingSettingItemRequestBuilder) GetEncryptionPublicKey()(*i0a6e758c70ffdd42835c37d486fd53bac47c3b3806c07e1d3709a2073bdf86d8.GetEncryptionPublicKeyRequestBuilder) {
     return i0a6e758c70ffdd42835c37d486fd53bac47c3b3806c07e1d3709a2073bdf86d8.NewGetEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ImportedAppleDeviceIdentities the importedAppleDeviceIdentities property
+// ImportedAppleDeviceIdentities provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentities()(*i21c452abb08aebef53cfef108f20776c8c80e1b61fade3bc7b23262c36f6790e.ImportedAppleDeviceIdentitiesRequestBuilder) {
     return i21c452abb08aebef53cfef108f20776c8c80e1b61fade3bc7b23262c36f6790e.NewImportedAppleDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ImportedAppleDeviceIdentitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.depOnboardingSettings.item.importedAppleDeviceIdentities.item collection
+// ImportedAppleDeviceIdentitiesById provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
 func (m *DepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentitiesById(id string)(*ia6717b64f1af972b7242219bd4db44a401fd79458567d783585ee41f0fd2c0b6.ImportedAppleDeviceIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -219,19 +219,19 @@ func (m *DepOnboardingSettingItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable), nil
 }
-// ShareForSchoolDataSyncService the shareForSchoolDataSyncService property
+// ShareForSchoolDataSyncService provides operations to call the shareForSchoolDataSyncService method.
 func (m *DepOnboardingSettingItemRequestBuilder) ShareForSchoolDataSyncService()(*i989047b1c27e9cacd2dfc635896ba97eabdf1a1f2c9359c6782243264caa99ae.ShareForSchoolDataSyncServiceRequestBuilder) {
     return i989047b1c27e9cacd2dfc635896ba97eabdf1a1f2c9359c6782243264caa99ae.NewShareForSchoolDataSyncServiceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SyncWithAppleDeviceEnrollmentProgram the syncWithAppleDeviceEnrollmentProgram property
+// SyncWithAppleDeviceEnrollmentProgram provides operations to call the syncWithAppleDeviceEnrollmentProgram method.
 func (m *DepOnboardingSettingItemRequestBuilder) SyncWithAppleDeviceEnrollmentProgram()(*if9fb73889c241fb97e6deb0813e9e46d242f7a381291cf01dad122ab56ea043c.SyncWithAppleDeviceEnrollmentProgramRequestBuilder) {
     return if9fb73889c241fb97e6deb0813e9e46d242f7a381291cf01dad122ab56ea043c.NewSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UnshareForSchoolDataSyncService the unshareForSchoolDataSyncService property
+// UnshareForSchoolDataSyncService provides operations to call the unshareForSchoolDataSyncService method.
 func (m *DepOnboardingSettingItemRequestBuilder) UnshareForSchoolDataSyncService()(*ie23d6848bd98c8bd4afdc914cf1374fd1fd8f96b0c4e1dbfadefc18a867a668a.UnshareForSchoolDataSyncServiceRequestBuilder) {
     return ie23d6848bd98c8bd4afdc914cf1374fd1fd8f96b0c4e1dbfadefc18a867a668a.NewUnshareForSchoolDataSyncServiceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UploadDepToken the uploadDepToken property
+// UploadDepToken provides operations to call the uploadDepToken method.
 func (m *DepOnboardingSettingItemRequestBuilder) UploadDepToken()(*id9d4a53b959ec383d97e9b95072f8672fabff3e6ae908bfa98f47839ef0cbb99.UploadDepTokenRequestBuilder) {
     return id9d4a53b959ec383d97e9b95072f8672fabff3e6ae908bfa98f47839ef0cbb99.NewUploadDepTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

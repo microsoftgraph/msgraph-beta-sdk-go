@@ -163,11 +163,11 @@ func (m *TriggersRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba80
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.TriggersRootable), nil
 }
-// RetentionEvents the retentionEvents property
+// RetentionEvents provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
 func (m *TriggersRequestBuilder) RetentionEvents()(*ie0107ff94b81502217270b5eebe17deccc797c285961273a188895034ddb1e10.RetentionEventsRequestBuilder) {
     return ie0107ff94b81502217270b5eebe17deccc797c285961273a188895034ddb1e10.NewRetentionEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RetentionEventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.triggers.retentionEvents.item collection
+// RetentionEventsById provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
 func (m *TriggersRequestBuilder) RetentionEventsById(id string)(*ief0be26f30e99afaa104e185e00cba0ad7ce018614bfc13c6b256dc49b079d4e.RetentionEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

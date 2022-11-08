@@ -72,7 +72,7 @@ func NewPolicySetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PolicySetsRequestBuilder) Count()(*i533f0632b8629a8867e4692dde5c727dc05f4a5af09cfc18969a4e1d6ec1a4ca.CountRequestBuilder) {
     return i533f0632b8629a8867e4692dde5c727dc05f4a5af09cfc18969a4e1d6ec1a4ca.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *PolicySetsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetCollectionResponseable), nil
 }
-// GetPolicySets the getPolicySets property
+// GetPolicySets provides operations to call the getPolicySets method.
 func (m *PolicySetsRequestBuilder) GetPolicySets()(*ib959247d2d05cb603ba7167a7c01244eade31add99340194087e2772c7daba23.GetPolicySetsRequestBuilder) {
     return ib959247d2d05cb603ba7167a7c01244eade31add99340194087e2772c7daba23.NewGetPolicySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

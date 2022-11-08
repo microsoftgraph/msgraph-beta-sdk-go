@@ -71,7 +71,7 @@ func NewWindowsManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsManagedAppProtectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsManagedAppProtectionsRequestBuilder) Count()(*i82aa97f0dad4b9a64dd2f3933725743bf0772abcbf43a95de8edfce2530d40d7.CountRequestBuilder) {
     return i82aa97f0dad4b9a64dd2f3933725743bf0772abcbf43a95de8edfce2530d40d7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

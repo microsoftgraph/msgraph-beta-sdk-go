@@ -47,7 +47,7 @@ type MobileAppInstallStatusItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// App the app property
+// App provides operations to manage the app property of the microsoft.graph.mobileAppInstallStatus entity.
 func (m *MobileAppInstallStatusItemRequestBuilder) App()(*ic4b734d1ed3f0a54080e18cb02c0e25b7366d82eab9cb274e4638c4984f7d6ec.AppRequestBuilder) {
     return ic4b734d1ed3f0a54080e18cb02c0e25b7366d82eab9cb274e4638c4984f7d6ec.NewAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

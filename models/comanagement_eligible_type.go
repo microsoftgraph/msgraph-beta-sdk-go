@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of accessReview entities.
 type ComanagementEligibleType int
 
 const (
@@ -13,10 +13,12 @@ const (
     INELIGIBLE_COMANAGEMENTELIGIBLETYPE
     // Devices scheduled for Co-Management enrollment
     SCHEDULEDFORENROLLMENT_COMANAGEMENTELIGIBLETYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_COMANAGEMENTELIGIBLETYPE
 )
 
 func (i ComanagementEligibleType) String() string {
-    return []string{"comanaged", "eligible", "eligibleButNotAzureAdJoined", "needsOsUpdate", "ineligible", "scheduledForEnrollment"}[i]
+    return []string{"comanaged", "eligible", "eligibleButNotAzureAdJoined", "needsOsUpdate", "ineligible", "scheduledForEnrollment", "unknownFutureValue"}[i]
 }
 func ParseComanagementEligibleType(v string) (interface{}, error) {
     result := COMANAGED_COMANAGEMENTELIGIBLETYPE
@@ -33,6 +35,8 @@ func ParseComanagementEligibleType(v string) (interface{}, error) {
             result = INELIGIBLE_COMANAGEMENTELIGIBLETYPE
         case "scheduledForEnrollment":
             result = SCHEDULEDFORENROLLMENT_COMANAGEMENTELIGIBLETYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_COMANAGEMENTELIGIBLETYPE
         default:
             return 0, errors.New("Unknown ComanagementEligibleType value: " + v)
     }

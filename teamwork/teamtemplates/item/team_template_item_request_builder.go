@@ -109,11 +109,11 @@ func (m *TeamTemplateItemRequestBuilder) CreatePatchRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// Definitions the definitions property
+// Definitions provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
 func (m *TeamTemplateItemRequestBuilder) Definitions()(*ic7350a668e20d5ab217625a29b80afd656f38f31f9bf269aa844f74397857cf5.DefinitionsRequestBuilder) {
     return ic7350a668e20d5ab217625a29b80afd656f38f31f9bf269aa844f74397857cf5.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item collection
+// DefinitionsById provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
 func (m *TeamTemplateItemRequestBuilder) DefinitionsById(id string)(*i36e756c3ac0db12c681dff44b71a96b1dbed457a2d9bdec2b5dcfa431a7ae5aa.TeamTemplateDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

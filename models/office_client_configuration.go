@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeClientConfiguration provides operations to manage the collection of accessReview entities.
+// OfficeClientConfiguration 
 type OfficeClientConfiguration struct {
     Entity
     // The list of group assignments for the policy.
@@ -25,7 +25,7 @@ type OfficeClientConfiguration struct {
     // Preference settings JSON string in binary format, these values can be overridden by the user.
     userPreferencePayload []byte
 }
-// NewOfficeClientConfiguration instantiates a new officeClientConfiguration and sets the default values.
+// NewOfficeClientConfiguration instantiates a new OfficeClientConfiguration and sets the default values.
 func NewOfficeClientConfiguration()(*OfficeClientConfiguration) {
     m := &OfficeClientConfiguration{
         Entity: *NewEntity(),

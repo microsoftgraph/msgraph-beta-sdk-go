@@ -163,11 +163,11 @@ func (m *MessageTraceItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageTraceable), nil
 }
-// Recipients the recipients property
+// Recipients provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
 func (m *MessageTraceItemRequestBuilder) Recipients()(*i3ab3304bdff2112b7f44c4e3735f9f4f803cca87448b4d30efc2916bc2663f09.RecipientsRequestBuilder) {
     return i3ab3304bdff2112b7f44c4e3735f9f4f803cca87448b4d30efc2916bc2663f09.NewRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RecipientsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageTraces.item.recipients.item collection
+// RecipientsById provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
 func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*i784f8f4585fbe63e879909a57ff455aab4735d6d36dfefcca7b001c7d766c074.MessageRecipientItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

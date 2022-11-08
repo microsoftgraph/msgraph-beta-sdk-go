@@ -9,7 +9,7 @@ import (
 type ConditionalAccessApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The applicationFilter property
+    // Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
     applicationFilter ConditionalAccessFilterable
     // Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     excludeApplications []string
@@ -39,7 +39,7 @@ func CreateConditionalAccessApplicationsFromDiscriminatorValue(parseNode i878a80
 func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetApplicationFilter gets the applicationFilter property value. The applicationFilter property
+// GetApplicationFilter gets the applicationFilter property value. Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
 func (m *ConditionalAccessApplications) GetApplicationFilter()(ConditionalAccessFilterable) {
     return m.applicationFilter
 }
@@ -124,7 +124,7 @@ func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d2689638
 func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetApplicationFilter sets the applicationFilter property value. The applicationFilter property
+// SetApplicationFilter sets the applicationFilter property value. Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.
 func (m *ConditionalAccessApplications) SetApplicationFilter(value ConditionalAccessFilterable)() {
     m.applicationFilter = value
 }

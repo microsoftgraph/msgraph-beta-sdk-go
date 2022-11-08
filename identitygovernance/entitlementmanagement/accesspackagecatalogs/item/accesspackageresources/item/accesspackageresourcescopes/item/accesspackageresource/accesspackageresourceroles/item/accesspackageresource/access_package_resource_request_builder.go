@@ -47,7 +47,7 @@ type AccessPackageResourceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageResourceEnvironment the accessPackageResourceEnvironment property
+// AccessPackageResourceEnvironment provides operations to manage the accessPackageResourceEnvironment property of the microsoft.graph.accessPackageResource entity.
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceEnvironment()(*i9db06489d34fd1191bc9c3d6aa53866ad47e3da399c04a02856dfaf88adfac73.AccessPackageResourceEnvironmentRequestBuilder) {
     return i9db06489d34fd1191bc9c3d6aa53866ad47e3da399c04a02856dfaf88adfac73.NewAccessPackageResourceEnvironmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

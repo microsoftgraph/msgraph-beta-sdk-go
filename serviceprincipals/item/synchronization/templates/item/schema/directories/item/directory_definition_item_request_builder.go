@@ -124,7 +124,7 @@ func (m *DirectoryDefinitionItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Discover the discover property
+// Discover provides operations to call the discover method.
 func (m *DirectoryDefinitionItemRequestBuilder) Discover()(*if4eb858c5315d8a890c8b57ddf4442d3ba2cb1706122fe2ca0b0c1cf43c0b2fa.DiscoverRequestBuilder) {
     return if4eb858c5315d8a890c8b57ddf4442d3ba2cb1706122fe2ca0b0c1cf43c0b2fa.NewDiscoverRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

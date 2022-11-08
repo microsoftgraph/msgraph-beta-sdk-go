@@ -71,7 +71,7 @@ func NewUserExperienceAnalyticsAnomalyDeviceRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAnomalyDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UserExperienceAnalyticsAnomalyDeviceRequestBuilder) Count()(*iae982d4ccf5d6d9057830edfb967fd63618bc635e87a27f8e7a0b22b583dc5ea.CountRequestBuilder) {
     return iae982d4ccf5d6d9057830edfb967fd63618bc635e87a27f8e7a0b22b583dc5ea.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -72,7 +72,7 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewPlacesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PlacesRequestBuilder) Count()(*iab431c93f04e578a7b236d5928b58e98153eb39a2d0667392eca8d00bfc07863.CountRequestBuilder) {
     return iab431c93f04e578a7b236d5928b58e98153eb39a2d0667392eca8d00bfc07863.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *PlacesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable), nil
 }
-// Room the room property
+// Room casts the previous resource to room.
 func (m *PlacesRequestBuilder) Room()(*i933c3a687d41d5b45c0c6ebb4fbf566132a111fdd0a5e8fb12b8e63e8c92ea1b.RoomRequestBuilder) {
     return i933c3a687d41d5b45c0c6ebb4fbf566132a111fdd0a5e8fb12b8e63e8c92ea1b.NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

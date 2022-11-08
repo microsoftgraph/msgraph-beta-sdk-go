@@ -22,6 +22,7 @@ type CloudPcProvisioningPolicyable interface {
     GetManagedBy()(*CloudPcManagementService)
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
     GetOnPremisesConnectionId()(*string)
+    GetProvisioningType()(*CloudPcProvisioningType)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
@@ -37,5 +38,6 @@ type CloudPcProvisioningPolicyable interface {
     SetManagedBy(value *CloudPcManagementService)()
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
     SetOnPremisesConnectionId(value *string)()
+    SetProvisioningType(value *CloudPcProvisioningType)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

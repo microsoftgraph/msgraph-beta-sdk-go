@@ -108,7 +108,7 @@ func (m *CustomerPaymentItemRequestBuilder) CreatePatchRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// Customer the customer property
+// Customer provides operations to manage the customer property of the microsoft.graph.customerPayment entity.
 func (m *CustomerPaymentItemRequestBuilder) Customer()(*i886f4607741215f862d6a69e542af8213c42fff6790bc09f722f6cb72243ea80.CustomerRequestBuilder) {
     return i886f4607741215f862d6a69e542af8213c42fff6790bc09f722f6cb72243ea80.NewCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewTabsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewTabsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TabsRequestBuilder) Count()(*ic32ad53629fdc5defd3ebadcbedf2433d57e7f9a24b27e9258fbddd4c9f387b5.CountRequestBuilder) {
     return ic32ad53629fdc5defd3ebadcbedf2433d57e7f9a24b27e9258fbddd4c9f387b5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

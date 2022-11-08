@@ -47,7 +47,7 @@ type JournalLineItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.journalLine entity.
 func (m *JournalLineItemRequestBuilder) Account()(*i790e45982e30e4b38a213bd1d3ce9b7f8ad62bd16bffdadcbd565cb706700be4.AccountRequestBuilder) {
     return i790e45982e30e4b38a213bd1d3ce9b7f8ad62bd16bffdadcbd565cb706700be4.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
