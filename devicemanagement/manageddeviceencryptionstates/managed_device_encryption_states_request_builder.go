@@ -71,7 +71,7 @@ func NewManagedDeviceEncryptionStatesRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceEncryptionStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedDeviceEncryptionStatesRequestBuilder) Count()(*i01d7eda5e7199aec1e1f922efc2dbda189bdb9e7cb66f4ee291ee40c93cd9a6d.CountRequestBuilder) {
     return i01d7eda5e7199aec1e1f922efc2dbda189bdb9e7cb66f4ee291ee40c93cd9a6d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

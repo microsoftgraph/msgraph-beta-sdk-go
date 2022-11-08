@@ -75,7 +75,7 @@ func NewAppliesToRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewAppliesToRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AppliesToRequestBuilder) Count()(*ic54e399544e5bee9521a9e228a9cbd75d26d094bf5295b258e44df7102354067.CountRequestBuilder) {
     return ic54e399544e5bee9521a9e228a9cbd75d26d094bf5295b258e44df7102354067.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -128,11 +128,11 @@ func (m *AppliesToRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *AppliesToRequestBuilder) GetByIds()(*i2faedfd6563232ad03511594aaa725b4aa98d0f39a974fb030b17a46e225f194.GetByIdsRequestBuilder) {
     return i2faedfd6563232ad03511594aaa725b4aa98d0f39a974fb030b17a46e225f194.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *AppliesToRequestBuilder) GetUserOwnedObjects()(*i9385584faf3cda07d9406c6ada0bc2dc1333495a084ce94fb82d7c1086ded9f7.GetUserOwnedObjectsRequestBuilder) {
     return i9385584faf3cda07d9406c6ada0bc2dc1333495a084ce94fb82d7c1086ded9f7.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *AppliesToRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of directory entities.
 func (m *AppliesToRequestBuilder) Ref()(*i80cd825752a6c36726e34a08801539564e2e4948894a9fdc9512ef76fa5bd4b5.RefRequestBuilder) {
     return i80cd825752a6c36726e34a08801539564e2e4948894a9fdc9512ef76fa5bd4b5.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *AppliesToRequestBuilder) ValidateProperties()(*i39c2c50639f8c9a9a5cfc3426436150d193d7a9ce9c827dc564a7499b69c48fd.ValidatePropertiesRequestBuilder) {
     return i39c2c50639f8c9a9a5cfc3426436150d193d7a9ce9c827dc564a7499b69c48fd.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

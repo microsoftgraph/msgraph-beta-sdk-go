@@ -72,7 +72,7 @@ func NewMdmWindowsInformationProtectionPoliciesRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewMdmWindowsInformationProtectionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) Count()(*ifc6fca424d2fce33bd51c77e17bc106cfef5325f7e72318232be6188af43400f.CountRequestBuilder) {
     return ifc6fca424d2fce33bd51c77e17bc106cfef5325f7e72318232be6188af43400f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) Get(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyCollectionResponseable), nil
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) HasPayloadLinks()(*if5c7a26625cafb004ed0e764dba42822957f316d6ddc05ff25f1effaad016720.HasPayloadLinksRequestBuilder) {
     return if5c7a26625cafb004ed0e764dba42822957f316d6ddc05ff25f1effaad016720.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

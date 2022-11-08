@@ -49,7 +49,7 @@ type EdiscoveryReviewSetQueryItemRequestBuilderPatchRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplyTags the applyTags property
+// ApplyTags provides operations to call the applyTags method.
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) ApplyTags()(*if9834b50a79825154b32059bdb0d29f98aa338e9369f666af5f862b9e6d2360e.ApplyTagsRequestBuilder) {
     return if9834b50a79825154b32059bdb0d29f98aa338e9369f666af5f862b9e6d2360e.NewApplyTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -130,7 +130,7 @@ func (m *EdiscoveryReviewSetQueryItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Export the export property
+// Export provides operations to call the export method.
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) Export()(*i9e1e4e7e8e8cd680826d746191f2ddd4e1784912c6628647895647279baf2784.ExportRequestBuilder) {
     return i9e1e4e7e8e8cd680826d746191f2ddd4e1784912c6628647895647279baf2784.NewExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

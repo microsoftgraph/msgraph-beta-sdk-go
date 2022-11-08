@@ -53,11 +53,11 @@ type SetItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Children the children property
+// Children provides operations to manage the children property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) Children()(*i4829170845bc936c1528ecef8dfc282d2fee64e5a6ba073b6242b892d15a5bc2.ChildrenRequestBuilder) {
     return i4829170845bc936c1528ecef8dfc282d2fee64e5a6ba073b6242b892d15a5bc2.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.sites.item.termStore.groups.item.sets.item.children.item collection
+// ChildrenById provides operations to manage the children property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) ChildrenById(id string)(*i8c74097eb991389805d8bc432945ca286134ac23fe23246bfec470c0c375dae6.TermItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -164,7 +164,7 @@ func (m *SetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *S
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
-// ParentGroup the parentGroup property
+// ParentGroup provides operations to manage the parentGroup property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) ParentGroup()(*ia3d974d7b715ff637df72a64eef475b12cd0f7c808b738f7f51111583b80934f.ParentGroupRequestBuilder) {
     return ia3d974d7b715ff637df72a64eef475b12cd0f7c808b738f7f51111583b80934f.NewParentGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -187,11 +187,11 @@ func (m *SetItemRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
-// Relations the relations property
+// Relations provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) Relations()(*i852bcca495c1ce81d9fc331fecb4b4c665b26811300c0a98a9e4ec7492241052.RelationsRequestBuilder) {
     return i852bcca495c1ce81d9fc331fecb4b4c665b26811300c0a98a9e4ec7492241052.NewRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RelationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.sites.item.termStore.groups.item.sets.item.relations.item collection
+// RelationsById provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) RelationsById(id string)(*ie122d3b9129e84dcb6cd1762ac6f1e1a657315dc60a7418c807a69e37ed5ff36.RelationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,11 +202,11 @@ func (m *SetItemRequestBuilder) RelationsById(id string)(*ie122d3b9129e84dcb6cd1
     }
     return ie122d3b9129e84dcb6cd1762ac6f1e1a657315dc60a7418c807a69e37ed5ff36.NewRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Terms the terms property
+// Terms provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) Terms()(*ie14b6f2d0be1a880975434b9f6442d48b58d466b58fcd79c525879964099f56d.TermsRequestBuilder) {
     return ie14b6f2d0be1a880975434b9f6442d48b58d466b58fcd79c525879964099f56d.NewTermsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TermsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.sites.item.termStore.groups.item.sets.item.terms.item collection
+// TermsById provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
 func (m *SetItemRequestBuilder) TermsById(id string)(*i5a1af5677ae96ce125300fa136492a2bb2fd6718fa3ff2ea94ca0a839382d420.TermItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

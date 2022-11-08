@@ -41,11 +41,11 @@ type ExternalRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Connections the connections property
+// Connections provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
 func (m *ExternalRequestBuilder) Connections()(*i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141.ConnectionsRequestBuilder) {
     return i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141.NewConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ConnectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item collection
+// ConnectionsById provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
 func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.ExternalConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

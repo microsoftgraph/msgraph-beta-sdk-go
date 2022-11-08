@@ -144,11 +144,11 @@ func (m *AccessReviewHistoryDefinitionItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable), nil
 }
-// Instances the instances property
+// Instances provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
 func (m *AccessReviewHistoryDefinitionItemRequestBuilder) Instances()(*i050b4af622bb8ddd2c81fe0ae9becfb70e566ad32e6db4fc5f8fc5fbe66d38a2.InstancesRequestBuilder) {
     return i050b4af622bb8ddd2c81fe0ae9becfb70e566ad32e6db4fc5f8fc5fbe66d38a2.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InstancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.historyDefinitions.item.instances.item collection
+// InstancesById provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
 func (m *AccessReviewHistoryDefinitionItemRequestBuilder) InstancesById(id string)(*i8910ece6652691a45270ec62ed5f47ca518c0bc5d957467024798a7369422029.AccessReviewHistoryInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

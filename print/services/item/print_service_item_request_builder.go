@@ -125,11 +125,11 @@ func (m *PrintServiceItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Endpoints the endpoints property
+// Endpoints provides operations to manage the endpoints property of the microsoft.graph.printService entity.
 func (m *PrintServiceItemRequestBuilder) Endpoints()(*i5156d63463fd84dabf998d1b720e37782785f03d3b54eed7ca4e6066737d94b8.EndpointsRequestBuilder) {
     return i5156d63463fd84dabf998d1b720e37782785f03d3b54eed7ca4e6066737d94b8.NewEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EndpointsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.print.services.item.endpoints.item collection
+// EndpointsById provides operations to manage the endpoints property of the microsoft.graph.printService entity.
 func (m *PrintServiceItemRequestBuilder) EndpointsById(id string)(*i556b3043d8dcb4e4f5bcc1d4092ed9b7dc4973097ec58cda9e66e1e069e31b42.PrintServiceEndpointItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

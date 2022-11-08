@@ -56,7 +56,7 @@ type DepIOSEnrollmentProfile struct {
     temporarySessionTimeoutInSeconds *int32
     // Indicates if Weclome screen is disabled
     updateCompleteScreenDisabled *bool
-    // Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+    // Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
     userlessSharedAadModeEnabled *bool
     // Indicates timeout of temporary session
     userSessionTimeoutInSeconds *int32
@@ -210,7 +210,7 @@ func (m *DepIOSEnrollmentProfile) GetTemporarySessionTimeoutInSeconds()(*int32) 
 func (m *DepIOSEnrollmentProfile) GetUpdateCompleteScreenDisabled()(*bool) {
     return m.updateCompleteScreenDisabled
 }
-// GetUserlessSharedAadModeEnabled gets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+// GetUserlessSharedAadModeEnabled gets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
 func (m *DepIOSEnrollmentProfile) GetUserlessSharedAadModeEnabled()(*bool) {
     return m.userlessSharedAadModeEnabled
 }
@@ -510,7 +510,7 @@ func (m *DepIOSEnrollmentProfile) SetTemporarySessionTimeoutInSeconds(value *int
 func (m *DepIOSEnrollmentProfile) SetUpdateCompleteScreenDisabled(value *bool)() {
     m.updateCompleteScreenDisabled = value
 }
-// SetUserlessSharedAadModeEnabled sets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+// SetUserlessSharedAadModeEnabled sets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
 func (m *DepIOSEnrollmentProfile) SetUserlessSharedAadModeEnabled(value *bool)() {
     m.userlessSharedAadModeEnabled = value
 }

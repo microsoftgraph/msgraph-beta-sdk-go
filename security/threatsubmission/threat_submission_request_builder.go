@@ -131,11 +131,11 @@ func (m *ThreatSubmissionRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// EmailThreats the emailThreats property
+// EmailThreats provides operations to manage the emailThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) EmailThreats()(*iab730a3e5e523ceacfc51a80389a408f3b763d8578932292a4d6486fa46c88e1.EmailThreatsRequestBuilder) {
     return iab730a3e5e523ceacfc51a80389a408f3b763d8578932292a4d6486fa46c88e1.NewEmailThreatsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EmailThreatsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.threatSubmission.emailThreats.item collection
+// EmailThreatsById provides operations to manage the emailThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) EmailThreatsById(id string)(*i1cc1873bdc105e1d79034a659428dc9e6f9cacb1aeb842585395edb7e83b9cee.EmailThreatSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -146,11 +146,11 @@ func (m *ThreatSubmissionRequestBuilder) EmailThreatsById(id string)(*i1cc1873bd
     }
     return i1cc1873bdc105e1d79034a659428dc9e6f9cacb1aeb842585395edb7e83b9cee.NewEmailThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// EmailThreatSubmissionPolicies the emailThreatSubmissionPolicies property
+// EmailThreatSubmissionPolicies provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) EmailThreatSubmissionPolicies()(*if956c41d927fdbd93476646ddf92e2e53ea39cd255c6014671d49ed36a05be59.EmailThreatSubmissionPoliciesRequestBuilder) {
     return if956c41d927fdbd93476646ddf92e2e53ea39cd255c6014671d49ed36a05be59.NewEmailThreatSubmissionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EmailThreatSubmissionPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.threatSubmission.emailThreatSubmissionPolicies.item collection
+// EmailThreatSubmissionPoliciesById provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) EmailThreatSubmissionPoliciesById(id string)(*ib5a0370dad339fb08a1a2b4167f005a9e8a48731fdadcbe94317bbe45c759d9d.EmailThreatSubmissionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,11 +161,11 @@ func (m *ThreatSubmissionRequestBuilder) EmailThreatSubmissionPoliciesById(id st
     }
     return ib5a0370dad339fb08a1a2b4167f005a9e8a48731fdadcbe94317bbe45c759d9d.NewEmailThreatSubmissionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// FileThreats the fileThreats property
+// FileThreats provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) FileThreats()(*i73a9697fcc2f3912806f4fa3ce0e1bcb5e2e53d5a6779a4fe4ada90a825e98f5.FileThreatsRequestBuilder) {
     return i73a9697fcc2f3912806f4fa3ce0e1bcb5e2e53d5a6779a4fe4ada90a825e98f5.NewFileThreatsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FileThreatsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.threatSubmission.fileThreats.item collection
+// FileThreatsById provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) FileThreatsById(id string)(*iea4954cd2624be64ac3de2ebf2b2820af5b41742fb51a218c4440447feabbb05.FileThreatSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -214,11 +214,11 @@ func (m *ThreatSubmissionRequestBuilder) Patch(ctx context.Context, body i084fa7
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ThreatSubmissionRootable), nil
 }
-// UrlThreats the urlThreats property
+// UrlThreats provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) UrlThreats()(*i44f875f20192781d7d5d7e4a796fac48b4e14878f9923e86dd403c7edfa045f8.UrlThreatsRequestBuilder) {
     return i44f875f20192781d7d5d7e4a796fac48b4e14878f9923e86dd403c7edfa045f8.NewUrlThreatsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UrlThreatsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.threatSubmission.urlThreats.item collection
+// UrlThreatsById provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
 func (m *ThreatSubmissionRequestBuilder) UrlThreatsById(id string)(*i5f1a4923ee76d1cf452c42ff9b166ea23067d5576e64a4b629b5ce1aa976f6b2.UrlThreatSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

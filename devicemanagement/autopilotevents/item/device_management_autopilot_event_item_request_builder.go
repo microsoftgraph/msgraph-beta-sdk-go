@@ -163,11 +163,11 @@ func (m *DeviceManagementAutopilotEventItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotEventable), nil
 }
-// PolicyStatusDetails the policyStatusDetails property
+// PolicyStatusDetails provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
 func (m *DeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetails()(*if76c2cb80ed357d07ffd85f409f06a5249ec510099f57edb418f41e7bdb74e03.PolicyStatusDetailsRequestBuilder) {
     return if76c2cb80ed357d07ffd85f409f06a5249ec510099f57edb418f41e7bdb74e03.NewPolicyStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PolicyStatusDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection
+// PolicyStatusDetailsById provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
 func (m *DeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetailsById(id string)(*ib32d34f50255bdea0699208e320acf08a90078315ca8ef82a9c10a80d7799d4b.DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

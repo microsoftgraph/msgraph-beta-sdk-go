@@ -13,11 +13,9 @@ type UserExperienceAnalyticsAnomalySeverityOverviewable interface {
     GetLowSeverityAnomalyCount()(*int32)
     GetMediumSeverityAnomalyCount()(*int32)
     GetOdataType()(*string)
-    GetOtherSeverityAnomalyCount()(*int32)
     SetHighSeverityAnomalyCount(value *int32)()
     SetInformationalSeverityAnomalyCount(value *int32)()
     SetLowSeverityAnomalyCount(value *int32)()
     SetMediumSeverityAnomalyCount(value *int32)()
     SetOdataType(value *string)()
-    SetOtherSeverityAnomalyCount(value *int32)()
 }

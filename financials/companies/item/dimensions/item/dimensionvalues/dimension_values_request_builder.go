@@ -64,7 +64,7 @@ func NewDimensionValuesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewDimensionValuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DimensionValuesRequestBuilder) Count()(*i82b6ae114a39ecf464f8c3a4dadcbcd69a0f197b72495b164ec0f263e6706c7b.CountRequestBuilder) {
     return i82b6ae114a39ecf464f8c3a4dadcbcd69a0f197b72495b164ec0f263e6706c7b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewServiceManagementDetailsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewServiceManagementDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ServiceManagementDetailsRequestBuilder) Count()(*id9cedd800cc800bd2491ff0556928ca0fc98731567b0d3bd7ee862242e0b0894.CountRequestBuilder) {
     return id9cedd800cc800bd2491ff0556928ca0fc98731567b0d3bd7ee862242e0b0894.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

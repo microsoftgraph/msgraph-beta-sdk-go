@@ -50,15 +50,15 @@ type DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *DeviceEnrollmentConfigurationItemRequestBuilder) Assign()(*i6170658a0d5b58db8b79dacb601c4d22e30a4c4ae87b850f6f7f68c09f444c89.AssignRequestBuilder) {
     return i6170658a0d5b58db8b79dacb601c4d22e30a4c4ae87b850f6f7f68c09f444c89.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
 func (m *DeviceEnrollmentConfigurationItemRequestBuilder) Assignments()(*if2a3d3b427cb31b340e4c2412c17e0640a24dc599137ce6be0cc982589e4deb0.AssignmentsRequestBuilder) {
     return if2a3d3b427cb31b340e4c2412c17e0640a24dc599137ce6be0cc982589e4deb0.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.deviceEnrollmentConfigurations.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
 func (m *DeviceEnrollmentConfigurationItemRequestBuilder) AssignmentsById(id string)(*i934f161901d6bdad15cab7b3c6bac23e288fe9d7ada1f9c5697626905ea96d9b.EnrollmentConfigurationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -184,7 +184,7 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) Patch(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable), nil
 }
-// SetPriority the setPriority property
+// SetPriority provides operations to call the setPriority method.
 func (m *DeviceEnrollmentConfigurationItemRequestBuilder) SetPriority()(*iaa0d710f90b1a32f5cd84646584587a42f6739141a218233692f0fa578073ccc.SetPriorityRequestBuilder) {
     return iaa0d710f90b1a32f5cd84646584587a42f6739141a218233692f0fa578073ccc.NewSetPriorityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

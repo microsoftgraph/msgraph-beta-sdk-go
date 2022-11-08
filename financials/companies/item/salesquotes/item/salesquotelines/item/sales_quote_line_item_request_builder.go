@@ -41,7 +41,7 @@ type SalesQuoteLineItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.salesQuoteLine entity.
 func (m *SalesQuoteLineItemRequestBuilder) Account()(*iaedea421f986c2290ff5e85cf9cd350ce7d46ab761c4a52f3368aa7a04a81155.AccountRequestBuilder) {
     return iaedea421f986c2290ff5e85cf9cd350ce7d46ab761c4a52f3368aa7a04a81155.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -113,7 +113,7 @@ func (m *SalesQuoteLineItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineable), nil
 }
-// Item the item property
+// Item provides operations to manage the item property of the microsoft.graph.salesQuoteLine entity.
 func (m *SalesQuoteLineItemRequestBuilder) Item()(*ief6a29ce7506934c46b05f2c7309d4828ce1140b27abd5e2f67e0ff81bd7f9b2.ItemRequestBuilder) {
     return ief6a29ce7506934c46b05f2c7309d4828ce1140b27abd5e2f67e0ff81bd7f9b2.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

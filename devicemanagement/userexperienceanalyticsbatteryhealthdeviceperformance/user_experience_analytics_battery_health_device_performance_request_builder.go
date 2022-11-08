@@ -71,7 +71,7 @@ func NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder) Count()(*iec406bc8f1b3f8d5645c8589692b11933580fe0a7e16eb03f7dd04594d6ae84f.CountRequestBuilder) {
     return iec406bc8f1b3f8d5645c8589692b11933580fe0a7e16eb03f7dd04594d6ae84f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

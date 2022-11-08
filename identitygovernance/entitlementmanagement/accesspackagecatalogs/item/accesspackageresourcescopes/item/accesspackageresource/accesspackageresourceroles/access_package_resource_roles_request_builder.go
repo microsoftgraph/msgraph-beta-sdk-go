@@ -71,7 +71,7 @@ func NewAccessPackageResourceRolesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRolesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AccessPackageResourceRolesRequestBuilder) Count()(*i48cbd6b01715efe71baefdf588d439729fe2949ae984de2c2dcd05360e8f3656.CountRequestBuilder) {
     return i48cbd6b01715efe71baefdf588d439729fe2949ae984de2c2dcd05360e8f3656.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

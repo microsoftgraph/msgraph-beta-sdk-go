@@ -75,7 +75,7 @@ func NewDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DevicesRequestBuilder) Count()(*i800566844fcfb7cc1f53476272e8c00a3364179482887ce17eebdf7c1b5e75b6.CountRequestBuilder) {
     return i800566844fcfb7cc1f53476272e8c00a3364179482887ce17eebdf7c1b5e75b6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -132,11 +132,11 @@ func (m *DevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *D
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *DevicesRequestBuilder) GetByIds()(*i5b99a93dfadae89dd1a0250b13e44b39be4c40435f5b5670c19cb96ba87b1810.GetByIdsRequestBuilder) {
     return i5b99a93dfadae89dd1a0250b13e44b39be4c40435f5b5670c19cb96ba87b1810.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*i000920950afec74ee3236bcb1b56a6ffbcbd168697e8e421d9bf377c179b2c97.GetUserOwnedObjectsRequestBuilder) {
     return i000920950afec74ee3236bcb1b56a6ffbcbd168697e8e421d9bf377c179b2c97.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -159,7 +159,7 @@ func (m *DevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *DevicesRequestBuilder) ValidateProperties()(*ic4620257c5f6a7211c4eade0d12c8e243a7b9c5be5d1552436c6b6aa91e2ec48.ValidatePropertiesRequestBuilder) {
     return ic4620257c5f6a7211c4eade0d12c8e243a7b9c5be5d1552436c6b6aa91e2ec48.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

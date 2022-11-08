@@ -163,11 +163,11 @@ func (m *RoleDefinitionRequestBuilder) Patch(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable), nil
 }
-// Resource the resource property
+// Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *RoleDefinitionRequestBuilder) Resource()(*i97adbc644af2ffa48cfe3964ee506d02ae1d3e412c01d627cdb766476662b40b.ResourceRequestBuilder) {
     return i97adbc644af2ffa48cfe3964ee506d02ae1d3e412c01d627cdb766476662b40b.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleSetting the roleSetting property
+// RoleSetting provides operations to manage the roleSetting property of the microsoft.graph.governanceRoleDefinition entity.
 func (m *RoleDefinitionRequestBuilder) RoleSetting()(*ic0bd59a32465d8c7f2b1f112a07c6b85565e57fae05e63f31aa5b0bd9f5c1bba.RoleSettingRequestBuilder) {
     return ic0bd59a32465d8c7f2b1f112a07c6b85565e57fae05e63f31aa5b0bd9f5c1bba.NewRoleSettingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

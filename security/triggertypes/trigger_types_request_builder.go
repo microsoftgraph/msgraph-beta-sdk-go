@@ -163,11 +163,11 @@ func (m *TriggerTypesRequestBuilder) Patch(ctx context.Context, body i084fa7ab3b
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.TriggerTypesRootable), nil
 }
-// RetentionEventTypes the retentionEventTypes property
+// RetentionEventTypes provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.
 func (m *TriggerTypesRequestBuilder) RetentionEventTypes()(*i6ceb4a8aba19b485fb1e32e4504bf4db9d36100595ff00693b33dc73b5ff7997.RetentionEventTypesRequestBuilder) {
     return i6ceb4a8aba19b485fb1e32e4504bf4db9d36100595ff00693b33dc73b5ff7997.NewRetentionEventTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RetentionEventTypesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.triggerTypes.retentionEventTypes.item collection
+// RetentionEventTypesById provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.
 func (m *TriggerTypesRequestBuilder) RetentionEventTypesById(id string)(*i8c137478d2c1fe548b46d0609d17e7b33507d17741ad6fb43482bb56f900e9d3.RetentionEventTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

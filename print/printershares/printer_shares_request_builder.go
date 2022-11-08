@@ -71,7 +71,7 @@ func NewPrinterSharesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PrinterSharesRequestBuilder) Count()(*i693a7cc3118a14d0d42cd0e166806c4292241f68509395fd7aa6154143586a2a.CountRequestBuilder) {
     return i693a7cc3118a14d0d42cd0e166806c4292241f68509395fd7aa6154143586a2a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -66,7 +66,7 @@ func NewPictureItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewPictureItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the financials entity.
 func (m *PictureItemRequestBuilder) Content()(*i2bf8b733cdc278c60ebc2b9fb50eebfe016532abf1604c58c3273f51bc20e689.ContentRequestBuilder) {
     return i2bf8b733cdc278c60ebc2b9fb50eebfe016532abf1604c58c3273f51bc20e689.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

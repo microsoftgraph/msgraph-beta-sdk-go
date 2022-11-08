@@ -143,7 +143,7 @@ func (m *ColorIconRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable), nil
 }
-// HostedContent the hostedContent property
+// HostedContent provides operations to manage the hostedContent property of the microsoft.graph.teamsAppIcon entity.
 func (m *ColorIconRequestBuilder) HostedContent()(*if2226be996ec1412235de4328758920ae9dc5a3eb3ec23b99c0b7e468f05b5f4.HostedContentRequestBuilder) {
     return if2226be996ec1412235de4328758920ae9dc5a3eb3ec23b99c0b7e468f05b5f4.NewHostedContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

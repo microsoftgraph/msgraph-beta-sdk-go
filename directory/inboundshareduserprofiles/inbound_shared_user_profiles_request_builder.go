@@ -71,7 +71,7 @@ func NewInboundSharedUserProfilesRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewInboundSharedUserProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *InboundSharedUserProfilesRequestBuilder) Count()(*ib8a4c256fdbd8c9dd504e51ae24e7363f41b8cbad077fefcf96c659ec79c39b2.CountRequestBuilder) {
     return ib8a4c256fdbd8c9dd504e51ae24e7363f41b8cbad077fefcf96c659ec79c39b2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

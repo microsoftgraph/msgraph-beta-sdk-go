@@ -48,7 +48,7 @@ type TenantTagItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AssignTag the assignTag property
+// AssignTag provides operations to call the assignTag method.
 func (m *TenantTagItemRequestBuilder) AssignTag()(*i533bf20e862e0cfd002ac11184843402fc54130b1fcc0d9fabaa59a9f85e56fd.AssignTagRequestBuilder) {
     return i533bf20e862e0cfd002ac11184843402fc54130b1fcc0d9fabaa59a9f85e56fd.NewAssignTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *TenantTagItemRequestBuilder) Patch(ctx context.Context, body i72d786f54
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
 }
-// UnassignTag the unassignTag property
+// UnassignTag provides operations to call the unassignTag method.
 func (m *TenantTagItemRequestBuilder) UnassignTag()(*i440904d249ab1863908d720951a7531014fede6e241f7da8e5eb95c853508844.UnassignTagRequestBuilder) {
     return i440904d249ab1863908d720951a7531014fede6e241f7da8e5eb95c853508844.NewUnassignTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

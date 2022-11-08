@@ -71,7 +71,7 @@ func NewDriverInventoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewDriverInventoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DriverInventoriesRequestBuilder) Count()(*iefbb4c9cbde20d57b3543300d47ade6170d962738106f14b36079fccc7b886ae.CountRequestBuilder) {
     return iefbb4c9cbde20d57b3543300d47ade6170d962738106f14b36079fccc7b886ae.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -64,7 +64,7 @@ func NewCustodianSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewCustodianSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CustodianSourcesRequestBuilder) Count()(*i539132aff03bd07c90f1ae65e7353e42b785dc0839746a24c0947eee05521354.CountRequestBuilder) {
     return i539132aff03bd07c90f1ae65e7353e42b785dc0839746a24c0947eee05521354.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

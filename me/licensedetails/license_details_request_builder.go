@@ -71,7 +71,7 @@ func NewLicenseDetailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewLicenseDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *LicenseDetailsRequestBuilder) Count()(*icab6ada85f20473c83b14a456c66b802f86c036be5ac05cc9786b6245ff4fc9e.CountRequestBuilder) {
     return icab6ada85f20473c83b14a456c66b802f86c036be5ac05cc9786b6245ff4fc9e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

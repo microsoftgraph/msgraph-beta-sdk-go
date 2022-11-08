@@ -71,7 +71,7 @@ func NewManagementTemplateStepVersionsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateStepVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagementTemplateStepVersionsRequestBuilder) Count()(*i2105f68bb66b02d05110aef193b87c3227f092c53df250ef349f1e25c1482dd0.CountRequestBuilder) {
     return i2105f68bb66b02d05110aef193b87c3227f092c53df250ef349f1e25c1482dd0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -49,15 +49,15 @@ type CloudPcProvisioningPolicyItemRequestBuilderPatchRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *CloudPcProvisioningPolicyItemRequestBuilder) Assign()(*i21d65c3429cff028859a2c620580cf0b27cf65a897ffa7c6f9bd17a4506e4104.AssignRequestBuilder) {
     return i21d65c3429cff028859a2c620580cf0b27cf65a897ffa7c6f9bd17a4506e4104.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
 func (m *CloudPcProvisioningPolicyItemRequestBuilder) Assignments()(*i8efaf7f9224f8bf3ba72fe2c8e64b5a0019684376d8d47f60bfc6702485abc3c.AssignmentsRequestBuilder) {
     return i8efaf7f9224f8bf3ba72fe2c8e64b5a0019684376d8d47f60bfc6702485abc3c.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.provisioningPolicies.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
 func (m *CloudPcProvisioningPolicyItemRequestBuilder) AssignmentsById(id string)(*if91535156d5443297583fcd65d99597809e9e5b6115e4948cfc32c6c18b25848.CloudPcProvisioningPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

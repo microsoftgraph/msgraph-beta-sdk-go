@@ -146,15 +146,15 @@ func (m *MicrosoftTunnelSiteItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable), nil
 }
-// MicrosoftTunnelConfiguration the microsoftTunnelConfiguration property
+// MicrosoftTunnelConfiguration provides operations to manage the microsoftTunnelConfiguration property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelConfiguration()(*ibbd8be26def4f1c33c115243694230b27231cfa01a930726d7cd6e16f6198b0a.MicrosoftTunnelConfigurationRequestBuilder) {
     return ibbd8be26def4f1c33c115243694230b27231cfa01a930726d7cd6e16f6198b0a.NewMicrosoftTunnelConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftTunnelServers the microsoftTunnelServers property
+// MicrosoftTunnelServers provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServers()(*i5024ea90c8fd45ac7dbd6e184330159a989748ef5af2324e47ab26071b412298.MicrosoftTunnelServersRequestBuilder) {
     return i5024ea90c8fd45ac7dbd6e184330159a989748ef5af2324e47ab26071b412298.NewMicrosoftTunnelServersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftTunnelServersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.microsoftTunnelSites.item.microsoftTunnelServers.item collection
+// MicrosoftTunnelServersById provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.
 func (m *MicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServersById(id string)(*i9350d6dec8de249f17a367f9b40b072f9094b90586b5f3d60925874bf5f54981.MicrosoftTunnelServerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -184,7 +184,7 @@ func (m *MicrosoftTunnelSiteItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable), nil
 }
-// RequestUpgrade the requestUpgrade property
+// RequestUpgrade provides operations to call the requestUpgrade method.
 func (m *MicrosoftTunnelSiteItemRequestBuilder) RequestUpgrade()(*ib99129148e5b54549dbf1a1827b35b5e072543abc1f750848c53c7a2bfcbbf7d.RequestUpgradeRequestBuilder) {
     return ib99129148e5b54549dbf1a1827b35b5e072543abc1f750848c53c7a2bfcbbf7d.NewRequestUpgradeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

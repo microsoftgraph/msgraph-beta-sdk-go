@@ -51,11 +51,11 @@ type OutlookTaskItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.outlookTask entity.
 func (m *OutlookTaskItemRequestBuilder) Attachments()(*i0718f2c7a8c775532496a98d185ae4cfcb0a71392db198afe0ebb5deddd3bfdd.AttachmentsRequestBuilder) {
     return i0718f2c7a8c775532496a98d185ae4cfcb0a71392db198afe0ebb5deddd3bfdd.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item.taskFolders.item.tasks.item.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.outlookTask entity.
 func (m *OutlookTaskItemRequestBuilder) AttachmentsById(id string)(*i175900f9235a31a08f8f7870a3a233657ed75f27ea0f9c33a35029ae11dadd54.AttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -66,7 +66,7 @@ func (m *OutlookTaskItemRequestBuilder) AttachmentsById(id string)(*i175900f9235
     }
     return i175900f9235a31a08f8f7870a3a233657ed75f27ea0f9c33a35029ae11dadd54.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Complete the complete property
+// Complete provides operations to call the complete method.
 func (m *OutlookTaskItemRequestBuilder) Complete()(*i0e3cd5b3643da0403d06ec109f55ebdd821409ca2b64e8929398963347543678.CompleteRequestBuilder) {
     return i0e3cd5b3643da0403d06ec109f55ebdd821409ca2b64e8929398963347543678.NewCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -166,11 +166,11 @@ func (m *OutlookTaskItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *OutlookTaskItemRequestBuilder) MultiValueExtendedProperties()(*iec0dcd96a66f87e472d58355850a2262b0d0a17eb7b7dc13ff86168db555b568.MultiValueExtendedPropertiesRequestBuilder) {
     return iec0dcd96a66f87e472d58355850a2262b0d0a17eb7b7dc13ff86168db555b568.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item.taskFolders.item.tasks.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *OutlookTaskItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ie3373c186191b55aac268824553eab67e16cbf405be52509be0da3cd61c6f601.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -200,11 +200,11 @@ func (m *OutlookTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskable), nil
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *OutlookTaskItemRequestBuilder) SingleValueExtendedProperties()(*i2488a196ac751025aa25b85acf5ef7ee5e6c2a37ea695ecd83a9367d0fbc5c85.SingleValueExtendedPropertiesRequestBuilder) {
     return i2488a196ac751025aa25b85acf5ef7ee5e6c2a37ea695ecd83a9367d0fbc5c85.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item.taskFolders.item.tasks.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTask entity.
 func (m *OutlookTaskItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*if8a609bdb585ca1f49d83f9d345d43bf56ed08b184a513e1f1cd22d928dad3ed.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

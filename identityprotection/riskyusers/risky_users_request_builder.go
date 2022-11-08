@@ -54,7 +54,7 @@ type RiskyUsersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConfirmCompromised the confirmCompromised property
+// ConfirmCompromised provides operations to call the confirmCompromised method.
 func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*i0d24887ad1424b46fdf5a180eff9f454bf58befa467ded8aaa4caf97b26af372.ConfirmCompromisedRequestBuilder) {
     return i0d24887ad1424b46fdf5a180eff9f454bf58befa467ded8aaa4caf97b26af372.NewConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -77,7 +77,7 @@ func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RiskyUsersRequestBuilder) Count()(*iae05aaaedd9fb6fe6a4b91f7c5862ca13d272f03849d9ea53cf90acf281bb95c.CountRequestBuilder) {
     return iae05aaaedd9fb6fe6a4b91f7c5862ca13d272f03849d9ea53cf90acf281bb95c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -111,7 +111,7 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// Dismiss the dismiss property
+// Dismiss provides operations to call the dismiss method.
 func (m *RiskyUsersRequestBuilder) Dismiss()(*i6b4cbdd3c802c9249b42efb0eed9d285216ec8b1a67757dcf9ce82340b5e095e.DismissRequestBuilder) {
     return i6b4cbdd3c802c9249b42efb0eed9d285216ec8b1a67757dcf9ce82340b5e095e.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

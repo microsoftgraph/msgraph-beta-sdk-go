@@ -51,7 +51,7 @@ type GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Cancel()(*i4737e82829fcabb60ac1e844be9362f89516b650c51cc1b39a6c4b80bacf43c2.CancelRequestBuilder) {
     return i4737e82829fcabb60ac1e844be9362f89516b650c51cc1b39a6c4b80bacf43c2.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -170,19 +170,19 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentRequestable), nil
 }
-// Resource the resource property
+// Resource provides operations to manage the resource property of the microsoft.graph.governanceRoleAssignmentRequest entity.
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Resource()(*i3000050d43ca916d1fc4f7af69b6eae1a7ad773a63a08777915365cedd6c6514.ResourceRequestBuilder) {
     return i3000050d43ca916d1fc4f7af69b6eae1a7ad773a63a08777915365cedd6c6514.NewResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinition the roleDefinition property
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignmentRequest entity.
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) RoleDefinition()(*ib22d2ea7bd95ab9701839eba5d00b97c027e9b32625f8cc3e59cee9b36565b0b.RoleDefinitionRequestBuilder) {
     return ib22d2ea7bd95ab9701839eba5d00b97c027e9b32625f8cc3e59cee9b36565b0b.NewRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Subject the subject property
+// Subject provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignmentRequest entity.
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Subject()(*i3aa91578e04a924c446f9e55694205f49eeac917b836d297bf7e8a1373a85b88.SubjectRequestBuilder) {
     return i3aa91578e04a924c446f9e55694205f49eeac917b836d297bf7e8a1373a85b88.NewSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateRequest the updateRequest property
+// UpdateRequest provides operations to call the updateRequest method.
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) UpdateRequest()(*i0a02a0c28cacd2bf32065b7e26a8b68341b526257ef139d2807c2f4374bfc6d6.UpdateRequestRequestBuilder) {
     return i0a02a0c28cacd2bf32065b7e26a8b68341b526257ef139d2807c2f4374bfc6d6.NewUpdateRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

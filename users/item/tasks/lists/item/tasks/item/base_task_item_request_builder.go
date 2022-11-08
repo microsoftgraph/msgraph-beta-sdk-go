@@ -54,11 +54,11 @@ type BaseTaskItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChecklistItems the checklistItems property
+// ChecklistItems provides operations to manage the checklistItems property of the microsoft.graph.baseTask entity.
 func (m *BaseTaskItemRequestBuilder) ChecklistItems()(*i9f90a854cb36ba230b51f79e03cf8c485003d9c20892f3aaaf9f9ca6e2311052.ChecklistItemsRequestBuilder) {
     return i9f90a854cb36ba230b51f79e03cf8c485003d9c20892f3aaaf9f9ca6e2311052.NewChecklistItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChecklistItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.tasks.lists.item.tasks.item.checklistItems.item collection
+// ChecklistItemsById provides operations to manage the checklistItems property of the microsoft.graph.baseTask entity.
 func (m *BaseTaskItemRequestBuilder) ChecklistItemsById(id string)(*i43baf14bdfa52348b0bb48c3d3ece5a20da9f14a5275a095129997e3eaebe805.ChecklistItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -146,11 +146,11 @@ func (m *BaseTaskItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.baseTask entity.
 func (m *BaseTaskItemRequestBuilder) Extensions()(*if2aa69e4c699585c66a9474fde03947bf3cd63c88d2a207d476ff72016bb92ed.ExtensionsRequestBuilder) {
     return if2aa69e4c699585c66a9474fde03947bf3cd63c88d2a207d476ff72016bb92ed.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.tasks.lists.item.tasks.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.baseTask entity.
 func (m *BaseTaskItemRequestBuilder) ExtensionsById(id string)(*i400d2cff755de6f49886cdc0854849d644b5a10323083dc756fb70061fd9b716.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *BaseTaskItemRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable), nil
 }
-// LinkedResources the linkedResources property
+// LinkedResources provides operations to manage the linkedResources property of the microsoft.graph.baseTask entity.
 func (m *BaseTaskItemRequestBuilder) LinkedResources()(*i63585e4f9db5ce04afe272d39ba9e0f814d15a9ad69564f035b57992fdc60d0e.LinkedResourcesRequestBuilder) {
     return i63585e4f9db5ce04afe272d39ba9e0f814d15a9ad69564f035b57992fdc60d0e.NewLinkedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LinkedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.tasks.lists.item.tasks.item.linkedResources.item collection
+// LinkedResourcesById provides operations to manage the linkedResources property of the microsoft.graph.baseTask entity.
 func (m *BaseTaskItemRequestBuilder) LinkedResourcesById(id string)(*ic96ef0290e7cd1ba8655c202ac321602c963f0f41deb8e52900dee755247715e.LinkedResource_v2ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -195,11 +195,11 @@ func (m *BaseTaskItemRequestBuilder) LinkedResourcesById(id string)(*ic96ef0290e
     }
     return ic96ef0290e7cd1ba8655c202ac321602c963f0f41deb8e52900dee755247715e.NewLinkedResource_v2ItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Move the move property
+// Move provides operations to call the move method.
 func (m *BaseTaskItemRequestBuilder) Move()(*i7eb8a811f65d6bab93f6143e18dd050750b3187b5222bba2363767dea08f400e.MoveRequestBuilder) {
     return i7eb8a811f65d6bab93f6143e18dd050750b3187b5222bba2363767dea08f400e.NewMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ParentList the parentList property
+// ParentList provides operations to manage the parentList property of the microsoft.graph.baseTask entity.
 func (m *BaseTaskItemRequestBuilder) ParentList()(*ic3517bb76f041a0e9a13acef1cef85787191fc80023465b6551e0527d3bb7dcf.ParentListRequestBuilder) {
     return ic3517bb76f041a0e9a13acef1cef85787191fc80023465b6551e0527d3bb7dcf.NewParentListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -48,11 +48,11 @@ type MobileAppTroubleshootingEventItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppLogCollectionRequests the appLogCollectionRequests property
+// AppLogCollectionRequests provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
 func (m *MobileAppTroubleshootingEventItemRequestBuilder) AppLogCollectionRequests()(*i186343598b74b4f0042120f46cbd907b7e4c2196c2f23c1e8179ef22220cbe81.AppLogCollectionRequestsRequestBuilder) {
     return i186343598b74b4f0042120f46cbd907b7e4c2196c2f23c1e8179ef22220cbe81.NewAppLogCollectionRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppLogCollectionRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection
+// AppLogCollectionRequestsById provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.
 func (m *MobileAppTroubleshootingEventItemRequestBuilder) AppLogCollectionRequestsById(id string)(*i218964fcc9466955dadf71cd5fce1c5388a1e7158b35708e1ae331a3990fa362.AppLogCollectionRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

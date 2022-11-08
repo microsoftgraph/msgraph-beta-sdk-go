@@ -109,7 +109,7 @@ func (m *GroupPolicyPresentationValueItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// DefinitionValue the definitionValue property
+// DefinitionValue provides operations to manage the definitionValue property of the microsoft.graph.groupPolicyPresentationValue entity.
 func (m *GroupPolicyPresentationValueItemRequestBuilder) DefinitionValue()(*i001eb6cb139a524dd351cd98bb0c439290700a903f23d19a2f27b36ffe531777.DefinitionValueRequestBuilder) {
     return i001eb6cb139a524dd351cd98bb0c439290700a903f23d19a2f27b36ffe531777.NewDefinitionValueRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *GroupPolicyPresentationValueItemRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationValueable), nil
 }
-// Presentation the presentation property
+// Presentation provides operations to manage the presentation property of the microsoft.graph.groupPolicyPresentationValue entity.
 func (m *GroupPolicyPresentationValueItemRequestBuilder) Presentation()(*i0c67a157507f229b79bb5a42860b892b4a5eafc70b612c8f218a33421b0a7dfc.PresentationRequestBuilder) {
     return i0c67a157507f229b79bb5a42860b892b4a5eafc70b612c8f218a33421b0a7dfc.NewPresentationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

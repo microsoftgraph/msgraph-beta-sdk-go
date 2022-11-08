@@ -127,11 +127,11 @@ func (m *TodoTaskListItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.todoTaskList entity.
 func (m *TodoTaskListItemRequestBuilder) Extensions()(*i51844e6ad1945783bba52eae008e45b15a6b2ab3ea414b3e976e4aa3673b8661.ExtensionsRequestBuilder) {
     return i51844e6ad1945783bba52eae008e45b15a6b2ab3ea414b3e976e4aa3673b8661.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTaskList entity.
 func (m *TodoTaskListItemRequestBuilder) ExtensionsById(id string)(*i2f0b6d2676d4d7d989c2a4fe2f8364c4ce76a7e3409cd5fbec015451e9fdd0dd.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *TodoTaskListItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskListable), nil
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
 func (m *TodoTaskListItemRequestBuilder) Tasks()(*i2cd7b734203f8bc3cb43183a0b7fa592be40d1d17bef40198b2ee83fcd0648f4.TasksRequestBuilder) {
     return i2cd7b734203f8bc3cb43183a0b7fa592be40d1d17bef40198b2ee83fcd0648f4.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
 func (m *TodoTaskListItemRequestBuilder) TasksById(id string)(*i08010241be71310a3e09edc0fe3b68805e3747b349c1bbe6e74094273231019e.TodoTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -187,11 +187,11 @@ type ReportsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplicationSignInDetailedSummary the applicationSignInDetailedSummary property
+// ApplicationSignInDetailedSummary provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.ApplicationSignInDetailedSummaryRequestBuilder) {
     return i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.NewApplicationSignInDetailedSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApplicationSignInDetailedSummaryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.applicationSignInDetailedSummary.item collection
+// ApplicationSignInDetailedSummaryById provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(*ib41269879aaaaafe023559bee72eced006e67c0981359cdf0e53448af198f4bc.ApplicationSignInDetailedSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,7 +202,7 @@ func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(
     }
     return ib41269879aaaaafe023559bee72eced006e67c0981359cdf0e53448af198f4bc.NewApplicationSignInDetailedSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AuthenticationMethods the authenticationMethods property
+// AuthenticationMethods provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) AuthenticationMethods()(*ib278d65ffeb85ab37242d833ae021cc70a1c1347099b6536ec196e9a7db3128c.AuthenticationMethodsRequestBuilder) {
     return ib278d65ffeb85ab37242d833ae021cc70a1c1347099b6536ec196e9a7db3128c.NewAuthenticationMethodsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -255,11 +255,11 @@ func (m *ReportsRequestBuilder) CreatePatchRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// CredentialUserRegistrationDetails the credentialUserRegistrationDetails property
+// CredentialUserRegistrationDetails provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) CredentialUserRegistrationDetails()(*i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.CredentialUserRegistrationDetailsRequestBuilder) {
     return i4b201efc99cccf9ab4d4acd90fb2df1aee6c33be6c22339b8c5424063e857dc2.NewCredentialUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CredentialUserRegistrationDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.credentialUserRegistrationDetails.item collection
+// CredentialUserRegistrationDetailsById provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)(*ie8dfbe0f2a10d928f186e8a85be8a433fa4f6ef763d02998cd4f197b915e90ce.CredentialUserRegistrationDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -270,11 +270,11 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)
     }
     return ie8dfbe0f2a10d928f186e8a85be8a433fa4f6ef763d02998cd4f197b915e90ce.NewCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DailyPrintUsage the dailyPrintUsage property
+// DailyPrintUsage provides operations to manage the dailyPrintUsage property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsage()(*id9c67fbf3e5b18ce81ffee38c9715eb874037620524b1e44114d6f244986dab1.DailyPrintUsageRequestBuilder) {
     return id9c67fbf3e5b18ce81ffee38c9715eb874037620524b1e44114d6f244986dab1.NewDailyPrintUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DailyPrintUsageById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsage.item collection
+// DailyPrintUsageById provides operations to manage the dailyPrintUsage property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageById(id string)(*iafb7bcf97ebde4e961ac9c604c210a588695171ec8fc5b466449ac1be57077be.PrintUsageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -285,11 +285,11 @@ func (m *ReportsRequestBuilder) DailyPrintUsageById(id string)(*iafb7bcf97ebde4e
     }
     return iafb7bcf97ebde4e961ac9c604c210a588695171ec8fc5b466449ac1be57077be.NewPrintUsageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DailyPrintUsageByPrinter the dailyPrintUsageByPrinter property
+// DailyPrintUsageByPrinter provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*i3c5eb35d4514961f4cbfafd47ac65dc5ed997312a3e247f4b53d8004051d0194.DailyPrintUsageByPrinterRequestBuilder) {
     return i3c5eb35d4514961f4cbfafd47ac65dc5ed997312a3e247f4b53d8004051d0194.NewDailyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DailyPrintUsageByPrinterById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageByPrinter.item collection
+// DailyPrintUsageByPrinterById provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*id64618d3ddc94c3dc7162d9da67abd3172a3d1bf99f56c9991906d6421e665be.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -300,11 +300,11 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*id64618
     }
     return id64618d3ddc94c3dc7162d9da67abd3172a3d1bf99f56c9991906d6421e665be.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DailyPrintUsageByUser the dailyPrintUsageByUser property
+// DailyPrintUsageByUser provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*i2993fd51754851864ba7c1a8dfc4c807b19f8200be6ce2e4964d2b687966d694.DailyPrintUsageByUserRequestBuilder) {
     return i2993fd51754851864ba7c1a8dfc4c807b19f8200be6ce2e4964d2b687966d694.NewDailyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DailyPrintUsageByUserById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageByUser.item collection
+// DailyPrintUsageByUserById provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i6325a2796f62004e900be3097636ac3cdb4b5f89fff67309d7747a1f3c033bf5.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -315,11 +315,11 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i6325a2796
     }
     return i6325a2796f62004e900be3097636ac3cdb4b5f89fff67309d7747a1f3c033bf5.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DailyPrintUsageSummariesByPrinter the dailyPrintUsageSummariesByPrinter property
+// DailyPrintUsageSummariesByPrinter provides operations to manage the dailyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinter()(*i51d8f12ca8bef3b5a605ad76c9d75dc8e73de7c0bb0b203ff61c881d868d0391.DailyPrintUsageSummariesByPrinterRequestBuilder) {
     return i51d8f12ca8bef3b5a605ad76c9d75dc8e73de7c0bb0b203ff61c881d868d0391.NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DailyPrintUsageSummariesByPrinterById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageSummariesByPrinter.item collection
+// DailyPrintUsageSummariesByPrinterById provides operations to manage the dailyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)(*i81f53b8b26ae53be90ad15f1e85f74bb88ada9cad7e6d8f0b3cb9ce23e2e0f46.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -330,11 +330,11 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)
     }
     return i81f53b8b26ae53be90ad15f1e85f74bb88ada9cad7e6d8f0b3cb9ce23e2e0f46.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DailyPrintUsageSummariesByUser the dailyPrintUsageSummariesByUser property
+// DailyPrintUsageSummariesByUser provides operations to manage the dailyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUser()(*i6858d47e90b1334353133cd0114055d1772fbe2294c3c8b1f87448025955a7f9.DailyPrintUsageSummariesByUserRequestBuilder) {
     return i6858d47e90b1334353133cd0114055d1772fbe2294c3c8b1f87448025955a7f9.NewDailyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DailyPrintUsageSummariesByUserById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.dailyPrintUsageSummariesByUser.item collection
+// DailyPrintUsageSummariesByUserById provides operations to manage the dailyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*if50f0dbd8a90dfcd7816cc16a43a257b56afed52876190fb217ae57a9d4679e0.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -844,11 +844,11 @@ func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailures()(*i492793d89
 func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailuresWithPeriod(period *string)(*i03f4f94b2b9e3fb286bbe022526518bbd7fc8be03e1497a413610d279818c361.ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder) {
     return i03f4f94b2b9e3fb286bbe022526518bbd7fc8be03e1497a413610d279818c361.NewManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
-// MonthlyPrintUsageByPrinter the monthlyPrintUsageByPrinter property
+// MonthlyPrintUsageByPrinter provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*i37eb861166f6d0555df75cb64e973d22d9bb9c2a8c03ca2f6c29444c37e3649f.MonthlyPrintUsageByPrinterRequestBuilder) {
     return i37eb861166f6d0555df75cb64e973d22d9bb9c2a8c03ca2f6c29444c37e3649f.NewMonthlyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MonthlyPrintUsageByPrinterById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageByPrinter.item collection
+// MonthlyPrintUsageByPrinterById provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i9d3332b918775296ebe9eb5ed2e432af9b61c784aceacaca03a043c49a0ff6db.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -859,11 +859,11 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i9d33
     }
     return i9d3332b918775296ebe9eb5ed2e432af9b61c784aceacaca03a043c49a0ff6db.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MonthlyPrintUsageByUser the monthlyPrintUsageByUser property
+// MonthlyPrintUsageByUser provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*ifbd8842a6664ec96c7d893455943698937b1af3fe05558ca8e628721e162064b.MonthlyPrintUsageByUserRequestBuilder) {
     return ifbd8842a6664ec96c7d893455943698937b1af3fe05558ca8e628721e162064b.NewMonthlyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MonthlyPrintUsageByUserById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageByUser.item collection
+// MonthlyPrintUsageByUserById provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i5983a969121cc458289b2e9bf5b347bab6120a3ecd4adca075e2189cc9460c6f.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -874,11 +874,11 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i5983a96
     }
     return i5983a969121cc458289b2e9bf5b347bab6120a3ecd4adca075e2189cc9460c6f.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MonthlyPrintUsageSummariesByPrinter the monthlyPrintUsageSummariesByPrinter property
+// MonthlyPrintUsageSummariesByPrinter provides operations to manage the monthlyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinter()(*i59460f776b2ba7ec0487cd235a89ad5d26f27c3ec165f0790954cfc2a01b9637.MonthlyPrintUsageSummariesByPrinterRequestBuilder) {
     return i59460f776b2ba7ec0487cd235a89ad5d26f27c3ec165f0790954cfc2a01b9637.NewMonthlyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MonthlyPrintUsageSummariesByPrinterById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageSummariesByPrinter.item collection
+// MonthlyPrintUsageSummariesByPrinterById provides operations to manage the monthlyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id string)(*i9e0e6696a72655a2583635eb551d9445661402ca5fa5c8f22f82920d3cbae9a3.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -889,11 +889,11 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id strin
     }
     return i9e0e6696a72655a2583635eb551d9445661402ca5fa5c8f22f82920d3cbae9a3.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// MonthlyPrintUsageSummariesByUser the monthlyPrintUsageSummariesByUser property
+// MonthlyPrintUsageSummariesByUser provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUser()(*i700648709215c245e3f56a9bb592458abcaa4d198b5956df2836a08af3f74be4.MonthlyPrintUsageSummariesByUserRequestBuilder) {
     return i700648709215c245e3f56a9bb592458abcaa4d198b5956df2836a08af3f74be4.NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MonthlyPrintUsageSummariesByUserById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.monthlyPrintUsageSummariesByUser.item collection
+// MonthlyPrintUsageSummariesByUserById provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(*ie40751cac1559213f1bbd658ede6043abd8ffd3463aa7abc8847eea9e36a36f8.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -923,15 +923,15 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable), nil
 }
-// Security the security property
+// Security provides operations to manage the security property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) Security()(*i20411aa1178b819cb7161434d3582faa5a8429cc93bee06b3c270d266d7eb4e8.SecurityRequestBuilder) {
     return i20411aa1178b819cb7161434d3582faa5a8429cc93bee06b3c270d266d7eb4e8.NewSecurityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserCredentialUsageDetails the userCredentialUsageDetails property
+// UserCredentialUsageDetails provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.UserCredentialUsageDetailsRequestBuilder) {
     return ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.NewUserCredentialUsageDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserCredentialUsageDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.userCredentialUsageDetails.item collection
+// UserCredentialUsageDetailsById provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*i6e7800f96429fcd3abddac192866febcab6b2f74bee1f02470e717ea53e849df.UserCredentialUsageDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

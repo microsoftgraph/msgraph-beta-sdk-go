@@ -84,7 +84,7 @@ func (m *JoinedGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Con
 func (m *JoinedGroupsRequestBuilder) Delta()(*ib4b15e2432646bfa285596911d9fb56acb5ace28adfc5f56de348210723dbc40.DeltaRequestBuilder) {
     return ib4b15e2432646bfa285596911d9fb56acb5ace28adfc5f56de348210723dbc40.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EvaluateDynamicMembership the evaluateDynamicMembership property
+// EvaluateDynamicMembership provides operations to call the evaluateDynamicMembership method.
 func (m *JoinedGroupsRequestBuilder) EvaluateDynamicMembership()(*i14e2b33f6eebbf36864b149113f785d4d4fb69c0b082832eecbb0ade5d528ba0.EvaluateDynamicMembershipRequestBuilder) {
     return i14e2b33f6eebbf36864b149113f785d4d4fb69c0b082832eecbb0ade5d528ba0.NewEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -107,15 +107,15 @@ func (m *JoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *JoinedGroupsRequestBuilder) GetByIds()(*ic01f1a71e9d81daccfa59f2811480ab0b9b91b235a54a1bf38301799ab722207.GetByIdsRequestBuilder) {
     return ic01f1a71e9d81daccfa59f2811480ab0b9b91b235a54a1bf38301799ab722207.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *JoinedGroupsRequestBuilder) GetUserOwnedObjects()(*ia4b17264996a812540aa98efa53ac88ff9f3de6dc41b3a974d28cd88490f84e8.GetUserOwnedObjectsRequestBuilder) {
     return ia4b17264996a812540aa98efa53ac88ff9f3de6dc41b3a974d28cd88490f84e8.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *JoinedGroupsRequestBuilder) ValidateProperties()(*i9ea560dd3a1ef2bd400a3c9b5a56daafabdf774542c588e5bcbc538ff7be9937.ValidatePropertiesRequestBuilder) {
     return i9ea560dd3a1ef2bd400a3c9b5a56daafabdf774542c588e5bcbc538ff7be9937.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -77,7 +77,7 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UsersRequestBuilder) Count()(*i4955c8ead1dfb331d7b6c5cb84c83e17fe654822a84f8a3c4f9681b987a8f982.CountRequestBuilder) {
     return i4955c8ead1dfb331d7b6c5cb84c83e17fe654822a84f8a3c4f9681b987a8f982.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -134,7 +134,7 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *UsersRequestBuilder) GetByIds()(*ia70b48171890bd6eba4caf9c2081ddd6213e4cd72a7d11bfda6ecbcc636d32ef.GetByIdsRequestBuilder) {
     return ia70b48171890bd6eba4caf9c2081ddd6213e4cd72a7d11bfda6ecbcc636d32ef.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -142,7 +142,7 @@ func (m *UsersRequestBuilder) GetByIds()(*ia70b48171890bd6eba4caf9c2081ddd6213e4
 func (m *UsersRequestBuilder) GetManagedAppBlockedUsers()(*i5c97c863f904b1cf0ebde61c61539e9095b7a10833dbc1282cd7123559514275.GetManagedAppBlockedUsersRequestBuilder) {
     return i5c97c863f904b1cf0ebde61c61539e9095b7a10833dbc1282cd7123559514275.NewGetManagedAppBlockedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *UsersRequestBuilder) GetUserOwnedObjects()(*i7c59b4c4e2615cc579520999d700128005226f408f7b8111977ed0c3a6a45d70.GetUserOwnedObjectsRequestBuilder) {
     return i7c59b4c4e2615cc579520999d700128005226f408f7b8111977ed0c3a6a45d70.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -165,11 +165,11 @@ func (m *UsersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba69
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
-// ValidatePassword the validatePassword property
+// ValidatePassword provides operations to call the validatePassword method.
 func (m *UsersRequestBuilder) ValidatePassword()(*i2c83b78d88f4ae5d43180bd3ceb5b2b18f835891b4d285c93889e5b4e7dadfa7.ValidatePasswordRequestBuilder) {
     return i2c83b78d88f4ae5d43180bd3ceb5b2b18f835891b4d285c93889e5b4e7dadfa7.NewValidatePasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *UsersRequestBuilder) ValidateProperties()(*i05710ad707ca5df305bac808ada934e670542cf0f0910503bdc6f9dee7a4e50c.ValidatePropertiesRequestBuilder) {
     return i05710ad707ca5df305bac808ada934e670542cf0f0910503bdc6f9dee7a4e50c.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

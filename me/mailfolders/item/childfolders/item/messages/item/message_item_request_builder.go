@@ -67,11 +67,11 @@ type MessageItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) Attachments()(*i18f0f3d80ebc26c14d0b298a950e35a82ff4632a691418331bc5c8ae9f7e1749.AttachmentsRequestBuilder) {
     return i18f0f3d80ebc26c14d0b298a950e35a82ff4632a691418331bc5c8ae9f7e1749.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.messages.item.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*i12ca9076148c4a8f67d38f9a192b8c7b772df3687a3cc8863d5e5956f3e8e836.AttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -101,11 +101,11 @@ func NewMessageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewMessageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the Content property
+// Content provides operations to manage the media for the user entity.
 func (m *MessageItemRequestBuilder) Content()(*ia2c3cee1b082982c4046236c2e1484b1d12b01e7d202b5ad24986f82a79d1367.ContentRequestBuilder) {
     return ia2c3cee1b082982c4046236c2e1484b1d12b01e7d202b5ad24986f82a79d1367.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Copy the copy property
+// Copy provides operations to call the copy method.
 func (m *MessageItemRequestBuilder) Copy()(*ib47eb4bd511bd586fac1efd76227784d7f819cd4b070f8b6ebf528e44d879c62.CopyRequestBuilder) {
     return ib47eb4bd511bd586fac1efd76227784d7f819cd4b070f8b6ebf528e44d879c62.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -121,7 +121,7 @@ func (m *MessageItemRequestBuilder) CreateDeleteRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// CreateForward the createForward property
+// CreateForward provides operations to call the createForward method.
 func (m *MessageItemRequestBuilder) CreateForward()(*iaff702774cc3e61c13d7e163970e1629db453df271cbb59488849ed2a3ae0ec7.CreateForwardRequestBuilder) {
     return iaff702774cc3e61c13d7e163970e1629db453df271cbb59488849ed2a3ae0ec7.NewCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *MessageItemRequestBuilder) CreatePatchRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// CreateReply the createReply property
+// CreateReply provides operations to call the createReply method.
 func (m *MessageItemRequestBuilder) CreateReply()(*ic2eb00d9cef4107c8d86f41b9ef42043e0038c1234cf6e8fb334c17ec24dd276.CreateReplyRequestBuilder) {
     return ic2eb00d9cef4107c8d86f41b9ef42043e0038c1234cf6e8fb334c17ec24dd276.NewCreateReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateReplyAll the createReplyAll property
+// CreateReplyAll provides operations to call the createReplyAll method.
 func (m *MessageItemRequestBuilder) CreateReplyAll()(*i38bd3b59f483648cf474b3f78ca224a4030f1ccdc95d8b3eca57afa7733c4cdc.CreateReplyAllRequestBuilder) {
     return i38bd3b59f483648cf474b3f78ca224a4030f1ccdc95d8b3eca57afa7733c4cdc.NewCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -179,11 +179,11 @@ func (m *MessageItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) Extensions()(*i98dfc01c9609a1f92d8d40b05cc6915fe1b5f42504125809b5cbadd5bac1be4a.ExtensionsRequestBuilder) {
     return i98dfc01c9609a1f92d8d40b05cc6915fe1b5f42504125809b5cbadd5bac1be4a.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.messages.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) ExtensionsById(id string)(*ic6ebbe1487ad64bdb56672d7a43c44d420745ba51711b450fa500eb99d41f83b.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -194,7 +194,7 @@ func (m *MessageItemRequestBuilder) ExtensionsById(id string)(*ic6ebbe1487ad64bd
     }
     return ic6ebbe1487ad64bdb56672d7a43c44d420745ba51711b450fa500eb99d41f83b.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Forward the forward property
+// Forward provides operations to call the forward method.
 func (m *MessageItemRequestBuilder) Forward()(*ic04bbf54cf6a3374e1844545b8f1fbb2c3e149b51fc1b499324271cb325f7593.ForwardRequestBuilder) {
     return ic04bbf54cf6a3374e1844545b8f1fbb2c3e149b51fc1b499324271cb325f7593.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -217,11 +217,11 @@ func (m *MessageItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
-// Mentions the mentions property
+// Mentions provides operations to manage the mentions property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) Mentions()(*i25ba706e121e0ece5ebf98516c94795df9564057f989070249206d4cfb86fd93.MentionsRequestBuilder) {
     return i25ba706e121e0ece5ebf98516c94795df9564057f989070249206d4cfb86fd93.NewMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MentionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.messages.item.mentions.item collection
+// MentionsById provides operations to manage the mentions property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) MentionsById(id string)(*ie8c7eefceaadf180d29aab9898dd5e226c4bc43a528d2ec1beaac3b40d5d3747.MentionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -232,15 +232,15 @@ func (m *MessageItemRequestBuilder) MentionsById(id string)(*ie8c7eefceaadf180d2
     }
     return ie8c7eefceaadf180d29aab9898dd5e226c4bc43a528d2ec1beaac3b40d5d3747.NewMentionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Move the move property
+// Move provides operations to call the move method.
 func (m *MessageItemRequestBuilder) Move()(*i97f19227de75a13e8bce2a9f2f0fe826731ce9d14c85ded6e3178da92ad9f8e1.MoveRequestBuilder) {
     return i97f19227de75a13e8bce2a9f2f0fe826731ce9d14c85ded6e3178da92ad9f8e1.NewMoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) MultiValueExtendedProperties()(*ia085204d95108fdfba3f30179e84fe9d56d2a41f0196b3faaccac5933897f4d8.MultiValueExtendedPropertiesRequestBuilder) {
     return ia085204d95108fdfba3f30179e84fe9d56d2a41f0196b3faaccac5933897f4d8.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.messages.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i402e59797825c6487d460e7a202a15eff3f3d7da3857b91b14cc5ac2341d77cb.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -270,23 +270,23 @@ func (m *MessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
-// Reply the reply property
+// Reply provides operations to call the reply method.
 func (m *MessageItemRequestBuilder) Reply()(*idb7f86c95ef4ba5d0a0f2d5e20325af74620e389e5d247f6967baca5d122864a.ReplyRequestBuilder) {
     return idb7f86c95ef4ba5d0a0f2d5e20325af74620e389e5d247f6967baca5d122864a.NewReplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ReplyAll the replyAll property
+// ReplyAll provides operations to call the replyAll method.
 func (m *MessageItemRequestBuilder) ReplyAll()(*ie9c259a2102e27c149931d444b88050c501e3097576971fd37ec324913adb6b7.ReplyAllRequestBuilder) {
     return ie9c259a2102e27c149931d444b88050c501e3097576971fd37ec324913adb6b7.NewReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Send the send property
+// Send provides operations to call the send method.
 func (m *MessageItemRequestBuilder) Send()(*ic57b0d8e565c4fbad1c8bb7680c7f1bebe14d763e641b8aaef0cf7ed6e29b08a.SendRequestBuilder) {
     return ic57b0d8e565c4fbad1c8bb7680c7f1bebe14d763e641b8aaef0cf7ed6e29b08a.NewSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) SingleValueExtendedProperties()(*ide503fc3f46ba166f51a715b9dc0b7e9a83eaf22bc09b1d3634024b436aad454.SingleValueExtendedPropertiesRequestBuilder) {
     return ide503fc3f46ba166f51a715b9dc0b7e9a83eaf22bc09b1d3634024b436aad454.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item.messages.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
 func (m *MessageItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i8fd7cb6657cd70065c95e991e7c57ff53240dfa4ec292476f12a358369c42f03.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -297,7 +297,7 @@ func (m *MessageItemRequestBuilder) SingleValueExtendedPropertiesById(id string)
     }
     return i8fd7cb6657cd70065c95e991e7c57ff53240dfa4ec292476f12a358369c42f03.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Unsubscribe the unsubscribe property
+// Unsubscribe provides operations to call the unsubscribe method.
 func (m *MessageItemRequestBuilder) Unsubscribe()(*ie673455ab447de7fc89be141da7ff6bb95f9d92378eaefe3914fe3f9e387c4e3.UnsubscribeRequestBuilder) {
     return ie673455ab447de7fc89be141da7ff6bb95f9d92378eaefe3914fe3f9e387c4e3.NewUnsubscribeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

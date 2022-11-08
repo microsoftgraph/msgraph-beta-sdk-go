@@ -47,7 +47,7 @@ type ManagementActionItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Apply the apply property
+// Apply provides operations to call the apply method.
 func (m *ManagementActionItemRequestBuilder) Apply()(*i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0.ApplyRequestBuilder) {
     return i02a0acf8de02ec6d8ae4b62929ab4b9b5af1a13131d5aab7c33afdb467de17e0.NewApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

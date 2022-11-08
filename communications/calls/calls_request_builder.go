@@ -72,7 +72,7 @@ func NewCallsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewCallsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CallsRequestBuilder) Count()(*i82cbd4b0f7b8bfe78f5cd209459763cc3f5f5cadaecb44d2fb30e8c9cfede574.CountRequestBuilder) {
     return i82cbd4b0f7b8bfe78f5cd209459763cc3f5f5cadaecb44d2fb30e8c9cfede574.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *CallsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cal
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallCollectionResponseable), nil
 }
-// LogTeleconferenceDeviceQuality the logTeleconferenceDeviceQuality property
+// LogTeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
 func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*i76213bc38ffe1e25600e63d627ee5435aa9633adeb687d7993a4e35979ea8ae9.LogTeleconferenceDeviceQualityRequestBuilder) {
     return i76213bc38ffe1e25600e63d627ee5435aa9633adeb687d7993a4e35979ea8ae9.NewLogTeleconferenceDeviceQualityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

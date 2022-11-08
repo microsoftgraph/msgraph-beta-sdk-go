@@ -47,7 +47,7 @@ type ManagedTenantEmailNotificationItemRequestBuilderPatchRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alert the alert property
+// Alert provides operations to manage the alert property of the microsoft.graph.managedTenants.managedTenantEmailNotification entity.
 func (m *ManagedTenantEmailNotificationItemRequestBuilder) Alert()(*icbf87804c8e2be716f3529b937ba853b9828310c66a82de654e44e38951bd80b.AlertRequestBuilder) {
     return icbf87804c8e2be716f3529b937ba853b9828310c66a82de654e44e38951bd80b.NewAlertRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

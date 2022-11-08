@@ -112,7 +112,7 @@ func (m *VendorRequestBuilder) CreatePatchRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// Currency the currency property
+// Currency provides operations to manage the currency property of the microsoft.graph.vendor entity.
 func (m *VendorRequestBuilder) Currency()(*id3530cd4beaef287f14ef57e5ce261093ee364b54bcd985342b7f6aba98c12a9.CurrencyRequestBuilder) {
     return id3530cd4beaef287f14ef57e5ce261093ee364b54bcd985342b7f6aba98c12a9.NewCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -170,19 +170,19 @@ func (m *VendorRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Vendor_escapedable), nil
 }
-// PaymentMethod the paymentMethod property
+// PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.vendor entity.
 func (m *VendorRequestBuilder) PaymentMethod()(*i92a917a0186915b670b0fd1c9b2a2186e591519b280fcf76975baec3ed95f9a0.PaymentMethodRequestBuilder) {
     return i92a917a0186915b670b0fd1c9b2a2186e591519b280fcf76975baec3ed95f9a0.NewPaymentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PaymentTerm the paymentTerm property
+// PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.vendor entity.
 func (m *VendorRequestBuilder) PaymentTerm()(*i7d6d8b8d7190a5ae78eca79894d25c85fe55630db9a3a082ecf50fb8b91212f5.PaymentTermRequestBuilder) {
     return i7d6d8b8d7190a5ae78eca79894d25c85fe55630db9a3a082ecf50fb8b91212f5.NewPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Picture the picture property
+// Picture provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *VendorRequestBuilder) Picture()(*ia526393eb7b43a4b816611314931e6467a22bc3e148195dde146c51385fc71de.PictureRequestBuilder) {
     return ia526393eb7b43a4b816611314931e6467a22bc3e148195dde146c51385fc71de.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.purchaseInvoices.item.vendor.picture.item collection
+// PictureById provides operations to manage the picture property of the microsoft.graph.vendor entity.
 func (m *VendorRequestBuilder) PictureById(id string)(*icca345d7b061ef3cc7f41feb32c4b0a236d5a873a6bf9291ba53dd28a25ba727.PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

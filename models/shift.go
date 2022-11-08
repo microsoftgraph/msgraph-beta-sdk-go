@@ -12,11 +12,11 @@ type Shift struct {
     draftShift ShiftItemable
     // The isStagedForDeletion property
     isStagedForDeletion *bool
-    // ID of the scheduling group the shift is part of. Required.
+    // The schedulingGroupId property
     schedulingGroupId *string
-    // The shared version of this shift that is viewable by both employees and managers. Required.
+    // The sharedShift property
     sharedShift ShiftItemable
-    // ID of the user assigned to the shift. Required.
+    // The userId property
     userId *string
 }
 // NewShift instantiates a new Shift and sets the default values.
@@ -50,15 +50,15 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 func (m *Shift) GetIsStagedForDeletion()(*bool) {
     return m.isStagedForDeletion
 }
-// GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
+// GetSchedulingGroupId gets the schedulingGroupId property value. The schedulingGroupId property
 func (m *Shift) GetSchedulingGroupId()(*string) {
     return m.schedulingGroupId
 }
-// GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
+// GetSharedShift gets the sharedShift property value. The sharedShift property
 func (m *Shift) GetSharedShift()(ShiftItemable) {
     return m.sharedShift
 }
-// GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
+// GetUserId gets the userId property value. The userId property
 func (m *Shift) GetUserId()(*string) {
     return m.userId
 }
@@ -108,15 +108,15 @@ func (m *Shift) SetDraftShift(value ShiftItemable)() {
 func (m *Shift) SetIsStagedForDeletion(value *bool)() {
     m.isStagedForDeletion = value
 }
-// SetSchedulingGroupId sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
+// SetSchedulingGroupId sets the schedulingGroupId property value. The schedulingGroupId property
 func (m *Shift) SetSchedulingGroupId(value *string)() {
     m.schedulingGroupId = value
 }
-// SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
+// SetSharedShift sets the sharedShift property value. The sharedShift property
 func (m *Shift) SetSharedShift(value ShiftItemable)() {
     m.sharedShift = value
 }
-// SetUserId sets the userId property value. ID of the user assigned to the shift. Required.
+// SetUserId sets the userId property value. The userId property
 func (m *Shift) SetUserId(value *string)() {
     m.userId = value
 }

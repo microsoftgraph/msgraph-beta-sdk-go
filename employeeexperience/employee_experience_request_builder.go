@@ -109,11 +109,11 @@ func (m *EmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable), nil
 }
-// LearningProviders the learningProviders property
+// LearningProviders provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
 func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*i6b5708b261996882c3e6e477468067309a807de798a49dd6a15df3e75ca6e815.LearningProvidersRequestBuilder) {
     return i6b5708b261996882c3e6e477468067309a807de798a49dd6a15df3e75ca6e815.NewLearningProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LearningProvidersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.employeeExperience.learningProviders.item collection
+// LearningProvidersById provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
 func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*i3eafc347efe81746aff991e110ba0c4e3da53ec10fff1a11e037e33262f03750.LearningProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

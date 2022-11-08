@@ -71,7 +71,7 @@ func NewAndroidForWorkEnrollmentProfilesRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AndroidForWorkEnrollmentProfilesRequestBuilder) Count()(*ieb404ee6184ffe60f204de38aa016a4722dd883b1804499c76f78e6a59f08f61.CountRequestBuilder) {
     return ieb404ee6184ffe60f204de38aa016a4722dd883b1804499c76f78e6a59f08f61.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

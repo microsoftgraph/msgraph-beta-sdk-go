@@ -165,11 +165,11 @@ func (m *RunItemRequestBuilder) Patch(ctx context.Context, body i45fdec8a8c1f65c
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Runable), nil
 }
-// TaskProcessingResults the taskProcessingResults property
+// TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 func (m *RunItemRequestBuilder) TaskProcessingResults()(*i35792f29ff8dbaa935e3654762ef55946a53c9080830db1a3036052ea419d1d3.TaskProcessingResultsRequestBuilder) {
     return i35792f29ff8dbaa935e3654762ef55946a53c9080830db1a3036052ea419d1d3.NewTaskProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskProcessingResultsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.runs.item.taskProcessingResults.item collection
+// TaskProcessingResultsById provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 func (m *RunItemRequestBuilder) TaskProcessingResultsById(id string)(*ic531cfa2410ddf622d486cfd3893e34f937d0ff8ff6b082cb3bc2b64ca51f398.TaskProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *RunItemRequestBuilder) TaskProcessingResultsById(id string)(*ic531cfa24
     }
     return ic531cfa2410ddf622d486cfd3893e34f937d0ff8ff6b082cb3bc2b64ca51f398.NewTaskProcessingResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserProcessingResults the userProcessingResults property
+// UserProcessingResults provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 func (m *RunItemRequestBuilder) UserProcessingResults()(*id4be2a0422f2633d3836b422e16037f0d69628c2a667c7dddac5aedd209b5743.UserProcessingResultsRequestBuilder) {
     return id4be2a0422f2633d3836b422e16037f0d69628c2a667c7dddac5aedd209b5743.NewUserProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserProcessingResultsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.runs.item.userProcessingResults.item collection
+// UserProcessingResultsById provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 func (m *RunItemRequestBuilder) UserProcessingResultsById(id string)(*i95d980915ecef4d08660324b7dad5fb381f0d979b3981b9abfd58535fc42a5b9.UserProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -63,7 +63,7 @@ func NewExceptionOccurrencesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewExceptionOccurrencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ExceptionOccurrencesRequestBuilder) Count()(*i2227b4acf59ca4912fae59a2f15cddf6c7da044ec8f56ee649c8303df272b458.CountRequestBuilder) {
     return i2227b4acf59ca4912fae59a2f15cddf6c7da044ec8f56ee649c8303df272b458.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

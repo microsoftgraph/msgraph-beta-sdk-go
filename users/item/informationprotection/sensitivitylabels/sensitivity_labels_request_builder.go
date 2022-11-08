@@ -72,7 +72,7 @@ func NewSensitivityLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewSensitivityLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SensitivityLabelsRequestBuilder) Count()(*ia1829a2a0758171411b9683230e761fa4d4b0a6a111918ba3bc6018cbce2bd34.CountRequestBuilder) {
     return ia1829a2a0758171411b9683230e761fa4d4b0a6a111918ba3bc6018cbce2bd34.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -106,7 +106,7 @@ func (m *SensitivityLabelsRequestBuilder) CreatePostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// Evaluate the evaluate property
+// Evaluate provides operations to call the evaluate method.
 func (m *SensitivityLabelsRequestBuilder) Evaluate()(*i7dfd202d90884a877da7c2aea60f5b55911b884f0c240167a4945939c55480ea.EvaluateRequestBuilder) {
     return i7dfd202d90884a877da7c2aea60f5b55911b884f0c240167a4945939c55480ea.NewEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

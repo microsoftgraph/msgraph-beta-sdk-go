@@ -51,11 +51,11 @@ type OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackgroundImage the backgroundImage property
+// BackgroundImage provides operations to manage the media for the organization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) BackgroundImage()(*i6a7478100780912a5be031e6c8d790dc49405d68dd9b8c7f08e4ce316b6b8e3d.BackgroundImageRequestBuilder) {
     return i6a7478100780912a5be031e6c8d790dc49405d68dd9b8c7f08e4ce316b6b8e3d.NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BannerLogo the bannerLogo property
+// BannerLogo provides operations to manage the media for the organization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) BannerLogo()(*ic2fbe7099579dba0316764b0f81d4a843f3004e003c2609224543e9897d0b2ae.BannerLogoRequestBuilder) {
     return ic2fbe7099579dba0316764b0f81d4a843f3004e003c2609224543e9897d0b2ae.NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,7 +136,7 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Favicon the favicon property
+// Favicon provides operations to manage the media for the organization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Favicon()(*ia7baad9e196f596f211db6cea3f24b75276809ee9ba116821ef97852759ddad3.FaviconRequestBuilder) {
     return ia7baad9e196f596f211db6cea3f24b75276809ee9ba116821ef97852759ddad3.NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -178,11 +178,11 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Patch(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable), nil
 }
-// SquareLogo the squareLogo property
+// SquareLogo provides operations to manage the media for the organization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*i9d66c98e71dc6ac8e5d6be7ba84577c585b7605c426a5121a43bdc47b7842967.SquareLogoRequestBuilder) {
     return i9d66c98e71dc6ac8e5d6be7ba84577c585b7605c426a5121a43bdc47b7842967.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SquareLogoDark the squareLogoDark property
+// SquareLogoDark provides operations to manage the media for the organization entity.
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogoDark()(*ib06e3fb2ab0d52cd388a43e277edd31fc53e151e7c2cbb2c7729364e258b5717.SquareLogoDarkRequestBuilder) {
     return ib06e3fb2ab0d52cd388a43e277edd31fc53e151e7c2cbb2c7729364e258b5717.NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

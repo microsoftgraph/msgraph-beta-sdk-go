@@ -41,11 +41,11 @@ type FinancialsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Companies the companies property
+// Companies provides operations to manage the companies property of the microsoft.graph.financials entity.
 func (m *FinancialsRequestBuilder) Companies()(*id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.CompaniesRequestBuilder) {
     return id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.NewCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CompaniesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item collection
+// CompaniesById provides operations to manage the companies property of the microsoft.graph.financials entity.
 func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.CompanyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -9,9 +9,9 @@ import (
 type CollapseProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The fields property
+    // Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
     fields []string
-    // The limit property
+    // Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
     limit *int32
     // The OdataType property
     odataType *string
@@ -41,11 +41,11 @@ func (m *CollapseProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     return res
 }
-// GetFields gets the fields property value. The fields property
+// GetFields gets the fields property value. Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
 func (m *CollapseProperty) GetFields()([]string) {
     return m.fields
 }
-// GetLimit gets the limit property value. The limit property
+// GetLimit gets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
 func (m *CollapseProperty) GetLimit()(*int32) {
     return m.limit
 }
@@ -85,11 +85,11 @@ func (m *CollapseProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *CollapseProperty) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetFields sets the fields property value. The fields property
+// SetFields sets the fields property value. Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
 func (m *CollapseProperty) SetFields(value []string)() {
     m.fields = value
 }
-// SetLimit sets the limit property value. The limit property
+// SetLimit sets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
 func (m *CollapseProperty) SetLimit(value *int32)() {
     m.limit = value
 }

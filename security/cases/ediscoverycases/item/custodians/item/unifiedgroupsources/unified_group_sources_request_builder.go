@@ -71,7 +71,7 @@ func NewUnifiedGroupSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedGroupSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UnifiedGroupSourcesRequestBuilder) Count()(*i2de8672f0ec80673f318228f7b5e231761895a73906ecf9ef4f8c6ab76c718ce.CountRequestBuilder) {
     return i2de8672f0ec80673f318228f7b5e231761895a73906ecf9ef4f8c6ab76c718ce.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

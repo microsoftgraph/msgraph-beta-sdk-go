@@ -30,6 +30,8 @@ type VirtualEndpoint struct {
     reports CloudPcReportsable
     // Cloud PC service plans.
     servicePlans []CloudPcServicePlanable
+    // The sharedUseServicePlans property
+    sharedUseServicePlans []CloudPcSharedUseServicePlanable
     // Cloud PC snapshots.
     snapshots []CloudPcSnapshotable
     // Cloud PC supported regions.
@@ -84,6 +86,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     res["provisioningPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcProvisioningPolicyFromDiscriminatorValue , m.SetProvisioningPolicies)
     res["reports"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCloudPcReportsFromDiscriminatorValue , m.SetReports)
     res["servicePlans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcServicePlanFromDiscriminatorValue , m.SetServicePlans)
+    res["sharedUseServicePlans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcSharedUseServicePlanFromDiscriminatorValue , m.SetSharedUseServicePlans)
     res["snapshots"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcSnapshotFromDiscriminatorValue , m.SetSnapshots)
     res["supportedRegions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcSupportedRegionFromDiscriminatorValue , m.SetSupportedRegions)
     res["userSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcUserSettingFromDiscriminatorValue , m.SetUserSettings)
@@ -112,6 +115,10 @@ func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
 // GetServicePlans gets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
     return m.servicePlans
+}
+// GetSharedUseServicePlans gets the sharedUseServicePlans property value. The sharedUseServicePlans property
+func (m *VirtualEndpoint) GetSharedUseServicePlans()([]CloudPcSharedUseServicePlanable) {
+    return m.sharedUseServicePlans
 }
 // GetSnapshots gets the snapshots property value. Cloud PC snapshots.
 func (m *VirtualEndpoint) GetSnapshots()([]CloudPcSnapshotable) {
@@ -205,6 +212,13 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetSharedUseServicePlans() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSharedUseServicePlans())
+        err = writer.WriteCollectionOfObjectValues("sharedUseServicePlans", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSnapshots() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSnapshots())
         err = writer.WriteCollectionOfObjectValues("snapshots", cast)
@@ -271,6 +285,10 @@ func (m *VirtualEndpoint) SetReports(value CloudPcReportsable)() {
 // SetServicePlans sets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {
     m.servicePlans = value
+}
+// SetSharedUseServicePlans sets the sharedUseServicePlans property value. The sharedUseServicePlans property
+func (m *VirtualEndpoint) SetSharedUseServicePlans(value []CloudPcSharedUseServicePlanable)() {
+    m.sharedUseServicePlans = value
 }
 // SetSnapshots sets the snapshots property value. Cloud PC snapshots.
 func (m *VirtualEndpoint) SetSnapshots(value []CloudPcSnapshotable)() {

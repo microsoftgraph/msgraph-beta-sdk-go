@@ -65,7 +65,7 @@ func NewCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CreatedObjectsRequestBuilder) Count()(*i4549b51bb5af6e26215931bd628e24f2f5f7b1a69e745bb61213dcd4d0c10db0.CountRequestBuilder) {
     return i4549b51bb5af6e26215931bd628e24f2f5f7b1a69e745bb61213dcd4d0c10db0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *CreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *CreatedObjectsRequestBuilder) ServicePrincipal()(*ie99526d4050fc6abef6cc1a9115b5edc58a81ba738d1fc11734aa50d56462a95.ServicePrincipalRequestBuilder) {
     return ie99526d4050fc6abef6cc1a9115b5edc58a81ba738d1fc11734aa50d56462a95.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

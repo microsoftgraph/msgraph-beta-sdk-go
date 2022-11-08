@@ -38,6 +38,8 @@ type IosManagedAppProtection struct {
     managedUniversalLinks []string
     // Versions less than the specified version will block the managed app from accessing company data.
     minimumRequiredSdkVersion *string
+    // Versions less than the specified version will result in warning message on the managed app from accessing company data.
+    minimumWarningSdkVersion *string
     // Versions less than the specified version will block the managed app from accessing company data.
     minimumWipeSdkVersion *string
     // Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
@@ -124,6 +126,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
     res["filterOpenInToOnlyManagedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFilterOpenInToOnlyManagedApps)
     res["managedUniversalLinks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetManagedUniversalLinks)
     res["minimumRequiredSdkVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumRequiredSdkVersion)
+    res["minimumWarningSdkVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWarningSdkVersion)
     res["minimumWipeSdkVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWipeSdkVersion)
     res["protectInboundDataFromUnknownSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetProtectInboundDataFromUnknownSources)
     res["thirdPartyKeyboardsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetThirdPartyKeyboardsBlocked)
@@ -140,6 +143,10 @@ func (m *IosManagedAppProtection) GetManagedUniversalLinks()([]string) {
 // GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
     return m.minimumRequiredSdkVersion
+}
+// GetMinimumWarningSdkVersion gets the minimumWarningSdkVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
+func (m *IosManagedAppProtection) GetMinimumWarningSdkVersion()(*string) {
+    return m.minimumWarningSdkVersion
 }
 // GetMinimumWipeSdkVersion gets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) GetMinimumWipeSdkVersion()(*string) {
@@ -254,6 +261,12 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err = writer.WriteStringValue("minimumWarningSdkVersion", m.GetMinimumWarningSdkVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("minimumWipeSdkVersion", m.GetMinimumWipeSdkVersion())
         if err != nil {
             return err
@@ -332,6 +345,10 @@ func (m *IosManagedAppProtection) SetManagedUniversalLinks(value []string)() {
 // SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
     m.minimumRequiredSdkVersion = value
+}
+// SetMinimumWarningSdkVersion sets the minimumWarningSdkVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
+func (m *IosManagedAppProtection) SetMinimumWarningSdkVersion(value *string)() {
+    m.minimumWarningSdkVersion = value
 }
 // SetMinimumWipeSdkVersion sets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) SetMinimumWipeSdkVersion(value *string)() {

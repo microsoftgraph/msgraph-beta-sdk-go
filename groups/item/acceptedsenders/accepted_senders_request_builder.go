@@ -61,7 +61,7 @@ func NewAcceptedSendersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewAcceptedSendersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AcceptedSendersRequestBuilder) Count()(*i1c62368e52bc1e94ced1b2521a90393444d19397b351dc8490667a7bcb3a0850.CountRequestBuilder) {
     return i1c62368e52bc1e94ced1b2521a90393444d19397b351dc8490667a7bcb3a0850.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -100,7 +100,7 @@ func (m *AcceptedSendersRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of group entities.
 func (m *AcceptedSendersRequestBuilder) Ref()(*i7fce822c8eb09f82caa2bcc9e7604c37738f2edb5716893702145f6996245896.RefRequestBuilder) {
     return i7fce822c8eb09f82caa2bcc9e7604c37738f2edb5716893702145f6996245896.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

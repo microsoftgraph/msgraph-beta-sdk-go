@@ -125,7 +125,7 @@ func (m *ListItemVersionItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Fields the fields property
+// Fields provides operations to manage the fields property of the microsoft.graph.listItemVersion entity.
 func (m *ListItemVersionItemRequestBuilder) Fields()(*i7bf446758cfbf4eefe9c4146bdba71ab1bd19e2f59d4892e0ee0a604fcdf94aa.FieldsRequestBuilder) {
     return i7bf446758cfbf4eefe9c4146bdba71ab1bd19e2f59d4892e0ee0a604fcdf94aa.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *ListItemVersionItemRequestBuilder) Patch(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemVersionable), nil
 }
-// RestoreVersion the restoreVersion property
+// RestoreVersion provides operations to call the restoreVersion method.
 func (m *ListItemVersionItemRequestBuilder) RestoreVersion()(*i43d0792d6a3f4e800e42feb69f42306e2ee72175ac602d07d0face95422db2b3.RestoreVersionRequestBuilder) {
     return i43d0792d6a3f4e800e42feb69f42306e2ee72175ac602d07d0face95422db2b3.NewRestoreVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewEvaluateDlpPoliciesJobsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateDlpPoliciesJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *EvaluateDlpPoliciesJobsRequestBuilder) Count()(*i060c1da6d95d5c08d44a93d471a9484625f334c7789a5a6afa32ba6911725ba6.CountRequestBuilder) {
     return i060c1da6d95d5c08d44a93d471a9484625f334c7789a5a6afa32ba6911725ba6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -64,7 +64,7 @@ func NewEmailNotificationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewEmailNotificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *EmailNotificationsRequestBuilder) Count()(*ia43be3accd133648203e2815b0721f6275949d4a317387cfe0c1c1d68d757b5f.CountRequestBuilder) {
     return ia43be3accd133648203e2815b0721f6275949d4a317387cfe0c1c1d68d757b5f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

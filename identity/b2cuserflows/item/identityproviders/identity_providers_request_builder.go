@@ -65,7 +65,7 @@ func NewIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *IdentityProvidersRequestBuilder) Count()(*i0f1ee86570c7b0b309600ab6ea6196f2df0ee3c82316c2f6159de25a8a0864b2.CountRequestBuilder) {
     return i0f1ee86570c7b0b309600ab6ea6196f2df0ee3c82316c2f6159de25a8a0864b2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of identityContainer entities.
 func (m *IdentityProvidersRequestBuilder) Ref()(*i6365c50638527c8f8852c3f9523230e6ae3dc1eeaab96351d97e26588318017e.RefRequestBuilder) {
     return i6365c50638527c8f8852c3f9523230e6ae3dc1eeaab96351d97e26588318017e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

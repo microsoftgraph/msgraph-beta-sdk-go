@@ -145,7 +145,7 @@ func (m *ItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Item
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable), nil
 }
-// ItemCategory the itemCategory property
+// ItemCategory provides operations to manage the itemCategory property of the microsoft.graph.item entity.
 func (m *ItemRequestBuilder) ItemCategory()(*id5066b9f4c7adb8f002caf98bad972364e4258eda5d2201e18b72d83cce3b8cd.ItemCategoryRequestBuilder) {
     return id5066b9f4c7adb8f002caf98bad972364e4258eda5d2201e18b72d83cce3b8cd.NewItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *ItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba69
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable), nil
 }
-// Picture the picture property
+// Picture provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *ItemRequestBuilder) Picture()(*ica874df861b04c854819293a28451875a0de3a70d42eb99ce169d9b0de22b38f.PictureRequestBuilder) {
     return ica874df861b04c854819293a28451875a0de3a70d42eb99ce169d9b0de22b38f.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.purchaseInvoices.item.purchaseInvoiceLines.item.item.picture.item collection
+// PictureById provides operations to manage the picture property of the microsoft.graph.item entity.
 func (m *ItemRequestBuilder) PictureById(id string)(*idd0e9f3892ada8f104db60736781ee74f4ad0c253d21f75b68209f830cbf5861.PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

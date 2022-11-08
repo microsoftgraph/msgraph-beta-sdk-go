@@ -131,11 +131,11 @@ func (m *EducationSynchronizationProfileItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Errors the errors property
+// Errors provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
 func (m *EducationSynchronizationProfileItemRequestBuilder) Errors()(*i9915f3a66e2de398bdfae23c9b58bdf2c4a7c373437f422e62cc19ab1b37c01d.ErrorsRequestBuilder) {
     return i9915f3a66e2de398bdfae23c9b58bdf2c4a7c373437f422e62cc19ab1b37c01d.NewErrorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ErrorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.synchronizationProfiles.item.errors.item collection
+// ErrorsById provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.
 func (m *EducationSynchronizationProfileItemRequestBuilder) ErrorsById(id string)(*i88e077efbe7af1476bbdd89a3d093be25e50e57c1d6a1e16d2b9f2406ba01c90.EducationSynchronizationErrorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -184,23 +184,23 @@ func (m *EducationSynchronizationProfileItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileable), nil
 }
-// Pause the pause property
+// Pause provides operations to call the pause method.
 func (m *EducationSynchronizationProfileItemRequestBuilder) Pause()(*ibfdf2171a3f86b83740d33b9eb574ed52ef8e274f8b0c78649787ec4351bfa5d.PauseRequestBuilder) {
     return ibfdf2171a3f86b83740d33b9eb574ed52ef8e274f8b0c78649787ec4351bfa5d.NewPauseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ProfileStatus the profileStatus property
+// ProfileStatus provides operations to manage the profileStatus property of the microsoft.graph.educationSynchronizationProfile entity.
 func (m *EducationSynchronizationProfileItemRequestBuilder) ProfileStatus()(*i04d76fbaad9f08921b0fefffd4ae909a8fbadb2da7b557711ada64363e2e763d.ProfileStatusRequestBuilder) {
     return i04d76fbaad9f08921b0fefffd4ae909a8fbadb2da7b557711ada64363e2e763d.NewProfileStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Reset the reset property
+// Reset provides operations to call the reset method.
 func (m *EducationSynchronizationProfileItemRequestBuilder) Reset()(*id814594e10d99c016c54d9229da3f00c037b42a01b52dd4efad6b8da5d373fb6.ResetRequestBuilder) {
     return id814594e10d99c016c54d9229da3f00c037b42a01b52dd4efad6b8da5d373fb6.NewResetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Resume the resume property
+// Resume provides operations to call the resume method.
 func (m *EducationSynchronizationProfileItemRequestBuilder) Resume()(*ibd324584f412d6082609e09d36338222a1ea33342c17f036ead958c71c7e57d6.ResumeRequestBuilder) {
     return ibd324584f412d6082609e09d36338222a1ea33342c17f036ead958c71c7e57d6.NewResumeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Start the start property
+// Start provides operations to call the start method.
 func (m *EducationSynchronizationProfileItemRequestBuilder) Start()(*if70ade9d653b89ed0849b345d9e94a2327f9abc57ba5b75b6511e5e4013d1aea.StartRequestBuilder) {
     return if70ade9d653b89ed0849b345d9e94a2327f9abc57ba5b75b6511e5e4013d1aea.NewStartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

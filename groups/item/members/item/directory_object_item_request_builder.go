@@ -20,7 +20,7 @@ type DirectoryObjectItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// Application the application property
+// Application casts the previous resource to application.
 func (m *DirectoryObjectItemRequestBuilder) Application()(*i3196aa00a1ce299bcf796c3884e61126880c03f075bff5162d128f7c6d55c13e.ApplicationRequestBuilder) {
     return i3196aa00a1ce299bcf796c3884e61126880c03f075bff5162d128f7c6d55c13e.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -43,27 +43,27 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Device the device property
+// Device casts the previous resource to device.
 func (m *DirectoryObjectItemRequestBuilder) Device()(*i891dd04cc5613b4818d03f79193e6083c7b6213f8cd3bb83ad2a182b520cf403.DeviceRequestBuilder) {
     return i891dd04cc5613b4818d03f79193e6083c7b6213f8cd3bb83ad2a182b520cf403.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Group the group property
+// Group casts the previous resource to group.
 func (m *DirectoryObjectItemRequestBuilder) Group()(*i546e1ddc658614fd4779ae8e0fbbd2aa1d73c34462a7c7957c8a9d7544d0d046.GroupRequestBuilder) {
     return i546e1ddc658614fd4779ae8e0fbbd2aa1d73c34462a7c7957c8a9d7544d0d046.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OrgContact the orgContact property
+// OrgContact casts the previous resource to orgContact.
 func (m *DirectoryObjectItemRequestBuilder) OrgContact()(*i3a337ddddf2d8793c348227a5f8c67e1edfce989ff9529d9a004942c45d0e5e1.OrgContactRequestBuilder) {
     return i3a337ddddf2d8793c348227a5f8c67e1edfce989ff9529d9a004942c45d0e5e1.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of group entities.
 func (m *DirectoryObjectItemRequestBuilder) Ref()(*i0554f116bfdffd94f642eff19d8111d848187556d2639aad20e8334f50ac410f.RefRequestBuilder) {
     return i0554f116bfdffd94f642eff19d8111d848187556d2639aad20e8334f50ac410f.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*i302e76b03c5241f23781b72f91f61efdd300ecb011149443ac283284ca7762c8.ServicePrincipalRequestBuilder) {
     return i302e76b03c5241f23781b72f91f61efdd300ecb011149443ac283284ca7762c8.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *DirectoryObjectItemRequestBuilder) User()(*i9b5247cc064ac6f25e02ad51c84a760a6cdd8864f16894568377f03c71d7cef2.UserRequestBuilder) {
     return i9b5247cc064ac6f25e02ad51c84a760a6cdd8864f16894568377f03c71d7cef2.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

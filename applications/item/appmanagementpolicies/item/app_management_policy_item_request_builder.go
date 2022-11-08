@@ -33,7 +33,7 @@ func NewAppManagementPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of application entities.
 func (m *AppManagementPolicyItemRequestBuilder) Ref()(*id8515422dad04d2c65370d4049b61c9421b519e76f3c23c14869fae96b755564.RefRequestBuilder) {
     return id8515422dad04d2c65370d4049b61c9421b519e76f3c23c14869fae96b755564.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -109,7 +109,7 @@ func (m *AndroidForWorkEnrollmentProfileItemRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// CreateToken the createToken property
+// CreateToken provides operations to call the createToken method.
 func (m *AndroidForWorkEnrollmentProfileItemRequestBuilder) CreateToken()(*i5c8c19d77c389478909a5d5db267ec881c1ece4dbe130901468968c73c5b61f0.CreateTokenRequestBuilder) {
     return i5c8c19d77c389478909a5d5db267ec881c1ece4dbe130901468968c73c5b61f0.NewCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *AndroidForWorkEnrollmentProfileItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkEnrollmentProfileable), nil
 }
-// RevokeToken the revokeToken property
+// RevokeToken provides operations to call the revokeToken method.
 func (m *AndroidForWorkEnrollmentProfileItemRequestBuilder) RevokeToken()(*i9267d2002d296224b1f7223f20e956b623bc0d9efea1544156a9301683c48b4f.RevokeTokenRequestBuilder) {
     return i9267d2002d296224b1f7223f20e956b623bc0d9efea1544156a9301683c48b4f.NewRevokeTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

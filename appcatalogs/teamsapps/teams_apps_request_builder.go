@@ -71,7 +71,7 @@ func NewTeamsAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TeamsAppsRequestBuilder) Count()(*i3b119df5ddb81247fb9662688e4eca3700ad91abcb5389135820ea9ea3e1bc0f.CountRequestBuilder) {
     return i3b119df5ddb81247fb9662688e4eca3700ad91abcb5389135820ea9ea3e1bc0f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

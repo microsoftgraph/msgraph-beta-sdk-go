@@ -72,7 +72,7 @@ func NewJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *JobsRequestBuilder) Count()(*idd98eb362d57b8c73de7b38ab7898b713f8ee8b9046079723ecf4671bbd7d27e.CountRequestBuilder) {
     return idd98eb362d57b8c73de7b38ab7898b713f8ee8b9046079723ecf4671bbd7d27e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *JobsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba697
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable), nil
 }
-// ValidateCredentials the validateCredentials property
+// ValidateCredentials provides operations to call the validateCredentials method.
 func (m *JobsRequestBuilder) ValidateCredentials()(*idabdbd0ce7782af2dce85605bd2f1cfa204eefa118389d0ac6b33b8d7c7e9ead.ValidateCredentialsRequestBuilder) {
     return idabdbd0ce7782af2dce85605bd2f1cfa204eefa118389d0ac6b33b8d7c7e9ead.NewValidateCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

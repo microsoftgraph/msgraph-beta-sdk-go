@@ -110,11 +110,11 @@ func (m *AccessReviewStageItemRequestBuilder) CreatePatchRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// Decisions the decisions property
+// Decisions provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
 func (m *AccessReviewStageItemRequestBuilder) Decisions()(*ie8bb93c0d5c21facddb85b340ce5d64414de2dee85b59caccca457f2e887aa82.DecisionsRequestBuilder) {
     return ie8bb93c0d5c21facddb85b340ce5d64414de2dee85b59caccca457f2e887aa82.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.stages.item.decisions.item collection
+// DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
 func (m *AccessReviewStageItemRequestBuilder) DecisionsById(id string)(*i4fdaa2de2f9ec85adc70f4f7f833539dcf6a8145e40b5fb2ce3f1d1317e19b22.AccessReviewInstanceDecisionItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,7 +179,7 @@ func (m *AccessReviewStageItemRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable), nil
 }
-// Stop the stop property
+// Stop provides operations to call the stop method.
 func (m *AccessReviewStageItemRequestBuilder) Stop()(*i1f36147fefe41c46cb8eb01b94e9e30db2e9ecee810b25f697f038bb59fdd8ff.StopRequestBuilder) {
     return i1f36147fefe41c46cb8eb01b94e9e30db2e9ecee810b25f697f038bb59fdd8ff.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

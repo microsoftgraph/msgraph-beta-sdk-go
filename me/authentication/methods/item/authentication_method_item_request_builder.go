@@ -91,11 +91,11 @@ func (m *AuthenticationMethodItemRequestBuilder) CreatePatchRequestInformation(c
     }
     return requestInfo, nil
 }
-// DisableSmsSignIn the disableSmsSignIn property
+// DisableSmsSignIn provides operations to call the disableSmsSignIn method.
 func (m *AuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*ic4978741cb0a6da22ff1661ecb8d06e4df9cd8f4a9a73d4d8821bc9ffd545054.DisableSmsSignInRequestBuilder) {
     return ic4978741cb0a6da22ff1661ecb8d06e4df9cd8f4a9a73d4d8821bc9ffd545054.NewDisableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EnableSmsSignIn the enableSmsSignIn property
+// EnableSmsSignIn provides operations to call the enableSmsSignIn method.
 func (m *AuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*i168734de056992d72cab15e81d68305aaeaeb4ea4a0542fd088e7d19aef1952e.EnableSmsSignInRequestBuilder) {
     return i168734de056992d72cab15e81d68305aaeaeb4ea4a0542fd088e7d19aef1952e.NewEnableSmsSignInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -137,7 +137,7 @@ func (m *AuthenticationMethodItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable), nil
 }
-// ResetPassword the resetPassword property
+// ResetPassword provides operations to call the resetPassword method.
 func (m *AuthenticationMethodItemRequestBuilder) ResetPassword()(*ida6186e59b7d46b210722f00360284059fb02e165f3d3a13c9cbd4943a50a6f1.ResetPasswordRequestBuilder) {
     return ida6186e59b7d46b210722f00360284059fb02e165f3d3a13c9cbd4943a50a6f1.NewResetPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -72,7 +72,7 @@ func NewAndroidManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedAppProtectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AndroidManagedAppProtectionsRequestBuilder) Count()(*if6fc5d245a42f28cba4b78a215f505b9c98339174f307a6bb878607ec9f4a754.CountRequestBuilder) {
     return if6fc5d245a42f28cba4b78a215f505b9c98339174f307a6bb878607ec9f4a754.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -125,7 +125,7 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedAppProtectionCollectionResponseable), nil
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *AndroidManagedAppProtectionsRequestBuilder) HasPayloadLinks()(*i72659658ca3b6fbacbe361e8d3bffc59f5940ce43ad6b33bc228ca23b65e927c.HasPayloadLinksRequestBuilder) {
     return i72659658ca3b6fbacbe361e8d3bffc59f5940ce43ad6b33bc228ca23b65e927c.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -2,7 +2,7 @@ package managedtenants
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of accessReview entities.
 type TenantOnboardingStatus int
 
 const (

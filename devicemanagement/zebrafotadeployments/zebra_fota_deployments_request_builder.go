@@ -71,7 +71,7 @@ func NewZebraFotaDeploymentsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewZebraFotaDeploymentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ZebraFotaDeploymentsRequestBuilder) Count()(*id99f13eae48f7eee026c074ae75bc315fc2464a11336c0fd4542cfb5dfd45435.CountRequestBuilder) {
     return id99f13eae48f7eee026c074ae75bc315fc2464a11336c0fd4542cfb5dfd45435.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -49,11 +49,11 @@ type ExternalItemItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activities the activities property
+// Activities provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
 func (m *ExternalItemItemRequestBuilder) Activities()(*id4fb21891daa15849c8c5b5c2a4306e1a8dcb106d545b688718c0f3edc1c8734.ActivitiesRequestBuilder) {
     return id4fb21891daa15849c8c5b5c2a4306e1a8dcb106d545b688718c0f3edc1c8734.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.connections.item.items.item.activities.item collection
+// ActivitiesById provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
 func (m *ExternalItemItemRequestBuilder) ActivitiesById(id string)(*i8956ebc39875adb9855c2cc11374ae86fad8593ac607428a7d1c03dfb8ed5095.ExternalActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -64,7 +64,7 @@ func (m *ExternalItemItemRequestBuilder) ActivitiesById(id string)(*i8956ebc3987
     }
     return i8956ebc39875adb9855c2cc11374ae86fad8593ac607428a7d1c03dfb8ed5095.NewExternalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AddActivities the addActivities property
+// AddActivities provides operations to call the addActivities method.
 func (m *ExternalItemItemRequestBuilder) AddActivities()(*i0b64a056cdc0395ed65428f6cc669477cc2a3539e57f3b9f847a761f2612ec56.AddActivitiesRequestBuilder) {
     return i0b64a056cdc0395ed65428f6cc669477cc2a3539e57f3b9f847a761f2612ec56.NewAddActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

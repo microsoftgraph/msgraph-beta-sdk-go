@@ -69,7 +69,7 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContactMergeSuggestions the contactMergeSuggestions property
+// ContactMergeSuggestions provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) ContactMergeSuggestions()(*i21792fb5d0587c01b074f73aa213a9aada350eb2d54feb377416679d1452e3b3.ContactMergeSuggestionsRequestBuilder) {
     return i21792fb5d0587c01b074f73aa213a9aada350eb2d54feb377416679d1452e3b3.NewContactMergeSuggestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -150,7 +150,7 @@ func (m *SettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable), nil
 }
-// ItemInsights the itemInsights property
+// ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) ItemInsights()(*ic53be0a6e3ccdb0f71da58981f07304dc4c0f2a8b10ba9bc9eedcc0fbb71c379.ItemInsightsRequestBuilder) {
     return ic53be0a6e3ccdb0f71da58981f07304dc4c0f2a8b10ba9bc9eedcc0fbb71c379.NewItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable), nil
 }
-// RegionalAndLanguageSettings the regionalAndLanguageSettings property
+// RegionalAndLanguageSettings provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) RegionalAndLanguageSettings()(*i9e63b9aece244b092e835c3c7715d420a6cb488defd0c4ce5f26e2bba05dbda1.RegionalAndLanguageSettingsRequestBuilder) {
     return i9e63b9aece244b092e835c3c7715d420a6cb488defd0c4ce5f26e2bba05dbda1.NewRegionalAndLanguageSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ShiftPreferences the shiftPreferences property
+// ShiftPreferences provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.
 func (m *SettingsRequestBuilder) ShiftPreferences()(*ie7cbd9285be1e57b9114826319c5f590fef40f177efb1e9c8f4b353ea383b428.ShiftPreferencesRequestBuilder) {
     return ie7cbd9285be1e57b9114826319c5f590fef40f177efb1e9c8f4b353ea383b428.NewShiftPreferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

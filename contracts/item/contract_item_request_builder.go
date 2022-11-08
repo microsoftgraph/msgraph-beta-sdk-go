@@ -51,11 +51,11 @@ type ContractItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups the checkMemberGroups property
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *ContractItemRequestBuilder) CheckMemberGroups()(*i40801acc1059e0e77fbe039c879fa1cf08529d5f64814562f3ec79dde1c5a4fc.CheckMemberGroupsRequestBuilder) {
     return i40801acc1059e0e77fbe039c879fa1cf08529d5f64814562f3ec79dde1c5a4fc.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CheckMemberObjects the checkMemberObjects property
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *ContractItemRequestBuilder) CheckMemberObjects()(*idde5435a6a0561007c340ade46139ae9f81c57f894f4e9aae890f86aeecbef7d.CheckMemberObjectsRequestBuilder) {
     return idde5435a6a0561007c340ade46139ae9f81c57f894f4e9aae890f86aeecbef7d.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *ContractItemRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable), nil
 }
-// GetMemberGroups the getMemberGroups property
+// GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *ContractItemRequestBuilder) GetMemberGroups()(*ib7db9dde30bf0fa242f3a4321173cb16756ab77e1673add802f16c530ffa67b4.GetMemberGroupsRequestBuilder) {
     return ib7db9dde30bf0fa242f3a4321173cb16756ab77e1673add802f16c530ffa67b4.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetMemberObjects the getMemberObjects property
+// GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *ContractItemRequestBuilder) GetMemberObjects()(*i2552b8bdbc7e213a9a6eae17e0a7d61fb51f1e4c5000eabd09038e0e3bb9acaa.GetMemberObjectsRequestBuilder) {
     return i2552b8bdbc7e213a9a6eae17e0a7d61fb51f1e4c5000eabd09038e0e3bb9acaa.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -182,7 +182,7 @@ func (m *ContractItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable), nil
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *ContractItemRequestBuilder) Restore()(*i1786fc8f851599ebda69e9280c6b1118c2d2be8b0a0440447bbca330fa027c3b.RestoreRequestBuilder) {
     return i1786fc8f851599ebda69e9280c6b1118c2d2be8b0a0440447bbca330fa027c3b.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of accessReview entities.
 type RemoteAction int
 
 const (
@@ -62,10 +62,12 @@ const (
     REENABLE_REMOTEACTION
     // Indicate user initiates an action to move the device to a new organizational unit.
     MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
+    // Add device action of InitiateMobileDeviceManagementKeyRecovery
+    INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery"}[i]
 }
 func ParseRemoteAction(v string) (interface{}, error) {
     result := UNKNOWN_REMOTEACTION
@@ -126,6 +128,8 @@ func ParseRemoteAction(v string) (interface{}, error) {
             result = REENABLE_REMOTEACTION
         case "moveDeviceToOrganizationalUnit":
             result = MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
+        case "initiateMobileDeviceManagementKeyRecovery":
+            result = INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
         default:
             return 0, errors.New("Unknown RemoteAction value: " + v)
     }

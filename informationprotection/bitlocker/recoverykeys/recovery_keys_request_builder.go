@@ -64,7 +64,7 @@ func NewRecoveryKeysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewRecoveryKeysRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RecoveryKeysRequestBuilder) Count()(*icd6da77efc3da62a0e40947323da3d03d83f6620ee17240d4dc2683ef73a8235.CountRequestBuilder) {
     return icd6da77efc3da62a0e40947323da3d03d83f6620ee17240d4dc2683ef73a8235.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

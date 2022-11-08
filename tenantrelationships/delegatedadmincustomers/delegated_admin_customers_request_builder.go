@@ -71,7 +71,7 @@ func NewDelegatedAdminCustomersRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedAdminCustomersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DelegatedAdminCustomersRequestBuilder) Count()(*i7c74507a45241d79a518a8cb78586cabc128c1bfce91340d1c19620bada7d6d7.CountRequestBuilder) {
     return i7c74507a45241d79a518a8cb78586cabc128c1bfce91340d1c19620bada7d6d7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

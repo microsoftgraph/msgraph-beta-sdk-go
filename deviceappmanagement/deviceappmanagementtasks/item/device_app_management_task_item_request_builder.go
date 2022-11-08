@@ -162,7 +162,7 @@ func (m *DeviceAppManagementTaskItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskable), nil
 }
-// UpdateStatus the updateStatus property
+// UpdateStatus provides operations to call the updateStatus method.
 func (m *DeviceAppManagementTaskItemRequestBuilder) UpdateStatus()(*i5b05b57841b989a46b71baf62a919e31b311eaf72e23e96a94706db86b5b80da.UpdateStatusRequestBuilder) {
     return i5b05b57841b989a46b71baf62a919e31b311eaf72e23e96a94706db86b5b80da.NewUpdateStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -52,11 +52,11 @@ type WindowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Apps the apps property
+// Apps provides operations to manage the apps property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionItemRequestBuilder) Apps()(*i4d9d201299918a35fb4e4cf579ccd2a733831ba18bfc3b796f25ff72712c65ff.AppsRequestBuilder) {
     return i4d9d201299918a35fb4e4cf579ccd2a733831ba18bfc3b796f25ff72712c65ff.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AppsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.windowsManagedAppProtections.item.apps.item collection
+// AppsById provides operations to manage the apps property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionItemRequestBuilder) AppsById(id string)(*i0cc29f4a22b83e5ca5d2e726aed9e5dd7d1e0b6491976a69c92134e4188679a7.ManagedMobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -67,15 +67,15 @@ func (m *WindowsManagedAppProtectionItemRequestBuilder) AppsById(id string)(*i0c
     }
     return i0cc29f4a22b83e5ca5d2e726aed9e5dd7d1e0b6491976a69c92134e4188679a7.NewManagedMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *WindowsManagedAppProtectionItemRequestBuilder) Assign()(*i4ed8a48e1a91904077b1c7b41a39725b3ff69fd77ff37f36cc5ca55a3771fcd2.AssignRequestBuilder) {
     return i4ed8a48e1a91904077b1c7b41a39725b3ff69fd77ff37f36cc5ca55a3771fcd2.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionItemRequestBuilder) Assignments()(*ie2b148f923b331e886164975a27dc60b5fee8486b6ff177093e08d135da109c0.AssignmentsRequestBuilder) {
     return ie2b148f923b331e886164975a27dc60b5fee8486b6ff177093e08d135da109c0.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.windowsManagedAppProtections.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsManagedAppProtection entity.
 func (m *WindowsManagedAppProtectionItemRequestBuilder) AssignmentsById(id string)(*i04796f9559857226eaa48cd43add7d74f4c5fdb3061437f60850d3556e9ea211.TargetedManagedAppPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -201,7 +201,7 @@ func (m *WindowsManagedAppProtectionItemRequestBuilder) Patch(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsManagedAppProtectionable), nil
 }
-// TargetApps the targetApps property
+// TargetApps provides operations to call the targetApps method.
 func (m *WindowsManagedAppProtectionItemRequestBuilder) TargetApps()(*iaea643d7019f43c457c70b1d3282412e6e2fcac099fb44847cfee5e56e6c4b6c.TargetAppsRequestBuilder) {
     return iaea643d7019f43c457c70b1d3282412e6e2fcac099fb44847cfee5e56e6c4b6c.NewTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

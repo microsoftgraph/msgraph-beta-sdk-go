@@ -72,7 +72,7 @@ func NewAccessPackageAssignmentApprovalsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentApprovalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AccessPackageAssignmentApprovalsRequestBuilder) Count()(*i0ee2f6344954fc2c3a00b08c6f56973edda9ed5a515e8c3f1b65bec0231eee19.CountRequestBuilder) {
     return i0ee2f6344954fc2c3a00b08c6f56973edda9ed5a515e8c3f1b65bec0231eee19.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -48,11 +48,11 @@ type CustomSecurityAttributeDefinitionItemRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AllowedValues the allowedValues property
+// AllowedValues provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.
 func (m *CustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValues()(*iabb2c9c8d603422583bcb8f8258070d32341f88769a528bbf7389076f4dc84ab.AllowedValuesRequestBuilder) {
     return iabb2c9c8d603422583bcb8f8258070d32341f88769a528bbf7389076f4dc84ab.NewAllowedValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AllowedValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.customSecurityAttributeDefinitions.item.allowedValues.item collection
+// AllowedValuesById provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.
 func (m *CustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValuesById(id string)(*i1fe7ff93f58439008a626f169f7eeff4e9a77d0871cc58d3033500a4d65a4a2c.AllowedValueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

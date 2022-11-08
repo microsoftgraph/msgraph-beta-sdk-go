@@ -22,14 +22,20 @@ const (
     ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
     ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Template Family for EPM Elevation Rules
+    ENDPOINTSECURITYENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for EnrollmentConfiguration
     ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Template Family for QuietTimeIndicates Template Family for all the Apps QuietTime policies and templates
+    APPQUIETTIME_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for Baseline
     BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "enrollmentConfiguration", "baseline"}[i]
+    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
@@ -50,10 +56,16 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (interface{}, er
             result = ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "endpointSecurityApplicationControl":
             result = ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "endpointSecurityEndpointPrivilegeManagement":
+            result = ENDPOINTSECURITYENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "enrollmentConfiguration":
             result = ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "appQuietTime":
+            result = APPQUIETTIME_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "baseline":
             result = BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationTemplateFamily value: " + v)
     }

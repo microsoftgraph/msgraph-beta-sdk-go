@@ -53,7 +53,7 @@ type ManagementActionTenantDeploymentStatusesRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChangeDeploymentStatus the changeDeploymentStatus property
+// ChangeDeploymentStatus provides operations to call the changeDeploymentStatus method.
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) ChangeDeploymentStatus()(*id50624c28ac1a98a4cd1cc6f61b4dc20c4a7524a54c2bbd7c8cbd10f86ded55f.ChangeDeploymentStatusRequestBuilder) {
     return id50624c28ac1a98a4cd1cc6f61b4dc20c4a7524a54c2bbd7c8cbd10f86ded55f.NewChangeDeploymentStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -76,7 +76,7 @@ func NewManagementActionTenantDeploymentStatusesRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewManagementActionTenantDeploymentStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Count()(*id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.CountRequestBuilder) {
     return id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

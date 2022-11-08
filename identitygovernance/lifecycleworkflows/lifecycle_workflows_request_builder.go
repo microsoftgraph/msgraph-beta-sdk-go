@@ -117,11 +117,11 @@ func (m *LifecycleWorkflowsRequestBuilder) CreatePatchRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// CustomTaskExtensions the customTaskExtensions property
+// CustomTaskExtensions provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) CustomTaskExtensions()(*i5707969f667414c398d3c9b22236a007c32e34c6252415a86d6bca6c57e743d0.CustomTaskExtensionsRequestBuilder) {
     return i5707969f667414c398d3c9b22236a007c32e34c6252415a86d6bca6c57e743d0.NewCustomTaskExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustomTaskExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.customTaskExtensions.item collection
+// CustomTaskExtensionsById provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) CustomTaskExtensionsById(id string)(*ib86c43a2f2e75a7aa5fbd68fd99f6cea961e6ae68ee0209e49d5248994f78717.CustomTaskExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -148,7 +148,7 @@ func (m *LifecycleWorkflowsRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// DeletedItems the deletedItems property
+// DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) DeletedItems()(*i6808840b5526833bc69eb1b4e6cf26bd083d4894645ce8021775399f27fc430f.DeletedItemsRequestBuilder) {
     return i6808840b5526833bc69eb1b4e6cf26bd083d4894645ce8021775399f27fc430f.NewDeletedItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -190,15 +190,15 @@ func (m *LifecycleWorkflowsRequestBuilder) Patch(ctx context.Context, body i45fd
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleWorkflowsContainerable), nil
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) Settings()(*i37c70f03fae165b58938fc0ae08b3f677d0db4bdb15ca0c09368f6e67555bbbf.SettingsRequestBuilder) {
     return i37c70f03fae165b58938fc0ae08b3f677d0db4bdb15ca0c09368f6e67555bbbf.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskDefinitions the taskDefinitions property
+// TaskDefinitions provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitions()(*id28ac37f235479a4d042611c03e18df4abd08307ecf13f724585b68b40cb8401.TaskDefinitionsRequestBuilder) {
     return id28ac37f235479a4d042611c03e18df4abd08307ecf13f724585b68b40cb8401.NewTaskDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.taskDefinitions.item collection
+// TaskDefinitionsById provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitionsById(id string)(*i43e6642142b931dba778895fb75fdcc74949ad3affdac1525d7089a8698e0c53.TaskDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -209,11 +209,11 @@ func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitionsById(id string)(*i43e6
     }
     return i43e6642142b931dba778895fb75fdcc74949ad3affdac1525d7089a8698e0c53.NewTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Workflows the workflows property
+// Workflows provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) Workflows()(*i59b00a625634744f30edbe5af244c841751a117e220b6c04a8154bbda71cecbd.WorkflowsRequestBuilder) {
     return i59b00a625634744f30edbe5af244c841751a117e220b6c04a8154bbda71cecbd.NewWorkflowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WorkflowsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item collection
+// WorkflowsById provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) WorkflowsById(id string)(*i9981a40a98032ec47f106a3d59efd9b83b8c90577133fc2f18f9835fc22e6dcd.WorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -224,11 +224,11 @@ func (m *LifecycleWorkflowsRequestBuilder) WorkflowsById(id string)(*i9981a40a98
     }
     return i9981a40a98032ec47f106a3d59efd9b83b8c90577133fc2f18f9835fc22e6dcd.NewWorkflowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// WorkflowTemplates the workflowTemplates property
+// WorkflowTemplates provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) WorkflowTemplates()(*i18009dcca459c246d46cb5828cc0eee8f1d993b91686c706db8e83fb460509d0.WorkflowTemplatesRequestBuilder) {
     return i18009dcca459c246d46cb5828cc0eee8f1d993b91686c706db8e83fb460509d0.NewWorkflowTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WorkflowTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflowTemplates.item collection
+// WorkflowTemplatesById provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) WorkflowTemplatesById(id string)(*i5256431ba63928d796b312fa77a2f1c20b3bf8896afabf580168e5adca606b7b.WorkflowTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

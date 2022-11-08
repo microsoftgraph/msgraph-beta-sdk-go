@@ -56,15 +56,15 @@ type ManagedEBookItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *ManagedEBookItemRequestBuilder) Assign()(*i74a0325b0065a251b01ec5c782cded3d19e332e6d91b4d38e8a2778d6d46efc1.AssignRequestBuilder) {
     return i74a0325b0065a251b01ec5c782cded3d19e332e6d91b4d38e8a2778d6d46efc1.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) Assignments()(*iae1ce53ec1fe3d26e228e31ca74e284059c70d35ab9331dd10ab28b6e3e5f006.AssignmentsRequestBuilder) {
     return iae1ce53ec1fe3d26e228e31ca74e284059c70d35ab9331dd10ab28b6e3e5f006.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedEBooks.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) AssignmentsById(id string)(*i9ca2634cfe73b9f5258e0a85ae4be6b9174af8d4172b8471d7cf5054a507dc5b.ManagedEBookAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,11 +75,11 @@ func (m *ManagedEBookItemRequestBuilder) AssignmentsById(id string)(*i9ca2634cfe
     }
     return i9ca2634cfe73b9f5258e0a85ae4be6b9174af8d4172b8471d7cf5054a507dc5b.NewManagedEBookAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Categories the categories property
+// Categories provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) Categories()(*i8796b5653a9f0dac43ca660f182d458d71ab4290f3f1a84fbb80d020d2f00738.CategoriesRequestBuilder) {
     return i8796b5653a9f0dac43ca660f182d458d71ab4290f3f1a84fbb80d020d2f00738.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedEBooks.item.categories.item collection
+// CategoriesById provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) CategoriesById(id string)(*i2d88a7f499b3854e7de1e7af5887f042e5cdba6db3b6afe628aa868205b0ae3e.ManagedEBookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -167,11 +167,11 @@ func (m *ManagedEBookItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// DeviceStates the deviceStates property
+// DeviceStates provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) DeviceStates()(*ia371fb97d4603b6022b57d8702547b0b74f86539b1fc17374e88f8232f4a6ff6.DeviceStatesRequestBuilder) {
     return ia371fb97d4603b6022b57d8702547b0b74f86539b1fc17374e88f8232f4a6ff6.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedEBooks.item.deviceStates.item collection
+// DeviceStatesById provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) DeviceStatesById(id string)(*i47d65cb9c49a38dcee79025d300de84f32574e9a653d54c08c771b81f324a256.DeviceInstallStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -201,7 +201,7 @@ func (m *ManagedEBookItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookable), nil
 }
-// InstallSummary the installSummary property
+// InstallSummary provides operations to manage the installSummary property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) InstallSummary()(*ifa3abdbb40057ad8079ae0439f61eb6074f9d3512d729656d322eacb98aa3403.InstallSummaryRequestBuilder) {
     return ifa3abdbb40057ad8079ae0439f61eb6074f9d3512d729656d322eacb98aa3403.NewInstallSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -224,11 +224,11 @@ func (m *ManagedEBookItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookable), nil
 }
-// UserStateSummary the userStateSummary property
+// UserStateSummary provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) UserStateSummary()(*iba6a5bdbe4569e6c8f560b2c6f52bc985906914c6b733d7db6a101b9ab423314.UserStateSummaryRequestBuilder) {
     return iba6a5bdbe4569e6c8f560b2c6f52bc985906914c6b733d7db6a101b9ab423314.NewUserStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserStateSummaryById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item collection
+// UserStateSummaryById provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBookItemRequestBuilder) UserStateSummaryById(id string)(*i93a3f61d471b69c96df478aa01820a8a69b1252d396baad2e4d4e1b17f5f21fe.UserInstallStateSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

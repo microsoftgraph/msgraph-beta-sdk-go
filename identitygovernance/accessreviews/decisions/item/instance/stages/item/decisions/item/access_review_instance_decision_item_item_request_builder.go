@@ -144,11 +144,11 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
-// Insights the insights property
+// Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*ib542ea2b84b5f5ec13876434dc68d59a3dd7d3a6474c6b16d657ddd7bbb26de8.InsightsRequestBuilder) {
     return ib542ea2b84b5f5ec13876434dc68d59a3dd7d3a6474c6b16d657ddd7bbb26de8.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InsightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.decisions.item.instance.stages.item.decisions.item.insights.item collection
+// InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*i06294658c661ee1e23e6c5f753ae5fca9f470edc8884dbdb7a18a8565aac588d.GovernanceInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

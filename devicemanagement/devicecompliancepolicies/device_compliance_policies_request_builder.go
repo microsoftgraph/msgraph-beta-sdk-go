@@ -77,7 +77,7 @@ func NewDeviceCompliancePoliciesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DeviceCompliancePoliciesRequestBuilder) Count()(*i66a18fc3065359dba5afba474db05606a4e59242a39b023a6c78e234799dcef5.CountRequestBuilder) {
     return i66a18fc3065359dba5afba474db05606a4e59242a39b023a6c78e234799dcef5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -134,11 +134,11 @@ func (m *DeviceCompliancePoliciesRequestBuilder) Get(ctx context.Context, reques
 func (m *DeviceCompliancePoliciesRequestBuilder) GetDevicesScheduledToRetire()(*ice8333de4faa45aa6e283d6de5cec5fb2d91ddb4641c608a190a6c8ebda92bc5.GetDevicesScheduledToRetireRequestBuilder) {
     return ice8333de4faa45aa6e283d6de5cec5fb2d91ddb4641c608a190a6c8ebda92bc5.NewGetDevicesScheduledToRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetNoncompliantDevicesToRetire the getNoncompliantDevicesToRetire property
+// GetNoncompliantDevicesToRetire provides operations to call the getNoncompliantDevicesToRetire method.
 func (m *DeviceCompliancePoliciesRequestBuilder) GetNoncompliantDevicesToRetire()(*ib6a7c9eba0eedb8b155fc77517d8205c9a0fd4224085c1ecd7ab1b0310850607.GetNoncompliantDevicesToRetireRequestBuilder) {
     return ib6a7c9eba0eedb8b155fc77517d8205c9a0fd4224085c1ecd7ab1b0310850607.NewGetNoncompliantDevicesToRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *DeviceCompliancePoliciesRequestBuilder) HasPayloadLinks()(*i8c922b0106272c33024960c0cdcce96f4a55b9e9d3d906cb19b2281dbb71993a.HasPayloadLinksRequestBuilder) {
     return i8c922b0106272c33024960c0cdcce96f4a55b9e9d3d906cb19b2281dbb71993a.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -161,15 +161,15 @@ func (m *DeviceCompliancePoliciesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable), nil
 }
-// RefreshDeviceComplianceReportSummarization the refreshDeviceComplianceReportSummarization property
+// RefreshDeviceComplianceReportSummarization provides operations to call the refreshDeviceComplianceReportSummarization method.
 func (m *DeviceCompliancePoliciesRequestBuilder) RefreshDeviceComplianceReportSummarization()(*ib90740a26262712164b9160ce4822a569344cfc69adafea017f8563b8e220b51.RefreshDeviceComplianceReportSummarizationRequestBuilder) {
     return ib90740a26262712164b9160ce4822a569344cfc69adafea017f8563b8e220b51.NewRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetScheduledRetireState the setScheduledRetireState property
+// SetScheduledRetireState provides operations to call the setScheduledRetireState method.
 func (m *DeviceCompliancePoliciesRequestBuilder) SetScheduledRetireState()(*i5f664252c457e99b8d5db6b834754f966442a3164d883ca219d4dbf2362b3cdc.SetScheduledRetireStateRequestBuilder) {
     return i5f664252c457e99b8d5db6b834754f966442a3164d883ca219d4dbf2362b3cdc.NewSetScheduledRetireStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ValidateComplianceScript the validateComplianceScript property
+// ValidateComplianceScript provides operations to call the validateComplianceScript method.
 func (m *DeviceCompliancePoliciesRequestBuilder) ValidateComplianceScript()(*i58651a263a770247eef91ec5783125ddffea19f0485aeac13f756043009a7093.ValidateComplianceScriptRequestBuilder) {
     return i58651a263a770247eef91ec5783125ddffea19f0485aeac13f756043009a7093.NewValidateComplianceScriptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

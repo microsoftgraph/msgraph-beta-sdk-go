@@ -148,11 +148,11 @@ func (m *SectionGroupItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable), nil
 }
-// ParentNotebook the parentNotebook property
+// ParentNotebook provides operations to manage the parentNotebook property of the microsoft.graph.sectionGroup entity.
 func (m *SectionGroupItemRequestBuilder) ParentNotebook()(*i61c3fcf84198a289c9ad7e0b9a40d4ea948700245a43cd6850aef0c29857c9f6.ParentNotebookRequestBuilder) {
     return i61c3fcf84198a289c9ad7e0b9a40d4ea948700245a43cd6850aef0c29857c9f6.NewParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ParentSectionGroup the parentSectionGroup property
+// ParentSectionGroup provides operations to manage the parentSectionGroup property of the microsoft.graph.sectionGroup entity.
 func (m *SectionGroupItemRequestBuilder) ParentSectionGroup()(*id25518edba7734e869da95f61d58fb87a9d7c5a5d045b289b34701c880603d4f.ParentSectionGroupRequestBuilder) {
     return id25518edba7734e869da95f61d58fb87a9d7c5a5d045b289b34701c880603d4f.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -175,11 +175,11 @@ func (m *SectionGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable), nil
 }
-// SectionGroups the sectionGroups property
+// SectionGroups provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
 func (m *SectionGroupItemRequestBuilder) SectionGroups()(*i5e9c2e9e291f78c1402ba804b4c32c4fc0c1669c43a6c7d708bcab21d37a2919.SectionGroupsRequestBuilder) {
     return i5e9c2e9e291f78c1402ba804b4c32c4fc0c1669c43a6c7d708bcab21d37a2919.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SectionGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.onenote.notebooks.item.sectionGroups.item.sectionGroups.item collection
+// SectionGroupsById provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
 func (m *SectionGroupItemRequestBuilder) SectionGroupsById(id string)(*i954e7d402eebd4584c7935bbd86a4b62175adbf7abc1644f654cff25a504125b.SectionGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -190,11 +190,11 @@ func (m *SectionGroupItemRequestBuilder) SectionGroupsById(id string)(*i954e7d40
     }
     return i954e7d402eebd4584c7935bbd86a4b62175adbf7abc1644f654cff25a504125b.NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Sections the sections property
+// Sections provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
 func (m *SectionGroupItemRequestBuilder) Sections()(*i887f06e9811896629e7ddcc465f0720b208fbc606abd1095f0202c79bbe57ea9.SectionsRequestBuilder) {
     return i887f06e9811896629e7ddcc465f0720b208fbc606abd1095f0202c79bbe57ea9.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.onenote.notebooks.item.sectionGroups.item.sections.item collection
+// SectionsById provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
 func (m *SectionGroupItemRequestBuilder) SectionsById(id string)(*i296a3e93c1287f06e81489a2e3c90c16ac06c725f6572ef61c195884dc53a4ed.OnenoteSectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

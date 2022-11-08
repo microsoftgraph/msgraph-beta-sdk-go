@@ -52,7 +52,7 @@ type EdiscoveryReviewSetItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddToReviewSet the addToReviewSet property
+// AddToReviewSet provides operations to call the addToReviewSet method.
 func (m *EdiscoveryReviewSetItemRequestBuilder) AddToReviewSet()(*i6ee8072b7be515f2616f558e647d2f0b734c1d8fd4d866b1080a2d6ba5c6a720.AddToReviewSetRequestBuilder) {
     return i6ee8072b7be515f2616f558e647d2f0b734c1d8fd4d866b1080a2d6ba5c6a720.NewAddToReviewSetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -133,15 +133,15 @@ func (m *EdiscoveryReviewSetItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Export the export property
+// Export provides operations to call the export method.
 func (m *EdiscoveryReviewSetItemRequestBuilder) Export()(*ib064e11e062e18e98877ab3fdf949472ea03e136c1932231c0139d9ae22ce1df.ExportRequestBuilder) {
     return ib064e11e062e18e98877ab3fdf949472ea03e136c1932231c0139d9ae22ce1df.NewExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Files the files property
+// Files provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *EdiscoveryReviewSetItemRequestBuilder) Files()(*i5ff73ef2fe7116c20ed58367d30484db3d963ecc309ea6f5001b424ee079a433.FilesRequestBuilder) {
     return i5ff73ef2fe7116c20ed58367d30484db3d963ecc309ea6f5001b424ee079a433.NewFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// FilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.reviewSets.item.files.item collection
+// FilesById provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *EdiscoveryReviewSetItemRequestBuilder) FilesById(id string)(*i043c811701556dc7039d9829366dfbd791bad059dc33385fdc660c2cb4fe3c7e.EdiscoveryFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -190,11 +190,11 @@ func (m *EdiscoveryReviewSetItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable), nil
 }
-// Queries the queries property
+// Queries provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *EdiscoveryReviewSetItemRequestBuilder) Queries()(*i0eca40fca99f521380db599179b32d183a6d2074f8c40eac1aba336327909dce.QueriesRequestBuilder) {
     return i0eca40fca99f521380db599179b32d183a6d2074f8c40eac1aba336327909dce.NewQueriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// QueriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.reviewSets.item.queries.item collection
+// QueriesById provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
 func (m *EdiscoveryReviewSetItemRequestBuilder) QueriesById(id string)(*ie5eca18cf54c63e4a7756b0ff25ab10a6405f77676774867434b697867eb2738.EdiscoveryReviewSetQueryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

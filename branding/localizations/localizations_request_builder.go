@@ -71,7 +71,7 @@ func NewLocalizationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewLocalizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *LocalizationsRequestBuilder) Count()(*ibfe3804a41aac6a4a761486cc677fc8c325202881dd2fb41530c1541702cd333.CountRequestBuilder) {
     return ibfe3804a41aac6a4a761486cc677fc8c325202881dd2fb41530c1541702cd333.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

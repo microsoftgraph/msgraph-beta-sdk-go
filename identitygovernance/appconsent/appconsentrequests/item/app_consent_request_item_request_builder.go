@@ -163,11 +163,11 @@ func (m *AppConsentRequestItemRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable), nil
 }
-// UserConsentRequests the userConsentRequests property
+// UserConsentRequests provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
 func (m *AppConsentRequestItemRequestBuilder) UserConsentRequests()(*ie9bfbf0e213108ded0a885746ae0097274292f69201e7bed56c69703467327fa.UserConsentRequestsRequestBuilder) {
     return ie9bfbf0e213108ded0a885746ae0097274292f69201e7bed56c69703467327fa.NewUserConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserConsentRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.appConsent.appConsentRequests.item.userConsentRequests.item collection
+// UserConsentRequestsById provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
 func (m *AppConsentRequestItemRequestBuilder) UserConsentRequestsById(id string)(*i60af31a2f3f01ae0558591bc8f2d3ca141db9c46daef0f57ffd582e3b9d2d3e4.UserConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

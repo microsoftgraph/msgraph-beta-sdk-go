@@ -10,11 +10,11 @@ import (
 // Workflow 
 type Workflow struct {
     WorkflowBase
-    // When the workflow was deleted. Supports $filter(lt,gt) and $orderBy.
+    // When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The unique identifier of the Azure AD identity that last modified the workflow object.
     executionScope []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable
-    // Identifier used for individually addressing a specific workflow. Supports $filter(eq, ne).
+    // Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.
     id *string
     // The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
     nextScheduleRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -24,7 +24,7 @@ type Workflow struct {
     taskReports []TaskReportable
     // The userProcessingResults property
     userProcessingResults []UserProcessingResultable
-    // The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq, ne).
+    // The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     version *int32
     // The workflow versions that are available.
     versions []WorkflowVersionable
@@ -42,7 +42,7 @@ func NewWorkflow()(*Workflow) {
 func CreateWorkflowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflow(), nil
 }
-// GetDeletedDateTime gets the deletedDateTime property value. When the workflow was deleted. Supports $filter(lt,gt) and $orderBy.
+// GetDeletedDateTime gets the deletedDateTime property value. When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.deletedDateTime
 }
@@ -64,7 +64,7 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     res["versions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWorkflowVersionFromDiscriminatorValue , m.SetVersions)
     return res
 }
-// GetId gets the id property value. Identifier used for individually addressing a specific workflow. Supports $filter(eq, ne).
+// GetId gets the id property value. Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.
 func (m *Workflow) GetId()(*string) {
     return m.id
 }
@@ -84,7 +84,7 @@ func (m *Workflow) GetTaskReports()([]TaskReportable) {
 func (m *Workflow) GetUserProcessingResults()([]UserProcessingResultable) {
     return m.userProcessingResults
 }
-// GetVersion gets the version property value. The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq, ne).
+// GetVersion gets the version property value. The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Workflow) GetVersion()(*int32) {
     return m.version
 }
@@ -159,7 +159,7 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDeletedDateTime sets the deletedDateTime property value. When the workflow was deleted. Supports $filter(lt,gt) and $orderBy.
+// SetDeletedDateTime sets the deletedDateTime property value. When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Workflow) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.deletedDateTime = value
 }
@@ -167,7 +167,7 @@ func (m *Workflow) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
 func (m *Workflow) SetExecutionScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     m.executionScope = value
 }
-// SetId sets the id property value. Identifier used for individually addressing a specific workflow. Supports $filter(eq, ne).
+// SetId sets the id property value. Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.
 func (m *Workflow) SetId(value *string)() {
     m.id = value
 }
@@ -187,7 +187,7 @@ func (m *Workflow) SetTaskReports(value []TaskReportable)() {
 func (m *Workflow) SetUserProcessingResults(value []UserProcessingResultable)() {
     m.userProcessingResults = value
 }
-// SetVersion sets the version property value. The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq, ne).
+// SetVersion sets the version property value. The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Workflow) SetVersion(value *int32)() {
     m.version = value
 }

@@ -162,7 +162,7 @@ func (m *SettingsRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba80
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseSettingsable), nil
 }
-// ResetToDefault the resetToDefault property
+// ResetToDefault provides operations to call the resetToDefault method.
 func (m *SettingsRequestBuilder) ResetToDefault()(*ib23d156da63cc479655c5a4923d85c3788379baeedbf65f8c3d7cccca65ddafc.ResetToDefaultRequestBuilder) {
     return ib23d156da63cc479655c5a4923d85c3788379baeedbf65f8c3d7cccca65ddafc.NewResetToDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

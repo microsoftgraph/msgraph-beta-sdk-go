@@ -7,32 +7,32 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Run provides operations to manage the collection of activityStatistics entities.
+// Run provides operations to manage the collection of accessReview entities.
 type Run struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The date time that the run completed. Value is null if the workflow hasn't completed. Optional.
+    // The date time that the run completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number of tasks that failed in the run execution. Required.
+    // The number of tasks that failed in the run execution.
     failedTasksCount *int32
-    // The number of users that failed in the run execution. Required.
+    // The number of users that failed in the run execution.
     failedUsersCount *int32
-    // The datetime that the run was last updated. Optional.
+    // The datetime that the run was last updated.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The processingStatus property
     processingStatus *LifecycleWorkflowProcessingStatus
-    // The date time that the run is scheduled to be executed for a workflow. Required.
+    // The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     scheduledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The date time that the run execution started. Optional.
+    // The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number of successfully completed users in the run. Required.
+    // The number of successfully completed users in the run.
     successfulUsersCount *int32
     // The related taskProcessingResults.
     taskProcessingResults []TaskProcessingResultable
     // The totalTasksCount property
     totalTasksCount *int32
-    // The total number of unprocessed tasks in the run execution. Required.
+    // The total number of unprocessed tasks in the run execution.
     totalUnprocessedTasksCount *int32
-    // The total number of users in the workflow execution. Required.
+    // The total number of users in the workflow execution.
     totalUsersCount *int32
     // The associated individual user execution.
     userProcessingResults []UserProcessingResultable
@@ -52,15 +52,15 @@ func NewRun()(*Run) {
 func CreateRunFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRun(), nil
 }
-// GetCompletedDateTime gets the completedDateTime property value. The date time that the run completed. Value is null if the workflow hasn't completed. Optional.
+// GetCompletedDateTime gets the completedDateTime property value. The date time that the run completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completedDateTime
 }
-// GetFailedTasksCount gets the failedTasksCount property value. The number of tasks that failed in the run execution. Required.
+// GetFailedTasksCount gets the failedTasksCount property value. The number of tasks that failed in the run execution.
 func (m *Run) GetFailedTasksCount()(*int32) {
     return m.failedTasksCount
 }
-// GetFailedUsersCount gets the failedUsersCount property value. The number of users that failed in the run execution. Required.
+// GetFailedUsersCount gets the failedUsersCount property value. The number of users that failed in the run execution.
 func (m *Run) GetFailedUsersCount()(*int32) {
     return m.failedUsersCount
 }
@@ -83,7 +83,7 @@ func (m *Run) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     res["workflowExecutionType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWorkflowExecutionType , m.SetWorkflowExecutionType)
     return res
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The datetime that the run was last updated. Optional.
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The datetime that the run was last updated.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastUpdatedDateTime
 }
@@ -91,15 +91,15 @@ func (m *Run) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *Run) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
     return m.processingStatus
 }
-// GetScheduledDateTime gets the scheduledDateTime property value. The date time that the run is scheduled to be executed for a workflow. Required.
+// GetScheduledDateTime gets the scheduledDateTime property value. The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.scheduledDateTime
 }
-// GetStartedDateTime gets the startedDateTime property value. The date time that the run execution started. Optional.
+// GetStartedDateTime gets the startedDateTime property value. The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startedDateTime
 }
-// GetSuccessfulUsersCount gets the successfulUsersCount property value. The number of successfully completed users in the run. Required.
+// GetSuccessfulUsersCount gets the successfulUsersCount property value. The number of successfully completed users in the run.
 func (m *Run) GetSuccessfulUsersCount()(*int32) {
     return m.successfulUsersCount
 }
@@ -111,11 +111,11 @@ func (m *Run) GetTaskProcessingResults()([]TaskProcessingResultable) {
 func (m *Run) GetTotalTasksCount()(*int32) {
     return m.totalTasksCount
 }
-// GetTotalUnprocessedTasksCount gets the totalUnprocessedTasksCount property value. The total number of unprocessed tasks in the run execution. Required.
+// GetTotalUnprocessedTasksCount gets the totalUnprocessedTasksCount property value. The total number of unprocessed tasks in the run execution.
 func (m *Run) GetTotalUnprocessedTasksCount()(*int32) {
     return m.totalUnprocessedTasksCount
 }
-// GetTotalUsersCount gets the totalUsersCount property value. The total number of users in the workflow execution. Required.
+// GetTotalUsersCount gets the totalUsersCount property value. The total number of users in the workflow execution.
 func (m *Run) GetTotalUsersCount()(*int32) {
     return m.totalUsersCount
 }
@@ -223,19 +223,19 @@ func (m *Run) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
     }
     return nil
 }
-// SetCompletedDateTime sets the completedDateTime property value. The date time that the run completed. Value is null if the workflow hasn't completed. Optional.
+// SetCompletedDateTime sets the completedDateTime property value. The date time that the run completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.completedDateTime = value
 }
-// SetFailedTasksCount sets the failedTasksCount property value. The number of tasks that failed in the run execution. Required.
+// SetFailedTasksCount sets the failedTasksCount property value. The number of tasks that failed in the run execution.
 func (m *Run) SetFailedTasksCount(value *int32)() {
     m.failedTasksCount = value
 }
-// SetFailedUsersCount sets the failedUsersCount property value. The number of users that failed in the run execution. Required.
+// SetFailedUsersCount sets the failedUsersCount property value. The number of users that failed in the run execution.
 func (m *Run) SetFailedUsersCount(value *int32)() {
     m.failedUsersCount = value
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The datetime that the run was last updated. Optional.
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The datetime that the run was last updated.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastUpdatedDateTime = value
 }
@@ -243,15 +243,15 @@ func (m *Run) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
 func (m *Run) SetProcessingStatus(value *LifecycleWorkflowProcessingStatus)() {
     m.processingStatus = value
 }
-// SetScheduledDateTime sets the scheduledDateTime property value. The date time that the run is scheduled to be executed for a workflow. Required.
+// SetScheduledDateTime sets the scheduledDateTime property value. The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) SetScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.scheduledDateTime = value
 }
-// SetStartedDateTime sets the startedDateTime property value. The date time that the run execution started. Optional.
+// SetStartedDateTime sets the startedDateTime property value. The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *Run) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startedDateTime = value
 }
-// SetSuccessfulUsersCount sets the successfulUsersCount property value. The number of successfully completed users in the run. Required.
+// SetSuccessfulUsersCount sets the successfulUsersCount property value. The number of successfully completed users in the run.
 func (m *Run) SetSuccessfulUsersCount(value *int32)() {
     m.successfulUsersCount = value
 }
@@ -263,11 +263,11 @@ func (m *Run) SetTaskProcessingResults(value []TaskProcessingResultable)() {
 func (m *Run) SetTotalTasksCount(value *int32)() {
     m.totalTasksCount = value
 }
-// SetTotalUnprocessedTasksCount sets the totalUnprocessedTasksCount property value. The total number of unprocessed tasks in the run execution. Required.
+// SetTotalUnprocessedTasksCount sets the totalUnprocessedTasksCount property value. The total number of unprocessed tasks in the run execution.
 func (m *Run) SetTotalUnprocessedTasksCount(value *int32)() {
     m.totalUnprocessedTasksCount = value
 }
-// SetTotalUsersCount sets the totalUsersCount property value. The total number of users in the workflow execution. Required.
+// SetTotalUsersCount sets the totalUsersCount property value. The total number of users in the workflow execution.
 func (m *Run) SetTotalUsersCount(value *int32)() {
     m.totalUsersCount = value
 }

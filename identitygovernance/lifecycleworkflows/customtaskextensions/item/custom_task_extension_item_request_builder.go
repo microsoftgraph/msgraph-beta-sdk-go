@@ -67,7 +67,7 @@ func NewCustomTaskExtensionItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewCustomTaskExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatedBy the createdBy property
+// CreatedBy provides operations to manage the createdBy property of the microsoft.graph.identityGovernance.customTaskExtension entity.
 func (m *CustomTaskExtensionItemRequestBuilder) CreatedBy()(*i42cc87c22a4b21b92f9dab0cc9bd2413e40de49149836174d30ac03980f2354c.CreatedByRequestBuilder) {
     return i42cc87c22a4b21b92f9dab0cc9bd2413e40de49149836174d30ac03980f2354c.NewCreatedByRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -148,7 +148,7 @@ func (m *CustomTaskExtensionItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CustomTaskExtensionable), nil
 }
-// LastModifiedBy the lastModifiedBy property
+// LastModifiedBy provides operations to manage the lastModifiedBy property of the microsoft.graph.identityGovernance.customTaskExtension entity.
 func (m *CustomTaskExtensionItemRequestBuilder) LastModifiedBy()(*i3761f886fcb8b973ce57cde51dbe0d124d8392965e07dbb4b99d586acd91a46f.LastModifiedByRequestBuilder) {
     return i3761f886fcb8b973ce57cde51dbe0d124d8392965e07dbb4b99d586acd91a46f.NewLastModifiedByRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

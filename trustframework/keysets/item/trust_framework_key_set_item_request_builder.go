@@ -128,7 +128,7 @@ func (m *TrustFrameworkKeySetItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// GenerateKey the generateKey property
+// GenerateKey provides operations to call the generateKey method.
 func (m *TrustFrameworkKeySetItemRequestBuilder) GenerateKey()(*ie04ccf263002e1d9853509d405e0878dfbf7c145b0a12ed976019d944eb6fe4d.GenerateKeyRequestBuilder) {
     return ie04ccf263002e1d9853509d405e0878dfbf7c145b0a12ed976019d944eb6fe4d.NewGenerateKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -174,15 +174,15 @@ func (m *TrustFrameworkKeySetItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable), nil
 }
-// UploadCertificate the uploadCertificate property
+// UploadCertificate provides operations to call the uploadCertificate method.
 func (m *TrustFrameworkKeySetItemRequestBuilder) UploadCertificate()(*i9d1297a38f5879454a214ecb884be348ff387c1b4b4287a28598568142a017af.UploadCertificateRequestBuilder) {
     return i9d1297a38f5879454a214ecb884be348ff387c1b4b4287a28598568142a017af.NewUploadCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UploadPkcs12 the uploadPkcs12 property
+// UploadPkcs12 provides operations to call the uploadPkcs12 method.
 func (m *TrustFrameworkKeySetItemRequestBuilder) UploadPkcs12()(*i4df38ca1b862714120e25419c3ed380c7c772471f65cbf3e0d620c5a0d60f6bf.UploadPkcs12RequestBuilder) {
     return i4df38ca1b862714120e25419c3ed380c7c772471f65cbf3e0d620c5a0d60f6bf.NewUploadPkcs12RequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UploadSecret the uploadSecret property
+// UploadSecret provides operations to call the uploadSecret method.
 func (m *TrustFrameworkKeySetItemRequestBuilder) UploadSecret()(*i78db104952796dbfc3b27052328de3db351b4c77d4b5dffcd1d52a18b26c3220.UploadSecretRequestBuilder) {
     return i78db104952796dbfc3b27052328de3db351b4c77d4b5dffcd1d52a18b26c3220.NewUploadSecretRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

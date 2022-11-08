@@ -162,7 +162,7 @@ func (m *ManagedAppPolicyItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyable), nil
 }
-// TargetApps the targetApps property
+// TargetApps provides operations to call the targetApps method.
 func (m *ManagedAppPolicyItemRequestBuilder) TargetApps()(*i5cd6d74ba596318f265190129cfc42fd3fcb93764fb956aabda82f2de1438925.TargetAppsRequestBuilder) {
     return i5cd6d74ba596318f265190129cfc42fd3fcb93764fb956aabda82f2de1438925.NewTargetAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

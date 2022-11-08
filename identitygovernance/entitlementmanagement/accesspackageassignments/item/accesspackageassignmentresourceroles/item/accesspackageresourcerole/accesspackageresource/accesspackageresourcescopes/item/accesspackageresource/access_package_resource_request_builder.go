@@ -49,15 +49,15 @@ type AccessPackageResourceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageResourceEnvironment the accessPackageResourceEnvironment property
+// AccessPackageResourceEnvironment provides operations to manage the accessPackageResourceEnvironment property of the microsoft.graph.accessPackageResource entity.
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceEnvironment()(*i726f6c66c6429aa18a150eb7422c737149bbfb4b73d801a2d4f6e876412b5e66.AccessPackageResourceEnvironmentRequestBuilder) {
     return i726f6c66c6429aa18a150eb7422c737149bbfb4b73d801a2d4f6e876412b5e66.NewAccessPackageResourceEnvironmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceRoles the accessPackageResourceRoles property
+// AccessPackageResourceRoles provides operations to manage the accessPackageResourceRoles property of the microsoft.graph.accessPackageResource entity.
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRoles()(*i406dce83226b310fcd626cc7e2727281d629ea3aa8d18cd48e2b0ceeb505739c.AccessPackageResourceRolesRequestBuilder) {
     return i406dce83226b310fcd626cc7e2727281d629ea3aa8d18cd48e2b0ceeb505739c.NewAccessPackageResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourceRolesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignments.item.accessPackageAssignmentResourceRoles.item.accessPackageResourceRole.accessPackageResource.accessPackageResourceScopes.item.accessPackageResource.accessPackageResourceRoles.item collection
+// AccessPackageResourceRolesById provides operations to manage the accessPackageResourceRoles property of the microsoft.graph.accessPackageResource entity.
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id string)(*iff5d9c5d86af16fdc9276caed83c87d667a13a132d9e3944476f06223e5d9051.AccessPackageResourceRoleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

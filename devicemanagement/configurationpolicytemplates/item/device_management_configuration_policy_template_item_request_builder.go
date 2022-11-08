@@ -163,11 +163,11 @@ func (m *DeviceManagementConfigurationPolicyTemplateItemRequestBuilder) Patch(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable), nil
 }
-// SettingTemplates the settingTemplates property
+// SettingTemplates provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.
 func (m *DeviceManagementConfigurationPolicyTemplateItemRequestBuilder) SettingTemplates()(*i3126bfb1a915f0c85e8910f85b7fbdc19b25d34462fa8ede5a13c297a190602c.SettingTemplatesRequestBuilder) {
     return i3126bfb1a915f0c85e8910f85b7fbdc19b25d34462fa8ede5a13c297a190602c.NewSettingTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicyTemplates.item.settingTemplates.item collection
+// SettingTemplatesById provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.
 func (m *DeviceManagementConfigurationPolicyTemplateItemRequestBuilder) SettingTemplatesById(id string)(*ifeb77407d3839d95c54629e5156854062d7a5a2e76728f24033dce5b2d483dd1.DeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

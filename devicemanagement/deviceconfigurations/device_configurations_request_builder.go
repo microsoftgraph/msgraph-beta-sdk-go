@@ -74,7 +74,7 @@ func NewDeviceConfigurationsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DeviceConfigurationsRequestBuilder) Count()(*id4f8b95e9a4f408fff016b0499932369a6013687b3c089be2d425060978e03b0.CountRequestBuilder) {
     return id4f8b95e9a4f408fff016b0499932369a6013687b3c089be2d425060978e03b0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -131,11 +131,11 @@ func (m *DeviceConfigurationsRequestBuilder) Get(ctx context.Context, requestCon
 func (m *DeviceConfigurationsRequestBuilder) GetIosAvailableUpdateVersions()(*i91812d422ff32b6087dbdb578859075772e6e50438228306a697e5aa7c00dc0a.GetIosAvailableUpdateVersionsRequestBuilder) {
     return i91812d422ff32b6087dbdb578859075772e6e50438228306a697e5aa7c00dc0a.NewGetIosAvailableUpdateVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetTargetedUsersAndDevices the getTargetedUsersAndDevices property
+// GetTargetedUsersAndDevices provides operations to call the getTargetedUsersAndDevices method.
 func (m *DeviceConfigurationsRequestBuilder) GetTargetedUsersAndDevices()(*i7c8fc03ac714b8a0b8442431c0a15160448a9c352c4c71e08219dd57f3689a4a.GetTargetedUsersAndDevicesRequestBuilder) {
     return i7c8fc03ac714b8a0b8442431c0a15160448a9c352c4c71e08219dd57f3689a4a.NewGetTargetedUsersAndDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HasPayloadLinks the hasPayloadLinks property
+// HasPayloadLinks provides operations to call the hasPayloadLinks method.
 func (m *DeviceConfigurationsRequestBuilder) HasPayloadLinks()(*ie1dbe7768034fc9acbabff177deec668725e3e1b963712ee72a4c861c0c6347f.HasPayloadLinksRequestBuilder) {
     return ie1dbe7768034fc9acbabff177deec668725e3e1b963712ee72a4c861c0c6347f.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

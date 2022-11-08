@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsVpnConfiguration windows VPN configuration profile.
+// WindowsVpnConfiguration 
 type WindowsVpnConfiguration struct {
     DeviceConfiguration
     // Connection name displayed to the user.
@@ -15,7 +15,7 @@ type WindowsVpnConfiguration struct {
     // List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
     servers []VpnServerable
 }
-// NewWindowsVpnConfiguration instantiates a new windowsVpnConfiguration and sets the default values.
+// NewWindowsVpnConfiguration instantiates a new WindowsVpnConfiguration and sets the default values.
 func NewWindowsVpnConfiguration()(*WindowsVpnConfiguration) {
     m := &WindowsVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

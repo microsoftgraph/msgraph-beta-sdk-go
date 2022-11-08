@@ -110,7 +110,7 @@ func (m *GroupPolicyDefinitionValueItemRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Definition the definition property
+// Definition provides operations to manage the definition property of the microsoft.graph.groupPolicyDefinitionValue entity.
 func (m *GroupPolicyDefinitionValueItemRequestBuilder) Definition()(*ic9fabc845b02722e73b3fb9e2f8552139c9b07bf659e6677a52a631de914b0b9.DefinitionRequestBuilder) {
     return ic9fabc845b02722e73b3fb9e2f8552139c9b07bf659e6677a52a631de914b0b9.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *GroupPolicyDefinitionValueItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionValueable), nil
 }
-// PresentationValues the presentationValues property
+// PresentationValues provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
 func (m *GroupPolicyDefinitionValueItemRequestBuilder) PresentationValues()(*ie0ffa233916a11feb6aca33fa5315a7307c871c11d9e88f6dca82ade1eaa693b.PresentationValuesRequestBuilder) {
     return ie0ffa233916a11feb6aca33fa5315a7307c871c11d9e88f6dca82ade1eaa693b.NewPresentationValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PresentationValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyConfigurations.item.definitionValues.item.presentationValues.item collection
+// PresentationValuesById provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.
 func (m *GroupPolicyDefinitionValueItemRequestBuilder) PresentationValuesById(id string)(*i133b5aa14c1c7989ad2fec6712baeefe6f3323249842963eb73e49f9e71226da.GroupPolicyPresentationValueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -162,7 +162,7 @@ func (m *CommandItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable), nil
 }
-// Responsepayload the responsepayload property
+// Responsepayload provides operations to manage the responsepayload property of the microsoft.graph.command entity.
 func (m *CommandItemRequestBuilder) Responsepayload()(*i844691ff08f283e00e97dbbf5f81d076166ce94149cc1e10a9cb7ac487f92f45.ResponsepayloadRequestBuilder) {
     return i844691ff08f283e00e97dbbf5f81d076166ce94149cc1e10a9cb7ac487f92f45.NewResponsepayloadRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

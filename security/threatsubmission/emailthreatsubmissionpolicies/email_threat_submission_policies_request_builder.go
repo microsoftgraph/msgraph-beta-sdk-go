@@ -71,7 +71,7 @@ func NewEmailThreatSubmissionPoliciesRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewEmailThreatSubmissionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *EmailThreatSubmissionPoliciesRequestBuilder) Count()(*ie22e62578a7ed12a64dd7303f42d5e4cd818178fc9aa248d4ba5b721849c529f.CountRequestBuilder) {
     return ie22e62578a7ed12a64dd7303f42d5e4cd818178fc9aa248d4ba5b721849c529f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewLanguagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewLanguagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *LanguagesRequestBuilder) Count()(*i1aac51c2aa3b33ccd359bbb95903ad8b0f162fb2acac0a70773f4c5cdb764b8f.CountRequestBuilder) {
     return i1aac51c2aa3b33ccd359bbb95903ad8b0f162fb2acac0a70773f4c5cdb764b8f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

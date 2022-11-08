@@ -71,7 +71,7 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContactInsights the contactInsights property
+// ContactInsights provides operations to manage the contactInsights property of the microsoft.graph.organizationSettings entity.
 func (m *SettingsRequestBuilder) ContactInsights()(*i1f95889a8b6bc8be19ad78a9c3b185e7e0cece2f41d8a4397545a591a97d2650.ContactInsightsRequestBuilder) {
     return i1f95889a8b6bc8be19ad78a9c3b185e7e0cece2f41d8a4397545a591a97d2650.NewContactInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -152,11 +152,11 @@ func (m *SettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable), nil
 }
-// ItemInsights the itemInsights property
+// ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.organizationSettings entity.
 func (m *SettingsRequestBuilder) ItemInsights()(*ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7.ItemInsightsRequestBuilder) {
     return ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7.NewItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MicrosoftApplicationDataAccess the microsoftApplicationDataAccess property
+// MicrosoftApplicationDataAccess provides operations to manage the microsoftApplicationDataAccess property of the microsoft.graph.organizationSettings entity.
 func (m *SettingsRequestBuilder) MicrosoftApplicationDataAccess()(*idad8116dcf0f508f2d5648089e624f18e9c892a32da2f4cd31cf8dfbb2acefad.MicrosoftApplicationDataAccessRequestBuilder) {
     return idad8116dcf0f508f2d5648089e624f18e9c892a32da2f4cd31cf8dfbb2acefad.NewMicrosoftApplicationDataAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -179,15 +179,15 @@ func (m *SettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable), nil
 }
-// PeopleInsights the peopleInsights property
+// PeopleInsights provides operations to manage the peopleInsights property of the microsoft.graph.organizationSettings entity.
 func (m *SettingsRequestBuilder) PeopleInsights()(*ib5d9323a069790a40d8250ed97dce0595a704227bc01a0ff026952b59c07b6fa.PeopleInsightsRequestBuilder) {
     return ib5d9323a069790a40d8250ed97dce0595a704227bc01a0ff026952b59c07b6fa.NewPeopleInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ProfileCardProperties the profileCardProperties property
+// ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
 func (m *SettingsRequestBuilder) ProfileCardProperties()(*i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf.ProfileCardPropertiesRequestBuilder) {
     return i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf.NewProfileCardPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ProfileCardPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.organization.item.settings.profileCardProperties.item collection
+// ProfileCardPropertiesById provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
 func (m *SettingsRequestBuilder) ProfileCardPropertiesById(id string)(*i164665736586dec4189f70a600626997bf7f7b32e1d5debbea1adff37d4860df.ProfileCardPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

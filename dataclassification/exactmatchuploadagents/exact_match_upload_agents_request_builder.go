@@ -71,7 +71,7 @@ func NewExactMatchUploadAgentsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchUploadAgentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ExactMatchUploadAgentsRequestBuilder) Count()(*ibb233fb09f4649d2f70a5b6df932868d9a9e320bb5d588af49465e4192249ef2.CountRequestBuilder) {
     return ibb233fb09f4649d2f70a5b6df932868d9a9e320bb5d588af49465e4192249ef2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

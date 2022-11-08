@@ -10,7 +10,7 @@ import (
 type LicenseAssignmentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
+    // Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
     assignedByGroup *string
     // The service plans that are disabled in this assignment. Read-Only.
     disabledPlans []string
@@ -42,7 +42,7 @@ func CreateLicenseAssignmentStateFromDiscriminatorValue(parseNode i878a80d2330e8
 func (m *LicenseAssignmentState) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAssignedByGroup gets the assignedByGroup property value. The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
+// GetAssignedByGroup gets the assignedByGroup property value. Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
 func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
     return m.assignedByGroup
 }
@@ -138,7 +138,7 @@ func (m *LicenseAssignmentState) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *LicenseAssignmentState) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAssignedByGroup sets the assignedByGroup property value. The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
+// SetAssignedByGroup sets the assignedByGroup property value. Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
 func (m *LicenseAssignmentState) SetAssignedByGroup(value *string)() {
     m.assignedByGroup = value
 }

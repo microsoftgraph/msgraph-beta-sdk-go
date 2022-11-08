@@ -52,11 +52,11 @@ type RoleInfoRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
 func (m *RoleInfoRequestBuilder) Assignments()(*ib5cd5b3c19268d246febcc379cad7c6c55d83a8e91bd1b806e4aeced1e9bcbf0.AssignmentsRequestBuilder) {
     return ib5cd5b3c19268d246febcc379cad7c6c55d83a8e91bd1b806e4aeced1e9bcbf0.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.privilegedApproval.item.roleInfo.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
 func (m *RoleInfoRequestBuilder) AssignmentsById(id string)(*i91831fb3bb284dcc082f0d50962d9b4761f0d7da6397b6aaa15e6aadeeef1c31.PrivilegedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -182,19 +182,19 @@ func (m *RoleInfoRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable), nil
 }
-// SelfActivate the selfActivate property
+// SelfActivate provides operations to call the selfActivate method.
 func (m *RoleInfoRequestBuilder) SelfActivate()(*i5cc87848e96d90dbe672f3e2fe6b8ec5e28e3cdc856ef730de729562e22b9524.SelfActivateRequestBuilder) {
     return i5cc87848e96d90dbe672f3e2fe6b8ec5e28e3cdc856ef730de729562e22b9524.NewSelfActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SelfDeactivate the selfDeactivate property
+// SelfDeactivate provides operations to call the selfDeactivate method.
 func (m *RoleInfoRequestBuilder) SelfDeactivate()(*i09a67af6e9bae1dd8dfd5d4374836f24ecdb5be20e1fae73a258e777e97458b4.SelfDeactivateRequestBuilder) {
     return i09a67af6e9bae1dd8dfd5d4374836f24ecdb5be20e1fae73a258e777e97458b4.NewSelfDeactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.privilegedRole entity.
 func (m *RoleInfoRequestBuilder) Settings()(*i8b106f89a5024f1de5fce1ceb14aee752150a35a2f3ead41de7233973c9e2ec7.SettingsRequestBuilder) {
     return i8b106f89a5024f1de5fce1ceb14aee752150a35a2f3ead41de7233973c9e2ec7.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Summary the summary property
+// Summary provides operations to manage the summary property of the microsoft.graph.privilegedRole entity.
 func (m *RoleInfoRequestBuilder) Summary()(*i920978860cb85582d4cc403166c2e16a9faae13fa4b1bd4c748c659db6073a7f.SummaryRequestBuilder) {
     return i920978860cb85582d4cc403166c2e16a9faae13fa4b1bd4c748c659db6073a7f.NewSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

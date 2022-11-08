@@ -144,11 +144,11 @@ func (m *ManagementTemplateCollectionItemRequestBuilder) Get(ctx context.Context
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionable), nil
 }
-// ManagementTemplates the managementTemplates property
+// ManagementTemplates provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managementTemplateCollection entity.
 func (m *ManagementTemplateCollectionItemRequestBuilder) ManagementTemplates()(*i66b065f7a2182545f95faad3e73276408aa8714100c9299ac0579b8b5ca4a93b.ManagementTemplatesRequestBuilder) {
     return i66b065f7a2182545f95faad3e73276408aa8714100c9299ac0579b8b5ca4a93b.NewManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ManagementTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateCollections.item.managementTemplates.item collection
+// ManagementTemplatesById provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managementTemplateCollection entity.
 func (m *ManagementTemplateCollectionItemRequestBuilder) ManagementTemplatesById(id string)(*i572f7869bc3019439300f8c8b6b7be069fdfd220a8910c3b13b2e61d357443b2.ManagementTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

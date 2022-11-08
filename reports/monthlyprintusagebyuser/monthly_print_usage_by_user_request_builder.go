@@ -71,7 +71,7 @@ func NewMonthlyPrintUsageByUserRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewMonthlyPrintUsageByUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MonthlyPrintUsageByUserRequestBuilder) Count()(*ie35fdeaa67a318acb5be7bc7faa28d4bbad9dbae0f522a83d6c5f4a5b3566078.CountRequestBuilder) {
     return ie35fdeaa67a318acb5be7bc7faa28d4bbad9dbae0f522a83d6c5f4a5b3566078.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

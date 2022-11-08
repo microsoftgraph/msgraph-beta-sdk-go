@@ -67,11 +67,11 @@ func NewProgramItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewProgramItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Controls the controls property
+// Controls provides operations to manage the controls property of the microsoft.graph.program entity.
 func (m *ProgramItemRequestBuilder) Controls()(*id08bfa3312ffcc704be5c1e51bdc101fc4e8ad11ce9dd1aedb0711cbe59e309d.ControlsRequestBuilder) {
     return id08bfa3312ffcc704be5c1e51bdc101fc4e8ad11ce9dd1aedb0711cbe59e309d.NewControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ControlsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.programs.item.controls.item collection
+// ControlsById provides operations to manage the controls property of the microsoft.graph.program entity.
 func (m *ProgramItemRequestBuilder) ControlsById(id string)(*i4389f3cba37530932c950ae7ea34269add1bb806749a0c4e1d0778b3b03f64cd.ProgramControlItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

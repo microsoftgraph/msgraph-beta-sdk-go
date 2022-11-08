@@ -93,11 +93,11 @@ func (m *SalesOrderItemRequestBuilder) CreatePatchRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// Currency the currency property
+// Currency provides operations to manage the currency property of the microsoft.graph.salesOrder entity.
 func (m *SalesOrderItemRequestBuilder) Currency()(*i6b4cd7f670148ff31b09be2a77ce4b56088969f3b75c3798f44df64d7aa566c4.CurrencyRequestBuilder) {
     return i6b4cd7f670148ff31b09be2a77ce4b56088969f3b75c3798f44df64d7aa566c4.NewCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Customer the customer property
+// Customer provides operations to manage the customer property of the microsoft.graph.salesOrder entity.
 func (m *SalesOrderItemRequestBuilder) Customer()(*ibadb4e5291769990863464c32ca114ea1f6f63e02c97cd3d8b4a41cf346a6191.CustomerRequestBuilder) {
     return ibadb4e5291769990863464c32ca114ea1f6f63e02c97cd3d8b4a41cf346a6191.NewCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -139,15 +139,15 @@ func (m *SalesOrderItemRequestBuilder) Patch(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderable), nil
 }
-// PaymentTerm the paymentTerm property
+// PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.salesOrder entity.
 func (m *SalesOrderItemRequestBuilder) PaymentTerm()(*iacc2dab86f622a8885ab0684a56e478f563750e45e00361ff62aaeb6b0a4da2e.PaymentTermRequestBuilder) {
     return iacc2dab86f622a8885ab0684a56e478f563750e45e00361ff62aaeb6b0a4da2e.NewPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SalesOrderLines the salesOrderLines property
+// SalesOrderLines provides operations to manage the salesOrderLines property of the microsoft.graph.salesOrder entity.
 func (m *SalesOrderItemRequestBuilder) SalesOrderLines()(*i209641ff30673fdb09ca02368f6bdc96fd38d1226fdc4e469075752b2475704d.SalesOrderLinesRequestBuilder) {
     return i209641ff30673fdb09ca02368f6bdc96fd38d1226fdc4e469075752b2475704d.NewSalesOrderLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SalesOrderLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesOrders.item.salesOrderLines.item collection
+// SalesOrderLinesById provides operations to manage the salesOrderLines property of the microsoft.graph.salesOrder entity.
 func (m *SalesOrderItemRequestBuilder) SalesOrderLinesById(id string)(*ic21a121310c89b15c2844b5275d312e77910ddae3d153823d924b5e4b6fa242d.SalesOrderLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

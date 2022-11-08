@@ -144,11 +144,11 @@ func (m *PolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionPolicyable), nil
 }
-// Labels the labels property
+// Labels provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 func (m *PolicyRequestBuilder) Labels()(*i726e3bd808c61b72f2f197668103c9195e3dbfc18dcd67a0b59fa52e22a43134.LabelsRequestBuilder) {
     return i726e3bd808c61b72f2f197668103c9195e3dbfc18dcd67a0b59fa52e22a43134.NewLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.informationProtection.policy.labels.item collection
+// LabelsById provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 func (m *PolicyRequestBuilder) LabelsById(id string)(*i4356a9d89270783745d35de695957d7e4d4b0ab0f0cd4d2c9eb40eb5c7c14dd5.InformationProtectionLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

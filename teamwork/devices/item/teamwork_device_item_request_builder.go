@@ -54,11 +54,11 @@ type TeamworkDeviceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activity the activity property
+// Activity provides operations to manage the activity property of the microsoft.graph.teamworkDevice entity.
 func (m *TeamworkDeviceItemRequestBuilder) Activity()(*idcb97c68de16b48e5f40ae7c33010c8ab78995f83aafa559ed280e2cd6db993b.ActivityRequestBuilder) {
     return idcb97c68de16b48e5f40ae7c33010c8ab78995f83aafa559ed280e2cd6db993b.NewActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Configuration the configuration property
+// Configuration provides operations to manage the configuration property of the microsoft.graph.teamworkDevice entity.
 func (m *TeamworkDeviceItemRequestBuilder) Configuration()(*i5991b16c8216191b7b79a2649c2cbd2785a5237f266a4b1a2b3caaf26d95c5d2.ConfigurationRequestBuilder) {
     return i5991b16c8216191b7b79a2649c2cbd2785a5237f266a4b1a2b3caaf26d95c5d2.NewConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -158,15 +158,15 @@ func (m *TeamworkDeviceItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable), nil
 }
-// Health the health property
+// Health provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.
 func (m *TeamworkDeviceItemRequestBuilder) Health()(*id65a906da2d62457b975164936dd205db649d8f0fcf34067fb93cdc441739c85.HealthRequestBuilder) {
     return id65a906da2d62457b975164936dd205db649d8f0fcf34067fb93cdc441739c85.NewHealthRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.
 func (m *TeamworkDeviceItemRequestBuilder) Operations()(*i370f825d40713fc0eb3f34cb88138713e23e2630f08716d8e4f4315992444b1a.OperationsRequestBuilder) {
     return i370f825d40713fc0eb3f34cb88138713e23e2630f08716d8e4f4315992444b1a.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.devices.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.
 func (m *TeamworkDeviceItemRequestBuilder) OperationsById(id string)(*i9322b599ad80a79ed0450750e6a1607ac4158d6981a51a70253206f7041ccd6d.TeamworkDeviceOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -196,15 +196,15 @@ func (m *TeamworkDeviceItemRequestBuilder) Patch(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable), nil
 }
-// Restart the restart property
+// Restart provides operations to call the restart method.
 func (m *TeamworkDeviceItemRequestBuilder) Restart()(*iea334c08ce97640ab2365649a261444b2335f9441fceb47ed8150a28e7a66e0c.RestartRequestBuilder) {
     return iea334c08ce97640ab2365649a261444b2335f9441fceb47ed8150a28e7a66e0c.NewRestartRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RunDiagnostics the runDiagnostics property
+// RunDiagnostics provides operations to call the runDiagnostics method.
 func (m *TeamworkDeviceItemRequestBuilder) RunDiagnostics()(*i45ce7cab530b471e7b705e982738e8c6ce9013eadd24b6a9491480dd05821d60.RunDiagnosticsRequestBuilder) {
     return i45ce7cab530b471e7b705e982738e8c6ce9013eadd24b6a9491480dd05821d60.NewRunDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateSoftware the updateSoftware property
+// UpdateSoftware provides operations to call the updateSoftware method.
 func (m *TeamworkDeviceItemRequestBuilder) UpdateSoftware()(*i885ba2537ef1730ed6c80f571dac9a76afac394788b86766b383cd7ed03da0c4.UpdateSoftwareRequestBuilder) {
     return i885ba2537ef1730ed6c80f571dac9a76afac394788b86766b383cd7ed03da0c4.NewUpdateSoftwareRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

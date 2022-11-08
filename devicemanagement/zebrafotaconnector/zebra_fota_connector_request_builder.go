@@ -50,11 +50,11 @@ type ZebraFotaConnectorRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApproveFotaApps the approveFotaApps property
+// ApproveFotaApps provides operations to call the approveFotaApps method.
 func (m *ZebraFotaConnectorRequestBuilder) ApproveFotaApps()(*i28906a226456a671e4df164729c0ea7ac015d9a6475a44a9bd06c3b189583468.ApproveFotaAppsRequestBuilder) {
     return i28906a226456a671e4df164729c0ea7ac015d9a6475a44a9bd06c3b189583468.NewApproveFotaAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Connect the connect property
+// Connect provides operations to call the connect method.
 func (m *ZebraFotaConnectorRequestBuilder) Connect()(*i625d8d6bdb933bca0689e1edc8ee0dd946b6ec3f24687e0130436e8ae11a7da3.ConnectRequestBuilder) {
     return i625d8d6bdb933bca0689e1edc8ee0dd946b6ec3f24687e0130436e8ae11a7da3.NewConnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -135,7 +135,7 @@ func (m *ZebraFotaConnectorRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Disconnect the disconnect property
+// Disconnect provides operations to call the disconnect method.
 func (m *ZebraFotaConnectorRequestBuilder) Disconnect()(*i806c9652f6fa842e11373fedc19939a6eacb3fac760ecfad2d11e59f4380f211.DisconnectRequestBuilder) {
     return i806c9652f6fa842e11373fedc19939a6eacb3fac760ecfad2d11e59f4380f211.NewDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -158,7 +158,7 @@ func (m *ZebraFotaConnectorRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ZebraFotaConnectorable), nil
 }
-// HasActiveDeployments the hasActiveDeployments property
+// HasActiveDeployments provides operations to call the hasActiveDeployments method.
 func (m *ZebraFotaConnectorRequestBuilder) HasActiveDeployments()(*i7b37f3837e71200d1ef0aa4174eb307e460cb5bd7cc9e1761e7779beb64ae55c.HasActiveDeploymentsRequestBuilder) {
     return i7b37f3837e71200d1ef0aa4174eb307e460cb5bd7cc9e1761e7779beb64ae55c.NewHasActiveDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -168,7 +168,7 @@ type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     nfcBlockOutgoingBeam *bool
     // Indicates whether or not the keyguard is disabled.
     passwordBlockKeyguard *bool
-    // List of device keyguard features to block. This collection can contain a maximum of 7 elements.
+    // List of device keyguard features to block. This collection can contain a maximum of 11 elements.
     passwordBlockKeyguardFeatures []AndroidKeyguardFeature
     // Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
     passwordExpirationDays *int32
@@ -749,7 +749,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetNfcBlockOutgoingBeam()
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguard()(*bool) {
     return m.passwordBlockKeyguard
 }
-// GetPasswordBlockKeyguardFeatures gets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 7 elements.
+// GetPasswordBlockKeyguardFeatures gets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 11 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguardFeatures()([]AndroidKeyguardFeature) {
     return m.passwordBlockKeyguardFeatures
 }
@@ -2124,7 +2124,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetNfcBlockOutgoingBeam(v
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordBlockKeyguard(value *bool)() {
     m.passwordBlockKeyguard = value
 }
-// SetPasswordBlockKeyguardFeatures sets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 7 elements.
+// SetPasswordBlockKeyguardFeatures sets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 11 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordBlockKeyguardFeatures(value []AndroidKeyguardFeature)() {
     m.passwordBlockKeyguardFeatures = value
 }

@@ -71,7 +71,7 @@ func NewChecklistItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewChecklistItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ChecklistItemsRequestBuilder) Count()(*i8e05ebfc77334032c0656c3990fc0b84ff8f7769f79068290de910742757f879.CountRequestBuilder) {
     return i8e05ebfc77334032c0656c3990fc0b84ff8f7769f79068290de910742757f879.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

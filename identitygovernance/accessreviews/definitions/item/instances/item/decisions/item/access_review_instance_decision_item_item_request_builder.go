@@ -145,11 +145,11 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
-// Insights the insights property
+// Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*if87b4a169c51e9577d64cd955cbaa3a26d8d4930311e16fd4353005de86c8dbd.InsightsRequestBuilder) {
     return if87b4a169c51e9577d64cd955cbaa3a26d8d4930311e16fd4353005de86c8dbd.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InsightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.decisions.item.insights.item collection
+// InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*i81e957f0658be9de81d9012275890916c58b87682a2c4e8351bd48af60285313.GovernanceInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -160,7 +160,7 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id str
     }
     return i81e957f0658be9de81d9012275890916c58b87682a2c4e8351bd48af60285313.NewGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instance the instance property
+// Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*i113045fa78a845c7966a1343271afe293117e065404d0a25845cde05921fdc7e.InstanceRequestBuilder) {
     return i113045fa78a845c7966a1343271afe293117e065404d0a25845cde05921fdc7e.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

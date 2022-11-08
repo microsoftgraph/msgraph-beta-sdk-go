@@ -69,19 +69,19 @@ type CallItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AddLargeGalleryView the addLargeGalleryView property
+// AddLargeGalleryView provides operations to call the addLargeGalleryView method.
 func (m *CallItemRequestBuilder) AddLargeGalleryView()(*ib840d59e075c9f1a42737eb611c25c9b9760e7d651bf5aba643e84343070c957.AddLargeGalleryViewRequestBuilder) {
     return ib840d59e075c9f1a42737eb611c25c9b9760e7d651bf5aba643e84343070c957.NewAddLargeGalleryViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Answer the answer property
+// Answer provides operations to call the answer method.
 func (m *CallItemRequestBuilder) Answer()(*i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.AnswerRequestBuilder) {
     return i7b15e8c80b7aa50a0151a753f97ef7289d17791928250d62926b97f749d6c305.NewAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AudioRoutingGroups the audioRoutingGroups property
+// AudioRoutingGroups provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) AudioRoutingGroups()(*ic54ac4adcd492f82a003801c0ce35301e9f04c5676f80853066311daf9c569da.AudioRoutingGroupsRequestBuilder) {
     return ic54ac4adcd492f82a003801c0ce35301e9f04c5676f80853066311daf9c569da.NewAudioRoutingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AudioRoutingGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item.audioRoutingGroups.item collection
+// AudioRoutingGroupsById provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) AudioRoutingGroupsById(id string)(*i151a479d1626e685450cad3f10b2ae807a5841c52441c261bfec932663c91e9f.AudioRoutingGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -92,11 +92,11 @@ func (m *CallItemRequestBuilder) AudioRoutingGroupsById(id string)(*i151a479d162
     }
     return i151a479d1626e685450cad3f10b2ae807a5841c52441c261bfec932663c91e9f.NewAudioRoutingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CancelMediaProcessing the cancelMediaProcessing property
+// CancelMediaProcessing provides operations to call the cancelMediaProcessing method.
 func (m *CallItemRequestBuilder) CancelMediaProcessing()(*id1e985c21267b30b9212f7e3d69af1960754fba433a529ab9f2819e92d7804e6.CancelMediaProcessingRequestBuilder) {
     return id1e985c21267b30b9212f7e3d69af1960754fba433a529ab9f2819e92d7804e6.NewCancelMediaProcessingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChangeScreenSharingRole the changeScreenSharingRole property
+// ChangeScreenSharingRole provides operations to call the changeScreenSharingRole method.
 func (m *CallItemRequestBuilder) ChangeScreenSharingRole()(*i6a96c1601820e25e2c11e319760d663fd67b6cdb677b5d599e7f4560698143e1.ChangeScreenSharingRoleRequestBuilder) {
     return i6a96c1601820e25e2c11e319760d663fd67b6cdb677b5d599e7f4560698143e1.NewChangeScreenSharingRoleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -119,11 +119,11 @@ func NewCallItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewCallItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// ContentSharingSessions the contentSharingSessions property
+// ContentSharingSessions provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) ContentSharingSessions()(*i6a956e9da3a6e7a50695a94bcd7dd16f04667e628762662e2a562dbb513808d4.ContentSharingSessionsRequestBuilder) {
     return i6a956e9da3a6e7a50695a94bcd7dd16f04667e628762662e2a562dbb513808d4.NewContentSharingSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ContentSharingSessionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item.contentSharingSessions.item collection
+// ContentSharingSessionsById provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) ContentSharingSessionsById(id string)(*ie37e4f36986bce11c7045e81e2c2f02722145373c94ed229df4e1f757aa12a44.ContentSharingSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -211,19 +211,19 @@ func (m *CallItemRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable), nil
 }
-// KeepAlive the keepAlive property
+// KeepAlive provides operations to call the keepAlive method.
 func (m *CallItemRequestBuilder) KeepAlive()(*i3af510b639a3bfd33b6d77bb52f8d92c7f9e25367174bdfa6142903edc74995c.KeepAliveRequestBuilder) {
     return i3af510b639a3bfd33b6d77bb52f8d92c7f9e25367174bdfa6142903edc74995c.NewKeepAliveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Mute the mute property
+// Mute provides operations to call the mute method.
 func (m *CallItemRequestBuilder) Mute()(*i2ad07b1a9d626a23f6fb4c6980016bdfa91427506827a8183fe0ab85ccea7297.MuteRequestBuilder) {
     return i2ad07b1a9d626a23f6fb4c6980016bdfa91427506827a8183fe0ab85ccea7297.NewMuteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) Operations()(*i8659ea4008fd7459c7570b3b977a99568235e5600beaac36764abf7a09a1c6a2.OperationsRequestBuilder) {
     return i8659ea4008fd7459c7570b3b977a99568235e5600beaac36764abf7a09a1c6a2.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) OperationsById(id string)(*ifc54b1625a5ef155b182402b189053da9800796fb7507ed629f84919426791d1.CommsOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -234,11 +234,11 @@ func (m *CallItemRequestBuilder) OperationsById(id string)(*ifc54b1625a5ef155b18
     }
     return ifc54b1625a5ef155b182402b189053da9800796fb7507ed629f84919426791d1.NewCommsOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Participants the participants property
+// Participants provides operations to manage the participants property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) Participants()(*if78246d1256eb5bc7db2b2c1dcd3d9daaa6de508f121f6f0bb97fcc022fe09f5.ParticipantsRequestBuilder) {
     return if78246d1256eb5bc7db2b2c1dcd3d9daaa6de508f121f6f0bb97fcc022fe09f5.NewParticipantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ParticipantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item.participants.item collection
+// ParticipantsById provides operations to manage the participants property of the microsoft.graph.call entity.
 func (m *CallItemRequestBuilder) ParticipantsById(id string)(*ie3ddf2285119a257859e618e7d13130592dc1f6e886e271f46d05000453bffd2.ParticipantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -268,39 +268,39 @@ func (m *CallItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable), nil
 }
-// PlayPrompt the playPrompt property
+// PlayPrompt provides operations to call the playPrompt method.
 func (m *CallItemRequestBuilder) PlayPrompt()(*i08e66c5d7bd1abccfebd8fb93bd3824b29263d4a78a8e0619b6492ed8f3fad49.PlayPromptRequestBuilder) {
     return i08e66c5d7bd1abccfebd8fb93bd3824b29263d4a78a8e0619b6492ed8f3fad49.NewPlayPromptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Record the record property
+// Record provides operations to call the record method.
 func (m *CallItemRequestBuilder) Record()(*i0c63fde205100ca16ab7a423f47cbdbde7db96e5bfd78a3f404e33371a9a304c.RecordRequestBuilder) {
     return i0c63fde205100ca16ab7a423f47cbdbde7db96e5bfd78a3f404e33371a9a304c.NewRecordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RecordResponse the recordResponse property
+// RecordResponse provides operations to call the recordResponse method.
 func (m *CallItemRequestBuilder) RecordResponse()(*i18782668e274df0b14fede1b2d0b04b9dfad365a601b91cb1ae1236333912f77.RecordResponseRequestBuilder) {
     return i18782668e274df0b14fede1b2d0b04b9dfad365a601b91cb1ae1236333912f77.NewRecordResponseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Redirect the redirect property
+// Redirect provides operations to call the redirect method.
 func (m *CallItemRequestBuilder) Redirect()(*i51c2a09e4f41fd4c07a21a333066d7d9b5683f48919e40d555e43eeedc2d2b0f.RedirectRequestBuilder) {
     return i51c2a09e4f41fd4c07a21a333066d7d9b5683f48919e40d555e43eeedc2d2b0f.NewRedirectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Reject the reject property
+// Reject provides operations to call the reject method.
 func (m *CallItemRequestBuilder) Reject()(*idaf0ca56e2f68098afebd431de7c548ac38196c36423e844dd58942eb2a4ee85.RejectRequestBuilder) {
     return idaf0ca56e2f68098afebd431de7c548ac38196c36423e844dd58942eb2a4ee85.NewRejectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubscribeToTone the subscribeToTone property
+// SubscribeToTone provides operations to call the subscribeToTone method.
 func (m *CallItemRequestBuilder) SubscribeToTone()(*i59f1af4a71937287f9a647acee47040de638eb6d16981d2dc3f1c22d63d3d210.SubscribeToToneRequestBuilder) {
     return i59f1af4a71937287f9a647acee47040de638eb6d16981d2dc3f1c22d63d3d210.NewSubscribeToToneRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Transfer the transfer property
+// Transfer provides operations to call the transfer method.
 func (m *CallItemRequestBuilder) Transfer()(*i4ffb8669c93d0b11c0238e80369824011ea5e33bda9395560f9abe880eb8acc0.TransferRequestBuilder) {
     return i4ffb8669c93d0b11c0238e80369824011ea5e33bda9395560f9abe880eb8acc0.NewTransferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Unmute the unmute property
+// Unmute provides operations to call the unmute method.
 func (m *CallItemRequestBuilder) Unmute()(*i4cae3b1a69ba2254d74646c3ba02c22835c51e378675f8f86fa207a4bf13fbb9.UnmuteRequestBuilder) {
     return i4cae3b1a69ba2254d74646c3ba02c22835c51e378675f8f86fa207a4bf13fbb9.NewUnmuteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateRecordingStatus the updateRecordingStatus property
+// UpdateRecordingStatus provides operations to call the updateRecordingStatus method.
 func (m *CallItemRequestBuilder) UpdateRecordingStatus()(*i2e0863e08fc93d954484ce570f9308574c3c610b9cbf1e2c9d07876c640463ac.UpdateRecordingStatusRequestBuilder) {
     return i2e0863e08fc93d954484ce570f9308574c3c610b9cbf1e2c9d07876c640463ac.NewUpdateRecordingStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

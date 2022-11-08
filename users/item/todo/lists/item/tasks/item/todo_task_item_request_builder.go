@@ -56,11 +56,11 @@ type TodoTaskItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) Attachments()(*ie85a412dd319a664a95d3439efb5b8d14ede7081d15bbf6471332e875d1201ad.AttachmentsRequestBuilder) {
     return ie85a412dd319a664a95d3439efb5b8d14ede7081d15bbf6471332e875d1201ad.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) AttachmentsById(id string)(*ic4e6851753207ff5fc60e5a3950f688623d469b81d6a0fbae90a924df884ea8d.AttachmentBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,11 +71,11 @@ func (m *TodoTaskItemRequestBuilder) AttachmentsById(id string)(*ic4e6851753207f
     }
     return ic4e6851753207ff5fc60e5a3950f688623d469b81d6a0fbae90a924df884ea8d.NewAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AttachmentSessions the attachmentSessions property
+// AttachmentSessions provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) AttachmentSessions()(*i564d8098d59e762f3fd7b37ee6392bcfd86990f75359dded91ccd109f847b3b3.AttachmentSessionsRequestBuilder) {
     return i564d8098d59e762f3fd7b37ee6392bcfd86990f75359dded91ccd109f847b3b3.NewAttachmentSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentSessionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item.attachmentSessions.item collection
+// AttachmentSessionsById provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*if4697c73398840a938b5a9cd44563f34d55fcf32dd3d0df0031975c562d55c2c.AttachmentSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -86,11 +86,11 @@ func (m *TodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*if4697c7
     }
     return if4697c73398840a938b5a9cd44563f34d55fcf32dd3d0df0031975c562d55c2c.NewAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ChecklistItems the checklistItems property
+// ChecklistItems provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) ChecklistItems()(*ifed95a4ba551c880d2020cfb9eb2eab0946d4430e7bb4641dab7f5b82b60c655.ChecklistItemsRequestBuilder) {
     return ifed95a4ba551c880d2020cfb9eb2eab0946d4430e7bb4641dab7f5b82b60c655.NewChecklistItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChecklistItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item.checklistItems.item collection
+// ChecklistItemsById provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) ChecklistItemsById(id string)(*iabf0df8a70bb970e3966c7005b6f3fac8c6c8c2c237330ea2b1c48ec24f3ef61.ChecklistItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -178,11 +178,11 @@ func (m *TodoTaskItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) Extensions()(*i4473eb3633503a172b34982c873e33c8efa94259783a3642ee6cedb3c5c906a7.ExtensionsRequestBuilder) {
     return i4473eb3633503a172b34982c873e33c8efa94259783a3642ee6cedb3c5c906a7.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) ExtensionsById(id string)(*i4531f84f655bf3b3d3a1027773f9c2bb029ea97f2eece205c7eb9bcaec4c009c.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -212,11 +212,11 @@ func (m *TodoTaskItemRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskable), nil
 }
-// LinkedResources the linkedResources property
+// LinkedResources provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) LinkedResources()(*i49c9f3580718111fd0b6ef827e6816e14178557d048d09f86d74f5aa6ba02f54.LinkedResourcesRequestBuilder) {
     return i49c9f3580718111fd0b6ef827e6816e14178557d048d09f86d74f5aa6ba02f54.NewLinkedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LinkedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item.linkedResources.item collection
+// LinkedResourcesById provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
 func (m *TodoTaskItemRequestBuilder) LinkedResourcesById(id string)(*i6737f99b67a18abc341a9ca718ffc65ce748e94cc634823575af95ac13a007ca.LinkedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

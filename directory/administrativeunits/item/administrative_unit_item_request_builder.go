@@ -57,11 +57,11 @@ type AdministrativeUnitItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CheckMemberGroups the checkMemberGroups property
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
 func (m *AdministrativeUnitItemRequestBuilder) CheckMemberGroups()(*i98d18deca5882a7f1ef7bba571654837ca98c441bb0eaa212a79efbf51074283.CheckMemberGroupsRequestBuilder) {
     return i98d18deca5882a7f1ef7bba571654837ca98c441bb0eaa212a79efbf51074283.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CheckMemberObjects the checkMemberObjects property
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
 func (m *AdministrativeUnitItemRequestBuilder) CheckMemberObjects()(*icfc4b43cabbf84440085018bda409b58924c8286c1e14bce978493163ca182b6.CheckMemberObjectsRequestBuilder) {
     return icfc4b43cabbf84440085018bda409b58924c8286c1e14bce978493163ca182b6.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -142,11 +142,11 @@ func (m *AdministrativeUnitItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitItemRequestBuilder) Extensions()(*ib3392aac80c6073c1b4cb66c1c9a59ef64a733b53d9fbe3bb2fdeea43b1e8ed0.ExtensionsRequestBuilder) {
     return ib3392aac80c6073c1b4cb66c1c9a59ef64a733b53d9fbe3bb2fdeea43b1e8ed0.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.administrativeUnits.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*i348fc6817b120c2ca4453cfe220f3a31e3dd76b71234d51b3cf59448c038898e.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -176,15 +176,15 @@ func (m *AdministrativeUnitItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// GetMemberGroups the getMemberGroups property
+// GetMemberGroups provides operations to call the getMemberGroups method.
 func (m *AdministrativeUnitItemRequestBuilder) GetMemberGroups()(*ib744a95755b350bc30b575b7a619bbb35c32385d740a0feca8f31cddc0e3af5d.GetMemberGroupsRequestBuilder) {
     return ib744a95755b350bc30b575b7a619bbb35c32385d740a0feca8f31cddc0e3af5d.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetMemberObjects the getMemberObjects property
+// GetMemberObjects provides operations to call the getMemberObjects method.
 func (m *AdministrativeUnitItemRequestBuilder) GetMemberObjects()(*i162499125dee18a8c32afea0c335b92a83c8bfbf514f6c85bec33a36bdaf7ca3.GetMemberObjectsRequestBuilder) {
     return i162499125dee18a8c32afea0c335b92a83c8bfbf514f6c85bec33a36bdaf7ca3.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitItemRequestBuilder) Members()(*i9a39d6011e7f6e52d0463e43f4affbe7fe566deec74cb2cfa89d0164876f73fb.MembersRequestBuilder) {
     return i9a39d6011e7f6e52d0463e43f4affbe7fe566deec74cb2cfa89d0164876f73fb.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -218,15 +218,15 @@ func (m *AdministrativeUnitItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *AdministrativeUnitItemRequestBuilder) Restore()(*i8dcb8bc7850e64bb1fd90771daf6714da6fc512dd4adae05039d541e9bb9419c.RestoreRequestBuilder) {
     return i8dcb8bc7850e64bb1fd90771daf6714da6fc512dd4adae05039d541e9bb9419c.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ScopedRoleMembers the scopedRoleMembers property
+// ScopedRoleMembers provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitItemRequestBuilder) ScopedRoleMembers()(*i29c75035d87e1e3a958b91c43025f79430cd4c9d3b0cc664ffe065bc407fda28.ScopedRoleMembersRequestBuilder) {
     return i29c75035d87e1e3a958b91c43025f79430cd4c9d3b0cc664ffe065bc407fda28.NewScopedRoleMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ScopedRoleMembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.administrativeUnits.item.scopedRoleMembers.item collection
+// ScopedRoleMembersById provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
 func (m *AdministrativeUnitItemRequestBuilder) ScopedRoleMembersById(id string)(*ibb066ad55db4b7866d16a995539af863ab771176674fded378a94af09016fc1b.ScopedRoleMembershipItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

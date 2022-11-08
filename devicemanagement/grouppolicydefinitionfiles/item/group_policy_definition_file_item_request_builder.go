@@ -109,11 +109,11 @@ func (m *GroupPolicyDefinitionFileItemRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// Definitions the definitions property
+// Definitions provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
 func (m *GroupPolicyDefinitionFileItemRequestBuilder) Definitions()(*i5be0d8880502185fd7c711521fef0b2544b7baad4394cd438f4b5bc4841090ac.DefinitionsRequestBuilder) {
     return i5be0d8880502185fd7c711521fef0b2544b7baad4394cd438f4b5bc4841090ac.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitionFiles.item.definitions.item collection
+// DefinitionsById provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
 func (m *GroupPolicyDefinitionFileItemRequestBuilder) DefinitionsById(id string)(*i127c36cfa00901ec1f6e2ca37cfd9639032b399ec048f50d6a66d9e5a5af307f.GroupPolicyDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

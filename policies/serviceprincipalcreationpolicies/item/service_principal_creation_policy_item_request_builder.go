@@ -127,11 +127,11 @@ func (m *ServicePrincipalCreationPolicyItemRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Excludes the excludes property
+// Excludes provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPolicyItemRequestBuilder) Excludes()(*i458957d039676a87049f925f9a0ac58100c522d4c5494921661924e3d7de9536.ExcludesRequestBuilder) {
     return i458957d039676a87049f925f9a0ac58100c522d4c5494921661924e3d7de9536.NewExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExcludesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.servicePrincipalCreationPolicies.item.excludes.item collection
+// ExcludesById provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPolicyItemRequestBuilder) ExcludesById(id string)(*if3d69c085cc31553bffa6238747fd2f166e883710ce3cb7738b69051017fde73.ServicePrincipalCreationConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,11 +161,11 @@ func (m *ServicePrincipalCreationPolicyItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCreationPolicyable), nil
 }
-// Includes the includes property
+// Includes provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPolicyItemRequestBuilder) Includes()(*ibb33c8122164f9a21b54efbd3817c55a46e13f7c672ae3565862893e0225a426.IncludesRequestBuilder) {
     return ibb33c8122164f9a21b54efbd3817c55a46e13f7c672ae3565862893e0225a426.NewIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IncludesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.servicePrincipalCreationPolicies.item.includes.item collection
+// IncludesById provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
 func (m *ServicePrincipalCreationPolicyItemRequestBuilder) IncludesById(id string)(*i8b8ea18691791149f6486e79113d56f56a6921846e0823954a25159321c50bdc.ServicePrincipalCreationConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

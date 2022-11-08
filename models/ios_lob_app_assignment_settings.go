@@ -8,7 +8,7 @@ import (
 // IosLobAppAssignmentSettings 
 type IosLobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
-    // Whether or not the app can be removed by the user.
+    // When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
     isRemovable *bool
     // Whether or not to uninstall the app when device is removed from Intune.
     uninstallOnDeviceRemoval *bool
@@ -36,7 +36,7 @@ func (m *IosLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
     res["vpnConfigurationId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetVpnConfigurationId)
     return res
 }
-// GetIsRemovable gets the isRemovable property value. Whether or not the app can be removed by the user.
+// GetIsRemovable gets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
 func (m *IosLobAppAssignmentSettings) GetIsRemovable()(*bool) {
     return m.isRemovable
 }
@@ -74,7 +74,7 @@ func (m *IosLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetIsRemovable sets the isRemovable property value. Whether or not the app can be removed by the user.
+// SetIsRemovable sets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
 func (m *IosLobAppAssignmentSettings) SetIsRemovable(value *bool)() {
     m.isRemovable = value
 }

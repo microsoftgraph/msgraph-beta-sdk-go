@@ -54,15 +54,15 @@ type DeviceManagementCompliancePolicyItemRequestBuilderPatchRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) Assign()(*i0742bff39d39edf9e7fdaa5802f2ceda48231b0df3ad173faa313f5c87241b5a.AssignRequestBuilder) {
     return i0742bff39d39edf9e7fdaa5802f2ceda48231b0df3ad173faa313f5c87241b5a.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementCompliancePolicy entity.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) Assignments()(*i02451624685ebfdb81d6b1930c79509f0df4294168ed18436aaa09cc42c5c946.AssignmentsRequestBuilder) {
     return i02451624685ebfdb81d6b1930c79509f0df4294168ed18436aaa09cc42c5c946.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementCompliancePolicy entity.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) AssignmentsById(id string)(*i1d9a96a6a2f04ecb11762741e92d99faf72d8bfcea65eb2f15cca45f47882da5.DeviceManagementConfigurationPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -188,11 +188,11 @@ func (m *DeviceManagementCompliancePolicyItemRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCompliancePolicyable), nil
 }
-// ScheduledActionsForRule the scheduledActionsForRule property
+// ScheduledActionsForRule provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceManagementCompliancePolicy entity.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) ScheduledActionsForRule()(*iffa40ac9a6da23297b60087932a288a73ea0e6ab171a35dec05137c5d4ed2f62.ScheduledActionsForRuleRequestBuilder) {
     return iffa40ac9a6da23297b60087932a288a73ea0e6ab171a35dec05137c5d4ed2f62.NewScheduledActionsForRuleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ScheduledActionsForRuleById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.scheduledActionsForRule.item collection
+// ScheduledActionsForRuleById provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceManagementCompliancePolicy entity.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) ScheduledActionsForRuleById(id string)(*i6cd919cf4ce1e5e402de893f996a02ad42aff8ec4ade9971ee45c71e8fbcb47a.DeviceManagementComplianceScheduledActionForRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -203,15 +203,15 @@ func (m *DeviceManagementCompliancePolicyItemRequestBuilder) ScheduledActionsFor
     }
     return i6cd919cf4ce1e5e402de893f996a02ad42aff8ec4ade9971ee45c71e8fbcb47a.NewDeviceManagementComplianceScheduledActionForRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SetScheduledActions the setScheduledActions property
+// SetScheduledActions provides operations to call the setScheduledActions method.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) SetScheduledActions()(*i1fb378ecdc09aaabf5c55da82fe6def98379ca93c0d2715669e8fa5761d1ed11.SetScheduledActionsRequestBuilder) {
     return i1fb378ecdc09aaabf5c55da82fe6def98379ca93c0d2715669e8fa5761d1ed11.NewSetScheduledActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementCompliancePolicy entity.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) Settings()(*i15585ed0e13327df9171fd8499ee3db205ffd397a580c4ed84e065a5d220e628.SettingsRequestBuilder) {
     return i15585ed0e13327df9171fd8499ee3db205ffd397a580c4ed84e065a5d220e628.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.compliancePolicies.item.settings.item collection
+// SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementCompliancePolicy entity.
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) SettingsById(id string)(*ie4d81e74e3624280f0e519971ef2c7635b27540efa521cec95913734fcecc59f.DeviceManagementConfigurationSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

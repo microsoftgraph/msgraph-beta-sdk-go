@@ -65,7 +65,7 @@ func NewAgentGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAgentGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AgentGroupsRequestBuilder) Count()(*i61b6d8ef2075d4dbeaae35be717fd2b8d0361eb0500832bbd32beca649eb6088.CountRequestBuilder) {
     return i61b6d8ef2075d4dbeaae35be717fd2b8d0361eb0500832bbd32beca649eb6088.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *AgentGroupsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *AgentGroupsRequestBuilder) Ref()(*i98f9f5d497a84c4cedf9b277df6da79834d04ce5d29487514d67141fd7646c3a.RefRequestBuilder) {
     return i98f9f5d497a84c4cedf9b277df6da79834d04ce5d29487514d67141fd7646c3a.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

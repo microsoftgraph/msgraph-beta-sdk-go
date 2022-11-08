@@ -162,7 +162,7 @@ func (m *DeviceManagementExchangeConnectorItemRequestBuilder) Patch(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementExchangeConnectorable), nil
 }
-// Sync the sync property
+// Sync provides operations to call the sync method.
 func (m *DeviceManagementExchangeConnectorItemRequestBuilder) Sync()(*ia460ac55c1186f52ecea17fd79222f817e81c6b715d9b29d34042565c6698ca3.SyncRequestBuilder) {
     return ia460ac55c1186f52ecea17fd79222f817e81c6b715d9b29d34042565c6698ca3.NewSyncRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

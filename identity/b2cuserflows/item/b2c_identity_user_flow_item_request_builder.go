@@ -150,7 +150,7 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable), nil
 }
-// IdentityProviders the identityProviders property
+// IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cIdentityUserFlowItemRequestBuilder) IdentityProviders()(*i3c30639732fa96ae7b2270ea94ac4d733ab4ce3489526a5e5cd1c27cbb90b0df.IdentityProvidersRequestBuilder) {
     return i3c30639732fa96ae7b2270ea94ac4d733ab4ce3489526a5e5cd1c27cbb90b0df.NewIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -165,11 +165,11 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) IdentityProvidersById(id string)
     }
     return i49a1823495467514804483eeb49dca5d9b4265432b5f032c862b8625c52a4c44.NewIdentityProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Languages the languages property
+// Languages provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cIdentityUserFlowItemRequestBuilder) Languages()(*ic8b27e7bcdb899e4a47d9ea30cb80e33646e9ca77dcb752f0bec144f3c6411be.LanguagesRequestBuilder) {
     return ic8b27e7bcdb899e4a47d9ea30cb80e33646e9ca77dcb752f0bec144f3c6411be.NewLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LanguagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.languages.item collection
+// LanguagesById provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cIdentityUserFlowItemRequestBuilder) LanguagesById(id string)(*i4f9895372ea85cee1ee4bf9a8b414752e4270d4b2216846b499db783b5644d6c.UserFlowLanguageConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -199,11 +199,11 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable), nil
 }
-// UserAttributeAssignments the userAttributeAssignments property
+// UserAttributeAssignments provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cIdentityUserFlowItemRequestBuilder) UserAttributeAssignments()(*ia8501a142e35d07776280d07596b55002a93c3239073e18d8e5ae9479c0a6576.UserAttributeAssignmentsRequestBuilder) {
     return ia8501a142e35d07776280d07596b55002a93c3239073e18d8e5ae9479c0a6576.NewUserAttributeAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserAttributeAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.userAttributeAssignments.item collection
+// UserAttributeAssignmentsById provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cIdentityUserFlowItemRequestBuilder) UserAttributeAssignmentsById(id string)(*ib4590aff7f09f446c7ae6a4a70dfc243aac07fb4522106f724124d4539ac2888.IdentityUserFlowAttributeAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -214,11 +214,11 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) UserAttributeAssignmentsById(id 
     }
     return ib4590aff7f09f446c7ae6a4a70dfc243aac07fb4522106f724124d4539ac2888.NewIdentityUserFlowAttributeAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserFlowIdentityProviders the userFlowIdentityProviders property
+// UserFlowIdentityProviders provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cIdentityUserFlowItemRequestBuilder) UserFlowIdentityProviders()(*ib718f8165ffdc29693dd68518ac7ea324def0c6882130bda31e56b4f400e55ed.UserFlowIdentityProvidersRequestBuilder) {
     return ib718f8165ffdc29693dd68518ac7ea324def0c6882130bda31e56b4f400e55ed.NewUserFlowIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserFlowIdentityProvidersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.userFlowIdentityProviders.item collection
+// UserFlowIdentityProvidersById provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
 func (m *B2cIdentityUserFlowItemRequestBuilder) UserFlowIdentityProvidersById(id string)(*i9ea52c3311e45f7594a4b33eff17673fff89c980f459b1cb921c89a7ec842263.IdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

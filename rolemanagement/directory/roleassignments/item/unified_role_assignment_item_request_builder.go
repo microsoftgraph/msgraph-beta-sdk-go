@@ -50,7 +50,7 @@ type UnifiedRoleAssignmentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppScope the appScope property
+// AppScope provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *UnifiedRoleAssignmentItemRequestBuilder) AppScope()(*i3474a2e38b281f4e7797434d422c48f9318be118347d877da4600124658ab447.AppScopeRequestBuilder) {
     return i3474a2e38b281f4e7797434d422c48f9318be118347d877da4600124658ab447.NewAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -131,7 +131,7 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// DirectoryScope the directoryScope property
+// DirectoryScope provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *UnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*i1522474c74e47117b7b5d32f30b9ee09e9a4497d181ef48a790b5dd525353391.DirectoryScopeRequestBuilder) {
     return i1522474c74e47117b7b5d32f30b9ee09e9a4497d181ef48a790b5dd525353391.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable), nil
 }
-// Principal the principal property
+// Principal provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *UnifiedRoleAssignmentItemRequestBuilder) Principal()(*idbde65951a67811bb15ce6245951166d482b6787a2b87ced4038bae710df35af.PrincipalRequestBuilder) {
     return idbde65951a67811bb15ce6245951166d482b6787a2b87ced4038bae710df35af.NewPrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleDefinition the roleDefinition property
+// RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignment entity.
 func (m *UnifiedRoleAssignmentItemRequestBuilder) RoleDefinition()(*ife4fc797bde6a1f61ef8a96d5a81eea6e837ac644934fadf77ca8be443553675.RoleDefinitionRequestBuilder) {
     return ife4fc797bde6a1f61ef8a96d5a81eea6e837ac644934fadf77ca8be443553675.NewRoleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

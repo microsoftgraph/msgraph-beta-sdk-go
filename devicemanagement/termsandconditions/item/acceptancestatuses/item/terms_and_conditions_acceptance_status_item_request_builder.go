@@ -162,7 +162,7 @@ func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) Patch(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsAcceptanceStatusable), nil
 }
-// TermsAndConditions the termsAndConditions property
+// TermsAndConditions provides operations to manage the termsAndConditions property of the microsoft.graph.termsAndConditionsAcceptanceStatus entity.
 func (m *TermsAndConditionsAcceptanceStatusItemRequestBuilder) TermsAndConditions()(*i2523e155e4ac31d790755ea42ed47b4eed80bc4912dcc1d948f2a67ea93a5613.TermsAndConditionsRequestBuilder) {
     return i2523e155e4ac31d790755ea42ed47b4eed80bc4912dcc1d948f2a67ea93a5613.NewTermsAndConditionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

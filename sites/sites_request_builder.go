@@ -48,7 +48,7 @@ type SitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SitesRequestBuilderGetQueryParameters
 }
-// Add the add property
+// Add provides operations to call the add method.
 func (m *SitesRequestBuilder) Add()(*i6f81ada91b35c4c8b5de72483e03b83321824cd7301bf2b1faec3e76d10920ab.AddRequestBuilder) {
     return i6f81ada91b35c4c8b5de72483e03b83321824cd7301bf2b1faec3e76d10920ab.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -71,7 +71,7 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SitesRequestBuilder) Count()(*ib81c95029d979466d91938adeca5dddd85b40bf0f696454eb18f46a1732d3a9c.CountRequestBuilder) {
     return ib81c95029d979466d91938adeca5dddd85b40bf0f696454eb18f46a1732d3a9c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -114,7 +114,7 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable), nil
 }
-// Remove the remove property
+// Remove provides operations to call the remove method.
 func (m *SitesRequestBuilder) Remove()(*i01987e74e1c88ee7412edc4fecc08f77a9bd5b9625489df2dcf277b733bd32a5.RemoveRequestBuilder) {
     return i01987e74e1c88ee7412edc4fecc08f77a9bd5b9625489df2dcf277b733bd32a5.NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

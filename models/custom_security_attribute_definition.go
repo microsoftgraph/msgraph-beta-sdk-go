@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomSecurityAttributeDefinition provides operations to manage the collection of activityStatistics entities.
+// CustomSecurityAttributeDefinition provides operations to manage the collection of accessReview entities.
 type CustomSecurityAttributeDefinition struct {
     Entity
     // Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.

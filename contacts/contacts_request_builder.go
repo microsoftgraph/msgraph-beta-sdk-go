@@ -75,7 +75,7 @@ func NewContactsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewContactsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ContactsRequestBuilder) Count()(*idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.CountRequestBuilder) {
     return idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -132,11 +132,11 @@ func (m *ContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable), nil
 }
-// GetByIds the getByIds property
+// GetByIds provides operations to call the getByIds method.
 func (m *ContactsRequestBuilder) GetByIds()(*i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4.GetByIdsRequestBuilder) {
     return i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetUserOwnedObjects the getUserOwnedObjects property
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *ContactsRequestBuilder) GetUserOwnedObjects()(*i078866701ebd014ef41908c3e576ecccdc54753b23645955da30d52b28cf8773.GetUserOwnedObjectsRequestBuilder) {
     return i078866701ebd014ef41908c3e576ecccdc54753b23645955da30d52b28cf8773.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -159,7 +159,7 @@ func (m *ContactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable), nil
 }
-// ValidateProperties the validateProperties property
+// ValidateProperties provides operations to call the validateProperties method.
 func (m *ContactsRequestBuilder) ValidateProperties()(*ife4ab247d2377531ea11bb4c8a0ab1e2b8f2156beb597f561bf1f7d9bd436500.ValidatePropertiesRequestBuilder) {
     return ife4ab247d2377531ea11bb4c8a0ab1e2b8f2156beb597f561bf1f7d9bd436500.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

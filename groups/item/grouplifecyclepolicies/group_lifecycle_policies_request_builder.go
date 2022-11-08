@@ -72,7 +72,7 @@ func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGroupLifecyclePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*i52c0fd4afda9ce1c2acfe3243b4d73285db937c44edaf90736e497bd5752d2b4.CountRequestBuilder) {
     return i52c0fd4afda9ce1c2acfe3243b4d73285db937c44edaf90736e497bd5752d2b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable), nil
 }
-// RenewGroup the renewGroup property
+// RenewGroup provides operations to call the renewGroup method.
 func (m *GroupLifecyclePoliciesRequestBuilder) RenewGroup()(*iaa407d49590d88aab26c493fc0c47ab7b8972e4c890aebcf9acf600a19c85b7f.RenewGroupRequestBuilder) {
     return iaa407d49590d88aab26c493fc0c47ab7b8972e4c890aebcf9acf600a19c85b7f.NewRenewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -144,11 +144,11 @@ func (m *LearningProviderItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable), nil
 }
-// LearningContents the learningContents property
+// LearningContents provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
 func (m *LearningProviderItemRequestBuilder) LearningContents()(*i2919c38739be04a3e465de3c3099dbdbcce772b268c4d68f95903feeeeed2e4e.LearningContentsRequestBuilder) {
     return i2919c38739be04a3e465de3c3099dbdbcce772b268c4d68f95903feeeeed2e4e.NewLearningContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LearningContentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.employeeExperience.learningProviders.item.learningContents.item collection
+// LearningContentsById provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
 func (m *LearningProviderItemRequestBuilder) LearningContentsById(id string)(*i39fd7d6efa293a5c2ce369286bc48b30105ae461e89f150a49f1690bd94f5906.LearningContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

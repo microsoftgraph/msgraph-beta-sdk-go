@@ -71,7 +71,7 @@ func NewWindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) Count()(*iceee18eb78f5601612dceec430ed442451ebd558a5e889210a83eb520e57bd6f.CountRequestBuilder) {
     return iceee18eb78f5601612dceec430ed442451ebd558a5e889210a83eb520e57bd6f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

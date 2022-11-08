@@ -163,11 +163,11 @@ func (m *VppTokenItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable), nil
 }
-// RevokeLicenses the revokeLicenses property
+// RevokeLicenses provides operations to call the revokeLicenses method.
 func (m *VppTokenItemRequestBuilder) RevokeLicenses()(*i77b3caa890238c2e63b357fa8fb1a4582acced3f5ce3a51847b85fd8f5bc33a3.RevokeLicensesRequestBuilder) {
     return i77b3caa890238c2e63b357fa8fb1a4582acced3f5ce3a51847b85fd8f5bc33a3.NewRevokeLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SyncLicenses the syncLicenses property
+// SyncLicenses provides operations to call the syncLicenses method.
 func (m *VppTokenItemRequestBuilder) SyncLicenses()(*i3681306afa23d4e519223d22b3e4d3d6a8494447cfc62f41140e640c8b25537f.SyncLicensesRequestBuilder) {
     return i3681306afa23d4e519223d22b3e4d3d6a8494447cfc62f41140e640c8b25537f.NewSyncLicensesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

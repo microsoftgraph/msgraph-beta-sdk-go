@@ -71,7 +71,7 @@ func NewWorkflowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewWorkflowsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WorkflowsRequestBuilder) Count()(*i232c536cbd7acac29d00b8d6ec5a3015194eba1fdeb0bf1040a1cd327b940a44.CountRequestBuilder) {
     return i232c536cbd7acac29d00b8d6ec5a3015194eba1fdeb0bf1040a1cd327b940a44.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

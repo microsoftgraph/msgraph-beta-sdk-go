@@ -167,11 +167,11 @@ func (m *AuthenticationMethodsRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodsRootable), nil
 }
-// UserRegistrationDetails the userRegistrationDetails property
+// UserRegistrationDetails provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
 func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetails()(*i7b9ae5210f90db0ebad31fc1b0bef221ff1eaa0cbeb3edb35517a6383d681410.UserRegistrationDetailsRequestBuilder) {
     return i7b9ae5210f90db0ebad31fc1b0bef221ff1eaa0cbeb3edb35517a6383d681410.NewUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserRegistrationDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.authenticationMethods.userRegistrationDetails.item collection
+// UserRegistrationDetailsById provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
 func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetailsById(id string)(*id56845adf52c64521fdbf34ae5eab50d9239bb78eb71c9f92a44c87dc1d83dbc.UserRegistrationDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

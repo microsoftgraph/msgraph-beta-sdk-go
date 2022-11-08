@@ -48,11 +48,11 @@ type DeletedTeamItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Channels the channels property
+// Channels provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
 func (m *DeletedTeamItemRequestBuilder) Channels()(*i5118c5e121c36d5e616a9c1900488e8b80c477f7ba6872c899411a9b4e8ec5b5.ChannelsRequestBuilder) {
     return i5118c5e121c36d5e616a9c1900488e8b80c477f7ba6872c899411a9b4e8ec5b5.NewChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChannelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.deletedTeams.item.channels.item collection
+// ChannelsById provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
 func (m *DeletedTeamItemRequestBuilder) ChannelsById(id string)(*i220bfae082f99dda33a9fa02f79b7ec0ff49b02b93a04452fc70e84ca04e7251.ChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -163,11 +163,11 @@ func (m *WorkflowTemplateItemRequestBuilder) Patch(ctx context.Context, body i45
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.WorkflowTemplateable), nil
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
 func (m *WorkflowTemplateItemRequestBuilder) Tasks()(*icd457e07402d78894926f869a7554baf4a129c8ae7dd998f2832480d6d3e472a.TasksRequestBuilder) {
     return icd457e07402d78894926f869a7554baf4a129c8ae7dd998f2832480d6d3e472a.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflowTemplates.item.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
 func (m *WorkflowTemplateItemRequestBuilder) TasksById(id string)(*ie297a3959b639dfced94678df88e4819c3d9f7b1894a05cc49f62078ef6b9b73.TaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

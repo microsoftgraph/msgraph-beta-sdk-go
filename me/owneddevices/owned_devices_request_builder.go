@@ -66,7 +66,7 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OwnedDevicesRequestBuilder) Count()(*i42321f15232b855c72a134551dbe7a72e2682885077ae1665d5f4eff5840bc04.CountRequestBuilder) {
     return i42321f15232b855c72a134551dbe7a72e2682885077ae1665d5f4eff5840bc04.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -86,11 +86,11 @@ func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// Device the device property
+// Device casts the previous resource to device.
 func (m *OwnedDevicesRequestBuilder) Device()(*ic017f30cd7c33576e3d04036fdfd40cd8e77bb0c1e79607dd72ded07cf88b1a3.DeviceRequestBuilder) {
     return ic017f30cd7c33576e3d04036fdfd40cd8e77bb0c1e79607dd72ded07cf88b1a3.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *OwnedDevicesRequestBuilder) Endpoint()(*i272026ecca77eee7e55a1afc65d584e1dab1753b9ca2c410a03c72603d93c17f.EndpointRequestBuilder) {
     return i272026ecca77eee7e55a1afc65d584e1dab1753b9ca2c410a03c72603d93c17f.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

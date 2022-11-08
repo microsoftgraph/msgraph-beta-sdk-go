@@ -72,7 +72,7 @@ func NewGovernanceResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceResourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *GovernanceResourcesRequestBuilder) Count()(*i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.CountRequestBuilder) {
     return i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *GovernanceResourcesRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
-// Register the register property
+// Register provides operations to call the register method.
 func (m *GovernanceResourcesRequestBuilder) Register()(*i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3.RegisterRequestBuilder) {
     return i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3.NewRegisterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -72,7 +72,7 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AlertsRequestBuilder) Count()(*ie6c4ed50fd25d2b22f824917c6168d4dbc7e67a1434dab8eb59ad93aba04f0a3.CountRequestBuilder) {
     return ie6c4ed50fd25d2b22f824917c6168d4dbc7e67a1434dab8eb59ad93aba04f0a3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *AlertsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Alertable), nil
 }
-// UpdateAlerts the updateAlerts property
+// UpdateAlerts provides operations to call the updateAlerts method.
 func (m *AlertsRequestBuilder) UpdateAlerts()(*ic0f34eb05ee86e1f4fa938395d0feec9b577cfcd78533c67a155562b35abea89.UpdateAlertsRequestBuilder) {
     return ic0f34eb05ee86e1f4fa938395d0feec9b577cfcd78533c67a155562b35abea89.NewUpdateAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

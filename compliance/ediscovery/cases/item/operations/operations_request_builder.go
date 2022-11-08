@@ -53,7 +53,7 @@ type OperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CaseExportOperation the caseExportOperation property
+// CaseExportOperation casts the previous resource to caseExportOperation.
 func (m *OperationsRequestBuilder) CaseExportOperation()(*i93ea821b9980699a2d9362f686c25a70b08121a88043a646e6e71f2e50aa556e.CaseExportOperationRequestBuilder) {
     return i93ea821b9980699a2d9362f686c25a70b08121a88043a646e6e71f2e50aa556e.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -76,7 +76,7 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OperationsRequestBuilder) Count()(*i89e3ed68600e2e0d92b605e812700fb7aceb682bc5a959aa606822b3a1f743fc.CountRequestBuilder) {
     return i89e3ed68600e2e0d92b605e812700fb7aceb682bc5a959aa606822b3a1f743fc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

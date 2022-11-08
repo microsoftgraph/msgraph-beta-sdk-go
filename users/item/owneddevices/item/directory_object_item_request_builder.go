@@ -69,11 +69,11 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// Device the device property
+// Device casts the previous resource to device.
 func (m *DirectoryObjectItemRequestBuilder) Device()(*i786db4183478393ba082620f8de65e06256635d4f4f33bb0e3db10500e5540c7.DeviceRequestBuilder) {
     return i786db4183478393ba082620f8de65e06256635d4f4f33bb0e3db10500e5540c7.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*ifff22df5e359c0e7a3bd6dc5bebe047205543003e78b0be5861fe2a36c506601.EndpointRequestBuilder) {
     return ifff22df5e359c0e7a3bd6dc5bebe047205543003e78b0be5861fe2a36c506601.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

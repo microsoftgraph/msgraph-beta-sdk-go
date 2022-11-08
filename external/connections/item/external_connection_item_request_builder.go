@@ -150,11 +150,11 @@ func (m *ExternalConnectionItemRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable), nil
 }
-// Groups the groups property
+// Groups provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Groups()(*iffd6530bca8d8e49e6ef2ef7466d12e5661125b7576d14dcf6d7effb88eecfab.GroupsRequestBuilder) {
     return iffd6530bca8d8e49e6ef2ef7466d12e5661125b7576d14dcf6d7effb88eecfab.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item.groups.item collection
+// GroupsById provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*i69c1e05ad8c29369be49685d62438c214dc9c439a6a4fbbe7ed3e2fe0eda2729.ExternalGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -165,11 +165,11 @@ func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*i69c1e05ad
     }
     return i69c1e05ad8c29369be49685d62438c214dc9c439a6a4fbbe7ed3e2fe0eda2729.NewExternalGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Items the items property
+// Items provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Items()(*ic21306f170b512d1bf604d2d8a2934279112fc43e76ee2e1190304bfcb9affaf.ItemsRequestBuilder) {
     return ic21306f170b512d1bf604d2d8a2934279112fc43e76ee2e1190304bfcb9affaf.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item.items.item collection
+// ItemsById provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*ia3b063108d214ef75fea5b818cfe6b67e41a7d601f088df5d728f5455baccf43.ExternalItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*ia3b063108d
     }
     return ia3b063108d214ef75fea5b818cfe6b67e41a7d601f088df5d728f5455baccf43.NewExternalItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Operations the operations property
+// Operations provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Operations()(*i37bbb931ba7a99580029f5e59fceec6eb8640b3b273e993b0da516dcc40deb00.OperationsRequestBuilder) {
     return i37bbb931ba7a99580029f5e59fceec6eb8640b3b273e993b0da516dcc40deb00.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item.operations.item collection
+// OperationsById provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) OperationsById(id string)(*ib6f02e4874285f867a5cd99416af186a892f455b055bf8cf850ece628119315b.ConnectionOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -214,11 +214,11 @@ func (m *ExternalConnectionItemRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable), nil
 }
-// Quota the quota property
+// Quota provides operations to manage the quota property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Quota()(*i8c82bcb72ad581e1896086d0a0ba519177dc48e3fabef71c43f877aa89d0d5bb.QuotaRequestBuilder) {
     return i8c82bcb72ad581e1896086d0a0ba519177dc48e3fabef71c43f877aa89d0d5bb.NewQuotaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Schema the schema property
+// Schema provides operations to manage the schema property of the microsoft.graph.externalConnectors.externalConnection entity.
 func (m *ExternalConnectionItemRequestBuilder) Schema()(*i65e452495f83460495ba06e038372fc125514330984811a66430c11e50b0a903.SchemaRequestBuilder) {
     return i65e452495f83460495ba06e038372fc125514330984811a66430c11e50b0a903.NewSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -59,7 +59,7 @@ type InformationProtectionRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Bitlocker the bitlocker property
+// Bitlocker provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) Bitlocker()(*i4d90195489ca45be2307fbe69c3159942127422787130dc6bf07c3af7c022a08.BitlockerRequestBuilder) {
     return i4d90195489ca45be2307fbe69c3159942127422787130dc6bf07c3af7c022a08.NewBitlockerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -124,11 +124,11 @@ func (m *InformationProtectionRequestBuilder) CreatePatchRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// DataLossPreventionPolicies the dataLossPreventionPolicies property
+// DataLossPreventionPolicies provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) DataLossPreventionPolicies()(*ic3c846ff56dc5e314d4c6bfa19cb00924d82997eea901fe1f9b84c1d80e78428.DataLossPreventionPoliciesRequestBuilder) {
     return ic3c846ff56dc5e314d4c6bfa19cb00924d82997eea901fe1f9b84c1d80e78428.NewDataLossPreventionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DataLossPreventionPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.informationProtection.dataLossPreventionPolicies.item collection
+// DataLossPreventionPoliciesById provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*i191c8b3440dd1e8a6718ed78cfecae17bc1dbfd3c34dd568e3ee66f765bbfcef.DataLossPreventionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -139,7 +139,7 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id 
     }
     return i191c8b3440dd1e8a6718ed78cfecae17bc1dbfd3c34dd568e3ee66f765bbfcef.NewDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DecryptBuffer the decryptBuffer property
+// DecryptBuffer provides operations to call the decryptBuffer method.
 func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*ia4c05b91b98e220a41cbdaa681d4415ce4d6cdbef9570b33a0dafc5be44f6bac.DecryptBufferRequestBuilder) {
     return ia4c05b91b98e220a41cbdaa681d4415ce4d6cdbef9570b33a0dafc5be44f6bac.NewDecryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -159,7 +159,7 @@ func (m *InformationProtectionRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// EncryptBuffer the encryptBuffer property
+// EncryptBuffer provides operations to call the encryptBuffer method.
 func (m *InformationProtectionRequestBuilder) EncryptBuffer()(*i04cf05c5c8f994ff60f069fa17365461a81725d5b81546944542ea7ba50c33b9.EncryptBufferRequestBuilder) {
     return i04cf05c5c8f994ff60f069fa17365461a81725d5b81546944542ea7ba50c33b9.NewEncryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -201,15 +201,15 @@ func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable), nil
 }
-// Policy the policy property
+// Policy provides operations to manage the policy property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) Policy()(*ia6cbc7bc1ed8597b7b0e86b2d192d20f7941e47862fb78aec8df090b439c4389.PolicyRequestBuilder) {
     return ia6cbc7bc1ed8597b7b0e86b2d192d20f7941e47862fb78aec8df090b439c4389.NewPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SensitivityLabels the sensitivityLabels property
+// SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*i05a0f6d03a62687d4a0ab7a6623ce716d5ec495078059f7cb0b8e6cea75698b8.SensitivityLabelsRequestBuilder) {
     return i05a0f6d03a62687d4a0ab7a6623ce716d5ec495078059f7cb0b8e6cea75698b8.NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SensitivityLabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.informationProtection.sensitivityLabels.item collection
+// SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*i881aabb372d33b8637b6e47f5cd810fa059621fecdca425af680154915bda58c.SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -220,19 +220,19 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*
     }
     return i881aabb372d33b8637b6e47f5cd810fa059621fecdca425af680154915bda58c.NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// SensitivityPolicySettings the sensitivityPolicySettings property
+// SensitivityPolicySettings provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*i124183ab6498588a7b75532486ec809ed07330838d143a4f82efefe532baad7c.SensitivityPolicySettingsRequestBuilder) {
     return i124183ab6498588a7b75532486ec809ed07330838d143a4f82efefe532baad7c.NewSensitivityPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SignDigest the signDigest property
+// SignDigest provides operations to call the signDigest method.
 func (m *InformationProtectionRequestBuilder) SignDigest()(*ie9793034cd3f29fae723f1f5ff28ff39cb87eb37c66f6795183c08da0ede1ade.SignDigestRequestBuilder) {
     return ie9793034cd3f29fae723f1f5ff28ff39cb87eb37c66f6795183c08da0ede1ade.NewSignDigestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ThreatAssessmentRequests the threatAssessmentRequests property
+// ThreatAssessmentRequests provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*idbc0c28ddaa866046df733d92dac03d4c4f02bc523555cc4a6b74a509ee1b65c.ThreatAssessmentRequestsRequestBuilder) {
     return idbc0c28ddaa866046df733d92dac03d4c4f02bc523555cc4a6b74a509ee1b65c.NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ThreatAssessmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.informationProtection.threatAssessmentRequests.item collection
+// ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*icaf3ff4e247245a4c08bfd8cebd5e2ed55e3a3ea59bac39141569435b536acf5.ThreatAssessmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -243,7 +243,7 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id st
     }
     return icaf3ff4e247245a4c08bfd8cebd5e2ed55e3a3ea59bac39141569435b536acf5.NewThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// VerifySignature the verifySignature property
+// VerifySignature provides operations to call the verifySignature method.
 func (m *InformationProtectionRequestBuilder) VerifySignature()(*i659c82714306f456ed196c36c3db55f7f532d452b83e200bc4c9fac27f759b58.VerifySignatureRequestBuilder) {
     return i659c82714306f456ed196c36c3db55f7f532d452b83e200bc4c9fac27f759b58.NewVerifySignatureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

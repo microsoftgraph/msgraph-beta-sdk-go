@@ -48,7 +48,7 @@ type FeatureRolloutPolicyItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppliesTo the appliesTo property
+// AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.featureRolloutPolicy entity.
 func (m *FeatureRolloutPolicyItemRequestBuilder) AppliesTo()(*if14b8a57f122d6d1ffeaa97dd10814e0c5978ae31d20c889a9ca740cf1e0679c.AppliesToRequestBuilder) {
     return if14b8a57f122d6d1ffeaa97dd10814e0c5978ae31d20c889a9ca740cf1e0679c.NewAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -49,15 +49,15 @@ type ServiceUpdateMessageItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Attachments the attachments property
+// Attachments provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
 func (m *ServiceUpdateMessageItemRequestBuilder) Attachments()(*ib1036e35f7726bb63968292aa4eec005a101ab799cf62d3d86c2229a632e0fd6.AttachmentsRequestBuilder) {
     return ib1036e35f7726bb63968292aa4eec005a101ab799cf62d3d86c2229a632e0fd6.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsArchive the attachmentsArchive property
+// AttachmentsArchive provides operations to manage the media for the admin entity.
 func (m *ServiceUpdateMessageItemRequestBuilder) AttachmentsArchive()(*iba6314f9ae414737a93628d9803d2f5d079b4663032af4e52dead50e53425e58.AttachmentsArchiveRequestBuilder) {
     return iba6314f9ae414737a93628d9803d2f5d079b4663032af4e52dead50e53425e58.NewAttachmentsArchiveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.messages.item.attachments.item collection
+// AttachmentsById provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
 func (m *ServiceUpdateMessageItemRequestBuilder) AttachmentsById(id string)(*ia518794b9649eb040a30d702e0d35056c1eef1acf65564115cc1be6834064a1f.ServiceAnnouncementAttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

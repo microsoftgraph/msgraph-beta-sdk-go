@@ -150,11 +150,11 @@ func (m *B2xIdentityUserFlowItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2xIdentityUserFlowable), nil
 }
-// IdentityProviders the identityProviders property
+// IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xIdentityUserFlowItemRequestBuilder) IdentityProviders()(*i961eb1bb9c95ad9a1c53819fc521c8a4e4e3dd72967d787f44f08b9b8c796ad2.IdentityProvidersRequestBuilder) {
     return i961eb1bb9c95ad9a1c53819fc521c8a4e4e3dd72967d787f44f08b9b8c796ad2.NewIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IdentityProvidersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.identityProviders.item collection
+// IdentityProvidersById provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xIdentityUserFlowItemRequestBuilder) IdentityProvidersById(id string)(*i7d194a5a848cdd478db3ec5b0473df2d333b7d840995b2db46e55e8b8b38b213.IdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -165,11 +165,11 @@ func (m *B2xIdentityUserFlowItemRequestBuilder) IdentityProvidersById(id string)
     }
     return i7d194a5a848cdd478db3ec5b0473df2d333b7d840995b2db46e55e8b8b38b213.NewIdentityProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Languages the languages property
+// Languages provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xIdentityUserFlowItemRequestBuilder) Languages()(*i7dcf98ba71a64ad6e1a7f1d9cbe306c7616a2b4fbec2dbc655c658192d35a36b.LanguagesRequestBuilder) {
     return i7dcf98ba71a64ad6e1a7f1d9cbe306c7616a2b4fbec2dbc655c658192d35a36b.NewLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LanguagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.languages.item collection
+// LanguagesById provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xIdentityUserFlowItemRequestBuilder) LanguagesById(id string)(*i45862c76d997425b3529626dabb7258b739baf239b9d5edccd7c60df97c16804.UserFlowLanguageConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -199,11 +199,11 @@ func (m *B2xIdentityUserFlowItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2xIdentityUserFlowable), nil
 }
-// UserAttributeAssignments the userAttributeAssignments property
+// UserAttributeAssignments provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xIdentityUserFlowItemRequestBuilder) UserAttributeAssignments()(*i574815dbbb1e9c51a965e25539eed078ec9ab55919033c1c32dc721a519d9f21.UserAttributeAssignmentsRequestBuilder) {
     return i574815dbbb1e9c51a965e25539eed078ec9ab55919033c1c32dc721a519d9f21.NewUserAttributeAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserAttributeAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.userAttributeAssignments.item collection
+// UserAttributeAssignmentsById provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xIdentityUserFlowItemRequestBuilder) UserAttributeAssignmentsById(id string)(*i8706143552eeb09a05c35bc53efe01f6fe2a821a3d0568b7c706289ea9919d1d.IdentityUserFlowAttributeAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -214,7 +214,7 @@ func (m *B2xIdentityUserFlowItemRequestBuilder) UserAttributeAssignmentsById(id 
     }
     return i8706143552eeb09a05c35bc53efe01f6fe2a821a3d0568b7c706289ea9919d1d.NewIdentityUserFlowAttributeAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserFlowIdentityProviders the userFlowIdentityProviders property
+// UserFlowIdentityProviders provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
 func (m *B2xIdentityUserFlowItemRequestBuilder) UserFlowIdentityProviders()(*icd6b8fe789e0ddefec348d941d6505a9be0443397887095b870d0a0a621d081a.UserFlowIdentityProvidersRequestBuilder) {
     return icd6b8fe789e0ddefec348d941d6505a9be0443397887095b870d0a0a621d081a.NewUserFlowIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

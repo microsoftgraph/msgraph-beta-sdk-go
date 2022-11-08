@@ -28,10 +28,12 @@ const (
     ACTIVATEDEVICEESIM_MANAGEDDEVICEREMOTEACTION
     // Name of the collectDiagnostics action.
     COLLECTDIAGNOSTICS_MANAGEDDEVICEREMOTEACTION
+    // Name of action to initiate MDM key recovery
+    INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_MANAGEDDEVICEREMOTEACTION
 )
 
 func (i ManagedDeviceRemoteAction) String() string {
-    return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics"}[i]
+    return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics", "initiateMobileDeviceManagementKeyRecovery"}[i]
 }
 func ParseManagedDeviceRemoteAction(v string) (interface{}, error) {
     result := RETIRE_MANAGEDDEVICEREMOTEACTION
@@ -68,6 +70,8 @@ func ParseManagedDeviceRemoteAction(v string) (interface{}, error) {
             result = ACTIVATEDEVICEESIM_MANAGEDDEVICEREMOTEACTION
         case "collectDiagnostics":
             result = COLLECTDIAGNOSTICS_MANAGEDDEVICEREMOTEACTION
+        case "initiateMobileDeviceManagementKeyRecovery":
+            result = INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_MANAGEDDEVICEREMOTEACTION
         default:
             return 0, errors.New("Unknown ManagedDeviceRemoteAction value: " + v)
     }

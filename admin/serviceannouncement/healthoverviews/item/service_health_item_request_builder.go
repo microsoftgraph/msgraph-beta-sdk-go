@@ -144,11 +144,11 @@ func (m *ServiceHealthItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthable), nil
 }
-// Issues the issues property
+// Issues provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
 func (m *ServiceHealthItemRequestBuilder) Issues()(*i18a6924091a3c9bbbe468505115ea5a5d8a057f434df414584dbb1569657989a.IssuesRequestBuilder) {
     return i18a6924091a3c9bbbe468505115ea5a5d8a057f434df414584dbb1569657989a.NewIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// IssuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.healthOverviews.item.issues.item collection
+// IssuesById provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
 func (m *ServiceHealthItemRequestBuilder) IssuesById(id string)(*i92fa557a83a3a5f72f390d4ba2371036b32f13a2df0fcd47d44a7d53c414e7d8.ServiceHealthIssueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

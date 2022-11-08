@@ -111,7 +111,7 @@ func (m *MicrosoftTunnelServerItemRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// CreateServerLogCollectionRequest the createServerLogCollectionRequest property
+// CreateServerLogCollectionRequest provides operations to call the createServerLogCollectionRequest method.
 func (m *MicrosoftTunnelServerItemRequestBuilder) CreateServerLogCollectionRequest()(*i9c30fe64f3cadb8062e1e80b68b8d12a9b9727c1f84ad283d585cd25e965ef20.CreateServerLogCollectionRequestRequestBuilder) {
     return i9c30fe64f3cadb8062e1e80b68b8d12a9b9727c1f84ad283d585cd25e965ef20.NewCreateServerLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -131,7 +131,7 @@ func (m *MicrosoftTunnelServerItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// GenerateServerLogCollectionRequest the generateServerLogCollectionRequest property
+// GenerateServerLogCollectionRequest provides operations to call the generateServerLogCollectionRequest method.
 func (m *MicrosoftTunnelServerItemRequestBuilder) GenerateServerLogCollectionRequest()(*i3f40885f535fa833a03343f90bdd196d1f53ba4e83ad2000066e6a2beaee2389.GenerateServerLogCollectionRequestRequestBuilder) {
     return i3f40885f535fa833a03343f90bdd196d1f53ba4e83ad2000066e6a2beaee2389.NewGenerateServerLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -154,11 +154,11 @@ func (m *MicrosoftTunnelServerItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerable), nil
 }
-// GetHealthMetrics the getHealthMetrics property
+// GetHealthMetrics provides operations to call the getHealthMetrics method.
 func (m *MicrosoftTunnelServerItemRequestBuilder) GetHealthMetrics()(*ia9fb0847e9b7d23ecba981329a874216f6257bc66e680123b5b5de57e3c5785f.GetHealthMetricsRequestBuilder) {
     return ia9fb0847e9b7d23ecba981329a874216f6257bc66e680123b5b5de57e3c5785f.NewGetHealthMetricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetHealthMetricTimeSeries the getHealthMetricTimeSeries property
+// GetHealthMetricTimeSeries provides operations to call the getHealthMetricTimeSeries method.
 func (m *MicrosoftTunnelServerItemRequestBuilder) GetHealthMetricTimeSeries()(*i1cd82da38eaeb9697597d203dbe05121215aa83c60f4bb16b4c4bb0ae1e829f2.GetHealthMetricTimeSeriesRequestBuilder) {
     return i1cd82da38eaeb9697597d203dbe05121215aa83c60f4bb16b4c4bb0ae1e829f2.NewGetHealthMetricTimeSeriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

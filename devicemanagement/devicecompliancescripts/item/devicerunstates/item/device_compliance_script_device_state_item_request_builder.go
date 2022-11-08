@@ -143,7 +143,7 @@ func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable), nil
 }
-// ManagedDevice the managedDevice property
+// ManagedDevice provides operations to manage the managedDevice property of the microsoft.graph.deviceComplianceScriptDeviceState entity.
 func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) ManagedDevice()(*i19a63f2b15203acaac6189a999bb295cf2c5803855da2a97309802ed8f87c931.ManagedDeviceRequestBuilder) {
     return i19a63f2b15203acaac6189a999bb295cf2c5803855da2a97309802ed8f87c931.NewManagedDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

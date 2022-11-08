@@ -72,7 +72,7 @@ func NewPendingAccessReviewInstancesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewPendingAccessReviewInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *PendingAccessReviewInstancesRequestBuilder) Count()(*i8af64007e276770891a7955d22db6ef3bff141426d566c5b49743d6320cba6de.CountRequestBuilder) {
     return i8af64007e276770891a7955d22db6ef3bff141426d566c5b49743d6320cba6de.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -55,11 +55,11 @@ type ConditionalAccessRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationContextClassReferences the authenticationContextClassReferences property
+// AuthenticationContextClassReferences provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) AuthenticationContextClassReferences()(*i0b765a6506e9c469fc394944929f3f3f68abc1cd67221843e72d0023cdc7b9a5.AuthenticationContextClassReferencesRequestBuilder) {
     return i0b765a6506e9c469fc394944929f3f3f68abc1cd67221843e72d0023cdc7b9a5.NewAuthenticationContextClassReferencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AuthenticationContextClassReferencesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.conditionalAccess.authenticationContextClassReferences.item collection
+// AuthenticationContextClassReferencesById provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) AuthenticationContextClassReferencesById(id string)(*i1e1e27fc92484640c1240b9cb5fb9a5b81b2571a142348b22dc8e7cfa597bdea.AuthenticationContextClassReferenceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -70,7 +70,7 @@ func (m *ConditionalAccessRequestBuilder) AuthenticationContextClassReferencesBy
     }
     return i1e1e27fc92484640c1240b9cb5fb9a5b81b2571a142348b22dc8e7cfa597bdea.NewAuthenticationContextClassReferenceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AuthenticationStrengths the authenticationStrengths property
+// AuthenticationStrengths provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) AuthenticationStrengths()(*i613a4d67bebbdad874d25a6af57693740b126f2be0ba8f0683a6c40352680356.AuthenticationStrengthsRequestBuilder) {
     return i613a4d67bebbdad874d25a6af57693740b126f2be0ba8f0683a6c40352680356.NewAuthenticationStrengthsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -170,11 +170,11 @@ func (m *ConditionalAccessRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessRootable), nil
 }
-// NamedLocations the namedLocations property
+// NamedLocations provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) NamedLocations()(*i8b450d93e3a0398b0e364118a8d1d65374bc93acb38b538683e67f6f68a0df16.NamedLocationsRequestBuilder) {
     return i8b450d93e3a0398b0e364118a8d1d65374bc93acb38b538683e67f6f68a0df16.NewNamedLocationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NamedLocationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.conditionalAccess.namedLocations.item collection
+// NamedLocationsById provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) NamedLocationsById(id string)(*ib6f953303fb5d962a08cf74168e4f0d71eb89d20c00a8164e1326cd252166379.NamedLocationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -204,11 +204,11 @@ func (m *ConditionalAccessRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessRootable), nil
 }
-// Policies the policies property
+// Policies provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) Policies()(*i74336fcd63e509c2dff28b731f926303088803045222a57ca21181ed72fcf778.PoliciesRequestBuilder) {
     return i74336fcd63e509c2dff28b731f926303088803045222a57ca21181ed72fcf778.NewPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.conditionalAccess.policies.item collection
+// PoliciesById provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) PoliciesById(id string)(*i4e66627208bf17ad44b017955b0a38ce27d6db98bb96808a5974cac73445707c.ConditionalAccessPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -219,11 +219,11 @@ func (m *ConditionalAccessRequestBuilder) PoliciesById(id string)(*i4e66627208bf
     }
     return i4e66627208bf17ad44b017955b0a38ce27d6db98bb96808a5974cac73445707c.NewConditionalAccessPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Templates the templates property
+// Templates provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) Templates()(*ic97d3f37939bde9c02ae8d631da4f7cf27c863c3df73816d823df479eeae856e.TemplatesRequestBuilder) {
     return ic97d3f37939bde9c02ae8d631da4f7cf27c863c3df73816d823df479eeae856e.NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.conditionalAccess.templates.item collection
+// TemplatesById provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
 func (m *ConditionalAccessRequestBuilder) TemplatesById(id string)(*i236cf09f7afec6e3a311ec7d864db943dfb016d470e91251403c97b871f8c2be.ConditionalAccessTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

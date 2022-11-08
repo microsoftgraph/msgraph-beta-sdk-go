@@ -71,7 +71,7 @@ func NewWindowsProtectionStatesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsProtectionStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsProtectionStatesRequestBuilder) Count()(*i9408837d526651b794f2b8b63f2a738d97c292579676650cbd9ef06a29aca1bf.CountRequestBuilder) {
     return i9408837d526651b794f2b8b63f2a738d97c292579676650cbd9ef06a29aca1bf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

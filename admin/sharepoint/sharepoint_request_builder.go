@@ -162,7 +162,7 @@ func (m *SharepointRequestBuilder) Patch(ctx context.Context, body i0d83e930c557
     }
     return res.(i0d83e930c557b824d39150e028a80d9f5a1fe75558f698c157c6c0dd930bcc83.Sharepointable), nil
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.tenantAdmin.sharepoint entity.
 func (m *SharepointRequestBuilder) Settings()(*ibcab7e3e425756e682048e2727794901f7a025dc933c4bf401cac95a8ffb618b.SettingsRequestBuilder) {
     return ibcab7e3e425756e682048e2727794901f7a025dc933c4bf401cac95a8ffb618b.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -109,11 +109,11 @@ func (m *RegistrationRequestBuilder) CreatePatchRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// CustomQuestions the customQuestions property
+// CustomQuestions provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
 func (m *RegistrationRequestBuilder) CustomQuestions()(*i8b1acecefd40015cacb48332acab4704015613d200d1caf5b420053071c45191.CustomQuestionsRequestBuilder) {
     return i8b1acecefd40015cacb48332acab4704015613d200d1caf5b420053071c45191.NewCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustomQuestionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.registration.customQuestions.item collection
+// CustomQuestionsById provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
 func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*ib42277fe4ce873d430664e5be2d00e9af9e96d89e8f7d228c9a3066373657e75.MeetingRegistrationQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

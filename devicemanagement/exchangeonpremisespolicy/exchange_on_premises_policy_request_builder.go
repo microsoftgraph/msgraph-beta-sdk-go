@@ -47,7 +47,7 @@ type ExchangeOnPremisesPolicyRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessSettings the conditionalAccessSettings property
+// ConditionalAccessSettings provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagementExchangeOnPremisesPolicy entity.
 func (m *ExchangeOnPremisesPolicyRequestBuilder) ConditionalAccessSettings()(*i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c.ConditionalAccessSettingsRequestBuilder) {
     return i718a6feeae2ee5e28a852efb3ecd55835920ec55431789c4811d78c490b54c7c.NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

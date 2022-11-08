@@ -75,7 +75,7 @@ func NewExclusionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewExclusionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ExclusionsRequestBuilder) Count()(*i09062f21d18bbad1807519431d48aac001991e078b5e4967de26f777128549c4.CountRequestBuilder) {
     return i09062f21d18bbad1807519431d48aac001991e078b5e4967de26f777128549c4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -109,11 +109,11 @@ func (m *ExclusionsRequestBuilder) CreatePostRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// EnrollAssets the enrollAssets property
+// EnrollAssets provides operations to call the enrollAssets method.
 func (m *ExclusionsRequestBuilder) EnrollAssets()(*ic1f0bd7dc659fdc462a2c99f69ef901e44c18a5ef5ab6d0830bbfd7789e3667d.EnrollAssetsRequestBuilder) {
     return ic1f0bd7dc659fdc462a2c99f69ef901e44c18a5ef5ab6d0830bbfd7789e3667d.NewEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EnrollAssetsById the enrollAssetsById property
+// EnrollAssetsById provides operations to call the enrollAssetsById method.
 func (m *ExclusionsRequestBuilder) EnrollAssetsById()(*i7a5ce3b3753fea9d5a62c39633c51d83d1cd2403b75643a52562b7a607be2f57.EnrollAssetsByIdRequestBuilder) {
     return i7a5ce3b3753fea9d5a62c39633c51d83d1cd2403b75643a52562b7a607be2f57.NewEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *ExclusionsRequestBuilder) Post(ctx context.Context, body i17376df570f19
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// UnenrollAssets the unenrollAssets property
+// UnenrollAssets provides operations to call the unenrollAssets method.
 func (m *ExclusionsRequestBuilder) UnenrollAssets()(*i5c9170b81c201b5105566ee9502169d272d67357d920434087742a266367025d.UnenrollAssetsRequestBuilder) {
     return i5c9170b81c201b5105566ee9502169d272d67357d920434087742a266367025d.NewUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UnenrollAssetsById the unenrollAssetsById property
+// UnenrollAssetsById provides operations to call the unenrollAssetsById method.
 func (m *ExclusionsRequestBuilder) UnenrollAssetsById()(*ie0c0fd2f52c8949442d7606cb6f684535237f75ae9a8505ddead286fdb640838.UnenrollAssetsByIdRequestBuilder) {
     return ie0c0fd2f52c8949442d7606cb6f684535237f75ae9a8505ddead286fdb640838.NewUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

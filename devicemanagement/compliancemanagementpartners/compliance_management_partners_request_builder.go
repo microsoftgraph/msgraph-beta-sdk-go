@@ -71,7 +71,7 @@ func NewComplianceManagementPartnersRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewComplianceManagementPartnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ComplianceManagementPartnersRequestBuilder) Count()(*i4f455163434ef80c3a34dbd526e33bd35f21126219fb08771ca838792cfbffc3.CountRequestBuilder) {
     return i4f455163434ef80c3a34dbd526e33bd35f21126219fb08771ca838792cfbffc3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

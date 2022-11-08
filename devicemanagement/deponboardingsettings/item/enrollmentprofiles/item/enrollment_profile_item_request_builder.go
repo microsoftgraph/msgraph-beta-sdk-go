@@ -168,11 +168,11 @@ func (m *EnrollmentProfileItemRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentProfileable), nil
 }
-// SetDefaultProfile the setDefaultProfile property
+// SetDefaultProfile provides operations to call the setDefaultProfile method.
 func (m *EnrollmentProfileItemRequestBuilder) SetDefaultProfile()(*i2368cb001c0085f52ee4b80f8cbadbf0281840398627682c4832aae50f7e0d0f.SetDefaultProfileRequestBuilder) {
     return i2368cb001c0085f52ee4b80f8cbadbf0281840398627682c4832aae50f7e0d0f.NewSetDefaultProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateDeviceProfileAssignment the updateDeviceProfileAssignment property
+// UpdateDeviceProfileAssignment provides operations to call the updateDeviceProfileAssignment method.
 func (m *EnrollmentProfileItemRequestBuilder) UpdateDeviceProfileAssignment()(*i43d975eb4ff9e5eee6d18830ab6b48dcbf7d0ba77a301b0a135586f21e707fa9.UpdateDeviceProfileAssignmentRequestBuilder) {
     return i43d975eb4ff9e5eee6d18830ab6b48dcbf7d0ba77a301b0a135586f21e707fa9.NewUpdateDeviceProfileAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

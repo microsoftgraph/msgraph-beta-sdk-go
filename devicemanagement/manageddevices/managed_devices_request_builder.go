@@ -63,15 +63,15 @@ type ManagedDevicesRequestBuilderPostRequestConfiguration struct {
 func (m *ManagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*i04cfb1258ecd2605a74af4f6db4fb79ce07d7a1dd318ff32459c8640ebba651c.AppDiagnosticsWithUpnRequestBuilder) {
     return i04cfb1258ecd2605a74af4f6db4fb79ce07d7a1dd318ff32459c8640ebba651c.NewAppDiagnosticsWithUpnRequestBuilderInternal(m.pathParameters, m.requestAdapter, upn);
 }
-// BulkReprovisionCloudPc the bulkReprovisionCloudPc property
+// BulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
 func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i9f3c0ec10d79caf7b25f90c50c18ffe886ea494018312ae756500b4daa0b1e5a.BulkReprovisionCloudPcRequestBuilder) {
     return i9f3c0ec10d79caf7b25f90c50c18ffe886ea494018312ae756500b4daa0b1e5a.NewBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BulkRestoreCloudPc the bulkRestoreCloudPc property
+// BulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
 func (m *ManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*i5f8ca051de0bcbbe5b881cdaf7d6d9a13cc6fca814cdda55f7a1fc121c17598e.BulkRestoreCloudPcRequestBuilder) {
     return i5f8ca051de0bcbbe5b881cdaf7d6d9a13cc6fca814cdda55f7a1fc121c17598e.NewBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// BulkSetCloudPcReviewStatus the bulkSetCloudPcReviewStatus property
+// BulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
 func (m *ManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*i110b95d5c92c30c95fc9cb7f533d46c23d6b53abfed1ab0c57efbcd3adc67edb.BulkSetCloudPcReviewStatusRequestBuilder) {
     return i110b95d5c92c30c95fc9cb7f533d46c23d6b53abfed1ab0c57efbcd3adc67edb.NewBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -94,7 +94,7 @@ func NewManagedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedDevicesRequestBuilder) Count()(*iaf61f975bbfeb9c90d8d01c8ad1c458f6730caee7a72f9bb3801c4a97ad62d62.CountRequestBuilder) {
     return iaf61f975bbfeb9c90d8d01c8ad1c458f6730caee7a72f9bb3801c4a97ad62d62.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -128,11 +128,11 @@ func (m *ManagedDevicesRequestBuilder) CreatePostRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// DownloadAppDiagnostics the downloadAppDiagnostics property
+// DownloadAppDiagnostics provides operations to call the downloadAppDiagnostics method.
 func (m *ManagedDevicesRequestBuilder) DownloadAppDiagnostics()(*iae6e25a8eb88b77410f0b3fa5c5df3b4c37bcc35afc1330f4f6200d047c6f8e1.DownloadAppDiagnosticsRequestBuilder) {
     return iae6e25a8eb88b77410f0b3fa5c5df3b4c37bcc35afc1330f4f6200d047c6f8e1.NewDownloadAppDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExecuteAction the executeAction property
+// ExecuteAction provides operations to call the executeAction method.
 func (m *ManagedDevicesRequestBuilder) ExecuteAction()(*ib1edad87ec29538295d4b5f56002379bc4d111c6ca85e79b9e3b58f1a12313aa.ExecuteActionRequestBuilder) {
     return ib1edad87ec29538295d4b5f56002379bc4d111c6ca85e79b9e3b58f1a12313aa.NewExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,7 +155,7 @@ func (m *ManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable), nil
 }
-// MoveDevicesToOU the moveDevicesToOU property
+// MoveDevicesToOU provides operations to call the moveDevicesToOU method.
 func (m *ManagedDevicesRequestBuilder) MoveDevicesToOU()(*i06835d5500346b7bc8d008091fe2b42358e5cd0e649c006b5492948c0d336599.MoveDevicesToOURequestBuilder) {
     return i06835d5500346b7bc8d008091fe2b42358e5cd0e649c006b5492948c0d336599.NewMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

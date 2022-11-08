@@ -71,7 +71,7 @@ func NewGovernanceRoleSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *GovernanceRoleSettingsRequestBuilder) Count()(*i6e2146330ed4729ebb43987a0599fc1db9372a7a1c615842cf45210fa198a1aa.CountRequestBuilder) {
     return i6e2146330ed4729ebb43987a0599fc1db9372a7a1c615842cf45210fa198a1aa.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

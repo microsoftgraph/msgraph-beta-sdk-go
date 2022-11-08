@@ -163,11 +163,11 @@ func (m *SensitivityLabelItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable), nil
 }
-// Sublabels the sublabels property
+// Sublabels provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
 func (m *SensitivityLabelItemRequestBuilder) Sublabels()(*ic2677db72cf10152bf239cd576c5c77e3349d9cbeec9950b4be8543327b82da9.SublabelsRequestBuilder) {
     return ic2677db72cf10152bf239cd576c5c77e3349d9cbeec9950b4be8543327b82da9.NewSublabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SublabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.informationProtection.sensitivityLabels.item.sublabels.item collection
+// SublabelsById provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
 func (m *SensitivityLabelItemRequestBuilder) SublabelsById(id string)(*ida90c3fc40c831f56dea7dd7e5bdb7609e5abe550e394464dc3ce3c554f41bdd.SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

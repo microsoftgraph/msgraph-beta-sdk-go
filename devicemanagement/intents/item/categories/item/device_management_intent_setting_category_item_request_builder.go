@@ -163,11 +163,11 @@ func (m *DeviceManagementIntentSettingCategoryItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentSettingCategoryable), nil
 }
-// Settings the settings property
+// Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
 func (m *DeviceManagementIntentSettingCategoryItemRequestBuilder) Settings()(*i6f5ecbb50b3a23bb965dcb095c581105f1656c71fe958419afb828d4dd8faa3c.SettingsRequestBuilder) {
     return i6f5ecbb50b3a23bb965dcb095c581105f1656c71fe958419afb828d4dd8faa3c.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.intents.item.categories.item.settings.item collection
+// SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
 func (m *DeviceManagementIntentSettingCategoryItemRequestBuilder) SettingsById(id string)(*ic0badc0b4b04a1bb99499349c8b314c126d2c085987633b9819ac2a473383b48.DeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

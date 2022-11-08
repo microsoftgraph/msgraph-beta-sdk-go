@@ -20,10 +20,12 @@ const (
     ANDROIDOPENSOURCEPROJECTUSERASSOCIATED_APPMANAGEMENTLEVEL
     // Android Open Source Project (AOSP) userless devices
     ANDROIDOPENSOURCEPROJECTUSERLESS_APPMANAGEMENTLEVEL
+    // Place holder for evolvable enum
+    UNKNOWNFUTUREVALUE_APPMANAGEMENTLEVEL
 )
 
 func (i AppManagementLevel) String() string {
-    return []string{"unspecified", "unmanaged", "mdm", "androidEnterprise", "androidEnterpriseDedicatedDevicesWithAzureAdSharedMode", "androidOpenSourceProjectUserAssociated", "androidOpenSourceProjectUserless"}[i]
+    return []string{"unspecified", "unmanaged", "mdm", "androidEnterprise", "androidEnterpriseDedicatedDevicesWithAzureAdSharedMode", "androidOpenSourceProjectUserAssociated", "androidOpenSourceProjectUserless", "unknownFutureValue"}[i]
 }
 func ParseAppManagementLevel(v string) (interface{}, error) {
     result := UNSPECIFIED_APPMANAGEMENTLEVEL
@@ -42,6 +44,8 @@ func ParseAppManagementLevel(v string) (interface{}, error) {
             result = ANDROIDOPENSOURCEPROJECTUSERASSOCIATED_APPMANAGEMENTLEVEL
         case "androidOpenSourceProjectUserless":
             result = ANDROIDOPENSOURCEPROJECTUSERLESS_APPMANAGEMENTLEVEL
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_APPMANAGEMENTLEVEL
         default:
             return 0, errors.New("Unknown AppManagementLevel value: " + v)
     }

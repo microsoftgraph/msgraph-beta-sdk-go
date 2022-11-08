@@ -51,7 +51,7 @@ type NextVersionDefinitionRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Category the category property
+// Category provides operations to manage the category property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *NextVersionDefinitionRequestBuilder) Category()(*id5b28d8da3b0080437018517a9e7c25762109b722c10c438d5d3ceabf215bff5.CategoryRequestBuilder) {
     return id5b28d8da3b0080437018517a9e7c25762109b722c10c438d5d3ceabf215bff5.NewCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -116,7 +116,7 @@ func (m *NextVersionDefinitionRequestBuilder) CreatePatchRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// DefinitionFile the definitionFile property
+// DefinitionFile provides operations to manage the definitionFile property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *NextVersionDefinitionRequestBuilder) DefinitionFile()(*i640cd655474ac9b2a590aa46892b03be1d3fee33b81b859f57cd63017a17ffe8.DefinitionFileRequestBuilder) {
     return i640cd655474ac9b2a590aa46892b03be1d3fee33b81b859f57cd63017a17ffe8.NewDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -174,11 +174,11 @@ func (m *NextVersionDefinitionRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable), nil
 }
-// Presentations the presentations property
+// Presentations provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *NextVersionDefinitionRequestBuilder) Presentations()(*i26cea1b628a9da082ff30062f4f11ed9cbd999596bbc99faa1213903e5f34d37.PresentationsRequestBuilder) {
     return i26cea1b628a9da082ff30062f4f11ed9cbd999596bbc99faa1213903e5f34d37.NewPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PresentationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyDefinitions.item.nextVersionDefinition.presentations.item collection
+// PresentationsById provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *NextVersionDefinitionRequestBuilder) PresentationsById(id string)(*ica1c1ab53345b0934afadc64800a3328e0c05a18bb3bf8722bfd4f522eabc4f3.GroupPolicyPresentationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -189,7 +189,7 @@ func (m *NextVersionDefinitionRequestBuilder) PresentationsById(id string)(*ica1
     }
     return ica1c1ab53345b0934afadc64800a3328e0c05a18bb3bf8722bfd4f522eabc4f3.NewGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PreviousVersionDefinition the previousVersionDefinition property
+// PreviousVersionDefinition provides operations to manage the previousVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.
 func (m *NextVersionDefinitionRequestBuilder) PreviousVersionDefinition()(*ib2ff762ff32474e301d90f37b46ab31571b5a05f779566ee07878e8081181c75.PreviousVersionDefinitionRequestBuilder) {
     return ib2ff762ff32474e301d90f37b46ab31571b5a05f779566ee07878e8081181c75.NewPreviousVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Organization provides operations to manage the collection of accessReviewDecision entities.
+// Organization 
 type Organization struct {
     DirectoryObject
     // The collection of service plans associated with the tenant. Not nullable.
@@ -27,6 +27,8 @@ type Organization struct {
     countryLetterCode *string
     // Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+    defaultUsageLocation *string
     // The directory size quota information of an organization.
     directorySizeQuota DirectorySizeQuotaable
     // The display name for the tenant.
@@ -66,7 +68,7 @@ type Organization struct {
     // The collection of domains associated with this tenant. Not nullable.
     verifiedDomains []VerifiedDomainable
 }
-// NewOrganization instantiates a new organization and sets the default values.
+// NewOrganization instantiates a new Organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),
@@ -115,6 +117,10 @@ func (m *Organization) GetCountryLetterCode()(*string) {
 func (m *Organization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
+// GetDefaultUsageLocation gets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+func (m *Organization) GetDefaultUsageLocation()(*string) {
+    return m.defaultUsageLocation
+}
 // GetDirectorySizeQuota gets the directorySizeQuota property value. The directory size quota information of an organization.
 func (m *Organization) GetDirectorySizeQuota()(DirectorySizeQuotaable) {
     return m.directorySizeQuota
@@ -139,6 +145,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     res["country"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCountry)
     res["countryLetterCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCountryLetterCode)
     res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
+    res["defaultUsageLocation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDefaultUsageLocation)
     res["directorySizeQuota"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDirectorySizeQuotaFromDiscriminatorValue , m.SetDirectorySizeQuota)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     res["extensions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue , m.SetExtensions)
@@ -282,6 +289,12 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("defaultUsageLocation", m.GetDefaultUsageLocation())
         if err != nil {
             return err
         }
@@ -441,6 +454,10 @@ func (m *Organization) SetCountryLetterCode(value *string)() {
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
+}
+// SetDefaultUsageLocation sets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+func (m *Organization) SetDefaultUsageLocation(value *string)() {
+    m.defaultUsageLocation = value
 }
 // SetDirectorySizeQuota sets the directorySizeQuota property value. The directory size quota information of an organization.
 func (m *Organization) SetDirectorySizeQuota(value DirectorySizeQuotaable)() {

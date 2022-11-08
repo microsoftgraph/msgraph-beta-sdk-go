@@ -109,7 +109,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// CreateToken the createToken property
+// CreateToken provides operations to call the createToken method.
 func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateToken()(*ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c.CreateTokenRequestBuilder) {
     return ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c.NewCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -167,7 +167,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) Patch(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable), nil
 }
-// RevokeToken the revokeToken property
+// RevokeToken provides operations to call the revokeToken method.
 func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) RevokeToken()(*i11bdf5bd909415fbbbbde18debe66a9b2f9f109ca57dc34d589ea53d118fd6bf.RevokeTokenRequestBuilder) {
     return i11bdf5bd909415fbbbbde18debe66a9b2f9f109ca57dc34d589ea53d118fd6bf.NewRevokeTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

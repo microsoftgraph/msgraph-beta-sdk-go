@@ -49,7 +49,7 @@ type UserAppInstallStatusItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// App the app property
+// App provides operations to manage the app property of the microsoft.graph.userAppInstallStatus entity.
 func (m *UserAppInstallStatusItemRequestBuilder) App()(*ic490bfa15729cb25d9948b8e388970092529ca560f41391770e7660c3d7c9699.AppRequestBuilder) {
     return ic490bfa15729cb25d9948b8e388970092529ca560f41391770e7660c3d7c9699.NewAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -130,11 +130,11 @@ func (m *UserAppInstallStatusItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// DeviceStatuses the deviceStatuses property
+// DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.
 func (m *UserAppInstallStatusItemRequestBuilder) DeviceStatuses()(*i70fe0c8c492862237342af1645c6716e74e8d1fc6bd0dcea8a7c03a1aae69df5.DeviceStatusesRequestBuilder) {
     return i70fe0c8c492862237342af1645c6716e74e8d1fc6bd0dcea8a7c03a1aae69df5.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.mobileApps.item.userStatuses.item.deviceStatuses.item collection
+// DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.
 func (m *UserAppInstallStatusItemRequestBuilder) DeviceStatusesById(id string)(*i52b737a53d0c03e6a268168d1f82ff2bdff242cee05a2ee607462da8e246d8ba.MobileAppInstallStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

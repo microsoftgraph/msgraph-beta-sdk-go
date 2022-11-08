@@ -48,7 +48,7 @@ type OwnedObjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *OwnedObjectsRequestBuilderGetQueryParameters
 }
-// Application the application property
+// Application casts the previous resource to application.
 func (m *OwnedObjectsRequestBuilder) Application()(*ic041e40f6a1573129defd7e3a13bfaee595aac6da323d7f2a3dd69c1b291d000.ApplicationRequestBuilder) {
     return ic041e40f6a1573129defd7e3a13bfaee595aac6da323d7f2a3dd69c1b291d000.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -71,7 +71,7 @@ func NewOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OwnedObjectsRequestBuilder) Count()(*i6abdeca92b8bcaac9f60823fd72189369671d17efbcbb21d501d3073582f37fc.CountRequestBuilder) {
     return i6abdeca92b8bcaac9f60823fd72189369671d17efbcbb21d501d3073582f37fc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -110,11 +110,11 @@ func (m *OwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Group the group property
+// Group casts the previous resource to group.
 func (m *OwnedObjectsRequestBuilder) Group()(*i61bea30e212f931c96aa3ecc9e7f3e4d9094b11a682a42233bc692755285c5cf.GroupRequestBuilder) {
     return i61bea30e212f931c96aa3ecc9e7f3e4d9094b11a682a42233bc692755285c5cf.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *OwnedObjectsRequestBuilder) ServicePrincipal()(*i38b6bcdb8583f7fc3c15b40a7b6804ec3035b7dd491bd08c078fe10d5e0a884b.ServicePrincipalRequestBuilder) {
     return i38b6bcdb8583f7fc3c15b40a7b6804ec3035b7dd491bd08c078fe10d5e0a884b.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

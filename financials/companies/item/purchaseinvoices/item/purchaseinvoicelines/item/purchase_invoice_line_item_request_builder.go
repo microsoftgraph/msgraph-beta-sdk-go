@@ -41,7 +41,7 @@ type PurchaseInvoiceLineItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Account the account property
+// Account provides operations to manage the account property of the microsoft.graph.purchaseInvoiceLine entity.
 func (m *PurchaseInvoiceLineItemRequestBuilder) Account()(*ie2e5bef67a7e8106830897b4790a818964af4e79807a777a83c0395718133484.AccountRequestBuilder) {
     return ie2e5bef67a7e8106830897b4790a818964af4e79807a777a83c0395718133484.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -113,7 +113,7 @@ func (m *PurchaseInvoiceLineItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable), nil
 }
-// Item the item property
+// Item provides operations to manage the item property of the microsoft.graph.purchaseInvoiceLine entity.
 func (m *PurchaseInvoiceLineItemRequestBuilder) Item()(*ie391dc3382801307bb68740c42b4f1301ab41dd9b59ec3276fbdd441fda52bfa.ItemRequestBuilder) {
     return ie391dc3382801307bb68740c42b4f1301ab41dd9b59ec3276fbdd441fda52bfa.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -143,7 +143,7 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable), nil
 }
-// InformationProtection the informationProtection property
+// InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.security.security entity.
 func (m *SecurityRequestBuilder) InformationProtection()(*i15f9a3b3af4d96595ad79f7304273f2359735b229271a4a0701a8b960e31a317.InformationProtectionRequestBuilder) {
     return i15f9a3b3af4d96595ad79f7304273f2359735b229271a4a0701a8b960e31a317.NewInformationProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

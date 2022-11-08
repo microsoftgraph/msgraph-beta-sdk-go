@@ -71,7 +71,7 @@ func NewLegalHoldsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewLegalHoldsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *LegalHoldsRequestBuilder) Count()(*i14188f6c6ceb79c9660b603399957b99ebb403caae8fa2bc8e2d8794f90f5dae.CountRequestBuilder) {
     return i14188f6c6ceb79c9660b603399957b99ebb403caae8fa2bc8e2d8794f90f5dae.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

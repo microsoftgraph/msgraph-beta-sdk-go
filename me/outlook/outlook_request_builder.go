@@ -95,11 +95,11 @@ func (m *OutlookRequestBuilder) Get(ctx context.Context, requestConfiguration *O
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookUserable), nil
 }
-// MasterCategories the masterCategories property
+// MasterCategories provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) MasterCategories()(*ia9234bf87076aa410405ec78141ae5dc5da406a4d6cc28b4a7be5092b0ee6296.MasterCategoriesRequestBuilder) {
     return ia9234bf87076aa410405ec78141ae5dc5da406a4d6cc28b4a7be5092b0ee6296.NewMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MasterCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.outlook.masterCategories.item collection
+// MasterCategoriesById provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*i84930f2750a94ee2130f035e9c9bdbcfffcb068c52a806479d0964d9d2020e40.OutlookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -122,11 +122,11 @@ func (m *OutlookRequestBuilder) SupportedTimeZones()(*ib55f78ab3053067f88ec9c133
 func (m *OutlookRequestBuilder) SupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*i767cd2a73c29879daa39ae90aebfabcd397159b1e720933714a03e3a5fceb72a.SupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
     return i767cd2a73c29879daa39ae90aebfabcd397159b1e720933714a03e3a5fceb72a.NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.pathParameters, m.requestAdapter, timeZoneStandard);
 }
-// TaskFolders the taskFolders property
+// TaskFolders provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) TaskFolders()(*i82b391a4153948653004ca349b6eac39e2c3e7b3926201627e2e3eea88aad251.TaskFoldersRequestBuilder) {
     return i82b391a4153948653004ca349b6eac39e2c3e7b3926201627e2e3eea88aad251.NewTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskFoldersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.outlook.taskFolders.item collection
+// TaskFoldersById provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*ic19e499d3e4541329156d6926f4f6db570dcce60051f4e1edd3f0b0db81cff9a.OutlookTaskFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -137,11 +137,11 @@ func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*ic19e499d3e454132915
     }
     return ic19e499d3e4541329156d6926f4f6db570dcce60051f4e1edd3f0b0db81cff9a.NewOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TaskGroups the taskGroups property
+// TaskGroups provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) TaskGroups()(*i7832228cb9bca400c299eb3f31f40734874357edc378956e69605b0e3b39ef21.TaskGroupsRequestBuilder) {
     return i7832228cb9bca400c299eb3f31f40734874357edc378956e69605b0e3b39ef21.NewTaskGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.outlook.taskGroups.item collection
+// TaskGroupsById provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*i984fa253a0580cb2d81d93e449a106836d455f23e065de8d03edfcc8dbf44acb.OutlookTaskGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -152,11 +152,11 @@ func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*i984fa253a0580cb2d81d
     }
     return i984fa253a0580cb2d81d93e449a106836d455f23e065de8d03edfcc8dbf44acb.NewOutlookTaskGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Tasks the tasks property
+// Tasks provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) Tasks()(*ibf3b7a436ea0ea400b8c6c0590a9be4465672faf619ae54e97e418017b25ef00.TasksRequestBuilder) {
     return ibf3b7a436ea0ea400b8c6c0590a9be4465672faf619ae54e97e418017b25ef00.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.outlook.tasks.item collection
+// TasksById provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) TasksById(id string)(*id3508c1f1aa1eff5970c7a4fe8b1bb7b16a0d219f157caf9278141e89295cd00.OutlookTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

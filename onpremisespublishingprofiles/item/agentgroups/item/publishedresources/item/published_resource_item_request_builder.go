@@ -48,7 +48,7 @@ type PublishedResourceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AgentGroups the agentGroups property
+// AgentGroups provides operations to manage the agentGroups property of the microsoft.graph.publishedResource entity.
 func (m *PublishedResourceItemRequestBuilder) AgentGroups()(*i93349e74bb039f3ba024302c7c8e7990c3684ed86252469ae3fbb8ec0392f332.AgentGroupsRequestBuilder) {
     return i93349e74bb039f3ba024302c7c8e7990c3684ed86252469ae3fbb8ec0392f332.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

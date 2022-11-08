@@ -71,7 +71,7 @@ func NewMobileAppIntentAndStatesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppIntentAndStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MobileAppIntentAndStatesRequestBuilder) Count()(*i0049afc7342ed26dc751f34e69ba849c31908c591d4d2c1cfa35ee5fdba7594e.CountRequestBuilder) {
     return i0049afc7342ed26dc751f34e69ba849c31908c591d4d2c1cfa35ee5fdba7594e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

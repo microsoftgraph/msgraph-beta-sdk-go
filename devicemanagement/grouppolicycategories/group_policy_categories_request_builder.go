@@ -71,7 +71,7 @@ func NewGroupPolicyCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *GroupPolicyCategoriesRequestBuilder) Count()(*i507fbf894fe31a0c42a8cba7c8e6abda59d82dfefea041c3dff7fd0872f4291b.CountRequestBuilder) {
     return i507fbf894fe31a0c42a8cba7c8e6abda59d82dfefea041c3dff7fd0872f4291b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

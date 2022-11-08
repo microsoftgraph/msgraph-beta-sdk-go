@@ -65,7 +65,7 @@ func NewClaimsMappingPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ClaimsMappingPoliciesRequestBuilder) Count()(*i0438131ff8ba54925db4c29af39223414dce78d26ebc13f6de96410d1c3938e7.CountRequestBuilder) {
     return i0438131ff8ba54925db4c29af39223414dce78d26ebc13f6de96410d1c3938e7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *ClaimsMappingPoliciesRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of servicePrincipal entities.
 func (m *ClaimsMappingPoliciesRequestBuilder) Ref()(*i51ab07afa75185d97ee9cec70456563295cd1a9edda1515508fe08ea98d946a5.RefRequestBuilder) {
     return i51ab07afa75185d97ee9cec70456563295cd1a9edda1515508fe08ea98d946a5.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

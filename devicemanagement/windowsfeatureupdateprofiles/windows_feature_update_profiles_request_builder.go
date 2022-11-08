@@ -71,7 +71,7 @@ func NewWindowsFeatureUpdateProfilesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsFeatureUpdateProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsFeatureUpdateProfilesRequestBuilder) Count()(*ia982d8a568462ee022ad1cccab7c070041b50d54d68cec4e6e82813941a3a944.CountRequestBuilder) {
     return ia982d8a568462ee022ad1cccab7c070041b50d54d68cec4e6e82813941a3a944.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewProviderTenantSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewProviderTenantSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ProviderTenantSettingsRequestBuilder) Count()(*ic8c1434bd2f1674b0199d32078b811be4c4b1e953bcfec933c5db55bca367f72.CountRequestBuilder) {
     return ic8c1434bd2f1674b0199d32078b811be4c4b1e953bcfec933c5db55bca367f72.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

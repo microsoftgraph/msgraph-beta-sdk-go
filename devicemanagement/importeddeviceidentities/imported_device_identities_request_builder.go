@@ -73,7 +73,7 @@ func NewImportedDeviceIdentitiesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewImportedDeviceIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ImportedDeviceIdentitiesRequestBuilder) Count()(*i480d1fa84691984b46caafa0c9d056d9c38c0452d47b9d4829c099dde2a6f199.CountRequestBuilder) {
     return i480d1fa84691984b46caafa0c9d056d9c38c0452d47b9d4829c099dde2a6f199.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -126,7 +126,7 @@ func (m *ImportedDeviceIdentitiesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityCollectionResponseable), nil
 }
-// ImportDeviceIdentityList the importDeviceIdentityList property
+// ImportDeviceIdentityList provides operations to call the importDeviceIdentityList method.
 func (m *ImportedDeviceIdentitiesRequestBuilder) ImportDeviceIdentityList()(*i76339fd2d40042286c7a9b4333ff7246712608a8ec9a407e5fc00e4a39473d6a.ImportDeviceIdentityListRequestBuilder) {
     return i76339fd2d40042286c7a9b4333ff7246712608a8ec9a407e5fc00e4a39473d6a.NewImportDeviceIdentityListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *ImportedDeviceIdentitiesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedDeviceIdentityable), nil
 }
-// SearchExistingIdentities the searchExistingIdentities property
+// SearchExistingIdentities provides operations to call the searchExistingIdentities method.
 func (m *ImportedDeviceIdentitiesRequestBuilder) SearchExistingIdentities()(*i2eb32d0eb94562e9b6f79567b48fe799dded573649031029fb86f8965772271e.SearchExistingIdentitiesRequestBuilder) {
     return i2eb32d0eb94562e9b6f79567b48fe799dded573649031029fb86f8965772271e.NewSearchExistingIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

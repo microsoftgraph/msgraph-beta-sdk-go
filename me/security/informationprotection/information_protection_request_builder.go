@@ -145,7 +145,7 @@ func (m *InformationProtectionRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable), nil
 }
-// LabelPolicySettings the labelPolicySettings property
+// LabelPolicySettings provides operations to manage the labelPolicySettings property of the microsoft.graph.security.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) LabelPolicySettings()(*i8e9491710a0bbc3a7573e318c1ef91e719520df41b38fe807612bba123ecdf72.LabelPolicySettingsRequestBuilder) {
     return i8e9491710a0bbc3a7573e318c1ef91e719520df41b38fe807612bba123ecdf72.NewLabelPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -168,11 +168,11 @@ func (m *InformationProtectionRequestBuilder) Patch(ctx context.Context, body i0
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable), nil
 }
-// SensitivityLabels the sensitivityLabels property
+// SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*i74de70411e6c153c3e8096355987b2554a1094928ddf669d102fd583e83c1756.SensitivityLabelsRequestBuilder) {
     return i74de70411e6c153c3e8096355987b2554a1094928ddf669d102fd583e83c1756.NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SensitivityLabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.security.informationProtection.sensitivityLabels.item collection
+// SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*if34b41d5c18bbd593001d0c4b8898efc24fb05ad9b2133b0d81a33e8c36c0c29.SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

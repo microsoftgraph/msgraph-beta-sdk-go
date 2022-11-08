@@ -164,15 +164,15 @@ func (m *TaskProcessingResultItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskProcessingResultable), nil
 }
-// Resume the resume property
+// Resume provides operations to call the resume method.
 func (m *TaskProcessingResultItemRequestBuilder) Resume()(*ic306b8893db0a909e635297f5f4b27abf655c601c6bed685caeb8454757e3c78.ResumeRequestBuilder) {
     return ic306b8893db0a909e635297f5f4b27abf655c601c6bed685caeb8454757e3c78.NewResumeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Subject the subject property
+// Subject provides operations to manage the subject property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
 func (m *TaskProcessingResultItemRequestBuilder) Subject()(*ia121c070e8ddf8f82916dc8f7b32bbb1c81da44ded0b39b30be3d318453d65e6.SubjectRequestBuilder) {
     return ia121c070e8ddf8f82916dc8f7b32bbb1c81da44ded0b39b30be3d318453d65e6.NewSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Task the task property
+// Task provides operations to manage the task property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
 func (m *TaskProcessingResultItemRequestBuilder) Task()(*i4f1db5f698b2097a2bda80ec3e37e5ac56f98bfe0c3d167be9f521e0aa0c7055.TaskRequestBuilder) {
     return i4f1db5f698b2097a2bda80ec3e37e5ac56f98bfe0c3d167be9f521e0aa0c7055.NewTaskRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

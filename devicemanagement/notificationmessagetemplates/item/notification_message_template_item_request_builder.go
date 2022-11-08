@@ -145,11 +145,11 @@ func (m *NotificationMessageTemplateItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotificationMessageTemplateable), nil
 }
-// LocalizedNotificationMessages the localizedNotificationMessages property
+// LocalizedNotificationMessages provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
 func (m *NotificationMessageTemplateItemRequestBuilder) LocalizedNotificationMessages()(*ie131f760e231c41c85ab4a627830ad8e63680d71cfdfeb33b08cb086c57f4e8a.LocalizedNotificationMessagesRequestBuilder) {
     return ie131f760e231c41c85ab4a627830ad8e63680d71cfdfeb33b08cb086c57f4e8a.NewLocalizedNotificationMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// LocalizedNotificationMessagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.notificationMessageTemplates.item.localizedNotificationMessages.item collection
+// LocalizedNotificationMessagesById provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
 func (m *NotificationMessageTemplateItemRequestBuilder) LocalizedNotificationMessagesById(id string)(*i8f7ffa70b6e5e6cd3a41114a81ef71a7ef4f81cad3974df901008b8a88e8cf8e.LocalizedNotificationMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,7 +179,7 @@ func (m *NotificationMessageTemplateItemRequestBuilder) Patch(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotificationMessageTemplateable), nil
 }
-// SendTestMessage the sendTestMessage property
+// SendTestMessage provides operations to call the sendTestMessage method.
 func (m *NotificationMessageTemplateItemRequestBuilder) SendTestMessage()(*i92bdddc6d39f7ceb527fbc3a0c281fdad40f0d03ea69fda531a27f1fb720fdc0.SendTestMessageRequestBuilder) {
     return i92bdddc6d39f7ceb527fbc3a0c281fdad40f0d03ea69fda531a27f1fb720fdc0.NewSendTestMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

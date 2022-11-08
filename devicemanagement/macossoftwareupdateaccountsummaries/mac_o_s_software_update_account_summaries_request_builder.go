@@ -71,7 +71,7 @@ func NewMacOSSoftwareUpdateAccountSummariesRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewMacOSSoftwareUpdateAccountSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MacOSSoftwareUpdateAccountSummariesRequestBuilder) Count()(*i489cc74bef3004f249dde5c4a556d17b17597e69965458cdcc4754179c41709b.CountRequestBuilder) {
     return i489cc74bef3004f249dde5c4a556d17b17597e69965458cdcc4754179c41709b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewAcronymsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewAcronymsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AcronymsRequestBuilder) Count()(*i4676165c3a2c7675fa9df0975e39bd9ef9f4527be649374d7054fde3700e4256.CountRequestBuilder) {
     return i4676165c3a2c7675fa9df0975e39bd9ef9f4527be649374d7054fde3700e4256.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

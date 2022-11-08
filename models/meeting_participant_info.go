@@ -9,7 +9,7 @@ import (
 type MeetingParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Identity information of the participant.
+    // Identity information of the participant. Only the user property is used for onlineMeeting participants.
     identity IdentitySetable
     // The OdataType property
     odataType *string
@@ -44,7 +44,7 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80
     res["upn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUpn)
     return res
 }
-// GetIdentity gets the identity property value. Identity information of the participant.
+// GetIdentity gets the identity property value. Identity information of the participant. Only the user property is used for onlineMeeting participants.
 func (m *MeetingParticipantInfo) GetIdentity()(IdentitySetable) {
     return m.identity
 }
@@ -99,7 +99,7 @@ func (m *MeetingParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *MeetingParticipantInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetIdentity sets the identity property value. Identity information of the participant.
+// SetIdentity sets the identity property value. Identity information of the participant. Only the user property is used for onlineMeeting participants.
 func (m *MeetingParticipantInfo) SetIdentity(value IdentitySetable)() {
     m.identity = value
 }

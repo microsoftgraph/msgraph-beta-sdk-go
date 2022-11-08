@@ -56,7 +56,7 @@ type EducationAssignmentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Categories the categories property
+// Categories provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Categories()(*i9f6aff0f0fb85711382cc277517e1973a86d4d579f3d7e2f1c175fad1b973d28.CategoriesRequestBuilder) {
     return i9f6aff0f0fb85711382cc277517e1973a86d4d579f3d7e2f1c175fad1b973d28.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -186,15 +186,15 @@ func (m *EducationAssignmentItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable), nil
 }
-// Publish the publish property
+// Publish provides operations to call the publish method.
 func (m *EducationAssignmentItemRequestBuilder) Publish()(*iba118f4097921de3e02dbaeb597a1cf1cc65f08ed80fe4ffdd011bbdeb936ed2.PublishRequestBuilder) {
     return iba118f4097921de3e02dbaeb597a1cf1cc65f08ed80fe4ffdd011bbdeb936ed2.NewPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Resources the resources property
+// Resources provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Resources()(*i7aec1a2ebd08a150442dd3f2dab446f096282c891d32dee633746b4a74177b6d.ResourcesRequestBuilder) {
     return i7aec1a2ebd08a150442dd3f2dab446f096282c891d32dee633746b4a74177b6d.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.assignments.item.resources.item collection
+// ResourcesById provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) ResourcesById(id string)(*i7406f0fbcb81f97517ec46d1a396eee4f12972305c2bd1f4a72ae53516d8d8b3.EducationAssignmentResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -205,23 +205,23 @@ func (m *EducationAssignmentItemRequestBuilder) ResourcesById(id string)(*i7406f
     }
     return i7406f0fbcb81f97517ec46d1a396eee4f12972305c2bd1f4a72ae53516d8d8b3.NewEducationAssignmentResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Rubric the rubric property
+// Rubric provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Rubric()(*iaaa8edd814077594dcfe08fabae894b6b945f70a45186a958cdb96a4f3c66924.RubricRequestBuilder) {
     return iaaa8edd814077594dcfe08fabae894b6b945f70a45186a958cdb96a4f3c66924.NewRubricRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetUpFeedbackResourcesFolder the setUpFeedbackResourcesFolder property
+// SetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
 func (m *EducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*icaf5ade0d32878478f4fc3b3161eff9ab10621464aed9f1562c1f92c10d70e8c.SetUpFeedbackResourcesFolderRequestBuilder) {
     return icaf5ade0d32878478f4fc3b3161eff9ab10621464aed9f1562c1f92c10d70e8c.NewSetUpFeedbackResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetUpResourcesFolder the setUpResourcesFolder property
+// SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
 func (m *EducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*i1902f3a0ccc4b4d090900e03e4ad1c30b5e8404be560e8d2ae81ccf93c63bc9b.SetUpResourcesFolderRequestBuilder) {
     return i1902f3a0ccc4b4d090900e03e4ad1c30b5e8404be560e8d2ae81ccf93c63bc9b.NewSetUpResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Submissions the submissions property
+// Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) Submissions()(*i34f2686ac9e572a0aab5c6d3a460d4aab368203139a21a9e6676179cbc76f29d.SubmissionsRequestBuilder) {
     return i34f2686ac9e572a0aab5c6d3a460d4aab368203139a21a9e6676179cbc76f29d.NewSubmissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SubmissionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.assignments.item.submissions.item collection
+// SubmissionsById provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 func (m *EducationAssignmentItemRequestBuilder) SubmissionsById(id string)(*i5da31198b4698c9632f11b1d4cb2162d37d7be431577136dcb6670fb9876d353.EducationSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

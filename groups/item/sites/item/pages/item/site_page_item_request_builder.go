@@ -162,7 +162,7 @@ func (m *SitePageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SitePageable), nil
 }
-// Publish the publish property
+// Publish provides operations to call the publish method.
 func (m *SitePageItemRequestBuilder) Publish()(*ica99574f6a3b2318222bb8e6ca1e24877c68357214625eeea45c2f89e4b0666d.PublishRequestBuilder) {
     return ica99574f6a3b2318222bb8e6ca1e24877c68357214625eeea45c2f89e4b0666d.NewPublishRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

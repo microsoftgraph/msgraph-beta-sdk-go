@@ -50,7 +50,7 @@ type RecommendationResourceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Complete the complete property
+// Complete provides operations to call the complete method.
 func (m *RecommendationResourceItemRequestBuilder) Complete()(*i8bd3a602819bab93ef30ba13423316d36438881a750ab8b4323f2e30935f8ca2.CompleteRequestBuilder) {
     return i8bd3a602819bab93ef30ba13423316d36438881a750ab8b4323f2e30935f8ca2.NewCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -131,7 +131,7 @@ func (m *RecommendationResourceItemRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Dismiss the dismiss property
+// Dismiss provides operations to call the dismiss method.
 func (m *RecommendationResourceItemRequestBuilder) Dismiss()(*i91abf1f45533fe91ddeadb12b2f158073abbf92e451bc97c91cd0e45bb1421a1.DismissRequestBuilder) {
     return i91abf1f45533fe91ddeadb12b2f158073abbf92e451bc97c91cd0e45bb1421a1.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -173,11 +173,11 @@ func (m *RecommendationResourceItemRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable), nil
 }
-// Postpone the postpone property
+// Postpone provides operations to call the postpone method.
 func (m *RecommendationResourceItemRequestBuilder) Postpone()(*i7c01e9ec847c8cee15c0ce69a7ffc881ef74d2d10434a70d532cb3f20c36890f.PostponeRequestBuilder) {
     return i7c01e9ec847c8cee15c0ce69a7ffc881ef74d2d10434a70d532cb3f20c36890f.NewPostponeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Reactivate the reactivate property
+// Reactivate provides operations to call the reactivate method.
 func (m *RecommendationResourceItemRequestBuilder) Reactivate()(*i4bf83ccc76f94e75a1334b2b27a8a4d5f954c67c2ac09f3211ab9279a2c0f379.ReactivateRequestBuilder) {
     return i4bf83ccc76f94e75a1334b2b27a8a4d5f954c67c2ac09f3211ab9279a2c0f379.NewReactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

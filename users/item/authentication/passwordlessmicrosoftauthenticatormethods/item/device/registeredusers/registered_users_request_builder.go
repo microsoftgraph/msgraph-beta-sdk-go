@@ -67,7 +67,7 @@ func NewRegisteredUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewRegisteredUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RegisteredUsersRequestBuilder) Count()(*id271f8f3427b9b873934a3ec31959ff5fd4de4dea6ac7064f3c9c28b7ff46f7c.CountRequestBuilder) {
     return id271f8f3427b9b873934a3ec31959ff5fd4de4dea6ac7064f3c9c28b7ff46f7c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -87,7 +87,7 @@ func (m *RegisteredUsersRequestBuilder) CreateGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *RegisteredUsersRequestBuilder) Endpoint()(*i7957b6b43deebe38325b93c57149f0e7d51cadf1b40704f0ad1af6ad1f32a29a.EndpointRequestBuilder) {
     return i7957b6b43deebe38325b93c57149f0e7d51cadf1b40704f0ad1af6ad1f32a29a.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -110,11 +110,11 @@ func (m *RegisteredUsersRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *RegisteredUsersRequestBuilder) ServicePrincipal()(*i253bc9e78e315df32d67b1ae3f81bcb0c16504eb3d417559674392ff06364674.ServicePrincipalRequestBuilder) {
     return i253bc9e78e315df32d67b1ae3f81bcb0c16504eb3d417559674392ff06364674.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *RegisteredUsersRequestBuilder) User()(*i49d70fba6849b6effacaf37e9a611ce60d3dffc12c433c51046299be96f8f3da.UserRequestBuilder) {
     return i49d70fba6849b6effacaf37e9a611ce60d3dffc12c433c51046299be96f8f3da.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

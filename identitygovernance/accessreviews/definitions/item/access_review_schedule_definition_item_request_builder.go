@@ -145,11 +145,11 @@ func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionable), nil
 }
-// Instances the instances property
+// Instances provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Instances()(*i5591bb267508ecb75034e78615aaee45cc17284223ea50adf429b06c79b258f9.InstancesRequestBuilder) {
     return i5591bb267508ecb75034e78615aaee45cc17284223ea50adf429b06c79b258f9.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InstancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item collection
+// InstancesById provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) InstancesById(id string)(*idac0b3111695ecd4dc16b6628acb0b3c5ae374573f87c852ffc058f95d7abdab.AccessReviewInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,7 +179,7 @@ func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionable), nil
 }
-// Stop the stop property
+// Stop provides operations to call the stop method.
 func (m *AccessReviewScheduleDefinitionItemRequestBuilder) Stop()(*i49ec1b54a19ce17f31feaddd613b4715b173af48df3cdd9ae28ad65e94f03408.StopRequestBuilder) {
     return i49ec1b54a19ce17f31feaddd613b4715b173af48df3cdd9ae28ad65e94f03408.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

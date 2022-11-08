@@ -87,7 +87,7 @@ func (m *DirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*ieb2fc2b46d2a27a112045b5787377ae0421730227604b6438a89053350c68abb.ServicePrincipalRequestBuilder) {
     return ieb2fc2b46d2a27a112045b5787377ae0421730227604b6438a89053350c68abb.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

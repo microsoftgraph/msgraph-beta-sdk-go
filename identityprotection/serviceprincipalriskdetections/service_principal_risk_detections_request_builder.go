@@ -71,7 +71,7 @@ func NewServicePrincipalRiskDetectionsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalRiskDetectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) Count()(*i2a7c5b962a0301daf3d885c22f0964c1c24132187b7ee1638c6b00926beff25a.CountRequestBuilder) {
     return i2a7c5b962a0301daf3d885c22f0964c1c24132187b7ee1638c6b00926beff25a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

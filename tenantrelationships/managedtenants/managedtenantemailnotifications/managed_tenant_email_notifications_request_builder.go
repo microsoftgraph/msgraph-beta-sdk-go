@@ -71,7 +71,7 @@ func NewManagedTenantEmailNotificationsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantEmailNotificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedTenantEmailNotificationsRequestBuilder) Count()(*i0ec0ea80fffd901cd23291a72dd3e98a6b017163ff419295e325658643811524.CountRequestBuilder) {
     return i0ec0ea80fffd901cd23291a72dd3e98a6b017163ff419295e325658643811524.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -72,7 +72,7 @@ func NewClientConfigurationsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewClientConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ClientConfigurationsRequestBuilder) Count()(*if29faf001b603fa8aa22a6114cacf638e8e9ef0052023c9d636614374f5d88d4.CountRequestBuilder) {
     return if29faf001b603fa8aa22a6114cacf638e8e9ef0052023c9d636614374f5d88d4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,7 +144,7 @@ func (m *ClientConfigurationsRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable), nil
 }
-// UpdatePriorities the updatePriorities property
+// UpdatePriorities provides operations to call the updatePriorities method.
 func (m *ClientConfigurationsRequestBuilder) UpdatePriorities()(*i5b05cfeb81737764b1b449f41eb8fb567b64805ba33849ab4222a56ae58eb02d.UpdatePrioritiesRequestBuilder) {
     return i5b05cfeb81737764b1b449f41eb8fb567b64805ba33849ab4222a56ae58eb02d.NewUpdatePrioritiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

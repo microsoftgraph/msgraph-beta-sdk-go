@@ -71,7 +71,7 @@ func NewWindowsDriverUpdateProfilesRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDriverUpdateProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsDriverUpdateProfilesRequestBuilder) Count()(*i19bf96f814779757f8518b376df20008afb6ed4d24474f053347e145d222d39e.CountRequestBuilder) {
     return i19bf96f814779757f8518b376df20008afb6ed4d24474f053347e145d222d39e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

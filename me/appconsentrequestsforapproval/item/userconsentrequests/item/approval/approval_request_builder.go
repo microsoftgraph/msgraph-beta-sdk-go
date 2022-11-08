@@ -163,11 +163,11 @@ func (m *ApprovalRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable), nil
 }
-// Steps the steps property
+// Steps provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ApprovalRequestBuilder) Steps()(*ibb57e3796c27730914c962add83c1d0bed61c742002d5f7577c5ee04f51f1dd8.StepsRequestBuilder) {
     return ibb57e3796c27730914c962add83c1d0bed61c742002d5f7577c5ee04f51f1dd8.NewStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// StepsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.appConsentRequestsForApproval.item.userConsentRequests.item.approval.steps.item collection
+// StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
 func (m *ApprovalRequestBuilder) StepsById(id string)(*i5d52076e1e2824e38e9ff8f8f0226ae0fdf93e7031774cec6b0d39489bff6682.ApprovalStepItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

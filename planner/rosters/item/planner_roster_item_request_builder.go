@@ -146,11 +146,11 @@ func (m *PlannerRosterItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable), nil
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
 func (m *PlannerRosterItemRequestBuilder) Members()(*i9ad7de99f1b757c4ff16ccef4d347a843f114b88ad7c9579c76ffa1dd8f293f9.MembersRequestBuilder) {
     return i9ad7de99f1b757c4ff16ccef4d347a843f114b88ad7c9579c76ffa1dd8f293f9.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.rosters.item.members.item collection
+// MembersById provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
 func (m *PlannerRosterItemRequestBuilder) MembersById(id string)(*ie53712fa7eb3bcb49fdf48153b4145c0918f55b3d8a9851bfbf8ce2045244c3c.PlannerRosterMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *PlannerRosterItemRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable), nil
 }
-// Plans the plans property
+// Plans provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
 func (m *PlannerRosterItemRequestBuilder) Plans()(*i2243091c8fa68ba9e7a97bce329cf8353df512034105a6cdb60022d8a3462d3f.PlansRequestBuilder) {
     return i2243091c8fa68ba9e7a97bce329cf8353df512034105a6cdb60022d8a3462d3f.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PlansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.planner.rosters.item.plans.item collection
+// PlansById provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
 func (m *PlannerRosterItemRequestBuilder) PlansById(id string)(*if82e900011d72e8f7a8566012bb928604f336d22e9e7bd8049c43486ff3d7ff3.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

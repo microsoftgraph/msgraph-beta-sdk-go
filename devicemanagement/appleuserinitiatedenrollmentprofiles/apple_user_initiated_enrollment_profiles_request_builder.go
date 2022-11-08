@@ -71,7 +71,7 @@ func NewAppleUserInitiatedEnrollmentProfilesRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewAppleUserInitiatedEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AppleUserInitiatedEnrollmentProfilesRequestBuilder) Count()(*iaef11290d38eff1a75effc8d7e76332b78af15e677a55c05dd53b63b267df7b6.CountRequestBuilder) {
     return iaef11290d38eff1a75effc8d7e76332b78af15e677a55c05dd53b63b267df7b6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

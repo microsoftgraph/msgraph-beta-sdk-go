@@ -163,11 +163,11 @@ func (m *DelegatedAdminCustomerItemRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminCustomerable), nil
 }
-// ServiceManagementDetails the serviceManagementDetails property
+// ServiceManagementDetails provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
 func (m *DelegatedAdminCustomerItemRequestBuilder) ServiceManagementDetails()(*i5093588ff828a456fe58938e3d5759dcf3b70d94b295e3f2b0fb96ffa9792d00.ServiceManagementDetailsRequestBuilder) {
     return i5093588ff828a456fe58938e3d5759dcf3b70d94b295e3f2b0fb96ffa9792d00.NewServiceManagementDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServiceManagementDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.delegatedAdminCustomers.item.serviceManagementDetails.item collection
+// ServiceManagementDetailsById provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
 func (m *DelegatedAdminCustomerItemRequestBuilder) ServiceManagementDetailsById(id string)(*i4df86d6dec0a2f78e7560e7f073d0b13519817d64ffbcb9980e4bb522198eb2b.DelegatedAdminServiceManagementDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

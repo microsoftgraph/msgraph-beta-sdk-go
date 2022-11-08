@@ -71,7 +71,7 @@ func NewAnniversariesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewAnniversariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AnniversariesRequestBuilder) Count()(*ifcf1ffc3b5789a9a90db163028dd7a253c3980916f521ed9509535b97d181ff7.CountRequestBuilder) {
     return ifcf1ffc3b5789a9a90db163028dd7a253c3980916f521ed9509535b97d181ff7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

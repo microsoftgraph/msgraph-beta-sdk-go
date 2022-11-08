@@ -71,7 +71,7 @@ func NewDispositionReviewStagesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewDispositionReviewStagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DispositionReviewStagesRequestBuilder) Count()(*i3d3e92d57774d596a24845a2aa2328505c92f7b3c0694085ec6d80aed360a881.CountRequestBuilder) {
     return i3d3e92d57774d596a24845a2aa2328505c92f7b3c0694085ec6d80aed360a881.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

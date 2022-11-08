@@ -49,7 +49,7 @@ type OwnedObjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *OwnedObjectsRequestBuilderGetQueryParameters
 }
-// Application the application property
+// Application casts the previous resource to application.
 func (m *OwnedObjectsRequestBuilder) Application()(*ic9213a91056269d46044c3d272dddda936dac5e2969317d84a1ce5309de25111.ApplicationRequestBuilder) {
     return ic9213a91056269d46044c3d272dddda936dac5e2969317d84a1ce5309de25111.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -72,7 +72,7 @@ func NewOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *OwnedObjectsRequestBuilder) Count()(*i56c59dca0958c7e4544d9406366ddb1a4747561d1d8ebe793dff6b9c73fe3f96.CountRequestBuilder) {
     return i56c59dca0958c7e4544d9406366ddb1a4747561d1d8ebe793dff6b9c73fe3f96.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -92,7 +92,7 @@ func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *OwnedObjectsRequestBuilder) Endpoint()(*i8bbbcf96afb909a4b9175c65e9efc752c3d426ed8dac3672190658251a65cc73.EndpointRequestBuilder) {
     return i8bbbcf96afb909a4b9175c65e9efc752c3d426ed8dac3672190658251a65cc73.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -115,11 +115,11 @@ func (m *OwnedObjectsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Group the group property
+// Group casts the previous resource to group.
 func (m *OwnedObjectsRequestBuilder) Group()(*i8018702d3846ca256f0d8c83b18ef29d5f76d470fbdee3bc0ae88763b4926944.GroupRequestBuilder) {
     return i8018702d3846ca256f0d8c83b18ef29d5f76d470fbdee3bc0ae88763b4926944.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *OwnedObjectsRequestBuilder) ServicePrincipal()(*i25be7a0abe3623e432f3d68d414148d114907c272263b51ade9c88e7396feede.ServicePrincipalRequestBuilder) {
     return i25be7a0abe3623e432f3d68d414148d114907c272263b51ade9c88e7396feede.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

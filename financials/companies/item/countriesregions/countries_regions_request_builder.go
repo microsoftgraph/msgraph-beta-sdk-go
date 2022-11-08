@@ -71,7 +71,7 @@ func NewCountriesRegionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewCountriesRegionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *CountriesRegionsRequestBuilder) Count()(*i881bc3edfa3e18b88ea2f779119bf4504cac991b8bbf1caeb568476bf3424c8e.CountRequestBuilder) {
     return i881bc3edfa3e18b88ea2f779119bf4504cac991b8bbf1caeb568476bf3424c8e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -51,11 +51,11 @@ type EducationSchoolItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AdministrativeUnit the administrativeUnit property
+// AdministrativeUnit provides operations to manage the administrativeUnit property of the microsoft.graph.educationSchool entity.
 func (m *EducationSchoolItemRequestBuilder) AdministrativeUnit()(*icfb6e32f97bd4235dc90841a8db94d6ae91f82157354db59ed54dd9f182a6096.AdministrativeUnitRequestBuilder) {
     return icfb6e32f97bd4235dc90841a8db94d6ae91f82157354db59ed54dd9f182a6096.NewAdministrativeUnitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Classes the classes property
+// Classes provides operations to manage the classes property of the microsoft.graph.educationSchool entity.
 func (m *EducationSchoolItemRequestBuilder) Classes()(*i29849b7bdbfecd87e4bbd3df4a5e86328cd6ecaa3abc6305f327b6fbe08c2513.ClassesRequestBuilder) {
     return i29849b7bdbfecd87e4bbd3df4a5e86328cd6ecaa3abc6305f327b6fbe08c2513.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -185,7 +185,7 @@ func (m *EducationSchoolItemRequestBuilder) Patch(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable), nil
 }
-// Users the users property
+// Users provides operations to manage the users property of the microsoft.graph.educationSchool entity.
 func (m *EducationSchoolItemRequestBuilder) Users()(*i73b5871e98e80de0617052da16b736c5337770c4ccdfb726277a00424b92fe7d.UsersRequestBuilder) {
     return i73b5871e98e80de0617052da16b736c5337770c4ccdfb726277a00424b92fe7d.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

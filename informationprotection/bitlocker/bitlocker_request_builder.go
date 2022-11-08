@@ -88,11 +88,11 @@ func (m *BitlockerRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bitlockerable), nil
 }
-// RecoveryKeys the recoveryKeys property
+// RecoveryKeys provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *BitlockerRequestBuilder) RecoveryKeys()(*i3aff3a656fbbde11cf121aa411c961df9053d91b2360949922f9c52f0a45d2c5.RecoveryKeysRequestBuilder) {
     return i3aff3a656fbbde11cf121aa411c961df9053d91b2360949922f9c52f0a45d2c5.NewRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RecoveryKeysById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.bitlocker.recoveryKeys.item collection
+// RecoveryKeysById provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
 func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*if2ebcd3e1f6994611d75fef91c6a8af89427d1b5902b51756526761c63ff4f79.BitlockerRecoveryKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

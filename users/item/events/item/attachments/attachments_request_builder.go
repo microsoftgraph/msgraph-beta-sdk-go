@@ -70,7 +70,7 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAttachmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *AttachmentsRequestBuilder) Count()(*iee7b6ef0b246d06686903f54a5205e388bfc81302de289cec88319f80452e750.CountRequestBuilder) {
     return iee7b6ef0b246d06686903f54a5205e388bfc81302de289cec88319f80452e750.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// CreateUploadSession the createUploadSession property
+// CreateUploadSession provides operations to call the createUploadSession method.
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*ib8f638495b2a070271ea5ea13f03bb60ecc559ce9401414a2626d0ea66ee1a83.CreateUploadSessionRequestBuilder) {
     return ib8f638495b2a070271ea5ea13f03bb60ecc559ce9401414a2626d0ea66ee1a83.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

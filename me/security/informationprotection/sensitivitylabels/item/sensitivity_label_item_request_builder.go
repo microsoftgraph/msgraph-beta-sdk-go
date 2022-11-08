@@ -143,7 +143,7 @@ func (m *SensitivityLabelItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable), nil
 }
-// Parent the parent property
+// Parent provides operations to manage the parent property of the microsoft.graph.security.sensitivityLabel entity.
 func (m *SensitivityLabelItemRequestBuilder) Parent()(*i2a2a54c7ce0d6aa228b6d250731199d77c5aea6e276ad637c0d3f3c04eda75c6.ParentRequestBuilder) {
     return i2a2a54c7ce0d6aa228b6d250731199d77c5aea6e276ad637c0d3f3c04eda75c6.NewParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

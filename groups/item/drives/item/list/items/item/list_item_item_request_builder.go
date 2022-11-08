@@ -57,11 +57,11 @@ type ListItemItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activities the activities property
+// Activities provides operations to manage the activities property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) Activities()(*i0cb76728147daa09bf4bbab15e0bce8b43f90519e713aa589ac36df5793bdd56.ActivitiesRequestBuilder) {
     return i0cb76728147daa09bf4bbab15e0bce8b43f90519e713aa589ac36df5793bdd56.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.items.item.activities.item collection
+// ActivitiesById provides operations to manage the activities property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) ActivitiesById(id string)(*i1b1aa7803d99a08f9dec1d866f0f80448a026373dcff21f717d40a5d9d38abfa.ItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -72,7 +72,7 @@ func (m *ListItemItemRequestBuilder) ActivitiesById(id string)(*i1b1aa7803d99a08
     }
     return i1b1aa7803d99a08f9dec1d866f0f80448a026373dcff21f717d40a5d9d38abfa.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Analytics the analytics property
+// Analytics provides operations to manage the analytics property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) Analytics()(*i8f246cc1f550296948d6bd1b237a0f41a0c07cc208ef8ec818d665b5965bff58.AnalyticsRequestBuilder) {
     return i8f246cc1f550296948d6bd1b237a0f41a0c07cc208ef8ec818d665b5965bff58.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -123,7 +123,7 @@ func (m *ListItemItemRequestBuilder) CreateGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// CreateLink the createLink property
+// CreateLink provides operations to call the createLink method.
 func (m *ListItemItemRequestBuilder) CreateLink()(*i108b6cb2f69e24ec22d180c8bdcbae840c0885d00af2a5818a6e88ed86daa0d1.CreateLinkRequestBuilder) {
     return i108b6cb2f69e24ec22d180c8bdcbae840c0885d00af2a5818a6e88ed86daa0d1.NewCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -157,11 +157,11 @@ func (m *ListItemItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// DocumentSetVersions the documentSetVersions property
+// DocumentSetVersions provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) DocumentSetVersions()(*i1e8c7c338e42aeb9c74fce9d7b9403c5f0d4655c202f1e06d08f98874d015271.DocumentSetVersionsRequestBuilder) {
     return i1e8c7c338e42aeb9c74fce9d7b9403c5f0d4655c202f1e06d08f98874d015271.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.items.item.documentSetVersions.item collection
+// DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*i5b2ebfed04e3431fd964eb61a2f73cba78b041fc31994903425814dbc31291cd.DocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -172,11 +172,11 @@ func (m *ListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*i5b2ebf
     }
     return i5b2ebfed04e3431fd964eb61a2f73cba78b041fc31994903425814dbc31291cd.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DriveItem the driveItem property
+// DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) DriveItem()(*id1e8b72d2181d1aa7b67436559ba163fa55c18f849453ec6ead6a4b7ff61f01a.DriveItemRequestBuilder) {
     return id1e8b72d2181d1aa7b67436559ba163fa55c18f849453ec6ead6a4b7ff61f01a.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Fields the fields property
+// Fields provides operations to manage the fields property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) Fields()(*i39b604f736645c8f40bce28fbfefd28ffd08f0d1e56ddec40290fdf73ab62cf4.FieldsRequestBuilder) {
     return i39b604f736645c8f40bce28fbfefd28ffd08f0d1e56ddec40290fdf73ab62cf4.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -222,11 +222,11 @@ func (m *ListItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable), nil
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) Versions()(*i1148b86be59e2cffb40af45781417a440a472151211dc7c69df13af98c89b03b.VersionsRequestBuilder) {
     return i1148b86be59e2cffb40af45781417a440a472151211dc7c69df13af98c89b03b.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item.list.items.item.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
 func (m *ListItemItemRequestBuilder) VersionsById(id string)(*ia375d1f56654ebe644d9a09084b16a11ac0c9bff7bd3fe6f839b19cc150e55be.ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

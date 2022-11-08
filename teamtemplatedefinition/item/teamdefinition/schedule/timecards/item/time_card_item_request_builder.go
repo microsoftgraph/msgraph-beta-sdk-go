@@ -50,11 +50,11 @@ type TimeCardItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClockOut the clockOut property
+// ClockOut provides operations to call the clockOut method.
 func (m *TimeCardItemRequestBuilder) ClockOut()(*i2c62ff957de7606fbe7e762b37c84cdb8f0cc2a15a08770ff10abce74a3cbf09.ClockOutRequestBuilder) {
     return i2c62ff957de7606fbe7e762b37c84cdb8f0cc2a15a08770ff10abce74a3cbf09.NewClockOutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Confirm the confirm property
+// Confirm provides operations to call the confirm method.
 func (m *TimeCardItemRequestBuilder) Confirm()(*id709bff395df540eb314290e5bc41a404b3068169c7146e3c4337835f03ed994.ConfirmRequestBuilder) {
     return id709bff395df540eb314290e5bc41a404b3068169c7146e3c4337835f03ed994.NewConfirmRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -135,7 +135,7 @@ func (m *TimeCardItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// EndBreak the endBreak property
+// EndBreak provides operations to call the endBreak method.
 func (m *TimeCardItemRequestBuilder) EndBreak()(*i74320898fa41927de6f3de0efeceded94f134cf4da93f2e1beec9ed7b1006d55.EndBreakRequestBuilder) {
     return i74320898fa41927de6f3de0efeceded94f134cf4da93f2e1beec9ed7b1006d55.NewEndBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -177,7 +177,7 @@ func (m *TimeCardItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
 }
-// StartBreak the startBreak property
+// StartBreak provides operations to call the startBreak method.
 func (m *TimeCardItemRequestBuilder) StartBreak()(*icf9b004d01d0dd52484fc476ea85ae2da972e67fca60f50b317f10f70f82b92a.StartBreakRequestBuilder) {
     return icf9b004d01d0dd52484fc476ea85ae2da972e67fca60f50b317f10f70f82b92a.NewStartBreakRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

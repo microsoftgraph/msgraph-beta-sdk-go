@@ -7,12 +7,12 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TaskReport provides operations to manage the collection of activityStatistics entities.
+// TaskReport provides operations to manage the collection of accessReview entities.
 type TaskReport struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The date time that the associated run completed. Value is null if the run has not completed.
+    // The date time that the associated run completed. Value is null if the run has not completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number of users in the run execution for which the associated task failed.
+    // The number of users in the run execution for which the associated task failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     failedUsersCount *int32
     // The date and time that the task report was last updated.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -22,7 +22,7 @@ type TaskReport struct {
     runId *string
     // The date time that the associated run started. Value is null if the run has not started.
     startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The number of users in the run execution for which the associated task succeeded.
+    // The number of users in the run execution for which the associated task succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     successfulUsersCount *int32
     // The task property
     task Taskable
@@ -30,9 +30,9 @@ type TaskReport struct {
     taskDefinition TaskDefinitionable
     // The related lifecycle workflow taskProcessingResults.
     taskProcessingResults []TaskProcessingResultable
-    // The total number of users in the run execution for which the associated task was scheduled to execute.
+    // The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     totalUsersCount *int32
-    // The number of users in the run execution for which the associated task is queued, in progress, or canceled.
+    // The number of users in the run execution for which the associated task is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     unprocessedUsersCount *int32
 }
 // NewTaskReport instantiates a new taskReport and sets the default values.
@@ -48,11 +48,11 @@ func NewTaskReport()(*TaskReport) {
 func CreateTaskReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTaskReport(), nil
 }
-// GetCompletedDateTime gets the completedDateTime property value. The date time that the associated run completed. Value is null if the run has not completed.
+// GetCompletedDateTime gets the completedDateTime property value. The date time that the associated run completed. Value is null if the run has not completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completedDateTime
 }
-// GetFailedUsersCount gets the failedUsersCount property value. The number of users in the run execution for which the associated task failed.
+// GetFailedUsersCount gets the failedUsersCount property value. The number of users in the run execution for which the associated task failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) GetFailedUsersCount()(*int32) {
     return m.failedUsersCount
 }
@@ -89,7 +89,7 @@ func (m *TaskReport) GetRunId()(*string) {
 func (m *TaskReport) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.startedDateTime
 }
-// GetSuccessfulUsersCount gets the successfulUsersCount property value. The number of users in the run execution for which the associated task succeeded.
+// GetSuccessfulUsersCount gets the successfulUsersCount property value. The number of users in the run execution for which the associated task succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) GetSuccessfulUsersCount()(*int32) {
     return m.successfulUsersCount
 }
@@ -105,11 +105,11 @@ func (m *TaskReport) GetTaskDefinition()(TaskDefinitionable) {
 func (m *TaskReport) GetTaskProcessingResults()([]TaskProcessingResultable) {
     return m.taskProcessingResults
 }
-// GetTotalUsersCount gets the totalUsersCount property value. The total number of users in the run execution for which the associated task was scheduled to execute.
+// GetTotalUsersCount gets the totalUsersCount property value. The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) GetTotalUsersCount()(*int32) {
     return m.totalUsersCount
 }
-// GetUnprocessedUsersCount gets the unprocessedUsersCount property value. The number of users in the run execution for which the associated task is queued, in progress, or canceled.
+// GetUnprocessedUsersCount gets the unprocessedUsersCount property value. The number of users in the run execution for which the associated task is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) GetUnprocessedUsersCount()(*int32) {
     return m.unprocessedUsersCount
 }
@@ -195,11 +195,11 @@ func (m *TaskReport) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetCompletedDateTime sets the completedDateTime property value. The date time that the associated run completed. Value is null if the run has not completed.
+// SetCompletedDateTime sets the completedDateTime property value. The date time that the associated run completed. Value is null if the run has not completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.completedDateTime = value
 }
-// SetFailedUsersCount sets the failedUsersCount property value. The number of users in the run execution for which the associated task failed.
+// SetFailedUsersCount sets the failedUsersCount property value. The number of users in the run execution for which the associated task failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) SetFailedUsersCount(value *int32)() {
     m.failedUsersCount = value
 }
@@ -219,7 +219,7 @@ func (m *TaskReport) SetRunId(value *string)() {
 func (m *TaskReport) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startedDateTime = value
 }
-// SetSuccessfulUsersCount sets the successfulUsersCount property value. The number of users in the run execution for which the associated task succeeded.
+// SetSuccessfulUsersCount sets the successfulUsersCount property value. The number of users in the run execution for which the associated task succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) SetSuccessfulUsersCount(value *int32)() {
     m.successfulUsersCount = value
 }
@@ -235,11 +235,11 @@ func (m *TaskReport) SetTaskDefinition(value TaskDefinitionable)() {
 func (m *TaskReport) SetTaskProcessingResults(value []TaskProcessingResultable)() {
     m.taskProcessingResults = value
 }
-// SetTotalUsersCount sets the totalUsersCount property value. The total number of users in the run execution for which the associated task was scheduled to execute.
+// SetTotalUsersCount sets the totalUsersCount property value. The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) SetTotalUsersCount(value *int32)() {
     m.totalUsersCount = value
 }
-// SetUnprocessedUsersCount sets the unprocessedUsersCount property value. The number of users in the run execution for which the associated task is queued, in progress, or canceled.
+// SetUnprocessedUsersCount sets the unprocessedUsersCount property value. The number of users in the run execution for which the associated task is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *TaskReport) SetUnprocessedUsersCount(value *int32)() {
     m.unprocessedUsersCount = value
 }

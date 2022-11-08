@@ -70,7 +70,7 @@ func NewEdiscoveryFileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryFileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the security entity.
 func (m *EdiscoveryFileItemRequestBuilder) Content()(*i49b7fff01c50011b3e0b5be0e5950dcf157489a28103a1e0867f97e5bd25bcac.ContentRequestBuilder) {
     return i49b7fff01c50011b3e0b5be0e5950dcf157489a28103a1e0867f97e5bd25bcac.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -116,7 +116,7 @@ func (m *EdiscoveryFileItemRequestBuilder) CreatePatchRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// Custodian the custodian property
+// Custodian provides operations to manage the custodian property of the microsoft.graph.security.ediscoveryFile entity.
 func (m *EdiscoveryFileItemRequestBuilder) Custodian()(*i7e6ee1b13311237cd10c4bd4dd6914b2938edd0dc1a6cdc1d2c74f86860fbc48.CustodianRequestBuilder) {
     return i7e6ee1b13311237cd10c4bd4dd6914b2938edd0dc1a6cdc1d2c74f86860fbc48.NewCustodianRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,7 +136,7 @@ func (m *EdiscoveryFileItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// ExtractedTextContent the extractedTextContent property
+// ExtractedTextContent provides operations to manage the media for the security entity.
 func (m *EdiscoveryFileItemRequestBuilder) ExtractedTextContent()(*i5a85cec846ca2d02e5b3f3a52074e96d47dd250564beef04af2dec6728824bc3.ExtractedTextContentRequestBuilder) {
     return i5a85cec846ca2d02e5b3f3a52074e96d47dd250564beef04af2dec6728824bc3.NewExtractedTextContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -178,11 +178,11 @@ func (m *EdiscoveryFileItemRequestBuilder) Patch(ctx context.Context, body i084f
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileable), nil
 }
-// Tags the tags property
+// Tags provides operations to manage the tags property of the microsoft.graph.security.ediscoveryFile entity.
 func (m *EdiscoveryFileItemRequestBuilder) Tags()(*i356a21545eea0beb6ac2eaa13c1e96ec498939fd0a1dac3fda5ad5a10c6e2339.TagsRequestBuilder) {
     return i356a21545eea0beb6ac2eaa13c1e96ec498939fd0a1dac3fda5ad5a10c6e2339.NewTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.reviewSets.item.files.item.tags.item collection
+// TagsById provides operations to manage the tags property of the microsoft.graph.security.ediscoveryFile entity.
 func (m *EdiscoveryFileItemRequestBuilder) TagsById(id string)(*id67a82b42c38ea6688f920465e5576b5f1202c832832b54dc6d6b720984e9bff.EdiscoveryReviewTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

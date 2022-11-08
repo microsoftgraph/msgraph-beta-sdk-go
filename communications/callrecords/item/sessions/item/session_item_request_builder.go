@@ -163,11 +163,11 @@ func (m *SessionItemRequestBuilder) Patch(ctx context.Context, body iabe42a55de4
     }
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Sessionable), nil
 }
-// Segments the segments property
+// Segments provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
 func (m *SessionItemRequestBuilder) Segments()(*iabbe40f0f6d1f3fb8ac0a23aa219ff44bda95d73c465c1d1a899652d73196770.SegmentsRequestBuilder) {
     return iabbe40f0f6d1f3fb8ac0a23aa219ff44bda95d73c465c1d1a899652d73196770.NewSegmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SegmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.callRecords.item.sessions.item.segments.item collection
+// SegmentsById provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
 func (m *SessionItemRequestBuilder) SegmentsById(id string)(*i6564fedf9e6c15797aeb0a83489cd5028189f0ab73355330d7375e2974ef0318.SegmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

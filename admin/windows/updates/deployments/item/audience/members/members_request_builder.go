@@ -75,7 +75,7 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *MembersRequestBuilder) Count()(*i10ab5f35138e0963fa62739ea774a4cfd4a425f8ad2e62dde35ac49854f903c2.CountRequestBuilder) {
     return i10ab5f35138e0963fa62739ea774a4cfd4a425f8ad2e62dde35ac49854f903c2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -109,11 +109,11 @@ func (m *MembersRequestBuilder) CreatePostRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// EnrollAssets the enrollAssets property
+// EnrollAssets provides operations to call the enrollAssets method.
 func (m *MembersRequestBuilder) EnrollAssets()(*i079094e832db2fdc3708f4c93306944a98d15be1db5ce29dbf96023069c7e745.EnrollAssetsRequestBuilder) {
     return i079094e832db2fdc3708f4c93306944a98d15be1db5ce29dbf96023069c7e745.NewEnrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EnrollAssetsById the enrollAssetsById property
+// EnrollAssetsById provides operations to call the enrollAssetsById method.
 func (m *MembersRequestBuilder) EnrollAssetsById()(*i4c88dc2f576d570f1868d24fb9515df3d9593c50de671743df58e4fb17d47336.EnrollAssetsByIdRequestBuilder) {
     return i4c88dc2f576d570f1868d24fb9515df3d9593c50de671743df58e4fb17d47336.NewEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *MembersRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// UnenrollAssets the unenrollAssets property
+// UnenrollAssets provides operations to call the unenrollAssets method.
 func (m *MembersRequestBuilder) UnenrollAssets()(*ib620cf4d2dcbe5b56d595a4921e6f8f470341999bb89c2a3526a70d51d228519.UnenrollAssetsRequestBuilder) {
     return ib620cf4d2dcbe5b56d595a4921e6f8f470341999bb89c2a3526a70d51d228519.NewUnenrollAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UnenrollAssetsById the unenrollAssetsById property
+// UnenrollAssetsById provides operations to call the unenrollAssetsById method.
 func (m *MembersRequestBuilder) UnenrollAssetsById()(*i0e3ec33249cfa006a9d1754f0677f112f76990d7829004b50cb28caa94546d94.UnenrollAssetsByIdRequestBuilder) {
     return i0e3ec33249cfa006a9d1754f0677f112f76990d7829004b50cb28caa94546d94.NewUnenrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -71,7 +71,7 @@ func NewManagedAppStatusesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedAppStatusesRequestBuilder) Count()(*ib26cb47ba7ba06e2809459076a2d8813e5086848f6275ab126bccdd2e9aa4dc4.CountRequestBuilder) {
     return ib26cb47ba7ba06e2809459076a2d8813e5086848f6275ab126bccdd2e9aa4dc4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -64,7 +64,7 @@ func NewWindowsHelloForBusinessMethodsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsHelloForBusinessMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Count()(*i482fcb88f266a6977b32944c580d433a7b4cf1e7ce56410afb77eeba195dce5c.CountRequestBuilder) {
     return i482fcb88f266a6977b32944c580d433a7b4cf1e7ce56410afb77eeba195dce5c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

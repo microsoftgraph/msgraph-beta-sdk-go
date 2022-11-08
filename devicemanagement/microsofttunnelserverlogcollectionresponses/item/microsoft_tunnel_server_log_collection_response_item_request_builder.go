@@ -79,7 +79,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// CreateDownloadUrl the createDownloadUrl property
+// CreateDownloadUrl provides operations to call the createDownloadUrl method.
 func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) CreateDownloadUrl()(*i20b8f6f29c4f846d5d534ad55fbe200f4e7d71c85829acc2959002c31c697ecc.CreateDownloadUrlRequestBuilder) {
     return i20b8f6f29c4f846d5d534ad55fbe200f4e7d71c85829acc2959002c31c697ecc.NewCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -129,7 +129,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// GenerateDownloadUrl the generateDownloadUrl property
+// GenerateDownloadUrl provides operations to call the generateDownloadUrl method.
 func (m *MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder) GenerateDownloadUrl()(*i7436a2969fbe4f194d2c2ade8934cfffcf7e6e9d9e65a5b365faf1285f658261.GenerateDownloadUrlRequestBuilder) {
     return i7436a2969fbe4f194d2c2ade8934cfffcf7e6e9d9e65a5b365faf1285f658261.NewGenerateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

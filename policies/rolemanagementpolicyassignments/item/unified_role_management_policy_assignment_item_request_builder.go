@@ -162,7 +162,7 @@ func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyAssignmentable), nil
 }
-// Policy the policy property
+// Policy provides operations to manage the policy property of the microsoft.graph.unifiedRoleManagementPolicyAssignment entity.
 func (m *UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) Policy()(*i97d43eac42c79f3cf8cefa18ac4a34500ad654efc79abac0011675b2acc3ff09.PolicyRequestBuilder) {
     return i97d43eac42c79f3cf8cefa18ac4a34500ad654efc79abac0011675b2acc3ff09.NewPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -162,7 +162,7 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable), nil
 }
-// TeamDefinition the teamDefinition property
+// TeamDefinition provides operations to manage the teamDefinition property of the microsoft.graph.teamTemplateDefinition entity.
 func (m *TeamTemplateDefinitionItemRequestBuilder) TeamDefinition()(*id22c129ffe11f645002050d7c402e123a2221d5632ca43f772c2e6772a8cf51e.TeamDefinitionRequestBuilder) {
     return id22c129ffe11f645002050d7c402e123a2221d5632ca43f772c2e6772a8cf51e.NewTeamDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

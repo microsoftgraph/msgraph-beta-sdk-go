@@ -48,11 +48,11 @@ type AccessPackageResourceEnvironmentItemRequestBuilderPatchRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageResources the accessPackageResources property
+// AccessPackageResources provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
 func (m *AccessPackageResourceEnvironmentItemRequestBuilder) AccessPackageResources()(*i5ae24f9a3712044143bf6c8de4d6dd2c51855b65924b9f12aa5fbf5998b667c7.AccessPackageResourcesRequestBuilder) {
     return i5ae24f9a3712044143bf6c8de4d6dd2c51855b65924b9f12aa5fbf5998b667c7.NewAccessPackageResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AccessPackageResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageResourceEnvironments.item.accessPackageResources.item collection
+// AccessPackageResourcesById provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
 func (m *AccessPackageResourceEnvironmentItemRequestBuilder) AccessPackageResourcesById(id string)(*i05ca2010e661942dd330a261fab2107a6e6e4690faa8a61c0c14e02f72db0562.AccessPackageResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

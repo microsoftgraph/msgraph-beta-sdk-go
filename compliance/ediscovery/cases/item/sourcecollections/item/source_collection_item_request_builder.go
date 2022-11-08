@@ -56,11 +56,11 @@ type SourceCollectionItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AdditionalSources the additionalSources property
+// AdditionalSources provides operations to manage the additionalSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) AdditionalSources()(*i2c744ed9b76601b529ed40d577c487cc9b9cdba275f49afd6d038d45b275a597.AdditionalSourcesRequestBuilder) {
     return i2c744ed9b76601b529ed40d577c487cc9b9cdba275f49afd6d038d45b275a597.NewAdditionalSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AdditionalSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.sourceCollections.item.additionalSources.item collection
+// AdditionalSourcesById provides operations to manage the additionalSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) AdditionalSourcesById(id string)(*id3fbc20e2aaca189e5a1a34399bb63266b91e90673fe015d4987e17f6eff56c3.DataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,7 +71,7 @@ func (m *SourceCollectionItemRequestBuilder) AdditionalSourcesById(id string)(*i
     }
     return id3fbc20e2aaca189e5a1a34399bb63266b91e90673fe015d4987e17f6eff56c3.NewDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AddToReviewSetOperation the addToReviewSetOperation property
+// AddToReviewSetOperation provides operations to manage the addToReviewSetOperation property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) AddToReviewSetOperation()(*i3bd4cbfecafd766c2564c32940263a2048489063caa57ec31b0d0ad2df543409.AddToReviewSetOperationRequestBuilder) {
     return i3bd4cbfecafd766c2564c32940263a2048489063caa57ec31b0d0ad2df543409.NewAddToReviewSetOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -136,11 +136,11 @@ func (m *SourceCollectionItemRequestBuilder) CreatePatchRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// CustodianSources the custodianSources property
+// CustodianSources provides operations to manage the custodianSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) CustodianSources()(*i0597b69327ef47612760d3a06e5168d4357386c9da9233bf1fe1f95375bde771.CustodianSourcesRequestBuilder) {
     return i0597b69327ef47612760d3a06e5168d4357386c9da9233bf1fe1f95375bde771.NewCustodianSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CustodianSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.sourceCollections.item.custodianSources.item collection
+// CustodianSourcesById provides operations to manage the custodianSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) CustodianSourcesById(id string)(*i68367f015eed592e4cb8c8ffbae9b14545f24cbd517163582e6f2b0ec13d383b.DataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -167,7 +167,7 @@ func (m *SourceCollectionItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// EstimateStatistics the estimateStatistics property
+// EstimateStatistics provides operations to call the estimateStatistics method.
 func (m *SourceCollectionItemRequestBuilder) EstimateStatistics()(*i85c4be0475ccbd4aff4cb007fd0c2ec13881b05cf9e8cb5b59116c59ad86da86.EstimateStatisticsRequestBuilder) {
     return i85c4be0475ccbd4aff4cb007fd0c2ec13881b05cf9e8cb5b59116c59ad86da86.NewEstimateStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -190,15 +190,15 @@ func (m *SourceCollectionItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable), nil
 }
-// LastEstimateStatisticsOperation the lastEstimateStatisticsOperation property
+// LastEstimateStatisticsOperation provides operations to manage the lastEstimateStatisticsOperation property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) LastEstimateStatisticsOperation()(*i3a1a6840838c80f69f0c58a7e3911451029954fdbf7475cb9efe0917ce53d7b3.LastEstimateStatisticsOperationRequestBuilder) {
     return i3a1a6840838c80f69f0c58a7e3911451029954fdbf7475cb9efe0917ce53d7b3.NewLastEstimateStatisticsOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NoncustodialSources the noncustodialSources property
+// NoncustodialSources provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) NoncustodialSources()(*ie844c3a4d7bb8cc79a58d398b260c44e966bd08e45f89594aa2bccaa7e8180e9.NoncustodialSourcesRequestBuilder) {
     return ie844c3a4d7bb8cc79a58d398b260c44e966bd08e45f89594aa2bccaa7e8180e9.NewNoncustodialSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// NoncustodialSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.sourceCollections.item.noncustodialSources.item collection
+// NoncustodialSourcesById provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.
 func (m *SourceCollectionItemRequestBuilder) NoncustodialSourcesById(id string)(*idb9eb7d4d565925a68fe0c31a5803668300d9310f130d86958e02c95d5021202.NoncustodialDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -228,7 +228,7 @@ func (m *SourceCollectionItemRequestBuilder) Patch(ctx context.Context, body ic1
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable), nil
 }
-// PurgeData the purgeData property
+// PurgeData provides operations to call the purgeData method.
 func (m *SourceCollectionItemRequestBuilder) PurgeData()(*i84c12d2b8523a8a3510e4a5f67b2e585d0ce763b1a2a1889cd8f30a1adc23b66.PurgeDataRequestBuilder) {
     return i84c12d2b8523a8a3510e4a5f67b2e585d0ce763b1a2a1889cd8f30a1adc23b66.NewPurgeDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

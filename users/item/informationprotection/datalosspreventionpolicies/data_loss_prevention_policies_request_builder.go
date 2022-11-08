@@ -72,7 +72,7 @@ func NewDataLossPreventionPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewDataLossPreventionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *DataLossPreventionPoliciesRequestBuilder) Count()(*ica1f70465a279503b8a4d7dbac96daff006f35a7ac4154b61e907953fb960e9f.CountRequestBuilder) {
     return ica1f70465a279503b8a4d7dbac96daff006f35a7ac4154b61e907953fb960e9f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -106,7 +106,7 @@ func (m *DataLossPreventionPoliciesRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Evaluate the evaluate property
+// Evaluate provides operations to call the evaluate method.
 func (m *DataLossPreventionPoliciesRequestBuilder) Evaluate()(*ib3cd5dd4b0ee69c984ee15bbb23332518f5b925645d591d3b77f0b66ad74bb46.EvaluateRequestBuilder) {
     return ib3cd5dd4b0ee69c984ee15bbb23332518f5b925645d591d3b77f0b66ad74bb46.NewEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

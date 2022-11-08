@@ -73,7 +73,7 @@ func NewUserAttributeAssignmentsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewUserAttributeAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *UserAttributeAssignmentsRequestBuilder) Count()(*if08a0a222aa8d9addb9ddccf3a99dc785072e2c13936aa264c6c9b644121ad26.CountRequestBuilder) {
     return if08a0a222aa8d9addb9ddccf3a99dc785072e2c13936aa264c6c9b644121ad26.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *UserAttributeAssignmentsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable), nil
 }
-// SetOrder the setOrder property
+// SetOrder provides operations to call the setOrder method.
 func (m *UserAttributeAssignmentsRequestBuilder) SetOrder()(*ic0c2653e1c9764d09e46f0f0c5fbc743c57740a231409bd22b086f6d6d9486a1.SetOrderRequestBuilder) {
     return ic0c2653e1c9764d09e46f0f0c5fbc743c57740a231409bd22b086f6d6d9486a1.NewSetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

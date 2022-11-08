@@ -5,12 +5,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementPriorityMetaData 
+// DeviceManagementPriorityMetaData priority metadata of the policy.
 type DeviceManagementPriorityMetaData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The OdataType property
     odataType *string
+    // Priority of the policy. Valid values 1 to 500
+    priority *int32
 }
 // NewDeviceManagementPriorityMetaData instantiates a new deviceManagementPriorityMetaData and sets the default values.
 func NewDeviceManagementPriorityMetaData()(*DeviceManagementPriorityMetaData) {
@@ -33,16 +35,27 @@ func (m *DeviceManagementPriorityMetaData) GetAdditionalData()(map[string]interf
 func (m *DeviceManagementPriorityMetaData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["priority"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPriority)
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementPriorityMetaData) GetOdataType()(*string) {
     return m.odataType
 }
+// GetPriority gets the priority property value. Priority of the policy. Valid values 1 to 500
+func (m *DeviceManagementPriorityMetaData) GetPriority()(*int32) {
+    return m.priority
+}
 // Serialize serializes information the current object
 func (m *DeviceManagementPriorityMetaData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("priority", m.GetPriority())
         if err != nil {
             return err
         }
@@ -62,4 +75,8 @@ func (m *DeviceManagementPriorityMetaData) SetAdditionalData(value map[string]in
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementPriorityMetaData) SetOdataType(value *string)() {
     m.odataType = value
+}
+// SetPriority sets the priority property value. Priority of the policy. Valid values 1 to 500
+func (m *DeviceManagementPriorityMetaData) SetPriority(value *int32)() {
+    m.priority = value
 }

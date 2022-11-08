@@ -33,7 +33,7 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of group entities.
 func (m *DirectoryObjectItemRequestBuilder) Ref()(*i8a168d43783aed6d67e862d23f7849ee602b7bc8e95ee3893f39c80b551acb89.RefRequestBuilder) {
     return i8a168d43783aed6d67e862d23f7849ee602b7bc8e95ee3893f39c80b551acb89.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

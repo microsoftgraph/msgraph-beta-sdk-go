@@ -125,11 +125,11 @@ func (m *CatalogRequestBuilder) Delete(ctx context.Context, requestConfiguration
     }
     return nil
 }
-// Entries the entries property
+// Entries provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
 func (m *CatalogRequestBuilder) Entries()(*i4968f4ec9198198a442624bbae5280f764e604de782d3e8b5b23463d851d1581.EntriesRequestBuilder) {
     return i4968f4ec9198198a442624bbae5280f764e604de782d3e8b5b23463d851d1581.NewEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EntriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.catalog.entries.item collection
+// EntriesById provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
 func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.CatalogEntryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

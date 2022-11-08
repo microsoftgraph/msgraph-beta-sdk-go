@@ -111,11 +111,11 @@ func (m *UserFlowLanguageConfigurationItemRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// DefaultPages the defaultPages property
+// DefaultPages provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
 func (m *UserFlowLanguageConfigurationItemRequestBuilder) DefaultPages()(*ic56e48b961e57de85d10390f870dd3e57722e4a44a0964781543b92374e68259.DefaultPagesRequestBuilder) {
     return ic56e48b961e57de85d10390f870dd3e57722e4a44a0964781543b92374e68259.NewDefaultPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DefaultPagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.languages.item.defaultPages.item collection
+// DefaultPagesById provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
 func (m *UserFlowLanguageConfigurationItemRequestBuilder) DefaultPagesById(id string)(*i2fb4388026c86a21e8b8d1776d2c5f2b64cc93696f3f4d055161caa5dff7e785.UserFlowLanguagePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,11 +161,11 @@ func (m *UserFlowLanguageConfigurationItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguageConfigurationable), nil
 }
-// OverridesPages the overridesPages property
+// OverridesPages provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
 func (m *UserFlowLanguageConfigurationItemRequestBuilder) OverridesPages()(*iecf50a78d9d6bd3f01a4f78210ea956d05c66f139964a7db9869f81ca435eaca.OverridesPagesRequestBuilder) {
     return iecf50a78d9d6bd3f01a4f78210ea956d05c66f139964a7db9869f81ca435eaca.NewOverridesPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// OverridesPagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.languages.item.overridesPages.item collection
+// OverridesPagesById provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
 func (m *UserFlowLanguageConfigurationItemRequestBuilder) OverridesPagesById(id string)(*ia8cb0ef728fb55863ea7e003c3f99fbd388a2e1017ae424b5f63e5e4b1660d67.UserFlowLanguagePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

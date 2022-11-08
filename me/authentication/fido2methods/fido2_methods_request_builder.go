@@ -64,7 +64,7 @@ func NewFido2MethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewFido2MethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *Fido2MethodsRequestBuilder) Count()(*if870364c475eb6e18494ccf6b38f518667a980070c44782cec250e4617088fac.CountRequestBuilder) {
     return if870364c475eb6e18494ccf6b38f518667a980070c44782cec250e4617088fac.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

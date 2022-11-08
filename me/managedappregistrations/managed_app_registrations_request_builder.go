@@ -64,7 +64,7 @@ func NewManagedAppRegistrationsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedAppRegistrationsRequestBuilder) Count()(*i830b6ef9dc5d56faadbf7600f58cee13cdd69e426a05f484de5a161736404159.CountRequestBuilder) {
     return i830b6ef9dc5d56faadbf7600f58cee13cdd69e426a05f484de5a161736404159.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

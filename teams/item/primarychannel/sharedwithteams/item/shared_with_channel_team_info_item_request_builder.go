@@ -48,11 +48,11 @@ type SharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AllowedMembers the allowedMembers property
+// AllowedMembers provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
 func (m *SharedWithChannelTeamInfoItemRequestBuilder) AllowedMembers()(*i898623a0cb83375add7a3c4a495361c6d58de884e01848135af7088f6f2550bb.AllowedMembersRequestBuilder) {
     return i898623a0cb83375add7a3c4a495361c6d58de884e01848135af7088f6f2550bb.NewAllowedMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AllowedMembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teams.item.primaryChannel.sharedWithTeams.item.allowedMembers.item collection
+// AllowedMembersById provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
 func (m *SharedWithChannelTeamInfoItemRequestBuilder) AllowedMembersById(id string)(*i3d662ddb1ded98393a62765983978f7d110bab072bf7af4a74059d8ec5f44b98.ConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

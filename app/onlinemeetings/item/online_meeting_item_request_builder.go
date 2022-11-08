@@ -56,15 +56,15 @@ type OnlineMeetingItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlternativeRecording the alternativeRecording property
+// AlternativeRecording provides operations to manage the media for the commsApplication entity.
 func (m *OnlineMeetingItemRequestBuilder) AlternativeRecording()(*i621490855f8aac21cf8d7032977ac3e4dd93569a78b9ec995379c44e1ed33eaf.AlternativeRecordingRequestBuilder) {
     return i621490855f8aac21cf8d7032977ac3e4dd93569a78b9ec995379c44e1ed33eaf.NewAlternativeRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceReports the attendanceReports property
+// AttendanceReports provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReports()(*i36d7f6a1b1906c3cdb16b4ede2175f668fa5388566026ae225a46e8d0be75ba4.AttendanceReportsRequestBuilder) {
     return i36d7f6a1b1906c3cdb16b4ede2175f668fa5388566026ae225a46e8d0be75ba4.NewAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AttendanceReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item.attendanceReports.item collection
+// AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*i29fda42a3d65f7aed1e8a1e9c5006e031671b1aed329c71b8d3daa638210ed5a.MeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,7 +75,7 @@ func (m *OnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*i29f
     }
     return i29fda42a3d65f7aed1e8a1e9c5006e031671b1aed329c71b8d3daa638210ed5a.NewMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// AttendeeReport the attendeeReport property
+// AttendeeReport provides operations to manage the media for the commsApplication entity.
 func (m *OnlineMeetingItemRequestBuilder) AttendeeReport()(*i5792a57d1b509cf5853eddfc75cdd3d12d7fffac6c1d1ec273e69dfc55edec5d.AttendeeReportRequestBuilder) {
     return i5792a57d1b509cf5853eddfc75cdd3d12d7fffac6c1d1ec273e69dfc55edec5d.NewAttendeeReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -175,7 +175,7 @@ func (m *OnlineMeetingItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
-// MeetingAttendanceReport the meetingAttendanceReport property
+// MeetingAttendanceReport provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) MeetingAttendanceReport()(*ia44b3dfc614f798ddda4e107c7b00a962e62b26be06acb8ba2c30fda4607647a.MeetingAttendanceReportRequestBuilder) {
     return ia44b3dfc614f798ddda4e107c7b00a962e62b26be06acb8ba2c30fda4607647a.NewMeetingAttendanceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -198,19 +198,19 @@ func (m *OnlineMeetingItemRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
-// Recording the recording property
+// Recording provides operations to manage the media for the commsApplication entity.
 func (m *OnlineMeetingItemRequestBuilder) Recording()(*ic4cea0d5545c1ec81a2c193eb0ee5d7a032aa549a87e4b5ea7d5e3d4250137fc.RecordingRequestBuilder) {
     return ic4cea0d5545c1ec81a2c193eb0ee5d7a032aa549a87e4b5ea7d5e3d4250137fc.NewRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Registration the registration property
+// Registration provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) Registration()(*ifc43ad7bd5674ca951e2271a8b4d99b63fa47b18f4fca9e422daedf0278acaf6.RegistrationRequestBuilder) {
     return ifc43ad7bd5674ca951e2271a8b4d99b63fa47b18f4fca9e422daedf0278acaf6.NewRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Transcripts the transcripts property
+// Transcripts provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) Transcripts()(*i67de322803fb9ceef33e79fb4b659d5e8d0ffaa90284f5ea1260109536f446ce.TranscriptsRequestBuilder) {
     return i67de322803fb9ceef33e79fb4b659d5e8d0ffaa90284f5ea1260109536f446ce.NewTranscriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TranscriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item.transcripts.item collection
+// TranscriptsById provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*ide6e7b6bb6c57b727e00bfe216300dcd9aa6cd3b52ecddbd9256ee94b3816d97.CallTranscriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,7 +221,7 @@ func (m *OnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*ide6e7b6bb
     }
     return ide6e7b6bb6c57b727e00bfe216300dcd9aa6cd3b52ecddbd9256ee94b3816d97.NewCallTranscriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// VirtualAppointment the virtualAppointment property
+// VirtualAppointment provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
 func (m *OnlineMeetingItemRequestBuilder) VirtualAppointment()(*if386b4892e4921e066f9d8ba80ef001577fdf97ddb75e8a48e18973728537f9e.VirtualAppointmentRequestBuilder) {
     return if386b4892e4921e066f9d8ba80ef001577fdf97ddb75e8a48e18973728537f9e.NewVirtualAppointmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

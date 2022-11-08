@@ -47,7 +47,7 @@ type AccessPackageSubjectRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectedOrganization the connectedOrganization property
+// ConnectedOrganization provides operations to manage the connectedOrganization property of the microsoft.graph.accessPackageSubject entity.
 func (m *AccessPackageSubjectRequestBuilder) ConnectedOrganization()(*i3bc24229e1128c2cce7d6b8a2ac56330a89f0ecbacdd925db7d93a9d632df341.ConnectedOrganizationRequestBuilder) {
     return i3bc24229e1128c2cce7d6b8a2ac56330a89f0ecbacdd925db7d93a9d632df341.NewConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

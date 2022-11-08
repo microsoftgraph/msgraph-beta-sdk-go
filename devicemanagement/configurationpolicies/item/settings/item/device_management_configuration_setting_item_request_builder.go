@@ -163,11 +163,11 @@ func (m *DeviceManagementConfigurationSettingItemRequestBuilder) Patch(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingable), nil
 }
-// SettingDefinitions the settingDefinitions property
+// SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
 func (m *DeviceManagementConfigurationSettingItemRequestBuilder) SettingDefinitions()(*i62b1d6eab00b5d31b1da915377cabcc6787d8e719541a4b96712ed97f1fb694a.SettingDefinitionsRequestBuilder) {
     return i62b1d6eab00b5d31b1da915377cabcc6787d8e719541a4b96712ed97f1fb694a.NewSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SettingDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.configurationPolicies.item.settings.item.settingDefinitions.item collection
+// SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSetting entity.
 func (m *DeviceManagementConfigurationSettingItemRequestBuilder) SettingDefinitionsById(id string)(*ia66c682748fe92cfeb5a885bafb942e6c4fad1f09b6488cb5fdcfc111166c7f8.DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -75,7 +75,7 @@ func NewTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *TiIndicatorsRequestBuilder) Count()(*i16222b62e050bff07e47b4d54715cd2b8242e600345080f1bf21dd94b9cbf876.CountRequestBuilder) {
     return i16222b62e050bff07e47b4d54715cd2b8242e600345080f1bf21dd94b9cbf876.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -109,11 +109,11 @@ func (m *TiIndicatorsRequestBuilder) CreatePostRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
-// DeleteTiIndicators the deleteTiIndicators property
+// DeleteTiIndicators provides operations to call the deleteTiIndicators method.
 func (m *TiIndicatorsRequestBuilder) DeleteTiIndicators()(*ie38c9a1118b781a8cc486e08009768123690676d39af853ebdf06098c5110f09.DeleteTiIndicatorsRequestBuilder) {
     return ie38c9a1118b781a8cc486e08009768123690676d39af853ebdf06098c5110f09.NewDeleteTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteTiIndicatorsByExternalId the deleteTiIndicatorsByExternalId property
+// DeleteTiIndicatorsByExternalId provides operations to call the deleteTiIndicatorsByExternalId method.
 func (m *TiIndicatorsRequestBuilder) DeleteTiIndicatorsByExternalId()(*i84faad3a80813a60a94e3416bfa220426811428a0f17f7a125a8a8389a71931a.DeleteTiIndicatorsByExternalIdRequestBuilder) {
     return i84faad3a80813a60a94e3416bfa220426811428a0f17f7a125a8a8389a71931a.NewDeleteTiIndicatorsByExternalIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -155,11 +155,11 @@ func (m *TiIndicatorsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TiIndicatorable), nil
 }
-// SubmitTiIndicators the submitTiIndicators property
+// SubmitTiIndicators provides operations to call the submitTiIndicators method.
 func (m *TiIndicatorsRequestBuilder) SubmitTiIndicators()(*id9554bf1b52f05e494c0e5962b41bb42f06710f09ff2286b921260ce9ef0c431.SubmitTiIndicatorsRequestBuilder) {
     return id9554bf1b52f05e494c0e5962b41bb42f06710f09ff2286b921260ce9ef0c431.NewSubmitTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UpdateTiIndicators the updateTiIndicators property
+// UpdateTiIndicators provides operations to call the updateTiIndicators method.
 func (m *TiIndicatorsRequestBuilder) UpdateTiIndicators()(*i5fd228a8811b3ee0e602ce99917149a6ef997b242fa74579dc28eb98aeff4610.UpdateTiIndicatorsRequestBuilder) {
     return i5fd228a8811b3ee0e602ce99917149a6ef997b242fa74579dc28eb98aeff4610.NewUpdateTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

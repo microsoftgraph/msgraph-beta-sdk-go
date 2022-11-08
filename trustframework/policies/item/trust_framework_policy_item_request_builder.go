@@ -66,7 +66,7 @@ func NewTrustFrameworkPolicyItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewTrustFrameworkPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the Content property
+// Content provides operations to manage the media for the trustFramework entity.
 func (m *TrustFrameworkPolicyItemRequestBuilder) Content()(*i5c4da7ee1c24fe10468f45f0fe04d8ae862385f122bfa42d08cb50a2d412e5a6.ContentRequestBuilder) {
     return i5c4da7ee1c24fe10468f45f0fe04d8ae862385f122bfa42d08cb50a2d412e5a6.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

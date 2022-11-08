@@ -146,11 +146,11 @@ func (m *TermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable), nil
 }
-// Groups the groups property
+// Groups provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
 func (m *TermStoreRequestBuilder) Groups()(*i557e90131fb7948f83184a4138384d2cb144fa914a789150b0f333c2385da445.GroupsRequestBuilder) {
     return i557e90131fb7948f83184a4138384d2cb144fa914a789150b0f333c2385da445.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.sites.item.termStore.groups.item collection
+// GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
 func (m *TermStoreRequestBuilder) GroupsById(id string)(*i5e455a1dbba3c96e48c6a219266ef918910ae70b87a393ccfbad933a417aa9bd.GroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b991
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable), nil
 }
-// Sets the sets property
+// Sets provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 func (m *TermStoreRequestBuilder) Sets()(*ibf00d4d648db9648140aeb93e5baf4efca2cb1040cc9a118acaa2453be406461.SetsRequestBuilder) {
     return ibf00d4d648db9648140aeb93e5baf4efca2cb1040cc9a118acaa2453be406461.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.sites.item.termStore.sets.item collection
+// SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 func (m *TermStoreRequestBuilder) SetsById(id string)(*ib37f08ab8c115f912fe7af47394199e5f0f121163a529b0d819aa1b822b81efd.SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

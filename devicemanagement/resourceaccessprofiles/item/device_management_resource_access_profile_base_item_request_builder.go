@@ -49,15 +49,15 @@ type DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) Assign()(*iaac20666e49cb2032811a5fbdaae8facc6a32715040bd58f314cf8d5f006f5bd.AssignRequestBuilder) {
     return iaac20666e49cb2032811a5fbdaae8facc6a32715040bd58f314cf8d5f006f5bd.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementResourceAccessProfileBase entity.
 func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) Assignments()(*i1aa4fb44cf4940a0794e33de635a58953960c975237235af78452d02bffe2854.AssignmentsRequestBuilder) {
     return i1aa4fb44cf4940a0794e33de635a58953960c975237235af78452d02bffe2854.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.resourceAccessProfiles.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementResourceAccessProfileBase entity.
 func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) AssignmentsById(id string)(*i4c6649ed921058137d23369f25fb530c052e741c6026b182c9c66a0903b527cd.DeviceManagementResourceAccessProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

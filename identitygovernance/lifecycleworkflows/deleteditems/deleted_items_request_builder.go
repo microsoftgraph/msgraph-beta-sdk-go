@@ -163,11 +163,11 @@ func (m *DeletedItemsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable), nil
 }
-// Workflows the workflows property
+// Workflows provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
 func (m *DeletedItemsRequestBuilder) Workflows()(*i107e287abd874c0a4928f8327e64bd31dbdac0596408ea8567b569f879a88cbb.WorkflowsRequestBuilder) {
     return i107e287abd874c0a4928f8327e64bd31dbdac0596408ea8567b569f879a88cbb.NewWorkflowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// WorkflowsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.deletedItems.workflows.item collection
+// WorkflowsById provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
 func (m *DeletedItemsRequestBuilder) WorkflowsById(id string)(*i5d01df1d1af127f479050fa126d10c131929a2ee235822e864028a6a27873225.WorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

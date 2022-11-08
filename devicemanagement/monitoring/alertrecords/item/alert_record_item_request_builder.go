@@ -162,7 +162,7 @@ func (m *AlertRecordItemRequestBuilder) Patch(ctx context.Context, body i2edb127
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable), nil
 }
-// SetPortalNotificationAsSent the setPortalNotificationAsSent property
+// SetPortalNotificationAsSent provides operations to call the setPortalNotificationAsSent method.
 func (m *AlertRecordItemRequestBuilder) SetPortalNotificationAsSent()(*ie8e248d4681d36487eeb2486b7bc3b530be5336b238916600fd1fd729588130c.SetPortalNotificationAsSentRequestBuilder) {
     return ie8e248d4681d36487eeb2486b7bc3b530be5336b238916600fd1fd729588130c.NewSetPortalNotificationAsSentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

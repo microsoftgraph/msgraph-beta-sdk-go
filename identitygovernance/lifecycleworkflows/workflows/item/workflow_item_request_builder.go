@@ -59,7 +59,7 @@ type WorkflowItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activate the activate property
+// Activate provides operations to call the activate method.
 func (m *WorkflowItemRequestBuilder) Activate()(*ia296fd3f1e5ff3c40ad60f799e79db0663a31846e3148df92a8094390a84cbc6.ActivateRequestBuilder) {
     return ia296fd3f1e5ff3c40ad60f799e79db0663a31846e3148df92a8094390a84cbc6.NewActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -110,7 +110,7 @@ func (m *WorkflowItemRequestBuilder) CreateGetRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// CreateNewVersion the createNewVersion property
+// CreateNewVersion provides operations to call the createNewVersion method.
 func (m *WorkflowItemRequestBuilder) CreateNewVersion()(*i8cf137125336cf3388d0d941867bc83ad6c65b4792df2a56c0d38480e18514e6.CreateNewVersionRequestBuilder) {
     return i8cf137125336cf3388d0d941867bc83ad6c65b4792df2a56c0d38480e18514e6.NewCreateNewVersionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -144,11 +144,11 @@ func (m *WorkflowItemRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// ExecutionScope the executionScope property
+// ExecutionScope provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) ExecutionScope()(*i934fe4f55a2953e59cde9d68812afe753793bccb49bd983f66eb03de7818ddb3.ExecutionScopeRequestBuilder) {
     return i934fe4f55a2953e59cde9d68812afe753793bccb49bd983f66eb03de7818ddb3.NewExecutionScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExecutionScopeById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.executionScope.item collection
+// ExecutionScopeById provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) ExecutionScopeById(id string)(*i8da9737a36642b2e91c4eff981addd7f2de8405fe0688fe557f971af4a13ac18.UserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -197,15 +197,15 @@ func (m *WorkflowItemRequestBuilder) Patch(ctx context.Context, body i45fdec8a8c
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable), nil
 }
-// Restore the restore property
+// Restore provides operations to call the restore method.
 func (m *WorkflowItemRequestBuilder) Restore()(*id1a69d66fcdba1734751a42ddd76d3290528f1a35ebb6abc86009b8bd9bc7ae9.RestoreRequestBuilder) {
     return id1a69d66fcdba1734751a42ddd76d3290528f1a35ebb6abc86009b8bd9bc7ae9.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Runs the runs property
+// Runs provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) Runs()(*i9c7801e61117ebd031766d3bba5d64703219864956b206a667ccb7693e19be01.RunsRequestBuilder) {
     return i9c7801e61117ebd031766d3bba5d64703219864956b206a667ccb7693e19be01.NewRunsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RunsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.runs.item collection
+// RunsById provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) RunsById(id string)(*iaf85afa1d6b8f410137ec7672bd355b194e453bcdfa855d80caa7244c13e5984.RunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -216,11 +216,11 @@ func (m *WorkflowItemRequestBuilder) RunsById(id string)(*iaf85afa1d6b8f410137ec
     }
     return iaf85afa1d6b8f410137ec7672bd355b194e453bcdfa855d80caa7244c13e5984.NewRunItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// TaskReports the taskReports property
+// TaskReports provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) TaskReports()(*ie017ea425d3c3d3e3a14e4eba029e59ff7d30b45b86a6679525d524b2394f958.TaskReportsRequestBuilder) {
     return ie017ea425d3c3d3e3a14e4eba029e59ff7d30b45b86a6679525d524b2394f958.NewTaskReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// TaskReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.taskReports.item collection
+// TaskReportsById provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) TaskReportsById(id string)(*i142e5b6ba183b550be2173bc3636299e41d86cf0262dccc248a5ffdc7efb99f4.TaskReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -231,11 +231,11 @@ func (m *WorkflowItemRequestBuilder) TaskReportsById(id string)(*i142e5b6ba183b5
     }
     return i142e5b6ba183b550be2173bc3636299e41d86cf0262dccc248a5ffdc7efb99f4.NewTaskReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserProcessingResults the userProcessingResults property
+// UserProcessingResults provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) UserProcessingResults()(*i313445eff5f5b36a7c96ea00a400493cef88d5c9739c4a86f54522dc923afb5f.UserProcessingResultsRequestBuilder) {
     return i313445eff5f5b36a7c96ea00a400493cef88d5c9739c4a86f54522dc923afb5f.NewUserProcessingResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserProcessingResultsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.userProcessingResults.item collection
+// UserProcessingResultsById provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) UserProcessingResultsById(id string)(*i83e8cbd4cf7df11f171e7aa3cad7bef500b6ee10a4be4b785640618dad1171ce.UserProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -246,11 +246,11 @@ func (m *WorkflowItemRequestBuilder) UserProcessingResultsById(id string)(*i83e8
     }
     return i83e8cbd4cf7df11f171e7aa3cad7bef500b6ee10a4be4b785640618dad1171ce.NewUserProcessingResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Versions the versions property
+// Versions provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) Versions()(*i05a5138a4e33f7e83896eacd4c6fd83d689731f5d0a139cd1bf922f9f49c4aec.VersionsRequestBuilder) {
     return i05a5138a4e33f7e83896eacd4c6fd83d689731f5d0a139cd1bf922f9f49c4aec.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// VersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.lifecycleWorkflows.workflows.item.versions.item collection
+// VersionsById provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
 func (m *WorkflowItemRequestBuilder) VersionsById(id string)(*ie76c3e625e2dc0bf84c56645d4951120ee9f62d232c50d3eddcf264dc8035d22.WorkflowVersionVersionNumberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -66,7 +66,7 @@ func NewCallTranscriptItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewCallTranscriptItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the content property
+// Content provides operations to manage the media for the user entity.
 func (m *CallTranscriptItemRequestBuilder) Content()(*i999b1bb8ec32908854a9b129526bbb60ff4f14aabbffa69a2d42c0390322a6ed.ContentRequestBuilder) {
     return i999b1bb8ec32908854a9b129526bbb60ff4f14aabbffa69a2d42c0390322a6ed.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -75,7 +75,7 @@ func NewSensitivityLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewSensitivityLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SensitivityLabelsRequestBuilder) Count()(*i4621b23c1a4155914a831bad97217b88c3ce3b737da6d18246c93060a04baed8.CountRequestBuilder) {
     return i4621b23c1a4155914a831bad97217b88c3ce3b737da6d18246c93060a04baed8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -109,19 +109,19 @@ func (m *SensitivityLabelsRequestBuilder) CreatePostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// EvaluateApplication the evaluateApplication property
+// EvaluateApplication provides operations to call the evaluateApplication method.
 func (m *SensitivityLabelsRequestBuilder) EvaluateApplication()(*i88759b56304a762698295808a5bfb06f29418867560c74fec3dc6fd888ff3f25.EvaluateApplicationRequestBuilder) {
     return i88759b56304a762698295808a5bfb06f29418867560c74fec3dc6fd888ff3f25.NewEvaluateApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EvaluateClassificationResults the evaluateClassificationResults property
+// EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
 func (m *SensitivityLabelsRequestBuilder) EvaluateClassificationResults()(*icc10ec374205c05b4532d9c89d0c36886f133046713bc767e65df773ff64ed0c.EvaluateClassificationResultsRequestBuilder) {
     return icc10ec374205c05b4532d9c89d0c36886f133046713bc767e65df773ff64ed0c.NewEvaluateClassificationResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EvaluateRemoval the evaluateRemoval property
+// EvaluateRemoval provides operations to call the evaluateRemoval method.
 func (m *SensitivityLabelsRequestBuilder) EvaluateRemoval()(*i5cad7b98159f40ed5a5c934595269dacf1b687ffeb3281ebb743bd111e0a847b.EvaluateRemovalRequestBuilder) {
     return i5cad7b98159f40ed5a5c934595269dacf1b687ffeb3281ebb743bd111e0a847b.NewEvaluateRemovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtractContentLabel the extractContentLabel property
+// ExtractContentLabel provides operations to call the extractContentLabel method.
 func (m *SensitivityLabelsRequestBuilder) ExtractContentLabel()(*ie0b8e402d3912c7159a7b1635da1d709d914855376e51d3fa858ac845bf853a0.ExtractContentLabelRequestBuilder) {
     return ie0b8e402d3912c7159a7b1635da1d709d914855376e51d3fa858ac845bf853a0.NewExtractContentLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

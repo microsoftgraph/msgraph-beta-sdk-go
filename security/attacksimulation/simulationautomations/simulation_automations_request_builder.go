@@ -71,7 +71,7 @@ func NewSimulationAutomationsRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewSimulationAutomationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *SimulationAutomationsRequestBuilder) Count()(*ibdef5b5b54051d81f7a1cd30758c4af25399ca147f2a43a03aa08cb584bb2da7.CountRequestBuilder) {
     return ibdef5b5b54051d81f7a1cd30758c4af25399ca147f2a43a03aa08cb584bb2da7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

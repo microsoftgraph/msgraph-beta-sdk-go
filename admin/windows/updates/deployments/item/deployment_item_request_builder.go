@@ -47,7 +47,7 @@ type DeploymentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Audience the audience property
+// Audience provides operations to manage the audience property of the microsoft.graph.windowsUpdates.deployment entity.
 func (m *DeploymentItemRequestBuilder) Audience()(*ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af.AudienceRequestBuilder) {
     return ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af.NewAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

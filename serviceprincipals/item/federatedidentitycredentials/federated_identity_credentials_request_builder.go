@@ -71,7 +71,7 @@ func NewFederatedIdentityCredentialsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewFederatedIdentityCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *FederatedIdentityCredentialsRequestBuilder) Count()(*iebcbd8845331a6964f67c073a3e55653c6a9e380fcda347c1ebe0d8d093802af.CountRequestBuilder) {
     return iebcbd8845331a6964f67c073a3e55653c6a9e380fcda347c1ebe0d8d093802af.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkflowVersion provides operations to manage the collection of activityStatistics entities.
+// WorkflowVersion provides operations to manage the collection of accessReview entities.
 type WorkflowVersion struct {
     WorkflowBase
-    // The version of the workflow.Supports $filter(eq, ne), orderby.
+    // The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
     versionNumber *int32
 }
 // NewWorkflowVersion instantiates a new workflowVersion and sets the default values.
@@ -30,7 +30,7 @@ func (m *WorkflowVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     res["versionNumber"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetVersionNumber)
     return res
 }
-// GetVersionNumber gets the versionNumber property value. The version of the workflow.Supports $filter(eq, ne), orderby.
+// GetVersionNumber gets the versionNumber property value. The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *WorkflowVersion) GetVersionNumber()(*int32) {
     return m.versionNumber
 }
@@ -48,7 +48,7 @@ func (m *WorkflowVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetVersionNumber sets the versionNumber property value. The version of the workflow.Supports $filter(eq, ne), orderby.
+// SetVersionNumber sets the versionNumber property value. The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *WorkflowVersion) SetVersionNumber(value *int32)() {
     m.versionNumber = value
 }

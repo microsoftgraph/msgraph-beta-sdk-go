@@ -71,7 +71,7 @@ func NewThumbnailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewThumbnailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ThumbnailsRequestBuilder) Count()(*id0e6a8996510a2c58f1f8a38cc19d1a2d97eb1f2b79401253228559226c69088.CountRequestBuilder) {
     return id0e6a8996510a2c58f1f8a38cc19d1a2d97eb1f2b79401253228559226c69088.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

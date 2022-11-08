@@ -50,11 +50,11 @@ type TermsOfUseRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AgreementAcceptances the agreementAcceptances property
+// AgreementAcceptances provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) AgreementAcceptances()(*idbdd55c4f874f351f01786070df721944ce5b3467ee40a9186d8e1d8254c5038.AgreementAcceptancesRequestBuilder) {
     return idbdd55c4f874f351f01786070df721944ce5b3467ee40a9186d8e1d8254c5038.NewAgreementAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AgreementAcceptancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.termsOfUse.agreementAcceptances.item collection
+// AgreementAcceptancesById provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*ib81ff97ec65f62c7e3bf45944864f15e6a426c2a95656377c94aedf6454d4d96.AgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -65,11 +65,11 @@ func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*ib81ff97
     }
     return ib81ff97ec65f62c7e3bf45944864f15e6a426c2a95656377c94aedf6454d4d96.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Agreements the agreements property
+// Agreements provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) Agreements()(*i7a12547468a4d42ab8f3d3d3cd4e300f925a0ca2e7691adcd36d1a01331d01b4.AgreementsRequestBuilder) {
     return i7a12547468a4d42ab8f3d3d3cd4e300f925a0ca2e7691adcd36d1a01331d01b4.NewAgreementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AgreementsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.termsOfUse.agreements.item collection
+// AgreementsById provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*i4c625eec080c8046d067dfb89b7686880f5fffd058fe784176bdef86f3d98004.AgreementItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

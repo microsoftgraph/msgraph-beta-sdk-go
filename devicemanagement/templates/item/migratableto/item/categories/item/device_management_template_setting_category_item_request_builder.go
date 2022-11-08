@@ -163,11 +163,11 @@ func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) Patch(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable), nil
 }
-// RecommendedSettings the recommendedSettings property
+// RecommendedSettings provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
 func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettings()(*i9e5640ff3754bcaa660cdf178d94998794911b48229e263458de97b69ab89270.RecommendedSettingsRequestBuilder) {
     return i9e5640ff3754bcaa660cdf178d94998794911b48229e263458de97b69ab89270.NewRecommendedSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RecommendedSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.templates.item.migratableTo.item.categories.item.recommendedSettings.item collection
+// RecommendedSettingsById provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
 func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettingsById(id string)(*i6df98bc7a334bb0e520b27b51abf768c12c7867b133863c4266d26d189f93800.DeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

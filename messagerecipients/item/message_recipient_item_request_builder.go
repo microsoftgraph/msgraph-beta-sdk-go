@@ -125,11 +125,11 @@ func (m *MessageRecipientItemRequestBuilder) Delete(ctx context.Context, request
     }
     return nil
 }
-// Events the events property
+// Events provides operations to manage the events property of the microsoft.graph.messageRecipient entity.
 func (m *MessageRecipientItemRequestBuilder) Events()(*i763db342488d93b06499e840923a524b416bfbf32aecb8bb444b83d1e431f4fa.EventsRequestBuilder) {
     return i763db342488d93b06499e840923a524b416bfbf32aecb8bb444b83d1e431f4fa.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// EventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.messageRecipients.item.events.item collection
+// EventsById provides operations to manage the events property of the microsoft.graph.messageRecipient entity.
 func (m *MessageRecipientItemRequestBuilder) EventsById(id string)(*i743383fc382e5378ae11e0a3af80773199e61bc9a09df96b661701162acd2b84.MessageEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

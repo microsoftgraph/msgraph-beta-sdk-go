@@ -68,7 +68,7 @@ func NewRegisteredOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewRegisteredOwnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *RegisteredOwnersRequestBuilder) Count()(*i338d1b61dbaf2aade9b1857655b4087f295833dbe79026745f012c70c9bccf27.CountRequestBuilder) {
     return i338d1b61dbaf2aade9b1857655b4087f295833dbe79026745f012c70c9bccf27.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -88,7 +88,7 @@ func (m *RegisteredOwnersRequestBuilder) CreateGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// Endpoint the endpoint property
+// Endpoint casts the previous resource to endpoint.
 func (m *RegisteredOwnersRequestBuilder) Endpoint()(*ibb177032861c420eed9c10973c8b36e00f9191503e88dffd6eac6a8fe0fee45c.EndpointRequestBuilder) {
     return ibb177032861c420eed9c10973c8b36e00f9191503e88dffd6eac6a8fe0fee45c.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -111,15 +111,15 @@ func (m *RegisteredOwnersRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Ref the Ref property
+// Ref provides operations to manage the collection of user entities.
 func (m *RegisteredOwnersRequestBuilder) Ref()(*id14cc5e14a110d66e57d7e206dcae0ff3e29cc1d5e2c4c5ba7af589ea6a725cb.RefRequestBuilder) {
     return id14cc5e14a110d66e57d7e206dcae0ff3e29cc1d5e2c4c5ba7af589ea6a725cb.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipal the servicePrincipal property
+// ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *RegisteredOwnersRequestBuilder) ServicePrincipal()(*i4f59905a40df19de334251cc9abff3ffefb99ca93bf457e8666215b14a7339d2.ServicePrincipalRequestBuilder) {
     return i4f59905a40df19de334251cc9abff3ffefb99ca93bf457e8666215b14a7339d2.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// User the user property
+// User casts the previous resource to user.
 func (m *RegisteredOwnersRequestBuilder) User()(*i72af981097426fa79407a436be650e110d4d66ccb9f519a0e13bf5368a01dbd9.UserRequestBuilder) {
     return i72af981097426fa79407a436be650e110d4d66ccb9f519a0e13bf5368a01dbd9.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

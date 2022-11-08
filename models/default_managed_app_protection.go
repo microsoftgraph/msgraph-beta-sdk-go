@@ -88,6 +88,8 @@ type DefaultManagedAppProtection struct {
     minimumWarningCompanyPortalVersion *string
     // Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
     minimumWarningPatchVersion *string
+    // Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
+    minimumWarningSdkVersion *string
     // Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
     minimumWipeCompanyPortalVersion *string
     // Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
@@ -303,6 +305,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
     res["minimumRequiredSdkVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumRequiredSdkVersion)
     res["minimumWarningCompanyPortalVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWarningCompanyPortalVersion)
     res["minimumWarningPatchVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWarningPatchVersion)
+    res["minimumWarningSdkVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWarningSdkVersion)
     res["minimumWipeCompanyPortalVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWipeCompanyPortalVersion)
     res["minimumWipePatchVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWipePatchVersion)
     res["minimumWipeSdkVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMinimumWipeSdkVersion)
@@ -345,6 +348,10 @@ func (m *DefaultManagedAppProtection) GetMinimumWarningCompanyPortalVersion()(*s
 // GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
     return m.minimumWarningPatchVersion
+}
+// GetMinimumWarningSdkVersion gets the minimumWarningSdkVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
+func (m *DefaultManagedAppProtection) GetMinimumWarningSdkVersion()(*string) {
+    return m.minimumWarningSdkVersion
 }
 // GetMinimumWipeCompanyPortalVersion gets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
 func (m *DefaultManagedAppProtection) GetMinimumWipeCompanyPortalVersion()(*string) {
@@ -659,6 +666,12 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("minimumWarningSdkVersion", m.GetMinimumWarningSdkVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("minimumWipeCompanyPortalVersion", m.GetMinimumWipeCompanyPortalVersion())
         if err != nil {
             return err
@@ -900,6 +913,10 @@ func (m *DefaultManagedAppProtection) SetMinimumWarningCompanyPortalVersion(valu
 // SetMinimumWarningPatchVersion sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) SetMinimumWarningPatchVersion(value *string)() {
     m.minimumWarningPatchVersion = value
+}
+// SetMinimumWarningSdkVersion sets the minimumWarningSdkVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
+func (m *DefaultManagedAppProtection) SetMinimumWarningSdkVersion(value *string)() {
+    m.minimumWarningSdkVersion = value
 }
 // SetMinimumWipeCompanyPortalVersion sets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
 func (m *DefaultManagedAppProtection) SetMinimumWipeCompanyPortalVersion(value *string)() {

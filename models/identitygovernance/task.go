@@ -6,24 +6,24 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Task provides operations to manage the collection of activityStatistics entities.
+// Task provides operations to manage the collection of accessReview entities.
 type Task struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks.
+    // Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
     arguments []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable
     // The category property
     category *LifecycleTaskCategory
-    // A boolean value that determines if the failure of this task stops the subsequent workflows from running.
+    // A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
     continueOnError *bool
-    // A string that describes the purpose of the task for administrative use.
+    // A string that describes the purpose of the task for administrative use. Optional.
     description *string
-    // A unique string that identifies the task. Supports $filter(eq) and orderBy.
+    // A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.
     displayName *string
-    // An integer that states in what order the task will run in a workflow.
+    // An integer that states in what order the task will run in a workflow.Supports $orderby.
     executionSequence *int32
-    // A boolean value that denotes whether the task is set to run or not. Supports $filter(eq, ne) and orderBy.
+    // A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
     isEnabled *bool
-    // A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks
+    // A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
     taskDefinitionId *string
     // The result of processing the task.
     taskProcessingResults []TaskProcessingResultable
@@ -41,7 +41,7 @@ func NewTask()(*Task) {
 func CreateTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTask(), nil
 }
-// GetArguments gets the arguments property value. Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks.
+// GetArguments gets the arguments property value. Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
 func (m *Task) GetArguments()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable) {
     return m.arguments
 }
@@ -49,19 +49,19 @@ func (m *Task) GetArguments()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81
 func (m *Task) GetCategory()(*LifecycleTaskCategory) {
     return m.category
 }
-// GetContinueOnError gets the continueOnError property value. A boolean value that determines if the failure of this task stops the subsequent workflows from running.
+// GetContinueOnError gets the continueOnError property value. A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
 func (m *Task) GetContinueOnError()(*bool) {
     return m.continueOnError
 }
-// GetDescription gets the description property value. A string that describes the purpose of the task for administrative use.
+// GetDescription gets the description property value. A string that describes the purpose of the task for administrative use. Optional.
 func (m *Task) GetDescription()(*string) {
     return m.description
 }
-// GetDisplayName gets the displayName property value. A unique string that identifies the task. Supports $filter(eq) and orderBy.
+// GetDisplayName gets the displayName property value. A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.
 func (m *Task) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetExecutionSequence gets the executionSequence property value. An integer that states in what order the task will run in a workflow.
+// GetExecutionSequence gets the executionSequence property value. An integer that states in what order the task will run in a workflow.Supports $orderby.
 func (m *Task) GetExecutionSequence()(*int32) {
     return m.executionSequence
 }
@@ -79,11 +79,11 @@ func (m *Task) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     res["taskProcessingResults"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTaskProcessingResultFromDiscriminatorValue , m.SetTaskProcessingResults)
     return res
 }
-// GetIsEnabled gets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Supports $filter(eq, ne) and orderBy.
+// GetIsEnabled gets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
 func (m *Task) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
-// GetTaskDefinitionId gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks
+// GetTaskDefinitionId gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
 func (m *Task) GetTaskDefinitionId()(*string) {
     return m.taskDefinitionId
 }
@@ -156,7 +156,7 @@ func (m *Task) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetArguments sets the arguments property value. Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks.
+// SetArguments sets the arguments property value. Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
 func (m *Task) SetArguments(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)() {
     m.arguments = value
 }
@@ -164,27 +164,27 @@ func (m *Task) SetArguments(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
 func (m *Task) SetCategory(value *LifecycleTaskCategory)() {
     m.category = value
 }
-// SetContinueOnError sets the continueOnError property value. A boolean value that determines if the failure of this task stops the subsequent workflows from running.
+// SetContinueOnError sets the continueOnError property value. A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
 func (m *Task) SetContinueOnError(value *bool)() {
     m.continueOnError = value
 }
-// SetDescription sets the description property value. A string that describes the purpose of the task for administrative use.
+// SetDescription sets the description property value. A string that describes the purpose of the task for administrative use. Optional.
 func (m *Task) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisplayName sets the displayName property value. A unique string that identifies the task. Supports $filter(eq) and orderBy.
+// SetDisplayName sets the displayName property value. A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.
 func (m *Task) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetExecutionSequence sets the executionSequence property value. An integer that states in what order the task will run in a workflow.
+// SetExecutionSequence sets the executionSequence property value. An integer that states in what order the task will run in a workflow.Supports $orderby.
 func (m *Task) SetExecutionSequence(value *int32)() {
     m.executionSequence = value
 }
-// SetIsEnabled sets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Supports $filter(eq, ne) and orderBy.
+// SetIsEnabled sets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
 func (m *Task) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// SetTaskDefinitionId sets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks
+// SetTaskDefinitionId sets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
 func (m *Task) SetTaskDefinitionId(value *string)() {
     m.taskDefinitionId = value
 }

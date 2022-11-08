@@ -162,7 +162,7 @@ func (m *TenantReferenceTenantItemRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable), nil
 }
-// RemovePersonalData the removePersonalData property
+// RemovePersonalData provides operations to call the removePersonalData method.
 func (m *TenantReferenceTenantItemRequestBuilder) RemovePersonalData()(*ie1c570cd205e72966d47bbdddfa8b472f99efdb059ed9180c06e16d4c254f8c1.RemovePersonalDataRequestBuilder) {
     return ie1c570cd205e72966d47bbdddfa8b472f99efdb059ed9180c06e16d4c254f8c1.NewRemovePersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

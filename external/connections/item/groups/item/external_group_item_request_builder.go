@@ -144,11 +144,11 @@ func (m *ExternalGroupItemRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable), nil
 }
-// Members the members property
+// Members provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.
 func (m *ExternalGroupItemRequestBuilder) Members()(*i49421c1197288b7126d2903285c93d95920b1d2649fc679eb7ae3b4cb79dda29.MembersRequestBuilder) {
     return i49421c1197288b7126d2903285c93d95920b1d2649fc679eb7ae3b4cb79dda29.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item.groups.item.members.item collection
+// MembersById provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.
 func (m *ExternalGroupItemRequestBuilder) MembersById(id string)(*ib9f6edb3f7c014bb3b4eba7c3b44d3ac306dd73bad7509d2f0c3cd95bc0bc20a.IdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

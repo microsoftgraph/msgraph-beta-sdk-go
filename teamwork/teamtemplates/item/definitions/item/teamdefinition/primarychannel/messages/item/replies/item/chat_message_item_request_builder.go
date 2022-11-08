@@ -148,11 +148,11 @@ func (m *ChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
-// HostedContents the hostedContents property
+// HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ChatMessageItemRequestBuilder) HostedContents()(*ic70519a54b2d1918b53e3b81119a3503bf5a81d38bfcde80639b9d59dd6f6cd1.HostedContentsRequestBuilder) {
     return ic70519a54b2d1918b53e3b81119a3503bf5a81d38bfcde80639b9d59dd6f6cd1.NewHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// HostedContentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item.definitions.item.teamDefinition.primaryChannel.messages.item.replies.item.hostedContents.item collection
+// HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
 func (m *ChatMessageItemRequestBuilder) HostedContentsById(id string)(*i906f3e52d5c6560d08566194d61ebf1f7caec1a3000ca22965be87755de64f2c.ChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -182,19 +182,19 @@ func (m *ChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
-// SetReaction the setReaction property
+// SetReaction provides operations to call the setReaction method.
 func (m *ChatMessageItemRequestBuilder) SetReaction()(*idd784fde9717d1a98cf748032a175cfed76f55f57a0ca0b90fa27925c33fdd5f.SetReactionRequestBuilder) {
     return idd784fde9717d1a98cf748032a175cfed76f55f57a0ca0b90fa27925c33fdd5f.NewSetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SoftDelete the softDelete property
+// SoftDelete provides operations to call the softDelete method.
 func (m *ChatMessageItemRequestBuilder) SoftDelete()(*i62662298aaab7e40e12ca7223b65c0d1aac81d44655be07ea8cbe19427f6ee82.SoftDeleteRequestBuilder) {
     return i62662298aaab7e40e12ca7223b65c0d1aac81d44655be07ea8cbe19427f6ee82.NewSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UndoSoftDelete the undoSoftDelete property
+// UndoSoftDelete provides operations to call the undoSoftDelete method.
 func (m *ChatMessageItemRequestBuilder) UndoSoftDelete()(*ide808b9160068aadce59b22981fe50fe4f395466fd6c95f9fe14b7ae59886fa6.UndoSoftDeleteRequestBuilder) {
     return ide808b9160068aadce59b22981fe50fe4f395466fd6c95f9fe14b7ae59886fa6.NewUndoSoftDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UnsetReaction the unsetReaction property
+// UnsetReaction provides operations to call the unsetReaction method.
 func (m *ChatMessageItemRequestBuilder) UnsetReaction()(*i9f251d8f20fde4a82337cbf1754335c9545caa87aeb5cb2b098ef8e699b5d8ea.UnsetReactionRequestBuilder) {
     return i9f251d8f20fde4a82337cbf1754335c9545caa87aeb5cb2b098ef8e699b5d8ea.NewUnsetReactionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

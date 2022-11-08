@@ -50,11 +50,11 @@ type SalesInvoiceItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Cancel the cancel property
+// Cancel provides operations to call the cancel method.
 func (m *SalesInvoiceItemRequestBuilder) Cancel()(*i36d06f0f74d1b6fcb1f7c52c368d55e3ae1c78fea244620a809d74b4050c21f2.CancelRequestBuilder) {
     return i36d06f0f74d1b6fcb1f7c52c368d55e3ae1c78fea244620a809d74b4050c21f2.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CancelAndSend the cancelAndSend property
+// CancelAndSend provides operations to call the cancelAndSend method.
 func (m *SalesInvoiceItemRequestBuilder) CancelAndSend()(*i4029970bec644a3ffd8071814f20a9d8eb5762118c76c4b80b23161fb86c2fee.CancelAndSendRequestBuilder) {
     return i4029970bec644a3ffd8071814f20a9d8eb5762118c76c4b80b23161fb86c2fee.NewCancelAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -107,11 +107,11 @@ func (m *SalesInvoiceItemRequestBuilder) CreatePatchRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// Currency the currency property
+// Currency provides operations to manage the currency property of the microsoft.graph.salesInvoice entity.
 func (m *SalesInvoiceItemRequestBuilder) Currency()(*i0650e7911918a65a74f67fe1c197bdc18b90494b3361ef73af6e6fed5d0e8e47.CurrencyRequestBuilder) {
     return i0650e7911918a65a74f67fe1c197bdc18b90494b3361ef73af6e6fed5d0e8e47.NewCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Customer the customer property
+// Customer provides operations to manage the customer property of the microsoft.graph.salesInvoice entity.
 func (m *SalesInvoiceItemRequestBuilder) Customer()(*i93777e17bc2372af2aae81772eb24d80da0156546c0cdfca56a28e9618f8d889.CustomerRequestBuilder) {
     return i93777e17bc2372af2aae81772eb24d80da0156546c0cdfca56a28e9618f8d889.NewCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -153,23 +153,23 @@ func (m *SalesInvoiceItemRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceable), nil
 }
-// PaymentTerm the paymentTerm property
+// PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.salesInvoice entity.
 func (m *SalesInvoiceItemRequestBuilder) PaymentTerm()(*i973a00f44707ce3fe81e75ce782fefb6c04714e28ca331b622c712a4b29cb6cb.PaymentTermRequestBuilder) {
     return i973a00f44707ce3fe81e75ce782fefb6c04714e28ca331b622c712a4b29cb6cb.NewPaymentTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post the post property
+// Post provides operations to call the post method.
 func (m *SalesInvoiceItemRequestBuilder) Post()(*i37e5adacee5361adfd45947751eeada85d4fb063399b1012befbf77338d1551b.PostRequestBuilder) {
     return i37e5adacee5361adfd45947751eeada85d4fb063399b1012befbf77338d1551b.NewPostRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostAndSend the postAndSend property
+// PostAndSend provides operations to call the postAndSend method.
 func (m *SalesInvoiceItemRequestBuilder) PostAndSend()(*iff094cb38c7f93c080b831ba288f86fafe7cb758d1a92b96280ccf5a97b91609.PostAndSendRequestBuilder) {
     return iff094cb38c7f93c080b831ba288f86fafe7cb758d1a92b96280ccf5a97b91609.NewPostAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SalesInvoiceLines the salesInvoiceLines property
+// SalesInvoiceLines provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
 func (m *SalesInvoiceItemRequestBuilder) SalesInvoiceLines()(*i34ab7468987d894218eb3c0a57bf71468ae3b457fdc7c9a1e1e06dac5693aad7.SalesInvoiceLinesRequestBuilder) {
     return i34ab7468987d894218eb3c0a57bf71468ae3b457fdc7c9a1e1e06dac5693aad7.NewSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SalesInvoiceLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoices.item.salesInvoiceLines.item collection
+// SalesInvoiceLinesById provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
 func (m *SalesInvoiceItemRequestBuilder) SalesInvoiceLinesById(id string)(*if8797c053079d45780da07f4c01fb650fc8015394e895a3fdf2d677f2013e9ae.SalesInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *SalesInvoiceItemRequestBuilder) SalesInvoiceLinesById(id string)(*if879
     }
     return if8797c053079d45780da07f4c01fb650fc8015394e895a3fdf2d677f2013e9ae.NewSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Send the send property
+// Send provides operations to call the send method.
 func (m *SalesInvoiceItemRequestBuilder) Send()(*i73fdc6873e10630216ab19990248e2068cf89ebe3b996094b3b49c3edfb216d3.SendRequestBuilder) {
     return i73fdc6873e10630216ab19990248e2068cf89ebe3b996094b3b49c3edfb216d3.NewSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ShipmentMethod the shipmentMethod property
+// ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.salesInvoice entity.
 func (m *SalesInvoiceItemRequestBuilder) ShipmentMethod()(*i02155747beea3539ff57236a7d1a9ced210439349101163afadd0ca4dddc11ff.ShipmentMethodRequestBuilder) {
     return i02155747beea3539ff57236a7d1a9ced210439349101163afadd0ca4dddc11ff.NewShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

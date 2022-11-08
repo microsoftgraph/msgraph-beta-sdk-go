@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationStrengthPolicy provides operations to manage the collection of accessReview entities.
+// AuthenticationStrengthPolicy 
 type AuthenticationStrengthPolicy struct {
     Entity
     // A collection of authentication method modes that are required be used to satify this authentication strength.
@@ -26,7 +26,7 @@ type AuthenticationStrengthPolicy struct {
     // The requirementsSatisfied property
     requirementsSatisfied *AuthenticationStrengthRequirements
 }
-// NewAuthenticationStrengthPolicy instantiates a new authenticationStrengthPolicy and sets the default values.
+// NewAuthenticationStrengthPolicy instantiates a new AuthenticationStrengthPolicy and sets the default values.
 func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
     m := &AuthenticationStrengthPolicy{
         Entity: *NewEntity(),

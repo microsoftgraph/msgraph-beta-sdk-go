@@ -71,7 +71,7 @@ func NewManagedTenantApiNotificationsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantApiNotificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *ManagedTenantApiNotificationsRequestBuilder) Count()(*i29c76e627ba51878217cbefa644bc9d31790f69e512e5b64b6f3f43cdd533255.CountRequestBuilder) {
     return i29c76e627ba51878217cbefa644bc9d31790f69e512e5b64b6f3f43cdd533255.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

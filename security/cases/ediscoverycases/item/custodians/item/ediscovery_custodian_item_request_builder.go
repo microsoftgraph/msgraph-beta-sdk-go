@@ -58,11 +58,11 @@ type EdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Activate the activate property
+// Activate provides operations to call the activate method.
 func (m *EdiscoveryCustodianItemRequestBuilder) Activate()(*i4cded81d6396494b55b9783880804a76233d8daa057ffd6582c7638ebbc5b0e9.ActivateRequestBuilder) {
     return i4cded81d6396494b55b9783880804a76233d8daa057ffd6582c7638ebbc5b0e9.NewActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ApplyHold the applyHold property
+// ApplyHold provides operations to call the applyHold method.
 func (m *EdiscoveryCustodianItemRequestBuilder) ApplyHold()(*idc366a2de9455855aad941d033dcd4e11623a2239a8994da3404c6e79873f8ed.ApplyHoldRequestBuilder) {
     return idc366a2de9455855aad941d033dcd4e11623a2239a8994da3404c6e79873f8ed.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -162,7 +162,7 @@ func (m *EdiscoveryCustodianItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCustodianable), nil
 }
-// LastIndexOperation the lastIndexOperation property
+// LastIndexOperation provides operations to manage the lastIndexOperation property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *EdiscoveryCustodianItemRequestBuilder) LastIndexOperation()(*i8207885b0bf2ea2d63475bae7d26fa0498c6807c91130210ada883efffcdff1e.LastIndexOperationRequestBuilder) {
     return i8207885b0bf2ea2d63475bae7d26fa0498c6807c91130210ada883efffcdff1e.NewLastIndexOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -185,19 +185,19 @@ func (m *EdiscoveryCustodianItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCustodianable), nil
 }
-// Release the release property
+// Release provides operations to call the release method.
 func (m *EdiscoveryCustodianItemRequestBuilder) Release()(*i25f82dbb8cf7ca352ce0f843e8fc8cd4fcfbd99f773b8a5f96233e8b67e0134b.ReleaseRequestBuilder) {
     return i25f82dbb8cf7ca352ce0f843e8fc8cd4fcfbd99f773b8a5f96233e8b67e0134b.NewReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RemoveHold the removeHold property
+// RemoveHold provides operations to call the removeHold method.
 func (m *EdiscoveryCustodianItemRequestBuilder) RemoveHold()(*i250ddd0aa330bb7d9ea55c916947840d121a66c3dde4b7545742b82e8f6e7ac1.RemoveHoldRequestBuilder) {
     return i250ddd0aa330bb7d9ea55c916947840d121a66c3dde4b7545742b82e8f6e7ac1.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SiteSources the siteSources property
+// SiteSources provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *EdiscoveryCustodianItemRequestBuilder) SiteSources()(*i03f3e0d3baf12c177e4672910cc93cd351204faa39b38e9125b94b0465177cbd.SiteSourcesRequestBuilder) {
     return i03f3e0d3baf12c177e4672910cc93cd351204faa39b38e9125b94b0465177cbd.NewSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SiteSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.custodians.item.siteSources.item collection
+// SiteSourcesById provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *EdiscoveryCustodianItemRequestBuilder) SiteSourcesById(id string)(*i143d5b3bc52e8356276951d7cc0a9c058b11eba317e2d6b3e7ac0db12a0f480a.SiteSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,11 +208,11 @@ func (m *EdiscoveryCustodianItemRequestBuilder) SiteSourcesById(id string)(*i143
     }
     return i143d5b3bc52e8356276951d7cc0a9c058b11eba317e2d6b3e7ac0db12a0f480a.NewSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UnifiedGroupSources the unifiedGroupSources property
+// UnifiedGroupSources provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *EdiscoveryCustodianItemRequestBuilder) UnifiedGroupSources()(*ie416f7f615f3b8cc0d03e5759e3f2a5be926bc05b1c601c65a9cd332cd0752da.UnifiedGroupSourcesRequestBuilder) {
     return ie416f7f615f3b8cc0d03e5759e3f2a5be926bc05b1c601c65a9cd332cd0752da.NewUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UnifiedGroupSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.custodians.item.unifiedGroupSources.item collection
+// UnifiedGroupSourcesById provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *EdiscoveryCustodianItemRequestBuilder) UnifiedGroupSourcesById(id string)(*i089a870e693072fe784f18deae6aef7a21348d641c984511c981fa961f3e7024.UnifiedGroupSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -223,15 +223,15 @@ func (m *EdiscoveryCustodianItemRequestBuilder) UnifiedGroupSourcesById(id strin
     }
     return i089a870e693072fe784f18deae6aef7a21348d641c984511c981fa961f3e7024.NewUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UpdateIndex the updateIndex property
+// UpdateIndex provides operations to call the updateIndex method.
 func (m *EdiscoveryCustodianItemRequestBuilder) UpdateIndex()(*i1d6b86465bb3bc751dc147d093bd1285a99a35daf39ad5608f2d968591cb3ee4.UpdateIndexRequestBuilder) {
     return i1d6b86465bb3bc751dc147d093bd1285a99a35daf39ad5608f2d968591cb3ee4.NewUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserSources the userSources property
+// UserSources provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *EdiscoveryCustodianItemRequestBuilder) UserSources()(*idf7d17e258ae3eb429fcc8b0a4fb77cbb89c88802013e167f54b495ebd387b15.UserSourcesRequestBuilder) {
     return idf7d17e258ae3eb429fcc8b0a4fb77cbb89c88802013e167f54b495ebd387b15.NewUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.custodians.item.userSources.item collection
+// UserSourcesById provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryCustodian entity.
 func (m *EdiscoveryCustodianItemRequestBuilder) UserSourcesById(id string)(*i5bd1512a36bd7cc5e41d7ce737db1fe666eea2a3c15417a8d9e1b607a6d57151.UserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

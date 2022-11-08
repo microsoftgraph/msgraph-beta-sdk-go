@@ -165,11 +165,11 @@ func (m *EdiscoveryHoldPolicyItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable), nil
 }
-// SiteSources the siteSources property
+// SiteSources provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) SiteSources()(*i9ace712041a40643f189574a97cef54b4f5289dc8e7d5f14f9f6a0aa6ca7b5e6.SiteSourcesRequestBuilder) {
     return i9ace712041a40643f189574a97cef54b4f5289dc8e7d5f14f9f6a0aa6ca7b5e6.NewSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SiteSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.legalHolds.item.siteSources.item collection
+// SiteSourcesById provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) SiteSourcesById(id string)(*i4e3141a0617761408ffbe4cd94649b46da74b1eede7901858625db7024f92bd2.SiteSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -180,11 +180,11 @@ func (m *EdiscoveryHoldPolicyItemRequestBuilder) SiteSourcesById(id string)(*i4e
     }
     return i4e3141a0617761408ffbe4cd94649b46da74b1eede7901858625db7024f92bd2.NewSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserSources the userSources property
+// UserSources provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) UserSources()(*ia32cbd79caa9eff14de00b07f351e1947720fbb09797cc6a8508ebc248384a93.UserSourcesRequestBuilder) {
     return ia32cbd79caa9eff14de00b07f351e1947720fbb09797cc6a8508ebc248384a93.NewUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.cases.ediscoveryCases.item.legalHolds.item.userSources.item collection
+// UserSourcesById provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) UserSourcesById(id string)(*i40830520f16be71cf2045e80d0b0d26460dde0bdcc9eb2ab191bc252c04a5cd2.UserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

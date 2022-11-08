@@ -128,11 +128,11 @@ func (m *ContactItemRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Extensions the extensions property
+// Extensions provides operations to manage the extensions property of the microsoft.graph.contact entity.
 func (m *ContactItemRequestBuilder) Extensions()(*ie3d9f38317d56bf10dda6a36e3760ff01c63ef2ad752e3c69e3cec7076f38854.ExtensionsRequestBuilder) {
     return ie3d9f38317d56bf10dda6a36e3760ff01c63ef2ad752e3c69e3cec7076f38854.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.contacts.item.extensions.item collection
+// ExtensionsById provides operations to manage the extensions property of the microsoft.graph.contact entity.
 func (m *ContactItemRequestBuilder) ExtensionsById(id string)(*i2701a9bf3922181a04af924cf3fbecae3d77d44a3405910fbbc6aed642912d7d.ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -162,11 +162,11 @@ func (m *ContactItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable), nil
 }
-// MultiValueExtendedProperties the multiValueExtendedProperties property
+// MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contact entity.
 func (m *ContactItemRequestBuilder) MultiValueExtendedProperties()(*i32630bf5a40120b413c9183bae333e6054a59c736a62597a7a53fdc7bdd321fc.MultiValueExtendedPropertiesRequestBuilder) {
     return i32630bf5a40120b413c9183bae333e6054a59c736a62597a7a53fdc7bdd321fc.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.contacts.item.multiValueExtendedProperties.item collection
+// MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contact entity.
 func (m *ContactItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i7e5eb71905e81193c6dacd18d4b084ea5663e00b4ae0e2ca050049b100d89d56.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -196,15 +196,15 @@ func (m *ContactItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable), nil
 }
-// Photo the photo property
+// Photo provides operations to manage the photo property of the microsoft.graph.contact entity.
 func (m *ContactItemRequestBuilder) Photo()(*i46c2fa37031933cdf768d58a91bf34aedb2ac9a66cfaccfd4c59c530260a509b.PhotoRequestBuilder) {
     return i46c2fa37031933cdf768d58a91bf34aedb2ac9a66cfaccfd4c59c530260a509b.NewPhotoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedProperties the singleValueExtendedProperties property
+// SingleValueExtendedProperties provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contact entity.
 func (m *ContactItemRequestBuilder) SingleValueExtendedProperties()(*i3fef6dd05b3fc212eff69f402926aec45502db994ed5342e766f3e568323e591.SingleValueExtendedPropertiesRequestBuilder) {
     return i3fef6dd05b3fc212eff69f402926aec45502db994ed5342e766f3e568323e591.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.contacts.item.singleValueExtendedProperties.item collection
+// SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contact entity.
 func (m *ContactItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i4fc59cfed5e5f3b9672457001a35df6b3a62d567de18acefa1ca1cc5823c1c4c.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

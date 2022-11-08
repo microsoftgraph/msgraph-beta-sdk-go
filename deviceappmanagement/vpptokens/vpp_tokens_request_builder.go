@@ -73,7 +73,7 @@ func NewVppTokensRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewVppTokensRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *VppTokensRequestBuilder) Count()(*ia528e1063400aadddf50613ea016bf5d44eacef1c362b6d342b7013823ef491f.CountRequestBuilder) {
     return ia528e1063400aadddf50613ea016bf5d44eacef1c362b6d342b7013823ef491f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *VppTokensRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable), nil
 }
-// SyncLicenseCounts the syncLicenseCounts property
+// SyncLicenseCounts provides operations to call the syncLicenseCounts method.
 func (m *VppTokensRequestBuilder) SyncLicenseCounts()(*ib956f45626ba71f8b797fc4b16070658a39a611e2d6aa111aea4eca180955477.SyncLicenseCountsRequestBuilder) {
     return ib956f45626ba71f8b797fc4b16070658a39a611e2d6aa111aea4eca180955477.NewSyncLicenseCountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

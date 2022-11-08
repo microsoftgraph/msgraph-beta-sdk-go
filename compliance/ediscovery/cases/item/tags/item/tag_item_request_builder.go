@@ -49,11 +49,11 @@ type TagItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChildTags the childTags property
+// ChildTags provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
 func (m *TagItemRequestBuilder) ChildTags()(*ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b.ChildTagsRequestBuilder) {
     return ifd0bc700953e86731dc6b8f4d24856110197f3a2f3a5c274adce92d84c52a38b.NewChildTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildTagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.tags.item.childTags.item collection
+// ChildTagsById provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
 func (m *TagItemRequestBuilder) ChildTagsById(id string)(*i38aad1ced9d8f554b56c1f56b3c9627d8e57370d80ef2c7226ef8dce8859b733.TagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -160,7 +160,7 @@ func (m *TagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *T
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable), nil
 }
-// Parent the parent property
+// Parent provides operations to manage the parent property of the microsoft.graph.ediscovery.tag entity.
 func (m *TagItemRequestBuilder) Parent()(*i0062f7032319358f950525b0727c7483d6120ab82ff3470b0574d7d1bffe764a.ParentRequestBuilder) {
     return i0062f7032319358f950525b0727c7483d6120ab82ff3470b0574d7d1bffe764a.NewParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

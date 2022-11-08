@@ -24,12 +24,14 @@ const (
     LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Setting can be deployed through device enrollment.
     ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
-    // Sentinel member for cases where the client cannot handle the new enum values.
+    // Setting can be deployed using the Endpoint privilege management channel
+    ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
 )
 
 func (i DeviceManagementConfigurationTechnologies) String() string {
-    return []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "enrollment", "unknownFutureValue"}[i]
+    return []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementConfigurationTechnologies(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
@@ -52,6 +54,8 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (interface{}, erro
             result = LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "enrollment":
             result = ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+        case "endpointPrivilegeManagement":
+            result = ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         default:

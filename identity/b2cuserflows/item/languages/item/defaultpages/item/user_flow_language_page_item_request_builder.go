@@ -66,7 +66,7 @@ func NewUserFlowLanguagePageItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowLanguagePageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content the Content property
+// Content provides operations to manage the media for the identityContainer entity.
 func (m *UserFlowLanguagePageItemRequestBuilder) Content()(*if6b7602a1f5a313544f4660d15f927d4b43e0ac4355640227ee189a9d9cd3c6b.ContentRequestBuilder) {
     return if6b7602a1f5a313544f4660d15f927d4b43e0ac4355640227ee189a9d9cd3c6b.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

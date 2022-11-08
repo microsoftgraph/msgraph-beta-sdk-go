@@ -125,7 +125,7 @@ func (m *TenantAttachRBACRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Enable the enable property
+// Enable provides operations to call the enable method.
 func (m *TenantAttachRBACRequestBuilder) Enable()(*i7bc33d26fea3adf37af488567a81f90be048ebf49ee9219a6b86ea2b4cd5b097.EnableRequestBuilder) {
     return i7bc33d26fea3adf37af488567a81f90be048ebf49ee9219a6b86ea2b4cd5b097.NewEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

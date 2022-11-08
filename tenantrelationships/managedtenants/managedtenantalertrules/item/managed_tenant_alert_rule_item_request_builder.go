@@ -49,11 +49,11 @@ type ManagedTenantAlertRuleItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alerts the alerts property
+// Alerts provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
 func (m *ManagedTenantAlertRuleItemRequestBuilder) Alerts()(*i0cec944e50cc713c9364d6763f210aeb821799d0ffa3f9ff0f52c6a6c52ec033.AlertsRequestBuilder) {
     return i0cec944e50cc713c9364d6763f210aeb821799d0ffa3f9ff0f52c6a6c52ec033.NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AlertsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedTenantAlertRules.item.alerts.item collection
+// AlertsById provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
 func (m *ManagedTenantAlertRuleItemRequestBuilder) AlertsById(id string)(*i19a32188a040845d03d44353d043fe9b0fdf18e46f0b8b499998d90b4226ccb2.ManagedTenantAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,7 +179,7 @@ func (m *ManagedTenantAlertRuleItemRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantAlertRuleable), nil
 }
-// RuleDefinition the ruleDefinition property
+// RuleDefinition provides operations to manage the ruleDefinition property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
 func (m *ManagedTenantAlertRuleItemRequestBuilder) RuleDefinition()(*ib4f6aeda622993a4277a2d88d9fe91d60eb6abc7a9f2e8ef54a0fa2ea3623e02.RuleDefinitionRequestBuilder) {
     return ib4f6aeda622993a4277a2d88d9fe91d60eb6abc7a9f2e8ef54a0fa2ea3623e02.NewRuleDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

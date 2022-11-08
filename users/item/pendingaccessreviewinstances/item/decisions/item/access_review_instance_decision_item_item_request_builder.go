@@ -145,11 +145,11 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
-// Insights the insights property
+// Insights provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Insights()(*i98df9c7f840c9c5c0b12fd428f2fbe2ea965b169f7e863ca7e3667e7cd6f7b1f.InsightsRequestBuilder) {
     return i98df9c7f840c9c5c0b12fd428f2fbe2ea965b169f7e863ca7e3667e7cd6f7b1f.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// InsightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.pendingAccessReviewInstances.item.decisions.item.insights.item collection
+// InsightsById provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id string)(*i8ab4f8a4023a5ba0dded9e9af14a7e133a9d36389a5fd6c5d70237f49afb7541.GovernanceInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -160,7 +160,7 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id str
     }
     return i8ab4f8a4023a5ba0dded9e9af14a7e133a9d36389a5fd6c5d70237f49afb7541.NewGovernanceInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instance the instance property
+// Instance provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*i407e7c942fbe85193ce2e1d35ec7cff1697fbd67c46b78f4c45991c2c13508c0.InstanceRequestBuilder) {
     return i407e7c942fbe85193ce2e1d35ec7cff1697fbd67c46b78f4c45991c2c13508c0.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

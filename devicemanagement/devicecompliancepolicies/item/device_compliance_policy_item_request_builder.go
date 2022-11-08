@@ -60,15 +60,15 @@ type DeviceCompliancePolicyItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Assign the assign property
+// Assign provides operations to call the assign method.
 func (m *DeviceCompliancePolicyItemRequestBuilder) Assign()(*ib270494a9068f6e72dec9f03b5ba60e5bb8fe5ad2b5cb9fbe2e630750404a4b1.AssignRequestBuilder) {
     return ib270494a9068f6e72dec9f03b5ba60e5bb8fe5ad2b5cb9fbe2e630750404a4b1.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assignments the assignments property
+// Assignments provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) Assignments()(*i9488f52bd7cc76d580224eb7ca66454394d137f7c9e6dd2acb88d09d9a7e51c6.AssignmentsRequestBuilder) {
     return i9488f52bd7cc76d580224eb7ca66454394d137f7c9e6dd2acb88d09d9a7e51c6.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicies.item.assignments.item collection
+// AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) AssignmentsById(id string)(*i3383893ad7fa9d341ce2de93a744c841a52543d2213e0bfa5f2aa3542cc73fe0.DeviceCompliancePolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -156,11 +156,11 @@ func (m *DeviceCompliancePolicyItemRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// DeviceSettingStateSummaries the deviceSettingStateSummaries property
+// DeviceSettingStateSummaries provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) DeviceSettingStateSummaries()(*i439f777579087aca184f6db254b06b730f0350f86f3b16ab9715855a4d1dba9d.DeviceSettingStateSummariesRequestBuilder) {
     return i439f777579087aca184f6db254b06b730f0350f86f3b16ab9715855a4d1dba9d.NewDeviceSettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceSettingStateSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicies.item.deviceSettingStateSummaries.item collection
+// DeviceSettingStateSummariesById provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) DeviceSettingStateSummariesById(id string)(*iae08883b92d515e98cdc6bc2aa90846da99d3b61ad866c8ab0134b07d2effedf.SettingStateDeviceSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,11 +171,11 @@ func (m *DeviceCompliancePolicyItemRequestBuilder) DeviceSettingStateSummariesBy
     }
     return iae08883b92d515e98cdc6bc2aa90846da99d3b61ad866c8ab0134b07d2effedf.NewSettingStateDeviceSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceStatuses the deviceStatuses property
+// DeviceStatuses provides operations to manage the deviceStatuses property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) DeviceStatuses()(*id1ddb4feb2a86c7e00f57540a6ad6d5e4ec28b49c8a7d13acfad4a9b79ffef7a.DeviceStatusesRequestBuilder) {
     return id1ddb4feb2a86c7e00f57540a6ad6d5e4ec28b49c8a7d13acfad4a9b79ffef7a.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeviceStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicies.item.deviceStatuses.item collection
+// DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) DeviceStatusesById(id string)(*i2241d054608ba9643ba9fabeb07e233374bce0842cb061ee1fa65ee48d7cf7fb.DeviceComplianceDeviceStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -186,7 +186,7 @@ func (m *DeviceCompliancePolicyItemRequestBuilder) DeviceStatusesById(id string)
     }
     return i2241d054608ba9643ba9fabeb07e233374bce0842cb061ee1fa65ee48d7cf7fb.NewDeviceComplianceDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeviceStatusOverview the deviceStatusOverview property
+// DeviceStatusOverview provides operations to manage the deviceStatusOverview property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) DeviceStatusOverview()(*i029c708ccdb6d4ef5dc4da9e27b34aa93e864246d8928a227c86dea55f0ed64c.DeviceStatusOverviewRequestBuilder) {
     return i029c708ccdb6d4ef5dc4da9e27b34aa93e864246d8928a227c86dea55f0ed64c.NewDeviceStatusOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -228,15 +228,15 @@ func (m *DeviceCompliancePolicyItemRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable), nil
 }
-// ScheduleActionsForRules the scheduleActionsForRules property
+// ScheduleActionsForRules provides operations to call the scheduleActionsForRules method.
 func (m *DeviceCompliancePolicyItemRequestBuilder) ScheduleActionsForRules()(*i3f8fc70c29f6750d091ef750e61ce5245979cb89e4ded10d81e6f29376601e4f.ScheduleActionsForRulesRequestBuilder) {
     return i3f8fc70c29f6750d091ef750e61ce5245979cb89e4ded10d81e6f29376601e4f.NewScheduleActionsForRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ScheduledActionsForRule the scheduledActionsForRule property
+// ScheduledActionsForRule provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) ScheduledActionsForRule()(*i67fbfff12a38b588d862cac3e0f5919efcd47ec1706ebbebae7f2a9c4cb13f8b.ScheduledActionsForRuleRequestBuilder) {
     return i67fbfff12a38b588d862cac3e0f5919efcd47ec1706ebbebae7f2a9c4cb13f8b.NewScheduledActionsForRuleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ScheduledActionsForRuleById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item collection
+// ScheduledActionsForRuleById provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) ScheduledActionsForRuleById(id string)(*i5151b97d6c1c450de6501bbc7815d527e3f1cd53abb08be08da23fc61bd291db.DeviceComplianceScheduledActionForRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -247,11 +247,11 @@ func (m *DeviceCompliancePolicyItemRequestBuilder) ScheduledActionsForRuleById(i
     }
     return i5151b97d6c1c450de6501bbc7815d527e3f1cd53abb08be08da23fc61bd291db.NewDeviceComplianceScheduledActionForRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserStatuses the userStatuses property
+// UserStatuses provides operations to manage the userStatuses property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) UserStatuses()(*ibc404ddee37b91bd7cb4a0ad73dd266370588956b1f15cfc815c8ae7b9470c9d.UserStatusesRequestBuilder) {
     return ibc404ddee37b91bd7cb4a0ad73dd266370588956b1f15cfc815c8ae7b9470c9d.NewUserStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// UserStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceCompliancePolicies.item.userStatuses.item collection
+// UserStatusesById provides operations to manage the userStatuses property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) UserStatusesById(id string)(*i411a74566de656324f76d6caebf7327fa83cbd750a7c74e112ce1d060b24d414.DeviceComplianceUserStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -262,7 +262,7 @@ func (m *DeviceCompliancePolicyItemRequestBuilder) UserStatusesById(id string)(*
     }
     return i411a74566de656324f76d6caebf7327fa83cbd750a7c74e112ce1d060b24d414.NewDeviceComplianceUserStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// UserStatusOverview the userStatusOverview property
+// UserStatusOverview provides operations to manage the userStatusOverview property of the microsoft.graph.deviceCompliancePolicy entity.
 func (m *DeviceCompliancePolicyItemRequestBuilder) UserStatusOverview()(*ibe0820e05500713b9524c00f4582d491a213af40b239abac338d37833fdf7c21.UserStatusOverviewRequestBuilder) {
     return ibe0820e05500713b9524c00f4582d491a213af40b239abac338d37833fdf7c21.NewUserStatusOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -134,11 +134,11 @@ func (m *IdentityProtectionRequestBuilder) Patch(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProtectionRootable), nil
 }
-// RiskDetections the riskDetections property
+// RiskDetections provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskDetections()(*i0e267c8100f2aba2f7153bd084faad7f539542ced6c643bbda5c3501e2ccc9a4.RiskDetectionsRequestBuilder) {
     return i0e267c8100f2aba2f7153bd084faad7f539542ced6c643bbda5c3501e2ccc9a4.NewRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RiskDetectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityProtection.riskDetections.item collection
+// RiskDetectionsById provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i294f460d075f1fad271e61484dbf4976eb35e90151e8cbeea5c33955169dbb83.RiskDetectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -149,11 +149,11 @@ func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i294f4
     }
     return i294f460d075f1fad271e61484dbf4976eb35e90151e8cbeea5c33955169dbb83.NewRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RiskyServicePrincipals the riskyServicePrincipals property
+// RiskyServicePrincipals provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipals()(*i98ea4cb17d390592303b9e25c8f92ccaf566e5d10c2cabc9f160512904151e07.RiskyServicePrincipalsRequestBuilder) {
     return i98ea4cb17d390592303b9e25c8f92ccaf566e5d10c2cabc9f160512904151e07.NewRiskyServicePrincipalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RiskyServicePrincipalsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityProtection.riskyServicePrincipals.item collection
+// RiskyServicePrincipalsById provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipalsById(id string)(*i93ffa285a6083330a0c11899f97deea0e0a67ea5245ac02339ac77d9f35ce82b.RiskyServicePrincipalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -164,11 +164,11 @@ func (m *IdentityProtectionRequestBuilder) RiskyServicePrincipalsById(id string)
     }
     return i93ffa285a6083330a0c11899f97deea0e0a67ea5245ac02339ac77d9f35ce82b.NewRiskyServicePrincipalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// RiskyUsers the riskyUsers property
+// RiskyUsers provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*i19f24f05457f3b35ed5a71197a5407212d3b7238b612e5bf489fbc4202271989.RiskyUsersRequestBuilder) {
     return i19f24f05457f3b35ed5a71197a5407212d3b7238b612e5bf489fbc4202271989.NewRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RiskyUsersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityProtection.riskyUsers.item collection
+// RiskyUsersById provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i5b186cdb023bab2640affb6c67369c3f8028451aa7845fa6d84e60b0d9b0fc05.RiskyUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,11 +179,11 @@ func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i5b186cdb0
     }
     return i5b186cdb023bab2640affb6c67369c3f8028451aa7845fa6d84e60b0d9b0fc05.NewRiskyUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// ServicePrincipalRiskDetections the servicePrincipalRiskDetections property
+// ServicePrincipalRiskDetections provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetections()(*ic7b59228365548f0fce94cdce65ae97f7b560a35a266ece91414c55ca4e5c249.ServicePrincipalRiskDetectionsRequestBuilder) {
     return ic7b59228365548f0fce94cdce65ae97f7b560a35a266ece91414c55ca4e5c249.NewServicePrincipalRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ServicePrincipalRiskDetectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityProtection.servicePrincipalRiskDetections.item collection
+// ServicePrincipalRiskDetectionsById provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
 func (m *IdentityProtectionRequestBuilder) ServicePrincipalRiskDetectionsById(id string)(*i3b4ddc0707ce5dc4f8bc784d8e4305e5ba05b0af6b7287ebf1b1abc4f5796032.ServicePrincipalRiskDetectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

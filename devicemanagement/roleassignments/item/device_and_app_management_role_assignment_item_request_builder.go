@@ -163,11 +163,11 @@ func (m *DeviceAndAppManagementRoleAssignmentItemRequestBuilder) Patch(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementRoleAssignmentable), nil
 }
-// RoleScopeTags the roleScopeTags property
+// RoleScopeTags provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
 func (m *DeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleScopeTags()(*i5cad8ef86dc95ddf4ad899618000e669a92e76bdb8d952086dd1b1ac1b69d619.RoleScopeTagsRequestBuilder) {
     return i5cad8ef86dc95ddf4ad899618000e669a92e76bdb8d952086dd1b1ac1b69d619.NewRoleScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// RoleScopeTagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleAssignments.item.roleScopeTags.item collection
+// RoleScopeTagsById provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
 func (m *DeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleScopeTagsById(id string)(*i0144dfcc833d31687db4d6e06640cdfd86f365134712a6504ff2ceeccb6a3aa6.RoleScopeTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

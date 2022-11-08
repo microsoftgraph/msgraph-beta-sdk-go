@@ -63,6 +63,8 @@ type IntuneBrandingProfile struct {
     sendDeviceOwnershipChangePushNotification *bool
     // Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
     showAzureADEnterpriseApps *bool
+    // Boolean that indicates if Configuration Manager Apps will be shown in Company Portal
+    showConfigurationManagerApps *bool
     // Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
     showDisplayNameNextToLogo *bool
     // Boolean that represents whether the administrator-supplied logo images are shown or not
@@ -169,6 +171,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(i878a80d
     res["roleScopeTagIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetRoleScopeTagIds)
     res["sendDeviceOwnershipChangePushNotification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSendDeviceOwnershipChangePushNotification)
     res["showAzureADEnterpriseApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShowAzureADEnterpriseApps)
+    res["showConfigurationManagerApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShowConfigurationManagerApps)
     res["showDisplayNameNextToLogo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShowDisplayNameNextToLogo)
     res["showLogo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShowLogo)
     res["showOfficeWebApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShowOfficeWebApps)
@@ -231,6 +234,10 @@ func (m *IntuneBrandingProfile) GetSendDeviceOwnershipChangePushNotification()(*
 // GetShowAzureADEnterpriseApps gets the showAzureADEnterpriseApps property value. Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
 func (m *IntuneBrandingProfile) GetShowAzureADEnterpriseApps()(*bool) {
     return m.showAzureADEnterpriseApps
+}
+// GetShowConfigurationManagerApps gets the showConfigurationManagerApps property value. Boolean that indicates if Configuration Manager Apps will be shown in Company Portal
+func (m *IntuneBrandingProfile) GetShowConfigurationManagerApps()(*bool) {
+    return m.showConfigurationManagerApps
 }
 // GetShowDisplayNameNextToLogo gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
 func (m *IntuneBrandingProfile) GetShowDisplayNameNextToLogo()(*bool) {
@@ -424,6 +431,12 @@ func (m *IntuneBrandingProfile) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteBoolValue("showConfigurationManagerApps", m.GetShowConfigurationManagerApps())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("showDisplayNameNextToLogo", m.GetShowDisplayNameNextToLogo())
         if err != nil {
             return err
@@ -562,6 +575,10 @@ func (m *IntuneBrandingProfile) SetSendDeviceOwnershipChangePushNotification(val
 // SetShowAzureADEnterpriseApps sets the showAzureADEnterpriseApps property value. Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
 func (m *IntuneBrandingProfile) SetShowAzureADEnterpriseApps(value *bool)() {
     m.showAzureADEnterpriseApps = value
+}
+// SetShowConfigurationManagerApps sets the showConfigurationManagerApps property value. Boolean that indicates if Configuration Manager Apps will be shown in Company Portal
+func (m *IntuneBrandingProfile) SetShowConfigurationManagerApps(value *bool)() {
+    m.showConfigurationManagerApps = value
 }
 // SetShowDisplayNameNextToLogo sets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
 func (m *IntuneBrandingProfile) SetShowDisplayNameNextToLogo(value *bool)() {

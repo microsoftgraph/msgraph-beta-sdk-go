@@ -64,7 +64,7 @@ func NewFavoritePlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewFavoritePlansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the Count property
+// Count provides operations to count the resources in the collection.
 func (m *FavoritePlansRequestBuilder) Count()(*i6e798cb62d48269e63cd78c9159cd198e2c890347a287f36f0d2142a35eb42c1.CountRequestBuilder) {
     return i6e798cb62d48269e63cd78c9159cd198e2c890347a287f36f0d2142a35eb42c1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

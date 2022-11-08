@@ -52,11 +52,11 @@ type GroupPolicyCategoryItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Children the children property
+// Children provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoryItemRequestBuilder) Children()(*id2be9225a42cb4e206ea5df101d0b19a8153d5b9b239d1b508a6a626f022511d.ChildrenRequestBuilder) {
     return id2be9225a42cb4e206ea5df101d0b19a8153d5b9b239d1b508a6a626f022511d.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyCategories.item.children.item collection
+// ChildrenById provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoryItemRequestBuilder) ChildrenById(id string)(*ifbd0ac3b7baba765dc2dc37d787c02abc489a2f2b906d274ff1edb3eaa318000.GroupPolicyCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -128,15 +128,15 @@ func (m *GroupPolicyCategoryItemRequestBuilder) CreatePatchRequestInformation(ct
     }
     return requestInfo, nil
 }
-// DefinitionFile the definitionFile property
+// DefinitionFile provides operations to manage the definitionFile property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoryItemRequestBuilder) DefinitionFile()(*ib08bb2c1c958799079296de4709174f5e45ba516b4aba985d1cb9bc3f3277f8f.DefinitionFileRequestBuilder) {
     return ib08bb2c1c958799079296de4709174f5e45ba516b4aba985d1cb9bc3f3277f8f.NewDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Definitions the definitions property
+// Definitions provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoryItemRequestBuilder) Definitions()(*i077f9bb18a3b8a45bbe869035f3d5b79f48a4e8c97eeec6eee3ae05847933d3c.DefinitionsRequestBuilder) {
     return i077f9bb18a3b8a45bbe869035f3d5b79f48a4e8c97eeec6eee3ae05847933d3c.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyCategories.item.definitions.item collection
+// DefinitionsById provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoryItemRequestBuilder) DefinitionsById(id string)(*i8c872c2226508b9c43bacd7dd3653c998b92eb6bc77a2787b67fc5417e0ee09a.GroupPolicyDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -182,7 +182,7 @@ func (m *GroupPolicyCategoryItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyCategoryable), nil
 }
-// Parent the parent property
+// Parent provides operations to manage the parent property of the microsoft.graph.groupPolicyCategory entity.
 func (m *GroupPolicyCategoryItemRequestBuilder) Parent()(*i821765f6697e8edae076c3f190855ac0dea6daad75cfdcb0ceb7c24fc78d5252.ParentRequestBuilder) {
     return i821765f6697e8edae076c3f190855ac0dea6daad75cfdcb0ceb7c24fc78d5252.NewParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
