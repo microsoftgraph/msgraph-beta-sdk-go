@@ -77,7 +77,7 @@ type Application struct {
     samlMetadataUrl *string
     // References application or service contact information from a Service or Asset Management database. Nullable.
     serviceManagementReference *string
-    // The servicePrincipalLockConfiguration property
+    // Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
     servicePrincipalLockConfiguration ServicePrincipalLockConfigurationable
     // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
     signInAudience *string
@@ -302,7 +302,7 @@ func (m *Application) GetSamlMetadataUrl()(*string) {
 func (m *Application) GetServiceManagementReference()(*string) {
     return m.serviceManagementReference
 }
-// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. The servicePrincipalLockConfiguration property
+// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
 func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable) {
     return m.servicePrincipalLockConfiguration
 }
@@ -781,7 +781,7 @@ func (m *Application) SetSamlMetadataUrl(value *string)() {
 func (m *Application) SetServiceManagementReference(value *string)() {
     m.serviceManagementReference = value
 }
-// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. The servicePrincipalLockConfiguration property
+// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
 func (m *Application) SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)() {
     m.servicePrincipalLockConfiguration = value
 }

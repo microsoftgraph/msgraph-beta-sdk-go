@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LinkedResource_v2 provides operations to manage the collection of accessReview entities.
+// LinkedResource_v2 provides operations to manage the collection of accessReviewDecision entities.
 type LinkedResource_v2 struct {
     Entity
     // Field indicating the app name of the source that is sending the linkedResource.

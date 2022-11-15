@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to call the getOemWarranty method.
 type WarrantyType int
 
 const (
