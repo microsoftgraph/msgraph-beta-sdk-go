@@ -45,8 +45,6 @@ func NewSimulation()(*Simulation) {
     m := &Simulation{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.simulation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSimulationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

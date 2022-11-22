@@ -32,8 +32,6 @@ func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
     m := &EdiscoveryExportOperation{
         CaseOperation: *NewCaseOperation(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryExportOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryExportOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

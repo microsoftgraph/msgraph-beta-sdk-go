@@ -21,8 +21,6 @@ func NewMfaDetail()(*MfaDetail) {
     m := &MfaDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mfaDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMfaDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

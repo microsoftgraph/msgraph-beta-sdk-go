@@ -17,8 +17,6 @@ func NewAuthenticationEventHandlerResult()(*AuthenticationEventHandlerResult) {
     m := &AuthenticationEventHandlerResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authenticationEventHandlerResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationEventHandlerResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {
     m := &WindowsAutopilotSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsAutopilotSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsAutopilotSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

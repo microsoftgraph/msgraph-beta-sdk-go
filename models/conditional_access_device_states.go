@@ -21,8 +21,6 @@ func NewConditionalAccessDeviceStates()(*ConditionalAccessDeviceStates) {
     m := &ConditionalAccessDeviceStates{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessDeviceStates";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessDeviceStatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

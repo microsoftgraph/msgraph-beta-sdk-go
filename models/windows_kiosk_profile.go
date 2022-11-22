@@ -25,8 +25,6 @@ func NewWindowsKioskProfile()(*WindowsKioskProfile) {
     m := &WindowsKioskProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsKioskProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsKioskProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

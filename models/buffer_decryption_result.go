@@ -19,8 +19,6 @@ func NewBufferDecryptionResult()(*BufferDecryptionResult) {
     m := &BufferDecryptionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.bufferDecryptionResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBufferDecryptionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

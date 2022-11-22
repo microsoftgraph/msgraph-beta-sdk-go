@@ -23,8 +23,6 @@ func NewMacOSAssociatedDomainsItem()(*MacOSAssociatedDomainsItem) {
     m := &MacOSAssociatedDomainsItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSAssociatedDomainsItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSAssociatedDomainsItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

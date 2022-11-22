@@ -18,8 +18,6 @@ func NewDeviceManagementConfigurationChoiceSettingDefinition()(*DeviceManagement
     m := &DeviceManagementConfigurationChoiceSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

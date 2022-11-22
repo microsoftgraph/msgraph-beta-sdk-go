@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalActivity provides operations to manage the collection of externalConnection entities.
+// ExternalActivity provides operations to manage the collection of accessReviewDecision entities.
 type ExternalActivity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Represents an identity used to identify who is responsible for the activity.
@@ -22,8 +22,6 @@ func NewExternalActivity()(*ExternalActivity) {
     m := &ExternalActivity{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.externalConnectors.externalActivity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

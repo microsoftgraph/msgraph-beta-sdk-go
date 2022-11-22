@@ -8,8 +8,7 @@ import (
 
 // PlannerTeamsPublicationInfo 
 type PlannerTeamsPublicationInfo struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    PlannerTaskCreation
     // The date and time when this task was last modified by the publication process. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
@@ -26,8 +25,8 @@ type PlannerTeamsPublicationInfo struct {
 // NewPlannerTeamsPublicationInfo instantiates a new plannerTeamsPublicationInfo and sets the default values.
 func NewPlannerTeamsPublicationInfo()(*PlannerTeamsPublicationInfo) {
     m := &PlannerTeamsPublicationInfo{
+        PlannerTaskCreation: *NewPlannerTaskCreation(),
     }
-    m.SetAdditionalData(make(map[string]interface{}));
     odataTypeValue := "#microsoft.graph.plannerTeamsPublicationInfo";
     m.SetOdataType(&odataTypeValue);
     return m
@@ -36,13 +35,9 @@ func NewPlannerTeamsPublicationInfo()(*PlannerTeamsPublicationInfo) {
 func CreatePlannerTeamsPublicationInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTeamsPublicationInfo(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTeamsPublicationInfo) GetAdditionalData()(map[string]interface{}) {
-    return m.additionalData
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.PlannerTaskCreation.GetFieldDeserializers()
     res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     res["publicationId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPublicationId)
@@ -77,53 +72,47 @@ func (m *PlannerTeamsPublicationInfo) GetPublishingTeamName()(*string) {
 }
 // Serialize serializes information the current object
 func (m *PlannerTeamsPublicationInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.PlannerTaskCreation.Serialize(writer)
+    if err != nil {
+        return err
+    }
     {
-        err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        err = writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("publicationId", m.GetPublicationId())
+        err = writer.WriteStringValue("publicationId", m.GetPublicationId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("publishedToPlanId", m.GetPublishedToPlanId())
+        err = writer.WriteStringValue("publishedToPlanId", m.GetPublishedToPlanId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("publishingTeamId", m.GetPublishingTeamId())
+        err = writer.WriteStringValue("publishingTeamId", m.GetPublishingTeamId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("publishingTeamName", m.GetPublishingTeamName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        err = writer.WriteStringValue("publishingTeamName", m.GetPublishingTeamName())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTeamsPublicationInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when this task was last modified by the publication process. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

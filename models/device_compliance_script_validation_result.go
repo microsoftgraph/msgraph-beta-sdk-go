@@ -23,8 +23,6 @@ func NewDeviceComplianceScriptValidationResult()(*DeviceComplianceScriptValidati
     m := &DeviceComplianceScriptValidationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceComplianceScriptValidationResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceScriptValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

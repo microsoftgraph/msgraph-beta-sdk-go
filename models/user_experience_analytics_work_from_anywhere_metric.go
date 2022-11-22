@@ -16,8 +16,6 @@ func NewUserExperienceAnalyticsWorkFromAnywhereMetric()(*UserExperienceAnalytics
     m := &UserExperienceAnalyticsWorkFromAnywhereMetric{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

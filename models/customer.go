@@ -61,8 +61,6 @@ func NewCustomer()(*Customer) {
     m := &Customer{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.customer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

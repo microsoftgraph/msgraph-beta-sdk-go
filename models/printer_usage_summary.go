@@ -31,8 +31,6 @@ func NewPrinterUsageSummary()(*PrinterUsageSummary) {
     m := &PrinterUsageSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.printerUsageSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterUsageSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

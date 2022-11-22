@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// LifecycleManagementSettings provides operations to manage the collection of accessReview entities.
+// LifecycleManagementSettings provides operations to manage the collection of activityStatistics entities.
 type LifecycleManagementSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
@@ -17,8 +17,6 @@ func NewLifecycleManagementSettings()(*LifecycleManagementSettings) {
     m := &LifecycleManagementSettings{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.lifecycleManagementSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLifecycleManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

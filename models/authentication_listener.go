@@ -18,8 +18,6 @@ func NewAuthenticationListener()(*AuthenticationListener) {
     m := &AuthenticationListener{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.authenticationListener";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

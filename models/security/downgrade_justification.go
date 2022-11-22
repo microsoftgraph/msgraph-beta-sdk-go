@@ -21,8 +21,6 @@ func NewDowngradeJustification()(*DowngradeJustification) {
     m := &DowngradeJustification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.downgradeJustification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDowngradeJustificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

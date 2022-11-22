@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlan provides operations to manage the collection of accessReview entities.
+// PlannerPlan provides operations to manage the collection of activityStatistics entities.
 type PlannerPlan struct {
     PlannerDelta
     // Collection of buckets in the plan. Read-only. Nullable.
@@ -19,6 +19,8 @@ type PlannerPlan struct {
     createdBy IdentitySetable
     // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The creationSource property
+    creationSource PlannerPlanCreationable
     // Additional details about the plan. Read-only. Nullable.
     details PlannerPlanDetailsable
     // The owner property
@@ -33,8 +35,6 @@ func NewPlannerPlan()(*PlannerPlan) {
     m := &PlannerPlan{
         PlannerDelta: *NewPlannerDelta(),
     }
-    odataTypeValue := "#microsoft.graph.plannerPlan";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +61,10 @@ func (m *PlannerPlan) GetCreatedBy()(IdentitySetable) {
 func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
+// GetCreationSource gets the creationSource property value. The creationSource property
+func (m *PlannerPlan) GetCreationSource()(PlannerPlanCreationable) {
+    return m.creationSource
+}
 // GetDetails gets the details property value. Additional details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
     return m.details
@@ -73,6 +77,7 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     res["contexts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerPlanContextCollectionFromDiscriminatorValue , m.SetContexts)
     res["createdBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdentitySetFromDiscriminatorValue , m.SetCreatedBy)
     res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
+    res["creationSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerPlanCreationFromDiscriminatorValue , m.SetCreationSource)
     res["details"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerPlanDetailsFromDiscriminatorValue , m.SetDetails)
     res["owner"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOwner)
     res["tasks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue , m.SetTasks)
@@ -129,6 +134,12 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("creationSource", m.GetCreationSource())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("details", m.GetDetails())
         if err != nil {
             return err
@@ -174,6 +185,10 @@ func (m *PlannerPlan) SetCreatedBy(value IdentitySetable)() {
 // SetCreatedDateTime sets the createdDateTime property value. Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
+}
+// SetCreationSource sets the creationSource property value. The creationSource property
+func (m *PlannerPlan) SetCreationSource(value PlannerPlanCreationable)() {
+    m.creationSource = value
 }
 // SetDetails sets the details property value. Additional details about the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {

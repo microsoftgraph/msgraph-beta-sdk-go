@@ -26,8 +26,6 @@ func NewGovernanceSchedule()(*GovernanceSchedule) {
     m := &GovernanceSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.governanceSchedule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernanceScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

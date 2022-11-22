@@ -28,8 +28,6 @@ func NewB2cIdentityUserFlow()(*B2cIdentityUserFlow) {
     m := &B2cIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),
     }
-    odataTypeValue := "#microsoft.graph.b2cIdentityUserFlow";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateB2cIdentityUserFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -27,8 +27,6 @@ func NewDataSharingConsent()(*DataSharingConsent) {
     m := &DataSharingConsent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.dataSharingConsent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDataSharingConsentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

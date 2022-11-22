@@ -69,8 +69,6 @@ func NewMacOSPrivacyAccessControlItem()(*MacOSPrivacyAccessControlItem) {
     m := &MacOSPrivacyAccessControlItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSPrivacyAccessControlItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSPrivacyAccessControlItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

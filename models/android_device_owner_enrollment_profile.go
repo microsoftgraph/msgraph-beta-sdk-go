@@ -55,8 +55,6 @@ func NewAndroidDeviceOwnerEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfi
     m := &AndroidDeviceOwnerEnrollmentProfile{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerEnrollmentProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

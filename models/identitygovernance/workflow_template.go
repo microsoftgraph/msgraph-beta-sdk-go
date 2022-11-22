@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// WorkflowTemplate provides operations to manage the collection of accessReview entities.
+// WorkflowTemplate provides operations to manage the collection of activityStatistics entities.
 type WorkflowTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category property
@@ -25,8 +25,6 @@ func NewWorkflowTemplate()(*WorkflowTemplate) {
     m := &WorkflowTemplate{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.workflowTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkflowTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

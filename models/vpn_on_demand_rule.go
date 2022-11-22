@@ -35,8 +35,6 @@ func NewVpnOnDemandRule()(*VpnOnDemandRule) {
     m := &VpnOnDemandRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.vpnOnDemandRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnOnDemandRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

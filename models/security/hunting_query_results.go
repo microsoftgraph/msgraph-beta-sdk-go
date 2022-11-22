@@ -21,8 +21,6 @@ func NewHuntingQueryResults()(*HuntingQueryResults) {
     m := &HuntingQueryResults{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.huntingQueryResults";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHuntingQueryResultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

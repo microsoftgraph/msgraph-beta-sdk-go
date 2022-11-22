@@ -25,8 +25,6 @@ func NewContentClassification()(*ContentClassification) {
     m := &ContentClassification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.contentClassification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -34,8 +34,6 @@ func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
     m := &PrivilegedRoleSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.privilegedRoleSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivilegedRoleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewDataProcessorServiceForWindowsFeaturesOnboarding()(*DataProcessorService
     m := &DataProcessorServiceForWindowsFeaturesOnboarding{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.dataProcessorServiceForWindowsFeaturesOnboarding";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDataProcessorServiceForWindowsFeaturesOnboardingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

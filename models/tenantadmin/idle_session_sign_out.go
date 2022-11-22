@@ -23,8 +23,6 @@ func NewIdleSessionSignOut()(*IdleSessionSignOut) {
     m := &IdleSessionSignOut{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.tenantAdmin.idleSessionSignOut";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdleSessionSignOutFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

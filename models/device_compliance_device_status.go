@@ -31,8 +31,6 @@ func NewDeviceComplianceDeviceStatus()(*DeviceComplianceDeviceStatus) {
     m := &DeviceComplianceDeviceStatus{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceComplianceDeviceStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceDeviceStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -8,9 +8,9 @@ import (
 // PlannerPlanDetails 
 type PlannerPlanDetails struct {
     PlannerDelta
-    // An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan
+    // An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
     categoryDescriptions PlannerCategoryDescriptionsable
-    // Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.
+    // A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container. Read-only.
     contextDetails PlannerPlanContextDetailsCollectionable
     // The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
     sharedWith PlannerUserIdsable
@@ -20,19 +20,17 @@ func NewPlannerPlanDetails()(*PlannerPlanDetails) {
     m := &PlannerPlanDetails{
         PlannerDelta: *NewPlannerDelta(),
     }
-    odataTypeValue := "#microsoft.graph.plannerPlanDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerPlanDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePlannerPlanDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlanDetails(), nil
 }
-// GetCategoryDescriptions gets the categoryDescriptions property value. An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan
+// GetCategoryDescriptions gets the categoryDescriptions property value. An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
 func (m *PlannerPlanDetails) GetCategoryDescriptions()(PlannerCategoryDescriptionsable) {
     return m.categoryDescriptions
 }
-// GetContextDetails gets the contextDetails property value. Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.
+// GetContextDetails gets the contextDetails property value. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container. Read-only.
 func (m *PlannerPlanDetails) GetContextDetails()(PlannerPlanContextDetailsCollectionable) {
     return m.contextDetails
 }
@@ -74,11 +72,11 @@ func (m *PlannerPlanDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetCategoryDescriptions sets the categoryDescriptions property value. An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan
+// SetCategoryDescriptions sets the categoryDescriptions property value. An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
 func (m *PlannerPlanDetails) SetCategoryDescriptions(value PlannerCategoryDescriptionsable)() {
     m.categoryDescriptions = value
 }
-// SetContextDetails sets the contextDetails property value. Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.
+// SetContextDetails sets the contextDetails property value. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container. Read-only.
 func (m *PlannerPlanDetails) SetContextDetails(value PlannerPlanContextDetailsCollectionable)() {
     m.contextDetails = value
 }

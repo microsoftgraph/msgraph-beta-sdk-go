@@ -34,8 +34,6 @@ func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {
     m := &MobileAppInstallSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.mobileAppInstallSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppInstallSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

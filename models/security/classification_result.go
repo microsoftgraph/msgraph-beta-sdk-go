@@ -23,8 +23,6 @@ func NewClassificationResult()(*ClassificationResult) {
     m := &ClassificationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.classificationResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

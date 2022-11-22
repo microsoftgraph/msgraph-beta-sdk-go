@@ -18,8 +18,6 @@ func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
     m := &UserExperienceAnalyticsCategory{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsCategory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -26,8 +26,6 @@ func NewUserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpact
     m := &UserExperienceAnalyticsImpactingProcess{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsImpactingProcess";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

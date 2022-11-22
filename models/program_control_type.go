@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProgramControlType 
+// ProgramControlType provides operations to manage the collection of accessReview entities.
 type ProgramControlType struct {
     Entity
     // The controlTypeGroupId property
@@ -13,13 +13,11 @@ type ProgramControlType struct {
     // The name of the program control type
     displayName *string
 }
-// NewProgramControlType instantiates a new ProgramControlType and sets the default values.
+// NewProgramControlType instantiates a new programControlType and sets the default values.
 func NewProgramControlType()(*ProgramControlType) {
     m := &ProgramControlType{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.programControlType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProgramControlTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

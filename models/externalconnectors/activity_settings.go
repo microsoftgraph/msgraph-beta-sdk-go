@@ -19,8 +19,6 @@ func NewActivitySettings()(*ActivitySettings) {
     m := &ActivitySettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.externalConnectors.activitySettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateActivitySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

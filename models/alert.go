@@ -93,8 +93,6 @@ func NewAlert()(*Alert) {
     m := &Alert{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.alert";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

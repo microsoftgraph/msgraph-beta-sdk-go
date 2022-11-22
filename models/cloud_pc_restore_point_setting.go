@@ -21,8 +21,6 @@ func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
     m := &CloudPcRestorePointSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcRestorePointSetting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcRestorePointSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

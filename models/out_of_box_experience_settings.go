@@ -29,8 +29,6 @@ func NewOutOfBoxExperienceSettings()(*OutOfBoxExperienceSettings) {
     m := &OutOfBoxExperienceSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.outOfBoxExperienceSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutOfBoxExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

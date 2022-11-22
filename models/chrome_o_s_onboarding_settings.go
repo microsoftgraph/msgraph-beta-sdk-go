@@ -23,8 +23,6 @@ func NewChromeOSOnboardingSettings()(*ChromeOSOnboardingSettings) {
     m := &ChromeOSOnboardingSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.chromeOSOnboardingSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChromeOSOnboardingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

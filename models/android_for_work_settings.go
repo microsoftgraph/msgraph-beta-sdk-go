@@ -33,8 +33,6 @@ func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
     m := &AndroidForWorkSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidForWorkSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

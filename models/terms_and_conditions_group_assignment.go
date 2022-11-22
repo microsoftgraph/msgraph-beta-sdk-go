@@ -18,8 +18,6 @@ func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) 
     m := &TermsAndConditionsGroupAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.termsAndConditionsGroupAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

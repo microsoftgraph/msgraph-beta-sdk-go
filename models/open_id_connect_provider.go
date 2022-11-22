@@ -26,8 +26,6 @@ func NewOpenIdConnectProvider()(*OpenIdConnectProvider) {
     m := &OpenIdConnectProvider{
         IdentityProvider: *NewIdentityProvider(),
     }
-    odataTypeValue := "#microsoft.graph.openIdConnectProvider";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOpenIdConnectProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -35,8 +35,6 @@ func NewBrowserSiteList()(*BrowserSiteList) {
     m := &BrowserSiteList{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.browserSiteList";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBrowserSiteListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

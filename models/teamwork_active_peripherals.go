@@ -27,8 +27,6 @@ func NewTeamworkActivePeripherals()(*TeamworkActivePeripherals) {
     m := &TeamworkActivePeripherals{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkActivePeripherals";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkActivePeripheralsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

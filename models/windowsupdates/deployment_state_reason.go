@@ -19,8 +19,6 @@ func NewDeploymentStateReason()(*DeploymentStateReason) {
     m := &DeploymentStateReason{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.deploymentStateReason";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeploymentStateReasonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

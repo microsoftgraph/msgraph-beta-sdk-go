@@ -23,8 +23,6 @@ func NewNotificationChannel()(*NotificationChannel) {
     m := &NotificationChannel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagement.notificationChannel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNotificationChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

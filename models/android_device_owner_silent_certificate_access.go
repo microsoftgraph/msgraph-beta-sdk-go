@@ -19,8 +19,6 @@ func NewAndroidDeviceOwnerSilentCertificateAccess()(*AndroidDeviceOwnerSilentCer
     m := &AndroidDeviceOwnerSilentCertificateAccess{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerSilentCertificateAccess";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerSilentCertificateAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

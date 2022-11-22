@@ -22,13 +22,11 @@ type Account struct {
     // The subCategory property
     subCategory *string
 }
-// NewAccount instantiates a new Account and sets the default values.
+// NewAccount instantiates a new account and sets the default values.
 func NewAccount()(*Account) {
     m := &Account{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.account";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

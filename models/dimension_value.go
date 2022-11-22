@@ -21,8 +21,6 @@ func NewDimensionValue()(*DimensionValue) {
     m := &DimensionValue{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.dimensionValue";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDimensionValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResource 
+// AccessPackageResource provides operations to manage the collection of accessReviewDecision entities.
 type AccessPackageResource struct {
     Entity
     // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
@@ -41,8 +41,6 @@ func NewAccessPackageResource()(*AccessPackageResource) {
     m := &AccessPackageResource{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.accessPackageResource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

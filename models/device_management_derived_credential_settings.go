@@ -24,8 +24,6 @@ func NewDeviceManagementDerivedCredentialSettings()(*DeviceManagementDerivedCred
     m := &DeviceManagementDerivedCredentialSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementDerivedCredentialSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

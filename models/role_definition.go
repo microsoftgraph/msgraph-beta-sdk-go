@@ -30,8 +30,6 @@ func NewRoleDefinition()(*RoleDefinition) {
     m := &RoleDefinition{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.roleDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

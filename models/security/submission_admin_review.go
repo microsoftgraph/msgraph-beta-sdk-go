@@ -24,8 +24,6 @@ func NewSubmissionAdminReview()(*SubmissionAdminReview) {
     m := &SubmissionAdminReview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.submissionAdminReview";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubmissionAdminReviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

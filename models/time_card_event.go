@@ -24,8 +24,6 @@ func NewTimeCardEvent()(*TimeCardEvent) {
     m := &TimeCardEvent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.timeCardEvent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeCardEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

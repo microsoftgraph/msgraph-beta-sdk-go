@@ -21,8 +21,6 @@ func NewSigningResult()(*SigningResult) {
     m := &SigningResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.signingResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSigningResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

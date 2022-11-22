@@ -33,8 +33,6 @@ func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
     m := &DeviceLogCollectionResponse{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceLogCollectionResponse";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceLogCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

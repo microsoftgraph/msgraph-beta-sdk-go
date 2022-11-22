@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Connector casts the previous resource to application.
+// Connector provides operations to manage the collection of accessReview entities.
 type Connector struct {
     Entity
     // The external IP address as detected by the the connector server. Read-only.
@@ -22,8 +22,6 @@ func NewConnector()(*Connector) {
     m := &Connector{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.connector";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

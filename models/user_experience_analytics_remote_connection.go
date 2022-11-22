@@ -40,8 +40,6 @@ func NewUserExperienceAnalyticsRemoteConnection()(*UserExperienceAnalyticsRemote
     m := &UserExperienceAnalyticsRemoteConnection{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsRemoteConnection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

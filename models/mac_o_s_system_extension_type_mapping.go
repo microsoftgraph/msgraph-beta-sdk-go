@@ -21,8 +21,6 @@ func NewMacOSSystemExtensionTypeMapping()(*MacOSSystemExtensionTypeMapping) {
     m := &MacOSSystemExtensionTypeMapping{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSSystemExtensionTypeMapping";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSSystemExtensionTypeMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

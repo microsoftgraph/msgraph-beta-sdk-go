@@ -29,8 +29,6 @@ func NewRunSummary()(*RunSummary) {
     m := &RunSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityGovernance.runSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

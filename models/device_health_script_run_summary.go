@@ -37,8 +37,6 @@ func NewDeviceHealthScriptRunSummary()(*DeviceHealthScriptRunSummary) {
     m := &DeviceHealthScriptRunSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptRunSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

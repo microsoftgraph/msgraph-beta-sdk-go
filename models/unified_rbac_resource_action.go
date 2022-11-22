@@ -28,8 +28,6 @@ func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
     m := &UnifiedRbacResourceAction{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRbacResourceAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRbacResourceActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewPayloadByFilter()(*PayloadByFilter) {
     m := &PayloadByFilter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.payloadByFilter";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePayloadByFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

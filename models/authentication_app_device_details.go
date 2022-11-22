@@ -25,8 +25,6 @@ func NewAuthenticationAppDeviceDetails()(*AuthenticationAppDeviceDetails) {
     m := &AuthenticationAppDeviceDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authenticationAppDeviceDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

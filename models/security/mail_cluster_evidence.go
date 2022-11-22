@@ -26,8 +26,6 @@ func NewMailClusterEvidence()(*MailClusterEvidence) {
     m := &MailClusterEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.mailClusterEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailClusterEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

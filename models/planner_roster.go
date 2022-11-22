@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerRoster provides operations to manage the collection of accessReview entities.
+// PlannerRoster provides operations to manage the collection of accessReviewDecision entities.
 type PlannerRoster struct {
     Entity
     // Retrieves the members of the plannerRoster.
@@ -18,8 +18,6 @@ func NewPlannerRoster()(*PlannerRoster) {
     m := &PlannerRoster{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.plannerRoster";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerRosterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

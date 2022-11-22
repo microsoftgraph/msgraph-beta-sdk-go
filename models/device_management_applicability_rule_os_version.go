@@ -25,8 +25,6 @@ func NewDeviceManagementApplicabilityRuleOsVersion()(*DeviceManagementApplicabil
     m := &DeviceManagementApplicabilityRuleOsVersion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementApplicabilityRuleOsVersion";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

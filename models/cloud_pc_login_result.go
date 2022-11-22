@@ -20,8 +20,6 @@ func NewCloudPcLoginResult()(*CloudPcLoginResult) {
     m := &CloudPcLoginResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcLoginResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcLoginResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

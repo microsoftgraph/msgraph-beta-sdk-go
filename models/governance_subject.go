@@ -22,8 +22,6 @@ func NewGovernanceSubject()(*GovernanceSubject) {
     m := &GovernanceSubject{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.governanceSubject";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernanceSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

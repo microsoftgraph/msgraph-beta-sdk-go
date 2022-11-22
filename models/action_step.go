@@ -23,8 +23,6 @@ func NewActionStep()(*ActionStep) {
     m := &ActionStep{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.actionStep";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateActionStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -18,8 +18,6 @@ func NewPrintServiceEndpoint()(*PrintServiceEndpoint) {
     m := &PrintServiceEndpoint{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.printServiceEndpoint";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintServiceEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

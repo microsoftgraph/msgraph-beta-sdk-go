@@ -19,8 +19,6 @@ func NewSafeguardSettings()(*SafeguardSettings) {
     m := &SafeguardSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.safeguardSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSafeguardSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

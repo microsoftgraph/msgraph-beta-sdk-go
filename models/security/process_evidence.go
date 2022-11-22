@@ -35,8 +35,6 @@ func NewProcessEvidence()(*ProcessEvidence) {
     m := &ProcessEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.processEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProcessEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

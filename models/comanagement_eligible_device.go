@@ -52,8 +52,6 @@ func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
     m := &ComanagementEligibleDevice{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.comanagementEligibleDevice";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComanagementEligibleDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

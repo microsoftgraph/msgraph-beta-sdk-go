@@ -23,8 +23,6 @@ func NewCustomQuestionAnswer()(*CustomQuestionAnswer) {
     m := &CustomQuestionAnswer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.customQuestionAnswer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomQuestionAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

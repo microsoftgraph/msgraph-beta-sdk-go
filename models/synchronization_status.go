@@ -42,8 +42,6 @@ func NewSynchronizationStatus()(*SynchronizationStatus) {
     m := &SynchronizationStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.synchronizationStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

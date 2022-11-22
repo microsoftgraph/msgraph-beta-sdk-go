@@ -22,8 +22,6 @@ func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
     m := &MicrosoftTunnelHealthThreshold{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.microsoftTunnelHealthThreshold";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

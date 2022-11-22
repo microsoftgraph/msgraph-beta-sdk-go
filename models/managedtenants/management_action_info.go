@@ -23,8 +23,6 @@ func NewManagementActionInfo()(*ManagementActionInfo) {
     m := &ManagementActionInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.managementActionInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementActionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

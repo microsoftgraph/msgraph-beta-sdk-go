@@ -21,8 +21,6 @@ func NewDirectorySizeQuota()(*DirectorySizeQuota) {
     m := &DirectorySizeQuota{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.directorySizeQuota";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectorySizeQuotaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewAccessPackageLocalizedContent()(*AccessPackageLocalizedContent) {
     m := &AccessPackageLocalizedContent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessPackageLocalizedContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageLocalizedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

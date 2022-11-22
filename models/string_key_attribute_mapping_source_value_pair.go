@@ -21,8 +21,6 @@ func NewStringKeyAttributeMappingSourceValuePair()(*StringKeyAttributeMappingSou
     m := &StringKeyAttributeMappingSourceValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.stringKeyAttributeMappingSourceValuePair";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStringKeyAttributeMappingSourceValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

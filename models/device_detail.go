@@ -33,8 +33,6 @@ func NewDeviceDetail()(*DeviceDetail) {
     m := &DeviceDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

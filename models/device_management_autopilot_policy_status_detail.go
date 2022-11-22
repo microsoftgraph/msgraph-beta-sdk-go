@@ -27,8 +27,6 @@ func NewDeviceManagementAutopilotPolicyStatusDetail()(*DeviceManagementAutopilot
     m := &DeviceManagementAutopilotPolicyStatusDetail{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementAutopilotPolicyStatusDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

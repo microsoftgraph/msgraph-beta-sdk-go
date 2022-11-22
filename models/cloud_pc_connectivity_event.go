@@ -28,8 +28,6 @@ func NewCloudPcConnectivityEvent()(*CloudPcConnectivityEvent) {
     m := &CloudPcConnectivityEvent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcConnectivityEvent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcConnectivityEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

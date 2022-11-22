@@ -16,8 +16,6 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyAssignment()(*Windows
     m := &WindowsDefenderApplicationControlSupplementalPolicyAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

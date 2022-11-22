@@ -21,8 +21,6 @@ func NewAppMetadataEntry()(*AppMetadataEntry) {
     m := &AppMetadataEntry{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.appMetadataEntry";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppMetadataEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

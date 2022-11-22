@@ -33,8 +33,6 @@ func NewWindowsNetworkIsolationPolicy()(*WindowsNetworkIsolationPolicy) {
     m := &WindowsNetworkIsolationPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsNetworkIsolationPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

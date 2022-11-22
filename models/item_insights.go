@@ -13,8 +13,6 @@ func NewItemInsights()(*ItemInsights) {
     m := &ItemInsights{
         OfficeGraphInsights: *NewOfficeGraphInsights(),
     }
-    odataTypeValue := "#microsoft.graph.itemInsights";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemInsightsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

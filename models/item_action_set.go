@@ -37,8 +37,6 @@ func NewItemActionSet()(*ItemActionSet) {
     m := &ItemActionSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.itemActionSet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemActionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewDeviceScopeActionResult()(*DeviceScopeActionResult) {
     m := &DeviceScopeActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceScopeActionResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceScopeActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,8 +33,6 @@ func NewMacOSSoftwareUpdateCategorySummary()(*MacOSSoftwareUpdateCategorySummary
     m := &MacOSSoftwareUpdateCategorySummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.macOSSoftwareUpdateCategorySummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSSoftwareUpdateCategorySummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

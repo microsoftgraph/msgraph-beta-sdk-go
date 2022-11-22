@@ -19,8 +19,6 @@ func NewAlertRuleDefinitionTemplate()(*AlertRuleDefinitionTemplate) {
     m := &AlertRuleDefinitionTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.alertRuleDefinitionTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertRuleDefinitionTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

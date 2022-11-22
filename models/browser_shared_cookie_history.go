@@ -34,8 +34,6 @@ func NewBrowserSharedCookieHistory()(*BrowserSharedCookieHistory) {
     m := &BrowserSharedCookieHistory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.browserSharedCookieHistory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBrowserSharedCookieHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

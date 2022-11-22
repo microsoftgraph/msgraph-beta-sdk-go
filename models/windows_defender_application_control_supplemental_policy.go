@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicy provides operations to manage the deviceAppManagement singleton.
+// WindowsDefenderApplicationControlSupplementalPolicy 
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
     // The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
@@ -37,8 +37,6 @@ func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderAp
     m := &WindowsDefenderApplicationControlSupplementalPolicy{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

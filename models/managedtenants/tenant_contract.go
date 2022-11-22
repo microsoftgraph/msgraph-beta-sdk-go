@@ -23,8 +23,6 @@ func NewTenantContract()(*TenantContract) {
     m := &TenantContract{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.tenantContract";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantContractFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

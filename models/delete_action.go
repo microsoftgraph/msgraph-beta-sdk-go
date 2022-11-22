@@ -21,8 +21,6 @@ func NewDeleteAction()(*DeleteAction) {
     m := &DeleteAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deleteAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeleteActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

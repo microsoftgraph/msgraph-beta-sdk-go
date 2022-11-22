@@ -19,8 +19,6 @@ func NewTimeClockSettings()(*TimeClockSettings) {
     m := &TimeClockSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.timeClockSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeClockSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

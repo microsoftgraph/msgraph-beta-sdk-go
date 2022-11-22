@@ -22,8 +22,6 @@ func NewTeamworkConnection()(*TeamworkConnection) {
     m := &TeamworkConnection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkConnection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

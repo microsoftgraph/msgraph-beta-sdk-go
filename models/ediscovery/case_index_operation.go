@@ -8,13 +8,11 @@ import (
 type CaseIndexOperation struct {
     CaseOperation
 }
-// NewCaseIndexOperation instantiates a new CaseIndexOperation and sets the default values.
+// NewCaseIndexOperation instantiates a new caseIndexOperation and sets the default values.
 func NewCaseIndexOperation()(*CaseIndexOperation) {
     m := &CaseIndexOperation{
         CaseOperation: *NewCaseOperation(),
     }
-    odataTypeValue := "#microsoft.graph.ediscovery.caseIndexOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCaseIndexOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

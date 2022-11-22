@@ -24,8 +24,6 @@ func NewHybridAgentUpdaterConfiguration()(*HybridAgentUpdaterConfiguration) {
     m := &HybridAgentUpdaterConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.hybridAgentUpdaterConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

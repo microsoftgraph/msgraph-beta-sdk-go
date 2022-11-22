@@ -17,8 +17,6 @@ func NewUserExperienceAnalyticsScoreHistory()(*UserExperienceAnalyticsScoreHisto
     m := &UserExperienceAnalyticsScoreHistory{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsScoreHistory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsScoreHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

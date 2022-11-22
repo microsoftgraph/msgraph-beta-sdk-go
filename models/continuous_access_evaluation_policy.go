@@ -26,8 +26,6 @@ func NewContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicy) {
     m := &ContinuousAccessEvaluationPolicy{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.continuousAccessEvaluationPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

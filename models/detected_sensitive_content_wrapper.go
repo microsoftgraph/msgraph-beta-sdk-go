@@ -19,8 +19,6 @@ func NewDetectedSensitiveContentWrapper()(*DetectedSensitiveContentWrapper) {
     m := &DetectedSensitiveContentWrapper{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.detectedSensitiveContentWrapper";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDetectedSensitiveContentWrapperFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewDeviceComplianceScriptRuleError()(*DeviceComplianceScriptRuleError) {
     m := &DeviceComplianceScriptRuleError{
         DeviceComplianceScriptError: *NewDeviceComplianceScriptError(),
     }
-    odataTypeValue := "#microsoft.graph.deviceComplianceScriptRuleError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceScriptRuleErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

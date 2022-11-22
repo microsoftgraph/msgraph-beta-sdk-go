@@ -23,8 +23,6 @@ func NewCloudPcSnapshot()(*CloudPcSnapshot) {
     m := &CloudPcSnapshot{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.cloudPcSnapshot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcSnapshotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

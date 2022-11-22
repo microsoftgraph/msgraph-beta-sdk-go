@@ -21,8 +21,6 @@ func NewOutboundSharedUserProfile()(*OutboundSharedUserProfile) {
     m := &OutboundSharedUserProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.outboundSharedUserProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutboundSharedUserProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

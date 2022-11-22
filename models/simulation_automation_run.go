@@ -23,8 +23,6 @@ func NewSimulationAutomationRun()(*SimulationAutomationRun) {
     m := &SimulationAutomationRun{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.simulationAutomationRun";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSimulationAutomationRunFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

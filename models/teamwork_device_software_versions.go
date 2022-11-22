@@ -27,8 +27,6 @@ func NewTeamworkDeviceSoftwareVersions()(*TeamworkDeviceSoftwareVersions) {
     m := &TeamworkDeviceSoftwareVersions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkDeviceSoftwareVersions";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDeviceSoftwareVersionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

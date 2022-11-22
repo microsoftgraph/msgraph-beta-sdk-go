@@ -26,8 +26,6 @@ func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.cloudPcServicePlan";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcServicePlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

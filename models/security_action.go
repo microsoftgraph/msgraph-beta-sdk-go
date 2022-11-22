@@ -43,8 +43,6 @@ func NewSecurityAction()(*SecurityAction) {
     m := &SecurityAction{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.securityAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

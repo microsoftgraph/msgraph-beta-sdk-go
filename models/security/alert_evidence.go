@@ -30,8 +30,6 @@ func NewAlertEvidence()(*AlertEvidence) {
     m := &AlertEvidence{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.alertEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

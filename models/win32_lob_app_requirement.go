@@ -21,8 +21,6 @@ func NewWin32LobAppRequirement()(*Win32LobAppRequirement) {
     m := &Win32LobAppRequirement{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.win32LobAppRequirement";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

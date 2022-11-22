@@ -47,8 +47,6 @@ func NewExcludedApps()(*ExcludedApps) {
     m := &ExcludedApps{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.excludedApps";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExcludedAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

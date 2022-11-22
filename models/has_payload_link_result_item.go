@@ -25,8 +25,6 @@ func NewHasPayloadLinkResultItem()(*HasPayloadLinkResultItem) {
     m := &HasPayloadLinkResultItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.hasPayloadLinkResultItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHasPayloadLinkResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

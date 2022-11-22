@@ -20,8 +20,6 @@ func NewOemWarrantyInformationOnboarding()(*OemWarrantyInformationOnboarding) {
     m := &OemWarrantyInformationOnboarding{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.oemWarrantyInformationOnboarding";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOemWarrantyInformationOnboardingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

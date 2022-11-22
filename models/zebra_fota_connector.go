@@ -25,8 +25,6 @@ func NewZebraFotaConnector()(*ZebraFotaConnector) {
     m := &ZebraFotaConnector{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.zebraFotaConnector";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

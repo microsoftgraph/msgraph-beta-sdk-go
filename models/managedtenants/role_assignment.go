@@ -21,8 +21,6 @@ func NewRoleAssignment()(*RoleAssignment) {
     m := &RoleAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.roleAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

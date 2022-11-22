@@ -23,8 +23,6 @@ func NewMonitoringRule()(*MonitoringRule) {
     m := &MonitoringRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.monitoringRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMonitoringRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

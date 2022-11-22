@@ -22,8 +22,6 @@ func NewWinGetAppInstallTimeSettings()(*WinGetAppInstallTimeSettings) {
     m := &WinGetAppInstallTimeSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.winGetAppInstallTimeSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWinGetAppInstallTimeSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

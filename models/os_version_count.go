@@ -24,8 +24,6 @@ func NewOsVersionCount()(*OsVersionCount) {
     m := &OsVersionCount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.osVersionCount";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOsVersionCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

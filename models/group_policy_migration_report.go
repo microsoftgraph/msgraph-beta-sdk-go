@@ -45,8 +45,6 @@ func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
     m := &GroupPolicyMigrationReport{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyMigrationReport";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyMigrationReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

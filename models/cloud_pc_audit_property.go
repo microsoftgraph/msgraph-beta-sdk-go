@@ -23,8 +23,6 @@ func NewCloudPcAuditProperty()(*CloudPcAuditProperty) {
     m := &CloudPcAuditProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcAuditProperty";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcAuditPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

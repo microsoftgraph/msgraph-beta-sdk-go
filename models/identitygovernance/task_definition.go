@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TaskDefinition provides operations to manage the collection of accessReview entities.
+// TaskDefinition provides operations to manage the collection of activityStatistics entities.
 type TaskDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The category property
@@ -27,8 +27,6 @@ func NewTaskDefinition()(*TaskDefinition) {
     m := &TaskDefinition{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.taskDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTaskDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

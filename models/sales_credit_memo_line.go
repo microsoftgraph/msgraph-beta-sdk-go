@@ -62,8 +62,6 @@ func NewSalesCreditMemoLine()(*SalesCreditMemoLine) {
     m := &SalesCreditMemoLine{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.salesCreditMemoLine";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSalesCreditMemoLineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

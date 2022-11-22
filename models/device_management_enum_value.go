@@ -21,8 +21,6 @@ func NewDeviceManagementEnumValue()(*DeviceManagementEnumValue) {
     m := &DeviceManagementEnumValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementEnumValue";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementEnumValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

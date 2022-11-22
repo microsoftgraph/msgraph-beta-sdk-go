@@ -13,6 +13,8 @@ type CloudPcDomainJoinConfiguration struct {
     odataType *string
     // The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
     onPremisesConnectionId *string
+    // The regionGroup property
+    regionGroup *CloudPcRegionGroup
     // The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
     regionName *string
     // Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
@@ -23,8 +25,6 @@ func NewCloudPcDomainJoinConfiguration()(*CloudPcDomainJoinConfiguration) {
     m := &CloudPcDomainJoinConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcDomainJoinConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +40,7 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     res["onPremisesConnectionId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOnPremisesConnectionId)
+    res["regionGroup"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcRegionGroup , m.SetRegionGroup)
     res["regionName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRegionName)
     res["type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcDomainJoinType , m.SetType)
     return res
@@ -51,6 +52,10 @@ func (m *CloudPcDomainJoinConfiguration) GetOdataType()(*string) {
 // GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
 func (m *CloudPcDomainJoinConfiguration) GetOnPremisesConnectionId()(*string) {
     return m.onPremisesConnectionId
+}
+// GetRegionGroup gets the regionGroup property value. The regionGroup property
+func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcRegionGroup) {
+    return m.regionGroup
 }
 // GetRegionName gets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
 func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
@@ -70,6 +75,13 @@ func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteStringValue("onPremisesConnectionId", m.GetOnPremisesConnectionId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRegionGroup() != nil {
+        cast := (*m.GetRegionGroup()).String()
+        err := writer.WriteStringValue("regionGroup", &cast)
         if err != nil {
             return err
         }
@@ -106,6 +118,10 @@ func (m *CloudPcDomainJoinConfiguration) SetOdataType(value *string)() {
 // SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
 func (m *CloudPcDomainJoinConfiguration) SetOnPremisesConnectionId(value *string)() {
     m.onPremisesConnectionId = value
+}
+// SetRegionGroup sets the regionGroup property value. The regionGroup property
+func (m *CloudPcDomainJoinConfiguration) SetRegionGroup(value *CloudPcRegionGroup)() {
+    m.regionGroup = value
 }
 // SetRegionName sets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
 func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {

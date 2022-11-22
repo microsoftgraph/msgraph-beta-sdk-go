@@ -21,8 +21,6 @@ func NewProfileCardAnnotation()(*ProfileCardAnnotation) {
     m := &ProfileCardAnnotation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.profileCardAnnotation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProfileCardAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

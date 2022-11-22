@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageRecipient 
+// MessageRecipient provides operations to manage the collection of accessReview entities.
 type MessageRecipient struct {
     Entity
     // The deliveryStatus property
@@ -15,13 +15,11 @@ type MessageRecipient struct {
     // The recipientEmail property
     recipientEmail *string
 }
-// NewMessageRecipient instantiates a new MessageRecipient and sets the default values.
+// NewMessageRecipient instantiates a new messageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.messageRecipient";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMessageRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

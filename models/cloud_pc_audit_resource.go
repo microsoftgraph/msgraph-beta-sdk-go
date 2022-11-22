@@ -25,8 +25,6 @@ func NewCloudPcAuditResource()(*CloudPcAuditResource) {
     m := &CloudPcAuditResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcAuditResource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

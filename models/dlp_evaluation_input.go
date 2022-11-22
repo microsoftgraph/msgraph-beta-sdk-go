@@ -21,8 +21,6 @@ func NewDlpEvaluationInput()(*DlpEvaluationInput) {
     m := &DlpEvaluationInput{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.dlpEvaluationInput";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDlpEvaluationInputFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

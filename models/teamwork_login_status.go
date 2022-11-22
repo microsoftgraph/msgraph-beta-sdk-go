@@ -23,8 +23,6 @@ func NewTeamworkLoginStatus()(*TeamworkLoginStatus) {
     m := &TeamworkLoginStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkLoginStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkLoginStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

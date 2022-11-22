@@ -21,8 +21,6 @@ func NewAuthenticationConditionsApplications()(*AuthenticationConditionsApplicat
     m := &AuthenticationConditionsApplications{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authenticationConditionsApplications";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationConditionsApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -20,8 +20,6 @@ func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     m := &RbacApplicationMultiple{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.rbacApplicationMultiple";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRbacApplicationMultipleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

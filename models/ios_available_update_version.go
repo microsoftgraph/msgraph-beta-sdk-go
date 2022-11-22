@@ -26,8 +26,6 @@ func NewIosAvailableUpdateVersion()(*IosAvailableUpdateVersion) {
     m := &IosAvailableUpdateVersion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.iosAvailableUpdateVersion";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosAvailableUpdateVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

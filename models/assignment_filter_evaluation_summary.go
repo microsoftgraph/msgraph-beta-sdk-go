@@ -34,8 +34,6 @@ func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) 
     m := &AssignmentFilterEvaluationSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.assignmentFilterEvaluationSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

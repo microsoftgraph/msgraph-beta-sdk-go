@@ -21,8 +21,6 @@ func NewTeamworkAccountConfiguration()(*TeamworkAccountConfiguration) {
     m := &TeamworkAccountConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkAccountConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkAccountConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewDeviceAndAppManagementData()(*DeviceAndAppManagementData) {
     m := &DeviceAndAppManagementData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceAndAppManagementData";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceAndAppManagementDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

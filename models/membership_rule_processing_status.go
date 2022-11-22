@@ -24,8 +24,6 @@ func NewMembershipRuleProcessingStatus()(*MembershipRuleProcessingStatus) {
     m := &MembershipRuleProcessingStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.membershipRuleProcessingStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMembershipRuleProcessingStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewEvaluateDynamicMembershipResult()(*EvaluateDynamicMembershipResult) {
     m := &EvaluateDynamicMembershipResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.evaluateDynamicMembershipResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEvaluateDynamicMembershipResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

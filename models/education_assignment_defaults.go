@@ -17,13 +17,11 @@ type EducationAssignmentDefaults struct {
     // Default Teams channel to which notifications will be sent. Default value is null.
     notificationChannelUrl *string
 }
-// NewEducationAssignmentDefaults instantiates a new EducationAssignmentDefaults and sets the default values.
+// NewEducationAssignmentDefaults instantiates a new educationAssignmentDefaults and sets the default values.
 func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
     m := &EducationAssignmentDefaults{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.educationAssignmentDefaults";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationAssignmentDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

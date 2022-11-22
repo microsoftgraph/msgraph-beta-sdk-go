@@ -19,8 +19,6 @@ func NewFilterOperand()(*FilterOperand) {
     m := &FilterOperand{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.filterOperand";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFilterOperandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

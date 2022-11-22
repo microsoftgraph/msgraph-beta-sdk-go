@@ -25,8 +25,6 @@ func NewContentInfo()(*ContentInfo) {
     m := &ContentInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.contentInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

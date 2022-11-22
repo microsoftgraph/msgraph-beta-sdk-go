@@ -20,8 +20,6 @@ func NewDeviceManagementResourceAccessProfileAssignment()(*DeviceManagementResou
     m := &DeviceManagementResourceAccessProfileAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementResourceAccessProfileAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

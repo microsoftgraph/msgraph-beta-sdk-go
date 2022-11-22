@@ -36,8 +36,6 @@ func NewAssignmentReviewSettings()(*AssignmentReviewSettings) {
     m := &AssignmentReviewSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.assignmentReviewSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

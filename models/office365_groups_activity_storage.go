@@ -24,8 +24,6 @@ func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
     m := &Office365GroupsActivityStorage{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.office365GroupsActivityStorage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOffice365GroupsActivityStorageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

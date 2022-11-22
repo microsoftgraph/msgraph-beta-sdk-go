@@ -16,8 +16,6 @@ func NewSmsAuthenticationMethodTarget()(*SmsAuthenticationMethodTarget) {
     m := &SmsAuthenticationMethodTarget{
         AuthenticationMethodTarget: *NewAuthenticationMethodTarget(),
     }
-    odataTypeValue := "#microsoft.graph.smsAuthenticationMethodTarget";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSmsAuthenticationMethodTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

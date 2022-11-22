@@ -21,8 +21,6 @@ func NewDeviceHealthScriptRemediationSummary()(*DeviceHealthScriptRemediationSum
     m := &DeviceHealthScriptRemediationSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptRemediationSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptRemediationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

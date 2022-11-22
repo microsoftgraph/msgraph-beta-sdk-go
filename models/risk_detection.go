@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskDetection 
+// RiskDetection provides operations to manage the collection of accessReviewDecision entities.
 type RiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
@@ -50,13 +50,11 @@ type RiskDetection struct {
     // The user principal name (UPN) of the user.
     userPrincipalName *string
 }
-// NewRiskDetection instantiates a new RiskDetection and sets the default values.
+// NewRiskDetection instantiates a new riskDetection and sets the default values.
 func NewRiskDetection()(*RiskDetection) {
     m := &RiskDetection{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.riskDetection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRiskDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

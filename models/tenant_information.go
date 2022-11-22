@@ -25,8 +25,6 @@ func NewTenantInformation()(*TenantInformation) {
     m := &TenantInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.tenantInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

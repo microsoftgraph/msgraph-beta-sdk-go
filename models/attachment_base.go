@@ -23,8 +23,6 @@ func NewAttachmentBase()(*AttachmentBase) {
     m := &AttachmentBase{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.attachmentBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttachmentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

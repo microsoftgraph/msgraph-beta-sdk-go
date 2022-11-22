@@ -17,8 +17,6 @@ func NewEditAction()(*EditAction) {
     m := &EditAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.editAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEditActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

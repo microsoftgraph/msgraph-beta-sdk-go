@@ -22,8 +22,6 @@ func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     m := &CredentialUsageSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.credentialUsageSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCredentialUsageSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

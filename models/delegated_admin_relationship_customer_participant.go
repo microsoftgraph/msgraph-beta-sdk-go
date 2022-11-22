@@ -21,8 +21,6 @@ func NewDelegatedAdminRelationshipCustomerParticipant()(*DelegatedAdminRelations
     m := &DelegatedAdminRelationshipCustomerParticipant{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.delegatedAdminRelationshipCustomerParticipant";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDelegatedAdminRelationshipCustomerParticipantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

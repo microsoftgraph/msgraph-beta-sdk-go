@@ -25,8 +25,6 @@ func NewAcl()(*Acl) {
     m := &Acl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.acl";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAclFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

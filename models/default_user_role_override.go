@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DefaultUserRoleOverride casts the previous resource to application.
+// DefaultUserRoleOverride provides operations to manage the collection of accessReviewDecision entities.
 type DefaultUserRoleOverride struct {
     Entity
     // The isDefault property
@@ -18,8 +18,6 @@ func NewDefaultUserRoleOverride()(*DefaultUserRoleOverride) {
     m := &DefaultUserRoleOverride{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.defaultUserRoleOverride";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDefaultUserRoleOverrideFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewAlertImpact()(*AlertImpact) {
     m := &AlertImpact{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagement.alertImpact";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertImpactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

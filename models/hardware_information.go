@@ -97,8 +97,6 @@ func NewHardwareInformation()(*HardwareInformation) {
     m := &HardwareInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.hardwareInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHardwareInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

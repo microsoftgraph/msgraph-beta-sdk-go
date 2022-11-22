@@ -19,8 +19,6 @@ func NewDlpNotification()(*DlpNotification) {
     m := &DlpNotification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.dlpNotification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDlpNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
     m := &TeamworkMicrophoneConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkMicrophoneConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

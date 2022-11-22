@@ -19,8 +19,6 @@ func NewUserPrint()(*UserPrint) {
     m := &UserPrint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userPrint";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserPrintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewAnswerKeyword()(*AnswerKeyword) {
     m := &AnswerKeyword{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.search.answerKeyword";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAnswerKeywordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

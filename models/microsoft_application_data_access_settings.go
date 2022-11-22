@@ -18,8 +18,6 @@ func NewMicrosoftApplicationDataAccessSettings()(*MicrosoftApplicationDataAccess
     m := &MicrosoftApplicationDataAccessSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.microsoftApplicationDataAccessSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

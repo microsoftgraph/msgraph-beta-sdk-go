@@ -7,8 +7,10 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i1a50ff3dd302c604b985d0374bb47387abddd017a6b0ab9cb2172bd489320e21 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/bannerlogo"
     i265d482fd8a0fbcbd2146179615b8b362ca76edaacfdc3d28b99118c36f153cf "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/squarelogo"
+    i27a7f1c9012e93d9c3e61b6a137890da14b3f7bef34b5a022ee2d6fe4d2720e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/customcss"
     i340773e20b6413210d35749d04d3b107621c008f2c1fd973f5619ba97b856c66 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/favicon"
     i4ae048953822cae862c6d34d42f91e75a88a9088ea27c42144c633d498f29818 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/backgroundimage"
+    i8b37050d1d22a282a414cf549ec1e913764602be0afe641fc3a491bd264c8e84 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/headerlogo"
     i9b2a1f4742a759802889ffed461b5cf74a5758b4826a120e5044efb62f8759f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item/squarelogodark"
 )
 
@@ -120,6 +122,10 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
+// CustomCSS provides operations to manage the media for the organizationalBranding entity.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CustomCSS()(*i27a7f1c9012e93d9c3e61b6a137890da14b3f7bef34b5a022ee2d6fe4d2720e6.CustomCSSRequestBuilder) {
+    return i27a7f1c9012e93d9c3e61b6a137890da14b3f7bef34b5a022ee2d6fe4d2720e6.NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Delete delete navigation property localizations for branding
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
@@ -158,6 +164,10 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Get(ctx context.C
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable), nil
+}
+// HeaderLogo provides operations to manage the media for the organizationalBranding entity.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) HeaderLogo()(*i8b37050d1d22a282a414cf549ec1e913764602be0afe641fc3a491bd264c8e84.HeaderLogoRequestBuilder) {
+    return i8b37050d1d22a282a414cf549ec1e913764602be0afe641fc3a491bd264c8e84.NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property localizations in branding
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, error) {

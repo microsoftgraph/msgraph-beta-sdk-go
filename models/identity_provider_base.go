@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProviderBase provides operations to manage the collection of accessReview entities.
+// IdentityProviderBase provides operations to manage the collection of activityStatistics entities.
 type IdentityProviderBase struct {
     Entity
     // The display name of the identity provider.
@@ -16,8 +16,6 @@ func NewIdentityProviderBase()(*IdentityProviderBase) {
     m := &IdentityProviderBase{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityProviderBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityProviderBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

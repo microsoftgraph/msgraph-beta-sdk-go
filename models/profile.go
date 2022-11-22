@@ -52,8 +52,6 @@ func NewProfile()(*Profile) {
     m := &Profile{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.profile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

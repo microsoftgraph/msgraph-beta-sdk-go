@@ -16,8 +16,6 @@ func NewImportedAppleDeviceIdentityResult()(*ImportedAppleDeviceIdentityResult) 
     m := &ImportedAppleDeviceIdentityResult{
         ImportedAppleDeviceIdentity: *NewImportedAppleDeviceIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.importedAppleDeviceIdentityResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateImportedAppleDeviceIdentityResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

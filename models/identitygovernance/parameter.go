@@ -23,8 +23,6 @@ func NewParameter()(*Parameter) {
     m := &Parameter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityGovernance.parameter";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

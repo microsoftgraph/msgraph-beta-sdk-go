@@ -16,8 +16,6 @@ func NewClassificationError()(*ClassificationError) {
     m := &ClassificationError{
         ClassifcationErrorBase: *NewClassifcationErrorBase(),
     }
-    odataTypeValue := "#microsoft.graph.classificationError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

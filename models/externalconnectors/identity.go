@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Identity provides operations to manage the collection of externalConnection entities.
+// Identity provides operations to manage the collection of accessReviewDecision entities.
 type Identity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The type property
@@ -17,8 +17,6 @@ func NewIdentity()(*Identity) {
     m := &Identity{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.externalConnectors.identity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

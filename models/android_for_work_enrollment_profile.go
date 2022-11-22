@@ -35,8 +35,6 @@ func NewAndroidForWorkEnrollmentProfile()(*AndroidForWorkEnrollmentProfile) {
     m := &AndroidForWorkEnrollmentProfile{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.androidForWorkEnrollmentProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidForWorkEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

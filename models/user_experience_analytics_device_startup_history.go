@@ -47,8 +47,6 @@ func NewUserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDe
     m := &UserExperienceAnalyticsDeviceStartupHistory{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

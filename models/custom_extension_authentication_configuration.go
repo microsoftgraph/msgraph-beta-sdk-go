@@ -17,8 +17,6 @@ func NewCustomExtensionAuthenticationConfiguration()(*CustomExtensionAuthenticat
     m := &CustomExtensionAuthenticationConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.customExtensionAuthenticationConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomExtensionAuthenticationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

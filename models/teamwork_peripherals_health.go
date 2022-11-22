@@ -29,8 +29,6 @@ func NewTeamworkPeripheralsHealth()(*TeamworkPeripheralsHealth) {
     m := &TeamworkPeripheralsHealth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkPeripheralsHealth";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkPeripheralsHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

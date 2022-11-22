@@ -25,8 +25,6 @@ func NewCloudPcSourceDeviceImage()(*CloudPcSourceDeviceImage) {
     m := &CloudPcSourceDeviceImage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcSourceDeviceImage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcSourceDeviceImageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

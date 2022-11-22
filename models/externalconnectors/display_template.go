@@ -26,8 +26,6 @@ func NewDisplayTemplate()(*DisplayTemplate) {
     m := &DisplayTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.externalConnectors.displayTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDisplayTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

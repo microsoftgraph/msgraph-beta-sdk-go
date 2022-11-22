@@ -19,8 +19,6 @@ func NewExactMatchUploadAgent()(*ExactMatchUploadAgent) {
     m := &ExactMatchUploadAgent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.exactMatchUploadAgent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchUploadAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

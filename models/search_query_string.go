@@ -19,8 +19,6 @@ func NewSearchQueryString()(*SearchQueryString) {
     m := &SearchQueryString{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.searchQueryString";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchQueryStringFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

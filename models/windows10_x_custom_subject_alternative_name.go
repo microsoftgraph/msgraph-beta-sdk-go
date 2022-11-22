@@ -21,8 +21,6 @@ func NewWindows10XCustomSubjectAlternativeName()(*Windows10XCustomSubjectAlterna
     m := &Windows10XCustomSubjectAlternativeName{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windows10XCustomSubjectAlternativeName";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10XCustomSubjectAlternativeNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewManagedDeviceReportedApp()(*ManagedDeviceReportedApp) {
     m := &ManagedDeviceReportedApp{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedDeviceReportedApp";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceReportedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

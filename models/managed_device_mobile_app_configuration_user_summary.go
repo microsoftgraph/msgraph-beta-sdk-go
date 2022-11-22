@@ -31,8 +31,6 @@ func NewManagedDeviceMobileAppConfigurationUserSummary()(*ManagedDeviceMobileApp
     m := &ManagedDeviceMobileAppConfigurationUserSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedDeviceMobileAppConfigurationUserSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationUserSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

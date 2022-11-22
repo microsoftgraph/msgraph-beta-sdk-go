@@ -18,8 +18,6 @@ func NewMachineLearningDetectedSensitiveContent()(*MachineLearningDetectedSensit
     m := &MachineLearningDetectedSensitiveContent{
         DetectedSensitiveContent: *NewDetectedSensitiveContent(),
     }
-    odataTypeValue := "#microsoft.graph.machineLearningDetectedSensitiveContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMachineLearningDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

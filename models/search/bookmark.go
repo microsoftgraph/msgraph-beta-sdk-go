@@ -38,8 +38,6 @@ func NewBookmark()(*Bookmark) {
     m := &Bookmark{
         SearchAnswer: *NewSearchAnswer(),
     }
-    odataTypeValue := "#microsoft.graph.search.bookmark";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookmarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

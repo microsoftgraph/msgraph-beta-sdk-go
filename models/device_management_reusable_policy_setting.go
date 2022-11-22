@@ -33,8 +33,6 @@ func NewDeviceManagementReusablePolicySetting()(*DeviceManagementReusablePolicyS
     m := &DeviceManagementReusablePolicySetting{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementReusablePolicySetting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementReusablePolicySettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

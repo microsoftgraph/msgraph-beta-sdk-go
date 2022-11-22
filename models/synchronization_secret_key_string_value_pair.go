@@ -21,8 +21,6 @@ func NewSynchronizationSecretKeyStringValuePair()(*SynchronizationSecretKeyStrin
     m := &SynchronizationSecretKeyStringValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.synchronizationSecretKeyStringValuePair";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

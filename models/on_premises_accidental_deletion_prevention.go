@@ -21,8 +21,6 @@ func NewOnPremisesAccidentalDeletionPrevention()(*OnPremisesAccidentalDeletionPr
     m := &OnPremisesAccidentalDeletionPrevention{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onPremisesAccidentalDeletionPrevention";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesAccidentalDeletionPreventionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

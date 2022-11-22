@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Command casts the previous resource to device.
+// Command provides operations to manage the collection of activityStatistics entities.
 type Command struct {
     Entity
     // The appServiceName property
@@ -32,8 +32,6 @@ func NewCommand()(*Command) {
     m := &Command{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.command";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCommandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

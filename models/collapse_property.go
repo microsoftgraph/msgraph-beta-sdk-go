@@ -21,8 +21,6 @@ func NewCollapseProperty()(*CollapseProperty) {
     m := &CollapseProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.collapseProperty";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCollapsePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

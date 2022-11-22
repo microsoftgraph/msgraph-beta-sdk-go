@@ -18,8 +18,6 @@ func NewExternalGroup()(*ExternalGroup) {
     m := &ExternalGroup{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.externalGroup";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

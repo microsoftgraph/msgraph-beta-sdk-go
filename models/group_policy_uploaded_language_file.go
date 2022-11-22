@@ -28,8 +28,6 @@ func NewGroupPolicyUploadedLanguageFile()(*GroupPolicyUploadedLanguageFile) {
     m := &GroupPolicyUploadedLanguageFile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.groupPolicyUploadedLanguageFile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

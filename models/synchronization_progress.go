@@ -26,8 +26,6 @@ func NewSynchronizationProgress()(*SynchronizationProgress) {
     m := &SynchronizationProgress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.synchronizationProgress";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationProgressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

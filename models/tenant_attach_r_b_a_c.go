@@ -13,8 +13,6 @@ func NewTenantAttachRBAC()(*TenantAttachRBAC) {
     m := &TenantAttachRBAC{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.tenantAttachRBAC";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantAttachRBACFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

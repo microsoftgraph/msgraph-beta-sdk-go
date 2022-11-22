@@ -21,8 +21,6 @@ func NewEvaluateLabelJobResultGroup()(*EvaluateLabelJobResultGroup) {
     m := &EvaluateLabelJobResultGroup{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.evaluateLabelJobResultGroup";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEvaluateLabelJobResultGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

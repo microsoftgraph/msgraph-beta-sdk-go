@@ -33,8 +33,6 @@ func NewMatchingDlpRule()(*MatchingDlpRule) {
     m := &MatchingDlpRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.matchingDlpRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMatchingDlpRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

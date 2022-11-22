@@ -4,7 +4,9 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i0c5077ba20bdd0382ab21bcc11e6767634c79e044ca74a54e6eb5c3a7c9dd1e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/customcss"
     i0cc7ec2bb77cfb998ba8a1ad527a89fb9a51a4881030337bde331a8e4f476070 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/backgroundimage"
+    i13c3fa8a59fb9b7ef339ac6aad1d9ad1f5cd9f50d6e354b844d3a4f31607a8cc "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/headerlogo"
     i1b40b605aeb59b28ba3fa6abed7afbe4b8f7d36ecb4da595918a6e40e86b5489 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/squarelogodark"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i2dc84c458003c3284caa395048d6882b017ff8d4d2f1da317816287aff8f011c "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/squarelogo"
@@ -103,6 +105,10 @@ func (m *BrandingRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
+// CustomCSS provides operations to manage the media for the organizationalBranding entity.
+func (m *BrandingRequestBuilder) CustomCSS()(*i0c5077ba20bdd0382ab21bcc11e6767634c79e044ca74a54e6eb5c3a7c9dd1e9.CustomCSSRequestBuilder) {
+    return i0c5077ba20bdd0382ab21bcc11e6767634c79e044ca74a54e6eb5c3a7c9dd1e9.NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Favicon provides operations to manage the media for the organizationalBranding entity.
 func (m *BrandingRequestBuilder) Favicon()(*i6dbe8712bcbf565967e359a0b5474825946d283c9a8f7154520173aba185bbdb.FaviconRequestBuilder) {
     return i6dbe8712bcbf565967e359a0b5474825946d283c9a8f7154520173aba185bbdb.NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -125,6 +131,10 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable), nil
+}
+// HeaderLogo provides operations to manage the media for the organizationalBranding entity.
+func (m *BrandingRequestBuilder) HeaderLogo()(*i13c3fa8a59fb9b7ef339ac6aad1d9ad1f5cd9f50d6e354b844d3a4f31607a8cc.HeaderLogoRequestBuilder) {
+    return i13c3fa8a59fb9b7ef339ac6aad1d9ad1f5cd9f50d6e354b844d3a4f31607a8cc.NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) Localizations()(*icb26067e77492c83cb4e87ec1e3f5164c5a2b6eccb9e23f4a03609a175e65c87.LocalizationsRequestBuilder) {

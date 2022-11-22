@@ -2,17 +2,18 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type CloudPcManagementService int
 
 const (
     WINDOWS365_CLOUDPCMANAGEMENTSERVICE CloudPcManagementService = iota
     DEVBOX_CLOUDPCMANAGEMENTSERVICE
     UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
+    RPABOX_CLOUDPCMANAGEMENTSERVICE
 )
 
 func (i CloudPcManagementService) String() string {
-    return []string{"windows365", "devBox", "unknownFutureValue"}[i]
+    return []string{"windows365", "devBox", "unknownFutureValue", "rpaBox"}[i]
 }
 func ParseCloudPcManagementService(v string) (interface{}, error) {
     result := WINDOWS365_CLOUDPCMANAGEMENTSERVICE
@@ -23,6 +24,8 @@ func ParseCloudPcManagementService(v string) (interface{}, error) {
             result = DEVBOX_CLOUDPCMANAGEMENTSERVICE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
+        case "rpaBox":
+            result = RPABOX_CLOUDPCMANAGEMENTSERVICE
         default:
             return 0, errors.New("Unknown CloudPcManagementService value: " + v)
     }

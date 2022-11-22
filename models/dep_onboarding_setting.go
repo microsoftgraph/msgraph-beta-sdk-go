@@ -47,8 +47,6 @@ func NewDepOnboardingSetting()(*DepOnboardingSetting) {
     m := &DepOnboardingSetting{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.depOnboardingSetting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDepOnboardingSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

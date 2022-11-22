@@ -62,8 +62,6 @@ func NewOffice365ActiveUserDetail()(*Office365ActiveUserDetail) {
     m := &Office365ActiveUserDetail{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.office365ActiveUserDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOffice365ActiveUserDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

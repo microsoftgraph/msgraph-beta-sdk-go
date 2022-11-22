@@ -19,8 +19,6 @@ func NewGroupPolicyConfigurationAssignment()(*GroupPolicyConfigurationAssignment
     m := &GroupPolicyConfigurationAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyConfigurationAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyConfigurationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

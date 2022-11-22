@@ -16,8 +16,6 @@ func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent
     m := &ExactMatchDetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
     }
-    odataTypeValue := "#microsoft.graph.exactMatchDetectedSensitiveContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

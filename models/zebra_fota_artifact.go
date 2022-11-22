@@ -26,8 +26,6 @@ func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
     m := &ZebraFotaArtifact{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.zebraFotaArtifact";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaArtifactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

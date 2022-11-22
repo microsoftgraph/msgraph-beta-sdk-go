@@ -21,8 +21,6 @@ func NewDeviceManagementExchangeDeviceClass()(*DeviceManagementExchangeDeviceCla
     m := &DeviceManagementExchangeDeviceClass{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementExchangeDeviceClass";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

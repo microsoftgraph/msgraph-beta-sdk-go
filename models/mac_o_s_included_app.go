@@ -21,8 +21,6 @@ func NewMacOSIncludedApp()(*MacOSIncludedApp) {
     m := &MacOSIncludedApp{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSIncludedApp";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSIncludedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

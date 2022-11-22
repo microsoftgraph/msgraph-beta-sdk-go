@@ -25,8 +25,6 @@ func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {
     m := &ApplicationSignInDetailedSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.applicationSignInDetailedSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApplicationSignInDetailedSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

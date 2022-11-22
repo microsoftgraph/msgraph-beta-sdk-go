@@ -18,8 +18,6 @@ func NewDeviceManagementSettingInstance()(*DeviceManagementSettingInstance) {
     m := &DeviceManagementSettingInstance{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingInstance";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

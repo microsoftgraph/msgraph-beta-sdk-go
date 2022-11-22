@@ -20,8 +20,6 @@ func NewWindowsManagementAppHealthSummary()(*WindowsManagementAppHealthSummary) 
     m := &WindowsManagementAppHealthSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsManagementAppHealthSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsManagementAppHealthSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

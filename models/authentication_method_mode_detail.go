@@ -18,8 +18,6 @@ func NewAuthenticationMethodModeDetail()(*AuthenticationMethodModeDetail) {
     m := &AuthenticationMethodModeDetail{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.authenticationMethodModeDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationMethodModeDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

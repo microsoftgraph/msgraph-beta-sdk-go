@@ -7,7 +7,6 @@ import (
     i073bf3b84f9c5c09e315a22772bce801c5a9a6d430187bdc73f389f2cbca1815 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/exactmatchdatastores"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i373b8bc295a82bf2e640c37a2dcfed846455f2e1735c48e5cb25dbe3d1217798 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/exactmatchuploadagents"
-    i3cff8239684e50220c01c5330bc2d3ce5fe0516a4602276e77c0c2ef9881baeb "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/classifytext"
     i4fea7db9ec3dfb8eee5d0f28c2b8b50636edd00c4d449297a2541a4ef2b44e2e "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/evaluatelabeljobs"
     i6594c9c85b2fe737b67f8e7096b7bac27a77e943585e903afc1c799b3c1391e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/jobs"
     i6d2bd6b47f18fd25d8706f12f070fd69369097c3c3fa36e4f0972447bd008caf "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/sensitivitylabels"
@@ -82,10 +81,6 @@ func (m *DataClassificationRequestBuilder) ClassifyFileJobsById(id string)(*i479
         urlTplParams["jobResponseBase%2Did"] = id
     }
     return i4792e57c8d9125efc146f0b2e40e63e9de13f444548ccb305eb4736a1a5be3a5.NewJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// ClassifyText provides operations to call the classifyText method.
-func (m *DataClassificationRequestBuilder) ClassifyText()(*i3cff8239684e50220c01c5330bc2d3ce5fe0516a4602276e77c0c2ef9881baeb.ClassifyTextRequestBuilder) {
-    return i3cff8239684e50220c01c5330bc2d3ce5fe0516a4602276e77c0c2ef9881baeb.NewClassifyTextRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClassifyTextJobs provides operations to manage the classifyTextJobs property of the microsoft.graph.dataClassificationService entity.
 func (m *DataClassificationRequestBuilder) ClassifyTextJobs()(*ifbc5c976485c8ce6802245796a7bca4914bfd3e80f624a761511266b13799b70.ClassifyTextJobsRequestBuilder) {

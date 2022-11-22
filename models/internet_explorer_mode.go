@@ -16,8 +16,6 @@ func NewInternetExplorerMode()(*InternetExplorerMode) {
     m := &InternetExplorerMode{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.internetExplorerMode";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInternetExplorerModeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

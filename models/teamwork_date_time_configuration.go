@@ -27,8 +27,6 @@ func NewTeamworkDateTimeConfiguration()(*TeamworkDateTimeConfiguration) {
     m := &TeamworkDateTimeConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkDateTimeConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDateTimeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

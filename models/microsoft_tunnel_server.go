@@ -25,8 +25,6 @@ func NewMicrosoftTunnelServer()(*MicrosoftTunnelServer) {
     m := &MicrosoftTunnelServer{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.microsoftTunnelServer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftTunnelServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

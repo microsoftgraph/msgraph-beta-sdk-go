@@ -21,8 +21,6 @@ func NewDeviceManagementConfigurationSettingDependedOnBy()(*DeviceManagementConf
     m := &DeviceManagementConfigurationSettingDependedOnBy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingDependedOnBy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

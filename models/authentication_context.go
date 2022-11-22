@@ -21,8 +21,6 @@ func NewAuthenticationContext()(*AuthenticationContext) {
     m := &AuthenticationContext{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authenticationContext";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

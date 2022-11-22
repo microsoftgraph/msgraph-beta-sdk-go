@@ -21,8 +21,6 @@ func NewTranslationLanguageOverride()(*TranslationLanguageOverride) {
     m := &TranslationLanguageOverride{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.translationLanguageOverride";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTranslationLanguageOverrideFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

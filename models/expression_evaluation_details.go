@@ -25,8 +25,6 @@ func NewExpressionEvaluationDetails()(*ExpressionEvaluationDetails) {
     m := &ExpressionEvaluationDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.expressionEvaluationDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExpressionEvaluationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

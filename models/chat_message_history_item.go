@@ -24,8 +24,6 @@ func NewChatMessageHistoryItem()(*ChatMessageHistoryItem) {
     m := &ChatMessageHistoryItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.chatMessageHistoryItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatMessageHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

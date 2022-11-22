@@ -26,8 +26,6 @@ func NewSignInActivity()(*SignInActivity) {
     m := &SignInActivity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.signInActivity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSignInActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

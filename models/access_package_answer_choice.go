@@ -21,8 +21,6 @@ func NewAccessPackageAnswerChoice()(*AccessPackageAnswerChoice) {
     m := &AccessPackageAnswerChoice{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessPackageAnswerChoice";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAnswerChoiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -37,8 +37,6 @@ func NewAppleVpnAlwaysOnConfiguration()(*AppleVpnAlwaysOnConfiguration) {
     m := &AppleVpnAlwaysOnConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.appleVpnAlwaysOnConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

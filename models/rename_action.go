@@ -21,8 +21,6 @@ func NewRenameAction()(*RenameAction) {
     m := &RenameAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.renameAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRenameActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

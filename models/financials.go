@@ -19,8 +19,6 @@ func NewFinancials()(*Financials) {
     m := &Financials{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.financials";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFinancialsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

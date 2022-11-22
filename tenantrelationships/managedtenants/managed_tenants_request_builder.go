@@ -10,6 +10,7 @@ import (
     i0b126875f3df8ff7b29e49628de663aa712a3121ba720093bf9eedc172a2f466 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/manageddevicecompliancetrends"
     i0f79005843a77cfe19ad60950bc394afee89e8d9bc4b81f6b21b1a8097fbaf3b "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/conditionalaccesspolicycoverages"
     i1d7cc37e7e8e702a054a8907daa331abe670d4a4d9e3e68367c96a95472d6186 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/cloudpcdevices"
+    i1e0d9f981a2f7ec6977de1f608176ed15d12b8f4c41d22354dc9c1610b826a35 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatecollectiontenantsummaries"
     i23841075703fcb028662b4d36c5564ffa62324dd12cbd9935ed7d56f0dc0ca9f "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantsdetailedinformation"
     i2b66c9972458318dcd18b57d227c1397d3704eed4ceba1aab769bae8473fef7c "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplates"
     i2cdcdc509df3082b25195c0a43c6d5f07ffa1bd0852bda0e8d272dc9a577f670 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managedtenantalertrules"
@@ -18,6 +19,7 @@ import (
     i412f9c2c45d441afb79881179a35f22a85e609a2de25dab29ff47d663d739c03 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managedtenantticketingendpoints"
     i507510374fef5a86fcce6eb7ecdb044e4a7bc928ee54765d0620b2b896a746e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenants"
     i65beab9150aa7abd814be391125d812f4d3c3bdfde9d2016db1f22a146166aee "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/windowsprotectionstates"
+    i6c8ccc9d63db57b24eef1a198f4256d2b75c2f3d924dfb09f7dc3934cfc5dc56 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatesteptenantsummaries"
     i71e724937f2266c62830468204cfd18d9303a53fb8e960124d76a13f5477fb03 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/myroles"
     i824a81edbead3d58bdec21d61a960b3c5f03f44f0e89355db9cc5414e1d67e10 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantscustomizedinformation"
     i83b6ac56968781119a7493f0b33b04d11b021d336f7c7003dc04aacb7b9c9bb0 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/auditevents"
@@ -37,6 +39,7 @@ import (
     id38271415c05281407c0442f61c0fa978c6d3d451589b71dc5cf915930b23e2a "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managedtenantemailnotifications"
     idbc8f4984d2cb262d1942923c269bd190c01b953b808d1fdb9cf4be97280aaa9 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/aggregatedpolicycompliances"
     ie2be96252bd3e7e355c4cc7dbf41dd9251cda2dfdea6235dbd43916501b1bb8e "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/manageddevicecompliances"
+    i11da6ef4eeeb8786fb93d5972f290e02c6b190e32733d30dff04b7a103677aff "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatesteptenantsummaries/item"
     i186e85376ac4af3f7e13d1b03ae3ecca0403b582ff4761f086be79d2ceacdf75 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/windowsdevicemalwarestates/item"
     i1ec6b65aff2fcd462f8f45f48ce513ea76dde61b1ec3f1cf01d65b849b740b8b "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementintents/item"
     i22d7e4fc2a16cf517b6c379250cc88fc88b4ed4261b52362648bc93110b5f230 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantscustomizedinformation/item"
@@ -55,6 +58,7 @@ import (
     i8612235b849d43a7141e3638c7b76b5ba29594d12c5272cfc9e32333a038808a "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatecollections/item"
     i902764218ad5577611d10586599ccdb34a8aa22b15a8c9043e035e89db4d4c7b "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenants/item"
     ib007e276e70fb157eccc427006d3a6fdf591c84e085e79a6ae7d6a7149a17922 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactiontenantdeploymentstatuses/item"
+    ib38449635f2df87835a316e9d35bdd8ac3d8641ecd90714b1eacf60a43539b76 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatecollectiontenantsummaries/item"
     ib38de1bc2342da950cccc8e38397f843bd594e1cd1797be00f0b3b3cb7ac6f55 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managedtenantalertlogs/item"
     ib3de4c41c301db1496cc9d3bc09f4fa6822595a1f06c6de4ddc82599b19d147a "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managedtenantalertruledefinitions/item"
     ib6a72645824ea588f45be0386a20b709a95dddebe610e26a32be605ca2493073 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managedtenantalertrules/item"
@@ -521,6 +525,21 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionsById(id stri
     }
     return i8612235b849d43a7141e3638c7b76b5ba29594d12c5272cfc9e32333a038808a.NewManagementTemplateCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// ManagementTemplateCollectionTenantSummaries provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionTenantSummaries()(*i1e0d9f981a2f7ec6977de1f608176ed15d12b8f4c41d22354dc9c1610b826a35.ManagementTemplateCollectionTenantSummariesRequestBuilder) {
+    return i1e0d9f981a2f7ec6977de1f608176ed15d12b8f4c41d22354dc9c1610b826a35.NewManagementTemplateCollectionTenantSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ManagementTemplateCollectionTenantSummariesById provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionTenantSummariesById(id string)(*ib38449635f2df87835a316e9d35bdd8ac3d8641ecd90714b1eacf60a43539b76.ManagementTemplateCollectionTenantSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["managementTemplateCollectionTenantSummary%2Did"] = id
+    }
+    return ib38449635f2df87835a316e9d35bdd8ac3d8641ecd90714b1eacf60a43539b76.NewManagementTemplateCollectionTenantSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // ManagementTemplates provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplates()(*i2b66c9972458318dcd18b57d227c1397d3704eed4ceba1aab769bae8473fef7c.ManagementTemplatesRequestBuilder) {
     return i2b66c9972458318dcd18b57d227c1397d3704eed4ceba1aab769bae8473fef7c.NewManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -550,6 +569,21 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepsById(id string)(*i
         urlTplParams["managementTemplateStep%2Did"] = id
     }
     return i7002a802b3e3d4667259a74b2f46e5190bce103c7bacef3e3630f3808a1f4256.NewManagementTemplateStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// ManagementTemplateStepTenantSummaries provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepTenantSummaries()(*i6c8ccc9d63db57b24eef1a198f4256d2b75c2f3d924dfb09f7dc3934cfc5dc56.ManagementTemplateStepTenantSummariesRequestBuilder) {
+    return i6c8ccc9d63db57b24eef1a198f4256d2b75c2f3d924dfb09f7dc3934cfc5dc56.NewManagementTemplateStepTenantSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ManagementTemplateStepTenantSummariesById provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepTenantSummariesById(id string)(*i11da6ef4eeeb8786fb93d5972f290e02c6b190e32733d30dff04b7a103677aff.ManagementTemplateStepTenantSummaryItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["managementTemplateStepTenantSummary%2Did"] = id
+    }
+    return i11da6ef4eeeb8786fb93d5972f290e02c6b190e32733d30dff04b7a103677aff.NewManagementTemplateStepTenantSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementTemplateStepVersions provides operations to manage the managementTemplateStepVersions property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersions()(*id0d999b2f9f0ee37ec597aead92f01550dd34dbc53eee9ed3fe40e49f0d53bf7.ManagementTemplateStepVersionsRequestBuilder) {

@@ -22,8 +22,6 @@ func NewMobileAppTroubleshootingHistoryItem()(*MobileAppTroubleshootingHistoryIt
     m := &MobileAppTroubleshootingHistoryItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mobileAppTroubleshootingHistoryItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

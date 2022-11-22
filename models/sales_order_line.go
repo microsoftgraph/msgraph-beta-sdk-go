@@ -70,8 +70,6 @@ func NewSalesOrderLine()(*SalesOrderLine) {
     m := &SalesOrderLine{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.salesOrderLine";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSalesOrderLineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

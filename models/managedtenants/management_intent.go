@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementIntent provides operations to manage the collection of accessReview entities.
+// ManagementIntent provides operations to manage the collection of accessReviewDecision entities.
 type ManagementIntent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The display name for the management intent. Optional. Read-only.
@@ -21,8 +21,6 @@ func NewManagementIntent()(*ManagementIntent) {
     m := &ManagementIntent{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedTenants.managementIntent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementIntentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewExtendedKeyUsage()(*ExtendedKeyUsage) {
     m := &ExtendedKeyUsage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.extendedKeyUsage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExtendedKeyUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

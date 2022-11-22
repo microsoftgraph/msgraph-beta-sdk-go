@@ -25,8 +25,6 @@ func NewPrivateLinkDetails()(*PrivateLinkDetails) {
     m := &PrivateLinkDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.privateLinkDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivateLinkDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

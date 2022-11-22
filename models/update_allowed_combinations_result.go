@@ -25,8 +25,6 @@ func NewUpdateAllowedCombinationsResult()(*UpdateAllowedCombinationsResult) {
     m := &UpdateAllowedCombinationsResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.updateAllowedCombinationsResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUpdateAllowedCombinationsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

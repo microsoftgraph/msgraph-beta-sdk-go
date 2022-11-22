@@ -30,8 +30,6 @@ func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.externalConnection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

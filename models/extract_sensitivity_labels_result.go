@@ -19,8 +19,6 @@ func NewExtractSensitivityLabelsResult()(*ExtractSensitivityLabelsResult) {
     m := &ExtractSensitivityLabelsResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.extractSensitivityLabelsResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExtractSensitivityLabelsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CloudPcOverview provides operations to manage the collection of accessReview entities.
+// CloudPcOverview provides operations to manage the collection of activityStatistics entities.
 type CloudPcOverview struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
@@ -56,8 +56,6 @@ func NewCloudPcOverview()(*CloudPcOverview) {
     m := &CloudPcOverview{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedTenants.cloudPcOverview";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnect
     m := &DeviceManagementDomainJoinConnector{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementDomainJoinConnector";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementDomainJoinConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

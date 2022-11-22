@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Task provides operations to manage the collection of accessReview entities.
+// Task provides operations to manage the collection of activityStatistics entities.
 type Task struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
@@ -33,8 +33,6 @@ func NewTask()(*Task) {
     m := &Task{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.task";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

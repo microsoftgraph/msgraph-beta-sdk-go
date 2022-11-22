@@ -19,8 +19,6 @@ func NewVerificationResult()(*VerificationResult) {
     m := &VerificationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.verificationResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVerificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

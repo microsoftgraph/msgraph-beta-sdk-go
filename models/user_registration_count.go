@@ -21,8 +21,6 @@ func NewUserRegistrationCount()(*UserRegistrationCount) {
     m := &UserRegistrationCount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userRegistrationCount";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserRegistrationCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,6 @@ func NewUpdatableAssetError()(*UpdatableAssetError) {
     m := &UpdatableAssetError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.updatableAssetError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUpdatableAssetErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

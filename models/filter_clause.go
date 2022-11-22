@@ -23,8 +23,6 @@ func NewFilterClause()(*FilterClause) {
     m := &FilterClause{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.filterClause";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFilterClauseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

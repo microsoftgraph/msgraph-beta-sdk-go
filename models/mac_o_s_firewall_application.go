@@ -21,8 +21,6 @@ func NewMacOSFirewallApplication()(*MacOSFirewallApplication) {
     m := &MacOSFirewallApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSFirewallApplication";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSFirewallApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

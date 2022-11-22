@@ -36,8 +36,6 @@ func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserEx
     m := &UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

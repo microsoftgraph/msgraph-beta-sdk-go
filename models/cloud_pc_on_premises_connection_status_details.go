@@ -24,8 +24,6 @@ func NewCloudPcOnPremisesConnectionStatusDetails()(*CloudPcOnPremisesConnectionS
     m := &CloudPcOnPremisesConnectionStatusDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcOnPremisesConnectionStatusDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

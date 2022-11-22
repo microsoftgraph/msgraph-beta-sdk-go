@@ -22,8 +22,6 @@ func NewWindowsManagementApp()(*WindowsManagementApp) {
     m := &WindowsManagementApp{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsManagementApp";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsManagementAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

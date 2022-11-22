@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommsOperation provides operations to manage the commsApplication singleton.
+// CommsOperation provides operations to manage the collection of accessReviewDecision entities.
 type CommsOperation struct {
     Entity
     // Unique Client Context string. Max limit is 256 chars.
@@ -20,8 +20,6 @@ func NewCommsOperation()(*CommsOperation) {
     m := &CommsOperation{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.commsOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCommsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

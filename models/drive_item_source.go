@@ -21,8 +21,6 @@ func NewDriveItemSource()(*DriveItemSource) {
     m := &DriveItemSource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.driveItemSource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDriveItemSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

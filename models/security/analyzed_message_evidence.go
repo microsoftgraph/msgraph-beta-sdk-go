@@ -51,8 +51,6 @@ func NewAnalyzedMessageEvidence()(*AnalyzedMessageEvidence) {
     m := &AnalyzedMessageEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.analyzedMessageEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAnalyzedMessageEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

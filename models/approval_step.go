@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalStep provides operations to manage the collection of accessReview entities.
+// ApprovalStep provides operations to manage the collection of activityStatistics entities.
 type ApprovalStep struct {
     Entity
     // Indicates whether the step is assigned to the calling user to review. Read-only.
@@ -29,8 +29,6 @@ func NewApprovalStep()(*ApprovalStep) {
     m := &ApprovalStep{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.approvalStep";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApprovalStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

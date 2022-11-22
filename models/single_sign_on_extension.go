@@ -17,8 +17,6 @@ func NewSingleSignOnExtension()(*SingleSignOnExtension) {
     m := &SingleSignOnExtension{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.singleSignOnExtension";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

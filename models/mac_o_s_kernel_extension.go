@@ -21,8 +21,6 @@ func NewMacOSKernelExtension()(*MacOSKernelExtension) {
     m := &MacOSKernelExtension{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.macOSKernelExtension";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSKernelExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,8 +29,6 @@ func NewJobResponseBase()(*JobResponseBase) {
     m := &JobResponseBase{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.jobResponseBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateJobResponseBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

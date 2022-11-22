@@ -26,8 +26,6 @@ func NewWarrantyOffer()(*WarrantyOffer) {
     m := &WarrantyOffer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.warrantyOffer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWarrantyOfferFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

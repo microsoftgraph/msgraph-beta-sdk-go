@@ -17,8 +17,6 @@ func NewSitePageData()(*SitePageData) {
     m := &SitePageData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sitePageData";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSitePageDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

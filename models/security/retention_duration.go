@@ -17,8 +17,6 @@ func NewRetentionDuration()(*RetentionDuration) {
     m := &RetentionDuration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.retentionDuration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRetentionDurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

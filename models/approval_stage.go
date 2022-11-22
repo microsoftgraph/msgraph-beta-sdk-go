@@ -29,8 +29,6 @@ func NewApprovalStage()(*ApprovalStage) {
     m := &ApprovalStage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.approvalStage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

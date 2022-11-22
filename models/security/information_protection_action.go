@@ -17,8 +17,6 @@ func NewInformationProtectionAction()(*InformationProtectionAction) {
     m := &InformationProtectionAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.informationProtectionAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInformationProtectionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

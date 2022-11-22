@@ -19,8 +19,6 @@ func NewShareAction()(*ShareAction) {
     m := &ShareAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.shareAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateShareActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

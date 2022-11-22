@@ -11,13 +11,11 @@ type Edge struct {
     // A container for Internet Explorer mode resources.
     internetExplorerMode InternetExplorerModeable
 }
-// NewEdge instantiates a new edge and sets the default values.
+// NewEdge instantiates a new Edge and sets the default values.
 func NewEdge()(*Edge) {
     m := &Edge{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.edge";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdgeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

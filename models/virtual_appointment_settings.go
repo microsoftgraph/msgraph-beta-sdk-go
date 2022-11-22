@@ -19,8 +19,6 @@ func NewVirtualAppointmentSettings()(*VirtualAppointmentSettings) {
     m := &VirtualAppointmentSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.virtualAppointmentSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVirtualAppointmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

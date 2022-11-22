@@ -19,8 +19,6 @@ func NewAssignmentFilterValidationResult()(*AssignmentFilterValidationResult) {
     m := &AssignmentFilterValidationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.assignmentFilterValidationResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentFilterValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

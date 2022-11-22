@@ -26,8 +26,6 @@ func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     m := &DeviceRegistrationPolicy{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceRegistrationPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceRegistrationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

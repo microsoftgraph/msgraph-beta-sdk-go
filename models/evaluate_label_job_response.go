@@ -16,8 +16,6 @@ func NewEvaluateLabelJobResponse()(*EvaluateLabelJobResponse) {
     m := &EvaluateLabelJobResponse{
         JobResponseBase: *NewJobResponseBase(),
     }
-    odataTypeValue := "#microsoft.graph.evaluateLabelJobResponse";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEvaluateLabelJobResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

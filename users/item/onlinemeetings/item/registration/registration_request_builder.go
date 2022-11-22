@@ -67,7 +67,7 @@ func NewRegistrationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// CreateDeleteRequestInformation disable and delete the externalMeetingRegistration of an onlineMeeting.
 func (m *RegistrationRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *RegistrationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,7 +124,7 @@ func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*i2ad1071fdb
     }
     return i2ad1071fdb0ce5c7f13d818f7600904c2cfb682f002cf4a3d1323a2d717ccb6e.NewMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+// Delete disable and delete the externalMeetingRegistration of an onlineMeeting.
 func (m *RegistrationRequestBuilder) Delete(ctx context.Context, requestConfiguration *RegistrationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

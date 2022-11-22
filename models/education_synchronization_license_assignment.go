@@ -21,8 +21,6 @@ func NewEducationSynchronizationLicenseAssignment()(*EducationSynchronizationLic
     m := &EducationSynchronizationLicenseAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationSynchronizationLicenseAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSynchronizationLicenseAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

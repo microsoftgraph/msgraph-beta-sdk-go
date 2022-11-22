@@ -25,8 +25,6 @@ func NewEducationIdentityMatchingOptions()(*EducationIdentityMatchingOptions) {
     m := &EducationIdentityMatchingOptions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationIdentityMatchingOptions";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationIdentityMatchingOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

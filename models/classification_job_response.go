@@ -16,8 +16,6 @@ func NewClassificationJobResponse()(*ClassificationJobResponse) {
     m := &ClassificationJobResponse{
         JobResponseBase: *NewJobResponseBase(),
     }
-    odataTypeValue := "#microsoft.graph.classificationJobResponse";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationJobResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

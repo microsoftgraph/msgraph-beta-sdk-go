@@ -37,8 +37,6 @@ func NewMatchingLabel()(*MatchingLabel) {
     m := &MatchingLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.matchingLabel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMatchingLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

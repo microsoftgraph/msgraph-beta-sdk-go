@@ -21,8 +21,6 @@ func NewClassificationAttribute()(*ClassificationAttribute) {
     m := &ClassificationAttribute{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.classificationAttribute";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

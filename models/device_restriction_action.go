@@ -20,8 +20,6 @@ func NewDeviceRestrictionAction()(*DeviceRestrictionAction) {
     m := &DeviceRestrictionAction{
         DlpActionInfo: *NewDlpActionInfo(),
     }
-    odataTypeValue := "#microsoft.graph.deviceRestrictionAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceRestrictionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
