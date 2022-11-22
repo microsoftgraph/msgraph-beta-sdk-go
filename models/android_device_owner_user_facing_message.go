@@ -21,8 +21,6 @@ func NewAndroidDeviceOwnerUserFacingMessage()(*AndroidDeviceOwnerUserFacingMessa
     m := &AndroidDeviceOwnerUserFacingMessage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerUserFacingMessage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewDeviceManagementTroubleshootingErrorResource()(*DeviceManagementTroubles
     m := &DeviceManagementTroubleshootingErrorResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementTroubleshootingErrorResource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

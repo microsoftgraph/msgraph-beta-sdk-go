@@ -16,8 +16,6 @@ func NewPlannerBucketTaskBoardTaskFormat()(*PlannerBucketTaskBoardTaskFormat) {
     m := &PlannerBucketTaskBoardTaskFormat{
         PlannerDelta: *NewPlannerDelta(),
     }
-    odataTypeValue := "#microsoft.graph.plannerBucketTaskBoardTaskFormat";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerBucketTaskBoardTaskFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

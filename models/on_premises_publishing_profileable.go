@@ -13,6 +13,7 @@ type OnPremisesPublishingProfileable interface {
     GetConnectorGroups()([]ConnectorGroupable)
     GetConnectors()([]Connectorable)
     GetHybridAgentUpdaterConfiguration()(HybridAgentUpdaterConfigurationable)
+    GetIsDefaultAccessEnabled()(*bool)
     GetIsEnabled()(*bool)
     GetPublishedResources()([]PublishedResourceable)
     SetAgentGroups(value []OnPremisesAgentGroupable)()
@@ -20,6 +21,7 @@ type OnPremisesPublishingProfileable interface {
     SetConnectorGroups(value []ConnectorGroupable)()
     SetConnectors(value []Connectorable)()
     SetHybridAgentUpdaterConfiguration(value HybridAgentUpdaterConfigurationable)()
+    SetIsDefaultAccessEnabled(value *bool)()
     SetIsEnabled(value *bool)()
     SetPublishedResources(value []PublishedResourceable)()
 }

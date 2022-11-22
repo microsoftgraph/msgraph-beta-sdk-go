@@ -33,8 +33,6 @@ func NewSynchronizationRule()(*SynchronizationRule) {
     m := &SynchronizationRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.synchronizationRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

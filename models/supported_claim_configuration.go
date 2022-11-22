@@ -19,8 +19,6 @@ func NewSupportedClaimConfiguration()(*SupportedClaimConfiguration) {
     m := &SupportedClaimConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.supportedClaimConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSupportedClaimConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

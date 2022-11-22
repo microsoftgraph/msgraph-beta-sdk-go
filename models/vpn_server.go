@@ -23,8 +23,6 @@ func NewVpnServer()(*VpnServer) {
     m := &VpnServer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.vpnServer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

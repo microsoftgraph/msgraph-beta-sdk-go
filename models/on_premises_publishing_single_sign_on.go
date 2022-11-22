@@ -21,8 +21,6 @@ func NewOnPremisesPublishingSingleSignOn()(*OnPremisesPublishingSingleSignOn) {
     m := &OnPremisesPublishingSingleSignOn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onPremisesPublishingSingleSignOn";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

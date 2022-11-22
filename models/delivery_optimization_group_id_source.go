@@ -17,8 +17,6 @@ func NewDeliveryOptimizationGroupIdSource()(*DeliveryOptimizationGroupIdSource) 
     m := &DeliveryOptimizationGroupIdSource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deliveryOptimizationGroupIdSource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeliveryOptimizationGroupIdSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

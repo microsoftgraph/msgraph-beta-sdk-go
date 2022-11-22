@@ -19,8 +19,6 @@ func NewConditionalAccessExternalTenants()(*ConditionalAccessExternalTenants) {
     m := &ConditionalAccessExternalTenants{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.conditionalAccessExternalTenants";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessExternalTenantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

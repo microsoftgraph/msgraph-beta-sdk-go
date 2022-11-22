@@ -17,8 +17,6 @@ func NewAndroidDeviceOwnerKioskModeHomeScreenItem()(*AndroidDeviceOwnerKioskMode
     m := &AndroidDeviceOwnerKioskModeHomeScreenItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeHomeScreenItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeHomeScreenItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -39,8 +39,6 @@ func NewUserPFXCertificate()(*UserPFXCertificate) {
     m := &UserPFXCertificate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userPFXCertificate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserPFXCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

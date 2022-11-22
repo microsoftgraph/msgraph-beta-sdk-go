@@ -20,8 +20,6 @@ func NewMailboxEvidence()(*MailboxEvidence) {
     m := &MailboxEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.mailboxEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMailboxEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

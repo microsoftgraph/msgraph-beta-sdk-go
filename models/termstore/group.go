@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Group provides operations to manage the collection of accessReview entities.
+// Group provides operations to manage the collection of activityStatistics entities.
 type Group struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Date and time of the group creation. Read-only.
@@ -28,8 +28,6 @@ func NewGroup()(*Group) {
     m := &Group{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.termStore.group";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

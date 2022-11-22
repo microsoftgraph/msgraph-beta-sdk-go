@@ -17,8 +17,6 @@ func NewCreateAction()(*CreateAction) {
     m := &CreateAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.createAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCreateActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

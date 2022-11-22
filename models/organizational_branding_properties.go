@@ -26,6 +26,10 @@ type OrganizationalBrandingProperties struct {
     customCannotAccessYourAccountText *string
     // A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.
     customCannotAccessYourAccountUrl *string
+    // The customCSS property
+    customCSS []byte
+    // The customCSSRelativeUrl property
+    customCSSRelativeUrl *string
     // A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
     customForgotMyPasswordText *string
     // A string to replace the default 'Privacy and Cookies' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
@@ -44,6 +48,12 @@ type OrganizationalBrandingProperties struct {
     faviconRelativeUrl *string
     // The RGB color to apply to customize the color of the header.
     headerBackgroundColor *string
+    // The headerLogo property
+    headerLogo []byte
+    // The headerLogoRelativeUrl property
+    headerLogoRelativeUrl *string
+    // The loginPageLayoutConfiguration property
+    loginPageLayoutConfiguration LoginPageLayoutConfigurationable
     // Represents the various texts that can be hidden on the login page for a tenant.
     loginPageTextVisibilitySettings LoginPageTextVisibilitySettingsable
     // Text that appears at the bottom of the sign-in box. Use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be in Unicode format and not exceed 1024 characters.
@@ -64,8 +74,6 @@ func NewOrganizationalBrandingProperties()(*OrganizationalBrandingProperties) {
     m := &OrganizationalBrandingProperties{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.organizationalBrandingProperties";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOrganizationalBrandingPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -128,6 +136,14 @@ func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountText(
 func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountUrl()(*string) {
     return m.customCannotAccessYourAccountUrl
 }
+// GetCustomCSS gets the customCSS property value. The customCSS property
+func (m *OrganizationalBrandingProperties) GetCustomCSS()([]byte) {
+    return m.customCSS
+}
+// GetCustomCSSRelativeUrl gets the customCSSRelativeUrl property value. The customCSSRelativeUrl property
+func (m *OrganizationalBrandingProperties) GetCustomCSSRelativeUrl()(*string) {
+    return m.customCSSRelativeUrl
+}
 // GetCustomForgotMyPasswordText gets the customForgotMyPasswordText property value. A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) GetCustomForgotMyPasswordText()(*string) {
     return m.customForgotMyPasswordText
@@ -172,6 +188,8 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
     res["customAccountResetCredentialsUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomAccountResetCredentialsUrl)
     res["customCannotAccessYourAccountText"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomCannotAccessYourAccountText)
     res["customCannotAccessYourAccountUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomCannotAccessYourAccountUrl)
+    res["customCSS"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetCustomCSS)
+    res["customCSSRelativeUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomCSSRelativeUrl)
     res["customForgotMyPasswordText"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomForgotMyPasswordText)
     res["customPrivacyAndCookiesText"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomPrivacyAndCookiesText)
     res["customPrivacyAndCookiesUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomPrivacyAndCookiesUrl)
@@ -181,6 +199,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
     res["favicon"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetFavicon)
     res["faviconRelativeUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFaviconRelativeUrl)
     res["headerBackgroundColor"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetHeaderBackgroundColor)
+    res["headerLogo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetHeaderLogo)
+    res["headerLogoRelativeUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetHeaderLogoRelativeUrl)
+    res["loginPageLayoutConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateLoginPageLayoutConfigurationFromDiscriminatorValue , m.SetLoginPageLayoutConfiguration)
     res["loginPageTextVisibilitySettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateLoginPageTextVisibilitySettingsFromDiscriminatorValue , m.SetLoginPageTextVisibilitySettings)
     res["signInPageText"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSignInPageText)
     res["squareLogo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetSquareLogo)
@@ -193,6 +214,18 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
 // GetHeaderBackgroundColor gets the headerBackgroundColor property value. The RGB color to apply to customize the color of the header.
 func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
     return m.headerBackgroundColor
+}
+// GetHeaderLogo gets the headerLogo property value. The headerLogo property
+func (m *OrganizationalBrandingProperties) GetHeaderLogo()([]byte) {
+    return m.headerLogo
+}
+// GetHeaderLogoRelativeUrl gets the headerLogoRelativeUrl property value. The headerLogoRelativeUrl property
+func (m *OrganizationalBrandingProperties) GetHeaderLogoRelativeUrl()(*string) {
+    return m.headerLogoRelativeUrl
+}
+// GetLoginPageLayoutConfiguration gets the loginPageLayoutConfiguration property value. The loginPageLayoutConfiguration property
+func (m *OrganizationalBrandingProperties) GetLoginPageLayoutConfiguration()(LoginPageLayoutConfigurationable) {
+    return m.loginPageLayoutConfiguration
 }
 // GetLoginPageTextVisibilitySettings gets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
 func (m *OrganizationalBrandingProperties) GetLoginPageTextVisibilitySettings()(LoginPageTextVisibilitySettingsable) {
@@ -283,6 +316,18 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteByteArrayValue("customCSS", m.GetCustomCSS())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("customCSSRelativeUrl", m.GetCustomCSSRelativeUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("customForgotMyPasswordText", m.GetCustomForgotMyPasswordText())
         if err != nil {
             return err
@@ -332,6 +377,24 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d2689
     }
     {
         err = writer.WriteStringValue("headerBackgroundColor", m.GetHeaderBackgroundColor())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteByteArrayValue("headerLogo", m.GetHeaderLogo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("headerLogoRelativeUrl", m.GetHeaderLogoRelativeUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("loginPageLayoutConfiguration", m.GetLoginPageLayoutConfiguration())
         if err != nil {
             return err
         }
@@ -416,6 +479,14 @@ func (m *OrganizationalBrandingProperties) SetCustomCannotAccessYourAccountText(
 func (m *OrganizationalBrandingProperties) SetCustomCannotAccessYourAccountUrl(value *string)() {
     m.customCannotAccessYourAccountUrl = value
 }
+// SetCustomCSS sets the customCSS property value. The customCSS property
+func (m *OrganizationalBrandingProperties) SetCustomCSS(value []byte)() {
+    m.customCSS = value
+}
+// SetCustomCSSRelativeUrl sets the customCSSRelativeUrl property value. The customCSSRelativeUrl property
+func (m *OrganizationalBrandingProperties) SetCustomCSSRelativeUrl(value *string)() {
+    m.customCSSRelativeUrl = value
+}
 // SetCustomForgotMyPasswordText sets the customForgotMyPasswordText property value. A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) SetCustomForgotMyPasswordText(value *string)() {
     m.customForgotMyPasswordText = value
@@ -451,6 +522,18 @@ func (m *OrganizationalBrandingProperties) SetFaviconRelativeUrl(value *string)(
 // SetHeaderBackgroundColor sets the headerBackgroundColor property value. The RGB color to apply to customize the color of the header.
 func (m *OrganizationalBrandingProperties) SetHeaderBackgroundColor(value *string)() {
     m.headerBackgroundColor = value
+}
+// SetHeaderLogo sets the headerLogo property value. The headerLogo property
+func (m *OrganizationalBrandingProperties) SetHeaderLogo(value []byte)() {
+    m.headerLogo = value
+}
+// SetHeaderLogoRelativeUrl sets the headerLogoRelativeUrl property value. The headerLogoRelativeUrl property
+func (m *OrganizationalBrandingProperties) SetHeaderLogoRelativeUrl(value *string)() {
+    m.headerLogoRelativeUrl = value
+}
+// SetLoginPageLayoutConfiguration sets the loginPageLayoutConfiguration property value. The loginPageLayoutConfiguration property
+func (m *OrganizationalBrandingProperties) SetLoginPageLayoutConfiguration(value LoginPageLayoutConfigurationable)() {
+    m.loginPageLayoutConfiguration = value
 }
 // SetLoginPageTextVisibilitySettings sets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
 func (m *OrganizationalBrandingProperties) SetLoginPageTextVisibilitySettings(value LoginPageTextVisibilitySettingsable)() {

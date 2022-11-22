@@ -25,8 +25,6 @@ func NewCustomUpdateTimeWindow()(*CustomUpdateTimeWindow) {
     m := &CustomUpdateTimeWindow{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.customUpdateTimeWindow";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomUpdateTimeWindowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

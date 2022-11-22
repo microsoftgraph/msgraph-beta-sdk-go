@@ -23,8 +23,6 @@ func NewMeetingCapability()(*MeetingCapability) {
     m := &MeetingCapability{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.meetingCapability";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMeetingCapabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

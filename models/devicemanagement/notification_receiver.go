@@ -21,8 +21,6 @@ func NewNotificationReceiver()(*NotificationReceiver) {
     m := &NotificationReceiver{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagement.notificationReceiver";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNotificationReceiverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -20,8 +20,6 @@ func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
     m := &RemoteAssistanceSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.remoteAssistanceSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRemoteAssistanceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

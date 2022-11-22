@@ -18,8 +18,6 @@ func NewBookingCustomer()(*BookingCustomer) {
     m := &BookingCustomer{
         BookingPerson: *NewBookingPerson(),
     }
-    odataTypeValue := "#microsoft.graph.bookingCustomer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

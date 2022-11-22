@@ -45,8 +45,6 @@ func NewStrongAuthenticationPhoneAppDetail()(*StrongAuthenticationPhoneAppDetail
     m := &StrongAuthenticationPhoneAppDetail{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.strongAuthenticationPhoneAppDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStrongAuthenticationPhoneAppDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

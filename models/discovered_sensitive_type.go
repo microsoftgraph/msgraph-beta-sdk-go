@@ -25,8 +25,6 @@ func NewDiscoveredSensitiveType()(*DiscoveredSensitiveType) {
     m := &DiscoveredSensitiveType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.discoveredSensitiveType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDiscoveredSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

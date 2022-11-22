@@ -17,8 +17,6 @@ func NewOfficeConfigurationAssignmentTarget()(*OfficeConfigurationAssignmentTarg
     m := &OfficeConfigurationAssignmentTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.officeConfigurationAssignmentTarget";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOfficeConfigurationAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,8 +29,6 @@ func NewAccessPackageResourceAttribute()(*AccessPackageResourceAttribute) {
     m := &AccessPackageResourceAttribute{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessPackageResourceAttribute";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageResourceAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

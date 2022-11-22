@@ -18,8 +18,6 @@ func NewUserAnalytics()(*UserAnalytics) {
     m := &UserAnalytics{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userAnalytics";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserAnalyticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

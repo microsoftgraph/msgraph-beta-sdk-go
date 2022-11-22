@@ -1,11 +1,12 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintDocument provides operations to manage the collection of accessReview entities.
+// PrintDocument provides operations to manage the collection of activityStatistics entities.
 type PrintDocument struct {
     Entity
     // The configuration property
@@ -14,16 +15,18 @@ type PrintDocument struct {
     contentType *string
     // The document's name. Read-only.
     displayName *string
+    // The downloadedDateTime property
+    downloadedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The document's size in bytes. Read-only.
     size *int64
+    // The uploadedDateTime property
+    uploadedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewPrintDocument instantiates a new printDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {
     m := &PrintDocument{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.printDocument";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintDocumentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,18 +45,28 @@ func (m *PrintDocument) GetContentType()(*string) {
 func (m *PrintDocument) GetDisplayName()(*string) {
     return m.displayName
 }
+// GetDownloadedDateTime gets the downloadedDateTime property value. The downloadedDateTime property
+func (m *PrintDocument) GetDownloadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.downloadedDateTime
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePrinterDocumentConfigurationFromDiscriminatorValue , m.SetConfiguration)
     res["contentType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetContentType)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["downloadedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetDownloadedDateTime)
     res["size"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetSize)
+    res["uploadedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetUploadedDateTime)
     return res
 }
 // GetSize gets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) GetSize()(*int64) {
     return m.size
+}
+// GetUploadedDateTime gets the uploadedDateTime property value. The uploadedDateTime property
+func (m *PrintDocument) GetUploadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.uploadedDateTime
 }
 // Serialize serializes information the current object
 func (m *PrintDocument) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,7 +93,19 @@ func (m *PrintDocument) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteTimeValue("downloadedDateTime", m.GetDownloadedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("size", m.GetSize())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("uploadedDateTime", m.GetUploadedDateTime())
         if err != nil {
             return err
         }
@@ -99,7 +124,15 @@ func (m *PrintDocument) SetContentType(value *string)() {
 func (m *PrintDocument) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// SetDownloadedDateTime sets the downloadedDateTime property value. The downloadedDateTime property
+func (m *PrintDocument) SetDownloadedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.downloadedDateTime = value
+}
 // SetSize sets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) SetSize(value *int64)() {
     m.size = value
+}
+// SetUploadedDateTime sets the uploadedDateTime property value. The uploadedDateTime property
+func (m *PrintDocument) SetUploadedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.uploadedDateTime = value
 }

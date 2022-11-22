@@ -11,9 +11,12 @@ import (
     i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/restore"
     ib05f8eb4a398c1197e5500e337b98f29806e31c0d85a4c4d513aa425dcdbbc08 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/getcloudpcconnectivityhistory"
     ibd3ed8e86fd7912f38df4a5ee348162bbd2f3faee2c4688adbdf41aed4563b2d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/getcloudpclaunchinfo"
+    ic2801aae9bbfd9e2fc587c7534a8202e1104a4e45684db61ac6d578a3aa2d66c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/getshiftworkcloudpcaccessstate"
+    id59d5f3bf71ded12222a12943edebd3dcac00295833811722cfa0838178ac8ca "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/retrypartneragentinstallation"
     idd692d448454691ef652a1555dc60f805306ee63076a45f51d1f0e45253c9964 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/rename"
     ie1b3b83917cdcc75511ad5eb6d6dbf8d5c29ca730fb1a3e4c356599c7261e842 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/endgraceperiod"
     ie4696cde156288c3f3bd9ecdc93adfc93dc5d8beeb9cceac7e81177b09b725a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/reprovision"
+    ie88847fb120b95088657195eed01ca0ea1c02640776d8ba96966309669339590 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/getsupportedcloudpcremoteactions"
 )
 
 // CloudPCItemRequestBuilder provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
@@ -167,6 +170,14 @@ func (m *CloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(*ib05f8eb4a3
 func (m *CloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*ibd3ed8e86fd7912f38df4a5ee348162bbd2f3faee2c4688adbdf41aed4563b2d.GetCloudPcLaunchInfoRequestBuilder) {
     return ibd3ed8e86fd7912f38df4a5ee348162bbd2f3faee2c4688adbdf41aed4563b2d.NewGetCloudPcLaunchInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
+func (m *CloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*ic2801aae9bbfd9e2fc587c7534a8202e1104a4e45684db61ac6d578a3aa2d66c.GetShiftWorkCloudPcAccessStateRequestBuilder) {
+    return ic2801aae9bbfd9e2fc587c7534a8202e1104a4e45684db61ac6d578a3aa2d66c.NewGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
+func (m *CloudPCItemRequestBuilder) GetSupportedCloudPcRemoteActions()(*ie88847fb120b95088657195eed01ca0ea1c02640776d8ba96966309669339590.GetSupportedCloudPcRemoteActionsRequestBuilder) {
+    return ie88847fb120b95088657195eed01ca0ea1c02640776d8ba96966309669339590.NewGetSupportedCloudPcRemoteActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property cloudPCs in me
 func (m *CloudPCItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, requestConfiguration *CloudPCItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
     requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
@@ -201,6 +212,10 @@ func (m *CloudPCItemRequestBuilder) Reprovision()(*ie4696cde156288c3f3bd9ecdc93a
 // Restore provides operations to call the restore method.
 func (m *CloudPCItemRequestBuilder) Restore()(*i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054.RestoreRequestBuilder) {
     return i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
+func (m *CloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*id59d5f3bf71ded12222a12943edebd3dcac00295833811722cfa0838178ac8ca.RetryPartnerAgentInstallationRequestBuilder) {
+    return id59d5f3bf71ded12222a12943edebd3dcac00295833811722cfa0838178ac8ca.NewRetryPartnerAgentInstallationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Troubleshoot provides operations to call the troubleshoot method.
 func (m *CloudPCItemRequestBuilder) Troubleshoot()(*i48833d47a3b49cc67b08b792c187d1d2e754160e7d01e8291dfc3500786630e6.TroubleshootRequestBuilder) {

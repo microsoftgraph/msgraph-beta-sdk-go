@@ -24,8 +24,6 @@ func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPr
     m := &DeviceManagementExchangeOnPremisesPolicy{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementExchangeOnPremisesPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

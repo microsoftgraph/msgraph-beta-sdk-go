@@ -19,8 +19,6 @@ func NewDelegatedAdminAccessDetails()(*DelegatedAdminAccessDetails) {
     m := &DelegatedAdminAccessDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.delegatedAdminAccessDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDelegatedAdminAccessDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

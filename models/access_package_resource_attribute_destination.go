@@ -17,8 +17,6 @@ func NewAccessPackageResourceAttributeDestination()(*AccessPackageResourceAttrib
     m := &AccessPackageResourceAttributeDestination{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.accessPackageResourceAttributeDestination";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageResourceAttributeDestinationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

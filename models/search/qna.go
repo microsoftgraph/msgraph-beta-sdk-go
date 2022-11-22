@@ -34,8 +34,6 @@ func NewQna()(*Qna) {
     m := &Qna{
         SearchAnswer: *NewSearchAnswer(),
     }
-    odataTypeValue := "#microsoft.graph.search.qna";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateQnaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

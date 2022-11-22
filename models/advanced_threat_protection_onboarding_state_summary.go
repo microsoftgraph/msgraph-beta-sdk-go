@@ -32,8 +32,6 @@ func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtecti
     m := &AdvancedThreatProtectionOnboardingStateSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.advancedThreatProtectionOnboardingStateSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewUserExperienceAnalyticsDeviceStartupProcess()(*UserExperienceAnalyticsDe
     m := &UserExperienceAnalyticsDeviceStartupProcess{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsDeviceStartupProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewIpCategory()(*IpCategory) {
     m := &IpCategory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.ipCategory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIpCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

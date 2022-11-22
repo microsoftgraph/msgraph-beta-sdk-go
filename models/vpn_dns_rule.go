@@ -27,8 +27,6 @@ func NewVpnDnsRule()(*VpnDnsRule) {
     m := &VpnDnsRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.vpnDnsRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnDnsRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

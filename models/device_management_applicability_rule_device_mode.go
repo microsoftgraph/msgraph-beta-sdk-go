@@ -23,8 +23,6 @@ func NewDeviceManagementApplicabilityRuleDeviceMode()(*DeviceManagementApplicabi
     m := &DeviceManagementApplicabilityRuleDeviceMode{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementApplicabilityRuleDeviceMode";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementApplicabilityRuleDeviceModeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminServiceManagementDetail provides operations to manage the collection of accessReview entities.
+// DelegatedAdminServiceManagementDetail provides operations to manage the collection of accessReviewDecision entities.
 type DelegatedAdminServiceManagementDetail struct {
     Entity
     // The URL of the management portal for the managed service. Read-only.
@@ -18,8 +18,6 @@ func NewDelegatedAdminServiceManagementDetail()(*DelegatedAdminServiceManagement
     m := &DelegatedAdminServiceManagementDetail{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.delegatedAdminServiceManagementDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

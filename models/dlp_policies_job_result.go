@@ -24,8 +24,6 @@ func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
     m := &DlpPoliciesJobResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.dlpPoliciesJobResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDlpPoliciesJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

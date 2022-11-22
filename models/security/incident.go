@@ -44,8 +44,6 @@ func NewIncident()(*Incident) {
     m := &Incident{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.security.incident";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIncidentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

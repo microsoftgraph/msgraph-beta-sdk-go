@@ -17,8 +17,6 @@ func NewPlannerPlanContextDetailsCollection()(*PlannerPlanContextDetailsCollecti
     m := &PlannerPlanContextDetailsCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.plannerPlanContextDetailsCollection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerPlanContextDetailsCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewContentLabel()(*ContentLabel) {
     m := &ContentLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.contentLabel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

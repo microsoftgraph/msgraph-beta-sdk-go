@@ -19,8 +19,6 @@ func NewAlertDataReferenceString()(*AlertDataReferenceString) {
     m := &AlertDataReferenceString{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.alertDataReferenceString";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertDataReferenceStringFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

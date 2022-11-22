@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedAccess 
+// PrivilegedAccess provides operations to manage the collection of accessReview entities.
 type PrivilegedAccess struct {
     Entity
     // The display name of the provider managed by PIM.
@@ -21,13 +21,11 @@ type PrivilegedAccess struct {
     // A collection of role settings for the provider.
     roleSettings []GovernanceRoleSettingable
 }
-// NewPrivilegedAccess instantiates a new PrivilegedAccess and sets the default values.
+// NewPrivilegedAccess instantiates a new privilegedAccess and sets the default values.
 func NewPrivilegedAccess()(*PrivilegedAccess) {
     m := &PrivilegedAccess{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.privilegedAccess";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivilegedAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewDeviceManagementCollectionSettingDefinition()(*DeviceManagementCollectio
     m := &DeviceManagementCollectionSettingDefinition{
         DeviceManagementSettingDefinition: *NewDeviceManagementSettingDefinition(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementCollectionSettingDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementCollectionSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

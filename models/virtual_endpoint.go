@@ -44,8 +44,6 @@ func NewVirtualEndpoint()(*VirtualEndpoint) {
     m := &VirtualEndpoint{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.virtualEndpoint";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVirtualEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

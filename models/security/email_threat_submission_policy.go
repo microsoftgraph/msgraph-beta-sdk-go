@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// EmailThreatSubmissionPolicy provides operations to manage the collection of accessReview entities.
+// EmailThreatSubmissionPolicy provides operations to manage the collection of activityStatistics entities.
 type EmailThreatSubmissionPolicy struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is null. Optional for creation.
@@ -41,8 +41,6 @@ func NewEmailThreatSubmissionPolicy()(*EmailThreatSubmissionPolicy) {
     m := &EmailThreatSubmissionPolicy{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.security.emailThreatSubmissionPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmailThreatSubmissionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

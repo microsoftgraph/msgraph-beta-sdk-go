@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilterOperatorSchema 
+// FilterOperatorSchema provides operations to manage the collection of accessReviewDecision entities.
 type FilterOperatorSchema struct {
     Entity
     // The arity property
@@ -20,8 +20,6 @@ func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.filterOperatorSchema";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFilterOperatorSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

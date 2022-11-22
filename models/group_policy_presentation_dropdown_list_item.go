@@ -21,8 +21,6 @@ func NewGroupPolicyPresentationDropdownListItem()(*GroupPolicyPresentationDropdo
     m := &GroupPolicyPresentationDropdownListItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.groupPolicyPresentationDropdownListItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationDropdownListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

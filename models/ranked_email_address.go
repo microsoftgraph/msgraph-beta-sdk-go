@@ -21,8 +21,6 @@ func NewRankedEmailAddress()(*RankedEmailAddress) {
     m := &RankedEmailAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.rankedEmailAddress";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRankedEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -49,8 +49,6 @@ func NewWindowsFirewallRule()(*WindowsFirewallRule) {
     m := &WindowsFirewallRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsFirewallRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsFirewallRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

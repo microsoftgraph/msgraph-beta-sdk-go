@@ -39,8 +39,6 @@ func NewDeviceHealthScriptDeviceState()(*DeviceHealthScriptDeviceState) {
     m := &DeviceHealthScriptDeviceState{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceHealthScriptDeviceState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

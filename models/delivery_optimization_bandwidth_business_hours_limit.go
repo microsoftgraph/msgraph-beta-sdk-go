@@ -25,8 +25,6 @@ func NewDeliveryOptimizationBandwidthBusinessHoursLimit()(*DeliveryOptimizationB
     m := &DeliveryOptimizationBandwidthBusinessHoursLimit{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deliveryOptimizationBandwidthBusinessHoursLimit";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeliveryOptimizationBandwidthBusinessHoursLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

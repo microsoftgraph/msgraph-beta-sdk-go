@@ -21,8 +21,6 @@ func NewResponsiblePolicy()(*ResponsiblePolicy) {
     m := &ResponsiblePolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.responsiblePolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResponsiblePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

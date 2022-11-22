@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ConnectionOperation provides operations to manage the collection of externalConnection entities.
+// ConnectionOperation provides operations to manage the collection of accessReviewDecision entities.
 type ConnectionOperation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // If status is failed, provides more information about the error that caused the failure.
@@ -19,8 +19,6 @@ func NewConnectionOperation()(*ConnectionOperation) {
     m := &ConnectionOperation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.externalConnectors.connectionOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConnectionOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

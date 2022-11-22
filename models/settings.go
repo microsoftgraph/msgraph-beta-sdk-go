@@ -23,8 +23,6 @@ func NewSettings()(*Settings) {
     m := &Settings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.settings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting provides operations to manage the commsApplication singleton.
+// OnlineMeeting provides operations to manage the collection of activityStatistics entities.
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -79,8 +79,6 @@ func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.onlineMeeting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnlineMeetingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

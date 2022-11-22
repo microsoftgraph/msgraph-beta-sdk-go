@@ -25,8 +25,6 @@ func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
     m := &UserExperienceAnalyticsInsight{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsInsight";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     m := &PasswordSingleSignOnField{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.passwordSingleSignOnField";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordSingleSignOnFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

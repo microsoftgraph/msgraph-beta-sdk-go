@@ -21,8 +21,6 @@ func NewOfficeUserCheckinSummary()(*OfficeUserCheckinSummary) {
     m := &OfficeUserCheckinSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.officeUserCheckinSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOfficeUserCheckinSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

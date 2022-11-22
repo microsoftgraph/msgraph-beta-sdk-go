@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Currency provides operations to manage the collection of accessReview entities.
+// Currency 
 type Currency struct {
     Entity
     // The amountDecimalPlaces property
@@ -27,8 +27,6 @@ func NewCurrency()(*Currency) {
     m := &Currency{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.currency";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCurrencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewTrustFramework()(*TrustFramework) {
     m := &TrustFramework{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.trustFramework";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTrustFrameworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewExactMatchClassificationResult()(*ExactMatchClassificationResult) {
     m := &ExactMatchClassificationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.exactMatchClassificationResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

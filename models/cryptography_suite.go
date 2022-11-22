@@ -29,8 +29,6 @@ func NewCryptographySuite()(*CryptographySuite) {
     m := &CryptographySuite{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cryptographySuite";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCryptographySuiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

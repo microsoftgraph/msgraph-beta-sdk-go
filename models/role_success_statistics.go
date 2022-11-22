@@ -35,8 +35,6 @@ func NewRoleSuccessStatistics()(*RoleSuccessStatistics) {
     m := &RoleSuccessStatistics{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.roleSuccessStatistics";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleSuccessStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewAuthenticationSourceFilter()(*AuthenticationSourceFilter) {
     m := &AuthenticationSourceFilter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authenticationSourceFilter";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationSourceFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application casts the previous resource to application.
+// Application provides operations to manage the collection of accessReview entities.
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
@@ -71,15 +71,15 @@ type Application struct {
     publisherDomain *string
     // Specifies whether this application requires Azure AD to verify the signed authentication requests.
     requestSignatureVerification RequestSignatureVerificationable
-    // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
+    // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccessable
     // The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
     samlMetadataUrl *string
     // References application or service contact information from a Service or Asset Management database. Nullable.
     serviceManagementReference *string
-    // The servicePrincipalLockConfiguration property
+    // Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
     servicePrincipalLockConfiguration ServicePrincipalLockConfigurationable
-    // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
+    // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
     signInAudience *string
     // Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
     spa SpaApplicationable
@@ -290,7 +290,7 @@ func (m *Application) GetPublisherDomain()(*string) {
 func (m *Application) GetRequestSignatureVerification()(RequestSignatureVerificationable) {
     return m.requestSignatureVerification
 }
-// GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
+// GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) {
     return m.requiredResourceAccess
 }
@@ -302,11 +302,11 @@ func (m *Application) GetSamlMetadataUrl()(*string) {
 func (m *Application) GetServiceManagementReference()(*string) {
     return m.serviceManagementReference
 }
-// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. The servicePrincipalLockConfiguration property
+// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
 func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable) {
     return m.servicePrincipalLockConfiguration
 }
-// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
+// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
 func (m *Application) GetSignInAudience()(*string) {
     return m.signInAudience
 }
@@ -769,7 +769,7 @@ func (m *Application) SetPublisherDomain(value *string)() {
 func (m *Application) SetRequestSignatureVerification(value RequestSignatureVerificationable)() {
     m.requestSignatureVerification = value
 }
-// SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
+// SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccessable)() {
     m.requiredResourceAccess = value
 }
@@ -781,11 +781,11 @@ func (m *Application) SetSamlMetadataUrl(value *string)() {
 func (m *Application) SetServiceManagementReference(value *string)() {
     m.serviceManagementReference = value
 }
-// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. The servicePrincipalLockConfiguration property
+// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
 func (m *Application) SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)() {
     m.servicePrincipalLockConfiguration = value
 }
-// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
+// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
 func (m *Application) SetSignInAudience(value *string)() {
     m.signInAudience = value
 }

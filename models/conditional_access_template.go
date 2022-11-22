@@ -22,8 +22,6 @@ func NewConditionalAccessTemplate()(*ConditionalAccessTemplate) {
     m := &ConditionalAccessTemplate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.conditionalAccessTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewActivateDeviceEsimActionResult()(*ActivateDeviceEsimActionResult) {
     m := &ActivateDeviceEsimActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
     }
-    odataTypeValue := "#microsoft.graph.activateDeviceEsimActionResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateActivateDeviceEsimActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

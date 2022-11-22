@@ -20,8 +20,6 @@ func NewRiskyServicePrincipalHistoryItem()(*RiskyServicePrincipalHistoryItem) {
     m := &RiskyServicePrincipalHistoryItem{
         RiskyServicePrincipal: *NewRiskyServicePrincipal(),
     }
-    odataTypeValue := "#microsoft.graph.riskyServicePrincipalHistoryItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRiskyServicePrincipalHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

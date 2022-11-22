@@ -16,8 +16,6 @@ func NewCloudPcReports()(*CloudPcReports) {
     m := &CloudPcReports{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.cloudPcReports";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcReportsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

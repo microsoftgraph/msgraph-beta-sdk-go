@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSettingDefinition provides operations to manage the collection of accessReview entities.
+// DeviceManagementConfigurationSettingDefinition provides operations to manage the collection of accessReviewDecision entities.
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
     // The accessTypes property
@@ -50,8 +50,6 @@ func NewDeviceManagementConfigurationSettingDefinition()(*DeviceManagementConfig
     m := &DeviceManagementConfigurationSettingDefinition{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

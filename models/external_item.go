@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalItem provides operations to manage the collection of accessReview entities.
+// ExternalItem provides operations to manage the collection of accessReviewDecision entities.
 type ExternalItem struct {
     Entity
     // The acl property
@@ -20,8 +20,6 @@ func NewExternalItem()(*ExternalItem) {
     m := &ExternalItem{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.externalItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

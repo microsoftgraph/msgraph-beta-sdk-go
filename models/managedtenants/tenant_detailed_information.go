@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantDetailedInformation provides operations to manage the collection of accessReview entities.
+// TenantDetailedInformation provides operations to manage the collection of accessReviewDecision entities.
 type TenantDetailedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The city where the managed tenant is located. Optional. Read-only.
@@ -35,8 +35,6 @@ func NewTenantDetailedInformation()(*TenantDetailedInformation) {
     m := &TenantDetailedInformation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedTenants.tenantDetailedInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantDetailedInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

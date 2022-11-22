@@ -17,8 +17,6 @@ func NewGovernanceCriteria()(*GovernanceCriteria) {
     m := &GovernanceCriteria{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.governanceCriteria";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

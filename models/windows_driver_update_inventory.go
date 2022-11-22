@@ -33,8 +33,6 @@ func NewWindowsDriverUpdateInventory()(*WindowsDriverUpdateInventory) {
     m := &WindowsDriverUpdateInventory{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsDriverUpdateInventory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDriverUpdateInventoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -32,8 +32,6 @@ func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.dataClassificationService";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDataClassificationServiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewGovernancePolicy()(*GovernancePolicy) {
     m := &GovernancePolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.governancePolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

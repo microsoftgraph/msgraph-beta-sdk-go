@@ -25,8 +25,6 @@ func NewAttributeMappingSource()(*AttributeMappingSource) {
     m := &AttributeMappingSource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.attributeMappingSource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeMappingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

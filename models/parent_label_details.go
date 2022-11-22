@@ -33,8 +33,6 @@ func NewParentLabelDetails()(*ParentLabelDetails) {
     m := &ParentLabelDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.parentLabelDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParentLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

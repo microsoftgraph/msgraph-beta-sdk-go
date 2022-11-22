@@ -41,6 +41,8 @@ type OnPremisesPublishing struct {
     odataType *string
     // Represents the application segment collection for an on-premises wildcard application.
     onPremisesApplicationSegments []OnPremisesApplicationSegmentable
+    // The segmentsConfiguration property
+    segmentsConfiguration SegmentConfigurationable
     // Represents the single sign-on configuration for the on-premises application.
     singleSignOnSettings OnPremisesPublishingSingleSignOnable
     // The useAlternateUrlForTranslationAndRedirect property
@@ -57,8 +59,6 @@ func NewOnPremisesPublishing()(*OnPremisesPublishing) {
     m := &OnPremisesPublishing{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onPremisesPublishing";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesPublishingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -108,6 +108,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
     res["isTranslateLinksInBodyEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsTranslateLinksInBodyEnabled)
     res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
     res["onPremisesApplicationSegments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOnPremisesApplicationSegmentFromDiscriminatorValue , m.SetOnPremisesApplicationSegments)
+    res["segmentsConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSegmentConfigurationFromDiscriminatorValue , m.SetSegmentsConfiguration)
     res["singleSignOnSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue , m.SetSingleSignOnSettings)
     res["useAlternateUrlForTranslationAndRedirect"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUseAlternateUrlForTranslationAndRedirect)
     res["verifiedCustomDomainCertificatesMetadata"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue , m.SetVerifiedCustomDomainCertificatesMetadata)
@@ -158,6 +159,10 @@ func (m *OnPremisesPublishing) GetOdataType()(*string) {
 // GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application.
 func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
     return m.onPremisesApplicationSegments
+}
+// GetSegmentsConfiguration gets the segmentsConfiguration property value. The segmentsConfiguration property
+func (m *OnPremisesPublishing) GetSegmentsConfiguration()(SegmentConfigurationable) {
+    return m.segmentsConfiguration
 }
 // GetSingleSignOnSettings gets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
 func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable) {
@@ -280,6 +285,12 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteObjectValue("segmentsConfiguration", m.GetSegmentsConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("singleSignOnSettings", m.GetSingleSignOnSettings())
         if err != nil {
             return err
@@ -384,6 +395,10 @@ func (m *OnPremisesPublishing) SetOdataType(value *string)() {
 // SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application.
 func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)() {
     m.onPremisesApplicationSegments = value
+}
+// SetSegmentsConfiguration sets the segmentsConfiguration property value. The segmentsConfiguration property
+func (m *OnPremisesPublishing) SetSegmentsConfiguration(value SegmentConfigurationable)() {
+    m.segmentsConfiguration = value
 }
 // SetSingleSignOnSettings sets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
 func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)() {

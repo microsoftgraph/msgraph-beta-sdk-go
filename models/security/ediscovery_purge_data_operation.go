@@ -13,8 +13,6 @@ func NewEdiscoveryPurgeDataOperation()(*EdiscoveryPurgeDataOperation) {
     m := &EdiscoveryPurgeDataOperation{
         CaseOperation: *NewCaseOperation(),
     }
-    odataTypeValue := "#microsoft.graph.security.ediscoveryPurgeDataOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryPurgeDataOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

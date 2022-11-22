@@ -19,8 +19,6 @@ func NewWinGetAppInstallExperience()(*WinGetAppInstallExperience) {
     m := &WinGetAppInstallExperience{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.winGetAppInstallExperience";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWinGetAppInstallExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,6 @@ func NewStorage()(*Storage) {
     m := &Storage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.storage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStorageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

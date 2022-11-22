@@ -21,8 +21,6 @@ func NewSiteSettings()(*SiteSettings) {
     m := &SiteSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.siteSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSiteSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

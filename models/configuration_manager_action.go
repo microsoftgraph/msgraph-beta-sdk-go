@@ -19,8 +19,6 @@ func NewConfigurationManagerAction()(*ConfigurationManagerAction) {
     m := &ConfigurationManagerAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.configurationManagerAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigurationManagerActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

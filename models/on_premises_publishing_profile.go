@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesPublishingProfile 
+// OnPremisesPublishingProfile provides operations to manage the collection of accessReview entities.
 type OnPremisesPublishingProfile struct {
     Entity
     // List of existing onPremisesAgentGroup objects. Read-only. Nullable.
@@ -18,18 +18,18 @@ type OnPremisesPublishingProfile struct {
     connectors []Connectorable
     // Represents a hybridAgentUpdaterConfiguration object.
     hybridAgentUpdaterConfiguration HybridAgentUpdaterConfigurationable
+    // The isDefaultAccessEnabled property
+    isDefaultAccessEnabled *bool
     // Represents if Azure AD Application Proxy is enabled for the tenant.
     isEnabled *bool
     // List of existing publishedResource objects. Read-only. Nullable.
     publishedResources []PublishedResourceable
 }
-// NewOnPremisesPublishingProfile instantiates a new OnPremisesPublishingProfile and sets the default values.
+// NewOnPremisesPublishingProfile instantiates a new onPremisesPublishingProfile and sets the default values.
 func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {
     m := &OnPremisesPublishingProfile{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.onPremisesPublishingProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesPublishingProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +60,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
     res["connectorGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConnectorGroupFromDiscriminatorValue , m.SetConnectorGroups)
     res["connectors"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConnectorFromDiscriminatorValue , m.SetConnectors)
     res["hybridAgentUpdaterConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue , m.SetHybridAgentUpdaterConfiguration)
+    res["isDefaultAccessEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsDefaultAccessEnabled)
     res["isEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsEnabled)
     res["publishedResources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePublishedResourceFromDiscriminatorValue , m.SetPublishedResources)
     return res
@@ -67,6 +68,10 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
 // GetHybridAgentUpdaterConfiguration gets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
 func (m *OnPremisesPublishingProfile) GetHybridAgentUpdaterConfiguration()(HybridAgentUpdaterConfigurationable) {
     return m.hybridAgentUpdaterConfiguration
+}
+// GetIsDefaultAccessEnabled gets the isDefaultAccessEnabled property value. The isDefaultAccessEnabled property
+func (m *OnPremisesPublishingProfile) GetIsDefaultAccessEnabled()(*bool) {
+    return m.isDefaultAccessEnabled
 }
 // GetIsEnabled gets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
 func (m *OnPremisesPublishingProfile) GetIsEnabled()(*bool) {
@@ -117,6 +122,12 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteBoolValue("isDefaultAccessEnabled", m.GetIsDefaultAccessEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
         if err != nil {
             return err
@@ -150,6 +161,10 @@ func (m *OnPremisesPublishingProfile) SetConnectors(value []Connectorable)() {
 // SetHybridAgentUpdaterConfiguration sets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
 func (m *OnPremisesPublishingProfile) SetHybridAgentUpdaterConfiguration(value HybridAgentUpdaterConfigurationable)() {
     m.hybridAgentUpdaterConfiguration = value
+}
+// SetIsDefaultAccessEnabled sets the isDefaultAccessEnabled property value. The isDefaultAccessEnabled property
+func (m *OnPremisesPublishingProfile) SetIsDefaultAccessEnabled(value *bool)() {
+    m.isDefaultAccessEnabled = value
 }
 // SetIsEnabled sets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
 func (m *OnPremisesPublishingProfile) SetIsEnabled(value *bool)() {

@@ -19,8 +19,6 @@ func NewConnectionInfo()(*ConnectionInfo) {
     m := &ConnectionInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.connectionInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConnectionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

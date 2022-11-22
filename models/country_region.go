@@ -23,8 +23,6 @@ func NewCountryRegion()(*CountryRegion) {
     m := &CountryRegion{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.countryRegion";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCountryRegionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

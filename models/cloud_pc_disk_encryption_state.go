@@ -2,27 +2,27 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type CloudPcDiskEncryptionState int
 
 const (
     NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE CloudPcDiskEncryptionState = iota
-    NOTENCRYPED_CLOUDPCDISKENCRYPTIONSTATE
+    NOTENCRYPTED_CLOUDPCDISKENCRYPTIONSTATE
     ENCRYPTEDUSINGPLATFORMMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
     ENCRYPTEDUSINGCUSTOMERMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
     UNKNOWNFUTUREVALUE_CLOUDPCDISKENCRYPTIONSTATE
 )
 
 func (i CloudPcDiskEncryptionState) String() string {
-    return []string{"notAvailable", "notEncryped", "encryptedUsingPlatformManagedKey", "encryptedUsingCustomerManagedKey", "unknownFutureValue"}[i]
+    return []string{"notAvailable", "notEncrypted", "encryptedUsingPlatformManagedKey", "encryptedUsingCustomerManagedKey", "unknownFutureValue"}[i]
 }
 func ParseCloudPcDiskEncryptionState(v string) (interface{}, error) {
     result := NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE
     switch v {
         case "notAvailable":
             result = NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE
-        case "notEncryped":
-            result = NOTENCRYPED_CLOUDPCDISKENCRYPTIONSTATE
+        case "notEncrypted":
+            result = NOTENCRYPTED_CLOUDPCDISKENCRYPTIONSTATE
         case "encryptedUsingPlatformManagedKey":
             result = ENCRYPTEDUSINGPLATFORMMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
         case "encryptedUsingCustomerManagedKey":

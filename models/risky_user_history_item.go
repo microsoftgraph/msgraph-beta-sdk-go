@@ -20,8 +20,6 @@ func NewRiskyUserHistoryItem()(*RiskyUserHistoryItem) {
     m := &RiskyUserHistoryItem{
         RiskyUser: *NewRiskyUser(),
     }
-    odataTypeValue := "#microsoft.graph.riskyUserHistoryItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRiskyUserHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

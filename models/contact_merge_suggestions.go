@@ -16,8 +16,6 @@ func NewContactMergeSuggestions()(*ContactMergeSuggestions) {
     m := &ContactMergeSuggestions{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.contactMergeSuggestions";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContactMergeSuggestionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

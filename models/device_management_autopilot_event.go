@@ -69,8 +69,6 @@ func NewDeviceManagementAutopilotEvent()(*DeviceManagementAutopilotEvent) {
     m := &DeviceManagementAutopilotEvent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementAutopilotEvent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementAutopilotEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

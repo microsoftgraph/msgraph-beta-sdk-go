@@ -29,8 +29,6 @@ func NewLoginPageTextVisibilitySettings()(*LoginPageTextVisibilitySettings) {
     m := &LoginPageTextVisibilitySettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.loginPageTextVisibilitySettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLoginPageTextVisibilitySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

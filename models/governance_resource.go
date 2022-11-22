@@ -32,13 +32,11 @@ type GovernanceResource struct {
     // Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
     type_escaped *string
 }
-// NewGovernanceResource instantiates a new GovernanceResource and sets the default values.
+// NewGovernanceResource instantiates a new governanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
     m := &GovernanceResource{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.governanceResource";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernanceResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

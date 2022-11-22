@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignmentMultiple provides operations to manage the collection of accessReview entities.
+// UnifiedRoleAssignmentMultiple provides operations to manage the collection of activityStatistics entities.
 type UnifiedRoleAssignmentMultiple struct {
     Entity
     // Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
@@ -36,8 +36,6 @@ func NewUnifiedRoleAssignmentMultiple()(*UnifiedRoleAssignmentMultiple) {
     m := &UnifiedRoleAssignmentMultiple{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleAssignmentMultiple";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleAssignmentMultipleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

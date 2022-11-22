@@ -27,8 +27,6 @@ func NewUserSummary()(*UserSummary) {
     m := &UserSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityGovernance.userSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

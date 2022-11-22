@@ -21,8 +21,6 @@ func NewStringKeyLongValuePair()(*StringKeyLongValuePair) {
     m := &StringKeyLongValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.stringKeyLongValuePair";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStringKeyLongValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,6 @@ func NewTimeCardBreak()(*TimeCardBreak) {
     m := &TimeCardBreak{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.timeCardBreak";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeCardBreakFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

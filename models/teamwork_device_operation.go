@@ -33,8 +33,6 @@ func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
     m := &TeamworkDeviceOperation{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkDeviceOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDeviceOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

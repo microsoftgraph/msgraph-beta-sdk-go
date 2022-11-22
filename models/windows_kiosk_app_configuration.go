@@ -17,8 +17,6 @@ func NewWindowsKioskAppConfiguration()(*WindowsKioskAppConfiguration) {
     m := &WindowsKioskAppConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsKioskAppConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsKioskAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

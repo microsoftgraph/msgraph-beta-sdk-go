@@ -27,8 +27,6 @@ func NewParseExpressionResponse()(*ParseExpressionResponse) {
     m := &ParseExpressionResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.parseExpressionResponse";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParseExpressionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,8 +24,6 @@ func NewCloudApplicationEvidence()(*CloudApplicationEvidence) {
     m := &CloudApplicationEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.cloudApplicationEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudApplicationEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

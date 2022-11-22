@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReview 
+// AccessReview provides operations to manage the collection of accessReview entities.
 type AccessReview struct {
     Entity
     // The business flow template identifier. Required on create.  This value is case sensitive.
@@ -38,13 +38,11 @@ type AccessReview struct {
     // This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
     status *string
 }
-// NewAccessReview instantiates a new AccessReview and sets the default values.
+// NewAccessReview instantiates a new accessReview and sets the default values.
 func NewAccessReview()(*AccessReview) {
     m := &AccessReview{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.accessReview";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

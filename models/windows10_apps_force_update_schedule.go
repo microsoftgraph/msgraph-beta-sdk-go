@@ -24,8 +24,6 @@ func NewWindows10AppsForceUpdateSchedule()(*Windows10AppsForceUpdateSchedule) {
     m := &Windows10AppsForceUpdateSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windows10AppsForceUpdateSchedule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10AppsForceUpdateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

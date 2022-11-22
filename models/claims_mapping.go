@@ -27,8 +27,6 @@ func NewClaimsMapping()(*ClaimsMapping) {
     m := &ClaimsMapping{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.claimsMapping";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClaimsMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

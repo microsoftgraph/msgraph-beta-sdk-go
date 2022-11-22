@@ -19,8 +19,6 @@ func NewTargetPolicyEndpoints()(*TargetPolicyEndpoints) {
     m := &TargetPolicyEndpoints{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.targetPolicyEndpoints";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTargetPolicyEndpointsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

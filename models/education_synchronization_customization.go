@@ -26,8 +26,6 @@ func NewEducationSynchronizationCustomization()(*EducationSynchronizationCustomi
     m := &EducationSynchronizationCustomization{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationSynchronizationCustomization";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSynchronizationCustomizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

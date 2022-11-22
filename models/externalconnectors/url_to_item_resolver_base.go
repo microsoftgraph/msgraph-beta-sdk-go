@@ -19,8 +19,6 @@ func NewUrlToItemResolverBase()(*UrlToItemResolverBase) {
     m := &UrlToItemResolverBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.externalConnectors.urlToItemResolverBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUrlToItemResolverBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

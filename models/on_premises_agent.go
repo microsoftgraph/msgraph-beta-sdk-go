@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgent 
+// OnPremisesAgent provides operations to manage the collection of accessReviewDecision entities.
 type OnPremisesAgent struct {
     Entity
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
@@ -19,13 +19,11 @@ type OnPremisesAgent struct {
     // The supportedPublishingTypes property
     supportedPublishingTypes []OnPremisesPublishingType
 }
-// NewOnPremisesAgent instantiates a new OnPremisesAgent and sets the default values.
+// NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
     m := &OnPremisesAgent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.onPremisesAgent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

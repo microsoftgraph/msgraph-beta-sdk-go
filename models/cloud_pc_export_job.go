@@ -31,8 +31,6 @@ func NewCloudPcExportJob()(*CloudPcExportJob) {
     m := &CloudPcExportJob{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.cloudPcExportJob";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcExportJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

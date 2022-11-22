@@ -27,8 +27,6 @@ func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWi
     m := &WindowsInformationProtectionWipeAction{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsInformationProtectionWipeAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsInformationProtectionWipeActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

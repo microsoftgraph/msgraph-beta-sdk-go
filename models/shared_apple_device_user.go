@@ -25,8 +25,6 @@ func NewSharedAppleDeviceUser()(*SharedAppleDeviceUser) {
     m := &SharedAppleDeviceUser{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sharedAppleDeviceUser";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSharedAppleDeviceUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

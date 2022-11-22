@@ -17,8 +17,6 @@ func NewWorkflowExecutionConditions()(*WorkflowExecutionConditions) {
     m := &WorkflowExecutionConditions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityGovernance.workflowExecutionConditions";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkflowExecutionConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

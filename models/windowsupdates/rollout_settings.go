@@ -26,8 +26,6 @@ func NewRolloutSettings()(*RolloutSettings) {
     m := &RolloutSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.rolloutSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRolloutSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

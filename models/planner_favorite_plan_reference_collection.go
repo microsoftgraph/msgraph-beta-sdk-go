@@ -17,8 +17,6 @@ func NewPlannerFavoritePlanReferenceCollection()(*PlannerFavoritePlanReferenceCo
     m := &PlannerFavoritePlanReferenceCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.plannerFavoritePlanReferenceCollection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerFavoritePlanReferenceCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

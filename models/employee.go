@@ -51,8 +51,6 @@ func NewEmployee()(*Employee) {
     m := &Employee{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.employee";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmployeeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewInferenceData()(*InferenceData) {
     m := &InferenceData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.inferenceData";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInferenceDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

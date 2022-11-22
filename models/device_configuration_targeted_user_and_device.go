@@ -30,8 +30,6 @@ func NewDeviceConfigurationTargetedUserAndDevice()(*DeviceConfigurationTargetedU
     m := &DeviceConfigurationTargetedUserAndDevice{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceConfigurationTargetedUserAndDevice";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationTargetedUserAndDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

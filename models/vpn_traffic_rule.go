@@ -37,8 +37,6 @@ func NewVpnTrafficRule()(*VpnTrafficRule) {
     m := &VpnTrafficRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.vpnTrafficRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnTrafficRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

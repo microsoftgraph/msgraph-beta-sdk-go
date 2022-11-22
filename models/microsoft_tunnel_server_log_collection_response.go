@@ -29,8 +29,6 @@ func NewMicrosoftTunnelServerLogCollectionResponse()(*MicrosoftTunnelServerLogCo
     m := &MicrosoftTunnelServerLogCollectionResponse{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.microsoftTunnelServerLogCollectionResponse";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,8 +17,6 @@ func NewCustomSecurityAttributeValue()(*CustomSecurityAttributeValue) {
     m := &CustomSecurityAttributeValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.customSecurityAttributeValue";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomSecurityAttributeValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

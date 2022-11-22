@@ -25,8 +25,6 @@ func NewCustomExtensionHandlerInstance()(*CustomExtensionHandlerInstance) {
     m := &CustomExtensionHandlerInstance{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.customExtensionHandlerInstance";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomExtensionHandlerInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

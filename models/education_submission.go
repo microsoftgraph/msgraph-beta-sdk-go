@@ -45,8 +45,6 @@ func NewEducationSubmission()(*EducationSubmission) {
     m := &EducationSubmission{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.educationSubmission";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

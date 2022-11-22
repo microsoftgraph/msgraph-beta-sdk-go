@@ -10,6 +10,8 @@ type BuiltInIdentityProvider struct {
     IdentityProviderBase
     // The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
     identityProviderType *string
+    // The state property
+    state *IdentityProviderState
 }
 // NewBuiltInIdentityProvider instantiates a new BuiltInIdentityProvider and sets the default values.
 func NewBuiltInIdentityProvider()(*BuiltInIdentityProvider) {
@@ -28,11 +30,16 @@ func CreateBuiltInIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e
 func (m *BuiltInIdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityProviderBase.GetFieldDeserializers()
     res["identityProviderType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetIdentityProviderType)
+    res["state"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseIdentityProviderState , m.SetState)
     return res
 }
 // GetIdentityProviderType gets the identityProviderType property value. The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
 func (m *BuiltInIdentityProvider) GetIdentityProviderType()(*string) {
     return m.identityProviderType
+}
+// GetState gets the state property value. The state property
+func (m *BuiltInIdentityProvider) GetState()(*IdentityProviderState) {
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *BuiltInIdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -46,9 +53,20 @@ func (m *BuiltInIdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetState() != nil {
+        cast := (*m.GetState()).String()
+        err = writer.WriteStringValue("state", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetIdentityProviderType sets the identityProviderType property value. The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
 func (m *BuiltInIdentityProvider) SetIdentityProviderType(value *string)() {
     m.identityProviderType = value
+}
+// SetState sets the state property value. The state property
+func (m *BuiltInIdentityProvider) SetState(value *IdentityProviderState)() {
+    m.state = value
 }

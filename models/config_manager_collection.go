@@ -27,8 +27,6 @@ func NewConfigManagerCollection()(*ConfigManagerCollection) {
     m := &ConfigManagerCollection{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.configManagerCollection";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigManagerCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

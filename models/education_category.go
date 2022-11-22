@@ -16,8 +16,6 @@ func NewEducationCategory()(*EducationCategory) {
     m := &EducationCategory{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.educationCategory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

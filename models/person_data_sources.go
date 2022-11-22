@@ -19,8 +19,6 @@ func NewPersonDataSources()(*PersonDataSources) {
     m := &PersonDataSources{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.personDataSources";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonDataSourcesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

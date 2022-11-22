@@ -21,8 +21,6 @@ func NewDevicesFilter()(*DevicesFilter) {
     m := &DevicesFilter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.devicesFilter";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDevicesFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

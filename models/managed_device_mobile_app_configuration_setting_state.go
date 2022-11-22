@@ -43,8 +43,6 @@ func NewManagedDeviceMobileAppConfigurationSettingState()(*ManagedDeviceMobileAp
     m := &ManagedDeviceMobileAppConfigurationSettingState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedDeviceMobileAppConfigurationSettingState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

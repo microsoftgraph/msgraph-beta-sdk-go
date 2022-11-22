@@ -27,8 +27,6 @@ func NewTeamworkDisplayConfiguration()(*TeamworkDisplayConfiguration) {
     m := &TeamworkDisplayConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkDisplayConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDisplayConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,8 +29,6 @@ func NewConfigManagerPolicySummary()(*ConfigManagerPolicySummary) {
     m := &ConfigManagerPolicySummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.configManagerPolicySummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigManagerPolicySummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

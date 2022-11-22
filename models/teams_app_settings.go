@@ -16,8 +16,6 @@ func NewTeamsAppSettings()(*TeamsAppSettings) {
     m := &TeamsAppSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamsAppSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsAppSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

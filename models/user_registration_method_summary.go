@@ -25,8 +25,6 @@ func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
     m := &UserRegistrationMethodSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userRegistrationMethodSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserRegistrationMethodSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

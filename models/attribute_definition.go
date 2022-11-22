@@ -41,8 +41,6 @@ func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.attributeDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

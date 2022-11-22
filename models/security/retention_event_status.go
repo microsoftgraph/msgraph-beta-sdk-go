@@ -22,8 +22,6 @@ func NewRetentionEventStatus()(*RetentionEventStatus) {
     m := &RetentionEventStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.retentionEventStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRetentionEventStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

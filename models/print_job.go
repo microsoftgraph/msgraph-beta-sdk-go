@@ -6,9 +6,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintJob provides operations to manage the collection of accessReview entities.
+// PrintJob provides operations to manage the collection of activityStatistics entities.
 type PrintJob struct {
     Entity
+    // The acknowledgedDateTime property
+    acknowledgedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The completedDateTime property
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A group of settings that a printer should use to print a job.
     configuration PrintJobConfigurationable
     // The createdBy property
@@ -19,6 +23,8 @@ type PrintJob struct {
     displayName *string
     // The documents property
     documents []PrintDocumentable
+    // The errorCode property
+    errorCode *int32
     // If true, document can be fetched by printer.
     isFetchable *bool
     // Contains the source job URL, if the job has been redirected from another printer.
@@ -35,13 +41,19 @@ func NewPrintJob()(*PrintJob) {
     m := &PrintJob{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.printJob";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrintJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintJob(), nil
+}
+// GetAcknowledgedDateTime gets the acknowledgedDateTime property value. The acknowledgedDateTime property
+func (m *PrintJob) GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.acknowledgedDateTime
+}
+// GetCompletedDateTime gets the completedDateTime property value. The completedDateTime property
+func (m *PrintJob) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.completedDateTime
 }
 // GetConfiguration gets the configuration property value. A group of settings that a printer should use to print a job.
 func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
@@ -63,14 +75,21 @@ func (m *PrintJob) GetDisplayName()(*string) {
 func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     return m.documents
 }
+// GetErrorCode gets the errorCode property value. The errorCode property
+func (m *PrintJob) GetErrorCode()(*int32) {
+    return m.errorCode
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["acknowledgedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetAcknowledgedDateTime)
+    res["completedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCompletedDateTime)
     res["configuration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePrintJobConfigurationFromDiscriminatorValue , m.SetConfiguration)
     res["createdBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserIdentityFromDiscriminatorValue , m.SetCreatedBy)
     res["createdDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetCreatedDateTime)
     res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
     res["documents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePrintDocumentFromDiscriminatorValue , m.SetDocuments)
+    res["errorCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetErrorCode)
     res["isFetchable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsFetchable)
     res["redirectedFrom"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRedirectedFrom)
     res["redirectedTo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetRedirectedTo)
@@ -105,6 +124,18 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         return err
     }
     {
+        err = writer.WriteTimeValue("acknowledgedDateTime", m.GetAcknowledgedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("completedDateTime", m.GetCompletedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("configuration", m.GetConfiguration())
         if err != nil {
             return err
@@ -131,6 +162,12 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if m.GetDocuments() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDocuments())
         err = writer.WriteCollectionOfObjectValues("documents", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("errorCode", m.GetErrorCode())
         if err != nil {
             return err
         }
@@ -168,6 +205,14 @@ func (m *PrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
+// SetAcknowledgedDateTime sets the acknowledgedDateTime property value. The acknowledgedDateTime property
+func (m *PrintJob) SetAcknowledgedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.acknowledgedDateTime = value
+}
+// SetCompletedDateTime sets the completedDateTime property value. The completedDateTime property
+func (m *PrintJob) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.completedDateTime = value
+}
 // SetConfiguration sets the configuration property value. A group of settings that a printer should use to print a job.
 func (m *PrintJob) SetConfiguration(value PrintJobConfigurationable)() {
     m.configuration = value
@@ -187,6 +232,10 @@ func (m *PrintJob) SetDisplayName(value *string)() {
 // SetDocuments sets the documents property value. The documents property
 func (m *PrintJob) SetDocuments(value []PrintDocumentable)() {
     m.documents = value
+}
+// SetErrorCode sets the errorCode property value. The errorCode property
+func (m *PrintJob) SetErrorCode(value *int32)() {
+    m.errorCode = value
 }
 // SetIsFetchable sets the isFetchable property value. If true, document can be fetched by printer.
 func (m *PrintJob) SetIsFetchable(value *bool)() {

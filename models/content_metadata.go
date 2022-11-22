@@ -17,8 +17,6 @@ func NewContentMetadata()(*ContentMetadata) {
     m := &ContentMetadata{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.contentMetadata";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

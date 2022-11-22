@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type CloudPcOnPremisesConnectionHealthCheckErrorType int
 
 const (
@@ -59,6 +59,8 @@ const (
     PERMISSIONCHECKNORESOURCEGROUPNETWORKCONTRIBUTORROLE_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
     PERMISSIONCHECKTRANSIENTSERVICEERROR_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
     PERMISSIONCHECKUNKNOWNERROR_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
+    UDPCONNECTIVITYCHECKSTUNURLNOTALLOWLISTED_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
+    UDPCONNECTIVITYCHECKUNKNOWNERROR_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
     INTERNALSERVERERRORDEPLOYMENTCANCELED_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
     INTERNALSERVERERRORALLOCATERESOURCEFAILED_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
     INTERNALSERVERERRORVMDEPLOYMENTTIMEOUT_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
@@ -68,7 +70,7 @@ const (
 )
 
 func (i CloudPcOnPremisesConnectionHealthCheckErrorType) String() string {
-    return []string{"dnsCheckFqdnNotFound", "dnsCheckNameWithInvalidCharacter", "dnsCheckUnknownError", "adJoinCheckFqdnNotFound", "adJoinCheckIncorrectCredentials", "adJoinCheckOrganizationalUnitNotFound", "adJoinCheckOrganizationalUnitIncorrectFormat", "adJoinCheckComputerObjectAlreadyExists", "adJoinCheckAccessDenied", "adJoinCheckCredentialsExpired", "adJoinCheckAccountLockedOrDisabled", "adJoinCheckAccountQuotaExceeded", "adJoinCheckUnknownError", "endpointConnectivityCheckCloudPcUrlNotAllowListed", "endpointConnectivityCheckWVDUrlNotAllowListed", "endpointConnectivityCheckIntuneUrlNotAllowListed", "endpointConnectivityCheckAzureADUrlNotAllowListed", "endpointConnectivityCheckLocaleUrlNotAllowListed", "endpointConnectivityCheckUnknownError", "azureAdDeviceSyncCheckDeviceNotFound", "azureAdDeviceSyncCheckLongSyncCircle", "azureAdDeviceSyncCheckConnectDisabled", "azureAdDeviceSyncCheckDurationExceeded", "azureAdDeviceSyncCheckScpNotConfigured", "azureAdDeviceSyncCheckTransientServiceError", "azureAdDeviceSyncCheckUnknownError", "resourceAvailabilityCheckNoSubnetIP", "resourceAvailabilityCheckSubscriptionDisabled", "resourceAvailabilityCheckAzurePolicyViolation", "resourceAvailabilityCheckSubscriptionNotFound", "resourceAvailabilityCheckSubscriptionTransferred", "resourceAvailabilityCheckGeneralSubscriptionError", "resourceAvailabilityCheckUnsupportedVNetRegion", "resourceAvailabilityCheckResourceGroupInvalid", "resourceAvailabilityCheckVNetInvalid", "resourceAvailabilityCheckSubnetInvalid", "resourceAvailabilityCheckResourceGroupBeingDeleted", "resourceAvailabilityCheckVNetBeingMoved", "resourceAvailabilityCheckSubnetDelegationFailed", "resourceAvailabilityCheckSubnetWithExternalResources", "resourceAvailabilityCheckResourceGroupLockedForReadonly", "resourceAvailabilityCheckResourceGroupLockedForDelete", "resourceAvailabilityCheckNoIntuneReaderRoleError", "resourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation", "resourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation", "resourceAvailabilityCheckTransientServiceError", "resourceAvailabilityCheckUnknownError", "permissionCheckNoSubscriptionReaderRole", "permissionCheckNoResourceGroupOwnerRole", "permissionCheckNoVNetContributorRole", "permissionCheckNoResourceGroupNetworkContributorRole", "permissionCheckTransientServiceError", "permissionCheckUnknownError", "internalServerErrorDeploymentCanceled", "internalServerErrorAllocateResourceFailed", "internalServerErrorVMDeploymentTimeout", "internalServerErrorUnableToRunDscScript", "internalServerUnknownError", "unknownFutureValue"}[i]
+    return []string{"dnsCheckFqdnNotFound", "dnsCheckNameWithInvalidCharacter", "dnsCheckUnknownError", "adJoinCheckFqdnNotFound", "adJoinCheckIncorrectCredentials", "adJoinCheckOrganizationalUnitNotFound", "adJoinCheckOrganizationalUnitIncorrectFormat", "adJoinCheckComputerObjectAlreadyExists", "adJoinCheckAccessDenied", "adJoinCheckCredentialsExpired", "adJoinCheckAccountLockedOrDisabled", "adJoinCheckAccountQuotaExceeded", "adJoinCheckUnknownError", "endpointConnectivityCheckCloudPcUrlNotAllowListed", "endpointConnectivityCheckWVDUrlNotAllowListed", "endpointConnectivityCheckIntuneUrlNotAllowListed", "endpointConnectivityCheckAzureADUrlNotAllowListed", "endpointConnectivityCheckLocaleUrlNotAllowListed", "endpointConnectivityCheckUnknownError", "azureAdDeviceSyncCheckDeviceNotFound", "azureAdDeviceSyncCheckLongSyncCircle", "azureAdDeviceSyncCheckConnectDisabled", "azureAdDeviceSyncCheckDurationExceeded", "azureAdDeviceSyncCheckScpNotConfigured", "azureAdDeviceSyncCheckTransientServiceError", "azureAdDeviceSyncCheckUnknownError", "resourceAvailabilityCheckNoSubnetIP", "resourceAvailabilityCheckSubscriptionDisabled", "resourceAvailabilityCheckAzurePolicyViolation", "resourceAvailabilityCheckSubscriptionNotFound", "resourceAvailabilityCheckSubscriptionTransferred", "resourceAvailabilityCheckGeneralSubscriptionError", "resourceAvailabilityCheckUnsupportedVNetRegion", "resourceAvailabilityCheckResourceGroupInvalid", "resourceAvailabilityCheckVNetInvalid", "resourceAvailabilityCheckSubnetInvalid", "resourceAvailabilityCheckResourceGroupBeingDeleted", "resourceAvailabilityCheckVNetBeingMoved", "resourceAvailabilityCheckSubnetDelegationFailed", "resourceAvailabilityCheckSubnetWithExternalResources", "resourceAvailabilityCheckResourceGroupLockedForReadonly", "resourceAvailabilityCheckResourceGroupLockedForDelete", "resourceAvailabilityCheckNoIntuneReaderRoleError", "resourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation", "resourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation", "resourceAvailabilityCheckTransientServiceError", "resourceAvailabilityCheckUnknownError", "permissionCheckNoSubscriptionReaderRole", "permissionCheckNoResourceGroupOwnerRole", "permissionCheckNoVNetContributorRole", "permissionCheckNoResourceGroupNetworkContributorRole", "permissionCheckTransientServiceError", "permissionCheckUnknownError", "udpConnectivityCheckStunUrlNotAllowListed", "udpConnectivityCheckUnknownError", "internalServerErrorDeploymentCanceled", "internalServerErrorAllocateResourceFailed", "internalServerErrorVMDeploymentTimeout", "internalServerErrorUnableToRunDscScript", "internalServerUnknownError", "unknownFutureValue"}[i]
 }
 func ParseCloudPcOnPremisesConnectionHealthCheckErrorType(v string) (interface{}, error) {
     result := DNSCHECKFQDNNOTFOUND_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
@@ -179,6 +181,10 @@ func ParseCloudPcOnPremisesConnectionHealthCheckErrorType(v string) (interface{}
             result = PERMISSIONCHECKTRANSIENTSERVICEERROR_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
         case "permissionCheckUnknownError":
             result = PERMISSIONCHECKUNKNOWNERROR_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
+        case "udpConnectivityCheckStunUrlNotAllowListed":
+            result = UDPCONNECTIVITYCHECKSTUNURLNOTALLOWLISTED_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
+        case "udpConnectivityCheckUnknownError":
+            result = UDPCONNECTIVITYCHECKUNKNOWNERROR_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
         case "internalServerErrorDeploymentCanceled":
             result = INTERNALSERVERERRORDEPLOYMENTCANCELED_CLOUDPCONPREMISESCONNECTIONHEALTHCHECKERRORTYPE
         case "internalServerErrorAllocateResourceFailed":

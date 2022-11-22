@@ -25,8 +25,6 @@ func NewIosVpnSecurityAssociationParameters()(*IosVpnSecurityAssociationParamete
     m := &IosVpnSecurityAssociationParameters{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.iosVpnSecurityAssociationParameters";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

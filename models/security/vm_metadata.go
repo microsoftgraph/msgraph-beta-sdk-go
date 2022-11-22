@@ -25,8 +25,6 @@ func NewVmMetadata()(*VmMetadata) {
     m := &VmMetadata{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.vmMetadata";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVmMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

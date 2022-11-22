@@ -16,8 +16,6 @@ func NewIpEvidence()(*IpEvidence) {
     m := &IpEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.ipEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIpEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

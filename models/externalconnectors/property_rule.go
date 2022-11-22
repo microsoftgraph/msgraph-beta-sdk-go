@@ -26,8 +26,6 @@ func NewPropertyRule()(*PropertyRule) {
     m := &PropertyRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.externalConnectors.propertyRule";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewManagedDeviceModelsAndManufacturers()(*ManagedDeviceModelsAndManufacture
     m := &ManagedDeviceModelsAndManufacturers{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedDeviceModelsAndManufacturers";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewAndroidDeviceOwnerKioskModeManagedFolder()(*AndroidDeviceOwnerKioskModeM
     m := &AndroidDeviceOwnerKioskModeManagedFolder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolder";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

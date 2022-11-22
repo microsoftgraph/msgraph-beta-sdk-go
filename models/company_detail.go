@@ -29,8 +29,6 @@ func NewCompanyDetail()(*CompanyDetail) {
     m := &CompanyDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.companyDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCompanyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

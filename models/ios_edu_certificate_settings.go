@@ -33,8 +33,6 @@ func NewIosEduCertificateSettings()(*IosEduCertificateSettings) {
     m := &IosEduCertificateSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.iosEduCertificateSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosEduCertificateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

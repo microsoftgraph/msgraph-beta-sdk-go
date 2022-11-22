@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC provides operations to manage the collection of accessReview entities.
+// CloudPC provides operations to manage the collection of activityStatistics entities.
 type CloudPC struct {
     Entity
     // The Azure Active Directory (Azure AD) device ID of the Cloud PC.
@@ -35,10 +35,14 @@ type CloudPC struct {
     onPremisesConnectionName *string
     // The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
     osVersion *CloudPcOperatingSystem
+    // The partnerAgentInstallResults property
+    partnerAgentInstallResults []CloudPcPartnerAgentInstallResultable
     // The provisioning policy ID of the Cloud PC.
     provisioningPolicyId *string
     // The provisioning policy that is applied during the provisioning of Cloud PCs.
     provisioningPolicyName *string
+    // The provisioningType property
+    provisioningType *CloudPcProvisioningType
     // The service plan ID of the Cloud PC.
     servicePlanId *string
     // The service plan name of the Cloud PC.
@@ -59,8 +63,6 @@ func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.cloudPC";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPCFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -99,8 +101,10 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     res["managedDeviceName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetManagedDeviceName)
     res["onPremisesConnectionName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOnPremisesConnectionName)
     res["osVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcOperatingSystem , m.SetOsVersion)
+    res["partnerAgentInstallResults"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcPartnerAgentInstallResultFromDiscriminatorValue , m.SetPartnerAgentInstallResults)
     res["provisioningPolicyId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProvisioningPolicyId)
     res["provisioningPolicyName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProvisioningPolicyName)
+    res["provisioningType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcProvisioningType , m.SetProvisioningType)
     res["servicePlanId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetServicePlanId)
     res["servicePlanName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetServicePlanName)
     res["servicePlanType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcServicePlanType , m.SetServicePlanType)
@@ -146,6 +150,10 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
 func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     return m.osVersion
 }
+// GetPartnerAgentInstallResults gets the partnerAgentInstallResults property value. The partnerAgentInstallResults property
+func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable) {
+    return m.partnerAgentInstallResults
+}
 // GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 func (m *CloudPC) GetProvisioningPolicyId()(*string) {
     return m.provisioningPolicyId
@@ -153,6 +161,10 @@ func (m *CloudPC) GetProvisioningPolicyId()(*string) {
 // GetProvisioningPolicyName gets the provisioningPolicyName property value. The provisioning policy that is applied during the provisioning of Cloud PCs.
 func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     return m.provisioningPolicyName
+}
+// GetProvisioningType gets the provisioningType property value. The provisioningType property
+func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
+    return m.provisioningType
 }
 // GetServicePlanId gets the servicePlanId property value. The service plan ID of the Cloud PC.
 func (m *CloudPC) GetServicePlanId()(*string) {
@@ -268,6 +280,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetPartnerAgentInstallResults() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPartnerAgentInstallResults())
+        err = writer.WriteCollectionOfObjectValues("partnerAgentInstallResults", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("provisioningPolicyId", m.GetProvisioningPolicyId())
         if err != nil {
@@ -276,6 +295,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteStringValue("provisioningPolicyName", m.GetProvisioningPolicyName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetProvisioningType() != nil {
+        cast := (*m.GetProvisioningType()).String()
+        err = writer.WriteStringValue("provisioningType", &cast)
         if err != nil {
             return err
         }
@@ -379,6 +405,10 @@ func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
 func (m *CloudPC) SetOsVersion(value *CloudPcOperatingSystem)() {
     m.osVersion = value
 }
+// SetPartnerAgentInstallResults sets the partnerAgentInstallResults property value. The partnerAgentInstallResults property
+func (m *CloudPC) SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)() {
+    m.partnerAgentInstallResults = value
+}
 // SetProvisioningPolicyId sets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 func (m *CloudPC) SetProvisioningPolicyId(value *string)() {
     m.provisioningPolicyId = value
@@ -386,6 +416,10 @@ func (m *CloudPC) SetProvisioningPolicyId(value *string)() {
 // SetProvisioningPolicyName sets the provisioningPolicyName property value. The provisioning policy that is applied during the provisioning of Cloud PCs.
 func (m *CloudPC) SetProvisioningPolicyName(value *string)() {
     m.provisioningPolicyName = value
+}
+// SetProvisioningType sets the provisioningType property value. The provisioningType property
+func (m *CloudPC) SetProvisioningType(value *CloudPcProvisioningType)() {
+    m.provisioningType = value
 }
 // SetServicePlanId sets the servicePlanId property value. The service plan ID of the Cloud PC.
 func (m *CloudPC) SetServicePlanId(value *string)() {

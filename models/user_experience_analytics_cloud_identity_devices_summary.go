@@ -19,8 +19,6 @@ func NewUserExperienceAnalyticsCloudIdentityDevicesSummary()(*UserExperienceAnal
     m := &UserExperienceAnalyticsCloudIdentityDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsCloudIdentityDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

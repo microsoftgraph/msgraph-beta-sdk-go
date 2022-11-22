@@ -27,8 +27,6 @@ func NewDeviceManagementIntentDeviceState()(*DeviceManagementIntentDeviceState) 
     m := &DeviceManagementIntentDeviceState{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementIntentDeviceState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementIntentDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

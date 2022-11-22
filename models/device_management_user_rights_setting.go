@@ -21,8 +21,6 @@ func NewDeviceManagementUserRightsSetting()(*DeviceManagementUserRightsSetting) 
     m := &DeviceManagementUserRightsSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementUserRightsSetting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementUserRightsSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

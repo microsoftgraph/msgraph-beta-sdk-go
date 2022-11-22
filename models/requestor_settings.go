@@ -23,8 +23,6 @@ func NewRequestorSettings()(*RequestorSettings) {
     m := &RequestorSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.requestorSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRequestorSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

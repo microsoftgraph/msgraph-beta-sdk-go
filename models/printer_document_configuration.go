@@ -57,8 +57,6 @@ func NewPrinterDocumentConfiguration()(*PrinterDocumentConfiguration) {
     m := &PrinterDocumentConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.printerDocumentConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterDocumentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

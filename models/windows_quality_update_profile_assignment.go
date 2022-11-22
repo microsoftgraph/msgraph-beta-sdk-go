@@ -16,8 +16,6 @@ func NewWindowsQualityUpdateProfileAssignment()(*WindowsQualityUpdateProfileAssi
     m := &WindowsQualityUpdateProfileAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsQualityUpdateProfileAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsQualityUpdateProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

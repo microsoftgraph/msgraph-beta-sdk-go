@@ -27,8 +27,6 @@ func NewPersonNamePronounciation()(*PersonNamePronounciation) {
     m := &PersonNamePronounciation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.personNamePronounciation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonNamePronounciationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -29,8 +29,6 @@ func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     m := &TeamworkSoftwareUpdateHealth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkSoftwareUpdateHealth";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

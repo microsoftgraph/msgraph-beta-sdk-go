@@ -28,8 +28,6 @@ func NewDeviceConfigurationUserStateSummary()(*DeviceConfigurationUserStateSumma
     m := &DeviceConfigurationUserStateSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceConfigurationUserStateSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationUserStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

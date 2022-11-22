@@ -33,8 +33,6 @@ func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     m := &SymantecCodeSigningCertificate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.symantecCodeSigningCertificate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSymantecCodeSigningCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

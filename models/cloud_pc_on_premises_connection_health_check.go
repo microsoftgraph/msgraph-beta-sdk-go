@@ -32,8 +32,6 @@ func NewCloudPcOnPremisesConnectionHealthCheck()(*CloudPcOnPremisesConnectionHea
     m := &CloudPcOnPremisesConnectionHealthCheck{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcOnPremisesConnectionHealthCheck";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

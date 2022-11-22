@@ -17,8 +17,6 @@ func NewStringValueDictionary()(*StringValueDictionary) {
     m := &StringValueDictionary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.stringValueDictionary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStringValueDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

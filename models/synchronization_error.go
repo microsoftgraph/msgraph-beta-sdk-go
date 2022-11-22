@@ -23,8 +23,6 @@ func NewSynchronizationError()(*SynchronizationError) {
     m := &SynchronizationError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.synchronizationError";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

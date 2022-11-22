@@ -17,8 +17,6 @@ func NewOnTokenIssuanceStartHandler()(*OnTokenIssuanceStartHandler) {
     m := &OnTokenIssuanceStartHandler{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onTokenIssuanceStartHandler";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnTokenIssuanceStartHandlerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

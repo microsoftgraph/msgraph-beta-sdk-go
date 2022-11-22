@@ -19,8 +19,6 @@ func NewUserExperienceAnalyticsWindows10DevicesSummary()(*UserExperienceAnalytic
     m := &UserExperienceAnalyticsWindows10DevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsWindows10DevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

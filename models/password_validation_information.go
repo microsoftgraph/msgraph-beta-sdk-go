@@ -21,8 +21,6 @@ func NewPasswordValidationInformation()(*PasswordValidationInformation) {
     m := &PasswordValidationInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.passwordValidationInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordValidationInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

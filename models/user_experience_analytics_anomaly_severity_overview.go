@@ -25,8 +25,6 @@ func NewUserExperienceAnalyticsAnomalySeverityOverview()(*UserExperienceAnalytic
     m := &UserExperienceAnalyticsAnomalySeverityOverview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsAnomalySeverityOverview";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsAnomalySeverityOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

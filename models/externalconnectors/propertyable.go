@@ -9,6 +9,7 @@ type Propertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAliases()([]string)
+    GetIsExactMatchRequired()(*bool)
     GetIsQueryable()(*bool)
     GetIsRefinable()(*bool)
     GetIsRetrievable()(*bool)
@@ -18,6 +19,7 @@ type Propertyable interface {
     GetOdataType()(*string)
     GetType()(*PropertyType)
     SetAliases(value []string)()
+    SetIsExactMatchRequired(value *bool)()
     SetIsQueryable(value *bool)()
     SetIsRefinable(value *bool)()
     SetIsRetrievable(value *bool)()

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SensitiveType provides operations to manage the collection of accessReview entities.
+// SensitiveType provides operations to manage the collection of accessReviewDecision entities.
 type SensitiveType struct {
     Entity
     // The classificationMethod property
@@ -32,8 +32,6 @@ func NewSensitiveType()(*SensitiveType) {
     m := &SensitiveType{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.sensitiveType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

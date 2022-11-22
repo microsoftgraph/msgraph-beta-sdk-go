@@ -24,8 +24,6 @@ func NewSecurityBaselineState()(*SecurityBaselineState) {
     m := &SecurityBaselineState{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.securityBaselineState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityBaselineStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

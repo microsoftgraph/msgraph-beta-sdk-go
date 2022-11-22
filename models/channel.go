@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Channel provides operations to manage the collection of accessReview entities.
+// Channel provides operations to manage the collection of activityStatistics entities.
 type Channel struct {
     Entity
     // Read only. Timestamp at which the channel was created.
@@ -31,6 +31,8 @@ type Channel struct {
     moderationSettings ChannelModerationSettingsable
     // A collection of teams with which a channel is shared.
     sharedWithTeams []SharedWithChannelTeamInfoable
+    // The summary property
+    summary ChannelSummaryable
     // A collection of all the tabs in the channel. A navigation property.
     tabs []TeamsTabable
     // The ID of the Azure Active Directory tenant.
@@ -43,8 +45,6 @@ func NewChannel()(*Channel) {
     m := &Channel{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.channel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -81,6 +81,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     res["messages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateChatMessageFromDiscriminatorValue , m.SetMessages)
     res["moderationSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateChannelModerationSettingsFromDiscriminatorValue , m.SetModerationSettings)
     res["sharedWithTeams"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSharedWithChannelTeamInfoFromDiscriminatorValue , m.SetSharedWithTeams)
+    res["summary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateChannelSummaryFromDiscriminatorValue , m.SetSummary)
     res["tabs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue , m.SetTabs)
     res["tenantId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTenantId)
     res["webUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWebUrl)
@@ -113,6 +114,10 @@ func (m *Channel) GetModerationSettings()(ChannelModerationSettingsable) {
 // GetSharedWithTeams gets the sharedWithTeams property value. A collection of teams with which a channel is shared.
 func (m *Channel) GetSharedWithTeams()([]SharedWithChannelTeamInfoable) {
     return m.sharedWithTeams
+}
+// GetSummary gets the summary property value. The summary property
+func (m *Channel) GetSummary()(ChannelSummaryable) {
+    return m.summary
 }
 // GetTabs gets the tabs property value. A collection of all the tabs in the channel. A navigation property.
 func (m *Channel) GetTabs()([]TeamsTabable) {
@@ -202,6 +207,12 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("summary", m.GetSummary())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTabs() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTabs())
         err = writer.WriteCollectionOfObjectValues("tabs", cast)
@@ -266,6 +277,10 @@ func (m *Channel) SetModerationSettings(value ChannelModerationSettingsable)() {
 // SetSharedWithTeams sets the sharedWithTeams property value. A collection of teams with which a channel is shared.
 func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
     m.sharedWithTeams = value
+}
+// SetSummary sets the summary property value. The summary property
+func (m *Channel) SetSummary(value ChannelSummaryable)() {
+    m.summary = value
 }
 // SetTabs sets the tabs property value. A collection of all the tabs in the channel. A navigation property.
 func (m *Channel) SetTabs(value []TeamsTabable)() {

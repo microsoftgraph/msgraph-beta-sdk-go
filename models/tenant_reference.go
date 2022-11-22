@@ -19,8 +19,6 @@ func NewTenantReference()(*TenantReference) {
     m := &TenantReference{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.tenantReference";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

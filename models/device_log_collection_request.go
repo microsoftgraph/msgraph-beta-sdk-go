@@ -21,8 +21,6 @@ func NewDeviceLogCollectionRequest()(*DeviceLogCollectionRequest) {
     m := &DeviceLogCollectionRequest{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceLogCollectionRequest";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceLogCollectionRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

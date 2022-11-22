@@ -22,8 +22,6 @@ func NewOauthApplicationEvidence()(*OauthApplicationEvidence) {
     m := &OauthApplicationEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.oauthApplicationEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOauthApplicationEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

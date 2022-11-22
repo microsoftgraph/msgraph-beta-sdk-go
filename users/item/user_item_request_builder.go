@@ -69,7 +69,6 @@ import (
     i7d4d710e1c8a8fc885d164dc49223af3ba44bf6a062cfa0019953387e5b65644 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/contacts"
     i7d78da96ae198e74cdcd846ebd00d688295a8b346c939e4e49d56b88b5f72711 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/removealldevicesfrommanagement"
     i7f0c66e611b8af22dffef0886d0dc8468dc8cac8bb0b577016f3d4b1daf70528 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/invalidateallrefreshtokens"
-    i807859e90e02be96c7951593aa65cbf418e7a30d0f62e3a47b8382296d35e2d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/tasks"
     i87f894b87c2947e4dad88e845ac91e8a8ddf1ca5ba6b426384ab8873fe897913 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/translateexchangeids"
     i89f9ebf7c167c75aff01142f1e2b30d94fcb3ccf3d4af1752e74dbc3f979ecd6 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/getmailtips"
     i8df6ede5cb15274ffb3a3341b8e1b560c67d6eca03c4eafb47c23266ca7b8809 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/checkmemberobjects"
@@ -1104,10 +1103,6 @@ func (m *UserItemRequestBuilder) SendMail()(*id6953e096a9515e55975655319314bf395
 // Settings provides operations to manage the settings property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Settings()(*i7984c072c770ec17745d737738e8ab409b4f442b183221a451997db094cd8b13.SettingsRequestBuilder) {
     return i7984c072c770ec17745d737738e8ab409b4f442b183221a451997db094cd8b13.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Tasks provides operations to manage the tasks property of the microsoft.graph.user entity.
-func (m *UserItemRequestBuilder) Tasks()(*i807859e90e02be96c7951593aa65cbf418e7a30d0f62e3a47b8382296d35e2d2.TasksRequestBuilder) {
-    return i807859e90e02be96c7951593aa65cbf418e7a30d0f62e3a47b8382296d35e2d2.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Teamwork provides operations to manage the teamwork property of the microsoft.graph.user entity.
 func (m *UserItemRequestBuilder) Teamwork()(*if429d108f0ce6b9f644fc8ece21d69b6a892d9788590f39dc3d9d21bda91a159.TeamworkRequestBuilder) {

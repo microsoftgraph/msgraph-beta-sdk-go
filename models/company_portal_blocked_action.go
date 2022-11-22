@@ -23,8 +23,6 @@ func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
     m := &CompanyPortalBlockedAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.companyPortalBlockedAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCompanyPortalBlockedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

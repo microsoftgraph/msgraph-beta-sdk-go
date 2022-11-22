@@ -25,8 +25,6 @@ func NewAzureADRegistrationPolicy()(*AzureADRegistrationPolicy) {
     m := &AzureADRegistrationPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.azureADRegistrationPolicy";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAzureADRegistrationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

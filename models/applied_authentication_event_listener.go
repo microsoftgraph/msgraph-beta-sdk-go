@@ -23,8 +23,6 @@ func NewAppliedAuthenticationEventListener()(*AppliedAuthenticationEventListener
     m := &AppliedAuthenticationEventListener{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.appliedAuthenticationEventListener";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppliedAuthenticationEventListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

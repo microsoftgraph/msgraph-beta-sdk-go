@@ -43,8 +43,6 @@ func NewDeviceComplianceScript()(*DeviceComplianceScript) {
     m := &DeviceComplianceScript{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceComplianceScript";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

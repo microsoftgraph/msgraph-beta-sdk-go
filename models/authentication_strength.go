@@ -21,8 +21,6 @@ func NewAuthenticationStrength()(*AuthenticationStrength) {
     m := &AuthenticationStrength{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.authenticationStrength";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationStrengthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

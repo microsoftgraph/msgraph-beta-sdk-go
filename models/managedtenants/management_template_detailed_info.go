@@ -25,8 +25,6 @@ func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
     m := &ManagementTemplateDetailedInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.managementTemplateDetailedInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementTemplateDetailedInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

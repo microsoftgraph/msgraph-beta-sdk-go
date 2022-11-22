@@ -26,8 +26,6 @@ func NewCloudPcHealthCheckItem()(*CloudPcHealthCheckItem) {
     m := &CloudPcHealthCheckItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcHealthCheckItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcHealthCheckItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

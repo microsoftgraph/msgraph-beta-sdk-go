@@ -33,8 +33,6 @@ func NewWindowsQualityUpdateProfile()(*WindowsQualityUpdateProfile) {
     m := &WindowsQualityUpdateProfile{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsQualityUpdateProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsQualityUpdateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

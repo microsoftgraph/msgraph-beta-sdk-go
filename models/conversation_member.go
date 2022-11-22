@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationMember provides operations to manage the collection of accessReview entities.
+// ConversationMember provides operations to manage the collection of activityStatistics entities.
 type ConversationMember struct {
     Entity
     // The display name of the user.
@@ -21,8 +21,6 @@ func NewConversationMember()(*ConversationMember) {
     m := &ConversationMember{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.conversationMember";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +41,8 @@ func CreateConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26
                         return NewAadUserConversationMember(), nil
                     case "#microsoft.graph.anonymousGuestConversationMember":
                         return NewAnonymousGuestConversationMember(), nil
+                    case "#microsoft.graph.azureCommunicationServicesUserConversationMember":
+                        return NewAzureCommunicationServicesUserConversationMember(), nil
                     case "#microsoft.graph.microsoftAccountUserConversationMember":
                         return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.skypeForBusinessUserConversationMember":

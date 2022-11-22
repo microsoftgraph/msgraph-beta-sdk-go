@@ -24,8 +24,6 @@ func NewDeviceManagementIntentUserStateSummary()(*DeviceManagementIntentUserStat
     m := &DeviceManagementIntentUserStateSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementIntentUserStateSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

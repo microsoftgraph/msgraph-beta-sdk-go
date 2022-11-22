@@ -28,8 +28,6 @@ func NewUserAppInstallStatus()(*UserAppInstallStatus) {
     m := &UserAppInstallStatus{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userAppInstallStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserAppInstallStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

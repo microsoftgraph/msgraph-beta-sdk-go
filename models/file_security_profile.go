@@ -47,8 +47,6 @@ func NewFileSecurityProfile()(*FileSecurityProfile) {
     m := &FileSecurityProfile{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.fileSecurityProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

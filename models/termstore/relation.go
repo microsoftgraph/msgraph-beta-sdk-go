@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Relation provides operations to manage the collection of accessReview entities.
+// Relation provides operations to manage the collection of activityStatistics entities.
 type Relation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
@@ -23,8 +23,6 @@ func NewRelation()(*Relation) {
     m := &Relation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.termStore.relation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRelationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,8 +19,6 @@ func NewDecisionItemPrincipalResourceMembership()(*DecisionItemPrincipalResource
     m := &DecisionItemPrincipalResourceMembership{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.decisionItemPrincipalResourceMembership";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

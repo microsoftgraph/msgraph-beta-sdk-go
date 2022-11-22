@@ -23,8 +23,6 @@ func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     m := &MobileAppSupportedDeviceType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mobileAppSupportedDeviceType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

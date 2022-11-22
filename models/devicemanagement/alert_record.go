@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AlertRecord provides operations to manage the collection of accessReview entities.
+// AlertRecord provides operations to manage the collection of activityStatistics entities.
 type AlertRecord struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 Count and 12 AffectedCloudPcPercentage.
@@ -34,8 +34,6 @@ func NewAlertRecord()(*AlertRecord) {
     m := &AlertRecord{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagement.alertRecord";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

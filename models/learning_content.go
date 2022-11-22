@@ -51,8 +51,6 @@ func NewLearningContent()(*LearningContent) {
     m := &LearningContent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.learningContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLearningContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

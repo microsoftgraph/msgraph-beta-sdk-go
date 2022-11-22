@@ -2,7 +2,7 @@ package windowsupdates
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the collection of accessReview entities.
 type MonitoringAction int
 
 const (

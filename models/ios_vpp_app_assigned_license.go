@@ -22,8 +22,6 @@ func NewIosVppAppAssignedLicense()(*IosVppAppAssignedLicense) {
     m := &IosVppAppAssignedLicense{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.iosVppAppAssignedLicense";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosVppAppAssignedLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

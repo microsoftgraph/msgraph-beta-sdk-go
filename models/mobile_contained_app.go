@@ -13,8 +13,6 @@ func NewMobileContainedApp()(*MobileContainedApp) {
     m := &MobileContainedApp{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.mobileContainedApp";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileContainedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

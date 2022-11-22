@@ -23,8 +23,6 @@ func NewAndroidFotaDeploymentAssignment()(*AndroidFotaDeploymentAssignment) {
     m := &AndroidFotaDeploymentAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidFotaDeploymentAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidFotaDeploymentAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

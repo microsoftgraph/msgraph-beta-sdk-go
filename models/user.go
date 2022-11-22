@@ -277,8 +277,6 @@ type User struct {
     streetAddress *string
     // The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     surname *string
-    // The tasks property
-    tasks Tasksable
     // A container for Microsoft Teams features available for the user. Read-only. Nullable.
     teamwork UserTeamworkable
     // Represents the To Do services available to a user.
@@ -656,7 +654,6 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     res["state"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetState)
     res["streetAddress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetStreetAddress)
     res["surname"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSurname)
-    res["tasks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTasksFromDiscriminatorValue , m.SetTasks)
     res["teamwork"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateUserTeamworkFromDiscriminatorValue , m.SetTeamwork)
     res["todo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTodoFromDiscriminatorValue , m.SetTodo)
     res["transitiveMemberOf"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue , m.SetTransitiveMemberOf)
@@ -995,10 +992,6 @@ func (m *User) GetStreetAddress()(*string) {
 // GetSurname gets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetSurname()(*string) {
     return m.surname
-}
-// GetTasks gets the tasks property value. The tasks property
-func (m *User) GetTasks()(Tasksable) {
-    return m.tasks
 }
 // GetTeamwork gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *User) GetTeamwork()(UserTeamworkable) {
@@ -1896,12 +1889,6 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
-        err = writer.WriteObjectValue("tasks", m.GetTasks())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("teamwork", m.GetTeamwork())
         if err != nil {
             return err
@@ -2496,10 +2483,6 @@ func (m *User) SetStreetAddress(value *string)() {
 // SetSurname sets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetSurname(value *string)() {
     m.surname = value
-}
-// SetTasks sets the tasks property value. The tasks property
-func (m *User) SetTasks(value Tasksable)() {
-    m.tasks = value
 }
 // SetTeamwork sets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *User) SetTeamwork(value UserTeamworkable)() {

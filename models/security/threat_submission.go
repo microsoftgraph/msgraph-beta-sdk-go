@@ -36,8 +36,6 @@ func NewThreatSubmission()(*ThreatSubmission) {
     m := &ThreatSubmission{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.security.threatSubmission";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

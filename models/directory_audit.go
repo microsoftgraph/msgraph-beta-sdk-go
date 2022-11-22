@@ -39,8 +39,6 @@ func NewDirectoryAudit()(*DirectoryAudit) {
     m := &DirectoryAudit{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.directoryAudit";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectoryAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

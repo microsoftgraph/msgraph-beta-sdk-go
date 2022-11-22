@@ -30,8 +30,6 @@ func NewUserAccount()(*UserAccount) {
     m := &UserAccount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userAccount";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

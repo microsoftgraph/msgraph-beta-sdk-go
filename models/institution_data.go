@@ -25,8 +25,6 @@ func NewInstitutionData()(*InstitutionData) {
     m := &InstitutionData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.institutionData";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInstitutionDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

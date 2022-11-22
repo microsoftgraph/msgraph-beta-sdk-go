@@ -17,8 +17,6 @@ func NewWorkflowExecutionTrigger()(*WorkflowExecutionTrigger) {
     m := &WorkflowExecutionTrigger{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityGovernance.workflowExecutionTrigger";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkflowExecutionTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

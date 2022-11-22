@@ -21,8 +21,6 @@ func NewSubmissionDetectedFile()(*SubmissionDetectedFile) {
     m := &SubmissionDetectedFile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.submissionDetectedFile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubmissionDetectedFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -18,8 +18,6 @@ func NewUserExperienceAnalyticsDeviceWithoutCloudIdentity()(*UserExperienceAnaly
     m := &UserExperienceAnalyticsDeviceWithoutCloudIdentity{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

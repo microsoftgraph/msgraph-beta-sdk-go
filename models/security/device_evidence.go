@@ -45,8 +45,6 @@ func NewDeviceEvidence()(*DeviceEvidence) {
     m := &DeviceEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.deviceEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

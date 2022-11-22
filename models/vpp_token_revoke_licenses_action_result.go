@@ -20,8 +20,6 @@ func NewVppTokenRevokeLicensesActionResult()(*VppTokenRevokeLicensesActionResult
     m := &VppTokenRevokeLicensesActionResult{
         VppTokenActionResult: *NewVppTokenActionResult(),
     }
-    odataTypeValue := "#microsoft.graph.vppTokenRevokeLicensesActionResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVppTokenRevokeLicensesActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

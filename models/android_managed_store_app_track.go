@@ -21,8 +21,6 @@ func NewAndroidManagedStoreAppTrack()(*AndroidManagedStoreAppTrack) {
     m := &AndroidManagedStoreAppTrack{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidManagedStoreAppTrack";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidManagedStoreAppTrackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

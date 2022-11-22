@@ -25,8 +25,6 @@ func NewTaskReportSummary()(*TaskReportSummary) {
     m := &TaskReportSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.identityGovernance.taskReportSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTaskReportSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

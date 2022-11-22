@@ -18,8 +18,6 @@ func NewSchema()(*Schema) {
     m := &Schema{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.schema";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

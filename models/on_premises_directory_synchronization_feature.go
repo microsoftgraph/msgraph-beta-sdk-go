@@ -55,8 +55,6 @@ func NewOnPremisesDirectorySynchronizationFeature()(*OnPremisesDirectorySynchron
     m := &OnPremisesDirectorySynchronizationFeature{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.onPremisesDirectorySynchronizationFeature";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesDirectorySynchronizationFeatureFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

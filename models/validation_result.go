@@ -23,8 +23,6 @@ func NewValidationResult()(*ValidationResult) {
     m := &ValidationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.validationResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -32,8 +32,6 @@ func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalytic
     m := &UserExperienceAnalyticsNotAutopilotReadyDevice{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

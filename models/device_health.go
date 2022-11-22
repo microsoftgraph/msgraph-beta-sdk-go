@@ -20,8 +20,6 @@ func NewDeviceHealth()(*DeviceHealth) {
     m := &DeviceHealth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceHealth";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

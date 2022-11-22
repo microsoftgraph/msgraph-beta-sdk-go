@@ -25,8 +25,6 @@ func NewProviderTenantSetting()(*ProviderTenantSetting) {
     m := &ProviderTenantSetting{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.providerTenantSetting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProviderTenantSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

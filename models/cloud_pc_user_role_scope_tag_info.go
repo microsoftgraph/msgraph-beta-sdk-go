@@ -21,8 +21,6 @@ func NewCloudPcUserRoleScopeTagInfo()(*CloudPcUserRoleScopeTagInfo) {
     m := &CloudPcUserRoleScopeTagInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcUserRoleScopeTagInfo";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcUserRoleScopeTagInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

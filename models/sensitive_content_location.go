@@ -27,8 +27,6 @@ func NewSensitiveContentLocation()(*SensitiveContentLocation) {
     m := &SensitiveContentLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.sensitiveContentLocation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSensitiveContentLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

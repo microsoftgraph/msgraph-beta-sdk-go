@@ -28,8 +28,6 @@ func NewVerifiedCustomDomainCertificatesMetadata()(*VerifiedCustomDomainCertific
     m := &VerifiedCustomDomainCertificatesMetadata{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.verifiedCustomDomainCertificatesMetadata";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

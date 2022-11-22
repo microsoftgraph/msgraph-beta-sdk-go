@@ -21,8 +21,6 @@ func NewAutoLabeling()(*AutoLabeling) {
     m := &AutoLabeling{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.autoLabeling";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAutoLabelingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

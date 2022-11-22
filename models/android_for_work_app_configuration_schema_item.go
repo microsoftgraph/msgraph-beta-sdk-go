@@ -35,8 +35,6 @@ func NewAndroidForWorkAppConfigurationSchemaItem()(*AndroidForWorkAppConfigurati
     m := &AndroidForWorkAppConfigurationSchemaItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.androidForWorkAppConfigurationSchemaItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

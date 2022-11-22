@@ -38,8 +38,6 @@ func NewDeviceManagementConfigurationPolicyTemplate()(*DeviceManagementConfigura
     m := &DeviceManagementConfigurationPolicyTemplate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationPolicyTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

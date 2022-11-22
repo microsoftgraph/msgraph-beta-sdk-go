@@ -22,8 +22,6 @@ func NewResponseStatus()(*ResponseStatus) {
     m := &ResponseStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.responseStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResponseStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

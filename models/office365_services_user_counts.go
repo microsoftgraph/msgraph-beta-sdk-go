@@ -46,8 +46,6 @@ func NewOffice365ServicesUserCounts()(*Office365ServicesUserCounts) {
     m := &Office365ServicesUserCounts{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.office365ServicesUserCounts";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOffice365ServicesUserCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewWindowsDriverUpdateProfileAssignment()(*WindowsDriverUpdateProfileAssign
     m := &WindowsDriverUpdateProfileAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsDriverUpdateProfileAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDriverUpdateProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

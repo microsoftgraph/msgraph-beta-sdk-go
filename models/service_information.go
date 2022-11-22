@@ -21,8 +21,6 @@ func NewServiceInformation()(*ServiceInformation) {
     m := &ServiceInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.serviceInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServiceInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

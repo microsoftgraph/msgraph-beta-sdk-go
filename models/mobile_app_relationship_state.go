@@ -34,8 +34,6 @@ func NewMobileAppRelationshipState()(*MobileAppRelationshipState) {
     m := &MobileAppRelationshipState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mobileAppRelationshipState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppRelationshipStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

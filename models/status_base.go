@@ -19,8 +19,6 @@ func NewStatusBase()(*StatusBase) {
     m := &StatusBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.statusBase";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStatusBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

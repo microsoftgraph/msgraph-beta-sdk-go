@@ -26,8 +26,6 @@ func NewWorkloadStatus()(*WorkloadStatus) {
     m := &WorkloadStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.workloadStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkloadStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

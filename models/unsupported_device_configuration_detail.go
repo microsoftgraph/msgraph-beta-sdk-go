@@ -21,8 +21,6 @@ func NewUnsupportedDeviceConfigurationDetail()(*UnsupportedDeviceConfigurationDe
     m := &UnsupportedDeviceConfigurationDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.unsupportedDeviceConfigurationDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnsupportedDeviceConfigurationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

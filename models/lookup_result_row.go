@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LookupResultRow provides operations to manage the collection of accessReview entities.
+// LookupResultRow provides operations to manage the collection of activityStatistics entities.
 type LookupResultRow struct {
     Entity
     // The row property
@@ -16,8 +16,6 @@ func NewLookupResultRow()(*LookupResultRow) {
     m := &LookupResultRow{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.lookupResultRow";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLookupResultRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

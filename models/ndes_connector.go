@@ -29,8 +29,6 @@ func NewNdesConnector()(*NdesConnector) {
     m := &NdesConnector{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.ndesConnector";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNdesConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

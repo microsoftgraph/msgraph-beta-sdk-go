@@ -20,8 +20,6 @@ func NewAuthenticationStrengthRoot()(*AuthenticationStrengthRoot) {
     m := &AuthenticationStrengthRoot{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.authenticationStrengthRoot";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationStrengthRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

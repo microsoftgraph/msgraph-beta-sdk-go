@@ -19,8 +19,6 @@ func NewWritebackConfiguration()(*WritebackConfiguration) {
     m := &WritebackConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.writebackConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWritebackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

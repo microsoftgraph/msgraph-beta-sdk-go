@@ -33,8 +33,6 @@ func NewPortalNotification()(*PortalNotification) {
     m := &PortalNotification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagement.portalNotification";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePortalNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

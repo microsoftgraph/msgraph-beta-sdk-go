@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantGroup provides operations to manage the collection of accessReview entities.
+// TenantGroup provides operations to manage the collection of accessReviewDecision entities.
 type TenantGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
@@ -25,8 +25,6 @@ func NewTenantGroup()(*TenantGroup) {
     m := &TenantGroup{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedTenants.tenantGroup";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

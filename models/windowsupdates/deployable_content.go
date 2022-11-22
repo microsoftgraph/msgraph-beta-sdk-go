@@ -17,8 +17,6 @@ func NewDeployableContent()(*DeployableContent) {
     m := &DeployableContent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.deployableContent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeployableContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

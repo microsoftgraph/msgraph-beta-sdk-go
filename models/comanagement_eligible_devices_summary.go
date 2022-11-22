@@ -29,8 +29,6 @@ func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary
     m := &ComanagementEligibleDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.comanagementEligibleDevicesSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

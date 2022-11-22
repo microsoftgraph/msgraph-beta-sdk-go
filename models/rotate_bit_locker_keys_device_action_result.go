@@ -16,8 +16,6 @@ func NewRotateBitLockerKeysDeviceActionResult()(*RotateBitLockerKeysDeviceAction
     m := &RotateBitLockerKeysDeviceActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
     }
-    odataTypeValue := "#microsoft.graph.rotateBitLockerKeysDeviceActionResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRotateBitLockerKeysDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

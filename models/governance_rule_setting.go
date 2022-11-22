@@ -21,8 +21,6 @@ func NewGovernanceRuleSetting()(*GovernanceRuleSetting) {
     m := &GovernanceRuleSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.governanceRuleSetting";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernanceRuleSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

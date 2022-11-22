@@ -19,8 +19,6 @@ func NewSafeguardProfile()(*SafeguardProfile) {
     m := &SafeguardProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.safeguardProfile";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSafeguardProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -21,8 +21,6 @@ func NewSinglePropertySchema()(*SinglePropertySchema) {
     m := &SinglePropertySchema{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.singlePropertySchema";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSinglePropertySchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

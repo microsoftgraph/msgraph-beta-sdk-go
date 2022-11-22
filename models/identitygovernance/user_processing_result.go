@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// UserProcessingResult provides operations to manage the collection of accessReview entities.
+// UserProcessingResult provides operations to manage the collection of activityStatistics entities.
 type UserProcessingResult struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The date time that the workflow execution for a user completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
@@ -38,8 +38,6 @@ func NewUserProcessingResult()(*UserProcessingResult) {
     m := &UserProcessingResult{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.identityGovernance.userProcessingResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserProcessingResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

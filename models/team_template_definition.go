@@ -39,8 +39,6 @@ func NewTeamTemplateDefinition()(*TeamTemplateDefinition) {
     m := &TeamTemplateDefinition{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamTemplateDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamTemplateDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

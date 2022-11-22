@@ -29,8 +29,6 @@ func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
     m := &MobileAppIntentAndStateDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.mobileAppIntentAndStateDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppIntentAndStateDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

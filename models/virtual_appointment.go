@@ -24,8 +24,6 @@ func NewVirtualAppointment()(*VirtualAppointment) {
     m := &VirtualAppointment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.virtualAppointment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVirtualAppointmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

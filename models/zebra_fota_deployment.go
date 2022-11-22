@@ -24,8 +24,6 @@ func NewZebraFotaDeployment()(*ZebraFotaDeployment) {
     m := &ZebraFotaDeployment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.zebraFotaDeployment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

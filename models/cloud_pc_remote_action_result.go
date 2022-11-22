@@ -32,8 +32,6 @@ func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
     m := &CloudPcRemoteActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcRemoteActionResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcRemoteActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -7,7 +7,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplate provides operations to manage the collection of accessReview entities.
+// ManagementTemplate 
 type ManagementTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
@@ -48,8 +48,6 @@ func NewManagementTemplate()(*ManagementTemplate) {
     m := &ManagementTemplate{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedTenants.managementTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

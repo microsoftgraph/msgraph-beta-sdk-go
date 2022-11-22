@@ -29,8 +29,6 @@ func NewEmbeddedSIMActivationCodePool()(*EmbeddedSIMActivationCodePool) {
     m := &EmbeddedSIMActivationCodePool{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.embeddedSIMActivationCodePool";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmbeddedSIMActivationCodePoolFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

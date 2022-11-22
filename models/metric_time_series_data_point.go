@@ -22,8 +22,6 @@ func NewMetricTimeSeriesDataPoint()(*MetricTimeSeriesDataPoint) {
     m := &MetricTimeSeriesDataPoint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.metricTimeSeriesDataPoint";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMetricTimeSeriesDataPointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

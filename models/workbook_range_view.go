@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRangeView 
+// WorkbookRangeView provides operations to manage the collection of accessReview entities.
 type WorkbookRangeView struct {
     Entity
     // The cellAddresses property
@@ -33,13 +33,11 @@ type WorkbookRangeView struct {
     // Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
     valueTypes Jsonable
 }
-// NewWorkbookRangeView instantiates a new WorkbookRangeView and sets the default values.
+// NewWorkbookRangeView instantiates a new workbookRangeView and sets the default values.
 func NewWorkbookRangeView()(*WorkbookRangeView) {
     m := &WorkbookRangeView{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.workbookRangeView";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookRangeViewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

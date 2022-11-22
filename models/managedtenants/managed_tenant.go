@@ -51,10 +51,14 @@ type ManagedTenant struct {
     managementIntents []ManagementIntentable
     // The managementTemplateCollections property
     managementTemplateCollections []ManagementTemplateCollectionable
+    // The managementTemplateCollectionTenantSummaries property
+    managementTemplateCollectionTenantSummaries []ManagementTemplateCollectionTenantSummaryable
     // The collection of baseline management templates across managed tenants.
     managementTemplates []ManagementTemplateable
     // The managementTemplateSteps property
     managementTemplateSteps []ManagementTemplateStepable
+    // The managementTemplateStepTenantSummaries property
+    managementTemplateStepTenantSummaries []ManagementTemplateStepTenantSummaryable
     // The managementTemplateStepVersions property
     managementTemplateStepVersions []ManagementTemplateStepVersionable
     // The collection of role assignments to a signed-in user for a managed tenant.
@@ -79,8 +83,6 @@ func NewManagedTenant()(*ManagedTenant) {
     m := &ManagedTenant{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedTenants.managedTenant";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedTenantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -143,8 +145,10 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     res["managementActionTenantDeploymentStatuses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue , m.SetManagementActionTenantDeploymentStatuses)
     res["managementIntents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementIntentFromDiscriminatorValue , m.SetManagementIntents)
     res["managementTemplateCollections"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateCollectionFromDiscriminatorValue , m.SetManagementTemplateCollections)
+    res["managementTemplateCollectionTenantSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateCollectionTenantSummaryFromDiscriminatorValue , m.SetManagementTemplateCollectionTenantSummaries)
     res["managementTemplates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateFromDiscriminatorValue , m.SetManagementTemplates)
     res["managementTemplateSteps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateStepFromDiscriminatorValue , m.SetManagementTemplateSteps)
+    res["managementTemplateStepTenantSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateStepTenantSummaryFromDiscriminatorValue , m.SetManagementTemplateStepTenantSummaries)
     res["managementTemplateStepVersions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateStepVersionFromDiscriminatorValue , m.SetManagementTemplateStepVersions)
     res["myRoles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMyRoleFromDiscriminatorValue , m.SetMyRoles)
     res["tenantGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTenantGroupFromDiscriminatorValue , m.SetTenantGroups)
@@ -208,6 +212,10 @@ func (m *ManagedTenant) GetManagementIntents()([]ManagementIntentable) {
 func (m *ManagedTenant) GetManagementTemplateCollections()([]ManagementTemplateCollectionable) {
     return m.managementTemplateCollections
 }
+// GetManagementTemplateCollectionTenantSummaries gets the managementTemplateCollectionTenantSummaries property value. The managementTemplateCollectionTenantSummaries property
+func (m *ManagedTenant) GetManagementTemplateCollectionTenantSummaries()([]ManagementTemplateCollectionTenantSummaryable) {
+    return m.managementTemplateCollectionTenantSummaries
+}
 // GetManagementTemplates gets the managementTemplates property value. The collection of baseline management templates across managed tenants.
 func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplateable) {
     return m.managementTemplates
@@ -215,6 +223,10 @@ func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplateable) {
 // GetManagementTemplateSteps gets the managementTemplateSteps property value. The managementTemplateSteps property
 func (m *ManagedTenant) GetManagementTemplateSteps()([]ManagementTemplateStepable) {
     return m.managementTemplateSteps
+}
+// GetManagementTemplateStepTenantSummaries gets the managementTemplateStepTenantSummaries property value. The managementTemplateStepTenantSummaries property
+func (m *ManagedTenant) GetManagementTemplateStepTenantSummaries()([]ManagementTemplateStepTenantSummaryable) {
+    return m.managementTemplateStepTenantSummaries
 }
 // GetManagementTemplateStepVersions gets the managementTemplateStepVersions property value. The managementTemplateStepVersions property
 func (m *ManagedTenant) GetManagementTemplateStepVersions()([]ManagementTemplateStepVersionable) {
@@ -405,6 +417,13 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetManagementTemplateCollectionTenantSummaries() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateCollectionTenantSummaries())
+        err = writer.WriteCollectionOfObjectValues("managementTemplateCollectionTenantSummaries", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetManagementTemplates() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplates())
         err = writer.WriteCollectionOfObjectValues("managementTemplates", cast)
@@ -415,6 +434,13 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetManagementTemplateSteps() != nil {
         cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateSteps())
         err = writer.WriteCollectionOfObjectValues("managementTemplateSteps", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagementTemplateStepTenantSummaries() != nil {
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateStepTenantSummaries())
+        err = writer.WriteCollectionOfObjectValues("managementTemplateStepTenantSummaries", cast)
         if err != nil {
             return err
         }
@@ -568,6 +594,10 @@ func (m *ManagedTenant) SetManagementIntents(value []ManagementIntentable)() {
 func (m *ManagedTenant) SetManagementTemplateCollections(value []ManagementTemplateCollectionable)() {
     m.managementTemplateCollections = value
 }
+// SetManagementTemplateCollectionTenantSummaries sets the managementTemplateCollectionTenantSummaries property value. The managementTemplateCollectionTenantSummaries property
+func (m *ManagedTenant) SetManagementTemplateCollectionTenantSummaries(value []ManagementTemplateCollectionTenantSummaryable)() {
+    m.managementTemplateCollectionTenantSummaries = value
+}
 // SetManagementTemplates sets the managementTemplates property value. The collection of baseline management templates across managed tenants.
 func (m *ManagedTenant) SetManagementTemplates(value []ManagementTemplateable)() {
     m.managementTemplates = value
@@ -575,6 +605,10 @@ func (m *ManagedTenant) SetManagementTemplates(value []ManagementTemplateable)()
 // SetManagementTemplateSteps sets the managementTemplateSteps property value. The managementTemplateSteps property
 func (m *ManagedTenant) SetManagementTemplateSteps(value []ManagementTemplateStepable)() {
     m.managementTemplateSteps = value
+}
+// SetManagementTemplateStepTenantSummaries sets the managementTemplateStepTenantSummaries property value. The managementTemplateStepTenantSummaries property
+func (m *ManagedTenant) SetManagementTemplateStepTenantSummaries(value []ManagementTemplateStepTenantSummaryable)() {
+    m.managementTemplateStepTenantSummaries = value
 }
 // SetManagementTemplateStepVersions sets the managementTemplateStepVersions property value. The managementTemplateStepVersions property
 func (m *ManagedTenant) SetManagementTemplateStepVersions(value []ManagementTemplateStepVersionable)() {

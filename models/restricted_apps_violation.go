@@ -32,8 +32,6 @@ func NewRestrictedAppsViolation()(*RestrictedAppsViolation) {
     m := &RestrictedAppsViolation{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.restrictedAppsViolation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRestrictedAppsViolationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

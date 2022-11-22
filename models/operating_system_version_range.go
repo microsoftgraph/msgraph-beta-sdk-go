@@ -23,8 +23,6 @@ func NewOperatingSystemVersionRange()(*OperatingSystemVersionRange) {
     m := &OperatingSystemVersionRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.operatingSystemVersionRange";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOperatingSystemVersionRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

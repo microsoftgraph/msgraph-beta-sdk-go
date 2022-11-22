@@ -23,8 +23,6 @@ func NewDeviceManagementConfigurationSettingInstanceTemplate()(*DeviceManagement
     m := &DeviceManagementConfigurationSettingInstanceTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingInstanceTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

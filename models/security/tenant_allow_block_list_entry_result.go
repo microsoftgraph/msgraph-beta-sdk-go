@@ -28,8 +28,6 @@ func NewTenantAllowBlockListEntryResult()(*TenantAllowBlockListEntryResult) {
     m := &TenantAllowBlockListEntryResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.tenantAllowBlockListEntryResult";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantAllowBlockListEntryResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

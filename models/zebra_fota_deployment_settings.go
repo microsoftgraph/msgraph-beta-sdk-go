@@ -50,8 +50,6 @@ func NewZebraFotaDeploymentSettings()(*ZebraFotaDeploymentSettings) {
     m := &ZebraFotaDeploymentSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.zebraFotaDeploymentSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -20,8 +20,6 @@ func NewSynchronizationSchema()(*SynchronizationSchema) {
     m := &SynchronizationSchema{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.synchronizationSchema";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

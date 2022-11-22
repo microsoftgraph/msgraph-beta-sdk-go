@@ -51,8 +51,6 @@ func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {
     m := &ProvisioningObjectSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.provisioningObjectSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProvisioningObjectSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

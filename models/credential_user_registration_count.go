@@ -18,8 +18,6 @@ func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
     m := &CredentialUserRegistrationCount{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.credentialUserRegistrationCount";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCredentialUserRegistrationCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

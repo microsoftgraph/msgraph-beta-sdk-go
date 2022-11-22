@@ -28,8 +28,6 @@ func NewRegionalAndLanguageSettings()(*RegionalAndLanguageSettings) {
     m := &RegionalAndLanguageSettings{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.regionalAndLanguageSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRegionalAndLanguageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

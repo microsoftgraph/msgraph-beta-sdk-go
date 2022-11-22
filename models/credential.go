@@ -23,8 +23,6 @@ func NewCredential()(*Credential) {
     m := &Credential{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.credential";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

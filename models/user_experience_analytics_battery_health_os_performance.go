@@ -26,8 +26,6 @@ func NewUserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnaly
     m := &UserExperienceAnalyticsBatteryHealthOsPerformance{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsBatteryHealthOsPerformance";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthOsPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

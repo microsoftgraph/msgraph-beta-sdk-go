@@ -37,8 +37,6 @@ func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
     m := &ComplianceManagementPartner{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.complianceManagementPartner";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComplianceManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

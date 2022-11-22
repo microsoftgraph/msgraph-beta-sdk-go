@@ -35,8 +35,6 @@ func NewWorkloadActionDeploymentStatus()(*WorkloadActionDeploymentStatus) {
     m := &WorkloadActionDeploymentStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.workloadActionDeploymentStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkloadActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

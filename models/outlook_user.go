@@ -22,8 +22,6 @@ func NewOutlookUser()(*OutlookUser) {
     m := &OutlookUser{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.outlookUser";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutlookUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

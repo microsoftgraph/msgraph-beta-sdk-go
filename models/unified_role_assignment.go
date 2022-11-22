@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignment provides operations to manage the collection of accessReview entities.
+// UnifiedRoleAssignment provides operations to manage the collection of activityStatistics entities.
 type UnifiedRoleAssignment struct {
     Entity
     // Details of the app specific scope when the assignment scope is app specific. Containment entity.
@@ -36,8 +36,6 @@ func NewUnifiedRoleAssignment()(*UnifiedRoleAssignment) {
     m := &UnifiedRoleAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

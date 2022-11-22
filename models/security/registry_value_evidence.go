@@ -24,8 +24,6 @@ func NewRegistryValueEvidence()(*RegistryValueEvidence) {
     m := &RegistryValueEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
-    odataTypeValue := "#microsoft.graph.security.registryValueEvidence";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRegistryValueEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

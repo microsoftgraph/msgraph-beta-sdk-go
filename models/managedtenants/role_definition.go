@@ -23,8 +23,6 @@ func NewRoleDefinition()(*RoleDefinition) {
     m := &RoleDefinition{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.managedTenants.roleDefinition";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

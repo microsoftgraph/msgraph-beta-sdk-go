@@ -16,8 +16,6 @@ func NewDeviceManagementIntentAssignment()(*DeviceManagementIntentAssignment) {
     m := &DeviceManagementIntentAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementIntentAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementIntentAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,8 +16,6 @@ func NewIntuneBrandingProfileAssignment()(*IntuneBrandingProfileAssignment) {
     m := &IntuneBrandingProfileAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.intuneBrandingProfileAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIntuneBrandingProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -7,6 +7,8 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i250ae21e56996eaf8b3a69882264a2c7de924d1e4f067694db380361586a9e3d "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/squarelogo"
     i7bdb509589c083f5cd687ccb30e62736aa8c72f641f5bcf6328e4a655e072b25 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/bannerlogo"
+    i8ab8f774a5a97f1d672f15ad971f6404b3a1261eba32549ee9704bbf936b05f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/customcss"
+    i957b7effb04db0e2b1c5cea3a7dc2d5e14018afff7d8e350d23de1228772c818 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/headerlogo"
     i9b7f20e9ef38f4aefd99cbe38e2c0b1a9b0e0df96bc3c1f8e0e5588c555411b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/favicon"
     ibd06dae6052c9c44018f5200f072f15bc200a78f5b996495a11369beb8cb87c9 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/localizations"
     id1e3e547ca552ddc7d060d1dce939722dd18581fb9a5143610155bad7476a574 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/backgroundimage"
@@ -122,6 +124,10 @@ func (m *BrandingRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
+// CustomCSS provides operations to manage the media for the organization entity.
+func (m *BrandingRequestBuilder) CustomCSS()(*i8ab8f774a5a97f1d672f15ad971f6404b3a1261eba32549ee9704bbf936b05f4.CustomCSSRequestBuilder) {
+    return i8ab8f774a5a97f1d672f15ad971f6404b3a1261eba32549ee9704bbf936b05f4.NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Delete delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 func (m *BrandingRequestBuilder) Delete(ctx context.Context, requestConfiguration *BrandingRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
@@ -160,6 +166,10 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable), nil
+}
+// HeaderLogo provides operations to manage the media for the organization entity.
+func (m *BrandingRequestBuilder) HeaderLogo()(*i957b7effb04db0e2b1c5cea3a7dc2d5e14018afff7d8e350d23de1228772c818.HeaderLogoRequestBuilder) {
+    return i957b7effb04db0e2b1c5cea3a7dc2d5e14018afff7d8e350d23de1228772c818.NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
 func (m *BrandingRequestBuilder) Localizations()(*ibd06dae6052c9c44018f5200f072f15bc200a78f5b996495a11369beb8cb87c9.LocalizationsRequestBuilder) {

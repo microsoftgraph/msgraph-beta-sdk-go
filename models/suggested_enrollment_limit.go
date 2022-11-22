@@ -19,8 +19,6 @@ func NewSuggestedEnrollmentLimit()(*SuggestedEnrollmentLimit) {
     m := &SuggestedEnrollmentLimit{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.suggestedEnrollmentLimit";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSuggestedEnrollmentLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

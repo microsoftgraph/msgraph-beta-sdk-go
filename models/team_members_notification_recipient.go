@@ -8,7 +8,7 @@ import (
 // TeamMembersNotificationRecipient 
 type TeamMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
-    // The team's identifier.
+    // The unique identifier for the team whose members should receive the notification.
     teamId *string
 }
 // NewTeamMembersNotificationRecipient instantiates a new TeamMembersNotificationRecipient and sets the default values.
@@ -30,7 +30,7 @@ func (m *TeamMembersNotificationRecipient) GetFieldDeserializers()(map[string]fu
     res["teamId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTeamId)
     return res
 }
-// GetTeamId gets the teamId property value. The team's identifier.
+// GetTeamId gets the teamId property value. The unique identifier for the team whose members should receive the notification.
 func (m *TeamMembersNotificationRecipient) GetTeamId()(*string) {
     return m.teamId
 }
@@ -48,7 +48,7 @@ func (m *TeamMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetTeamId sets the teamId property value. The team's identifier.
+// SetTeamId sets the teamId property value. The unique identifier for the team whose members should receive the notification.
 func (m *TeamMembersNotificationRecipient) SetTeamId(value *string)() {
     m.teamId = value
 }

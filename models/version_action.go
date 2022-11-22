@@ -19,8 +19,6 @@ func NewVersionAction()(*VersionAction) {
     m := &VersionAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.versionAction";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVersionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

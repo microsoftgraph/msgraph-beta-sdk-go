@@ -21,8 +21,6 @@ func NewWindowsUpdateCatalogItem()(*WindowsUpdateCatalogItem) {
     m := &WindowsUpdateCatalogItem{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.windowsUpdateCatalogItem";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

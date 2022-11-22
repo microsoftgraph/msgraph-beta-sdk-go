@@ -19,8 +19,6 @@ func NewUserSet()(*UserSet) {
     m := &UserSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userSet";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

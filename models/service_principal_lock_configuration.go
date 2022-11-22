@@ -9,17 +9,17 @@ import (
 type ServicePrincipalLockConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The allProperties property
+    // Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
     allProperties *bool
-    // The credentialsWithUsageSign property
+    // Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
     credentialsWithUsageSign *bool
-    // The credentialsWithUsageVerify property
+    // Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
     credentialsWithUsageVerify *bool
-    // The isEnabled property
+    // Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
     isEnabled *bool
     // The OdataType property
     odataType *string
-    // The tokenEncryptionKeyId property
+    // Locks the tokenEncryptionKeyId property for modification on the service principal.
     tokenEncryptionKeyId *bool
 }
 // NewServicePrincipalLockConfiguration instantiates a new servicePrincipalLockConfiguration and sets the default values.
@@ -27,8 +27,6 @@ func NewServicePrincipalLockConfiguration()(*ServicePrincipalLockConfiguration) 
     m := &ServicePrincipalLockConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.servicePrincipalLockConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateServicePrincipalLockConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,15 +37,15 @@ func CreateServicePrincipalLockConfigurationFromDiscriminatorValue(parseNode i87
 func (m *ServicePrincipalLockConfiguration) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAllProperties gets the allProperties property value. The allProperties property
+// GetAllProperties gets the allProperties property value. Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
 func (m *ServicePrincipalLockConfiguration) GetAllProperties()(*bool) {
     return m.allProperties
 }
-// GetCredentialsWithUsageSign gets the credentialsWithUsageSign property value. The credentialsWithUsageSign property
+// GetCredentialsWithUsageSign gets the credentialsWithUsageSign property value. Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
 func (m *ServicePrincipalLockConfiguration) GetCredentialsWithUsageSign()(*bool) {
     return m.credentialsWithUsageSign
 }
-// GetCredentialsWithUsageVerify gets the credentialsWithUsageVerify property value. The credentialsWithUsageVerify property
+// GetCredentialsWithUsageVerify gets the credentialsWithUsageVerify property value. Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
 func (m *ServicePrincipalLockConfiguration) GetCredentialsWithUsageVerify()(*bool) {
     return m.credentialsWithUsageVerify
 }
@@ -62,7 +60,7 @@ func (m *ServicePrincipalLockConfiguration) GetFieldDeserializers()(map[string]f
     res["tokenEncryptionKeyId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetTokenEncryptionKeyId)
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
 func (m *ServicePrincipalLockConfiguration) GetIsEnabled()(*bool) {
     return m.isEnabled
 }
@@ -70,7 +68,7 @@ func (m *ServicePrincipalLockConfiguration) GetIsEnabled()(*bool) {
 func (m *ServicePrincipalLockConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. The tokenEncryptionKeyId property
+// GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Locks the tokenEncryptionKeyId property for modification on the service principal.
 func (m *ServicePrincipalLockConfiguration) GetTokenEncryptionKeyId()(*bool) {
     return m.tokenEncryptionKeyId
 }
@@ -124,19 +122,19 @@ func (m *ServicePrincipalLockConfiguration) Serialize(writer i878a80d2330e89d268
 func (m *ServicePrincipalLockConfiguration) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAllProperties sets the allProperties property value. The allProperties property
+// SetAllProperties sets the allProperties property value. Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
 func (m *ServicePrincipalLockConfiguration) SetAllProperties(value *bool)() {
     m.allProperties = value
 }
-// SetCredentialsWithUsageSign sets the credentialsWithUsageSign property value. The credentialsWithUsageSign property
+// SetCredentialsWithUsageSign sets the credentialsWithUsageSign property value. Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
 func (m *ServicePrincipalLockConfiguration) SetCredentialsWithUsageSign(value *bool)() {
     m.credentialsWithUsageSign = value
 }
-// SetCredentialsWithUsageVerify sets the credentialsWithUsageVerify property value. The credentialsWithUsageVerify property
+// SetCredentialsWithUsageVerify sets the credentialsWithUsageVerify property value. Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
 func (m *ServicePrincipalLockConfiguration) SetCredentialsWithUsageVerify(value *bool)() {
     m.credentialsWithUsageVerify = value
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
 func (m *ServicePrincipalLockConfiguration) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
@@ -144,7 +142,7 @@ func (m *ServicePrincipalLockConfiguration) SetIsEnabled(value *bool)() {
 func (m *ServicePrincipalLockConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. The tokenEncryptionKeyId property
+// SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. Locks the tokenEncryptionKeyId property for modification on the service principal.
 func (m *ServicePrincipalLockConfiguration) SetTokenEncryptionKeyId(value *bool)() {
     m.tokenEncryptionKeyId = value
 }

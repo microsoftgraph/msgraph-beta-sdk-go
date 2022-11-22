@@ -21,8 +21,6 @@ func NewMeetingSpeaker()(*MeetingSpeaker) {
     m := &MeetingSpeaker{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.meetingSpeaker";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMeetingSpeakerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

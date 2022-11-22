@@ -24,8 +24,6 @@ func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) 
     m := &InformationProtectionContentLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.informationProtectionContentLabel";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInformationProtectionContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

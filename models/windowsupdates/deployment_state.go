@@ -23,8 +23,6 @@ func NewDeploymentState()(*DeploymentState) {
     m := &DeploymentState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.windowsUpdates.deploymentState";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeploymentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

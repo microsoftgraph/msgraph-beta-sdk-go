@@ -47,8 +47,6 @@ func NewDeviceShellScript()(*DeviceShellScript) {
     m := &DeviceShellScript{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceShellScript";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceShellScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

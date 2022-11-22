@@ -25,8 +25,6 @@ func NewOemWarranty()(*OemWarranty) {
     m := &OemWarranty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.oemWarranty";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOemWarrantyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

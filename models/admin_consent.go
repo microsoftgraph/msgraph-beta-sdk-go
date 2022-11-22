@@ -21,8 +21,6 @@ func NewAdminConsent()(*AdminConsent) {
     m := &AdminConsent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.adminConsent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAdminConsentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

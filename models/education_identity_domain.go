@@ -21,8 +21,6 @@ func NewEducationIdentityDomain()(*EducationIdentityDomain) {
     m := &EducationIdentityDomain{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationIdentityDomain";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationIdentityDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

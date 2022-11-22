@@ -37,8 +37,6 @@ func NewPrivilegedApproval()(*PrivilegedApproval) {
     m := &PrivilegedApproval{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.privilegedApproval";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivilegedApprovalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

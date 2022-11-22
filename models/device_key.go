@@ -23,8 +23,6 @@ func NewDeviceKey()(*DeviceKey) {
     m := &DeviceKey{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceKey";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

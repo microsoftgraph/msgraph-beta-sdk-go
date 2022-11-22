@@ -46,8 +46,6 @@ func NewSynchronizationTaskExecution()(*SynchronizationTaskExecution) {
     m := &SynchronizationTaskExecution{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.synchronizationTaskExecution";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationTaskExecutionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

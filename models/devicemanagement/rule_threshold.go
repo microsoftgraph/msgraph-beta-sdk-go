@@ -23,8 +23,6 @@ func NewRuleThreshold()(*RuleThreshold) {
     m := &RuleThreshold{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deviceManagement.ruleThreshold";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRuleThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

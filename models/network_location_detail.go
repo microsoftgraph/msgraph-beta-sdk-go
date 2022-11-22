@@ -21,8 +21,6 @@ func NewNetworkLocationDetail()(*NetworkLocationDetail) {
     m := &NetworkLocationDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.networkLocationDetail";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNetworkLocationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

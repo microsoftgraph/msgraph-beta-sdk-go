@@ -23,8 +23,6 @@ func NewTeamworkCameraConfiguration()(*TeamworkCameraConfiguration) {
     m := &TeamworkCameraConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkCameraConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkCameraConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,8 +23,6 @@ func NewTeamworkSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     m := &TeamworkSoftwareUpdateStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.teamworkSoftwareUpdateStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

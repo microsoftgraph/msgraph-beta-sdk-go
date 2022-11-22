@@ -27,8 +27,6 @@ func NewNetworkInterface()(*NetworkInterface) {
     m := &NetworkInterface{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.networkInterface";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNetworkInterfaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

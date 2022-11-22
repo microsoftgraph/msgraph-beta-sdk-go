@@ -21,8 +21,6 @@ func NewMatchLocation()(*MatchLocation) {
     m := &MatchLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.matchLocation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMatchLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

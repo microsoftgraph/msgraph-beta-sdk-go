@@ -39,8 +39,6 @@ func NewTeamworkDeviceConfiguration()(*TeamworkDeviceConfiguration) {
     m := &TeamworkDeviceConfiguration{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkDeviceConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

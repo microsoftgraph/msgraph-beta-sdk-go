@@ -20,8 +20,6 @@ func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary
     m := &DeviceConfigurationConflictSummary{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceConfigurationConflictSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationConflictSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

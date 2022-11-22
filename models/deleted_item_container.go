@@ -13,8 +13,6 @@ func NewDeletedItemContainer()(*DeletedItemContainer) {
     m := &DeletedItemContainer{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deletedItemContainer";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeletedItemContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

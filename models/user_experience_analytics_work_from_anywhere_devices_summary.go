@@ -45,8 +45,6 @@ func NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary()(*UserExperienceA
     m := &UserExperienceAnalyticsWorkFromAnywhereDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

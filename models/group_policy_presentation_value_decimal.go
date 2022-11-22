@@ -16,8 +16,6 @@ func NewGroupPolicyPresentationValueDecimal()(*GroupPolicyPresentationValueDecim
     m := &GroupPolicyPresentationValueDecimal{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),
     }
-    odataTypeValue := "#microsoft.graph.groupPolicyPresentationValueDecimal";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationValueDecimalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

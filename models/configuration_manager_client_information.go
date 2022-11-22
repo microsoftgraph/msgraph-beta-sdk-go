@@ -23,8 +23,6 @@ func NewConfigurationManagerClientInformation()(*ConfigurationManagerClientInfor
     m := &ConfigurationManagerClientInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.configurationManagerClientInformation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigurationManagerClientInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

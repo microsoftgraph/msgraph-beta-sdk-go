@@ -24,8 +24,6 @@ func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssi
     m := &UnifiedRoleManagementPolicyAssignment{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRoleManagementPolicyAssignment";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

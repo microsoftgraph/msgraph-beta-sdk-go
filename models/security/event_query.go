@@ -21,8 +21,6 @@ func NewEventQuery()(*EventQuery) {
     m := &EventQuery{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.security.eventQuery";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEventQueryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

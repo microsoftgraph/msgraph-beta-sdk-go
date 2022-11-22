@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessFlowTemplate provides operations to manage the collection of businessFlowTemplate entities.
+// BusinessFlowTemplate provides operations to manage the collection of accessReview entities.
 type BusinessFlowTemplate struct {
     Entity
     // The name of the business flow template
@@ -16,8 +16,6 @@ func NewBusinessFlowTemplate()(*BusinessFlowTemplate) {
     m := &BusinessFlowTemplate{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.businessFlowTemplate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBusinessFlowTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

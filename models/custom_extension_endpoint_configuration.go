@@ -17,8 +17,6 @@ func NewCustomExtensionEndpointConfiguration()(*CustomExtensionEndpointConfigura
     m := &CustomExtensionEndpointConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.customExtensionEndpointConfiguration";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomExtensionEndpointConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

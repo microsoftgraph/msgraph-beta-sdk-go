@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedDeviceComplianceTrend provides operations to manage the collection of accessReview entities.
+// ManagedDeviceComplianceTrend provides operations to manage the collection of accessReviewDecision entities.
 type ManagedDeviceComplianceTrend struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The number of devices with a compliant status. Required. Read-only.
@@ -33,8 +33,6 @@ func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
     m := &ManagedDeviceComplianceTrend{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.managedTenants.managedDeviceComplianceTrend";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceComplianceTrendFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

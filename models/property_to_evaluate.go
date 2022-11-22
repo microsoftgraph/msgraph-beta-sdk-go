@@ -21,8 +21,6 @@ func NewPropertyToEvaluate()(*PropertyToEvaluate) {
     m := &PropertyToEvaluate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.propertyToEvaluate";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePropertyToEvaluateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

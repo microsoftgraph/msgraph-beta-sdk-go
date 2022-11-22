@@ -23,8 +23,6 @@ func NewReputationCategory()(*ReputationCategory) {
     m := &ReputationCategory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.reputationCategory";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateReputationCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

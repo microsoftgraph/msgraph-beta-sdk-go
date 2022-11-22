@@ -23,8 +23,6 @@ func NewEducationFileSynchronizationVerificationMessage()(*EducationFileSynchron
     m := &EducationFileSynchronizationVerificationMessage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.educationFileSynchronizationVerificationMessage";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationFileSynchronizationVerificationMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

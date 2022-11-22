@@ -13,8 +13,6 @@ func NewTagOperation()(*TagOperation) {
     m := &TagOperation{
         CaseOperation: *NewCaseOperation(),
     }
-    odataTypeValue := "#microsoft.graph.ediscovery.tagOperation";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTagOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

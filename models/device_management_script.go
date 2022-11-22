@@ -45,8 +45,6 @@ func NewDeviceManagementScript()(*DeviceManagementScript) {
     m := &DeviceManagementScript{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.deviceManagementScript";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

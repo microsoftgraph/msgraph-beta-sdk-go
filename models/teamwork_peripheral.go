@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkPeripheral 
+// TeamworkPeripheral provides operations to manage the collection of accessReviewDecision entities.
 type TeamworkPeripheral struct {
     Entity
     // Display name for the peripheral.
@@ -15,13 +15,11 @@ type TeamworkPeripheral struct {
     // The unique identifier for the vendor of the device. Each vendor has a unique ID.
     vendorId *string
 }
-// NewTeamworkPeripheral instantiates a new TeamworkPeripheral and sets the default values.
+// NewTeamworkPeripheral instantiates a new teamworkPeripheral and sets the default values.
 func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     m := &TeamworkPeripheral{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.teamworkPeripheral";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkPeripheralFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

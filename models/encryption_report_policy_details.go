@@ -21,8 +21,6 @@ func NewEncryptionReportPolicyDetails()(*EncryptionReportPolicyDetails) {
     m := &EncryptionReportPolicyDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.encryptionReportPolicyDetails";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEncryptionReportPolicyDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

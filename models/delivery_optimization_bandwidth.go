@@ -17,8 +17,6 @@ func NewDeliveryOptimizationBandwidth()(*DeliveryOptimizationBandwidth) {
     m := &DeliveryOptimizationBandwidth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.deliveryOptimizationBandwidth";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeliveryOptimizationBandwidthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

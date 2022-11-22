@@ -37,8 +37,6 @@ func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
     m := &CloudPcAuditEvent{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.cloudPcAuditEvent";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

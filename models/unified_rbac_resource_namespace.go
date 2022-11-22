@@ -18,8 +18,6 @@ func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
     m := &UnifiedRbacResourceNamespace{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.unifiedRbacResourceNamespace";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

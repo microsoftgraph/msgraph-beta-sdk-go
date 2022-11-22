@@ -19,8 +19,6 @@ func NewCloudPcWindowsSettings()(*CloudPcWindowsSettings) {
     m := &CloudPcWindowsSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.cloudPcWindowsSettings";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcWindowsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

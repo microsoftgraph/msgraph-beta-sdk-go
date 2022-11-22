@@ -21,8 +21,6 @@ func NewFilterGroup()(*FilterGroup) {
     m := &FilterGroup{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.filterGroup";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFilterGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -35,8 +35,6 @@ func NewComanagedDevicesSummary()(*ComanagedDevicesSummary) {
     m := &ComanagedDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.comanagedDevicesSummary";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComanagedDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

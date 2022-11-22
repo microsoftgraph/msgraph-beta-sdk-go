@@ -29,8 +29,6 @@ func NewResponsibleSensitiveType()(*ResponsibleSensitiveType) {
     m := &ResponsibleSensitiveType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.responsibleSensitiveType";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResponsibleSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

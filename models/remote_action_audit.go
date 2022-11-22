@@ -33,8 +33,6 @@ func NewRemoteActionAudit()(*RemoteActionAudit) {
     m := &RemoteActionAudit{
         Entity: *NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.remoteActionAudit";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRemoteActionAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

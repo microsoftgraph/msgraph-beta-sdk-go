@@ -36,8 +36,6 @@ func NewOfficeClientCheckinStatus()(*OfficeClientCheckinStatus) {
     m := &OfficeClientCheckinStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odataTypeValue := "#microsoft.graph.officeClientCheckinStatus";
-    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOfficeClientCheckinStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
