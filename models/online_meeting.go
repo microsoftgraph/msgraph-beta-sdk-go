@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting provides operations to manage the collection of activityStatistics entities.
+// OnlineMeeting 
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -74,7 +74,7 @@ type OnlineMeeting struct {
     // The virtualAppointment property
     virtualAppointment VirtualAppointmentable
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),

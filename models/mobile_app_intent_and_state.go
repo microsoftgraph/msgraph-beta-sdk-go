@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppIntentAndState mobileApp Intent and Install State for a given device.
+// MobileAppIntentAndState 
 type MobileAppIntentAndState struct {
     Entity
     // Device identifier created or collected by Intune.
@@ -15,7 +15,7 @@ type MobileAppIntentAndState struct {
     // Identifier for the user that tried to enroll the device.
     userId *string
 }
-// NewMobileAppIntentAndState instantiates a new mobileAppIntentAndState and sets the default values.
+// NewMobileAppIntentAndState instantiates a new MobileAppIntentAndState and sets the default values.
 func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
     m := &MobileAppIntentAndState{
         Entity: *NewEntity(),

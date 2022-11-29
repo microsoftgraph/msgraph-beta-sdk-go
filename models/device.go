@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Device provides operations to manage the collection of activityStatistics entities.
+// Device 
 type Device struct {
     DirectoryObject
     // true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
@@ -21,7 +21,7 @@ type Device struct {
     complianceExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
     deviceCategory *string
-    // Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+    // Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
     deviceId *string
     // For internal use only. Set to null.
     deviceMetadata *string
@@ -73,7 +73,7 @@ type Device struct {
     operatingSystem *string
     // Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
     operatingSystemVersion *string
-    // For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+    // For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
     physicalIds []string
     // Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
     platform *string
@@ -87,7 +87,7 @@ type Device struct {
     registrationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
     status *string
-    // List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
+    // List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
     systemLabels []string
     // Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
     transitiveMemberOf []DirectoryObjectable
@@ -96,7 +96,7 @@ type Device struct {
     // Represents the usage rights a device has been granted.
     usageRights []UsageRightable
 }
-// NewDevice instantiates a new device and sets the default values.
+// NewDevice instantiates a new Device and sets the default values.
 func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),
@@ -133,7 +133,7 @@ func (m *Device) GetComplianceExpirationDateTime()(*i336074805fc853987abe6f7fe3a
 func (m *Device) GetDeviceCategory()(*string) {
     return m.deviceCategory
 }
-// GetDeviceId gets the deviceId property value. Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+// GetDeviceId gets the deviceId property value. Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
 func (m *Device) GetDeviceId()(*string) {
     return m.deviceId
 }
@@ -285,7 +285,7 @@ func (m *Device) GetOperatingSystem()(*string) {
 func (m *Device) GetOperatingSystemVersion()(*string) {
     return m.operatingSystemVersion
 }
-// GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+// GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
 func (m *Device) GetPhysicalIds()([]string) {
     return m.physicalIds
 }
@@ -313,7 +313,7 @@ func (m *Device) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 func (m *Device) GetStatus()(*string) {
     return m.status
 }
-// GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
+// GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
 func (m *Device) GetSystemLabels()([]string) {
     return m.systemLabels
 }
@@ -627,7 +627,7 @@ func (m *Device) SetComplianceExpirationDateTime(value *i336074805fc853987abe6f7
 func (m *Device) SetDeviceCategory(value *string)() {
     m.deviceCategory = value
 }
-// SetDeviceId sets the deviceId property value. Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+// SetDeviceId sets the deviceId property value. Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetDeviceId(value *string)() {
     m.deviceId = value
 }
@@ -731,7 +731,7 @@ func (m *Device) SetOperatingSystem(value *string)() {
 func (m *Device) SetOperatingSystemVersion(value *string)() {
     m.operatingSystemVersion = value
 }
-// SetPhysicalIds sets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+// SetPhysicalIds sets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
 func (m *Device) SetPhysicalIds(value []string)() {
     m.physicalIds = value
 }
@@ -759,7 +759,7 @@ func (m *Device) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a
 func (m *Device) SetStatus(value *string)() {
     m.status = value
 }
-// SetSystemLabels sets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
+// SetSystemLabels sets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
 func (m *Device) SetSystemLabels(value []string)() {
     m.systemLabels = value
 }

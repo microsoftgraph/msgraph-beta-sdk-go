@@ -41,7 +41,7 @@ func NewReplyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
+// CreatePostRequestInformation add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
 func (m *ReplyRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ReplyPostRequestBodyable, requestConfiguration *ReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -54,7 +54,7 @@ func (m *ReplyRequestBuilder) CreatePostRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// Post reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
+// Post add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
 func (m *ReplyRequestBuilder) Post(ctx context.Context, body ReplyPostRequestBodyable, requestConfiguration *ReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

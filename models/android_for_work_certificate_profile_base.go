@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkCertificateProfileBase android For Work certificate profile base.
+// AndroidForWorkCertificateProfileBase 
 type AndroidForWorkCertificateProfileBase struct {
     DeviceConfiguration
     // Certificate Validity Period Options.
@@ -23,7 +23,7 @@ type AndroidForWorkCertificateProfileBase struct {
     // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
-// NewAndroidForWorkCertificateProfileBase instantiates a new androidForWorkCertificateProfileBase and sets the default values.
+// NewAndroidForWorkCertificateProfileBase instantiates a new AndroidForWorkCertificateProfileBase and sets the default values.
 func NewAndroidForWorkCertificateProfileBase()(*AndroidForWorkCertificateProfileBase) {
     m := &AndroidForWorkCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),

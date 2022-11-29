@@ -10,13 +10,13 @@ type PlannerUser struct {
     PlannerDelta
     // The all property
     all []PlannerDeltaable
-    // A collection containing the references to the plans that the user has marked as favorites.
+    // A collection that contains the references to the plans that the user has marked as favorites.
     favoritePlanReferences PlannerFavoritePlanReferenceCollectionable
     // Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
     favoritePlans []PlannerPlanable
     // The plans property
     plans []PlannerPlanable
-    // A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
+    // A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
     recentPlanReferences PlannerRecentPlanReferenceCollectionable
     // Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
     recentPlans []PlannerPlanable
@@ -40,7 +40,7 @@ func CreatePlannerUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *PlannerUser) GetAll()([]PlannerDeltaable) {
     return m.all
 }
-// GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection containing the references to the plans that the user has marked as favorites.
+// GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) GetFavoritePlanReferences()(PlannerFavoritePlanReferenceCollectionable) {
     return m.favoritePlanReferences
 }
@@ -65,7 +65,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
     return m.plans
 }
-// GetRecentPlanReferences gets the recentPlanReferences property value. A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
+// GetRecentPlanReferences gets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) GetRecentPlanReferences()(PlannerRecentPlanReferenceCollectionable) {
     return m.recentPlanReferences
 }
@@ -147,7 +147,7 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *PlannerUser) SetAll(value []PlannerDeltaable)() {
     m.all = value
 }
-// SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection containing the references to the plans that the user has marked as favorites.
+// SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) SetFavoritePlanReferences(value PlannerFavoritePlanReferenceCollectionable)() {
     m.favoritePlanReferences = value
 }
@@ -159,7 +159,7 @@ func (m *PlannerUser) SetFavoritePlans(value []PlannerPlanable)() {
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
     m.plans = value
 }
-// SetRecentPlanReferences sets the recentPlanReferences property value. A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
+// SetRecentPlanReferences sets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlanReferences(value PlannerRecentPlanReferenceCollectionable)() {
     m.recentPlanReferences = value
 }

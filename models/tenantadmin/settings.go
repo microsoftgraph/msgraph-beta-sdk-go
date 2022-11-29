@@ -65,7 +65,7 @@ type Settings struct {
     siteCreationDefaultManagedPath *string
     // The default storage quota for a new site upon creation. Measured in megabytes (MB).
     siteCreationDefaultStorageLimitInMB *int32
-    // The default timezone of a tenant for newly created sites.
+    // The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.
     tenantDefaultTimezone *string
 }
 // NewSettings instantiates a new settings and sets the default values.
@@ -225,7 +225,7 @@ func (m *Settings) GetSiteCreationDefaultManagedPath()(*string) {
 func (m *Settings) GetSiteCreationDefaultStorageLimitInMB()(*int32) {
     return m.siteCreationDefaultStorageLimitInMB
 }
-// GetTenantDefaultTimezone gets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites.
+// GetTenantDefaultTimezone gets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.
 func (m *Settings) GetTenantDefaultTimezone()(*string) {
     return m.tenantDefaultTimezone
 }
@@ -526,7 +526,7 @@ func (m *Settings) SetSiteCreationDefaultManagedPath(value *string)() {
 func (m *Settings) SetSiteCreationDefaultStorageLimitInMB(value *int32)() {
     m.siteCreationDefaultStorageLimitInMB = value
 }
-// SetTenantDefaultTimezone sets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites.
+// SetTenantDefaultTimezone sets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.
 func (m *Settings) SetTenantDefaultTimezone(value *string)() {
     m.tenantDefaultTimezone = value
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosManagedAppProtection policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
+// IosManagedAppProtection 
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
     // Semicolon seperated list of device models allowed, as a string, for the managed app to work.
@@ -47,7 +47,7 @@ type IosManagedAppProtection struct {
     // Defines if third party keyboards are allowed while accessing a managed app
     thirdPartyKeyboardsBlocked *bool
 }
-// NewIosManagedAppProtection instantiates a new iosManagedAppProtection and sets the default values.
+// NewIosManagedAppProtection instantiates a new IosManagedAppProtection and sets the default values.
 func NewIosManagedAppProtection()(*IosManagedAppProtection) {
     m := &IosManagedAppProtection{
         TargetedManagedAppProtection: *NewTargetedManagedAppProtection(),

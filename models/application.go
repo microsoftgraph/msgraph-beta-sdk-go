@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application provides operations to manage the collection of accessReview entities.
+// Application 
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
@@ -23,7 +23,7 @@ type Application struct {
     connectorGroup ConnectorGroupable
     // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Supports $filter (eq when counting empty collections). Read-only.
+    // Supports $filter (/$count eq 0, /$count ne 0). Read-only.
     createdOnBehalfOf DirectoryObjectable
     // The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
     defaultRedirectUri *string
@@ -33,9 +33,9 @@ type Application struct {
     disabledByMicrosoftStatus *string
     // The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string
-    // Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+    // Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
     extensionProperties []ExtensionPropertyable
-    // Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+    // Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
     federatedIdentityCredentials []FederatedIdentityCredentialable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string
@@ -59,7 +59,7 @@ type Application struct {
     onPremisesPublishing OnPremisesPublishingable
     // Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
     optionalClaims OptionalClaimsable
-    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
+    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
     owners []DirectoryObjectable
     // Specifies parental control settings for an application.
     parentalControlSettings ParentalControlSettingsable
@@ -102,7 +102,7 @@ type Application struct {
     // Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
     windows WindowsApplicationable
 }
-// NewApplication instantiates a new application and sets the default values.
+// NewApplication instantiates a new Application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
@@ -143,7 +143,7 @@ func (m *Application) GetConnectorGroup()(ConnectorGroupable) {
 func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. Supports $filter (eq when counting empty collections). Read-only.
+// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. Supports $filter (/$count eq 0, /$count ne 0). Read-only.
 func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     return m.createdOnBehalfOf
 }
@@ -163,11 +163,11 @@ func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
 func (m *Application) GetDisplayName()(*string) {
     return m.displayName
 }
-// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     return m.extensionProperties
 }
-// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     return m.federatedIdentityCredentials
 }
@@ -266,7 +266,7 @@ func (m *Application) GetOnPremisesPublishing()(OnPremisesPublishingable) {
 func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
     return m.optionalClaims
 }
-// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
+// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *Application) GetOwners()([]DirectoryObjectable) {
     return m.owners
 }
@@ -673,7 +673,7 @@ func (m *Application) SetConnectorGroup(value ConnectorGroupable)() {
 func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. Supports $filter (eq when counting empty collections). Read-only.
+// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. Supports $filter (/$count eq 0, /$count ne 0). Read-only.
 func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     m.createdOnBehalfOf = value
 }
@@ -693,11 +693,11 @@ func (m *Application) SetDisabledByMicrosoftStatus(value *string)() {
 func (m *Application) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     m.extensionProperties = value
 }
-// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
     m.federatedIdentityCredentials = value
 }
@@ -745,7 +745,7 @@ func (m *Application) SetOnPremisesPublishing(value OnPremisesPublishingable)() 
 func (m *Application) SetOptionalClaims(value OptionalClaimsable)() {
     m.optionalClaims = value
 }
-// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
+// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *Application) SetOwners(value []DirectoryObjectable)() {
     m.owners = value
 }

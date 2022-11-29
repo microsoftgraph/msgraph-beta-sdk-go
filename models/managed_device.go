@@ -192,7 +192,7 @@ type ManagedDevice struct {
     // Count of remediated malware for this windows device. This property is read-only.
     windowsRemediatedMalwareCount *int32
 }
-// NewManagedDevice instantiates a new managedDevice and sets the default values.
+// NewManagedDevice instantiates a new ManagedDevice and sets the default values.
 func NewManagedDevice()(*ManagedDevice) {
     m := &ManagedDevice{
         Entity: *NewEntity(),
