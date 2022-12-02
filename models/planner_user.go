@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -10,13 +9,13 @@ type PlannerUser struct {
     PlannerDelta
     // The all property
     all []PlannerDeltaable
-    // A collection containing the references to the plans that the user has marked as favorites.
+    // A collection that contains the references to the plans that the user has marked as favorites.
     favoritePlanReferences PlannerFavoritePlanReferenceCollectionable
     // Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
     favoritePlans []PlannerPlanable
     // The plans property
     plans []PlannerPlanable
-    // A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
+    // A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
     recentPlanReferences PlannerRecentPlanReferenceCollectionable
     // Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
     recentPlans []PlannerPlanable
@@ -40,7 +39,7 @@ func CreatePlannerUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *PlannerUser) GetAll()([]PlannerDeltaable) {
     return m.all
 }
-// GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection containing the references to the plans that the user has marked as favorites.
+// GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) GetFavoritePlanReferences()(PlannerFavoritePlanReferenceCollectionable) {
     return m.favoritePlanReferences
 }
@@ -51,21 +50,117 @@ func (m *PlannerUser) GetFavoritePlans()([]PlannerPlanable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
-    res["all"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerDeltaFromDiscriminatorValue , m.SetAll)
-    res["favoritePlanReferences"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerFavoritePlanReferenceCollectionFromDiscriminatorValue , m.SetFavoritePlanReferences)
-    res["favoritePlans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue , m.SetFavoritePlans)
-    res["plans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue , m.SetPlans)
-    res["recentPlanReferences"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreatePlannerRecentPlanReferenceCollectionFromDiscriminatorValue , m.SetRecentPlanReferences)
-    res["recentPlans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue , m.SetRecentPlans)
-    res["rosterPlans"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue , m.SetRosterPlans)
-    res["tasks"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue , m.SetTasks)
+    res["all"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerDeltaFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerDeltaable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerDeltaable)
+            }
+            m.SetAll(res)
+        }
+        return nil
+    }
+    res["favoritePlanReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerFavoritePlanReferenceCollectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFavoritePlanReferences(val.(PlannerFavoritePlanReferenceCollectionable))
+        }
+        return nil
+    }
+    res["favoritePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerPlanable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerPlanable)
+            }
+            m.SetFavoritePlans(res)
+        }
+        return nil
+    }
+    res["plans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerPlanable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerPlanable)
+            }
+            m.SetPlans(res)
+        }
+        return nil
+    }
+    res["recentPlanReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePlannerRecentPlanReferenceCollectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecentPlanReferences(val.(PlannerRecentPlanReferenceCollectionable))
+        }
+        return nil
+    }
+    res["recentPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerPlanable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerPlanable)
+            }
+            m.SetRecentPlans(res)
+        }
+        return nil
+    }
+    res["rosterPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerPlanable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerPlanable)
+            }
+            m.SetRosterPlans(res)
+        }
+        return nil
+    }
+    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerTaskable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerTaskable)
+            }
+            m.SetTasks(res)
+        }
+        return nil
+    }
     return res
 }
 // GetPlans gets the plans property value. The plans property
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
     return m.plans
 }
-// GetRecentPlanReferences gets the recentPlanReferences property value. A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
+// GetRecentPlanReferences gets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) GetRecentPlanReferences()(PlannerRecentPlanReferenceCollectionable) {
     return m.recentPlanReferences
 }
@@ -88,7 +183,10 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         return err
     }
     if m.GetAll() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAll())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAll()))
+        for i, v := range m.GetAll() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("all", cast)
         if err != nil {
             return err
@@ -101,14 +199,20 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     if m.GetFavoritePlans() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetFavoritePlans())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFavoritePlans()))
+        for i, v := range m.GetFavoritePlans() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("favoritePlans", cast)
         if err != nil {
             return err
         }
     }
     if m.GetPlans() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPlans())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
+        for i, v := range m.GetPlans() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("plans", cast)
         if err != nil {
             return err
@@ -121,21 +225,30 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     if m.GetRecentPlans() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRecentPlans())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecentPlans()))
+        for i, v := range m.GetRecentPlans() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("recentPlans", cast)
         if err != nil {
             return err
         }
     }
     if m.GetRosterPlans() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRosterPlans())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRosterPlans()))
+        for i, v := range m.GetRosterPlans() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("rosterPlans", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTasks() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTasks())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTasks()))
+        for i, v := range m.GetTasks() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("tasks", cast)
         if err != nil {
             return err
@@ -147,7 +260,7 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *PlannerUser) SetAll(value []PlannerDeltaable)() {
     m.all = value
 }
-// SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection containing the references to the plans that the user has marked as favorites.
+// SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) SetFavoritePlanReferences(value PlannerFavoritePlanReferenceCollectionable)() {
     m.favoritePlanReferences = value
 }
@@ -159,7 +272,7 @@ func (m *PlannerUser) SetFavoritePlans(value []PlannerPlanable)() {
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
     m.plans = value
 }
-// SetRecentPlanReferences sets the recentPlanReferences property value. A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
+// SetRecentPlanReferences sets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlanReferences(value PlannerRecentPlanReferenceCollectionable)() {
     m.recentPlanReferences = value
 }

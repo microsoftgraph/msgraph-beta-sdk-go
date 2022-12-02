@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Casts the previous resource to application.
 type ExternalAuthenticationType int
 
 const (

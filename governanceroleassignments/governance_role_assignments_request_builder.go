@@ -4,9 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i1a5b64af85add71a023d2e785c1a5be6ae9f5cb8a4b70eac9b1164d616d8b1c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/export"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i86d77de760f63f9525b1d187924b60019eb7f47ccd0a3aae49066b65191c38bd "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/count"
 )
 
 // GovernanceRoleAssignmentsRequestBuilder provides operations to manage the collection of governanceRoleAssignment entities.
@@ -73,8 +71,8 @@ func NewGovernanceRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2
     return NewGovernanceRoleAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GovernanceRoleAssignmentsRequestBuilder) Count()(*i86d77de760f63f9525b1d187924b60019eb7f47ccd0a3aae49066b65191c38bd.CountRequestBuilder) {
-    return i86d77de760f63f9525b1d187924b60019eb7f47ccd0a3aae49066b65191c38bd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceRoleAssignmentsRequestBuilder) Count()(*GovernanceRoleAssignmentsCountRequestBuilder) {
+    return NewGovernanceRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from governanceRoleAssignments
 func (m *GovernanceRoleAssignmentsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -107,8 +105,8 @@ func (m *GovernanceRoleAssignmentsRequestBuilder) CreatePostRequestInformation(c
     return requestInfo, nil
 }
 // Export provides operations to call the export method.
-func (m *GovernanceRoleAssignmentsRequestBuilder) Export()(*i1a5b64af85add71a023d2e785c1a5be6ae9f5cb8a4b70eac9b1164d616d8b1c3.ExportRequestBuilder) {
-    return i1a5b64af85add71a023d2e785c1a5be6ae9f5cb8a4b70eac9b1164d616d8b1c3.NewExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceRoleAssignmentsRequestBuilder) Export()(*GovernanceRoleAssignmentsExportRequestBuilder) {
+    return NewGovernanceRoleAssignmentsExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get entities from governanceRoleAssignments
 func (m *GovernanceRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *GovernanceRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentCollectionResponseable, error) {

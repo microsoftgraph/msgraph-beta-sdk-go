@@ -5,8 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/register"
-    i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/count"
 )
 
 // GovernanceResourcesRequestBuilder provides operations to manage the collection of governanceResource entities.
@@ -73,8 +71,8 @@ func NewGovernanceResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewGovernanceResourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GovernanceResourcesRequestBuilder) Count()(*i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.CountRequestBuilder) {
-    return i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceResourcesRequestBuilder) Count()(*GovernanceResourcesCountRequestBuilder) {
+    return NewGovernanceResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from governanceResources
 func (m *GovernanceResourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -145,6 +143,6 @@ func (m *GovernanceResourcesRequestBuilder) Post(ctx context.Context, body ie233
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
 // Register provides operations to call the register method.
-func (m *GovernanceResourcesRequestBuilder) Register()(*i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3.RegisterRequestBuilder) {
-    return i50e2c1a59b4fe23c5c0516829f1357ff0e5a3ad45684ba6777c8873e4e5eb0d3.NewRegisterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceResourcesRequestBuilder) Register()(*GovernanceResourcesRegisterRequestBuilder) {
+    return NewGovernanceResourcesRegisterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

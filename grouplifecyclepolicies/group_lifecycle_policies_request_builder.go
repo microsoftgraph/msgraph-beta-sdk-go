@@ -5,8 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i728289e9bd017b0300591eba32e4afdb7e7bb0fd3a3663b7d8d50af8c083e963 "github.com/microsoftgraph/msgraph-beta-sdk-go/grouplifecyclepolicies/renewgroup"
-    i9890bcce0426f96fd44b7f68219bfafba7f5dc0822f0d98ce5aae660f8ad0c1b "github.com/microsoftgraph/msgraph-beta-sdk-go/grouplifecyclepolicies/count"
 )
 
 // GroupLifecyclePoliciesRequestBuilder provides operations to manage the collection of groupLifecyclePolicy entities.
@@ -73,8 +71,8 @@ func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewGroupLifecyclePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*i9890bcce0426f96fd44b7f68219bfafba7f5dc0822f0d98ce5aae660f8ad0c1b.CountRequestBuilder) {
-    return i9890bcce0426f96fd44b7f68219bfafba7f5dc0822f0d98ce5aae660f8ad0c1b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*GroupLifecyclePoliciesCountRequestBuilder) {
+    return NewGroupLifecyclePoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list all the groupLifecyclePolicies.
 func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -145,6 +143,6 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable), nil
 }
 // RenewGroup provides operations to call the renewGroup method.
-func (m *GroupLifecyclePoliciesRequestBuilder) RenewGroup()(*i728289e9bd017b0300591eba32e4afdb7e7bb0fd3a3663b7d8d50af8c083e963.RenewGroupRequestBuilder) {
-    return i728289e9bd017b0300591eba32e4afdb7e7bb0fd3a3663b7d8d50af8c083e963.NewRenewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GroupLifecyclePoliciesRequestBuilder) RenewGroup()(*GroupLifecyclePoliciesRenewGroupRequestBuilder) {
+    return NewGroupLifecyclePoliciesRenewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

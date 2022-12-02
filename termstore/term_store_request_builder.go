@@ -3,12 +3,8 @@ package termstore
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d491e0ed92613755e9ce87b7bcb61d5ac45e24bb3148376a23cd9790125ae69 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/groups"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/termstore"
-    i8696d51b25dc2d6a8f09c66d2c3a8a89a556550f2c721719ed3f083e08d1e4cc "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets"
-    i8ab8307d36a2288f235f92a810e06d877f6459827fbbf4925375f0c10a27ed06 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets/item"
-    ie85fd90aba6dfc1ffc92628ee3e7c7005a31cc9ec42b25f47257ab099e58a968 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/groups/item"
 )
 
 // TermStoreRequestBuilder provides operations to manage the store singleton.
@@ -112,11 +108,11 @@ func (m *TermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable), nil
 }
 // Groups provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) Groups()(*i0d491e0ed92613755e9ce87b7bcb61d5ac45e24bb3148376a23cd9790125ae69.GroupsRequestBuilder) {
-    return i0d491e0ed92613755e9ce87b7bcb61d5ac45e24bb3148376a23cd9790125ae69.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TermStoreRequestBuilder) Groups()(*TermStoreGroupsRequestBuilder) {
+    return NewTermStoreGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) GroupsById(id string)(*ie85fd90aba6dfc1ffc92628ee3e7c7005a31cc9ec42b25f47257ab099e58a968.GroupItemRequestBuilder) {
+func (m *TermStoreRequestBuilder) GroupsById(id string)(*TermStoreGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -124,7 +120,7 @@ func (m *TermStoreRequestBuilder) GroupsById(id string)(*ie85fd90aba6dfc1ffc9262
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return ie85fd90aba6dfc1ffc92628ee3e7c7005a31cc9ec42b25f47257ab099e58a968.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the properties of a store object.
 func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, requestConfiguration *TermStoreRequestBuilderPatchRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
@@ -146,11 +142,11 @@ func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b991
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable), nil
 }
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) Sets()(*i8696d51b25dc2d6a8f09c66d2c3a8a89a556550f2c721719ed3f083e08d1e4cc.SetsRequestBuilder) {
-    return i8696d51b25dc2d6a8f09c66d2c3a8a89a556550f2c721719ed3f083e08d1e4cc.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TermStoreRequestBuilder) Sets()(*TermStoreSetsRequestBuilder) {
+    return NewTermStoreSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) SetsById(id string)(*i8ab8307d36a2288f235f92a810e06d877f6459827fbbf4925375f0c10a27ed06.SetItemRequestBuilder) {
+func (m *TermStoreRequestBuilder) SetsById(id string)(*TermStoreSetsSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,5 +154,5 @@ func (m *TermStoreRequestBuilder) SetsById(id string)(*i8ab8307d36a2288f235f92a8
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return i8ab8307d36a2288f235f92a810e06d877f6459827fbbf4925375f0c10a27ed06.NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

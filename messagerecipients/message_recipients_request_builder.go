@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    iec25c11760427fddea015520a3f5d677283310bfe6e54fef5e4d115266926f52 "github.com/microsoftgraph/msgraph-beta-sdk-go/messagerecipients/count"
 )
 
 // MessageRecipientsRequestBuilder provides operations to manage the collection of messageRecipient entities.
@@ -72,8 +71,8 @@ func NewMessageRecipientsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewMessageRecipientsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *MessageRecipientsRequestBuilder) Count()(*iec25c11760427fddea015520a3f5d677283310bfe6e54fef5e4d115266926f52.CountRequestBuilder) {
-    return iec25c11760427fddea015520a3f5d677283310bfe6e54fef5e4d115266926f52.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MessageRecipientsRequestBuilder) Count()(*MessageRecipientsCountRequestBuilder) {
+    return NewMessageRecipientsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from messageRecipients
 func (m *MessageRecipientsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MessageRecipientsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

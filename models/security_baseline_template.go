@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -43,9 +42,44 @@ func (m *SecurityBaselineTemplate) GetDeviceStateSummary()(SecurityBaselineState
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementTemplate.GetFieldDeserializers()
-    res["categoryDeviceStateSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSecurityBaselineCategoryStateSummaryFromDiscriminatorValue , m.SetCategoryDeviceStateSummaries)
-    res["deviceStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSecurityBaselineDeviceStateFromDiscriminatorValue , m.SetDeviceStates)
-    res["deviceStateSummary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSecurityBaselineStateSummaryFromDiscriminatorValue , m.SetDeviceStateSummary)
+    res["categoryDeviceStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSecurityBaselineCategoryStateSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SecurityBaselineCategoryStateSummaryable, len(val))
+            for i, v := range val {
+                res[i] = v.(SecurityBaselineCategoryStateSummaryable)
+            }
+            m.SetCategoryDeviceStateSummaries(res)
+        }
+        return nil
+    }
+    res["deviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSecurityBaselineDeviceStateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SecurityBaselineDeviceStateable, len(val))
+            for i, v := range val {
+                res[i] = v.(SecurityBaselineDeviceStateable)
+            }
+            m.SetDeviceStates(res)
+        }
+        return nil
+    }
+    res["deviceStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSecurityBaselineStateSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceStateSummary(val.(SecurityBaselineStateSummaryable))
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -55,14 +89,20 @@ func (m *SecurityBaselineTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
         return err
     }
     if m.GetCategoryDeviceStateSummaries() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCategoryDeviceStateSummaries())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCategoryDeviceStateSummaries()))
+        for i, v := range m.GetCategoryDeviceStateSummaries() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("categoryDeviceStateSummaries", cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceStates() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeviceStates())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceStates()))
+        for i, v := range m.GetDeviceStates() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("deviceStates", cast)
         if err != nil {
             return err

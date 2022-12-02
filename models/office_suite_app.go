@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -59,19 +58,144 @@ func (m *OfficeSuiteApp) GetExcludedApps()(ExcludedAppsable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
-    res["autoAcceptEula"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAutoAcceptEula)
-    res["excludedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateExcludedAppsFromDiscriminatorValue , m.SetExcludedApps)
-    res["installProgressDisplayLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOfficeSuiteInstallProgressDisplayLevel , m.SetInstallProgressDisplayLevel)
-    res["localesToInstall"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetLocalesToInstall)
-    res["officeConfigurationXml"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetOfficeConfigurationXml)
-    res["officePlatformArchitecture"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsArchitecture , m.SetOfficePlatformArchitecture)
-    res["officeSuiteAppDefaultFileFormat"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOfficeSuiteDefaultFileFormatType , m.SetOfficeSuiteAppDefaultFileFormat)
-    res["productIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseOfficeProductId , m.SetProductIds)
-    res["shouldUninstallOlderVersionsOfOffice"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShouldUninstallOlderVersionsOfOffice)
-    res["targetVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTargetVersion)
-    res["updateChannel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseOfficeUpdateChannel , m.SetUpdateChannel)
-    res["updateVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetUpdateVersion)
-    res["useSharedComputerActivation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUseSharedComputerActivation)
+    res["autoAcceptEula"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutoAcceptEula(val)
+        }
+        return nil
+    }
+    res["excludedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExcludedAppsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExcludedApps(val.(ExcludedAppsable))
+        }
+        return nil
+    }
+    res["installProgressDisplayLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseOfficeSuiteInstallProgressDisplayLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInstallProgressDisplayLevel(val.(*OfficeSuiteInstallProgressDisplayLevel))
+        }
+        return nil
+    }
+    res["localesToInstall"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetLocalesToInstall(res)
+        }
+        return nil
+    }
+    res["officeConfigurationXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOfficeConfigurationXml(val)
+        }
+        return nil
+    }
+    res["officePlatformArchitecture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsArchitecture)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOfficePlatformArchitecture(val.(*WindowsArchitecture))
+        }
+        return nil
+    }
+    res["officeSuiteAppDefaultFileFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseOfficeSuiteDefaultFileFormatType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOfficeSuiteAppDefaultFileFormat(val.(*OfficeSuiteDefaultFileFormatType))
+        }
+        return nil
+    }
+    res["productIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseOfficeProductId)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OfficeProductId, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OfficeProductId))
+            }
+            m.SetProductIds(res)
+        }
+        return nil
+    }
+    res["shouldUninstallOlderVersionsOfOffice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetShouldUninstallOlderVersionsOfOffice(val)
+        }
+        return nil
+    }
+    res["targetVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetVersion(val)
+        }
+        return nil
+    }
+    res["updateChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseOfficeUpdateChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUpdateChannel(val.(*OfficeUpdateChannel))
+        }
+        return nil
+    }
+    res["updateVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUpdateVersion(val)
+        }
+        return nil
+    }
+    res["useSharedComputerActivation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUseSharedComputerActivation(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInstallProgressDisplayLevel gets the installProgressDisplayLevel property value. The Enum to specify the level of display for the Installation Progress Setup UI on the Device.

@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -39,9 +38,36 @@ func (m *ProtectGroup) GetAllowGuestUsers()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LabelActionBase.GetFieldDeserializers()
-    res["allowEmailFromGuestUsers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowEmailFromGuestUsers)
-    res["allowGuestUsers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAllowGuestUsers)
-    res["privacy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseGroupPrivacy , m.SetPrivacy)
+    res["allowEmailFromGuestUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowEmailFromGuestUsers(val)
+        }
+        return nil
+    }
+    res["allowGuestUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowGuestUsers(val)
+        }
+        return nil
+    }
+    res["privacy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseGroupPrivacy)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivacy(val.(*GroupPrivacy))
+        }
+        return nil
+    }
     return res
 }
 // GetPrivacy gets the privacy property value. The privacy property
