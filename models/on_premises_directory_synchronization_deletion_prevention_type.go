@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the directory singleton.
 type OnPremisesDirectorySynchronizationDeletionPreventionType int
 
 const (

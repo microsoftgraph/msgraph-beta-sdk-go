@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectorySettingTemplate 
+// DirectorySettingTemplate provides operations to manage the collection of directorySettingTemplate entities.
 type DirectorySettingTemplate struct {
     DirectoryObject
     // Description of the template. Read-only.
@@ -14,7 +14,7 @@ type DirectorySettingTemplate struct {
     // Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
     values []SettingTemplateValueable
 }
-// NewDirectorySettingTemplate instantiates a new DirectorySettingTemplate and sets the default values.
+// NewDirectorySettingTemplate instantiates a new directorySettingTemplate and sets the default values.
 func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessScenario 
+// BusinessScenario provides operations to manage the collection of administrativeUnit entities.
 type BusinessScenario struct {
     Entity
     // The createdBy property
@@ -25,7 +25,7 @@ type BusinessScenario struct {
     // The uniqueName property
     uniqueName *string
 }
-// NewBusinessScenario instantiates a new BusinessScenario and sets the default values.
+// NewBusinessScenario instantiates a new businessScenario and sets the default values.
 func NewBusinessScenario()(*BusinessScenario) {
     m := &BusinessScenario{
         Entity: *NewEntity(),

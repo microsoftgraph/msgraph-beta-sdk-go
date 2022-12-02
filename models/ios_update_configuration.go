@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosUpdateConfiguration 
+// IosUpdateConfiguration iOS Update Configuration, allows you to configure time window within week to install iOS updates
 type IosUpdateConfiguration struct {
     DeviceConfiguration
     // Active Hours End (active hours mean the time window when updates install should not happen)
@@ -26,7 +26,7 @@ type IosUpdateConfiguration struct {
     // UTC Time Offset indicated in minutes
     utcTimeOffsetInMinutes *int32
 }
-// NewIosUpdateConfiguration instantiates a new IosUpdateConfiguration and sets the default values.
+// NewIosUpdateConfiguration instantiates a new iosUpdateConfiguration and sets the default values.
 func NewIosUpdateConfiguration()(*IosUpdateConfiguration) {
     m := &IosUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

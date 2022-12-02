@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to application.
+// Provides operations to call the instantiate method.
 type AllowInvitesFrom int
 
 const (

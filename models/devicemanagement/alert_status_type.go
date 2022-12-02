@@ -2,7 +2,7 @@ package devicemanagement
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the deviceManagement singleton.
 type AlertStatusType int
 
 const (
