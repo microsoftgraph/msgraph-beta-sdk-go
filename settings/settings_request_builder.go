@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i84afac5624cdd0c1e3d09b01fede02fb6e246e80cfad2e9afcb63aaf789c5619 "github.com/microsoftgraph/msgraph-beta-sdk-go/settings/count"
 )
 
 // SettingsRequestBuilder provides operations to manage the collection of directorySetting entities.
@@ -23,8 +22,6 @@ type SettingsRequestBuilderGetQueryParameters struct {
     Count *bool `uriparametername:"%24count"`
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
-    // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
@@ -56,7 +53,7 @@ type SettingsRequestBuilderPostRequestConfiguration struct {
 func NewSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsRequestBuilder) {
     m := &SettingsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/settings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/settings{?%24top,%24skip,%24search,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -72,8 +69,8 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *SettingsRequestBuilder) Count()(*i84afac5624cdd0c1e3d09b01fede02fb6e246e80cfad2e9afcb63aaf789c5619.CountRequestBuilder) {
-    return i84afac5624cdd0c1e3d09b01fede02fb6e246e80cfad2e9afcb63aaf789c5619.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SettingsRequestBuilder) Count()(*SettingsCountRequestBuilder) {
+    return NewSettingsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of tenant-level or group-specific group settings objects.
 func (m *SettingsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

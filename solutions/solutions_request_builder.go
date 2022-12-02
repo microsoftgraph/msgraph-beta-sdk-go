@@ -5,8 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i4ae425519efe123d7fd914fb6947518f7b8564d9a775daffa92b348e1f6d0be8 "github.com/microsoftgraph/msgraph-beta-sdk-go/solutions/businessscenarios"
-    ibde22196f177df05858cdfdbf98e381850ebc10dab7c03a2231fa5425c836adc "github.com/microsoftgraph/msgraph-beta-sdk-go/solutions/businessscenarios/item"
 )
 
 // SolutionsRequestBuilder provides operations to manage the solutionsRoot singleton.
@@ -42,11 +40,11 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BusinessScenarios provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BusinessScenarios()(*i4ae425519efe123d7fd914fb6947518f7b8564d9a775daffa92b348e1f6d0be8.BusinessScenariosRequestBuilder) {
-    return i4ae425519efe123d7fd914fb6947518f7b8564d9a775daffa92b348e1f6d0be8.NewBusinessScenariosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SolutionsRequestBuilder) BusinessScenarios()(*SolutionsBusinessScenariosRequestBuilder) {
+    return NewSolutionsBusinessScenariosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BusinessScenariosById provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BusinessScenariosById(id string)(*ibde22196f177df05858cdfdbf98e381850ebc10dab7c03a2231fa5425c836adc.BusinessScenarioItemRequestBuilder) {
+func (m *SolutionsRequestBuilder) BusinessScenariosById(id string)(*SolutionsBusinessScenariosBusinessScenarioItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -54,7 +52,7 @@ func (m *SolutionsRequestBuilder) BusinessScenariosById(id string)(*ibde22196f17
     if id != "" {
         urlTplParams["businessScenario%2Did"] = id
     }
-    return ibde22196f177df05858cdfdbf98e381850ebc10dab7c03a2231fa5425c836adc.NewBusinessScenarioItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSolutionsBusinessScenariosBusinessScenarioItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {

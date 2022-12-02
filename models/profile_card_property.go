@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProfileCardProperty provides operations to manage the collection of activityStatistics entities.
+// ProfileCardProperty provides operations to manage the collection of accessReviewDecision entities.
 type ProfileCardProperty struct {
     Entity
     // Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
@@ -35,8 +34,30 @@ func (m *ProfileCardProperty) GetDirectoryPropertyName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProfileCardProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["annotations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateProfileCardAnnotationFromDiscriminatorValue , m.SetAnnotations)
-    res["directoryPropertyName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDirectoryPropertyName)
+    res["annotations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateProfileCardAnnotationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ProfileCardAnnotationable, len(val))
+            for i, v := range val {
+                res[i] = v.(ProfileCardAnnotationable)
+            }
+            m.SetAnnotations(res)
+        }
+        return nil
+    }
+    res["directoryPropertyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDirectoryPropertyName(val)
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -46,7 +67,10 @@ func (m *ProfileCardProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef
         return err
     }
     if m.GetAnnotations() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAnnotations())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAnnotations()))
+        for i, v := range m.GetAnnotations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("annotations", cast)
         if err != nil {
             return err

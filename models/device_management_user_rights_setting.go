@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -34,9 +33,40 @@ func (m *DeviceManagementUserRightsSetting) GetAdditionalData()(map[string]inter
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementUserRightsSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["localUsersOrGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementUserRightsLocalUserOrGroupFromDiscriminatorValue , m.SetLocalUsersOrGroups)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["state"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseStateManagementSetting , m.SetState)
+    res["localUsersOrGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementUserRightsLocalUserOrGroupFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceManagementUserRightsLocalUserOrGroupable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceManagementUserRightsLocalUserOrGroupable)
+            }
+            m.SetLocalUsersOrGroups(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseStateManagementSetting)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetState(val.(*StateManagementSetting))
+        }
+        return nil
+    }
     return res
 }
 // GetLocalUsersOrGroups gets the localUsersOrGroups property value. Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.
@@ -54,7 +84,10 @@ func (m *DeviceManagementUserRightsSetting) GetState()(*StateManagementSetting) 
 // Serialize serializes information the current object
 func (m *DeviceManagementUserRightsSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetLocalUsersOrGroups() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetLocalUsersOrGroups())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocalUsersOrGroups()))
+        for i, v := range m.GetLocalUsersOrGroups() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("localUsersOrGroups", cast)
         if err != nil {
             return err

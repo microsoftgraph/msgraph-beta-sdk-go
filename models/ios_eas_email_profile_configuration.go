@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -123,33 +122,276 @@ func (m *IosEasEmailProfileConfiguration) GetEncryptionCertificateType()(*EmailC
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosEasEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EasEmailProfileConfigurationBase.GetFieldDeserializers()
-    res["accountName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAccountName)
-    res["authenticationMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEasAuthenticationMethod , m.SetAuthenticationMethod)
-    res["blockMovingMessagesToOtherEmailAccounts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockMovingMessagesToOtherEmailAccounts)
-    res["blockSendingEmailFromThirdPartyApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockSendingEmailFromThirdPartyApps)
-    res["blockSyncingRecentlyUsedEmailAddresses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockSyncingRecentlyUsedEmailAddresses)
-    res["derivedCredentialSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue , m.SetDerivedCredentialSettings)
-    res["durationOfEmailToSync"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEmailSyncDuration , m.SetDurationOfEmailToSync)
-    res["easServices"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEasServices , m.SetEasServices)
-    res["easServicesUserOverrideEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEasServicesUserOverrideEnabled)
-    res["emailAddressSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseUserEmailSource , m.SetEmailAddressSource)
-    res["encryptionCertificateType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEmailCertificateType , m.SetEncryptionCertificateType)
-    res["hostName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetHostName)
-    res["identityCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosCertificateProfileBaseFromDiscriminatorValue , m.SetIdentityCertificate)
-    res["perAppVPNProfileId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPerAppVPNProfileId)
-    res["requireSmime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequireSmime)
-    res["requireSsl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequireSsl)
-    res["signingCertificateType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEmailCertificateType , m.SetSigningCertificateType)
-    res["smimeEnablePerMessageSwitch"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmimeEnablePerMessageSwitch)
-    res["smimeEncryptByDefaultEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmimeEncryptByDefaultEnabled)
-    res["smimeEncryptByDefaultUserOverrideEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmimeEncryptByDefaultUserOverrideEnabled)
-    res["smimeEncryptionCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosCertificateProfileFromDiscriminatorValue , m.SetSmimeEncryptionCertificate)
-    res["smimeEncryptionCertificateUserOverrideEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmimeEncryptionCertificateUserOverrideEnabled)
-    res["smimeSigningCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIosCertificateProfileFromDiscriminatorValue , m.SetSmimeSigningCertificate)
-    res["smimeSigningCertificateUserOverrideEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmimeSigningCertificateUserOverrideEnabled)
-    res["smimeSigningEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmimeSigningEnabled)
-    res["smimeSigningUserOverrideEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSmimeSigningUserOverrideEnabled)
-    res["useOAuth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUseOAuth)
+    res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccountName(val)
+        }
+        return nil
+    }
+    res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEasAuthenticationMethod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationMethod(val.(*EasAuthenticationMethod))
+        }
+        return nil
+    }
+    res["blockMovingMessagesToOtherEmailAccounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockMovingMessagesToOtherEmailAccounts(val)
+        }
+        return nil
+    }
+    res["blockSendingEmailFromThirdPartyApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockSendingEmailFromThirdPartyApps(val)
+        }
+        return nil
+    }
+    res["blockSyncingRecentlyUsedEmailAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockSyncingRecentlyUsedEmailAddresses(val)
+        }
+        return nil
+    }
+    res["derivedCredentialSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDerivedCredentialSettings(val.(DeviceManagementDerivedCredentialSettingsable))
+        }
+        return nil
+    }
+    res["durationOfEmailToSync"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEmailSyncDuration)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDurationOfEmailToSync(val.(*EmailSyncDuration))
+        }
+        return nil
+    }
+    res["easServices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEasServices)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEasServices(val.(*EasServices))
+        }
+        return nil
+    }
+    res["easServicesUserOverrideEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEasServicesUserOverrideEnabled(val)
+        }
+        return nil
+    }
+    res["emailAddressSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserEmailSource)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmailAddressSource(val.(*UserEmailSource))
+        }
+        return nil
+    }
+    res["encryptionCertificateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEmailCertificateType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEncryptionCertificateType(val.(*EmailCertificateType))
+        }
+        return nil
+    }
+    res["hostName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHostName(val)
+        }
+        return nil
+    }
+    res["identityCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIosCertificateProfileBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityCertificate(val.(IosCertificateProfileBaseable))
+        }
+        return nil
+    }
+    res["perAppVPNProfileId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPerAppVPNProfileId(val)
+        }
+        return nil
+    }
+    res["requireSmime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequireSmime(val)
+        }
+        return nil
+    }
+    res["requireSsl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequireSsl(val)
+        }
+        return nil
+    }
+    res["signingCertificateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEmailCertificateType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSigningCertificateType(val.(*EmailCertificateType))
+        }
+        return nil
+    }
+    res["smimeEnablePerMessageSwitch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeEnablePerMessageSwitch(val)
+        }
+        return nil
+    }
+    res["smimeEncryptByDefaultEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeEncryptByDefaultEnabled(val)
+        }
+        return nil
+    }
+    res["smimeEncryptByDefaultUserOverrideEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeEncryptByDefaultUserOverrideEnabled(val)
+        }
+        return nil
+    }
+    res["smimeEncryptionCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIosCertificateProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeEncryptionCertificate(val.(IosCertificateProfileable))
+        }
+        return nil
+    }
+    res["smimeEncryptionCertificateUserOverrideEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeEncryptionCertificateUserOverrideEnabled(val)
+        }
+        return nil
+    }
+    res["smimeSigningCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIosCertificateProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeSigningCertificate(val.(IosCertificateProfileable))
+        }
+        return nil
+    }
+    res["smimeSigningCertificateUserOverrideEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeSigningCertificateUserOverrideEnabled(val)
+        }
+        return nil
+    }
+    res["smimeSigningEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeSigningEnabled(val)
+        }
+        return nil
+    }
+    res["smimeSigningUserOverrideEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSmimeSigningUserOverrideEnabled(val)
+        }
+        return nil
+    }
+    res["useOAuth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUseOAuth(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHostName gets the hostName property value. Exchange location that (URL) that the native mail app connects to.

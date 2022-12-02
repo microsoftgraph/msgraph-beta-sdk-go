@@ -5,8 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    ib51775d0103f2848789780fed67e4a5c9a298b92986a1aeabcf8f735e6666d7f "github.com/microsoftgraph/msgraph-beta-sdk-go/officeconfiguration/clientconfigurations"
-    i4f3ec96b42f2d1014637f13f95e0e6619fd4e35e09fad4a2b5571a24e4f6d381 "github.com/microsoftgraph/msgraph-beta-sdk-go/officeconfiguration/clientconfigurations/item"
 )
 
 // OfficeConfigurationRequestBuilder provides operations to manage the officeConfiguration singleton.
@@ -42,11 +40,11 @@ type OfficeConfigurationRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ClientConfigurations provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
-func (m *OfficeConfigurationRequestBuilder) ClientConfigurations()(*ib51775d0103f2848789780fed67e4a5c9a298b92986a1aeabcf8f735e6666d7f.ClientConfigurationsRequestBuilder) {
-    return ib51775d0103f2848789780fed67e4a5c9a298b92986a1aeabcf8f735e6666d7f.NewClientConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OfficeConfigurationRequestBuilder) ClientConfigurations()(*OfficeConfigurationClientConfigurationsRequestBuilder) {
+    return NewOfficeConfigurationClientConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClientConfigurationsById provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
-func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(*i4f3ec96b42f2d1014637f13f95e0e6619fd4e35e09fad4a2b5571a24e4f6d381.OfficeClientConfigurationItemRequestBuilder) {
+func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(*OfficeConfigurationClientConfigurationsOfficeClientConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -54,7 +52,7 @@ func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(
     if id != "" {
         urlTplParams["officeClientConfiguration%2Did"] = id
     }
-    return i4f3ec96b42f2d1014637f13f95e0e6619fd4e35e09fad4a2b5571a24e4f6d381.NewOfficeClientConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOfficeConfigurationClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewOfficeConfigurationRequestBuilderInternal instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
 func NewOfficeConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OfficeConfigurationRequestBuilder) {

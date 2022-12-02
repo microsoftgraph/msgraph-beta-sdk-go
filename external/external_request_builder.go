@@ -4,9 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141 "github.com/microsoftgraph/msgraph-beta-sdk-go/external/connections"
     ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/externalconnectors"
-    i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/external/connections/item"
 )
 
 // ExternalRequestBuilder provides operations to manage the external singleton.
@@ -42,11 +40,11 @@ type ExternalRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Connections provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
-func (m *ExternalRequestBuilder) Connections()(*i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141.ConnectionsRequestBuilder) {
-    return i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141.NewConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ExternalRequestBuilder) Connections()(*ExternalConnectionsRequestBuilder) {
+    return NewExternalConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectionsById provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
-func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.ExternalConnectionItemRequestBuilder) {
+func (m *ExternalRequestBuilder) ConnectionsById(id string)(*ExternalConnectionsExternalConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -54,7 +52,7 @@ func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e
     if id != "" {
         urlTplParams["externalConnection%2Did"] = id
     }
-    return i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExternalConnectionsExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewExternalRequestBuilderInternal instantiates a new ExternalRequestBuilder and sets the default values.
 func NewExternalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalRequestBuilder) {

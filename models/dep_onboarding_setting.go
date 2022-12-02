@@ -2,7 +2,6 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -76,22 +75,178 @@ func (m *DepOnboardingSetting) GetEnrollmentProfiles()([]EnrollmentProfileable) 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appleIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAppleIdentifier)
-    res["dataSharingConsentGranted"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDataSharingConsentGranted)
-    res["defaultIosEnrollmentProfile"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDepIOSEnrollmentProfileFromDiscriminatorValue , m.SetDefaultIosEnrollmentProfile)
-    res["defaultMacOsEnrollmentProfile"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDepMacOSEnrollmentProfileFromDiscriminatorValue , m.SetDefaultMacOsEnrollmentProfile)
-    res["enrollmentProfiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEnrollmentProfileFromDiscriminatorValue , m.SetEnrollmentProfiles)
-    res["importedAppleDeviceIdentities"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateImportedAppleDeviceIdentityFromDiscriminatorValue , m.SetImportedAppleDeviceIdentities)
-    res["lastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastModifiedDateTime)
-    res["lastSuccessfulSyncDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastSuccessfulSyncDateTime)
-    res["lastSyncErrorCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetLastSyncErrorCode)
-    res["lastSyncTriggeredDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetLastSyncTriggeredDateTime)
-    res["roleScopeTagIds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetRoleScopeTagIds)
-    res["shareTokenWithSchoolDataSyncService"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShareTokenWithSchoolDataSyncService)
-    res["syncedDeviceCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSyncedDeviceCount)
-    res["tokenExpirationDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetTokenExpirationDateTime)
-    res["tokenName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTokenName)
-    res["tokenType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDepTokenType , m.SetTokenType)
+    res["appleIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleIdentifier(val)
+        }
+        return nil
+    }
+    res["dataSharingConsentGranted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDataSharingConsentGranted(val)
+        }
+        return nil
+    }
+    res["defaultIosEnrollmentProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDepIOSEnrollmentProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultIosEnrollmentProfile(val.(DepIOSEnrollmentProfileable))
+        }
+        return nil
+    }
+    res["defaultMacOsEnrollmentProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDepMacOSEnrollmentProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultMacOsEnrollmentProfile(val.(DepMacOSEnrollmentProfileable))
+        }
+        return nil
+    }
+    res["enrollmentProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEnrollmentProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EnrollmentProfileable, len(val))
+            for i, v := range val {
+                res[i] = v.(EnrollmentProfileable)
+            }
+            m.SetEnrollmentProfiles(res)
+        }
+        return nil
+    }
+    res["importedAppleDeviceIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateImportedAppleDeviceIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ImportedAppleDeviceIdentityable, len(val))
+            for i, v := range val {
+                res[i] = v.(ImportedAppleDeviceIdentityable)
+            }
+            m.SetImportedAppleDeviceIdentities(res)
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["lastSuccessfulSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSuccessfulSyncDateTime(val)
+        }
+        return nil
+    }
+    res["lastSyncErrorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSyncErrorCode(val)
+        }
+        return nil
+    }
+    res["lastSyncTriggeredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSyncTriggeredDateTime(val)
+        }
+        return nil
+    }
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoleScopeTagIds(res)
+        }
+        return nil
+    }
+    res["shareTokenWithSchoolDataSyncService"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetShareTokenWithSchoolDataSyncService(val)
+        }
+        return nil
+    }
+    res["syncedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSyncedDeviceCount(val)
+        }
+        return nil
+    }
+    res["tokenExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenExpirationDateTime(val)
+        }
+        return nil
+    }
+    res["tokenName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenName(val)
+        }
+        return nil
+    }
+    res["tokenType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDepTokenType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenType(val.(*DepTokenType))
+        }
+        return nil
+    }
     return res
 }
 // GetImportedAppleDeviceIdentities gets the importedAppleDeviceIdentities property value. The imported Apple device identities.
@@ -169,14 +324,20 @@ func (m *DepOnboardingSetting) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     if m.GetEnrollmentProfiles() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEnrollmentProfiles())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnrollmentProfiles()))
+        for i, v := range m.GetEnrollmentProfiles() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("enrollmentProfiles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetImportedAppleDeviceIdentities() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetImportedAppleDeviceIdentities())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImportedAppleDeviceIdentities()))
+        for i, v := range m.GetImportedAppleDeviceIdentities() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("importedAppleDeviceIdentities", cast)
         if err != nil {
             return err

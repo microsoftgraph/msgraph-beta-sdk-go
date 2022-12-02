@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i8adea324672db98ee82eec636c5eca8c4db48f99b8e57de5f60ada299b65dbbf "github.com/microsoftgraph/msgraph-beta-sdk-go/approleassignments/count"
 )
 
 // AppRoleAssignmentsRequestBuilder provides operations to manage the collection of appRoleAssignment entities.
@@ -72,8 +71,8 @@ func NewAppRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewAppRoleAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *AppRoleAssignmentsRequestBuilder) Count()(*i8adea324672db98ee82eec636c5eca8c4db48f99b8e57de5f60ada299b65dbbf.CountRequestBuilder) {
-    return i8adea324672db98ee82eec636c5eca8c4db48f99b8e57de5f60ada299b65dbbf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AppRoleAssignmentsRequestBuilder) Count()(*AppRoleAssignmentsCountRequestBuilder) {
+    return NewAppRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from appRoleAssignments
 func (m *AppRoleAssignmentsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AppRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

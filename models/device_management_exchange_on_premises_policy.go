@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -45,11 +44,64 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*Devi
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessRules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue , m.SetAccessRules)
-    res["conditionalAccessSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue , m.SetConditionalAccessSettings)
-    res["defaultAccessLevel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceManagementExchangeAccessLevel , m.SetDefaultAccessLevel)
-    res["knownDeviceClasses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue , m.SetKnownDeviceClasses)
-    res["notificationContent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetNotificationContent)
+    res["accessRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceManagementExchangeAccessRuleable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceManagementExchangeAccessRuleable)
+            }
+            m.SetAccessRules(res)
+        }
+        return nil
+    }
+    res["conditionalAccessSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConditionalAccessSettings(val.(OnPremisesConditionalAccessSettingsable))
+        }
+        return nil
+    }
+    res["defaultAccessLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceManagementExchangeAccessLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultAccessLevel(val.(*DeviceManagementExchangeAccessLevel))
+        }
+        return nil
+    }
+    res["knownDeviceClasses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceManagementExchangeDeviceClassable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceManagementExchangeDeviceClassable)
+            }
+            m.SetKnownDeviceClasses(res)
+        }
+        return nil
+    }
+    res["notificationContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNotificationContent(val)
+        }
+        return nil
+    }
     return res
 }
 // GetKnownDeviceClasses gets the knownDeviceClasses property value. The list of device classes known to Exchange
@@ -67,7 +119,10 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i878a80d2330
         return err
     }
     if m.GetAccessRules() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessRules())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessRules()))
+        for i, v := range m.GetAccessRules() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("accessRules", cast)
         if err != nil {
             return err
@@ -87,7 +142,10 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i878a80d2330
         }
     }
     if m.GetKnownDeviceClasses() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetKnownDeviceClasses())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKnownDeviceClasses()))
+        for i, v := range m.GetKnownDeviceClasses() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("knownDeviceClasses", cast)
         if err != nil {
             return err

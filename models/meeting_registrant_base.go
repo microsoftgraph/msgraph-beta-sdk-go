@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrantBase provides operations to manage the collection of activityStatistics entities.
+// MeetingRegistrantBase provides operations to manage the collection of accessReviewDecision entities.
 type MeetingRegistrantBase struct {
     Entity
     // A unique web URL for the registrant to join the meeting. Read-only.
@@ -45,7 +44,16 @@ func CreateMeetingRegistrantBaseFromDiscriminatorValue(parseNode i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrantBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["joinWebUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetJoinWebUrl)
+    res["joinWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetJoinWebUrl(val)
+        }
+        return nil
+    }
     return res
 }
 // GetJoinWebUrl gets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.

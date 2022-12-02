@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -87,27 +86,216 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetChangeUefiSettingsPer
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["bluetooth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetBluetooth)
-    res["bootFromBuiltInNetworkAdapters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetBootFromBuiltInNetworkAdapters)
-    res["bootFromExternalMedia"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetBootFromExternalMedia)
-    res["cameras"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetCameras)
-    res["changeUefiSettingsPermission"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseChangeUefiSettingsPermission , m.SetChangeUefiSettingsPermission)
-    res["frontCamera"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetFrontCamera)
-    res["infraredCamera"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetInfraredCamera)
-    res["microphone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetMicrophone)
-    res["microphonesAndSpeakers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetMicrophonesAndSpeakers)
-    res["nearFieldCommunication"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetNearFieldCommunication)
-    res["radios"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetRadios)
-    res["rearCamera"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetRearCamera)
-    res["sdCard"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSdCard)
-    res["simultaneousMultiThreading"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSimultaneousMultiThreading)
-    res["usbTypeAPort"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetUsbTypeAPort)
-    res["virtualizationOfCpuAndIO"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetVirtualizationOfCpuAndIO)
-    res["wakeOnLAN"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetWakeOnLAN)
-    res["wakeOnPower"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetWakeOnPower)
-    res["wiFi"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetWiFi)
-    res["windowsPlatformBinaryTable"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetWindowsPlatformBinaryTable)
-    res["wirelessWideAreaNetwork"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetWirelessWideAreaNetwork)
+    res["bluetooth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBluetooth(val.(*Enablement))
+        }
+        return nil
+    }
+    res["bootFromBuiltInNetworkAdapters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBootFromBuiltInNetworkAdapters(val.(*Enablement))
+        }
+        return nil
+    }
+    res["bootFromExternalMedia"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBootFromExternalMedia(val.(*Enablement))
+        }
+        return nil
+    }
+    res["cameras"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCameras(val.(*Enablement))
+        }
+        return nil
+    }
+    res["changeUefiSettingsPermission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseChangeUefiSettingsPermission)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetChangeUefiSettingsPermission(val.(*ChangeUefiSettingsPermission))
+        }
+        return nil
+    }
+    res["frontCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFrontCamera(val.(*Enablement))
+        }
+        return nil
+    }
+    res["infraredCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInfraredCamera(val.(*Enablement))
+        }
+        return nil
+    }
+    res["microphone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMicrophone(val.(*Enablement))
+        }
+        return nil
+    }
+    res["microphonesAndSpeakers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMicrophonesAndSpeakers(val.(*Enablement))
+        }
+        return nil
+    }
+    res["nearFieldCommunication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNearFieldCommunication(val.(*Enablement))
+        }
+        return nil
+    }
+    res["radios"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRadios(val.(*Enablement))
+        }
+        return nil
+    }
+    res["rearCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRearCamera(val.(*Enablement))
+        }
+        return nil
+    }
+    res["sdCard"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSdCard(val.(*Enablement))
+        }
+        return nil
+    }
+    res["simultaneousMultiThreading"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSimultaneousMultiThreading(val.(*Enablement))
+        }
+        return nil
+    }
+    res["usbTypeAPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUsbTypeAPort(val.(*Enablement))
+        }
+        return nil
+    }
+    res["virtualizationOfCpuAndIO"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVirtualizationOfCpuAndIO(val.(*Enablement))
+        }
+        return nil
+    }
+    res["wakeOnLAN"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWakeOnLAN(val.(*Enablement))
+        }
+        return nil
+    }
+    res["wakeOnPower"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWakeOnPower(val.(*Enablement))
+        }
+        return nil
+    }
+    res["wiFi"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWiFi(val.(*Enablement))
+        }
+        return nil
+    }
+    res["windowsPlatformBinaryTable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsPlatformBinaryTable(val.(*Enablement))
+        }
+        return nil
+    }
+    res["wirelessWideAreaNetwork"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWirelessWideAreaNetwork(val.(*Enablement))
+        }
+        return nil
+    }
     return res
 }
 // GetFrontCamera gets the frontCamera property value. Possible values of a property

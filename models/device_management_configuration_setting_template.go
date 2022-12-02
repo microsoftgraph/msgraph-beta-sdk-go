@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,8 +26,30 @@ func CreateDeviceManagementConfigurationSettingTemplateFromDiscriminatorValue(pa
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["settingDefinitions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue , m.SetSettingDefinitions)
-    res["settingInstanceTemplate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue , m.SetSettingInstanceTemplate)
+    res["settingDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceManagementConfigurationSettingDefinitionable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeviceManagementConfigurationSettingDefinitionable)
+            }
+            m.SetSettingDefinitions(res)
+        }
+        return nil
+    }
+    res["settingInstanceTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettingInstanceTemplate(val.(DeviceManagementConfigurationSettingInstanceTemplateable))
+        }
+        return nil
+    }
     return res
 }
 // GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions
@@ -46,7 +67,10 @@ func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i878a80d
         return err
     }
     if m.GetSettingDefinitions() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSettingDefinitions())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSettingDefinitions()))
+        for i, v := range m.GetSettingDefinitions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("settingDefinitions", cast)
         if err != nil {
             return err

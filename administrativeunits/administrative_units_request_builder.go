@@ -5,11 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i277b79a3b313ac8255d78ae90b5e9c683fe411d78cfeb5e1e83d31d38c270e05 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/getbyids"
-    ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/getuserownedobjects"
-    ic5b5428ae35afae2a32cefcf30c64f6ab1fbe0e8909656a8a35a1a32357418eb "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/validateproperties"
-    ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/count"
-    if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/delta"
 )
 
 // AdministrativeUnitsRequestBuilder provides operations to manage the collection of administrativeUnit entities.
@@ -76,8 +71,8 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewAdministrativeUnitsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *AdministrativeUnitsRequestBuilder) Count()(*ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191.CountRequestBuilder) {
-    return ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AdministrativeUnitsRequestBuilder) Count()(*AdministrativeUnitsCountRequestBuilder) {
+    return NewAdministrativeUnitsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of administrativeUnit objects.
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -110,8 +105,8 @@ func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformation(ctx con
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *AdministrativeUnitsRequestBuilder) Delta()(*if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424.DeltaRequestBuilder) {
-    return if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AdministrativeUnitsRequestBuilder) Delta()(*AdministrativeUnitsDeltaRequestBuilder) {
+    return NewAdministrativeUnitsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get retrieve a list of administrativeUnit objects.
 func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable, error) {
@@ -133,12 +128,12 @@ func (m *AdministrativeUnitsRequestBuilder) Get(ctx context.Context, requestConf
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*i277b79a3b313ac8255d78ae90b5e9c683fe411d78cfeb5e1e83d31d38c270e05.GetByIdsRequestBuilder) {
-    return i277b79a3b313ac8255d78ae90b5e9c683fe411d78cfeb5e1e83d31d38c270e05.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*AdministrativeUnitsGetByIdsRequestBuilder) {
+    return NewAdministrativeUnitsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385.GetUserOwnedObjectsRequestBuilder) {
-    return ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*AdministrativeUnitsGetUserOwnedObjectsRequestBuilder) {
+    return NewAdministrativeUnitsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post use this API to create a new administrativeUnit.
 func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
@@ -160,6 +155,6 @@ func (m *AdministrativeUnitsRequestBuilder) Post(ctx context.Context, body ie233
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*ic5b5428ae35afae2a32cefcf30c64f6ab1fbe0e8909656a8a35a1a32357418eb.ValidatePropertiesRequestBuilder) {
-    return ic5b5428ae35afae2a32cefcf30c64f6ab1fbe0e8909656a8a35a1a32357418eb.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*AdministrativeUnitsValidatePropertiesRequestBuilder) {
+    return NewAdministrativeUnitsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

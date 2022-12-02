@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -31,8 +30,30 @@ func (m *AndroidForWorkAppConfigurationSchema) GetExampleJson()([]byte) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkAppConfigurationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["exampleJson"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetExampleJson)
-    res["schemaItems"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue , m.SetSchemaItems)
+    res["exampleJson"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExampleJson(val)
+        }
+        return nil
+    }
+    res["schemaItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AndroidForWorkAppConfigurationSchemaItemable, len(val))
+            for i, v := range val {
+                res[i] = v.(AndroidForWorkAppConfigurationSchemaItemable)
+            }
+            m.SetSchemaItems(res)
+        }
+        return nil
+    }
     return res
 }
 // GetSchemaItems gets the schemaItems property value. Collection of items each representing a named configuration option in the schema
@@ -52,7 +73,10 @@ func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i878a80d2330e89d
         }
     }
     if m.GetSchemaItems() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSchemaItems())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchemaItems()))
+        for i, v := range m.GetSchemaItems() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("schemaItems", cast)
         if err != nil {
             return err

@@ -4,11 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/count"
-    i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/getbyids"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/getuserownedobjects"
-    id565fc293fb2551afc570c576145e318aeda2a244589d9a61a5c0321766491b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/contracts/validateproperties"
 )
 
 // ContractsRequestBuilder provides operations to manage the collection of contract entities.
@@ -75,8 +71,8 @@ func NewContractsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewContractsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ContractsRequestBuilder) Count()(*i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.CountRequestBuilder) {
-    return i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContractsRequestBuilder) Count()(*ContractsCountRequestBuilder) {
+    return NewContractsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of contract objects associated to a partner tenant.
 func (m *ContractsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ContractsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -128,12 +124,12 @@ func (m *ContractsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContractCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *ContractsRequestBuilder) GetByIds()(*i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6.GetByIdsRequestBuilder) {
-    return i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContractsRequestBuilder) GetByIds()(*ContractsGetByIdsRequestBuilder) {
+    return NewContractsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *ContractsRequestBuilder) GetUserOwnedObjects()(*i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2.GetUserOwnedObjectsRequestBuilder) {
-    return i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContractsRequestBuilder) GetUserOwnedObjects()(*ContractsGetUserOwnedObjectsRequestBuilder) {
+    return NewContractsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to contracts
 func (m *ContractsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, requestConfiguration *ContractsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
@@ -155,6 +151,6 @@ func (m *ContractsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *ContractsRequestBuilder) ValidateProperties()(*id565fc293fb2551afc570c576145e318aeda2a244589d9a61a5c0321766491b8.ValidatePropertiesRequestBuilder) {
-    return id565fc293fb2551afc570c576145e318aeda2a244589d9a61a5c0321766491b8.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContractsRequestBuilder) ValidateProperties()(*ContractsValidatePropertiesRequestBuilder) {
+    return NewContractsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

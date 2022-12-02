@@ -4,10 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/allmessages"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/count"
-    i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/getallmessages"
 )
 
 // TeamsRequestBuilder provides operations to manage the collection of team entities.
@@ -55,8 +52,8 @@ type TeamsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllMessages provides operations to call the allMessages method.
-func (m *TeamsRequestBuilder) AllMessages()(*i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009.AllMessagesRequestBuilder) {
-    return i1354b487322b620232b94894c5e175f1dd3ef45009122d282358f2beb620c009.NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TeamsRequestBuilder) AllMessages()(*TeamsAllMessagesRequestBuilder) {
+    return NewTeamsAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewTeamsRequestBuilderInternal instantiates a new TeamsRequestBuilder and sets the default values.
 func NewTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsRequestBuilder) {
@@ -78,8 +75,8 @@ func NewTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewTeamsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *TeamsRequestBuilder) Count()(*i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5.CountRequestBuilder) {
-    return i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TeamsRequestBuilder) Count()(*TeamsCountRequestBuilder) {
+    return NewTeamsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation list all teams in an organization.
 func (m *TeamsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -131,8 +128,8 @@ func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *Tea
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-func (m *TeamsRequestBuilder) GetAllMessages()(*i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.GetAllMessagesRequestBuilder) {
-    return i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TeamsRequestBuilder) GetAllMessages()(*TeamsGetAllMessagesRequestBuilder) {
+    return NewTeamsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new team.
 func (m *TeamsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {

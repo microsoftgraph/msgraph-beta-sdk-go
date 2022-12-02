@@ -4,16 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i0c5077ba20bdd0382ab21bcc11e6767634c79e044ca74a54e6eb5c3a7c9dd1e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/customcss"
-    i0cc7ec2bb77cfb998ba8a1ad527a89fb9a51a4881030337bde331a8e4f476070 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/backgroundimage"
-    i13c3fa8a59fb9b7ef339ac6aad1d9ad1f5cd9f50d6e354b844d3a4f31607a8cc "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/headerlogo"
-    i1b40b605aeb59b28ba3fa6abed7afbe4b8f7d36ecb4da595918a6e40e86b5489 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/squarelogodark"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i2dc84c458003c3284caa395048d6882b017ff8d4d2f1da317816287aff8f011c "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/squarelogo"
-    i6dbe8712bcbf565967e359a0b5474825946d283c9a8f7154520173aba185bbdb "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/favicon"
-    ib0aa6f52ba8b83b6b9f06a69897f4792f8858acad7d73aaf3dbe9c3583eb1973 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/bannerlogo"
-    icb26067e77492c83cb4e87ec1e3f5164c5a2b6eccb9e23f4a03609a175e65c87 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations"
-    i71fbeabc44f0c477a20e1c3a1515ecf3df8929b67e5f5aeb33b83cf6335140ad "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/localizations/item"
 )
 
 // BrandingRequestBuilder provides operations to manage the organizationalBranding singleton.
@@ -49,12 +40,12 @@ type BrandingRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BackgroundImage provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) BackgroundImage()(*i0cc7ec2bb77cfb998ba8a1ad527a89fb9a51a4881030337bde331a8e4f476070.BackgroundImageRequestBuilder) {
-    return i0cc7ec2bb77cfb998ba8a1ad527a89fb9a51a4881030337bde331a8e4f476070.NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) BackgroundImage()(*BrandingBackgroundImageRequestBuilder) {
+    return NewBrandingBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BannerLogo provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) BannerLogo()(*ib0aa6f52ba8b83b6b9f06a69897f4792f8858acad7d73aaf3dbe9c3583eb1973.BannerLogoRequestBuilder) {
-    return ib0aa6f52ba8b83b6b9f06a69897f4792f8858acad7d73aaf3dbe9c3583eb1973.NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) BannerLogo()(*BrandingBannerLogoRequestBuilder) {
+    return NewBrandingBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewBrandingRequestBuilderInternal instantiates a new BrandingRequestBuilder and sets the default values.
 func NewBrandingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BrandingRequestBuilder) {
@@ -106,12 +97,12 @@ func (m *BrandingRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // CustomCSS provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) CustomCSS()(*i0c5077ba20bdd0382ab21bcc11e6767634c79e044ca74a54e6eb5c3a7c9dd1e9.CustomCSSRequestBuilder) {
-    return i0c5077ba20bdd0382ab21bcc11e6767634c79e044ca74a54e6eb5c3a7c9dd1e9.NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) CustomCSS()(*BrandingCustomCSSRequestBuilder) {
+    return NewBrandingCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Favicon provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) Favicon()(*i6dbe8712bcbf565967e359a0b5474825946d283c9a8f7154520173aba185bbdb.FaviconRequestBuilder) {
-    return i6dbe8712bcbf565967e359a0b5474825946d283c9a8f7154520173aba185bbdb.NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) Favicon()(*BrandingFaviconRequestBuilder) {
+    return NewBrandingFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get branding
 func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *BrandingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -133,15 +124,15 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable), nil
 }
 // HeaderLogo provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) HeaderLogo()(*i13c3fa8a59fb9b7ef339ac6aad1d9ad1f5cd9f50d6e354b844d3a4f31607a8cc.HeaderLogoRequestBuilder) {
-    return i13c3fa8a59fb9b7ef339ac6aad1d9ad1f5cd9f50d6e354b844d3a4f31607a8cc.NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) HeaderLogo()(*BrandingHeaderLogoRequestBuilder) {
+    return NewBrandingHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-func (m *BrandingRequestBuilder) Localizations()(*icb26067e77492c83cb4e87ec1e3f5164c5a2b6eccb9e23f4a03609a175e65c87.LocalizationsRequestBuilder) {
-    return icb26067e77492c83cb4e87ec1e3f5164c5a2b6eccb9e23f4a03609a175e65c87.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) Localizations()(*BrandingLocalizationsRequestBuilder) {
+    return NewBrandingLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i71fbeabc44f0c477a20e1c3a1515ecf3df8929b67e5f5aeb33b83cf6335140ad.OrganizationalBrandingLocalizationItemRequestBuilder) {
+func (m *BrandingRequestBuilder) LocalizationsById(id string)(*BrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -149,7 +140,7 @@ func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i71fbeabc44f0c477
     if id != "" {
         urlTplParams["organizationalBrandingLocalization%2Did"] = id
     }
-    return i71fbeabc44f0c477a20e1c3a1515ecf3df8929b67e5f5aeb33b83cf6335140ad.NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update branding
 func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, requestConfiguration *BrandingRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -171,10 +162,10 @@ func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable), nil
 }
 // SquareLogo provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) SquareLogo()(*i2dc84c458003c3284caa395048d6882b017ff8d4d2f1da317816287aff8f011c.SquareLogoRequestBuilder) {
-    return i2dc84c458003c3284caa395048d6882b017ff8d4d2f1da317816287aff8f011c.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) SquareLogo()(*BrandingSquareLogoRequestBuilder) {
+    return NewBrandingSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SquareLogoDark provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) SquareLogoDark()(*i1b40b605aeb59b28ba3fa6abed7afbe4b8f7d36ecb4da595918a6e40e86b5489.SquareLogoDarkRequestBuilder) {
-    return i1b40b605aeb59b28ba3fa6abed7afbe4b8f7d36ecb4da595918a6e40e86b5489.NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) SquareLogoDark()(*BrandingSquareLogoDarkRequestBuilder) {
+    return NewBrandingSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

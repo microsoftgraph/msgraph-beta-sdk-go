@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows81WifiImportConfiguration 
+// Windows81WifiImportConfiguration windows 8.1+ Wi-Fi import configuration. By configuring this profile you can instruct Windows 8.1 (and later) devices to connect to desired Wi-Fi endpoint. Connect a Windows 8.1 device to the desired Wi-Fi network and extract the XML from that device to later embed into this Wi-Fi profile.
 type Windows81WifiImportConfiguration struct {
     DeviceConfiguration
     // Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.
@@ -15,7 +14,7 @@ type Windows81WifiImportConfiguration struct {
     // Profile name displayed in the UI.
     profileName *string
 }
-// NewWindows81WifiImportConfiguration instantiates a new Windows81WifiImportConfiguration and sets the default values.
+// NewWindows81WifiImportConfiguration instantiates a new windows81WifiImportConfiguration and sets the default values.
 func NewWindows81WifiImportConfiguration()(*Windows81WifiImportConfiguration) {
     m := &Windows81WifiImportConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -31,9 +30,36 @@ func CreateWindows81WifiImportConfigurationFromDiscriminatorValue(parseNode i878
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81WifiImportConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["payload"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetPayload)
-    res["payloadFileName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPayloadFileName)
-    res["profileName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetProfileName)
+    res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPayload(val)
+        }
+        return nil
+    }
+    res["payloadFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPayloadFileName(val)
+        }
+        return nil
+    }
+    res["profileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProfileName(val)
+        }
+        return nil
+    }
     return res
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.

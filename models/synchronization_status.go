@@ -2,7 +2,6 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -67,19 +66,144 @@ func (m *SynchronizationStatus) GetEscrowsPruned()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["code"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSynchronizationStatusCode , m.SetCode)
-    res["countSuccessiveCompleteFailures"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetCountSuccessiveCompleteFailures)
-    res["escrowsPruned"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEscrowsPruned)
-    res["lastExecution"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue , m.SetLastExecution)
-    res["lastSuccessfulExecution"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue , m.SetLastSuccessfulExecution)
-    res["lastSuccessfulExecutionWithExports"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue , m.SetLastSuccessfulExecutionWithExports)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["progress"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSynchronizationProgressFromDiscriminatorValue , m.SetProgress)
-    res["quarantine"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSynchronizationQuarantineFromDiscriminatorValue , m.SetQuarantine)
-    res["steadyStateFirstAchievedTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetSteadyStateFirstAchievedTime)
-    res["steadyStateLastAchievedTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetSteadyStateLastAchievedTime)
-    res["synchronizedEntryCountByType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateStringKeyLongValuePairFromDiscriminatorValue , m.SetSynchronizedEntryCountByType)
-    res["troubleshootingUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTroubleshootingUrl)
+    res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSynchronizationStatusCode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCode(val.(*SynchronizationStatusCode))
+        }
+        return nil
+    }
+    res["countSuccessiveCompleteFailures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCountSuccessiveCompleteFailures(val)
+        }
+        return nil
+    }
+    res["escrowsPruned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEscrowsPruned(val)
+        }
+        return nil
+    }
+    res["lastExecution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastExecution(val.(SynchronizationTaskExecutionable))
+        }
+        return nil
+    }
+    res["lastSuccessfulExecution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSuccessfulExecution(val.(SynchronizationTaskExecutionable))
+        }
+        return nil
+    }
+    res["lastSuccessfulExecutionWithExports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSynchronizationTaskExecutionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastSuccessfulExecutionWithExports(val.(SynchronizationTaskExecutionable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["progress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSynchronizationProgressFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SynchronizationProgressable, len(val))
+            for i, v := range val {
+                res[i] = v.(SynchronizationProgressable)
+            }
+            m.SetProgress(res)
+        }
+        return nil
+    }
+    res["quarantine"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSynchronizationQuarantineFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQuarantine(val.(SynchronizationQuarantineable))
+        }
+        return nil
+    }
+    res["steadyStateFirstAchievedTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSteadyStateFirstAchievedTime(val)
+        }
+        return nil
+    }
+    res["steadyStateLastAchievedTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSteadyStateLastAchievedTime(val)
+        }
+        return nil
+    }
+    res["synchronizedEntryCountByType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateStringKeyLongValuePairFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]StringKeyLongValuePairable, len(val))
+            for i, v := range val {
+                res[i] = v.(StringKeyLongValuePairable)
+            }
+            m.SetSynchronizedEntryCountByType(res)
+        }
+        return nil
+    }
+    res["troubleshootingUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTroubleshootingUrl(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastExecution gets the lastExecution property value. Details of the last execution of the job.
@@ -168,7 +292,10 @@ func (m *SynchronizationStatus) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetProgress() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetProgress())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProgress()))
+        for i, v := range m.GetProgress() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("progress", cast)
         if err != nil {
             return err
@@ -193,7 +320,10 @@ func (m *SynchronizationStatus) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetSynchronizedEntryCountByType() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSynchronizedEntryCountByType())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSynchronizedEntryCountByType()))
+        for i, v := range m.GetSynchronizedEntryCountByType() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("synchronizedEntryCountByType", cast)
         if err != nil {
             return err

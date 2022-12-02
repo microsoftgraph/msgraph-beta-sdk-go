@@ -2,11 +2,10 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcExportJob 
+// CloudPcExportJob provides operations to manage the collection of accessReview entities.
 type CloudPcExportJob struct {
     Entity
     // The date time when the export job expires.
@@ -26,7 +25,7 @@ type CloudPcExportJob struct {
     // The selected columns of the report.
     select_escaped []string
 }
-// NewCloudPcExportJob instantiates a new CloudPcExportJob and sets the default values.
+// NewCloudPcExportJob instantiates a new cloudPcExportJob and sets the default values.
 func NewCloudPcExportJob()(*CloudPcExportJob) {
     m := &CloudPcExportJob{
         Entity: *NewEntity(),
@@ -52,14 +51,90 @@ func (m *CloudPcExportJob) GetExportUrl()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["expirationDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetExpirationDateTime)
-    res["exportJobStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcExportJobStatus , m.SetExportJobStatus)
-    res["exportUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetExportUrl)
-    res["filter"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFilter)
-    res["format"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetFormat)
-    res["reportName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcReportName , m.SetReportName)
-    res["requestDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetRequestDateTime)
-    res["select"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSelect)
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
+        return nil
+    }
+    res["exportJobStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcExportJobStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExportJobStatus(val.(*CloudPcExportJobStatus))
+        }
+        return nil
+    }
+    res["exportUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExportUrl(val)
+        }
+        return nil
+    }
+    res["filter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFilter(val)
+        }
+        return nil
+    }
+    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFormat(val)
+        }
+        return nil
+    }
+    res["reportName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcReportName)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReportName(val.(*CloudPcReportName))
+        }
+        return nil
+    }
+    res["requestDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequestDateTime(val)
+        }
+        return nil
+    }
+    res["select"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSelect(res)
+        }
+        return nil
+    }
     return res
 }
 // GetFilter gets the filter property value. The filter applied on the report.

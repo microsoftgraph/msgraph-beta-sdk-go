@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -127,31 +126,280 @@ func (m *Windows10VpnConfiguration) GetEnableSplitTunneling()(*bool) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsVpnConfiguration.GetFieldDeserializers()
-    res["associatedApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindows10AssociatedAppsFromDiscriminatorValue , m.SetAssociatedApps)
-    res["authenticationMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindows10VpnAuthenticationMethod , m.SetAuthenticationMethod)
-    res["connectionType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindows10VpnConnectionType , m.SetConnectionType)
-    res["cryptographySuite"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateCryptographySuiteFromDiscriminatorValue , m.SetCryptographySuite)
-    res["dnsRules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateVpnDnsRuleFromDiscriminatorValue , m.SetDnsRules)
-    res["dnsSuffixes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetDnsSuffixes)
-    res["eapXml"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetByteArrayValue(m.SetEapXml)
-    res["enableAlwaysOn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableAlwaysOn)
-    res["enableConditionalAccess"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableConditionalAccess)
-    res["enableDeviceTunnel"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableDeviceTunnel)
-    res["enableDnsRegistration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableDnsRegistration)
-    res["enableSingleSignOnWithAlternateCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableSingleSignOnWithAlternateCertificate)
-    res["enableSplitTunneling"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetEnableSplitTunneling)
-    res["identityCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindowsCertificateProfileBaseFromDiscriminatorValue , m.SetIdentityCertificate)
-    res["microsoftTunnelSiteId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMicrosoftTunnelSiteId)
-    res["onlyAssociatedAppsCanUseConnection"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetOnlyAssociatedAppsCanUseConnection)
-    res["profileTarget"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindows10VpnProfileTarget , m.SetProfileTarget)
-    res["proxyServer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateWindows10VpnProxyServerFromDiscriminatorValue , m.SetProxyServer)
-    res["rememberUserCredentials"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRememberUserCredentials)
-    res["routes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateVpnRouteFromDiscriminatorValue , m.SetRoutes)
-    res["singleSignOnEku"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateExtendedKeyUsageFromDiscriminatorValue , m.SetSingleSignOnEku)
-    res["singleSignOnIssuerHash"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSingleSignOnIssuerHash)
-    res["trafficRules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateVpnTrafficRuleFromDiscriminatorValue , m.SetTrafficRules)
-    res["trustedNetworkDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetTrustedNetworkDomains)
-    res["windowsInformationProtectionDomain"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetWindowsInformationProtectionDomain)
+    res["associatedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindows10AssociatedAppsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Windows10AssociatedAppsable, len(val))
+            for i, v := range val {
+                res[i] = v.(Windows10AssociatedAppsable)
+            }
+            m.SetAssociatedApps(res)
+        }
+        return nil
+    }
+    res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindows10VpnAuthenticationMethod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationMethod(val.(*Windows10VpnAuthenticationMethod))
+        }
+        return nil
+    }
+    res["connectionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindows10VpnConnectionType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectionType(val.(*Windows10VpnConnectionType))
+        }
+        return nil
+    }
+    res["cryptographySuite"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCryptographySuiteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCryptographySuite(val.(CryptographySuiteable))
+        }
+        return nil
+    }
+    res["dnsRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVpnDnsRuleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VpnDnsRuleable, len(val))
+            for i, v := range val {
+                res[i] = v.(VpnDnsRuleable)
+            }
+            m.SetDnsRules(res)
+        }
+        return nil
+    }
+    res["dnsSuffixes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDnsSuffixes(res)
+        }
+        return nil
+    }
+    res["eapXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEapXml(val)
+        }
+        return nil
+    }
+    res["enableAlwaysOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableAlwaysOn(val)
+        }
+        return nil
+    }
+    res["enableConditionalAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableConditionalAccess(val)
+        }
+        return nil
+    }
+    res["enableDeviceTunnel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableDeviceTunnel(val)
+        }
+        return nil
+    }
+    res["enableDnsRegistration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableDnsRegistration(val)
+        }
+        return nil
+    }
+    res["enableSingleSignOnWithAlternateCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableSingleSignOnWithAlternateCertificate(val)
+        }
+        return nil
+    }
+    res["enableSplitTunneling"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableSplitTunneling(val)
+        }
+        return nil
+    }
+    res["identityCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWindowsCertificateProfileBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityCertificate(val.(WindowsCertificateProfileBaseable))
+        }
+        return nil
+    }
+    res["microsoftTunnelSiteId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMicrosoftTunnelSiteId(val)
+        }
+        return nil
+    }
+    res["onlyAssociatedAppsCanUseConnection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnlyAssociatedAppsCanUseConnection(val)
+        }
+        return nil
+    }
+    res["profileTarget"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindows10VpnProfileTarget)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProfileTarget(val.(*Windows10VpnProfileTarget))
+        }
+        return nil
+    }
+    res["proxyServer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWindows10VpnProxyServerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProxyServer(val.(Windows10VpnProxyServerable))
+        }
+        return nil
+    }
+    res["rememberUserCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRememberUserCredentials(val)
+        }
+        return nil
+    }
+    res["routes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVpnRouteFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VpnRouteable, len(val))
+            for i, v := range val {
+                res[i] = v.(VpnRouteable)
+            }
+            m.SetRoutes(res)
+        }
+        return nil
+    }
+    res["singleSignOnEku"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExtendedKeyUsageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSingleSignOnEku(val.(ExtendedKeyUsageable))
+        }
+        return nil
+    }
+    res["singleSignOnIssuerHash"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSingleSignOnIssuerHash(val)
+        }
+        return nil
+    }
+    res["trafficRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateVpnTrafficRuleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]VpnTrafficRuleable, len(val))
+            for i, v := range val {
+                res[i] = v.(VpnTrafficRuleable)
+            }
+            m.SetTrafficRules(res)
+        }
+        return nil
+    }
+    res["trustedNetworkDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTrustedNetworkDomains(res)
+        }
+        return nil
+    }
+    res["windowsInformationProtectionDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsInformationProtectionDomain(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
@@ -209,7 +457,10 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     if m.GetAssociatedApps() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssociatedApps())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssociatedApps()))
+        for i, v := range m.GetAssociatedApps() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("associatedApps", cast)
         if err != nil {
             return err
@@ -236,7 +487,10 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetDnsRules() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDnsRules())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDnsRules()))
+        for i, v := range m.GetDnsRules() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("dnsRules", cast)
         if err != nil {
             return err
@@ -328,7 +582,10 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetRoutes() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRoutes())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoutes()))
+        for i, v := range m.GetRoutes() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("routes", cast)
         if err != nil {
             return err
@@ -347,7 +604,10 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetTrafficRules() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTrafficRules())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTrafficRules()))
+        for i, v := range m.GetTrafficRules() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("trafficRules", cast)
         if err != nil {
             return err

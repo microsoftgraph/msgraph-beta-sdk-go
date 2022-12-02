@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -25,7 +24,20 @@ func CreateExactMatchDetectedSensitiveContentFromDiscriminatorValue(parseNode i8
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
-    res["matches"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSensitiveContentLocationFromDiscriminatorValue , m.SetMatches)
+    res["matches"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSensitiveContentLocationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SensitiveContentLocationable, len(val))
+            for i, v := range val {
+                res[i] = v.(SensitiveContentLocationable)
+            }
+            m.SetMatches(res)
+        }
+        return nil
+    }
     return res
 }
 // GetMatches gets the matches property value. The matches property
@@ -39,7 +51,10 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i878a80d2330e89d26
         return err
     }
     if m.GetMatches() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetMatches())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMatches()))
+        for i, v := range m.GetMatches() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("matches", cast)
         if err != nil {
             return err

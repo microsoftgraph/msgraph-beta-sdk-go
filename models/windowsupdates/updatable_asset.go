@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// UpdatableAsset provides operations to manage the collection of accessReview entities.
+// UpdatableAsset provides operations to manage the collection of activityStatistics entities.
 type UpdatableAsset struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }

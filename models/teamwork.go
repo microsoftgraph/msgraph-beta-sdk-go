@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -41,11 +40,72 @@ func (m *Teamwork) GetDevices()([]TeamworkDeviceable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deletedTeams"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeletedTeamFromDiscriminatorValue , m.SetDeletedTeams)
-    res["devices"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTeamworkDeviceFromDiscriminatorValue , m.SetDevices)
-    res["teamsAppSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamsAppSettingsFromDiscriminatorValue , m.SetTeamsAppSettings)
-    res["teamTemplates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTeamTemplateFromDiscriminatorValue , m.SetTeamTemplates)
-    res["workforceIntegrations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWorkforceIntegrationFromDiscriminatorValue , m.SetWorkforceIntegrations)
+    res["deletedTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeletedTeamFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeletedTeamable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeletedTeamable)
+            }
+            m.SetDeletedTeams(res)
+        }
+        return nil
+    }
+    res["devices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkDeviceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamworkDeviceable, len(val))
+            for i, v := range val {
+                res[i] = v.(TeamworkDeviceable)
+            }
+            m.SetDevices(res)
+        }
+        return nil
+    }
+    res["teamsAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamsAppSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsAppSettings(val.(TeamsAppSettingsable))
+        }
+        return nil
+    }
+    res["teamTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamTemplateable, len(val))
+            for i, v := range val {
+                res[i] = v.(TeamTemplateable)
+            }
+            m.SetTeamTemplates(res)
+        }
+        return nil
+    }
+    res["workforceIntegrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWorkforceIntegrationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WorkforceIntegrationable, len(val))
+            for i, v := range val {
+                res[i] = v.(WorkforceIntegrationable)
+            }
+            m.SetWorkforceIntegrations(res)
+        }
+        return nil
+    }
     return res
 }
 // GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
@@ -67,14 +127,20 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         return err
     }
     if m.GetDeletedTeams() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeletedTeams())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeletedTeams()))
+        for i, v := range m.GetDeletedTeams() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("deletedTeams", cast)
         if err != nil {
             return err
         }
     }
     if m.GetDevices() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDevices())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDevices()))
+        for i, v := range m.GetDevices() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("devices", cast)
         if err != nil {
             return err
@@ -87,14 +153,20 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     if m.GetTeamTemplates() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTeamTemplates())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTeamTemplates()))
+        for i, v := range m.GetTeamTemplates() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("teamTemplates", cast)
         if err != nil {
             return err
         }
     }
     if m.GetWorkforceIntegrations() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetWorkforceIntegrations())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkforceIntegrations()))
+        for i, v := range m.GetWorkforceIntegrations() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("workforceIntegrations", cast)
         if err != nil {
             return err
