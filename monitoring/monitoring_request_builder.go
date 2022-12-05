@@ -5,10 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf "github.com/microsoftgraph/msgraph-beta-sdk-go/models/devicemanagement"
-    idba65f28d93adc7778f8fe81d4f189ab183b31b1afdd469eaefc6bc32666e664 "github.com/microsoftgraph/msgraph-beta-sdk-go/monitoring/alertrecords"
-    ie61fb3019adb9dd0420256aa6aacdb175005e870f509b997fb24e6360e0ca219 "github.com/microsoftgraph/msgraph-beta-sdk-go/monitoring/alertrules"
-    i4a397c92150e0353279b4ef4eeaeb5a4ab922ad0556d24d80908e100407dba3e "github.com/microsoftgraph/msgraph-beta-sdk-go/monitoring/alertrecords/item"
-    if486ea48fbeed75043bbdfabe527238f4bb23a0777e0d5085924090762d9628b "github.com/microsoftgraph/msgraph-beta-sdk-go/monitoring/alertrules/item"
 )
 
 // MonitoringRequestBuilder provides operations to manage the monitoring singleton.
@@ -44,11 +40,11 @@ type MonitoringRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AlertRecords provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRecords()(*idba65f28d93adc7778f8fe81d4f189ab183b31b1afdd469eaefc6bc32666e664.AlertRecordsRequestBuilder) {
-    return idba65f28d93adc7778f8fe81d4f189ab183b31b1afdd469eaefc6bc32666e664.NewAlertRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MonitoringRequestBuilder) AlertRecords()(*MonitoringAlertRecordsRequestBuilder) {
+    return NewMonitoringAlertRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertRecordsById provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*i4a397c92150e0353279b4ef4eeaeb5a4ab922ad0556d24d80908e100407dba3e.AlertRecordItemRequestBuilder) {
+func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*MonitoringAlertRecordsAlertRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -56,14 +52,14 @@ func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*i4a397c92150e035
     if id != "" {
         urlTplParams["alertRecord%2Did"] = id
     }
-    return i4a397c92150e0353279b4ef4eeaeb5a4ab922ad0556d24d80908e100407dba3e.NewAlertRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMonitoringAlertRecordsAlertRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AlertRules provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRules()(*ie61fb3019adb9dd0420256aa6aacdb175005e870f509b997fb24e6360e0ca219.AlertRulesRequestBuilder) {
-    return ie61fb3019adb9dd0420256aa6aacdb175005e870f509b997fb24e6360e0ca219.NewAlertRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MonitoringRequestBuilder) AlertRules()(*MonitoringAlertRulesRequestBuilder) {
+    return NewMonitoringAlertRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertRulesById provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*if486ea48fbeed75043bbdfabe527238f4bb23a0777e0d5085924090762d9628b.AlertRuleItemRequestBuilder) {
+func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*MonitoringAlertRulesAlertRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -71,7 +67,7 @@ func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*if486ea48fbeed7504
     if id != "" {
         urlTplParams["alertRule%2Did"] = id
     }
-    return if486ea48fbeed75043bbdfabe527238f4bb23a0777e0d5085924090762d9628b.NewAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMonitoringRequestBuilderInternal instantiates a new MonitoringRequestBuilder and sets the default values.
 func NewMonitoringRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringRequestBuilder) {

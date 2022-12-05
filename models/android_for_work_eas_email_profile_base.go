@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -71,13 +70,76 @@ func (m *AndroidForWorkEasEmailProfileBase) GetEmailAddressSource()(*UserEmailSo
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkEasEmailProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["authenticationMethod"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEasAuthenticationMethod , m.SetAuthenticationMethod)
-    res["durationOfEmailToSync"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEmailSyncDuration , m.SetDurationOfEmailToSync)
-    res["emailAddressSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseUserEmailSource , m.SetEmailAddressSource)
-    res["hostName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetHostName)
-    res["identityCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAndroidForWorkCertificateProfileBaseFromDiscriminatorValue , m.SetIdentityCertificate)
-    res["requireSsl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRequireSsl)
-    res["usernameSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidUsernameSource , m.SetUsernameSource)
+    res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEasAuthenticationMethod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationMethod(val.(*EasAuthenticationMethod))
+        }
+        return nil
+    }
+    res["durationOfEmailToSync"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEmailSyncDuration)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDurationOfEmailToSync(val.(*EmailSyncDuration))
+        }
+        return nil
+    }
+    res["emailAddressSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserEmailSource)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmailAddressSource(val.(*UserEmailSource))
+        }
+        return nil
+    }
+    res["hostName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHostName(val)
+        }
+        return nil
+    }
+    res["identityCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAndroidForWorkCertificateProfileBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityCertificate(val.(AndroidForWorkCertificateProfileBaseable))
+        }
+        return nil
+    }
+    res["requireSsl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequireSsl(val)
+        }
+        return nil
+    }
+    res["usernameSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidUsernameSource)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUsernameSource(val.(*AndroidUsernameSource))
+        }
+        return nil
+    }
     return res
 }
 // GetHostName gets the hostName property value. Exchange location (URL) that the mail app connects to.

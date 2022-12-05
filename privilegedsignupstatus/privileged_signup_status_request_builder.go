@@ -5,11 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i505eff958ea7946e725489038a9fbe85c297626b944e12d9c6f68697f1a65258 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus/issignedup"
-    i576c2492be4604b88fea75e47108c8bd8db61a3de84b266733d2d7849bec46eb "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus/cansignup"
-    ib823f830e3ea0500a214b973cf170985ed37b35d907e2b81e06df8aaa8f66256 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus/completesetup"
-    ibe660ff6aa6da80e38b282109151294b9409fe46a692bb37484dd8a1705b5a94 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus/signup"
-    id44dae2f191b15a24754b7171e85d2ba201233b96e37c2e42c8cad8b291e85ff "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus/count"
 )
 
 // PrivilegedSignupStatusRequestBuilder provides operations to manage the collection of privilegedSignupStatus entities.
@@ -57,12 +52,12 @@ type PrivilegedSignupStatusRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CanSignUp provides operations to call the canSignUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) CanSignUp()(*i576c2492be4604b88fea75e47108c8bd8db61a3de84b266733d2d7849bec46eb.CanSignUpRequestBuilder) {
-    return i576c2492be4604b88fea75e47108c8bd8db61a3de84b266733d2d7849bec46eb.NewCanSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) CanSignUp()(*PrivilegedSignupStatusCanSignUpRequestBuilder) {
+    return NewPrivilegedSignupStatusCanSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CompleteSetup provides operations to call the completeSetup method.
-func (m *PrivilegedSignupStatusRequestBuilder) CompleteSetup()(*ib823f830e3ea0500a214b973cf170985ed37b35d907e2b81e06df8aaa8f66256.CompleteSetupRequestBuilder) {
-    return ib823f830e3ea0500a214b973cf170985ed37b35d907e2b81e06df8aaa8f66256.NewCompleteSetupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) CompleteSetup()(*PrivilegedSignupStatusCompleteSetupRequestBuilder) {
+    return NewPrivilegedSignupStatusCompleteSetupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewPrivilegedSignupStatusRequestBuilderInternal instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedSignupStatusRequestBuilder) {
@@ -84,8 +79,8 @@ func NewPrivilegedSignupStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewPrivilegedSignupStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PrivilegedSignupStatusRequestBuilder) Count()(*id44dae2f191b15a24754b7171e85d2ba201233b96e37c2e42c8cad8b291e85ff.CountRequestBuilder) {
-    return id44dae2f191b15a24754b7171e85d2ba201233b96e37c2e42c8cad8b291e85ff.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) Count()(*PrivilegedSignupStatusCountRequestBuilder) {
+    return NewPrivilegedSignupStatusCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedSignupStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -137,8 +132,8 @@ func (m *PrivilegedSignupStatusRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusCollectionResponseable), nil
 }
 // IsSignedUp provides operations to call the isSignedUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) IsSignedUp()(*i505eff958ea7946e725489038a9fbe85c297626b944e12d9c6f68697f1a65258.IsSignedUpRequestBuilder) {
-    return i505eff958ea7946e725489038a9fbe85c297626b944e12d9c6f68697f1a65258.NewIsSignedUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) IsSignedUp()(*PrivilegedSignupStatusIsSignedUpRequestBuilder) {
+    return NewPrivilegedSignupStatusIsSignedUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, requestConfiguration *PrivilegedSignupStatusRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, error) {
@@ -160,6 +155,6 @@ func (m *PrivilegedSignupStatusRequestBuilder) Post(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable), nil
 }
 // SignUp provides operations to call the signUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) SignUp()(*ibe660ff6aa6da80e38b282109151294b9409fe46a692bb37484dd8a1705b5a94.SignUpRequestBuilder) {
-    return ibe660ff6aa6da80e38b282109151294b9409fe46a692bb37484dd8a1705b5a94.NewSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) SignUp()(*PrivilegedSignupStatusSignUpRequestBuilder) {
+    return NewPrivilegedSignupStatusSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

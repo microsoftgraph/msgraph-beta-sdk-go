@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlanConfigurationLocalization provides operations to manage the collection of activityStatistics entities.
+// PlannerPlanConfigurationLocalization provides operations to manage the collection of administrativeUnit entities.
 type PlannerPlanConfigurationLocalization struct {
     Entity
     // The buckets property
@@ -33,9 +32,40 @@ func (m *PlannerPlanConfigurationLocalization) GetBuckets()([]PlannerPlanConfigu
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerPlanConfigurationLocalization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["buckets"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePlannerPlanConfigurationBucketLocalizationFromDiscriminatorValue , m.SetBuckets)
-    res["languageTag"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLanguageTag)
-    res["planTitle"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetPlanTitle)
+    res["buckets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanConfigurationBucketLocalizationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerPlanConfigurationBucketLocalizationable, len(val))
+            for i, v := range val {
+                res[i] = v.(PlannerPlanConfigurationBucketLocalizationable)
+            }
+            m.SetBuckets(res)
+        }
+        return nil
+    }
+    res["languageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLanguageTag(val)
+        }
+        return nil
+    }
+    res["planTitle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlanTitle(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLanguageTag gets the languageTag property value. The languageTag property
@@ -53,7 +83,10 @@ func (m *PlannerPlanConfigurationLocalization) Serialize(writer i878a80d2330e89d
         return err
     }
     if m.GetBuckets() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetBuckets())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBuckets()))
+        for i, v := range m.GetBuckets() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("buckets", cast)
         if err != nil {
             return err

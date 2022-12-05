@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i2aca526f21f769867b4037ab02016b4b01044c786a7202e0ba32b17c095ee4fd "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviewdecisions/count"
 )
 
 // AccessReviewDecisionsRequestBuilder provides operations to manage the collection of accessReviewDecision entities.
@@ -72,8 +71,8 @@ func NewAccessReviewDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewAccessReviewDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *AccessReviewDecisionsRequestBuilder) Count()(*i2aca526f21f769867b4037ab02016b4b01044c786a7202e0ba32b17c095ee4fd.CountRequestBuilder) {
-    return i2aca526f21f769867b4037ab02016b4b01044c786a7202e0ba32b17c095ee4fd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AccessReviewDecisionsRequestBuilder) Count()(*AccessReviewDecisionsCountRequestBuilder) {
+    return NewAccessReviewDecisionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from accessReviewDecisions
 func (m *AccessReviewDecisionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewDecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

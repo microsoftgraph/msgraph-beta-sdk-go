@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the commsApplication singleton.
 type AutoAdmittedUsersType int
 
 const (

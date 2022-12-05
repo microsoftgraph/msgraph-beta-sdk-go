@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -33,8 +32,26 @@ func (m *ChatMessageMentionedIdentitySet) GetConversation()(TeamworkConversation
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentitySet.GetFieldDeserializers()
-    res["conversation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkConversationIdentityFromDiscriminatorValue , m.SetConversation)
-    res["tag"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkTagIdentityFromDiscriminatorValue , m.SetTag)
+    res["conversation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkConversationIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConversation(val.(TeamworkConversationIdentityable))
+        }
+        return nil
+    }
+    res["tag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkTagIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTag(val.(TeamworkTagIdentityable))
+        }
+        return nil
+    }
     return res
 }
 // GetTag gets the tag property value. If present, represents a tag @mentioned in a team message.

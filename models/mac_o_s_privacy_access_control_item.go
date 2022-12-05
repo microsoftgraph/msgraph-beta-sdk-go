@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -122,33 +121,280 @@ func (m *MacOSPrivacyAccessControlItem) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSPrivacyAccessControlItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessibility"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetAccessibility)
-    res["addressBook"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetAddressBook)
-    res["appleEventsAllowedReceivers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMacOSAppleEventReceiverFromDiscriminatorValue , m.SetAppleEventsAllowedReceivers)
-    res["blockCamera"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockCamera)
-    res["blockListenEvent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockListenEvent)
-    res["blockMicrophone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockMicrophone)
-    res["blockScreenCapture"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBlockScreenCapture)
-    res["calendar"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetCalendar)
-    res["codeRequirement"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCodeRequirement)
-    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
-    res["fileProviderPresence"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetFileProviderPresence)
-    res["identifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetIdentifier)
-    res["identifierType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSProcessIdentifierType , m.SetIdentifierType)
-    res["mediaLibrary"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetMediaLibrary)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["photos"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetPhotos)
-    res["postEvent"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetPostEvent)
-    res["reminders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetReminders)
-    res["speechRecognition"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSpeechRecognition)
-    res["staticCodeValidation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStaticCodeValidation)
-    res["systemPolicyAllFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSystemPolicyAllFiles)
-    res["systemPolicyDesktopFolder"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSystemPolicyDesktopFolder)
-    res["systemPolicyDocumentsFolder"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSystemPolicyDocumentsFolder)
-    res["systemPolicyDownloadsFolder"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSystemPolicyDownloadsFolder)
-    res["systemPolicyNetworkVolumes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSystemPolicyNetworkVolumes)
-    res["systemPolicyRemovableVolumes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSystemPolicyRemovableVolumes)
-    res["systemPolicySystemAdminFiles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetSystemPolicySystemAdminFiles)
+    res["accessibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccessibility(val.(*Enablement))
+        }
+        return nil
+    }
+    res["addressBook"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAddressBook(val.(*Enablement))
+        }
+        return nil
+    }
+    res["appleEventsAllowedReceivers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMacOSAppleEventReceiverFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MacOSAppleEventReceiverable, len(val))
+            for i, v := range val {
+                res[i] = v.(MacOSAppleEventReceiverable)
+            }
+            m.SetAppleEventsAllowedReceivers(res)
+        }
+        return nil
+    }
+    res["blockCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockCamera(val)
+        }
+        return nil
+    }
+    res["blockListenEvent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockListenEvent(val)
+        }
+        return nil
+    }
+    res["blockMicrophone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockMicrophone(val)
+        }
+        return nil
+    }
+    res["blockScreenCapture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockScreenCapture(val)
+        }
+        return nil
+    }
+    res["calendar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCalendar(val.(*Enablement))
+        }
+        return nil
+    }
+    res["codeRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCodeRequirement(val)
+        }
+        return nil
+    }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["fileProviderPresence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFileProviderPresence(val.(*Enablement))
+        }
+        return nil
+    }
+    res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentifier(val)
+        }
+        return nil
+    }
+    res["identifierType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMacOSProcessIdentifierType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentifierType(val.(*MacOSProcessIdentifierType))
+        }
+        return nil
+    }
+    res["mediaLibrary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaLibrary(val.(*Enablement))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["photos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPhotos(val.(*Enablement))
+        }
+        return nil
+    }
+    res["postEvent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPostEvent(val.(*Enablement))
+        }
+        return nil
+    }
+    res["reminders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReminders(val.(*Enablement))
+        }
+        return nil
+    }
+    res["speechRecognition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSpeechRecognition(val.(*Enablement))
+        }
+        return nil
+    }
+    res["staticCodeValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStaticCodeValidation(val)
+        }
+        return nil
+    }
+    res["systemPolicyAllFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemPolicyAllFiles(val.(*Enablement))
+        }
+        return nil
+    }
+    res["systemPolicyDesktopFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemPolicyDesktopFolder(val.(*Enablement))
+        }
+        return nil
+    }
+    res["systemPolicyDocumentsFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemPolicyDocumentsFolder(val.(*Enablement))
+        }
+        return nil
+    }
+    res["systemPolicyDownloadsFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemPolicyDownloadsFolder(val.(*Enablement))
+        }
+        return nil
+    }
+    res["systemPolicyNetworkVolumes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemPolicyNetworkVolumes(val.(*Enablement))
+        }
+        return nil
+    }
+    res["systemPolicyRemovableVolumes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemPolicyRemovableVolumes(val.(*Enablement))
+        }
+        return nil
+    }
+    res["systemPolicySystemAdminFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemPolicySystemAdminFiles(val.(*Enablement))
+        }
+        return nil
+    }
     return res
 }
 // GetFileProviderPresence gets the fileProviderPresence property value. Possible values of a property
@@ -236,7 +482,10 @@ func (m *MacOSPrivacyAccessControlItem) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetAppleEventsAllowedReceivers() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAppleEventsAllowedReceivers())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppleEventsAllowedReceivers()))
+        for i, v := range m.GetAppleEventsAllowedReceivers() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("appleEventsAllowedReceivers", cast)
         if err != nil {
             return err

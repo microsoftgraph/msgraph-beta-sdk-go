@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -51,8 +50,30 @@ func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowedRegistrant"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMeetingAudience , m.SetAllowedRegistrant)
-    res["registrants"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMeetingRegistrantBaseFromDiscriminatorValue , m.SetRegistrants)
+    res["allowedRegistrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMeetingAudience)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedRegistrant(val.(*MeetingAudience))
+        }
+        return nil
+    }
+    res["registrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMeetingRegistrantBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MeetingRegistrantBaseable, len(val))
+            for i, v := range val {
+                res[i] = v.(MeetingRegistrantBaseable)
+            }
+            m.SetRegistrants(res)
+        }
+        return nil
+    }
     return res
 }
 // GetRegistrants gets the registrants property value. Registrants of the online meeting.
@@ -73,7 +94,10 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     if m.GetRegistrants() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRegistrants())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrants()))
+        for i, v := range m.GetRegistrants() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("registrants", cast)
         if err != nil {
             return err

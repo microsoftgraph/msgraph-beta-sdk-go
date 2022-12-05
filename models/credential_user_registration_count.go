@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,8 +26,30 @@ func CreateCredentialUserRegistrationCountFromDiscriminatorValue(parseNode i878a
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["totalUserCount"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetTotalUserCount)
-    res["userRegistrationCounts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUserRegistrationCountFromDiscriminatorValue , m.SetUserRegistrationCounts)
+    res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalUserCount(val)
+        }
+        return nil
+    }
+    res["userRegistrationCounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationCountFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserRegistrationCountable, len(val))
+            for i, v := range val {
+                res[i] = v.(UserRegistrationCountable)
+            }
+            m.SetUserRegistrationCounts(res)
+        }
+        return nil
+    }
     return res
 }
 // GetTotalUserCount gets the totalUserCount property value. Provides the total user count in the tenant.
@@ -52,7 +73,10 @@ func (m *CredentialUserRegistrationCount) Serialize(writer i878a80d2330e89d26896
         }
     }
     if m.GetUserRegistrationCounts() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserRegistrationCounts())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRegistrationCounts()))
+        for i, v := range m.GetUserRegistrationCounts() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("userRegistrationCounts", cast)
         if err != nil {
             return err

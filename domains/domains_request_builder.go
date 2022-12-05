@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    id69b3cc09ba8b9adca3de328af7b1eea32e795e379816e920489fc63b5c2b77f "github.com/microsoftgraph/msgraph-beta-sdk-go/domains/count"
 )
 
 // DomainsRequestBuilder provides operations to manage the collection of domain entities.
@@ -72,8 +71,8 @@ func NewDomainsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewDomainsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DomainsRequestBuilder) Count()(*id69b3cc09ba8b9adca3de328af7b1eea32e795e379816e920489fc63b5c2b77f.CountRequestBuilder) {
-    return id69b3cc09ba8b9adca3de328af7b1eea32e795e379816e920489fc63b5c2b77f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DomainsRequestBuilder) Count()(*DomainsCountRequestBuilder) {
+    return NewDomainsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of domain objects.
 func (m *DomainsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DomainsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -5,8 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i2f83555cb91735e5ecd91446fcf0652b75e277d66aa860251673234a3da10b74 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/count"
-    iac0724706c3c45ed2466ef12bb6e0573300f34b77ab2f76aafd767ff1bb8d252 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/my"
 )
 
 // PrivilegedRoleAssignmentsRequestBuilder provides operations to manage the collection of privilegedRoleAssignment entities.
@@ -73,8 +71,8 @@ func NewPrivilegedRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2
     return NewPrivilegedRoleAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PrivilegedRoleAssignmentsRequestBuilder) Count()(*i2f83555cb91735e5ecd91446fcf0652b75e277d66aa860251673234a3da10b74.CountRequestBuilder) {
-    return i2f83555cb91735e5ecd91446fcf0652b75e277d66aa860251673234a3da10b74.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedRoleAssignmentsRequestBuilder) Count()(*PrivilegedRoleAssignmentsCountRequestBuilder) {
+    return NewPrivilegedRoleAssignmentsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of privilegedRoleAssignment objects, which correspond to all role assignments for the organization.
 func (m *PrivilegedRoleAssignmentsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -126,8 +124,8 @@ func (m *PrivilegedRoleAssignmentsRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentCollectionResponseable), nil
 }
 // My provides operations to call the my method.
-func (m *PrivilegedRoleAssignmentsRequestBuilder) My()(*iac0724706c3c45ed2466ef12bb6e0573300f34b77ab2f76aafd767ff1bb8d252.MyRequestBuilder) {
-    return iac0724706c3c45ed2466ef12bb6e0573300f34b77ab2f76aafd767ff1bb8d252.NewMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedRoleAssignmentsRequestBuilder) My()(*PrivilegedRoleAssignmentsMyRequestBuilder) {
+    return NewPrivilegedRoleAssignmentsMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post use this API to create a new  privilegedRoleAssignment.
 func (m *PrivilegedRoleAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, requestConfiguration *PrivilegedRoleAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {

@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosUpdateConfiguration 
+// IosUpdateConfiguration iOS Update Configuration, allows you to configure time window within week to install iOS updates
 type IosUpdateConfiguration struct {
     DeviceConfiguration
     // Active Hours End (active hours mean the time window when updates install should not happen)
@@ -27,7 +26,7 @@ type IosUpdateConfiguration struct {
     // UTC Time Offset indicated in minutes
     utcTimeOffsetInMinutes *int32
 }
-// NewIosUpdateConfiguration instantiates a new IosUpdateConfiguration and sets the default values.
+// NewIosUpdateConfiguration instantiates a new iosUpdateConfiguration and sets the default values.
 func NewIosUpdateConfiguration()(*IosUpdateConfiguration) {
     m := &IosUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -63,15 +62,104 @@ func (m *IosUpdateConfiguration) GetEnforcedSoftwareUpdateDelayInDays()(*int32) 
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["activeHoursEnd"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeOnlyValue(m.SetActiveHoursEnd)
-    res["activeHoursStart"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeOnlyValue(m.SetActiveHoursStart)
-    res["customUpdateTimeWindows"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCustomUpdateTimeWindowFromDiscriminatorValue , m.SetCustomUpdateTimeWindows)
-    res["desiredOsVersion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDesiredOsVersion)
-    res["enforcedSoftwareUpdateDelayInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetEnforcedSoftwareUpdateDelayInDays)
-    res["isEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsEnabled)
-    res["scheduledInstallDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseDayOfWeek , m.SetScheduledInstallDays)
-    res["updateScheduleType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseIosSoftwareUpdateScheduleType , m.SetUpdateScheduleType)
-    res["utcTimeOffsetInMinutes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetUtcTimeOffsetInMinutes)
+    res["activeHoursEnd"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeOnlyValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveHoursEnd(val)
+        }
+        return nil
+    }
+    res["activeHoursStart"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeOnlyValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveHoursStart(val)
+        }
+        return nil
+    }
+    res["customUpdateTimeWindows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomUpdateTimeWindowFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomUpdateTimeWindowable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomUpdateTimeWindowable)
+            }
+            m.SetCustomUpdateTimeWindows(res)
+        }
+        return nil
+    }
+    res["desiredOsVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDesiredOsVersion(val)
+        }
+        return nil
+    }
+    res["enforcedSoftwareUpdateDelayInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnforcedSoftwareUpdateDelayInDays(val)
+        }
+        return nil
+    }
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
+        return nil
+    }
+    res["scheduledInstallDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseDayOfWeek)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DayOfWeek, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DayOfWeek))
+            }
+            m.SetScheduledInstallDays(res)
+        }
+        return nil
+    }
+    res["updateScheduleType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseIosSoftwareUpdateScheduleType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUpdateScheduleType(val.(*IosSoftwareUpdateScheduleType))
+        }
+        return nil
+    }
+    res["utcTimeOffsetInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUtcTimeOffsetInMinutes(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Is setting enabled in UI
@@ -109,7 +197,10 @@ func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     if m.GetCustomUpdateTimeWindows() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCustomUpdateTimeWindows())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomUpdateTimeWindows()))
+        for i, v := range m.GetCustomUpdateTimeWindows() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("customUpdateTimeWindows", cast)
         if err != nil {
             return err

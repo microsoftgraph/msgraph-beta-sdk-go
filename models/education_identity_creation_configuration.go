@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,7 +26,20 @@ func CreateEducationIdentityCreationConfigurationFromDiscriminatorValue(parseNod
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationIdentityCreationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationIdentitySynchronizationConfiguration.GetFieldDeserializers()
-    res["userDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEducationIdentityDomainFromDiscriminatorValue , m.SetUserDomains)
+    res["userDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationIdentityDomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationIdentityDomainable, len(val))
+            for i, v := range val {
+                res[i] = v.(EducationIdentityDomainable)
+            }
+            m.SetUserDomains(res)
+        }
+        return nil
+    }
     return res
 }
 // GetUserDomains gets the userDomains property value. The userDomains property
@@ -41,7 +53,10 @@ func (m *EducationIdentityCreationConfiguration) Serialize(writer i878a80d2330e8
         return err
     }
     if m.GetUserDomains() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUserDomains())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserDomains()))
+        for i, v := range m.GetUserDomains() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("userDomains", cast)
         if err != nil {
             return err

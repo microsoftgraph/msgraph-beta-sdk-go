@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesPublishingProfile provides operations to manage the collection of accessReview entities.
+// OnPremisesPublishingProfile 
 type OnPremisesPublishingProfile struct {
     Entity
     // List of existing onPremisesAgentGroup objects. Read-only. Nullable.
@@ -25,7 +24,7 @@ type OnPremisesPublishingProfile struct {
     // List of existing publishedResource objects. Read-only. Nullable.
     publishedResources []PublishedResourceable
 }
-// NewOnPremisesPublishingProfile instantiates a new onPremisesPublishingProfile and sets the default values.
+// NewOnPremisesPublishingProfile instantiates a new OnPremisesPublishingProfile and sets the default values.
 func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {
     m := &OnPremisesPublishingProfile{
         Entity: *NewEntity(),
@@ -55,14 +54,106 @@ func (m *OnPremisesPublishingProfile) GetConnectors()([]Connectorable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agentGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOnPremisesAgentGroupFromDiscriminatorValue , m.SetAgentGroups)
-    res["agents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateOnPremisesAgentFromDiscriminatorValue , m.SetAgents)
-    res["connectorGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConnectorGroupFromDiscriminatorValue , m.SetConnectorGroups)
-    res["connectors"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConnectorFromDiscriminatorValue , m.SetConnectors)
-    res["hybridAgentUpdaterConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue , m.SetHybridAgentUpdaterConfiguration)
-    res["isDefaultAccessEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsDefaultAccessEnabled)
-    res["isEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsEnabled)
-    res["publishedResources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreatePublishedResourceFromDiscriminatorValue , m.SetPublishedResources)
+    res["agentGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentGroupFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OnPremisesAgentGroupable, len(val))
+            for i, v := range val {
+                res[i] = v.(OnPremisesAgentGroupable)
+            }
+            m.SetAgentGroups(res)
+        }
+        return nil
+    }
+    res["agents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OnPremisesAgentable, len(val))
+            for i, v := range val {
+                res[i] = v.(OnPremisesAgentable)
+            }
+            m.SetAgents(res)
+        }
+        return nil
+    }
+    res["connectorGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConnectorGroupFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConnectorGroupable, len(val))
+            for i, v := range val {
+                res[i] = v.(ConnectorGroupable)
+            }
+            m.SetConnectorGroups(res)
+        }
+        return nil
+    }
+    res["connectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Connectorable, len(val))
+            for i, v := range val {
+                res[i] = v.(Connectorable)
+            }
+            m.SetConnectors(res)
+        }
+        return nil
+    }
+    res["hybridAgentUpdaterConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHybridAgentUpdaterConfiguration(val.(HybridAgentUpdaterConfigurationable))
+        }
+        return nil
+    }
+    res["isDefaultAccessEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDefaultAccessEnabled(val)
+        }
+        return nil
+    }
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
+        return nil
+    }
+    res["publishedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePublishedResourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PublishedResourceable, len(val))
+            for i, v := range val {
+                res[i] = v.(PublishedResourceable)
+            }
+            m.SetPublishedResources(res)
+        }
+        return nil
+    }
     return res
 }
 // GetHybridAgentUpdaterConfiguration gets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
@@ -88,28 +179,40 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
         return err
     }
     if m.GetAgentGroups() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAgentGroups())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgentGroups()))
+        for i, v := range m.GetAgentGroups() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("agentGroups", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAgents() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAgents())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgents()))
+        for i, v := range m.GetAgents() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("agents", cast)
         if err != nil {
             return err
         }
     }
     if m.GetConnectorGroups() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetConnectorGroups())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectorGroups()))
+        for i, v := range m.GetConnectorGroups() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("connectorGroups", cast)
         if err != nil {
             return err
         }
     }
     if m.GetConnectors() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetConnectors())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectors()))
+        for i, v := range m.GetConnectors() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("connectors", cast)
         if err != nil {
             return err
@@ -134,7 +237,10 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     if m.GetPublishedResources() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPublishedResources())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPublishedResources()))
+        for i, v := range m.GetPublishedResources() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("publishedResources", cast)
         if err != nil {
             return err

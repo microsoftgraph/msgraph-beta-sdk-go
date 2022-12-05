@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsHealthMonitoringConfiguration 
+// WindowsHealthMonitoringConfiguration windows device health monitoring configuration
 type WindowsHealthMonitoringConfiguration struct {
     DeviceConfiguration
     // Possible values of a property
@@ -15,7 +14,7 @@ type WindowsHealthMonitoringConfiguration struct {
     // Device health monitoring scope
     configDeviceHealthMonitoringScope *WindowsHealthMonitoringScope
 }
-// NewWindowsHealthMonitoringConfiguration instantiates a new WindowsHealthMonitoringConfiguration and sets the default values.
+// NewWindowsHealthMonitoringConfiguration instantiates a new windowsHealthMonitoringConfiguration and sets the default values.
 func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfiguration) {
     m := &WindowsHealthMonitoringConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -43,9 +42,36 @@ func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringSc
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsHealthMonitoringConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["allowDeviceHealthMonitoring"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseEnablement , m.SetAllowDeviceHealthMonitoring)
-    res["configDeviceHealthMonitoringCustomScope"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetConfigDeviceHealthMonitoringCustomScope)
-    res["configDeviceHealthMonitoringScope"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseWindowsHealthMonitoringScope , m.SetConfigDeviceHealthMonitoringScope)
+    res["allowDeviceHealthMonitoring"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowDeviceHealthMonitoring(val.(*Enablement))
+        }
+        return nil
+    }
+    res["configDeviceHealthMonitoringCustomScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConfigDeviceHealthMonitoringCustomScope(val)
+        }
+        return nil
+    }
+    res["configDeviceHealthMonitoringScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsHealthMonitoringScope)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConfigDeviceHealthMonitoringScope(val.(*WindowsHealthMonitoringScope))
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object

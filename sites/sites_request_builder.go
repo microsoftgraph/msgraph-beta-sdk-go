@@ -4,11 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i01987e74e1c88ee7412edc4fecc08f77a9bd5b9625489df2dcf277b733bd32a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/remove"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i6f81ada91b35c4c8b5de72483e03b83321824cd7301bf2b1faec3e76d10920ab "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/add"
-    i78c52f4a1bffb07514485793e74ce9ff957279c79c8593b58f1d24032586a995 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/delta"
-    ib81c95029d979466d91938adeca5dddd85b40bf0f696454eb18f46a1732d3a9c "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/count"
 )
 
 // SitesRequestBuilder provides operations to manage the collection of site entities.
@@ -49,8 +45,8 @@ type SitesRequestBuilderGetRequestConfiguration struct {
     QueryParameters *SitesRequestBuilderGetQueryParameters
 }
 // Add provides operations to call the add method.
-func (m *SitesRequestBuilder) Add()(*i6f81ada91b35c4c8b5de72483e03b83321824cd7301bf2b1faec3e76d10920ab.AddRequestBuilder) {
-    return i6f81ada91b35c4c8b5de72483e03b83321824cd7301bf2b1faec3e76d10920ab.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SitesRequestBuilder) Add()(*SitesAddRequestBuilder) {
+    return NewSitesAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SitesRequestBuilder) {
@@ -72,8 +68,8 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *SitesRequestBuilder) Count()(*ib81c95029d979466d91938adeca5dddd85b40bf0f696454eb18f46a1732d3a9c.CountRequestBuilder) {
-    return ib81c95029d979466d91938adeca5dddd85b40bf0f696454eb18f46a1732d3a9c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SitesRequestBuilder) Count()(*SitesCountRequestBuilder) {
+    return NewSitesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
 func (m *SitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -92,8 +88,8 @@ func (m *SitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *SitesRequestBuilder) Delta()(*i78c52f4a1bffb07514485793e74ce9ff957279c79c8593b58f1d24032586a995.DeltaRequestBuilder) {
-    return i78c52f4a1bffb07514485793e74ce9ff957279c79c8593b58f1d24032586a995.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SitesRequestBuilder) Delta()(*SitesDeltaRequestBuilder) {
+    return NewSitesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
 func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
@@ -115,6 +111,6 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable), nil
 }
 // Remove provides operations to call the remove method.
-func (m *SitesRequestBuilder) Remove()(*i01987e74e1c88ee7412edc4fecc08f77a9bd5b9625489df2dcf277b733bd32a5.RemoveRequestBuilder) {
-    return i01987e74e1c88ee7412edc4fecc08f77a9bd5b9625489df2dcf277b733bd32a5.NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SitesRequestBuilder) Remove()(*SitesRemoveRequestBuilder) {
+    return NewSitesRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

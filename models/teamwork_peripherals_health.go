@@ -1,7 +1,6 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -54,13 +53,80 @@ func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPerip
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["communicationSpeakerHealth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue , m.SetCommunicationSpeakerHealth)
-    res["contentCameraHealth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue , m.SetContentCameraHealth)
-    res["displayHealthCollection"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTeamworkPeripheralHealthFromDiscriminatorValue , m.SetDisplayHealthCollection)
-    res["microphoneHealth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue , m.SetMicrophoneHealth)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
-    res["roomCameraHealth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue , m.SetRoomCameraHealth)
-    res["speakerHealth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue , m.SetSpeakerHealth)
+    res["communicationSpeakerHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCommunicationSpeakerHealth(val.(TeamworkPeripheralHealthable))
+        }
+        return nil
+    }
+    res["contentCameraHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentCameraHealth(val.(TeamworkPeripheralHealthable))
+        }
+        return nil
+    }
+    res["displayHealthCollection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamworkPeripheralHealthable, len(val))
+            for i, v := range val {
+                res[i] = v.(TeamworkPeripheralHealthable)
+            }
+            m.SetDisplayHealthCollection(res)
+        }
+        return nil
+    }
+    res["microphoneHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMicrophoneHealth(val.(TeamworkPeripheralHealthable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["roomCameraHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRoomCameraHealth(val.(TeamworkPeripheralHealthable))
+        }
+        return nil
+    }
+    res["speakerHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSpeakerHealth(val.(TeamworkPeripheralHealthable))
+        }
+        return nil
+    }
     return res
 }
 // GetMicrophoneHealth gets the microphoneHealth property value. The health details about the microphone.
@@ -94,7 +160,10 @@ func (m *TeamworkPeripheralsHealth) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     if m.GetDisplayHealthCollection() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDisplayHealthCollection())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDisplayHealthCollection()))
+        for i, v := range m.GetDisplayHealthCollection() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("displayHealthCollection", cast)
         if err != nil {
             return err

@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i5ad919390649acca976dd32cee353bc6addac4a39fb9be5acd8cdc42e54a1663 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/count"
 )
 
 // WorkbooksRequestBuilder provides operations to manage the collection of driveItem entities.
@@ -72,8 +71,8 @@ func NewWorkbooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewWorkbooksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *WorkbooksRequestBuilder) Count()(*i5ad919390649acca976dd32cee353bc6addac4a39fb9be5acd8cdc42e54a1663.CountRequestBuilder) {
-    return i5ad919390649acca976dd32cee353bc6addac4a39fb9be5acd8cdc42e54a1663.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *WorkbooksRequestBuilder) Count()(*WorkbooksCountRequestBuilder) {
+    return NewWorkbooksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from workbooks
 func (m *WorkbooksRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *WorkbooksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

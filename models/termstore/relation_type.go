@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of agreement entities.
 type RelationType int
 
 const (

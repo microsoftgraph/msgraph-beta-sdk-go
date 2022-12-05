@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsCertificateProfileBase device Configuration.
+// WindowsCertificateProfileBase 
 type WindowsCertificateProfileBase struct {
     DeviceConfiguration
     // Certificate Validity Period Options.
@@ -21,7 +20,7 @@ type WindowsCertificateProfileBase struct {
     // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
-// NewWindowsCertificateProfileBase instantiates a new windowsCertificateProfileBase and sets the default values.
+// NewWindowsCertificateProfileBase instantiates a new WindowsCertificateProfileBase and sets the default values.
 func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     m := &WindowsCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -73,12 +72,66 @@ func (m *WindowsCertificateProfileBase) GetCertificateValidityPeriodValue()(*int
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsCertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["certificateValidityPeriodScale"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCertificateValidityPeriodScale , m.SetCertificateValidityPeriodScale)
-    res["certificateValidityPeriodValue"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetCertificateValidityPeriodValue)
-    res["keyStorageProvider"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseKeyStorageProviderOption , m.SetKeyStorageProvider)
-    res["renewalThresholdPercentage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetRenewalThresholdPercentage)
-    res["subjectAlternativeNameType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSubjectAlternativeNameType , m.SetSubjectAlternativeNameType)
-    res["subjectNameFormat"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSubjectNameFormat , m.SetSubjectNameFormat)
+    res["certificateValidityPeriodScale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCertificateValidityPeriodScale)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertificateValidityPeriodScale(val.(*CertificateValidityPeriodScale))
+        }
+        return nil
+    }
+    res["certificateValidityPeriodValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertificateValidityPeriodValue(val)
+        }
+        return nil
+    }
+    res["keyStorageProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseKeyStorageProviderOption)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKeyStorageProvider(val.(*KeyStorageProviderOption))
+        }
+        return nil
+    }
+    res["renewalThresholdPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRenewalThresholdPercentage(val)
+        }
+        return nil
+    }
+    res["subjectAlternativeNameType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSubjectAlternativeNameType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubjectAlternativeNameType(val.(*SubjectAlternativeNameType))
+        }
+        return nil
+    }
+    res["subjectNameFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSubjectNameFormat)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubjectNameFormat(val.(*SubjectNameFormat))
+        }
+        return nil
+    }
     return res
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.

@@ -1,11 +1,10 @@
 package models
 
 import (
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalWorkflowProvider provides operations to manage the collection of accessReviewDecision entities.
+// ApprovalWorkflowProvider provides operations to manage the collection of administrativeUnit entities.
 type ApprovalWorkflowProvider struct {
     Entity
     // The businessFlows property
@@ -43,10 +42,58 @@ func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["businessFlows"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue , m.SetBusinessFlows)
-    res["businessFlowsWithRequestsAwaitingMyDecision"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue , m.SetBusinessFlowsWithRequestsAwaitingMyDecision)
-    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
-    res["policyTemplates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateGovernancePolicyTemplateFromDiscriminatorValue , m.SetPolicyTemplates)
+    res["businessFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BusinessFlowable, len(val))
+            for i, v := range val {
+                res[i] = v.(BusinessFlowable)
+            }
+            m.SetBusinessFlows(res)
+        }
+        return nil
+    }
+    res["businessFlowsWithRequestsAwaitingMyDecision"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BusinessFlowable, len(val))
+            for i, v := range val {
+                res[i] = v.(BusinessFlowable)
+            }
+            m.SetBusinessFlowsWithRequestsAwaitingMyDecision(res)
+        }
+        return nil
+    }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["policyTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGovernancePolicyTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GovernancePolicyTemplateable, len(val))
+            for i, v := range val {
+                res[i] = v.(GovernancePolicyTemplateable)
+            }
+            m.SetPolicyTemplates(res)
+        }
+        return nil
+    }
     return res
 }
 // GetPolicyTemplates gets the policyTemplates property value. The policyTemplates property
@@ -60,14 +107,20 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i878a80d2330e89d26896388a3f4
         return err
     }
     if m.GetBusinessFlows() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetBusinessFlows())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBusinessFlows()))
+        for i, v := range m.GetBusinessFlows() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("businessFlows", cast)
         if err != nil {
             return err
         }
     }
     if m.GetBusinessFlowsWithRequestsAwaitingMyDecision() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetBusinessFlowsWithRequestsAwaitingMyDecision())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetBusinessFlowsWithRequestsAwaitingMyDecision()))
+        for i, v := range m.GetBusinessFlowsWithRequestsAwaitingMyDecision() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("businessFlowsWithRequestsAwaitingMyDecision", cast)
         if err != nil {
             return err
@@ -80,7 +133,10 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     if m.GetPolicyTemplates() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPolicyTemplates())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicyTemplates()))
+        for i, v := range m.GetPolicyTemplates() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err = writer.WriteCollectionOfObjectValues("policyTemplates", cast)
         if err != nil {
             return err

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomAuthenticationExtension 
+// CustomAuthenticationExtension provides operations to manage the collection of agreement entities.
 type CustomAuthenticationExtension struct {
     CustomCalloutExtension
 }
-// NewCustomAuthenticationExtension instantiates a new CustomAuthenticationExtension and sets the default values.
+// NewCustomAuthenticationExtension instantiates a new customAuthenticationExtension and sets the default values.
 func NewCustomAuthenticationExtension()(*CustomAuthenticationExtension) {
     m := &CustomAuthenticationExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),

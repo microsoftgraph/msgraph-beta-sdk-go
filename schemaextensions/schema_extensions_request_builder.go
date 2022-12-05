@@ -5,7 +5,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    ifc7fc3294e3e74f0a8568e6a335ff60bf7bb98a956c21a7e802f5c3ab74bba56 "github.com/microsoftgraph/msgraph-beta-sdk-go/schemaextensions/count"
 )
 
 // SchemaExtensionsRequestBuilder provides operations to manage the collection of schemaExtension entities.
@@ -72,8 +71,8 @@ func NewSchemaExtensionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewSchemaExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *SchemaExtensionsRequestBuilder) Count()(*ifc7fc3294e3e74f0a8568e6a335ff60bf7bb98a956c21a7e802f5c3ab74bba56.CountRequestBuilder) {
-    return ifc7fc3294e3e74f0a8568e6a335ff60bf7bb98a956c21a7e802f5c3ab74bba56.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SchemaExtensionsRequestBuilder) Count()(*SchemaExtensionsCountRequestBuilder) {
+    return NewSchemaExtensionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get a list of schemaExtension objects in your tenant. The schema extensions can be `InDevelopment`, `Available`, or `Deprecated` and includes schema extensions:+ Created by any apps you own in the current tenant.+ Owned by other apps that are marked as `Available`.+ Created by other developers from other tenants and marked as `Available`. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. 
 func (m *SchemaExtensionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SchemaExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

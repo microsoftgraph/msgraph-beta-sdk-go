@@ -2,7 +2,7 @@ package identitygovernance
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of agreement entities.
 type LifecycleWorkflowProcessingStatus int
 
 const (

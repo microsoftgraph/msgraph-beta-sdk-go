@@ -2,7 +2,6 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -79,15 +78,100 @@ func (m *AssignmentFilterEvaluationSummary) GetEvaluationResult()(*AssignmentFil
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["assignmentFilterDisplayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAssignmentFilterDisplayName)
-    res["assignmentFilterId"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetAssignmentFilterId)
-    res["assignmentFilterLastModifiedDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetAssignmentFilterLastModifiedDateTime)
-    res["assignmentFilterPlatform"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDevicePlatformType , m.SetAssignmentFilterPlatform)
-    res["assignmentFilterType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDeviceAndAppManagementAssignmentFilterType , m.SetAssignmentFilterType)
-    res["assignmentFilterTypeAndEvaluationResults"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAssignmentFilterTypeAndEvaluationResultFromDiscriminatorValue , m.SetAssignmentFilterTypeAndEvaluationResults)
-    res["evaluationDateTime"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetTimeValue(m.SetEvaluationDateTime)
-    res["evaluationResult"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAssignmentFilterEvaluationResult , m.SetEvaluationResult)
-    res["@odata.type"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetOdataType)
+    res["assignmentFilterDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignmentFilterDisplayName(val)
+        }
+        return nil
+    }
+    res["assignmentFilterId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignmentFilterId(val)
+        }
+        return nil
+    }
+    res["assignmentFilterLastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignmentFilterLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["assignmentFilterPlatform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDevicePlatformType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignmentFilterPlatform(val.(*DevicePlatformType))
+        }
+        return nil
+    }
+    res["assignmentFilterType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceAndAppManagementAssignmentFilterType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignmentFilterType(val.(*DeviceAndAppManagementAssignmentFilterType))
+        }
+        return nil
+    }
+    res["assignmentFilterTypeAndEvaluationResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAssignmentFilterTypeAndEvaluationResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AssignmentFilterTypeAndEvaluationResultable, len(val))
+            for i, v := range val {
+                res[i] = v.(AssignmentFilterTypeAndEvaluationResultable)
+            }
+            m.SetAssignmentFilterTypeAndEvaluationResults(res)
+        }
+        return nil
+    }
+    res["evaluationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEvaluationDateTime(val)
+        }
+        return nil
+    }
+    res["evaluationResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAssignmentFilterEvaluationResult)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEvaluationResult(val.(*AssignmentFilterEvaluationResult))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -129,7 +213,10 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i878a80d2330e89d268
         }
     }
     if m.GetAssignmentFilterTypeAndEvaluationResults() != nil {
-        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssignmentFilterTypeAndEvaluationResults())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentFilterTypeAndEvaluationResults()))
+        for i, v := range m.GetAssignmentFilterTypeAndEvaluationResults() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
         err := writer.WriteCollectionOfObjectValues("assignmentFilterTypeAndEvaluationResults", cast)
         if err != nil {
             return err

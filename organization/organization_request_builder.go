@@ -4,11 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i0c7f3ef6fb529e975f67ac224f6035fee6c05276ac28c894a14cfc1e7c3bb0d0 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/getbyids"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i4f7e292b6f68155029e47cb4585b2ff760bd870e2fd32f3f0b1f4c96196fd371 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/validateproperties"
-    if23338229be95a3b02ac4d54214519857673110709575e54061cd24d479f3b7c "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/getuserownedobjects"
-    ifb1963c9103f69be173eee22987446cd3e9d7ce821b04983cea3b23fb532ead5 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/count"
 )
 
 // OrganizationRequestBuilder provides operations to manage the collection of organization entities.
@@ -75,8 +71,8 @@ func NewOrganizationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewOrganizationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *OrganizationRequestBuilder) Count()(*ifb1963c9103f69be173eee22987446cd3e9d7ce821b04983cea3b23fb532ead5.CountRequestBuilder) {
-    return ifb1963c9103f69be173eee22987446cd3e9d7ce821b04983cea3b23fb532ead5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) Count()(*OrganizationCountRequestBuilder) {
+    return NewOrganizationCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of organization objects.
 func (m *OrganizationRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -128,12 +124,12 @@ func (m *OrganizationRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *OrganizationRequestBuilder) GetByIds()(*i0c7f3ef6fb529e975f67ac224f6035fee6c05276ac28c894a14cfc1e7c3bb0d0.GetByIdsRequestBuilder) {
-    return i0c7f3ef6fb529e975f67ac224f6035fee6c05276ac28c894a14cfc1e7c3bb0d0.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) GetByIds()(*OrganizationGetByIdsRequestBuilder) {
+    return NewOrganizationGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *OrganizationRequestBuilder) GetUserOwnedObjects()(*if23338229be95a3b02ac4d54214519857673110709575e54061cd24d479f3b7c.GetUserOwnedObjectsRequestBuilder) {
-    return if23338229be95a3b02ac4d54214519857673110709575e54061cd24d479f3b7c.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) GetUserOwnedObjects()(*OrganizationGetUserOwnedObjectsRequestBuilder) {
+    return NewOrganizationGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to organization
 func (m *OrganizationRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, requestConfiguration *OrganizationRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, error) {
@@ -155,6 +151,6 @@ func (m *OrganizationRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *OrganizationRequestBuilder) ValidateProperties()(*i4f7e292b6f68155029e47cb4585b2ff760bd870e2fd32f3f0b1f4c96196fd371.ValidatePropertiesRequestBuilder) {
-    return i4f7e292b6f68155029e47cb4585b2ff760bd870e2fd32f3f0b1f4c96196fd371.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OrganizationRequestBuilder) ValidateProperties()(*OrganizationValidatePropertiesRequestBuilder) {
+    return NewOrganizationValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
