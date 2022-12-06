@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -228,458 +229,48 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingType()(*MacOSContent
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleDeviceFeaturesConfigurationBase.GetFieldDeserializers()
-    res["adminShowHostInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdminShowHostInfo(val)
-        }
-        return nil
-    }
-    res["appAssociatedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMacOSAssociatedDomainsItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MacOSAssociatedDomainsItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(MacOSAssociatedDomainsItemable)
-            }
-            m.SetAppAssociatedDomains(res)
-        }
-        return nil
-    }
-    res["associatedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]KeyValuePairable, len(val))
-            for i, v := range val {
-                res[i] = v.(KeyValuePairable)
-            }
-            m.SetAssociatedDomains(res)
-        }
-        return nil
-    }
-    res["authorizedUsersListHidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthorizedUsersListHidden(val)
-        }
-        return nil
-    }
-    res["authorizedUsersListHideAdminUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthorizedUsersListHideAdminUsers(val)
-        }
-        return nil
-    }
-    res["authorizedUsersListHideLocalUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthorizedUsersListHideLocalUsers(val)
-        }
-        return nil
-    }
-    res["authorizedUsersListHideMobileAccounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthorizedUsersListHideMobileAccounts(val)
-        }
-        return nil
-    }
-    res["authorizedUsersListIncludeNetworkUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthorizedUsersListIncludeNetworkUsers(val)
-        }
-        return nil
-    }
-    res["authorizedUsersListShowOtherManagedUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthorizedUsersListShowOtherManagedUsers(val)
-        }
-        return nil
-    }
-    res["autoLaunchItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMacOSLaunchItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MacOSLaunchItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(MacOSLaunchItemable)
-            }
-            m.SetAutoLaunchItems(res)
-        }
-        return nil
-    }
-    res["consoleAccessDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConsoleAccessDisabled(val)
-        }
-        return nil
-    }
-    res["contentCachingBlockDeletion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingBlockDeletion(val)
-        }
-        return nil
-    }
-    res["contentCachingClientListenRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IpRangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IpRangeable)
-            }
-            m.SetContentCachingClientListenRanges(res)
-        }
-        return nil
-    }
-    res["contentCachingClientPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSContentCachingClientPolicy)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingClientPolicy(val.(*MacOSContentCachingClientPolicy))
-        }
-        return nil
-    }
-    res["contentCachingDataPath"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingDataPath(val)
-        }
-        return nil
-    }
-    res["contentCachingDisableConnectionSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingDisableConnectionSharing(val)
-        }
-        return nil
-    }
-    res["contentCachingEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingEnabled(val)
-        }
-        return nil
-    }
-    res["contentCachingForceConnectionSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingForceConnectionSharing(val)
-        }
-        return nil
-    }
-    res["contentCachingKeepAwake"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingKeepAwake(val)
-        }
-        return nil
-    }
-    res["contentCachingLogClientIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingLogClientIdentities(val)
-        }
-        return nil
-    }
-    res["contentCachingMaxSizeBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingMaxSizeBytes(val)
-        }
-        return nil
-    }
-    res["contentCachingParents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetContentCachingParents(res)
-        }
-        return nil
-    }
-    res["contentCachingParentSelectionPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSContentCachingParentSelectionPolicy)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingParentSelectionPolicy(val.(*MacOSContentCachingParentSelectionPolicy))
-        }
-        return nil
-    }
-    res["contentCachingPeerFilterRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IpRangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IpRangeable)
-            }
-            m.SetContentCachingPeerFilterRanges(res)
-        }
-        return nil
-    }
-    res["contentCachingPeerListenRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IpRangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IpRangeable)
-            }
-            m.SetContentCachingPeerListenRanges(res)
-        }
-        return nil
-    }
-    res["contentCachingPeerPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSContentCachingPeerPolicy)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingPeerPolicy(val.(*MacOSContentCachingPeerPolicy))
-        }
-        return nil
-    }
-    res["contentCachingPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingPort(val)
-        }
-        return nil
-    }
-    res["contentCachingPublicRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IpRangeable, len(val))
-            for i, v := range val {
-                res[i] = v.(IpRangeable)
-            }
-            m.SetContentCachingPublicRanges(res)
-        }
-        return nil
-    }
-    res["contentCachingShowAlerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingShowAlerts(val)
-        }
-        return nil
-    }
-    res["contentCachingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMacOSContentCachingType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentCachingType(val.(*MacOSContentCachingType))
-        }
-        return nil
-    }
-    res["loginWindowText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLoginWindowText(val)
-        }
-        return nil
-    }
-    res["logOutDisabledWhileLoggedIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLogOutDisabledWhileLoggedIn(val)
-        }
-        return nil
-    }
-    res["macOSSingleSignOnExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateMacOSSingleSignOnExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMacOSSingleSignOnExtension(val.(MacOSSingleSignOnExtensionable))
-        }
-        return nil
-    }
-    res["powerOffDisabledWhileLoggedIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPowerOffDisabledWhileLoggedIn(val)
-        }
-        return nil
-    }
-    res["restartDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestartDisabled(val)
-        }
-        return nil
-    }
-    res["restartDisabledWhileLoggedIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestartDisabledWhileLoggedIn(val)
-        }
-        return nil
-    }
-    res["screenLockDisableImmediate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScreenLockDisableImmediate(val)
-        }
-        return nil
-    }
-    res["shutDownDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetShutDownDisabled(val)
-        }
-        return nil
-    }
-    res["shutDownDisabledWhileLoggedIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetShutDownDisabledWhileLoggedIn(val)
-        }
-        return nil
-    }
-    res["singleSignOnExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSingleSignOnExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSingleSignOnExtension(val.(SingleSignOnExtensionable))
-        }
-        return nil
-    }
-    res["singleSignOnExtensionPkinitCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateMacOSCertificateProfileBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSingleSignOnExtensionPkinitCertificate(val.(MacOSCertificateProfileBaseable))
-        }
-        return nil
-    }
-    res["sleepDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSleepDisabled(val)
-        }
-        return nil
-    }
+    res["adminShowHostInfo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAdminShowHostInfo)
+    res["appAssociatedDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMacOSAssociatedDomainsItemFromDiscriminatorValue , m.SetAppAssociatedDomains)
+    res["associatedDomains"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue , m.SetAssociatedDomains)
+    res["authorizedUsersListHidden"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAuthorizedUsersListHidden)
+    res["authorizedUsersListHideAdminUsers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAuthorizedUsersListHideAdminUsers)
+    res["authorizedUsersListHideLocalUsers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAuthorizedUsersListHideLocalUsers)
+    res["authorizedUsersListHideMobileAccounts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAuthorizedUsersListHideMobileAccounts)
+    res["authorizedUsersListIncludeNetworkUsers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAuthorizedUsersListIncludeNetworkUsers)
+    res["authorizedUsersListShowOtherManagedUsers"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAuthorizedUsersListShowOtherManagedUsers)
+    res["autoLaunchItems"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMacOSLaunchItemFromDiscriminatorValue , m.SetAutoLaunchItems)
+    res["consoleAccessDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetConsoleAccessDisabled)
+    res["contentCachingBlockDeletion"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContentCachingBlockDeletion)
+    res["contentCachingClientListenRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue , m.SetContentCachingClientListenRanges)
+    res["contentCachingClientPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSContentCachingClientPolicy , m.SetContentCachingClientPolicy)
+    res["contentCachingDataPath"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetContentCachingDataPath)
+    res["contentCachingDisableConnectionSharing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContentCachingDisableConnectionSharing)
+    res["contentCachingEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContentCachingEnabled)
+    res["contentCachingForceConnectionSharing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContentCachingForceConnectionSharing)
+    res["contentCachingKeepAwake"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContentCachingKeepAwake)
+    res["contentCachingLogClientIdentities"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContentCachingLogClientIdentities)
+    res["contentCachingMaxSizeBytes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetContentCachingMaxSizeBytes)
+    res["contentCachingParents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetContentCachingParents)
+    res["contentCachingParentSelectionPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSContentCachingParentSelectionPolicy , m.SetContentCachingParentSelectionPolicy)
+    res["contentCachingPeerFilterRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue , m.SetContentCachingPeerFilterRanges)
+    res["contentCachingPeerListenRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue , m.SetContentCachingPeerListenRanges)
+    res["contentCachingPeerPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSContentCachingPeerPolicy , m.SetContentCachingPeerPolicy)
+    res["contentCachingPort"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetContentCachingPort)
+    res["contentCachingPublicRanges"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue , m.SetContentCachingPublicRanges)
+    res["contentCachingShowAlerts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetContentCachingShowAlerts)
+    res["contentCachingType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMacOSContentCachingType , m.SetContentCachingType)
+    res["loginWindowText"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetLoginWindowText)
+    res["logOutDisabledWhileLoggedIn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetLogOutDisabledWhileLoggedIn)
+    res["macOSSingleSignOnExtension"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMacOSSingleSignOnExtensionFromDiscriminatorValue , m.SetMacOSSingleSignOnExtension)
+    res["powerOffDisabledWhileLoggedIn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPowerOffDisabledWhileLoggedIn)
+    res["restartDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRestartDisabled)
+    res["restartDisabledWhileLoggedIn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetRestartDisabledWhileLoggedIn)
+    res["screenLockDisableImmediate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetScreenLockDisableImmediate)
+    res["shutDownDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShutDownDisabled)
+    res["shutDownDisabledWhileLoggedIn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetShutDownDisabledWhileLoggedIn)
+    res["singleSignOnExtension"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSingleSignOnExtensionFromDiscriminatorValue , m.SetSingleSignOnExtension)
+    res["singleSignOnExtensionPkinitCertificate"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateMacOSCertificateProfileBaseFromDiscriminatorValue , m.SetSingleSignOnExtensionPkinitCertificate)
+    res["sleepDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSleepDisabled)
     return res
 }
 // GetLoginWindowText gets the loginWindowText property value. Custom text to be displayed on the login window.
@@ -743,20 +334,14 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetAppAssociatedDomains() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppAssociatedDomains()))
-        for i, v := range m.GetAppAssociatedDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAppAssociatedDomains())
         err = writer.WriteCollectionOfObjectValues("appAssociatedDomains", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAssociatedDomains() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssociatedDomains()))
-        for i, v := range m.GetAssociatedDomains() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAssociatedDomains())
         err = writer.WriteCollectionOfObjectValues("associatedDomains", cast)
         if err != nil {
             return err
@@ -799,10 +384,7 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetAutoLaunchItems() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAutoLaunchItems()))
-        for i, v := range m.GetAutoLaunchItems() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAutoLaunchItems())
         err = writer.WriteCollectionOfObjectValues("autoLaunchItems", cast)
         if err != nil {
             return err
@@ -821,10 +403,7 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetContentCachingClientListenRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingClientListenRanges()))
-        for i, v := range m.GetContentCachingClientListenRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetContentCachingClientListenRanges())
         err = writer.WriteCollectionOfObjectValues("contentCachingClientListenRanges", cast)
         if err != nil {
             return err
@@ -893,20 +472,14 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetContentCachingPeerFilterRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingPeerFilterRanges()))
-        for i, v := range m.GetContentCachingPeerFilterRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetContentCachingPeerFilterRanges())
         err = writer.WriteCollectionOfObjectValues("contentCachingPeerFilterRanges", cast)
         if err != nil {
             return err
         }
     }
     if m.GetContentCachingPeerListenRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingPeerListenRanges()))
-        for i, v := range m.GetContentCachingPeerListenRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetContentCachingPeerListenRanges())
         err = writer.WriteCollectionOfObjectValues("contentCachingPeerListenRanges", cast)
         if err != nil {
             return err
@@ -926,10 +499,7 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
         }
     }
     if m.GetContentCachingPublicRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentCachingPublicRanges()))
-        for i, v := range m.GetContentCachingPublicRanges() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetContentCachingPublicRanges())
         err = writer.WriteCollectionOfObjectValues("contentCachingPublicRanges", cast)
         if err != nil {
             return err

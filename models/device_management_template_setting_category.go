@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -24,20 +25,7 @@ func CreateDeviceManagementTemplateSettingCategoryFromDiscriminatorValue(parseNo
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTemplateSettingCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementSettingCategory.GetFieldDeserializers()
-    res["recommendedSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementSettingInstanceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementSettingInstanceable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementSettingInstanceable)
-            }
-            m.SetRecommendedSettings(res)
-        }
-        return nil
-    }
+    res["recommendedSettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementSettingInstanceFromDiscriminatorValue , m.SetRecommendedSettings)
     return res
 }
 // GetRecommendedSettings gets the recommendedSettings property value. The settings this category contains
@@ -51,10 +39,7 @@ func (m *DeviceManagementTemplateSettingCategory) Serialize(writer i878a80d2330e
         return err
     }
     if m.GetRecommendedSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendedSettings()))
-        for i, v := range m.GetRecommendedSettings() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetRecommendedSettings())
         err = writer.WriteCollectionOfObjectValues("recommendedSettings", cast)
         if err != nil {
             return err

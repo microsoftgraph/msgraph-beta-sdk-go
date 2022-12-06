@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i73719052e486b23e86fa082eeff9fe41c253df9920a422379254c79e4ded758e "github.com/microsoftgraph/msgraph-beta-sdk-go/messagetraces/count"
 )
 
 // MessageTracesRequestBuilder provides operations to manage the collection of messageTrace entities.
@@ -71,8 +72,8 @@ func NewMessageTracesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewMessageTracesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *MessageTracesRequestBuilder) Count()(*MessageTracesCountRequestBuilder) {
-    return NewMessageTracesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MessageTracesRequestBuilder) Count()(*i73719052e486b23e86fa082eeff9fe41c253df9920a422379254c79e4ded758e.CountRequestBuilder) {
+    return i73719052e486b23e86fa082eeff9fe41c253df9920a422379254c79e4ded758e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from messageTraces
 func (m *MessageTracesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MessageTracesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

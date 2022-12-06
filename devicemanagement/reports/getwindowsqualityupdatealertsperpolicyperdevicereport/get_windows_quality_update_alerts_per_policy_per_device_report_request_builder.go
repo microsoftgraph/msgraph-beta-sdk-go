@@ -1,0 +1,75 @@
+package getwindowsqualityupdatealertsperpolicyperdevicereport
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.
+type GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder struct {
+    // Path parameters for the request
+    pathParameters map[string]string
+    // The request adapter to use to execute the requests.
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
+    // Url template to use to build the URL for the current request builder
+    urlTemplate string
+}
+// GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers map[string]string
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// NewGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal instantiates a new GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder and sets the default values.
+func NewGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
+    m := &GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder{
+    }
+    m.urlTemplate = "{+baseurl}/deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport";
+    urlTplParams := make(map[string]string)
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
+    }
+    m.pathParameters = urlTplParams;
+    m.requestAdapter = requestAdapter;
+    return m
+}
+// NewGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder instantiates a new GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder and sets the default values.
+func NewGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CreatePostRequestInformation invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformation(ctx context.Context, body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// Post invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Post(ctx context.Context, body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
+    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendPrimitiveAsync(ctx, requestInfo, "[]byte", errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.([]byte), nil
+}

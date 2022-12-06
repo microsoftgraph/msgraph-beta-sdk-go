@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -98,198 +99,20 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackageAssignmentApprovals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Approvalable, len(val))
-            for i, v := range val {
-                res[i] = v.(Approvalable)
-            }
-            m.SetAccessPackageAssignmentApprovals(res)
-        }
-        return nil
-    }
-    res["accessPackageAssignmentPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageAssignmentPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentPolicyable)
-            }
-            m.SetAccessPackageAssignmentPolicies(res)
-        }
-        return nil
-    }
-    res["accessPackageAssignmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageAssignmentRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentRequestable)
-            }
-            m.SetAccessPackageAssignmentRequests(res)
-        }
-        return nil
-    }
-    res["accessPackageAssignmentResourceRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageAssignmentResourceRoleable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentResourceRoleable)
-            }
-            m.SetAccessPackageAssignmentResourceRoles(res)
-        }
-        return nil
-    }
-    res["accessPackageAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageAssignmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageAssignmentable)
-            }
-            m.SetAccessPackageAssignments(res)
-        }
-        return nil
-    }
-    res["accessPackageCatalogs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageCatalogFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageCatalogable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageCatalogable)
-            }
-            m.SetAccessPackageCatalogs(res)
-        }
-        return nil
-    }
-    res["accessPackageResourceEnvironments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceEnvironmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageResourceEnvironmentable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageResourceEnvironmentable)
-            }
-            m.SetAccessPackageResourceEnvironments(res)
-        }
-        return nil
-    }
-    res["accessPackageResourceRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageResourceRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageResourceRequestable)
-            }
-            m.SetAccessPackageResourceRequests(res)
-        }
-        return nil
-    }
-    res["accessPackageResourceRoleScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleScopeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageResourceRoleScopeable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageResourceRoleScopeable)
-            }
-            m.SetAccessPackageResourceRoleScopes(res)
-        }
-        return nil
-    }
-    res["accessPackageResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageResourceable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageResourceable)
-            }
-            m.SetAccessPackageResources(res)
-        }
-        return nil
-    }
-    res["accessPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageable)
-            }
-            m.SetAccessPackages(res)
-        }
-        return nil
-    }
-    res["connectedOrganizations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConnectedOrganizationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConnectedOrganizationable, len(val))
-            for i, v := range val {
-                res[i] = v.(ConnectedOrganizationable)
-            }
-            m.SetConnectedOrganizations(res)
-        }
-        return nil
-    }
-    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEntitlementManagementSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSettings(val.(EntitlementManagementSettingsable))
-        }
-        return nil
-    }
-    res["subjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageSubjectFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AccessPackageSubjectable, len(val))
-            for i, v := range val {
-                res[i] = v.(AccessPackageSubjectable)
-            }
-            m.SetSubjects(res)
-        }
-        return nil
-    }
+    res["accessPackageAssignmentApprovals"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue , m.SetAccessPackageAssignmentApprovals)
+    res["accessPackageAssignmentPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue , m.SetAccessPackageAssignmentPolicies)
+    res["accessPackageAssignmentRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue , m.SetAccessPackageAssignmentRequests)
+    res["accessPackageAssignmentResourceRoles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue , m.SetAccessPackageAssignmentResourceRoles)
+    res["accessPackageAssignments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageAssignmentFromDiscriminatorValue , m.SetAccessPackageAssignments)
+    res["accessPackageCatalogs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageCatalogFromDiscriminatorValue , m.SetAccessPackageCatalogs)
+    res["accessPackageResourceEnvironments"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageResourceEnvironmentFromDiscriminatorValue , m.SetAccessPackageResourceEnvironments)
+    res["accessPackageResourceRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageResourceRequestFromDiscriminatorValue , m.SetAccessPackageResourceRequests)
+    res["accessPackageResourceRoleScopes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageResourceRoleScopeFromDiscriminatorValue , m.SetAccessPackageResourceRoleScopes)
+    res["accessPackageResources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageResourceFromDiscriminatorValue , m.SetAccessPackageResources)
+    res["accessPackages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue , m.SetAccessPackages)
+    res["connectedOrganizations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConnectedOrganizationFromDiscriminatorValue , m.SetConnectedOrganizations)
+    res["settings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateEntitlementManagementSettingsFromDiscriminatorValue , m.SetSettings)
+    res["subjects"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAccessPackageSubjectFromDiscriminatorValue , m.SetSubjects)
     return res
 }
 // GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
@@ -307,120 +130,84 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
         return err
     }
     if m.GetAccessPackageAssignmentApprovals() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageAssignmentApprovals()))
-        for i, v := range m.GetAccessPackageAssignmentApprovals() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageAssignmentApprovals())
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentApprovals", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageAssignmentPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageAssignmentPolicies()))
-        for i, v := range m.GetAccessPackageAssignmentPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageAssignmentPolicies())
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentPolicies", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageAssignmentRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageAssignmentRequests()))
-        for i, v := range m.GetAccessPackageAssignmentRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageAssignmentRequests())
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentRequests", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageAssignmentResourceRoles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageAssignmentResourceRoles()))
-        for i, v := range m.GetAccessPackageAssignmentResourceRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageAssignmentResourceRoles())
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignmentResourceRoles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageAssignments()))
-        for i, v := range m.GetAccessPackageAssignments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageAssignments())
         err = writer.WriteCollectionOfObjectValues("accessPackageAssignments", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageCatalogs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageCatalogs()))
-        for i, v := range m.GetAccessPackageCatalogs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageCatalogs())
         err = writer.WriteCollectionOfObjectValues("accessPackageCatalogs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageResourceEnvironments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceEnvironments()))
-        for i, v := range m.GetAccessPackageResourceEnvironments() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageResourceEnvironments())
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceEnvironments", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageResourceRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceRequests()))
-        for i, v := range m.GetAccessPackageResourceRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageResourceRequests())
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceRequests", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageResourceRoleScopes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResourceRoleScopes()))
-        for i, v := range m.GetAccessPackageResourceRoleScopes() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageResourceRoleScopes())
         err = writer.WriteCollectionOfObjectValues("accessPackageResourceRoleScopes", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackageResources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageResources()))
-        for i, v := range m.GetAccessPackageResources() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackageResources())
         err = writer.WriteCollectionOfObjectValues("accessPackageResources", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAccessPackages() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackages()))
-        for i, v := range m.GetAccessPackages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAccessPackages())
         err = writer.WriteCollectionOfObjectValues("accessPackages", cast)
         if err != nil {
             return err
         }
     }
     if m.GetConnectedOrganizations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectedOrganizations()))
-        for i, v := range m.GetConnectedOrganizations() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetConnectedOrganizations())
         err = writer.WriteCollectionOfObjectValues("connectedOrganizations", cast)
         if err != nil {
             return err
@@ -433,10 +220,7 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetSubjects() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjects()))
-        for i, v := range m.GetSubjects() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSubjects())
         err = writer.WriteCollectionOfObjectValues("subjects", cast)
         if err != nil {
             return err

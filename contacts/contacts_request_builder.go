@@ -4,7 +4,12 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i078866701ebd014ef41908c3e576ecccdc54753b23645955da30d52b28cf8773 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/getuserownedobjects"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i263e3a49923c8b3d5d4677d4bffaef4520d3839dbb9e191c0ead10a25a4595b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/delta"
+    i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/getbyids"
+    idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/count"
+    ife4ab247d2377531ea11bb4c8a0ab1e2b8f2156beb597f561bf1f7d9bd436500 "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/validateproperties"
 )
 
 // ContactsRequestBuilder provides operations to manage the collection of orgContact entities.
@@ -71,8 +76,8 @@ func NewContactsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewContactsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ContactsRequestBuilder) Count()(*ContactsCountRequestBuilder) {
-    return NewContactsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContactsRequestBuilder) Count()(*idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.CountRequestBuilder) {
+    return idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get the list of organizational contacts for this organization.
 func (m *ContactsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -105,8 +110,8 @@ func (m *ContactsRequestBuilder) CreatePostRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *ContactsRequestBuilder) Delta()(*ContactsDeltaRequestBuilder) {
-    return NewContactsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContactsRequestBuilder) Delta()(*i263e3a49923c8b3d5d4677d4bffaef4520d3839dbb9e191c0ead10a25a4595b3.DeltaRequestBuilder) {
+    return i263e3a49923c8b3d5d4677d4bffaef4520d3839dbb9e191c0ead10a25a4595b3.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get the list of organizational contacts for this organization.
 func (m *ContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *ContactsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable, error) {
@@ -128,12 +133,12 @@ func (m *ContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *ContactsRequestBuilder) GetByIds()(*ContactsGetByIdsRequestBuilder) {
-    return NewContactsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContactsRequestBuilder) GetByIds()(*i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4.GetByIdsRequestBuilder) {
+    return i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *ContactsRequestBuilder) GetUserOwnedObjects()(*ContactsGetUserOwnedObjectsRequestBuilder) {
-    return NewContactsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContactsRequestBuilder) GetUserOwnedObjects()(*i078866701ebd014ef41908c3e576ecccdc54753b23645955da30d52b28cf8773.GetUserOwnedObjectsRequestBuilder) {
+    return i078866701ebd014ef41908c3e576ecccdc54753b23645955da30d52b28cf8773.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to contacts
 func (m *ContactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, requestConfiguration *ContactsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, error) {
@@ -155,6 +160,6 @@ func (m *ContactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *ContactsRequestBuilder) ValidateProperties()(*ContactsValidatePropertiesRequestBuilder) {
-    return NewContactsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ContactsRequestBuilder) ValidateProperties()(*ife4ab247d2377531ea11bb4c8a0ab1e2b8f2156beb597f561bf1f7d9bd436500.ValidatePropertiesRequestBuilder) {
+    return ife4ab247d2377531ea11bb4c8a0ab1e2b8f2156beb597f561bf1f7d9bd436500.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

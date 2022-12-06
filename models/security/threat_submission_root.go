@@ -1,6 +1,7 @@
 package security
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
@@ -39,62 +40,10 @@ func (m *ThreatSubmissionRoot) GetEmailThreatSubmissionPolicies()([]EmailThreatS
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["emailThreats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateEmailThreatSubmissionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EmailThreatSubmissionable, len(val))
-            for i, v := range val {
-                res[i] = v.(EmailThreatSubmissionable)
-            }
-            m.SetEmailThreats(res)
-        }
-        return nil
-    }
-    res["emailThreatSubmissionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateEmailThreatSubmissionPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EmailThreatSubmissionPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(EmailThreatSubmissionPolicyable)
-            }
-            m.SetEmailThreatSubmissionPolicies(res)
-        }
-        return nil
-    }
-    res["fileThreats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateFileThreatSubmissionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]FileThreatSubmissionable, len(val))
-            for i, v := range val {
-                res[i] = v.(FileThreatSubmissionable)
-            }
-            m.SetFileThreats(res)
-        }
-        return nil
-    }
-    res["urlThreats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUrlThreatSubmissionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UrlThreatSubmissionable, len(val))
-            for i, v := range val {
-                res[i] = v.(UrlThreatSubmissionable)
-            }
-            m.SetUrlThreats(res)
-        }
-        return nil
-    }
+    res["emailThreats"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEmailThreatSubmissionFromDiscriminatorValue , m.SetEmailThreats)
+    res["emailThreatSubmissionPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateEmailThreatSubmissionPolicyFromDiscriminatorValue , m.SetEmailThreatSubmissionPolicies)
+    res["fileThreats"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateFileThreatSubmissionFromDiscriminatorValue , m.SetFileThreats)
+    res["urlThreats"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateUrlThreatSubmissionFromDiscriminatorValue , m.SetUrlThreats)
     return res
 }
 // GetFileThreats gets the fileThreats property value. The fileThreats property
@@ -112,40 +61,28 @@ func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     if m.GetEmailThreats() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailThreats()))
-        for i, v := range m.GetEmailThreats() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEmailThreats())
         err = writer.WriteCollectionOfObjectValues("emailThreats", cast)
         if err != nil {
             return err
         }
     }
     if m.GetEmailThreatSubmissionPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmailThreatSubmissionPolicies()))
-        for i, v := range m.GetEmailThreatSubmissionPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetEmailThreatSubmissionPolicies())
         err = writer.WriteCollectionOfObjectValues("emailThreatSubmissionPolicies", cast)
         if err != nil {
             return err
         }
     }
     if m.GetFileThreats() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFileThreats()))
-        for i, v := range m.GetFileThreats() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetFileThreats())
         err = writer.WriteCollectionOfObjectValues("fileThreats", cast)
         if err != nil {
             return err
         }
     }
     if m.GetUrlThreats() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUrlThreats()))
-        for i, v := range m.GetUrlThreats() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetUrlThreats())
         err = writer.WriteCollectionOfObjectValues("urlThreats", cast)
         if err != nil {
             return err

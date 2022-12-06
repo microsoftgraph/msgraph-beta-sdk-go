@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    iaa2bc30f415e2d4a9addd951d0af3d759598920f3e95a7b813975b77edb5ff51 "github.com/microsoftgraph/msgraph-beta-sdk-go/messageevents/count"
 )
 
 // MessageEventsRequestBuilder provides operations to manage the collection of messageEvent entities.
@@ -71,8 +72,8 @@ func NewMessageEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewMessageEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *MessageEventsRequestBuilder) Count()(*MessageEventsCountRequestBuilder) {
-    return NewMessageEventsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MessageEventsRequestBuilder) Count()(*iaa2bc30f415e2d4a9addd951d0af3d759598920f3e95a7b813975b77edb5ff51.CountRequestBuilder) {
+    return iaa2bc30f415e2d4a9addd951d0af3d759598920f3e95a7b813975b77edb5ff51.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from messageEvents
 func (m *MessageEventsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MessageEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

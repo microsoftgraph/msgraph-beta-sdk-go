@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/externalconnectors"
+    ifd0bef7cf3f9483c45767e76c4d696dee9baf1414a57fd07451c43ee66ea5501 "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/count"
 )
 
 // ConnectionsRequestBuilder provides operations to manage the collection of externalConnection entities.
@@ -71,8 +72,8 @@ func NewConnectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewConnectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ConnectionsRequestBuilder) Count()(*ConnectionsCountRequestBuilder) {
-    return NewConnectionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ConnectionsRequestBuilder) Count()(*ifd0bef7cf3f9483c45767e76c4d696dee9baf1414a57fd07451c43ee66ea5501.CountRequestBuilder) {
+    return ifd0bef7cf3f9483c45767e76c4d696dee9baf1414a57fd07451c43ee66ea5501.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from connections
 func (m *ConnectionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

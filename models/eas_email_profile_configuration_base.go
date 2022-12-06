@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -58,46 +59,10 @@ func (m *EasEmailProfileConfigurationBase) GetCustomDomainName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["customDomainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCustomDomainName(val)
-        }
-        return nil
-    }
-    res["userDomainNameSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDomainNameSource)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserDomainNameSource(val.(*DomainNameSource))
-        }
-        return nil
-    }
-    res["usernameAADSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUsernameSource)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUsernameAADSource(val.(*UsernameSource))
-        }
-        return nil
-    }
-    res["usernameSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserEmailSource)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUsernameSource(val.(*UserEmailSource))
-        }
-        return nil
-    }
+    res["customDomainName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetCustomDomainName)
+    res["userDomainNameSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseDomainNameSource , m.SetUserDomainNameSource)
+    res["usernameAADSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseUsernameSource , m.SetUsernameAADSource)
+    res["usernameSource"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseUserEmailSource , m.SetUsernameSource)
     return res
 }
 // GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.

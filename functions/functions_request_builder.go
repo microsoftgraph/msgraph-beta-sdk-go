@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i89076df830194b439662ab1ec73b210e0106cadd2553fb4fa4c161c97b5b3c8b "github.com/microsoftgraph/msgraph-beta-sdk-go/functions/count"
 )
 
 // FunctionsRequestBuilder provides operations to manage the collection of attributeMappingFunctionSchema entities.
@@ -71,8 +72,8 @@ func NewFunctionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewFunctionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *FunctionsRequestBuilder) Count()(*FunctionsCountRequestBuilder) {
-    return NewFunctionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *FunctionsRequestBuilder) Count()(*i89076df830194b439662ab1ec73b210e0106cadd2553fb4fa4c161c97b5b3c8b.CountRequestBuilder) {
+    return i89076df830194b439662ab1ec73b210e0106cadd2553fb4fa4c161c97b5b3c8b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from functions
 func (m *FunctionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *FunctionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

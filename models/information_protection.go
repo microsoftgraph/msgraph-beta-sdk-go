@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -42,78 +43,12 @@ func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreven
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["bitlocker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateBitlockerFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBitlocker(val.(Bitlockerable))
-        }
-        return nil
-    }
-    res["dataLossPreventionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDataLossPreventionPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DataLossPreventionPolicyable, len(val))
-            for i, v := range val {
-                res[i] = v.(DataLossPreventionPolicyable)
-            }
-            m.SetDataLossPreventionPolicies(res)
-        }
-        return nil
-    }
-    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateInformationProtectionPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPolicy(val.(InformationProtectionPolicyable))
-        }
-        return nil
-    }
-    res["sensitivityLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SensitivityLabelable, len(val))
-            for i, v := range val {
-                res[i] = v.(SensitivityLabelable)
-            }
-            m.SetSensitivityLabels(res)
-        }
-        return nil
-    }
-    res["sensitivityPolicySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSensitivityPolicySettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSensitivityPolicySettings(val.(SensitivityPolicySettingsable))
-        }
-        return nil
-    }
-    res["threatAssessmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateThreatAssessmentRequestFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ThreatAssessmentRequestable, len(val))
-            for i, v := range val {
-                res[i] = v.(ThreatAssessmentRequestable)
-            }
-            m.SetThreatAssessmentRequests(res)
-        }
-        return nil
-    }
+    res["bitlocker"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateBitlockerFromDiscriminatorValue , m.SetBitlocker)
+    res["dataLossPreventionPolicies"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDataLossPreventionPolicyFromDiscriminatorValue , m.SetDataLossPreventionPolicies)
+    res["policy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateInformationProtectionPolicyFromDiscriminatorValue , m.SetPolicy)
+    res["sensitivityLabels"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue , m.SetSensitivityLabels)
+    res["sensitivityPolicySettings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateSensitivityPolicySettingsFromDiscriminatorValue , m.SetSensitivityPolicySettings)
+    res["threatAssessmentRequests"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateThreatAssessmentRequestFromDiscriminatorValue , m.SetThreatAssessmentRequests)
     return res
 }
 // GetPolicy gets the policy property value. The policy property
@@ -145,10 +80,7 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetDataLossPreventionPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDataLossPreventionPolicies()))
-        for i, v := range m.GetDataLossPreventionPolicies() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDataLossPreventionPolicies())
         err = writer.WriteCollectionOfObjectValues("dataLossPreventionPolicies", cast)
         if err != nil {
             return err
@@ -161,10 +93,7 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetSensitivityLabels() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensitivityLabels()))
-        for i, v := range m.GetSensitivityLabels() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSensitivityLabels())
         err = writer.WriteCollectionOfObjectValues("sensitivityLabels", cast)
         if err != nil {
             return err
@@ -177,10 +106,7 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetThreatAssessmentRequests() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThreatAssessmentRequests()))
-        for i, v := range m.GetThreatAssessmentRequests() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetThreatAssessmentRequests())
         err = writer.WriteCollectionOfObjectValues("threatAssessmentRequests", cast)
         if err != nil {
             return err

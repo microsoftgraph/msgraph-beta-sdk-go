@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    id53de4ae6cd871e3e18077c5f71c8f4ebb733bf8608a5f21e5f08e3ec95fc1b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/count"
 )
 
 // DrivesRequestBuilder provides operations to manage the collection of drive entities.
@@ -71,8 +72,8 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewDrivesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DrivesRequestBuilder) Count()(*DrivesCountRequestBuilder) {
-    return NewDrivesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DrivesRequestBuilder) Count()(*id53de4ae6cd871e3e18077c5f71c8f4ebb733bf8608a5f21e5f08e3ec95fc1b6.CountRequestBuilder) {
+    return id53de4ae6cd871e3e18077c5f71c8f4ebb733bf8608a5f21e5f08e3ec95fc1b6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 func (m *DrivesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

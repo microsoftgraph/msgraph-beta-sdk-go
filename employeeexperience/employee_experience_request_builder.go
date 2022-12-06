@@ -5,6 +5,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i6b5708b261996882c3e6e477468067309a807de798a49dd6a15df3e75ca6e815 "github.com/microsoftgraph/msgraph-beta-sdk-go/employeeexperience/learningproviders"
+    i3eafc347efe81746aff991e110ba0c4e3da53ec10fff1a11e037e33262f03750 "github.com/microsoftgraph/msgraph-beta-sdk-go/employeeexperience/learningproviders/item"
 )
 
 // EmployeeExperienceRequestBuilder provides operations to manage the employeeExperience singleton.
@@ -108,11 +110,11 @@ func (m *EmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable), nil
 }
 // LearningProviders provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
-func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*EmployeeExperienceLearningProvidersRequestBuilder) {
-    return NewEmployeeExperienceLearningProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*i6b5708b261996882c3e6e477468067309a807de798a49dd6a15df3e75ca6e815.LearningProvidersRequestBuilder) {
+    return i6b5708b261996882c3e6e477468067309a807de798a49dd6a15df3e75ca6e815.NewLearningProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LearningProvidersById provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
-func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*EmployeeExperienceLearningProvidersLearningProviderItemRequestBuilder) {
+func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*i3eafc347efe81746aff991e110ba0c4e3da53ec10fff1a11e037e33262f03750.LearningProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +122,7 @@ func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*Emp
     if id != "" {
         urlTplParams["learningProvider%2Did"] = id
     }
-    return NewEmployeeExperienceLearningProvidersLearningProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i3eafc347efe81746aff991e110ba0c4e3da53ec10fff1a11e037e33262f03750.NewLearningProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update employeeExperience
 func (m *EmployeeExperienceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable, requestConfiguration *EmployeeExperienceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable, error) {

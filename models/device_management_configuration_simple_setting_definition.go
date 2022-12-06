@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -60,54 +61,10 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependentOn()(
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingDefinition.GetFieldDeserializers()
-    res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefaultValue(val.(DeviceManagementConfigurationSettingValueable))
-        }
-        return nil
-    }
-    res["dependedOnBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementConfigurationSettingDependedOnByable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationSettingDependedOnByable)
-            }
-            m.SetDependedOnBy(res)
-        }
-        return nil
-    }
-    res["dependentOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationDependentOnFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementConfigurationDependentOnable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceManagementConfigurationDependentOnable)
-            }
-            m.SetDependentOn(res)
-        }
-        return nil
-    }
-    res["valueDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingValueDefinitionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetValueDefinition(val.(DeviceManagementConfigurationSettingValueDefinitionable))
-        }
-        return nil
-    }
+    res["defaultValue"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue , m.SetDefaultValue)
+    res["dependedOnBy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValue , m.SetDependedOnBy)
+    res["dependentOn"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceManagementConfigurationDependentOnFromDiscriminatorValue , m.SetDependentOn)
+    res["valueDefinition"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateDeviceManagementConfigurationSettingValueDefinitionFromDiscriminatorValue , m.SetValueDefinition)
     return res
 }
 // GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting
@@ -127,20 +84,14 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
         }
     }
     if m.GetDependedOnBy() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDependedOnBy()))
-        for i, v := range m.GetDependedOnBy() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDependedOnBy())
         err = writer.WriteCollectionOfObjectValues("dependedOnBy", cast)
         if err != nil {
             return err
         }
     }
     if m.GetDependentOn() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDependentOn()))
-        for i, v := range m.GetDependentOn() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDependentOn())
         err = writer.WriteCollectionOfObjectValues("dependentOn", cast)
         if err != nil {
             return err

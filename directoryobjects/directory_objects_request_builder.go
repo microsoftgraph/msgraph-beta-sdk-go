@@ -5,6 +5,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/getuserownedobjects"
+    ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/validateproperties"
+    if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/count"
+    if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects/getbyids"
 )
 
 // DirectoryObjectsRequestBuilder provides operations to manage the collection of directoryObject entities.
@@ -71,8 +75,8 @@ func NewDirectoryObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewDirectoryObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DirectoryObjectsRequestBuilder) Count()(*DirectoryObjectsCountRequestBuilder) {
-    return NewDirectoryObjectsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryObjectsRequestBuilder) Count()(*if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.CountRequestBuilder) {
+    return if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from directoryObjects
 func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -124,12 +128,12 @@ func (m *DirectoryObjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *DirectoryObjectsRequestBuilder) GetByIds()(*DirectoryObjectsGetByIdsRequestBuilder) {
-    return NewDirectoryObjectsGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryObjectsRequestBuilder) GetByIds()(*if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.GetByIdsRequestBuilder) {
+    return if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *DirectoryObjectsRequestBuilder) GetUserOwnedObjects()(*DirectoryObjectsGetUserOwnedObjectsRequestBuilder) {
-    return NewDirectoryObjectsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryObjectsRequestBuilder) GetUserOwnedObjects()(*i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f.GetUserOwnedObjectsRequestBuilder) {
+    return i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to directoryObjects
 func (m *DirectoryObjectsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DirectoryObjectsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -151,6 +155,6 @@ func (m *DirectoryObjectsRequestBuilder) Post(ctx context.Context, body ie233ee7
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*DirectoryObjectsValidatePropertiesRequestBuilder) {
-    return NewDirectoryObjectsValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a.ValidatePropertiesRequestBuilder) {
+    return ic6700723c63482539e5aa3621bbf7b7d3f647a64473ed594a663f2ea03736c9a.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

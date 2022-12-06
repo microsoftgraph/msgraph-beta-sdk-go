@@ -1,10 +1,11 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcSupportedRegion provides operations to manage the deviceManagement singleton.
+// CloudPcSupportedRegion 
 type CloudPcSupportedRegion struct {
     Entity
     // The name for the supported region. Read-only.
@@ -16,7 +17,7 @@ type CloudPcSupportedRegion struct {
     // The supportedSolution property
     supportedSolution *CloudPcManagementService
 }
-// NewCloudPcSupportedRegion instantiates a new cloudPcSupportedRegion and sets the default values.
+// NewCloudPcSupportedRegion instantiates a new CloudPcSupportedRegion and sets the default values.
 func NewCloudPcSupportedRegion()(*CloudPcSupportedRegion) {
     m := &CloudPcSupportedRegion{
         Entity: *NewEntity(),
@@ -34,46 +35,10 @@ func (m *CloudPcSupportedRegion) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["regionGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcRegionGroup)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRegionGroup(val.(*CloudPcRegionGroup))
-        }
-        return nil
-    }
-    res["regionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcSupportedRegionStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRegionStatus(val.(*CloudPcSupportedRegionStatus))
-        }
-        return nil
-    }
-    res["supportedSolution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcManagementService)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSupportedSolution(val.(*CloudPcManagementService))
-        }
-        return nil
-    }
+    res["displayName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetDisplayName)
+    res["regionGroup"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcRegionGroup , m.SetRegionGroup)
+    res["regionStatus"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcSupportedRegionStatus , m.SetRegionStatus)
+    res["supportedSolution"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseCloudPcManagementService , m.SetSupportedSolution)
     return res
 }
 // GetRegionGroup gets the regionGroup property value. The regionGroup property

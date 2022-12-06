@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i8dee24a3893a8c02680c0092db43337755e2ea02e29ca9be41452cb594a180a4 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroledefinitions/count"
 )
 
 // GovernanceRoleDefinitionsRequestBuilder provides operations to manage the collection of governanceRoleDefinition entities.
@@ -71,8 +72,8 @@ func NewGovernanceRoleDefinitionsRequestBuilder(rawUrl string, requestAdapter i2
     return NewGovernanceRoleDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GovernanceRoleDefinitionsRequestBuilder) Count()(*GovernanceRoleDefinitionsCountRequestBuilder) {
-    return NewGovernanceRoleDefinitionsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceRoleDefinitionsRequestBuilder) Count()(*i8dee24a3893a8c02680c0092db43337755e2ea02e29ca9be41452cb594a180a4.CountRequestBuilder) {
+    return i8dee24a3893a8c02680c0092db43337755e2ea02e29ca9be41452cb594a180a4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceRoleDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

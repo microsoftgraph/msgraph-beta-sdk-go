@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i8cbdf4e4b2b4bed95ad69f5754b40f7d022a334b0ec9250d2e7e8f59a92f4f01 "github.com/microsoftgraph/msgraph-beta-sdk-go/commands/count"
 )
 
 // CommandsRequestBuilder provides operations to manage the collection of command entities.
@@ -71,8 +72,8 @@ func NewCommandsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewCommandsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *CommandsRequestBuilder) Count()(*CommandsCountRequestBuilder) {
-    return NewCommandsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CommandsRequestBuilder) Count()(*i8cbdf4e4b2b4bed95ad69f5754b40f7d022a334b0ec9250d2e7e8f59a92f4f01.CountRequestBuilder) {
+    return i8cbdf4e4b2b4bed95ad69f5754b40f7d022a334b0ec9250d2e7e8f59a92f4f01.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from commands
 func (m *CommandsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CommandsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

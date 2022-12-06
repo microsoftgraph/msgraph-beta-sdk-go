@@ -5,6 +5,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i2a94e0c4cbf03995fb887ccc1adaaf1535a7095f2925bd939b1567826bf0a455 "github.com/microsoftgraph/msgraph-beta-sdk-go/riskyusers/confirmcompromised"
+    id07d5656e2cb901787a0893efc24d0d3229dfe14a9686001f680f5d7b512c75e "github.com/microsoftgraph/msgraph-beta-sdk-go/riskyusers/count"
+    ide36b7543a880f8983018f236850b4ff64e2a96dae1f905da183360a2d6952ab "github.com/microsoftgraph/msgraph-beta-sdk-go/riskyusers/dismiss"
 )
 
 // RiskyUsersRequestBuilder provides operations to manage the collection of riskyUser entities.
@@ -52,8 +55,8 @@ type RiskyUsersRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ConfirmCompromised provides operations to call the confirmCompromised method.
-func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*RiskyUsersConfirmCompromisedRequestBuilder) {
-    return NewRiskyUsersConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*i2a94e0c4cbf03995fb887ccc1adaaf1535a7095f2925bd939b1567826bf0a455.ConfirmCompromisedRequestBuilder) {
+    return i2a94e0c4cbf03995fb887ccc1adaaf1535a7095f2925bd939b1567826bf0a455.NewConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewRiskyUsersRequestBuilderInternal instantiates a new RiskyUsersRequestBuilder and sets the default values.
 func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersRequestBuilder) {
@@ -75,8 +78,8 @@ func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewRiskyUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *RiskyUsersRequestBuilder) Count()(*RiskyUsersCountRequestBuilder) {
-    return NewRiskyUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RiskyUsersRequestBuilder) Count()(*id07d5656e2cb901787a0893efc24d0d3229dfe14a9686001f680f5d7b512c75e.CountRequestBuilder) {
+    return id07d5656e2cb901787a0893efc24d0d3229dfe14a9686001f680f5d7b512c75e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve the properties and relationships of a collection of **riskyUser** objects.
 func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -109,8 +112,8 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // Dismiss provides operations to call the dismiss method.
-func (m *RiskyUsersRequestBuilder) Dismiss()(*RiskyUsersDismissRequestBuilder) {
-    return NewRiskyUsersDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RiskyUsersRequestBuilder) Dismiss()(*ide36b7543a880f8983018f236850b4ff64e2a96dae1f905da183360a2d6952ab.DismissRequestBuilder) {
+    return ide36b7543a880f8983018f236850b4ff64e2a96dae1f905da183360a2d6952ab.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get retrieve the properties and relationships of a collection of **riskyUser** objects.
 func (m *RiskyUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserCollectionResponseable, error) {

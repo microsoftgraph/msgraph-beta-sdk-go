@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -376,1386 +377,140 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFactoryResetDeviceAdmi
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["accountsBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccountsBlockModification(val)
-        }
-        return nil
-    }
-    res["appsAllowInstallFromUnknownSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppsAllowInstallFromUnknownSources(val)
-        }
-        return nil
-    }
-    res["appsAutoUpdatePolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerAppAutoUpdatePolicyType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppsAutoUpdatePolicy(val.(*AndroidDeviceOwnerAppAutoUpdatePolicyType))
-        }
-        return nil
-    }
-    res["appsDefaultPermissionPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerDefaultAppPermissionPolicyType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppsDefaultPermissionPolicy(val.(*AndroidDeviceOwnerDefaultAppPermissionPolicyType))
-        }
-        return nil
-    }
-    res["appsRecommendSkippingFirstUseHints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppsRecommendSkippingFirstUseHints(val)
-        }
-        return nil
-    }
-    res["azureAdSharedDeviceDataClearApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AppListItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(AppListItemable)
-            }
-            m.SetAzureAdSharedDeviceDataClearApps(res)
-        }
-        return nil
-    }
-    res["bluetoothBlockConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBluetoothBlockConfiguration(val)
-        }
-        return nil
-    }
-    res["bluetoothBlockContactSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBluetoothBlockContactSharing(val)
-        }
-        return nil
-    }
-    res["cameraBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCameraBlocked(val)
-        }
-        return nil
-    }
-    res["cellularBlockWiFiTethering"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCellularBlockWiFiTethering(val)
-        }
-        return nil
-    }
-    res["certificateCredentialConfigurationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCertificateCredentialConfigurationDisabled(val)
-        }
-        return nil
-    }
-    res["crossProfilePoliciesAllowCopyPaste"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCrossProfilePoliciesAllowCopyPaste(val)
-        }
-        return nil
-    }
-    res["crossProfilePoliciesAllowDataSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCrossProfileDataSharing)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCrossProfilePoliciesAllowDataSharing(val.(*AndroidDeviceOwnerCrossProfileDataSharing))
-        }
-        return nil
-    }
-    res["crossProfilePoliciesShowWorkContactsInPersonalProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCrossProfilePoliciesShowWorkContactsInPersonalProfile(val)
-        }
-        return nil
-    }
-    res["dataRoamingBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDataRoamingBlocked(val)
-        }
-        return nil
-    }
-    res["dateTimeConfigurationBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDateTimeConfigurationBlocked(val)
-        }
-        return nil
-    }
-    res["detailedHelpText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDetailedHelpText(val.(AndroidDeviceOwnerUserFacingMessageable))
-        }
-        return nil
-    }
-    res["deviceOwnerLockScreenMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceOwnerLockScreenMessage(val.(AndroidDeviceOwnerUserFacingMessageable))
-        }
-        return nil
-    }
-    res["enrollmentProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerEnrollmentProfileType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnrollmentProfile(val.(*AndroidDeviceOwnerEnrollmentProfileType))
-        }
-        return nil
-    }
-    res["factoryResetBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFactoryResetBlocked(val)
-        }
-        return nil
-    }
-    res["factoryResetDeviceAdministratorEmails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetFactoryResetDeviceAdministratorEmails(res)
-        }
-        return nil
-    }
-    res["globalProxy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAndroidDeviceOwnerGlobalProxyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGlobalProxy(val.(AndroidDeviceOwnerGlobalProxyable))
-        }
-        return nil
-    }
-    res["googleAccountsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGoogleAccountsBlocked(val)
-        }
-        return nil
-    }
-    res["kioskCustomizationDeviceSettingsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskCustomizationDeviceSettingsBlocked(val)
-        }
-        return nil
-    }
-    res["kioskCustomizationPowerButtonActionsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskCustomizationPowerButtonActionsBlocked(val)
-        }
-        return nil
-    }
-    res["kioskCustomizationStatusBar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskCustomizationStatusBar)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskCustomizationStatusBar(val.(*AndroidDeviceOwnerKioskCustomizationStatusBar))
-        }
-        return nil
-    }
-    res["kioskCustomizationSystemErrorWarnings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskCustomizationSystemErrorWarnings(val)
-        }
-        return nil
-    }
-    res["kioskCustomizationSystemNavigation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskCustomizationSystemNavigation)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskCustomizationSystemNavigation(val.(*AndroidDeviceOwnerKioskCustomizationSystemNavigation))
-        }
-        return nil
-    }
-    res["kioskModeAppOrderEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeAppOrderEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeAppPositions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerKioskModeAppPositionItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidDeviceOwnerKioskModeAppPositionItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(AndroidDeviceOwnerKioskModeAppPositionItemable)
-            }
-            m.SetKioskModeAppPositions(res)
-        }
-        return nil
-    }
-    res["kioskModeApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AppListItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(AppListItemable)
-            }
-            m.SetKioskModeApps(res)
-        }
-        return nil
-    }
-    res["kioskModeAppsInFolderOrderedByName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeAppsInFolderOrderedByName(val)
-        }
-        return nil
-    }
-    res["kioskModeBluetoothConfigurationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeBluetoothConfigurationEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeDebugMenuEasyAccessEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeDebugMenuEasyAccessEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeExitCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeExitCode(val)
-        }
-        return nil
-    }
-    res["kioskModeFlashlightConfigurationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeFlashlightConfigurationEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeFolderIcon"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskModeFolderIcon)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeFolderIcon(val.(*AndroidDeviceOwnerKioskModeFolderIcon))
-        }
-        return nil
-    }
-    res["kioskModeGridHeight"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeGridHeight(val)
-        }
-        return nil
-    }
-    res["kioskModeGridWidth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeGridWidth(val)
-        }
-        return nil
-    }
-    res["kioskModeIconSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskModeIconSize)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeIconSize(val.(*AndroidDeviceOwnerKioskModeIconSize))
-        }
-        return nil
-    }
-    res["kioskModeLockHomeScreen"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeLockHomeScreen(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidDeviceOwnerKioskModeManagedFolderable, len(val))
-            for i, v := range val {
-                res[i] = v.(AndroidDeviceOwnerKioskModeManagedFolderable)
-            }
-            m.SetKioskModeManagedFolders(res)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenAutoSignout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenAutoSignout(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenPinComplexity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKioskModeManagedHomeScreenPinComplexity)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenPinComplexity(val.(*KioskModeManagedHomeScreenPinComplexity))
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenPinRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenPinRequired(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenPinRequiredToResume"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenPinRequiredToResume(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenSignInBackground"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenSignInBackground(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenSignInBrandingLogo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenSignInBrandingLogo(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedHomeScreenSignInEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedHomeScreenSignInEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeManagedSettingsEntryDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeManagedSettingsEntryDisabled(val)
-        }
-        return nil
-    }
-    res["kioskModeMediaVolumeConfigurationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeMediaVolumeConfigurationEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeScreenOrientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerKioskModeScreenOrientation)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeScreenOrientation(val.(*AndroidDeviceOwnerKioskModeScreenOrientation))
-        }
-        return nil
-    }
-    res["kioskModeScreenSaverConfigurationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeScreenSaverConfigurationEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeScreenSaverDetectMediaDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeScreenSaverDetectMediaDisabled(val)
-        }
-        return nil
-    }
-    res["kioskModeScreenSaverDisplayTimeInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeScreenSaverDisplayTimeInSeconds(val)
-        }
-        return nil
-    }
-    res["kioskModeScreenSaverImageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeScreenSaverImageUrl(val)
-        }
-        return nil
-    }
-    res["kioskModeScreenSaverStartDelayInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeScreenSaverStartDelayInSeconds(val)
-        }
-        return nil
-    }
-    res["kioskModeShowAppNotificationBadge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeShowAppNotificationBadge(val)
-        }
-        return nil
-    }
-    res["kioskModeShowDeviceInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeShowDeviceInfo(val)
-        }
-        return nil
-    }
-    res["kioskModeUseManagedHomeScreenApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKioskModeType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeUseManagedHomeScreenApp(val.(*KioskModeType))
-        }
-        return nil
-    }
-    res["kioskModeVirtualHomeButtonEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeVirtualHomeButtonEnabled(val)
-        }
-        return nil
-    }
-    res["kioskModeVirtualHomeButtonType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerVirtualHomeButtonType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeVirtualHomeButtonType(val.(*AndroidDeviceOwnerVirtualHomeButtonType))
-        }
-        return nil
-    }
-    res["kioskModeWallpaperUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeWallpaperUrl(val)
-        }
-        return nil
-    }
-    res["kioskModeWifiAllowedSsids"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetKioskModeWifiAllowedSsids(res)
-        }
-        return nil
-    }
-    res["kioskModeWiFiConfigurationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetKioskModeWiFiConfigurationEnabled(val)
-        }
-        return nil
-    }
-    res["microphoneForceMute"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrophoneForceMute(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherConfigurationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherConfigurationEnabled(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherCustomWallpaperAllowUserModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherCustomWallpaperAllowUserModification(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherCustomWallpaperEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherCustomWallpaperEnabled(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherCustomWallpaperImageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherCustomWallpaperImageUrl(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherDockPresenceAllowUserModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherDockPresenceAllowUserModification(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherDockPresenceConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMicrosoftLauncherDockPresence)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherDockPresenceConfiguration(val.(*MicrosoftLauncherDockPresence))
-        }
-        return nil
-    }
-    res["microsoftLauncherFeedAllowUserModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherFeedAllowUserModification(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherFeedEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherFeedEnabled(val)
-        }
-        return nil
-    }
-    res["microsoftLauncherSearchBarPlacementConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMicrosoftLauncherSearchBarPlacement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftLauncherSearchBarPlacementConfiguration(val.(*MicrosoftLauncherSearchBarPlacement))
-        }
-        return nil
-    }
-    res["networkEscapeHatchAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNetworkEscapeHatchAllowed(val)
-        }
-        return nil
-    }
-    res["nfcBlockOutgoingBeam"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNfcBlockOutgoingBeam(val)
-        }
-        return nil
-    }
-    res["passwordBlockKeyguard"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordBlockKeyguard(val)
-        }
-        return nil
-    }
-    res["passwordBlockKeyguardFeatures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAndroidKeyguardFeature)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidKeyguardFeature, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AndroidKeyguardFeature))
-            }
-            m.SetPasswordBlockKeyguardFeatures(res)
-        }
-        return nil
-    }
-    res["passwordExpirationDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordExpirationDays(val)
-        }
-        return nil
-    }
-    res["passwordMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumLength(val)
-        }
-        return nil
-    }
-    res["passwordMinimumLetterCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumLetterCharacters(val)
-        }
-        return nil
-    }
-    res["passwordMinimumLowerCaseCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumLowerCaseCharacters(val)
-        }
-        return nil
-    }
-    res["passwordMinimumNonLetterCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumNonLetterCharacters(val)
-        }
-        return nil
-    }
-    res["passwordMinimumNumericCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumNumericCharacters(val)
-        }
-        return nil
-    }
-    res["passwordMinimumSymbolCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumSymbolCharacters(val)
-        }
-        return nil
-    }
-    res["passwordMinimumUpperCaseCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinimumUpperCaseCharacters(val)
-        }
-        return nil
-    }
-    res["passwordMinutesOfInactivityBeforeScreenTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordMinutesOfInactivityBeforeScreenTimeout(val)
-        }
-        return nil
-    }
-    res["passwordPreviousPasswordCountToBlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordPreviousPasswordCountToBlock(val)
-        }
-        return nil
-    }
-    res["passwordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordRequiredType(val.(*AndroidDeviceOwnerRequiredPasswordType))
-        }
-        return nil
-    }
-    res["passwordRequireUnlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordUnlock)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordRequireUnlock(val.(*AndroidDeviceOwnerRequiredPasswordUnlock))
-        }
-        return nil
-    }
-    res["passwordSignInFailureCountBeforeFactoryReset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPasswordSignInFailureCountBeforeFactoryReset(val)
-        }
-        return nil
-    }
-    res["personalProfileAppsAllowInstallFromUnknownSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPersonalProfileAppsAllowInstallFromUnknownSources(val)
-        }
-        return nil
-    }
-    res["personalProfileCameraBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPersonalProfileCameraBlocked(val)
-        }
-        return nil
-    }
-    res["personalProfilePersonalApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AppListItemable, len(val))
-            for i, v := range val {
-                res[i] = v.(AppListItemable)
-            }
-            m.SetPersonalProfilePersonalApplications(res)
-        }
-        return nil
-    }
-    res["personalProfilePlayStoreMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePersonalProfilePersonalPlayStoreMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPersonalProfilePlayStoreMode(val.(*PersonalProfilePersonalPlayStoreMode))
-        }
-        return nil
-    }
-    res["personalProfileScreenCaptureBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPersonalProfileScreenCaptureBlocked(val)
-        }
-        return nil
-    }
-    res["playStoreMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerPlayStoreMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlayStoreMode(val.(*AndroidDeviceOwnerPlayStoreMode))
-        }
-        return nil
-    }
-    res["screenCaptureBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScreenCaptureBlocked(val)
-        }
-        return nil
-    }
-    res["securityCommonCriteriaModeEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurityCommonCriteriaModeEnabled(val)
-        }
-        return nil
-    }
-    res["securityDeveloperSettingsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurityDeveloperSettingsEnabled(val)
-        }
-        return nil
-    }
-    res["securityRequireVerifyApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSecurityRequireVerifyApps(val)
-        }
-        return nil
-    }
-    res["shortHelpText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetShortHelpText(val.(AndroidDeviceOwnerUserFacingMessageable))
-        }
-        return nil
-    }
-    res["statusBarBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatusBarBlocked(val)
-        }
-        return nil
-    }
-    res["stayOnModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAndroidDeviceOwnerBatteryPluggedMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidDeviceOwnerBatteryPluggedMode, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*AndroidDeviceOwnerBatteryPluggedMode))
-            }
-            m.SetStayOnModes(res)
-        }
-        return nil
-    }
-    res["storageAllowUsb"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStorageAllowUsb(val)
-        }
-        return nil
-    }
-    res["storageBlockExternalMedia"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStorageBlockExternalMedia(val)
-        }
-        return nil
-    }
-    res["storageBlockUsbFileTransfer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStorageBlockUsbFileTransfer(val)
-        }
-        return nil
-    }
-    res["systemUpdateFreezePeriods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerSystemUpdateFreezePeriodFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidDeviceOwnerSystemUpdateFreezePeriodable, len(val))
-            for i, v := range val {
-                res[i] = v.(AndroidDeviceOwnerSystemUpdateFreezePeriodable)
-            }
-            m.SetSystemUpdateFreezePeriods(res)
-        }
-        return nil
-    }
-    res["systemUpdateInstallType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerSystemUpdateInstallType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSystemUpdateInstallType(val.(*AndroidDeviceOwnerSystemUpdateInstallType))
-        }
-        return nil
-    }
-    res["systemUpdateWindowEndMinutesAfterMidnight"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSystemUpdateWindowEndMinutesAfterMidnight(val)
-        }
-        return nil
-    }
-    res["systemUpdateWindowStartMinutesAfterMidnight"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSystemUpdateWindowStartMinutesAfterMidnight(val)
-        }
-        return nil
-    }
-    res["systemWindowsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSystemWindowsBlocked(val)
-        }
-        return nil
-    }
-    res["usersBlockAdd"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUsersBlockAdd(val)
-        }
-        return nil
-    }
-    res["usersBlockRemove"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUsersBlockRemove(val)
-        }
-        return nil
-    }
-    res["volumeBlockAdjustment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVolumeBlockAdjustment(val)
-        }
-        return nil
-    }
-    res["vpnAlwaysOnLockdownMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVpnAlwaysOnLockdownMode(val)
-        }
-        return nil
-    }
-    res["vpnAlwaysOnPackageIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVpnAlwaysOnPackageIdentifier(val)
-        }
-        return nil
-    }
-    res["wifiBlockEditConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiBlockEditConfigurations(val)
-        }
-        return nil
-    }
-    res["wifiBlockEditPolicyDefinedConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWifiBlockEditPolicyDefinedConfigurations(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordExpirationDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordExpirationDays(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordMinimumLength(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordMinimumLetterCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordMinimumLetterCharacters(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordMinimumLowerCaseCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordMinimumLowerCaseCharacters(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordMinimumNonLetterCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordMinimumNonLetterCharacters(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordMinimumNumericCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordMinimumNumericCharacters(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordMinimumSymbolCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordMinimumSymbolCharacters(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordMinimumUpperCaseCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordMinimumUpperCaseCharacters(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordPreviousPasswordCountToBlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordPreviousPasswordCountToBlock(val)
-        }
-        return nil
-    }
-    res["workProfilePasswordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordRequiredType(val.(*AndroidDeviceOwnerRequiredPasswordType))
-        }
-        return nil
-    }
-    res["workProfilePasswordRequireUnlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordUnlock)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordRequireUnlock(val.(*AndroidDeviceOwnerRequiredPasswordUnlock))
-        }
-        return nil
-    }
-    res["workProfilePasswordSignInFailureCountBeforeFactoryReset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset(val)
-        }
-        return nil
-    }
+    res["accountsBlockModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAccountsBlockModification)
+    res["appsAllowInstallFromUnknownSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppsAllowInstallFromUnknownSources)
+    res["appsAutoUpdatePolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerAppAutoUpdatePolicyType , m.SetAppsAutoUpdatePolicy)
+    res["appsDefaultPermissionPolicy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerDefaultAppPermissionPolicyType , m.SetAppsDefaultPermissionPolicy)
+    res["appsRecommendSkippingFirstUseHints"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetAppsRecommendSkippingFirstUseHints)
+    res["azureAdSharedDeviceDataClearApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue , m.SetAzureAdSharedDeviceDataClearApps)
+    res["bluetoothBlockConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBluetoothBlockConfiguration)
+    res["bluetoothBlockContactSharing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetBluetoothBlockContactSharing)
+    res["cameraBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCameraBlocked)
+    res["cellularBlockWiFiTethering"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCellularBlockWiFiTethering)
+    res["certificateCredentialConfigurationDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCertificateCredentialConfigurationDisabled)
+    res["crossProfilePoliciesAllowCopyPaste"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCrossProfilePoliciesAllowCopyPaste)
+    res["crossProfilePoliciesAllowDataSharing"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerCrossProfileDataSharing , m.SetCrossProfilePoliciesAllowDataSharing)
+    res["crossProfilePoliciesShowWorkContactsInPersonalProfile"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetCrossProfilePoliciesShowWorkContactsInPersonalProfile)
+    res["dataRoamingBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDataRoamingBlocked)
+    res["dateTimeConfigurationBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetDateTimeConfigurationBlocked)
+    res["detailedHelpText"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue , m.SetDetailedHelpText)
+    res["deviceOwnerLockScreenMessage"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue , m.SetDeviceOwnerLockScreenMessage)
+    res["enrollmentProfile"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerEnrollmentProfileType , m.SetEnrollmentProfile)
+    res["factoryResetBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetFactoryResetBlocked)
+    res["factoryResetDeviceAdministratorEmails"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetFactoryResetDeviceAdministratorEmails)
+    res["globalProxy"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAndroidDeviceOwnerGlobalProxyFromDiscriminatorValue , m.SetGlobalProxy)
+    res["googleAccountsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetGoogleAccountsBlocked)
+    res["kioskCustomizationDeviceSettingsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskCustomizationDeviceSettingsBlocked)
+    res["kioskCustomizationPowerButtonActionsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskCustomizationPowerButtonActionsBlocked)
+    res["kioskCustomizationStatusBar"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerKioskCustomizationStatusBar , m.SetKioskCustomizationStatusBar)
+    res["kioskCustomizationSystemErrorWarnings"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskCustomizationSystemErrorWarnings)
+    res["kioskCustomizationSystemNavigation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerKioskCustomizationSystemNavigation , m.SetKioskCustomizationSystemNavigation)
+    res["kioskModeAppOrderEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAppOrderEnabled)
+    res["kioskModeAppPositions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAndroidDeviceOwnerKioskModeAppPositionItemFromDiscriminatorValue , m.SetKioskModeAppPositions)
+    res["kioskModeApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue , m.SetKioskModeApps)
+    res["kioskModeAppsInFolderOrderedByName"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeAppsInFolderOrderedByName)
+    res["kioskModeBluetoothConfigurationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeBluetoothConfigurationEnabled)
+    res["kioskModeDebugMenuEasyAccessEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeDebugMenuEasyAccessEnabled)
+    res["kioskModeExitCode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeExitCode)
+    res["kioskModeFlashlightConfigurationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeFlashlightConfigurationEnabled)
+    res["kioskModeFolderIcon"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerKioskModeFolderIcon , m.SetKioskModeFolderIcon)
+    res["kioskModeGridHeight"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetKioskModeGridHeight)
+    res["kioskModeGridWidth"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetKioskModeGridWidth)
+    res["kioskModeIconSize"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerKioskModeIconSize , m.SetKioskModeIconSize)
+    res["kioskModeLockHomeScreen"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeLockHomeScreen)
+    res["kioskModeManagedFolders"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue , m.SetKioskModeManagedFolders)
+    res["kioskModeManagedHomeScreenAutoSignout"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeManagedHomeScreenAutoSignout)
+    res["kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds)
+    res["kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds)
+    res["kioskModeManagedHomeScreenPinComplexity"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseKioskModeManagedHomeScreenPinComplexity , m.SetKioskModeManagedHomeScreenPinComplexity)
+    res["kioskModeManagedHomeScreenPinRequired"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeManagedHomeScreenPinRequired)
+    res["kioskModeManagedHomeScreenPinRequiredToResume"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeManagedHomeScreenPinRequiredToResume)
+    res["kioskModeManagedHomeScreenSignInBackground"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeManagedHomeScreenSignInBackground)
+    res["kioskModeManagedHomeScreenSignInBrandingLogo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeManagedHomeScreenSignInBrandingLogo)
+    res["kioskModeManagedHomeScreenSignInEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeManagedHomeScreenSignInEnabled)
+    res["kioskModeManagedSettingsEntryDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeManagedSettingsEntryDisabled)
+    res["kioskModeMediaVolumeConfigurationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeMediaVolumeConfigurationEnabled)
+    res["kioskModeScreenOrientation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerKioskModeScreenOrientation , m.SetKioskModeScreenOrientation)
+    res["kioskModeScreenSaverConfigurationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeScreenSaverConfigurationEnabled)
+    res["kioskModeScreenSaverDetectMediaDisabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeScreenSaverDetectMediaDisabled)
+    res["kioskModeScreenSaverDisplayTimeInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetKioskModeScreenSaverDisplayTimeInSeconds)
+    res["kioskModeScreenSaverImageUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeScreenSaverImageUrl)
+    res["kioskModeScreenSaverStartDelayInSeconds"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetKioskModeScreenSaverStartDelayInSeconds)
+    res["kioskModeShowAppNotificationBadge"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeShowAppNotificationBadge)
+    res["kioskModeShowDeviceInfo"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeShowDeviceInfo)
+    res["kioskModeUseManagedHomeScreenApp"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseKioskModeType , m.SetKioskModeUseManagedHomeScreenApp)
+    res["kioskModeVirtualHomeButtonEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeVirtualHomeButtonEnabled)
+    res["kioskModeVirtualHomeButtonType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerVirtualHomeButtonType , m.SetKioskModeVirtualHomeButtonType)
+    res["kioskModeWallpaperUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetKioskModeWallpaperUrl)
+    res["kioskModeWifiAllowedSsids"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetKioskModeWifiAllowedSsids)
+    res["kioskModeWiFiConfigurationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetKioskModeWiFiConfigurationEnabled)
+    res["microphoneForceMute"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrophoneForceMute)
+    res["microsoftLauncherConfigurationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrosoftLauncherConfigurationEnabled)
+    res["microsoftLauncherCustomWallpaperAllowUserModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrosoftLauncherCustomWallpaperAllowUserModification)
+    res["microsoftLauncherCustomWallpaperEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrosoftLauncherCustomWallpaperEnabled)
+    res["microsoftLauncherCustomWallpaperImageUrl"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetMicrosoftLauncherCustomWallpaperImageUrl)
+    res["microsoftLauncherDockPresenceAllowUserModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrosoftLauncherDockPresenceAllowUserModification)
+    res["microsoftLauncherDockPresenceConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMicrosoftLauncherDockPresence , m.SetMicrosoftLauncherDockPresenceConfiguration)
+    res["microsoftLauncherFeedAllowUserModification"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrosoftLauncherFeedAllowUserModification)
+    res["microsoftLauncherFeedEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetMicrosoftLauncherFeedEnabled)
+    res["microsoftLauncherSearchBarPlacementConfiguration"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseMicrosoftLauncherSearchBarPlacement , m.SetMicrosoftLauncherSearchBarPlacementConfiguration)
+    res["networkEscapeHatchAllowed"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetNetworkEscapeHatchAllowed)
+    res["nfcBlockOutgoingBeam"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetNfcBlockOutgoingBeam)
+    res["passwordBlockKeyguard"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPasswordBlockKeyguard)
+    res["passwordBlockKeyguardFeatures"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseAndroidKeyguardFeature , m.SetPasswordBlockKeyguardFeatures)
+    res["passwordExpirationDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordExpirationDays)
+    res["passwordMinimumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumLength)
+    res["passwordMinimumLetterCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumLetterCharacters)
+    res["passwordMinimumLowerCaseCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumLowerCaseCharacters)
+    res["passwordMinimumNonLetterCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumNonLetterCharacters)
+    res["passwordMinimumNumericCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumNumericCharacters)
+    res["passwordMinimumSymbolCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumSymbolCharacters)
+    res["passwordMinimumUpperCaseCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinimumUpperCaseCharacters)
+    res["passwordMinutesOfInactivityBeforeScreenTimeout"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordMinutesOfInactivityBeforeScreenTimeout)
+    res["passwordPreviousPasswordCountToBlock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordPreviousPasswordCountToBlock)
+    res["passwordRequiredType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType , m.SetPasswordRequiredType)
+    res["passwordRequireUnlock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordUnlock , m.SetPasswordRequireUnlock)
+    res["passwordSignInFailureCountBeforeFactoryReset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetPasswordSignInFailureCountBeforeFactoryReset)
+    res["personalProfileAppsAllowInstallFromUnknownSources"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPersonalProfileAppsAllowInstallFromUnknownSources)
+    res["personalProfileCameraBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPersonalProfileCameraBlocked)
+    res["personalProfilePersonalApplications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAppListItemFromDiscriminatorValue , m.SetPersonalProfilePersonalApplications)
+    res["personalProfilePlayStoreMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParsePersonalProfilePersonalPlayStoreMode , m.SetPersonalProfilePlayStoreMode)
+    res["personalProfileScreenCaptureBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetPersonalProfileScreenCaptureBlocked)
+    res["playStoreMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerPlayStoreMode , m.SetPlayStoreMode)
+    res["screenCaptureBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetScreenCaptureBlocked)
+    res["securityCommonCriteriaModeEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityCommonCriteriaModeEnabled)
+    res["securityDeveloperSettingsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityDeveloperSettingsEnabled)
+    res["securityRequireVerifyApps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSecurityRequireVerifyApps)
+    res["shortHelpText"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue , m.SetShortHelpText)
+    res["statusBarBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStatusBarBlocked)
+    res["stayOnModes"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfEnumValues(ParseAndroidDeviceOwnerBatteryPluggedMode , m.SetStayOnModes)
+    res["storageAllowUsb"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStorageAllowUsb)
+    res["storageBlockExternalMedia"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStorageBlockExternalMedia)
+    res["storageBlockUsbFileTransfer"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetStorageBlockUsbFileTransfer)
+    res["systemUpdateFreezePeriods"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAndroidDeviceOwnerSystemUpdateFreezePeriodFromDiscriminatorValue , m.SetSystemUpdateFreezePeriods)
+    res["systemUpdateInstallType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerSystemUpdateInstallType , m.SetSystemUpdateInstallType)
+    res["systemUpdateWindowEndMinutesAfterMidnight"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSystemUpdateWindowEndMinutesAfterMidnight)
+    res["systemUpdateWindowStartMinutesAfterMidnight"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSystemUpdateWindowStartMinutesAfterMidnight)
+    res["systemWindowsBlocked"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetSystemWindowsBlocked)
+    res["usersBlockAdd"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUsersBlockAdd)
+    res["usersBlockRemove"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetUsersBlockRemove)
+    res["volumeBlockAdjustment"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetVolumeBlockAdjustment)
+    res["vpnAlwaysOnLockdownMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetVpnAlwaysOnLockdownMode)
+    res["vpnAlwaysOnPackageIdentifier"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetVpnAlwaysOnPackageIdentifier)
+    res["wifiBlockEditConfigurations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWifiBlockEditConfigurations)
+    res["wifiBlockEditPolicyDefinedConfigurations"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetWifiBlockEditPolicyDefinedConfigurations)
+    res["workProfilePasswordExpirationDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordExpirationDays)
+    res["workProfilePasswordMinimumLength"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordMinimumLength)
+    res["workProfilePasswordMinimumLetterCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordMinimumLetterCharacters)
+    res["workProfilePasswordMinimumLowerCaseCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordMinimumLowerCaseCharacters)
+    res["workProfilePasswordMinimumNonLetterCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordMinimumNonLetterCharacters)
+    res["workProfilePasswordMinimumNumericCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordMinimumNumericCharacters)
+    res["workProfilePasswordMinimumSymbolCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordMinimumSymbolCharacters)
+    res["workProfilePasswordMinimumUpperCaseCharacters"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordMinimumUpperCaseCharacters)
+    res["workProfilePasswordPreviousPasswordCountToBlock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordPreviousPasswordCountToBlock)
+    res["workProfilePasswordRequiredType"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordType , m.SetWorkProfilePasswordRequiredType)
+    res["workProfilePasswordRequireUnlock"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseAndroidDeviceOwnerRequiredPasswordUnlock , m.SetWorkProfilePasswordRequireUnlock)
+    res["workProfilePasswordSignInFailureCountBeforeFactoryReset"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset)
     return res
 }
 // GetGlobalProxy gets the globalProxy property value. Proxy is set up directly with host, port and excluded hosts.
@@ -2249,10 +1004,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     if m.GetAzureAdSharedDeviceDataClearApps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAzureAdSharedDeviceDataClearApps()))
-        for i, v := range m.GetAzureAdSharedDeviceDataClearApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAzureAdSharedDeviceDataClearApps())
         err = writer.WriteCollectionOfObjectValues("azureAdSharedDeviceDataClearApps", cast)
         if err != nil {
             return err
@@ -2401,20 +1153,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     if m.GetKioskModeAppPositions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeAppPositions()))
-        for i, v := range m.GetKioskModeAppPositions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetKioskModeAppPositions())
         err = writer.WriteCollectionOfObjectValues("kioskModeAppPositions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetKioskModeApps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeApps()))
-        for i, v := range m.GetKioskModeApps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetKioskModeApps())
         err = writer.WriteCollectionOfObjectValues("kioskModeApps", cast)
         if err != nil {
             return err
@@ -2483,10 +1229,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     if m.GetKioskModeManagedFolders() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeManagedFolders()))
-        for i, v := range m.GetKioskModeManagedFolders() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetKioskModeManagedFolders())
         err = writer.WriteCollectionOfObjectValues("kioskModeManagedFolders", cast)
         if err != nil {
             return err
@@ -2825,10 +1568,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     if m.GetPersonalProfilePersonalApplications() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPersonalProfilePersonalApplications()))
-        for i, v := range m.GetPersonalProfilePersonalApplications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetPersonalProfilePersonalApplications())
         err = writer.WriteCollectionOfObjectValues("personalProfilePersonalApplications", cast)
         if err != nil {
             return err
@@ -2915,10 +1655,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     if m.GetSystemUpdateFreezePeriods() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSystemUpdateFreezePeriods()))
-        for i, v := range m.GetSystemUpdateFreezePeriods() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetSystemUpdateFreezePeriods())
         err = writer.WriteCollectionOfObjectValues("systemUpdateFreezePeriods", cast)
         if err != nil {
             return err

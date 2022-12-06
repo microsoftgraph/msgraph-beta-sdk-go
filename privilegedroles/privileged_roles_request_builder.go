@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i4e80291c9198a3ac2650632538595ef6e41a48baf94c795043e914ea51607b77 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroles/count"
 )
 
 // PrivilegedRolesRequestBuilder provides operations to manage the collection of privilegedRole entities.
@@ -71,8 +72,8 @@ func NewPrivilegedRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewPrivilegedRolesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PrivilegedRolesRequestBuilder) Count()(*PrivilegedRolesCountRequestBuilder) {
-    return NewPrivilegedRolesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedRolesRequestBuilder) Count()(*i4e80291c9198a3ac2650632538595ef6e41a48baf94c795043e914ea51607b77.CountRequestBuilder) {
+    return i4e80291c9198a3ac2650632538595ef6e41a48baf94c795043e914ea51607b77.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of privilegedRole objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
 func (m *PrivilegedRolesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

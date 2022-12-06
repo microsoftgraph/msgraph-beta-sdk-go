@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i73991b2ef22211d884811241bcf1450635b1dbe828f54c6b7e8614664225dada "github.com/microsoftgraph/msgraph-beta-sdk-go/alloweddatalocations/count"
 )
 
 // AllowedDataLocationsRequestBuilder provides operations to manage the collection of allowedDataLocation entities.
@@ -71,8 +72,8 @@ func NewAllowedDataLocationsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewAllowedDataLocationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *AllowedDataLocationsRequestBuilder) Count()(*AllowedDataLocationsCountRequestBuilder) {
-    return NewAllowedDataLocationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AllowedDataLocationsRequestBuilder) Count()(*i73991b2ef22211d884811241bcf1450635b1dbe828f54c6b7e8614664225dada.CountRequestBuilder) {
+    return i73991b2ef22211d884811241bcf1450635b1dbe828f54c6b7e8614664225dada.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from allowedDataLocations
 func (m *AllowedDataLocationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AllowedDataLocationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

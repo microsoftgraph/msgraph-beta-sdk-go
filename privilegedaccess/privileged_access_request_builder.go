@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i33e50cc01be8c6c67441f26b0bb23deefa0c91771fa3556b23c303d09f88b1e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/count"
 )
 
 // PrivilegedAccessRequestBuilder provides operations to manage the collection of privilegedAccess entities.
@@ -71,8 +72,8 @@ func NewPrivilegedAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewPrivilegedAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PrivilegedAccessRequestBuilder) Count()(*PrivilegedAccessCountRequestBuilder) {
-    return NewPrivilegedAccessCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedAccessRequestBuilder) Count()(*i33e50cc01be8c6c67441f26b0bb23deefa0c91771fa3556b23c303d09f88b1e0.CountRequestBuilder) {
+    return i33e50cc01be8c6c67441f26b0bb23deefa0c91771fa3556b23c303d09f88b1e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from privilegedAccess
 func (m *PrivilegedAccessRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

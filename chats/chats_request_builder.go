@@ -5,6 +5,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i3ffed895f21daba82463bd2903d50fce085e5f77677698c86d175dc2cc3323b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/getallmessages"
+    i53f5d6ac5d19da99e4d848f0d84293b898614b5041c3215a25d1e5dc57339235 "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/allmessages"
+    i7e2a1fe21ec472f69ed541801acf62993349d49bbc38ebe5ae0445629c4b8a89 "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/count"
 )
 
 // ChatsRequestBuilder provides operations to manage the collection of chat entities.
@@ -52,8 +55,8 @@ type ChatsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllMessages provides operations to call the allMessages method.
-func (m *ChatsRequestBuilder) AllMessages()(*ChatsAllMessagesRequestBuilder) {
-    return NewChatsAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ChatsRequestBuilder) AllMessages()(*i53f5d6ac5d19da99e4d848f0d84293b898614b5041c3215a25d1e5dc57339235.AllMessagesRequestBuilder) {
+    return i53f5d6ac5d19da99e4d848f0d84293b898614b5041c3215a25d1e5dc57339235.NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewChatsRequestBuilderInternal instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsRequestBuilder) {
@@ -75,8 +78,8 @@ func NewChatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewChatsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ChatsRequestBuilder) Count()(*ChatsCountRequestBuilder) {
-    return NewChatsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ChatsRequestBuilder) Count()(*i7e2a1fe21ec472f69ed541801acf62993349d49bbc38ebe5ae0445629c4b8a89.CountRequestBuilder) {
+    return i7e2a1fe21ec472f69ed541801acf62993349d49bbc38ebe5ae0445629c4b8a89.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
 func (m *ChatsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ChatsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -128,8 +131,8 @@ func (m *ChatsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cha
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-func (m *ChatsRequestBuilder) GetAllMessages()(*ChatsGetAllMessagesRequestBuilder) {
-    return NewChatsGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ChatsRequestBuilder) GetAllMessages()(*i3ffed895f21daba82463bd2903d50fce085e5f77677698c86d175dc2cc3323b9.GetAllMessagesRequestBuilder) {
+    return i3ffed895f21daba82463bd2903d50fce085e5f77677698c86d175dc2cc3323b9.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new chat object.
 func (m *ChatsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable, requestConfiguration *ChatsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable, error) {

@@ -5,6 +5,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies"
+    ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item"
 )
 
 // FinancialsRequestBuilder provides operations to manage the financials singleton.
@@ -40,11 +42,11 @@ type FinancialsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Companies provides operations to manage the companies property of the microsoft.graph.financials entity.
-func (m *FinancialsRequestBuilder) Companies()(*FinancialsCompaniesRequestBuilder) {
-    return NewFinancialsCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *FinancialsRequestBuilder) Companies()(*id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.CompaniesRequestBuilder) {
+    return id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.NewCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CompaniesById provides operations to manage the companies property of the microsoft.graph.financials entity.
-func (m *FinancialsRequestBuilder) CompaniesById(id string)(*FinancialsCompaniesCompanyItemRequestBuilder) {
+func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.CompanyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +54,7 @@ func (m *FinancialsRequestBuilder) CompaniesById(id string)(*FinancialsCompanies
     if id != "" {
         urlTplParams["company%2Did"] = id
     }
-    return NewFinancialsCompaniesCompanyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.NewCompanyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewFinancialsRequestBuilderInternal instantiates a new FinancialsRequestBuilder and sets the default values.
 func NewFinancialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FinancialsRequestBuilder) {

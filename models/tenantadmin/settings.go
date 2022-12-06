@@ -1,6 +1,7 @@
 package tenantadmin
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
@@ -97,316 +98,35 @@ func (m *Settings) GetExcludedFileExtensionsForSyncApp()([]string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowedDomainGuidsForSyncApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetAllowedDomainGuidsForSyncApp(res)
-        }
-        return nil
-    }
-    res["availableManagedPathsForSiteCreation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetAvailableManagedPathsForSiteCreation(res)
-        }
-        return nil
-    }
-    res["deletedUserPersonalSiteRetentionPeriodInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeletedUserPersonalSiteRetentionPeriodInDays(val)
-        }
-        return nil
-    }
-    res["excludedFileExtensionsForSyncApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetExcludedFileExtensionsForSyncApp(res)
-        }
-        return nil
-    }
-    res["idleSessionSignOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdleSessionSignOutFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdleSessionSignOut(val.(IdleSessionSignOutable))
-        }
-        return nil
-    }
-    res["imageTaggingOption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImageTaggingChoice)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetImageTaggingOption(val.(*ImageTaggingChoice))
-        }
-        return nil
-    }
-    res["isCommentingOnSitePagesEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsCommentingOnSitePagesEnabled(val)
-        }
-        return nil
-    }
-    res["isFileActivityNotificationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsFileActivityNotificationEnabled(val)
-        }
-        return nil
-    }
-    res["isLegacyAuthProtocolsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsLegacyAuthProtocolsEnabled(val)
-        }
-        return nil
-    }
-    res["isLoopEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsLoopEnabled(val)
-        }
-        return nil
-    }
-    res["isMacSyncAppEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsMacSyncAppEnabled(val)
-        }
-        return nil
-    }
-    res["isRequireAcceptingUserToMatchInvitedUserEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsRequireAcceptingUserToMatchInvitedUserEnabled(val)
-        }
-        return nil
-    }
-    res["isResharingByExternalUsersEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsResharingByExternalUsersEnabled(val)
-        }
-        return nil
-    }
-    res["isSharePointMobileNotificationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSharePointMobileNotificationEnabled(val)
-        }
-        return nil
-    }
-    res["isSharePointNewsfeedEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSharePointNewsfeedEnabled(val)
-        }
-        return nil
-    }
-    res["isSiteCreationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSiteCreationEnabled(val)
-        }
-        return nil
-    }
-    res["isSiteCreationUIEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSiteCreationUIEnabled(val)
-        }
-        return nil
-    }
-    res["isSitePagesCreationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSitePagesCreationEnabled(val)
-        }
-        return nil
-    }
-    res["isSitesStorageLimitAutomatic"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSitesStorageLimitAutomatic(val)
-        }
-        return nil
-    }
-    res["isSyncButtonHiddenOnPersonalSite"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSyncButtonHiddenOnPersonalSite(val)
-        }
-        return nil
-    }
-    res["isUnmanagedSyncAppForTenantRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsUnmanagedSyncAppForTenantRestricted(val)
-        }
-        return nil
-    }
-    res["personalSiteDefaultStorageLimitInMB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPersonalSiteDefaultStorageLimitInMB(val)
-        }
-        return nil
-    }
-    res["sharingAllowedDomainList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetSharingAllowedDomainList(res)
-        }
-        return nil
-    }
-    res["sharingBlockedDomainList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*string))
-            }
-            m.SetSharingBlockedDomainList(res)
-        }
-        return nil
-    }
-    res["sharingCapability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSharingCapabilities)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSharingCapability(val.(*SharingCapabilities))
-        }
-        return nil
-    }
-    res["sharingDomainRestrictionMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSharingDomainRestrictionMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSharingDomainRestrictionMode(val.(*SharingDomainRestrictionMode))
-        }
-        return nil
-    }
-    res["siteCreationDefaultManagedPath"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSiteCreationDefaultManagedPath(val)
-        }
-        return nil
-    }
-    res["siteCreationDefaultStorageLimitInMB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSiteCreationDefaultStorageLimitInMB(val)
-        }
-        return nil
-    }
-    res["tenantDefaultTimezone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantDefaultTimezone(val)
-        }
-        return nil
-    }
+    res["allowedDomainGuidsForSyncApp"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAllowedDomainGuidsForSyncApp)
+    res["availableManagedPathsForSiteCreation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetAvailableManagedPathsForSiteCreation)
+    res["deletedUserPersonalSiteRetentionPeriodInDays"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetDeletedUserPersonalSiteRetentionPeriodInDays)
+    res["excludedFileExtensionsForSyncApp"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetExcludedFileExtensionsForSyncApp)
+    res["idleSessionSignOut"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetObjectValue(CreateIdleSessionSignOutFromDiscriminatorValue , m.SetIdleSessionSignOut)
+    res["imageTaggingOption"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseImageTaggingChoice , m.SetImageTaggingOption)
+    res["isCommentingOnSitePagesEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsCommentingOnSitePagesEnabled)
+    res["isFileActivityNotificationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsFileActivityNotificationEnabled)
+    res["isLegacyAuthProtocolsEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsLegacyAuthProtocolsEnabled)
+    res["isLoopEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsLoopEnabled)
+    res["isMacSyncAppEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsMacSyncAppEnabled)
+    res["isRequireAcceptingUserToMatchInvitedUserEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsRequireAcceptingUserToMatchInvitedUserEnabled)
+    res["isResharingByExternalUsersEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsResharingByExternalUsersEnabled)
+    res["isSharePointMobileNotificationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSharePointMobileNotificationEnabled)
+    res["isSharePointNewsfeedEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSharePointNewsfeedEnabled)
+    res["isSiteCreationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSiteCreationEnabled)
+    res["isSiteCreationUIEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSiteCreationUIEnabled)
+    res["isSitePagesCreationEnabled"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSitePagesCreationEnabled)
+    res["isSitesStorageLimitAutomatic"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSitesStorageLimitAutomatic)
+    res["isSyncButtonHiddenOnPersonalSite"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsSyncButtonHiddenOnPersonalSite)
+    res["isUnmanagedSyncAppForTenantRestricted"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetBoolValue(m.SetIsUnmanagedSyncAppForTenantRestricted)
+    res["personalSiteDefaultStorageLimitInMB"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt64Value(m.SetPersonalSiteDefaultStorageLimitInMB)
+    res["sharingAllowedDomainList"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSharingAllowedDomainList)
+    res["sharingBlockedDomainList"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfPrimitiveValues("string" , m.SetSharingBlockedDomainList)
+    res["sharingCapability"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSharingCapabilities , m.SetSharingCapability)
+    res["sharingDomainRestrictionMode"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetEnumValue(ParseSharingDomainRestrictionMode , m.SetSharingDomainRestrictionMode)
+    res["siteCreationDefaultManagedPath"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetSiteCreationDefaultManagedPath)
+    res["siteCreationDefaultStorageLimitInMB"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetInt32Value(m.SetSiteCreationDefaultStorageLimitInMB)
+    res["tenantDefaultTimezone"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetStringValue(m.SetTenantDefaultTimezone)
     return res
 }
 // GetIdleSessionSignOut gets the idleSessionSignOut property value. Specifies the idle session sign-out policies for the tenant.

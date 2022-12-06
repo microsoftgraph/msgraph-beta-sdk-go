@@ -1,6 +1,7 @@
 package managedtenants
 
 import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
@@ -123,482 +124,40 @@ func (m *ManagedTenant) GetDeviceCompliancePolicySettingStateSummaries()([]Devic
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["aggregatedPolicyCompliances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAggregatedPolicyComplianceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AggregatedPolicyComplianceable, len(val))
-            for i, v := range val {
-                res[i] = v.(AggregatedPolicyComplianceable)
-            }
-            m.SetAggregatedPolicyCompliances(res)
-        }
-        return nil
-    }
-    res["auditEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuditEventFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuditEventable, len(val))
-            for i, v := range val {
-                res[i] = v.(AuditEventable)
-            }
-            m.SetAuditEvents(res)
-        }
-        return nil
-    }
-    res["cloudPcConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcConnectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcConnectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcConnectionable)
-            }
-            m.SetCloudPcConnections(res)
-        }
-        return nil
-    }
-    res["cloudPcDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcDeviceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcDeviceable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcDeviceable)
-            }
-            m.SetCloudPcDevices(res)
-        }
-        return nil
-    }
-    res["cloudPcsOverview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcOverviewFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcOverviewable, len(val))
-            for i, v := range val {
-                res[i] = v.(CloudPcOverviewable)
-            }
-            m.SetCloudPcsOverview(res)
-        }
-        return nil
-    }
-    res["conditionalAccessPolicyCoverages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyCoverageFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyCoverageable, len(val))
-            for i, v := range val {
-                res[i] = v.(ConditionalAccessPolicyCoverageable)
-            }
-            m.SetConditionalAccessPolicyCoverages(res)
-        }
-        return nil
-    }
-    res["credentialUserRegistrationsSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CredentialUserRegistrationsSummaryable, len(val))
-            for i, v := range val {
-                res[i] = v.(CredentialUserRegistrationsSummaryable)
-            }
-            m.SetCredentialUserRegistrationsSummaries(res)
-        }
-        return nil
-    }
-    res["deviceCompliancePolicySettingStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceCompliancePolicySettingStateSummaryable, len(val))
-            for i, v := range val {
-                res[i] = v.(DeviceCompliancePolicySettingStateSummaryable)
-            }
-            m.SetDeviceCompliancePolicySettingStateSummaries(res)
-        }
-        return nil
-    }
-    res["managedDeviceCompliances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceComplianceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedDeviceComplianceable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedDeviceComplianceable)
-            }
-            m.SetManagedDeviceCompliances(res)
-        }
-        return nil
-    }
-    res["managedDeviceComplianceTrends"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceComplianceTrendFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedDeviceComplianceTrendable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedDeviceComplianceTrendable)
-            }
-            m.SetManagedDeviceComplianceTrends(res)
-        }
-        return nil
-    }
-    res["managedTenantAlertLogs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedTenantAlertLogFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedTenantAlertLogable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedTenantAlertLogable)
-            }
-            m.SetManagedTenantAlertLogs(res)
-        }
-        return nil
-    }
-    res["managedTenantAlertRuleDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedTenantAlertRuleDefinitionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedTenantAlertRuleDefinitionable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedTenantAlertRuleDefinitionable)
-            }
-            m.SetManagedTenantAlertRuleDefinitions(res)
-        }
-        return nil
-    }
-    res["managedTenantAlertRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedTenantAlertRuleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedTenantAlertRuleable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedTenantAlertRuleable)
-            }
-            m.SetManagedTenantAlertRules(res)
-        }
-        return nil
-    }
-    res["managedTenantAlerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedTenantAlertFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedTenantAlertable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedTenantAlertable)
-            }
-            m.SetManagedTenantAlerts(res)
-        }
-        return nil
-    }
-    res["managedTenantApiNotifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedTenantApiNotificationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedTenantApiNotificationable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedTenantApiNotificationable)
-            }
-            m.SetManagedTenantApiNotifications(res)
-        }
-        return nil
-    }
-    res["managedTenantEmailNotifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedTenantEmailNotificationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedTenantEmailNotificationable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedTenantEmailNotificationable)
-            }
-            m.SetManagedTenantEmailNotifications(res)
-        }
-        return nil
-    }
-    res["managedTenantTicketingEndpoints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagedTenantTicketingEndpointFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagedTenantTicketingEndpointable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagedTenantTicketingEndpointable)
-            }
-            m.SetManagedTenantTicketingEndpoints(res)
-        }
-        return nil
-    }
-    res["managementActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementActionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementActionable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementActionable)
-            }
-            m.SetManagementActions(res)
-        }
-        return nil
-    }
-    res["managementActionTenantDeploymentStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementActionTenantDeploymentStatusable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementActionTenantDeploymentStatusable)
-            }
-            m.SetManagementActionTenantDeploymentStatuses(res)
-        }
-        return nil
-    }
-    res["managementIntents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementIntentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementIntentable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementIntentable)
-            }
-            m.SetManagementIntents(res)
-        }
-        return nil
-    }
-    res["managementTemplateCollections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateCollectionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementTemplateCollectionable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementTemplateCollectionable)
-            }
-            m.SetManagementTemplateCollections(res)
-        }
-        return nil
-    }
-    res["managementTemplateCollectionTenantSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateCollectionTenantSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementTemplateCollectionTenantSummaryable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementTemplateCollectionTenantSummaryable)
-            }
-            m.SetManagementTemplateCollectionTenantSummaries(res)
-        }
-        return nil
-    }
-    res["managementTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementTemplateable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementTemplateable)
-            }
-            m.SetManagementTemplates(res)
-        }
-        return nil
-    }
-    res["managementTemplateSteps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementTemplateStepable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementTemplateStepable)
-            }
-            m.SetManagementTemplateSteps(res)
-        }
-        return nil
-    }
-    res["managementTemplateStepTenantSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepTenantSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementTemplateStepTenantSummaryable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementTemplateStepTenantSummaryable)
-            }
-            m.SetManagementTemplateStepTenantSummaries(res)
-        }
-        return nil
-    }
-    res["managementTemplateStepVersions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepVersionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementTemplateStepVersionable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementTemplateStepVersionable)
-            }
-            m.SetManagementTemplateStepVersions(res)
-        }
-        return nil
-    }
-    res["myRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMyRoleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MyRoleable, len(val))
-            for i, v := range val {
-                res[i] = v.(MyRoleable)
-            }
-            m.SetMyRoles(res)
-        }
-        return nil
-    }
-    res["tenantGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTenantGroupFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TenantGroupable, len(val))
-            for i, v := range val {
-                res[i] = v.(TenantGroupable)
-            }
-            m.SetTenantGroups(res)
-        }
-        return nil
-    }
-    res["tenants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTenantFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Tenantable, len(val))
-            for i, v := range val {
-                res[i] = v.(Tenantable)
-            }
-            m.SetTenants(res)
-        }
-        return nil
-    }
-    res["tenantsCustomizedInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTenantCustomizedInformationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TenantCustomizedInformationable, len(val))
-            for i, v := range val {
-                res[i] = v.(TenantCustomizedInformationable)
-            }
-            m.SetTenantsCustomizedInformation(res)
-        }
-        return nil
-    }
-    res["tenantsDetailedInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTenantDetailedInformationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TenantDetailedInformationable, len(val))
-            for i, v := range val {
-                res[i] = v.(TenantDetailedInformationable)
-            }
-            m.SetTenantsDetailedInformation(res)
-        }
-        return nil
-    }
-    res["tenantTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTenantTagFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TenantTagable, len(val))
-            for i, v := range val {
-                res[i] = v.(TenantTagable)
-            }
-            m.SetTenantTags(res)
-        }
-        return nil
-    }
-    res["windowsDeviceMalwareStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsDeviceMalwareStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsDeviceMalwareStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsDeviceMalwareStateable)
-            }
-            m.SetWindowsDeviceMalwareStates(res)
-        }
-        return nil
-    }
-    res["windowsProtectionStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWindowsProtectionStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WindowsProtectionStateable, len(val))
-            for i, v := range val {
-                res[i] = v.(WindowsProtectionStateable)
-            }
-            m.SetWindowsProtectionStates(res)
-        }
-        return nil
-    }
+    res["aggregatedPolicyCompliances"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAggregatedPolicyComplianceFromDiscriminatorValue , m.SetAggregatedPolicyCompliances)
+    res["auditEvents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateAuditEventFromDiscriminatorValue , m.SetAuditEvents)
+    res["cloudPcConnections"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcConnectionFromDiscriminatorValue , m.SetCloudPcConnections)
+    res["cloudPcDevices"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcDeviceFromDiscriminatorValue , m.SetCloudPcDevices)
+    res["cloudPcsOverview"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCloudPcOverviewFromDiscriminatorValue , m.SetCloudPcsOverview)
+    res["conditionalAccessPolicyCoverages"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateConditionalAccessPolicyCoverageFromDiscriminatorValue , m.SetConditionalAccessPolicyCoverages)
+    res["credentialUserRegistrationsSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue , m.SetCredentialUserRegistrationsSummaries)
+    res["deviceCompliancePolicySettingStateSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue , m.SetDeviceCompliancePolicySettingStateSummaries)
+    res["managedDeviceCompliances"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedDeviceComplianceFromDiscriminatorValue , m.SetManagedDeviceCompliances)
+    res["managedDeviceComplianceTrends"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedDeviceComplianceTrendFromDiscriminatorValue , m.SetManagedDeviceComplianceTrends)
+    res["managedTenantAlertLogs"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertLogFromDiscriminatorValue , m.SetManagedTenantAlertLogs)
+    res["managedTenantAlertRuleDefinitions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertRuleDefinitionFromDiscriminatorValue , m.SetManagedTenantAlertRuleDefinitions)
+    res["managedTenantAlertRules"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertRuleFromDiscriminatorValue , m.SetManagedTenantAlertRules)
+    res["managedTenantAlerts"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantAlertFromDiscriminatorValue , m.SetManagedTenantAlerts)
+    res["managedTenantApiNotifications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantApiNotificationFromDiscriminatorValue , m.SetManagedTenantApiNotifications)
+    res["managedTenantEmailNotifications"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantEmailNotificationFromDiscriminatorValue , m.SetManagedTenantEmailNotifications)
+    res["managedTenantTicketingEndpoints"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagedTenantTicketingEndpointFromDiscriminatorValue , m.SetManagedTenantTicketingEndpoints)
+    res["managementActions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementActionFromDiscriminatorValue , m.SetManagementActions)
+    res["managementActionTenantDeploymentStatuses"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue , m.SetManagementActionTenantDeploymentStatuses)
+    res["managementIntents"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementIntentFromDiscriminatorValue , m.SetManagementIntents)
+    res["managementTemplateCollections"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateCollectionFromDiscriminatorValue , m.SetManagementTemplateCollections)
+    res["managementTemplateCollectionTenantSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateCollectionTenantSummaryFromDiscriminatorValue , m.SetManagementTemplateCollectionTenantSummaries)
+    res["managementTemplates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateFromDiscriminatorValue , m.SetManagementTemplates)
+    res["managementTemplateSteps"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateStepFromDiscriminatorValue , m.SetManagementTemplateSteps)
+    res["managementTemplateStepTenantSummaries"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateStepTenantSummaryFromDiscriminatorValue , m.SetManagementTemplateStepTenantSummaries)
+    res["managementTemplateStepVersions"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateManagementTemplateStepVersionFromDiscriminatorValue , m.SetManagementTemplateStepVersions)
+    res["myRoles"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateMyRoleFromDiscriminatorValue , m.SetMyRoles)
+    res["tenantGroups"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTenantGroupFromDiscriminatorValue , m.SetTenantGroups)
+    res["tenants"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTenantFromDiscriminatorValue , m.SetTenants)
+    res["tenantsCustomizedInformation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTenantCustomizedInformationFromDiscriminatorValue , m.SetTenantsCustomizedInformation)
+    res["tenantsDetailedInformation"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTenantDetailedInformationFromDiscriminatorValue , m.SetTenantsDetailedInformation)
+    res["tenantTags"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateTenantTagFromDiscriminatorValue , m.SetTenantTags)
+    res["windowsDeviceMalwareStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsDeviceMalwareStateFromDiscriminatorValue , m.SetWindowsDeviceMalwareStates)
+    res["windowsProtectionStates"] = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.SetCollectionOfObjectValues(CreateWindowsProtectionStateFromDiscriminatorValue , m.SetWindowsProtectionStates)
     return res
 }
 // GetManagedDeviceCompliances gets the managedDeviceCompliances property value. The collection of compliance for managed devices across managed tenants.
@@ -712,340 +271,238 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         return err
     }
     if m.GetAggregatedPolicyCompliances() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAggregatedPolicyCompliances()))
-        for i, v := range m.GetAggregatedPolicyCompliances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAggregatedPolicyCompliances())
         err = writer.WriteCollectionOfObjectValues("aggregatedPolicyCompliances", cast)
         if err != nil {
             return err
         }
     }
     if m.GetAuditEvents() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuditEvents()))
-        for i, v := range m.GetAuditEvents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetAuditEvents())
         err = writer.WriteCollectionOfObjectValues("auditEvents", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCloudPcConnections() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcConnections()))
-        for i, v := range m.GetCloudPcConnections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCloudPcConnections())
         err = writer.WriteCollectionOfObjectValues("cloudPcConnections", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCloudPcDevices() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcDevices()))
-        for i, v := range m.GetCloudPcDevices() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCloudPcDevices())
         err = writer.WriteCollectionOfObjectValues("cloudPcDevices", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCloudPcsOverview() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcsOverview()))
-        for i, v := range m.GetCloudPcsOverview() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCloudPcsOverview())
         err = writer.WriteCollectionOfObjectValues("cloudPcsOverview", cast)
         if err != nil {
             return err
         }
     }
     if m.GetConditionalAccessPolicyCoverages() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessPolicyCoverages()))
-        for i, v := range m.GetConditionalAccessPolicyCoverages() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetConditionalAccessPolicyCoverages())
         err = writer.WriteCollectionOfObjectValues("conditionalAccessPolicyCoverages", cast)
         if err != nil {
             return err
         }
     }
     if m.GetCredentialUserRegistrationsSummaries() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCredentialUserRegistrationsSummaries()))
-        for i, v := range m.GetCredentialUserRegistrationsSummaries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetCredentialUserRegistrationsSummaries())
         err = writer.WriteCollectionOfObjectValues("credentialUserRegistrationsSummaries", cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceCompliancePolicySettingStateSummaries() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceCompliancePolicySettingStateSummaries()))
-        for i, v := range m.GetDeviceCompliancePolicySettingStateSummaries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetDeviceCompliancePolicySettingStateSummaries())
         err = writer.WriteCollectionOfObjectValues("deviceCompliancePolicySettingStateSummaries", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedDeviceCompliances() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceCompliances()))
-        for i, v := range m.GetManagedDeviceCompliances() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedDeviceCompliances())
         err = writer.WriteCollectionOfObjectValues("managedDeviceCompliances", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedDeviceComplianceTrends() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceComplianceTrends()))
-        for i, v := range m.GetManagedDeviceComplianceTrends() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedDeviceComplianceTrends())
         err = writer.WriteCollectionOfObjectValues("managedDeviceComplianceTrends", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedTenantAlertLogs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedTenantAlertLogs()))
-        for i, v := range m.GetManagedTenantAlertLogs() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlertLogs())
         err = writer.WriteCollectionOfObjectValues("managedTenantAlertLogs", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedTenantAlertRuleDefinitions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedTenantAlertRuleDefinitions()))
-        for i, v := range m.GetManagedTenantAlertRuleDefinitions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlertRuleDefinitions())
         err = writer.WriteCollectionOfObjectValues("managedTenantAlertRuleDefinitions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedTenantAlertRules() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedTenantAlertRules()))
-        for i, v := range m.GetManagedTenantAlertRules() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlertRules())
         err = writer.WriteCollectionOfObjectValues("managedTenantAlertRules", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedTenantAlerts() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedTenantAlerts()))
-        for i, v := range m.GetManagedTenantAlerts() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantAlerts())
         err = writer.WriteCollectionOfObjectValues("managedTenantAlerts", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedTenantApiNotifications() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedTenantApiNotifications()))
-        for i, v := range m.GetManagedTenantApiNotifications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantApiNotifications())
         err = writer.WriteCollectionOfObjectValues("managedTenantApiNotifications", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedTenantEmailNotifications() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedTenantEmailNotifications()))
-        for i, v := range m.GetManagedTenantEmailNotifications() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantEmailNotifications())
         err = writer.WriteCollectionOfObjectValues("managedTenantEmailNotifications", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagedTenantTicketingEndpoints() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedTenantTicketingEndpoints()))
-        for i, v := range m.GetManagedTenantTicketingEndpoints() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagedTenantTicketingEndpoints())
         err = writer.WriteCollectionOfObjectValues("managedTenantTicketingEndpoints", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementActions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementActions()))
-        for i, v := range m.GetManagementActions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementActions())
         err = writer.WriteCollectionOfObjectValues("managementActions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementActionTenantDeploymentStatuses() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementActionTenantDeploymentStatuses()))
-        for i, v := range m.GetManagementActionTenantDeploymentStatuses() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementActionTenantDeploymentStatuses())
         err = writer.WriteCollectionOfObjectValues("managementActionTenantDeploymentStatuses", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementIntents() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementIntents()))
-        for i, v := range m.GetManagementIntents() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementIntents())
         err = writer.WriteCollectionOfObjectValues("managementIntents", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementTemplateCollections() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplateCollections()))
-        for i, v := range m.GetManagementTemplateCollections() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateCollections())
         err = writer.WriteCollectionOfObjectValues("managementTemplateCollections", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementTemplateCollectionTenantSummaries() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplateCollectionTenantSummaries()))
-        for i, v := range m.GetManagementTemplateCollectionTenantSummaries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateCollectionTenantSummaries())
         err = writer.WriteCollectionOfObjectValues("managementTemplateCollectionTenantSummaries", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementTemplates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplates()))
-        for i, v := range m.GetManagementTemplates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplates())
         err = writer.WriteCollectionOfObjectValues("managementTemplates", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementTemplateSteps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplateSteps()))
-        for i, v := range m.GetManagementTemplateSteps() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateSteps())
         err = writer.WriteCollectionOfObjectValues("managementTemplateSteps", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementTemplateStepTenantSummaries() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplateStepTenantSummaries()))
-        for i, v := range m.GetManagementTemplateStepTenantSummaries() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateStepTenantSummaries())
         err = writer.WriteCollectionOfObjectValues("managementTemplateStepTenantSummaries", cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementTemplateStepVersions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementTemplateStepVersions()))
-        for i, v := range m.GetManagementTemplateStepVersions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetManagementTemplateStepVersions())
         err = writer.WriteCollectionOfObjectValues("managementTemplateStepVersions", cast)
         if err != nil {
             return err
         }
     }
     if m.GetMyRoles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMyRoles()))
-        for i, v := range m.GetMyRoles() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetMyRoles())
         err = writer.WriteCollectionOfObjectValues("myRoles", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTenantGroups() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenantGroups()))
-        for i, v := range m.GetTenantGroups() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTenantGroups())
         err = writer.WriteCollectionOfObjectValues("tenantGroups", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTenants() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenants()))
-        for i, v := range m.GetTenants() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTenants())
         err = writer.WriteCollectionOfObjectValues("tenants", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTenantsCustomizedInformation() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenantsCustomizedInformation()))
-        for i, v := range m.GetTenantsCustomizedInformation() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTenantsCustomizedInformation())
         err = writer.WriteCollectionOfObjectValues("tenantsCustomizedInformation", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTenantsDetailedInformation() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenantsDetailedInformation()))
-        for i, v := range m.GetTenantsDetailedInformation() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTenantsDetailedInformation())
         err = writer.WriteCollectionOfObjectValues("tenantsDetailedInformation", cast)
         if err != nil {
             return err
         }
     }
     if m.GetTenantTags() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenantTags()))
-        for i, v := range m.GetTenantTags() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetTenantTags())
         err = writer.WriteCollectionOfObjectValues("tenantTags", cast)
         if err != nil {
             return err
         }
     }
     if m.GetWindowsDeviceMalwareStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsDeviceMalwareStates()))
-        for i, v := range m.GetWindowsDeviceMalwareStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetWindowsDeviceMalwareStates())
         err = writer.WriteCollectionOfObjectValues("windowsDeviceMalwareStates", cast)
         if err != nil {
             return err
         }
     }
     if m.GetWindowsProtectionStates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsProtectionStates()))
-        for i, v := range m.GetWindowsProtectionStates() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
+        cast := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.CollectionCast[i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable](m.GetWindowsProtectionStates())
         err = writer.WriteCollectionOfObjectValues("windowsProtectionStates", cast)
         if err != nil {
             return err

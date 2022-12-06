@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    ic0ff7c2173d7cf34dd6c3496f854421b3bbc24c4cf60b84ed7ffa7a593ef4a4e "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontrols/count"
 )
 
 // ProgramControlsRequestBuilder provides operations to manage the collection of programControl entities.
@@ -71,8 +72,8 @@ func NewProgramControlsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewProgramControlsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ProgramControlsRequestBuilder) Count()(*ProgramControlsCountRequestBuilder) {
-    return NewProgramControlsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ProgramControlsRequestBuilder) Count()(*ic0ff7c2173d7cf34dd6c3496f854421b3bbc24c4cf60b84ed7ffa7a593ef4a4e.CountRequestBuilder) {
+    return ic0ff7c2173d7cf34dd6c3496f854421b3bbc24c4cf60b84ed7ffa7a593ef4a4e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation in the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant.
 func (m *ProgramControlsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ProgramControlsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

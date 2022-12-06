@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i9e809ca615d1881daa43580730b984811d4ab6738ba555ed32b7cfda3f0dab6e "github.com/microsoftgraph/msgraph-beta-sdk-go/mobilitymanagementpolicies/count"
 )
 
 // MobilityManagementPoliciesRequestBuilder provides operations to manage the collection of mobilityManagementPolicy entities.
@@ -71,8 +72,8 @@ func NewMobilityManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i
     return NewMobilityManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *MobilityManagementPoliciesRequestBuilder) Count()(*MobilityManagementPoliciesCountRequestBuilder) {
-    return NewMobilityManagementPoliciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MobilityManagementPoliciesRequestBuilder) Count()(*i9e809ca615d1881daa43580730b984811d4ab6738ba555ed32b7cfda3f0dab6e.CountRequestBuilder) {
+    return i9e809ca615d1881daa43580730b984811d4ab6738ba555ed32b7cfda3f0dab6e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from mobilityManagementPolicies
 func (m *MobilityManagementPoliciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MobilityManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

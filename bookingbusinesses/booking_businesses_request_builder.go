@@ -5,6 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i21e6461c531c37228ca40c80cc5c229757e5d19fc7fb28224567d94fe8cba0a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/count"
 )
 
 // BookingBusinessesRequestBuilder provides operations to manage the collection of bookingBusiness entities.
@@ -71,8 +72,8 @@ func NewBookingBusinessesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewBookingBusinessesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *BookingBusinessesRequestBuilder) Count()(*BookingBusinessesCountRequestBuilder) {
-    return NewBookingBusinessesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BookingBusinessesRequestBuilder) Count()(*i21e6461c531c37228ca40c80cc5c229757e5d19fc7fb28224567d94fe8cba0a3.CountRequestBuilder) {
+    return i21e6461c531c37228ca40c80cc5c229757e5d19fc7fb28224567d94fe8cba0a3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation. You can also query for Bookings businesses by specifying a string in a `query` parameter to do substring matching among the businesses of a tenant. See an example below.
 func (m *BookingBusinessesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -5,6 +5,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i295d0a1bbe347dc515cbfb035dc8e5f6e62d156a38c91cf9d5e0dd1850c1181a "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/validateproperties"
+    i9e4a267df0b64bbe015b9a9d25d41081ea10eb7e9fd19c7fcedc2938c0855a91 "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/getbyids"
+    iaa64ef89c81fcefd78a49009037259473f7570a7b36120c5fd8341d50c28857b "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/getuserownedobjects"
+    ic332359d0ba77c6cf789b2ec60ffba74c8b641b95a304c0c7a2d6d6799151ed6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/count"
+    id6957caffc267be5904728060670436f3194b3e3fa67058c78537d9b6b75bd92 "github.com/microsoftgraph/msgraph-beta-sdk-go/devices/delta"
 )
 
 // DevicesRequestBuilder provides operations to manage the collection of device entities.
@@ -71,8 +76,8 @@ func NewDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DevicesRequestBuilder) Count()(*DevicesCountRequestBuilder) {
-    return NewDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DevicesRequestBuilder) Count()(*ic332359d0ba77c6cf789b2ec60ffba74c8b641b95a304c0c7a2d6d6799151ed6.CountRequestBuilder) {
+    return ic332359d0ba77c6cf789b2ec60ffba74c8b641b95a304c0c7a2d6d6799151ed6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a list of devices registered in the directory. 
 func (m *DevicesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -105,8 +110,8 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // Delta provides operations to call the delta method.
-func (m *DevicesRequestBuilder) Delta()(*DevicesDeltaRequestBuilder) {
-    return NewDevicesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DevicesRequestBuilder) Delta()(*id6957caffc267be5904728060670436f3194b3e3fa67058c78537d9b6b75bd92.DeltaRequestBuilder) {
+    return id6957caffc267be5904728060670436f3194b3e3fa67058c78537d9b6b75bd92.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get retrieve a list of devices registered in the directory. 
 func (m *DevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {
@@ -128,12 +133,12 @@ func (m *DevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *D
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *DevicesRequestBuilder) GetByIds()(*DevicesGetByIdsRequestBuilder) {
-    return NewDevicesGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DevicesRequestBuilder) GetByIds()(*i9e4a267df0b64bbe015b9a9d25d41081ea10eb7e9fd19c7fcedc2938c0855a91.GetByIdsRequestBuilder) {
+    return i9e4a267df0b64bbe015b9a9d25d41081ea10eb7e9fd19c7fcedc2938c0855a91.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*DevicesGetUserOwnedObjectsRequestBuilder) {
-    return NewDevicesGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*iaa64ef89c81fcefd78a49009037259473f7570a7b36120c5fd8341d50c28857b.GetUserOwnedObjectsRequestBuilder) {
+    return iaa64ef89c81fcefd78a49009037259473f7570a7b36120c5fd8341d50c28857b.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a new device.
 func (m *DevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *DevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -155,6 +160,6 @@ func (m *DevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *DevicesRequestBuilder) ValidateProperties()(*DevicesValidatePropertiesRequestBuilder) {
-    return NewDevicesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DevicesRequestBuilder) ValidateProperties()(*i295d0a1bbe347dc515cbfb035dc8e5f6e62d156a38c91cf9d5e0dd1850c1181a.ValidatePropertiesRequestBuilder) {
+    return i295d0a1bbe347dc515cbfb035dc8e5f6e62d156a38c91cf9d5e0dd1850c1181a.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
