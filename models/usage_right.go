@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UsageRight provides operations to manage the collection of allowedDataLocation entities.
+// UsageRight provides operations to manage the collection of application entities.
 type UsageRight struct {
     Entity
     // Product id corresponding to the usage right.

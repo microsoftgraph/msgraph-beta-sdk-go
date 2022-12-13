@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrgContact 
+// OrgContact provides operations to manage the collection of orgContact entities.
 type OrgContact struct {
     DirectoryObject
     // Postal addresses for this organizational contact. For now a contact can only have one physical address.
@@ -47,7 +47,7 @@ type OrgContact struct {
     // The transitive reports for a contact. Read-only.
     transitiveReports []DirectoryObjectable
 }
-// NewOrgContact instantiates a new OrgContact and sets the default values.
+// NewOrgContact instantiates a new orgContact and sets the default values.
 func NewOrgContact()(*OrgContact) {
     m := &OrgContact{
         DirectoryObject: *NewDirectoryObject(),

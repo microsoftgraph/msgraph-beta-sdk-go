@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidWorkProfileWiFiConfiguration by providing the configurations in this profile you can instruct the Android Work Profile device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
+// AndroidWorkProfileWiFiConfiguration 
 type AndroidWorkProfileWiFiConfiguration struct {
     DeviceConfiguration
     // Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
@@ -18,7 +18,7 @@ type AndroidWorkProfileWiFiConfiguration struct {
     // Wi-Fi Security Types for Android.
     wiFiSecurityType *AndroidWiFiSecurityType
 }
-// NewAndroidWorkProfileWiFiConfiguration instantiates a new androidWorkProfileWiFiConfiguration and sets the default values.
+// NewAndroidWorkProfileWiFiConfiguration instantiates a new AndroidWorkProfileWiFiConfiguration and sets the default values.
 func NewAndroidWorkProfileWiFiConfiguration()(*AndroidWorkProfileWiFiConfiguration) {
     m := &AndroidWorkProfileWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

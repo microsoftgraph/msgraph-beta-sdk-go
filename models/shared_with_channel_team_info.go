@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedWithChannelTeamInfo provides operations to manage the collection of accessReview entities.
+// SharedWithChannelTeamInfo 
 type SharedWithChannelTeamInfo struct {
     TeamInfo
     // A collection of team members who have access to the shared channel.
@@ -12,7 +12,7 @@ type SharedWithChannelTeamInfo struct {
     // Indicates whether the team is the host of the channel.
     isHostTeam *bool
 }
-// NewSharedWithChannelTeamInfo instantiates a new sharedWithChannelTeamInfo and sets the default values.
+// NewSharedWithChannelTeamInfo instantiates a new SharedWithChannelTeamInfo and sets the default values.
 func NewSharedWithChannelTeamInfo()(*SharedWithChannelTeamInfo) {
     m := &SharedWithChannelTeamInfo{
         TeamInfo: *NewTeamInfo(),

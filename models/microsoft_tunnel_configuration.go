@@ -39,7 +39,7 @@ type MicrosoftTunnelConfiguration struct {
     // The domains that will be resolved using the provided dns servers
     splitDNS []string
 }
-// NewMicrosoftTunnelConfiguration instantiates a new microsoftTunnelConfiguration and sets the default values.
+// NewMicrosoftTunnelConfiguration instantiates a new MicrosoftTunnelConfiguration and sets the default values.
 func NewMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {
     m := &MicrosoftTunnelConfiguration{
         Entity: *NewEntity(),

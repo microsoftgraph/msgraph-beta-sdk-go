@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of allowedDataLocation entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type AccountStatus int
 
 const (

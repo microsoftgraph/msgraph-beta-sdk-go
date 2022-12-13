@@ -2,7 +2,7 @@ package devicemanagement
 import (
     "errors"
 )
-// Provides operations to manage the collection of agreement entities.
+// Provides operations to manage the deviceManagement singleton.
 type OperatorType int
 
 const (

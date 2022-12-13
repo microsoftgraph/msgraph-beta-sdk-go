@@ -22,7 +22,7 @@ type AndroidWorkProfileCertificateProfileBase struct {
     // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
-// NewAndroidWorkProfileCertificateProfileBase instantiates a new androidWorkProfileCertificateProfileBase and sets the default values.
+// NewAndroidWorkProfileCertificateProfileBase instantiates a new AndroidWorkProfileCertificateProfileBase and sets the default values.
 func NewAndroidWorkProfileCertificateProfileBase()(*AndroidWorkProfileCertificateProfileBase) {
     m := &AndroidWorkProfileCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),

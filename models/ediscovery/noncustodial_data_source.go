@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NoncustodialDataSource 
+// NoncustodialDataSource provides operations to manage the compliance singleton.
 type NoncustodialDataSource struct {
     DataSourceContainer
     // Indicates if hold is applied to non-custodial data source (such as mailbox or site).
@@ -12,7 +12,7 @@ type NoncustodialDataSource struct {
     // User source or SharePoint site data source as non-custodial data source.
     dataSource DataSourceable
 }
-// NewNoncustodialDataSource instantiates a new NoncustodialDataSource and sets the default values.
+// NewNoncustodialDataSource instantiates a new noncustodialDataSource and sets the default values.
 func NewNoncustodialDataSource()(*NoncustodialDataSource) {
     m := &NoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),
