@@ -26,7 +26,7 @@ type AppRequestBuilderGetQueryParameters struct {
 // AppRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AppRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type AppRequestBuilderGetRequestConfiguration struct {
 // AppRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AppRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Calls provides operations to manage the calls property of the microsoft.graph.commsApplication entity.
-func (m *AppRequestBuilder) Calls()(*AppCallsRequestBuilder) {
-    return NewAppCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AppRequestBuilder) Calls()(*CallsRequestBuilder) {
+    return NewCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CallsById provides operations to manage the calls property of the microsoft.graph.commsApplication entity.
-func (m *AppRequestBuilder) CallsById(id string)(*AppCallsCallItemRequestBuilder) {
+func (m *AppRequestBuilder) CallsById(id string)(*CallsCallItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *AppRequestBuilder) CallsById(id string)(*AppCallsCallItemRequestBuilder
     if id != "" {
         urlTplParams["call%2Did"] = id
     }
-    return NewAppCallsCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCallsCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewAppRequestBuilderInternal instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRequestBuilder) {
@@ -84,7 +84,7 @@ func (m *AppRequestBuilder) CreateGetRequestInformation(ctx context.Context, req
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -98,7 +98,7 @@ func (m *AppRequestBuilder) CreatePatchRequestInformation(ctx context.Context, b
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -123,11 +123,11 @@ func (m *AppRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable), nil
 }
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
-func (m *AppRequestBuilder) OnlineMeetings()(*AppOnlineMeetingsRequestBuilder) {
-    return NewAppOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AppRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {
+    return NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OnlineMeetingsById provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
-func (m *AppRequestBuilder) OnlineMeetingsById(id string)(*AppOnlineMeetingsOnlineMeetingItemRequestBuilder) {
+func (m *AppRequestBuilder) OnlineMeetingsById(id string)(*OnlineMeetingsOnlineMeetingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -135,7 +135,7 @@ func (m *AppRequestBuilder) OnlineMeetingsById(id string)(*AppOnlineMeetingsOnli
     if id != "" {
         urlTplParams["onlineMeeting%2Did"] = id
     }
-    return NewAppOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update app
 func (m *AppRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, requestConfiguration *AppRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, error) {

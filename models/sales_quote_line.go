@@ -1,16 +1,17 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesQuoteLine provides operations to manage the collection of administrativeUnit entities.
+// SalesQuoteLine provides operations to manage the collection of accessReviewDecision entities.
 type SalesQuoteLine struct {
     Entity
     // The account property
     account Accountable
     // The accountId property
-    accountId *string
+    accountId *UUID
     // The amountExcludingTax property
     amountExcludingTax *float64
     // The amountIncludingTax property
@@ -24,11 +25,11 @@ type SalesQuoteLine struct {
     // The discountPercent property
     discountPercent *float64
     // The documentId property
-    documentId *string
+    documentId *UUID
     // The item property
     item Itemable
     // The itemId property
-    itemId *string
+    itemId *UUID
     // The lineType property
     lineType *string
     // The netAmount property
@@ -48,7 +49,7 @@ type SalesQuoteLine struct {
     // The totalTaxAmount property
     totalTaxAmount *float64
     // The unitOfMeasureId property
-    unitOfMeasureId *string
+    unitOfMeasureId *UUID
     // The unitPrice property
     unitPrice *float64
 }
@@ -68,7 +69,7 @@ func (m *SalesQuoteLine) GetAccount()(Accountable) {
     return m.account
 }
 // GetAccountId gets the accountId property value. The accountId property
-func (m *SalesQuoteLine) GetAccountId()(*string) {
+func (m *SalesQuoteLine) GetAccountId()(*UUID) {
     return m.accountId
 }
 // GetAmountExcludingTax gets the amountExcludingTax property value. The amountExcludingTax property
@@ -96,7 +97,7 @@ func (m *SalesQuoteLine) GetDiscountPercent()(*float64) {
     return m.discountPercent
 }
 // GetDocumentId gets the documentId property value. The documentId property
-func (m *SalesQuoteLine) GetDocumentId()(*string) {
+func (m *SalesQuoteLine) GetDocumentId()(*UUID) {
     return m.documentId
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -113,7 +114,7 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["accountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -183,7 +184,7 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["documentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -203,7 +204,7 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["itemId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -303,7 +304,7 @@ func (m *SalesQuoteLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["unitOfMeasureId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -329,7 +330,7 @@ func (m *SalesQuoteLine) GetItem()(Itemable) {
     return m.item
 }
 // GetItemId gets the itemId property value. The itemId property
-func (m *SalesQuoteLine) GetItemId()(*string) {
+func (m *SalesQuoteLine) GetItemId()(*UUID) {
     return m.itemId
 }
 // GetLineType gets the lineType property value. The lineType property
@@ -369,7 +370,7 @@ func (m *SalesQuoteLine) GetTotalTaxAmount()(*float64) {
     return m.totalTaxAmount
 }
 // GetUnitOfMeasureId gets the unitOfMeasureId property value. The unitOfMeasureId property
-func (m *SalesQuoteLine) GetUnitOfMeasureId()(*string) {
+func (m *SalesQuoteLine) GetUnitOfMeasureId()(*UUID) {
     return m.unitOfMeasureId
 }
 // GetUnitPrice gets the unitPrice property value. The unitPrice property
@@ -389,7 +390,7 @@ func (m *SalesQuoteLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("accountId", m.GetAccountId())
+        err = writer.WriteUUIDValue("accountId", m.GetAccountId())
         if err != nil {
             return err
         }
@@ -431,7 +432,7 @@ func (m *SalesQuoteLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("documentId", m.GetDocumentId())
+        err = writer.WriteUUIDValue("documentId", m.GetDocumentId())
         if err != nil {
             return err
         }
@@ -443,7 +444,7 @@ func (m *SalesQuoteLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("itemId", m.GetItemId())
+        err = writer.WriteUUIDValue("itemId", m.GetItemId())
         if err != nil {
             return err
         }
@@ -503,7 +504,7 @@ func (m *SalesQuoteLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("unitOfMeasureId", m.GetUnitOfMeasureId())
+        err = writer.WriteUUIDValue("unitOfMeasureId", m.GetUnitOfMeasureId())
         if err != nil {
             return err
         }
@@ -521,7 +522,7 @@ func (m *SalesQuoteLine) SetAccount(value Accountable)() {
     m.account = value
 }
 // SetAccountId sets the accountId property value. The accountId property
-func (m *SalesQuoteLine) SetAccountId(value *string)() {
+func (m *SalesQuoteLine) SetAccountId(value *UUID)() {
     m.accountId = value
 }
 // SetAmountExcludingTax sets the amountExcludingTax property value. The amountExcludingTax property
@@ -549,7 +550,7 @@ func (m *SalesQuoteLine) SetDiscountPercent(value *float64)() {
     m.discountPercent = value
 }
 // SetDocumentId sets the documentId property value. The documentId property
-func (m *SalesQuoteLine) SetDocumentId(value *string)() {
+func (m *SalesQuoteLine) SetDocumentId(value *UUID)() {
     m.documentId = value
 }
 // SetItem sets the item property value. The item property
@@ -557,7 +558,7 @@ func (m *SalesQuoteLine) SetItem(value Itemable)() {
     m.item = value
 }
 // SetItemId sets the itemId property value. The itemId property
-func (m *SalesQuoteLine) SetItemId(value *string)() {
+func (m *SalesQuoteLine) SetItemId(value *UUID)() {
     m.itemId = value
 }
 // SetLineType sets the lineType property value. The lineType property
@@ -597,7 +598,7 @@ func (m *SalesQuoteLine) SetTotalTaxAmount(value *float64)() {
     m.totalTaxAmount = value
 }
 // SetUnitOfMeasureId sets the unitOfMeasureId property value. The unitOfMeasureId property
-func (m *SalesQuoteLine) SetUnitOfMeasureId(value *string)() {
+func (m *SalesQuoteLine) SetUnitOfMeasureId(value *UUID)() {
     m.unitOfMeasureId = value
 }
 // SetUnitPrice sets the unitPrice property value. The unitPrice property

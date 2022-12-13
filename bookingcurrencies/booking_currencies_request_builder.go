@@ -38,7 +38,7 @@ type BookingCurrenciesRequestBuilderGetQueryParameters struct {
 // BookingCurrenciesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BookingCurrenciesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type BookingCurrenciesRequestBuilderGetRequestConfiguration struct {
 // BookingCurrenciesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BookingCurrenciesRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewBookingCurrenciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewBookingCurrenciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *BookingCurrenciesRequestBuilder) Count()(*BookingCurrenciesCountRequestBuilder) {
-    return NewBookingCurrenciesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BookingCurrenciesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get a list of bookingCurrency objects available to a Microsoft Bookings business.
 func (m *BookingCurrenciesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *BookingCurrenciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *BookingCurrenciesRequestBuilder) CreateGetRequestInformation(ctx contex
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,12 +99,15 @@ func (m *BookingCurrenciesRequestBuilder) CreatePostRequestInformation(ctx conte
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get get a list of bookingCurrency objects available to a Microsoft Bookings business.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
 func (m *BookingCurrenciesRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingCurrenciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCurrencyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

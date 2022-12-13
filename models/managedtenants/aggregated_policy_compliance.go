@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AggregatedPolicyCompliance provides operations to manage the collection of administrativeUnit entities.
+// AggregatedPolicyCompliance provides operations to manage the collection of accessReviewDecision entities.
 type AggregatedPolicyCompliance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Identifier for the device compliance policy. Optional. Read-only.

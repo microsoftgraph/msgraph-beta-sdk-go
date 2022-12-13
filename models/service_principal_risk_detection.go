@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalRiskDetection provides operations to manage the collection of activityStatistics entities.
+// ServicePrincipalRiskDetection 
 type ServicePrincipalRiskDetection struct {
     Entity
-    // Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+    // Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
     activity *ActivityType
     // Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -32,13 +32,13 @@ type ServicePrincipalRiskDetection struct {
     location SignInLocationable
     // Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
     requestId *string
-    // Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+    // Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
     riskDetail *RiskDetail
-    // The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).
+    // The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
     riskEventType *string
-    // Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
+    // Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
     riskLevel *RiskLevel
-    // The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+    // The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
     riskState *RiskState
     // The display name for the service principal.
     servicePrincipalDisplayName *string
@@ -46,10 +46,10 @@ type ServicePrincipalRiskDetection struct {
     servicePrincipalId *string
     // Source of the risk detection. For example, identityProtection.
     source *string
-    // Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.
+    // Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
     tokenIssuerType *TokenIssuerType
 }
-// NewServicePrincipalRiskDetection instantiates a new servicePrincipalRiskDetection and sets the default values.
+// NewServicePrincipalRiskDetection instantiates a new ServicePrincipalRiskDetection and sets the default values.
 func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
     m := &ServicePrincipalRiskDetection{
         Entity: *NewEntity(),
@@ -60,7 +60,7 @@ func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
 func CreateServicePrincipalRiskDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalRiskDetection(), nil
 }
-// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
 func (m *ServicePrincipalRiskDetection) GetActivity()(*ActivityType) {
     return m.activity
 }
@@ -317,19 +317,19 @@ func (m *ServicePrincipalRiskDetection) GetLocation()(SignInLocationable) {
 func (m *ServicePrincipalRiskDetection) GetRequestId()(*string) {
     return m.requestId
 }
-// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 func (m *ServicePrincipalRiskDetection) GetRiskDetail()(*RiskDetail) {
     return m.riskDetail
 }
-// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).
+// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
 func (m *ServicePrincipalRiskDetection) GetRiskEventType()(*string) {
     return m.riskEventType
 }
-// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
 func (m *ServicePrincipalRiskDetection) GetRiskLevel()(*RiskLevel) {
     return m.riskLevel
 }
-// GetRiskState gets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// GetRiskState gets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
 func (m *ServicePrincipalRiskDetection) GetRiskState()(*RiskState) {
     return m.riskState
 }
@@ -345,7 +345,7 @@ func (m *ServicePrincipalRiskDetection) GetServicePrincipalId()(*string) {
 func (m *ServicePrincipalRiskDetection) GetSource()(*string) {
     return m.source
 }
-// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.
+// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
 func (m *ServicePrincipalRiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
     return m.tokenIssuerType
 }
@@ -483,7 +483,7 @@ func (m *ServicePrincipalRiskDetection) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
 func (m *ServicePrincipalRiskDetection) SetActivity(value *ActivityType)() {
     m.activity = value
 }
@@ -531,19 +531,19 @@ func (m *ServicePrincipalRiskDetection) SetLocation(value SignInLocationable)() 
 func (m *ServicePrincipalRiskDetection) SetRequestId(value *string)() {
     m.requestId = value
 }
-// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 func (m *ServicePrincipalRiskDetection) SetRiskDetail(value *RiskDetail)() {
     m.riskDetail = value
 }
-// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).
+// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
 func (m *ServicePrincipalRiskDetection) SetRiskEventType(value *string)() {
     m.riskEventType = value
 }
-// SetRiskLevel sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// SetRiskLevel sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
 func (m *ServicePrincipalRiskDetection) SetRiskLevel(value *RiskLevel)() {
     m.riskLevel = value
 }
-// SetRiskState sets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// SetRiskState sets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
 func (m *ServicePrincipalRiskDetection) SetRiskState(value *RiskState)() {
     m.riskState = value
 }
@@ -559,7 +559,7 @@ func (m *ServicePrincipalRiskDetection) SetServicePrincipalId(value *string)() {
 func (m *ServicePrincipalRiskDetection) SetSource(value *string)() {
     m.source = value
 }
-// SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.
+// SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
 func (m *ServicePrincipalRiskDetection) SetTokenIssuerType(value *TokenIssuerType)() {
     m.tokenIssuerType = value
 }

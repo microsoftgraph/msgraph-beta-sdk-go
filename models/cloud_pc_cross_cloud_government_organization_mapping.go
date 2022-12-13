@@ -10,7 +10,7 @@ type CloudPcCrossCloudGovernmentOrganizationMapping struct {
     // The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
     organizationIdsInUSGovCloud []string
 }
-// NewCloudPcCrossCloudGovernmentOrganizationMapping instantiates a new cloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
+// NewCloudPcCrossCloudGovernmentOrganizationMapping instantiates a new CloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
 func NewCloudPcCrossCloudGovernmentOrganizationMapping()(*CloudPcCrossCloudGovernmentOrganizationMapping) {
     m := &CloudPcCrossCloudGovernmentOrganizationMapping{
         Entity: *NewEntity(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignIn provides operations to manage the auditLogRoot singleton.
+// SignIn 
 type SignIn struct {
     Entity
     // The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
@@ -16,9 +16,9 @@ type SignIn struct {
     appliedConditionalAccessPolicies []AppliedConditionalAccessPolicyable
     // The appliedEventListeners property
     appliedEventListeners []AppliedAuthenticationEventListenerable
-    // The authenticationAppDeviceDetails property
+    // Provides details about the app and device used during an Azure AD authentication step.
     authenticationAppDeviceDetails AuthenticationAppDeviceDetailsable
-    // The authenticationAppPolicyEvaluationDetails property
+    // Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
     authenticationAppPolicyEvaluationDetails []AuthenticationAppPolicyDetailsable
     // Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
     authenticationContextClassReferences []AuthenticationContextable
@@ -135,7 +135,7 @@ type SignIn struct {
     // Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
     userType *SignInUserType
 }
-// NewSignIn instantiates a new signIn and sets the default values.
+// NewSignIn instantiates a new SignIn and sets the default values.
 func NewSignIn()(*SignIn) {
     m := &SignIn{
         Entity: *NewEntity(),
@@ -162,11 +162,11 @@ func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAcces
 func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable) {
     return m.appliedEventListeners
 }
-// GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. The authenticationAppDeviceDetails property
+// GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. Provides details about the app and device used during an Azure AD authentication step.
 func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable) {
     return m.authenticationAppDeviceDetails
 }
-// GetAuthenticationAppPolicyEvaluationDetails gets the authenticationAppPolicyEvaluationDetails property value. The authenticationAppPolicyEvaluationDetails property
+// GetAuthenticationAppPolicyEvaluationDetails gets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
 func (m *SignIn) GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable) {
     return m.authenticationAppPolicyEvaluationDetails
 }
@@ -1531,11 +1531,11 @@ func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalA
 func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
     m.appliedEventListeners = value
 }
-// SetAuthenticationAppDeviceDetails sets the authenticationAppDeviceDetails property value. The authenticationAppDeviceDetails property
+// SetAuthenticationAppDeviceDetails sets the authenticationAppDeviceDetails property value. Provides details about the app and device used during an Azure AD authentication step.
 func (m *SignIn) SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)() {
     m.authenticationAppDeviceDetails = value
 }
-// SetAuthenticationAppPolicyEvaluationDetails sets the authenticationAppPolicyEvaluationDetails property value. The authenticationAppPolicyEvaluationDetails property
+// SetAuthenticationAppPolicyEvaluationDetails sets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
 func (m *SignIn) SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)() {
     m.authenticationAppPolicyEvaluationDetails = value
 }

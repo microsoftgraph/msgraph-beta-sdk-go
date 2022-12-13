@@ -38,7 +38,7 @@ type ApprovalWorkflowProvidersRequestBuilderGetQueryParameters struct {
 // ApprovalWorkflowProvidersRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ApprovalWorkflowProvidersRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type ApprovalWorkflowProvidersRequestBuilderGetRequestConfiguration struct {
 // ApprovalWorkflowProvidersRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ApprovalWorkflowProvidersRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewApprovalWorkflowProvidersRequestBuilder(rawUrl string, requestAdapter i2
     return NewApprovalWorkflowProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ApprovalWorkflowProvidersRequestBuilder) Count()(*ApprovalWorkflowProvidersCountRequestBuilder) {
-    return NewApprovalWorkflowProvidersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ApprovalWorkflowProvidersRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from approvalWorkflowProviders
 func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ApprovalWorkflowProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformation(ct
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,7 +99,7 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) CreatePostRequestInformation(c
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

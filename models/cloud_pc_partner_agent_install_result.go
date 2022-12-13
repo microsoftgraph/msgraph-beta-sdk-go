@@ -8,15 +8,15 @@ import (
 type CloudPcPartnerAgentInstallResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The installStatus property
+    // The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
     installStatus *CloudPcPartnerAgentInstallStatus
-    // The isThirdPartyPartner property
+    // Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
     isThirdPartyPartner *bool
     // The OdataType property
     odataType *string
-    // The partnerAgentName property
+    // Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
     partnerAgentName *CloudPcPartnerAgentName
-    // The retriable property
+    // Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
     retriable *bool
 }
 // NewCloudPcPartnerAgentInstallResult instantiates a new cloudPcPartnerAgentInstallResult and sets the default values.
@@ -89,11 +89,11 @@ func (m *CloudPcPartnerAgentInstallResult) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetInstallStatus gets the installStatus property value. The installStatus property
+// GetInstallStatus gets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) GetInstallStatus()(*CloudPcPartnerAgentInstallStatus) {
     return m.installStatus
 }
-// GetIsThirdPartyPartner gets the isThirdPartyPartner property value. The isThirdPartyPartner property
+// GetIsThirdPartyPartner gets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) GetIsThirdPartyPartner()(*bool) {
     return m.isThirdPartyPartner
 }
@@ -101,11 +101,11 @@ func (m *CloudPcPartnerAgentInstallResult) GetIsThirdPartyPartner()(*bool) {
 func (m *CloudPcPartnerAgentInstallResult) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPartnerAgentName gets the partnerAgentName property value. The partnerAgentName property
+// GetPartnerAgentName gets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) GetPartnerAgentName()(*CloudPcPartnerAgentName) {
     return m.partnerAgentName
 }
-// GetRetriable gets the retriable property value. The retriable property
+// GetRetriable gets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) GetRetriable()(*bool) {
     return m.retriable
 }
@@ -155,11 +155,11 @@ func (m *CloudPcPartnerAgentInstallResult) Serialize(writer i878a80d2330e89d2689
 func (m *CloudPcPartnerAgentInstallResult) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetInstallStatus sets the installStatus property value. The installStatus property
+// SetInstallStatus sets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) SetInstallStatus(value *CloudPcPartnerAgentInstallStatus)() {
     m.installStatus = value
 }
-// SetIsThirdPartyPartner sets the isThirdPartyPartner property value. The isThirdPartyPartner property
+// SetIsThirdPartyPartner sets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) SetIsThirdPartyPartner(value *bool)() {
     m.isThirdPartyPartner = value
 }
@@ -167,11 +167,11 @@ func (m *CloudPcPartnerAgentInstallResult) SetIsThirdPartyPartner(value *bool)()
 func (m *CloudPcPartnerAgentInstallResult) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPartnerAgentName sets the partnerAgentName property value. The partnerAgentName property
+// SetPartnerAgentName sets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) SetPartnerAgentName(value *CloudPcPartnerAgentName)() {
     m.partnerAgentName = value
 }
-// SetRetriable sets the retriable property value. The retriable property
+// SetRetriable sets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
 func (m *CloudPcPartnerAgentInstallResult) SetRetriable(value *bool)() {
     m.retriable = value
 }

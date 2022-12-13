@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -13,7 +14,7 @@ type PowerliftDownloadRequest struct {
     // The OdataType property
     odataType *string
     // The unique id for the request
-    powerliftId *string
+    powerliftId *UUID
 }
 // NewPowerliftDownloadRequest instantiates a new powerliftDownloadRequest and sets the default values.
 func NewPowerliftDownloadRequest()(*PowerliftDownloadRequest) {
@@ -58,7 +59,7 @@ func (m *PowerliftDownloadRequest) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["powerliftId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -78,7 +79,7 @@ func (m *PowerliftDownloadRequest) GetOdataType()(*string) {
     return m.odataType
 }
 // GetPowerliftId gets the powerliftId property value. The unique id for the request
-func (m *PowerliftDownloadRequest) GetPowerliftId()(*string) {
+func (m *PowerliftDownloadRequest) GetPowerliftId()(*UUID) {
     return m.powerliftId
 }
 // Serialize serializes information the current object
@@ -96,7 +97,7 @@ func (m *PowerliftDownloadRequest) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err := writer.WriteStringValue("powerliftId", m.GetPowerliftId())
+        err := writer.WriteUUIDValue("powerliftId", m.GetPowerliftId())
         if err != nil {
             return err
         }
@@ -122,6 +123,6 @@ func (m *PowerliftDownloadRequest) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetPowerliftId sets the powerliftId property value. The unique id for the request
-func (m *PowerliftDownloadRequest) SetPowerliftId(value *string)() {
+func (m *PowerliftDownloadRequest) SetPowerliftId(value *UUID)() {
     m.powerliftId = value
 }

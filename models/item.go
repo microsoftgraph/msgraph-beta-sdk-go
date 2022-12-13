@@ -2,14 +2,15 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Item 
+// Item provides operations to manage the collection of accessReviewDecision entities.
 type Item struct {
     Entity
     // The baseUnitOfMeasureId property
-    baseUnitOfMeasureId *string
+    baseUnitOfMeasureId *UUID
     // The blocked property
     blocked *bool
     // The displayName property
@@ -23,7 +24,7 @@ type Item struct {
     // The itemCategoryCode property
     itemCategoryCode *string
     // The itemCategoryId property
-    itemCategoryId *string
+    itemCategoryId *UUID
     // The lastModifiedDateTime property
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number property
@@ -35,7 +36,7 @@ type Item struct {
     // The taxGroupCode property
     taxGroupCode *string
     // The taxGroupId property
-    taxGroupId *string
+    taxGroupId *UUID
     // The type property
     type_escaped *string
     // The unitCost property
@@ -55,7 +56,7 @@ func CreateItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     return NewItem(), nil
 }
 // GetBaseUnitOfMeasureId gets the baseUnitOfMeasureId property value. The baseUnitOfMeasureId property
-func (m *Item) GetBaseUnitOfMeasureId()(*string) {
+func (m *Item) GetBaseUnitOfMeasureId()(*UUID) {
     return m.baseUnitOfMeasureId
 }
 // GetBlocked gets the blocked property value. The blocked property
@@ -70,7 +71,7 @@ func (m *Item) GetDisplayName()(*string) {
 func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["baseUnitOfMeasureId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -140,7 +141,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["itemCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -204,7 +205,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["taxGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -262,7 +263,7 @@ func (m *Item) GetItemCategoryCode()(*string) {
     return m.itemCategoryCode
 }
 // GetItemCategoryId gets the itemCategoryId property value. The itemCategoryId property
-func (m *Item) GetItemCategoryId()(*string) {
+func (m *Item) GetItemCategoryId()(*UUID) {
     return m.itemCategoryId
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
@@ -286,7 +287,7 @@ func (m *Item) GetTaxGroupCode()(*string) {
     return m.taxGroupCode
 }
 // GetTaxGroupId gets the taxGroupId property value. The taxGroupId property
-func (m *Item) GetTaxGroupId()(*string) {
+func (m *Item) GetTaxGroupId()(*UUID) {
     return m.taxGroupId
 }
 // GetType gets the type property value. The type property
@@ -308,7 +309,7 @@ func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         return err
     }
     {
-        err = writer.WriteStringValue("baseUnitOfMeasureId", m.GetBaseUnitOfMeasureId())
+        err = writer.WriteUUIDValue("baseUnitOfMeasureId", m.GetBaseUnitOfMeasureId())
         if err != nil {
             return err
         }
@@ -350,7 +351,7 @@ func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
-        err = writer.WriteStringValue("itemCategoryId", m.GetItemCategoryId())
+        err = writer.WriteUUIDValue("itemCategoryId", m.GetItemCategoryId())
         if err != nil {
             return err
         }
@@ -390,7 +391,7 @@ func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
-        err = writer.WriteStringValue("taxGroupId", m.GetTaxGroupId())
+        err = writer.WriteUUIDValue("taxGroupId", m.GetTaxGroupId())
         if err != nil {
             return err
         }
@@ -416,7 +417,7 @@ func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     return nil
 }
 // SetBaseUnitOfMeasureId sets the baseUnitOfMeasureId property value. The baseUnitOfMeasureId property
-func (m *Item) SetBaseUnitOfMeasureId(value *string)() {
+func (m *Item) SetBaseUnitOfMeasureId(value *UUID)() {
     m.baseUnitOfMeasureId = value
 }
 // SetBlocked sets the blocked property value. The blocked property
@@ -444,7 +445,7 @@ func (m *Item) SetItemCategoryCode(value *string)() {
     m.itemCategoryCode = value
 }
 // SetItemCategoryId sets the itemCategoryId property value. The itemCategoryId property
-func (m *Item) SetItemCategoryId(value *string)() {
+func (m *Item) SetItemCategoryId(value *UUID)() {
     m.itemCategoryId = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
@@ -468,7 +469,7 @@ func (m *Item) SetTaxGroupCode(value *string)() {
     m.taxGroupCode = value
 }
 // SetTaxGroupId sets the taxGroupId property value. The taxGroupId property
-func (m *Item) SetTaxGroupId(value *string)() {
+func (m *Item) SetTaxGroupId(value *UUID)() {
     m.taxGroupId = value
 }
 // SetType sets the type property value. The type property

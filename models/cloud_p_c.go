@@ -34,7 +34,7 @@ type CloudPC struct {
     onPremisesConnectionName *string
     // The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
     osVersion *CloudPcOperatingSystem
-    // The partnerAgentInstallResults property
+    // The results of every partner agent's installation status on Cloud PC.
     partnerAgentInstallResults []CloudPcPartnerAgentInstallResultable
     // The provisioning policy ID of the Cloud PC.
     provisioningPolicyId *string
@@ -369,7 +369,7 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
 func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     return m.osVersion
 }
-// GetPartnerAgentInstallResults gets the partnerAgentInstallResults property value. The partnerAgentInstallResults property
+// GetPartnerAgentInstallResults gets the partnerAgentInstallResults property value. The results of every partner agent's installation status on Cloud PC.
 func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable) {
     return m.partnerAgentInstallResults
 }
@@ -627,7 +627,7 @@ func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
 func (m *CloudPC) SetOsVersion(value *CloudPcOperatingSystem)() {
     m.osVersion = value
 }
-// SetPartnerAgentInstallResults sets the partnerAgentInstallResults property value. The partnerAgentInstallResults property
+// SetPartnerAgentInstallResults sets the partnerAgentInstallResults property value. The results of every partner agent's installation status on Cloud PC.
 func (m *CloudPC) SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)() {
     m.partnerAgentInstallResults = value
 }

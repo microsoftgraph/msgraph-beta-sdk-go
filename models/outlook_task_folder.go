@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -16,7 +17,7 @@ type OutlookTaskFolder struct {
     // The name of the task folder.
     name *string
     // The unique GUID identifier for the task folder's parent group.
-    parentGroupKey *string
+    parentGroupKey *UUID
     // The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The tasks in this task folder. Read-only. Nullable.
@@ -85,7 +86,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["parentGroupKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -137,7 +138,7 @@ func (m *OutlookTaskFolder) GetName()(*string) {
     return m.name
 }
 // GetParentGroupKey gets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
-func (m *OutlookTaskFolder) GetParentGroupKey()(*string) {
+func (m *OutlookTaskFolder) GetParentGroupKey()(*UUID) {
     return m.parentGroupKey
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
@@ -183,7 +184,7 @@ func (m *OutlookTaskFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteStringValue("parentGroupKey", m.GetParentGroupKey())
+        err = writer.WriteUUIDValue("parentGroupKey", m.GetParentGroupKey())
         if err != nil {
             return err
         }
@@ -227,7 +228,7 @@ func (m *OutlookTaskFolder) SetName(value *string)() {
     m.name = value
 }
 // SetParentGroupKey sets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
-func (m *OutlookTaskFolder) SetParentGroupKey(value *string)() {
+func (m *OutlookTaskFolder) SetParentGroupKey(value *UUID)() {
     m.parentGroupKey = value
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.

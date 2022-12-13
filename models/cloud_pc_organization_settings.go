@@ -9,6 +9,8 @@ type CloudPcOrganizationSettings struct {
     Entity
     // Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
     enableMEMAutoEnroll *bool
+    // The enableSingleSignOn property
+    enableSingleSignOn *bool
     // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
     osVersion *CloudPcOperatingSystem
     // The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
@@ -16,7 +18,7 @@ type CloudPcOrganizationSettings struct {
     // Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
     windowsSettings CloudPcWindowsSettingsable
 }
-// NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
+// NewCloudPcOrganizationSettings instantiates a new CloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     m := &CloudPcOrganizationSettings{
         Entity: *NewEntity(),
@@ -31,6 +33,10 @@ func CreateCloudPcOrganizationSettingsFromDiscriminatorValue(parseNode i878a80d2
 func (m *CloudPcOrganizationSettings) GetEnableMEMAutoEnroll()(*bool) {
     return m.enableMEMAutoEnroll
 }
+// GetEnableSingleSignOn gets the enableSingleSignOn property value. The enableSingleSignOn property
+func (m *CloudPcOrganizationSettings) GetEnableSingleSignOn()(*bool) {
+    return m.enableSingleSignOn
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -41,6 +47,16 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetEnableMEMAutoEnroll(val)
+        }
+        return nil
+    }
+    res["enableSingleSignOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableSingleSignOn(val)
         }
         return nil
     }
@@ -100,6 +116,12 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("enableSingleSignOn", m.GetEnableSingleSignOn())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOsVersion() != nil {
         cast := (*m.GetOsVersion()).String()
         err = writer.WriteStringValue("osVersion", &cast)
@@ -125,6 +147,10 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a
 // SetEnableMEMAutoEnroll sets the enableMEMAutoEnroll property value. Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
 func (m *CloudPcOrganizationSettings) SetEnableMEMAutoEnroll(value *bool)() {
     m.enableMEMAutoEnroll = value
+}
+// SetEnableSingleSignOn sets the enableSingleSignOn property value. The enableSingleSignOn property
+func (m *CloudPcOrganizationSettings) SetEnableSingleSignOn(value *bool)() {
+    m.enableSingleSignOn = value
 }
 // SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOperatingSystem)() {

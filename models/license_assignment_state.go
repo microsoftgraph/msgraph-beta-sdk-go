@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -12,7 +13,7 @@ type LicenseAssignmentState struct {
     // Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
     assignedByGroup *string
     // The service plans that are disabled in this assignment. Read-Only.
-    disabledPlans []string
+    disabledPlans []UUID
     // License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
     error *string
     // The timestamp when the state of the license assignment was last updated.
@@ -20,7 +21,7 @@ type LicenseAssignmentState struct {
     // The OdataType property
     odataType *string
     // The unique identifier for the SKU. Read-Only.
-    skuId *string
+    skuId *UUID
     // Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
     state *string
 }
@@ -44,7 +45,7 @@ func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
     return m.assignedByGroup
 }
 // GetDisabledPlans gets the disabledPlans property value. The service plans that are disabled in this assignment. Read-Only.
-func (m *LicenseAssignmentState) GetDisabledPlans()([]string) {
+func (m *LicenseAssignmentState) GetDisabledPlans()([]UUID) {
     return m.disabledPlans
 }
 // GetError gets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
@@ -65,14 +66,14 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["disabledPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfPrimitiveValues("uUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*UUID))
             }
             m.SetDisabledPlans(res)
         }
@@ -109,7 +110,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["skuId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -139,7 +140,7 @@ func (m *LicenseAssignmentState) GetOdataType()(*string) {
     return m.odataType
 }
 // GetSkuId gets the skuId property value. The unique identifier for the SKU. Read-Only.
-func (m *LicenseAssignmentState) GetSkuId()(*string) {
+func (m *LicenseAssignmentState) GetSkuId()(*UUID) {
     return m.skuId
 }
 // GetState gets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
@@ -155,7 +156,7 @@ func (m *LicenseAssignmentState) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     if m.GetDisabledPlans() != nil {
-        err := writer.WriteCollectionOfStringValues("disabledPlans", m.GetDisabledPlans())
+        err := writer.WriteCollectionOfUUIDValues("disabledPlans", m.GetDisabledPlans())
         if err != nil {
             return err
         }
@@ -179,7 +180,7 @@ func (m *LicenseAssignmentState) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err := writer.WriteStringValue("skuId", m.GetSkuId())
+        err := writer.WriteUUIDValue("skuId", m.GetSkuId())
         if err != nil {
             return err
         }
@@ -207,7 +208,7 @@ func (m *LicenseAssignmentState) SetAssignedByGroup(value *string)() {
     m.assignedByGroup = value
 }
 // SetDisabledPlans sets the disabledPlans property value. The service plans that are disabled in this assignment. Read-Only.
-func (m *LicenseAssignmentState) SetDisabledPlans(value []string)() {
+func (m *LicenseAssignmentState) SetDisabledPlans(value []UUID)() {
     m.disabledPlans = value
 }
 // SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
@@ -223,7 +224,7 @@ func (m *LicenseAssignmentState) SetOdataType(value *string)() {
     m.odataType = value
 }
 // SetSkuId sets the skuId property value. The unique identifier for the SKU. Read-Only.
-func (m *LicenseAssignmentState) SetSkuId(value *string)() {
+func (m *LicenseAssignmentState) SetSkuId(value *UUID)() {
     m.skuId = value
 }
 // SetState sets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.

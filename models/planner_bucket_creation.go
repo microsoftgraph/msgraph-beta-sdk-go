@@ -8,7 +8,7 @@ import (
 type PlannerBucketCreation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The creationSourceKind property
+    // Specifies what kind of creation source the bucket is created with. The possible values are: external, publication and unknownFutureValue.
     creationSourceKind *PlannerCreationSourceKind
     // The OdataType property
     odataType *string
@@ -46,7 +46,7 @@ func CreatePlannerBucketCreationFromDiscriminatorValue(parseNode i878a80d2330e89
 func (m *PlannerBucketCreation) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetCreationSourceKind gets the creationSourceKind property value. The creationSourceKind property
+// GetCreationSourceKind gets the creationSourceKind property value. Specifies what kind of creation source the bucket is created with. The possible values are: external, publication and unknownFutureValue.
 func (m *PlannerBucketCreation) GetCreationSourceKind()(*PlannerCreationSourceKind) {
     return m.creationSourceKind
 }
@@ -106,7 +106,7 @@ func (m *PlannerBucketCreation) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *PlannerBucketCreation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetCreationSourceKind sets the creationSourceKind property value. The creationSourceKind property
+// SetCreationSourceKind sets the creationSourceKind property value. Specifies what kind of creation source the bucket is created with. The possible values are: external, publication and unknownFutureValue.
 func (m *PlannerBucketCreation) SetCreationSourceKind(value *PlannerCreationSourceKind)() {
     m.creationSourceKind = value
 }

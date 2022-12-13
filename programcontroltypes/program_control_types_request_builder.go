@@ -38,7 +38,7 @@ type ProgramControlTypesRequestBuilderGetQueryParameters struct {
 // ProgramControlTypesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ProgramControlTypesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type ProgramControlTypesRequestBuilderGetRequestConfiguration struct {
 // ProgramControlTypesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ProgramControlTypesRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewProgramControlTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewProgramControlTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ProgramControlTypesRequestBuilder) Count()(*ProgramControlTypesCountRequestBuilder) {
-    return NewProgramControlTypesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ProgramControlTypesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation in the Azure AD access reviews feature, list all the programControlType objects.
 func (m *ProgramControlTypesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ProgramControlTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *ProgramControlTypesRequestBuilder) CreateGetRequestInformation(ctx cont
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,12 +99,15 @@ func (m *ProgramControlTypesRequestBuilder) CreatePostRequestInformation(ctx con
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get in the Azure AD access reviews feature, list all the programControlType objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/programcontroltype-list?view=graph-rest-1.0
 func (m *ProgramControlTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramControlTypesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlTypeCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

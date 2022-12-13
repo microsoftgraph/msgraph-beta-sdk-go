@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LearningProvider provides operations to manage the collection of agreement entities.
+// LearningProvider 
 type LearningProvider struct {
     Entity
     // The display name that appears in Viva Learning. Required.
@@ -24,7 +24,7 @@ type LearningProvider struct {
     // The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
     squareLogoWebUrlForLightTheme *string
 }
-// NewLearningProvider instantiates a new learningProvider and sets the default values.
+// NewLearningProvider instantiates a new LearningProvider and sets the default values.
 func NewLearningProvider()(*LearningProvider) {
     m := &LearningProvider{
         Entity: *NewEntity(),

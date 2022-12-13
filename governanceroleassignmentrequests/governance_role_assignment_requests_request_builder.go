@@ -38,7 +38,7 @@ type GovernanceRoleAssignmentRequestsRequestBuilderGetQueryParameters struct {
 // GovernanceRoleAssignmentRequestsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GovernanceRoleAssignmentRequestsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type GovernanceRoleAssignmentRequestsRequestBuilderGetRequestConfiguration struc
 // GovernanceRoleAssignmentRequestsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GovernanceRoleAssignmentRequestsRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewGovernanceRoleAssignmentRequestsRequestBuilder(rawUrl string, requestAda
     return NewGovernanceRoleAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GovernanceRoleAssignmentRequestsRequestBuilder) Count()(*GovernanceRoleAssignmentRequestsCountRequestBuilder) {
-    return NewGovernanceRoleAssignmentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceRoleAssignmentRequestsRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from governanceRoleAssignmentRequests
 func (m *GovernanceRoleAssignmentRequestsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceRoleAssignmentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *GovernanceRoleAssignmentRequestsRequestBuilder) CreateGetRequestInforma
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,7 +99,7 @@ func (m *GovernanceRoleAssignmentRequestsRequestBuilder) CreatePostRequestInform
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

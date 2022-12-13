@@ -26,7 +26,7 @@ type SecurityRequestBuilderGetQueryParameters struct {
 // SecurityRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SecurityRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,20 +35,20 @@ type SecurityRequestBuilderGetRequestConfiguration struct {
 // SecurityRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SecurityRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Alerts provides operations to manage the alerts property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Alerts()(*SecurityAlertsRequestBuilder) {
-    return NewSecurityAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) Alerts()(*AlertsRequestBuilder) {
+    return NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Alerts_v2 provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Alerts_v2()(*SecurityAlerts_v2RequestBuilder) {
-    return NewSecurityAlerts_v2RequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) Alerts_v2()(*Alerts_v2RequestBuilder) {
+    return NewAlerts_v2RequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Alerts_v2ById provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*SecurityAlerts_v2AlertItemRequestBuilder) {
+func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*Alerts_v2AlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -56,10 +56,10 @@ func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*SecurityAlerts_v2Aler
     if id != "" {
         urlTplParams["alert%2Did"] = id
     }
-    return NewSecurityAlerts_v2AlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlerts_v2AlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AlertsById provides operations to manage the alerts property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) AlertsById(id string)(*SecurityAlertsAlertItemRequestBuilder) {
+func (m *SecurityRequestBuilder) AlertsById(id string)(*AlertsAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,22 +67,22 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*SecurityAlertsAlertItemR
     if id != "" {
         urlTplParams["alert%2Did"] = id
     }
-    return NewSecurityAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlertsAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AttackSimulation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) AttackSimulation()(*SecurityAttackSimulationRequestBuilder) {
-    return NewSecurityAttackSimulationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) AttackSimulation()(*AttackSimulationRequestBuilder) {
+    return NewAttackSimulationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Cases provides operations to manage the cases property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Cases()(*SecurityCasesRequestBuilder) {
-    return NewSecurityCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) Cases()(*CasesRequestBuilder) {
+    return NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CloudAppSecurityProfiles provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) CloudAppSecurityProfiles()(*SecurityCloudAppSecurityProfilesRequestBuilder) {
-    return NewSecurityCloudAppSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) CloudAppSecurityProfiles()(*CloudAppSecurityProfilesRequestBuilder) {
+    return NewCloudAppSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CloudAppSecurityProfilesById provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) CloudAppSecurityProfilesById(id string)(*SecurityCloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) CloudAppSecurityProfilesById(id string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -90,7 +90,7 @@ func (m *SecurityRequestBuilder) CloudAppSecurityProfilesById(id string)(*Securi
     if id != "" {
         urlTplParams["cloudAppSecurityProfile%2Did"] = id
     }
-    return NewSecurityCloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSecurityRequestBuilderInternal instantiates a new SecurityRequestBuilder and sets the default values.
 func NewSecurityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityRequestBuilder) {
@@ -122,7 +122,7 @@ func (m *SecurityRequestBuilder) CreateGetRequestInformation(ctx context.Context
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -136,17 +136,17 @@ func (m *SecurityRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // DomainSecurityProfiles provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) DomainSecurityProfiles()(*SecurityDomainSecurityProfilesRequestBuilder) {
-    return NewSecurityDomainSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) DomainSecurityProfiles()(*DomainSecurityProfilesRequestBuilder) {
+    return NewDomainSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DomainSecurityProfilesById provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) DomainSecurityProfilesById(id string)(*SecurityDomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) DomainSecurityProfilesById(id string)(*DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,14 +154,14 @@ func (m *SecurityRequestBuilder) DomainSecurityProfilesById(id string)(*Security
     if id != "" {
         urlTplParams["domainSecurityProfile%2Did"] = id
     }
-    return NewSecurityDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // FileSecurityProfiles provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) FileSecurityProfiles()(*SecurityFileSecurityProfilesRequestBuilder) {
-    return NewSecurityFileSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) FileSecurityProfiles()(*FileSecurityProfilesRequestBuilder) {
+    return NewFileSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FileSecurityProfilesById provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) FileSecurityProfilesById(id string)(*SecurityFileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) FileSecurityProfilesById(id string)(*FileSecurityProfilesFileSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,7 +169,7 @@ func (m *SecurityRequestBuilder) FileSecurityProfilesById(id string)(*SecurityFi
     if id != "" {
         urlTplParams["fileSecurityProfile%2Did"] = id
     }
-    return NewSecurityFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewFileSecurityProfilesFileSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get security
 func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable, error) {
@@ -191,11 +191,11 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable), nil
 }
 // HostSecurityProfiles provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) HostSecurityProfiles()(*SecurityHostSecurityProfilesRequestBuilder) {
-    return NewSecurityHostSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) HostSecurityProfiles()(*HostSecurityProfilesRequestBuilder) {
+    return NewHostSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HostSecurityProfilesById provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) HostSecurityProfilesById(id string)(*SecurityHostSecurityProfilesHostSecurityProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) HostSecurityProfilesById(id string)(*HostSecurityProfilesHostSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -203,14 +203,14 @@ func (m *SecurityRequestBuilder) HostSecurityProfilesById(id string)(*SecurityHo
     if id != "" {
         urlTplParams["hostSecurityProfile%2Did"] = id
     }
-    return NewSecurityHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Incidents provides operations to manage the incidents property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Incidents()(*SecurityIncidentsRequestBuilder) {
-    return NewSecurityIncidentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
+    return NewIncidentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IncidentsById provides operations to manage the incidents property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) IncidentsById(id string)(*SecurityIncidentsIncidentItemRequestBuilder) {
+func (m *SecurityRequestBuilder) IncidentsById(id string)(*IncidentsIncidentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -218,18 +218,18 @@ func (m *SecurityRequestBuilder) IncidentsById(id string)(*SecurityIncidentsInci
     if id != "" {
         urlTplParams["incident%2Did"] = id
     }
-    return NewSecurityIncidentsIncidentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIncidentsIncidentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) InformationProtection()(*SecurityInformationProtectionRequestBuilder) {
-    return NewSecurityInformationProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) InformationProtection()(*InformationProtectionRequestBuilder) {
+    return NewInformationProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IpSecurityProfiles provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) IpSecurityProfiles()(*SecurityIpSecurityProfilesRequestBuilder) {
-    return NewSecurityIpSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) IpSecurityProfiles()(*IpSecurityProfilesRequestBuilder) {
+    return NewIpSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IpSecurityProfilesById provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) IpSecurityProfilesById(id string)(*SecurityIpSecurityProfilesIpSecurityProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) IpSecurityProfilesById(id string)(*IpSecurityProfilesIpSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -237,11 +237,11 @@ func (m *SecurityRequestBuilder) IpSecurityProfilesById(id string)(*SecurityIpSe
     if id != "" {
         urlTplParams["ipSecurityProfile%2Did"] = id
     }
-    return NewSecurityIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIpSecurityProfilesIpSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Labels provides operations to manage the labels property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Labels()(*SecurityLabelsRequestBuilder) {
-    return NewSecurityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) Labels()(*LabelsRequestBuilder) {
+    return NewLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update security
 func (m *SecurityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable, error) {
@@ -263,11 +263,11 @@ func (m *SecurityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable), nil
 }
 // ProviderTenantSettings provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) ProviderTenantSettings()(*SecurityProviderTenantSettingsRequestBuilder) {
-    return NewSecurityProviderTenantSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) ProviderTenantSettings()(*ProviderTenantSettingsRequestBuilder) {
+    return NewProviderTenantSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ProviderTenantSettingsById provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) ProviderTenantSettingsById(id string)(*SecurityProviderTenantSettingsProviderTenantSettingItemRequestBuilder) {
+func (m *SecurityRequestBuilder) ProviderTenantSettingsById(id string)(*ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -275,18 +275,18 @@ func (m *SecurityRequestBuilder) ProviderTenantSettingsById(id string)(*Security
     if id != "" {
         urlTplParams["providerTenantSetting%2Did"] = id
     }
-    return NewSecurityProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RunHuntingQuery provides operations to call the runHuntingQuery method.
-func (m *SecurityRequestBuilder) RunHuntingQuery()(*SecurityRunHuntingQueryRequestBuilder) {
-    return NewSecurityRunHuntingQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) RunHuntingQuery()(*RunHuntingQueryRequestBuilder) {
+    return NewRunHuntingQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecureScoreControlProfiles provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecuritySecureScoreControlProfilesRequestBuilder) {
-    return NewSecuritySecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecureScoreControlProfilesRequestBuilder) {
+    return NewSecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecureScoreControlProfilesById provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*SecuritySecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -294,14 +294,14 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*Secu
     if id != "" {
         urlTplParams["secureScoreControlProfile%2Did"] = id
     }
-    return NewSecuritySecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SecureScores provides operations to manage the secureScores property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecureScores()(*SecuritySecureScoresRequestBuilder) {
-    return NewSecuritySecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
+    return NewSecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecureScoresById provides operations to manage the secureScores property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecuritySecureScoresSecureScoreItemRequestBuilder) {
+func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecureScoresSecureScoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -309,14 +309,14 @@ func (m *SecurityRequestBuilder) SecureScoresById(id string)(*SecuritySecureScor
     if id != "" {
         urlTplParams["secureScore%2Did"] = id
     }
-    return NewSecuritySecureScoresSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSecureScoresSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SecurityActions provides operations to manage the securityActions property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecurityActions()(*SecuritySecurityActionsRequestBuilder) {
-    return NewSecuritySecurityActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) SecurityActions()(*SecurityActionsRequestBuilder) {
+    return NewSecurityActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecurityActionsById provides operations to manage the securityActions property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SecurityActionsById(id string)(*SecuritySecurityActionsSecurityActionItemRequestBuilder) {
+func (m *SecurityRequestBuilder) SecurityActionsById(id string)(*SecurityActionsSecurityActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -324,14 +324,14 @@ func (m *SecurityRequestBuilder) SecurityActionsById(id string)(*SecuritySecurit
     if id != "" {
         urlTplParams["securityAction%2Did"] = id
     }
-    return NewSecuritySecurityActionsSecurityActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSecurityActionsSecurityActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SecuritySubjectRightsRequestsRequestBuilder) {
-    return NewSecuritySubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
+    return NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubjectRightsRequestsById provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) SubjectRightsRequestsById(id string)(*SecuritySubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
+func (m *SecurityRequestBuilder) SubjectRightsRequestsById(id string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -339,18 +339,18 @@ func (m *SecurityRequestBuilder) SubjectRightsRequestsById(id string)(*SecurityS
     if id != "" {
         urlTplParams["subjectRightsRequest%2Did"] = id
     }
-    return NewSecuritySubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ThreatSubmission provides operations to manage the threatSubmission property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) ThreatSubmission()(*SecurityThreatSubmissionRequestBuilder) {
-    return NewSecurityThreatSubmissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) ThreatSubmission()(*ThreatSubmissionRequestBuilder) {
+    return NewThreatSubmissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TiIndicators provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) TiIndicators()(*SecurityTiIndicatorsRequestBuilder) {
-    return NewSecurityTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) TiIndicators()(*TiIndicatorsRequestBuilder) {
+    return NewTiIndicatorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TiIndicatorsById provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) TiIndicatorsById(id string)(*SecurityTiIndicatorsTiIndicatorItemRequestBuilder) {
+func (m *SecurityRequestBuilder) TiIndicatorsById(id string)(*TiIndicatorsTiIndicatorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -358,22 +358,22 @@ func (m *SecurityRequestBuilder) TiIndicatorsById(id string)(*SecurityTiIndicato
     if id != "" {
         urlTplParams["tiIndicator%2Did"] = id
     }
-    return NewSecurityTiIndicatorsTiIndicatorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTiIndicatorsTiIndicatorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Triggers provides operations to manage the triggers property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) Triggers()(*SecurityTriggersRequestBuilder) {
-    return NewSecurityTriggersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) Triggers()(*TriggersRequestBuilder) {
+    return NewTriggersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TriggerTypes provides operations to manage the triggerTypes property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) TriggerTypes()(*SecurityTriggerTypesRequestBuilder) {
-    return NewSecurityTriggerTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) TriggerTypes()(*TriggerTypesRequestBuilder) {
+    return NewTriggerTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserSecurityProfiles provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) UserSecurityProfiles()(*SecurityUserSecurityProfilesRequestBuilder) {
-    return NewSecurityUserSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SecurityRequestBuilder) UserSecurityProfiles()(*UserSecurityProfilesRequestBuilder) {
+    return NewUserSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserSecurityProfilesById provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
-func (m *SecurityRequestBuilder) UserSecurityProfilesById(id string)(*SecurityUserSecurityProfilesUserSecurityProfileItemRequestBuilder) {
+func (m *SecurityRequestBuilder) UserSecurityProfilesById(id string)(*UserSecurityProfilesUserSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -381,5 +381,5 @@ func (m *SecurityRequestBuilder) UserSecurityProfilesById(id string)(*SecurityUs
     if id != "" {
         urlTplParams["userSecurityProfile%2Did"] = id
     }
-    return NewSecurityUserSecurityProfilesUserSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserSecurityProfilesUserSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

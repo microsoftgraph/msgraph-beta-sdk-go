@@ -8,11 +8,11 @@ import (
 type PlannerTaskCreation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The creationSourceKind property
+    // Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
     creationSourceKind *PlannerCreationSourceKind
     // The OdataType property
     odataType *string
-    // Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
+    // Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.
     teamsPublicationInfo PlannerTeamsPublicationInfoable
 }
 // NewPlannerTaskCreation instantiates a new plannerTaskCreation and sets the default values.
@@ -50,7 +50,7 @@ func CreatePlannerTaskCreationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 func (m *PlannerTaskCreation) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetCreationSourceKind gets the creationSourceKind property value. The creationSourceKind property
+// GetCreationSourceKind gets the creationSourceKind property value. Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
 func (m *PlannerTaskCreation) GetCreationSourceKind()(*PlannerCreationSourceKind) {
     return m.creationSourceKind
 }
@@ -93,7 +93,7 @@ func (m *PlannerTaskCreation) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *PlannerTaskCreation) GetOdataType()(*string) {
     return m.odataType
 }
-// GetTeamsPublicationInfo gets the teamsPublicationInfo property value. Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
+// GetTeamsPublicationInfo gets the teamsPublicationInfo property value. Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.
 func (m *PlannerTaskCreation) GetTeamsPublicationInfo()(PlannerTeamsPublicationInfoable) {
     return m.teamsPublicationInfo
 }
@@ -130,7 +130,7 @@ func (m *PlannerTaskCreation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *PlannerTaskCreation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetCreationSourceKind sets the creationSourceKind property value. The creationSourceKind property
+// SetCreationSourceKind sets the creationSourceKind property value. Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
 func (m *PlannerTaskCreation) SetCreationSourceKind(value *PlannerCreationSourceKind)() {
     m.creationSourceKind = value
 }
@@ -138,7 +138,7 @@ func (m *PlannerTaskCreation) SetCreationSourceKind(value *PlannerCreationSource
 func (m *PlannerTaskCreation) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetTeamsPublicationInfo sets the teamsPublicationInfo property value. Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
+// SetTeamsPublicationInfo sets the teamsPublicationInfo property value. Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.
 func (m *PlannerTaskCreation) SetTeamsPublicationInfo(value PlannerTeamsPublicationInfoable)() {
     m.teamsPublicationInfo = value
 }

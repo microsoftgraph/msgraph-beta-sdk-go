@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicy provides operations to manage the deviceManagement singleton.
+// CloudPcProvisioningPolicy 
 type CloudPcProvisioningPolicy struct {
     Entity
     // The URL of the alternate resource that links to this provisioning policy. Read-only.
@@ -19,6 +19,8 @@ type CloudPcProvisioningPolicy struct {
     displayName *string
     // Specifies how Cloud PCs will join Azure Active Directory.
     domainJoinConfiguration CloudPcDomainJoinConfigurationable
+    // The enableSingleSignOn property
+    enableSingleSignOn *bool
     // The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
     gracePeriodInHours *int32
     // The display name for the OS image you’re provisioning.
@@ -40,7 +42,7 @@ type CloudPcProvisioningPolicy struct {
     // Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
     windowsSettings CloudPcWindowsSettingsable
 }
-// NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
+// NewCloudPcProvisioningPolicy instantiates a new CloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     m := &CloudPcProvisioningPolicy{
         Entity: *NewEntity(),
@@ -74,6 +76,10 @@ func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
 // GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(CloudPcDomainJoinConfigurationable) {
     return m.domainJoinConfiguration
+}
+// GetEnableSingleSignOn gets the enableSingleSignOn property value. The enableSingleSignOn property
+func (m *CloudPcProvisioningPolicy) GetEnableSingleSignOn()(*bool) {
+    return m.enableSingleSignOn
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -139,6 +145,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetDomainJoinConfiguration(val.(CloudPcDomainJoinConfigurationable))
+        }
+        return nil
+    }
+    res["enableSingleSignOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableSingleSignOn(val)
         }
         return nil
     }
@@ -331,6 +347,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteBoolValue("enableSingleSignOn", m.GetEnableSingleSignOn())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("gracePeriodInHours", m.GetGracePeriodInHours())
         if err != nil {
             return err
@@ -418,6 +440,10 @@ func (m *CloudPcProvisioningPolicy) SetDisplayName(value *string)() {
 // SetDomainJoinConfiguration sets the domainJoinConfiguration property value. Specifies how Cloud PCs will join Azure Active Directory.
 func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value CloudPcDomainJoinConfigurationable)() {
     m.domainJoinConfiguration = value
+}
+// SetEnableSingleSignOn sets the enableSingleSignOn property value. The enableSingleSignOn property
+func (m *CloudPcProvisioningPolicy) SetEnableSingleSignOn(value *bool)() {
+    m.enableSingleSignOn = value
 }
 // SetGracePeriodInHours sets the gracePeriodInHours property value. The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
 func (m *CloudPcProvisioningPolicy) SetGracePeriodInHours(value *int32)() {

@@ -26,7 +26,7 @@ type OfficeConfigurationRequestBuilderGetQueryParameters struct {
 // OfficeConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OfficeConfigurationRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type OfficeConfigurationRequestBuilderGetRequestConfiguration struct {
 // OfficeConfigurationRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OfficeConfigurationRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ClientConfigurations provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
-func (m *OfficeConfigurationRequestBuilder) ClientConfigurations()(*OfficeConfigurationClientConfigurationsRequestBuilder) {
-    return NewOfficeConfigurationClientConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *OfficeConfigurationRequestBuilder) ClientConfigurations()(*ClientConfigurationsRequestBuilder) {
+    return NewClientConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClientConfigurationsById provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
-func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(*OfficeConfigurationClientConfigurationsOfficeClientConfigurationItemRequestBuilder) {
+func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(*ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(
     if id != "" {
         urlTplParams["officeClientConfiguration%2Did"] = id
     }
-    return NewOfficeConfigurationClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewOfficeConfigurationRequestBuilderInternal instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
 func NewOfficeConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OfficeConfigurationRequestBuilder) {
@@ -84,7 +84,7 @@ func (m *OfficeConfigurationRequestBuilder) CreateGetRequestInformation(ctx cont
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -98,7 +98,7 @@ func (m *OfficeConfigurationRequestBuilder) CreatePatchRequestInformation(ctx co
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

@@ -8,11 +8,11 @@ import (
 type OnPremisesAccidentalDeletionPrevention struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The alertThreshold property
+    // Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
     alertThreshold *int32
     // The OdataType property
     odataType *string
-    // The synchronizationPreventionType property
+    // The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage.
     synchronizationPreventionType *OnPremisesDirectorySynchronizationDeletionPreventionType
 }
 // NewOnPremisesAccidentalDeletionPrevention instantiates a new onPremisesAccidentalDeletionPrevention and sets the default values.
@@ -30,7 +30,7 @@ func CreateOnPremisesAccidentalDeletionPreventionFromDiscriminatorValue(parseNod
 func (m *OnPremisesAccidentalDeletionPrevention) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAlertThreshold gets the alertThreshold property value. The alertThreshold property
+// GetAlertThreshold gets the alertThreshold property value. Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
 func (m *OnPremisesAccidentalDeletionPrevention) GetAlertThreshold()(*int32) {
     return m.alertThreshold
 }
@@ -73,7 +73,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) GetFieldDeserializers()(map[str
 func (m *OnPremisesAccidentalDeletionPrevention) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSynchronizationPreventionType gets the synchronizationPreventionType property value. The synchronizationPreventionType property
+// GetSynchronizationPreventionType gets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage.
 func (m *OnPremisesAccidentalDeletionPrevention) GetSynchronizationPreventionType()(*OnPremisesDirectorySynchronizationDeletionPreventionType) {
     return m.synchronizationPreventionType
 }
@@ -110,7 +110,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) Serialize(writer i878a80d2330e8
 func (m *OnPremisesAccidentalDeletionPrevention) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAlertThreshold sets the alertThreshold property value. The alertThreshold property
+// SetAlertThreshold sets the alertThreshold property value. Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
 func (m *OnPremisesAccidentalDeletionPrevention) SetAlertThreshold(value *int32)() {
     m.alertThreshold = value
 }
@@ -118,7 +118,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) SetAlertThreshold(value *int32)
 func (m *OnPremisesAccidentalDeletionPrevention) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSynchronizationPreventionType sets the synchronizationPreventionType property value. The synchronizationPreventionType property
+// SetSynchronizationPreventionType sets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage.
 func (m *OnPremisesAccidentalDeletionPrevention) SetSynchronizationPreventionType(value *OnPremisesDirectorySynchronizationDeletionPreventionType)() {
     m.synchronizationPreventionType = value
 }

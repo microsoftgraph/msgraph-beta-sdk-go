@@ -4,10 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesDirectorySynchronization provides operations to manage the directory singleton.
+// OnPremisesDirectorySynchronization provides operations to manage the collection of accessReviewDecision entities.
 type OnPremisesDirectorySynchronization struct {
     Entity
-    // The configuration property
+    // Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
     configuration OnPremisesDirectorySynchronizationConfigurationable
     // The features property
     features OnPremisesDirectorySynchronizationFeatureable
@@ -23,7 +23,7 @@ func NewOnPremisesDirectorySynchronization()(*OnPremisesDirectorySynchronization
 func CreateOnPremisesDirectorySynchronizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesDirectorySynchronization(), nil
 }
-// GetConfiguration gets the configuration property value. The configuration property
+// GetConfiguration gets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
 func (m *OnPremisesDirectorySynchronization) GetConfiguration()(OnPremisesDirectorySynchronizationConfigurationable) {
     return m.configuration
 }
@@ -76,7 +76,7 @@ func (m *OnPremisesDirectorySynchronization) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetConfiguration sets the configuration property value. The configuration property
+// SetConfiguration sets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
 func (m *OnPremisesDirectorySynchronization) SetConfiguration(value OnPremisesDirectorySynchronizationConfigurationable)() {
     m.configuration = value
 }

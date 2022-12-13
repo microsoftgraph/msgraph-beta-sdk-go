@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type EvidenceRemediationStatus int
 
 const (
@@ -11,16 +11,11 @@ const (
     PREVENTED_EVIDENCEREMEDIATIONSTATUS
     BLOCKED_EVIDENCEREMEDIATIONSTATUS
     NOTFOUND_EVIDENCEREMEDIATIONSTATUS
-    ACTIVE_EVIDENCEREMEDIATIONSTATUS
-    PENDINGAPPROVAL_EVIDENCEREMEDIATIONSTATUS
-    DECLINED_EVIDENCEREMEDIATIONSTATUS
-    NOTREMEDIATED_EVIDENCEREMEDIATIONSTATUS
-    RUNNING_EVIDENCEREMEDIATIONSTATUS
     UNKNOWNFUTUREVALUE_EVIDENCEREMEDIATIONSTATUS
 )
 
 func (i EvidenceRemediationStatus) String() string {
-    return []string{"none", "remediated", "prevented", "blocked", "notFound", "active", "pendingApproval", "declined", "notRemediated", "running", "unknownFutureValue"}[i]
+    return []string{"none", "remediated", "prevented", "blocked", "notFound", "unknownFutureValue"}[i]
 }
 func ParseEvidenceRemediationStatus(v string) (interface{}, error) {
     result := NONE_EVIDENCEREMEDIATIONSTATUS
@@ -35,16 +30,6 @@ func ParseEvidenceRemediationStatus(v string) (interface{}, error) {
             result = BLOCKED_EVIDENCEREMEDIATIONSTATUS
         case "notFound":
             result = NOTFOUND_EVIDENCEREMEDIATIONSTATUS
-        case "active":
-            result = ACTIVE_EVIDENCEREMEDIATIONSTATUS
-        case "pendingApproval":
-            result = PENDINGAPPROVAL_EVIDENCEREMEDIATIONSTATUS
-        case "declined":
-            result = DECLINED_EVIDENCEREMEDIATIONSTATUS
-        case "notRemediated":
-            result = NOTREMEDIATED_EVIDENCEREMEDIATIONSTATUS
-        case "running":
-            result = RUNNING_EVIDENCEREMEDIATIONSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EVIDENCEREMEDIATIONSTATUS
         default:

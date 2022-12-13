@@ -26,7 +26,7 @@ type BrandingRequestBuilderGetQueryParameters struct {
 // BrandingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BrandingRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,17 +35,17 @@ type BrandingRequestBuilderGetRequestConfiguration struct {
 // BrandingRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BrandingRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BackgroundImage provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) BackgroundImage()(*BrandingBackgroundImageRequestBuilder) {
-    return NewBrandingBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) BackgroundImage()(*BackgroundImageRequestBuilder) {
+    return NewBackgroundImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BannerLogo provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) BannerLogo()(*BrandingBannerLogoRequestBuilder) {
-    return NewBrandingBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) BannerLogo()(*BannerLogoRequestBuilder) {
+    return NewBannerLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewBrandingRequestBuilderInternal instantiates a new BrandingRequestBuilder and sets the default values.
 func NewBrandingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BrandingRequestBuilder) {
@@ -77,7 +77,7 @@ func (m *BrandingRequestBuilder) CreateGetRequestInformation(ctx context.Context
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -91,18 +91,18 @@ func (m *BrandingRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // CustomCSS provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) CustomCSS()(*BrandingCustomCSSRequestBuilder) {
-    return NewBrandingCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) CustomCSS()(*CustomCSSRequestBuilder) {
+    return NewCustomCSSRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Favicon provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) Favicon()(*BrandingFaviconRequestBuilder) {
-    return NewBrandingFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) Favicon()(*FaviconRequestBuilder) {
+    return NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get branding
 func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *BrandingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -124,15 +124,15 @@ func (m *BrandingRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable), nil
 }
 // HeaderLogo provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) HeaderLogo()(*BrandingHeaderLogoRequestBuilder) {
-    return NewBrandingHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) HeaderLogo()(*HeaderLogoRequestBuilder) {
+    return NewHeaderLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-func (m *BrandingRequestBuilder) Localizations()(*BrandingLocalizationsRequestBuilder) {
-    return NewBrandingLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) Localizations()(*LocalizationsRequestBuilder) {
+    return NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-func (m *BrandingRequestBuilder) LocalizationsById(id string)(*BrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
+func (m *BrandingRequestBuilder) LocalizationsById(id string)(*LocalizationsOrganizationalBrandingLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -140,7 +140,7 @@ func (m *BrandingRequestBuilder) LocalizationsById(id string)(*BrandingLocalizat
     if id != "" {
         urlTplParams["organizationalBrandingLocalization%2Did"] = id
     }
-    return NewBrandingLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLocalizationsOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update branding
 func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, requestConfiguration *BrandingRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable, error) {
@@ -162,10 +162,10 @@ func (m *BrandingRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingable), nil
 }
 // SquareLogo provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) SquareLogo()(*BrandingSquareLogoRequestBuilder) {
-    return NewBrandingSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) SquareLogo()(*SquareLogoRequestBuilder) {
+    return NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SquareLogoDark provides operations to manage the media for the organizationalBranding entity.
-func (m *BrandingRequestBuilder) SquareLogoDark()(*BrandingSquareLogoDarkRequestBuilder) {
-    return NewBrandingSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BrandingRequestBuilder) SquareLogoDark()(*SquareLogoDarkRequestBuilder) {
+    return NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

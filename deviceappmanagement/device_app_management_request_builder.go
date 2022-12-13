@@ -26,7 +26,7 @@ type DeviceAppManagementRequestBuilderGetQueryParameters struct {
 // DeviceAppManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceAppManagementRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type DeviceAppManagementRequestBuilderGetRequestConfiguration struct {
 // DeviceAppManagementRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceAppManagementRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AndroidManagedAppProtections provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtections()(*DeviceAppManagementAndroidManagedAppProtectionsRequestBuilder) {
-    return NewDeviceAppManagementAndroidManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtections()(*AndroidManagedAppProtectionsRequestBuilder) {
+    return NewAndroidManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AndroidManagedAppProtectionsById provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id string)(*DeviceAppManagementAndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id string)(*AndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id 
     if id != "" {
         urlTplParams["androidManagedAppProtection%2Did"] = id
     }
-    return NewDeviceAppManagementAndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAndroidManagedAppProtectionsAndroidManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDeviceAppManagementRequestBuilderInternal instantiates a new DeviceAppManagementRequestBuilder and sets the default values.
 func NewDeviceAppManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceAppManagementRequestBuilder) {
@@ -84,7 +84,7 @@ func (m *DeviceAppManagementRequestBuilder) CreateGetRequestInformation(ctx cont
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -98,17 +98,17 @@ func (m *DeviceAppManagementRequestBuilder) CreatePatchRequestInformation(ctx co
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // DefaultManagedAppProtections provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtections()(*DeviceAppManagementDefaultManagedAppProtectionsRequestBuilder) {
-    return NewDeviceAppManagementDefaultManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtections()(*DefaultManagedAppProtectionsRequestBuilder) {
+    return NewDefaultManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DefaultManagedAppProtectionsById provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtectionsById(id string)(*DeviceAppManagementDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtectionsById(id string)(*DefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -116,14 +116,14 @@ func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtectionsById(id 
     if id != "" {
         urlTplParams["defaultManagedAppProtection%2Did"] = id
     }
-    return NewDeviceAppManagementDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDefaultManagedAppProtectionsDefaultManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DeviceAppManagementTasks provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasks()(*DeviceAppManagementDeviceAppManagementTasksRequestBuilder) {
-    return NewDeviceAppManagementDeviceAppManagementTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasks()(*DeviceAppManagementTasksRequestBuilder) {
+    return NewDeviceAppManagementTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeviceAppManagementTasksById provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasksById(id string)(*DeviceAppManagementDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasksById(id string)(*DeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -131,14 +131,14 @@ func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasksById(id stri
     if id != "" {
         urlTplParams["deviceAppManagementTask%2Did"] = id
     }
-    return NewDeviceAppManagementDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceAppManagementTasksDeviceAppManagementTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // EnterpriseCodeSigningCertificates provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificates()(*DeviceAppManagementEnterpriseCodeSigningCertificatesRequestBuilder) {
-    return NewDeviceAppManagementEnterpriseCodeSigningCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificates()(*EnterpriseCodeSigningCertificatesRequestBuilder) {
+    return NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EnterpriseCodeSigningCertificatesById provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificatesById(id string)(*DeviceAppManagementEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificatesById(id string)(*EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -146,7 +146,7 @@ func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificatesByI
     if id != "" {
         urlTplParams["enterpriseCodeSigningCertificate%2Did"] = id
     }
-    return NewDeviceAppManagementEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get deviceAppManagement
 func (m *DeviceAppManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceAppManagementRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementable, error) {
@@ -168,11 +168,11 @@ func (m *DeviceAppManagementRequestBuilder) Get(ctx context.Context, requestConf
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementable), nil
 }
 // IosLobAppProvisioningConfigurations provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurations()(*DeviceAppManagementIosLobAppProvisioningConfigurationsRequestBuilder) {
-    return NewDeviceAppManagementIosLobAppProvisioningConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurations()(*IosLobAppProvisioningConfigurationsRequestBuilder) {
+    return NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IosLobAppProvisioningConfigurationsById provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurationsById(id string)(*DeviceAppManagementIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurationsById(id string)(*IosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -180,14 +180,14 @@ func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurationsB
     if id != "" {
         urlTplParams["iosLobAppProvisioningConfiguration%2Did"] = id
     }
-    return NewDeviceAppManagementIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosLobAppProvisioningConfigurationsIosLobAppProvisioningConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // IosManagedAppProtections provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtections()(*DeviceAppManagementIosManagedAppProtectionsRequestBuilder) {
-    return NewDeviceAppManagementIosManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtections()(*IosManagedAppProtectionsRequestBuilder) {
+    return NewIosManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IosManagedAppProtectionsById provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtectionsById(id string)(*DeviceAppManagementIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtectionsById(id string)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -195,14 +195,14 @@ func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtectionsById(id stri
     if id != "" {
         urlTplParams["iosManagedAppProtection%2Did"] = id
     }
-    return NewDeviceAppManagementIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedAppPolicies provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedAppPolicies()(*DeviceAppManagementManagedAppPoliciesRequestBuilder) {
-    return NewDeviceAppManagementManagedAppPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) ManagedAppPolicies()(*ManagedAppPoliciesRequestBuilder) {
+    return NewManagedAppPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedAppPoliciesById provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedAppPoliciesById(id string)(*DeviceAppManagementManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedAppPoliciesById(id string)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -210,14 +210,14 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppPoliciesById(id string)(*D
     if id != "" {
         urlTplParams["managedAppPolicy%2Did"] = id
     }
-    return NewDeviceAppManagementManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppPoliciesManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedAppRegistrations provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrations()(*DeviceAppManagementManagedAppRegistrationsRequestBuilder) {
-    return NewDeviceAppManagementManagedAppRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrations()(*ManagedAppRegistrationsRequestBuilder) {
+    return NewManagedAppRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedAppRegistrationsById provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrationsById(id string)(*DeviceAppManagementManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrationsById(id string)(*ManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -225,14 +225,14 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrationsById(id strin
     if id != "" {
         urlTplParams["managedAppRegistration%2Did"] = id
     }
-    return NewDeviceAppManagementManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedAppStatuses provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedAppStatuses()(*DeviceAppManagementManagedAppStatusesRequestBuilder) {
-    return NewDeviceAppManagementManagedAppStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) ManagedAppStatuses()(*ManagedAppStatusesRequestBuilder) {
+    return NewManagedAppStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedAppStatusesById provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedAppStatusesById(id string)(*DeviceAppManagementManagedAppStatusesManagedAppStatusItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedAppStatusesById(id string)(*ManagedAppStatusesManagedAppStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -240,14 +240,14 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppStatusesById(id string)(*D
     if id != "" {
         urlTplParams["managedAppStatus%2Did"] = id
     }
-    return NewDeviceAppManagementManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedAppStatusesManagedAppStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedEBookCategories provides operations to manage the managedEBookCategories property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategories()(*DeviceAppManagementManagedEBookCategoriesRequestBuilder) {
-    return NewDeviceAppManagementManagedEBookCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategories()(*ManagedEBookCategoriesRequestBuilder) {
+    return NewManagedEBookCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedEBookCategoriesById provides operations to manage the managedEBookCategories property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategoriesById(id string)(*DeviceAppManagementManagedEBookCategoriesManagedEBookCategoryItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategoriesById(id string)(*ManagedEBookCategoriesManagedEBookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -255,14 +255,14 @@ func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategoriesById(id string
     if id != "" {
         urlTplParams["managedEBookCategory%2Did"] = id
     }
-    return NewDeviceAppManagementManagedEBookCategoriesManagedEBookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedEBookCategoriesManagedEBookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedEBooks provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedEBooks()(*DeviceAppManagementManagedEBooksRequestBuilder) {
-    return NewDeviceAppManagementManagedEBooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) ManagedEBooks()(*ManagedEBooksRequestBuilder) {
+    return NewManagedEBooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedEBooksById provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) ManagedEBooksById(id string)(*DeviceAppManagementManagedEBooksManagedEBookItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedEBooksById(id string)(*ManagedEBooksManagedEBookItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -270,14 +270,14 @@ func (m *DeviceAppManagementRequestBuilder) ManagedEBooksById(id string)(*Device
     if id != "" {
         urlTplParams["managedEBook%2Did"] = id
     }
-    return NewDeviceAppManagementManagedEBooksManagedEBookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedEBooksManagedEBookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MdmWindowsInformationProtectionPolicies provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolicies()(*DeviceAppManagementMdmWindowsInformationProtectionPoliciesRequestBuilder) {
-    return NewDeviceAppManagementMdmWindowsInformationProtectionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolicies()(*MdmWindowsInformationProtectionPoliciesRequestBuilder) {
+    return NewMdmWindowsInformationProtectionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MdmWindowsInformationProtectionPoliciesById provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPoliciesById(id string)(*DeviceAppManagementMdmWindowsInformationProtectionPoliciesMdmWindowsInformationProtectionPolicyItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPoliciesById(id string)(*MdmWindowsInformationProtectionPoliciesMdmWindowsInformationProtectionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -285,14 +285,14 @@ func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolic
     if id != "" {
         urlTplParams["mdmWindowsInformationProtectionPolicy%2Did"] = id
     }
-    return NewDeviceAppManagementMdmWindowsInformationProtectionPoliciesMdmWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMdmWindowsInformationProtectionPoliciesMdmWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MobileAppCategories provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MobileAppCategories()(*DeviceAppManagementMobileAppCategoriesRequestBuilder) {
-    return NewDeviceAppManagementMobileAppCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) MobileAppCategories()(*MobileAppCategoriesRequestBuilder) {
+    return NewMobileAppCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileAppCategoriesById provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MobileAppCategoriesById(id string)(*DeviceAppManagementMobileAppCategoriesMobileAppCategoryItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MobileAppCategoriesById(id string)(*MobileAppCategoriesMobileAppCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -300,14 +300,14 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppCategoriesById(id string)(*
     if id != "" {
         urlTplParams["mobileAppCategory%2Did"] = id
     }
-    return NewDeviceAppManagementMobileAppCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MobileAppConfigurations provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurations()(*DeviceAppManagementMobileAppConfigurationsRequestBuilder) {
-    return NewDeviceAppManagementMobileAppConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurations()(*MobileAppConfigurationsRequestBuilder) {
+    return NewMobileAppConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileAppConfigurationsById provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurationsById(id string)(*DeviceAppManagementMobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurationsById(id string)(*MobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -315,14 +315,14 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurationsById(id strin
     if id != "" {
         urlTplParams["managedDeviceMobileAppConfiguration%2Did"] = id
     }
-    return NewDeviceAppManagementMobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppConfigurationsManagedDeviceMobileAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MobileApps provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MobileApps()(*DeviceAppManagementMobileAppsRequestBuilder) {
-    return NewDeviceAppManagementMobileAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) MobileApps()(*MobileAppsRequestBuilder) {
+    return NewMobileAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileAppsById provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) MobileAppsById(id string)(*DeviceAppManagementMobileAppsMobileAppItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MobileAppsById(id string)(*MobileAppsMobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -330,7 +330,7 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppsById(id string)(*DeviceApp
     if id != "" {
         urlTplParams["mobileApp%2Did"] = id
     }
-    return NewDeviceAppManagementMobileAppsMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppsMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update deviceAppManagement
 func (m *DeviceAppManagementRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementable, requestConfiguration *DeviceAppManagementRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementable, error) {
@@ -352,11 +352,11 @@ func (m *DeviceAppManagementRequestBuilder) Patch(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementable), nil
 }
 // PolicySets provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) PolicySets()(*DeviceAppManagementPolicySetsRequestBuilder) {
-    return NewDeviceAppManagementPolicySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) PolicySets()(*PolicySetsRequestBuilder) {
+    return NewPolicySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PolicySetsById provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) PolicySetsById(id string)(*DeviceAppManagementPolicySetsPolicySetItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) PolicySetsById(id string)(*PolicySetsPolicySetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -364,14 +364,14 @@ func (m *DeviceAppManagementRequestBuilder) PolicySetsById(id string)(*DeviceApp
     if id != "" {
         urlTplParams["policySet%2Did"] = id
     }
-    return NewDeviceAppManagementPolicySetsPolicySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPolicySetsPolicySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SideLoadingKeys provides operations to manage the sideLoadingKeys property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) SideLoadingKeys()(*DeviceAppManagementSideLoadingKeysRequestBuilder) {
-    return NewDeviceAppManagementSideLoadingKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) SideLoadingKeys()(*SideLoadingKeysRequestBuilder) {
+    return NewSideLoadingKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SideLoadingKeysById provides operations to manage the sideLoadingKeys property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) SideLoadingKeysById(id string)(*DeviceAppManagementSideLoadingKeysSideLoadingKeyItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) SideLoadingKeysById(id string)(*SideLoadingKeysSideLoadingKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -379,22 +379,22 @@ func (m *DeviceAppManagementRequestBuilder) SideLoadingKeysById(id string)(*Devi
     if id != "" {
         urlTplParams["sideLoadingKey%2Did"] = id
     }
-    return NewDeviceAppManagementSideLoadingKeysSideLoadingKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSideLoadingKeysSideLoadingKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SymantecCodeSigningCertificate provides operations to manage the symantecCodeSigningCertificate property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) SymantecCodeSigningCertificate()(*DeviceAppManagementSymantecCodeSigningCertificateRequestBuilder) {
-    return NewDeviceAppManagementSymantecCodeSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) SymantecCodeSigningCertificate()(*SymantecCodeSigningCertificateRequestBuilder) {
+    return NewSymantecCodeSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SyncMicrosoftStoreForBusinessApps provides operations to call the syncMicrosoftStoreForBusinessApps method.
-func (m *DeviceAppManagementRequestBuilder) SyncMicrosoftStoreForBusinessApps()(*DeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilder) {
-    return NewDeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) SyncMicrosoftStoreForBusinessApps()(*SyncMicrosoftStoreForBusinessAppsRequestBuilder) {
+    return NewSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TargetedManagedAppConfigurations provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurations()(*DeviceAppManagementTargetedManagedAppConfigurationsRequestBuilder) {
-    return NewDeviceAppManagementTargetedManagedAppConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurations()(*TargetedManagedAppConfigurationsRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TargetedManagedAppConfigurationsById provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurationsById(id string)(*DeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurationsById(id string)(*TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -402,14 +402,14 @@ func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurationsById
     if id != "" {
         urlTplParams["targetedManagedAppConfiguration%2Did"] = id
     }
-    return NewDeviceAppManagementTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // VppTokens provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) VppTokens()(*DeviceAppManagementVppTokensRequestBuilder) {
-    return NewDeviceAppManagementVppTokensRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) VppTokens()(*VppTokensRequestBuilder) {
+    return NewVppTokensRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VppTokensById provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) VppTokensById(id string)(*DeviceAppManagementVppTokensVppTokenItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) VppTokensById(id string)(*VppTokensVppTokenItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -417,14 +417,14 @@ func (m *DeviceAppManagementRequestBuilder) VppTokensById(id string)(*DeviceAppM
     if id != "" {
         urlTplParams["vppToken%2Did"] = id
     }
-    return NewDeviceAppManagementVppTokensVppTokenItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewVppTokensVppTokenItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WdacSupplementalPolicies provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPolicies()(*DeviceAppManagementWdacSupplementalPoliciesRequestBuilder) {
-    return NewDeviceAppManagementWdacSupplementalPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPolicies()(*WdacSupplementalPoliciesRequestBuilder) {
+    return NewWdacSupplementalPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WdacSupplementalPoliciesById provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPoliciesById(id string)(*DeviceAppManagementWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPoliciesById(id string)(*WdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -432,14 +432,14 @@ func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPoliciesById(id stri
     if id != "" {
         urlTplParams["windowsDefenderApplicationControlSupplementalPolicy%2Did"] = id
     }
-    return NewDeviceAppManagementWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWdacSupplementalPoliciesWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsInformationProtectionDeviceRegistrations provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRegistrations()(*DeviceAppManagementWindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
-    return NewDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRegistrations()(*WindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
+    return NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsInformationProtectionDeviceRegistrationsById provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRegistrationsById(id string)(*DeviceAppManagementWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRegistrationsById(id string)(*WindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -447,14 +447,14 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRe
     if id != "" {
         urlTplParams["windowsInformationProtectionDeviceRegistration%2Did"] = id
     }
-    return NewDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsInformationProtectionPolicies provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies()(*DeviceAppManagementWindowsInformationProtectionPoliciesRequestBuilder) {
-    return NewDeviceAppManagementWindowsInformationProtectionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies()(*WindowsInformationProtectionPoliciesRequestBuilder) {
+    return NewWindowsInformationProtectionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsInformationProtectionPoliciesById provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPoliciesById(id string)(*DeviceAppManagementWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPoliciesById(id string)(*WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -462,14 +462,14 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies
     if id != "" {
         urlTplParams["windowsInformationProtectionPolicy%2Did"] = id
     }
-    return NewDeviceAppManagementWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsInformationProtectionWipeActions provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActions()(*DeviceAppManagementWindowsInformationProtectionWipeActionsRequestBuilder) {
-    return NewDeviceAppManagementWindowsInformationProtectionWipeActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActions()(*WindowsInformationProtectionWipeActionsRequestBuilder) {
+    return NewWindowsInformationProtectionWipeActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsInformationProtectionWipeActionsById provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActionsById(id string)(*DeviceAppManagementWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActionsById(id string)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -477,14 +477,14 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActi
     if id != "" {
         urlTplParams["windowsInformationProtectionWipeAction%2Did"] = id
     }
-    return NewDeviceAppManagementWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsManagedAppProtections provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsManagedAppProtections()(*DeviceAppManagementWindowsManagedAppProtectionsRequestBuilder) {
-    return NewDeviceAppManagementWindowsManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) WindowsManagedAppProtections()(*WindowsManagedAppProtectionsRequestBuilder) {
+    return NewWindowsManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsManagedAppProtectionsById provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsManagedAppProtectionsById(id string)(*DeviceAppManagementWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WindowsManagedAppProtectionsById(id string)(*WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -492,9 +492,9 @@ func (m *DeviceAppManagementRequestBuilder) WindowsManagedAppProtectionsById(id 
     if id != "" {
         urlTplParams["windowsManagedAppProtection%2Did"] = id
     }
-    return NewDeviceAppManagementWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsManagementApp provides operations to manage the windowsManagementApp property of the microsoft.graph.deviceAppManagement entity.
-func (m *DeviceAppManagementRequestBuilder) WindowsManagementApp()(*DeviceAppManagementWindowsManagementAppRequestBuilder) {
-    return NewDeviceAppManagementWindowsManagementAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DeviceAppManagementRequestBuilder) WindowsManagementApp()(*WindowsManagementAppRequestBuilder) {
+    return NewWindowsManagementAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

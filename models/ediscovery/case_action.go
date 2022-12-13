@@ -2,7 +2,7 @@ package ediscovery
 import (
     "errors"
 )
-// Provides operations to manage the collection of administrativeUnit entities.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type CaseAction int
 
 const (

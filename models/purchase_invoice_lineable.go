@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -9,18 +10,18 @@ type PurchaseInvoiceLineable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccount()(Accountable)
-    GetAccountId()(*string)
+    GetAccountId()(*UUID)
     GetAmountExcludingTax()(*float64)
     GetAmountIncludingTax()(*float64)
     GetDescription()(*string)
     GetDiscountAmount()(*float64)
     GetDiscountAppliedBeforeTax()(*bool)
     GetDiscountPercent()(*float64)
-    GetDocumentId()(*string)
+    GetDocumentId()(*UUID)
     GetExpectedReceiptDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetInvoiceDiscountAllocation()(*float64)
     GetItem()(Itemable)
-    GetItemId()(*string)
+    GetItemId()(*UUID)
     GetLineType()(*string)
     GetNetAmount()(*float64)
     GetNetAmountIncludingTax()(*float64)
@@ -32,18 +33,18 @@ type PurchaseInvoiceLineable interface {
     GetTotalTaxAmount()(*float64)
     GetUnitCost()(*float64)
     SetAccount(value Accountable)()
-    SetAccountId(value *string)()
+    SetAccountId(value *UUID)()
     SetAmountExcludingTax(value *float64)()
     SetAmountIncludingTax(value *float64)()
     SetDescription(value *string)()
     SetDiscountAmount(value *float64)()
     SetDiscountAppliedBeforeTax(value *bool)()
     SetDiscountPercent(value *float64)()
-    SetDocumentId(value *string)()
+    SetDocumentId(value *UUID)()
     SetExpectedReceiptDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetInvoiceDiscountAllocation(value *float64)()
     SetItem(value Itemable)()
-    SetItemId(value *string)()
+    SetItemId(value *UUID)()
     SetLineType(value *string)()
     SetNetAmount(value *float64)()
     SetNetAmountIncludingTax(value *float64)()

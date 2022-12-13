@@ -38,7 +38,7 @@ type CommandsRequestBuilderGetQueryParameters struct {
 // CommandsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CommandsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type CommandsRequestBuilderGetRequestConfiguration struct {
 // CommandsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CommandsRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewCommandsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewCommandsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *CommandsRequestBuilder) Count()(*CommandsCountRequestBuilder) {
-    return NewCommandsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *CommandsRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from commands
 func (m *CommandsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CommandsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *CommandsRequestBuilder) CreateGetRequestInformation(ctx context.Context
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,7 +99,7 @@ func (m *CommandsRequestBuilder) CreatePostRequestInformation(ctx context.Contex
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

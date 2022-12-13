@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcExportJob provides operations to manage the deviceManagement singleton.
+// CloudPcExportJob 
 type CloudPcExportJob struct {
     Entity
     // The date time when the export job expires.
@@ -25,7 +25,7 @@ type CloudPcExportJob struct {
     // The selected columns of the report.
     select_escaped []string
 }
-// NewCloudPcExportJob instantiates a new cloudPcExportJob and sets the default values.
+// NewCloudPcExportJob instantiates a new CloudPcExportJob and sets the default values.
 func NewCloudPcExportJob()(*CloudPcExportJob) {
     m := &CloudPcExportJob{
         Entity: *NewEntity(),

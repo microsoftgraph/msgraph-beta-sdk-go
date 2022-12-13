@@ -38,7 +38,7 @@ type ProgramControlsRequestBuilderGetQueryParameters struct {
 // ProgramControlsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ProgramControlsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type ProgramControlsRequestBuilderGetRequestConfiguration struct {
 // ProgramControlsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ProgramControlsRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewProgramControlsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewProgramControlsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *ProgramControlsRequestBuilder) Count()(*ProgramControlsCountRequestBuilder) {
-    return NewProgramControlsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ProgramControlsRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation in the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant.
 func (m *ProgramControlsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ProgramControlsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *ProgramControlsRequestBuilder) CreateGetRequestInformation(ctx context.
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,12 +99,15 @@ func (m *ProgramControlsRequestBuilder) CreatePostRequestInformation(ctx context
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get in the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/programcontrol-list?view=graph-rest-1.0
 func (m *ProgramControlsRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramControlsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,6 +127,9 @@ func (m *ProgramControlsRequestBuilder) Get(ctx context.Context, requestConfigur
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlCollectionResponseable), nil
 }
 // Post in the Azure AD access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/programcontrol-create?view=graph-rest-1.0
 func (m *ProgramControlsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, requestConfiguration *ProgramControlsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

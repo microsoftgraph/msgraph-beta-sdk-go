@@ -38,7 +38,7 @@ type AllowedDataLocationsRequestBuilderGetQueryParameters struct {
 // AllowedDataLocationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AllowedDataLocationsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type AllowedDataLocationsRequestBuilderGetRequestConfiguration struct {
 // AllowedDataLocationsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AllowedDataLocationsRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewAllowedDataLocationsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewAllowedDataLocationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *AllowedDataLocationsRequestBuilder) Count()(*AllowedDataLocationsCountRequestBuilder) {
-    return NewAllowedDataLocationsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *AllowedDataLocationsRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from allowedDataLocations
 func (m *AllowedDataLocationsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *AllowedDataLocationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *AllowedDataLocationsRequestBuilder) CreateGetRequestInformation(ctx con
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,7 +99,7 @@ func (m *AllowedDataLocationsRequestBuilder) CreatePostRequestInformation(ctx co
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

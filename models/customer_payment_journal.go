@@ -2,16 +2,17 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomerPaymentJournal provides operations to manage the collection of activityStatistics entities.
+// CustomerPaymentJournal provides operations to manage the collection of accessReviewDecision entities.
 type CustomerPaymentJournal struct {
     Entity
     // The account property
     account Accountable
     // The balancingAccountId property
-    balancingAccountId *string
+    balancingAccountId *UUID
     // The balancingAccountNumber property
     balancingAccountNumber *string
     // The code property
@@ -39,7 +40,7 @@ func (m *CustomerPaymentJournal) GetAccount()(Accountable) {
     return m.account
 }
 // GetBalancingAccountId gets the balancingAccountId property value. The balancingAccountId property
-func (m *CustomerPaymentJournal) GetBalancingAccountId()(*string) {
+func (m *CustomerPaymentJournal) GetBalancingAccountId()(*UUID) {
     return m.balancingAccountId
 }
 // GetBalancingAccountNumber gets the balancingAccountNumber property value. The balancingAccountNumber property
@@ -72,7 +73,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["balancingAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -154,7 +155,7 @@ func (m *CustomerPaymentJournal) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err = writer.WriteStringValue("balancingAccountId", m.GetBalancingAccountId())
+        err = writer.WriteUUIDValue("balancingAccountId", m.GetBalancingAccountId())
         if err != nil {
             return err
         }
@@ -200,7 +201,7 @@ func (m *CustomerPaymentJournal) SetAccount(value Accountable)() {
     m.account = value
 }
 // SetBalancingAccountId sets the balancingAccountId property value. The balancingAccountId property
-func (m *CustomerPaymentJournal) SetBalancingAccountId(value *string)() {
+func (m *CustomerPaymentJournal) SetBalancingAccountId(value *UUID)() {
     m.balancingAccountId = value
 }
 // SetBalancingAccountNumber sets the balancingAccountNumber property value. The balancingAccountNumber property

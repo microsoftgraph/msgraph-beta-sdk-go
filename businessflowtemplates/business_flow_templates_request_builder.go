@@ -38,7 +38,7 @@ type BusinessFlowTemplatesRequestBuilderGetQueryParameters struct {
 // BusinessFlowTemplatesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BusinessFlowTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type BusinessFlowTemplatesRequestBuilderGetRequestConfiguration struct {
 // BusinessFlowTemplatesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BusinessFlowTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewBusinessFlowTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewBusinessFlowTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *BusinessFlowTemplatesRequestBuilder) Count()(*BusinessFlowTemplatesCountRequestBuilder) {
-    return NewBusinessFlowTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *BusinessFlowTemplatesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation in the Azure AD access reviews feature, list all the businessFlowTemplate objects.
 func (m *BusinessFlowTemplatesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *BusinessFlowTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *BusinessFlowTemplatesRequestBuilder) CreateGetRequestInformation(ctx co
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,12 +99,15 @@ func (m *BusinessFlowTemplatesRequestBuilder) CreatePostRequestInformation(ctx c
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get in the Azure AD access reviews feature, list all the businessFlowTemplate objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/businessflowtemplate-list?view=graph-rest-1.0
 func (m *BusinessFlowTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessFlowTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

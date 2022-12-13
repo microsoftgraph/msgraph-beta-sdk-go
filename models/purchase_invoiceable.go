@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -12,7 +13,7 @@ type PurchaseInvoiceable interface {
     GetBuyFromAddress()(PostalAddressTypeable)
     GetCurrency()(Currencyable)
     GetCurrencyCode()(*string)
-    GetCurrencyId()(*string)
+    GetCurrencyId()(*UUID)
     GetDiscountAmount()(*float64)
     GetDiscountAppliedBeforeTax()(*bool)
     GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -22,7 +23,7 @@ type PurchaseInvoiceable interface {
     GetPayToAddress()(PostalAddressTypeable)
     GetPayToContact()(*string)
     GetPayToName()(*string)
-    GetPayToVendorId()(*string)
+    GetPayToVendorId()(*UUID)
     GetPayToVendorNumber()(*string)
     GetPricesIncludeTax()(*bool)
     GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable)
@@ -34,14 +35,14 @@ type PurchaseInvoiceable interface {
     GetTotalAmountIncludingTax()(*float64)
     GetTotalTaxAmount()(*float64)
     GetVendor()(Vendor_escapedable)
-    GetVendorId()(*string)
+    GetVendorId()(*UUID)
     GetVendorInvoiceNumber()(*string)
     GetVendorName()(*string)
     GetVendorNumber()(*string)
     SetBuyFromAddress(value PostalAddressTypeable)()
     SetCurrency(value Currencyable)()
     SetCurrencyCode(value *string)()
-    SetCurrencyId(value *string)()
+    SetCurrencyId(value *UUID)()
     SetDiscountAmount(value *float64)()
     SetDiscountAppliedBeforeTax(value *bool)()
     SetDueDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
@@ -51,7 +52,7 @@ type PurchaseInvoiceable interface {
     SetPayToAddress(value PostalAddressTypeable)()
     SetPayToContact(value *string)()
     SetPayToName(value *string)()
-    SetPayToVendorId(value *string)()
+    SetPayToVendorId(value *UUID)()
     SetPayToVendorNumber(value *string)()
     SetPricesIncludeTax(value *bool)()
     SetPurchaseInvoiceLines(value []PurchaseInvoiceLineable)()
@@ -63,7 +64,7 @@ type PurchaseInvoiceable interface {
     SetTotalAmountIncludingTax(value *float64)()
     SetTotalTaxAmount(value *float64)()
     SetVendor(value Vendor_escapedable)()
-    SetVendorId(value *string)()
+    SetVendorId(value *UUID)()
     SetVendorInvoiceNumber(value *string)()
     SetVendorName(value *string)()
     SetVendorNumber(value *string)()

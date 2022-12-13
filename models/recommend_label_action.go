@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -14,7 +15,7 @@ type RecommendLabelAction struct {
     // The label that is being recommended.
     label LabelDetailsable
     // The sensitive information type GUIDs that caused the recommendation to be given.
-    responsibleSensitiveTypeIds []string
+    responsibleSensitiveTypeIds []UUID
 }
 // NewRecommendLabelAction instantiates a new RecommendLabelAction and sets the default values.
 func NewRecommendLabelAction()(*RecommendLabelAction) {
@@ -75,14 +76,14 @@ func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["responsibleSensitiveTypeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfPrimitiveValues("uUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*UUID))
             }
             m.SetResponsibleSensitiveTypeIds(res)
         }
@@ -95,7 +96,7 @@ func (m *RecommendLabelAction) GetLabel()(LabelDetailsable) {
     return m.label
 }
 // GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
-func (m *RecommendLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
+func (m *RecommendLabelAction) GetResponsibleSensitiveTypeIds()([]UUID) {
     return m.responsibleSensitiveTypeIds
 }
 // Serialize serializes information the current object
@@ -128,7 +129,7 @@ func (m *RecommendLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     if m.GetResponsibleSensitiveTypeIds() != nil {
-        err = writer.WriteCollectionOfStringValues("responsibleSensitiveTypeIds", m.GetResponsibleSensitiveTypeIds())
+        err = writer.WriteCollectionOfUUIDValues("responsibleSensitiveTypeIds", m.GetResponsibleSensitiveTypeIds())
         if err != nil {
             return err
         }
@@ -148,6 +149,6 @@ func (m *RecommendLabelAction) SetLabel(value LabelDetailsable)() {
     m.label = value
 }
 // SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
-func (m *RecommendLabelAction) SetResponsibleSensitiveTypeIds(value []string)() {
+func (m *RecommendLabelAction) SetResponsibleSensitiveTypeIds(value []UUID)() {
     m.responsibleSensitiveTypeIds = value
 }

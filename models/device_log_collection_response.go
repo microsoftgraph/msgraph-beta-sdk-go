@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -17,7 +18,7 @@ type DeviceLogCollectionResponse struct {
     // The UPN for who initiated the request
     initiatedByUserPrincipalName *string
     // The device Id
-    managedDeviceId *string
+    managedDeviceId *UUID
     // The DateTime the request was received
     receivedDateTimeUTC *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The DateTime of the request
@@ -94,7 +95,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -150,7 +151,7 @@ func (m *DeviceLogCollectionResponse) GetInitiatedByUserPrincipalName()(*string)
     return m.initiatedByUserPrincipalName
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The device Id
-func (m *DeviceLogCollectionResponse) GetManagedDeviceId()(*string) {
+func (m *DeviceLogCollectionResponse) GetManagedDeviceId()(*UUID) {
     return m.managedDeviceId
 }
 // GetReceivedDateTimeUTC gets the receivedDateTimeUTC property value. The DateTime the request was received
@@ -200,7 +201,7 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteStringValue("managedDeviceId", m.GetManagedDeviceId())
+        err = writer.WriteUUIDValue("managedDeviceId", m.GetManagedDeviceId())
         if err != nil {
             return err
         }
@@ -248,7 +249,7 @@ func (m *DeviceLogCollectionResponse) SetInitiatedByUserPrincipalName(value *str
     m.initiatedByUserPrincipalName = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The device Id
-func (m *DeviceLogCollectionResponse) SetManagedDeviceId(value *string)() {
+func (m *DeviceLogCollectionResponse) SetManagedDeviceId(value *UUID)() {
     m.managedDeviceId = value
 }
 // SetReceivedDateTimeUTC sets the receivedDateTimeUTC property value. The DateTime the request was received

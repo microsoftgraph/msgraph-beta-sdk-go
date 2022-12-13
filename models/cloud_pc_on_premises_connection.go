@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcOnPremisesConnection provides operations to manage the deviceManagement singleton.
+// CloudPcOnPremisesConnection 
 type CloudPcOnPremisesConnection struct {
     Entity
     // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
@@ -39,8 +39,10 @@ type CloudPcOnPremisesConnection struct {
     type_escaped *CloudPcOnPremisesConnectionType
     // The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
     virtualNetworkId *string
+    // The virtualNetworkLocation property
+    virtualNetworkLocation *string
 }
-// NewCloudPcOnPremisesConnection instantiates a new cloudPcOnPremisesConnection and sets the default values.
+// NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
     m := &CloudPcOnPremisesConnection{
         Entity: *NewEntity(),
@@ -234,6 +236,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["virtualNetworkLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVirtualNetworkLocation(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHealthCheckStatus gets the healthCheckStatus property value. The healthCheckStatus property
@@ -279,6 +291,10 @@ func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType
 // GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
     return m.virtualNetworkId
+}
+// GetVirtualNetworkLocation gets the virtualNetworkLocation property value. The virtualNetworkLocation property
+func (m *CloudPcOnPremisesConnection) GetVirtualNetworkLocation()(*string) {
+    return m.virtualNetworkLocation
 }
 // Serialize serializes information the current object
 func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -385,6 +401,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("virtualNetworkLocation", m.GetVirtualNetworkLocation())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAdDomainName sets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
@@ -450,4 +472,8 @@ func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnection
 // SetVirtualNetworkId sets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkId(value *string)() {
     m.virtualNetworkId = value
+}
+// SetVirtualNetworkLocation sets the virtualNetworkLocation property value. The virtualNetworkLocation property
+func (m *CloudPcOnPremisesConnection) SetVirtualNetworkLocation(value *string)() {
+    m.virtualNetworkLocation = value
 }

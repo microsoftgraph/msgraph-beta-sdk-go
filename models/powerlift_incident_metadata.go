@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -26,7 +27,7 @@ type PowerliftIncidentMetadata struct {
     // The device's OS the diagnostic is from. Example: iOS
     platform *string
     // The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
-    powerliftId *string
+    powerliftId *UUID
 }
 // NewPowerliftIncidentMetadata instantiates a new powerliftIncidentMetadata and sets the default values.
 func NewPowerliftIncidentMetadata()(*PowerliftIncidentMetadata) {
@@ -147,7 +148,7 @@ func (m *PowerliftIncidentMetadata) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["powerliftId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -175,7 +176,7 @@ func (m *PowerliftIncidentMetadata) GetPlatform()(*string) {
     return m.platform
 }
 // GetPowerliftId gets the powerliftId property value. The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
-func (m *PowerliftIncidentMetadata) GetPowerliftId()(*string) {
+func (m *PowerliftIncidentMetadata) GetPowerliftId()(*UUID) {
     return m.powerliftId
 }
 // Serialize serializes information the current object
@@ -229,7 +230,7 @@ func (m *PowerliftIncidentMetadata) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err := writer.WriteStringValue("powerliftId", m.GetPowerliftId())
+        err := writer.WriteUUIDValue("powerliftId", m.GetPowerliftId())
         if err != nil {
             return err
         }
@@ -279,6 +280,6 @@ func (m *PowerliftIncidentMetadata) SetPlatform(value *string)() {
     m.platform = value
 }
 // SetPowerliftId sets the powerliftId property value. The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
-func (m *PowerliftIncidentMetadata) SetPowerliftId(value *string)() {
+func (m *PowerliftIncidentMetadata) SetPowerliftId(value *UUID)() {
     m.powerliftId = value
 }

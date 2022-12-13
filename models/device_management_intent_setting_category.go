@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementIntentSettingCategory entity representing an intent setting category
+// DeviceManagementIntentSettingCategory 
 type DeviceManagementIntentSettingCategory struct {
     DeviceManagementSettingCategory
     // The settings this category contains
     settings []DeviceManagementSettingInstanceable
 }
-// NewDeviceManagementIntentSettingCategory instantiates a new deviceManagementIntentSettingCategory and sets the default values.
+// NewDeviceManagementIntentSettingCategory instantiates a new DeviceManagementIntentSettingCategory and sets the default values.
 func NewDeviceManagementIntentSettingCategory()(*DeviceManagementIntentSettingCategory) {
     m := &DeviceManagementIntentSettingCategory{
         DeviceManagementSettingCategory: *NewDeviceManagementSettingCategory(),

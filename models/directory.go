@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Directory provides operations to manage the directory singleton.
+// Directory 
 type Directory struct {
     Entity
     // Conceptual container for user and group directory objects.
@@ -23,7 +23,7 @@ type Directory struct {
     impactedResources []RecommendationResourceable
     // The inboundSharedUserProfiles property
     inboundSharedUserProfiles []InboundSharedUserProfileable
-    // The onPremisesSynchronization property
+    // A container for on-premises directory synchronization functionalities that are available for the organization.
     onPremisesSynchronization []OnPremisesDirectorySynchronizationable
     // The outboundSharedUserProfiles property
     outboundSharedUserProfiles []OutboundSharedUserProfileable
@@ -32,7 +32,7 @@ type Directory struct {
     // The sharedEmailDomains property
     sharedEmailDomains []SharedEmailDomainable
 }
-// NewDirectory instantiates a new directory and sets the default values.
+// NewDirectory instantiates a new Directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),
@@ -248,7 +248,7 @@ func (m *Directory) GetImpactedResources()([]RecommendationResourceable) {
 func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileable) {
     return m.inboundSharedUserProfiles
 }
-// GetOnPremisesSynchronization gets the onPremisesSynchronization property value. The onPremisesSynchronization property
+// GetOnPremisesSynchronization gets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
 func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable) {
     return m.onPremisesSynchronization
 }
@@ -424,7 +424,7 @@ func (m *Directory) SetImpactedResources(value []RecommendationResourceable)() {
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)() {
     m.inboundSharedUserProfiles = value
 }
-// SetOnPremisesSynchronization sets the onPremisesSynchronization property value. The onPremisesSynchronization property
+// SetOnPremisesSynchronization sets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
 func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)() {
     m.onPremisesSynchronization = value
 }

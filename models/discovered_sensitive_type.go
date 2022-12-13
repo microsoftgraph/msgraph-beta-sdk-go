@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -15,7 +16,7 @@ type DiscoveredSensitiveType struct {
     // The count property
     count *int32
     // The id property
-    id *string
+    id *UUID
     // The OdataType property
     odataType *string
 }
@@ -84,7 +85,7 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -106,7 +107,7 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetId gets the id property value. The id property
-func (m *DiscoveredSensitiveType) GetId()(*string) {
+func (m *DiscoveredSensitiveType) GetId()(*UUID) {
     return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -138,7 +139,7 @@ func (m *DiscoveredSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err := writer.WriteStringValue("id", m.GetId())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
@@ -174,7 +175,7 @@ func (m *DiscoveredSensitiveType) SetCount(value *int32)() {
     m.count = value
 }
 // SetId sets the id property value. The id property
-func (m *DiscoveredSensitiveType) SetId(value *string)() {
+func (m *DiscoveredSensitiveType) SetId(value *UUID)() {
     m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

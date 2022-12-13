@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedOperationEvent provides operations to manage the collection of activityStatistics entities.
+// PrivilegedOperationEvent 
 type PrivilegedOperationEvent struct {
     Entity
     // Detailed human readable information for the event.
@@ -37,7 +37,7 @@ type PrivilegedOperationEvent struct {
     // The user's display name.
     userName *string
 }
-// NewPrivilegedOperationEvent instantiates a new privilegedOperationEvent and sets the default values.
+// NewPrivilegedOperationEvent instantiates a new PrivilegedOperationEvent and sets the default values.
 func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     m := &PrivilegedOperationEvent{
         Entity: *NewEntity(),

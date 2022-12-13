@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -9,7 +10,7 @@ type DeviceKey struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The deviceId property
-    deviceId *string
+    deviceId *UUID
     // The keyMaterial property
     keyMaterial []byte
     // The keyType property
@@ -33,14 +34,14 @@ func (m *DeviceKey) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
 // GetDeviceId gets the deviceId property value. The deviceId property
-func (m *DeviceKey) GetDeviceId()(*string) {
+func (m *DeviceKey) GetDeviceId()(*UUID) {
     return m.deviceId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -96,7 +97,7 @@ func (m *DeviceKey) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *DeviceKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("deviceId", m.GetDeviceId())
+        err := writer.WriteUUIDValue("deviceId", m.GetDeviceId())
         if err != nil {
             return err
         }
@@ -132,7 +133,7 @@ func (m *DeviceKey) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
 // SetDeviceId sets the deviceId property value. The deviceId property
-func (m *DeviceKey) SetDeviceId(value *string)() {
+func (m *DeviceKey) SetDeviceId(value *UUID)() {
     m.deviceId = value
 }
 // SetKeyMaterial sets the keyMaterial property value. The keyMaterial property

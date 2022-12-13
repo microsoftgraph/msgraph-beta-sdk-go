@@ -7,7 +7,7 @@ import (
 // PlannerBucket provides operations to manage the collection of accessReviewDecision entities.
 type PlannerBucket struct {
     PlannerDelta
-    // The creationSource property
+    // Contains information about the origin of the bucket.
     creationSource PlannerBucketCreationable
     // Name of the bucket.
     name *string
@@ -29,7 +29,7 @@ func NewPlannerBucket()(*PlannerBucket) {
 func CreatePlannerBucketFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerBucket(), nil
 }
-// GetCreationSource gets the creationSource property value. The creationSource property
+// GetCreationSource gets the creationSource property value. Contains information about the origin of the bucket.
 func (m *PlannerBucket) GetCreationSource()(PlannerBucketCreationable) {
     return m.creationSource
 }
@@ -150,7 +150,7 @@ func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetCreationSource sets the creationSource property value. The creationSource property
+// SetCreationSource sets the creationSource property value. Contains information about the origin of the bucket.
 func (m *PlannerBucket) SetCreationSource(value PlannerBucketCreationable)() {
     m.creationSource = value
 }

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -26,7 +27,7 @@ type Windows10XSCEPCertificateProfile struct {
     // Certificate renewal threshold percentage
     renewalThresholdPercentage *int32
     // Trusted Root Certificate ID
-    rootCertificateId *string
+    rootCertificateId *UUID
     // SCEP Server Url(s).
     scepServerUrls []string
     // Custom AAD Attributes.
@@ -165,7 +166,7 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["rootCertificateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -235,7 +236,7 @@ func (m *Windows10XSCEPCertificateProfile) GetRenewalThresholdPercentage()(*int3
     return m.renewalThresholdPercentage
 }
 // GetRootCertificateId gets the rootCertificateId property value. Trusted Root Certificate ID
-func (m *Windows10XSCEPCertificateProfile) GetRootCertificateId()(*string) {
+func (m *Windows10XSCEPCertificateProfile) GetRootCertificateId()(*UUID) {
     return m.rootCertificateId
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
@@ -320,7 +321,7 @@ func (m *Windows10XSCEPCertificateProfile) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
-        err = writer.WriteStringValue("rootCertificateId", m.GetRootCertificateId())
+        err = writer.WriteUUIDValue("rootCertificateId", m.GetRootCertificateId())
         if err != nil {
             return err
         }
@@ -386,7 +387,7 @@ func (m *Windows10XSCEPCertificateProfile) SetRenewalThresholdPercentage(value *
     m.renewalThresholdPercentage = value
 }
 // SetRootCertificateId sets the rootCertificateId property value. Trusted Root Certificate ID
-func (m *Windows10XSCEPCertificateProfile) SetRootCertificateId(value *string)() {
+func (m *Windows10XSCEPCertificateProfile) SetRootCertificateId(value *UUID)() {
     m.rootCertificateId = value
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s).

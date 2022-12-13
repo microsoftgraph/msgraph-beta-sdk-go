@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -17,7 +18,7 @@ type Customer struct {
     // The currencyCode property
     currencyCode *string
     // The currencyId property
-    currencyId *string
+    currencyId *UUID
     // The displayName property
     displayName *string
     // The email property
@@ -29,11 +30,11 @@ type Customer struct {
     // The paymentMethod property
     paymentMethod PaymentMethodable
     // The paymentMethodId property
-    paymentMethodId *string
+    paymentMethodId *UUID
     // The paymentTerm property
     paymentTerm PaymentTermable
     // The paymentTermsId property
-    paymentTermsId *string
+    paymentTermsId *UUID
     // The phoneNumber property
     phoneNumber *string
     // The picture property
@@ -41,11 +42,11 @@ type Customer struct {
     // The shipmentMethod property
     shipmentMethod ShipmentMethodable
     // The shipmentMethodId property
-    shipmentMethodId *string
+    shipmentMethodId *UUID
     // The taxAreaDisplayName property
     taxAreaDisplayName *string
     // The taxAreaId property
-    taxAreaId *string
+    taxAreaId *UUID
     // The taxLiable property
     taxLiable *bool
     // The taxRegistrationNumber property
@@ -83,7 +84,7 @@ func (m *Customer) GetCurrencyCode()(*string) {
     return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *Customer) GetCurrencyId()(*string) {
+func (m *Customer) GetCurrencyId()(*UUID) {
     return m.currencyId
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -138,7 +139,7 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["currencyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -198,7 +199,7 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["paymentMethodId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -218,7 +219,7 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["paymentTermsId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -262,7 +263,7 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["shipmentMethodId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -282,7 +283,7 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["taxAreaId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -346,7 +347,7 @@ func (m *Customer) GetPaymentMethod()(PaymentMethodable) {
     return m.paymentMethod
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
-func (m *Customer) GetPaymentMethodId()(*string) {
+func (m *Customer) GetPaymentMethodId()(*UUID) {
     return m.paymentMethodId
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
@@ -354,7 +355,7 @@ func (m *Customer) GetPaymentTerm()(PaymentTermable) {
     return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
-func (m *Customer) GetPaymentTermsId()(*string) {
+func (m *Customer) GetPaymentTermsId()(*UUID) {
     return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
@@ -370,7 +371,7 @@ func (m *Customer) GetShipmentMethod()(ShipmentMethodable) {
     return m.shipmentMethod
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
-func (m *Customer) GetShipmentMethodId()(*string) {
+func (m *Customer) GetShipmentMethodId()(*UUID) {
     return m.shipmentMethodId
 }
 // GetTaxAreaDisplayName gets the taxAreaDisplayName property value. The taxAreaDisplayName property
@@ -378,7 +379,7 @@ func (m *Customer) GetTaxAreaDisplayName()(*string) {
     return m.taxAreaDisplayName
 }
 // GetTaxAreaId gets the taxAreaId property value. The taxAreaId property
-func (m *Customer) GetTaxAreaId()(*string) {
+func (m *Customer) GetTaxAreaId()(*UUID) {
     return m.taxAreaId
 }
 // GetTaxLiable gets the taxLiable property value. The taxLiable property
@@ -428,7 +429,7 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("currencyId", m.GetCurrencyId())
+        err = writer.WriteUUIDValue("currencyId", m.GetCurrencyId())
         if err != nil {
             return err
         }
@@ -464,7 +465,7 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("paymentMethodId", m.GetPaymentMethodId())
+        err = writer.WriteUUIDValue("paymentMethodId", m.GetPaymentMethodId())
         if err != nil {
             return err
         }
@@ -476,7 +477,7 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("paymentTermsId", m.GetPaymentTermsId())
+        err = writer.WriteUUIDValue("paymentTermsId", m.GetPaymentTermsId())
         if err != nil {
             return err
         }
@@ -504,7 +505,7 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("shipmentMethodId", m.GetShipmentMethodId())
+        err = writer.WriteUUIDValue("shipmentMethodId", m.GetShipmentMethodId())
         if err != nil {
             return err
         }
@@ -516,7 +517,7 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("taxAreaId", m.GetTaxAreaId())
+        err = writer.WriteUUIDValue("taxAreaId", m.GetTaxAreaId())
         if err != nil {
             return err
         }
@@ -564,7 +565,7 @@ func (m *Customer) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *Customer) SetCurrencyId(value *string)() {
+func (m *Customer) SetCurrencyId(value *UUID)() {
     m.currencyId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
@@ -588,7 +589,7 @@ func (m *Customer) SetPaymentMethod(value PaymentMethodable)() {
     m.paymentMethod = value
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
-func (m *Customer) SetPaymentMethodId(value *string)() {
+func (m *Customer) SetPaymentMethodId(value *UUID)() {
     m.paymentMethodId = value
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
@@ -596,7 +597,7 @@ func (m *Customer) SetPaymentTerm(value PaymentTermable)() {
     m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
-func (m *Customer) SetPaymentTermsId(value *string)() {
+func (m *Customer) SetPaymentTermsId(value *UUID)() {
     m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
@@ -612,7 +613,7 @@ func (m *Customer) SetShipmentMethod(value ShipmentMethodable)() {
     m.shipmentMethod = value
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. The shipmentMethodId property
-func (m *Customer) SetShipmentMethodId(value *string)() {
+func (m *Customer) SetShipmentMethodId(value *UUID)() {
     m.shipmentMethodId = value
 }
 // SetTaxAreaDisplayName sets the taxAreaDisplayName property value. The taxAreaDisplayName property
@@ -620,7 +621,7 @@ func (m *Customer) SetTaxAreaDisplayName(value *string)() {
     m.taxAreaDisplayName = value
 }
 // SetTaxAreaId sets the taxAreaId property value. The taxAreaId property
-func (m *Customer) SetTaxAreaId(value *string)() {
+func (m *Customer) SetTaxAreaId(value *UUID)() {
     m.taxAreaId = value
 }
 // SetTaxLiable sets the taxLiable property value. The taxLiable property

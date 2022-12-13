@@ -38,7 +38,7 @@ type PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters struct {
 // PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration struc
 // PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewPrivilegedRoleAssignmentRequestsRequestBuilder(rawUrl string, requestAda
     return NewPrivilegedRoleAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Count()(*PrivilegedRoleAssignmentRequestsCountRequestBuilder) {
-    return NewPrivilegedRoleAssignmentRequestsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInforma
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,12 +99,15 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreatePostRequestInform
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedroleassignmentrequest-list?view=graph-rest-1.0
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,10 +127,13 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestCollectionResponseable), nil
 }
 // My provides operations to call the my method.
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) My()(*PrivilegedRoleAssignmentRequestsMyRequestBuilder) {
-    return NewPrivilegedRoleAssignmentRequestsMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) My()(*MyRequestBuilder) {
+    return NewMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post create a privilegedroleassignmentrequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/privilegedroleassignmentrequest-post?view=graph-rest-1.0
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

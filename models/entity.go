@@ -462,6 +462,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCallTranscript(), nil
                     case "#microsoft.graph.cancelMediaProcessingOperation":
                         return NewCancelMediaProcessingOperation(), nil
+                    case "#microsoft.graph.canvasLayout":
+                        return NewCanvasLayout(), nil
                     case "#microsoft.graph.cartToClassAssociation":
                         return NewCartToClassAssociation(), nil
                     case "#microsoft.graph.certificateBasedAuthConfiguration":
@@ -1180,6 +1182,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewGroupPolicyUploadedPresentation(), nil
                     case "#microsoft.graph.homeRealmDiscoveryPolicy":
                         return NewHomeRealmDiscoveryPolicy(), nil
+                    case "#microsoft.graph.horizontalSection":
+                        return NewHorizontalSection(), nil
+                    case "#microsoft.graph.horizontalSectionColumn":
+                        return NewHorizontalSectionColumn(), nil
                     case "#microsoft.graph.hostSecurityProfile":
                         return NewHostSecurityProfile(), nil
                     case "#microsoft.graph.identityApiConnector":
@@ -2078,6 +2084,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSoftwareOathAuthenticationMethod(), nil
                     case "#microsoft.graph.softwareUpdateStatusSummary":
                         return NewSoftwareUpdateStatusSummary(), nil
+                    case "#microsoft.graph.standardWebPart":
+                        return NewStandardWebPart(), nil
                     case "#microsoft.graph.startHoldMusicOperation":
                         return NewStartHoldMusicOperation(), nil
                     case "#microsoft.graph.stopHoldMusicOperation":
@@ -2196,6 +2204,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTermsOfUseContainer(), nil
                     case "#microsoft.graph.textClassificationRequest":
                         return NewTextClassificationRequest(), nil
+                    case "#microsoft.graph.textWebPart":
+                        return NewTextWebPart(), nil
                     case "#microsoft.graph.threatAssessmentRequest":
                         return NewThreatAssessmentRequest(), nil
                     case "#microsoft.graph.threatAssessmentResult":
@@ -2412,6 +2422,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.vendor":
                         return NewVendor_escaped(), nil
+                    case "#microsoft.graph.verticalSection":
+                        return NewVerticalSection(), nil
                     case "#microsoft.graph.virtualAppointment":
                         return NewVirtualAppointment(), nil
                     case "#microsoft.graph.virtualEndpoint":
@@ -2428,6 +2440,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWebApp(), nil
                     case "#microsoft.graph.webApplicationSegment":
                         return NewWebApplicationSegment(), nil
+                    case "#microsoft.graph.webPart":
+                        return NewWebPart(), nil
                     case "#microsoft.graph.win32LobApp":
                         return NewWin32LobApp(), nil
                     case "#microsoft.graph.windows10CertificateProfileBase":

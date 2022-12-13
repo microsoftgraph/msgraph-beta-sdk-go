@@ -8,15 +8,15 @@ import (
 type AuthenticationAppPolicyDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The adminConfiguration property
+    // The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
     adminConfiguration *AuthenticationAppAdminConfiguration
-    // The authenticationEvaluation property
+    // Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
     authenticationEvaluation *AuthenticationAppEvaluation
     // The OdataType property
     odataType *string
-    // The policyName property
+    // The name of the policy enforced on the user's authentication app.
     policyName *string
-    // The status property
+    // Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
     status *AuthenticationAppPolicyStatus
 }
 // NewAuthenticationAppPolicyDetails instantiates a new authenticationAppPolicyDetails and sets the default values.
@@ -34,11 +34,11 @@ func CreateAuthenticationAppPolicyDetailsFromDiscriminatorValue(parseNode i878a8
 func (m *AuthenticationAppPolicyDetails) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAdminConfiguration gets the adminConfiguration property value. The adminConfiguration property
+// GetAdminConfiguration gets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
 func (m *AuthenticationAppPolicyDetails) GetAdminConfiguration()(*AuthenticationAppAdminConfiguration) {
     return m.adminConfiguration
 }
-// GetAuthenticationEvaluation gets the authenticationEvaluation property value. The authenticationEvaluation property
+// GetAuthenticationEvaluation gets the authenticationEvaluation property value. Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
 func (m *AuthenticationAppPolicyDetails) GetAuthenticationEvaluation()(*AuthenticationAppEvaluation) {
     return m.authenticationEvaluation
 }
@@ -101,11 +101,11 @@ func (m *AuthenticationAppPolicyDetails) GetFieldDeserializers()(map[string]func
 func (m *AuthenticationAppPolicyDetails) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPolicyName gets the policyName property value. The policyName property
+// GetPolicyName gets the policyName property value. The name of the policy enforced on the user's authentication app.
 func (m *AuthenticationAppPolicyDetails) GetPolicyName()(*string) {
     return m.policyName
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
 func (m *AuthenticationAppPolicyDetails) GetStatus()(*AuthenticationAppPolicyStatus) {
     return m.status
 }
@@ -156,11 +156,11 @@ func (m *AuthenticationAppPolicyDetails) Serialize(writer i878a80d2330e89d268963
 func (m *AuthenticationAppPolicyDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAdminConfiguration sets the adminConfiguration property value. The adminConfiguration property
+// SetAdminConfiguration sets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
 func (m *AuthenticationAppPolicyDetails) SetAdminConfiguration(value *AuthenticationAppAdminConfiguration)() {
     m.adminConfiguration = value
 }
-// SetAuthenticationEvaluation sets the authenticationEvaluation property value. The authenticationEvaluation property
+// SetAuthenticationEvaluation sets the authenticationEvaluation property value. Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
 func (m *AuthenticationAppPolicyDetails) SetAuthenticationEvaluation(value *AuthenticationAppEvaluation)() {
     m.authenticationEvaluation = value
 }
@@ -168,11 +168,11 @@ func (m *AuthenticationAppPolicyDetails) SetAuthenticationEvaluation(value *Auth
 func (m *AuthenticationAppPolicyDetails) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPolicyName sets the policyName property value. The policyName property
+// SetPolicyName sets the policyName property value. The name of the policy enforced on the user's authentication app.
 func (m *AuthenticationAppPolicyDetails) SetPolicyName(value *string)() {
     m.policyName = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
 func (m *AuthenticationAppPolicyDetails) SetStatus(value *AuthenticationAppPolicyStatus)() {
     m.status = value
 }

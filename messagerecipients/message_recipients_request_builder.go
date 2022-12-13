@@ -38,7 +38,7 @@ type MessageRecipientsRequestBuilderGetQueryParameters struct {
 // MessageRecipientsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MessageRecipientsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type MessageRecipientsRequestBuilderGetRequestConfiguration struct {
 // MessageRecipientsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MessageRecipientsRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewMessageRecipientsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewMessageRecipientsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *MessageRecipientsRequestBuilder) Count()(*MessageRecipientsCountRequestBuilder) {
-    return NewMessageRecipientsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MessageRecipientsRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from messageRecipients
 func (m *MessageRecipientsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *MessageRecipientsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -85,7 +85,7 @@ func (m *MessageRecipientsRequestBuilder) CreateGetRequestInformation(ctx contex
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -99,7 +99,7 @@ func (m *MessageRecipientsRequestBuilder) CreatePostRequestInformation(ctx conte
     requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
