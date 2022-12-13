@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReview provides operations to manage the collection of accessReview entities.
+// AccessReview provides operations to manage the collection of allowedDataLocation entities.
 type AccessReview struct {
     Entity
     // The business flow template identifier. Required on create.  This value is case sensitive.

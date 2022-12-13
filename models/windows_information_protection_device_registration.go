@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionDeviceRegistration represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
+// WindowsInformationProtectionDeviceRegistration 
 type WindowsInformationProtectionDeviceRegistration struct {
     Entity
     // Device Mac address.
@@ -21,7 +21,7 @@ type WindowsInformationProtectionDeviceRegistration struct {
     // UserId associated with this device registration record.
     userId *string
 }
-// NewWindowsInformationProtectionDeviceRegistration instantiates a new windowsInformationProtectionDeviceRegistration and sets the default values.
+// NewWindowsInformationProtectionDeviceRegistration instantiates a new WindowsInformationProtectionDeviceRegistration and sets the default values.
 func NewWindowsInformationProtectionDeviceRegistration()(*WindowsInformationProtectionDeviceRegistration) {
     m := &WindowsInformationProtectionDeviceRegistration{
         Entity: *NewEntity(),

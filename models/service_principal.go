@@ -2,11 +2,11 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipal casts the previous resource to servicePrincipal.
+// ServicePrincipal 
 type ServicePrincipal struct {
     DirectoryObject
     // true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
@@ -26,7 +26,7 @@ type ServicePrincipal struct {
     // The appManagementPolicy applied to this service principal.
     appManagementPolicies []AppManagementPolicyable
     // Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-    appOwnerOrganizationId *UUID
+    appOwnerOrganizationId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
     appRoleAssignedTo []AppRoleAssignmentable
     // Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
@@ -112,7 +112,7 @@ type ServicePrincipal struct {
     // Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     tags []string
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-    tokenEncryptionKeyId *UUID
+    tokenEncryptionKeyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The tokenIssuancePolicies assigned to this service principal. Supports $expand.
     tokenIssuancePolicies []TokenIssuancePolicyable
     // The tokenLifetimePolicies assigned to this service principal. Supports $expand.
@@ -122,7 +122,7 @@ type ServicePrincipal struct {
     // Specifies the verified publisher of the application which this service principal represents.
     verifiedPublisher VerifiedPublisherable
 }
-// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -168,7 +168,7 @@ func (m *ServicePrincipal) GetAppManagementPolicies()([]AppManagementPolicyable)
     return m.appManagementPolicies
 }
 // GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-func (m *ServicePrincipal) GetAppOwnerOrganizationId()(*UUID) {
+func (m *ServicePrincipal) GetAppOwnerOrganizationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.appOwnerOrganizationId
 }
 // GetAppRoleAssignedTo gets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
@@ -1013,7 +1013,7 @@ func (m *ServicePrincipal) GetTags()([]string) {
     return m.tags
 }
 // GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-func (m *ServicePrincipal) GetTokenEncryptionKeyId()(*UUID) {
+func (m *ServicePrincipal) GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.tokenEncryptionKeyId
 }
 // GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal. Supports $expand.
@@ -1497,7 +1497,7 @@ func (m *ServicePrincipal) SetAppManagementPolicies(value []AppManagementPolicya
     m.appManagementPolicies = value
 }
 // SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
-func (m *ServicePrincipal) SetAppOwnerOrganizationId(value *UUID)() {
+func (m *ServicePrincipal) SetAppOwnerOrganizationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.appOwnerOrganizationId = value
 }
 // SetAppRoleAssignedTo sets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
@@ -1669,7 +1669,7 @@ func (m *ServicePrincipal) SetTags(value []string)() {
     m.tags = value
 }
 // SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-func (m *ServicePrincipal) SetTokenEncryptionKeyId(value *UUID)() {
+func (m *ServicePrincipal) SetTokenEncryptionKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.tokenEncryptionKeyId = value
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal. Supports $expand.

@@ -1,7 +1,7 @@
 package models
 
 import (
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -16,7 +16,7 @@ type ServicePlanInfo struct {
     // The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
     provisioningStatus *string
     // The unique identifier of the service plan.
-    servicePlanId *UUID
+    servicePlanId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The name of the service plan.
     servicePlanName *string
 }
@@ -103,7 +103,7 @@ func (m *ServicePlanInfo) GetProvisioningStatus()(*string) {
     return m.provisioningStatus
 }
 // GetServicePlanId gets the servicePlanId property value. The unique identifier of the service plan.
-func (m *ServicePlanInfo) GetServicePlanId()(*UUID) {
+func (m *ServicePlanInfo) GetServicePlanId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.servicePlanId
 }
 // GetServicePlanName gets the servicePlanName property value. The name of the service plan.
@@ -167,7 +167,7 @@ func (m *ServicePlanInfo) SetProvisioningStatus(value *string)() {
     m.provisioningStatus = value
 }
 // SetServicePlanId sets the servicePlanId property value. The unique identifier of the service plan.
-func (m *ServicePlanInfo) SetServicePlanId(value *UUID)() {
+func (m *ServicePlanInfo) SetServicePlanId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.servicePlanId = value
 }
 // SetServicePlanName sets the servicePlanName property value. The name of the service plan.

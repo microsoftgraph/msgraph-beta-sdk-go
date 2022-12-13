@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the filterOperators method.
+// Provides operations to manage the collection of agreementAcceptance entities.
 type ScopeOperatorType int
 
 const (

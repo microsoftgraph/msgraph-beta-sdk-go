@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of allowedDataLocation entities.
 type BehaviorDuringRetentionPeriod int
 
 const (

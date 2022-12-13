@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the getCloudPcReviewStatus method.
+// Provides operations to call the bulkSetCloudPcReviewStatus method.
 type CloudPcUserAccessLevel int
 
 const (

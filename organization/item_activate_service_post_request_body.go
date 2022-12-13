@@ -1,7 +1,7 @@
 package organization
 
 import (
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -12,9 +12,9 @@ type ItemActivateServicePostRequestBody struct {
     // The service property
     service *string
     // The servicePlanId property
-    servicePlanId *UUID
+    servicePlanId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The skuId property
-    skuId *UUID
+    skuId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewItemActivateServicePostRequestBody instantiates a new ItemActivateServicePostRequestBody and sets the default values.
 func NewItemActivateServicePostRequestBody()(*ItemActivateServicePostRequestBody) {
@@ -71,11 +71,11 @@ func (m *ItemActivateServicePostRequestBody) GetService()(*string) {
     return m.service
 }
 // GetServicePlanId gets the servicePlanId property value. The servicePlanId property
-func (m *ItemActivateServicePostRequestBody) GetServicePlanId()(*UUID) {
+func (m *ItemActivateServicePostRequestBody) GetServicePlanId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.servicePlanId
 }
 // GetSkuId gets the skuId property value. The skuId property
-func (m *ItemActivateServicePostRequestBody) GetSkuId()(*UUID) {
+func (m *ItemActivateServicePostRequestBody) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.skuId
 }
 // Serialize serializes information the current object
@@ -115,10 +115,10 @@ func (m *ItemActivateServicePostRequestBody) SetService(value *string)() {
     m.service = value
 }
 // SetServicePlanId sets the servicePlanId property value. The servicePlanId property
-func (m *ItemActivateServicePostRequestBody) SetServicePlanId(value *UUID)() {
+func (m *ItemActivateServicePostRequestBody) SetServicePlanId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.servicePlanId = value
 }
 // SetSkuId sets the skuId property value. The skuId property
-func (m *ItemActivateServicePostRequestBody) SetSkuId(value *UUID)() {
+func (m *ItemActivateServicePostRequestBody) SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.skuId = value
 }

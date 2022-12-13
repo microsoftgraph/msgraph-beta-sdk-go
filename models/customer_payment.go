@@ -2,17 +2,17 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomerPayment provides operations to manage the collection of accessReviewDecision entities.
+// CustomerPayment provides operations to manage the collection of agreementAcceptance entities.
 type CustomerPayment struct {
     Entity
     // The amount property
     amount *float64
     // The appliesToInvoiceId property
-    appliesToInvoiceId *UUID
+    appliesToInvoiceId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The appliesToInvoiceNumber property
     appliesToInvoiceNumber *string
     // The comment property
@@ -22,7 +22,7 @@ type CustomerPayment struct {
     // The customer property
     customer Customerable
     // The customerId property
-    customerId *UUID
+    customerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The customerNumber property
     customerNumber *string
     // The description property
@@ -56,7 +56,7 @@ func (m *CustomerPayment) GetAmount()(*float64) {
     return m.amount
 }
 // GetAppliesToInvoiceId gets the appliesToInvoiceId property value. The appliesToInvoiceId property
-func (m *CustomerPayment) GetAppliesToInvoiceId()(*UUID) {
+func (m *CustomerPayment) GetAppliesToInvoiceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.appliesToInvoiceId
 }
 // GetAppliesToInvoiceNumber gets the appliesToInvoiceNumber property value. The appliesToInvoiceNumber property
@@ -76,7 +76,7 @@ func (m *CustomerPayment) GetCustomer()(Customerable) {
     return m.customer
 }
 // GetCustomerId gets the customerId property value. The customerId property
-func (m *CustomerPayment) GetCustomerId()(*UUID) {
+func (m *CustomerPayment) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.customerId
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
@@ -369,7 +369,7 @@ func (m *CustomerPayment) SetAmount(value *float64)() {
     m.amount = value
 }
 // SetAppliesToInvoiceId sets the appliesToInvoiceId property value. The appliesToInvoiceId property
-func (m *CustomerPayment) SetAppliesToInvoiceId(value *UUID)() {
+func (m *CustomerPayment) SetAppliesToInvoiceId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.appliesToInvoiceId = value
 }
 // SetAppliesToInvoiceNumber sets the appliesToInvoiceNumber property value. The appliesToInvoiceNumber property
@@ -389,7 +389,7 @@ func (m *CustomerPayment) SetCustomer(value Customerable)() {
     m.customer = value
 }
 // SetCustomerId sets the customerId property value. The customerId property
-func (m *CustomerPayment) SetCustomerId(value *UUID)() {
+func (m *CustomerPayment) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.customerId = value
 }
 // SetCustomerNumber sets the customerNumber property value. The customerNumber property

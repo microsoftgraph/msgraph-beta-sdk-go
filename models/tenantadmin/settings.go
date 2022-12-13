@@ -1,7 +1,7 @@
 package tenantadmin
 
 import (
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
@@ -10,7 +10,7 @@ import (
 type Settings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Collection of trusted domain GUIDs for the OneDrive sync app.
-    allowedDomainGuidsForSyncApp []UUID
+    allowedDomainGuidsForSyncApp []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // Collection of managed paths available for site creation. Read-only.
     availableManagedPathsForSiteCreation []string
     // The number of days for preserving a deleted user's OneDrive.
@@ -80,7 +80,7 @@ func CreateSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewSettings(), nil
 }
 // GetAllowedDomainGuidsForSyncApp gets the allowedDomainGuidsForSyncApp property value. Collection of trusted domain GUIDs for the OneDrive sync app.
-func (m *Settings) GetAllowedDomainGuidsForSyncApp()([]UUID) {
+func (m *Settings) GetAllowedDomainGuidsForSyncApp()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.allowedDomainGuidsForSyncApp
 }
 // GetAvailableManagedPathsForSiteCreation gets the availableManagedPathsForSiteCreation property value. Collection of managed paths available for site creation. Read-only.
@@ -99,14 +99,14 @@ func (m *Settings) GetExcludedFileExtensionsForSyncApp()([]string) {
 func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedDomainGuidsForSyncApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("uUID")
+        val, err := n.GetCollectionOfPrimitiveValues("i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UUID, len(val))
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*UUID))
+                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
             }
             m.SetAllowedDomainGuidsForSyncApp(res)
         }
@@ -696,7 +696,7 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAllowedDomainGuidsForSyncApp sets the allowedDomainGuidsForSyncApp property value. Collection of trusted domain GUIDs for the OneDrive sync app.
-func (m *Settings) SetAllowedDomainGuidsForSyncApp(value []UUID)() {
+func (m *Settings) SetAllowedDomainGuidsForSyncApp(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.allowedDomainGuidsForSyncApp = value
 }
 // SetAvailableManagedPathsForSiteCreation sets the availableManagedPathsForSiteCreation property value. Collection of managed paths available for site creation. Read-only.

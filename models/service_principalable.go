@@ -2,7 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -18,7 +18,7 @@ type ServicePrincipalable interface {
     GetAppId()(*string)
     GetApplicationTemplateId()(*string)
     GetAppManagementPolicies()([]AppManagementPolicyable)
-    GetAppOwnerOrganizationId()(*UUID)
+    GetAppOwnerOrganizationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetAppRoleAssignedTo()([]AppRoleAssignmentable)
     GetAppRoleAssignmentRequired()(*bool)
     GetAppRoleAssignments()([]AppRoleAssignmentable)
@@ -61,7 +61,7 @@ type ServicePrincipalable interface {
     GetSignInAudience()(*string)
     GetSynchronization()(Synchronizationable)
     GetTags()([]string)
-    GetTokenEncryptionKeyId()(*UUID)
+    GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetTokenIssuancePolicies()([]TokenIssuancePolicyable)
     GetTokenLifetimePolicies()([]TokenLifetimePolicyable)
     GetTransitiveMemberOf()([]DirectoryObjectable)
@@ -74,7 +74,7 @@ type ServicePrincipalable interface {
     SetAppId(value *string)()
     SetApplicationTemplateId(value *string)()
     SetAppManagementPolicies(value []AppManagementPolicyable)()
-    SetAppOwnerOrganizationId(value *UUID)()
+    SetAppOwnerOrganizationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetAppRoleAssignedTo(value []AppRoleAssignmentable)()
     SetAppRoleAssignmentRequired(value *bool)()
     SetAppRoleAssignments(value []AppRoleAssignmentable)()
@@ -117,7 +117,7 @@ type ServicePrincipalable interface {
     SetSignInAudience(value *string)()
     SetSynchronization(value Synchronizationable)()
     SetTags(value []string)()
-    SetTokenEncryptionKeyId(value *UUID)()
+    SetTokenEncryptionKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetTokenIssuancePolicies(value []TokenIssuancePolicyable)()
     SetTokenLifetimePolicies(value []TokenLifetimePolicyable)()
     SetTransitiveMemberOf(value []DirectoryObjectable)()

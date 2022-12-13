@@ -1,7 +1,7 @@
 package models
 
 import (
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -17,7 +17,7 @@ type OutlookTaskFolder struct {
     // The name of the task folder.
     name *string
     // The unique GUID identifier for the task folder's parent group.
-    parentGroupKey *UUID
+    parentGroupKey *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The tasks in this task folder. Read-only. Nullable.
@@ -138,7 +138,7 @@ func (m *OutlookTaskFolder) GetName()(*string) {
     return m.name
 }
 // GetParentGroupKey gets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
-func (m *OutlookTaskFolder) GetParentGroupKey()(*UUID) {
+func (m *OutlookTaskFolder) GetParentGroupKey()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.parentGroupKey
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
@@ -228,7 +228,7 @@ func (m *OutlookTaskFolder) SetName(value *string)() {
     m.name = value
 }
 // SetParentGroupKey sets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
-func (m *OutlookTaskFolder) SetParentGroupKey(value *UUID)() {
+func (m *OutlookTaskFolder) SetParentGroupKey(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.parentGroupKey = value
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.

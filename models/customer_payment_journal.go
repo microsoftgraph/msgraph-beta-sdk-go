@@ -2,17 +2,17 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomerPaymentJournal provides operations to manage the collection of accessReviewDecision entities.
+// CustomerPaymentJournal provides operations to manage the collection of agreementAcceptance entities.
 type CustomerPaymentJournal struct {
     Entity
     // The account property
     account Accountable
     // The balancingAccountId property
-    balancingAccountId *UUID
+    balancingAccountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The balancingAccountNumber property
     balancingAccountNumber *string
     // The code property
@@ -40,7 +40,7 @@ func (m *CustomerPaymentJournal) GetAccount()(Accountable) {
     return m.account
 }
 // GetBalancingAccountId gets the balancingAccountId property value. The balancingAccountId property
-func (m *CustomerPaymentJournal) GetBalancingAccountId()(*UUID) {
+func (m *CustomerPaymentJournal) GetBalancingAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.balancingAccountId
 }
 // GetBalancingAccountNumber gets the balancingAccountNumber property value. The balancingAccountNumber property
@@ -201,7 +201,7 @@ func (m *CustomerPaymentJournal) SetAccount(value Accountable)() {
     m.account = value
 }
 // SetBalancingAccountId sets the balancingAccountId property value. The balancingAccountId property
-func (m *CustomerPaymentJournal) SetBalancingAccountId(value *UUID)() {
+func (m *CustomerPaymentJournal) SetBalancingAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.balancingAccountId = value
 }
 // SetBalancingAccountNumber sets the balancingAccountNumber property value. The balancingAccountNumber property

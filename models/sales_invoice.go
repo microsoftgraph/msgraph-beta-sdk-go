@@ -2,17 +2,17 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesInvoice provides operations to manage the collection of accessReviewDecision entities.
+// SalesInvoice provides operations to manage the collection of activityStatistics entities.
 type SalesInvoice struct {
     Entity
     // The billingPostalAddress property
     billingPostalAddress PostalAddressTypeable
     // The billToCustomerId property
-    billToCustomerId *UUID
+    billToCustomerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The billToCustomerNumber property
     billToCustomerNumber *string
     // The billToName property
@@ -22,11 +22,11 @@ type SalesInvoice struct {
     // The currencyCode property
     currencyCode *string
     // The currencyId property
-    currencyId *UUID
+    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The customer property
     customer Customerable
     // The customerId property
-    customerId *UUID
+    customerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The customerName property
     customerName *string
     // The customerNumber property
@@ -50,13 +50,13 @@ type SalesInvoice struct {
     // The number property
     number *string
     // The orderId property
-    orderId *UUID
+    orderId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The orderNumber property
     orderNumber *string
     // The paymentTerm property
     paymentTerm PaymentTermable
     // The paymentTermsId property
-    paymentTermsId *UUID
+    paymentTermsId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The phoneNumber property
     phoneNumber *string
     // The pricesIncludeTax property
@@ -70,7 +70,7 @@ type SalesInvoice struct {
     // The shipmentMethod property
     shipmentMethod ShipmentMethodable
     // The shipmentMethodId property
-    shipmentMethodId *UUID
+    shipmentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The shippingPostalAddress property
     shippingPostalAddress PostalAddressTypeable
     // The shipToContact property
@@ -102,7 +102,7 @@ func (m *SalesInvoice) GetBillingPostalAddress()(PostalAddressTypeable) {
     return m.billingPostalAddress
 }
 // GetBillToCustomerId gets the billToCustomerId property value. The billToCustomerId property
-func (m *SalesInvoice) GetBillToCustomerId()(*UUID) {
+func (m *SalesInvoice) GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.billToCustomerId
 }
 // GetBillToCustomerNumber gets the billToCustomerNumber property value. The billToCustomerNumber property
@@ -122,7 +122,7 @@ func (m *SalesInvoice) GetCurrencyCode()(*string) {
     return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *SalesInvoice) GetCurrencyId()(*UUID) {
+func (m *SalesInvoice) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.currencyId
 }
 // GetCustomer gets the customer property value. The customer property
@@ -130,7 +130,7 @@ func (m *SalesInvoice) GetCustomer()(Customerable) {
     return m.customer
 }
 // GetCustomerId gets the customerId property value. The customerId property
-func (m *SalesInvoice) GetCustomerId()(*UUID) {
+func (m *SalesInvoice) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.customerId
 }
 // GetCustomerName gets the customerName property value. The customerName property
@@ -567,7 +567,7 @@ func (m *SalesInvoice) GetNumber()(*string) {
     return m.number
 }
 // GetOrderId gets the orderId property value. The orderId property
-func (m *SalesInvoice) GetOrderId()(*UUID) {
+func (m *SalesInvoice) GetOrderId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.orderId
 }
 // GetOrderNumber gets the orderNumber property value. The orderNumber property
@@ -579,7 +579,7 @@ func (m *SalesInvoice) GetPaymentTerm()(PaymentTermable) {
     return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
-func (m *SalesInvoice) GetPaymentTermsId()(*UUID) {
+func (m *SalesInvoice) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
@@ -607,7 +607,7 @@ func (m *SalesInvoice) GetShipmentMethod()(ShipmentMethodable) {
     return m.shipmentMethod
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
-func (m *SalesInvoice) GetShipmentMethodId()(*UUID) {
+func (m *SalesInvoice) GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.shipmentMethodId
 }
 // GetShippingPostalAddress gets the shippingPostalAddress property value. The shippingPostalAddress property
@@ -883,7 +883,7 @@ func (m *SalesInvoice) SetBillingPostalAddress(value PostalAddressTypeable)() {
     m.billingPostalAddress = value
 }
 // SetBillToCustomerId sets the billToCustomerId property value. The billToCustomerId property
-func (m *SalesInvoice) SetBillToCustomerId(value *UUID)() {
+func (m *SalesInvoice) SetBillToCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.billToCustomerId = value
 }
 // SetBillToCustomerNumber sets the billToCustomerNumber property value. The billToCustomerNumber property
@@ -903,7 +903,7 @@ func (m *SalesInvoice) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *SalesInvoice) SetCurrencyId(value *UUID)() {
+func (m *SalesInvoice) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.currencyId = value
 }
 // SetCustomer sets the customer property value. The customer property
@@ -911,7 +911,7 @@ func (m *SalesInvoice) SetCustomer(value Customerable)() {
     m.customer = value
 }
 // SetCustomerId sets the customerId property value. The customerId property
-func (m *SalesInvoice) SetCustomerId(value *UUID)() {
+func (m *SalesInvoice) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.customerId = value
 }
 // SetCustomerName sets the customerName property value. The customerName property
@@ -959,7 +959,7 @@ func (m *SalesInvoice) SetNumber(value *string)() {
     m.number = value
 }
 // SetOrderId sets the orderId property value. The orderId property
-func (m *SalesInvoice) SetOrderId(value *UUID)() {
+func (m *SalesInvoice) SetOrderId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.orderId = value
 }
 // SetOrderNumber sets the orderNumber property value. The orderNumber property
@@ -971,7 +971,7 @@ func (m *SalesInvoice) SetPaymentTerm(value PaymentTermable)() {
     m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
-func (m *SalesInvoice) SetPaymentTermsId(value *UUID)() {
+func (m *SalesInvoice) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
@@ -999,7 +999,7 @@ func (m *SalesInvoice) SetShipmentMethod(value ShipmentMethodable)() {
     m.shipmentMethod = value
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. The shipmentMethodId property
-func (m *SalesInvoice) SetShipmentMethodId(value *UUID)() {
+func (m *SalesInvoice) SetShipmentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.shipmentMethodId = value
 }
 // SetShippingPostalAddress sets the shippingPostalAddress property value. The shippingPostalAddress property

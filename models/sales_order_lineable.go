@@ -1,7 +1,7 @@
 package models
 
 import (
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -10,19 +10,19 @@ type SalesOrderLineable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccount()(Accountable)
-    GetAccountId()(*UUID)
+    GetAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetAmountExcludingTax()(*float64)
     GetAmountIncludingTax()(*float64)
     GetDescription()(*string)
     GetDiscountAmount()(*float64)
     GetDiscountAppliedBeforeTax()(*bool)
     GetDiscountPercent()(*float64)
-    GetDocumentId()(*UUID)
+    GetDocumentId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetInvoiceDiscountAllocation()(*float64)
     GetInvoicedQuantity()(*float64)
     GetInvoiceQuantity()(*float64)
     GetItem()(Itemable)
-    GetItemId()(*UUID)
+    GetItemId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetLineType()(*string)
     GetNetAmount()(*float64)
     GetNetAmountIncludingTax()(*float64)
@@ -35,22 +35,22 @@ type SalesOrderLineable interface {
     GetTaxCode()(*string)
     GetTaxPercent()(*float64)
     GetTotalTaxAmount()(*float64)
-    GetUnitOfMeasureId()(*UUID)
+    GetUnitOfMeasureId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetUnitPrice()(*float64)
     SetAccount(value Accountable)()
-    SetAccountId(value *UUID)()
+    SetAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetAmountExcludingTax(value *float64)()
     SetAmountIncludingTax(value *float64)()
     SetDescription(value *string)()
     SetDiscountAmount(value *float64)()
     SetDiscountAppliedBeforeTax(value *bool)()
     SetDiscountPercent(value *float64)()
-    SetDocumentId(value *UUID)()
+    SetDocumentId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetInvoiceDiscountAllocation(value *float64)()
     SetInvoicedQuantity(value *float64)()
     SetInvoiceQuantity(value *float64)()
     SetItem(value Itemable)()
-    SetItemId(value *UUID)()
+    SetItemId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetLineType(value *string)()
     SetNetAmount(value *float64)()
     SetNetAmountIncludingTax(value *float64)()
@@ -63,6 +63,6 @@ type SalesOrderLineable interface {
     SetTaxCode(value *string)()
     SetTaxPercent(value *float64)()
     SetTotalTaxAmount(value *float64)()
-    SetUnitOfMeasureId(value *UUID)()
+    SetUnitOfMeasureId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetUnitPrice(value *float64)()
 }

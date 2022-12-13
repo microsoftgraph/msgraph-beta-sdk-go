@@ -1,7 +1,7 @@
 package models
 
 import (
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -14,7 +14,7 @@ type ResourceSpecificPermission struct {
     // The displayName property
     displayName *string
     // The id property
-    id *UUID
+    id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The isEnabled property
     isEnabled *bool
     // The OdataType property
@@ -111,7 +111,7 @@ func (m *ResourceSpecificPermission) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetId gets the id property value. The id property
-func (m *ResourceSpecificPermission) GetId()(*UUID) {
+func (m *ResourceSpecificPermission) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.id
 }
 // GetIsEnabled gets the isEnabled property value. The isEnabled property
@@ -185,7 +185,7 @@ func (m *ResourceSpecificPermission) SetDisplayName(value *string)() {
     m.displayName = value
 }
 // SetId sets the id property value. The id property
-func (m *ResourceSpecificPermission) SetId(value *UUID)() {
+func (m *ResourceSpecificPermission) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.id = value
 }
 // SetIsEnabled sets the isEnabled property value. The isEnabled property

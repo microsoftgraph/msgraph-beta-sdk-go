@@ -2,7 +2,7 @@ package security
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -15,7 +15,7 @@ type AttackSimulationInfo struct {
     // The duration (in time) for the attack simulation.
     attackSimDurationTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The activity ID for the attack simulation.
-    attackSimId *UUID
+    attackSimId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The unique identifier for the user who got the attack simulation email.
     attackSimUserId *string
     // The OdataType property
@@ -45,7 +45,7 @@ func (m *AttackSimulationInfo) GetAttackSimDurationTime()(*i878a80d2330e89d26896
     return m.attackSimDurationTime
 }
 // GetAttackSimId gets the attackSimId property value. The activity ID for the attack simulation.
-func (m *AttackSimulationInfo) GetAttackSimId()(*UUID) {
+func (m *AttackSimulationInfo) GetAttackSimId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.attackSimId
 }
 // GetAttackSimUserId gets the attackSimUserId property value. The unique identifier for the user who got the attack simulation email.
@@ -164,7 +164,7 @@ func (m *AttackSimulationInfo) SetAttackSimDurationTime(value *i878a80d2330e89d2
     m.attackSimDurationTime = value
 }
 // SetAttackSimId sets the attackSimId property value. The activity ID for the attack simulation.
-func (m *AttackSimulationInfo) SetAttackSimId(value *UUID)() {
+func (m *AttackSimulationInfo) SetAttackSimId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.attackSimId = value
 }
 // SetAttackSimUserId sets the attackSimUserId property value. The unique identifier for the user who got the attack simulation email.

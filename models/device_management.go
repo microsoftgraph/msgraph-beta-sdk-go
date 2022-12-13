@@ -2,7 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -150,7 +150,7 @@ type DeviceManagement struct {
     // The device management intents
     intents []DeviceManagementIntentable
     // Intune Account ID for given tenant
-    intuneAccountId *UUID
+    intuneAccountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand IntuneBrandable
     // Intune branding profiles targeted to AAD groups
@@ -2927,7 +2927,7 @@ func (m *DeviceManagement) GetIntents()([]DeviceManagementIntentable) {
     return m.intents
 }
 // GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
-func (m *DeviceManagement) GetIntuneAccountId()(*UUID) {
+func (m *DeviceManagement) GetIntuneAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.intuneAccountId
 }
 // GetIntuneBrand gets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
@@ -5185,7 +5185,7 @@ func (m *DeviceManagement) SetIntents(value []DeviceManagementIntentable)() {
     m.intents = value
 }
 // SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
-func (m *DeviceManagement) SetIntuneAccountId(value *UUID)() {
+func (m *DeviceManagement) SetIntuneAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.intuneAccountId = value
 }
 // SetIntuneBrand sets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.

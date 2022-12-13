@@ -12,7 +12,7 @@ type PlannerAssignedToTaskBoardTaskFormat struct {
     // Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.
     unassignedOrderHint *string
 }
-// NewPlannerAssignedToTaskBoardTaskFormat instantiates a new plannerAssignedToTaskBoardTaskFormat and sets the default values.
+// NewPlannerAssignedToTaskBoardTaskFormat instantiates a new PlannerAssignedToTaskBoardTaskFormat and sets the default values.
 func NewPlannerAssignedToTaskBoardTaskFormat()(*PlannerAssignedToTaskBoardTaskFormat) {
     m := &PlannerAssignedToTaskBoardTaskFormat{
         PlannerDelta: *NewPlannerDelta(),

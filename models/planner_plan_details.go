@@ -14,7 +14,7 @@ type PlannerPlanDetails struct {
     // The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
     sharedWith PlannerUserIdsable
 }
-// NewPlannerPlanDetails instantiates a new plannerPlanDetails and sets the default values.
+// NewPlannerPlanDetails instantiates a new PlannerPlanDetails and sets the default values.
 func NewPlannerPlanDetails()(*PlannerPlanDetails) {
     m := &PlannerPlanDetails{
         PlannerDelta: *NewPlannerDelta(),

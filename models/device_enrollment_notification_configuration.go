@@ -1,7 +1,7 @@
 package models
 
 import (
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -13,7 +13,7 @@ type DeviceEnrollmentNotificationConfiguration struct {
     // DefaultLocale for the Enrollment Notification
     defaultLocale *string
     // Notification Message Template Id
-    notificationMessageTemplateId *UUID
+    notificationMessageTemplateId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The list of notification data -
     notificationTemplates []string
     // This enum indicates the platform type for which the enrollment restriction applies.
@@ -112,7 +112,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[
     return res
 }
 // GetNotificationMessageTemplateId gets the notificationMessageTemplateId property value. Notification Message Template Id
-func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTemplateId()(*UUID) {
+func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTemplateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.notificationMessageTemplateId
 }
 // GetNotificationTemplates gets the notificationTemplates property value. The list of notification data -
@@ -183,7 +183,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) SetDefaultLocale(value *stri
     m.defaultLocale = value
 }
 // SetNotificationMessageTemplateId sets the notificationMessageTemplateId property value. Notification Message Template Id
-func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationMessageTemplateId(value *UUID)() {
+func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationMessageTemplateId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.notificationMessageTemplateId = value
 }
 // SetNotificationTemplates sets the notificationTemplates property value. The list of notification data -

@@ -2,7 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -18,7 +18,7 @@ type Customer struct {
     // The currencyCode property
     currencyCode *string
     // The currencyId property
-    currencyId *UUID
+    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The displayName property
     displayName *string
     // The email property
@@ -30,11 +30,11 @@ type Customer struct {
     // The paymentMethod property
     paymentMethod PaymentMethodable
     // The paymentMethodId property
-    paymentMethodId *UUID
+    paymentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The paymentTerm property
     paymentTerm PaymentTermable
     // The paymentTermsId property
-    paymentTermsId *UUID
+    paymentTermsId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The phoneNumber property
     phoneNumber *string
     // The picture property
@@ -42,11 +42,11 @@ type Customer struct {
     // The shipmentMethod property
     shipmentMethod ShipmentMethodable
     // The shipmentMethodId property
-    shipmentMethodId *UUID
+    shipmentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The taxAreaDisplayName property
     taxAreaDisplayName *string
     // The taxAreaId property
-    taxAreaId *UUID
+    taxAreaId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The taxLiable property
     taxLiable *bool
     // The taxRegistrationNumber property
@@ -84,7 +84,7 @@ func (m *Customer) GetCurrencyCode()(*string) {
     return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *Customer) GetCurrencyId()(*UUID) {
+func (m *Customer) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.currencyId
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -347,7 +347,7 @@ func (m *Customer) GetPaymentMethod()(PaymentMethodable) {
     return m.paymentMethod
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
-func (m *Customer) GetPaymentMethodId()(*UUID) {
+func (m *Customer) GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentMethodId
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
@@ -355,7 +355,7 @@ func (m *Customer) GetPaymentTerm()(PaymentTermable) {
     return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
-func (m *Customer) GetPaymentTermsId()(*UUID) {
+func (m *Customer) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
@@ -371,7 +371,7 @@ func (m *Customer) GetShipmentMethod()(ShipmentMethodable) {
     return m.shipmentMethod
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
-func (m *Customer) GetShipmentMethodId()(*UUID) {
+func (m *Customer) GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.shipmentMethodId
 }
 // GetTaxAreaDisplayName gets the taxAreaDisplayName property value. The taxAreaDisplayName property
@@ -379,7 +379,7 @@ func (m *Customer) GetTaxAreaDisplayName()(*string) {
     return m.taxAreaDisplayName
 }
 // GetTaxAreaId gets the taxAreaId property value. The taxAreaId property
-func (m *Customer) GetTaxAreaId()(*UUID) {
+func (m *Customer) GetTaxAreaId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.taxAreaId
 }
 // GetTaxLiable gets the taxLiable property value. The taxLiable property
@@ -565,7 +565,7 @@ func (m *Customer) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *Customer) SetCurrencyId(value *UUID)() {
+func (m *Customer) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.currencyId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
@@ -589,7 +589,7 @@ func (m *Customer) SetPaymentMethod(value PaymentMethodable)() {
     m.paymentMethod = value
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
-func (m *Customer) SetPaymentMethodId(value *UUID)() {
+func (m *Customer) SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentMethodId = value
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
@@ -597,7 +597,7 @@ func (m *Customer) SetPaymentTerm(value PaymentTermable)() {
     m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
-func (m *Customer) SetPaymentTermsId(value *UUID)() {
+func (m *Customer) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
@@ -613,7 +613,7 @@ func (m *Customer) SetShipmentMethod(value ShipmentMethodable)() {
     m.shipmentMethod = value
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. The shipmentMethodId property
-func (m *Customer) SetShipmentMethodId(value *UUID)() {
+func (m *Customer) SetShipmentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.shipmentMethodId = value
 }
 // SetTaxAreaDisplayName sets the taxAreaDisplayName property value. The taxAreaDisplayName property
@@ -621,7 +621,7 @@ func (m *Customer) SetTaxAreaDisplayName(value *string)() {
     m.taxAreaDisplayName = value
 }
 // SetTaxAreaId sets the taxAreaId property value. The taxAreaId property
-func (m *Customer) SetTaxAreaId(value *UUID)() {
+func (m *Customer) SetTaxAreaId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.taxAreaId = value
 }
 // SetTaxLiable sets the taxLiable property value. The taxLiable property

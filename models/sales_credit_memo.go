@@ -2,17 +2,17 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesCreditMemo provides operations to manage the collection of accessReviewDecision entities.
+// SalesCreditMemo provides operations to manage the collection of activityStatistics entities.
 type SalesCreditMemo struct {
     Entity
     // The billingPostalAddress property
     billingPostalAddress PostalAddressTypeable
     // The billToCustomerId property
-    billToCustomerId *UUID
+    billToCustomerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The billToCustomerNumber property
     billToCustomerNumber *string
     // The billToName property
@@ -24,11 +24,11 @@ type SalesCreditMemo struct {
     // The currencyCode property
     currencyCode *string
     // The currencyId property
-    currencyId *UUID
+    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The customer property
     customer Customerable
     // The customerId property
-    customerId *UUID
+    customerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The customerName property
     customerName *string
     // The customerNumber property
@@ -44,7 +44,7 @@ type SalesCreditMemo struct {
     // The externalDocumentNumber property
     externalDocumentNumber *string
     // The invoiceId property
-    invoiceId *UUID
+    invoiceId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The invoiceNumber property
     invoiceNumber *string
     // The lastModifiedDateTime property
@@ -54,7 +54,7 @@ type SalesCreditMemo struct {
     // The paymentTerm property
     paymentTerm PaymentTermable
     // The paymentTermsId property
-    paymentTermsId *UUID
+    paymentTermsId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The phoneNumber property
     phoneNumber *string
     // The pricesIncludeTax property
@@ -90,7 +90,7 @@ func (m *SalesCreditMemo) GetBillingPostalAddress()(PostalAddressTypeable) {
     return m.billingPostalAddress
 }
 // GetBillToCustomerId gets the billToCustomerId property value. The billToCustomerId property
-func (m *SalesCreditMemo) GetBillToCustomerId()(*UUID) {
+func (m *SalesCreditMemo) GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.billToCustomerId
 }
 // GetBillToCustomerNumber gets the billToCustomerNumber property value. The billToCustomerNumber property
@@ -114,7 +114,7 @@ func (m *SalesCreditMemo) GetCurrencyCode()(*string) {
     return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *SalesCreditMemo) GetCurrencyId()(*UUID) {
+func (m *SalesCreditMemo) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.currencyId
 }
 // GetCustomer gets the customer property value. The customer property
@@ -122,7 +122,7 @@ func (m *SalesCreditMemo) GetCustomer()(Customerable) {
     return m.customer
 }
 // GetCustomerId gets the customerId property value. The customerId property
-func (m *SalesCreditMemo) GetCustomerId()(*UUID) {
+func (m *SalesCreditMemo) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.customerId
 }
 // GetCustomerName gets the customerName property value. The customerName property
@@ -483,7 +483,7 @@ func (m *SalesCreditMemo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetInvoiceId gets the invoiceId property value. The invoiceId property
-func (m *SalesCreditMemo) GetInvoiceId()(*UUID) {
+func (m *SalesCreditMemo) GetInvoiceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.invoiceId
 }
 // GetInvoiceNumber gets the invoiceNumber property value. The invoiceNumber property
@@ -503,7 +503,7 @@ func (m *SalesCreditMemo) GetPaymentTerm()(PaymentTermable) {
     return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
-func (m *SalesCreditMemo) GetPaymentTermsId()(*UUID) {
+func (m *SalesCreditMemo) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
@@ -751,7 +751,7 @@ func (m *SalesCreditMemo) SetBillingPostalAddress(value PostalAddressTypeable)()
     m.billingPostalAddress = value
 }
 // SetBillToCustomerId sets the billToCustomerId property value. The billToCustomerId property
-func (m *SalesCreditMemo) SetBillToCustomerId(value *UUID)() {
+func (m *SalesCreditMemo) SetBillToCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.billToCustomerId = value
 }
 // SetBillToCustomerNumber sets the billToCustomerNumber property value. The billToCustomerNumber property
@@ -775,7 +775,7 @@ func (m *SalesCreditMemo) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *SalesCreditMemo) SetCurrencyId(value *UUID)() {
+func (m *SalesCreditMemo) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.currencyId = value
 }
 // SetCustomer sets the customer property value. The customer property
@@ -783,7 +783,7 @@ func (m *SalesCreditMemo) SetCustomer(value Customerable)() {
     m.customer = value
 }
 // SetCustomerId sets the customerId property value. The customerId property
-func (m *SalesCreditMemo) SetCustomerId(value *UUID)() {
+func (m *SalesCreditMemo) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.customerId = value
 }
 // SetCustomerName sets the customerName property value. The customerName property
@@ -815,7 +815,7 @@ func (m *SalesCreditMemo) SetExternalDocumentNumber(value *string)() {
     m.externalDocumentNumber = value
 }
 // SetInvoiceId sets the invoiceId property value. The invoiceId property
-func (m *SalesCreditMemo) SetInvoiceId(value *UUID)() {
+func (m *SalesCreditMemo) SetInvoiceId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.invoiceId = value
 }
 // SetInvoiceNumber sets the invoiceNumber property value. The invoiceNumber property
@@ -835,7 +835,7 @@ func (m *SalesCreditMemo) SetPaymentTerm(value PaymentTermable)() {
     m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
-func (m *SalesCreditMemo) SetPaymentTermsId(value *UUID)() {
+func (m *SalesCreditMemo) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property

@@ -2,7 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i2bacd9b8d8db2e77ee2b5c5ccb19d679c36f920b8fee9d786a0adafff458afcd "github.com/google/UUID"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -27,7 +27,7 @@ type PowerliftIncidentMetadata struct {
     // The device's OS the diagnostic is from. Example: iOS
     platform *string
     // The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
-    powerliftId *UUID
+    powerliftId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewPowerliftIncidentMetadata instantiates a new powerliftIncidentMetadata and sets the default values.
 func NewPowerliftIncidentMetadata()(*PowerliftIncidentMetadata) {
@@ -176,7 +176,7 @@ func (m *PowerliftIncidentMetadata) GetPlatform()(*string) {
     return m.platform
 }
 // GetPowerliftId gets the powerliftId property value. The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
-func (m *PowerliftIncidentMetadata) GetPowerliftId()(*UUID) {
+func (m *PowerliftIncidentMetadata) GetPowerliftId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.powerliftId
 }
 // Serialize serializes information the current object
@@ -280,6 +280,6 @@ func (m *PowerliftIncidentMetadata) SetPlatform(value *string)() {
     m.platform = value
 }
 // SetPowerliftId sets the powerliftId property value. The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
-func (m *PowerliftIncidentMetadata) SetPowerliftId(value *UUID)() {
+func (m *PowerliftIncidentMetadata) SetPowerliftId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.powerliftId = value
 }
