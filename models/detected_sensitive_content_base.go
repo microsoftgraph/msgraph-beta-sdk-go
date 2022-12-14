@@ -1,6 +1,7 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -13,7 +14,7 @@ type DetectedSensitiveContentBase struct {
     // The displayName property
     displayName *string
     // The id property
-    id *string
+    id *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The OdataType property
     odataType *string
     // The recommendedConfidence property
@@ -90,7 +91,7 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -132,7 +133,7 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetId gets the id property value. The id property
-func (m *DetectedSensitiveContentBase) GetId()(*string) {
+func (m *DetectedSensitiveContentBase) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -162,7 +163,7 @@ func (m *DetectedSensitiveContentBase) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
-        err := writer.WriteStringValue("id", m.GetId())
+        err := writer.WriteUUIDValue("id", m.GetId())
         if err != nil {
             return err
         }
@@ -206,7 +207,7 @@ func (m *DetectedSensitiveContentBase) SetDisplayName(value *string)() {
     m.displayName = value
 }
 // SetId sets the id property value. The id property
-func (m *DetectedSensitiveContentBase) SetId(value *string)() {
+func (m *DetectedSensitiveContentBase) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

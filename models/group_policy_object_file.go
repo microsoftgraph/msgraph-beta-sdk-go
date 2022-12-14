@@ -2,10 +2,11 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyObjectFile the Group Policy Object file uploaded by admin.
+// GroupPolicyObjectFile 
 type GroupPolicyObjectFile struct {
     Entity
     // The Group Policy Object file content.
@@ -13,7 +14,7 @@ type GroupPolicyObjectFile struct {
     // The date and time at which the GroupPolicy was first uploaded.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Group Policy Object GUID from GPO Xml content
-    groupPolicyObjectId *string
+    groupPolicyObjectId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The date and time at which the GroupPolicyObjectFile was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The distinguished name of the OU.
@@ -21,7 +22,7 @@ type GroupPolicyObjectFile struct {
     // The list of scope tags for the configuration.
     roleScopeTagIds []string
 }
-// NewGroupPolicyObjectFile instantiates a new groupPolicyObjectFile and sets the default values.
+// NewGroupPolicyObjectFile instantiates a new GroupPolicyObjectFile and sets the default values.
 func NewGroupPolicyObjectFile()(*GroupPolicyObjectFile) {
     m := &GroupPolicyObjectFile{
         Entity: *NewEntity(),
@@ -64,7 +65,7 @@ func (m *GroupPolicyObjectFile) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["groupPolicyObjectId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -110,7 +111,7 @@ func (m *GroupPolicyObjectFile) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetGroupPolicyObjectId gets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
-func (m *GroupPolicyObjectFile) GetGroupPolicyObjectId()(*string) {
+func (m *GroupPolicyObjectFile) GetGroupPolicyObjectId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.groupPolicyObjectId
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time at which the GroupPolicyObjectFile was last modified.
@@ -144,7 +145,7 @@ func (m *GroupPolicyObjectFile) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("groupPolicyObjectId", m.GetGroupPolicyObjectId())
+        err = writer.WriteUUIDValue("groupPolicyObjectId", m.GetGroupPolicyObjectId())
         if err != nil {
             return err
         }
@@ -178,7 +179,7 @@ func (m *GroupPolicyObjectFile) SetCreatedDateTime(value *i336074805fc853987abe6
     m.createdDateTime = value
 }
 // SetGroupPolicyObjectId sets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
-func (m *GroupPolicyObjectFile) SetGroupPolicyObjectId(value *string)() {
+func (m *GroupPolicyObjectFile) SetGroupPolicyObjectId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.groupPolicyObjectId = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time at which the GroupPolicyObjectFile was last modified.

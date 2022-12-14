@@ -38,7 +38,7 @@ type PrivilegedSignupStatusRequestBuilderGetQueryParameters struct {
 // PrivilegedSignupStatusRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedSignupStatusRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,17 +47,17 @@ type PrivilegedSignupStatusRequestBuilderGetRequestConfiguration struct {
 // PrivilegedSignupStatusRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedSignupStatusRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CanSignUp provides operations to call the canSignUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) CanSignUp()(*PrivilegedSignupStatusCanSignUpRequestBuilder) {
-    return NewPrivilegedSignupStatusCanSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) CanSignUp()(*CanSignUpRequestBuilder) {
+    return NewCanSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CompleteSetup provides operations to call the completeSetup method.
-func (m *PrivilegedSignupStatusRequestBuilder) CompleteSetup()(*PrivilegedSignupStatusCompleteSetupRequestBuilder) {
-    return NewPrivilegedSignupStatusCompleteSetupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) CompleteSetup()(*CompleteSetupRequestBuilder) {
+    return NewCompleteSetupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewPrivilegedSignupStatusRequestBuilderInternal instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedSignupStatusRequestBuilder) {
@@ -79,8 +79,8 @@ func NewPrivilegedSignupStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewPrivilegedSignupStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *PrivilegedSignupStatusRequestBuilder) Count()(*PrivilegedSignupStatusCountRequestBuilder) {
-    return NewPrivilegedSignupStatusCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedSignupStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -88,12 +88,12 @@ func (m *PrivilegedSignupStatusRequestBuilder) CreateGetRequestInformation(ctx c
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -104,10 +104,10 @@ func (m *PrivilegedSignupStatusRequestBuilder) CreatePostRequestInformation(ctx 
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -132,8 +132,8 @@ func (m *PrivilegedSignupStatusRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusCollectionResponseable), nil
 }
 // IsSignedUp provides operations to call the isSignedUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) IsSignedUp()(*PrivilegedSignupStatusIsSignedUpRequestBuilder) {
-    return NewPrivilegedSignupStatusIsSignedUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) IsSignedUp()(*IsSignedUpRequestBuilder) {
+    return NewIsSignedUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, requestConfiguration *PrivilegedSignupStatusRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable, error) {
@@ -155,6 +155,6 @@ func (m *PrivilegedSignupStatusRequestBuilder) Post(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedSignupStatusable), nil
 }
 // SignUp provides operations to call the signUp method.
-func (m *PrivilegedSignupStatusRequestBuilder) SignUp()(*PrivilegedSignupStatusSignUpRequestBuilder) {
-    return NewPrivilegedSignupStatusSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *PrivilegedSignupStatusRequestBuilder) SignUp()(*SignUpRequestBuilder) {
+    return NewSignUpRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

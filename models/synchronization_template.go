@@ -1,14 +1,15 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SynchronizationTemplate provides operations to manage the collection of application entities.
+// SynchronizationTemplate provides operations to call the instantiate method.
 type SynchronizationTemplate struct {
     Entity
     // Identifier of the application this template belongs to.
-    applicationId *string
+    applicationId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // true if this template is recommended to be the default for the application.
     default_escaped *bool
     // Description of the template.
@@ -34,7 +35,7 @@ func CreateSynchronizationTemplateFromDiscriminatorValue(parseNode i878a80d2330e
     return NewSynchronizationTemplate(), nil
 }
 // GetApplicationId gets the applicationId property value. Identifier of the application this template belongs to.
-func (m *SynchronizationTemplate) GetApplicationId()(*string) {
+func (m *SynchronizationTemplate) GetApplicationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.applicationId
 }
 // GetDefault gets the default property value. true if this template is recommended to be the default for the application.
@@ -57,7 +58,7 @@ func (m *SynchronizationTemplate) GetFactoryTag()(*string) {
 func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -147,7 +148,7 @@ func (m *SynchronizationTemplate) Serialize(writer i878a80d2330e89d26896388a3f48
         return err
     }
     {
-        err = writer.WriteStringValue("applicationId", m.GetApplicationId())
+        err = writer.WriteUUIDValue("applicationId", m.GetApplicationId())
         if err != nil {
             return err
         }
@@ -195,7 +196,7 @@ func (m *SynchronizationTemplate) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetApplicationId sets the applicationId property value. Identifier of the application this template belongs to.
-func (m *SynchronizationTemplate) SetApplicationId(value *string)() {
+func (m *SynchronizationTemplate) SetApplicationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.applicationId = value
 }
 // SetDefault sets the default property value. true if this template is recommended to be the default for the application.

@@ -26,7 +26,7 @@ type RoleManagementRequestBuilderGetQueryParameters struct {
 // RoleManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleManagementRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,13 +35,13 @@ type RoleManagementRequestBuilderGetRequestConfiguration struct {
 // RoleManagementRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleManagementRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CloudPC provides operations to manage the cloudPC property of the microsoft.graph.roleManagement entity.
-func (m *RoleManagementRequestBuilder) CloudPC()(*RoleManagementCloudPCRequestBuilder) {
-    return NewRoleManagementCloudPCRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RoleManagementRequestBuilder) CloudPC()(*CloudPCRequestBuilder) {
+    return NewCloudPCRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewRoleManagementRequestBuilderInternal instantiates a new RoleManagementRequestBuilder and sets the default values.
 func NewRoleManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementRequestBuilder) {
@@ -68,12 +68,12 @@ func (m *RoleManagementRequestBuilder) CreateGetRequestInformation(ctx context.C
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -84,25 +84,25 @@ func (m *RoleManagementRequestBuilder) CreatePatchRequestInformation(ctx context
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // DeviceManagement provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.
-func (m *RoleManagementRequestBuilder) DeviceManagement()(*RoleManagementDeviceManagementRequestBuilder) {
-    return NewRoleManagementDeviceManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RoleManagementRequestBuilder) DeviceManagement()(*DeviceManagementRequestBuilder) {
+    return NewDeviceManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Directory provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
-func (m *RoleManagementRequestBuilder) Directory()(*RoleManagementDirectoryRequestBuilder) {
-    return NewRoleManagementDirectoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RoleManagementRequestBuilder) Directory()(*DirectoryRequestBuilder) {
+    return NewDirectoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
-func (m *RoleManagementRequestBuilder) EntitlementManagement()(*RoleManagementEntitlementManagementRequestBuilder) {
-    return NewRoleManagementEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *RoleManagementRequestBuilder) EntitlementManagement()(*EntitlementManagementRequestBuilder) {
+    return NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get roleManagement
 func (m *RoleManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleManagementable, error) {

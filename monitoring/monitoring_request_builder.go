@@ -26,7 +26,7 @@ type MonitoringRequestBuilderGetQueryParameters struct {
 // MonitoringRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MonitoringRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type MonitoringRequestBuilderGetRequestConfiguration struct {
 // MonitoringRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MonitoringRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AlertRecords provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRecords()(*MonitoringAlertRecordsRequestBuilder) {
-    return NewMonitoringAlertRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MonitoringRequestBuilder) AlertRecords()(*AlertRecordsRequestBuilder) {
+    return NewAlertRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertRecordsById provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*MonitoringAlertRecordsAlertRecordItemRequestBuilder) {
+func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*AlertRecordsAlertRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,14 +52,14 @@ func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*MonitoringAlertR
     if id != "" {
         urlTplParams["alertRecord%2Did"] = id
     }
-    return NewMonitoringAlertRecordsAlertRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlertRecordsAlertRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AlertRules provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRules()(*MonitoringAlertRulesRequestBuilder) {
-    return NewMonitoringAlertRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *MonitoringRequestBuilder) AlertRules()(*AlertRulesRequestBuilder) {
+    return NewAlertRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertRulesById provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*MonitoringAlertRulesAlertRuleItemRequestBuilder) {
+func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*AlertRulesAlertRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*MonitoringAlertRul
     if id != "" {
         urlTplParams["alertRule%2Did"] = id
     }
-    return NewMonitoringAlertRulesAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlertRulesAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMonitoringRequestBuilderInternal instantiates a new MonitoringRequestBuilder and sets the default values.
 func NewMonitoringRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringRequestBuilder) {
@@ -94,12 +94,12 @@ func (m *MonitoringRequestBuilder) CreateGetRequestInformation(ctx context.Conte
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -110,10 +110,10 @@ func (m *MonitoringRequestBuilder) CreatePatchRequestInformation(ctx context.Con
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

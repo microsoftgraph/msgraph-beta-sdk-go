@@ -25,9 +25,9 @@ type OrganizationalBrandingProperties struct {
     customCannotAccessYourAccountText *string
     // A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.
     customCannotAccessYourAccountUrl *string
-    // The customCSS property
+    // CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
     customCSS []byte
-    // The customCSSRelativeUrl property
+    // A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     customCSSRelativeUrl *string
     // A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
     customForgotMyPasswordText *string
@@ -47,11 +47,11 @@ type OrganizationalBrandingProperties struct {
     faviconRelativeUrl *string
     // The RGB color to apply to customize the color of the header.
     headerBackgroundColor *string
-    // The headerLogo property
+    // A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
     headerLogo []byte
-    // The headerLogoRelativeUrl property
+    // A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
     headerLogoRelativeUrl *string
-    // The loginPageLayoutConfiguration property
+    // Represents the layout configuration to be displayed on the login page for a tenant.
     loginPageLayoutConfiguration LoginPageLayoutConfigurationable
     // Represents the various texts that can be hidden on the login page for a tenant.
     loginPageTextVisibilitySettings LoginPageTextVisibilitySettingsable
@@ -135,11 +135,11 @@ func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountText(
 func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountUrl()(*string) {
     return m.customCannotAccessYourAccountUrl
 }
-// GetCustomCSS gets the customCSS property value. The customCSS property
+// GetCustomCSS gets the customCSS property value. CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
 func (m *OrganizationalBrandingProperties) GetCustomCSS()([]byte) {
     return m.customCSS
 }
-// GetCustomCSSRelativeUrl gets the customCSSRelativeUrl property value. The customCSSRelativeUrl property
+// GetCustomCSSRelativeUrl gets the customCSSRelativeUrl property value. A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) GetCustomCSSRelativeUrl()(*string) {
     return m.customCSSRelativeUrl
 }
@@ -488,15 +488,15 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
 func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
     return m.headerBackgroundColor
 }
-// GetHeaderLogo gets the headerLogo property value. The headerLogo property
+// GetHeaderLogo gets the headerLogo property value. A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
 func (m *OrganizationalBrandingProperties) GetHeaderLogo()([]byte) {
     return m.headerLogo
 }
-// GetHeaderLogoRelativeUrl gets the headerLogoRelativeUrl property value. The headerLogoRelativeUrl property
+// GetHeaderLogoRelativeUrl gets the headerLogoRelativeUrl property value. A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) GetHeaderLogoRelativeUrl()(*string) {
     return m.headerLogoRelativeUrl
 }
-// GetLoginPageLayoutConfiguration gets the loginPageLayoutConfiguration property value. The loginPageLayoutConfiguration property
+// GetLoginPageLayoutConfiguration gets the loginPageLayoutConfiguration property value. Represents the layout configuration to be displayed on the login page for a tenant.
 func (m *OrganizationalBrandingProperties) GetLoginPageLayoutConfiguration()(LoginPageLayoutConfigurationable) {
     return m.loginPageLayoutConfiguration
 }
@@ -752,11 +752,11 @@ func (m *OrganizationalBrandingProperties) SetCustomCannotAccessYourAccountText(
 func (m *OrganizationalBrandingProperties) SetCustomCannotAccessYourAccountUrl(value *string)() {
     m.customCannotAccessYourAccountUrl = value
 }
-// SetCustomCSS sets the customCSS property value. The customCSS property
+// SetCustomCSS sets the customCSS property value. CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
 func (m *OrganizationalBrandingProperties) SetCustomCSS(value []byte)() {
     m.customCSS = value
 }
-// SetCustomCSSRelativeUrl sets the customCSSRelativeUrl property value. The customCSSRelativeUrl property
+// SetCustomCSSRelativeUrl sets the customCSSRelativeUrl property value. A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) SetCustomCSSRelativeUrl(value *string)() {
     m.customCSSRelativeUrl = value
 }
@@ -796,15 +796,15 @@ func (m *OrganizationalBrandingProperties) SetFaviconRelativeUrl(value *string)(
 func (m *OrganizationalBrandingProperties) SetHeaderBackgroundColor(value *string)() {
     m.headerBackgroundColor = value
 }
-// SetHeaderLogo sets the headerLogo property value. The headerLogo property
+// SetHeaderLogo sets the headerLogo property value. A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
 func (m *OrganizationalBrandingProperties) SetHeaderLogo(value []byte)() {
     m.headerLogo = value
 }
-// SetHeaderLogoRelativeUrl sets the headerLogoRelativeUrl property value. The headerLogoRelativeUrl property
+// SetHeaderLogoRelativeUrl sets the headerLogoRelativeUrl property value. A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) SetHeaderLogoRelativeUrl(value *string)() {
     m.headerLogoRelativeUrl = value
 }
-// SetLoginPageLayoutConfiguration sets the loginPageLayoutConfiguration property value. The loginPageLayoutConfiguration property
+// SetLoginPageLayoutConfiguration sets the loginPageLayoutConfiguration property value. Represents the layout configuration to be displayed on the login page for a tenant.
 func (m *OrganizationalBrandingProperties) SetLoginPageLayoutConfiguration(value LoginPageLayoutConfigurationable)() {
     m.loginPageLayoutConfiguration = value
 }

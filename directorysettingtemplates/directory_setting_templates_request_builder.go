@@ -38,7 +38,7 @@ type DirectorySettingTemplatesRequestBuilderGetQueryParameters struct {
 // DirectorySettingTemplatesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectorySettingTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type DirectorySettingTemplatesRequestBuilderGetRequestConfiguration struct {
 // DirectorySettingTemplatesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectorySettingTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewDirectorySettingTemplatesRequestBuilder(rawUrl string, requestAdapter i2
     return NewDirectorySettingTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *DirectorySettingTemplatesRequestBuilder) Count()(*DirectorySettingTemplatesCountRequestBuilder) {
-    return NewDirectorySettingTemplatesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectorySettingTemplatesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
 func (m *DirectorySettingTemplatesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DirectorySettingTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -80,12 +80,12 @@ func (m *DirectorySettingTemplatesRequestBuilder) CreateGetRequestInformation(ct
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -96,15 +96,18 @@ func (m *DirectorySettingTemplatesRequestBuilder) CreatePostRequestInformation(c
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-1.0
 func (m *DirectorySettingTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectorySettingTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,12 +127,12 @@ func (m *DirectorySettingTemplatesRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-func (m *DirectorySettingTemplatesRequestBuilder) GetByIds()(*DirectorySettingTemplatesGetByIdsRequestBuilder) {
-    return NewDirectorySettingTemplatesGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectorySettingTemplatesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-func (m *DirectorySettingTemplatesRequestBuilder) GetUserOwnedObjects()(*DirectorySettingTemplatesGetUserOwnedObjectsRequestBuilder) {
-    return NewDirectorySettingTemplatesGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectorySettingTemplatesRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
+    return NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to directorySettingTemplates
 func (m *DirectorySettingTemplatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
@@ -151,6 +154,6 @@ func (m *DirectorySettingTemplatesRequestBuilder) Post(ctx context.Context, body
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable), nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-func (m *DirectorySettingTemplatesRequestBuilder) ValidateProperties()(*DirectorySettingTemplatesValidatePropertiesRequestBuilder) {
-    return NewDirectorySettingTemplatesValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *DirectorySettingTemplatesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

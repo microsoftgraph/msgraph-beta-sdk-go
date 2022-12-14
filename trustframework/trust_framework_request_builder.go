@@ -26,7 +26,7 @@ type TrustFrameworkRequestBuilderGetQueryParameters struct {
 // TrustFrameworkRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TrustFrameworkRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,7 +35,7 @@ type TrustFrameworkRequestBuilderGetRequestConfiguration struct {
 // TrustFrameworkRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TrustFrameworkRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -64,12 +64,12 @@ func (m *TrustFrameworkRequestBuilder) CreateGetRequestInformation(ctx context.C
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -80,10 +80,10 @@ func (m *TrustFrameworkRequestBuilder) CreatePatchRequestInformation(ctx context
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -108,11 +108,11 @@ func (m *TrustFrameworkRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable), nil
 }
 // KeySets provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
-func (m *TrustFrameworkRequestBuilder) KeySets()(*TrustFrameworkKeySetsRequestBuilder) {
-    return NewTrustFrameworkKeySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TrustFrameworkRequestBuilder) KeySets()(*KeySetsRequestBuilder) {
+    return NewKeySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // KeySetsById provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
-func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*TrustFrameworkKeySetsTrustFrameworkKeySetItemRequestBuilder) {
+func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*KeySetsTrustFrameworkKeySetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +120,7 @@ func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*TrustFrameworkKey
     if id != "" {
         urlTplParams["trustFrameworkKeySet%2Did"] = id
     }
-    return NewTrustFrameworkKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update trustFramework
 func (m *TrustFrameworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable, requestConfiguration *TrustFrameworkRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable, error) {
@@ -142,11 +142,11 @@ func (m *TrustFrameworkRequestBuilder) Patch(ctx context.Context, body ie233ee76
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable), nil
 }
 // Policies provides operations to manage the policies property of the microsoft.graph.trustFramework entity.
-func (m *TrustFrameworkRequestBuilder) Policies()(*TrustFrameworkPoliciesRequestBuilder) {
-    return NewTrustFrameworkPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TrustFrameworkRequestBuilder) Policies()(*PoliciesRequestBuilder) {
+    return NewPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PoliciesById provides operations to manage the policies property of the microsoft.graph.trustFramework entity.
-func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*TrustFrameworkPoliciesTrustFrameworkPolicyItemRequestBuilder) {
+func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*PoliciesTrustFrameworkPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,5 +154,5 @@ func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*TrustFrameworkPo
     if id != "" {
         urlTplParams["trustFrameworkPolicy%2Did"] = id
     }
-    return NewTrustFrameworkPoliciesTrustFrameworkPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPoliciesTrustFrameworkPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -1,16 +1,17 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PurchaseInvoiceLine provides operations to manage the collection of agreement entities.
+// PurchaseInvoiceLine provides operations to manage the collection of activityStatistics entities.
 type PurchaseInvoiceLine struct {
     Entity
     // The account property
     account Accountable
     // The accountId property
-    accountId *string
+    accountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The amountExcludingTax property
     amountExcludingTax *float64
     // The amountIncludingTax property
@@ -24,7 +25,7 @@ type PurchaseInvoiceLine struct {
     // The discountPercent property
     discountPercent *float64
     // The documentId property
-    documentId *string
+    documentId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The expectedReceiptDate property
     expectedReceiptDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The invoiceDiscountAllocation property
@@ -32,7 +33,7 @@ type PurchaseInvoiceLine struct {
     // The item property
     item Itemable
     // The itemId property
-    itemId *string
+    itemId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The lineType property
     lineType *string
     // The netAmount property
@@ -70,7 +71,7 @@ func (m *PurchaseInvoiceLine) GetAccount()(Accountable) {
     return m.account
 }
 // GetAccountId gets the accountId property value. The accountId property
-func (m *PurchaseInvoiceLine) GetAccountId()(*string) {
+func (m *PurchaseInvoiceLine) GetAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.accountId
 }
 // GetAmountExcludingTax gets the amountExcludingTax property value. The amountExcludingTax property
@@ -98,7 +99,7 @@ func (m *PurchaseInvoiceLine) GetDiscountPercent()(*float64) {
     return m.discountPercent
 }
 // GetDocumentId gets the documentId property value. The documentId property
-func (m *PurchaseInvoiceLine) GetDocumentId()(*string) {
+func (m *PurchaseInvoiceLine) GetDocumentId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.documentId
 }
 // GetExpectedReceiptDate gets the expectedReceiptDate property value. The expectedReceiptDate property
@@ -119,7 +120,7 @@ func (m *PurchaseInvoiceLine) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["accountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -189,7 +190,7 @@ func (m *PurchaseInvoiceLine) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["documentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -229,7 +230,7 @@ func (m *PurchaseInvoiceLine) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["itemId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -349,7 +350,7 @@ func (m *PurchaseInvoiceLine) GetItem()(Itemable) {
     return m.item
 }
 // GetItemId gets the itemId property value. The itemId property
-func (m *PurchaseInvoiceLine) GetItemId()(*string) {
+func (m *PurchaseInvoiceLine) GetItemId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.itemId
 }
 // GetLineType gets the lineType property value. The lineType property
@@ -405,7 +406,7 @@ func (m *PurchaseInvoiceLine) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("accountId", m.GetAccountId())
+        err = writer.WriteUUIDValue("accountId", m.GetAccountId())
         if err != nil {
             return err
         }
@@ -447,7 +448,7 @@ func (m *PurchaseInvoiceLine) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("documentId", m.GetDocumentId())
+        err = writer.WriteUUIDValue("documentId", m.GetDocumentId())
         if err != nil {
             return err
         }
@@ -471,7 +472,7 @@ func (m *PurchaseInvoiceLine) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("itemId", m.GetItemId())
+        err = writer.WriteUUIDValue("itemId", m.GetItemId())
         if err != nil {
             return err
         }
@@ -543,7 +544,7 @@ func (m *PurchaseInvoiceLine) SetAccount(value Accountable)() {
     m.account = value
 }
 // SetAccountId sets the accountId property value. The accountId property
-func (m *PurchaseInvoiceLine) SetAccountId(value *string)() {
+func (m *PurchaseInvoiceLine) SetAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.accountId = value
 }
 // SetAmountExcludingTax sets the amountExcludingTax property value. The amountExcludingTax property
@@ -571,7 +572,7 @@ func (m *PurchaseInvoiceLine) SetDiscountPercent(value *float64)() {
     m.discountPercent = value
 }
 // SetDocumentId sets the documentId property value. The documentId property
-func (m *PurchaseInvoiceLine) SetDocumentId(value *string)() {
+func (m *PurchaseInvoiceLine) SetDocumentId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.documentId = value
 }
 // SetExpectedReceiptDate sets the expectedReceiptDate property value. The expectedReceiptDate property
@@ -587,7 +588,7 @@ func (m *PurchaseInvoiceLine) SetItem(value Itemable)() {
     m.item = value
 }
 // SetItemId sets the itemId property value. The itemId property
-func (m *PurchaseInvoiceLine) SetItemId(value *string)() {
+func (m *PurchaseInvoiceLine) SetItemId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.itemId = value
 }
 // SetLineType sets the lineType property value. The lineType property

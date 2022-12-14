@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -21,7 +22,7 @@ type GroupPolicyDefinition struct {
     // The localized explanation or help text associated with the policy. The default value is empty.
     explainText *string
     // The category id of the parent category
-    groupPolicyCategoryId *string
+    groupPolicyCategoryId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // Signifies whether or not there are related definitions to this definition
     hasRelatedDefinitions *bool
     // The date and time the entity was last modified.
@@ -142,7 +143,7 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["groupPolicyCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -258,7 +259,7 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetGroupPolicyCategoryId gets the groupPolicyCategoryId property value. The category id of the parent category
-func (m *GroupPolicyDefinition) GetGroupPolicyCategoryId()(*string) {
+func (m *GroupPolicyDefinition) GetGroupPolicyCategoryId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.groupPolicyCategoryId
 }
 // GetHasRelatedDefinitions gets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition
@@ -345,7 +346,7 @@ func (m *GroupPolicyDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err = writer.WriteStringValue("groupPolicyCategoryId", m.GetGroupPolicyCategoryId())
+        err = writer.WriteUUIDValue("groupPolicyCategoryId", m.GetGroupPolicyCategoryId())
         if err != nil {
             return err
         }
@@ -442,7 +443,7 @@ func (m *GroupPolicyDefinition) SetExplainText(value *string)() {
     m.explainText = value
 }
 // SetGroupPolicyCategoryId sets the groupPolicyCategoryId property value. The category id of the parent category
-func (m *GroupPolicyDefinition) SetGroupPolicyCategoryId(value *string)() {
+func (m *GroupPolicyDefinition) SetGroupPolicyCategoryId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.groupPolicyCategoryId = value
 }
 // SetHasRelatedDefinitions sets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition

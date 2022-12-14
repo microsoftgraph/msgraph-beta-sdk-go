@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -11,7 +12,7 @@ type CustomerPayment struct {
     // The amount property
     amount *float64
     // The appliesToInvoiceId property
-    appliesToInvoiceId *string
+    appliesToInvoiceId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The appliesToInvoiceNumber property
     appliesToInvoiceNumber *string
     // The comment property
@@ -21,7 +22,7 @@ type CustomerPayment struct {
     // The customer property
     customer Customerable
     // The customerId property
-    customerId *string
+    customerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The customerNumber property
     customerNumber *string
     // The description property
@@ -55,7 +56,7 @@ func (m *CustomerPayment) GetAmount()(*float64) {
     return m.amount
 }
 // GetAppliesToInvoiceId gets the appliesToInvoiceId property value. The appliesToInvoiceId property
-func (m *CustomerPayment) GetAppliesToInvoiceId()(*string) {
+func (m *CustomerPayment) GetAppliesToInvoiceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.appliesToInvoiceId
 }
 // GetAppliesToInvoiceNumber gets the appliesToInvoiceNumber property value. The appliesToInvoiceNumber property
@@ -75,7 +76,7 @@ func (m *CustomerPayment) GetCustomer()(Customerable) {
     return m.customer
 }
 // GetCustomerId gets the customerId property value. The customerId property
-func (m *CustomerPayment) GetCustomerId()(*string) {
+func (m *CustomerPayment) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.customerId
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
@@ -108,7 +109,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["appliesToInvoiceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -158,7 +159,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["customerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -278,7 +279,7 @@ func (m *CustomerPayment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("appliesToInvoiceId", m.GetAppliesToInvoiceId())
+        err = writer.WriteUUIDValue("appliesToInvoiceId", m.GetAppliesToInvoiceId())
         if err != nil {
             return err
         }
@@ -308,7 +309,7 @@ func (m *CustomerPayment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("customerId", m.GetCustomerId())
+        err = writer.WriteUUIDValue("customerId", m.GetCustomerId())
         if err != nil {
             return err
         }
@@ -368,7 +369,7 @@ func (m *CustomerPayment) SetAmount(value *float64)() {
     m.amount = value
 }
 // SetAppliesToInvoiceId sets the appliesToInvoiceId property value. The appliesToInvoiceId property
-func (m *CustomerPayment) SetAppliesToInvoiceId(value *string)() {
+func (m *CustomerPayment) SetAppliesToInvoiceId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.appliesToInvoiceId = value
 }
 // SetAppliesToInvoiceNumber sets the appliesToInvoiceNumber property value. The appliesToInvoiceNumber property
@@ -388,7 +389,7 @@ func (m *CustomerPayment) SetCustomer(value Customerable)() {
     m.customer = value
 }
 // SetCustomerId sets the customerId property value. The customerId property
-func (m *CustomerPayment) SetCustomerId(value *string)() {
+func (m *CustomerPayment) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.customerId = value
 }
 // SetCustomerNumber sets the customerNumber property value. The customerNumber property

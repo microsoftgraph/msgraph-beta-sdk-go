@@ -2,10 +2,11 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PurchaseInvoice provides operations to manage the collection of agreement entities.
+// PurchaseInvoice provides operations to manage the collection of activityStatistics entities.
 type PurchaseInvoice struct {
     Entity
     // The buyFromAddress property
@@ -15,7 +16,7 @@ type PurchaseInvoice struct {
     // The currencyCode property
     currencyCode *string
     // The currencyId property
-    currencyId *string
+    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The discountAmount property
     discountAmount *float64
     // The discountAppliedBeforeTax property
@@ -35,7 +36,7 @@ type PurchaseInvoice struct {
     // The payToName property
     payToName *string
     // The payToVendorId property
-    payToVendorId *string
+    payToVendorId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The payToVendorNumber property
     payToVendorNumber *string
     // The pricesIncludeTax property
@@ -59,7 +60,7 @@ type PurchaseInvoice struct {
     // The vendor property
     vendor_escaped Vendor_escapedable
     // The vendorId property
-    vendorId *string
+    vendorId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The vendorInvoiceNumber property
     vendorInvoiceNumber *string
     // The vendorName property
@@ -91,7 +92,7 @@ func (m *PurchaseInvoice) GetCurrencyCode()(*string) {
     return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *PurchaseInvoice) GetCurrencyId()(*string) {
+func (m *PurchaseInvoice) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.currencyId
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
@@ -140,7 +141,7 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["currencyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -240,7 +241,7 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["payToVendorId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -364,7 +365,7 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["vendorId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -430,7 +431,7 @@ func (m *PurchaseInvoice) GetPayToName()(*string) {
     return m.payToName
 }
 // GetPayToVendorId gets the payToVendorId property value. The payToVendorId property
-func (m *PurchaseInvoice) GetPayToVendorId()(*string) {
+func (m *PurchaseInvoice) GetPayToVendorId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.payToVendorId
 }
 // GetPayToVendorNumber gets the payToVendorNumber property value. The payToVendorNumber property
@@ -478,7 +479,7 @@ func (m *PurchaseInvoice) GetVendor()(Vendor_escapedable) {
     return m.vendor_escaped
 }
 // GetVendorId gets the vendorId property value. The vendorId property
-func (m *PurchaseInvoice) GetVendorId()(*string) {
+func (m *PurchaseInvoice) GetVendorId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.vendorId
 }
 // GetVendorInvoiceNumber gets the vendorInvoiceNumber property value. The vendorInvoiceNumber property
@@ -518,7 +519,7 @@ func (m *PurchaseInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("currencyId", m.GetCurrencyId())
+        err = writer.WriteUUIDValue("currencyId", m.GetCurrencyId())
         if err != nil {
             return err
         }
@@ -578,7 +579,7 @@ func (m *PurchaseInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("payToVendorId", m.GetPayToVendorId())
+        err = writer.WriteUUIDValue("payToVendorId", m.GetPayToVendorId())
         if err != nil {
             return err
         }
@@ -648,7 +649,7 @@ func (m *PurchaseInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err = writer.WriteStringValue("vendorId", m.GetVendorId())
+        err = writer.WriteUUIDValue("vendorId", m.GetVendorId())
         if err != nil {
             return err
         }
@@ -692,7 +693,7 @@ func (m *PurchaseInvoice) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *PurchaseInvoice) SetCurrencyId(value *string)() {
+func (m *PurchaseInvoice) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.currencyId = value
 }
 // SetDiscountAmount sets the discountAmount property value. The discountAmount property
@@ -732,7 +733,7 @@ func (m *PurchaseInvoice) SetPayToName(value *string)() {
     m.payToName = value
 }
 // SetPayToVendorId sets the payToVendorId property value. The payToVendorId property
-func (m *PurchaseInvoice) SetPayToVendorId(value *string)() {
+func (m *PurchaseInvoice) SetPayToVendorId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.payToVendorId = value
 }
 // SetPayToVendorNumber sets the payToVendorNumber property value. The payToVendorNumber property
@@ -780,7 +781,7 @@ func (m *PurchaseInvoice) SetVendor(value Vendor_escapedable)() {
     m.vendor_escaped = value
 }
 // SetVendorId sets the vendorId property value. The vendorId property
-func (m *PurchaseInvoice) SetVendorId(value *string)() {
+func (m *PurchaseInvoice) SetVendorId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.vendorId = value
 }
 // SetVendorInvoiceNumber sets the vendorInvoiceNumber property value. The vendorInvoiceNumber property

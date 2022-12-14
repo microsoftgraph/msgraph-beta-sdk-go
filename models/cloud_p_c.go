@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC provides operations to manage the collection of accessReviewDecision entities.
+// CloudPC 
 type CloudPC struct {
     Entity
     // The Azure Active Directory (Azure AD) device ID of the Cloud PC.
@@ -34,7 +34,7 @@ type CloudPC struct {
     onPremisesConnectionName *string
     // The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
     osVersion *CloudPcOperatingSystem
-    // The partnerAgentInstallResults property
+    // The results of every partner agent's installation status on Cloud PC.
     partnerAgentInstallResults []CloudPcPartnerAgentInstallResultable
     // The provisioning policy ID of the Cloud PC.
     provisioningPolicyId *string
@@ -57,7 +57,7 @@ type CloudPC struct {
     // The user principal name (UPN) of the user assigned to the Cloud PC.
     userPrincipalName *string
 }
-// NewCloudPC instantiates a new cloudPC and sets the default values.
+// NewCloudPC instantiates a new CloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
@@ -369,7 +369,7 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
 func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     return m.osVersion
 }
-// GetPartnerAgentInstallResults gets the partnerAgentInstallResults property value. The partnerAgentInstallResults property
+// GetPartnerAgentInstallResults gets the partnerAgentInstallResults property value. The results of every partner agent's installation status on Cloud PC.
 func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable) {
     return m.partnerAgentInstallResults
 }
@@ -627,7 +627,7 @@ func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
 func (m *CloudPC) SetOsVersion(value *CloudPcOperatingSystem)() {
     m.osVersion = value
 }
-// SetPartnerAgentInstallResults sets the partnerAgentInstallResults property value. The partnerAgentInstallResults property
+// SetPartnerAgentInstallResults sets the partnerAgentInstallResults property value. The results of every partner agent's installation status on Cloud PC.
 func (m *CloudPC) SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)() {
     m.partnerAgentInstallResults = value
 }

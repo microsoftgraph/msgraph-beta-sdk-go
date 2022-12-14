@@ -1,22 +1,23 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Contract provides operations to manage the collection of contract entities.
+// Contract 
 type Contract struct {
     DirectoryObject
     // The contractType property
     contractType *string
     // The customerId property
-    customerId *string
+    customerId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The defaultDomainName property
     defaultDomainName *string
     // The displayName property
     displayName *string
 }
-// NewContract instantiates a new contract and sets the default values.
+// NewContract instantiates a new Contract and sets the default values.
 func NewContract()(*Contract) {
     m := &Contract{
         DirectoryObject: *NewDirectoryObject(),
@@ -34,7 +35,7 @@ func (m *Contract) GetContractType()(*string) {
     return m.contractType
 }
 // GetCustomerId gets the customerId property value. The customerId property
-func (m *Contract) GetCustomerId()(*string) {
+func (m *Contract) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.customerId
 }
 // GetDefaultDomainName gets the defaultDomainName property value. The defaultDomainName property
@@ -59,7 +60,7 @@ func (m *Contract) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["customerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -103,7 +104,7 @@ func (m *Contract) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err = writer.WriteStringValue("customerId", m.GetCustomerId())
+        err = writer.WriteUUIDValue("customerId", m.GetCustomerId())
         if err != nil {
             return err
         }
@@ -127,7 +128,7 @@ func (m *Contract) SetContractType(value *string)() {
     m.contractType = value
 }
 // SetCustomerId sets the customerId property value. The customerId property
-func (m *Contract) SetCustomerId(value *string)() {
+func (m *Contract) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.customerId = value
 }
 // SetDefaultDomainName sets the defaultDomainName property value. The defaultDomainName property

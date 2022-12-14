@@ -6,15 +6,15 @@ import (
 
 // OnPremisesDirectorySynchronizationConfiguration 
 type OnPremisesDirectorySynchronizationConfiguration struct {
-    // The accidentalDeletionPrevention property
+    // Contains the accidental deletion prevention configuration for a tenant.
     accidentalDeletionPrevention OnPremisesAccidentalDeletionPreventionable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The customerRequestedSynchronizationInterval property
+    // Interval of time that the customer requested the sync client waits between sync cycles.
     customerRequestedSynchronizationInterval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The OdataType property
     odataType *string
-    // The synchronizationInterval property
+    // Interval of time the sync client should honor between sync cycles
     synchronizationInterval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewOnPremisesDirectorySynchronizationConfiguration instantiates a new onPremisesDirectorySynchronizationConfiguration and sets the default values.
@@ -28,7 +28,7 @@ func NewOnPremisesDirectorySynchronizationConfiguration()(*OnPremisesDirectorySy
 func CreateOnPremisesDirectorySynchronizationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesDirectorySynchronizationConfiguration(), nil
 }
-// GetAccidentalDeletionPrevention gets the accidentalDeletionPrevention property value. The accidentalDeletionPrevention property
+// GetAccidentalDeletionPrevention gets the accidentalDeletionPrevention property value. Contains the accidental deletion prevention configuration for a tenant.
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetAccidentalDeletionPrevention()(OnPremisesAccidentalDeletionPreventionable) {
     return m.accidentalDeletionPrevention
 }
@@ -36,7 +36,7 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) GetAccidentalDeletionP
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetCustomerRequestedSynchronizationInterval gets the customerRequestedSynchronizationInterval property value. The customerRequestedSynchronizationInterval property
+// GetCustomerRequestedSynchronizationInterval gets the customerRequestedSynchronizationInterval property value. Interval of time that the customer requested the sync client waits between sync cycles.
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetCustomerRequestedSynchronizationInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.customerRequestedSynchronizationInterval
 }
@@ -89,7 +89,7 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) GetFieldDeserializers(
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetOdataType()(*string) {
     return m.odataType
 }
-// GetSynchronizationInterval gets the synchronizationInterval property value. The synchronizationInterval property
+// GetSynchronizationInterval gets the synchronizationInterval property value. Interval of time the sync client should honor between sync cycles
 func (m *OnPremisesDirectorySynchronizationConfiguration) GetSynchronizationInterval()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     return m.synchronizationInterval
 }
@@ -127,7 +127,7 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) Serialize(writer i878a
     }
     return nil
 }
-// SetAccidentalDeletionPrevention sets the accidentalDeletionPrevention property value. The accidentalDeletionPrevention property
+// SetAccidentalDeletionPrevention sets the accidentalDeletionPrevention property value. Contains the accidental deletion prevention configuration for a tenant.
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetAccidentalDeletionPrevention(value OnPremisesAccidentalDeletionPreventionable)() {
     m.accidentalDeletionPrevention = value
 }
@@ -135,7 +135,7 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) SetAccidentalDeletionP
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetCustomerRequestedSynchronizationInterval sets the customerRequestedSynchronizationInterval property value. The customerRequestedSynchronizationInterval property
+// SetCustomerRequestedSynchronizationInterval sets the customerRequestedSynchronizationInterval property value. Interval of time that the customer requested the sync client waits between sync cycles.
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetCustomerRequestedSynchronizationInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.customerRequestedSynchronizationInterval = value
 }
@@ -143,7 +143,7 @@ func (m *OnPremisesDirectorySynchronizationConfiguration) SetCustomerRequestedSy
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetSynchronizationInterval sets the synchronizationInterval property value. The synchronizationInterval property
+// SetSynchronizationInterval sets the synchronizationInterval property value. Interval of time the sync client should honor between sync cycles
 func (m *OnPremisesDirectorySynchronizationConfiguration) SetSynchronizationInterval(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     m.synchronizationInterval = value
 }

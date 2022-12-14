@@ -2,10 +2,11 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Vendor_escaped provides operations to manage the collection of agreement entities.
+// Vendor_escaped 
 type Vendor_escaped struct {
     Entity
     // The address property
@@ -19,7 +20,7 @@ type Vendor_escaped struct {
     // The currencyCode property
     currencyCode *string
     // The currencyId property
-    currencyId *string
+    currencyId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The displayName property
     displayName *string
     // The email property
@@ -31,11 +32,11 @@ type Vendor_escaped struct {
     // The paymentMethod property
     paymentMethod PaymentMethodable
     // The paymentMethodId property
-    paymentMethodId *string
+    paymentMethodId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The paymentTerm property
     paymentTerm PaymentTermable
     // The paymentTermsId property
-    paymentTermsId *string
+    paymentTermsId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The phoneNumber property
     phoneNumber *string
     // The picture property
@@ -79,7 +80,7 @@ func (m *Vendor_escaped) GetCurrencyCode()(*string) {
     return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
-func (m *Vendor_escaped) GetCurrencyId()(*string) {
+func (m *Vendor_escaped) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.currencyId
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -144,7 +145,7 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["currencyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -204,7 +205,7 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["paymentMethodId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -224,7 +225,7 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["paymentTermsId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -302,7 +303,7 @@ func (m *Vendor_escaped) GetPaymentMethod()(PaymentMethodable) {
     return m.paymentMethod
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
-func (m *Vendor_escaped) GetPaymentMethodId()(*string) {
+func (m *Vendor_escaped) GetPaymentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentMethodId
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
@@ -310,7 +311,7 @@ func (m *Vendor_escaped) GetPaymentTerm()(PaymentTermable) {
     return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
-func (m *Vendor_escaped) GetPaymentTermsId()(*string) {
+func (m *Vendor_escaped) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
@@ -370,7 +371,7 @@ func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("currencyId", m.GetCurrencyId())
+        err = writer.WriteUUIDValue("currencyId", m.GetCurrencyId())
         if err != nil {
             return err
         }
@@ -406,7 +407,7 @@ func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("paymentMethodId", m.GetPaymentMethodId())
+        err = writer.WriteUUIDValue("paymentMethodId", m.GetPaymentMethodId())
         if err != nil {
             return err
         }
@@ -418,7 +419,7 @@ func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("paymentTermsId", m.GetPaymentTermsId())
+        err = writer.WriteUUIDValue("paymentTermsId", m.GetPaymentTermsId())
         if err != nil {
             return err
         }
@@ -480,7 +481,7 @@ func (m *Vendor_escaped) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
-func (m *Vendor_escaped) SetCurrencyId(value *string)() {
+func (m *Vendor_escaped) SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.currencyId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
@@ -504,7 +505,7 @@ func (m *Vendor_escaped) SetPaymentMethod(value PaymentMethodable)() {
     m.paymentMethod = value
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
-func (m *Vendor_escaped) SetPaymentMethodId(value *string)() {
+func (m *Vendor_escaped) SetPaymentMethodId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentMethodId = value
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
@@ -512,7 +513,7 @@ func (m *Vendor_escaped) SetPaymentTerm(value PaymentTermable)() {
     m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
-func (m *Vendor_escaped) SetPaymentTermsId(value *string)() {
+func (m *Vendor_escaped) SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property

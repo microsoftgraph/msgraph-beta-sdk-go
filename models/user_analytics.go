@@ -12,7 +12,7 @@ type UserAnalytics struct {
     // The current settings for a user to use the analytics API.
     settings Settingsable
 }
-// NewUserAnalytics instantiates a new userAnalytics and sets the default values.
+// NewUserAnalytics instantiates a new UserAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
     m := &UserAnalytics{
         Entity: *NewEntity(),

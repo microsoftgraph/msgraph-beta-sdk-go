@@ -26,7 +26,7 @@ type FinancialsRequestBuilderGetQueryParameters struct {
 // FinancialsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FinancialsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type FinancialsRequestBuilderGetRequestConfiguration struct {
 // FinancialsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FinancialsRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Companies provides operations to manage the companies property of the microsoft.graph.financials entity.
-func (m *FinancialsRequestBuilder) Companies()(*FinancialsCompaniesRequestBuilder) {
-    return NewFinancialsCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *FinancialsRequestBuilder) Companies()(*CompaniesRequestBuilder) {
+    return NewCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CompaniesById provides operations to manage the companies property of the microsoft.graph.financials entity.
-func (m *FinancialsRequestBuilder) CompaniesById(id string)(*FinancialsCompaniesCompanyItemRequestBuilder) {
+func (m *FinancialsRequestBuilder) CompaniesById(id string)(*CompaniesCompanyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *FinancialsRequestBuilder) CompaniesById(id string)(*FinancialsCompanies
     if id != "" {
         urlTplParams["company%2Did"] = id
     }
-    return NewFinancialsCompaniesCompanyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCompaniesCompanyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewFinancialsRequestBuilderInternal instantiates a new FinancialsRequestBuilder and sets the default values.
 func NewFinancialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FinancialsRequestBuilder) {
@@ -79,12 +79,12 @@ func (m *FinancialsRequestBuilder) CreateGetRequestInformation(ctx context.Conte
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -95,10 +95,10 @@ func (m *FinancialsRequestBuilder) CreatePatchRequestInformation(ctx context.Con
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

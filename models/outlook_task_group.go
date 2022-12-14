@@ -1,16 +1,17 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookTaskGroup provides operations to manage the collection of accessReviewDecision entities.
+// OutlookTaskGroup provides operations to manage the collection of activityStatistics entities.
 type OutlookTaskGroup struct {
     Entity
     // The version of the task group.
     changeKey *string
     // The unique GUID identifier for the task group.
-    groupKey *string
+    groupKey *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // True if the task group is the default task group.
     isDefaultGroup *bool
     // The name of the task group.
@@ -47,7 +48,7 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["groupKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -93,7 +94,7 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetGroupKey gets the groupKey property value. The unique GUID identifier for the task group.
-func (m *OutlookTaskGroup) GetGroupKey()(*string) {
+func (m *OutlookTaskGroup) GetGroupKey()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.groupKey
 }
 // GetIsDefaultGroup gets the isDefaultGroup property value. True if the task group is the default task group.
@@ -121,7 +122,7 @@ func (m *OutlookTaskGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err = writer.WriteStringValue("groupKey", m.GetGroupKey())
+        err = writer.WriteUUIDValue("groupKey", m.GetGroupKey())
         if err != nil {
             return err
         }
@@ -155,7 +156,7 @@ func (m *OutlookTaskGroup) SetChangeKey(value *string)() {
     m.changeKey = value
 }
 // SetGroupKey sets the groupKey property value. The unique GUID identifier for the task group.
-func (m *OutlookTaskGroup) SetGroupKey(value *string)() {
+func (m *OutlookTaskGroup) SetGroupKey(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.groupKey = value
 }
 // SetIsDefaultGroup sets the isDefaultGroup property value. True if the task group is the default task group.

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -14,7 +15,7 @@ type ApplyLabelAction struct {
     // Object that describes the details of the label to apply.
     label LabelDetailsable
     // If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
-    responsibleSensitiveTypeIds []string
+    responsibleSensitiveTypeIds []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
 }
 // NewApplyLabelAction instantiates a new ApplyLabelAction and sets the default values.
 func NewApplyLabelAction()(*ApplyLabelAction) {
@@ -75,14 +76,14 @@ func (m *ApplyLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["responsibleSensitiveTypeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfPrimitiveValues("i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
             for i, v := range val {
-                res[i] = *(v.(*string))
+                res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
             }
             m.SetResponsibleSensitiveTypeIds(res)
         }
@@ -95,7 +96,7 @@ func (m *ApplyLabelAction) GetLabel()(LabelDetailsable) {
     return m.label
 }
 // GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
-func (m *ApplyLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
+func (m *ApplyLabelAction) GetResponsibleSensitiveTypeIds()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.responsibleSensitiveTypeIds
 }
 // Serialize serializes information the current object
@@ -128,7 +129,7 @@ func (m *ApplyLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     if m.GetResponsibleSensitiveTypeIds() != nil {
-        err = writer.WriteCollectionOfStringValues("responsibleSensitiveTypeIds", m.GetResponsibleSensitiveTypeIds())
+        err = writer.WriteCollectionOfUUIDValues("responsibleSensitiveTypeIds", m.GetResponsibleSensitiveTypeIds())
         if err != nil {
             return err
         }
@@ -148,6 +149,6 @@ func (m *ApplyLabelAction) SetLabel(value LabelDetailsable)() {
     m.label = value
 }
 // SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
-func (m *ApplyLabelAction) SetResponsibleSensitiveTypeIds(value []string)() {
+func (m *ApplyLabelAction) SetResponsibleSensitiveTypeIds(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.responsibleSensitiveTypeIds = value
 }

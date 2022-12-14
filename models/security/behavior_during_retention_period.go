@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of application entities.
 type BehaviorDuringRetentionPeriod int
 
 const (

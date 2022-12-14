@@ -26,7 +26,7 @@ type SolutionsRequestBuilderGetQueryParameters struct {
 // SolutionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SolutionsRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type SolutionsRequestBuilderGetRequestConfiguration struct {
 // SolutionsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SolutionsRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BusinessScenarios provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BusinessScenarios()(*SolutionsBusinessScenariosRequestBuilder) {
-    return NewSolutionsBusinessScenariosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *SolutionsRequestBuilder) BusinessScenarios()(*BusinessScenariosRequestBuilder) {
+    return NewBusinessScenariosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BusinessScenariosById provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-func (m *SolutionsRequestBuilder) BusinessScenariosById(id string)(*SolutionsBusinessScenariosBusinessScenarioItemRequestBuilder) {
+func (m *SolutionsRequestBuilder) BusinessScenariosById(id string)(*BusinessScenariosBusinessScenarioItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,7 +52,7 @@ func (m *SolutionsRequestBuilder) BusinessScenariosById(id string)(*SolutionsBus
     if id != "" {
         urlTplParams["businessScenario%2Did"] = id
     }
-    return NewSolutionsBusinessScenariosBusinessScenarioItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBusinessScenariosBusinessScenarioItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {
@@ -79,12 +79,12 @@ func (m *SolutionsRequestBuilder) CreateGetRequestInformation(ctx context.Contex
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -95,10 +95,10 @@ func (m *SolutionsRequestBuilder) CreatePatchRequestInformation(ctx context.Cont
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil

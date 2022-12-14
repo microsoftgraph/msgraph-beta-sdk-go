@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -10,14 +11,14 @@ type SalesOrderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBillingPostalAddress()(PostalAddressTypeable)
-    GetBillToCustomerId()(*string)
+    GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetBillToCustomerNumber()(*string)
     GetBillToName()(*string)
     GetCurrency()(Currencyable)
     GetCurrencyCode()(*string)
-    GetCurrencyId()(*string)
+    GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetCustomer()(Customerable)
-    GetCustomerId()(*string)
+    GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetCustomerName()(*string)
     GetCustomerNumber()(*string)
     GetDiscountAmount()(*float64)
@@ -30,7 +31,7 @@ type SalesOrderable interface {
     GetOrderDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetPartialShipping()(*bool)
     GetPaymentTerm()(PaymentTermable)
-    GetPaymentTermsId()(*string)
+    GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetPhoneNumber()(*string)
     GetPricesIncludeTax()(*bool)
     GetRequestedDeliveryDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -45,14 +46,14 @@ type SalesOrderable interface {
     GetTotalAmountIncludingTax()(*float64)
     GetTotalTaxAmount()(*float64)
     SetBillingPostalAddress(value PostalAddressTypeable)()
-    SetBillToCustomerId(value *string)()
+    SetBillToCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetBillToCustomerNumber(value *string)()
     SetBillToName(value *string)()
     SetCurrency(value Currencyable)()
     SetCurrencyCode(value *string)()
-    SetCurrencyId(value *string)()
+    SetCurrencyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetCustomer(value Customerable)()
-    SetCustomerId(value *string)()
+    SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetCustomerName(value *string)()
     SetCustomerNumber(value *string)()
     SetDiscountAmount(value *float64)()
@@ -65,7 +66,7 @@ type SalesOrderable interface {
     SetOrderDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetPartialShipping(value *bool)()
     SetPaymentTerm(value PaymentTermable)()
-    SetPaymentTermsId(value *string)()
+    SetPaymentTermsId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetPhoneNumber(value *string)()
     SetPricesIncludeTax(value *bool)()
     SetRequestedDeliveryDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

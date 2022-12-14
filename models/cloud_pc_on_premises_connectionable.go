@@ -24,6 +24,7 @@ type CloudPcOnPremisesConnectionable interface {
     GetSubscriptionName()(*string)
     GetType()(*CloudPcOnPremisesConnectionType)
     GetVirtualNetworkId()(*string)
+    GetVirtualNetworkLocation()(*string)
     SetAdDomainName(value *string)()
     SetAdDomainPassword(value *string)()
     SetAdDomainUsername(value *string)()
@@ -40,4 +41,5 @@ type CloudPcOnPremisesConnectionable interface {
     SetSubscriptionName(value *string)()
     SetType(value *CloudPcOnPremisesConnectionType)()
     SetVirtualNetworkId(value *string)()
+    SetVirtualNetworkLocation(value *string)()
 }

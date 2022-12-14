@@ -8,11 +8,11 @@ import (
 type LoginPageLayoutConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The isFooterShown property
+    // Option to show the footer on the sign-in page.
     isFooterShown *bool
-    // The isHeaderShown property
+    // Option to show the header on the sign-in page.
     isHeaderShown *bool
-    // The layoutTemplateType property
+    // Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
     layoutTemplateType *LayoutTemplateType
     // The OdataType property
     odataType *string
@@ -77,15 +77,15 @@ func (m *LoginPageLayoutConfiguration) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsFooterShown gets the isFooterShown property value. The isFooterShown property
+// GetIsFooterShown gets the isFooterShown property value. Option to show the footer on the sign-in page.
 func (m *LoginPageLayoutConfiguration) GetIsFooterShown()(*bool) {
     return m.isFooterShown
 }
-// GetIsHeaderShown gets the isHeaderShown property value. The isHeaderShown property
+// GetIsHeaderShown gets the isHeaderShown property value. Option to show the header on the sign-in page.
 func (m *LoginPageLayoutConfiguration) GetIsHeaderShown()(*bool) {
     return m.isHeaderShown
 }
-// GetLayoutTemplateType gets the layoutTemplateType property value. The layoutTemplateType property
+// GetLayoutTemplateType gets the layoutTemplateType property value. Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
 func (m *LoginPageLayoutConfiguration) GetLayoutTemplateType()(*LayoutTemplateType) {
     return m.layoutTemplateType
 }
@@ -132,15 +132,15 @@ func (m *LoginPageLayoutConfiguration) Serialize(writer i878a80d2330e89d26896388
 func (m *LoginPageLayoutConfiguration) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetIsFooterShown sets the isFooterShown property value. The isFooterShown property
+// SetIsFooterShown sets the isFooterShown property value. Option to show the footer on the sign-in page.
 func (m *LoginPageLayoutConfiguration) SetIsFooterShown(value *bool)() {
     m.isFooterShown = value
 }
-// SetIsHeaderShown sets the isHeaderShown property value. The isHeaderShown property
+// SetIsHeaderShown sets the isHeaderShown property value. Option to show the header on the sign-in page.
 func (m *LoginPageLayoutConfiguration) SetIsHeaderShown(value *bool)() {
     m.isHeaderShown = value
 }
-// SetLayoutTemplateType sets the layoutTemplateType property value. The layoutTemplateType property
+// SetLayoutTemplateType sets the layoutTemplateType property value. Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
 func (m *LoginPageLayoutConfiguration) SetLayoutTemplateType(value *LayoutTemplateType)() {
     m.layoutTemplateType = value
 }

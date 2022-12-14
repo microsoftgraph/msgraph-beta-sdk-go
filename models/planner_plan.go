@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlan provides operations to manage the collection of accessReviewDecision entities.
+// PlannerPlan provides operations to manage the collection of administrativeUnit entities.
 type PlannerPlan struct {
     PlannerDelta
     // Collection of buckets in the plan. Read-only. Nullable.
@@ -18,7 +18,7 @@ type PlannerPlan struct {
     createdBy IdentitySetable
     // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The creationSource property
+    // Contains information about the origin of the plan.
     creationSource PlannerPlanCreationable
     // Additional details about the plan. Read-only. Nullable.
     details PlannerPlanDetailsable
@@ -60,7 +60,7 @@ func (m *PlannerPlan) GetCreatedBy()(IdentitySetable) {
 func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetCreationSource gets the creationSource property value. The creationSource property
+// GetCreationSource gets the creationSource property value. Contains information about the origin of the plan.
 func (m *PlannerPlan) GetCreationSource()(PlannerPlanCreationable) {
     return m.creationSource
 }
@@ -289,7 +289,7 @@ func (m *PlannerPlan) SetCreatedBy(value IdentitySetable)() {
 func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetCreationSource sets the creationSource property value. The creationSource property
+// SetCreationSource sets the creationSource property value. Contains information about the origin of the plan.
 func (m *PlannerPlan) SetCreationSource(value PlannerPlanCreationable)() {
     m.creationSource = value
 }

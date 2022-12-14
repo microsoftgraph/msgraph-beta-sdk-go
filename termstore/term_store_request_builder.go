@@ -26,7 +26,7 @@ type TermStoreRequestBuilderGetQueryParameters struct {
 // TermStoreRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TermStoreRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,7 +35,7 @@ type TermStoreRequestBuilderGetRequestConfiguration struct {
 // TermStoreRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TermStoreRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -64,12 +64,12 @@ func (m *TermStoreRequestBuilder) CreateGetRequestInformation(ctx context.Contex
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -80,15 +80,18 @@ func (m *TermStoreRequestBuilder) CreatePatchRequestInformation(ctx context.Cont
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get read the properties and relationships of a store object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
 func (m *TermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration *TermStoreRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,11 +111,11 @@ func (m *TermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable), nil
 }
 // Groups provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) Groups()(*TermStoreGroupsRequestBuilder) {
-    return NewTermStoreGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TermStoreRequestBuilder) Groups()(*GroupsRequestBuilder) {
+    return NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) GroupsById(id string)(*TermStoreGroupsGroupItemRequestBuilder) {
+func (m *TermStoreRequestBuilder) GroupsById(id string)(*GroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,9 +123,12 @@ func (m *TermStoreRequestBuilder) GroupsById(id string)(*TermStoreGroupsGroupIte
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return NewTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the properties of a store object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-store-update?view=graph-rest-1.0
 func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, requestConfiguration *TermStoreRequestBuilderPatchRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
     requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -142,11 +148,11 @@ func (m *TermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b991
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable), nil
 }
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) Sets()(*TermStoreSetsRequestBuilder) {
-    return NewTermStoreSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *TermStoreRequestBuilder) Sets()(*SetsRequestBuilder) {
+    return NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *TermStoreRequestBuilder) SetsById(id string)(*TermStoreSetsSetItemRequestBuilder) {
+func (m *TermStoreRequestBuilder) SetsById(id string)(*SetsSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,5 +160,5 @@ func (m *TermStoreRequestBuilder) SetsById(id string)(*TermStoreSetsSetItemReque
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return NewTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcExternalPartnerSetting provides operations to manage the collection of agreement entities.
+// CloudPcExternalPartnerSetting provides operations to manage the deviceManagement singleton.
 type CloudPcExternalPartnerSetting struct {
     Entity
     // Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).

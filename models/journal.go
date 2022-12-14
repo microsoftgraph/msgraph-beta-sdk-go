@@ -2,6 +2,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -11,7 +12,7 @@ type Journal struct {
     // The account property
     account Accountable
     // The balancingAccountId property
-    balancingAccountId *string
+    balancingAccountId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The balancingAccountNumber property
     balancingAccountNumber *string
     // The code property
@@ -39,7 +40,7 @@ func (m *Journal) GetAccount()(Accountable) {
     return m.account
 }
 // GetBalancingAccountId gets the balancingAccountId property value. The balancingAccountId property
-func (m *Journal) GetBalancingAccountId()(*string) {
+func (m *Journal) GetBalancingAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.balancingAccountId
 }
 // GetBalancingAccountNumber gets the balancingAccountNumber property value. The balancingAccountNumber property
@@ -68,7 +69,7 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["balancingAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -154,7 +155,7 @@ func (m *Journal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
-        err = writer.WriteStringValue("balancingAccountId", m.GetBalancingAccountId())
+        err = writer.WriteUUIDValue("balancingAccountId", m.GetBalancingAccountId())
         if err != nil {
             return err
         }
@@ -200,7 +201,7 @@ func (m *Journal) SetAccount(value Accountable)() {
     m.account = value
 }
 // SetBalancingAccountId sets the balancingAccountId property value. The balancingAccountId property
-func (m *Journal) SetBalancingAccountId(value *string)() {
+func (m *Journal) SetBalancingAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.balancingAccountId = value
 }
 // SetBalancingAccountNumber sets the balancingAccountNumber property value. The balancingAccountNumber property

@@ -1,6 +1,7 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -12,7 +13,7 @@ type DeviceEnrollmentNotificationConfiguration struct {
     // DefaultLocale for the Enrollment Notification
     defaultLocale *string
     // Notification Message Template Id
-    notificationMessageTemplateId *string
+    notificationMessageTemplateId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The list of notification data -
     notificationTemplates []string
     // This enum indicates the platform type for which the enrollment restriction applies.
@@ -65,7 +66,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[
         return nil
     }
     res["notificationMessageTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetUUIDValue()
         if err != nil {
             return err
         }
@@ -111,7 +112,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[
     return res
 }
 // GetNotificationMessageTemplateId gets the notificationMessageTemplateId property value. Notification Message Template Id
-func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTemplateId()(*string) {
+func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTemplateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     return m.notificationMessageTemplateId
 }
 // GetNotificationTemplates gets the notificationTemplates property value. The list of notification data -
@@ -146,7 +147,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) Serialize(writer i878a80d233
         }
     }
     {
-        err = writer.WriteStringValue("notificationMessageTemplateId", m.GetNotificationMessageTemplateId())
+        err = writer.WriteUUIDValue("notificationMessageTemplateId", m.GetNotificationMessageTemplateId())
         if err != nil {
             return err
         }
@@ -182,7 +183,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) SetDefaultLocale(value *stri
     m.defaultLocale = value
 }
 // SetNotificationMessageTemplateId sets the notificationMessageTemplateId property value. Notification Message Template Id
-func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationMessageTemplateId(value *string)() {
+func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationMessageTemplateId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     m.notificationMessageTemplateId = value
 }
 // SetNotificationTemplates sets the notificationTemplates property value. The list of notification data -

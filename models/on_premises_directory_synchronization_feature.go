@@ -8,45 +8,45 @@ import (
 type OnPremisesDirectorySynchronizationFeature struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The blockCloudObjectTakeoverThroughHardMatchEnabled property
+    // Used to block cloud object takeover via source anchor hard match if enabled.
     blockCloudObjectTakeoverThroughHardMatchEnabled *bool
-    // The blockSoftMatchEnabled property
+    // Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
     blockSoftMatchEnabled *bool
-    // The bypassDirSyncOverridesEnabled property
+    // When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
     bypassDirSyncOverridesEnabled *bool
-    // The cloudPasswordPolicyForPasswordSyncedUsersEnabled property
+    // Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
     cloudPasswordPolicyForPasswordSyncedUsersEnabled *bool
-    // The concurrentCredentialUpdateEnabled property
+    // Used to enable concurrent user credentials update in OrgId.
     concurrentCredentialUpdateEnabled *bool
-    // The concurrentOrgIdProvisioningEnabled property
+    // Used to enable concurrent user creation in OrgId.
     concurrentOrgIdProvisioningEnabled *bool
-    // The deviceWritebackEnabled property
+    // Used to indicate that device write-back is enabled.
     deviceWritebackEnabled *bool
-    // The directoryExtensionsEnabled property
+    // Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
     directoryExtensionsEnabled *bool
-    // The fopeConflictResolutionEnabled property
+    // Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
     fopeConflictResolutionEnabled *bool
-    // The groupWriteBackEnabled property
+    // Used to enable object-level group writeback feature for additional group types.
     groupWriteBackEnabled *bool
     // The OdataType property
     odataType *string
-    // The passwordSyncEnabled property
+    // Used to indicate on-premise password synchronization is enabled.
     passwordSyncEnabled *bool
-    // The passwordWritebackEnabled property
+    // Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
     passwordWritebackEnabled *bool
-    // The quarantineUponProxyAddressesConflictEnabled property
+    // Used to indicate that we should quarantine objects with conflicting proxy address.
     quarantineUponProxyAddressesConflictEnabled *bool
-    // The quarantineUponUpnConflictEnabled property
+    // Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
     quarantineUponUpnConflictEnabled *bool
-    // The softMatchOnUpnEnabled property
+    // Used to indicate that we should soft match objects based on userPrincipalName.
     softMatchOnUpnEnabled *bool
-    // The synchronizeUpnForManagedUsersEnabled property
+    // Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
     synchronizeUpnForManagedUsersEnabled *bool
-    // The unifiedGroupWritebackEnabled property
+    // Used to indicate that Microsoft 365 Group write-back is enabled.
     unifiedGroupWritebackEnabled *bool
-    // The userForcePasswordChangeOnLogonEnabled property
+    // Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
     userForcePasswordChangeOnLogonEnabled *bool
-    // The userWritebackEnabled property
+    // Used to indicate that user writeback is enabled.
     userWritebackEnabled *bool
 }
 // NewOnPremisesDirectorySynchronizationFeature instantiates a new onPremisesDirectorySynchronizationFeature and sets the default values.
@@ -64,35 +64,35 @@ func CreateOnPremisesDirectorySynchronizationFeatureFromDiscriminatorValue(parse
 func (m *OnPremisesDirectorySynchronizationFeature) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetBlockCloudObjectTakeoverThroughHardMatchEnabled gets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. The blockCloudObjectTakeoverThroughHardMatchEnabled property
+// GetBlockCloudObjectTakeoverThroughHardMatchEnabled gets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. Used to block cloud object takeover via source anchor hard match if enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetBlockCloudObjectTakeoverThroughHardMatchEnabled()(*bool) {
     return m.blockCloudObjectTakeoverThroughHardMatchEnabled
 }
-// GetBlockSoftMatchEnabled gets the blockSoftMatchEnabled property value. The blockSoftMatchEnabled property
+// GetBlockSoftMatchEnabled gets the blockSoftMatchEnabled property value. Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
 func (m *OnPremisesDirectorySynchronizationFeature) GetBlockSoftMatchEnabled()(*bool) {
     return m.blockSoftMatchEnabled
 }
-// GetBypassDirSyncOverridesEnabled gets the bypassDirSyncOverridesEnabled property value. The bypassDirSyncOverridesEnabled property
+// GetBypassDirSyncOverridesEnabled gets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) GetBypassDirSyncOverridesEnabled()(*bool) {
     return m.bypassDirSyncOverridesEnabled
 }
-// GetCloudPasswordPolicyForPasswordSyncedUsersEnabled gets the cloudPasswordPolicyForPasswordSyncedUsersEnabled property value. The cloudPasswordPolicyForPasswordSyncedUsersEnabled property
+// GetCloudPasswordPolicyForPasswordSyncedUsersEnabled gets the cloudPasswordPolicyForPasswordSyncedUsersEnabled property value. Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
 func (m *OnPremisesDirectorySynchronizationFeature) GetCloudPasswordPolicyForPasswordSyncedUsersEnabled()(*bool) {
     return m.cloudPasswordPolicyForPasswordSyncedUsersEnabled
 }
-// GetConcurrentCredentialUpdateEnabled gets the concurrentCredentialUpdateEnabled property value. The concurrentCredentialUpdateEnabled property
+// GetConcurrentCredentialUpdateEnabled gets the concurrentCredentialUpdateEnabled property value. Used to enable concurrent user credentials update in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) GetConcurrentCredentialUpdateEnabled()(*bool) {
     return m.concurrentCredentialUpdateEnabled
 }
-// GetConcurrentOrgIdProvisioningEnabled gets the concurrentOrgIdProvisioningEnabled property value. The concurrentOrgIdProvisioningEnabled property
+// GetConcurrentOrgIdProvisioningEnabled gets the concurrentOrgIdProvisioningEnabled property value. Used to enable concurrent user creation in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) GetConcurrentOrgIdProvisioningEnabled()(*bool) {
     return m.concurrentOrgIdProvisioningEnabled
 }
-// GetDeviceWritebackEnabled gets the deviceWritebackEnabled property value. The deviceWritebackEnabled property
+// GetDeviceWritebackEnabled gets the deviceWritebackEnabled property value. Used to indicate that device write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetDeviceWritebackEnabled()(*bool) {
     return m.deviceWritebackEnabled
 }
-// GetDirectoryExtensionsEnabled gets the directoryExtensionsEnabled property value. The directoryExtensionsEnabled property
+// GetDirectoryExtensionsEnabled gets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) GetDirectoryExtensionsEnabled()(*bool) {
     return m.directoryExtensionsEnabled
 }
@@ -301,11 +301,11 @@ func (m *OnPremisesDirectorySynchronizationFeature) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetFopeConflictResolutionEnabled gets the fopeConflictResolutionEnabled property value. The fopeConflictResolutionEnabled property
+// GetFopeConflictResolutionEnabled gets the fopeConflictResolutionEnabled property value. Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
 func (m *OnPremisesDirectorySynchronizationFeature) GetFopeConflictResolutionEnabled()(*bool) {
     return m.fopeConflictResolutionEnabled
 }
-// GetGroupWriteBackEnabled gets the groupWriteBackEnabled property value. The groupWriteBackEnabled property
+// GetGroupWriteBackEnabled gets the groupWriteBackEnabled property value. Used to enable object-level group writeback feature for additional group types.
 func (m *OnPremisesDirectorySynchronizationFeature) GetGroupWriteBackEnabled()(*bool) {
     return m.groupWriteBackEnabled
 }
@@ -313,39 +313,39 @@ func (m *OnPremisesDirectorySynchronizationFeature) GetGroupWriteBackEnabled()(*
 func (m *OnPremisesDirectorySynchronizationFeature) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPasswordSyncEnabled gets the passwordSyncEnabled property value. The passwordSyncEnabled property
+// GetPasswordSyncEnabled gets the passwordSyncEnabled property value. Used to indicate on-premise password synchronization is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetPasswordSyncEnabled()(*bool) {
     return m.passwordSyncEnabled
 }
-// GetPasswordWritebackEnabled gets the passwordWritebackEnabled property value. The passwordWritebackEnabled property
+// GetPasswordWritebackEnabled gets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetPasswordWritebackEnabled()(*bool) {
     return m.passwordWritebackEnabled
 }
-// GetQuarantineUponProxyAddressesConflictEnabled gets the quarantineUponProxyAddressesConflictEnabled property value. The quarantineUponProxyAddressesConflictEnabled property
+// GetQuarantineUponProxyAddressesConflictEnabled gets the quarantineUponProxyAddressesConflictEnabled property value. Used to indicate that we should quarantine objects with conflicting proxy address.
 func (m *OnPremisesDirectorySynchronizationFeature) GetQuarantineUponProxyAddressesConflictEnabled()(*bool) {
     return m.quarantineUponProxyAddressesConflictEnabled
 }
-// GetQuarantineUponUpnConflictEnabled gets the quarantineUponUpnConflictEnabled property value. The quarantineUponUpnConflictEnabled property
+// GetQuarantineUponUpnConflictEnabled gets the quarantineUponUpnConflictEnabled property value. Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) GetQuarantineUponUpnConflictEnabled()(*bool) {
     return m.quarantineUponUpnConflictEnabled
 }
-// GetSoftMatchOnUpnEnabled gets the softMatchOnUpnEnabled property value. The softMatchOnUpnEnabled property
+// GetSoftMatchOnUpnEnabled gets the softMatchOnUpnEnabled property value. Used to indicate that we should soft match objects based on userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) GetSoftMatchOnUpnEnabled()(*bool) {
     return m.softMatchOnUpnEnabled
 }
-// GetSynchronizeUpnForManagedUsersEnabled gets the synchronizeUpnForManagedUsersEnabled property value. The synchronizeUpnForManagedUsersEnabled property
+// GetSynchronizeUpnForManagedUsersEnabled gets the synchronizeUpnForManagedUsersEnabled property value. Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
 func (m *OnPremisesDirectorySynchronizationFeature) GetSynchronizeUpnForManagedUsersEnabled()(*bool) {
     return m.synchronizeUpnForManagedUsersEnabled
 }
-// GetUnifiedGroupWritebackEnabled gets the unifiedGroupWritebackEnabled property value. The unifiedGroupWritebackEnabled property
+// GetUnifiedGroupWritebackEnabled gets the unifiedGroupWritebackEnabled property value. Used to indicate that Microsoft 365 Group write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetUnifiedGroupWritebackEnabled()(*bool) {
     return m.unifiedGroupWritebackEnabled
 }
-// GetUserForcePasswordChangeOnLogonEnabled gets the userForcePasswordChangeOnLogonEnabled property value. The userForcePasswordChangeOnLogonEnabled property
+// GetUserForcePasswordChangeOnLogonEnabled gets the userForcePasswordChangeOnLogonEnabled property value. Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
 func (m *OnPremisesDirectorySynchronizationFeature) GetUserForcePasswordChangeOnLogonEnabled()(*bool) {
     return m.userForcePasswordChangeOnLogonEnabled
 }
-// GetUserWritebackEnabled gets the userWritebackEnabled property value. The userWritebackEnabled property
+// GetUserWritebackEnabled gets the userWritebackEnabled property value. Used to indicate that user writeback is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) GetUserWritebackEnabled()(*bool) {
     return m.userWritebackEnabled
 }
@@ -483,43 +483,43 @@ func (m *OnPremisesDirectorySynchronizationFeature) Serialize(writer i878a80d233
 func (m *OnPremisesDirectorySynchronizationFeature) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetBlockCloudObjectTakeoverThroughHardMatchEnabled sets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. The blockCloudObjectTakeoverThroughHardMatchEnabled property
+// SetBlockCloudObjectTakeoverThroughHardMatchEnabled sets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. Used to block cloud object takeover via source anchor hard match if enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetBlockCloudObjectTakeoverThroughHardMatchEnabled(value *bool)() {
     m.blockCloudObjectTakeoverThroughHardMatchEnabled = value
 }
-// SetBlockSoftMatchEnabled sets the blockSoftMatchEnabled property value. The blockSoftMatchEnabled property
+// SetBlockSoftMatchEnabled sets the blockSoftMatchEnabled property value. Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
 func (m *OnPremisesDirectorySynchronizationFeature) SetBlockSoftMatchEnabled(value *bool)() {
     m.blockSoftMatchEnabled = value
 }
-// SetBypassDirSyncOverridesEnabled sets the bypassDirSyncOverridesEnabled property value. The bypassDirSyncOverridesEnabled property
+// SetBypassDirSyncOverridesEnabled sets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) SetBypassDirSyncOverridesEnabled(value *bool)() {
     m.bypassDirSyncOverridesEnabled = value
 }
-// SetCloudPasswordPolicyForPasswordSyncedUsersEnabled sets the cloudPasswordPolicyForPasswordSyncedUsersEnabled property value. The cloudPasswordPolicyForPasswordSyncedUsersEnabled property
+// SetCloudPasswordPolicyForPasswordSyncedUsersEnabled sets the cloudPasswordPolicyForPasswordSyncedUsersEnabled property value. Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
 func (m *OnPremisesDirectorySynchronizationFeature) SetCloudPasswordPolicyForPasswordSyncedUsersEnabled(value *bool)() {
     m.cloudPasswordPolicyForPasswordSyncedUsersEnabled = value
 }
-// SetConcurrentCredentialUpdateEnabled sets the concurrentCredentialUpdateEnabled property value. The concurrentCredentialUpdateEnabled property
+// SetConcurrentCredentialUpdateEnabled sets the concurrentCredentialUpdateEnabled property value. Used to enable concurrent user credentials update in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) SetConcurrentCredentialUpdateEnabled(value *bool)() {
     m.concurrentCredentialUpdateEnabled = value
 }
-// SetConcurrentOrgIdProvisioningEnabled sets the concurrentOrgIdProvisioningEnabled property value. The concurrentOrgIdProvisioningEnabled property
+// SetConcurrentOrgIdProvisioningEnabled sets the concurrentOrgIdProvisioningEnabled property value. Used to enable concurrent user creation in OrgId.
 func (m *OnPremisesDirectorySynchronizationFeature) SetConcurrentOrgIdProvisioningEnabled(value *bool)() {
     m.concurrentOrgIdProvisioningEnabled = value
 }
-// SetDeviceWritebackEnabled sets the deviceWritebackEnabled property value. The deviceWritebackEnabled property
+// SetDeviceWritebackEnabled sets the deviceWritebackEnabled property value. Used to indicate that device write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetDeviceWritebackEnabled(value *bool)() {
     m.deviceWritebackEnabled = value
 }
-// SetDirectoryExtensionsEnabled sets the directoryExtensionsEnabled property value. The directoryExtensionsEnabled property
+// SetDirectoryExtensionsEnabled sets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
 func (m *OnPremisesDirectorySynchronizationFeature) SetDirectoryExtensionsEnabled(value *bool)() {
     m.directoryExtensionsEnabled = value
 }
-// SetFopeConflictResolutionEnabled sets the fopeConflictResolutionEnabled property value. The fopeConflictResolutionEnabled property
+// SetFopeConflictResolutionEnabled sets the fopeConflictResolutionEnabled property value. Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
 func (m *OnPremisesDirectorySynchronizationFeature) SetFopeConflictResolutionEnabled(value *bool)() {
     m.fopeConflictResolutionEnabled = value
 }
-// SetGroupWriteBackEnabled sets the groupWriteBackEnabled property value. The groupWriteBackEnabled property
+// SetGroupWriteBackEnabled sets the groupWriteBackEnabled property value. Used to enable object-level group writeback feature for additional group types.
 func (m *OnPremisesDirectorySynchronizationFeature) SetGroupWriteBackEnabled(value *bool)() {
     m.groupWriteBackEnabled = value
 }
@@ -527,39 +527,39 @@ func (m *OnPremisesDirectorySynchronizationFeature) SetGroupWriteBackEnabled(val
 func (m *OnPremisesDirectorySynchronizationFeature) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPasswordSyncEnabled sets the passwordSyncEnabled property value. The passwordSyncEnabled property
+// SetPasswordSyncEnabled sets the passwordSyncEnabled property value. Used to indicate on-premise password synchronization is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetPasswordSyncEnabled(value *bool)() {
     m.passwordSyncEnabled = value
 }
-// SetPasswordWritebackEnabled sets the passwordWritebackEnabled property value. The passwordWritebackEnabled property
+// SetPasswordWritebackEnabled sets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetPasswordWritebackEnabled(value *bool)() {
     m.passwordWritebackEnabled = value
 }
-// SetQuarantineUponProxyAddressesConflictEnabled sets the quarantineUponProxyAddressesConflictEnabled property value. The quarantineUponProxyAddressesConflictEnabled property
+// SetQuarantineUponProxyAddressesConflictEnabled sets the quarantineUponProxyAddressesConflictEnabled property value. Used to indicate that we should quarantine objects with conflicting proxy address.
 func (m *OnPremisesDirectorySynchronizationFeature) SetQuarantineUponProxyAddressesConflictEnabled(value *bool)() {
     m.quarantineUponProxyAddressesConflictEnabled = value
 }
-// SetQuarantineUponUpnConflictEnabled sets the quarantineUponUpnConflictEnabled property value. The quarantineUponUpnConflictEnabled property
+// SetQuarantineUponUpnConflictEnabled sets the quarantineUponUpnConflictEnabled property value. Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) SetQuarantineUponUpnConflictEnabled(value *bool)() {
     m.quarantineUponUpnConflictEnabled = value
 }
-// SetSoftMatchOnUpnEnabled sets the softMatchOnUpnEnabled property value. The softMatchOnUpnEnabled property
+// SetSoftMatchOnUpnEnabled sets the softMatchOnUpnEnabled property value. Used to indicate that we should soft match objects based on userPrincipalName.
 func (m *OnPremisesDirectorySynchronizationFeature) SetSoftMatchOnUpnEnabled(value *bool)() {
     m.softMatchOnUpnEnabled = value
 }
-// SetSynchronizeUpnForManagedUsersEnabled sets the synchronizeUpnForManagedUsersEnabled property value. The synchronizeUpnForManagedUsersEnabled property
+// SetSynchronizeUpnForManagedUsersEnabled sets the synchronizeUpnForManagedUsersEnabled property value. Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
 func (m *OnPremisesDirectorySynchronizationFeature) SetSynchronizeUpnForManagedUsersEnabled(value *bool)() {
     m.synchronizeUpnForManagedUsersEnabled = value
 }
-// SetUnifiedGroupWritebackEnabled sets the unifiedGroupWritebackEnabled property value. The unifiedGroupWritebackEnabled property
+// SetUnifiedGroupWritebackEnabled sets the unifiedGroupWritebackEnabled property value. Used to indicate that Microsoft 365 Group write-back is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetUnifiedGroupWritebackEnabled(value *bool)() {
     m.unifiedGroupWritebackEnabled = value
 }
-// SetUserForcePasswordChangeOnLogonEnabled sets the userForcePasswordChangeOnLogonEnabled property value. The userForcePasswordChangeOnLogonEnabled property
+// SetUserForcePasswordChangeOnLogonEnabled sets the userForcePasswordChangeOnLogonEnabled property value. Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
 func (m *OnPremisesDirectorySynchronizationFeature) SetUserForcePasswordChangeOnLogonEnabled(value *bool)() {
     m.userForcePasswordChangeOnLogonEnabled = value
 }
-// SetUserWritebackEnabled sets the userWritebackEnabled property value. The userWritebackEnabled property
+// SetUserWritebackEnabled sets the userWritebackEnabled property value. Used to indicate that user writeback is enabled.
 func (m *OnPremisesDirectorySynchronizationFeature) SetUserWritebackEnabled(value *bool)() {
     m.userWritebackEnabled = value
 }

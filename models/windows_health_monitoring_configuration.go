@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsHealthMonitoringConfiguration windows device health monitoring configuration
+// WindowsHealthMonitoringConfiguration 
 type WindowsHealthMonitoringConfiguration struct {
     DeviceConfiguration
     // Possible values of a property
@@ -14,7 +14,7 @@ type WindowsHealthMonitoringConfiguration struct {
     // Device health monitoring scope
     configDeviceHealthMonitoringScope *WindowsHealthMonitoringScope
 }
-// NewWindowsHealthMonitoringConfiguration instantiates a new windowsHealthMonitoringConfiguration and sets the default values.
+// NewWindowsHealthMonitoringConfiguration instantiates a new WindowsHealthMonitoringConfiguration and sets the default values.
 func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfiguration) {
     m := &WindowsHealthMonitoringConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

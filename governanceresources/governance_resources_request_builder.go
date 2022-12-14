@@ -38,7 +38,7 @@ type GovernanceResourcesRequestBuilderGetQueryParameters struct {
 // GovernanceResourcesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GovernanceResourcesRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -47,7 +47,7 @@ type GovernanceResourcesRequestBuilderGetRequestConfiguration struct {
 // GovernanceResourcesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GovernanceResourcesRequestBuilderPostRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -71,8 +71,8 @@ func NewGovernanceResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewGovernanceResourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
-func (m *GovernanceResourcesRequestBuilder) Count()(*GovernanceResourcesCountRequestBuilder) {
-    return NewGovernanceResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceResourcesRequestBuilder) Count()(*CountRequestBuilder) {
+    return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get entities from governanceResources
 func (m *GovernanceResourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GovernanceResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -80,12 +80,12 @@ func (m *GovernanceResourcesRequestBuilder) CreateGetRequestInformation(ctx cont
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -96,10 +96,10 @@ func (m *GovernanceResourcesRequestBuilder) CreatePostRequestInformation(ctx con
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -143,6 +143,6 @@ func (m *GovernanceResourcesRequestBuilder) Post(ctx context.Context, body ie233
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
 // Register provides operations to call the register method.
-func (m *GovernanceResourcesRequestBuilder) Register()(*GovernanceResourcesRegisterRequestBuilder) {
-    return NewGovernanceResourcesRegisterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *GovernanceResourcesRequestBuilder) Register()(*RegisterRequestBuilder) {
+    return NewRegisterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

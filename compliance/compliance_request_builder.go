@@ -26,7 +26,7 @@ type ComplianceRequestBuilderGetQueryParameters struct {
 // ComplianceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ComplianceRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,7 +35,7 @@ type ComplianceRequestBuilderGetRequestConfiguration struct {
 // ComplianceRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ComplianceRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
@@ -64,12 +64,12 @@ func (m *ComplianceRequestBuilder) CreateGetRequestInformation(ctx context.Conte
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -80,17 +80,17 @@ func (m *ComplianceRequestBuilder) CreatePatchRequestInformation(ctx context.Con
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Ediscovery provides operations to manage the ediscovery property of the microsoft.graph.compliance entity.
-func (m *ComplianceRequestBuilder) Ediscovery()(*ComplianceEdiscoveryRequestBuilder) {
-    return NewComplianceEdiscoveryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *ComplianceRequestBuilder) Ediscovery()(*EdiscoveryRequestBuilder) {
+    return NewEdiscoveryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get compliance
 func (m *ComplianceRequestBuilder) Get(ctx context.Context, requestConfiguration *ComplianceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Complianceable, error) {

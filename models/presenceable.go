@@ -11,7 +11,9 @@ type Presenceable interface {
     GetActivity()(*string)
     GetAvailability()(*string)
     GetOutOfOfficeSettings()(OutOfOfficeSettingsable)
+    GetStatusMessage()(PresenceStatusMessageable)
     SetActivity(value *string)()
     SetAvailability(value *string)()
     SetOutOfOfficeSettings(value OutOfOfficeSettingsable)()
+    SetStatusMessage(value PresenceStatusMessageable)()
 }

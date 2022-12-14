@@ -26,7 +26,7 @@ type IdentityRequestBuilderGetQueryParameters struct {
 // IdentityRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentityRequestBuilderGetRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
@@ -35,16 +35,16 @@ type IdentityRequestBuilderGetRequestConfiguration struct {
 // IdentityRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentityRequestBuilderPatchRequestConfiguration struct {
     // Request headers
-    Headers map[string]string
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ApiConnectors provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) ApiConnectors()(*IdentityApiConnectorsRequestBuilder) {
-    return NewIdentityApiConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) ApiConnectors()(*ApiConnectorsRequestBuilder) {
+    return NewApiConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ApiConnectorsById provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*IdentityApiConnectorsIdentityApiConnectorItemRequestBuilder) {
+func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,14 +52,14 @@ func (m *IdentityRequestBuilder) ApiConnectorsById(id string)(*IdentityApiConnec
     if id != "" {
         urlTplParams["identityApiConnector%2Did"] = id
     }
-    return NewIdentityApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AuthenticationEventListeners provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) AuthenticationEventListeners()(*IdentityAuthenticationEventListenersRequestBuilder) {
-    return NewIdentityAuthenticationEventListenersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) AuthenticationEventListeners()(*AuthenticationEventListenersRequestBuilder) {
+    return NewAuthenticationEventListenersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AuthenticationEventListenersById provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) AuthenticationEventListenersById(id string)(*IdentityAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) {
+func (m *IdentityRequestBuilder) AuthenticationEventListenersById(id string)(*AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,14 +67,14 @@ func (m *IdentityRequestBuilder) AuthenticationEventListenersById(id string)(*Id
     if id != "" {
         urlTplParams["authenticationEventListener%2Did"] = id
     }
-    return NewIdentityAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // B2cUserFlows provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) B2cUserFlows()(*IdentityB2cUserFlowsRequestBuilder) {
-    return NewIdentityB2cUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) B2cUserFlows()(*B2cUserFlowsRequestBuilder) {
+    return NewB2cUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // B2cUserFlowsById provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*IdentityB2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) {
+func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -82,14 +82,14 @@ func (m *IdentityRequestBuilder) B2cUserFlowsById(id string)(*IdentityB2cUserFlo
     if id != "" {
         urlTplParams["b2cIdentityUserFlow%2Did"] = id
     }
-    return NewIdentityB2cUserFlowsB2cIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // B2xUserFlows provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) B2xUserFlows()(*IdentityB2xUserFlowsRequestBuilder) {
-    return NewIdentityB2xUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xUserFlowsRequestBuilder) {
+    return NewB2xUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // B2xUserFlowsById provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*IdentityB2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
+func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*B2xUserFlowsB2xIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -97,11 +97,11 @@ func (m *IdentityRequestBuilder) B2xUserFlowsById(id string)(*IdentityB2xUserFlo
     if id != "" {
         urlTplParams["b2xIdentityUserFlow%2Did"] = id
     }
-    return NewIdentityB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewB2xUserFlowsB2xIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ConditionalAccess provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) ConditionalAccess()(*IdentityConditionalAccessRequestBuilder) {
-    return NewIdentityConditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) ConditionalAccess()(*ConditionalAccessRequestBuilder) {
+    return NewConditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewIdentityRequestBuilderInternal instantiates a new IdentityRequestBuilder and sets the default values.
 func NewIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityRequestBuilder) {
@@ -123,8 +123,8 @@ func NewIdentityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContinuousAccessEvaluationPolicy provides operations to manage the continuousAccessEvaluationPolicy property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) ContinuousAccessEvaluationPolicy()(*IdentityContinuousAccessEvaluationPolicyRequestBuilder) {
-    return NewIdentityContinuousAccessEvaluationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) ContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicyRequestBuilder) {
+    return NewContinuousAccessEvaluationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation get identity
 func (m *IdentityRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *IdentityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -132,12 +132,12 @@ func (m *IdentityRequestBuilder) CreateGetRequestInformation(ctx context.Context
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
@@ -148,20 +148,20 @@ func (m *IdentityRequestBuilder) CreatePatchRequestInformation(ctx context.Conte
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers["Accept"] = "application/json"
+    requestInfo.Headers.Add("Accept", "application/json")
     requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // CustomAuthenticationExtensions provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) CustomAuthenticationExtensions()(*IdentityCustomAuthenticationExtensionsRequestBuilder) {
-    return NewIdentityCustomAuthenticationExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) CustomAuthenticationExtensions()(*CustomAuthenticationExtensionsRequestBuilder) {
+    return NewCustomAuthenticationExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CustomAuthenticationExtensionsById provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) CustomAuthenticationExtensionsById(id string)(*IdentityCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) {
+func (m *IdentityRequestBuilder) CustomAuthenticationExtensionsById(id string)(*CustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,7 +169,7 @@ func (m *IdentityRequestBuilder) CustomAuthenticationExtensionsById(id string)(*
     if id != "" {
         urlTplParams["customAuthenticationExtension%2Did"] = id
     }
-    return NewIdentityCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCustomAuthenticationExtensionsCustomAuthenticationExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get identity
 func (m *IdentityRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable, error) {
@@ -191,11 +191,11 @@ func (m *IdentityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable), nil
 }
 // IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) IdentityProviders()(*IdentityIdentityProvidersRequestBuilder) {
-    return NewIdentityIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) IdentityProviders()(*IdentityProvidersRequestBuilder) {
+    return NewIdentityProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IdentityProvidersById provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*IdentityIdentityProvidersIdentityProviderBaseItemRequestBuilder) {
+func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*IdentityProvidersIdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -203,7 +203,7 @@ func (m *IdentityRequestBuilder) IdentityProvidersById(id string)(*IdentityIdent
     if id != "" {
         urlTplParams["identityProviderBase%2Did"] = id
     }
-    return NewIdentityIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityProvidersIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update identity
 func (m *IdentityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable, requestConfiguration *IdentityRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable, error) {
@@ -225,11 +225,11 @@ func (m *IdentityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable), nil
 }
 // UserFlowAttributes provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) UserFlowAttributes()(*IdentityUserFlowAttributesRequestBuilder) {
-    return NewIdentityUserFlowAttributesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserFlowAttributesRequestBuilder) {
+    return NewUserFlowAttributesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserFlowAttributesById provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*IdentityUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) {
+func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -237,14 +237,14 @@ func (m *IdentityRequestBuilder) UserFlowAttributesById(id string)(*IdentityUser
     if id != "" {
         urlTplParams["identityUserFlowAttribute%2Did"] = id
     }
-    return NewIdentityUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UserFlows provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) UserFlows()(*IdentityUserFlowsRequestBuilder) {
-    return NewIdentityUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *IdentityRequestBuilder) UserFlows()(*UserFlowsRequestBuilder) {
+    return NewUserFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserFlowsById provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
-func (m *IdentityRequestBuilder) UserFlowsById(id string)(*IdentityUserFlowsIdentityUserFlowItemRequestBuilder) {
+func (m *IdentityRequestBuilder) UserFlowsById(id string)(*UserFlowsIdentityUserFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -252,5 +252,5 @@ func (m *IdentityRequestBuilder) UserFlowsById(id string)(*IdentityUserFlowsIden
     if id != "" {
         urlTplParams["identityUserFlow%2Did"] = id
     }
-    return NewIdentityUserFlowsIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserFlowsIdentityUserFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

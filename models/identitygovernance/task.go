@@ -5,14 +5,14 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Task provides operations to manage the collection of agreement entities.
+// Task provides operations to manage the collection of activityStatistics entities.
 type Task struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
     arguments []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable
     // The category property
     category *LifecycleTaskCategory
-    // A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
+    // A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
     continueOnError *bool
     // A string that describes the purpose of the task for administrative use. Optional.
     description *string
@@ -46,7 +46,7 @@ func (m *Task) GetArguments()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81
 func (m *Task) GetCategory()(*LifecycleTaskCategory) {
     return m.category
 }
-// GetContinueOnError gets the continueOnError property value. A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
+// GetContinueOnError gets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
 func (m *Task) GetContinueOnError()(*bool) {
     return m.continueOnError
 }
@@ -256,7 +256,7 @@ func (m *Task) SetArguments(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
 func (m *Task) SetCategory(value *LifecycleTaskCategory)() {
     m.category = value
 }
-// SetContinueOnError sets the continueOnError property value. A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
+// SetContinueOnError sets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
 func (m *Task) SetContinueOnError(value *bool)() {
     m.continueOnError = value
 }

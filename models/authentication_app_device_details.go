@@ -8,15 +8,15 @@ import (
 type AuthenticationAppDeviceDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The appVersion property
+    // The version of the client authentication app used during the authentication step.
     appVersion *string
-    // The clientApp property
+    // The name of the client authentication app used during the authentication step.
     clientApp *string
-    // The deviceId property
+    // ID of the device used during the authentication step.
     deviceId *string
     // The OdataType property
     odataType *string
-    // The operatingSystem property
+    // The operating system running on the device used for the authentication step.
     operatingSystem *string
 }
 // NewAuthenticationAppDeviceDetails instantiates a new authenticationAppDeviceDetails and sets the default values.
@@ -34,15 +34,15 @@ func CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue(parseNode i878a8
 func (m *AuthenticationAppDeviceDetails) GetAdditionalData()(map[string]interface{}) {
     return m.additionalData
 }
-// GetAppVersion gets the appVersion property value. The appVersion property
+// GetAppVersion gets the appVersion property value. The version of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetAppVersion()(*string) {
     return m.appVersion
 }
-// GetClientApp gets the clientApp property value. The clientApp property
+// GetClientApp gets the clientApp property value. The name of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetClientApp()(*string) {
     return m.clientApp
 }
-// GetDeviceId gets the deviceId property value. The deviceId property
+// GetDeviceId gets the deviceId property value. ID of the device used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetDeviceId()(*string) {
     return m.deviceId
 }
@@ -105,7 +105,7 @@ func (m *AuthenticationAppDeviceDetails) GetFieldDeserializers()(map[string]func
 func (m *AuthenticationAppDeviceDetails) GetOdataType()(*string) {
     return m.odataType
 }
-// GetOperatingSystem gets the operatingSystem property value. The operatingSystem property
+// GetOperatingSystem gets the operatingSystem property value. The operating system running on the device used for the authentication step.
 func (m *AuthenticationAppDeviceDetails) GetOperatingSystem()(*string) {
     return m.operatingSystem
 }
@@ -153,15 +153,15 @@ func (m *AuthenticationAppDeviceDetails) Serialize(writer i878a80d2330e89d268963
 func (m *AuthenticationAppDeviceDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetAppVersion sets the appVersion property value. The appVersion property
+// SetAppVersion sets the appVersion property value. The version of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetAppVersion(value *string)() {
     m.appVersion = value
 }
-// SetClientApp sets the clientApp property value. The clientApp property
+// SetClientApp sets the clientApp property value. The name of the client authentication app used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetClientApp(value *string)() {
     m.clientApp = value
 }
-// SetDeviceId sets the deviceId property value. The deviceId property
+// SetDeviceId sets the deviceId property value. ID of the device used during the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetDeviceId(value *string)() {
     m.deviceId = value
 }
@@ -169,7 +169,7 @@ func (m *AuthenticationAppDeviceDetails) SetDeviceId(value *string)() {
 func (m *AuthenticationAppDeviceDetails) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetOperatingSystem sets the operatingSystem property value. The operatingSystem property
+// SetOperatingSystem sets the operatingSystem property value. The operating system running on the device used for the authentication step.
 func (m *AuthenticationAppDeviceDetails) SetOperatingSystem(value *string)() {
     m.operatingSystem = value
 }

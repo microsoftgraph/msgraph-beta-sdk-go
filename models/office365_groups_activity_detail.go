@@ -39,6 +39,10 @@ type Office365GroupsActivityDetail struct {
     sharePointSiteStorageUsedInBytes *int64
     // The total number of files in SharePoint Group site.
     sharePointTotalFileCount *int64
+    // The teamsChannelMessagesCount property
+    teamsChannelMessagesCount *int64
+    // The teamsMeetingsOrganizedCount property
+    teamsMeetingsOrganizedCount *int64
     // The number of messages liked in Yammer groups.
     yammerLikedMessageCount *int64
     // The number of messages posted to Yammer groups.
@@ -236,6 +240,26 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["teamsChannelMessagesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsChannelMessagesCount(val)
+        }
+        return nil
+    }
+    res["teamsMeetingsOrganizedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsMeetingsOrganizedCount(val)
+        }
+        return nil
+    }
     res["yammerLikedMessageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -315,6 +339,14 @@ func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*i
 // GetSharePointTotalFileCount gets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
 func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int64) {
     return m.sharePointTotalFileCount
+}
+// GetTeamsChannelMessagesCount gets the teamsChannelMessagesCount property value. The teamsChannelMessagesCount property
+func (m *Office365GroupsActivityDetail) GetTeamsChannelMessagesCount()(*int64) {
+    return m.teamsChannelMessagesCount
+}
+// GetTeamsMeetingsOrganizedCount gets the teamsMeetingsOrganizedCount property value. The teamsMeetingsOrganizedCount property
+func (m *Office365GroupsActivityDetail) GetTeamsMeetingsOrganizedCount()(*int64) {
+    return m.teamsMeetingsOrganizedCount
 }
 // GetYammerLikedMessageCount gets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
 func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int64) {
@@ -431,6 +463,18 @@ func (m *Office365GroupsActivityDetail) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteInt64Value("teamsChannelMessagesCount", m.GetTeamsChannelMessagesCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt64Value("teamsMeetingsOrganizedCount", m.GetTeamsMeetingsOrganizedCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("yammerLikedMessageCount", m.GetYammerLikedMessageCount())
         if err != nil {
             return err
@@ -513,6 +557,14 @@ func (m *Office365GroupsActivityDetail) SetSharePointSiteStorageUsedInBytes(valu
 // SetSharePointTotalFileCount sets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
 func (m *Office365GroupsActivityDetail) SetSharePointTotalFileCount(value *int64)() {
     m.sharePointTotalFileCount = value
+}
+// SetTeamsChannelMessagesCount sets the teamsChannelMessagesCount property value. The teamsChannelMessagesCount property
+func (m *Office365GroupsActivityDetail) SetTeamsChannelMessagesCount(value *int64)() {
+    m.teamsChannelMessagesCount = value
+}
+// SetTeamsMeetingsOrganizedCount sets the teamsMeetingsOrganizedCount property value. The teamsMeetingsOrganizedCount property
+func (m *Office365GroupsActivityDetail) SetTeamsMeetingsOrganizedCount(value *int64)() {
+    m.teamsMeetingsOrganizedCount = value
 }
 // SetYammerLikedMessageCount sets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
 func (m *Office365GroupsActivityDetail) SetYammerLikedMessageCount(value *int64)() {
