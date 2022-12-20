@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC 
+// CloudPC provides operations to manage the collection of activityStatistics entities.
 type CloudPC struct {
     Entity
     // The Azure Active Directory (Azure AD) device ID of the Cloud PC.
@@ -57,7 +57,7 @@ type CloudPC struct {
     // The user principal name (UPN) of the user assigned to the Cloud PC.
     userPrincipalName *string
 }
-// NewCloudPC instantiates a new CloudPC and sets the default values.
+// NewCloudPC instantiates a new cloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),

@@ -27,7 +27,7 @@ type UnifiedRoleManagementPolicy struct {
     // The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
     scopeType *string
 }
-// NewUnifiedRoleManagementPolicy instantiates a new unifiedRoleManagementPolicy and sets the default values.
+// NewUnifiedRoleManagementPolicy instantiates a new UnifiedRoleManagementPolicy and sets the default values.
 func NewUnifiedRoleManagementPolicy()(*UnifiedRoleManagementPolicy) {
     m := &UnifiedRoleManagementPolicy{
         Entity: *NewEntity(),

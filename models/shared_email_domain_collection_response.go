@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedEmailDomainCollectionResponse provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
+// SharedEmailDomainCollectionResponse 
 type SharedEmailDomainCollectionResponse struct {
     BaseCollectionPaginationCountResponse
     // The value property

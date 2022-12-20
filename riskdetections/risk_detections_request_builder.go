@@ -16,7 +16,7 @@ type RiskDetectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a **riskDetection** object.
+// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of **riskDetection** objects.
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -66,7 +66,7 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation retrieve the properties of a **riskDetection** object.
+// CreateGetRequestInformation retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,10 +96,10 @@ func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// Get retrieve the properties of a **riskDetection** object.
+// Get retrieve the properties of a collection of **riskDetection** objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
 func (m *RiskDetectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedApproval provides operations to manage the collection of application entities.
+// PrivilegedApproval 
 type PrivilegedApproval struct {
     Entity
     // The approvalDuration property
@@ -31,7 +31,7 @@ type PrivilegedApproval struct {
     // The userId property
     userId *string
 }
-// NewPrivilegedApproval instantiates a new privilegedApproval and sets the default values.
+// NewPrivilegedApproval instantiates a new PrivilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {
     m := &PrivilegedApproval{
         Entity: *NewEntity(),

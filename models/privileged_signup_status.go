@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedSignupStatus provides operations to manage the collection of application entities.
+// PrivilegedSignupStatus 
 type PrivilegedSignupStatus struct {
     Entity
     // The isRegistered property
@@ -12,7 +12,7 @@ type PrivilegedSignupStatus struct {
     // The status property
     status *SetupStatus
 }
-// NewPrivilegedSignupStatus instantiates a new privilegedSignupStatus and sets the default values.
+// NewPrivilegedSignupStatus instantiates a new PrivilegedSignupStatus and sets the default values.
 func NewPrivilegedSignupStatus()(*PrivilegedSignupStatus) {
     m := &PrivilegedSignupStatus{
         Entity: *NewEntity(),

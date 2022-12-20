@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IntuneBrandingProfile 
+// IntuneBrandingProfile this entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.
 type IntuneBrandingProfile struct {
     Entity
     // The list of group assignments for the branding profile
@@ -75,7 +75,7 @@ type IntuneBrandingProfile struct {
     // Logo image displayed in Company Portal apps which have a theme color background behind the logo
     themeColorLogo MimeContentable
 }
-// NewIntuneBrandingProfile instantiates a new IntuneBrandingProfile and sets the default values.
+// NewIntuneBrandingProfile instantiates a new intuneBrandingProfile and sets the default values.
 func NewIntuneBrandingProfile()(*IntuneBrandingProfile) {
     m := &IntuneBrandingProfile{
         Entity: *NewEntity(),

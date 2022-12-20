@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcOnPremisesConnection provides operations to manage the deviceManagement singleton.
+// CloudPcOnPremisesConnection 
 type CloudPcOnPremisesConnection struct {
     Entity
     // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
@@ -42,7 +42,7 @@ type CloudPcOnPremisesConnection struct {
     // The virtualNetworkLocation property
     virtualNetworkLocation *string
 }
-// NewCloudPcOnPremisesConnection instantiates a new cloudPcOnPremisesConnection and sets the default values.
+// NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
     m := &CloudPcOnPremisesConnection{
         Entity: *NewEntity(),

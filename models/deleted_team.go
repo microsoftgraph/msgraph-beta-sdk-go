@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeletedTeam provides operations to manage the collection of application entities.
+// DeletedTeam 
 type DeletedTeam struct {
     Entity
     // The channels those are either shared with this deleted team or created in this deleted team.
     channels []Channelable
 }
-// NewDeletedTeam instantiates a new deletedTeam and sets the default values.
+// NewDeletedTeam instantiates a new DeletedTeam and sets the default values.
 func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),

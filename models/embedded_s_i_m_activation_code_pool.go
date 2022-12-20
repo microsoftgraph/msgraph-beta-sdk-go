@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmbeddedSIMActivationCodePool 
+// EmbeddedSIMActivationCodePool a pool represents a group of embedded SIM activation codes.
 type EmbeddedSIMActivationCodePool struct {
     Entity
     // The total count of activation codes which belong to this pool.
@@ -23,7 +23,7 @@ type EmbeddedSIMActivationCodePool struct {
     // The time the embedded SIM activation code pool was last modified. Updated service side.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewEmbeddedSIMActivationCodePool instantiates a new EmbeddedSIMActivationCodePool and sets the default values.
+// NewEmbeddedSIMActivationCodePool instantiates a new embeddedSIMActivationCodePool and sets the default values.
 func NewEmbeddedSIMActivationCodePool()(*EmbeddedSIMActivationCodePool) {
     m := &EmbeddedSIMActivationCodePool{
         Entity: *NewEntity(),

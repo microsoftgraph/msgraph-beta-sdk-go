@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcServicePlan provides operations to manage the collection of application entities.
+// CloudPcServicePlan 
 type CloudPcServicePlan struct {
     Entity
     // The name for the service plan. Read-only.
@@ -20,7 +20,7 @@ type CloudPcServicePlan struct {
     // The number of vCPUs. Read-only.
     vCpuCount *int32
 }
-// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),

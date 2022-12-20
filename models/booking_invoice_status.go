@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of bookingBusiness entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type BookingInvoiceStatus int
 
 const (

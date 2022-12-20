@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSGeneralDeviceConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
+// MacOSGeneralDeviceConfiguration 
 type MacOSGeneralDeviceConfiguration struct {
     DeviceConfiguration
     // Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
@@ -126,7 +126,7 @@ type MacOSGeneralDeviceConfiguration struct {
     // TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.
     wallpaperModificationBlocked *bool
 }
-// NewMacOSGeneralDeviceConfiguration instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
+// NewMacOSGeneralDeviceConfiguration instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
 func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
     m := &MacOSGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

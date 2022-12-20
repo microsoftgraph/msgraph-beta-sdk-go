@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcExternalPartnerSetting provides operations to manage the deviceManagement singleton.
+// CloudPcExternalPartnerSetting 
 type CloudPcExternalPartnerSetting struct {
     Entity
     // Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).
@@ -19,7 +19,7 @@ type CloudPcExternalPartnerSetting struct {
     // Status details message.
     statusDetails *string
 }
-// NewCloudPcExternalPartnerSetting instantiates a new cloudPcExternalPartnerSetting and sets the default values.
+// NewCloudPcExternalPartnerSetting instantiates a new CloudPcExternalPartnerSetting and sets the default values.
 func NewCloudPcExternalPartnerSetting()(*CloudPcExternalPartnerSetting) {
     m := &CloudPcExternalPartnerSetting{
         Entity: *NewEntity(),

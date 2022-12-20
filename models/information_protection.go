@@ -20,7 +20,7 @@ type InformationProtection struct {
     // The threatAssessmentRequests property
     threatAssessmentRequests []ThreatAssessmentRequestable
 }
-// NewInformationProtection instantiates a new InformationProtection and sets the default values.
+// NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
         Entity: *NewEntity(),

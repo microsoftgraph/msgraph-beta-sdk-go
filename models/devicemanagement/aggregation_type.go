@@ -2,7 +2,7 @@ package devicemanagement
 import (
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of activityStatistics entities.
 type AggregationType int
 
 const (

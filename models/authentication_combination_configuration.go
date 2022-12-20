@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationCombinationConfiguration provides operations to manage the collection of application entities.
+// AuthenticationCombinationConfiguration 
 type AuthenticationCombinationConfiguration struct {
     Entity
     // Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
     appliesToCombinations []AuthenticationMethodModes
 }
-// NewAuthenticationCombinationConfiguration instantiates a new authenticationCombinationConfiguration and sets the default values.
+// NewAuthenticationCombinationConfiguration instantiates a new AuthenticationCombinationConfiguration and sets the default values.
 func NewAuthenticationCombinationConfiguration()(*AuthenticationCombinationConfiguration) {
     m := &AuthenticationCombinationConfiguration{
         Entity: *NewEntity(),

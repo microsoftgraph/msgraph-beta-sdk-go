@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcUserSetting provides operations to manage the deviceManagement singleton.
+// CloudPcUserSetting 
 type CloudPcUserSetting struct {
     Entity
     // Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
@@ -23,7 +23,7 @@ type CloudPcUserSetting struct {
     // Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
     selfServiceEnabled *bool
 }
-// NewCloudPcUserSetting instantiates a new cloudPcUserSetting and sets the default values.
+// NewCloudPcUserSetting instantiates a new CloudPcUserSetting and sets the default values.
 func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     m := &CloudPcUserSetting{
         Entity: *NewEntity(),
