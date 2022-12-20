@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDevice 
+// ManagedDevice devices that are managed or pre-enrolled through Intune
 type ManagedDevice struct {
     Entity
     // Whether the device is Azure Active Directory registered. This property is read-only.
@@ -191,7 +191,7 @@ type ManagedDevice struct {
     // Count of remediated malware for this windows device. This property is read-only.
     windowsRemediatedMalwareCount *int32
 }
-// NewManagedDevice instantiates a new ManagedDevice and sets the default values.
+// NewManagedDevice instantiates a new managedDevice and sets the default values.
 func NewManagedDevice()(*ManagedDevice) {
     m := &ManagedDevice{
         Entity: *NewEntity(),

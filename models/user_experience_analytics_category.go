@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsCategory 
+// UserExperienceAnalyticsCategory the user experience analytics category entity contains the scores and insights for the various metrics of a category.
 type UserExperienceAnalyticsCategory struct {
     Entity
     // The insights for the user experience analytics category.

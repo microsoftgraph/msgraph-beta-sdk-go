@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingAppointment represents a booked appointment of a service by a customer in a business.
+// BookingAppointment 
 type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
     additionalInformation *string
-    // Url of meeting to join anonymously.
+    // The URL of the meeting to join anonymously.
     anonymousJoinWebUrl *string
     // The SMTP address of the bookingCustomer who is booking the appointment.
     customerEmailAddress *string
@@ -23,7 +23,7 @@ type BookingAppointment struct {
     customerNotes *string
     // The customer's phone number.
     customerPhone *string
-    // It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+    // A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
     customers []BookingCustomerInformationBaseable
     // The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
     customerTimeZone *string
@@ -80,7 +80,7 @@ type BookingAppointment struct {
     // The start property
     start DateTimeTimeZoneable
 }
-// NewBookingAppointment instantiates a new bookingAppointment and sets the default values.
+// NewBookingAppointment instantiates a new BookingAppointment and sets the default values.
 func NewBookingAppointment()(*BookingAppointment) {
     m := &BookingAppointment{
         Entity: *NewEntity(),
@@ -95,7 +95,7 @@ func CreateBookingAppointmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *BookingAppointment) GetAdditionalInformation()(*string) {
     return m.additionalInformation
 }
-// GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. Url of meeting to join anonymously.
+// GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. The URL of the meeting to join anonymously.
 func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     return m.anonymousJoinWebUrl
 }
@@ -123,7 +123,7 @@ func (m *BookingAppointment) GetCustomerNotes()(*string) {
 func (m *BookingAppointment) GetCustomerPhone()(*string) {
     return m.customerPhone
 }
-// GetCustomers gets the customers property value. It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+// GetCustomers gets the customers property value. A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) GetCustomers()([]BookingCustomerInformationBaseable) {
     return m.customers
 }
@@ -838,7 +838,7 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *BookingAppointment) SetAdditionalInformation(value *string)() {
     m.additionalInformation = value
 }
-// SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. Url of meeting to join anonymously.
+// SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. The URL of the meeting to join anonymously.
 func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
     m.anonymousJoinWebUrl = value
 }
@@ -866,7 +866,7 @@ func (m *BookingAppointment) SetCustomerNotes(value *string)() {
 func (m *BookingAppointment) SetCustomerPhone(value *string)() {
     m.customerPhone = value
 }
-// SetCustomers sets the customers property value. It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+// SetCustomers sets the customers property value. A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) SetCustomers(value []BookingCustomerInformationBaseable)() {
     m.customers = value
 }

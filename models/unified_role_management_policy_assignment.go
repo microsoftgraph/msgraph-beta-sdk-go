@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyAssignment provides operations to manage the collection of application entities.
+// UnifiedRoleManagementPolicyAssignment 
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
     // The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
@@ -18,7 +18,7 @@ type UnifiedRoleManagementPolicyAssignment struct {
     // The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
     scopeType *string
 }
-// NewUnifiedRoleManagementPolicyAssignment instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
+// NewUnifiedRoleManagementPolicyAssignment instantiates a new UnifiedRoleManagementPolicyAssignment and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssignment) {
     m := &UnifiedRoleManagementPolicyAssignment{
         Entity: *NewEntity(),

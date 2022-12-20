@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationProfile 
+// EducationSynchronizationProfile provides operations to manage the collection of accessReviewDecision entities.
 type EducationSynchronizationProfile struct {
     Entity
     // The dataProvider property
@@ -26,7 +26,7 @@ type EducationSynchronizationProfile struct {
     // The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
     state *EducationSynchronizationProfileState
 }
-// NewEducationSynchronizationProfile instantiates a new EducationSynchronizationProfile and sets the default values.
+// NewEducationSynchronizationProfile instantiates a new educationSynchronizationProfile and sets the default values.
 func NewEducationSynchronizationProfile()(*EducationSynchronizationProfile) {
     m := &EducationSynchronizationProfile{
         Entity: *NewEntity(),

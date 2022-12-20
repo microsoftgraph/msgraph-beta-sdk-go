@@ -10,7 +10,7 @@ type TeamworkUserIdentity struct {
     // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, emailUser and azureCommunicationServicesUser.
     userIdentityType *TeamworkUserIdentityType
 }
-// NewTeamworkUserIdentity instantiates a new TeamworkUserIdentity and sets the default values.
+// NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
 func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {
     m := &TeamworkUserIdentity{
         Identity: *NewIdentity(),

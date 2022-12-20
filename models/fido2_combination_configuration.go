@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Fido2CombinationConfiguration provides operations to manage the collection of agreement entities.
+// Fido2CombinationConfiguration 
 type Fido2CombinationConfiguration struct {
     AuthenticationCombinationConfiguration
     // A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.
     allowedAAGUIDs []string
 }
-// NewFido2CombinationConfiguration instantiates a new fido2CombinationConfiguration and sets the default values.
+// NewFido2CombinationConfiguration instantiates a new Fido2CombinationConfiguration and sets the default values.
 func NewFido2CombinationConfiguration()(*Fido2CombinationConfiguration) {
     m := &Fido2CombinationConfiguration{
         AuthenticationCombinationConfiguration: *NewAuthenticationCombinationConfiguration(),

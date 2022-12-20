@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamTemplate provides operations to manage the collection of agreement entities.
+// TeamTemplate 
 type TeamTemplate struct {
     Entity
     // The definitions property
     definitions []TeamTemplateDefinitionable
 }
-// NewTeamTemplate instantiates a new teamTemplate and sets the default values.
+// NewTeamTemplate instantiates a new TeamTemplate and sets the default values.
 func NewTeamTemplate()(*TeamTemplate) {
     m := &TeamTemplate{
         Entity: *NewEntity(),

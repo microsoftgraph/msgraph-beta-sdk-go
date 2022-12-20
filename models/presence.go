@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Presence provides operations to manage the cloudCommunications singleton.
+// Presence 
 type Presence struct {
     Entity
     // The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
@@ -13,7 +13,7 @@ type Presence struct {
     availability *string
     // The out of office settings for a user.
     outOfOfficeSettings OutOfOfficeSettingsable
-    // The statusMessage property
+    // The presence status message of a user.
     statusMessage PresenceStatusMessageable
 }
 // NewPresence instantiates a new presence and sets the default values.
@@ -84,7 +84,7 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
     return m.outOfOfficeSettings
 }
-// GetStatusMessage gets the statusMessage property value. The statusMessage property
+// GetStatusMessage gets the statusMessage property value. The presence status message of a user.
 func (m *Presence) GetStatusMessage()(PresenceStatusMessageable) {
     return m.statusMessage
 }
@@ -132,7 +132,7 @@ func (m *Presence) SetAvailability(value *string)() {
 func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
     m.outOfOfficeSettings = value
 }
-// SetStatusMessage sets the statusMessage property value. The statusMessage property
+// SetStatusMessage sets the statusMessage property value. The presence status message of a user.
 func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
     m.statusMessage = value
 }

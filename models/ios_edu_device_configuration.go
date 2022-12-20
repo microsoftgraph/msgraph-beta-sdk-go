@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosEduDeviceConfiguration iOS Education device configuration
+// IosEduDeviceConfiguration 
 type IosEduDeviceConfiguration struct {
     DeviceConfiguration
     // The Trusted Root and PFX certificates for Device
@@ -14,7 +14,7 @@ type IosEduDeviceConfiguration struct {
     // Trusted Root and PFX certificates for iOS EDU.
     teacherCertificateSettings IosEduCertificateSettingsable
 }
-// NewIosEduDeviceConfiguration instantiates a new iosEduDeviceConfiguration and sets the default values.
+// NewIosEduDeviceConfiguration instantiates a new IosEduDeviceConfiguration and sets the default values.
 func NewIosEduDeviceConfiguration()(*IosEduDeviceConfiguration) {
     m := &IosEduDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

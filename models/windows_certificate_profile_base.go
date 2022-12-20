@@ -20,7 +20,7 @@ type WindowsCertificateProfileBase struct {
     // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
-// NewWindowsCertificateProfileBase instantiates a new windowsCertificateProfileBase and sets the default values.
+// NewWindowsCertificateProfileBase instantiates a new WindowsCertificateProfileBase and sets the default values.
 func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     m := &WindowsCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),

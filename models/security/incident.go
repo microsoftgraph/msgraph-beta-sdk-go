@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Incident provides operations to manage the collection of application entities.
+// Incident provides operations to manage the collection of accessReviewDecision entities.
 type Incident struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The list of related alerts. Supports $expand.
@@ -19,7 +19,7 @@ type Incident struct {
     comments []AlertCommentable
     // Time when the incident was first created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The customTags property
+    // Array of custom tags associated with an incident.
     customTags []string
     // Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
     determination *AlertDetermination
@@ -69,7 +69,7 @@ func (m *Incident) GetComments()([]AlertCommentable) {
 func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.createdDateTime
 }
-// GetCustomTags gets the customTags property value. The customTags property
+// GetCustomTags gets the customTags property value. Array of custom tags associated with an incident.
 func (m *Incident) GetCustomTags()([]string) {
     return m.customTags
 }
@@ -386,7 +386,7 @@ func (m *Incident) SetComments(value []AlertCommentable)() {
 func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// SetCustomTags sets the customTags property value. The customTags property
+// SetCustomTags sets the customTags property value. Array of custom tags associated with an incident.
 func (m *Incident) SetCustomTags(value []string)() {
     m.customTags = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeSuiteApp contains properties and inherited properties for the Office365 Suite App.
+// OfficeSuiteApp 
 type OfficeSuiteApp struct {
     MobileApp
     // The value to accept the EULA automatically on the enduser's device.
@@ -34,7 +34,7 @@ type OfficeSuiteApp struct {
     // The property to represent that whether the shared computer activation is used not for Office365 app suite.
     useSharedComputerActivation *bool
 }
-// NewOfficeSuiteApp instantiates a new officeSuiteApp and sets the default values.
+// NewOfficeSuiteApp instantiates a new OfficeSuiteApp and sets the default values.
 func NewOfficeSuiteApp()(*OfficeSuiteApp) {
     m := &OfficeSuiteApp{
         MobileApp: *NewMobileApp(),

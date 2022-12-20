@@ -11,7 +11,7 @@ type BookingStaffMember struct {
     availabilityIsAffectedByPersonalCalendar *bool
     // Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
     colorIndex *int32
-    // The isEmailNotificationEnabled property
+    // True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
     isEmailNotificationEnabled *bool
     // The role property
     role *BookingStaffRole
@@ -120,7 +120,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
 func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     return m.isEmailNotificationEnabled
 }
@@ -203,7 +203,7 @@ func (m *BookingStaffMember) SetAvailabilityIsAffectedByPersonalCalendar(value *
 func (m *BookingStaffMember) SetColorIndex(value *int32)() {
     m.colorIndex = value
 }
-// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
 func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
     m.isEmailNotificationEnabled = value
 }

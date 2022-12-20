@@ -18,7 +18,7 @@ type CloudPcOrganizationSettings struct {
     // Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
     windowsSettings CloudPcWindowsSettingsable
 }
-// NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
+// NewCloudPcOrganizationSettings instantiates a new CloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     m := &CloudPcOrganizationSettings{
         Entity: *NewEntity(),

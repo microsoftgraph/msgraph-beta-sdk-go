@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to manage the compliance singleton.
+// Provides operations to manage the collection of activityStatistics entities.
 type TermGroupScope int
 
 const (

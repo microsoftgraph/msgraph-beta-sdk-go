@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagement singleton entity that acts as a container for all device management functionality.
+// DeviceManagement 
 type DeviceManagement struct {
     Entity
     // The date & time when tenant data moved between scaleunits.
@@ -358,7 +358,7 @@ type DeviceManagement struct {
     // Collection of ZebraFotaDeployments associated with account.
     zebraFotaDeployments []ZebraFotaDeploymentable
 }
-// NewDeviceManagement instantiates a new deviceManagement and sets the default values.
+// NewDeviceManagement instantiates a new DeviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
     m := &DeviceManagement{
         Entity: *NewEntity(),

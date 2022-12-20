@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsWifiConfiguration device Configuration.
+// WindowsWifiConfiguration 
 type WindowsWifiConfiguration struct {
     DeviceConfiguration
     // Specify whether the wifi connection should connect automatically when in range.
@@ -34,7 +34,7 @@ type WindowsWifiConfiguration struct {
     // Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
     wifiSecurityType *WiFiSecurityType
 }
-// NewWindowsWifiConfiguration instantiates a new windowsWifiConfiguration and sets the default values.
+// NewWindowsWifiConfiguration instantiates a new WindowsWifiConfiguration and sets the default values.
 func NewWindowsWifiConfiguration()(*WindowsWifiConfiguration) {
     m := &WindowsWifiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

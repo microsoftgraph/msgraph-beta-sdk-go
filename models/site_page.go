@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SitePage 
+// SitePage provides operations to manage the collection of activityStatistics entities.
 type SitePage struct {
     BaseItem
     // Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
@@ -32,7 +32,7 @@ type SitePage struct {
     // Collection of webparts on the SharePoint page
     webParts []WebPartable
 }
-// NewSitePage instantiates a new SitePage and sets the default values.
+// NewSitePage instantiates a new sitePage and sets the default values.
 func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseItem: *NewBaseItem(),

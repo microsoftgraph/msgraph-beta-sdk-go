@@ -6,7 +6,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyObjectFile 
+// GroupPolicyObjectFile the Group Policy Object file uploaded by admin.
 type GroupPolicyObjectFile struct {
     Entity
     // The Group Policy Object file content.
@@ -22,7 +22,7 @@ type GroupPolicyObjectFile struct {
     // The list of scope tags for the configuration.
     roleScopeTagIds []string
 }
-// NewGroupPolicyObjectFile instantiates a new GroupPolicyObjectFile and sets the default values.
+// NewGroupPolicyObjectFile instantiates a new groupPolicyObjectFile and sets the default values.
 func NewGroupPolicyObjectFile()(*GroupPolicyObjectFile) {
     m := &GroupPolicyObjectFile{
         Entity: *NewEntity(),

@@ -2,7 +2,7 @@ package search
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type AnswerState int
 
 const (

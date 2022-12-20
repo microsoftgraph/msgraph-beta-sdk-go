@@ -16,7 +16,7 @@ type RiskyUsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a **riskyUser** object.
+// RiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a collection of **riskyUser** objects.
 type RiskyUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *RiskyUsersRequestBuilder) Count()(*RiskyUsersCountRequestBuilder) {
     return NewRiskyUsersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve the properties and relationships of a **riskyUser** object.
+// CreateGetRequestInformation retrieve the properties and relationships of a collection of **riskyUser** objects.
 func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,10 +112,10 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(ctx context.Cont
 func (m *RiskyUsersRequestBuilder) Dismiss()(*RiskyUsersDismissRequestBuilder) {
     return NewRiskyUsersDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get retrieve the properties and relationships of a **riskyUser** object.
+// Get retrieve the properties and relationships of a collection of **riskyUser** objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
+// [Find more info here]: https://docs.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
 func (m *RiskyUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
