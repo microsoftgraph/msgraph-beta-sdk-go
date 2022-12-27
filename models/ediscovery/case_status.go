@@ -2,7 +2,7 @@ package ediscovery
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the compliance singleton.
 type CaseStatus int
 
 const (

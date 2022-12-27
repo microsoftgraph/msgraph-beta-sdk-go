@@ -14,7 +14,7 @@ type TeamworkPeripheral struct {
     // The unique identifier for the vendor of the device. Each vendor has a unique ID.
     vendorId *string
 }
-// NewTeamworkPeripheral instantiates a new teamworkPeripheral and sets the default values.
+// NewTeamworkPeripheral instantiates a new TeamworkPeripheral and sets the default values.
 func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     m := &TeamworkPeripheral{
         Entity: *NewEntity(),

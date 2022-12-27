@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AlertRule provides operations to manage the collection of activityStatistics entities.
+// AlertRule provides operations to manage the collection of accessReviewDecision entities.
 type AlertRule struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
@@ -16,13 +16,13 @@ type AlertRule struct {
     displayName *string
     // The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
     enabled *bool
-    // Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only
+    // Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
     isSystemRule *bool
-    // The notificationChannels property
+    // The notification channels of the rule selected by the user.
     notificationChannels []NotificationChannelable
-    // The severity property
+    // The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
     severity *RuleSeverityType
-    // The threshold property
+    // The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
     threshold RuleThresholdable
 }
 // NewAlertRule instantiates a new alertRule and sets the default values.
@@ -141,19 +141,19 @@ func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetIsSystemRule gets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only
+// GetIsSystemRule gets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
 func (m *AlertRule) GetIsSystemRule()(*bool) {
     return m.isSystemRule
 }
-// GetNotificationChannels gets the notificationChannels property value. The notificationChannels property
+// GetNotificationChannels gets the notificationChannels property value. The notification channels of the rule selected by the user.
 func (m *AlertRule) GetNotificationChannels()([]NotificationChannelable) {
     return m.notificationChannels
 }
-// GetSeverity gets the severity property value. The severity property
+// GetSeverity gets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
 func (m *AlertRule) GetSeverity()(*RuleSeverityType) {
     return m.severity
 }
-// GetThreshold gets the threshold property value. The threshold property
+// GetThreshold gets the threshold property value. The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
 func (m *AlertRule) GetThreshold()(RuleThresholdable) {
     return m.threshold
 }
@@ -235,19 +235,19 @@ func (m *AlertRule) SetDisplayName(value *string)() {
 func (m *AlertRule) SetEnabled(value *bool)() {
     m.enabled = value
 }
-// SetIsSystemRule sets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only
+// SetIsSystemRule sets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
 func (m *AlertRule) SetIsSystemRule(value *bool)() {
     m.isSystemRule = value
 }
-// SetNotificationChannels sets the notificationChannels property value. The notificationChannels property
+// SetNotificationChannels sets the notificationChannels property value. The notification channels of the rule selected by the user.
 func (m *AlertRule) SetNotificationChannels(value []NotificationChannelable)() {
     m.notificationChannels = value
 }
-// SetSeverity sets the severity property value. The severity property
+// SetSeverity sets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
 func (m *AlertRule) SetSeverity(value *RuleSeverityType)() {
     m.severity = value
 }
-// SetThreshold sets the threshold property value. The threshold property
+// SetThreshold sets the threshold property value. The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
 func (m *AlertRule) SetThreshold(value RuleThresholdable)() {
     m.threshold = value
 }

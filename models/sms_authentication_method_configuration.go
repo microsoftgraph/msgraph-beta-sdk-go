@@ -7,7 +7,7 @@ import (
 // SmsAuthenticationMethodConfiguration 
 type SmsAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
-    // A collection of users or groups who are enabled to use the authentication method.
+    // A collection of groups that are enabled to use the authentication method.
     includeTargets []SmsAuthenticationMethodTargetable
 }
 // NewSmsAuthenticationMethodConfiguration instantiates a new SmsAuthenticationMethodConfiguration and sets the default values.
@@ -42,7 +42,7 @@ func (m *SmsAuthenticationMethodConfiguration) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetIncludeTargets gets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *SmsAuthenticationMethodConfiguration) GetIncludeTargets()([]SmsAuthenticationMethodTargetable) {
     return m.includeTargets
 }
@@ -64,7 +64,7 @@ func (m *SmsAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
+// SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
 func (m *SmsAuthenticationMethodConfiguration) SetIncludeTargets(value []SmsAuthenticationMethodTargetable)() {
     m.includeTargets = value
 }

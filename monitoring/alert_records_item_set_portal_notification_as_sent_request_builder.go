@@ -41,7 +41,7 @@ func NewAlertRecordsItemSetPortalNotificationAsSentRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewAlertRecordsItemSetPortalNotificationAsSentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+// CreatePostRequestInformation set the status of the specified notification on the Microsoft EndPoint Manager admin center as sent, by modifying the **isPortalNotificationSent** property to `true`.
 func (m *AlertRecordsItemSetPortalNotificationAsSentRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *AlertRecordsItemSetPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -53,7 +53,7 @@ func (m *AlertRecordsItemSetPortalNotificationAsSentRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// Post set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
+// Post set the status of the specified notification on the Microsoft EndPoint Manager admin center as sent, by modifying the **isPortalNotificationSent** property to `true`.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0

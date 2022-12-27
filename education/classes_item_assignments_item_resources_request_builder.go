@@ -90,7 +90,7 @@ func (m *ClassesItemAssignmentsItemResourcesRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
+// CreatePostRequestInformation create an assignment resource. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
 func (m *ClassesItemAssignmentsItemResourcesRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentResourceable, requestConfiguration *ClassesItemAssignmentsItemResourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,7 +126,7 @@ func (m *ClassesItemAssignmentsItemResourcesRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentResourceCollectionResponseable), nil
 }
-// Post create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
+// Post create an assignment resource. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0

@@ -8,7 +8,7 @@ import (
 type ExcludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The object identifier of an Azure AD user or group.
+    // The object identifier of an Azure AD group.
     id *string
     // The OdataType property
     odataType *string
@@ -65,7 +65,7 @@ func (m *ExcludeTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetId gets the id property value. The object identifier of an Azure AD user or group.
+// GetId gets the id property value. The object identifier of an Azure AD group.
 func (m *ExcludeTarget) GetId()(*string) {
     return m.id
 }
@@ -110,7 +110,7 @@ func (m *ExcludeTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 func (m *ExcludeTarget) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetId sets the id property value. The object identifier of an Azure AD user or group.
+// SetId sets the id property value. The object identifier of an Azure AD group.
 func (m *ExcludeTarget) SetId(value *string)() {
     m.id = value
 }

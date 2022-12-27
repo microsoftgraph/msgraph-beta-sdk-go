@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceMobileAppConfiguration an abstract class for Mobile app configuration for enrolled devices.
+// ManagedDeviceMobileAppConfiguration 
 type ManagedDeviceMobileAppConfiguration struct {
     Entity
     // The list of group assignemenets for app configration.
@@ -33,7 +33,7 @@ type ManagedDeviceMobileAppConfiguration struct {
     // Version of the device configuration.
     version *int32
 }
-// NewManagedDeviceMobileAppConfiguration instantiates a new managedDeviceMobileAppConfiguration and sets the default values.
+// NewManagedDeviceMobileAppConfiguration instantiates a new ManagedDeviceMobileAppConfiguration and sets the default values.
 func NewManagedDeviceMobileAppConfiguration()(*ManagedDeviceMobileAppConfiguration) {
     m := &ManagedDeviceMobileAppConfiguration{
         Entity: *NewEntity(),
