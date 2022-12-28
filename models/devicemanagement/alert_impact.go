@@ -12,7 +12,7 @@ type AlertImpact struct {
     aggregationType *AggregationType
     // The OdataType property
     odataType *string
-    // The number value of the impact.
+    // The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
     value *int32
 }
 // NewAlertImpact instantiates a new alertImpact and sets the default values.
@@ -73,7 +73,7 @@ func (m *AlertImpact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 func (m *AlertImpact) GetOdataType()(*string) {
     return m.odataType
 }
-// GetValue gets the value property value. The number value of the impact.
+// GetValue gets the value property value. The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
 func (m *AlertImpact) GetValue()(*int32) {
     return m.value
 }
@@ -118,7 +118,7 @@ func (m *AlertImpact) SetAggregationType(value *AggregationType)() {
 func (m *AlertImpact) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetValue sets the value property value. The number value of the impact.
+// SetValue sets the value property value. The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
 func (m *AlertImpact) SetValue(value *int32)() {
     m.value = value
 }

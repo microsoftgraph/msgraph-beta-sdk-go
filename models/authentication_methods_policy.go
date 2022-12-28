@@ -18,7 +18,7 @@ type AuthenticationMethodsPolicy struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The version of the policy in use.
     policyVersion *string
-    // The reconfirmationInDays property
+    // Days before the user will be asked to reconfirm their method.
     reconfirmationInDays *int32
     // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
     registrationEnforcement RegistrationEnforcementable
@@ -133,7 +133,7 @@ func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853
 func (m *AuthenticationMethodsPolicy) GetPolicyVersion()(*string) {
     return m.policyVersion
 }
-// GetReconfirmationInDays gets the reconfirmationInDays property value. The reconfirmationInDays property
+// GetReconfirmationInDays gets the reconfirmationInDays property value. Days before the user will be asked to reconfirm their method.
 func (m *AuthenticationMethodsPolicy) GetReconfirmationInDays()(*int32) {
     return m.reconfirmationInDays
 }
@@ -215,7 +215,7 @@ func (m *AuthenticationMethodsPolicy) SetLastModifiedDateTime(value *i336074805f
 func (m *AuthenticationMethodsPolicy) SetPolicyVersion(value *string)() {
     m.policyVersion = value
 }
-// SetReconfirmationInDays sets the reconfirmationInDays property value. The reconfirmationInDays property
+// SetReconfirmationInDays sets the reconfirmationInDays property value. Days before the user will be asked to reconfirm their method.
 func (m *AuthenticationMethodsPolicy) SetReconfirmationInDays(value *int32)() {
     m.reconfirmationInDays = value
 }

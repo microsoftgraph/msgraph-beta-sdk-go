@@ -2,7 +2,7 @@ package devicemanagement
 import (
     "errors"
 )
-// Provides operations to manage the collection of activityStatistics entities.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type OperatorType int
 
 const (

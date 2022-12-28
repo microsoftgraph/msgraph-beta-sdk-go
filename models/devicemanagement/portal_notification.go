@@ -20,7 +20,7 @@ type PortalNotification struct {
     alertRuleTemplate *AlertRuleTemplate
     // The unique identifier for the portal notification.
     id *string
-    // If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.
+    // true if the portal notification has already been sent to the user; false otherwise.
     isPortalNotificationSent *bool
     // The OdataType property
     odataType *string
@@ -161,7 +161,7 @@ func (m *PortalNotification) GetFieldDeserializers()(map[string]func(i878a80d233
 func (m *PortalNotification) GetId()(*string) {
     return m.id
 }
-// GetIsPortalNotificationSent gets the isPortalNotificationSent property value. If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.
+// GetIsPortalNotificationSent gets the isPortalNotificationSent property value. true if the portal notification has already been sent to the user; false otherwise.
 func (m *PortalNotification) GetIsPortalNotificationSent()(*bool) {
     return m.isPortalNotificationSent
 }
@@ -267,7 +267,7 @@ func (m *PortalNotification) SetAlertRuleTemplate(value *AlertRuleTemplate)() {
 func (m *PortalNotification) SetId(value *string)() {
     m.id = value
 }
-// SetIsPortalNotificationSent sets the isPortalNotificationSent property value. If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.
+// SetIsPortalNotificationSent sets the isPortalNotificationSent property value. true if the portal notification has already been sent to the user; false otherwise.
 func (m *PortalNotification) SetIsPortalNotificationSent(value *bool)() {
     m.isPortalNotificationSent = value
 }

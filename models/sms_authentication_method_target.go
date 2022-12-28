@@ -7,7 +7,7 @@ import (
 // SmsAuthenticationMethodTarget 
 type SmsAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
-    // Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.
+    // Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
     isUsableForSignIn *bool
 }
 // NewSmsAuthenticationMethodTarget instantiates a new SmsAuthenticationMethodTarget and sets the default values.
@@ -36,7 +36,7 @@ func (m *SmsAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetIsUsableForSignIn gets the isUsableForSignIn property value. Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.
+// GetIsUsableForSignIn gets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
 func (m *SmsAuthenticationMethodTarget) GetIsUsableForSignIn()(*bool) {
     return m.isUsableForSignIn
 }
@@ -54,7 +54,7 @@ func (m *SmsAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetIsUsableForSignIn sets the isUsableForSignIn property value. Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.
+// SetIsUsableForSignIn sets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
 func (m *SmsAuthenticationMethodTarget) SetIsUsableForSignIn(value *bool)() {
     m.isUsableForSignIn = value
 }
