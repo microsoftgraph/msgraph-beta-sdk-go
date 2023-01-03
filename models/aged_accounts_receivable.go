@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgedAccountsReceivable 
+// AgedAccountsReceivable provides operations to manage the collection of accessReviewDecision entities.
 type AgedAccountsReceivable struct {
     Entity
     // The agedAsOfDate property
@@ -28,7 +28,7 @@ type AgedAccountsReceivable struct {
     // The periodLengthFilter property
     periodLengthFilter *string
 }
-// NewAgedAccountsReceivable instantiates a new AgedAccountsReceivable and sets the default values.
+// NewAgedAccountsReceivable instantiates a new agedAccountsReceivable and sets the default values.
 func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
     m := &AgedAccountsReceivable{
         Entity: *NewEntity(),

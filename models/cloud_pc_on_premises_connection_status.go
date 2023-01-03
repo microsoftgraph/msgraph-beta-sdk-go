@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the admin singleton.
 type CloudPcOnPremisesConnectionStatus int
 
 const (
