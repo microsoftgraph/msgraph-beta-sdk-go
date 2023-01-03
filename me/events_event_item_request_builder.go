@@ -53,7 +53,7 @@ func (m *EventsEventItemRequestBuilder) Attachments()(*EventsItemAttachmentsRequ
     return NewEventsItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.event entity.
-func (m *EventsEventItemRequestBuilder) AttachmentsById(id string)(*EventsItemAttachmentsAttachmentItemRequestBuilder) {
+func (m *EventsEventItemRequestBuilder) AttachmentsById(id string)(*AttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -61,7 +61,7 @@ func (m *EventsEventItemRequestBuilder) AttachmentsById(id string)(*EventsItemAt
     if id != "" {
         urlTplParams["attachment%2Did"] = id
     }
-    return NewEventsItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Calendar provides operations to manage the calendar property of the microsoft.graph.event entity.
 func (m *EventsEventItemRequestBuilder) Calendar()(*EventsItemCalendarRequestBuilder) {
@@ -161,7 +161,7 @@ func (m *EventsEventItemRequestBuilder) ExceptionOccurrences()(*EventsItemExcept
     return NewEventsItemExceptionOccurrencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExceptionOccurrencesById provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
-func (m *EventsEventItemRequestBuilder) ExceptionOccurrencesById(id string)(*EventsItemExceptionOccurrencesEventItemRequestBuilder) {
+func (m *EventsEventItemRequestBuilder) ExceptionOccurrencesById(id string)(*EventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,14 +169,14 @@ func (m *EventsEventItemRequestBuilder) ExceptionOccurrencesById(id string)(*Eve
     if id != "" {
         urlTplParams["event%2Did1"] = id
     }
-    return NewEventsItemExceptionOccurrencesEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 func (m *EventsEventItemRequestBuilder) Extensions()(*EventsItemExtensionsRequestBuilder) {
     return NewEventsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.event entity.
-func (m *EventsEventItemRequestBuilder) ExtensionsById(id string)(*EventsItemExtensionsExtensionItemRequestBuilder) {
+func (m *EventsEventItemRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -184,7 +184,7 @@ func (m *EventsEventItemRequestBuilder) ExtensionsById(id string)(*EventsItemExt
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewEventsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Forward provides operations to call the forward method.
 func (m *EventsEventItemRequestBuilder) Forward()(*EventsItemForwardRequestBuilder) {
@@ -214,7 +214,7 @@ func (m *EventsEventItemRequestBuilder) Instances()(*EventsItemInstancesRequestB
     return NewEventsItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InstancesById provides operations to manage the instances property of the microsoft.graph.event entity.
-func (m *EventsEventItemRequestBuilder) InstancesById(id string)(*EventsItemInstancesEventItemRequestBuilder) {
+func (m *EventsEventItemRequestBuilder) InstancesById(id string)(*EventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -222,14 +222,14 @@ func (m *EventsEventItemRequestBuilder) InstancesById(id string)(*EventsItemInst
     if id != "" {
         urlTplParams["event%2Did1"] = id
     }
-    return NewEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MultiValueExtendedProperties provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
 func (m *EventsEventItemRequestBuilder) MultiValueExtendedProperties()(*EventsItemMultiValueExtendedPropertiesRequestBuilder) {
     return NewEventsItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *EventsEventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*EventsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
+func (m *EventsEventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -237,7 +237,7 @@ func (m *EventsEventItemRequestBuilder) MultiValueExtendedPropertiesById(id stri
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewEventsItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property events in me
 func (m *EventsEventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, requestConfiguration *EventsEventItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, error) {
@@ -263,7 +263,7 @@ func (m *EventsEventItemRequestBuilder) SingleValueExtendedProperties()(*EventsI
     return NewEventsItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-func (m *EventsEventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*EventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
+func (m *EventsEventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -271,7 +271,7 @@ func (m *EventsEventItemRequestBuilder) SingleValueExtendedPropertiesById(id str
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewEventsItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
 func (m *EventsEventItemRequestBuilder) SnoozeReminder()(*EventsItemSnoozeReminderRequestBuilder) {

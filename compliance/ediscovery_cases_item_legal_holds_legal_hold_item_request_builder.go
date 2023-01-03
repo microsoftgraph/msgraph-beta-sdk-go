@@ -166,7 +166,7 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) SiteSources()
     return NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SiteSourcesById provides operations to manage the siteSources property of the microsoft.graph.ediscovery.legalHold entity.
-func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) SiteSourcesById(id string)(*EdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) SiteSourcesById(id string)(*SiteSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) SiteSourcesBy
     if id != "" {
         urlTplParams["siteSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UnifiedGroupSources provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UnifiedGroupSources()(*EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UnifiedGroupSourcesById provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.legalHold entity.
-func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UnifiedGroupSourcesById(id string)(*EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UnifiedGroupSourcesById(id string)(*UnifiedGroupSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,14 +189,14 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UnifiedGroupS
     if id != "" {
         urlTplParams["unifiedGroupSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UserSources provides operations to manage the userSources property of the microsoft.graph.ediscovery.legalHold entity.
 func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UserSources()(*EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserSourcesById provides operations to manage the userSources property of the microsoft.graph.ediscovery.legalHold entity.
-func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UserSourcesById(id string)(*EdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UserSourcesById(id string)(*UserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,5 +204,5 @@ func (m *EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) UserSourcesBy
     if id != "" {
         urlTplParams["userSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

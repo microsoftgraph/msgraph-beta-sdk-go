@@ -150,7 +150,7 @@ func (m *ItemTermStoreRequestBuilder) Groups()(*ItemTermStoreGroupsRequestBuilde
     return NewItemTermStoreGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupsById provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-func (m *ItemTermStoreRequestBuilder) GroupsById(id string)(*ItemTermStoreGroupsGroupItemRequestBuilder) {
+func (m *ItemTermStoreRequestBuilder) GroupsById(id string)(*GroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -158,7 +158,7 @@ func (m *ItemTermStoreRequestBuilder) GroupsById(id string)(*ItemTermStoreGroups
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return NewItemTermStoreGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property termStore in sites
 func (m *ItemTermStoreRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, requestConfiguration *ItemTermStoreRequestBuilderPatchRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
@@ -184,7 +184,7 @@ func (m *ItemTermStoreRequestBuilder) Sets()(*ItemTermStoreSetsRequestBuilder) {
     return NewItemTermStoreSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-func (m *ItemTermStoreRequestBuilder) SetsById(id string)(*ItemTermStoreSetsSetItemRequestBuilder) {
+func (m *ItemTermStoreRequestBuilder) SetsById(id string)(*SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -192,5 +192,5 @@ func (m *ItemTermStoreRequestBuilder) SetsById(id string)(*ItemTermStoreSetsSetI
     if id != "" {
         urlTplParams["set%2Did"] = id
     }
-    return NewItemTermStoreSetsSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

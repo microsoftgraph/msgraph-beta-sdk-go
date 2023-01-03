@@ -82,7 +82,7 @@ func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Con
     return NewPendingAccessReviewInstancesItemContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ContactedReviewersById provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
-func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) ContactedReviewersById(id string)(*PendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilder) {
+func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) ContactedReviewersById(id string)(*AccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -90,7 +90,7 @@ func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Con
     if id != "" {
         urlTplParams["accessReviewReviewer%2Did"] = id
     }
-    return NewPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property pendingAccessReviewInstances for me
 func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +139,7 @@ func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Dec
     return NewPendingAccessReviewInstancesItemDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
-func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) DecisionsById(id string)(*PendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
+func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) DecisionsById(id string)(*AccessReviewInstanceDecisionItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -147,7 +147,7 @@ func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Dec
     if id != "" {
         urlTplParams["accessReviewInstanceDecisionItem%2Did"] = id
     }
-    return NewPendingAccessReviewInstancesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
 func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Definition()(*PendingAccessReviewInstancesItemDefinitionRequestBuilder) {
@@ -220,7 +220,7 @@ func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Sta
     return NewPendingAccessReviewInstancesItemStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // StagesById provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
-func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) StagesById(id string)(*PendingAccessReviewInstancesItemStagesAccessReviewStageItemRequestBuilder) {
+func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) StagesById(id string)(*AccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -228,7 +228,7 @@ func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Sta
     if id != "" {
         urlTplParams["accessReviewStage%2Did"] = id
     }
-    return NewPendingAccessReviewInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Stop provides operations to call the stop method.
 func (m *PendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) Stop()(*PendingAccessReviewInstancesItemStopRequestBuilder) {

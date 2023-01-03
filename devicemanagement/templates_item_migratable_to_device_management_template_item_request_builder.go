@@ -51,7 +51,7 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Ca
     return NewTemplatesItemMigratableToItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*TemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) {
+func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*DeviceManagementTemplateSettingCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Ca
     if id != "" {
         urlTplParams["deviceManagementTemplateSettingCategory%2Did"] = id
     }
-    return NewTemplatesItemMigratableToItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CompareWithTemplateId provides operations to call the compare method.
 func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) CompareWithTemplateId(templateId *string)(*TemplatesItemMigratableToItemCompareWithTemplateIdRequestBuilder) {
@@ -189,7 +189,7 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Se
     return NewTemplatesItemMigratableToItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) SettingsById(id string)(*TemplatesItemMigratableToItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
+func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) SettingsById(id string)(*DeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -197,5 +197,5 @@ func (m *TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) Se
     if id != "" {
         urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
-    return NewTemplatesItemMigratableToItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

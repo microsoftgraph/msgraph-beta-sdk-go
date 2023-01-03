@@ -51,7 +51,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatu
     return NewTermsAndConditionsItemAcceptanceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AcceptanceStatusesById provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatusesById(id string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
+func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatusesById(id string)(*TermsAndConditionsAcceptanceStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AcceptanceStatu
     if id != "" {
         urlTplParams["termsAndConditionsAcceptanceStatus%2Did"] = id
     }
-    return NewTermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsAndConditionsAcceptanceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Assignments()(*TermsAndConditionsItemAssignmentsRequestBuilder) {
     return NewTermsAndConditionsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById(id string)(*TermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilder) {
+func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById(id string)(*TermsAndConditionsAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) AssignmentsById
     if id != "" {
         urlTplParams["termsAndConditionsAssignment%2Did"] = id
     }
-    return NewTermsAndConditionsItemAssignmentsTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsAndConditionsAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.
 func NewTermsAndConditionsTermsAndConditionsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsAndConditionsTermsAndConditionsItemRequestBuilder) {
@@ -177,7 +177,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignment
     return NewTermsAndConditionsItemGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupAssignmentsById provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignmentsById(id string)(*TermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilder) {
+func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignmentsById(id string)(*TermsAndConditionsGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -185,7 +185,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) GroupAssignment
     if id != "" {
         urlTplParams["termsAndConditionsGroupAssignment%2Did"] = id
     }
-    return NewTermsAndConditionsItemGroupAssignmentsTermsAndConditionsGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermsAndConditionsGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property termsAndConditions in deviceManagement
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsable, requestConfiguration *TermsAndConditionsTermsAndConditionsItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsAndConditionsable, error) {

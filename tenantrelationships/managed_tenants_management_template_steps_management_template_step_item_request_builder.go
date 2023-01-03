@@ -174,7 +174,7 @@ func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestB
     return NewManagedTenantsManagementTemplateStepsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.managedTenants.managementTemplateStep entity.
-func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) VersionsById(id string)(*ManagedTenantsManagementTemplateStepsItemVersionsManagementTemplateStepVersionItemRequestBuilder) {
+func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) VersionsById(id string)(*ManagementTemplateStepVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -182,5 +182,5 @@ func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestB
     if id != "" {
         urlTplParams["managementTemplateStepVersion%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplateStepsItemVersionsManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

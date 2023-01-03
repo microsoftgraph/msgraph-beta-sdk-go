@@ -166,7 +166,7 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSection
     return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WebpartsById provides operations to manage the webparts property of the microsoft.graph.horizontalSectionColumn entity.
-func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSectionColumnItemRequestBuilder) WebpartsById(id string)(*ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsWebPartItemRequestBuilder) {
+func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSectionColumnItemRequestBuilder) WebpartsById(id string)(*WebPartItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *ItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsHorizontalSection
     if id != "" {
         urlTplParams["webPart%2Did"] = id
     }
-    return NewItemPagesItemCanvasLayoutHorizontalSectionsItemColumnsItemWebpartsWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

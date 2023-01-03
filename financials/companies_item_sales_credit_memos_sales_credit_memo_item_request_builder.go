@@ -143,7 +143,7 @@ func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) SalesCr
     return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SalesCreditMemoLinesById provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.
-func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) SalesCreditMemoLinesById(id string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
+func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) SalesCreditMemoLinesById(id string)(*SalesCreditMemoLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -151,5 +151,5 @@ func (m *CompaniesItemSalesCreditMemosSalesCreditMemoItemRequestBuilder) SalesCr
     if id != "" {
         urlTplParams["salesCreditMemoLine%2Did"] = id
     }
-    return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

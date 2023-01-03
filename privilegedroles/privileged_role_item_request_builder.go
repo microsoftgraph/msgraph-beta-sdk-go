@@ -51,7 +51,7 @@ func (m *PrivilegedRoleItemRequestBuilder) Assignments()(*ItemAssignmentsRequest
     return NewItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
-func (m *PrivilegedRoleItemRequestBuilder) AssignmentsById(id string)(*ItemAssignmentsPrivilegedRoleAssignmentItemRequestBuilder) {
+func (m *PrivilegedRoleItemRequestBuilder) AssignmentsById(id string)(*PrivilegedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *PrivilegedRoleItemRequestBuilder) AssignmentsById(id string)(*ItemAssig
     if id != "" {
         urlTplParams["privilegedRoleAssignment%2Did"] = id
     }
-    return NewItemAssignmentsPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPrivilegedRoleItemRequestBuilderInternal instantiates a new PrivilegedRoleItemRequestBuilder and sets the default values.
 func NewPrivilegedRoleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedRoleItemRequestBuilder) {

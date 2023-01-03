@@ -166,7 +166,7 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
     return NewRoleAssignmentsItemRoleScopeTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleScopeTagsById provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
-func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleScopeTagsById(id string)(*RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) {
+func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) RoleScopeTagsById(id string)(*RoleScopeTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *RoleAssignmentsDeviceAndAppManagementRoleAssignmentItemRequestBuilder) 
     if id != "" {
         urlTplParams["roleScopeTag%2Did"] = id
     }
-    return NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRoleScopeTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

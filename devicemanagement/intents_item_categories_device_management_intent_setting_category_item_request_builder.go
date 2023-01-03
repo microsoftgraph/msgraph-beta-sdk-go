@@ -166,7 +166,7 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
     return NewIntentsItemCategoriesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.
-func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) SettingsById(id string)(*IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
+func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBuilder) SettingsById(id string)(*DeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *IntentsItemCategoriesDeviceManagementIntentSettingCategoryItemRequestBu
     if id != "" {
         urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
-    return NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

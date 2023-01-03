@@ -147,7 +147,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizati
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LocalizationsById provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
-func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) LocalizationsById(id string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) {
+func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) LocalizationsById(id string)(*PlannerPlanConfigurationLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizati
     if id != "" {
         urlTplParams["plannerPlanConfigurationLocalization%2Did"] = id
     }
-    return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property planConfiguration in solutions
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, error) {

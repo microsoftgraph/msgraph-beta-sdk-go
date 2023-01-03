@@ -166,7 +166,7 @@ func (m *EdgeInternetExplorerModeRequestBuilder) SiteLists()(*EdgeInternetExplor
     return NewEdgeInternetExplorerModeSiteListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SiteListsById provides operations to manage the siteLists property of the microsoft.graph.internetExplorerMode entity.
-func (m *EdgeInternetExplorerModeRequestBuilder) SiteListsById(id string)(*EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) {
+func (m *EdgeInternetExplorerModeRequestBuilder) SiteListsById(id string)(*BrowserSiteListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *EdgeInternetExplorerModeRequestBuilder) SiteListsById(id string)(*EdgeI
     if id != "" {
         urlTplParams["browserSiteList%2Did"] = id
     }
-    return NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBrowserSiteListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -170,7 +170,7 @@ func (m *DeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemReque
     return NewDeviceManagementResourceNamespacesItemResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResourceActionsById provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
-func (m *DeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActionsById(id string)(*DeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
+func (m *DeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ResourceActionsById(id string)(*UnifiedRbacResourceActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -178,5 +178,5 @@ func (m *DeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemReque
     if id != "" {
         urlTplParams["unifiedRbacResourceAction%2Did"] = id
     }
-    return NewDeviceManagementResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRbacResourceActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

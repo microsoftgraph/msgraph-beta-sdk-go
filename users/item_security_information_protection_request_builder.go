@@ -170,7 +170,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabels()(*I
     return NewItemSecurityInformationProtectionSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
-func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*ItemSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
+func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -178,5 +178,5 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabelsById(
     if id != "" {
         urlTplParams["sensitivityLabel%2Did"] = id
     }
-    return NewItemSecurityInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -166,7 +166,7 @@ func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder)
     return NewEntitlementManagementRoleAssignmentApprovalsItemStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // StepsById provides operations to manage the steps property of the microsoft.graph.approval entity.
-func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) StepsById(id string)(*EntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) {
+func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder) StepsById(id string)(*ApprovalStepItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *EntitlementManagementRoleAssignmentApprovalsApprovalItemRequestBuilder)
     if id != "" {
         urlTplParams["approvalStep%2Did"] = id
     }
-    return NewEntitlementManagementRoleAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

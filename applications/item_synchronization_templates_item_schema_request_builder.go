@@ -128,7 +128,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Directories()(*It
     return NewItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectoriesById provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
-func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) DirectoriesById(id string)(*ItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
+func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) DirectoriesById(id string)(*DirectoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -136,7 +136,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) DirectoriesById(i
     if id != "" {
         urlTplParams["directoryDefinition%2Did"] = id
     }
-    return NewItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // FilterOperators provides operations to call the filterOperators method.
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) FilterOperators()(*ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) {

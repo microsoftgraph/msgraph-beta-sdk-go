@@ -51,7 +51,7 @@ func (m *PolicySetsPolicySetItemRequestBuilder) Assignments()(*PolicySetsItemAss
     return NewPolicySetsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.policySet entity.
-func (m *PolicySetsPolicySetItemRequestBuilder) AssignmentsById(id string)(*PolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilder) {
+func (m *PolicySetsPolicySetItemRequestBuilder) AssignmentsById(id string)(*PolicySetAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *PolicySetsPolicySetItemRequestBuilder) AssignmentsById(id string)(*Poli
     if id != "" {
         urlTplParams["policySetAssignment%2Did"] = id
     }
-    return NewPolicySetsItemAssignmentsPolicySetAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPolicySetAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPolicySetsPolicySetItemRequestBuilderInternal instantiates a new PolicySetItemRequestBuilder and sets the default values.
 func NewPolicySetsPolicySetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicySetsPolicySetItemRequestBuilder) {
@@ -162,7 +162,7 @@ func (m *PolicySetsPolicySetItemRequestBuilder) Items()(*PolicySetsItemItemsRequ
     return NewPolicySetsItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.policySet entity.
-func (m *PolicySetsPolicySetItemRequestBuilder) ItemsById(id string)(*PolicySetsItemItemsPolicySetItemItemRequestBuilder) {
+func (m *PolicySetsPolicySetItemRequestBuilder) ItemsById(id string)(*PolicySetItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -170,7 +170,7 @@ func (m *PolicySetsPolicySetItemRequestBuilder) ItemsById(id string)(*PolicySets
     if id != "" {
         urlTplParams["policySetItem%2Did"] = id
     }
-    return NewPolicySetsItemItemsPolicySetItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPolicySetItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property policySets in deviceAppManagement
 func (m *PolicySetsPolicySetItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetable, requestConfiguration *PolicySetsPolicySetItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetable, error) {

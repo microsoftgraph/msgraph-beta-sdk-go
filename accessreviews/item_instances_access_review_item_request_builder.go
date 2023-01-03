@@ -116,7 +116,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) Decisions()(*ItemInstances
     return NewItemInstancesItemDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
-func (m *ItemInstancesAccessReviewItemRequestBuilder) DecisionsById(id string)(*ItemInstancesItemDecisionsAccessReviewDecisionItemRequestBuilder) {
+func (m *ItemInstancesAccessReviewItemRequestBuilder) DecisionsById(id string)(*AccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -124,7 +124,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) DecisionsById(id string)(*
     if id != "" {
         urlTplParams["accessReviewDecision%2Did"] = id
     }
-    return NewItemInstancesItemDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property instances for accessReviews
 func (m *ItemInstancesAccessReviewItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInstancesAccessReviewItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -166,7 +166,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) MyDecisions()(*ItemInstanc
     return NewItemInstancesItemMyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MyDecisionsById provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
-func (m *ItemInstancesAccessReviewItemRequestBuilder) MyDecisionsById(id string)(*ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
+func (m *ItemInstancesAccessReviewItemRequestBuilder) MyDecisionsById(id string)(*AccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,7 +174,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) MyDecisionsById(id string)
     if id != "" {
         urlTplParams["accessReviewDecision%2Did"] = id
     }
-    return NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property instances in accessReviews
 func (m *ItemInstancesAccessReviewItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, requestConfiguration *ItemInstancesAccessReviewItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, error) {
@@ -204,7 +204,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) Reviewers()(*ItemInstances
     return NewItemInstancesItemReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ReviewersById provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
-func (m *ItemInstancesAccessReviewItemRequestBuilder) ReviewersById(id string)(*ItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilder) {
+func (m *ItemInstancesAccessReviewItemRequestBuilder) ReviewersById(id string)(*AccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -212,7 +212,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) ReviewersById(id string)(*
     if id != "" {
         urlTplParams["accessReviewReviewer%2Did"] = id
     }
-    return NewItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SendReminder provides operations to call the sendReminder method.
 func (m *ItemInstancesAccessReviewItemRequestBuilder) SendReminder()(*ItemInstancesItemSendReminderRequestBuilder) {

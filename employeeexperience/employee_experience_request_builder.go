@@ -112,7 +112,7 @@ func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*LearningProvider
     return NewLearningProvidersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LearningProvidersById provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
-func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*LearningProvidersLearningProviderItemRequestBuilder) {
+func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*LearningProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +120,7 @@ func (m *EmployeeExperienceRequestBuilder) LearningProvidersById(id string)(*Lea
     if id != "" {
         urlTplParams["learningProvider%2Did"] = id
     }
-    return NewLearningProvidersLearningProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLearningProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update employeeExperience
 func (m *EmployeeExperienceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable, requestConfiguration *EmployeeExperienceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceable, error) {

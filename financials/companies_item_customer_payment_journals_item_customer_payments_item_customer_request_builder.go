@@ -178,7 +178,7 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerReq
     return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.customer entity.
-func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerRequestBuilder) PictureById(id string)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPicturePictureItemRequestBuilder) {
+func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerRequestBuilder) PictureById(id string)(*PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -186,7 +186,7 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerReq
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerRequestBuilder) ShipmentMethod()(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerShipmentMethodRequestBuilder) {

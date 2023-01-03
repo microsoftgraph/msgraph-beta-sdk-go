@@ -128,7 +128,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Exclude
     return NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExcludesById provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
-func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ExcludesById(id string)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
+func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ExcludesById(id string)(*PermissionGrantConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -136,7 +136,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Exclude
     if id != "" {
         urlTplParams["permissionGrantConditionSet%2Did"] = id
     }
-    return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantPolicyable, error) {
@@ -162,7 +162,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Include
     return NewPermissionGrantPoliciesItemIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IncludesById provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
-func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) IncludesById(id string)(*PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilder) {
+func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) IncludesById(id string)(*PermissionGrantConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -170,7 +170,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Include
     if id != "" {
         urlTplParams["permissionGrantConditionSet%2Did"] = id
     }
-    return NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property permissionGrantPolicies in policies
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantPolicyable, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantPolicyable, error) {

@@ -51,7 +51,7 @@ func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) Children()(*GroupsItemSe
     return NewGroupsItemSetsItemTermsItemChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ChildrenById provides operations to manage the children property of the microsoft.graph.termStore.term entity.
-func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) ChildrenById(id string)(*GroupsItemSetsItemTermsItemChildrenTermItemRequestBuilder) {
+func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) ChildrenById(id string)(*TermItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) ChildrenById(id string)(
     if id != "" {
         urlTplParams["term%2Did1"] = id
     }
-    return NewGroupsItemSetsItemTermsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewGroupsItemSetsItemTermsTermItemRequestBuilderInternal instantiates a new TermItemRequestBuilder and sets the default values.
 func NewGroupsItemSetsItemTermsTermItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemTermsTermItemRequestBuilder) {
@@ -181,7 +181,7 @@ func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) Relations()(*GroupsItemS
     return NewGroupsItemSetsItemTermsItemRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RelationsById provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
-func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) RelationsById(id string)(*GroupsItemSetsItemTermsItemRelationsRelationItemRequestBuilder) {
+func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) RelationsById(id string)(*RelationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +189,7 @@ func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) RelationsById(id string)
     if id != "" {
         urlTplParams["relation%2Did"] = id
     }
-    return NewGroupsItemSetsItemTermsItemRelationsRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Set provides operations to manage the set property of the microsoft.graph.termStore.term entity.
 func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) Set()(*GroupsItemSetsItemTermsItemSetRequestBuilder) {

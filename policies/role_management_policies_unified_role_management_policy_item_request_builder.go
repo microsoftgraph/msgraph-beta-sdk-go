@@ -128,7 +128,7 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Ef
     return NewRoleManagementPoliciesItemEffectiveRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EffectiveRulesById provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRulesById(id string)(*RoleManagementPoliciesItemEffectiveRulesUnifiedRoleManagementPolicyRuleItemRequestBuilder) {
+func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) EffectiveRulesById(id string)(*UnifiedRoleManagementPolicyRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -136,7 +136,7 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Ef
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicyRule%2Did"] = id
     }
-    return NewRoleManagementPoliciesItemEffectiveRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get represents the role management policies.
 func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyable, error) {
@@ -181,7 +181,7 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Ru
     return NewRoleManagementPoliciesItemRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RulesById provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) RulesById(id string)(*RoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilder) {
+func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) RulesById(id string)(*UnifiedRoleManagementPolicyRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) Ru
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicyRule%2Did"] = id
     }
-    return NewRoleManagementPoliciesItemRulesUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRoleManagementPolicyRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

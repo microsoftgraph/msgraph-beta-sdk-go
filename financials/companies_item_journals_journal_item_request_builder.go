@@ -151,7 +151,7 @@ func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLines()(*Compani
     return NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // JournalLinesById provides operations to manage the journalLines property of the microsoft.graph.journal entity.
-func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLinesById(id string)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
+func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLinesById(id string)(*JournalLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -159,7 +159,7 @@ func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLinesById(id str
     if id != "" {
         urlTplParams["journalLine%2Did"] = id
     }
-    return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewJournalLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property journals in financials
 func (m *CompaniesItemJournalsJournalItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable, requestConfiguration *CompaniesItemJournalsJournalItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable, error) {

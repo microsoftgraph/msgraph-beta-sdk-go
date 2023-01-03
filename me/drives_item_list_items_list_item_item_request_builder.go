@@ -51,7 +51,7 @@ func (m *DrivesItemListItemsListItemItemRequestBuilder) Activities()(*DrivesItem
     return NewDrivesItemListItemsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ActivitiesById provides operations to manage the activities property of the microsoft.graph.listItem entity.
-func (m *DrivesItemListItemsListItemItemRequestBuilder) ActivitiesById(id string)(*DrivesItemListItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
+func (m *DrivesItemListItemsListItemItemRequestBuilder) ActivitiesById(id string)(*ItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *DrivesItemListItemsListItemItemRequestBuilder) ActivitiesById(id string
     if id != "" {
         urlTplParams["itemActivityOLD%2Did"] = id
     }
-    return NewDrivesItemListItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Analytics provides operations to manage the analytics property of the microsoft.graph.listItem entity.
 func (m *DrivesItemListItemsListItemItemRequestBuilder) Analytics()(*DrivesItemListItemsItemAnalyticsRequestBuilder) {
@@ -151,7 +151,7 @@ func (m *DrivesItemListItemsListItemItemRequestBuilder) DocumentSetVersions()(*D
     return NewDrivesItemListItemsItemDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DocumentSetVersionsById provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-func (m *DrivesItemListItemsListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*DrivesItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
+func (m *DrivesItemListItemsListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*DocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -159,7 +159,7 @@ func (m *DrivesItemListItemsListItemItemRequestBuilder) DocumentSetVersionsById(
     if id != "" {
         urlTplParams["documentSetVersion%2Did"] = id
     }
-    return NewDrivesItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
 func (m *DrivesItemListItemsListItemItemRequestBuilder) DriveItem()(*DrivesItemListItemsItemDriveItemRequestBuilder) {
@@ -216,7 +216,7 @@ func (m *DrivesItemListItemsListItemItemRequestBuilder) Versions()(*DrivesItemLi
     return NewDrivesItemListItemsItemVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VersionsById provides operations to manage the versions property of the microsoft.graph.listItem entity.
-func (m *DrivesItemListItemsListItemItemRequestBuilder) VersionsById(id string)(*DrivesItemListItemsItemVersionsListItemVersionItemRequestBuilder) {
+func (m *DrivesItemListItemsListItemItemRequestBuilder) VersionsById(id string)(*ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -224,5 +224,5 @@ func (m *DrivesItemListItemsListItemItemRequestBuilder) VersionsById(id string)(
     if id != "" {
         urlTplParams["listItemVersion%2Did"] = id
     }
-    return NewDrivesItemListItemsItemVersionsListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

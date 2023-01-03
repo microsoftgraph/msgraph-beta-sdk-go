@@ -51,7 +51,7 @@ func (m *PlannerRequestBuilder) All()(*PlannerAllRequestBuilder) {
     return NewPlannerAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AllById provides operations to manage the all property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) AllById(id string)(*PlannerAllPlannerDeltaItemRequestBuilder) {
+func (m *PlannerRequestBuilder) AllById(id string)(*PlannerDeltaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *PlannerRequestBuilder) AllById(id string)(*PlannerAllPlannerDeltaItemRe
     if id != "" {
         urlTplParams["plannerDelta%2Did"] = id
     }
-    return NewPlannerAllPlannerDeltaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerDeltaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPlannerRequestBuilderInternal instantiates a new PlannerRequestBuilder and sets the default values.
 func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerRequestBuilder) {
@@ -143,7 +143,7 @@ func (m *PlannerRequestBuilder) FavoritePlans()(*PlannerFavoritePlansRequestBuil
     return NewPlannerFavoritePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FavoritePlansById provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) FavoritePlansById(id string)(*PlannerFavoritePlansPlannerPlanItemRequestBuilder) {
+func (m *PlannerRequestBuilder) FavoritePlansById(id string)(*PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -151,7 +151,7 @@ func (m *PlannerRequestBuilder) FavoritePlansById(id string)(*PlannerFavoritePla
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerFavoritePlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get retrieve the properties and relationships of a plannerUser object. The returned properties include the user's favorite plans and recently viewed plans. 
 // [Find more info here]
@@ -202,7 +202,7 @@ func (m *PlannerRequestBuilder) Plans()(*PlannerPlansRequestBuilder) {
     return NewPlannerPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanItemRequestBuilder) {
+func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -210,14 +210,14 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*PlannerPlansPlannerPlanIte
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RecentPlans provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RecentPlans()(*PlannerRecentPlansRequestBuilder) {
     return NewPlannerRecentPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RecentPlansById provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) RecentPlansById(id string)(*PlannerRecentPlansPlannerPlanItemRequestBuilder) {
+func (m *PlannerRequestBuilder) RecentPlansById(id string)(*PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -225,14 +225,14 @@ func (m *PlannerRequestBuilder) RecentPlansById(id string)(*PlannerRecentPlansPl
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerRecentPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RosterPlans provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) RosterPlans()(*PlannerRosterPlansRequestBuilder) {
     return NewPlannerRosterPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RosterPlansById provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) RosterPlansById(id string)(*PlannerRosterPlansPlannerPlanItemRequestBuilder) {
+func (m *PlannerRequestBuilder) RosterPlansById(id string)(*PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -240,14 +240,14 @@ func (m *PlannerRequestBuilder) RosterPlansById(id string)(*PlannerRosterPlansPl
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 func (m *PlannerRequestBuilder) Tasks()(*PlannerTasksRequestBuilder) {
     return NewPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
-func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskItemRequestBuilder) {
+func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -255,5 +255,5 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*PlannerTasksPlannerTaskIte
     if id != "" {
         urlTplParams["plannerTask%2Did"] = id
     }
-    return NewPlannerTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

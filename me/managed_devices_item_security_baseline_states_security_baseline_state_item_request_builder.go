@@ -166,7 +166,7 @@ func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemReques
     return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SettingStatesById provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
-func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) SettingStatesById(id string)(*ManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
+func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilder) SettingStatesById(id string)(*SecurityBaselineSettingStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *ManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemReques
     if id != "" {
         urlTplParams["securityBaselineSettingState%2Did"] = id
     }
-    return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSecurityBaselineSettingStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

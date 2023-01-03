@@ -166,7 +166,7 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     return NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TenantsById provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
-func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) TenantsById(id string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
+func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) TenantsById(id string)(*TenantReferenceTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     if id != "" {
         urlTplParams["tenantReference%2DtenantId"] = id
     }
-    return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTenantReferenceTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

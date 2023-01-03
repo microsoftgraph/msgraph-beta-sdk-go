@@ -51,7 +51,7 @@ func (m *ItemAnalyticsRequestBuilder) ActivityStatistics()(*ItemAnalyticsActivit
     return NewItemAnalyticsActivityStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ActivityStatisticsById provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
-func (m *ItemAnalyticsRequestBuilder) ActivityStatisticsById(id string)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
+func (m *ItemAnalyticsRequestBuilder) ActivityStatisticsById(id string)(*ActivityStatisticsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ItemAnalyticsRequestBuilder) ActivityStatisticsById(id string)(*ItemAna
     if id != "" {
         urlTplParams["activityStatistics%2Did"] = id
     }
-    return NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewActivityStatisticsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemAnalyticsRequestBuilderInternal instantiates a new AnalyticsRequestBuilder and sets the default values.
 func NewItemAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAnalyticsRequestBuilder) {

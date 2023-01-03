@@ -112,7 +112,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) CustomQuestions()(*Online
     return NewOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CustomQuestionsById provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
-func (m *OnlineMeetingsItemRegistrationRequestBuilder) CustomQuestionsById(id string)(*OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) {
+func (m *OnlineMeetingsItemRegistrationRequestBuilder) CustomQuestionsById(id string)(*MeetingRegistrationQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +120,7 @@ func (m *OnlineMeetingsItemRegistrationRequestBuilder) CustomQuestionsById(id st
     if id != "" {
         urlTplParams["meetingRegistrationQuestion%2Did"] = id
     }
-    return NewOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 // [Find more info here]

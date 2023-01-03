@@ -170,7 +170,7 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Sessions()(*
     return NewExactMatchDataStoresItemSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SessionsById provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
-func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) SessionsById(id string)(*ExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilder) {
+func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) SessionsById(id string)(*ExactMatchSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -178,5 +178,5 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) SessionsById
     if id != "" {
         urlTplParams["exactMatchSession%2Did"] = id
     }
-    return NewExactMatchDataStoresItemSessionsExactMatchSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExactMatchSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

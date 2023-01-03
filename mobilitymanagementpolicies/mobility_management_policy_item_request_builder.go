@@ -147,7 +147,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*ItemInclu
     return NewItemIncludedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IncludedGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.mobilityManagementPolicies.item.includedGroups.item collection
-func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroupsById(id string)(*ItemIncludedGroupsGroupItemRequestBuilder) {
+func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroupsById(id string)(*GroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroupsById(id strin
     if id != "" {
         urlTplParams["group%2Did"] = id
     }
-    return NewItemIncludedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update entity in mobilityManagementPolicies
 func (m *MobilityManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {

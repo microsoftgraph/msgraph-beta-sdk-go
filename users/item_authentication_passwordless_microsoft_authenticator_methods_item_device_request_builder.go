@@ -59,7 +59,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceCommandsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CommandsById provides operations to manage the commands property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) CommandsById(id string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceCommandsCommandItemRequestBuilder) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) CommandsById(id string)(*CommandItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     if id != "" {
         urlTplParams["command%2Did"] = id
     }
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceCommandsCommandItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCommandItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilderInternal instantiates a new DeviceRequestBuilder and sets the default values.
 func NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) {
@@ -151,7 +151,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) ExtensionsById(id string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceExtensionsExtensionItemRequestBuilder) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -159,7 +159,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get device from users
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -193,7 +193,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MemberOfById provides operations to manage the memberOf property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) MemberOfById(id string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) MemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -201,7 +201,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property device in users
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -227,7 +227,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRegisteredOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RegisteredOwnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.authentication.passwordlessMicrosoftAuthenticatorMethods.item.device.registeredOwners.item collection
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredOwnersById(id string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRegisteredOwnersDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredOwnersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -235,14 +235,14 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RegisteredUsers provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredUsers()(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersRequestBuilder) {
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RegisteredUsersById provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredUsersById(id string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) RegisteredUsersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -250,7 +250,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRegisteredUsersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Restore provides operations to call the restore method.
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) Restore()(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRestoreRequestBuilder) {
@@ -261,7 +261,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) TransitiveMemberOfById(id string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) TransitiveMemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -269,14 +269,14 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UsageRights provides operations to manage the usageRights property of the microsoft.graph.device entity.
 func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) UsageRights()(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceUsageRightsRequestBuilder) {
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceUsageRightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsageRightsById provides operations to manage the usageRights property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) UsageRightsById(id string)(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceUsageRightsUsageRightItemRequestBuilder) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRequestBuilder) UsageRightsById(id string)(*UsageRightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -284,5 +284,5 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceRe
     if id != "" {
         urlTplParams["usageRight%2Did"] = id
     }
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceUsageRightsUsageRightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUsageRightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

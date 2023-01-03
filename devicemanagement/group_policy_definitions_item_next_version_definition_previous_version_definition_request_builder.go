@@ -174,7 +174,7 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitio
     return NewGroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionPresentationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PresentationsById provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
-func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilder) PresentationsById(id string)(*GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilder) {
+func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionRequestBuilder) PresentationsById(id string)(*GroupPolicyPresentationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -182,5 +182,5 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitio
     if id != "" {
         urlTplParams["groupPolicyPresentation%2Did"] = id
     }
-    return NewGroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitionPresentationsGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyPresentationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

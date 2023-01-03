@@ -2,7 +2,7 @@ package callrecords
 import (
     "errors"
 )
-// Provides operations to manage the cloudCommunications singleton.
+// Provides operations to manage the collection of accessReview entities.
 type ServiceRole int
 
 const (

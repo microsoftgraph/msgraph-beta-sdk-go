@@ -166,7 +166,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsThreatAssessmentReques
     return NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResultsById provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
-func (m *ItemInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ResultsById(id string)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
+func (m *ItemInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) ResultsById(id string)(*ThreatAssessmentResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsThreatAssessmentReques
     if id != "" {
         urlTplParams["threatAssessmentResult%2Did"] = id
     }
-    return NewItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewThreatAssessmentResultItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

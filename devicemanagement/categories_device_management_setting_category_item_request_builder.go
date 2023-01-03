@@ -166,7 +166,7 @@ func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDef
     return NewCategoriesItemSettingDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SettingDefinitionsById provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
-func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitionsById(id string)(*CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) {
+func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitionsById(id string)(*DeviceManagementSettingDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDef
     if id != "" {
         urlTplParams["deviceManagementSettingDefinition%2Did"] = id
     }
-    return NewCategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

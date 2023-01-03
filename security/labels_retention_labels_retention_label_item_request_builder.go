@@ -128,7 +128,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionRevie
     return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DispositionReviewStagesById provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
-func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStagesById(id string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
+func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStagesById(id string)(*DispositionReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -136,7 +136,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionRevie
     if id != "" {
         urlTplParams["dispositionReviewStage%2Did"] = id
     }
-    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDispositionReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get retentionLabels from security
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable, error) {

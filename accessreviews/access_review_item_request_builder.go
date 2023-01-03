@@ -116,7 +116,7 @@ func (m *AccessReviewItemRequestBuilder) Decisions()(*ItemDecisionsRequestBuilde
     return NewItemDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DecisionsById provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*ItemDecisionsAccessReviewDecisionItemRequestBuilder) {
+func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*AccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -124,7 +124,7 @@ func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*ItemDecisions
     if id != "" {
         urlTplParams["accessReviewDecision%2Did"] = id
     }
-    return NewItemDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete in the Azure AD access reviews feature, delete an accessReview object.
 // [Find more info here]
@@ -172,7 +172,7 @@ func (m *AccessReviewItemRequestBuilder) Instances()(*ItemInstancesRequestBuilde
     return NewItemInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InstancesById provides operations to manage the instances property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) InstancesById(id string)(*ItemInstancesAccessReviewItemRequestBuilder) {
+func (m *AccessReviewItemRequestBuilder) InstancesById(id string)(*AccessReviewItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -180,14 +180,14 @@ func (m *AccessReviewItemRequestBuilder) InstancesById(id string)(*ItemInstances
     if id != "" {
         urlTplParams["accessReview%2Did1"] = id
     }
-    return NewItemInstancesAccessReviewItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MyDecisions provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
 func (m *AccessReviewItemRequestBuilder) MyDecisions()(*ItemMyDecisionsRequestBuilder) {
     return NewItemMyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MyDecisionsById provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*ItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
+func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*AccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -195,7 +195,7 @@ func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*ItemMyDecis
     if id != "" {
         urlTplParams["accessReviewDecision%2Did"] = id
     }
-    return NewItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch in the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review.  To change the reviewers, use the addReviewer or removeReviewer APIs.  To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
 // [Find more info here]
@@ -228,7 +228,7 @@ func (m *AccessReviewItemRequestBuilder) Reviewers()(*ItemReviewersRequestBuilde
     return NewItemReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ReviewersById provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
-func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*ItemReviewersAccessReviewReviewerItemRequestBuilder) {
+func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*AccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -236,7 +236,7 @@ func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*ItemReviewers
     if id != "" {
         urlTplParams["accessReviewReviewer%2Did"] = id
     }
-    return NewItemReviewersAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SendReminder provides operations to call the sendReminder method.
 func (m *AccessReviewItemRequestBuilder) SendReminder()(*ItemSendReminderRequestBuilder) {

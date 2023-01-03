@@ -147,7 +147,7 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
     return NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupPolicySettingMappingsById provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.
-func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) GroupPolicySettingMappingsById(id string)(*GroupPolicyMigrationReportsItemGroupPolicySettingMappingsGroupPolicySettingMappingItemRequestBuilder) {
+func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) GroupPolicySettingMappingsById(id string)(*GroupPolicySettingMappingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
     if id != "" {
         urlTplParams["groupPolicySettingMapping%2Did"] = id
     }
-    return NewGroupPolicyMigrationReportsItemGroupPolicySettingMappingsGroupPolicySettingMappingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicySettingMappingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property groupPolicyMigrationReports in deviceManagement
 func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, requestConfiguration *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, error) {
@@ -181,7 +181,7 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
     return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UnsupportedGroupPolicyExtensionsById provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.
-func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) UnsupportedGroupPolicyExtensionsById(id string)(*GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilder) {
+func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder) UnsupportedGroupPolicyExtensionsById(id string)(*UnsupportedGroupPolicyExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilder
     if id != "" {
         urlTplParams["unsupportedGroupPolicyExtension%2Did"] = id
     }
-    return NewGroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsupportedGroupPolicyExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnsupportedGroupPolicyExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

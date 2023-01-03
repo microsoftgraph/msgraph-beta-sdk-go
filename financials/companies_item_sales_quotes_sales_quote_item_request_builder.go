@@ -147,7 +147,7 @@ func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) SalesQuoteLines()
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SalesQuoteLinesById provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
-func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) SalesQuoteLinesById(id string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
+func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) SalesQuoteLinesById(id string)(*SalesQuoteLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) SalesQuoteLinesBy
     if id != "" {
         urlTplParams["salesQuoteLine%2Did"] = id
     }
-    return NewCompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSalesQuoteLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Send provides operations to call the send method.
 func (m *CompaniesItemSalesQuotesSalesQuoteItemRequestBuilder) Send()(*CompaniesItemSalesQuotesItemSendRequestBuilder) {

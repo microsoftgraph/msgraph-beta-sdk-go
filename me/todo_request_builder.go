@@ -147,7 +147,7 @@ func (m *TodoRequestBuilder) Lists()(*TodoListsRequestBuilder) {
     return NewTodoListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ListsById provides operations to manage the lists property of the microsoft.graph.todo entity.
-func (m *TodoRequestBuilder) ListsById(id string)(*TodoListsTodoTaskListItemRequestBuilder) {
+func (m *TodoRequestBuilder) ListsById(id string)(*TodoTaskListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *TodoRequestBuilder) ListsById(id string)(*TodoListsTodoTaskListItemRequ
     if id != "" {
         urlTplParams["todoTaskList%2Did"] = id
     }
-    return NewTodoListsTodoTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property todo in me
 func (m *TodoRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Todoable, requestConfiguration *TodoRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Todoable, error) {

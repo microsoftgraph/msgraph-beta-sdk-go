@@ -132,7 +132,7 @@ func (m *WindowsUpdatesRequestBuilder) Deployments()(*WindowsUpdatesDeploymentsR
     return NewWindowsUpdatesDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeploymentsById provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
-func (m *WindowsUpdatesRequestBuilder) DeploymentsById(id string)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
+func (m *WindowsUpdatesRequestBuilder) DeploymentsById(id string)(*DeploymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -140,7 +140,7 @@ func (m *WindowsUpdatesRequestBuilder) DeploymentsById(id string)(*WindowsUpdate
     if id != "" {
         urlTplParams["deployment%2Did"] = id
     }
-    return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeploymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *WindowsUpdatesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Updatesable, error) {
@@ -185,7 +185,7 @@ func (m *WindowsUpdatesRequestBuilder) ResourceConnections()(*WindowsUpdatesReso
     return NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResourceConnectionsById provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
-func (m *WindowsUpdatesRequestBuilder) ResourceConnectionsById(id string)(*WindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilder) {
+func (m *WindowsUpdatesRequestBuilder) ResourceConnectionsById(id string)(*ResourceConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,14 +193,14 @@ func (m *WindowsUpdatesRequestBuilder) ResourceConnectionsById(id string)(*Windo
     if id != "" {
         urlTplParams["resourceConnection%2Did"] = id
     }
-    return NewWindowsUpdatesResourceConnectionsResourceConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewResourceConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UpdatableAssets provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
 func (m *WindowsUpdatesRequestBuilder) UpdatableAssets()(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UpdatableAssetsById provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.
-func (m *WindowsUpdatesRequestBuilder) UpdatableAssetsById(id string)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
+func (m *WindowsUpdatesRequestBuilder) UpdatableAssetsById(id string)(*UpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -208,5 +208,5 @@ func (m *WindowsUpdatesRequestBuilder) UpdatableAssetsById(id string)(*WindowsUp
     if id != "" {
         urlTplParams["updatableAsset%2Did"] = id
     }
-    return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

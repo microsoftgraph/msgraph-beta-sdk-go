@@ -55,7 +55,7 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) As
     return NewGroupPolicyConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.groupPolicyConfiguration entity.
-func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) AssignmentsById(id string)(*GroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilder) {
+func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) AssignmentsById(id string)(*GroupPolicyConfigurationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) As
     if id != "" {
         urlTplParams["groupPolicyConfigurationAssignment%2Did"] = id
     }
-    return NewGroupPolicyConfigurationsItemAssignmentsGroupPolicyConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal instantiates a new GroupPolicyConfigurationItemRequestBuilder and sets the default values.
 func NewGroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) {
@@ -131,7 +131,7 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) De
     return NewGroupPolicyConfigurationsItemDefinitionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DefinitionValuesById provides operations to manage the definitionValues property of the microsoft.graph.groupPolicyConfiguration entity.
-func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) DefinitionValuesById(id string)(*GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilder) {
+func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) DefinitionValuesById(id string)(*GroupPolicyDefinitionValueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,7 +139,7 @@ func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) De
     if id != "" {
         urlTplParams["groupPolicyDefinitionValue%2Did"] = id
     }
-    return NewGroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyDefinitionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property groupPolicyConfigurations for deviceManagement
 func (m *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {

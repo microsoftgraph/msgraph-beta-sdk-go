@@ -139,7 +139,7 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Purchas
     return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PurchaseInvoiceLinesById provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.
-func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) PurchaseInvoiceLinesById(id string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
+func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) PurchaseInvoiceLinesById(id string)(*PurchaseInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -147,7 +147,7 @@ func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Purchas
     if id != "" {
         urlTplParams["purchaseInvoiceLine%2Did"] = id
     }
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Vendor_escaped provides operations to manage the vendor property of the microsoft.graph.purchaseInvoice entity.
 func (m *CompaniesItemPurchaseInvoicesPurchaseInvoiceItemRequestBuilder) Vendor_escaped()(*CompaniesItemPurchaseInvoicesItemVendorRequestBuilder) {

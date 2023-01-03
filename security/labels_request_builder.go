@@ -166,7 +166,7 @@ func (m *LabelsRequestBuilder) RetentionLabels()(*LabelsRetentionLabelsRequestBu
     return NewLabelsRetentionLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RetentionLabelsById provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
-func (m *LabelsRequestBuilder) RetentionLabelsById(id string)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
+func (m *LabelsRequestBuilder) RetentionLabelsById(id string)(*RetentionLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *LabelsRequestBuilder) RetentionLabelsById(id string)(*LabelsRetentionLa
     if id != "" {
         urlTplParams["retentionLabel%2Did"] = id
     }
-    return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRetentionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

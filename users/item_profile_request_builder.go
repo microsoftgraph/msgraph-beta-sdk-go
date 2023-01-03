@@ -51,7 +51,7 @@ func (m *ItemProfileRequestBuilder) Account()(*ItemProfileAccountRequestBuilder)
     return NewItemProfileAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AccountById provides operations to manage the account property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) AccountById(id string)(*ItemProfileAccountUserAccountInformationItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) AccountById(id string)(*UserAccountInformationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *ItemProfileRequestBuilder) AccountById(id string)(*ItemProfileAccountUs
     if id != "" {
         urlTplParams["userAccountInformation%2Did"] = id
     }
-    return NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserAccountInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Addresses provides operations to manage the addresses property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Addresses()(*ItemProfileAddressesRequestBuilder) {
     return NewItemProfileAddressesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AddressesById provides operations to manage the addresses property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) AddressesById(id string)(*ItemProfileAddressesItemAddressItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) AddressesById(id string)(*ItemAddressItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,14 +74,14 @@ func (m *ItemProfileRequestBuilder) AddressesById(id string)(*ItemProfileAddress
     if id != "" {
         urlTplParams["itemAddress%2Did"] = id
     }
-    return NewItemProfileAddressesItemAddressItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemAddressItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Anniversaries provides operations to manage the anniversaries property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Anniversaries()(*ItemProfileAnniversariesRequestBuilder) {
     return NewItemProfileAnniversariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AnniversariesById provides operations to manage the anniversaries property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) AnniversariesById(id string)(*ItemProfileAnniversariesPersonAnnualEventItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) AnniversariesById(id string)(*PersonAnnualEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -89,14 +89,14 @@ func (m *ItemProfileRequestBuilder) AnniversariesById(id string)(*ItemProfileAnn
     if id != "" {
         urlTplParams["personAnnualEvent%2Did"] = id
     }
-    return NewItemProfileAnniversariesPersonAnnualEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPersonAnnualEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Awards provides operations to manage the awards property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Awards()(*ItemProfileAwardsRequestBuilder) {
     return NewItemProfileAwardsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AwardsById provides operations to manage the awards property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) AwardsById(id string)(*ItemProfileAwardsPersonAwardItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) AwardsById(id string)(*PersonAwardItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -104,14 +104,14 @@ func (m *ItemProfileRequestBuilder) AwardsById(id string)(*ItemProfileAwardsPers
     if id != "" {
         urlTplParams["personAward%2Did"] = id
     }
-    return NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPersonAwardItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Certifications provides operations to manage the certifications property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Certifications()(*ItemProfileCertificationsRequestBuilder) {
     return NewItemProfileCertificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CertificationsById provides operations to manage the certifications property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) CertificationsById(id string)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) CertificationsById(id string)(*PersonCertificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -119,7 +119,7 @@ func (m *ItemProfileRequestBuilder) CertificationsById(id string)(*ItemProfileCe
     if id != "" {
         urlTplParams["personCertification%2Did"] = id
     }
-    return NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPersonCertificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemProfileRequestBuilderInternal instantiates a new ProfileRequestBuilder and sets the default values.
 func NewItemProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileRequestBuilder) {
@@ -206,7 +206,7 @@ func (m *ItemProfileRequestBuilder) EducationalActivities()(*ItemProfileEducatio
     return NewItemProfileEducationalActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EducationalActivitiesById provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) EducationalActivitiesById(id string)(*ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) EducationalActivitiesById(id string)(*EducationalActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -214,14 +214,14 @@ func (m *ItemProfileRequestBuilder) EducationalActivitiesById(id string)(*ItemPr
     if id != "" {
         urlTplParams["educationalActivity%2Did"] = id
     }
-    return NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEducationalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Emails provides operations to manage the emails property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Emails()(*ItemProfileEmailsRequestBuilder) {
     return NewItemProfileEmailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EmailsById provides operations to manage the emails property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) EmailsById(id string)(*ItemProfileEmailsItemEmailItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) EmailsById(id string)(*ItemEmailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -229,7 +229,7 @@ func (m *ItemProfileRequestBuilder) EmailsById(id string)(*ItemProfileEmailsItem
     if id != "" {
         urlTplParams["itemEmail%2Did"] = id
     }
-    return NewItemProfileEmailsItemEmailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemEmailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
 // [Find more info here]
@@ -258,7 +258,7 @@ func (m *ItemProfileRequestBuilder) Interests()(*ItemProfileInterestsRequestBuil
     return NewItemProfileInterestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InterestsById provides operations to manage the interests property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) InterestsById(id string)(*ItemProfileInterestsPersonInterestItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) InterestsById(id string)(*PersonInterestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -266,14 +266,14 @@ func (m *ItemProfileRequestBuilder) InterestsById(id string)(*ItemProfileInteres
     if id != "" {
         urlTplParams["personInterest%2Did"] = id
     }
-    return NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPersonInterestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Languages provides operations to manage the languages property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Languages()(*ItemProfileLanguagesRequestBuilder) {
     return NewItemProfileLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LanguagesById provides operations to manage the languages property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) LanguagesById(id string)(*ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) LanguagesById(id string)(*LanguageProficiencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -281,14 +281,14 @@ func (m *ItemProfileRequestBuilder) LanguagesById(id string)(*ItemProfileLanguag
     if id != "" {
         urlTplParams["languageProficiency%2Did"] = id
     }
-    return NewItemProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLanguageProficiencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Names provides operations to manage the names property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Names()(*ItemProfileNamesRequestBuilder) {
     return NewItemProfileNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NamesById provides operations to manage the names property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) NamesById(id string)(*ItemProfileNamesPersonNameItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) NamesById(id string)(*PersonNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -296,14 +296,14 @@ func (m *ItemProfileRequestBuilder) NamesById(id string)(*ItemProfileNamesPerson
     if id != "" {
         urlTplParams["personName%2Did"] = id
     }
-    return NewItemProfileNamesPersonNameItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPersonNameItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Notes provides operations to manage the notes property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Notes()(*ItemProfileNotesRequestBuilder) {
     return NewItemProfileNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NotesById provides operations to manage the notes property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) NotesById(id string)(*ItemProfileNotesPersonAnnotationItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) NotesById(id string)(*PersonAnnotationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -311,7 +311,7 @@ func (m *ItemProfileRequestBuilder) NotesById(id string)(*ItemProfileNotesPerson
     if id != "" {
         urlTplParams["personAnnotation%2Did"] = id
     }
-    return NewItemProfileNotesPersonAnnotationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPersonAnnotationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property profile in users
 func (m *ItemProfileRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable, requestConfiguration *ItemProfileRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable, error) {
@@ -337,7 +337,7 @@ func (m *ItemProfileRequestBuilder) Patents()(*ItemProfilePatentsRequestBuilder)
     return NewItemProfilePatentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PatentsById provides operations to manage the patents property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) PatentsById(id string)(*ItemProfilePatentsItemPatentItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) PatentsById(id string)(*ItemPatentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -345,14 +345,14 @@ func (m *ItemProfileRequestBuilder) PatentsById(id string)(*ItemProfilePatentsIt
     if id != "" {
         urlTplParams["itemPatent%2Did"] = id
     }
-    return NewItemProfilePatentsItemPatentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPatentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Phones provides operations to manage the phones property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Phones()(*ItemProfilePhonesRequestBuilder) {
     return NewItemProfilePhonesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PhonesById provides operations to manage the phones property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) PhonesById(id string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) PhonesById(id string)(*ItemPhoneItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -360,14 +360,14 @@ func (m *ItemProfileRequestBuilder) PhonesById(id string)(*ItemProfilePhonesItem
     if id != "" {
         urlTplParams["itemPhone%2Did"] = id
     }
-    return NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPhoneItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Positions provides operations to manage the positions property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Positions()(*ItemProfilePositionsRequestBuilder) {
     return NewItemProfilePositionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PositionsById provides operations to manage the positions property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) PositionsById(id string)(*ItemProfilePositionsWorkPositionItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) PositionsById(id string)(*WorkPositionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -375,14 +375,14 @@ func (m *ItemProfileRequestBuilder) PositionsById(id string)(*ItemProfilePositio
     if id != "" {
         urlTplParams["workPosition%2Did"] = id
     }
-    return NewItemProfilePositionsWorkPositionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWorkPositionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Projects provides operations to manage the projects property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Projects()(*ItemProfileProjectsRequestBuilder) {
     return NewItemProfileProjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ProjectsById provides operations to manage the projects property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) ProjectsById(id string)(*ItemProfileProjectsProjectParticipationItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) ProjectsById(id string)(*ProjectParticipationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -390,14 +390,14 @@ func (m *ItemProfileRequestBuilder) ProjectsById(id string)(*ItemProfileProjects
     if id != "" {
         urlTplParams["projectParticipation%2Did"] = id
     }
-    return NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewProjectParticipationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Publications provides operations to manage the publications property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Publications()(*ItemProfilePublicationsRequestBuilder) {
     return NewItemProfilePublicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PublicationsById provides operations to manage the publications property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) PublicationsById(id string)(*ItemProfilePublicationsItemPublicationItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) PublicationsById(id string)(*ItemPublicationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -405,14 +405,14 @@ func (m *ItemProfileRequestBuilder) PublicationsById(id string)(*ItemProfilePubl
     if id != "" {
         urlTplParams["itemPublication%2Did"] = id
     }
-    return NewItemProfilePublicationsItemPublicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemPublicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Skills provides operations to manage the skills property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Skills()(*ItemProfileSkillsRequestBuilder) {
     return NewItemProfileSkillsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SkillsById provides operations to manage the skills property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) SkillsById(id string)(*ItemProfileSkillsSkillProficiencyItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) SkillsById(id string)(*SkillProficiencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -420,14 +420,14 @@ func (m *ItemProfileRequestBuilder) SkillsById(id string)(*ItemProfileSkillsSkil
     if id != "" {
         urlTplParams["skillProficiency%2Did"] = id
     }
-    return NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSkillProficiencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WebAccounts provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) WebAccounts()(*ItemProfileWebAccountsRequestBuilder) {
     return NewItemProfileWebAccountsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WebAccountsById provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) WebAccountsById(id string)(*ItemProfileWebAccountsWebAccountItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) WebAccountsById(id string)(*WebAccountItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -435,14 +435,14 @@ func (m *ItemProfileRequestBuilder) WebAccountsById(id string)(*ItemProfileWebAc
     if id != "" {
         urlTplParams["webAccount%2Did"] = id
     }
-    return NewItemProfileWebAccountsWebAccountItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWebAccountItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Websites provides operations to manage the websites property of the microsoft.graph.profile entity.
 func (m *ItemProfileRequestBuilder) Websites()(*ItemProfileWebsitesRequestBuilder) {
     return NewItemProfileWebsitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WebsitesById provides operations to manage the websites property of the microsoft.graph.profile entity.
-func (m *ItemProfileRequestBuilder) WebsitesById(id string)(*ItemProfileWebsitesPersonWebsiteItemRequestBuilder) {
+func (m *ItemProfileRequestBuilder) WebsitesById(id string)(*PersonWebsiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -450,5 +450,5 @@ func (m *ItemProfileRequestBuilder) WebsitesById(id string)(*ItemProfileWebsites
     if id != "" {
         urlTplParams["personWebsite%2Did"] = id
     }
-    return NewItemProfileWebsitesPersonWebsiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPersonWebsiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

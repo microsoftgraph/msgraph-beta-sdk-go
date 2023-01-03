@@ -51,7 +51,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) Agents()(*ItemAg
     return NewItemAgentGroupsItemAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AgentsById provides operations to manage the agents property of the microsoft.graph.onPremisesAgentGroup entity.
-func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) AgentsById(id string)(*ItemAgentGroupsItemAgentsOnPremisesAgentItemRequestBuilder) {
+func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) AgentsById(id string)(*OnPremisesAgentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) AgentsById(id st
     if id != "" {
         urlTplParams["onPremisesAgent%2Did"] = id
     }
-    return NewItemAgentGroupsItemAgentsOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal instantiates a new OnPremisesAgentGroupItemRequestBuilder and sets the default values.
 func NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
@@ -181,7 +181,7 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResourc
     return NewItemAgentGroupsItemPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PublishedResourcesById provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.
-func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResourcesById(id string)(*ItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilder) {
+func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResourcesById(id string)(*PublishedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) PublishedResourc
     if id != "" {
         urlTplParams["publishedResource%2Did"] = id
     }
-    return NewItemAgentGroupsItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -51,7 +51,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationM
     return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AuthenticationMethodModesById provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
-func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationMethodModesById(id string)(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilder) {
+func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationMethodModesById(id string)(*AuthenticationMethodModeDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) AuthenticationM
     if id != "" {
         urlTplParams["authenticationMethodModeDetail%2Did"] = id
     }
-    return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuthenticationMethodModeDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewConditionalAccessAuthenticationStrengthsRequestBuilderInternal instantiates a new AuthenticationStrengthsRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthsRequestBuilder) {
@@ -181,7 +181,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) Policies()(*Con
     return NewConditionalAccessAuthenticationStrengthsPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PoliciesById provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.
-func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) PoliciesById(id string)(*ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
+func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) PoliciesById(id string)(*AuthenticationStrengthPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) PoliciesById(id
     if id != "" {
         urlTplParams["authenticationStrengthPolicy%2Did"] = id
     }
-    return NewConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

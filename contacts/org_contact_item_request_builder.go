@@ -136,7 +136,7 @@ func (m *OrgContactItemRequestBuilder) DirectReports()(*ItemDirectReportsRequest
     return NewItemDirectReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectReportsById provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) DirectReportsById(id string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
+func (m *OrgContactItemRequestBuilder) DirectReportsById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -144,7 +144,7 @@ func (m *OrgContactItemRequestBuilder) DirectReportsById(id string)(*ItemDirectR
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemDirectReportsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get the properties and relationships of an organizational contact object.
 // [Find more info here]
@@ -185,7 +185,7 @@ func (m *OrgContactItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
     return NewItemMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MemberOfById provides operations to manage the memberOf property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) MemberOfById(id string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *OrgContactItemRequestBuilder) MemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,7 +193,7 @@ func (m *OrgContactItemRequestBuilder) MemberOfById(id string)(*ItemMemberOfDire
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update entity in contacts
 func (m *OrgContactItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, requestConfiguration *OrgContactItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, error) {
@@ -223,7 +223,7 @@ func (m *OrgContactItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMembe
     return NewItemTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) TransitiveMemberOfById(id string)(*ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *OrgContactItemRequestBuilder) TransitiveMemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -231,14 +231,14 @@ func (m *OrgContactItemRequestBuilder) TransitiveMemberOfById(id string)(*ItemTr
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TransitiveReports provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.
 func (m *OrgContactItemRequestBuilder) TransitiveReports()(*ItemTransitiveReportsRequestBuilder) {
     return NewItemTransitiveReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveReportsById provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.
-func (m *OrgContactItemRequestBuilder) TransitiveReportsById(id string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
+func (m *OrgContactItemRequestBuilder) TransitiveReportsById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -246,5 +246,5 @@ func (m *OrgContactItemRequestBuilder) TransitiveReportsById(id string)(*ItemTra
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemTransitiveReportsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

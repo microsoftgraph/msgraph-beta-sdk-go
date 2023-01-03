@@ -136,7 +136,7 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Enrollment
     return NewDepOnboardingSettingsItemEnrollmentProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EnrollmentProfilesById provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
-func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) EnrollmentProfilesById(id string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
+func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) EnrollmentProfilesById(id string)(*EnrollmentProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -144,7 +144,7 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Enrollment
     if id != "" {
         urlTplParams["enrollmentProfile%2Did"] = id
     }
-    return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewEnrollmentProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // GenerateEncryptionPublicKey provides operations to call the generateEncryptionPublicKey method.
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) GenerateEncryptionPublicKey()(*DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) {
@@ -178,7 +178,7 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAp
     return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ImportedAppleDeviceIdentitiesById provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
-func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentitiesById(id string)(*DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilder) {
+func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentitiesById(id string)(*ImportedAppleDeviceIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -186,7 +186,7 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ImportedAp
     if id != "" {
         urlTplParams["importedAppleDeviceIdentity%2Did"] = id
     }
-    return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportedAppleDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewImportedAppleDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property depOnboardingSettings in deviceManagement
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {

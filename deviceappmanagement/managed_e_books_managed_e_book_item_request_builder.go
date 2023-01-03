@@ -55,7 +55,7 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) Assignments()(*ManagedEBoo
     return NewManagedEBooksItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksManagedEBookItemRequestBuilder) AssignmentsById(id string)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
+func (m *ManagedEBooksManagedEBookItemRequestBuilder) AssignmentsById(id string)(*ManagedEBookAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,14 +63,14 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) AssignmentsById(id string)
     if id != "" {
         urlTplParams["managedEBookAssignment%2Did"] = id
     }
-    return NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedEBookAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
 func (m *ManagedEBooksManagedEBookItemRequestBuilder) Categories()(*ManagedEBooksItemCategoriesRequestBuilder) {
     return NewManagedEBooksItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksManagedEBookItemRequestBuilder) CategoriesById(id string)(*ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder) {
+func (m *ManagedEBooksManagedEBookItemRequestBuilder) CategoriesById(id string)(*ManagedEBookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) CategoriesById(id string)(
     if id != "" {
         urlTplParams["managedEBookCategory%2Did"] = id
     }
-    return NewManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedEBookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewManagedEBooksManagedEBookItemRequestBuilderInternal instantiates a new ManagedEBookItemRequestBuilder and sets the default values.
 func NewManagedEBooksManagedEBookItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksManagedEBookItemRequestBuilder) {
@@ -162,7 +162,7 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) DeviceStates()(*ManagedEBo
     return NewManagedEBooksItemDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeviceStatesById provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksManagedEBookItemRequestBuilder) DeviceStatesById(id string)(*ManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilder) {
+func (m *ManagedEBooksManagedEBookItemRequestBuilder) DeviceStatesById(id string)(*DeviceInstallStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -170,7 +170,7 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) DeviceStatesById(id string
     if id != "" {
         urlTplParams["deviceInstallState%2Did"] = id
     }
-    return NewManagedEBooksItemDeviceStatesDeviceInstallStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceInstallStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the Managed eBook.
 func (m *ManagedEBooksManagedEBookItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksManagedEBookItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookable, error) {
@@ -219,7 +219,7 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) UserStateSummary()(*Manage
     return NewManagedEBooksItemUserStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserStateSummaryById provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksManagedEBookItemRequestBuilder) UserStateSummaryById(id string)(*ManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilder) {
+func (m *ManagedEBooksManagedEBookItemRequestBuilder) UserStateSummaryById(id string)(*UserInstallStateSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -227,5 +227,5 @@ func (m *ManagedEBooksManagedEBookItemRequestBuilder) UserStateSummaryById(id st
     if id != "" {
         urlTplParams["userInstallStateSummary%2Did"] = id
     }
-    return NewManagedEBooksItemUserStateSummaryUserInstallStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserInstallStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

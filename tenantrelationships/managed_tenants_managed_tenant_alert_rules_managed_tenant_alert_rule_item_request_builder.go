@@ -51,7 +51,7 @@ func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestB
     return NewManagedTenantsManagedTenantAlertRulesItemAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertsById provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.
-func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) AlertsById(id string)(*ManagedTenantsManagedTenantAlertRulesItemAlertsManagedTenantAlertItemRequestBuilder) {
+func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) AlertsById(id string)(*ManagedTenantAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestB
     if id != "" {
         urlTplParams["managedTenantAlert%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantAlertRulesItemAlertsManagedTenantAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal instantiates a new ManagedTenantAlertRuleItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {

@@ -89,7 +89,7 @@ func (m *OutlookRequestBuilder) MasterCategories()(*OutlookMasterCategoriesReque
     return NewOutlookMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MasterCategoriesById provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
-func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*OutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
+func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*OutlookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -97,7 +97,7 @@ func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*OutlookMasterCa
     if id != "" {
         urlTplParams["outlookCategory%2Did"] = id
     }
-    return NewOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SupportedLanguages provides operations to call the supportedLanguages method.
 func (m *OutlookRequestBuilder) SupportedLanguages()(*OutlookSupportedLanguagesRequestBuilder) {
@@ -116,7 +116,7 @@ func (m *OutlookRequestBuilder) TaskFolders()(*OutlookTaskFoldersRequestBuilder)
     return NewOutlookTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TaskFoldersById provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
-func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*OutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) {
+func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*OutlookTaskFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -124,14 +124,14 @@ func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*OutlookTaskFoldersOu
     if id != "" {
         urlTplParams["outlookTaskFolder%2Did"] = id
     }
-    return NewOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TaskGroups provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) TaskGroups()(*OutlookTaskGroupsRequestBuilder) {
     return NewOutlookTaskGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TaskGroupsById provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
-func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) {
+func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*OutlookTaskGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,14 +139,14 @@ func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*OutlookTaskGroupsOutl
     if id != "" {
         urlTplParams["outlookTaskGroup%2Did"] = id
     }
-    return NewOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutlookTaskGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
 func (m *OutlookRequestBuilder) Tasks()(*OutlookTasksRequestBuilder) {
     return NewOutlookTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
-func (m *OutlookRequestBuilder) TasksById(id string)(*OutlookTasksOutlookTaskItemRequestBuilder) {
+func (m *OutlookRequestBuilder) TasksById(id string)(*OutlookTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -154,5 +154,5 @@ func (m *OutlookRequestBuilder) TasksById(id string)(*OutlookTasksOutlookTaskIte
     if id != "" {
         urlTplParams["outlookTask%2Did"] = id
     }
-    return NewOutlookTasksOutlookTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutlookTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

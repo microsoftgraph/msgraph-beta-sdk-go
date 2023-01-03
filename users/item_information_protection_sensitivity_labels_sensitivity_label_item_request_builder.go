@@ -166,7 +166,7 @@ func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBu
     return NewItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SublabelsById provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
-func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) SublabelsById(id string)(*ItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
+func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) SublabelsById(id string)(*SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBu
     if id != "" {
         urlTplParams["sensitivityLabel%2Did1"] = id
     }
-    return NewItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -51,7 +51,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlows()(*ItemBusine
     return NewItemBusinessFlowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BusinessFlowsById provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsById(id string)(*ItemBusinessFlowsBusinessFlowItemRequestBuilder) {
+func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsById(id string)(*BusinessFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsById(id string
     if id != "" {
         urlTplParams["businessFlow%2Did"] = id
     }
-    return NewItemBusinessFlowsBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // BusinessFlowsWithRequestsAwaitingMyDecision provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecision()(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
     return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BusinessFlowsWithRequestsAwaitingMyDecisionById provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecisionById(id string)(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilder) {
+func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecisionById(id string)(*BusinessFlowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAw
     if id != "" {
         urlTplParams["businessFlow%2Did"] = id
     }
-    return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewApprovalWorkflowProviderItemRequestBuilderInternal instantiates a new ApprovalWorkflowProviderItemRequestBuilder and sets the default values.
 func NewApprovalWorkflowProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalWorkflowProviderItemRequestBuilder) {
@@ -196,7 +196,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplates()(*ItemPoli
     return NewItemPolicyTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PolicyTemplatesById provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
-func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id string)(*ItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilder) {
+func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id string)(*GovernancePolicyTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,5 +204,5 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id stri
     if id != "" {
         urlTplParams["governancePolicyTemplate%2Did"] = id
     }
-    return NewItemPolicyTemplatesGovernancePolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGovernancePolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

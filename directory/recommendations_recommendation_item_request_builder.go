@@ -155,7 +155,7 @@ func (m *RecommendationsRecommendationItemRequestBuilder) ImpactedResources()(*R
     return NewRecommendationsItemImpactedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ImpactedResourcesById provides operations to manage the impactedResources property of the microsoft.graph.recommendation entity.
-func (m *RecommendationsRecommendationItemRequestBuilder) ImpactedResourcesById(id string)(*RecommendationsItemImpactedResourcesRecommendationResourceItemRequestBuilder) {
+func (m *RecommendationsRecommendationItemRequestBuilder) ImpactedResourcesById(id string)(*RecommendationResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -163,7 +163,7 @@ func (m *RecommendationsRecommendationItemRequestBuilder) ImpactedResourcesById(
     if id != "" {
         urlTplParams["recommendationResource%2Did"] = id
     }
-    return NewRecommendationsItemImpactedResourcesRecommendationResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRecommendationResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property recommendations in directory
 func (m *RecommendationsRecommendationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, requestConfiguration *RecommendationsRecommendationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {

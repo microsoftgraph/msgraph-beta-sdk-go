@@ -70,7 +70,7 @@ func (m *ItemProgramRequestBuilder) Controls()(*ItemProgramControlsRequestBuilde
     return NewItemProgramControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ControlsById provides operations to manage the controls property of the microsoft.graph.program entity.
-func (m *ItemProgramRequestBuilder) ControlsById(id string)(*ItemProgramControlsProgramControlItemRequestBuilder) {
+func (m *ItemProgramRequestBuilder) ControlsById(id string)(*ProgramControlItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *ItemProgramRequestBuilder) ControlsById(id string)(*ItemProgramControls
     if id != "" {
         urlTplParams["programControl%2Did1"] = id
     }
-    return NewItemProgramControlsProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation delete navigation property program for programControls
 func (m *ItemProgramRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProgramRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

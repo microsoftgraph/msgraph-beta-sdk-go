@@ -132,7 +132,7 @@ func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Devic
     return NewMobileAppsItemUserStatusesItemDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeviceStatusesById provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.
-func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) DeviceStatusesById(id string)(*MobileAppsItemUserStatusesItemDeviceStatusesMobileAppInstallStatusItemRequestBuilder) {
+func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) DeviceStatusesById(id string)(*MobileAppInstallStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -140,7 +140,7 @@ func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Devic
     if id != "" {
         urlTplParams["mobileAppInstallStatus%2Did"] = id
     }
-    return NewMobileAppsItemUserStatusesItemDeviceStatusesMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the list of installation states for this mobile app.
 func (m *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemUserStatusesUserAppInstallStatusItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, error) {

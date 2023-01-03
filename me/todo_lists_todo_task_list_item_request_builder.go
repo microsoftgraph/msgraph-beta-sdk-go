@@ -128,7 +128,7 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) Extensions()(*TodoListsItemExt
     return NewTodoListsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.todoTaskList entity.
-func (m *TodoListsTodoTaskListItemRequestBuilder) ExtensionsById(id string)(*TodoListsItemExtensionsExtensionItemRequestBuilder) {
+func (m *TodoListsTodoTaskListItemRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -136,7 +136,7 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) ExtensionsById(id string)(*Tod
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewTodoListsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the task lists in the users mailbox.
 func (m *TodoListsTodoTaskListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskListable, error) {
@@ -181,7 +181,7 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) Tasks()(*TodoListsItemTasksReq
     return NewTodoListsItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
-func (m *TodoListsTodoTaskListItemRequestBuilder) TasksById(id string)(*TodoListsItemTasksTodoTaskItemRequestBuilder) {
+func (m *TodoListsTodoTaskListItemRequestBuilder) TasksById(id string)(*TodoTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *TodoListsTodoTaskListItemRequestBuilder) TasksById(id string)(*TodoList
     if id != "" {
         urlTplParams["todoTask%2Did"] = id
     }
-    return NewTodoListsItemTasksTodoTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTodoTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

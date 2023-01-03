@@ -116,7 +116,7 @@ func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBu
     return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CustomerPaymentsById provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
-func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) CustomerPaymentsById(id string)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilder) {
+func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) CustomerPaymentsById(id string)(*CustomerPaymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -124,7 +124,7 @@ func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBu
     if id != "" {
         urlTplParams["customerPayment%2Did"] = id
     }
-    return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property customerPaymentJournals for financials
 func (m *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentJournalsCustomerPaymentJournalItemRequestBuilderDeleteRequestConfiguration)(error) {

@@ -51,7 +51,7 @@ func (m *ReportsRequestBuilder) CachedReportConfigurations()(*ReportsCachedRepor
     return NewReportsCachedReportConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CachedReportConfigurationsById provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.
-func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilder) {
+func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*DeviceManagementCachedReportConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*Repor
     if id != "" {
         urlTplParams["deviceManagementCachedReportConfiguration%2Did"] = id
     }
-    return NewReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewReportsRequestBuilderInternal instantiates a new ReportsRequestBuilder and sets the default values.
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {
@@ -143,7 +143,7 @@ func (m *ReportsRequestBuilder) ExportJobs()(*ReportsExportJobsRequestBuilder) {
     return NewReportsExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExportJobsById provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
-func (m *ReportsRequestBuilder) ExportJobsById(id string)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
+func (m *ReportsRequestBuilder) ExportJobsById(id string)(*DeviceManagementExportJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -151,7 +151,7 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*ReportsExportJobsDevi
     if id != "" {
         urlTplParams["deviceManagementExportJob%2Did"] = id
     }
-    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get reports singleton
 func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable, error) {

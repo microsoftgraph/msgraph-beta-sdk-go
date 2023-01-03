@@ -166,7 +166,7 @@ func (m *TriggerTypesRequestBuilder) RetentionEventTypes()(*TriggerTypesRetentio
     return NewTriggerTypesRetentionEventTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RetentionEventTypesById provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.
-func (m *TriggerTypesRequestBuilder) RetentionEventTypesById(id string)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
+func (m *TriggerTypesRequestBuilder) RetentionEventTypesById(id string)(*RetentionEventTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *TriggerTypesRequestBuilder) RetentionEventTypesById(id string)(*Trigger
     if id != "" {
         urlTplParams["retentionEventType%2Did"] = id
     }
-    return NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRetentionEventTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

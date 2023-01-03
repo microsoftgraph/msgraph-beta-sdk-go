@@ -49,7 +49,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) Attachments()(*ItemMessagesItemA
     return NewItemMessagesItemAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttachmentsById provides operations to manage the attachments property of the microsoft.graph.message entity.
-func (m *ItemMessagesMessageItemRequestBuilder) AttachmentsById(id string)(*ItemMessagesItemAttachmentsAttachmentItemRequestBuilder) {
+func (m *ItemMessagesMessageItemRequestBuilder) AttachmentsById(id string)(*AttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -57,7 +57,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) AttachmentsById(id string)(*Item
     if id != "" {
         urlTplParams["attachment%2Did"] = id
     }
-    return NewItemMessagesItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemMessagesMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewItemMessagesMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMessagesMessageItemRequestBuilder) {
@@ -161,7 +161,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) Extensions()(*ItemMessagesItemEx
     return NewItemMessagesItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.message entity.
-func (m *ItemMessagesMessageItemRequestBuilder) ExtensionsById(id string)(*ItemMessagesItemExtensionsExtensionItemRequestBuilder) {
+func (m *ItemMessagesMessageItemRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,7 +169,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) ExtensionsById(id string)(*ItemM
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewItemMessagesItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Forward provides operations to call the forward method.
 func (m *ItemMessagesMessageItemRequestBuilder) Forward()(*ItemMessagesItemForwardRequestBuilder) {
@@ -199,7 +199,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) Mentions()(*ItemMessagesItemMent
     return NewItemMessagesItemMentionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MentionsById provides operations to manage the mentions property of the microsoft.graph.message entity.
-func (m *ItemMessagesMessageItemRequestBuilder) MentionsById(id string)(*ItemMessagesItemMentionsMentionItemRequestBuilder) {
+func (m *ItemMessagesMessageItemRequestBuilder) MentionsById(id string)(*MentionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -207,7 +207,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) MentionsById(id string)(*ItemMes
     if id != "" {
         urlTplParams["mention%2Did"] = id
     }
-    return NewItemMessagesItemMentionsMentionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMentionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Move provides operations to call the move method.
 func (m *ItemMessagesMessageItemRequestBuilder) Move()(*ItemMessagesItemMoveRequestBuilder) {
@@ -218,7 +218,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) MultiValueExtendedProperties()(*
     return NewItemMessagesItemMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MultiValueExtendedPropertiesById provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
-func (m *ItemMessagesMessageItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ItemMessagesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilder) {
+func (m *ItemMessagesMessageItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -226,7 +226,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) MultiValueExtendedPropertiesById
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemMessagesItemMultiValueExtendedPropertiesMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property messages in users
 func (m *ItemMessagesMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *ItemMessagesMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
@@ -264,7 +264,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) SingleValueExtendedProperties()(
     return NewItemMessagesItemSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SingleValueExtendedPropertiesById provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
-func (m *ItemMessagesMessageItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ItemMessagesItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilder) {
+func (m *ItemMessagesMessageItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -272,7 +272,7 @@ func (m *ItemMessagesMessageItemRequestBuilder) SingleValueExtendedPropertiesByI
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
-    return NewItemMessagesItemSingleValueExtendedPropertiesSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Unsubscribe provides operations to call the unsubscribe method.
 func (m *ItemMessagesMessageItemRequestBuilder) Unsubscribe()(*ItemMessagesItemUnsubscribeRequestBuilder) {

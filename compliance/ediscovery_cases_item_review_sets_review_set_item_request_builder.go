@@ -174,7 +174,7 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Queries()(*Ed
     return NewEdiscoveryCasesItemReviewSetsItemQueriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // QueriesById provides operations to manage the queries property of the microsoft.graph.ediscovery.reviewSet entity.
-func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) QueriesById(id string)(*EdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilder) {
+func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) QueriesById(id string)(*ReviewSetQueryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -182,5 +182,5 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) QueriesById(i
     if id != "" {
         urlTplParams["reviewSetQuery%2Did"] = id
     }
-    return NewEdiscoveryCasesItemReviewSetsItemQueriesReviewSetQueryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewReviewSetQueryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

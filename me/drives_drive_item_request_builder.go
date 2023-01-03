@@ -51,7 +51,7 @@ func (m *DrivesDriveItemRequestBuilder) Activities()(*DrivesItemActivitiesReques
     return NewDrivesItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ActivitiesById provides operations to manage the activities property of the microsoft.graph.drive entity.
-func (m *DrivesDriveItemRequestBuilder) ActivitiesById(id string)(*DrivesItemActivitiesItemActivityOLDItemRequestBuilder) {
+func (m *DrivesDriveItemRequestBuilder) ActivitiesById(id string)(*ItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *DrivesDriveItemRequestBuilder) ActivitiesById(id string)(*DrivesItemAct
     if id != "" {
         urlTplParams["itemActivityOLD%2Did"] = id
     }
-    return NewDrivesItemActivitiesItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Bundles provides operations to manage the bundles property of the microsoft.graph.drive entity.
 func (m *DrivesDriveItemRequestBuilder) Bundles()(*DrivesItemBundlesRequestBuilder) {
     return NewDrivesItemBundlesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BundlesById provides operations to manage the bundles property of the microsoft.graph.drive entity.
-func (m *DrivesDriveItemRequestBuilder) BundlesById(id string)(*DrivesItemBundlesDriveItemItemRequestBuilder) {
+func (m *DrivesDriveItemRequestBuilder) BundlesById(id string)(*DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func (m *DrivesDriveItemRequestBuilder) BundlesById(id string)(*DrivesItemBundle
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewDrivesItemBundlesDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDrivesDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewDrivesDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DrivesDriveItemRequestBuilder) {
@@ -158,7 +158,7 @@ func (m *DrivesDriveItemRequestBuilder) Following()(*DrivesItemFollowingRequestB
     return NewDrivesItemFollowingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FollowingById provides operations to manage the following property of the microsoft.graph.drive entity.
-func (m *DrivesDriveItemRequestBuilder) FollowingById(id string)(*DrivesItemFollowingDriveItemItemRequestBuilder) {
+func (m *DrivesDriveItemRequestBuilder) FollowingById(id string)(*DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -166,7 +166,7 @@ func (m *DrivesDriveItemRequestBuilder) FollowingById(id string)(*DrivesItemFoll
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewDrivesItemFollowingDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get a collection of drives available for this user. Read-only.
 func (m *DrivesDriveItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DrivesDriveItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
@@ -192,7 +192,7 @@ func (m *DrivesDriveItemRequestBuilder) Items()(*DrivesItemItemsRequestBuilder) 
     return NewDrivesItemItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ItemsById provides operations to manage the items property of the microsoft.graph.drive entity.
-func (m *DrivesDriveItemRequestBuilder) ItemsById(id string)(*DrivesItemItemsDriveItemItemRequestBuilder) {
+func (m *DrivesDriveItemRequestBuilder) ItemsById(id string)(*DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -200,7 +200,7 @@ func (m *DrivesDriveItemRequestBuilder) ItemsById(id string)(*DrivesItemItemsDri
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewDrivesItemItemsDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // List provides operations to manage the list property of the microsoft.graph.drive entity.
 func (m *DrivesDriveItemRequestBuilder) List()(*DrivesItemListRequestBuilder) {
@@ -246,7 +246,7 @@ func (m *DrivesDriveItemRequestBuilder) Special()(*DrivesItemSpecialRequestBuild
     return NewDrivesItemSpecialRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SpecialById provides operations to manage the special property of the microsoft.graph.drive entity.
-func (m *DrivesDriveItemRequestBuilder) SpecialById(id string)(*DrivesItemSpecialDriveItemItemRequestBuilder) {
+func (m *DrivesDriveItemRequestBuilder) SpecialById(id string)(*DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -254,5 +254,5 @@ func (m *DrivesDriveItemRequestBuilder) SpecialById(id string)(*DrivesItemSpecia
     if id != "" {
         urlTplParams["driveItem%2Did"] = id
     }
-    return NewDrivesItemSpecialDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

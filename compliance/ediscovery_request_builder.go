@@ -51,7 +51,7 @@ func (m *EdiscoveryRequestBuilder) Cases()(*EdiscoveryCasesRequestBuilder) {
     return NewEdiscoveryCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CasesById provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
-func (m *EdiscoveryRequestBuilder) CasesById(id string)(*EdiscoveryCasesCaseItemRequestBuilder) {
+func (m *EdiscoveryRequestBuilder) CasesById(id string)(*CaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *EdiscoveryRequestBuilder) CasesById(id string)(*EdiscoveryCasesCaseItem
     if id != "" {
         urlTplParams["case%2Did"] = id
     }
-    return NewEdiscoveryCasesCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEdiscoveryRequestBuilderInternal instantiates a new EdiscoveryRequestBuilder and sets the default values.
 func NewEdiscoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryRequestBuilder) {

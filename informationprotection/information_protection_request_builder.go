@@ -97,7 +97,7 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPolicies()(*Data
     return NewDataLossPreventionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DataLossPreventionPoliciesById provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
+func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*DataLossPreventionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -105,7 +105,7 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id 
     if id != "" {
         urlTplParams["dataLossPreventionPolicy%2Did"] = id
     }
-    return NewDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DecryptBuffer provides operations to call the decryptBuffer method.
 func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*DecryptBufferRequestBuilder) {
@@ -162,7 +162,7 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*SensitivityLa
     return NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*SensitivityLabelsSensitivityLabelItemRequestBuilder) {
+func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -170,7 +170,7 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*
     if id != "" {
         urlTplParams["sensitivityLabel%2Did"] = id
     }
-    return NewSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SensitivityPolicySettings provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
 func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*SensitivityPolicySettingsRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*Threat
     return NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
+func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ThreatAssessmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,7 +193,7 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id st
     if id != "" {
         urlTplParams["threatAssessmentRequest%2Did"] = id
     }
-    return NewThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // VerifySignature provides operations to call the verifySignature method.
 func (m *InformationProtectionRequestBuilder) VerifySignature()(*VerifySignatureRequestBuilder) {

@@ -48,7 +48,7 @@ func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPolicies()(*ActivityBasedTi
     return NewActivityBasedTimeoutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ActivityBasedTimeoutPoliciesById provides operations to manage the activityBasedTimeoutPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*ActivityBasedTimeoutPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -56,7 +56,7 @@ func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*Ac
     if id != "" {
         urlTplParams["activityBasedTimeoutPolicy%2Did"] = id
     }
-    return NewActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewActivityBasedTimeoutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AdminConsentRequestPolicy provides operations to manage the adminConsentRequestPolicy property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) AdminConsentRequestPolicy()(*AdminConsentRequestPolicyRequestBuilder) {
@@ -67,7 +67,7 @@ func (m *PoliciesRequestBuilder) AppManagementPolicies()(*AppManagementPoliciesR
     return NewAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AppManagementPoliciesById provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) AppManagementPoliciesById(id string)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) AppManagementPoliciesById(id string)(*AppManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -75,7 +75,7 @@ func (m *PoliciesRequestBuilder) AppManagementPoliciesById(id string)(*AppManage
     if id != "" {
         urlTplParams["appManagementPolicy%2Did"] = id
     }
-    return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AuthenticationFlowsPolicy provides operations to manage the authenticationFlowsPolicy property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) AuthenticationFlowsPolicy()(*AuthenticationFlowsPolicyRequestBuilder) {
@@ -90,7 +90,7 @@ func (m *PoliciesRequestBuilder) AuthenticationStrengthPolicies()(*Authenticatio
     return NewAuthenticationStrengthPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AuthenticationStrengthPoliciesById provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) AuthenticationStrengthPoliciesById(id string)(*AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) AuthenticationStrengthPoliciesById(id string)(*AuthenticationStrengthPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -98,14 +98,14 @@ func (m *PoliciesRequestBuilder) AuthenticationStrengthPoliciesById(id string)(*
     if id != "" {
         urlTplParams["authenticationStrengthPolicy%2Did"] = id
     }
-    return NewAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuthenticationStrengthPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AuthorizationPolicy provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*AuthorizationPolicyRequestBuilder) {
     return NewAuthorizationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AuthorizationPolicyById provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) AuthorizationPolicyById(id string)(*AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) AuthorizationPolicyById(id string)(*AuthorizationPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -113,7 +113,7 @@ func (m *PoliciesRequestBuilder) AuthorizationPolicyById(id string)(*Authorizati
     if id != "" {
         urlTplParams["authorizationPolicy%2Did"] = id
     }
-    return NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuthorizationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // B2cAuthenticationMethodsPolicy provides operations to manage the b2cAuthenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) B2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicyRequestBuilder) {
@@ -124,7 +124,7 @@ func (m *PoliciesRequestBuilder) ClaimsMappingPolicies()(*ClaimsMappingPoliciesR
     return NewClaimsMappingPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClaimsMappingPoliciesById provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*ClaimsMappingPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -132,14 +132,14 @@ func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*ClaimsMap
     if id != "" {
         urlTplParams["claimsMappingPolicy%2Did"] = id
     }
-    return NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewClaimsMappingPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ConditionalAccessPolicies provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) ConditionalAccessPolicies()(*ConditionalAccessPoliciesRequestBuilder) {
     return NewConditionalAccessPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConditionalAccessPoliciesById provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*ConditionalAccessPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -147,7 +147,7 @@ func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*Condi
     if id != "" {
         urlTplParams["conditionalAccessPolicy%2Did"] = id
     }
-    return NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConditionalAccessPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PoliciesRequestBuilder) {
@@ -223,7 +223,7 @@ func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPolicie
     return NewFeatureRolloutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FeatureRolloutPoliciesById provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*FeatureRolloutPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -231,7 +231,7 @@ func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*FeatureR
     if id != "" {
         urlTplParams["featureRolloutPolicy%2Did"] = id
     }
-    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get policies
 func (m *PoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *PoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyRootable, error) {
@@ -257,7 +257,7 @@ func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*HomeRealmDiscover
     return NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HomeRealmDiscoveryPoliciesById provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*HomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*HomeRealmDiscoveryPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -265,7 +265,7 @@ func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*Home
     if id != "" {
         urlTplParams["homeRealmDiscoveryPolicy%2Did"] = id
     }
-    return NewHomeRealmDiscoveryPoliciesHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // IdentitySecurityDefaultsEnforcementPolicy provides operations to manage the identitySecurityDefaultsEnforcementPolicy property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
@@ -276,7 +276,7 @@ func (m *PoliciesRequestBuilder) MobileAppManagementPolicies()(*MobileAppManagem
     return NewMobileAppManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileAppManagementPoliciesById provides operations to manage the mobileAppManagementPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) MobileAppManagementPoliciesById(id string)(*MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) MobileAppManagementPoliciesById(id string)(*MobilityManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -284,14 +284,14 @@ func (m *PoliciesRequestBuilder) MobileAppManagementPoliciesById(id string)(*Mob
     if id != "" {
         urlTplParams["mobilityManagementPolicy%2Did"] = id
     }
-    return NewMobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MobileDeviceManagementPolicies provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) MobileDeviceManagementPolicies()(*MobileDeviceManagementPoliciesRequestBuilder) {
     return NewMobileDeviceManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileDeviceManagementPoliciesById provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) MobileDeviceManagementPoliciesById(id string)(*MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) MobileDeviceManagementPoliciesById(id string)(*MobilityManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -299,7 +299,7 @@ func (m *PoliciesRequestBuilder) MobileDeviceManagementPoliciesById(id string)(*
     if id != "" {
         urlTplParams["mobilityManagementPolicy%2Did"] = id
     }
-    return NewMobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update policies
 func (m *PoliciesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyRootable, requestConfiguration *PoliciesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyRootable, error) {
@@ -325,7 +325,7 @@ func (m *PoliciesRequestBuilder) PermissionGrantPolicies()(*PermissionGrantPolic
     return NewPermissionGrantPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PermissionGrantPoliciesById provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*PermissionGrantPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -333,14 +333,14 @@ func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*Permiss
     if id != "" {
         urlTplParams["permissionGrantPolicy%2Did"] = id
     }
-    return NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPermissionGrantPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleManagementPolicies provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) RoleManagementPolicies()(*RoleManagementPoliciesRequestBuilder) {
     return NewRoleManagementPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleManagementPoliciesById provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) RoleManagementPoliciesById(id string)(*RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) RoleManagementPoliciesById(id string)(*UnifiedRoleManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -348,14 +348,14 @@ func (m *PoliciesRequestBuilder) RoleManagementPoliciesById(id string)(*RoleMana
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicy%2Did"] = id
     }
-    return NewRoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRoleManagementPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleManagementPolicyAssignments provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignments()(*RoleManagementPolicyAssignmentsRequestBuilder) {
     return NewRoleManagementPolicyAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleManagementPolicyAssignmentsById provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignmentsById(id string)(*RoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignmentsById(id string)(*UnifiedRoleManagementPolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -363,14 +363,14 @@ func (m *PoliciesRequestBuilder) RoleManagementPolicyAssignmentsById(id string)(
     if id != "" {
         urlTplParams["unifiedRoleManagementPolicyAssignment%2Did"] = id
     }
-    return NewRoleManagementPolicyAssignmentsUnifiedRoleManagementPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRoleManagementPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ServicePrincipalCreationPolicies provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) ServicePrincipalCreationPolicies()(*ServicePrincipalCreationPoliciesRequestBuilder) {
     return NewServicePrincipalCreationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ServicePrincipalCreationPoliciesById provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) ServicePrincipalCreationPoliciesById(id string)(*ServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) ServicePrincipalCreationPoliciesById(id string)(*ServicePrincipalCreationPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -378,14 +378,14 @@ func (m *PoliciesRequestBuilder) ServicePrincipalCreationPoliciesById(id string)
     if id != "" {
         urlTplParams["servicePrincipalCreationPolicy%2Did"] = id
     }
-    return NewServicePrincipalCreationPoliciesServicePrincipalCreationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewServicePrincipalCreationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TokenIssuancePolicies provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) TokenIssuancePolicies()(*TokenIssuancePoliciesRequestBuilder) {
     return NewTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TokenIssuancePoliciesById provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*TokenIssuancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -393,14 +393,14 @@ func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*TokenIssu
     if id != "" {
         urlTplParams["tokenIssuancePolicy%2Did"] = id
     }
-    return NewTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTokenIssuancePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TokenLifetimePolicies provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.
 func (m *PoliciesRequestBuilder) TokenLifetimePolicies()(*TokenLifetimePoliciesRequestBuilder) {
     return NewTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TokenLifetimePoliciesById provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.
-func (m *PoliciesRequestBuilder) TokenLifetimePoliciesById(id string)(*TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+func (m *PoliciesRequestBuilder) TokenLifetimePoliciesById(id string)(*TokenLifetimePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -408,5 +408,5 @@ func (m *PoliciesRequestBuilder) TokenLifetimePoliciesById(id string)(*TokenLife
     if id != "" {
         urlTplParams["tokenLifetimePolicy%2Did"] = id
     }
-    return NewTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTokenLifetimePolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

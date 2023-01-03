@@ -116,7 +116,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Custodians()(*EdiscoveryCasesIte
     return NewEdiscoveryCasesItemCustodiansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CustodiansById provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) CustodiansById(id string)(*EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) CustodiansById(id string)(*CustodianItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -124,7 +124,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) CustodiansById(id string)(*Edisc
     if id != "" {
         urlTplParams["custodian%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansCustodianItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCustodianItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property cases for compliance
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderDeleteRequestConfiguration)(error) {
@@ -166,7 +166,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHolds()(*EdiscoveryCasesIte
     return NewEdiscoveryCasesItemLegalHoldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LegalHoldsById provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHoldsById(id string)(*EdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilder) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHoldsById(id string)(*LegalHoldItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHoldsById(id string)(*Edisc
     if id != "" {
         urlTplParams["legalHold%2Did"] = id
     }
-    return NewEdiscoveryCasesItemLegalHoldsLegalHoldItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLegalHoldItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSources()(*EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NoncustodialDataSourcesById provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*EdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*NoncustodialDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,14 +189,14 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSourcesById(id s
     if id != "" {
         urlTplParams["noncustodialDataSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Operations()(*EdiscoveryCasesItemOperationsRequestBuilder) {
     return NewEdiscoveryCasesItemOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OperationsById provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) OperationsById(id string)(*EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) OperationsById(id string)(*CaseOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,7 +204,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) OperationsById(id string)(*Edisc
     if id != "" {
         urlTplParams["caseOperation%2Did"] = id
     }
-    return NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCaseOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property cases in compliance
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, requestConfiguration *EdiscoveryCasesCaseItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable, error) {
@@ -234,7 +234,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSets()(*EdiscoveryCasesIte
     return NewEdiscoveryCasesItemReviewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ReviewSetsById provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSetsById(id string)(*EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSetsById(id string)(*ReviewSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -242,7 +242,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSetsById(id string)(*Edisc
     if id != "" {
         urlTplParams["reviewSet%2Did"] = id
     }
-    return NewEdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Settings()(*EdiscoveryCasesItemSettingsRequestBuilder) {
@@ -253,7 +253,7 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollections()(*EdiscoveryC
     return NewEdiscoveryCasesItemSourceCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SourceCollectionsById provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollectionsById(id string)(*EdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilder) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollectionsById(id string)(*SourceCollectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -261,14 +261,14 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollectionsById(id string)
     if id != "" {
         urlTplParams["sourceCollection%2Did"] = id
     }
-    return NewEdiscoveryCasesItemSourceCollectionsSourceCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSourceCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
 func (m *EdiscoveryCasesCaseItemRequestBuilder) Tags()(*EdiscoveryCasesItemTagsRequestBuilder) {
     return NewEdiscoveryCasesItemTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TagsById provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
-func (m *EdiscoveryCasesCaseItemRequestBuilder) TagsById(id string)(*EdiscoveryCasesItemTagsTagItemRequestBuilder) {
+func (m *EdiscoveryCasesCaseItemRequestBuilder) TagsById(id string)(*TagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -276,5 +276,5 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) TagsById(id string)(*EdiscoveryC
     if id != "" {
         urlTplParams["tag%2Did"] = id
     }
-    return NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

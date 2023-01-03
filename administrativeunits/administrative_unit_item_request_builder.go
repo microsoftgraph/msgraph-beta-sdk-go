@@ -139,7 +139,7 @@ func (m *AdministrativeUnitItemRequestBuilder) Extensions()(*ItemExtensionsReque
     return NewItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
-func (m *AdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*ItemExtensionsExtensionItemRequestBuilder) {
+func (m *AdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -147,7 +147,7 @@ func (m *AdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*ItemEx
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get retrieve the properties and relationships of an administrativeUnit object. Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
 // [Find more info here]
@@ -184,7 +184,7 @@ func (m *AdministrativeUnitItemRequestBuilder) Members()(*ItemMembersRequestBuil
     return NewItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.administrativeUnits.item.members.item collection
-func (m *AdministrativeUnitItemRequestBuilder) MembersById(id string)(*ItemMembersDirectoryObjectItemRequestBuilder) {
+func (m *AdministrativeUnitItemRequestBuilder) MembersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -192,7 +192,7 @@ func (m *AdministrativeUnitItemRequestBuilder) MembersById(id string)(*ItemMembe
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the properties of an administrativeUnit object.
 // [Find more info here]
@@ -225,7 +225,7 @@ func (m *AdministrativeUnitItemRequestBuilder) ScopedRoleMembers()(*ItemScopedRo
     return NewItemScopedRoleMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ScopedRoleMembersById provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
-func (m *AdministrativeUnitItemRequestBuilder) ScopedRoleMembersById(id string)(*ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) {
+func (m *AdministrativeUnitItemRequestBuilder) ScopedRoleMembersById(id string)(*ScopedRoleMembershipItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -233,5 +233,5 @@ func (m *AdministrativeUnitItemRequestBuilder) ScopedRoleMembersById(id string)(
     if id != "" {
         urlTplParams["scopedRoleMembership%2Did"] = id
     }
-    return NewItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -166,7 +166,7 @@ func (m *TriggersRequestBuilder) RetentionEvents()(*TriggersRetentionEventsReque
     return NewTriggersRetentionEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RetentionEventsById provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
-func (m *TriggersRequestBuilder) RetentionEventsById(id string)(*TriggersRetentionEventsRetentionEventItemRequestBuilder) {
+func (m *TriggersRequestBuilder) RetentionEventsById(id string)(*RetentionEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *TriggersRequestBuilder) RetentionEventsById(id string)(*TriggersRetenti
     if id != "" {
         urlTplParams["retentionEvent%2Did"] = id
     }
-    return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRetentionEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

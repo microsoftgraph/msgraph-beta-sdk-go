@@ -178,7 +178,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Tasks()(*BusinessScenariosI
     return NewBusinessScenariosItemPlannerTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
-func (m *BusinessScenariosItemPlannerRequestBuilder) TasksById(id string)(*BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) {
+func (m *BusinessScenariosItemPlannerRequestBuilder) TasksById(id string)(*BusinessScenarioTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -186,5 +186,5 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) TasksById(id string)(*Busin
     if id != "" {
         urlTplParams["businessScenarioTask%2Did"] = id
     }
-    return NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewBusinessScenarioTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

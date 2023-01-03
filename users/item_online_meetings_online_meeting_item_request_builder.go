@@ -55,7 +55,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReports()(
     return NewItemOnlineMeetingsItemAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttendanceReportsById provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
-func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
+func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsById(id string)(*MeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendanceReportsByI
     if id != "" {
         urlTplParams["meetingAttendanceReport%2Did"] = id
     }
-    return NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AttendeeReport provides operations to manage the media for the user entity.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendeeReport()(*ItemOnlineMeetingsItemAttendeeReportRequestBuilder) {
@@ -201,7 +201,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Transcripts()(*ItemO
     return NewItemOnlineMeetingsItemTranscriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TranscriptsById provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*ItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilder) {
+func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*CallTranscriptItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -209,7 +209,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) TranscriptsById(id s
     if id != "" {
         urlTplParams["callTranscript%2Did"] = id
     }
-    return NewItemOnlineMeetingsItemTranscriptsCallTranscriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCallTranscriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // VirtualAppointment provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) VirtualAppointment()(*ItemOnlineMeetingsItemVirtualAppointmentRequestBuilder) {

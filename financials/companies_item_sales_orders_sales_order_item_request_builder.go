@@ -143,7 +143,7 @@ func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) SalesOrderLines()
     return NewCompaniesItemSalesOrdersItemSalesOrderLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SalesOrderLinesById provides operations to manage the salesOrderLines property of the microsoft.graph.salesOrder entity.
-func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) SalesOrderLinesById(id string)(*CompaniesItemSalesOrdersItemSalesOrderLinesSalesOrderLineItemRequestBuilder) {
+func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) SalesOrderLinesById(id string)(*SalesOrderLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -151,5 +151,5 @@ func (m *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) SalesOrderLinesBy
     if id != "" {
         urlTplParams["salesOrderLine%2Did"] = id
     }
-    return NewCompaniesItemSalesOrdersItemSalesOrderLinesSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

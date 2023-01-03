@@ -147,7 +147,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContents()
     return NewLearningProvidersItemLearningContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LearningContentsById provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
-func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContentsById(id string)(*LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) {
+func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContentsById(id string)(*LearningContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContentsBy
     if id != "" {
         urlTplParams["learningContent%2Did"] = id
     }
-    return NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewLearningContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property learningProviders in employeeExperience
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, error) {

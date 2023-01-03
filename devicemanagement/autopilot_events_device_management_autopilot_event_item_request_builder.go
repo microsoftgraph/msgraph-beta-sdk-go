@@ -166,7 +166,7 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Policy
     return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PolicyStatusDetailsById provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
-func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetailsById(id string)(*AutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
+func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetailsById(id string)(*DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Policy
     if id != "" {
         urlTplParams["deviceManagementAutopilotPolicyStatusDetail%2Did"] = id
     }
-    return NewAutopilotEventsItemPolicyStatusDetailsDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

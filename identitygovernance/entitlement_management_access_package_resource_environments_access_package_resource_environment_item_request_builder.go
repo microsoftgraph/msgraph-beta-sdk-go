@@ -51,7 +51,7 @@ func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageReso
     return NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AccessPackageResourcesById provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.
-func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder) AccessPackageResourcesById(id string)(*EntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) {
+func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder) AccessPackageResourcesById(id string)(*AccessPackageResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageReso
     if id != "" {
         urlTplParams["accessPackageResource%2Did"] = id
     }
-    return NewEntitlementManagementAccessPackageResourceEnvironmentsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAccessPackageResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderInternal instantiates a new AccessPackageResourceEnvironmentItemRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceEnvironmentsAccessPackageResourceEnvironmentItemRequestBuilder) {

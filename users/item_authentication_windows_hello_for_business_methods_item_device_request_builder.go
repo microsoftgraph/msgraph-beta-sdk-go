@@ -59,7 +59,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceCommandsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CommandsById provides operations to manage the commands property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) CommandsById(id string)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceCommandsCommandItemRequestBuilder) {
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) CommandsById(id string)(*CommandItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     if id != "" {
         urlTplParams["command%2Did"] = id
     }
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceCommandsCommandItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCommandItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderInternal instantiates a new DeviceRequestBuilder and sets the default values.
 func NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) {
@@ -151,7 +151,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) ExtensionsById(id string)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceExtensionsExtensionItemRequestBuilder) {
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -159,7 +159,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -193,7 +193,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MemberOfById provides operations to manage the memberOf property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) MemberOfById(id string)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) MemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -201,7 +201,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property device in users
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -227,7 +227,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRegisteredOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RegisteredOwnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.authentication.windowsHelloForBusinessMethods.item.device.registeredOwners.item collection
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) RegisteredOwnersById(id string)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRegisteredOwnersDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) RegisteredOwnersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -235,14 +235,14 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRegisteredOwnersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RegisteredUsers provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) RegisteredUsers()(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRegisteredUsersRequestBuilder) {
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRegisteredUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RegisteredUsersById provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) RegisteredUsersById(id string)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRegisteredUsersDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) RegisteredUsersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -250,7 +250,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRegisteredUsersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Restore provides operations to call the restore method.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) Restore()(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRestoreRequestBuilder) {
@@ -261,7 +261,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceTransitiveMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveMemberOfById provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) TransitiveMemberOfById(id string)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) TransitiveMemberOfById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -269,14 +269,14 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceTransitiveMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UsageRights provides operations to manage the usageRights property of the microsoft.graph.device entity.
 func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) UsageRights()(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceUsageRightsRequestBuilder) {
     return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceUsageRightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsageRightsById provides operations to manage the usageRights property of the microsoft.graph.device entity.
-func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) UsageRightsById(id string)(*ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceUsageRightsUsageRightItemRequestBuilder) {
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilder) UsageRightsById(id string)(*UsageRightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -284,5 +284,5 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceRequestBuilde
     if id != "" {
         urlTplParams["usageRight%2Did"] = id
     }
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsItemDeviceUsageRightsUsageRightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUsageRightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

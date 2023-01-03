@@ -170,7 +170,7 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
     return NewReusablePolicySettingsItemReferencingConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ReferencingConfigurationPoliciesById provides operations to manage the referencingConfigurationPolicies property of the microsoft.graph.deviceManagementReusablePolicySetting entity.
-func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) ReferencingConfigurationPoliciesById(id string)(*ReusablePolicySettingsItemReferencingConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) {
+func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestBuilder) ReferencingConfigurationPoliciesById(id string)(*DeviceManagementConfigurationPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -178,5 +178,5 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
     if id != "" {
         urlTplParams["deviceManagementConfigurationPolicy%2Did"] = id
     }
-    return NewReusablePolicySettingsItemReferencingConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementConfigurationPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

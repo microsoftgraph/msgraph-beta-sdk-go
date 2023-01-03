@@ -51,7 +51,7 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Children()(
     return NewGroupPolicyCategoriesItemChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ChildrenById provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
-func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) ChildrenById(id string)(*GroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilder) {
+func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) ChildrenById(id string)(*GroupPolicyCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) ChildrenByI
     if id != "" {
         urlTplParams["groupPolicyCategory%2Did1"] = id
     }
-    return NewGroupPolicyCategoriesItemChildrenGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
 func NewGroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) {
@@ -131,7 +131,7 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Definitions
     return NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
-func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) DefinitionsById(id string)(*GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
+func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) DefinitionsById(id string)(*GroupPolicyDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,7 +139,7 @@ func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Definitions
     if id != "" {
         urlTplParams["groupPolicyDefinition%2Did"] = id
     }
-    return NewGroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property groupPolicyCategories for deviceManagement
 func (m *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyCategoriesGroupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {

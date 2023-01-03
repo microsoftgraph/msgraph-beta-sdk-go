@@ -116,7 +116,7 @@ func (m *ItemInformationProtectionRequestBuilder) DataLossPreventionPolicies()(*
     return NewItemInformationProtectionDataLossPreventionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DataLossPreventionPoliciesById provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
-func (m *ItemInformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
+func (m *ItemInformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*DataLossPreventionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -124,7 +124,7 @@ func (m *ItemInformationProtectionRequestBuilder) DataLossPreventionPoliciesById
     if id != "" {
         urlTplParams["dataLossPreventionPolicy%2Did"] = id
     }
-    return NewItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DecryptBuffer provides operations to call the decryptBuffer method.
 func (m *ItemInformationProtectionRequestBuilder) DecryptBuffer()(*ItemInformationProtectionDecryptBufferRequestBuilder) {
@@ -197,7 +197,7 @@ func (m *ItemInformationProtectionRequestBuilder) SensitivityLabels()(*ItemInfor
     return NewItemInformationProtectionSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SensitivityLabelsById provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
-func (m *ItemInformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
+func (m *ItemInformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -205,7 +205,7 @@ func (m *ItemInformationProtectionRequestBuilder) SensitivityLabelsById(id strin
     if id != "" {
         urlTplParams["sensitivityLabel%2Did"] = id
     }
-    return NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SensitivityPolicySettings provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
 func (m *ItemInformationProtectionRequestBuilder) SensitivityPolicySettings()(*ItemInformationProtectionSensitivityPolicySettingsRequestBuilder) {
@@ -220,7 +220,7 @@ func (m *ItemInformationProtectionRequestBuilder) ThreatAssessmentRequests()(*It
     return NewItemInformationProtectionThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ThreatAssessmentRequestsById provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-func (m *ItemInformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ItemInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) {
+func (m *ItemInformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*ThreatAssessmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -228,7 +228,7 @@ func (m *ItemInformationProtectionRequestBuilder) ThreatAssessmentRequestsById(i
     if id != "" {
         urlTplParams["threatAssessmentRequest%2Did"] = id
     }
-    return NewItemInformationProtectionThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // VerifySignature provides operations to call the verifySignature method.
 func (m *ItemInformationProtectionRequestBuilder) VerifySignature()(*ItemInformationProtectionVerifySignatureRequestBuilder) {

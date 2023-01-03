@@ -182,7 +182,7 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSources()
     return NewEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SiteSourcesById provides operations to manage the siteSources property of the microsoft.graph.ediscovery.custodian entity.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSourcesById(id string)(*EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSourcesById(id string)(*SiteSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -190,14 +190,14 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSourcesBy
     if id != "" {
         urlTplParams["siteSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UnifiedGroupSources provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupSources()(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UnifiedGroupSourcesById provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupSourcesById(id string)(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupSourcesById(id string)(*UnifiedGroupSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -205,7 +205,7 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupS
     if id != "" {
         urlTplParams["unifiedGroupSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UpdateIndex provides operations to call the updateIndex method.
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UpdateIndex()(*EdiscoveryCasesItemCustodiansItemUpdateIndexRequestBuilder) {
@@ -216,7 +216,7 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSources()
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserSourcesById provides operations to manage the userSources property of the microsoft.graph.ediscovery.custodian entity.
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSourcesById(id string)(*EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) {
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSourcesById(id string)(*UserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -224,5 +224,5 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSourcesBy
     if id != "" {
         urlTplParams["userSource%2Did"] = id
     }
-    return NewEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

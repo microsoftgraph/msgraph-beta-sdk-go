@@ -55,7 +55,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Assign
     return NewDeviceManagementScriptsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementScript entity.
-func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) AssignmentsById(id string)(*DeviceManagementScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilder) {
+func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) AssignmentsById(id string)(*DeviceManagementScriptAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Assign
     if id != "" {
         urlTplParams["deviceManagementScriptAssignment%2Did"] = id
     }
-    return NewDeviceManagementScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal instantiates a new DeviceManagementScriptItemRequestBuilder and sets the default values.
 func NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) {
@@ -147,7 +147,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Device
     return NewDeviceManagementScriptsItemDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeviceRunStatesById provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScript entity.
-func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceManagementScriptsItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
+func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) DeviceRunStatesById(id string)(*DeviceManagementScriptDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Device
     if id != "" {
         urlTplParams["deviceManagementScriptDeviceState%2Did"] = id
     }
-    return NewDeviceManagementScriptsItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the list of device management scripts associated with the tenant.
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, error) {
@@ -181,7 +181,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) GroupA
     return NewDeviceManagementScriptsItemGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GroupAssignmentsById provides operations to manage the groupAssignments property of the microsoft.graph.deviceManagementScript entity.
-func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) GroupAssignmentsById(id string)(*DeviceManagementScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilder) {
+func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) GroupAssignmentsById(id string)(*DeviceManagementScriptGroupAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +189,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) GroupA
     if id != "" {
         urlTplParams["deviceManagementScriptGroupAssignment%2Did"] = id
     }
-    return NewDeviceManagementScriptsItemGroupAssignmentsDeviceManagementScriptGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementScriptGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property deviceManagementScripts in deviceManagement
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, error) {
@@ -219,7 +219,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) UserRu
     return NewDeviceManagementScriptsItemUserRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserRunStatesById provides operations to manage the userRunStates property of the microsoft.graph.deviceManagementScript entity.
-func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) UserRunStatesById(id string)(*DeviceManagementScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilder) {
+func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) UserRunStatesById(id string)(*DeviceManagementScriptUserStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -227,5 +227,5 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) UserRu
     if id != "" {
         urlTplParams["deviceManagementScriptUserState%2Did"] = id
     }
-    return NewDeviceManagementScriptsItemUserRunStatesDeviceManagementScriptUserStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementScriptUserStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

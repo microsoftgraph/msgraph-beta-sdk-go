@@ -147,7 +147,7 @@ func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollection
     return NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementTemplatesById provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managementTemplateCollection entity.
-func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) ManagementTemplatesById(id string)(*ManagedTenantsManagementTemplateCollectionsItemManagementTemplatesManagementTemplateItemRequestBuilder) {
+func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) ManagementTemplatesById(id string)(*ManagementTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollection
     if id != "" {
         urlTplParams["managementTemplate%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplateCollectionsItemManagementTemplatesManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property managementTemplateCollections in tenantRelationships
 func (m *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionable, requestConfiguration *ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionable, error) {

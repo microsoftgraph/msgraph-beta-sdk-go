@@ -112,7 +112,7 @@ func (m *LifecycleWorkflowsRequestBuilder) CustomTaskExtensions()(*LifecycleWork
     return NewLifecycleWorkflowsCustomTaskExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CustomTaskExtensionsById provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-func (m *LifecycleWorkflowsRequestBuilder) CustomTaskExtensionsById(id string)(*LifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilder) {
+func (m *LifecycleWorkflowsRequestBuilder) CustomTaskExtensionsById(id string)(*CustomTaskExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +120,7 @@ func (m *LifecycleWorkflowsRequestBuilder) CustomTaskExtensionsById(id string)(*
     if id != "" {
         urlTplParams["customTaskExtension%2Did"] = id
     }
-    return NewLifecycleWorkflowsCustomTaskExtensionsCustomTaskExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCustomTaskExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property lifecycleWorkflows for identityGovernance
 func (m *LifecycleWorkflowsRequestBuilder) Delete(ctx context.Context, requestConfiguration *LifecycleWorkflowsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -189,7 +189,7 @@ func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitions()(*LifecycleWorkflows
     return NewLifecycleWorkflowsTaskDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TaskDefinitionsById provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitionsById(id string)(*LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) {
+func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitionsById(id string)(*TaskDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -197,14 +197,14 @@ func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitionsById(id string)(*Lifec
     if id != "" {
         urlTplParams["taskDefinition%2Did"] = id
     }
-    return NewLifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Workflows provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) Workflows()(*LifecycleWorkflowsWorkflowsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkflowsById provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-func (m *LifecycleWorkflowsRequestBuilder) WorkflowsById(id string)(*LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) {
+func (m *LifecycleWorkflowsRequestBuilder) WorkflowsById(id string)(*WorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -212,14 +212,14 @@ func (m *LifecycleWorkflowsRequestBuilder) WorkflowsById(id string)(*LifecycleWo
     if id != "" {
         urlTplParams["workflow%2Did"] = id
     }
-    return NewLifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWorkflowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WorkflowTemplates provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
 func (m *LifecycleWorkflowsRequestBuilder) WorkflowTemplates()(*LifecycleWorkflowsWorkflowTemplatesRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkflowTemplatesById provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-func (m *LifecycleWorkflowsRequestBuilder) WorkflowTemplatesById(id string)(*LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) {
+func (m *LifecycleWorkflowsRequestBuilder) WorkflowTemplatesById(id string)(*WorkflowTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -227,5 +227,5 @@ func (m *LifecycleWorkflowsRequestBuilder) WorkflowTemplatesById(id string)(*Lif
     if id != "" {
         urlTplParams["workflowTemplate%2Did"] = id
     }
-    return NewLifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWorkflowTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

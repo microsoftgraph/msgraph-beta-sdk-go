@@ -147,7 +147,7 @@ func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*I
     return NewItemChatsItemMessagesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemChatsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(
     if id != "" {
         urlTplParams["chatMessageHostedContent%2Did"] = id
     }
-    return NewItemChatsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property messages in users
 func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemChatsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
@@ -181,7 +181,7 @@ func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemChat
     return NewItemChatsItemMessagesItemRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
-func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ItemChatsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
+func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +189,7 @@ func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) RepliesById(id stri
     if id != "" {
         urlTplParams["chatMessage%2Did1"] = id
     }
-    return NewItemChatsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SetReaction provides operations to call the setReaction method.
 func (m *ItemChatsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemChatsItemMessagesItemSetReactionRequestBuilder) {

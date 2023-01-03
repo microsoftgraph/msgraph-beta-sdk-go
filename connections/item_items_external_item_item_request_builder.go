@@ -51,7 +51,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) Activities()(*ItemItemsItemAct
     return NewItemItemsItemActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ActivitiesById provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
-func (m *ItemItemsExternalItemItemRequestBuilder) ActivitiesById(id string)(*ItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
+func (m *ItemItemsExternalItemItemRequestBuilder) ActivitiesById(id string)(*ExternalActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) ActivitiesById(id string)(*Ite
     if id != "" {
         urlTplParams["externalActivity%2Did"] = id
     }
-    return NewItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExternalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AddActivities provides operations to call the addActivities method.
 func (m *ItemItemsExternalItemItemRequestBuilder) AddActivities()(*ItemItemsItemAddActivitiesRequestBuilder) {

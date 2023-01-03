@@ -128,7 +128,7 @@ func (m *MessageRecipientItemRequestBuilder) Events()(*ItemEventsRequestBuilder)
     return NewItemEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EventsById provides operations to manage the events property of the microsoft.graph.messageRecipient entity.
-func (m *MessageRecipientItemRequestBuilder) EventsById(id string)(*ItemEventsMessageEventItemRequestBuilder) {
+func (m *MessageRecipientItemRequestBuilder) EventsById(id string)(*MessageEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -136,7 +136,7 @@ func (m *MessageRecipientItemRequestBuilder) EventsById(id string)(*ItemEventsMe
     if id != "" {
         urlTplParams["messageEvent%2Did"] = id
     }
-    return NewItemEventsMessageEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMessageEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get entity from messageRecipients by key
 func (m *MessageRecipientItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessageRecipientItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageRecipientable, error) {

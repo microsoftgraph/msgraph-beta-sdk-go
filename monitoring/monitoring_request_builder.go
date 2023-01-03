@@ -44,7 +44,7 @@ func (m *MonitoringRequestBuilder) AlertRecords()(*AlertRecordsRequestBuilder) {
     return NewAlertRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertRecordsById provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*AlertRecordsAlertRecordItemRequestBuilder) {
+func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*AlertRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,14 +52,14 @@ func (m *MonitoringRequestBuilder) AlertRecordsById(id string)(*AlertRecordsAler
     if id != "" {
         urlTplParams["alertRecord%2Did"] = id
     }
-    return NewAlertRecordsAlertRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlertRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AlertRules provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
 func (m *MonitoringRequestBuilder) AlertRules()(*AlertRulesRequestBuilder) {
     return NewAlertRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertRulesById provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
-func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*AlertRulesAlertRuleItemRequestBuilder) {
+func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*AlertRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *MonitoringRequestBuilder) AlertRulesById(id string)(*AlertRulesAlertRul
     if id != "" {
         urlTplParams["alertRule%2Did"] = id
     }
-    return NewAlertRulesAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMonitoringRequestBuilderInternal instantiates a new MonitoringRequestBuilder and sets the default values.
 func NewMonitoringRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringRequestBuilder) {

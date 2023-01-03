@@ -164,7 +164,7 @@ func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFolders()(*Out
     return NewOutlookTaskGroupsItemTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TaskFoldersById provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
-func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFoldersById(id string)(*OutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) {
+func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFoldersById(id string)(*OutlookTaskFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -172,5 +172,5 @@ func (m *OutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) TaskFoldersById(id
     if id != "" {
         urlTplParams["outlookTaskFolder%2Did"] = id
     }
-    return NewOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

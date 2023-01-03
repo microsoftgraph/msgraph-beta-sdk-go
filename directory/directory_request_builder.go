@@ -44,7 +44,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeUnitsRequ
     return NewAdministrativeUnitsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AdministrativeUnitsById provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*AdministrativeUnitsAdministrativeUnitItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*AdministrativeUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -52,14 +52,14 @@ func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*Administra
     if id != "" {
         urlTplParams["administrativeUnit%2Did"] = id
     }
-    return NewAdministrativeUnitsAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AttributeSets provides operations to manage the attributeSets property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) AttributeSets()(*AttributeSetsRequestBuilder) {
     return NewAttributeSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttributeSetsById provides operations to manage the attributeSets property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) AttributeSetsById(id string)(*AttributeSetsAttributeSetItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) AttributeSetsById(id string)(*AttributeSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *DirectoryRequestBuilder) AttributeSetsById(id string)(*AttributeSetsAtt
     if id != "" {
         urlTplParams["attributeSet%2Did"] = id
     }
-    return NewAttributeSetsAttributeSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAttributeSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
@@ -123,7 +123,7 @@ func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitions()(*CustomSe
     return NewCustomSecurityAttributeDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CustomSecurityAttributeDefinitionsById provides operations to manage the customSecurityAttributeDefinitions property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitionsById(id string)(*CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitionsById(id string)(*CustomSecurityAttributeDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -131,14 +131,14 @@ func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitionsById(id stri
     if id != "" {
         urlTplParams["customSecurityAttributeDefinition%2Did"] = id
     }
-    return NewCustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCustomSecurityAttributeDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) DeletedItems()(*DeletedItemsRequestBuilder) {
     return NewDeletedItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeletedItemsById provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -146,14 +146,14 @@ func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*DeletedItemsDirec
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // FeatureRolloutPolicies provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPoliciesRequestBuilder) {
     return NewFeatureRolloutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FeatureRolloutPoliciesById provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) FeatureRolloutPoliciesById(id string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) FeatureRolloutPoliciesById(id string)(*FeatureRolloutPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -161,14 +161,14 @@ func (m *DirectoryRequestBuilder) FeatureRolloutPoliciesById(id string)(*Feature
     if id != "" {
         urlTplParams["featureRolloutPolicy%2Did"] = id
     }
-    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // FederationConfigurations provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) FederationConfigurations()(*FederationConfigurationsRequestBuilder) {
     return NewFederationConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FederationConfigurationsById provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*FederationConfigurationsIdentityProviderBaseItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*IdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -176,7 +176,7 @@ func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*Feder
     if id != "" {
         urlTplParams["identityProviderBase%2Did"] = id
     }
-    return NewFederationConfigurationsIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get directory
 func (m *DirectoryRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable, error) {
@@ -202,7 +202,7 @@ func (m *DirectoryRequestBuilder) ImpactedResources()(*ImpactedResourcesRequestB
     return NewImpactedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ImpactedResourcesById provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) ImpactedResourcesById(id string)(*ImpactedResourcesRecommendationResourceItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) ImpactedResourcesById(id string)(*RecommendationResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -210,14 +210,14 @@ func (m *DirectoryRequestBuilder) ImpactedResourcesById(id string)(*ImpactedReso
     if id != "" {
         urlTplParams["recommendationResource%2Did"] = id
     }
-    return NewImpactedResourcesRecommendationResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRecommendationResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // InboundSharedUserProfiles provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) InboundSharedUserProfiles()(*InboundSharedUserProfilesRequestBuilder) {
     return NewInboundSharedUserProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InboundSharedUserProfilesById provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) InboundSharedUserProfilesById(id string)(*InboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) InboundSharedUserProfilesById(id string)(*InboundSharedUserProfileUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -225,14 +225,14 @@ func (m *DirectoryRequestBuilder) InboundSharedUserProfilesById(id string)(*Inbo
     if id != "" {
         urlTplParams["inboundSharedUserProfile%2DuserId"] = id
     }
-    return NewInboundSharedUserProfilesInboundSharedUserProfileUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewInboundSharedUserProfileUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // OnPremisesSynchronization provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) OnPremisesSynchronization()(*OnPremisesSynchronizationRequestBuilder) {
     return NewOnPremisesSynchronizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OnPremisesSynchronizationById provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) OnPremisesSynchronizationById(id string)(*OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) OnPremisesSynchronizationById(id string)(*OnPremisesDirectorySynchronizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -240,14 +240,14 @@ func (m *DirectoryRequestBuilder) OnPremisesSynchronizationById(id string)(*OnPr
     if id != "" {
         urlTplParams["onPremisesDirectorySynchronization%2Did"] = id
     }
-    return NewOnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnPremisesDirectorySynchronizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // OutboundSharedUserProfiles provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) OutboundSharedUserProfiles()(*OutboundSharedUserProfilesRequestBuilder) {
     return NewOutboundSharedUserProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OutboundSharedUserProfilesById provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) OutboundSharedUserProfilesById(id string)(*OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) OutboundSharedUserProfilesById(id string)(*OutboundSharedUserProfileUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -255,7 +255,7 @@ func (m *DirectoryRequestBuilder) OutboundSharedUserProfilesById(id string)(*Out
     if id != "" {
         urlTplParams["outboundSharedUserProfile%2DuserId"] = id
     }
-    return NewOutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOutboundSharedUserProfileUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update directory
 func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable, requestConfiguration *DirectoryRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable, error) {
@@ -281,7 +281,7 @@ func (m *DirectoryRequestBuilder) Recommendations()(*RecommendationsRequestBuild
     return NewRecommendationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RecommendationsById provides operations to manage the recommendations property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) RecommendationsById(id string)(*RecommendationsRecommendationItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) RecommendationsById(id string)(*RecommendationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -289,14 +289,14 @@ func (m *DirectoryRequestBuilder) RecommendationsById(id string)(*Recommendation
     if id != "" {
         urlTplParams["recommendation%2Did"] = id
     }
-    return NewRecommendationsRecommendationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewRecommendationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SharedEmailDomains provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
 func (m *DirectoryRequestBuilder) SharedEmailDomains()(*SharedEmailDomainsRequestBuilder) {
     return NewSharedEmailDomainsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SharedEmailDomainsById provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
-func (m *DirectoryRequestBuilder) SharedEmailDomainsById(id string)(*SharedEmailDomainsSharedEmailDomainItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) SharedEmailDomainsById(id string)(*SharedEmailDomainItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -304,5 +304,5 @@ func (m *DirectoryRequestBuilder) SharedEmailDomainsById(id string)(*SharedEmail
     if id != "" {
         urlTplParams["sharedEmailDomain%2Did"] = id
     }
-    return NewSharedEmailDomainsSharedEmailDomainItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSharedEmailDomainItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

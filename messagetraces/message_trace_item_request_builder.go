@@ -166,7 +166,7 @@ func (m *MessageTraceItemRequestBuilder) Recipients()(*ItemRecipientsRequestBuil
     return NewItemRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RecipientsById provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
-func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*ItemRecipientsMessageRecipientItemRequestBuilder) {
+func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*MessageRecipientItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *MessageTraceItemRequestBuilder) RecipientsById(id string)(*ItemRecipien
     if id != "" {
         urlTplParams["messageRecipient%2Did"] = id
     }
-    return NewItemRecipientsMessageRecipientItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMessageRecipientItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

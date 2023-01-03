@@ -70,7 +70,7 @@ func (m *ProgramItemRequestBuilder) Controls()(*ItemControlsRequestBuilder) {
     return NewItemControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ControlsById provides operations to manage the controls property of the microsoft.graph.program entity.
-func (m *ProgramItemRequestBuilder) ControlsById(id string)(*ItemControlsProgramControlItemRequestBuilder) {
+func (m *ProgramItemRequestBuilder) ControlsById(id string)(*ProgramControlItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -78,7 +78,7 @@ func (m *ProgramItemRequestBuilder) ControlsById(id string)(*ItemControlsProgram
     if id != "" {
         urlTplParams["programControl%2Did"] = id
     }
-    return NewItemControlsProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation in the Azure AD access reviews feature, delete a program object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
 func (m *ProgramItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *ProgramItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -166,7 +166,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) 
     return NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
-func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) TasksById(id string)(*LifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilder) {
+func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) TasksById(id string)(*TaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,5 +174,5 @@ func (m *LifecycleWorkflowsWorkflowTemplatesWorkflowTemplateItemRequestBuilder) 
     if id != "" {
         urlTplParams["task%2Did"] = id
     }
-    return NewLifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -170,7 +170,7 @@ func (m *CompaniesItemPurchaseInvoiceLinesItemItemRequestBuilder) Picture()(*Com
     return NewCompaniesItemPurchaseInvoiceLinesItemItemPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PictureById provides operations to manage the picture property of the microsoft.graph.item entity.
-func (m *CompaniesItemPurchaseInvoiceLinesItemItemRequestBuilder) PictureById(id string)(*CompaniesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilder) {
+func (m *CompaniesItemPurchaseInvoiceLinesItemItemRequestBuilder) PictureById(id string)(*PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -178,5 +178,5 @@ func (m *CompaniesItemPurchaseInvoiceLinesItemItemRequestBuilder) PictureById(id
     if id != "" {
         urlTplParams["picture%2Did"] = id
     }
-    return NewCompaniesItemPurchaseInvoiceLinesItemItemPicturePictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

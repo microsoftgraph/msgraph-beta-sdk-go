@@ -136,7 +136,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Extensions()(*
     return NewAdministrativeUnitsItemExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExtensionsById provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*AdministrativeUnitsItemExtensionsExtensionItemRequestBuilder) {
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*ExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -144,7 +144,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ExtensionsById
     if id != "" {
         urlTplParams["extension%2Did"] = id
     }
-    return NewAdministrativeUnitsItemExtensionsExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
@@ -178,7 +178,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Members()(*Adm
     return NewAdministrativeUnitsItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.administrativeUnits.item.members.item collection
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MembersById(id string)(*AdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilder) {
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MembersById(id string)(*DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -186,7 +186,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) MembersById(id
     if id != "" {
         urlTplParams["directoryObject%2Did"] = id
     }
-    return NewAdministrativeUnitsItemMembersDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property administrativeUnits in directory
 func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsAdministrativeUnitItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
@@ -216,7 +216,7 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMemb
     return NewAdministrativeUnitsItemScopedRoleMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ScopedRoleMembersById provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
-func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMembersById(id string)(*AdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) {
+func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMembersById(id string)(*ScopedRoleMembershipItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -224,5 +224,5 @@ func (m *AdministrativeUnitsAdministrativeUnitItemRequestBuilder) ScopedRoleMemb
     if id != "" {
         urlTplParams["scopedRoleMembership%2Did"] = id
     }
-    return NewAdministrativeUnitsItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewScopedRoleMembershipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

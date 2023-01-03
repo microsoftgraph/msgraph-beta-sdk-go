@@ -55,7 +55,7 @@ func (m *WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuild
     return NewWindowsFeatureUpdateProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.windowsFeatureUpdateProfile entity.
-func (m *WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
+func (m *WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilder) AssignmentsById(id string)(*WindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuild
     if id != "" {
         urlTplParams["windowsFeatureUpdateProfileAssignment%2Did"] = id
     }
-    return NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewWindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilderInternal instantiates a new WindowsFeatureUpdateProfileItemRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsFeatureUpdateProfilesWindowsFeatureUpdateProfileItemRequestBuilder) {

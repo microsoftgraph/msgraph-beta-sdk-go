@@ -166,7 +166,7 @@ func (m *DeviceManagementRequestBuilder) ResourceNamespaces()(*DeviceManagementR
     return NewDeviceManagementResourceNamespacesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResourceNamespacesById provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *DeviceManagementRequestBuilder) ResourceNamespacesById(id string)(*DeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
+func (m *DeviceManagementRequestBuilder) ResourceNamespacesById(id string)(*UnifiedRbacResourceNamespaceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *DeviceManagementRequestBuilder) ResourceNamespacesById(id string)(*Devi
     if id != "" {
         urlTplParams["unifiedRbacResourceNamespace%2Did"] = id
     }
-    return NewDeviceManagementResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
 func (m *DeviceManagementRequestBuilder) RoleAssignments()(*DeviceManagementRoleAssignmentsRequestBuilder) {
     return NewDeviceManagementRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*DeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilder) {
+func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*UnifiedRoleAssignmentMultipleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,14 +189,14 @@ func (m *DeviceManagementRequestBuilder) RoleAssignmentsById(id string)(*DeviceM
     if id != "" {
         urlTplParams["unifiedRoleAssignmentMultiple%2Did"] = id
     }
-    return NewDeviceManagementRoleAssignmentsUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.
 func (m *DeviceManagementRequestBuilder) RoleDefinitions()(*DeviceManagementRoleDefinitionsRequestBuilder) {
     return NewDeviceManagementRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.
-func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*DeviceManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilder) {
+func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*UnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,5 +204,5 @@ func (m *DeviceManagementRequestBuilder) RoleDefinitionsById(id string)(*DeviceM
     if id != "" {
         urlTplParams["unifiedRoleDefinition%2Did"] = id
     }
-    return NewDeviceManagementRoleDefinitionsUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -51,7 +51,7 @@ func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliances()(*ManagedTen
     return NewManagedTenantsAggregatedPolicyCompliancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AggregatedPolicyCompliancesById provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliancesById(id string)(*ManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliancesById(id string)(*AggregatedPolicyComplianceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliancesById(id string
     if id != "" {
         urlTplParams["aggregatedPolicyCompliance%2Did"] = id
     }
-    return NewManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAggregatedPolicyComplianceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AuditEvents provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) AuditEvents()(*ManagedTenantsAuditEventsRequestBuilder) {
     return NewManagedTenantsAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AuditEventsById provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) AuditEventsById(id string)(*ManagedTenantsAuditEventsAuditEventItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) AuditEventsById(id string)(*AuditEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,14 +74,14 @@ func (m *ManagedTenantsRequestBuilder) AuditEventsById(id string)(*ManagedTenant
     if id != "" {
         urlTplParams["auditEvent%2Did"] = id
     }
-    return NewManagedTenantsAuditEventsAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CloudPcConnections provides operations to manage the cloudPcConnections property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) CloudPcConnections()(*ManagedTenantsCloudPcConnectionsRequestBuilder) {
     return NewManagedTenantsCloudPcConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CloudPcConnectionsById provides operations to manage the cloudPcConnections property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) CloudPcConnectionsById(id string)(*ManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) CloudPcConnectionsById(id string)(*CloudPcConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -89,14 +89,14 @@ func (m *ManagedTenantsRequestBuilder) CloudPcConnectionsById(id string)(*Manage
     if id != "" {
         urlTplParams["cloudPcConnection%2Did"] = id
     }
-    return NewManagedTenantsCloudPcConnectionsCloudPcConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCloudPcConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CloudPcDevices provides operations to manage the cloudPcDevices property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) CloudPcDevices()(*ManagedTenantsCloudPcDevicesRequestBuilder) {
     return NewManagedTenantsCloudPcDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CloudPcDevicesById provides operations to manage the cloudPcDevices property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) CloudPcDevicesById(id string)(*ManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) CloudPcDevicesById(id string)(*CloudPcDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -104,14 +104,14 @@ func (m *ManagedTenantsRequestBuilder) CloudPcDevicesById(id string)(*ManagedTen
     if id != "" {
         urlTplParams["cloudPcDevice%2Did"] = id
     }
-    return NewManagedTenantsCloudPcDevicesCloudPcDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCloudPcDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CloudPcsOverview provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) CloudPcsOverview()(*ManagedTenantsCloudPcsOverviewRequestBuilder) {
     return NewManagedTenantsCloudPcsOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CloudPcsOverviewById provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*CloudPcOverviewTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -119,14 +119,14 @@ func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*ManagedT
     if id != "" {
         urlTplParams["cloudPcOverview%2DtenantId"] = id
     }
-    return NewManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCloudPcOverviewTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ConditionalAccessPolicyCoverages provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoverages()(*ManagedTenantsConditionalAccessPolicyCoveragesRequestBuilder) {
     return NewManagedTenantsConditionalAccessPolicyCoveragesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConditionalAccessPolicyCoveragesById provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoveragesById(id string)(*ManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoveragesById(id string)(*ConditionalAccessPolicyCoverageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -134,7 +134,7 @@ func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoveragesById(id s
     if id != "" {
         urlTplParams["conditionalAccessPolicyCoverage%2Did"] = id
     }
-    return NewManagedTenantsConditionalAccessPolicyCoveragesConditionalAccessPolicyCoverageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConditionalAccessPolicyCoverageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewManagedTenantsRequestBuilderInternal instantiates a new ManagedTenantsRequestBuilder and sets the default values.
 func NewManagedTenantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsRequestBuilder) {
@@ -202,7 +202,7 @@ func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummaries()(*M
     return NewManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CredentialUserRegistrationsSummariesById provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummariesById(id string)(*ManagedTenantsCredentialUserRegistrationsSummariesCredentialUserRegistrationsSummaryItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummariesById(id string)(*CredentialUserRegistrationsSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -210,7 +210,7 @@ func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummariesById(
     if id != "" {
         urlTplParams["credentialUserRegistrationsSummary%2Did"] = id
     }
-    return NewManagedTenantsCredentialUserRegistrationsSummariesCredentialUserRegistrationsSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCredentialUserRegistrationsSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property managedTenants for tenantRelationships
 func (m *ManagedTenantsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedTenantsRequestBuilderDeleteRequestConfiguration)(error) {
@@ -233,7 +233,7 @@ func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummari
     return NewManagedTenantsDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeviceCompliancePolicySettingStateSummariesById provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummariesById(id string)(*ManagedTenantsDeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummariesById(id string)(*DeviceCompliancePolicySettingStateSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -241,7 +241,7 @@ func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummari
     if id != "" {
         urlTplParams["deviceCompliancePolicySettingStateSummary%2Did"] = id
     }
-    return NewManagedTenantsDeviceCompliancePolicySettingStateSummariesDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the operations available to interact with the multi-tenant management platform.
 func (m *ManagedTenantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantable, error) {
@@ -267,7 +267,7 @@ func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliances()(*ManagedTenant
     return NewManagedTenantsManagedDeviceCompliancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedDeviceCompliancesById provides operations to manage the managedDeviceCompliances property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliancesById(id string)(*ManagedTenantsManagedDeviceCompliancesManagedDeviceComplianceItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliancesById(id string)(*ManagedDeviceComplianceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -275,14 +275,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliancesById(id string)(*
     if id != "" {
         urlTplParams["managedDeviceCompliance%2Did"] = id
     }
-    return NewManagedTenantsManagedDeviceCompliancesManagedDeviceComplianceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedDeviceComplianceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedDeviceComplianceTrends provides operations to manage the managedDeviceComplianceTrends property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrends()(*ManagedTenantsManagedDeviceComplianceTrendsRequestBuilder) {
     return NewManagedTenantsManagedDeviceComplianceTrendsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedDeviceComplianceTrendsById provides operations to manage the managedDeviceComplianceTrends property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrendsById(id string)(*ManagedTenantsManagedDeviceComplianceTrendsManagedDeviceComplianceTrendItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrendsById(id string)(*ManagedDeviceComplianceTrendItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -290,14 +290,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrendsById(id stri
     if id != "" {
         urlTplParams["managedDeviceComplianceTrend%2Did"] = id
     }
-    return NewManagedTenantsManagedDeviceComplianceTrendsManagedDeviceComplianceTrendItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedDeviceComplianceTrendItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedTenantAlertLogs provides operations to manage the managedTenantAlertLogs property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertLogs()(*ManagedTenantsManagedTenantAlertLogsRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertLogsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedTenantAlertLogsById provides operations to manage the managedTenantAlertLogs property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertLogsById(id string)(*ManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertLogsById(id string)(*ManagedTenantAlertLogItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -305,14 +305,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertLogsById(id string)(*Ma
     if id != "" {
         urlTplParams["managedTenantAlertLog%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantAlertLogsManagedTenantAlertLogItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantAlertLogItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedTenantAlertRuleDefinitions provides operations to manage the managedTenantAlertRuleDefinitions property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRuleDefinitions()(*ManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertRuleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedTenantAlertRuleDefinitionsById provides operations to manage the managedTenantAlertRuleDefinitions property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRuleDefinitionsById(id string)(*ManagedTenantsManagedTenantAlertRuleDefinitionsManagedTenantAlertRuleDefinitionItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRuleDefinitionsById(id string)(*ManagedTenantAlertRuleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -320,14 +320,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRuleDefinitionsById(id 
     if id != "" {
         urlTplParams["managedTenantAlertRuleDefinition%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantAlertRuleDefinitionsManagedTenantAlertRuleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantAlertRuleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedTenantAlertRules provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRules()(*ManagedTenantsManagedTenantAlertRulesRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedTenantAlertRulesById provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRulesById(id string)(*ManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRulesById(id string)(*ManagedTenantAlertRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -335,14 +335,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertRulesById(id string)(*M
     if id != "" {
         urlTplParams["managedTenantAlertRule%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantAlertRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedTenantAlerts provides operations to manage the managedTenantAlerts property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedTenantAlerts()(*ManagedTenantsManagedTenantAlertsRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedTenantAlertsById provides operations to manage the managedTenantAlerts property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertsById(id string)(*ManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertsById(id string)(*ManagedTenantAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -350,14 +350,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedTenantAlertsById(id string)(*Manag
     if id != "" {
         urlTplParams["managedTenantAlert%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantAlertsManagedTenantAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedTenantApiNotifications provides operations to manage the managedTenantApiNotifications property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedTenantApiNotifications()(*ManagedTenantsManagedTenantApiNotificationsRequestBuilder) {
     return NewManagedTenantsManagedTenantApiNotificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedTenantApiNotificationsById provides operations to manage the managedTenantApiNotifications property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedTenantApiNotificationsById(id string)(*ManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedTenantApiNotificationsById(id string)(*ManagedTenantApiNotificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -365,14 +365,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedTenantApiNotificationsById(id stri
     if id != "" {
         urlTplParams["managedTenantApiNotification%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantApiNotificationsManagedTenantApiNotificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantApiNotificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedTenantEmailNotifications provides operations to manage the managedTenantEmailNotifications property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedTenantEmailNotifications()(*ManagedTenantsManagedTenantEmailNotificationsRequestBuilder) {
     return NewManagedTenantsManagedTenantEmailNotificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedTenantEmailNotificationsById provides operations to manage the managedTenantEmailNotifications property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedTenantEmailNotificationsById(id string)(*ManagedTenantsManagedTenantEmailNotificationsManagedTenantEmailNotificationItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedTenantEmailNotificationsById(id string)(*ManagedTenantEmailNotificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -380,14 +380,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedTenantEmailNotificationsById(id st
     if id != "" {
         urlTplParams["managedTenantEmailNotification%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantEmailNotificationsManagedTenantEmailNotificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantEmailNotificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagedTenantTicketingEndpoints provides operations to manage the managedTenantTicketingEndpoints property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagedTenantTicketingEndpoints()(*ManagedTenantsManagedTenantTicketingEndpointsRequestBuilder) {
     return NewManagedTenantsManagedTenantTicketingEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedTenantTicketingEndpointsById provides operations to manage the managedTenantTicketingEndpoints property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagedTenantTicketingEndpointsById(id string)(*ManagedTenantsManagedTenantTicketingEndpointsManagedTenantTicketingEndpointItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagedTenantTicketingEndpointsById(id string)(*ManagedTenantTicketingEndpointItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -395,14 +395,14 @@ func (m *ManagedTenantsRequestBuilder) ManagedTenantTicketingEndpointsById(id st
     if id != "" {
         urlTplParams["managedTenantTicketingEndpoint%2Did"] = id
     }
-    return NewManagedTenantsManagedTenantTicketingEndpointsManagedTenantTicketingEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagedTenantTicketingEndpointItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementActions provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementActions()(*ManagedTenantsManagementActionsRequestBuilder) {
     return NewManagedTenantsManagementActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementActionsById provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementActionsById(id string)(*ManagedTenantsManagementActionsManagementActionItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementActionsById(id string)(*ManagementActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -410,14 +410,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementActionsById(id string)(*Managed
     if id != "" {
         urlTplParams["managementAction%2Did"] = id
     }
-    return NewManagedTenantsManagementActionsManagementActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementActionTenantDeploymentStatuses provides operations to manage the managementActionTenantDeploymentStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatuses()(*ManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilder) {
     return NewManagedTenantsManagementActionTenantDeploymentStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementActionTenantDeploymentStatusesById provides operations to manage the managementActionTenantDeploymentStatuses property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatusesById(id string)(*ManagedTenantsManagementActionTenantDeploymentStatusesManagementActionTenantDeploymentStatusItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatusesById(id string)(*ManagementActionTenantDeploymentStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -425,14 +425,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatusesB
     if id != "" {
         urlTplParams["managementActionTenantDeploymentStatus%2Did"] = id
     }
-    return NewManagedTenantsManagementActionTenantDeploymentStatusesManagementActionTenantDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementActionTenantDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementIntents provides operations to manage the managementIntents property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementIntents()(*ManagedTenantsManagementIntentsRequestBuilder) {
     return NewManagedTenantsManagementIntentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementIntentsById provides operations to manage the managementIntents property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementIntentsById(id string)(*ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementIntentsById(id string)(*ManagementIntentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -440,14 +440,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementIntentsById(id string)(*Managed
     if id != "" {
         urlTplParams["managementIntent%2Did"] = id
     }
-    return NewManagedTenantsManagementIntentsManagementIntentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementIntentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementTemplateCollections provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollections()(*ManagedTenantsManagementTemplateCollectionsRequestBuilder) {
     return NewManagedTenantsManagementTemplateCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementTemplateCollectionsById provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionsById(id string)(*ManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionsById(id string)(*ManagementTemplateCollectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -455,14 +455,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionsById(id stri
     if id != "" {
         urlTplParams["managementTemplateCollection%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplateCollectionsManagementTemplateCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementTemplateCollectionTenantSummaries provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionTenantSummaries()(*ManagedTenantsManagementTemplateCollectionTenantSummariesRequestBuilder) {
     return NewManagedTenantsManagementTemplateCollectionTenantSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementTemplateCollectionTenantSummariesById provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionTenantSummariesById(id string)(*ManagedTenantsManagementTemplateCollectionTenantSummariesManagementTemplateCollectionTenantSummaryItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionTenantSummariesById(id string)(*ManagementTemplateCollectionTenantSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -470,14 +470,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionTenantSummari
     if id != "" {
         urlTplParams["managementTemplateCollectionTenantSummary%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplateCollectionTenantSummariesManagementTemplateCollectionTenantSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateCollectionTenantSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementTemplates provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplates()(*ManagedTenantsManagementTemplatesRequestBuilder) {
     return NewManagedTenantsManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementTemplatesById provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementTemplatesById(id string)(*ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementTemplatesById(id string)(*ManagementTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -485,14 +485,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplatesById(id string)(*Manag
     if id != "" {
         urlTplParams["managementTemplate%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementTemplateSteps provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateSteps()(*ManagedTenantsManagementTemplateStepsRequestBuilder) {
     return NewManagedTenantsManagementTemplateStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementTemplateStepsById provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepsById(id string)(*ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepsById(id string)(*ManagementTemplateStepItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -500,14 +500,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepsById(id string)(*M
     if id != "" {
         urlTplParams["managementTemplateStep%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementTemplateStepTenantSummaries provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepTenantSummaries()(*ManagedTenantsManagementTemplateStepTenantSummariesRequestBuilder) {
     return NewManagedTenantsManagementTemplateStepTenantSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementTemplateStepTenantSummariesById provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepTenantSummariesById(id string)(*ManagedTenantsManagementTemplateStepTenantSummariesManagementTemplateStepTenantSummaryItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepTenantSummariesById(id string)(*ManagementTemplateStepTenantSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -515,14 +515,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepTenantSummariesById
     if id != "" {
         urlTplParams["managementTemplateStepTenantSummary%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplateStepTenantSummariesManagementTemplateStepTenantSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateStepTenantSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ManagementTemplateStepVersions provides operations to manage the managementTemplateStepVersions property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersions()(*ManagedTenantsManagementTemplateStepVersionsRequestBuilder) {
     return NewManagedTenantsManagementTemplateStepVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagementTemplateStepVersionsById provides operations to manage the managementTemplateStepVersions property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersionsById(id string)(*ManagedTenantsManagementTemplateStepVersionsManagementTemplateStepVersionItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersionsById(id string)(*ManagementTemplateStepVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -530,14 +530,14 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersionsById(id str
     if id != "" {
         urlTplParams["managementTemplateStepVersion%2Did"] = id
     }
-    return NewManagedTenantsManagementTemplateStepVersionsManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MyRoles provides operations to manage the myRoles property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) MyRoles()(*ManagedTenantsMyRolesRequestBuilder) {
     return NewManagedTenantsMyRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MyRolesById provides operations to manage the myRoles property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) MyRolesById(id string)(*ManagedTenantsMyRolesMyRoleTenantItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) MyRolesById(id string)(*MyRoleTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -545,7 +545,7 @@ func (m *ManagedTenantsRequestBuilder) MyRolesById(id string)(*ManagedTenantsMyR
     if id != "" {
         urlTplParams["myRole%2DtenantId"] = id
     }
-    return NewManagedTenantsMyRolesMyRoleTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewMyRoleTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property managedTenants in tenantRelationships
 func (m *ManagedTenantsRequestBuilder) Patch(ctx context.Context, body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantable, requestConfiguration *ManagedTenantsRequestBuilderPatchRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantable, error) {
@@ -571,7 +571,7 @@ func (m *ManagedTenantsRequestBuilder) TenantGroups()(*ManagedTenantsTenantGroup
     return NewManagedTenantsTenantGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TenantGroupsById provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) TenantGroupsById(id string)(*ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) TenantGroupsById(id string)(*TenantGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -579,14 +579,14 @@ func (m *ManagedTenantsRequestBuilder) TenantGroupsById(id string)(*ManagedTenan
     if id != "" {
         urlTplParams["tenantGroup%2Did"] = id
     }
-    return NewManagedTenantsTenantGroupsTenantGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTenantGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tenants provides operations to manage the tenants property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) Tenants()(*ManagedTenantsTenantsRequestBuilder) {
     return NewManagedTenantsTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TenantsById provides operations to manage the tenants property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) TenantsById(id string)(*ManagedTenantsTenantsTenantItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) TenantsById(id string)(*TenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -594,14 +594,14 @@ func (m *ManagedTenantsRequestBuilder) TenantsById(id string)(*ManagedTenantsTen
     if id != "" {
         urlTplParams["tenant%2Did"] = id
     }
-    return NewManagedTenantsTenantsTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TenantsCustomizedInformation provides operations to manage the tenantsCustomizedInformation property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformation()(*ManagedTenantsTenantsCustomizedInformationRequestBuilder) {
     return NewManagedTenantsTenantsCustomizedInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TenantsCustomizedInformationById provides operations to manage the tenantsCustomizedInformation property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformationById(id string)(*ManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformationById(id string)(*TenantCustomizedInformationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -609,14 +609,14 @@ func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformationById(id strin
     if id != "" {
         urlTplParams["tenantCustomizedInformation%2Did"] = id
     }
-    return NewManagedTenantsTenantsCustomizedInformationTenantCustomizedInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTenantCustomizedInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TenantsDetailedInformation provides operations to manage the tenantsDetailedInformation property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformation()(*ManagedTenantsTenantsDetailedInformationRequestBuilder) {
     return NewManagedTenantsTenantsDetailedInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TenantsDetailedInformationById provides operations to manage the tenantsDetailedInformation property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformationById(id string)(*ManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformationById(id string)(*TenantDetailedInformationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -624,14 +624,14 @@ func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformationById(id string)
     if id != "" {
         urlTplParams["tenantDetailedInformation%2Did"] = id
     }
-    return NewManagedTenantsTenantsDetailedInformationTenantDetailedInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTenantDetailedInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TenantTags provides operations to manage the tenantTags property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) TenantTags()(*ManagedTenantsTenantTagsRequestBuilder) {
     return NewManagedTenantsTenantTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TenantTagsById provides operations to manage the tenantTags property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) TenantTagsById(id string)(*ManagedTenantsTenantTagsTenantTagItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) TenantTagsById(id string)(*TenantTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -639,14 +639,14 @@ func (m *ManagedTenantsRequestBuilder) TenantTagsById(id string)(*ManagedTenants
     if id != "" {
         urlTplParams["tenantTag%2Did"] = id
     }
-    return NewManagedTenantsTenantTagsTenantTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTenantTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsDeviceMalwareStates provides operations to manage the windowsDeviceMalwareStates property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStates()(*ManagedTenantsWindowsDeviceMalwareStatesRequestBuilder) {
     return NewManagedTenantsWindowsDeviceMalwareStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsDeviceMalwareStatesById provides operations to manage the windowsDeviceMalwareStates property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStatesById(id string)(*ManagedTenantsWindowsDeviceMalwareStatesWindowsDeviceMalwareStateItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStatesById(id string)(*WindowsDeviceMalwareStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -654,14 +654,14 @@ func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStatesById(id string)
     if id != "" {
         urlTplParams["windowsDeviceMalwareState%2Did"] = id
     }
-    return NewManagedTenantsWindowsDeviceMalwareStatesWindowsDeviceMalwareStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsDeviceMalwareStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsProtectionStates provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.
 func (m *ManagedTenantsRequestBuilder) WindowsProtectionStates()(*ManagedTenantsWindowsProtectionStatesRequestBuilder) {
     return NewManagedTenantsWindowsProtectionStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsProtectionStatesById provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.
-func (m *ManagedTenantsRequestBuilder) WindowsProtectionStatesById(id string)(*ManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) WindowsProtectionStatesById(id string)(*WindowsProtectionStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -669,5 +669,5 @@ func (m *ManagedTenantsRequestBuilder) WindowsProtectionStatesById(id string)(*M
     if id != "" {
         urlTplParams["windowsProtectionState%2Did"] = id
     }
-    return NewManagedTenantsWindowsProtectionStatesWindowsProtectionStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWindowsProtectionStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -166,7 +166,7 @@ func (m *PrivilegedAccessItemRequestBuilder) Resources()(*ItemResourcesRequestBu
     return NewItemResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ResourcesById provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) ResourcesById(id string)(*ItemResourcesGovernanceResourceItemRequestBuilder) {
+func (m *PrivilegedAccessItemRequestBuilder) ResourcesById(id string)(*GovernanceResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -174,14 +174,14 @@ func (m *PrivilegedAccessItemRequestBuilder) ResourcesById(id string)(*ItemResou
     if id != "" {
         urlTplParams["governanceResource%2Did"] = id
     }
-    return NewItemResourcesGovernanceResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGovernanceResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleAssignmentRequests provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleAssignmentRequestsRequestBuilder) {
     return NewItemRoleAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleAssignmentRequestsById provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequestsById(id string)(*ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilder) {
+func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequestsById(id string)(*GovernanceRoleAssignmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,14 +189,14 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequestsById(id strin
     if id != "" {
         urlTplParams["governanceRoleAssignmentRequest%2Did"] = id
     }
-    return NewItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleAssignments()(*ItemRoleAssignmentsRequestBuilder) {
     return NewItemRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleAssignmentsById provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentsById(id string)(*ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilder) {
+func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentsById(id string)(*GovernanceRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,14 +204,14 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentsById(id string)(*Ite
     if id != "" {
         urlTplParams["governanceRoleAssignment%2Did"] = id
     }
-    return NewItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitions()(*ItemRoleDefinitionsRequestBuilder) {
     return NewItemRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleDefinitionsById provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitionsById(id string)(*ItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
+func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitionsById(id string)(*GovernanceRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -219,14 +219,14 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitionsById(id string)(*Ite
     if id != "" {
         urlTplParams["governanceRoleDefinition%2Did"] = id
     }
-    return NewItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // RoleSettings provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
 func (m *PrivilegedAccessItemRequestBuilder) RoleSettings()(*ItemRoleSettingsRequestBuilder) {
     return NewItemRoleSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleSettingsById provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
-func (m *PrivilegedAccessItemRequestBuilder) RoleSettingsById(id string)(*ItemRoleSettingsGovernanceRoleSettingItemRequestBuilder) {
+func (m *PrivilegedAccessItemRequestBuilder) RoleSettingsById(id string)(*GovernanceRoleSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -234,5 +234,5 @@ func (m *PrivilegedAccessItemRequestBuilder) RoleSettingsById(id string)(*ItemRo
     if id != "" {
         urlTplParams["governanceRoleSetting%2Did"] = id
     }
-    return NewItemRoleSettingsGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

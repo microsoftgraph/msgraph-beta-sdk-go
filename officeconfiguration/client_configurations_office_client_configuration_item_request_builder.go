@@ -55,7 +55,7 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Assign
     return NewClientConfigurationsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.officeClientConfiguration entity.
-func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) AssignmentsById(id string)(*ClientConfigurationsItemAssignmentsOfficeClientConfigurationAssignmentItemRequestBuilder) {
+func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) AssignmentsById(id string)(*OfficeClientConfigurationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) Assign
     if id != "" {
         urlTplParams["officeClientConfigurationAssignment%2Did"] = id
     }
-    return NewClientConfigurationsItemAssignmentsOfficeClientConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOfficeClientConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal instantiates a new OfficeClientConfigurationItemRequestBuilder and sets the default values.
 func NewClientConfigurationsOfficeClientConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClientConfigurationsOfficeClientConfigurationItemRequestBuilder) {

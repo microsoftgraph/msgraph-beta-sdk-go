@@ -51,7 +51,7 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Categories()(*Temp
     return NewTemplatesItemCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CategoriesById provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) {
+func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CategoriesById(id string)(*DeviceManagementTemplateSettingCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,7 +59,7 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CategoriesById(id 
     if id != "" {
         urlTplParams["deviceManagementTemplateSettingCategory%2Did"] = id
     }
-    return NewTemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CompareWithTemplateId provides operations to call the compare method.
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CompareWithTemplateId(templateId *string)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
@@ -170,7 +170,7 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableTo()(*Te
     return NewTemplatesItemMigratableToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MigratableToById provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableToById(id string)(*TemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilder) {
+func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableToById(id string)(*DeviceManagementTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -178,7 +178,7 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableToById(i
     if id != "" {
         urlTplParams["deviceManagementTemplate%2Did1"] = id
     }
-    return NewTemplatesItemMigratableToDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property templates in deviceManagement
 func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable, requestConfiguration *TemplatesDeviceManagementTemplateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable, error) {
@@ -204,7 +204,7 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Settings()(*Templa
     return NewTemplatesItemSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SettingsById provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) SettingsById(id string)(*TemplatesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
+func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) SettingsById(id string)(*DeviceManagementSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -212,5 +212,5 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) SettingsById(id st
     if id != "" {
         urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
-    return NewTemplatesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

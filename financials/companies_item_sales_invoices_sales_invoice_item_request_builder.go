@@ -159,7 +159,7 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceL
     return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SalesInvoiceLinesById provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
-func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceLinesById(id string)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) {
+func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceLinesById(id string)(*SalesInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -167,7 +167,7 @@ func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) SalesInvoiceL
     if id != "" {
         urlTplParams["salesInvoiceLine%2Did"] = id
     }
-    return NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Send provides operations to call the send method.
 func (m *CompaniesItemSalesInvoicesSalesInvoiceItemRequestBuilder) Send()(*CompaniesItemSalesInvoicesItemSendRequestBuilder) {

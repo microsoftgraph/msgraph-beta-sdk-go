@@ -55,7 +55,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Assign
     return NewVirtualEndpointUserSettingsItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.cloudPcUserSetting entity.
-func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) AssignmentsById(id string)(*VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilder) {
+func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) AssignmentsById(id string)(*CloudPcUserSettingAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) Assign
     if id != "" {
         urlTplParams["cloudPcUserSettingAssignment%2Did"] = id
     }
-    return NewVirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCloudPcUserSettingAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal instantiates a new CloudPcUserSettingItemRequestBuilder and sets the default values.
 func NewVirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointUserSettingsCloudPcUserSettingItemRequestBuilder) {

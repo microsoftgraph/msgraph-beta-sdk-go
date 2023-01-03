@@ -178,7 +178,7 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebParts()(*ItemSitesItem
     return NewItemSitesItemPagesItemWebPartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WebPartsById provides operations to manage the webParts property of the microsoft.graph.sitePage entity.
-func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebPartsById(id string)(*ItemSitesItemPagesItemWebPartsWebPartItemRequestBuilder) {
+func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebPartsById(id string)(*WebPartItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -186,5 +186,5 @@ func (m *ItemSitesItemPagesSitePageItemRequestBuilder) WebPartsById(id string)(*
     if id != "" {
         urlTplParams["webPart%2Did"] = id
     }
-    return NewItemSitesItemPagesItemWebPartsWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewWebPartItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

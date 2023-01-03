@@ -93,7 +93,7 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomers()(*Delegated
     return NewDelegatedAdminCustomersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DelegatedAdminCustomersById provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
-func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomersById(id string)(*DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) {
+func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomersById(id string)(*DelegatedAdminCustomerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -101,14 +101,14 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomersById(id strin
     if id != "" {
         urlTplParams["delegatedAdminCustomer%2Did"] = id
     }
-    return NewDelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDelegatedAdminCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DelegatedAdminRelationships provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationships()(*DelegatedAdminRelationshipsRequestBuilder) {
     return NewDelegatedAdminRelationshipsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DelegatedAdminRelationshipsById provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
-func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationshipsById(id string)(*DelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilder) {
+func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationshipsById(id string)(*DelegatedAdminRelationshipItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -116,7 +116,7 @@ func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationshipsById(id s
     if id != "" {
         urlTplParams["delegatedAdminRelationship%2Did"] = id
     }
-    return NewDelegatedAdminRelationshipsDelegatedAdminRelationshipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDelegatedAdminRelationshipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // FindTenantInformationByDomainNameWithDomainName provides operations to call the findTenantInformationByDomainName method.
 func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByDomainNameWithDomainName(domainName *string)(*FindTenantInformationByDomainNameWithDomainNameRequestBuilder) {

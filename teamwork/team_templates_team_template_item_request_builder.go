@@ -112,7 +112,7 @@ func (m *TeamTemplatesTeamTemplateItemRequestBuilder) Definitions()(*TeamTemplat
     return NewTeamTemplatesItemDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DefinitionsById provides operations to manage the definitions property of the microsoft.graph.teamTemplate entity.
-func (m *TeamTemplatesTeamTemplateItemRequestBuilder) DefinitionsById(id string)(*TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) {
+func (m *TeamTemplatesTeamTemplateItemRequestBuilder) DefinitionsById(id string)(*TeamTemplateDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -120,7 +120,7 @@ func (m *TeamTemplatesTeamTemplateItemRequestBuilder) DefinitionsById(id string)
     if id != "" {
         urlTplParams["teamTemplateDefinition%2Did"] = id
     }
-    return NewTeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewTeamTemplateDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property teamTemplates for teamwork
 func (m *TeamTemplatesTeamTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesTeamTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {

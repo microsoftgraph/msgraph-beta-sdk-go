@@ -185,7 +185,7 @@ func (m *ItemSettingsRequestBuilder) ProfileCardProperties()(*ItemSettingsProfil
     return NewItemSettingsProfileCardPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ProfileCardPropertiesById provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
-func (m *ItemSettingsRequestBuilder) ProfileCardPropertiesById(id string)(*ItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilder) {
+func (m *ItemSettingsRequestBuilder) ProfileCardPropertiesById(id string)(*ProfileCardPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *ItemSettingsRequestBuilder) ProfileCardPropertiesById(id string)(*ItemS
     if id != "" {
         urlTplParams["profileCardProperty%2Did"] = id
     }
-    return NewItemSettingsProfileCardPropertiesProfileCardPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewProfileCardPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

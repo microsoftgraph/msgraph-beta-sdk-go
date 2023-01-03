@@ -2,7 +2,7 @@ package ediscovery
 import (
     "errors"
 )
-// Provides operations to manage the compliance singleton.
+// Provides operations to manage the admin singleton.
 type ChildSelectability int
 
 const (

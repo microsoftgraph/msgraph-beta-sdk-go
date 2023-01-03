@@ -55,7 +55,7 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     return NewResourceAccessProfilesItemAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById provides operations to manage the assignments property of the microsoft.graph.deviceManagementResourceAccessProfileBase entity.
-func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) AssignmentsById(id string)(*ResourceAccessProfilesItemAssignmentsDeviceManagementResourceAccessProfileAssignmentItemRequestBuilder) {
+func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) AssignmentsById(id string)(*DeviceManagementResourceAccessProfileAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     if id != "" {
         urlTplParams["deviceManagementResourceAccessProfileAssignment%2Did"] = id
     }
-    return NewResourceAccessProfilesItemAssignmentsDeviceManagementResourceAccessProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewDeviceManagementResourceAccessProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilder and sets the default values.
 func NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {

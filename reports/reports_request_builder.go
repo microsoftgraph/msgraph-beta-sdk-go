@@ -46,7 +46,7 @@ func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*ApplicationS
     return NewApplicationSignInDetailedSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ApplicationSignInDetailedSummaryById provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(*ApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilder) {
+func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(*ApplicationSignInDetailedSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -54,7 +54,7 @@ func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(
     if id != "" {
         urlTplParams["applicationSignInDetailedSummary%2Did"] = id
     }
-    return NewApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewApplicationSignInDetailedSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AuthenticationMethods provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) AuthenticationMethods()(*AuthenticationMethodsRequestBuilder) {
@@ -114,7 +114,7 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetails()(*CredentialU
     return NewCredentialUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CredentialUserRegistrationDetailsById provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)(*CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilder) {
+func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)(*CredentialUserRegistrationDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -122,14 +122,14 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)
     if id != "" {
         urlTplParams["credentialUserRegistrationDetails%2Did"] = id
     }
-    return NewCredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DailyPrintUsage provides operations to manage the dailyPrintUsage property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsage()(*DailyPrintUsageRequestBuilder) {
     return NewDailyPrintUsageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DailyPrintUsageById provides operations to manage the dailyPrintUsage property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) DailyPrintUsageById(id string)(*DailyPrintUsagePrintUsageItemRequestBuilder) {
+func (m *ReportsRequestBuilder) DailyPrintUsageById(id string)(*PrintUsageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -137,14 +137,14 @@ func (m *ReportsRequestBuilder) DailyPrintUsageById(id string)(*DailyPrintUsageP
     if id != "" {
         urlTplParams["printUsage%2Did"] = id
     }
-    return NewDailyPrintUsagePrintUsageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DailyPrintUsageByPrinter provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*DailyPrintUsageByPrinterRequestBuilder) {
     return NewDailyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DailyPrintUsageByPrinterById provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) {
+func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -152,14 +152,14 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*DailyPr
     if id != "" {
         urlTplParams["printUsageByPrinter%2Did"] = id
     }
-    return NewDailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DailyPrintUsageByUser provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*DailyPrintUsageByUserRequestBuilder) {
     return NewDailyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DailyPrintUsageByUserById provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) {
+func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -167,14 +167,14 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*DailyPrint
     if id != "" {
         urlTplParams["printUsageByUser%2Did"] = id
     }
-    return NewDailyPrintUsageByUserPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DailyPrintUsageSummariesByPrinter provides operations to manage the dailyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinter()(*DailyPrintUsageSummariesByPrinterRequestBuilder) {
     return NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DailyPrintUsageSummariesByPrinterById provides operations to manage the dailyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)(*DailyPrintUsageSummariesByPrinterPrintUsageByPrinterItemRequestBuilder) {
+func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)(*PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -182,14 +182,14 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)
     if id != "" {
         urlTplParams["printUsageByPrinter%2Did"] = id
     }
-    return NewDailyPrintUsageSummariesByPrinterPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DailyPrintUsageSummariesByUser provides operations to manage the dailyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUser()(*DailyPrintUsageSummariesByUserRequestBuilder) {
     return NewDailyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DailyPrintUsageSummariesByUserById provides operations to manage the dailyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
+func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -197,7 +197,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*D
     if id != "" {
         urlTplParams["printUsageByUser%2Did"] = id
     }
-    return NewDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DeviceConfigurationDeviceActivity provides operations to call the deviceConfigurationDeviceActivity method.
 func (m *ReportsRequestBuilder) DeviceConfigurationDeviceActivity()(*DeviceConfigurationDeviceActivityRequestBuilder) {
@@ -707,7 +707,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*MonthlyPrintUsageB
     return NewMonthlyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MonthlyPrintUsageByPrinterById provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*MonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) {
+func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -715,14 +715,14 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*Month
     if id != "" {
         urlTplParams["printUsageByPrinter%2Did"] = id
     }
-    return NewMonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MonthlyPrintUsageByUser provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*MonthlyPrintUsageByUserRequestBuilder) {
     return NewMonthlyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MonthlyPrintUsageByUserById provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*MonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilder) {
+func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -730,14 +730,14 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*MonthlyP
     if id != "" {
         urlTplParams["printUsageByUser%2Did"] = id
     }
-    return NewMonthlyPrintUsageByUserPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MonthlyPrintUsageSummariesByPrinter provides operations to manage the monthlyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinter()(*MonthlyPrintUsageSummariesByPrinterRequestBuilder) {
     return NewMonthlyPrintUsageSummariesByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MonthlyPrintUsageSummariesByPrinterById provides operations to manage the monthlyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id string)(*MonthlyPrintUsageSummariesByPrinterPrintUsageByPrinterItemRequestBuilder) {
+func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id string)(*PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -745,14 +745,14 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id strin
     if id != "" {
         urlTplParams["printUsageByPrinter%2Did"] = id
     }
-    return NewMonthlyPrintUsageSummariesByPrinterPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // MonthlyPrintUsageSummariesByUser provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
 func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUser()(*MonthlyPrintUsageSummariesByUserRequestBuilder) {
     return NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MonthlyPrintUsageSummariesByUserById provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(*MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
+func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(*PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -760,7 +760,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(
     if id != "" {
         urlTplParams["printUsageByUser%2Did"] = id
     }
-    return NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update reports
 func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable, requestConfiguration *ReportsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable, error) {
@@ -790,7 +790,7 @@ func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*UserCredentialUsag
     return NewUserCredentialUsageDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserCredentialUsageDetailsById provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
-func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
+func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*UserCredentialUsageDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -798,5 +798,5 @@ func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*UserC
     if id != "" {
         urlTplParams["userCredentialUsageDetails%2Did"] = id
     }
-    return NewUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewUserCredentialUsageDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

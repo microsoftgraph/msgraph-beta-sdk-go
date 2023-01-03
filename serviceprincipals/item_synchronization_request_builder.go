@@ -151,7 +151,7 @@ func (m *ItemSynchronizationRequestBuilder) Jobs()(*ItemSynchronizationJobsReque
     return NewItemSynchronizationJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // JobsById provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
-func (m *ItemSynchronizationRequestBuilder) JobsById(id string)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
+func (m *ItemSynchronizationRequestBuilder) JobsById(id string)(*SynchronizationJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -159,7 +159,7 @@ func (m *ItemSynchronizationRequestBuilder) JobsById(id string)(*ItemSynchroniza
     if id != "" {
         urlTplParams["synchronizationJob%2Did"] = id
     }
-    return NewItemSynchronizationJobsSynchronizationJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSynchronizationJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property synchronization in servicePrincipals
 func (m *ItemSynchronizationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable, requestConfiguration *ItemSynchronizationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable, error) {
@@ -189,7 +189,7 @@ func (m *ItemSynchronizationRequestBuilder) Templates()(*ItemSynchronizationTemp
     return NewItemSynchronizationTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TemplatesById provides operations to manage the templates property of the microsoft.graph.synchronization entity.
-func (m *ItemSynchronizationRequestBuilder) TemplatesById(id string)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
+func (m *ItemSynchronizationRequestBuilder) TemplatesById(id string)(*SynchronizationTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -197,5 +197,5 @@ func (m *ItemSynchronizationRequestBuilder) TemplatesById(id string)(*ItemSynchr
     if id != "" {
         urlTplParams["synchronizationTemplate%2Did"] = id
     }
-    return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewSynchronizationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

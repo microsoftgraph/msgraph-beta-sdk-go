@@ -51,7 +51,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroups()(*ItemAgent
     return NewItemAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AgentGroupsById provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroupsById(id string)(*ItemAgentGroupsOnPremisesAgentGroupItemRequestBuilder) {
+func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroupsById(id string)(*OnPremisesAgentGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -59,14 +59,14 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroupsById(id strin
     if id != "" {
         urlTplParams["onPremisesAgentGroup%2Did"] = id
     }
-    return NewItemAgentGroupsOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Agents provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Agents()(*ItemAgentsRequestBuilder) {
     return NewItemAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AgentsById provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentsById(id string)(*ItemAgentsOnPremisesAgentItemRequestBuilder) {
+func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentsById(id string)(*OnPremisesAgentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,14 +74,14 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentsById(id string)(*I
     if id != "" {
         urlTplParams["onPremisesAgent%2Did"] = id
     }
-    return NewItemAgentsOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ConnectorGroups provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroups()(*ItemConnectorGroupsRequestBuilder) {
     return NewItemConnectorGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectorGroupsById provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroupsById(id string)(*ItemConnectorGroupsConnectorGroupItemRequestBuilder) {
+func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroupsById(id string)(*ConnectorGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -89,14 +89,14 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroupsById(id s
     if id != "" {
         urlTplParams["connectorGroup%2Did"] = id
     }
-    return NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConnectorGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Connectors provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Connectors()(*ItemConnectorsRequestBuilder) {
     return NewItemConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectorsById provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorsById(id string)(*ItemConnectorsConnectorItemRequestBuilder) {
+func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorsById(id string)(*ConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -104,7 +104,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorsById(id string
     if id != "" {
         urlTplParams["connector%2Did"] = id
     }
-    return NewItemConnectorsConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewOnPremisesPublishingProfileItemRequestBuilderInternal instantiates a new OnPremisesPublishingProfileItemRequestBuilder and sets the default values.
 func NewOnPremisesPublishingProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnPremisesPublishingProfileItemRequestBuilder) {
@@ -226,7 +226,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResources()(*It
     return NewItemPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PublishedResourcesById provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.
-func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResourcesById(id string)(*ItemPublishedResourcesPublishedResourceItemRequestBuilder) {
+func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResourcesById(id string)(*PublishedResourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -234,5 +234,5 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResourcesById(i
     if id != "" {
         urlTplParams["publishedResource%2Did"] = id
     }
-    return NewItemPublishedResourcesPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

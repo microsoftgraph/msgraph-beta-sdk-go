@@ -147,7 +147,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Ho
     return NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HostedContentsById provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ItemTeamDefinitionChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) HostedContentsById(id string)(*ChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Ho
     if id != "" {
         urlTplParams["chatMessageHostedContent%2Did"] = id
     }
-    return NewItemTeamDefinitionChannelsItemMessagesItemHostedContentsChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property messages in teamTemplateDefinition
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
@@ -181,7 +181,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Re
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RepliesById provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
-func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
+func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) RepliesById(id string)(*ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +189,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) Re
     if id != "" {
         urlTplParams["chatMessage%2Did1"] = id
     }
-    return NewItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SetReaction provides operations to call the setReaction method.
 func (m *ItemTeamDefinitionChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemTeamDefinitionChannelsItemMessagesItemSetReactionRequestBuilder) {

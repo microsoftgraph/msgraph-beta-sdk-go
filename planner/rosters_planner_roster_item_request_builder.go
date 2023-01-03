@@ -147,7 +147,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Members()(*RostersItemMembersRe
     return NewRostersItemMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
-func (m *RostersPlannerRosterItemRequestBuilder) MembersById(id string)(*RostersItemMembersPlannerRosterMemberItemRequestBuilder) {
+func (m *RostersPlannerRosterItemRequestBuilder) MembersById(id string)(*PlannerRosterMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,7 +155,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) MembersById(id string)(*Rosters
     if id != "" {
         urlTplParams["plannerRosterMember%2Did"] = id
     }
-    return NewRostersItemMembersPlannerRosterMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerRosterMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property rosters in planner
 func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, error) {
@@ -181,7 +181,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Plans()(*RostersItemPlansReques
     return NewRostersItemPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PlansById provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
-func (m *RostersPlannerRosterItemRequestBuilder) PlansById(id string)(*RostersItemPlansPlannerPlanItemRequestBuilder) {
+func (m *RostersPlannerRosterItemRequestBuilder) PlansById(id string)(*PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,5 +189,5 @@ func (m *RostersPlannerRosterItemRequestBuilder) PlansById(id string)(*RostersIt
     if id != "" {
         urlTplParams["plannerPlan%2Did"] = id
     }
-    return NewRostersItemPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
