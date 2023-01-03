@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsIdentityProtectionConfiguration 
+// WindowsIdentityProtectionConfiguration this entity provides descriptions of the declared methods, properties and relationships exposed by Windows Hello for Business.
 type WindowsIdentityProtectionConfiguration struct {
     DeviceConfiguration
     // Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
@@ -36,7 +36,7 @@ type WindowsIdentityProtectionConfiguration struct {
     // Boolean value that blocks Windows Hello for Business as a method for signing into Windows.
     windowsHelloForBusinessBlocked *bool
 }
-// NewWindowsIdentityProtectionConfiguration instantiates a new WindowsIdentityProtectionConfiguration and sets the default values.
+// NewWindowsIdentityProtectionConfiguration instantiates a new windowsIdentityProtectionConfiguration and sets the default values.
 func NewWindowsIdentityProtectionConfiguration()(*WindowsIdentityProtectionConfiguration) {
     m := &WindowsIdentityProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

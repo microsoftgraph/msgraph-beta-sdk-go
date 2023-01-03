@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to device.
+// Provides operations to manage the admin singleton.
 type UsageRightState int
 
 const (

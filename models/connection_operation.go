@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectionOperation 
+// ConnectionOperation provides operations to manage the collection of accessReview entities.
 type ConnectionOperation struct {
     Entity
     // The error property
@@ -12,7 +12,7 @@ type ConnectionOperation struct {
     // The status property
     status *ConnectionOperationStatus
 }
-// NewConnectionOperation instantiates a new ConnectionOperation and sets the default values.
+// NewConnectionOperation instantiates a new connectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {
     m := &ConnectionOperation{
         Entity: *NewEntity(),
