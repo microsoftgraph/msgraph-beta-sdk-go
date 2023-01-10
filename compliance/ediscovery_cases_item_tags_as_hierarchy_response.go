@@ -6,7 +6,7 @@ import (
     ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/ediscovery"
 )
 
-// EdiscoveryCasesItemTagsAsHierarchyResponse provides operations to call the asHierarchy method.
+// EdiscoveryCasesItemTagsAsHierarchyResponse 
 type EdiscoveryCasesItemTagsAsHierarchyResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
     // The value property

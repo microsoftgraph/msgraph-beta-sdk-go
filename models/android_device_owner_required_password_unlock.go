@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// An enum representing possible values for required password unlock.
 type AndroidDeviceOwnerRequiredPasswordUnlock int
 
 const (

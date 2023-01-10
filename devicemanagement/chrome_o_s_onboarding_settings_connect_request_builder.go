@@ -42,23 +42,9 @@ func NewChromeOSOnboardingSettingsConnectRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewChromeOSOnboardingSettingsConnectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action connect
-func (m *ChromeOSOnboardingSettingsConnectRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ChromeOSOnboardingSettingsConnectPostRequestBodyable, requestConfiguration *ChromeOSOnboardingSettingsConnectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action connect
 func (m *ChromeOSOnboardingSettingsConnectRequestBuilder) Post(ctx context.Context, body ChromeOSOnboardingSettingsConnectPostRequestBodyable, requestConfiguration *ChromeOSOnboardingSettingsConnectRequestBuilderPostRequestConfiguration)(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingStatus, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -74,4 +60,18 @@ func (m *ChromeOSOnboardingSettingsConnectRequestBuilder) Post(ctx context.Conte
         return nil, nil
     }
     return res.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingStatus), nil
+}
+// ToPostRequestInformation invoke action connect
+func (m *ChromeOSOnboardingSettingsConnectRequestBuilder) ToPostRequestInformation(ctx context.Context, body ChromeOSOnboardingSettingsConnectPostRequestBodyable, requestConfiguration *ChromeOSOnboardingSettingsConnectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

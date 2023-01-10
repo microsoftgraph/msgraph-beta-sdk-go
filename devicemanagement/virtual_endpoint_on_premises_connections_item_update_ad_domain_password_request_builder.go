@@ -41,25 +41,12 @@ func NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
-func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformation(ctx context.Context, body VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-1.0
 func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder) Post(ctx context.Context, body VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBu
         return err
     }
     return nil
+}
+// ToPostRequestInformation update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
+func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

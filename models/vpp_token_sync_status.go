@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible sync statuses associated with an Apple Volume Purchase Program token.
 type VppTokenSyncStatus int
 
 const (

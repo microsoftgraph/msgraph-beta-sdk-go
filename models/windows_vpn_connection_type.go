@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Windows VPN connection type.
 type WindowsVpnConnectionType int
 
 const (

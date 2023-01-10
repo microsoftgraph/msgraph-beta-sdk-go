@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Represents various schedule modes for Zebra FOTA deployment.
 type ZebraFotaScheduleMode int
 
 const (

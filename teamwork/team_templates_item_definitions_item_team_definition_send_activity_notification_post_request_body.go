@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TeamTemplatesItemDefinitionsItemTeamDefinitionSendActivityNotificationPostRequestBody provides operations to call the sendActivityNotification method.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionSendActivityNotificationPostRequestBody 
 type TeamTemplatesItemDefinitionsItemTeamDefinitionSendActivityNotificationPostRequestBody struct {
     // The activityType property
     activityType *string

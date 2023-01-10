@@ -41,21 +41,9 @@ func NewDepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewDepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action shareForSchoolDataSyncService
-func (m *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action shareForSchoolDataSyncService
 func (m *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilder) Post(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilder) P
         return err
     }
     return nil
+}
+// ToPostRequestInformation invoke action shareForSchoolDataSyncService
+func (m *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

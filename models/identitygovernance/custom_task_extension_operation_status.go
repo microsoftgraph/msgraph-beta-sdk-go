@@ -2,7 +2,7 @@ package identitygovernance
 import (
     "errors"
 )
-// Provides operations to call the resume method.
+// 
 type CustomTaskExtensionOperationStatus int
 
 const (

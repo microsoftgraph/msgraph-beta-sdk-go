@@ -59,25 +59,9 @@ func NewVppTokensGetLicensesForAppWithBundleIdRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewVppTokensGetLicensesForAppWithBundleIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformation invoke function getLicensesForApp
-func (m *VppTokensGetLicensesForAppWithBundleIdRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *VppTokensGetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get invoke function getLicensesForApp
 func (m *VppTokensGetLicensesForAppWithBundleIdRequestBuilder) Get(ctx context.Context, requestConfiguration *VppTokensGetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration)(VppTokensGetLicensesForAppWithBundleIdResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -93,4 +77,20 @@ func (m *VppTokensGetLicensesForAppWithBundleIdRequestBuilder) Get(ctx context.C
         return nil, nil
     }
     return res.(VppTokensGetLicensesForAppWithBundleIdResponseable), nil
+}
+// ToGetRequestInformation invoke function getLicensesForApp
+func (m *VppTokensGetLicensesForAppWithBundleIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VppTokensGetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

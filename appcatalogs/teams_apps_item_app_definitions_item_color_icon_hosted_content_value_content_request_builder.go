@@ -48,37 +48,12 @@ func NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequest
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get media content for the navigation property hostedContent from appCatalogs
-func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreatePutRequestInformation update media content for the navigation property hostedContent in appCatalogs
-func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get get media content for the navigation property hostedContent from appCatalogs
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/teamworkhostedcontent-get?view=graph-rest-1.0
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -97,7 +72,7 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentReques
 }
 // Put update media content for the navigation property hostedContent in appCatalogs
 func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -110,4 +85,29 @@ func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentReques
         return err
     }
     return nil
+}
+// ToGetRequestInformation get media content for the navigation property hostedContent from appCatalogs
+func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPutRequestInformation update media content for the navigation property hostedContent in appCatalogs
+func (m *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *TeamsAppsItemAppDefinitionsItemColorIconHostedContentValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

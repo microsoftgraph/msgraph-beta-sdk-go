@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Defender TamperProtection setting options
 type WindowsDefenderTamperProtectionOptions int
 
 const (

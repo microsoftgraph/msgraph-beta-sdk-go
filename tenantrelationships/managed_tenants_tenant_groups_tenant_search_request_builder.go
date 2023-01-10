@@ -41,23 +41,9 @@ func NewManagedTenantsTenantGroupsTenantSearchRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantGroupsTenantSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action tenantSearch
-func (m *ManagedTenantsTenantGroupsTenantSearchRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ManagedTenantsTenantGroupsTenantSearchPostRequestBodyable, requestConfiguration *ManagedTenantsTenantGroupsTenantSearchRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action tenantSearch
 func (m *ManagedTenantsTenantGroupsTenantSearchRequestBuilder) Post(ctx context.Context, body ManagedTenantsTenantGroupsTenantSearchPostRequestBodyable, requestConfiguration *ManagedTenantsTenantGroupsTenantSearchRequestBuilderPostRequestConfiguration)(ManagedTenantsTenantGroupsTenantSearchResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -73,4 +59,18 @@ func (m *ManagedTenantsTenantGroupsTenantSearchRequestBuilder) Post(ctx context.
         return nil, nil
     }
     return res.(ManagedTenantsTenantGroupsTenantSearchResponseable), nil
+}
+// ToPostRequestInformation invoke action tenantSearch
+func (m *ManagedTenantsTenantGroupsTenantSearchRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsTenantGroupsTenantSearchPostRequestBodyable, requestConfiguration *ManagedTenantsTenantGroupsTenantSearchRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

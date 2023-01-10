@@ -41,21 +41,9 @@ func NewOemWarrantyInformationOnboardingItemEnableRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewOemWarrantyInformationOnboardingItemEnableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action enable
-func (m *OemWarrantyInformationOnboardingItemEnableRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *OemWarrantyInformationOnboardingItemEnableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action enable
 func (m *OemWarrantyInformationOnboardingItemEnableRequestBuilder) Post(ctx context.Context, requestConfiguration *OemWarrantyInformationOnboardingItemEnableRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *OemWarrantyInformationOnboardingItemEnableRequestBuilder) Post(ctx cont
         return err
     }
     return nil
+}
+// ToPostRequestInformation invoke action enable
+func (m *OemWarrantyInformationOnboardingItemEnableRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *OemWarrantyInformationOnboardingItemEnableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

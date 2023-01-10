@@ -71,29 +71,13 @@ func NewItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ItemMembersRequestBuilder) Count()(*ItemMembersCountRequestBuilder) {
     return NewItemMembersCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation users and groups that are members of this administrative unit. Supports $expand.
-func (m *ItemMembersRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Device casts the previous resource to device.
 func (m *ItemMembersRequestBuilder) Device()(*ItemMembersDeviceRequestBuilder) {
     return NewItemMembersDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get users and groups that are members of this administrative unit. Supports $expand.
 func (m *ItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -125,6 +109,22 @@ func (m *ItemMembersRequestBuilder) Ref()(*ItemMembersRefRequestBuilder) {
 // ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *ItemMembersRequestBuilder) ServicePrincipal()(*ItemMembersServicePrincipalRequestBuilder) {
     return NewItemMembersServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation users and groups that are members of this administrative unit. Supports $expand.
+func (m *ItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }
 // User casts the previous resource to user.
 func (m *ItemMembersRequestBuilder) User()(*ItemMembersUserRequestBuilder) {

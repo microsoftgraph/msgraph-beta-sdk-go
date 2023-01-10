@@ -41,25 +41,12 @@ func NewEdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a caseExportOperation.
-func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilder) CreatePostRequestInformation(ctx context.Context, body EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBodyable, requestConfiguration *EdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a caseExportOperation.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-reviewset-addtoreviewset?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilder) Post(ctx context.Context, body EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBodyable, requestConfiguration *EdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilder) Post(ctx
         return err
     }
     return nil
+}
+// ToPostRequestInformation start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a caseExportOperation.
+func (m *EdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilder) ToPostRequestInformation(ctx context.Context, body EdiscoveryCasesItemReviewSetsItemAddToReviewSetPostRequestBodyable, requestConfiguration *EdiscoveryCasesItemReviewSetsItemAddToReviewSetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// System Update Types for Android Device Owner.
 type AndroidDeviceOwnerSystemUpdateInstallType int
 
 const (

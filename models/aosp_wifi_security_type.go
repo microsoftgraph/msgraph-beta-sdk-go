@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
 type AospWifiSecurityType int
 
 const (

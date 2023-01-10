@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Type of Group Policy uploaded definition file status.
 type GroupPolicyUploadedDefinitionFileStatus int
 
 const (

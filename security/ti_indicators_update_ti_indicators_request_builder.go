@@ -41,26 +41,12 @@ func NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsUpdateTiIndicatorsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context,
         return nil, nil
     }
     return res.(TiIndicatorsUpdateTiIndicatorsResponseable), nil
+}
+// ToPostRequestInformation update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

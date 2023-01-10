@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Error code for rule validation.
 type DeviceComplianceScriptRulesValidationError int
 
 const (

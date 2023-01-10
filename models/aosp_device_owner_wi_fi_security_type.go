@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Wi-Fi Security Types for AOSP Device Owner.
 type AospDeviceOwnerWiFiSecurityType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Access Level in Exchange.
 type DeviceManagementExchangeAccessLevel int
 
 const (

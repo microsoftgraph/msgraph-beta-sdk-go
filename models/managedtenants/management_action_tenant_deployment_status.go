@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementActionTenantDeploymentStatus provides operations to manage the collection of accessReviewDecision entities.
+// ManagementActionTenantDeploymentStatus 
 type ManagementActionTenantDeploymentStatus struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The collection of deployment status for each instance of a management action. Optional.

@@ -44,21 +44,9 @@ func NewReportsGetSharePointActivityPagesWithPeriodRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetSharePointActivityPagesWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformation invoke function getSharePointActivityPages
-func (m *ReportsGetSharePointActivityPagesWithPeriodRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetSharePointActivityPagesWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get invoke function getSharePointActivityPages
 func (m *ReportsGetSharePointActivityPagesWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsGetSharePointActivityPagesWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -74,4 +62,16 @@ func (m *ReportsGetSharePointActivityPagesWithPeriodRequestBuilder) Get(ctx cont
         return nil, nil
     }
     return res.([]byte), nil
+}
+// ToGetRequestInformation invoke function getSharePointActivityPages
+func (m *ReportsGetSharePointActivityPagesWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetSharePointActivityPagesWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

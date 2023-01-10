@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// State of remote assistance for the account
 type RemoteAssistanceState int
 
 const (

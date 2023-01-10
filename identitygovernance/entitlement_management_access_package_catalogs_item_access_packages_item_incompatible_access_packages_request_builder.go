@@ -67,28 +67,12 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompat
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
-func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -108,4 +92,20 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompa
 // Ref provides operations to manage the collection of identityGovernance entities.
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) Ref()(*EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackagesItemIncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

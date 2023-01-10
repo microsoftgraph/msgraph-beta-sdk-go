@@ -67,22 +67,6 @@ func NewCalendarsItemCalendarViewRequestBuilder(rawUrl string, requestAdapter i2
 func (m *CalendarsItemCalendarViewRequestBuilder) Count()(*CalendarsItemCalendarViewCountRequestBuilder) {
     return NewCalendarsItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
-func (m *CalendarsItemCalendarViewRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Delta provides operations to call the delta method.
 func (m *CalendarsItemCalendarViewRequestBuilder) Delta()(*CalendarsItemCalendarViewDeltaRequestBuilder) {
     return NewCalendarsItemCalendarViewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -92,7 +76,7 @@ func (m *CalendarsItemCalendarViewRequestBuilder) Delta()(*CalendarsItemCalendar
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
 func (m *CalendarsItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *CalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -108,4 +92,20 @@ func (m *CalendarsItemCalendarViewRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
+}
+// ToGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
+func (m *CalendarsItemCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

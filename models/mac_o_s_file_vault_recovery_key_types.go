@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Recovery key types for macOS FileVault
 type MacOSFileVaultRecoveryKeyTypes int
 
 const (

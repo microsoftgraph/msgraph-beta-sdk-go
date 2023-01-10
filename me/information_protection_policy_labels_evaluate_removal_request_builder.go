@@ -41,26 +41,12 @@ func NewInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
-func (m *InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) CreatePostRequestInformation(ctx context.Context, body InformationProtectionPolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
 func (m *InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, body InformationProtectionPolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(InformationProtectionPolicyLabelsEvaluateRemovalResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) Post(ct
         return nil, nil
     }
     return res.(InformationProtectionPolicyLabelsEvaluateRemovalResponseable), nil
+}
+// ToPostRequestInformation indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
+func (m *InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) ToPostRequestInformation(ctx context.Context, body InformationProtectionPolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *InformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

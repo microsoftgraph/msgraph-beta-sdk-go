@@ -42,23 +42,9 @@ func NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action validateComplianceScript
-func (m *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) CreatePostRequestInformation(ctx context.Context, body DeviceCompliancePoliciesValidateComplianceScriptPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action validateComplianceScript
 func (m *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) Post(ctx context.Context, body DeviceCompliancePoliciesValidateComplianceScriptPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptValidationResultable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -74,4 +60,18 @@ func (m *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) Post(ct
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptValidationResultable), nil
+}
+// ToPostRequestInformation invoke action validateComplianceScript
+func (m *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeviceCompliancePoliciesValidateComplianceScriptPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

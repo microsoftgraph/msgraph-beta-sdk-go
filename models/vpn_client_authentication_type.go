@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The type of VPN client authentication type
 type VpnClientAuthenticationType int
 
 const (

@@ -67,25 +67,9 @@ func NewItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder(rawUrl string, re
 func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Count()(*ItemAgentGroupsItemAgentsItemAgentGroupsCountRequestBuilder) {
     return NewItemAgentGroupsItemAgentsItemAgentGroupsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
-func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -105,4 +89,20 @@ func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Get(ctx context
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) Ref()(*ItemAgentGroupsItemAgentsItemAgentGroupsRefRequestBuilder) {
     return NewItemAgentGroupsItemAgentsItemAgentGroupsRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+func (m *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentGroupsItemAgentsItemAgentGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// An admin initiated action to be applied on a managed app.
 type ManagedAppRemediationAction int
 
 const (

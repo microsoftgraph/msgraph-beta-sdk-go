@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Enum of possible MicrosoftTunnelServer health status types
 type MicrosoftTunnelServerHealthStatus int
 
 const (

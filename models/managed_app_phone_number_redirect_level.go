@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.
 type ManagedAppPhoneNumberRedirectLevel int
 
 const (

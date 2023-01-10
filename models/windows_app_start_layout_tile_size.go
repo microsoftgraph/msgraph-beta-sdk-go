@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The tile size of Windows app in the start layout.
 type WindowsAppStartLayoutTileSize int
 
 const (

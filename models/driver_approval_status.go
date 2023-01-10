@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// An enum type to represent approval status of a driver.
 type DriverApprovalStatus int
 
 const (

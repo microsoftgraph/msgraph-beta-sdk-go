@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 type AndroidManagedAppSafetyNetEvaluationType int
 
 const (

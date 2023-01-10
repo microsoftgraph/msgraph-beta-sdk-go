@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The Enum to specify the Office365 ProductIds that represent the Office365 Suite SKUs.
 type OfficeProductId int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the usersRegisteredByFeature method.
+// 
 type IncludedUserTypes int
 
 const (

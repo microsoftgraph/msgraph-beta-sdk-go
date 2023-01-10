@@ -67,28 +67,12 @@ func NewSchoolsItemClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *SchoolsItemClassesRequestBuilder) Count()(*SchoolsItemClassesCountRequestBuilder) {
     return NewSchoolsItemClassesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation retrieve a list of classes owned by a school.
-func (m *SchoolsItemClassesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get retrieve a list of classes owned by a school.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
 func (m *SchoolsItemClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -108,4 +92,20 @@ func (m *SchoolsItemClassesRequestBuilder) Get(ctx context.Context, requestConfi
 // Ref provides operations to manage the collection of educationRoot entities.
 func (m *SchoolsItemClassesRequestBuilder) Ref()(*SchoolsItemClassesRefRequestBuilder) {
     return NewSchoolsItemClassesRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation retrieve a list of classes owned by a school.
+func (m *SchoolsItemClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

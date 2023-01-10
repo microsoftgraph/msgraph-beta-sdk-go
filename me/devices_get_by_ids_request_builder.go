@@ -41,26 +41,12 @@ func NewDevicesGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
-func (m *DevicesGetByIdsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body DevicesGetByIdsPostRequestBodyable, requestConfiguration *DevicesGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
 func (m *DevicesGetByIdsRequestBuilder) Post(ctx context.Context, body DevicesGetByIdsPostRequestBodyable, requestConfiguration *DevicesGetByIdsRequestBuilderPostRequestConfiguration)(DevicesGetByIdsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *DevicesGetByIdsRequestBuilder) Post(ctx context.Context, body DevicesGe
         return nil, nil
     }
     return res.(DevicesGetByIdsResponseable), nil
+}
+// ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
+func (m *DevicesGetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body DevicesGetByIdsPostRequestBodyable, requestConfiguration *DevicesGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

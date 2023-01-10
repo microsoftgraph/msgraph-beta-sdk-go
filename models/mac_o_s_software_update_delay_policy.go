@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Flag enum to determine whether to delay software updates for macOS.
 type MacOSSoftwareUpdateDelayPolicy int
 
 const (

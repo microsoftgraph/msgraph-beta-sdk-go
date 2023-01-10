@@ -41,21 +41,9 @@ func NewAuthenticationMethodsItemDisableSmsSignInRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action disableSmsSignIn
-func (m *AuthenticationMethodsItemDisableSmsSignInRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsItemDisableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action disableSmsSignIn
 func (m *AuthenticationMethodsItemDisableSmsSignInRequestBuilder) Post(ctx context.Context, requestConfiguration *AuthenticationMethodsItemDisableSmsSignInRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *AuthenticationMethodsItemDisableSmsSignInRequestBuilder) Post(ctx conte
         return err
     }
     return nil
+}
+// ToPostRequestInformation invoke action disableSmsSignIn
+func (m *AuthenticationMethodsItemDisableSmsSignInRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsItemDisableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

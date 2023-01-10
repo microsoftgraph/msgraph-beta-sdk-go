@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// This enum represents associated assignment payload type
 type AssociatedAssignmentPayloadType int
 
 const (

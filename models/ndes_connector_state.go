@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The current status of the Ndes Connector.
 type NdesConnectorState int
 
 const (

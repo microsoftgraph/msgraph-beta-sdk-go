@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the type of app that a VPN traffic rule is associated with.
 type VpnTrafficRuleAppType int
 
 const (

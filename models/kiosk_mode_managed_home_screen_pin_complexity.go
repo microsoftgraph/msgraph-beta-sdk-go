@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Complexity of PIN for Managed Home Screen sign-in session.
 type KioskModeManagedHomeScreenPinComplexity int
 
 const (

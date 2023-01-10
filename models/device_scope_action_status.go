@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the triggerDeviceScopeAction method.
+// Indicates the status of the attempted device scope action
 type DeviceScopeActionStatus int
 
 const (

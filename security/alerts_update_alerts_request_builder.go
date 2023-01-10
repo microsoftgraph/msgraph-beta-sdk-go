@@ -41,26 +41,12 @@ func NewAlertsUpdateAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAlertsUpdateAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation update multiple alerts in one request instead of multiple requests.
-func (m *AlertsUpdateAlertsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post update multiple alerts in one request instead of multiple requests.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0
 func (m *AlertsUpdateAlertsRequestBuilder) Post(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(AlertsUpdateAlertsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *AlertsUpdateAlertsRequestBuilder) Post(ctx context.Context, body Alerts
         return nil, nil
     }
     return res.(AlertsUpdateAlertsResponseable), nil
+}
+// ToPostRequestInformation update multiple alerts in one request instead of multiple requests.
+func (m *AlertsUpdateAlertsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

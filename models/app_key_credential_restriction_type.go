@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to application.
+// 
 type AppKeyCredentialRestrictionType int
 
 const (

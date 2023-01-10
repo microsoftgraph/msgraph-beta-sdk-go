@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Android for Work device management targeting type for the account
 type AndroidManagedStoreAccountEnrollmentTarget int
 
 const (

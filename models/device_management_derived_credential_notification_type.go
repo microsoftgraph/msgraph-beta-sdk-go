@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Supported values for the notification type to use.
 type DeviceManagementDerivedCredentialNotificationType int
 
 const (

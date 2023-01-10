@@ -5,7 +5,7 @@ import (
     ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/ediscovery"
 )
 
-// EdiscoveryCasesItemReviewSetsItemExportPostRequestBody provides operations to call the export method.
+// EdiscoveryCasesItemReviewSetsItemExportPostRequestBody 
 type EdiscoveryCasesItemReviewSetsItemExportPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Wired Network Authentication Type Settings.
 type WiredNetworkAuthenticationType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Windows privacy data category specifier for privacy data access.
 type WindowsPrivacyDataCategory int
 
 const (

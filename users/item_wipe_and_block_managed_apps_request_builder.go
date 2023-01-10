@@ -41,21 +41,9 @@ func NewItemWipeAndBlockManagedAppsRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemWipeAndBlockManagedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation blocks the managed app user from app check-in.
-func (m *ItemWipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ItemWipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post blocks the managed app user from app check-in.
 func (m *ItemWipeAndBlockManagedAppsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemWipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *ItemWipeAndBlockManagedAppsRequestBuilder) Post(ctx context.Context, re
         return err
     }
     return nil
+}
+// ToPostRequestInformation blocks the managed app user from app check-in.
+func (m *ItemWipeAndBlockManagedAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemWipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

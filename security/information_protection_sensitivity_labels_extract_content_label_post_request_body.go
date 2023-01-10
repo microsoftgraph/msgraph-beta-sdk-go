@@ -5,7 +5,7 @@ import (
     i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
 )
 
-// InformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody provides operations to call the extractContentLabel method.
+// InformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody 
 type InformationProtectionSensitivityLabelsExtractContentLabelPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// An enum type to represent which category a driver belongs to.
 type DriverCategory int
 
 const (

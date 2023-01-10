@@ -6,7 +6,7 @@ import (
     i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf "github.com/microsoftgraph/msgraph-beta-sdk-go/models/devicemanagement"
 )
 
-// MonitoringAlertRecordsGetPortalNotificationsResponse provides operations to call the getPortalNotifications method.
+// MonitoringAlertRecordsGetPortalNotificationsResponse 
 type MonitoringAlertRecordsGetPortalNotificationsResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
     // The value property

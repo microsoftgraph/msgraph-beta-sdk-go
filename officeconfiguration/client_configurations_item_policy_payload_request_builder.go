@@ -48,34 +48,9 @@ func NewClientConfigurationsItemPolicyPayloadRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewClientConfigurationsItemPolicyPayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreatePutRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get policy settings JSON string in binary format, these values cannot be changed by the user.
 func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Get(ctx context.Context, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -94,7 +69,7 @@ func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Get(ctx context.Co
 }
 // Put policy settings JSON string in binary format, these values cannot be changed by the user.
 func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -107,4 +82,29 @@ func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) Put(ctx context.Co
         return err
     }
     return nil
+}
+// ToGetRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPutRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *ClientConfigurationsItemPolicyPayloadRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ClientConfigurationsItemPolicyPayloadRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

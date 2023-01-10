@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting provides operations to manage the commsApplication singleton.
+// OnlineMeeting 
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -44,7 +44,7 @@ type OnlineMeeting struct {
     isEntryExitAnnounced *bool
     // The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only.
     joinInformation ItemBodyable
-    // Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
+    // Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
     joinMeetingIdSettings JoinMeetingIdSettingsable
     // The joinUrl property
     joinUrl *string
@@ -497,7 +497,7 @@ func (m *OnlineMeeting) GetIsEntryExitAnnounced()(*bool) {
 func (m *OnlineMeeting) GetJoinInformation()(ItemBodyable) {
     return m.joinInformation
 }
-// GetJoinMeetingIdSettings gets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
+// GetJoinMeetingIdSettings gets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
 func (m *OnlineMeeting) GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable) {
     return m.joinMeetingIdSettings
 }
@@ -834,7 +834,7 @@ func (m *OnlineMeeting) SetIsEntryExitAnnounced(value *bool)() {
 func (m *OnlineMeeting) SetJoinInformation(value ItemBodyable)() {
     m.joinInformation = value
 }
-// SetJoinMeetingIdSettings sets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
+// SetJoinMeetingIdSettings sets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
 func (m *OnlineMeeting) SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)() {
     m.joinMeetingIdSettings = value
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Non-EAP methods for authentication.
 type NonEapAuthenticationMethodForEapTtlsType int
 
 const (

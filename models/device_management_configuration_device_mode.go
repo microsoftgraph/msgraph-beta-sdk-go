@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Describes applicability for the mode the device is in
 type DeviceManagementConfigurationDeviceMode int
 
 const (

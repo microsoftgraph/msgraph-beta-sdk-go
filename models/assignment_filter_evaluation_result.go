@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Supported evaluation results for filter.
 type AssignmentFilterEvaluationResult int
 
 const (

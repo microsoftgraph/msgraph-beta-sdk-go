@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.
 type UserExperienceAnalyticsAnomalyType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// App source options for macOS Gatekeeper.
 type MacOSGatekeeperAppSources int
 
 const (

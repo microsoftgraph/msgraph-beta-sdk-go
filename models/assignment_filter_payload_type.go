@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Represents the payload type AssignmentFilter is being assigned to.
 type AssignmentFilterPayloadType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the publishing state of an app.
 type MobileAppPublishingState int
 
 const (

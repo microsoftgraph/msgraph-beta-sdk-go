@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// An enum representing possible values for kiosk customization system navigation.
 type AndroidDeviceOwnerKioskCustomizationStatusBar int
 
 const (

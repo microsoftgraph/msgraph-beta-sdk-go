@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the compare method.
+// Setting comparison result type
 type DeviceManagementComparisonResult int
 
 const (

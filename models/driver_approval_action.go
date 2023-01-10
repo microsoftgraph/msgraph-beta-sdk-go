@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the executeAction method.
+// An enum type to represent approval actions of single or list of drivers.
 type DriverApprovalAction int
 
 const (

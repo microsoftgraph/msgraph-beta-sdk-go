@@ -67,22 +67,6 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OwnedDevicesRequestBuilder) Count()(*OwnedDevicesCountRequestBuilder) {
     return NewOwnedDevicesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Device casts the previous resource to device.
 func (m *OwnedDevicesRequestBuilder) Device()(*OwnedDevicesDeviceRequestBuilder) {
     return NewOwnedDevicesDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -96,7 +80,7 @@ func (m *OwnedDevicesRequestBuilder) Endpoint()(*OwnedDevicesEndpointRequestBuil
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
 func (m *OwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -112,4 +96,20 @@ func (m *OwnedDevicesRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// ToGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *OwnedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

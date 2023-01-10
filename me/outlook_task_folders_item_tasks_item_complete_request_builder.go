@@ -41,22 +41,9 @@ func NewOutlookTaskFoldersItemTasksItemCompleteRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewOutlookTaskFoldersItemTasksItemCompleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action complete
-func (m *OutlookTaskFoldersItemTasksItemCompleteRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *OutlookTaskFoldersItemTasksItemCompleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action complete
 func (m *OutlookTaskFoldersItemTasksItemCompleteRequestBuilder) Post(ctx context.Context, requestConfiguration *OutlookTaskFoldersItemTasksItemCompleteRequestBuilderPostRequestConfiguration)(OutlookTaskFoldersItemTasksItemCompleteResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -72,4 +59,17 @@ func (m *OutlookTaskFoldersItemTasksItemCompleteRequestBuilder) Post(ctx context
         return nil, nil
     }
     return res.(OutlookTaskFoldersItemTasksItemCompleteResponseable), nil
+}
+// ToPostRequestInformation invoke action complete
+func (m *OutlookTaskFoldersItemTasksItemCompleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *OutlookTaskFoldersItemTasksItemCompleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Device Management Certification Authority Types.
 type DeviceManagementCertificationAuthority int
 
 const (

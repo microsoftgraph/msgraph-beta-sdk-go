@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the connect method.
+// The onboarding status of the tenant.
 type ChromeOSOnboardingStatus int
 
 const (

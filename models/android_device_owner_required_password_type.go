@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Android Device Owner policy required password type.
 type AndroidDeviceOwnerRequiredPasswordType int
 
 const (

@@ -6,7 +6,7 @@ import (
     ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/externalconnectors"
 )
 
-// ConnectionsItemItemsItemAddActivitiesResponse provides operations to call the addActivities method.
+// ConnectionsItemItemsItemAddActivitiesResponse 
 type ConnectionsItemItemsItemAddActivitiesResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
     // The value property

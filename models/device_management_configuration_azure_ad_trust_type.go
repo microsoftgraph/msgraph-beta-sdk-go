@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Required AAD Trust Type
 type DeviceManagementConfigurationAzureAdTrustType int
 
 const (

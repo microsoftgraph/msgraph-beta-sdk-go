@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible statuses associated with a generated report
 type DeviceManagementReportStatus int
 
 const (

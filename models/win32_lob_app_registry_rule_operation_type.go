@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Contains all supported registry data detection type.
 type Win32LobAppRegistryRuleOperationType int
 
 const (

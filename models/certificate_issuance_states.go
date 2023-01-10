@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Certificate Issuance State Options.
 type CertificateIssuanceStates int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The enrollment token type for an enrollment profile.
 type AndroidDeviceOwnerEnrollmentTokenType int
 
 const (

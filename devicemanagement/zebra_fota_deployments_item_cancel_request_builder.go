@@ -41,22 +41,9 @@ func NewZebraFotaDeploymentsItemCancelRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewZebraFotaDeploymentsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action cancel
-func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action cancel
 func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration)(ZebraFotaDeploymentsItemCancelResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -72,4 +59,17 @@ func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) Post(ctx context.Context,
         return nil, nil
     }
     return res.(ZebraFotaDeploymentsItemCancelResponseable), nil
+}
+// ToPostRequestInformation invoke action cancel
+func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -41,24 +41,12 @@ func NewDeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation delete a single message or a message reply in a channel or a chat.
-func (m *DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post delete a single message or a message reply in a channel or a chat.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) Post(
         return err
     }
     return nil
+}
+// ToPostRequestInformation delete a single message or a message reply in a channel or a chat.
+func (m *DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesItemSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

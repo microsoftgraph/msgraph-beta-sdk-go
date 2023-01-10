@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Represents various states for Zebra FOTA connector.
 type ZebraFotaConnectorState int
 
 const (

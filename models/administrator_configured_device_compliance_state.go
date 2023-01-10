@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the overrideComplianceState method.
+// Administrator configured device compliance state Enum
 type AdministratorConfiguredDeviceComplianceState int
 
 const (

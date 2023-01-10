@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Data type for a configuration item inside an Android for Work application's custom configuration schema
 type AndroidForWorkAppConfigurationSchemaItemDataType int
 
 const (

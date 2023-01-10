@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Flag enum representing the allowed macOS system extension types.
 type MacOSSystemExtensionType int
 
 const (

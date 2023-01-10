@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Windows 10 Edition type.
 type Windows10EditionType int
 
 const (

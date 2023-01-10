@@ -41,21 +41,9 @@ func NewComanagedDevicesItemRequestRemoteAssistanceRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesItemRequestRemoteAssistanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation request remote assistance
-func (m *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post request remote assistance
 func (m *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilder) Post(ctx context.Context, requestConfiguration *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilder) Post(ctx con
         return err
     }
     return nil
+}
+// ToPostRequestInformation request remote assistance
+func (m *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

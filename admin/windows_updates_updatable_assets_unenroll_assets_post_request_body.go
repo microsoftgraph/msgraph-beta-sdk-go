@@ -5,7 +5,7 @@ import (
     i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c "github.com/microsoftgraph/msgraph-beta-sdk-go/models/windowsupdates"
 )
 
-// WindowsUpdatesUpdatableAssetsUnenrollAssetsPostRequestBody provides operations to call the unenrollAssets method.
+// WindowsUpdatesUpdatableAssetsUnenrollAssetsPostRequestBody 
 type WindowsUpdatesUpdatableAssetsUnenrollAssetsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}

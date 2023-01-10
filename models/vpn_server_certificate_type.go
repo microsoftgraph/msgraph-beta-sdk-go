@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The type of certificate the VPN server will present to the VPN client for authentication
 type VpnServerCertificateType int
 
 const (

@@ -5,7 +5,7 @@ import (
     ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/externalconnectors"
 )
 
-// ConnectionsItemItemsItemAddActivitiesPostRequestBody provides operations to call the addActivities method.
+// ConnectionsItemItemsItemAddActivitiesPostRequestBody 
 type ConnectionsItemItemsItemAddActivitiesPostRequestBody struct {
     // The activities property
     activities []ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityable

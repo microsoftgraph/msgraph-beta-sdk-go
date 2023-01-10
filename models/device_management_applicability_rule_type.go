@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Supported Applicability rule types for Device Configuration
 type DeviceManagementApplicabilityRuleType int
 
 const (

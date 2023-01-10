@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Delivery state of Configuration Manager device action
 type ConfigurationManagerActionDeliveryStatus int
 
 const (

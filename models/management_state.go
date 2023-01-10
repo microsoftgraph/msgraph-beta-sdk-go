@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Management state of device in Microsoft Intune.
 type ManagementState int
 
 const (

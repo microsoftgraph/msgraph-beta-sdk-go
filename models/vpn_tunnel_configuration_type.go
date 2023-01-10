@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The type of tunnels that will be present to the VPN client for configuration
 type VpnTunnelConfigurationType int
 
 const (

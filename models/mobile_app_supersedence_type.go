@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the supersedence type associated with a relationship between two mobile apps.
 type MobileAppSupersedenceType int
 
 const (

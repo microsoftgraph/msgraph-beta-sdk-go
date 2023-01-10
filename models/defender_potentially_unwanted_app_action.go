@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Defender’s action to take on detected Potentially Unwanted Application (PUA).
 type DefenderPotentiallyUnwantedAppAction int
 
 const (

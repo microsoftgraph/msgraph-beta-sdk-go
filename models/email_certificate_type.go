@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Supported certificate sources for email signing and encryption.
 type EmailCertificateType int
 
 const (

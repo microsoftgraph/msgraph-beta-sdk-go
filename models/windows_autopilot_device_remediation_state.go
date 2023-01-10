@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
 type WindowsAutopilotDeviceRemediationState int
 
 const (

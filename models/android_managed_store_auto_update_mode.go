@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Prioritization for automatic updates of Android Managed Store apps set on assignment.
 type AndroidManagedStoreAutoUpdateMode int
 
 const (

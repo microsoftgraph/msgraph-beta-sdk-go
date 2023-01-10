@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The type of VPN security association integrity algorithm
 type VpnIntegrityAlgorithmType int
 
 const (

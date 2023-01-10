@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Tenant mobile device management subscription state.
 type DeviceManagementSubscriptionState int
 
 const (

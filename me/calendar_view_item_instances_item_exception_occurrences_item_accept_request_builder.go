@@ -41,25 +41,12 @@ func NewCalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation accept the specified event in a user calendar.
-func (m *CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilder) CreatePostRequestInformation(ctx context.Context, body CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptPostRequestBodyable, requestConfiguration *CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post accept the specified event in a user calendar.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
 func (m *CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilder) Post(ctx context.Context, body CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptPostRequestBodyable, requestConfiguration *CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuild
         return err
     }
     return nil
+}
+// ToPostRequestInformation accept the specified event in a user calendar.
+func (m *CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptPostRequestBodyable, requestConfiguration *CalendarViewItemInstancesItemExceptionOccurrencesItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

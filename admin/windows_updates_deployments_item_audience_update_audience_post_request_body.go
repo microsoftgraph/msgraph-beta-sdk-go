@@ -5,7 +5,7 @@ import (
     i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c "github.com/microsoftgraph/msgraph-beta-sdk-go/models/windowsupdates"
 )
 
-// WindowsUpdatesDeploymentsItemAudienceUpdateAudiencePostRequestBody provides operations to call the updateAudience method.
+// WindowsUpdatesDeploymentsItemAudienceUpdateAudiencePostRequestBody 
 type WindowsUpdatesDeploymentsItemAudienceUpdateAudiencePostRequestBody struct {
     // The addExclusions property
     addExclusions []i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable

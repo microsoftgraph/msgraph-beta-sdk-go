@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Specifies the routing policy for a VPN traffic rule.
 type VpnTrafficRuleRoutingPolicyType int
 
 const (

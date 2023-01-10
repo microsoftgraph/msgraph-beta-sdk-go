@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Extensible Authentication Protocol (EAP) Configuration Types.
 type AndroidEapType int
 
 const (

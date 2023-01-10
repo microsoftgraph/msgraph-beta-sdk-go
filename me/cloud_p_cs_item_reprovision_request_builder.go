@@ -41,25 +41,12 @@ func NewCloudPCsItemReprovisionRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPCsItemReprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation reprovision a specific Cloud PC.
-func (m *CloudPCsItemReprovisionRequestBuilder) CreatePostRequestInformation(ctx context.Context, body CloudPCsItemReprovisionPostRequestBodyable, requestConfiguration *CloudPCsItemReprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post reprovision a specific Cloud PC.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
 func (m *CloudPCsItemReprovisionRequestBuilder) Post(ctx context.Context, body CloudPCsItemReprovisionPostRequestBodyable, requestConfiguration *CloudPCsItemReprovisionRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *CloudPCsItemReprovisionRequestBuilder) Post(ctx context.Context, body C
         return err
     }
     return nil
+}
+// ToPostRequestInformation reprovision a specific Cloud PC.
+func (m *CloudPCsItemReprovisionRequestBuilder) ToPostRequestInformation(ctx context.Context, body CloudPCsItemReprovisionPostRequestBodyable, requestConfiguration *CloudPCsItemReprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

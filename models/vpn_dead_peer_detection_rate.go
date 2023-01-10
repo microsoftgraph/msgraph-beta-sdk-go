@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Determines how often to check if a peer connection is still alive
 type VpnDeadPeerDetectionRate int
 
 const (

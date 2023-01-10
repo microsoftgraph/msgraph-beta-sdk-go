@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible values of the DmaGuardDeviceEnumerationPolicy.
 type DmaGuardDeviceEnumerationPolicyType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Top level failure categories for enrollment.
 type DeviceEnrollmentFailureReason int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// type tracking the encryption state of a secret setting value
 type DeviceManagementConfigurationSecretSettingValueState int
 
 const (

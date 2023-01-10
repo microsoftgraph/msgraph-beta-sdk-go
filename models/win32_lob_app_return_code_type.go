@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the type of return code.
 type Win32LobAppReturnCodeType int
 
 const (

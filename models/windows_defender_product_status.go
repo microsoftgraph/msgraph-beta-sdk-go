@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Product Status of Windows Defender
 type WindowsDefenderProductStatus int
 
 const (

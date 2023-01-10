@@ -42,22 +42,9 @@ func NewDataSharingConsentsItemConsentToDataSharingRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewDataSharingConsentsItemConsentToDataSharingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action consentToDataSharing
-func (m *DataSharingConsentsItemConsentToDataSharingRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *DataSharingConsentsItemConsentToDataSharingRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action consentToDataSharing
 func (m *DataSharingConsentsItemConsentToDataSharingRequestBuilder) Post(ctx context.Context, requestConfiguration *DataSharingConsentsItemConsentToDataSharingRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataSharingConsentable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -73,4 +60,17 @@ func (m *DataSharingConsentsItemConsentToDataSharingRequestBuilder) Post(ctx con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataSharingConsentable), nil
+}
+// ToPostRequestInformation invoke action consentToDataSharing
+func (m *DataSharingConsentsItemConsentToDataSharingRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DataSharingConsentsItemConsentToDataSharingRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -41,22 +41,9 @@ func NewItemsItemAssignSensitivityLabelRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemsItemAssignSensitivityLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action assignSensitivityLabel
-func (m *ItemsItemAssignSensitivityLabelRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemsItemAssignSensitivityLabelPostRequestBodyable, requestConfiguration *ItemsItemAssignSensitivityLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action assignSensitivityLabel
 func (m *ItemsItemAssignSensitivityLabelRequestBuilder) Post(ctx context.Context, body ItemsItemAssignSensitivityLabelPostRequestBodyable, requestConfiguration *ItemsItemAssignSensitivityLabelRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -69,4 +56,17 @@ func (m *ItemsItemAssignSensitivityLabelRequestBuilder) Post(ctx context.Context
         return err
     }
     return nil
+}
+// ToPostRequestInformation invoke action assignSensitivityLabel
+func (m *ItemsItemAssignSensitivityLabelRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemsItemAssignSensitivityLabelPostRequestBodyable, requestConfiguration *ItemsItemAssignSensitivityLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

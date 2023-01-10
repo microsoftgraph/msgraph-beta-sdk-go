@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The possible options to configure S mode unlock
 type WindowsSModeConfiguration int
 
 const (

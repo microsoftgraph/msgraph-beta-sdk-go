@@ -65,55 +65,13 @@ func NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroup
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property presentationValues for deviceManagement
-func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) CreateDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreateGetRequestInformation the associated group policy presentation values with the definition value.
-func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreatePatchRequestInformation update the navigation property presentationValues in deviceManagement
-func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) CreatePatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationValueable, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // DefinitionValue provides operations to manage the definitionValue property of the microsoft.graph.groupPolicyPresentationValue entity.
 func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) DefinitionValue()(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemDefinitionValueRequestBuilder) {
     return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemDefinitionValueRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property presentationValues for deviceManagement
 func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -129,7 +87,7 @@ func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGrou
 }
 // Get the associated group policy presentation values with the definition value.
 func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationValueable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -148,7 +106,7 @@ func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGrou
 }
 // Patch update the navigation property presentationValues in deviceManagement
 func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationValueable, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationValueable, error) {
-    requestInfo, err := m.CreatePatchRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -168,4 +126,46 @@ func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGrou
 // Presentation provides operations to manage the presentation property of the microsoft.graph.groupPolicyPresentationValue entity.
 func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) Presentation()(*GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilder) {
     return NewGroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToDeleteRequestInformation delete navigation property presentationValues for deviceManagement
+func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToGetRequestInformation the associated group policy presentation values with the definition value.
+func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPatchRequestInformation update the navigation property presentationValues in deviceManagement
+func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyPresentationValueable, requestConfiguration *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGroupPolicyPresentationValueItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

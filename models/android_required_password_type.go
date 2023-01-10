@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Android required password type.
 type AndroidRequiredPasswordType int
 
 const (

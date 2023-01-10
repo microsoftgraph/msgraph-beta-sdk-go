@@ -19,7 +19,7 @@ type Qna struct {
     isSuggested *bool
     // Keywords that trigger this qna to appear in search results.
     keywords AnswerKeywordable
-    // A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+    // A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
     languageTags []string
     // List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
     platforms []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType
@@ -170,7 +170,7 @@ func (m *Qna) GetIsSuggested()(*bool) {
 func (m *Qna) GetKeywords()(AnswerKeywordable) {
     return m.keywords
 }
-// GetLanguageTags gets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+// GetLanguageTags gets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
 func (m *Qna) GetLanguageTags()([]string) {
     return m.languageTags
 }
@@ -273,7 +273,7 @@ func (m *Qna) SetIsSuggested(value *bool)() {
 func (m *Qna) SetKeywords(value AnswerKeywordable)() {
     m.keywords = value
 }
-// SetLanguageTags sets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+// SetLanguageTags sets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
 func (m *Qna) SetLanguageTags(value []string)() {
     m.languageTags = value
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Template subtype
 type DeviceManagementTemplateSubtype int
 
 const (

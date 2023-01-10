@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Scope of the group policy setting.
 type GroupPolicySettingScope int
 
 const (

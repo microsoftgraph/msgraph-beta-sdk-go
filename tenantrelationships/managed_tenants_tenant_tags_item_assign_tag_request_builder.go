@@ -42,26 +42,12 @@ func NewManagedTenantsTenantTagsItemAssignTagRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantTagsItemAssignTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation assign the tenant tag to the specified managed tenants.
-func (m *ManagedTenantsTenantTagsItemAssignTagRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ManagedTenantsTenantTagsItemAssignTagPostRequestBodyable, requestConfiguration *ManagedTenantsTenantTagsItemAssignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post assign the tenant tag to the specified managed tenants.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0
 func (m *ManagedTenantsTenantTagsItemAssignTagRequestBuilder) Post(ctx context.Context, body ManagedTenantsTenantTagsItemAssignTagPostRequestBodyable, requestConfiguration *ManagedTenantsTenantTagsItemAssignTagRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -77,4 +63,18 @@ func (m *ManagedTenantsTenantTagsItemAssignTagRequestBuilder) Post(ctx context.C
         return nil, nil
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
+}
+// ToPostRequestInformation assign the tenant tag to the specified managed tenants.
+func (m *ManagedTenantsTenantTagsItemAssignTagRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsTenantTagsItemAssignTagPostRequestBodyable, requestConfiguration *ManagedTenantsTenantTagsItemAssignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

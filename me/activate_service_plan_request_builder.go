@@ -41,25 +41,12 @@ func NewActivateServicePlanRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewActivateServicePlanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation activate a service plan with a given `servicePlanId` and `skuId` for a given user.
-func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post activate a service plan with a given `servicePlanId` and `skuId` for a given user.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/user-activateserviceplan?view=graph-rest-1.0
 func (m *ActivateServicePlanRequestBuilder) Post(ctx context.Context, body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *ActivateServicePlanRequestBuilder) Post(ctx context.Context, body Activ
         return err
     }
     return nil
+}
+// ToPostRequestInformation activate a service plan with a given `servicePlanId` and `skuId` for a given user.
+func (m *ActivateServicePlanRequestBuilder) ToPostRequestInformation(ctx context.Context, body ActivateServicePlanPostRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

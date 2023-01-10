@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Describes the TemplateFamily for the Template entity
 type DeviceEnrollmentConfigurationType int
 
 const (

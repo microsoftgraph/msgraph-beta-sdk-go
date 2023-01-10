@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Values for the SignInAssistantSettings.
 type SignInAssistantOptions int
 
 const (

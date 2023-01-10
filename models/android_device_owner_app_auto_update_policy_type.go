@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Android Device Owner possible values for states of the device's app auto update policy.
 type AndroidDeviceOwnerAppAutoUpdatePolicyType int
 
 const (

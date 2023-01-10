@@ -41,22 +41,9 @@ func NewItemManagedDevicesItemEndRemoteHelpSessionRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemEndRemoteHelpSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation remote help - End ACS session, Pubsub session and delete Remote help session
-func (m *ItemManagedDevicesItemEndRemoteHelpSessionRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemEndRemoteHelpSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post remote help - End ACS session, Pubsub session and delete Remote help session
 func (m *ItemManagedDevicesItemEndRemoteHelpSessionRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemEndRemoteHelpSessionRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -69,4 +56,17 @@ func (m *ItemManagedDevicesItemEndRemoteHelpSessionRequestBuilder) Post(ctx cont
         return err
     }
     return nil
+}
+// ToPostRequestInformation remote help - End ACS session, Pubsub session and delete Remote help session
+func (m *ItemManagedDevicesItemEndRemoteHelpSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemEndRemoteHelpSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

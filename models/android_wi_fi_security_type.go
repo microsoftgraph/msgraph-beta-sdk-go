@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Wi-Fi Security Types for Android.
 type AndroidWiFiSecurityType int
 
 const (

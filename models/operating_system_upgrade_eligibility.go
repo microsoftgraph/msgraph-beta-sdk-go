@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Work From Anywhere windows device upgrade eligibility status
 type OperatingSystemUpgradeEligibility int
 
 const (

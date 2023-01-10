@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Locations which can be used to bring data into organization documents
 type ManagedAppDataIngestionLocation int
 
 const (

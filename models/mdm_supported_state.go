@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Mdm Support Status of the setting.
 type MdmSupportedState int
 
 const (

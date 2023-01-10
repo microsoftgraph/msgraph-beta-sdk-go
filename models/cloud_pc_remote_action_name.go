@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the getSupportedCloudPcRemoteActions method.
+// 
 type CloudPcRemoteActionName int
 
 const (

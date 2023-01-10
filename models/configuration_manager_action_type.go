@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the triggerConfigurationManagerAction method.
+// Action type on Configuration Manager client
 type ConfigurationManagerActionType int
 
 const (
