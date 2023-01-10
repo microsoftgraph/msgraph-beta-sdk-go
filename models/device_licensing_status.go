@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the device licensing status after Windows device based subscription has been enabled.
 type DeviceLicensingStatus int
 
 const (

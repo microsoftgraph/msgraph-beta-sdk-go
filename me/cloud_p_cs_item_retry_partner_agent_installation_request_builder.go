@@ -41,24 +41,12 @@ func NewCloudPCsItemRetryPartnerAgentInstallationRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
-func (m *CloudPCsItemRetryPartnerAgentInstallationRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *CloudPCsItemRetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0
 func (m *CloudPCsItemRetryPartnerAgentInstallationRequestBuilder) Post(ctx context.Context, requestConfiguration *CloudPCsItemRetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *CloudPCsItemRetryPartnerAgentInstallationRequestBuilder) Post(ctx conte
         return err
     }
     return nil
+}
+// ToPostRequestInformation retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
+func (m *CloudPCsItemRetryPartnerAgentInstallationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CloudPCsItemRetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

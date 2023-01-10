@@ -44,21 +44,9 @@ func NewReportsGetEmailActivityUserDetailWithPeriodRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetEmailActivityUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformation invoke function getEmailActivityUserDetail
-func (m *ReportsGetEmailActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get invoke function getEmailActivityUserDetail
 func (m *ReportsGetEmailActivityUserDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsGetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -74,4 +62,16 @@ func (m *ReportsGetEmailActivityUserDetailWithPeriodRequestBuilder) Get(ctx cont
         return nil, nil
     }
     return res.([]byte), nil
+}
+// ToGetRequestInformation invoke function getEmailActivityUserDetail
+func (m *ReportsGetEmailActivityUserDetailWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetEmailActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

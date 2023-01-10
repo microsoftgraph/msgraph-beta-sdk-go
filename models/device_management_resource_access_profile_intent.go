@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The administrator intent for the assignment of the profile.
 type DeviceManagementResourceAccessProfileIntent int
 
 const (

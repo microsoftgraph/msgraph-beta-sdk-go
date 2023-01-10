@@ -2,7 +2,7 @@ package devicemanagement
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// 
 type AggregationType int
 
 const (

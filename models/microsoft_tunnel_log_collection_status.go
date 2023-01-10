@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Enum type that represent the status of log collection
 type MicrosoftTunnelLogCollectionStatus int
 
 const (

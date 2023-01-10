@@ -42,26 +42,12 @@ func NewItemGetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetPasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation get a list of single sign-on credentials using a password for a user or group.
-func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemGetPasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post get a list of single sign-on credentials using a password for a user or group.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-1.0
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body ItemGetPasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -77,4 +63,18 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable), nil
+}
+// ToPostRequestInformation get a list of single sign-on credentials using a password for a user or group.
+func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGetPasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

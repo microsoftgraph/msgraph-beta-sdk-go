@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Represents the expected type for a macOS custom attribute script value.
 type DeviceCustomAttributeValueType int
 
 const (

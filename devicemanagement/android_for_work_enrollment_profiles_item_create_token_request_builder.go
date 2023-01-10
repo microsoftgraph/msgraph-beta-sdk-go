@@ -41,22 +41,9 @@ func NewAndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action createToken
-func (m *AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilder) CreatePostRequestInformation(ctx context.Context, body AndroidForWorkEnrollmentProfilesItemCreateTokenPostRequestBodyable, requestConfiguration *AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action createToken
 func (m *AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilder) Post(ctx context.Context, body AndroidForWorkEnrollmentProfilesItemCreateTokenPostRequestBodyable, requestConfiguration *AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -69,4 +56,17 @@ func (m *AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilder) Post(ctx
         return err
     }
     return nil
+}
+// ToPostRequestInformation invoke action createToken
+func (m *AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilder) ToPostRequestInformation(ctx context.Context, body AndroidForWorkEnrollmentProfilesItemCreateTokenPostRequestBodyable, requestConfiguration *AndroidForWorkEnrollmentProfilesItemCreateTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -42,23 +42,9 @@ func NewRecommendationsItemImpactedResourcesItemDismissRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendationsItemImpactedResourcesItemDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action dismiss
-func (m *RecommendationsItemImpactedResourcesItemDismissRequestBuilder) CreatePostRequestInformation(ctx context.Context, body RecommendationsItemImpactedResourcesItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemImpactedResourcesItemDismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action dismiss
 func (m *RecommendationsItemImpactedResourcesItemDismissRequestBuilder) Post(ctx context.Context, body RecommendationsItemImpactedResourcesItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemImpactedResourcesItemDismissRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -74,4 +60,18 @@ func (m *RecommendationsItemImpactedResourcesItemDismissRequestBuilder) Post(ctx
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable), nil
+}
+// ToPostRequestInformation invoke action dismiss
+func (m *RecommendationsItemImpactedResourcesItemDismissRequestBuilder) ToPostRequestInformation(ctx context.Context, body RecommendationsItemImpactedResourcesItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemImpactedResourcesItemDismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// TV content rating labels in United States
 type RatingUnitedStatesTelevisionType int
 
 const (

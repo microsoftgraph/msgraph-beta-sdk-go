@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Describes the OfficeSuiteApp file format types that can be selected.
 type OfficeSuiteDefaultFileFormatType int
 
 const (

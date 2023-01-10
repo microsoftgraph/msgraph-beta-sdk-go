@@ -41,24 +41,12 @@ func NewCloudPCsItemRebootRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPCsItemRebootRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation reboot a specific Cloud PC.
-func (m *CloudPCsItemRebootRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *CloudPCsItemRebootRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post reboot a specific Cloud PC.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
 func (m *CloudPCsItemRebootRequestBuilder) Post(ctx context.Context, requestConfiguration *CloudPCsItemRebootRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *CloudPCsItemRebootRequestBuilder) Post(ctx context.Context, requestConf
         return err
     }
     return nil
+}
+// ToPostRequestInformation reboot a specific Cloud PC.
+func (m *CloudPCsItemRebootRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CloudPCsItemRebootRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

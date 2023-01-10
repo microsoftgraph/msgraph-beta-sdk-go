@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Describes the various states for an embedded SIM activation code.
 type EmbeddedSIMDeviceStateValue int
 
 const (

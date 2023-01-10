@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Certificate Validity Period Options.
 type CertificateValidityPeriodScale int
 
 const (

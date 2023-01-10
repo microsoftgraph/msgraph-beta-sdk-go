@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
 type PersonalProfilePersonalPlayStoreMode int
 
 const (

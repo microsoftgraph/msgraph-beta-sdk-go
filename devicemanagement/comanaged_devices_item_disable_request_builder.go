@@ -41,21 +41,9 @@ func NewComanagedDevicesItemDisableRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesItemDisableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action disable
-func (m *ComanagedDevicesItemDisableRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemDisableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action disable
 func (m *ComanagedDevicesItemDisableRequestBuilder) Post(ctx context.Context, requestConfiguration *ComanagedDevicesItemDisableRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *ComanagedDevicesItemDisableRequestBuilder) Post(ctx context.Context, re
         return err
     }
     return nil
+}
+// ToPostRequestInformation invoke action disable
+func (m *ComanagedDevicesItemDisableRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemDisableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

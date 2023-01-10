@@ -41,22 +41,9 @@ func NewManagedDevicesItemEnableLostModeRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemEnableLostModeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation enable lost mode
-func (m *ManagedDevicesItemEnableLostModeRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ManagedDevicesItemEnableLostModePostRequestBodyable, requestConfiguration *ManagedDevicesItemEnableLostModeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post enable lost mode
 func (m *ManagedDevicesItemEnableLostModeRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemEnableLostModePostRequestBodyable, requestConfiguration *ManagedDevicesItemEnableLostModeRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -69,4 +56,17 @@ func (m *ManagedDevicesItemEnableLostModeRequestBuilder) Post(ctx context.Contex
         return err
     }
     return nil
+}
+// ToPostRequestInformation enable lost mode
+func (m *ManagedDevicesItemEnableLostModeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemEnableLostModePostRequestBodyable, requestConfiguration *ManagedDevicesItemEnableLostModeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

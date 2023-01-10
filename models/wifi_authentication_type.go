@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Wi-Fi Authentication Type Settings.
 type WifiAuthenticationType int
 
 const (

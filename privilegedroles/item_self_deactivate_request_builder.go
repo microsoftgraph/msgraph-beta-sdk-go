@@ -42,25 +42,12 @@ func NewItemSelfDeactivateRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemSelfDeactivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation deactivate the role that is assigned to the requestor.
-func (m *ItemSelfDeactivateRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ItemSelfDeactivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post deactivate the role that is assigned to the requestor.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/privilegedrole-selfdeactivate?view=graph-rest-1.0
 func (m *ItemSelfDeactivateRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSelfDeactivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +63,17 @@ func (m *ItemSelfDeactivateRequestBuilder) Post(ctx context.Context, requestConf
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
+}
+// ToPostRequestInformation deactivate the role that is assigned to the requestor.
+func (m *ItemSelfDeactivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSelfDeactivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

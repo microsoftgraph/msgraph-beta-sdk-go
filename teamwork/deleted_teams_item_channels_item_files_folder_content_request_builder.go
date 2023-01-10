@@ -48,37 +48,12 @@ func NewDeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the content stream, if the item represents a file.
-func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreatePutRequestInformation the content stream, if the item represents a file.
-func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get the content stream, if the item represents a file.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -97,7 +72,7 @@ func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) Get(ctx c
 }
 // Put the content stream, if the item represents a file.
 func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -110,4 +85,29 @@ func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) Put(ctx c
         return err
     }
     return nil
+}
+// ToGetRequestInformation the content stream, if the item represents a file.
+func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPutRequestInformation the content stream, if the item represents a file.
+func (m *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

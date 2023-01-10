@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Supported values for the padding scheme used by encryption provider.
 type UserPfxPaddingScheme int
 
 const (

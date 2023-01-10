@@ -42,26 +42,12 @@ func NewItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation start a break in a specific timeCard.
-func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post start a break in a specific timeCard.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/timecard-startbreak?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) Post(ctx context.Context, body ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -77,4 +63,18 @@ func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) Post(c
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable), nil
+}
+// ToPostRequestInformation start a break in a specific timeCard.
+func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyable, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsItemStartBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

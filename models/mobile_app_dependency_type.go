@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the dependency type associated with a relationship between two mobile apps.
 type MobileAppDependencyType int
 
 const (

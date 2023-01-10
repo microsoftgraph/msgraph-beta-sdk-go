@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The Enum to specify the Office365 Updates Channel.
 type OfficeUpdateChannel int
 
 const (

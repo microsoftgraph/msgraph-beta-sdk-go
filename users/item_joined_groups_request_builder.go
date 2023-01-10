@@ -59,22 +59,6 @@ func NewItemJoinedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get joinedGroups from users
-func (m *ItemJoinedGroupsRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Delta provides operations to call the delta method.
 func (m *ItemJoinedGroupsRequestBuilder) Delta()(*ItemJoinedGroupsDeltaRequestBuilder) {
     return NewItemJoinedGroupsDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -85,7 +69,7 @@ func (m *ItemJoinedGroupsRequestBuilder) EvaluateDynamicMembership()(*ItemJoined
 }
 // Get get joinedGroups from users
 func (m *ItemJoinedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -109,6 +93,22 @@ func (m *ItemJoinedGroupsRequestBuilder) GetByIds()(*ItemJoinedGroupsGetByIdsReq
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
 func (m *ItemJoinedGroupsRequestBuilder) GetUserOwnedObjects()(*ItemJoinedGroupsGetUserOwnedObjectsRequestBuilder) {
     return NewItemJoinedGroupsGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation get joinedGroups from users
+func (m *ItemJoinedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemJoinedGroupsRequestBuilder) ValidateProperties()(*ItemJoinedGroupsValidatePropertiesRequestBuilder) {

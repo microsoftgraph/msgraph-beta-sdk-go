@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Configures how the requested export job is localized
 type DeviceManagementExportJobLocalizationType int
 
 const (

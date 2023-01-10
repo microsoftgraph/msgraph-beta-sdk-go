@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Movies rating labels in New Zealand
 type RatingNewZealandMoviesType int
 
 const (

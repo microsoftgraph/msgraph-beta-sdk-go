@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceScopesItemTriggerDeviceScopeActionPostRequestBody provides operations to call the triggerDeviceScopeAction method.
+// UserExperienceAnalyticsDeviceScopesItemTriggerDeviceScopeActionPostRequestBody 
 type UserExperienceAnalyticsDeviceScopesItemTriggerDeviceScopeActionPostRequestBody struct {
     // Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
     actionName *string

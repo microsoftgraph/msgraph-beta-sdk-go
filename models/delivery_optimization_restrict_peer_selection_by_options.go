@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Values to restrict peer selection by.
 type DeliveryOptimizationRestrictPeerSelectionByOptions int
 
 const (

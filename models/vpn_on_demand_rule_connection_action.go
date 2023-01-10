@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// VPN On-Demand Rule Connection Action.
 type VpnOnDemandRuleConnectionAction int
 
 const (

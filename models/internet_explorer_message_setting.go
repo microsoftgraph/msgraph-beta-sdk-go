@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// What message will be displayed by Edge before switching to Internet Explorer.
 type InternetExplorerMessageSetting int
 
 const (

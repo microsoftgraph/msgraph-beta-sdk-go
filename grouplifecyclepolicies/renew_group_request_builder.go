@@ -41,26 +41,12 @@ func NewRenewGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewRenewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
-func (m *RenewGroupRequestBuilder) CreatePostRequestInformation(ctx context.Context, body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0
 func (m *RenewGroupRequestBuilder) Post(ctx context.Context, body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(RenewGroupResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +62,18 @@ func (m *RenewGroupRequestBuilder) Post(ctx context.Context, body RenewGroupPost
         return nil, nil
     }
     return res.(RenewGroupResponseable), nil
+}
+// ToPostRequestInformation renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+func (m *RenewGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

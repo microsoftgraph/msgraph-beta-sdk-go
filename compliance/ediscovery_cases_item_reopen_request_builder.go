@@ -41,24 +41,12 @@ func NewEdiscoveryCasesItemReopenRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemReopenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
-func (m *EdiscoveryCasesItemReopenRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReopenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/ediscovery-case-reopen?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemReopenRequestBuilder) Post(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReopenRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *EdiscoveryCasesItemReopenRequestBuilder) Post(ctx context.Context, requ
         return err
     }
     return nil
+}
+// ToPostRequestInformation reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
+func (m *EdiscoveryCasesItemReopenRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReopenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

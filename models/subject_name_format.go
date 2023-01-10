@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Subject Name Format Options.
 type SubjectNameFormat int
 
 const (

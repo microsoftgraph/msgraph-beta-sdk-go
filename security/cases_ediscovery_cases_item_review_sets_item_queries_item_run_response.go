@@ -6,7 +6,7 @@ import (
     i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
 )
 
-// CasesEdiscoveryCasesItemReviewSetsItemQueriesItemRunResponse provides operations to call the run method.
+// CasesEdiscoveryCasesItemReviewSetsItemQueriesItemRunResponse 
 type CasesEdiscoveryCasesItemReviewSetsItemQueriesItemRunResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
     // The value property

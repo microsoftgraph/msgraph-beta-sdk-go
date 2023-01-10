@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Specify how the Microsoft Edge settings are restricted based on kiosk mode.
 type EdgeKioskModeRestrictionType int
 
 const (

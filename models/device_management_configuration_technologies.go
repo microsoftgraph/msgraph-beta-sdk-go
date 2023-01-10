@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Describes which technology this setting can be deployed with
 type DeviceManagementConfigurationTechnologies int
 
 const (

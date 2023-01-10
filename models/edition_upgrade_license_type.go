@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Edition Upgrade License type
 type EditionUpgradeLicenseType int
 
 const (

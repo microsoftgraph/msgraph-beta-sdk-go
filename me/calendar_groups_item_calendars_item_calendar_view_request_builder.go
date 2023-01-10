@@ -63,22 +63,6 @@ func NewCalendarGroupsItemCalendarsItemCalendarViewRequestBuilder(rawUrl string,
 func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Count()(*CalendarGroupsItemCalendarsItemCalendarViewCountRequestBuilder) {
     return NewCalendarGroupsItemCalendarsItemCalendarViewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user's default calendar `(../me/calendarview)` or some other calendar of the user's.
-func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Delta provides operations to call the delta method.
 func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Delta()(*CalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilder) {
     return NewCalendarGroupsItemCalendarsItemCalendarViewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -88,7 +72,7 @@ func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Delta()(*Cal
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
 func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -104,4 +88,20 @@ func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) Get(ctx cont
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
+}
+// ToGetRequestInformation get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user's default calendar `(../me/calendarview)` or some other calendar of the user's.
+func (m *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CalendarGroupsItemCalendarsItemCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

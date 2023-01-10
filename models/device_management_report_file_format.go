@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible values for the file format of a report
 type DeviceManagementReportFileFormat int
 
 const (

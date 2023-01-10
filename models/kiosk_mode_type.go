@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible values of Android Kiosk Mode.
 type KioskModeType int
 
 const (

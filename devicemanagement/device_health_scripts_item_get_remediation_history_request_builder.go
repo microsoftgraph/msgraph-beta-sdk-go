@@ -42,22 +42,9 @@ func NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation function to get the number of remediations by a device health scripts
-func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get function to get the number of remediations by a device health scripts
 func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -73,4 +60,17 @@ func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) Get(ctx con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable), nil
+}
+// ToGetRequestInformation function to get the number of remediations by a device health scripts
+func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

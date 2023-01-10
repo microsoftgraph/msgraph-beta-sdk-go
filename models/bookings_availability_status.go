@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the getStaffAvailability method.
+// 
 type BookingsAvailabilityStatus int
 
 const (

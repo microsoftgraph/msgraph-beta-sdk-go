@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
 type OfficeSuiteInstallProgressDisplayLevel int
 
 const (

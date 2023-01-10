@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// State of lost mode, indicating if lost mode is enabled or disabled
 type LostModeState int
 
 const (

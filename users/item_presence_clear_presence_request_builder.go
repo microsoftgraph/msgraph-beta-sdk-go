@@ -41,25 +41,12 @@ func NewItemPresenceClearPresenceRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemPresenceClearPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation clear a presence session of an application for a user. If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. 
-func (m *ItemPresenceClearPresenceRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemPresenceClearPresencePostRequestBodyable, requestConfiguration *ItemPresenceClearPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post clear a presence session of an application for a user. If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
 func (m *ItemPresenceClearPresenceRequestBuilder) Post(ctx context.Context, body ItemPresenceClearPresencePostRequestBodyable, requestConfiguration *ItemPresenceClearPresenceRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *ItemPresenceClearPresenceRequestBuilder) Post(ctx context.Context, body
         return err
     }
     return nil
+}
+// ToPostRequestInformation clear a presence session of an application for a user. If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. 
+func (m *ItemPresenceClearPresenceRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPresenceClearPresencePostRequestBodyable, requestConfiguration *ItemPresenceClearPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

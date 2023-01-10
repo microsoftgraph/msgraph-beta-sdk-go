@@ -6,7 +6,7 @@ import (
     iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f "github.com/microsoftgraph/msgraph-beta-sdk-go/models/callrecords"
 )
 
-// CallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeResponse provides operations to call the getPstnCalls method.
+// CallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeResponse 
 type CallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
     // The value property

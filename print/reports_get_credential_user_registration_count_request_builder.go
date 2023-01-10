@@ -60,28 +60,12 @@ func NewReportsGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
-func (m *ReportsGetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0
 func (m *ReportsGetCredentialUserRegistrationCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsGetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(ReportsGetCredentialUserRegistrationCountResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -97,4 +81,20 @@ func (m *ReportsGetCredentialUserRegistrationCountRequestBuilder) Get(ctx contex
         return nil, nil
     }
     return res.(ReportsGetCredentialUserRegistrationCountResponseable), nil
+}
+// ToGetRequestInformation report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+func (m *ReportsGetCredentialUserRegistrationCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

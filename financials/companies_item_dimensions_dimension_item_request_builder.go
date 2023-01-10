@@ -51,22 +51,6 @@ func NewCompaniesItemDimensionsDimensionItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get dimensions from financials
-func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemDimensionsDimensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // DimensionValues provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionsItemDimensionValuesRequestBuilder) {
     return NewCompaniesItemDimensionsItemDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -84,7 +68,7 @@ func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValuesById
 }
 // Get get dimensions from financials
 func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemDimensionsDimensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Dimensionable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -100,4 +84,20 @@ func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) Get(ctx context.Con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Dimensionable), nil
+}
+// ToGetRequestInformation get dimensions from financials
+func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemDimensionsDimensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

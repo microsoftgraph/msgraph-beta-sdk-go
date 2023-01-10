@@ -41,24 +41,12 @@ func NewDeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation undo soft deletion of a single message or a message reply in a channel or a chat.
-func (m *DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post undo soft deletion of a single message or a message reply in a channel or a chat.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -71,4 +59,16 @@ func (m *DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) P
         return err
     }
     return nil
+}
+// ToPostRequestInformation undo soft deletion of a single message or a message reply in a channel or a chat.
+func (m *DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

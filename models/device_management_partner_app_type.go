@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Partner App Type.
 type DeviceManagementPartnerAppType int
 
 const (

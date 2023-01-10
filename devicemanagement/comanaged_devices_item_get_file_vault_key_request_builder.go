@@ -41,22 +41,9 @@ func NewComanagedDevicesItemGetFileVaultKeyRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesItemGetFileVaultKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation invoke function getFileVaultKey
-func (m *ComanagedDevicesItemGetFileVaultKeyRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemGetFileVaultKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get invoke function getFileVaultKey
 func (m *ComanagedDevicesItemGetFileVaultKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *ComanagedDevicesItemGetFileVaultKeyRequestBuilderGetRequestConfiguration)(ComanagedDevicesItemGetFileVaultKeyResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -72,4 +59,17 @@ func (m *ComanagedDevicesItemGetFileVaultKeyRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(ComanagedDevicesItemGetFileVaultKeyResponseable), nil
+}
+// ToGetRequestInformation invoke function getFileVaultKey
+func (m *ComanagedDevicesItemGetFileVaultKeyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemGetFileVaultKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

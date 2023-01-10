@@ -67,25 +67,9 @@ func NewItemConnectorsItemMemberOfRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Count()(*ItemConnectorsItemMemberOfCountRequestBuilder) {
     return NewItemConnectorsItemMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the connectorGroup that the connector is a member of. Read-only.
-func (m *ItemConnectorsItemMemberOfRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get the connectorGroup that the connector is a member of. Read-only.
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -105,4 +89,20 @@ func (m *ItemConnectorsItemMemberOfRequestBuilder) Get(ctx context.Context, requ
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Ref()(*ItemConnectorsItemMemberOfRefRequestBuilder) {
     return NewItemConnectorsItemMemberOfRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation the connectorGroup that the connector is a member of. Read-only.
+func (m *ItemConnectorsItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

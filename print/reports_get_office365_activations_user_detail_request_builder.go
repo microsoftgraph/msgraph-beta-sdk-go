@@ -41,21 +41,9 @@ func NewReportsGetOffice365ActivationsUserDetailRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetOffice365ActivationsUserDetailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation invoke function getOffice365ActivationsUserDetail
-func (m *ReportsGetOffice365ActivationsUserDetailRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetOffice365ActivationsUserDetailRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get invoke function getOffice365ActivationsUserDetail
 func (m *ReportsGetOffice365ActivationsUserDetailRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsGetOffice365ActivationsUserDetailRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -71,4 +59,16 @@ func (m *ReportsGetOffice365ActivationsUserDetailRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.([]byte), nil
+}
+// ToGetRequestInformation invoke function getOffice365ActivationsUserDetail
+func (m *ReportsGetOffice365ActivationsUserDetailRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetOffice365ActivationsUserDetailRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

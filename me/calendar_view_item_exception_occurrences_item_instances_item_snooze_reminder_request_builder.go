@@ -41,25 +41,12 @@ func NewCalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderReque
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation postpone a reminder for an event in a user calendar until a new time.
-func (m *CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequestBuilder) CreatePostRequestInformation(ctx context.Context, body CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderPostRequestBodyable, requestConfiguration *CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post postpone a reminder for an event in a user calendar until a new time.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
 func (m *CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequestBuilder) Post(ctx context.Context, body CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderPostRequestBodyable, requestConfiguration *CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequ
         return err
     }
     return nil
+}
+// ToPostRequestInformation postpone a reminder for an event in a user calendar until a new time.
+func (m *CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, body CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderPostRequestBodyable, requestConfiguration *CalendarViewItemExceptionOccurrencesItemInstancesItemSnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

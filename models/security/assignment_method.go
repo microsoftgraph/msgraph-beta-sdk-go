@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to call the evaluateApplication method.
+// 
 type AssignmentMethod int
 
 const (

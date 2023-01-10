@@ -71,22 +71,6 @@ func NewItemDevicesItemTransitiveMemberOfRequestBuilder(rawUrl string, requestAd
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) Count()(*ItemDevicesItemTransitiveMemberOfCountRequestBuilder) {
     return NewItemDevicesItemTransitiveMemberOfCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Device casts the previous resource to device.
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) Device()(*ItemDevicesItemTransitiveMemberOfDeviceRequestBuilder) {
     return NewItemDevicesItemTransitiveMemberOfDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -96,7 +80,7 @@ func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) Device()(*ItemDevicesI
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -124,6 +108,22 @@ func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) OrgContact()(*ItemDevi
 // ServicePrincipal casts the previous resource to servicePrincipal.
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ServicePrincipal()(*ItemDevicesItemTransitiveMemberOfServicePrincipalRequestBuilder) {
     return NewItemDevicesItemTransitiveMemberOfServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }
 // User casts the previous resource to user.
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) User()(*ItemDevicesItemTransitiveMemberOfUserRequestBuilder) {

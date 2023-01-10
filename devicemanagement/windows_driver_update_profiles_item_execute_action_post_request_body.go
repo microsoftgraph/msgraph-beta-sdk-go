@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody provides operations to call the executeAction method.
+// WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody 
 type WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody struct {
     // An enum type to represent approval actions of single or list of drivers.
     actionName *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriverApprovalAction

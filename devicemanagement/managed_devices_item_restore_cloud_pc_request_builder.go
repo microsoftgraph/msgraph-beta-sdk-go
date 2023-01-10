@@ -41,25 +41,12 @@ func NewManagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemRestoreCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation restore a Cloud PC device to a previous state with an Intune managed device ID.
-func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ManagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ManagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post restore a Cloud PC device to a previous state with an Intune managed device ID.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
 func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ManagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Contex
         return err
     }
     return nil
+}
+// ToPostRequestInformation restore a Cloud PC device to a previous state with an Intune managed device ID.
+func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ManagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

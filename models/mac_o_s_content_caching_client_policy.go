@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Determines which clients a content cache will serve.
 type MacOSContentCachingClientPolicy int
 
 const (

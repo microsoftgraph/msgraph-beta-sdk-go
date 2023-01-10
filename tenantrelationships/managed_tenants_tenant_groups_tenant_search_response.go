@@ -6,7 +6,7 @@ import (
     i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/managedtenants"
 )
 
-// ManagedTenantsTenantGroupsTenantSearchResponse provides operations to call the tenantSearch method.
+// ManagedTenantsTenantGroupsTenantSearchResponse 
 type ManagedTenantsTenantGroupsTenantSearchResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
     // The value property

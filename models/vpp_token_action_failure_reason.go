@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible types of reasons for an Apple Volume Purchase Program token action failure.
 type VppTokenActionFailureReason int
 
 const (

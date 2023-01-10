@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.
 type MicrosoftStoreForBusinessPortalSelectionOptions int
 
 const (

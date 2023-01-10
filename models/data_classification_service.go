@@ -26,7 +26,7 @@ type DataClassificationService struct {
     // The sensitivityLabels property
     sensitivityLabels []SensitivityLabelable
 }
-// NewDataClassificationService instantiates a new DataClassificationService and sets the default values.
+// NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),

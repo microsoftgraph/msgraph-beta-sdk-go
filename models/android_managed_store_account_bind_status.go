@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Bind status of the tenant with the Google EMM API
 type AndroidManagedStoreAccountBindStatus int
 
 const (

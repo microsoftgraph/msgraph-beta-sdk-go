@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Setting control type representation in the UX
 type DeviceManagementConfigurationControlType int
 
 const (

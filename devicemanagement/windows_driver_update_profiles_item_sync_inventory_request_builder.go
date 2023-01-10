@@ -41,21 +41,9 @@ func NewWindowsDriverUpdateProfilesItemSyncInventoryRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDriverUpdateProfilesItemSyncInventoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation sync the driver inventory of a WindowsDriverUpdateProfile.
-func (m *WindowsDriverUpdateProfilesItemSyncInventoryRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *WindowsDriverUpdateProfilesItemSyncInventoryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post sync the driver inventory of a WindowsDriverUpdateProfile.
 func (m *WindowsDriverUpdateProfilesItemSyncInventoryRequestBuilder) Post(ctx context.Context, requestConfiguration *WindowsDriverUpdateProfilesItemSyncInventoryRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *WindowsDriverUpdateProfilesItemSyncInventoryRequestBuilder) Post(ctx co
         return err
     }
     return nil
+}
+// ToPostRequestInformation sync the driver inventory of a WindowsDriverUpdateProfile.
+func (m *WindowsDriverUpdateProfilesItemSyncInventoryRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *WindowsDriverUpdateProfilesItemSyncInventoryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

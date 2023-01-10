@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Data can be transferred from/to these classes of apps
 type ManagedAppDataTransferLevel int
 
 const (

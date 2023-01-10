@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Microsoft Launcher Dock Presence selection.
 type MicrosoftLauncherDockPresence int
 
 const (

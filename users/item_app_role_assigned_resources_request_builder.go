@@ -67,28 +67,12 @@ func NewItemAppRoleAssignedResourcesRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemAppRoleAssignedResourcesRequestBuilder) Count()(*ItemAppRoleAssignedResourcesCountRequestBuilder) {
     return NewItemAppRoleAssignedResourcesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get the service principals to which the user has an app role assignment either directly or through group membership.
-func (m *ItemAppRoleAssignedResourcesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get get the service principals to which the user has an app role assignment either directly or through group membership.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-1.0
 func (m *ItemAppRoleAssignedResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -104,4 +88,20 @@ func (m *ItemAppRoleAssignedResourcesRequestBuilder) Get(ctx context.Context, re
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalCollectionResponseable), nil
+}
+// ToGetRequestInformation get the service principals to which the user has an app role assignment either directly or through group membership.
+func (m *ItemAppRoleAssignedResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignedResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

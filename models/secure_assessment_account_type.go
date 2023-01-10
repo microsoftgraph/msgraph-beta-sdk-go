@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.
 type SecureAssessmentAccountType int
 
 const (

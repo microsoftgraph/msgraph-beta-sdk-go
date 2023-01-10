@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Contains value for notification status.
 type WinGetAppNotification int
 
 const (

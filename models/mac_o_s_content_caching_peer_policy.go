@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Determines which content caches other content caches will peer with.
 type MacOSContentCachingPeerPolicy int
 
 const (

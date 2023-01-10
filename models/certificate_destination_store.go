@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible values for the Certificate Destination Store.
 type CertificateDestinationStore int
 
 const (

@@ -45,21 +45,9 @@ func NewReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformation invoke function getSkypeForBusinessActivityUserDetail
-func (m *ReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get invoke function getSkypeForBusinessActivityUserDetail
 func (m *ReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -75,4 +63,16 @@ func (m *ReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) Get
         return nil, nil
     }
     return res.([]byte), nil
+}
+// ToGetRequestInformation invoke function getSkypeForBusinessActivityUserDetail
+func (m *ReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

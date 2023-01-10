@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Flags representing firewall rule interface types.
 type WindowsFirewallRuleInterfaceTypes int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the commsApplication singleton.
+// 
 type MeetingRegistrantStatus int
 
 const (

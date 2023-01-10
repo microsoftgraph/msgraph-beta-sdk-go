@@ -42,22 +42,9 @@ func NewVppTokensItemSyncLicensesRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewVppTokensItemSyncLicensesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation syncs licenses associated with a specific appleVolumePurchaseProgramToken
-func (m *VppTokensItemSyncLicensesRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *VppTokensItemSyncLicensesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post syncs licenses associated with a specific appleVolumePurchaseProgramToken
 func (m *VppTokensItemSyncLicensesRequestBuilder) Post(ctx context.Context, requestConfiguration *VppTokensItemSyncLicensesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -73,4 +60,17 @@ func (m *VppTokensItemSyncLicensesRequestBuilder) Post(ctx context.Context, requ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable), nil
+}
+// ToPostRequestInformation syncs licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *VppTokensItemSyncLicensesRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VppTokensItemSyncLicensesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

@@ -42,25 +42,12 @@ func NewMeAssignmentsItemPublishRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewMeAssignmentsItemPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student's list. The state of the **assignment** goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment. To update the properties of a published assignment, see update an assignment.
-func (m *MeAssignmentsItemPublishRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student's list. The state of the **assignment** goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment. To update the properties of a published assignment, see update an assignment.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
 func (m *MeAssignmentsItemPublishRequestBuilder) Post(ctx context.Context, requestConfiguration *MeAssignmentsItemPublishRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +63,17 @@ func (m *MeAssignmentsItemPublishRequestBuilder) Post(ctx context.Context, reque
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable), nil
+}
+// ToPostRequestInformation change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student's list. The state of the **assignment** goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment. To update the properties of a published assignment, see update an assignment.
+func (m *MeAssignmentsItemPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

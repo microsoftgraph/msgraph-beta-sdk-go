@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Configuration manager client state
 type ConfigurationManagerClientState int
 
 const (

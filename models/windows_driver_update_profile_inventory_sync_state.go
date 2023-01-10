@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Windows DnF update inventory sync state.
 type WindowsDriverUpdateProfileInventorySyncState int
 
 const (

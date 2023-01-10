@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.
 type UserExperienceAnalyticsAnomalySeverity int
 
 const (

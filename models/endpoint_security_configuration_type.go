@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The endpoint security policy type.
 type EndpointSecurityConfigurationType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// An enum representing the Android SafetyNet attestation evaluation types.
 type AndroidSafetyNetEvaluationType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the getSupportedProperties method.
+// Represents the different type of operators which can be used to craft the AssignmentFilter rule.
 type AssignmentFilterOperator int
 
 const (

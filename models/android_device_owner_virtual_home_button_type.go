@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Android Device Owner Kiosk Mode managed home screen virtual home button type.
 type AndroidDeviceOwnerVirtualHomeButtonType int
 
 const (

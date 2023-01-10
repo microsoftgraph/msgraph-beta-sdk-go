@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Windows update for business configuration device states
 type WindowsUpdateStatus int
 
 const (

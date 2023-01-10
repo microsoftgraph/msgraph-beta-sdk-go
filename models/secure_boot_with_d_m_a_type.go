@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible values of Secure Boot with DMA
 type SecureBootWithDMAType int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Restrict managed app notification
 type ManagedAppNotificationRestriction int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates if the Group Policy Object file is covered and ready for Intune migration.
 type GroupPolicyMigrationReadiness int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the areGlobalScriptsAvailable method.
+// Indicates whether global device health scripts are enabled and are in which state
 type GlobalDeviceHealthScriptState int
 
 const (

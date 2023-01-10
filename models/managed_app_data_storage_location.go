@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Storage locations where managed apps can potentially store their data
 type ManagedAppDataStorageLocation int
 
 const (

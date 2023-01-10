@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Device management features.
 type ManagedDeviceManagementFeatures int
 
 const (

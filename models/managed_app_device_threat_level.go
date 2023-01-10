@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// The maxium threat level allowed for an app to be compliant.
 type ManagedAppDeviceThreatLevel int
 
 const (

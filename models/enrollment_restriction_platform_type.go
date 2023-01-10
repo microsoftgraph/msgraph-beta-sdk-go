@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// This enum indicates the platform type for which the enrollment restriction applies.
 type EnrollmentRestrictionPlatformType int
 
 const (

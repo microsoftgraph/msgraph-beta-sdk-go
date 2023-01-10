@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
 type WindowsDefenderApplicationControlSupplementalPolicyStatuses int
 
 const (

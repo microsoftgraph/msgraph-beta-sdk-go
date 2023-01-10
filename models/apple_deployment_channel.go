@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
 type AppleDeploymentChannel int
 
 const (

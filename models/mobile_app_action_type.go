@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Defines the Action Types for an Intune Application.
 type MobileAppActionType int
 
 const (

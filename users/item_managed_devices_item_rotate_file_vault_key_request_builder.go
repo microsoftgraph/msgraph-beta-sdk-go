@@ -41,21 +41,9 @@ func NewItemManagedDevicesItemRotateFileVaultKeyRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemRotateFileVaultKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action rotateFileVaultKey
-func (m *ItemManagedDevicesItemRotateFileVaultKeyRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRotateFileVaultKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action rotateFileVaultKey
 func (m *ItemManagedDevicesItemRotateFileVaultKeyRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRotateFileVaultKeyRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
@@ -68,4 +56,16 @@ func (m *ItemManagedDevicesItemRotateFileVaultKeyRequestBuilder) Post(ctx contex
         return err
     }
     return nil
+}
+// ToPostRequestInformation invoke action rotateFileVaultKey
+func (m *ItemManagedDevicesItemRotateFileVaultKeyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRotateFileVaultKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

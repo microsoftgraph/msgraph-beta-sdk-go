@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Defines the permission level granted to users to enable them change Uefi settings
 type ChangeUefiSettingsPermission int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible values for App update on Windows10 recurrence.
 type Windows10AppsUpdateRecurrence int
 
 const (

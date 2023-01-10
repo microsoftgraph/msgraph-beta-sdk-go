@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// MacOS Software Update Category
 type MacOSSoftwareUpdateCategory int
 
 const (

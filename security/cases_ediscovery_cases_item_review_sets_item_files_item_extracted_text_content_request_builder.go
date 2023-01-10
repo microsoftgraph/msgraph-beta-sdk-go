@@ -48,37 +48,12 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentReque
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get extractedTextContent for the navigation property files from security
-func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreatePutRequestInformation update extractedTextContent for the navigation property files in security
-func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get get extractedTextContent for the navigation property files from security
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-files?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -97,7 +72,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequ
 }
 // Put update extractedTextContent for the navigation property files in security
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -110,4 +85,29 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequ
         return err
     }
     return nil
+}
+// ToGetRequestInformation get extractedTextContent for the navigation property files from security
+func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPutRequestInformation update extractedTextContent for the navigation property files in security
+func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemExtractedTextContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

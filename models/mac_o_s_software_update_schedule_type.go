@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Update schedule type for macOS software updates.
 type MacOSSoftwareUpdateScheduleType int
 
 const (

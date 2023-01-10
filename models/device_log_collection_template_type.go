@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the createDeviceLogCollectionRequest method.
+// Enum for the template type used for collecting logs
 type DeviceLogCollectionTemplateType int
 
 const (

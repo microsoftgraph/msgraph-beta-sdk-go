@@ -48,34 +48,12 @@ func NewItemOnlineMeetingsItemAlternativeRecordingRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsItemAlternativeRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreatePutRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) CreatePutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -94,7 +72,7 @@ func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) Get(ctx conte
 }
 // Put the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilderPutRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -107,4 +85,29 @@ func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) Put(ctx conte
         return err
     }
     return nil
+}
+// ToGetRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// ToPutRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+func (m *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemAlternativeRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

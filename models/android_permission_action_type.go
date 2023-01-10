@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Android action taken when an app requests a dangerous permission.
 type AndroidPermissionActionType int
 
 const (

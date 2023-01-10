@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Enum indicating additional details regarding why an application has a particular install state.
 type ResultantAppStateDetail int
 
 const (

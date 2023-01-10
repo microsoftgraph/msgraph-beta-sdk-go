@@ -71,29 +71,13 @@ func NewItemSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ItemSitesRequestBuilder) Count()(*ItemSitesCountRequestBuilder) {
     return NewItemSitesCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the list of SharePoint sites in this group. Access the default site with /sites/root.
-func (m *ItemSitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Delta provides operations to call the delta method.
 func (m *ItemSitesRequestBuilder) Delta()(*ItemSitesDeltaRequestBuilder) {
     return NewItemSitesDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -113,4 +97,20 @@ func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration 
 // Remove provides operations to call the remove method.
 func (m *ItemSitesRequestBuilder) Remove()(*ItemSitesRemoveRequestBuilder) {
     return NewItemSitesRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation the list of SharePoint sites in this group. Access the default site with /sites/root.
+func (m *ItemSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

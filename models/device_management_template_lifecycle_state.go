@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Describes current lifecycle state of a template
 type DeviceManagementTemplateLifecycleState int
 
 const (

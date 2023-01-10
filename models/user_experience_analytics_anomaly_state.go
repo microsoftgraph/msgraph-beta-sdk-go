@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
 type UserExperienceAnalyticsAnomalyState int
 
 const (

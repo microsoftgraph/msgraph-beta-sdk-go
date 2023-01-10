@@ -42,25 +42,12 @@ func NewItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation discover the latest schema definition for provisioning to an application. 
-func (m *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post discover the latest schema definition for provisioning to an application. 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -76,4 +63,17 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder)
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable), nil
+}
+// ToPostRequestInformation discover the latest schema definition for provisioning to an application. 
+func (m *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

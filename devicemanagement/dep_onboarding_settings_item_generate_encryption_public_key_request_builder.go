@@ -41,22 +41,9 @@ func NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation generate a public key to use to encrypt the Apple device enrollment program token
-func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post generate a public key to use to encrypt the Apple device enrollment program token
 func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) Post(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration)(DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -72,4 +59,17 @@ func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) Pos
         return nil, nil
     }
     return res.(DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponseable), nil
+}
+// ToPostRequestInformation generate a public key to use to encrypt the Apple device enrollment program token
+func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

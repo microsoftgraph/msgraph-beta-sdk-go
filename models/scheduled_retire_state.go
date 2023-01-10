@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the setScheduledRetireState method.
+// Cancel or confirm scheduled retire 
 type ScheduledRetireState int
 
 const (

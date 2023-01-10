@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Forward Secrecy Group values for Windows10 VPN policies with IKEv2 connection type.
 type PerfectForwardSecrecyGroup int
 
 const (

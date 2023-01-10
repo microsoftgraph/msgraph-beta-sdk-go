@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates whether the target of a relationship is the parent or the child in the relationship.
 type MobileAppRelationshipType int
 
 const (

@@ -41,23 +41,9 @@ func NewCompliancePoliciesItemSetScheduledActionsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewCompliancePoliciesItemSetScheduledActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action setScheduledActions
-func (m *CompliancePoliciesItemSetScheduledActionsRequestBuilder) CreatePostRequestInformation(ctx context.Context, body CompliancePoliciesItemSetScheduledActionsPostRequestBodyable, requestConfiguration *CompliancePoliciesItemSetScheduledActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post invoke action setScheduledActions
 func (m *CompliancePoliciesItemSetScheduledActionsRequestBuilder) Post(ctx context.Context, body CompliancePoliciesItemSetScheduledActionsPostRequestBodyable, requestConfiguration *CompliancePoliciesItemSetScheduledActionsRequestBuilderPostRequestConfiguration)(CompliancePoliciesItemSetScheduledActionsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -73,4 +59,18 @@ func (m *CompliancePoliciesItemSetScheduledActionsRequestBuilder) Post(ctx conte
         return nil, nil
     }
     return res.(CompliancePoliciesItemSetScheduledActionsResponseable), nil
+}
+// ToPostRequestInformation invoke action setScheduledActions
+func (m *CompliancePoliciesItemSetScheduledActionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body CompliancePoliciesItemSetScheduledActionsPostRequestBodyable, requestConfiguration *CompliancePoliciesItemSetScheduledActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

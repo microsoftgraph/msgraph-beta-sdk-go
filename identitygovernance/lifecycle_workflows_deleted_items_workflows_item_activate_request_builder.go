@@ -41,25 +41,12 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the 'Real-time employee termination' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilder) CreatePostRequestInformation(ctx context.Context, body LifecycleWorkflowsDeletedItemsWorkflowsItemActivatePostRequestBodyable, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the 'Real-time employee termination' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-workflow-activate?view=graph-rest-1.0
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilder) Post(ctx context.Context, body LifecycleWorkflowsDeletedItemsWorkflowsItemActivatePostRequestBodyable, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -72,4 +59,17 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilder) Post
         return err
     }
     return nil
+}
+// ToPostRequestInformation run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the 'Real-time employee termination' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, body LifecycleWorkflowsDeletedItemsWorkflowsItemActivatePostRequestBodyable, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

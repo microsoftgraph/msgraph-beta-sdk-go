@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Indicates the status of the mobile app on the device.
 type MobileAppIntent int
 
 const (

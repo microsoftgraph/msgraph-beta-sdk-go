@@ -42,26 +42,12 @@ func NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
-func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) CreatePostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemProvisionOnDemandPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Post select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provision-on-demand?view=graph-rest-1.0
 func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) Post(ctx context.Context, body ItemSynchronizationJobsItemProvisionOnDemandPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringKeyStringValuePairable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -77,4 +63,18 @@ func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) Post(ctx co
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringKeyStringValuePairable), nil
+}
+// ToPostRequestInformation select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
+func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemProvisionOnDemandPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers.Add("Accept", "application/json")
+    requestInfo.SetContentFromParsable(ctx, m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

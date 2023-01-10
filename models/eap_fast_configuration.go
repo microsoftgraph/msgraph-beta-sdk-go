@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Available settings for EAP-FAST Configuration.
 type EapFastConfiguration int
 
 const (

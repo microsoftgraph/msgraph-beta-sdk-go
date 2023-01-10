@@ -2,7 +2,7 @@ package ediscovery
 import (
     "errors"
 )
-// Provides operations to call the addToReviewSet method.
+// 
 type AdditionalDataOptions int
 
 const (

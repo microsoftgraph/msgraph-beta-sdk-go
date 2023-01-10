@@ -71,22 +71,6 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *SitesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
-func (m *SitesRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Delta provides operations to call the delta method.
 func (m *SitesRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -96,7 +80,7 @@ func (m *SitesRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/site-list?view=graph-rest-1.0
 func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -116,4 +100,20 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
 // Remove provides operations to call the remove method.
 func (m *SitesRequestBuilder) Remove()(*RemoveRequestBuilder) {
     return NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ToGetRequestInformation list all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
+func (m *SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

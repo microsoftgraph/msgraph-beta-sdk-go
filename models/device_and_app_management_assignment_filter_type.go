@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Represents type of the assignment filter.
 type DeviceAndAppManagementAssignmentFilterType int
 
 const (

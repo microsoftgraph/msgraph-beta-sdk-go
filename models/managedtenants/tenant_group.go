@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantGroup provides operations to manage the collection of accessReviewDecision entities.
+// TenantGroup 
 type TenantGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.

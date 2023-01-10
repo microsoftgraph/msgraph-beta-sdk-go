@@ -44,22 +44,9 @@ func NewScopedForResourceWithResourceRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewScopedForResourceWithResourceRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformation invoke function scopedForResource
-func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformation(ctx context.Context, requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get invoke function scopedForResource
 func (m *ScopedForResourceWithResourceRequestBuilder) Get(ctx context.Context, requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(ScopedForResourceWithResourceResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(ctx, requestConfiguration);
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -75,4 +62,17 @@ func (m *ScopedForResourceWithResourceRequestBuilder) Get(ctx context.Context, r
         return nil, nil
     }
     return res.(ScopedForResourceWithResourceResponseable), nil
+}
+// ToGetRequestInformation invoke function scopedForResource
+func (m *ScopedForResourceWithResourceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.Add("Accept", "application/json")
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }

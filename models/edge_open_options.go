@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Possible values for the EdgeOpensWith setting.
 type EdgeOpenOptions int
 
 const (
