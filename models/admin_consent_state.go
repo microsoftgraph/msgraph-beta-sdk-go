@@ -17,7 +17,7 @@ const (
 func (i AdminConsentState) String() string {
     return []string{"notConfigured", "granted", "notGranted"}[i]
 }
-func ParseAdminConsentState(v string) (interface{}, error) {
+func ParseAdminConsentState(v string) (any, error) {
     result := NOTCONFIGURED_ADMINCONSENTSTATE
     switch v {
         case "notConfigured":

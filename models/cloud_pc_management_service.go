@@ -15,7 +15,7 @@ const (
 func (i CloudPcManagementService) String() string {
     return []string{"windows365", "devBox", "unknownFutureValue", "rpaBox"}[i]
 }
-func ParseCloudPcManagementService(v string) (interface{}, error) {
+func ParseCloudPcManagementService(v string) (any, error) {
     result := WINDOWS365_CLOUDPCMANAGEMENTSERVICE
     switch v {
         case "windows365":

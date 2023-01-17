@@ -21,7 +21,7 @@ const (
 func (i MacOSContentCachingClientPolicy) String() string {
     return []string{"notConfigured", "clientsInLocalNetwork", "clientsWithSamePublicIpAddress", "clientsInCustomLocalNetworks", "clientsInCustomLocalNetworksWithFallback"}[i]
 }
-func ParseMacOSContentCachingClientPolicy(v string) (interface{}, error) {
+func ParseMacOSContentCachingClientPolicy(v string) (any, error) {
     result := NOTCONFIGURED_MACOSCONTENTCACHINGCLIENTPOLICY
     switch v {
         case "notConfigured":

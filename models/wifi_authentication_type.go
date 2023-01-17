@@ -21,7 +21,7 @@ const (
 func (i WifiAuthenticationType) String() string {
     return []string{"none", "user", "machine", "machineOrUser", "guest"}[i]
 }
-func ParseWifiAuthenticationType(v string) (interface{}, error) {
+func ParseWifiAuthenticationType(v string) (any, error) {
     result := NONE_WIFIAUTHENTICATIONTYPE
     switch v {
         case "none":

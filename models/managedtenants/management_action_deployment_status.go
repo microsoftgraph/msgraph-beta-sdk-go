@@ -7,7 +7,7 @@ import (
 // ManagementActionDeploymentStatus 
 type ManagementActionDeploymentStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identifier for the management action. Required. Read-only.
     managementActionId *string
     // The management template identifier that was used to generate the management action. Required. Read-only.
@@ -25,7 +25,7 @@ type ManagementActionDeploymentStatus struct {
 func NewManagementActionDeploymentStatus()(*ManagementActionDeploymentStatus) {
     m := &ManagementActionDeploymentStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagementActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateManagementActionDeploymentStatusFromDiscriminatorValue(parseNode i878
     return NewManagementActionDeploymentStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementActionDeploymentStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagementActionDeploymentStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -181,7 +181,7 @@ func (m *ManagementActionDeploymentStatus) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementActionDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagementActionDeploymentStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetManagementActionId sets the managementActionId property value. The identifier for the management action. Required. Read-only.

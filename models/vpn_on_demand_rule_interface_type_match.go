@@ -19,7 +19,7 @@ const (
 func (i VpnOnDemandRuleInterfaceTypeMatch) String() string {
     return []string{"notConfigured", "ethernet", "wiFi", "cellular"}[i]
 }
-func ParseVpnOnDemandRuleInterfaceTypeMatch(v string) (interface{}, error) {
+func ParseVpnOnDemandRuleInterfaceTypeMatch(v string) (any, error) {
     result := NOTCONFIGURED_VPNONDEMANDRULEINTERFACETYPEMATCH
     switch v {
         case "notConfigured":

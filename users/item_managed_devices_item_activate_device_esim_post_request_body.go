@@ -7,7 +7,7 @@ import (
 // ItemManagedDevicesItemActivateDeviceEsimPostRequestBody 
 type ItemManagedDevicesItemActivateDeviceEsimPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The carrierUrl property
     carrierUrl *string
 }
@@ -15,7 +15,7 @@ type ItemManagedDevicesItemActivateDeviceEsimPostRequestBody struct {
 func NewItemManagedDevicesItemActivateDeviceEsimPostRequestBody()(*ItemManagedDevicesItemActivateDeviceEsimPostRequestBody) {
     m := &ItemManagedDevicesItemActivateDeviceEsimPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesItemActivateDeviceEsimPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemManagedDevicesItemActivateDeviceEsimPostRequestBodyFromDiscrimina
     return NewItemManagedDevicesItemActivateDeviceEsimPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemActivateDeviceEsimPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesItemActivateDeviceEsimPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCarrierUrl gets the carrierUrl property value. The carrierUrl property
@@ -62,7 +62,7 @@ func (m *ItemManagedDevicesItemActivateDeviceEsimPostRequestBody) Serialize(writ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemActivateDeviceEsimPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesItemActivateDeviceEsimPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCarrierUrl sets the carrierUrl property value. The carrierUrl property

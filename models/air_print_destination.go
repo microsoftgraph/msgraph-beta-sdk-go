@@ -7,7 +7,7 @@ import (
 // AirPrintDestination represents an AirPrint destination.
 type AirPrintDestination struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If true AirPrint connections are secured by Transport Layer Security (TLS). Default is false. Available in iOS 11.0 and later.
     forceTls *bool
     // The IP Address of the AirPrint destination.
@@ -23,7 +23,7 @@ type AirPrintDestination struct {
 func NewAirPrintDestination()(*AirPrintDestination) {
     m := &AirPrintDestination{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAirPrintDestinationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAirPrintDestinationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewAirPrintDestination(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AirPrintDestination) GetAdditionalData()(map[string]interface{}) {
+func (m *AirPrintDestination) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -150,7 +150,7 @@ func (m *AirPrintDestination) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AirPrintDestination) SetAdditionalData(value map[string]interface{})() {
+func (m *AirPrintDestination) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetForceTls sets the forceTls property value. If true AirPrint connections are secured by Transport Layer Security (TLS). Default is false. Available in iOS 11.0 and later.

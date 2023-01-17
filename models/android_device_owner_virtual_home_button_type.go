@@ -17,7 +17,7 @@ const (
 func (i AndroidDeviceOwnerVirtualHomeButtonType) String() string {
     return []string{"notConfigured", "swipeUp", "floating"}[i]
 }
-func ParseAndroidDeviceOwnerVirtualHomeButtonType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerVirtualHomeButtonType(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERVIRTUALHOMEBUTTONTYPE
     switch v {
         case "notConfigured":

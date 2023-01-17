@@ -17,7 +17,7 @@ const (
 func (i EnrollmentNotificationTemplateType) String() string {
     return []string{"email", "push", "unknownFutureValue"}[i]
 }
-func ParseEnrollmentNotificationTemplateType(v string) (interface{}, error) {
+func ParseEnrollmentNotificationTemplateType(v string) (any, error) {
     result := EMAIL_ENROLLMENTNOTIFICATIONTEMPLATETYPE
     switch v {
         case "email":

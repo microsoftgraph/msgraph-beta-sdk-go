@@ -17,7 +17,7 @@ const (
 func (i VpnProviderType) String() string {
     return []string{"notConfigured", "appProxy", "packetTunnel"}[i]
 }
-func ParseVpnProviderType(v string) (interface{}, error) {
+func ParseVpnProviderType(v string) (any, error) {
     result := NOTCONFIGURED_VPNPROVIDERTYPE
     switch v {
         case "notConfigured":

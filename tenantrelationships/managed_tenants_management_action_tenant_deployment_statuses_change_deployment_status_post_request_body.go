@@ -7,7 +7,7 @@ import (
 // ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody 
 type ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The managementActionId property
     managementActionId *string
     // The managementTemplateId property
@@ -25,7 +25,7 @@ type ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatu
 func NewManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody()(*ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody) {
     m := &ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymen
     return NewManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -172,7 +172,7 @@ func (m *ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentS
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedTenantsManagementActionTenantDeploymentStatusesChangeDeploymentStatusPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetManagementActionId sets the managementActionId property value. The managementActionId property

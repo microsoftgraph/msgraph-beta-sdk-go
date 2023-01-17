@@ -15,7 +15,7 @@ const (
 func (i PlannerCreationSourceKind) String() string {
     return []string{"none", "external", "publication", "unknownFutureValue"}[i]
 }
-func ParsePlannerCreationSourceKind(v string) (interface{}, error) {
+func ParsePlannerCreationSourceKind(v string) (any, error) {
     result := NONE_PLANNERCREATIONSOURCEKIND
     switch v {
         case "none":

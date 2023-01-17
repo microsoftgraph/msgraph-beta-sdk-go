@@ -14,7 +14,7 @@ const (
 func (i AndroidProfileApplicability) String() string {
     return []string{"default", "androidWorkProfile", "androidDeviceOwner"}[i]
 }
-func ParseAndroidProfileApplicability(v string) (interface{}, error) {
+func ParseAndroidProfileApplicability(v string) (any, error) {
     result := DEFAULT_ESCAPED_ANDROIDPROFILEAPPLICABILITY
     switch v {
         case "default":

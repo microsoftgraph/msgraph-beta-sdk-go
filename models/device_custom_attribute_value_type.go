@@ -17,7 +17,7 @@ const (
 func (i DeviceCustomAttributeValueType) String() string {
     return []string{"integer", "string", "dateTime"}[i]
 }
-func ParseDeviceCustomAttributeValueType(v string) (interface{}, error) {
+func ParseDeviceCustomAttributeValueType(v string) (any, error) {
     result := INTEGER_DEVICECUSTOMATTRIBUTEVALUETYPE
     switch v {
         case "integer":

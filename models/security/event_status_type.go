@@ -16,7 +16,7 @@ const (
 func (i EventStatusType) String() string {
     return []string{"pending", "error", "success", "notAvaliable", "unknownFutureValue"}[i]
 }
-func ParseEventStatusType(v string) (interface{}, error) {
+func ParseEventStatusType(v string) (any, error) {
     result := PENDING_EVENTSTATUSTYPE
     switch v {
         case "pending":

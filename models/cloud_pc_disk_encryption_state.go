@@ -16,7 +16,7 @@ const (
 func (i CloudPcDiskEncryptionState) String() string {
     return []string{"notAvailable", "notEncrypted", "encryptedUsingPlatformManagedKey", "encryptedUsingCustomerManagedKey", "unknownFutureValue"}[i]
 }
-func ParseCloudPcDiskEncryptionState(v string) (interface{}, error) {
+func ParseCloudPcDiskEncryptionState(v string) (any, error) {
     result := NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE
     switch v {
         case "notAvailable":

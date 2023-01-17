@@ -17,7 +17,7 @@ const (
 func (i AccountStatus) String() string {
     return []string{"unknown", "staged", "active", "suspended", "deleted", "unknownFutureValue"}[i]
 }
-func ParseAccountStatus(v string) (interface{}, error) {
+func ParseAccountStatus(v string) (any, error) {
     result := UNKNOWN_ACCOUNTSTATUS
     switch v {
         case "unknown":

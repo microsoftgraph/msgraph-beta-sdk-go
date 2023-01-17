@@ -7,7 +7,7 @@ import (
 // ParentLabelDetails 
 type ParentLabelDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The color that the user interface should display for the label, if configured.
     color *string
     // The admin-defined description for the label.
@@ -31,7 +31,7 @@ type ParentLabelDetails struct {
 func NewParentLabelDetails()(*ParentLabelDetails) {
     m := &ParentLabelDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateParentLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +57,7 @@ func CreateParentLabelDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewParentLabelDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParentLabelDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *ParentLabelDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColor gets the color property value. The color that the user interface should display for the label, if configured.
@@ -256,7 +256,7 @@ func (m *ParentLabelDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParentLabelDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *ParentLabelDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetColor sets the color property value. The color that the user interface should display for the label, if configured.

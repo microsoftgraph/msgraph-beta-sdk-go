@@ -19,7 +19,7 @@ const (
 func (i MicrosoftLauncherDockPresence) String() string {
     return []string{"notConfigured", "show", "hide", "disabled"}[i]
 }
-func ParseMicrosoftLauncherDockPresence(v string) (interface{}, error) {
+func ParseMicrosoftLauncherDockPresence(v string) (any, error) {
     result := NOTCONFIGURED_MICROSOFTLAUNCHERDOCKPRESENCE
     switch v {
         case "notConfigured":

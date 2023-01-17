@@ -7,7 +7,7 @@ import (
 // RequestSignatureVerification 
 type RequestSignatureVerification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether this application accepts weak algorithms.  The possible values are: rsaSha1, unknownFutureValue.
     allowedWeakAlgorithms *WeakAlgorithms
     // Specifies whether signed authentication requests for this application should be required.
@@ -19,7 +19,7 @@ type RequestSignatureVerification struct {
 func NewRequestSignatureVerification()(*RequestSignatureVerification) {
     m := &RequestSignatureVerification{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRequestSignatureVerificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateRequestSignatureVerificationFromDiscriminatorValue(parseNode i878a80d
     return NewRequestSignatureVerification(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequestSignatureVerification) GetAdditionalData()(map[string]interface{}) {
+func (m *RequestSignatureVerification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedWeakAlgorithms gets the allowedWeakAlgorithms property value. Specifies whether this application accepts weak algorithms.  The possible values are: rsaSha1, unknownFutureValue.
@@ -107,7 +107,7 @@ func (m *RequestSignatureVerification) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RequestSignatureVerification) SetAdditionalData(value map[string]interface{})() {
+func (m *RequestSignatureVerification) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedWeakAlgorithms sets the allowedWeakAlgorithms property value. Specifies whether this application accepts weak algorithms.  The possible values are: rsaSha1, unknownFutureValue.

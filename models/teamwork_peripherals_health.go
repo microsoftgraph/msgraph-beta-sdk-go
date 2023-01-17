@@ -7,7 +7,7 @@ import (
 // TeamworkPeripheralsHealth 
 type TeamworkPeripheralsHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The health details about the communication speaker.
     communicationSpeakerHealth TeamworkPeripheralHealthable
     // The health details about the content camera.
@@ -27,7 +27,7 @@ type TeamworkPeripheralsHealth struct {
 func NewTeamworkPeripheralsHealth()(*TeamworkPeripheralsHealth) {
     m := &TeamworkPeripheralsHealth{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkPeripheralsHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateTeamworkPeripheralsHealthFromDiscriminatorValue(parseNode i878a80d233
     return NewTeamworkPeripheralsHealth(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkPeripheralsHealth) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkPeripheralsHealth) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommunicationSpeakerHealth gets the communicationSpeakerHealth property value. The health details about the communication speaker.
@@ -202,7 +202,7 @@ func (m *TeamworkPeripheralsHealth) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkPeripheralsHealth) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkPeripheralsHealth) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCommunicationSpeakerHealth sets the communicationSpeakerHealth property value. The health details about the communication speaker.

@@ -19,7 +19,7 @@ const (
 func (i IosKioskModeAppType) String() string {
     return []string{"notConfigured", "appStoreApp", "managedApp", "builtInApp"}[i]
 }
-func ParseIosKioskModeAppType(v string) (interface{}, error) {
+func ParseIosKioskModeAppType(v string) (any, error) {
     result := NOTCONFIGURED_IOSKIOSKMODEAPPTYPE
     switch v {
         case "notConfigured":

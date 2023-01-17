@@ -15,7 +15,7 @@ const (
 func (i PolicyStatus) String() string {
     return []string{"pending", "error", "success", "unknownFutureValue"}[i]
 }
-func ParsePolicyStatus(v string) (interface{}, error) {
+func ParsePolicyStatus(v string) (any, error) {
     result := PENDING_POLICYSTATUS
     switch v {
         case "pending":

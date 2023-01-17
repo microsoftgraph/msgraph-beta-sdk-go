@@ -16,8 +16,6 @@ type IosLobApp struct {
     bundleId *string
     // The expiration time.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The identity version. This property is being deprecated in 2211(November 2022)
-    identityVersion *string
     // The value for the minimum applicable operating system.
     minimumSupportedOperatingSystem IosMinimumOperatingSystemable
     // The version number of iOS Line of Business (LoB) app.
@@ -95,16 +93,6 @@ func (m *IosLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
-    res["identityVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentityVersion(val)
-        }
-        return nil
-    }
     res["minimumSupportedOperatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIosMinimumOperatingSystemFromDiscriminatorValue)
         if err != nil {
@@ -126,10 +114,6 @@ func (m *IosLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     return res
-}
-// GetIdentityVersion gets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022)
-func (m *IosLobApp) GetIdentityVersion()(*string) {
-    return m.identityVersion
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *IosLobApp) GetMinimumSupportedOperatingSystem()(IosMinimumOperatingSystemable) {
@@ -170,12 +154,6 @@ func (m *IosLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteStringValue("identityVersion", m.GetIdentityVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("minimumSupportedOperatingSystem", m.GetMinimumSupportedOperatingSystem())
         if err != nil {
             return err
@@ -204,10 +182,6 @@ func (m *IosLobApp) SetBundleId(value *string)() {
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration time.
 func (m *IosLobApp) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
-}
-// SetIdentityVersion sets the identityVersion property value. The identity version. This property is being deprecated in 2211(November 2022)
-func (m *IosLobApp) SetIdentityVersion(value *string)() {
-    m.identityVersion = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *IosLobApp) SetMinimumSupportedOperatingSystem(value IosMinimumOperatingSystemable)() {

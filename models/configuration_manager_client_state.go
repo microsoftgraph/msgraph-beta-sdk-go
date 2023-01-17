@@ -23,7 +23,7 @@ const (
 func (i ConfigurationManagerClientState) String() string {
     return []string{"unknown", "installed", "healthy", "installFailed", "updateFailed", "communicationError"}[i]
 }
-func ParseConfigurationManagerClientState(v string) (interface{}, error) {
+func ParseConfigurationManagerClientState(v string) (any, error) {
     result := UNKNOWN_CONFIGURATIONMANAGERCLIENTSTATE
     switch v {
         case "unknown":

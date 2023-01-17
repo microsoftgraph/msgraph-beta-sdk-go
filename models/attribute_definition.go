@@ -7,7 +7,7 @@ import (
 // AttributeDefinition 
 type AttributeDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
     anchor *bool
     // The apiExpressions property
@@ -39,7 +39,7 @@ type AttributeDefinition struct {
 func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateAttributeDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewAttributeDefinition(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeDefinition) GetAdditionalData()(map[string]interface{}) {
+func (m *AttributeDefinition) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAnchor gets the anchor property value. true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
@@ -352,7 +352,7 @@ func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AttributeDefinition) SetAdditionalData(value map[string]interface{})() {
+func (m *AttributeDefinition) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAnchor sets the anchor property value. true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.

@@ -15,7 +15,7 @@ const (
 func (i ReferenceAttachmentProvider) String() string {
     return []string{"other", "oneDriveBusiness", "oneDriveConsumer", "dropbox"}[i]
 }
-func ParseReferenceAttachmentProvider(v string) (interface{}, error) {
+func ParseReferenceAttachmentProvider(v string) (any, error) {
     result := OTHER_REFERENCEATTACHMENTPROVIDER
     switch v {
         case "other":

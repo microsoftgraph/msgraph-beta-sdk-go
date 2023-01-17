@@ -7,7 +7,7 @@ import (
 // Credential 
 type Credential struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.
     fieldId *string
     // The OdataType property
@@ -21,7 +21,7 @@ type Credential struct {
 func NewCredential()(*Credential) {
     m := &Credential{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateCredentialFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewCredential(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Credential) GetAdditionalData()(map[string]interface{}) {
+func (m *Credential) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *Credential) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Credential) SetAdditionalData(value map[string]interface{})() {
+func (m *Credential) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFieldId sets the fieldId property value. The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.

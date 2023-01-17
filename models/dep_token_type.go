@@ -17,7 +17,7 @@ const (
 func (i DepTokenType) String() string {
     return []string{"none", "dep", "appleSchoolManager"}[i]
 }
-func ParseDepTokenType(v string) (interface{}, error) {
+func ParseDepTokenType(v string) (any, error) {
     result := NONE_DEPTOKENTYPE
     switch v {
         case "none":

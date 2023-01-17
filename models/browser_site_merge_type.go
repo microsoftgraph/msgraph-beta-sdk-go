@@ -17,7 +17,7 @@ const (
 func (i BrowserSiteMergeType) String() string {
     return []string{"noMerge", "default", "unknownFutureValue"}[i]
 }
-func ParseBrowserSiteMergeType(v string) (interface{}, error) {
+func ParseBrowserSiteMergeType(v string) (any, error) {
     result := NOMERGE_BROWSERSITEMERGETYPE
     switch v {
         case "noMerge":

@@ -13,7 +13,7 @@ const (
 func (i AppKeyCredentialRestrictionType) String() string {
     return []string{"asymmetricKeyLifetime", "unknownFutureValue"}[i]
 }
-func ParseAppKeyCredentialRestrictionType(v string) (interface{}, error) {
+func ParseAppKeyCredentialRestrictionType(v string) (any, error) {
     result := ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE
     switch v {
         case "asymmetricKeyLifetime":

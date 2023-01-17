@@ -8,7 +8,7 @@ import (
 // WindowsDriverUpdateProfileInventorySyncStatus a complex type to store the status of a driver and firmware profile inventory sync. The status includes the last successful sync date time and the state of the last sync.
 type WindowsDriverUpdateProfileInventorySyncStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Windows DnF update inventory sync state.
     driverInventorySyncState *WindowsDriverUpdateProfileInventorySyncState
     // The last successful sync date and time in UTC.
@@ -20,7 +20,7 @@ type WindowsDriverUpdateProfileInventorySyncStatus struct {
 func NewWindowsDriverUpdateProfileInventorySyncStatus()(*WindowsDriverUpdateProfileInventorySyncStatus) {
     m := &WindowsDriverUpdateProfileInventorySyncStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsDriverUpdateProfileInventorySyncStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateWindowsDriverUpdateProfileInventorySyncStatusFromDiscriminatorValue(p
     return NewWindowsDriverUpdateProfileInventorySyncStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDriverInventorySyncState gets the driverInventorySyncState property value. Windows DnF update inventory sync state.
@@ -108,7 +108,7 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDriverInventorySyncState sets the driverInventorySyncState property value. Windows DnF update inventory sync state.

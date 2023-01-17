@@ -7,7 +7,7 @@ import (
 // ZebraFotaDeploymentsItemCancelResponse 
 type ZebraFotaDeploymentsItemCancelResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *bool
 }
@@ -15,7 +15,7 @@ type ZebraFotaDeploymentsItemCancelResponse struct {
 func NewZebraFotaDeploymentsItemCancelResponse()(*ZebraFotaDeploymentsItemCancelResponse) {
     m := &ZebraFotaDeploymentsItemCancelResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateZebraFotaDeploymentsItemCancelResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateZebraFotaDeploymentsItemCancelResponseFromDiscriminatorValue(parseNod
     return NewZebraFotaDeploymentsItemCancelResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ZebraFotaDeploymentsItemCancelResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ZebraFotaDeploymentsItemCancelResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ZebraFotaDeploymentsItemCancelResponse) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ZebraFotaDeploymentsItemCancelResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ZebraFotaDeploymentsItemCancelResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

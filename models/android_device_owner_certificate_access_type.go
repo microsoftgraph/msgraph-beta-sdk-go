@@ -17,7 +17,7 @@ const (
 func (i AndroidDeviceOwnerCertificateAccessType) String() string {
     return []string{"userApproval", "specificApps", "unknownFutureValue"}[i]
 }
-func ParseAndroidDeviceOwnerCertificateAccessType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerCertificateAccessType(v string) (any, error) {
     result := USERAPPROVAL_ANDROIDDEVICEOWNERCERTIFICATEACCESSTYPE
     switch v {
         case "userApproval":

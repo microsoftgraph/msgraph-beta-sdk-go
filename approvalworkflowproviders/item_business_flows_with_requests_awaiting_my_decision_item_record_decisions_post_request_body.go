@@ -7,7 +7,7 @@ import (
 // ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody 
 type ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The justification property
     justification *string
     // The reviewResult property
@@ -17,7 +17,7 @@ type ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostReque
 func NewItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody()(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody) {
     m := &ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPos
     return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostR
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemBusinessFlowsWithRequestsAwaitingMyDecisionItemRecordDecisionsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetJustification sets the justification property value. The justification property

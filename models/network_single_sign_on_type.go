@@ -17,7 +17,7 @@ const (
 func (i NetworkSingleSignOnType) String() string {
     return []string{"disabled", "prelogon", "postlogon"}[i]
 }
-func ParseNetworkSingleSignOnType(v string) (interface{}, error) {
+func ParseNetworkSingleSignOnType(v string) (any, error) {
     result := DISABLED_NETWORKSINGLESIGNONTYPE
     switch v {
         case "disabled":

@@ -19,7 +19,7 @@ const (
 func (i LocalSecurityOptionsMinimumSessionSecurity) String() string {
     return []string{"none", "requireNtmlV2SessionSecurity", "require128BitEncryption", "ntlmV2And128BitEncryption"}[i]
 }
-func ParseLocalSecurityOptionsMinimumSessionSecurity(v string) (interface{}, error) {
+func ParseLocalSecurityOptionsMinimumSessionSecurity(v string) (any, error) {
     result := NONE_LOCALSECURITYOPTIONSMINIMUMSESSIONSECURITY
     switch v {
         case "none":

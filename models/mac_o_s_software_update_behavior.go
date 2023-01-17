@@ -23,7 +23,7 @@ const (
 func (i MacOSSoftwareUpdateBehavior) String() string {
     return []string{"notConfigured", "default", "downloadOnly", "installASAP", "notifyOnly", "installLater"}[i]
 }
-func ParseMacOSSoftwareUpdateBehavior(v string) (interface{}, error) {
+func ParseMacOSSoftwareUpdateBehavior(v string) (any, error) {
     result := NOTCONFIGURED_MACOSSOFTWAREUPDATEBEHAVIOR
     switch v {
         case "notConfigured":

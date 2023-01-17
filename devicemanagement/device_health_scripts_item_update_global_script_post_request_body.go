@@ -7,7 +7,7 @@ import (
 // DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody 
 type DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The version property
     version *string
 }
@@ -15,7 +15,7 @@ type DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody struct {
 func NewDeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody()(*DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody) {
     m := &DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceHealthScriptsItemUpdateGlobalScriptPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDeviceHealthScriptsItemUpdateGlobalScriptPostRequestBodyFromDiscrimin
     return NewDeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody) Serialize(wri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetVersion sets the version property value. The version property

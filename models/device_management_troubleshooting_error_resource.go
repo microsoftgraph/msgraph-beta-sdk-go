@@ -7,7 +7,7 @@ import (
 // DeviceManagementTroubleshootingErrorResource object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.
 type DeviceManagementTroubleshootingErrorResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
     link *string
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementTroubleshootingErrorResource struct {
 func NewDeviceManagementTroubleshootingErrorResource()(*DeviceManagementTroubleshootingErrorResource) {
     m := &DeviceManagementTroubleshootingErrorResource{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue(pa
     return NewDeviceManagementTroubleshootingErrorResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementTroubleshootingErrorResource) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementTroubleshootingErrorResource) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementTroubleshootingErrorResource) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementTroubleshootingErrorResource) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLink sets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}

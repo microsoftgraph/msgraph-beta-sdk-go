@@ -14,7 +14,7 @@ const (
 func (i DecisionItemPrincipalResourceMembershipType) String() string {
     return []string{"direct", "indirect", "unknownFutureValue"}[i]
 }
-func ParseDecisionItemPrincipalResourceMembershipType(v string) (interface{}, error) {
+func ParseDecisionItemPrincipalResourceMembershipType(v string) (any, error) {
     result := DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
     switch v {
         case "direct":

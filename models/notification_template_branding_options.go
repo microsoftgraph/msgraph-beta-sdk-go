@@ -23,7 +23,7 @@ const (
 func (i NotificationTemplateBrandingOptions) String() string {
     return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails"}[i]
 }
-func ParseNotificationTemplateBrandingOptions(v string) (interface{}, error) {
+func ParseNotificationTemplateBrandingOptions(v string) (any, error) {
     result := NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
     switch v {
         case "none":

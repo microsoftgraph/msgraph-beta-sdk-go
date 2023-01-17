@@ -15,7 +15,7 @@ const (
 func (i AppleDeploymentChannel) String() string {
     return []string{"deviceChannel", "userChannel"}[i]
 }
-func ParseAppleDeploymentChannel(v string) (interface{}, error) {
+func ParseAppleDeploymentChannel(v string) (any, error) {
     result := DEVICECHANNEL_APPLEDEPLOYMENTCHANNEL
     switch v {
         case "deviceChannel":

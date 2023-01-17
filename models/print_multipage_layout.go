@@ -19,7 +19,7 @@ const (
 func (i PrintMultipageLayout) String() string {
     return []string{"clockwiseFromTopLeft", "counterclockwiseFromTopLeft", "counterclockwiseFromTopRight", "clockwiseFromTopRight", "counterclockwiseFromBottomLeft", "clockwiseFromBottomLeft", "counterclockwiseFromBottomRight", "clockwiseFromBottomRight"}[i]
 }
-func ParsePrintMultipageLayout(v string) (interface{}, error) {
+func ParsePrintMultipageLayout(v string) (any, error) {
     result := CLOCKWISEFROMTOPLEFT_PRINTMULTIPAGELAYOUT
     switch v {
         case "clockwiseFromTopLeft":

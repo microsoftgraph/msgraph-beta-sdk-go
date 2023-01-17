@@ -16,7 +16,7 @@ const (
 func (i RetentionTrigger) String() string {
     return []string{"dateLabeled", "dateCreated", "dateModified", "dateOfEvent", "unknownFutureValue"}[i]
 }
-func ParseRetentionTrigger(v string) (interface{}, error) {
+func ParseRetentionTrigger(v string) (any, error) {
     result := DATELABELED_RETENTIONTRIGGER
     switch v {
         case "dateLabeled":

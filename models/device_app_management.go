@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagement singleton entity that acts as a container for all device app management functionality.
+// DeviceAppManagement 
 type DeviceAppManagement struct {
     Entity
     // Android managed app policies.
@@ -50,8 +50,6 @@ type DeviceAppManagement struct {
     mobileApps []MobileAppable
     // The PolicySet of Policies and Applications
     policySets []PolicySetable
-    // Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-    sideLoadingKeys []SideLoadingKeyable
     // The WinPhone Symantec Code Signing Certificate.
     symantecCodeSigningCertificate SymantecCodeSigningCertificateable
     // Targeted managed app configurations.
@@ -71,7 +69,7 @@ type DeviceAppManagement struct {
     // Windows management app.
     windowsManagementApp WindowsManagementAppable
 }
-// NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
+// NewDeviceAppManagement instantiates a new DeviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
         Entity: *NewEntity(),
@@ -375,20 +373,6 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["sideLoadingKeys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSideLoadingKeyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SideLoadingKeyable, len(val))
-            for i, v := range val {
-                res[i] = v.(SideLoadingKeyable)
-            }
-            m.SetSideLoadingKeys(res)
-        }
-        return nil
-    }
     res["symantecCodeSigningCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSymantecCodeSigningCertificateFromDiscriminatorValue)
         if err != nil {
@@ -576,10 +560,6 @@ func (m *DeviceAppManagement) GetMobileApps()([]MobileAppable) {
 // GetPolicySets gets the policySets property value. The PolicySet of Policies and Applications
 func (m *DeviceAppManagement) GetPolicySets()([]PolicySetable) {
     return m.policySets
-}
-// GetSideLoadingKeys gets the sideLoadingKeys property value. Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-func (m *DeviceAppManagement) GetSideLoadingKeys()([]SideLoadingKeyable) {
-    return m.sideLoadingKeys
 }
 // GetSymantecCodeSigningCertificate gets the symantecCodeSigningCertificate property value. The WinPhone Symantec Code Signing Certificate.
 func (m *DeviceAppManagement) GetSymantecCodeSigningCertificate()(SymantecCodeSigningCertificateable) {
@@ -814,16 +794,6 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    if m.GetSideLoadingKeys() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSideLoadingKeys()))
-        for i, v := range m.GetSideLoadingKeys() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("sideLoadingKeys", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteObjectValue("symantecCodeSigningCertificate", m.GetSymantecCodeSigningCertificate())
         if err != nil {
@@ -991,10 +961,6 @@ func (m *DeviceAppManagement) SetMobileApps(value []MobileAppable)() {
 // SetPolicySets sets the policySets property value. The PolicySet of Policies and Applications
 func (m *DeviceAppManagement) SetPolicySets(value []PolicySetable)() {
     m.policySets = value
-}
-// SetSideLoadingKeys sets the sideLoadingKeys property value. Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-func (m *DeviceAppManagement) SetSideLoadingKeys(value []SideLoadingKeyable)() {
-    m.sideLoadingKeys = value
 }
 // SetSymantecCodeSigningCertificate sets the symantecCodeSigningCertificate property value. The WinPhone Symantec Code Signing Certificate.
 func (m *DeviceAppManagement) SetSymantecCodeSigningCertificate(value SymantecCodeSigningCertificateable)() {

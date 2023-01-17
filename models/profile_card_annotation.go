@@ -7,7 +7,7 @@ import (
 // ProfileCardAnnotation 
 type ProfileCardAnnotation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').
     displayName *string
     // Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets 'Kostnads Senter' as the attribute label, rather than 'Cost Center.'
@@ -19,7 +19,7 @@ type ProfileCardAnnotation struct {
 func NewProfileCardAnnotation()(*ProfileCardAnnotation) {
     m := &ProfileCardAnnotation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateProfileCardAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateProfileCardAnnotationFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewProfileCardAnnotation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProfileCardAnnotation) GetAdditionalData()(map[string]interface{}) {
+func (m *ProfileCardAnnotation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').
@@ -114,7 +114,7 @@ func (m *ProfileCardAnnotation) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ProfileCardAnnotation) SetAdditionalData(value map[string]interface{})() {
+func (m *ProfileCardAnnotation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').

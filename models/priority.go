@@ -14,7 +14,7 @@ const (
 func (i Priority) String() string {
     return []string{"None", "High", "Low"}[i]
 }
-func ParsePriority(v string) (interface{}, error) {
+func ParsePriority(v string) (any, error) {
     result := NONE_PRIORITY
     switch v {
         case "None":

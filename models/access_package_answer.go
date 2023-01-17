@@ -7,7 +7,7 @@ import (
 // AccessPackageAnswer 
 type AccessPackageAnswer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The question the answer is for. Required and Read-only.
     answeredQuestion AccessPackageQuestionable
     // The display value of the answer. Required.
@@ -19,7 +19,7 @@ type AccessPackageAnswer struct {
 func NewAccessPackageAnswer()(*AccessPackageAnswer) {
     m := &AccessPackageAnswer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateAccessPackageAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewAccessPackageAnswer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAnswer) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageAnswer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAnsweredQuestion gets the answeredQuestion property value. The question the answer is for. Required and Read-only.
@@ -124,7 +124,7 @@ func (m *AccessPackageAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageAnswer) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageAnswer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAnsweredQuestion sets the answeredQuestion property value. The question the answer is for. Required and Read-only.

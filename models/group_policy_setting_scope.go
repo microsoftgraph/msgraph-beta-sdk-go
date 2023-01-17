@@ -17,7 +17,7 @@ const (
 func (i GroupPolicySettingScope) String() string {
     return []string{"unknown", "device", "user"}[i]
 }
-func ParseGroupPolicySettingScope(v string) (interface{}, error) {
+func ParseGroupPolicySettingScope(v string) (any, error) {
     result := UNKNOWN_GROUPPOLICYSETTINGSCOPE
     switch v {
         case "unknown":

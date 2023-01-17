@@ -8,7 +8,7 @@ import (
 // B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody 
 type B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The newAssignmentOrder property
     newAssignmentOrder ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentOrderable
 }
@@ -16,7 +16,7 @@ type B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody struct {
 func NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody()(*B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody) {
     m := &B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateB2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateB2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBodyFromDi
     return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody) Serial
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNewAssignmentOrder sets the newAssignmentOrder property value. The newAssignmentOrder property

@@ -17,7 +17,7 @@ const (
 func (i ScheduledRetireState) String() string {
     return []string{"cancelRetire", "confirmRetire", "unknownFutureValue"}[i]
 }
-func ParseScheduledRetireState(v string) (interface{}, error) {
+func ParseScheduledRetireState(v string) (any, error) {
     result := CANCELRETIRE_SCHEDULEDRETIRESTATE
     switch v {
         case "cancelRetire":

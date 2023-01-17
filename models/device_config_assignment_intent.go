@@ -15,7 +15,7 @@ const (
 func (i DeviceConfigAssignmentIntent) String() string {
     return []string{"apply", "remove"}[i]
 }
-func ParseDeviceConfigAssignmentIntent(v string) (interface{}, error) {
+func ParseDeviceConfigAssignmentIntent(v string) (any, error) {
     result := APPLY_DEVICECONFIGASSIGNMENTINTENT
     switch v {
         case "apply":

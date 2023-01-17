@@ -25,7 +25,7 @@ const (
 func (i ResultantAppState) String() string {
     return []string{"notApplicable", "installed", "failed", "notInstalled", "uninstallFailed", "pendingInstall", "unknown"}[i]
 }
-func ParseResultantAppState(v string) (interface{}, error) {
+func ParseResultantAppState(v string) (any, error) {
     result := NOTAPPLICABLE_RESULTANTAPPSTATE
     switch v {
         case "notApplicable":

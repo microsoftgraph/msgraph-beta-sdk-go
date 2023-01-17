@@ -7,7 +7,7 @@ import (
 // ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody 
 type ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ids property
     ids []string
 }
@@ -15,7 +15,7 @@ type ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody struct {
 func NewItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody()(*ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody) {
     m := &ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBodyFromDisc
     return NewItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody) Serializ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemTeamPermissionGrantsItemCheckMemberObjectsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIds sets the ids property value. The ids property

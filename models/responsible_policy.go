@@ -7,7 +7,7 @@ import (
 // ResponsiblePolicy 
 type ResponsiblePolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The id property
     id *string
     // The name property
@@ -19,7 +19,7 @@ type ResponsiblePolicy struct {
 func NewResponsiblePolicy()(*ResponsiblePolicy) {
     m := &ResponsiblePolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateResponsiblePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateResponsiblePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewResponsiblePolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResponsiblePolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *ResponsiblePolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *ResponsiblePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ResponsiblePolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *ResponsiblePolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetId sets the id property value. The id property

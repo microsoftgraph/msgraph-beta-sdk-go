@@ -7,7 +7,7 @@ import (
 // UserSet 
 type UserSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // For a user in an approval stage, this property indicates whether the user is a backup fallback approver.
     isBackup *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type UserSet struct {
 func NewUserSet()(*UserSet) {
     m := &UserSet{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +53,7 @@ func CreateUserSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     return NewUserSet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSet) GetAdditionalData()(map[string]interface{}) {
+func (m *UserSet) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -112,7 +112,7 @@ func (m *UserSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserSet) SetAdditionalData(value map[string]interface{})() {
+func (m *UserSet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsBackup sets the isBackup property value. For a user in an approval stage, this property indicates whether the user is a backup fallback approver.

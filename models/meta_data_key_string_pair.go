@@ -7,7 +7,7 @@ import (
 // MetaDataKeyStringPair 
 type MetaDataKeyStringPair struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Key of the meta data.
     key *string
     // The OdataType property
@@ -19,7 +19,7 @@ type MetaDataKeyStringPair struct {
 func NewMetaDataKeyStringPair()(*MetaDataKeyStringPair) {
     m := &MetaDataKeyStringPair{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMetaDataKeyStringPairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMetaDataKeyStringPairFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewMetaDataKeyStringPair(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MetaDataKeyStringPair) GetAdditionalData()(map[string]interface{}) {
+func (m *MetaDataKeyStringPair) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *MetaDataKeyStringPair) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MetaDataKeyStringPair) SetAdditionalData(value map[string]interface{})() {
+func (m *MetaDataKeyStringPair) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKey sets the key property value. Key of the meta data.

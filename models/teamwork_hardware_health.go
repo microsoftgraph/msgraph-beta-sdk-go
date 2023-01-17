@@ -7,7 +7,7 @@ import (
 // TeamworkHardwareHealth 
 type TeamworkHardwareHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The system health details for a teamworkDevice.
     computeHealth TeamworkPeripheralHealthable
     // The health details about the HDMI ingest of a device.
@@ -19,7 +19,7 @@ type TeamworkHardwareHealth struct {
 func NewTeamworkHardwareHealth()(*TeamworkHardwareHealth) {
     m := &TeamworkHardwareHealth{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkHardwareHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateTeamworkHardwareHealthFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewTeamworkHardwareHealth(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkHardwareHealth) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkHardwareHealth) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComputeHealth gets the computeHealth property value. The system health details for a teamworkDevice.
@@ -106,7 +106,7 @@ func (m *TeamworkHardwareHealth) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkHardwareHealth) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkHardwareHealth) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComputeHealth sets the computeHealth property value. The system health details for a teamworkDevice.

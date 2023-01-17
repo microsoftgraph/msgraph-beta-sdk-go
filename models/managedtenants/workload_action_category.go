@@ -14,7 +14,7 @@ const (
 func (i WorkloadActionCategory) String() string {
     return []string{"automated", "manual", "unknownFutureValue"}[i]
 }
-func ParseWorkloadActionCategory(v string) (interface{}, error) {
+func ParseWorkloadActionCategory(v string) (any, error) {
     result := AUTOMATED_WORKLOADACTIONCATEGORY
     switch v {
         case "automated":

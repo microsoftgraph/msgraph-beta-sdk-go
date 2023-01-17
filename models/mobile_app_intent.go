@@ -25,7 +25,7 @@ const (
 func (i MobileAppIntent) String() string {
     return []string{"available", "notAvailable", "requiredInstall", "requiredUninstall", "requiredAndAvailableInstall", "availableInstallWithoutEnrollment", "exclude"}[i]
 }
-func ParseMobileAppIntent(v string) (interface{}, error) {
+func ParseMobileAppIntent(v string) (any, error) {
     result := AVAILABLE_MOBILEAPPINTENT
     switch v {
         case "available":

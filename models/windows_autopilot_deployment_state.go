@@ -18,7 +18,7 @@ const (
 func (i WindowsAutopilotDeploymentState) String() string {
     return []string{"unknown", "success", "inProgress", "failure", "successWithTimeout", "notAttempted", "disabled"}[i]
 }
-func ParseWindowsAutopilotDeploymentState(v string) (interface{}, error) {
+func ParseWindowsAutopilotDeploymentState(v string) (any, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTDEPLOYMENTSTATE
     switch v {
         case "unknown":

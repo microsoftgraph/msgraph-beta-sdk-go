@@ -17,7 +17,7 @@ const (
 func (i DefenderRealtimeScanDirection) String() string {
     return []string{"monitorAllFiles", "monitorIncomingFilesOnly", "monitorOutgoingFilesOnly"}[i]
 }
-func ParseDefenderRealtimeScanDirection(v string) (interface{}, error) {
+func ParseDefenderRealtimeScanDirection(v string) (any, error) {
     result := MONITORALLFILES_DEFENDERREALTIMESCANDIRECTION
     switch v {
         case "monitorAllFiles":

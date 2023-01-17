@@ -15,7 +15,7 @@ const (
 func (i MobileAppSupersedenceType) String() string {
     return []string{"update", "replace"}[i]
 }
-func ParseMobileAppSupersedenceType(v string) (interface{}, error) {
+func ParseMobileAppSupersedenceType(v string) (any, error) {
     result := UPDATE_MOBILEAPPSUPERSEDENCETYPE
     switch v {
         case "update":

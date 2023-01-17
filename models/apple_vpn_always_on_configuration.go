@@ -7,7 +7,7 @@ import (
 // AppleVpnAlwaysOnConfiguration always On VPN configuration for MacOS and iOS IKEv2
 type AppleVpnAlwaysOnConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
     airPrintExceptionAction *VpnServiceExceptionAction
     // Specifies whether traffic from all captive network plugins should be allowed outside the vpn
@@ -35,7 +35,7 @@ type AppleVpnAlwaysOnConfiguration struct {
 func NewAppleVpnAlwaysOnConfiguration()(*AppleVpnAlwaysOnConfiguration) {
     m := &AppleVpnAlwaysOnConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue(parseNode i878a80
     return NewAppleVpnAlwaysOnConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppleVpnAlwaysOnConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *AppleVpnAlwaysOnConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAirPrintExceptionAction gets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
@@ -286,7 +286,7 @@ func (m *AppleVpnAlwaysOnConfiguration) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppleVpnAlwaysOnConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *AppleVpnAlwaysOnConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAirPrintExceptionAction sets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.

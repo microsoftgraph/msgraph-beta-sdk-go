@@ -8,7 +8,7 @@ import (
 // DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody 
 type DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignedAccessMultiModeProfiles property
     assignedAccessMultiModeProfiles []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAssignedAccessProfileable
 }
@@ -16,7 +16,7 @@ type DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody stru
 func NewDeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody()(*DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody) {
     m := &DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateDeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBod
     return NewDeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignedAccessMultiModeProfiles gets the assignedAccessMultiModeProfiles property value. The assignedAccessMultiModeProfiles property
@@ -71,7 +71,7 @@ func (m *DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody)
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceConfigurationsItemAssignedAccessMultiModeProfilesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignedAccessMultiModeProfiles sets the assignedAccessMultiModeProfiles property value. The assignedAccessMultiModeProfiles property

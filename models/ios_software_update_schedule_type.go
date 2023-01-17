@@ -19,7 +19,7 @@ const (
 func (i IosSoftwareUpdateScheduleType) String() string {
     return []string{"updateOutsideOfActiveHours", "alwaysUpdate", "updateDuringTimeWindows", "updateOutsideOfTimeWindows"}[i]
 }
-func ParseIosSoftwareUpdateScheduleType(v string) (interface{}, error) {
+func ParseIosSoftwareUpdateScheduleType(v string) (any, error) {
     result := UPDATEOUTSIDEOFACTIVEHOURS_IOSSOFTWAREUPDATESCHEDULETYPE
     switch v {
         case "updateOutsideOfActiveHours":

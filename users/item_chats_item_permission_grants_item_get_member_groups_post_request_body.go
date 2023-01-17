@@ -7,7 +7,7 @@ import (
 // ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody 
 type ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The securityEnabledOnly property
     securityEnabledOnly *bool
 }
@@ -15,7 +15,7 @@ type ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody struct {
 func NewItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody()(*ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody) {
     m := &ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBodyFromDi
     return NewItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody) Serial
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemChatsItemPermissionGrantsItemGetMemberGroupsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetSecurityEnabledOnly sets the securityEnabledOnly property value. The securityEnabledOnly property

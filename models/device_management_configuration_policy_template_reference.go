@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationPolicyTemplateReference policy template reference information
 type DeviceManagementConfigurationPolicyTemplateReference struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Template Display Name of the referenced template. This property is read-only.
@@ -23,7 +23,7 @@ type DeviceManagementConfigurationPolicyTemplateReference struct {
 func NewDeviceManagementConfigurationPolicyTemplateReference()(*DeviceManagementConfigurationPolicyTemplateReference) {
     m := &DeviceManagementConfigurationPolicyTemplateReference{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationPolicyTemplateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateDeviceManagementConfigurationPolicyTemplateReferenceFromDiscriminator
     return NewDeviceManagementConfigurationPolicyTemplateReference(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationPolicyTemplateReference) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationPolicyTemplateReference) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,7 +139,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) Serialize(writer 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationPolicyTemplateReference) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationPolicyTemplateReference) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

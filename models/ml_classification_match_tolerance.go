@@ -13,7 +13,7 @@ const (
 func (i MlClassificationMatchTolerance) String() string {
     return []string{"exact", "near"}[i]
 }
-func ParseMlClassificationMatchTolerance(v string) (interface{}, error) {
+func ParseMlClassificationMatchTolerance(v string) (any, error) {
     result := EXACT_MLCLASSIFICATIONMATCHTOLERANCE
     switch v {
         case "exact":

@@ -19,7 +19,7 @@ const (
 func (i IngestionSource) String() string {
     return []string{"unknown", "custom", "builtIn", "unknownFutureValue"}[i]
 }
-func ParseIngestionSource(v string) (interface{}, error) {
+func ParseIngestionSource(v string) (any, error) {
     result := UNKNOWN_INGESTIONSOURCE
     switch v {
         case "unknown":

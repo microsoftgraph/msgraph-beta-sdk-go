@@ -22,7 +22,7 @@ const (
 func (i TeamworkDeviceType) String() string {
     return []string{"unknown", "ipPhone", "teamsRoom", "surfaceHub", "collaborationBar", "teamsDisplay", "touchConsole", "lowCostPhone", "teamsPanel", "sip", "unknownFutureValue"}[i]
 }
-func ParseTeamworkDeviceType(v string) (interface{}, error) {
+func ParseTeamworkDeviceType(v string) (any, error) {
     result := UNKNOWN_TEAMWORKDEVICETYPE
     switch v {
         case "unknown":

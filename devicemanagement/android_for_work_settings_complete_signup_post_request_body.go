@@ -7,7 +7,7 @@ import (
 // AndroidForWorkSettingsCompleteSignupPostRequestBody 
 type AndroidForWorkSettingsCompleteSignupPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The enterpriseToken property
     enterpriseToken *string
 }
@@ -15,7 +15,7 @@ type AndroidForWorkSettingsCompleteSignupPostRequestBody struct {
 func NewAndroidForWorkSettingsCompleteSignupPostRequestBody()(*AndroidForWorkSettingsCompleteSignupPostRequestBody) {
     m := &AndroidForWorkSettingsCompleteSignupPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidForWorkSettingsCompleteSignupPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateAndroidForWorkSettingsCompleteSignupPostRequestBodyFromDiscriminatorV
     return NewAndroidForWorkSettingsCompleteSignupPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidForWorkSettingsCompleteSignupPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidForWorkSettingsCompleteSignupPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnterpriseToken gets the enterpriseToken property value. The enterpriseToken property
@@ -62,7 +62,7 @@ func (m *AndroidForWorkSettingsCompleteSignupPostRequestBody) Serialize(writer i
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidForWorkSettingsCompleteSignupPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidForWorkSettingsCompleteSignupPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnterpriseToken sets the enterpriseToken property value. The enterpriseToken property

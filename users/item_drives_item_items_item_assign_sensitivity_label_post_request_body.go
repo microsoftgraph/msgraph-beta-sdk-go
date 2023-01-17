@@ -8,7 +8,7 @@ import (
 // ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody 
 type ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignmentMethod property
     assignmentMethod *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod
     // The justificationText property
@@ -20,7 +20,7 @@ type ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody struct {
 func NewItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody()(*ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody) {
     m := &ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBodyFromDiscr
     return NewItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
@@ -108,7 +108,7 @@ func (m *ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody) Serialize
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDrivesItemItemsItemAssignSensitivityLabelPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property

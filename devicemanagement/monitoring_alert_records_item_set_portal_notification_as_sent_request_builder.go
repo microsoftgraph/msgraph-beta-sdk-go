@@ -41,7 +41,7 @@ func NewMonitoringAlertRecordsItemSetPortalNotificationAsSentRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewMonitoringAlertRecordsItemSetPortalNotificationAsSentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set the status of the specified notification on the Microsoft EndPoint Manager admin center as sent, by modifying the **isPortalNotificationSent** property to `true`.
+// Post set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0
@@ -54,13 +54,13 @@ func (m *MonitoringAlertRecordsItemSetPortalNotificationAsSentRequestBuilder) Po
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
-// ToPostRequestInformation set the status of the specified notification on the Microsoft EndPoint Manager admin center as sent, by modifying the **isPortalNotificationSent** property to `true`.
+// ToPostRequestInformation set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
 func (m *MonitoringAlertRecordsItemSetPortalNotificationAsSentRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MonitoringAlertRecordsItemSetPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

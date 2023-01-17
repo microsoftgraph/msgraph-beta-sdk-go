@@ -13,7 +13,7 @@ const (
 func (i DelegatedAdminAccessContainerType) String() string {
     return []string{"securityGroup", "unknownFutureValue"}[i]
 }
-func ParseDelegatedAdminAccessContainerType(v string) (interface{}, error) {
+func ParseDelegatedAdminAccessContainerType(v string) (any, error) {
     result := SECURITYGROUP_DELEGATEDADMINACCESSCONTAINERTYPE
     switch v {
         case "securityGroup":

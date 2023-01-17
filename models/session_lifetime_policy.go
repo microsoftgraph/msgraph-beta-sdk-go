@@ -7,7 +7,7 @@ import (
 // SessionLifetimePolicy 
 type SessionLifetimePolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The human-readable details of the conditional access session management policy applied to the sign-in.
     detail *string
     // If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
@@ -19,7 +19,7 @@ type SessionLifetimePolicy struct {
 func NewSessionLifetimePolicy()(*SessionLifetimePolicy) {
     m := &SessionLifetimePolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSessionLifetimePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateSessionLifetimePolicyFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewSessionLifetimePolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SessionLifetimePolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *SessionLifetimePolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDetail gets the detail property value. The human-readable details of the conditional access session management policy applied to the sign-in.
@@ -107,7 +107,7 @@ func (m *SessionLifetimePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SessionLifetimePolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *SessionLifetimePolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDetail sets the detail property value. The human-readable details of the conditional access session management policy applied to the sign-in.

@@ -7,7 +7,7 @@ import (
 // TeamworkCameraConfiguration 
 type TeamworkCameraConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The cameras property
     cameras []TeamworkPeripheralable
     // The configuration for the content camera.
@@ -21,7 +21,7 @@ type TeamworkCameraConfiguration struct {
 func NewTeamworkCameraConfiguration()(*TeamworkCameraConfiguration) {
     m := &TeamworkCameraConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkCameraConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTeamworkCameraConfigurationFromDiscriminatorValue(parseNode i878a80d2
     return NewTeamworkCameraConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkCameraConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkCameraConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCameras gets the cameras property value. The cameras property
@@ -136,7 +136,7 @@ func (m *TeamworkCameraConfiguration) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkCameraConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkCameraConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCameras sets the cameras property value. The cameras property

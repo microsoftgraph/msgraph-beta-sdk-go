@@ -15,7 +15,7 @@ const (
 func (i WindowsEdgeKioskType) String() string {
     return []string{"publicBrowsing", "fullScreen"}[i]
 }
-func ParseWindowsEdgeKioskType(v string) (interface{}, error) {
+func ParseWindowsEdgeKioskType(v string) (any, error) {
     result := PUBLICBROWSING_WINDOWSEDGEKIOSKTYPE
     switch v {
         case "publicBrowsing":

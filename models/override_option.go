@@ -15,7 +15,7 @@ const (
 func (i OverrideOption) String() string {
     return []string{"notAllowed", "allowFalsePositiveOverride", "allowWithJustification", "allowWithoutJustification"}[i]
 }
-func ParseOverrideOption(v string) (interface{}, error) {
+func ParseOverrideOption(v string) (any, error) {
     result := NOTALLOWED_OVERRIDEOPTION
     switch v {
         case "notAllowed":

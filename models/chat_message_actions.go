@@ -15,7 +15,7 @@ const (
 func (i ChatMessageActions) String() string {
     return []string{"reactionAdded", "reactionRemoved", "actionUndefined", "unknownFutureValue"}[i]
 }
-func ParseChatMessageActions(v string) (interface{}, error) {
+func ParseChatMessageActions(v string) (any, error) {
     result := REACTIONADDED_CHATMESSAGEACTIONS
     switch v {
         case "reactionAdded":

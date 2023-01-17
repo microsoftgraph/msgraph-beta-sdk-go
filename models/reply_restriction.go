@@ -14,7 +14,7 @@ const (
 func (i ReplyRestriction) String() string {
     return []string{"everyone", "authorAndModerators", "unknownFutureValue"}[i]
 }
-func ParseReplyRestriction(v string) (interface{}, error) {
+func ParseReplyRestriction(v string) (any, error) {
     result := EVERYONE_REPLYRESTRICTION
     switch v {
         case "everyone":

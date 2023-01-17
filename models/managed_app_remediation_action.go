@@ -17,7 +17,7 @@ const (
 func (i ManagedAppRemediationAction) String() string {
     return []string{"block", "wipe", "warn"}[i]
 }
-func ParseManagedAppRemediationAction(v string) (interface{}, error) {
+func ParseManagedAppRemediationAction(v string) (any, error) {
     result := BLOCK_MANAGEDAPPREMEDIATIONACTION
     switch v {
         case "block":

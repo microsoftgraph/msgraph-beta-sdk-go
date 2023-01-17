@@ -19,7 +19,7 @@ const (
 func (i RuleOperation) String() string {
     return []string{"equals", "notEquals", "contains", "notContains", "lessThan", "greaterThan", "startsWith", "unknownFutureValue"}[i]
 }
-func ParseRuleOperation(v string) (interface{}, error) {
+func ParseRuleOperation(v string) (any, error) {
     result := EQUALS_RULEOPERATION
     switch v {
         case "equals":

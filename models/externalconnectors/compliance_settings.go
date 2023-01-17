@@ -7,7 +7,7 @@ import (
 // ComplianceSettings 
 type ComplianceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
     eDiscoveryResultTemplates []DisplayTemplateable
     // The OdataType property
@@ -17,7 +17,7 @@ type ComplianceSettings struct {
 func NewComplianceSettings()(*ComplianceSettings) {
     m := &ComplianceSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComplianceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateComplianceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewComplianceSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComplianceSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *ComplianceSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEDiscoveryResultTemplates gets the eDiscoveryResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
@@ -92,7 +92,7 @@ func (m *ComplianceSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComplianceSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *ComplianceSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEDiscoveryResultTemplates sets the eDiscoveryResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.

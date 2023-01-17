@@ -9,7 +9,7 @@ type AndroidPermissionAction struct {
     // Android action taken when an app requests a dangerous permission.
     action *AndroidPermissionActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
@@ -19,7 +19,7 @@ type AndroidPermissionAction struct {
 func NewAndroidPermissionAction()(*AndroidPermissionAction) {
     m := &AndroidPermissionAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidPermissionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func (m *AndroidPermissionAction) GetAction()(*AndroidPermissionActionType) {
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidPermissionAction) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidPermissionAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -111,7 +111,7 @@ func (m *AndroidPermissionAction) SetAction(value *AndroidPermissionActionType)(
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidPermissionAction) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidPermissionAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

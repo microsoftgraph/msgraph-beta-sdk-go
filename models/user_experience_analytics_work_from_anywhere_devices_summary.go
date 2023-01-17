@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsWorkFromAnywhereDevicesSummary the user experience analytics Work From Anywhere metrics devices summary.
 type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value of work from anywhere autopilot devices summary.
     autopilotDevicesSummary UserExperienceAnalyticsAutopilotDevicesSummaryable
     // The user experience analytics work from anywhere Cloud Identity devices summary.
@@ -43,7 +43,7 @@ type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary struct {
 func NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary()(*UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) {
     m := &UserExperienceAnalyticsWorkFromAnywhereDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ func CreateUserExperienceAnalyticsWorkFromAnywhereDevicesSummaryFromDiscriminato
     return NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutopilotDevicesSummary gets the autopilotDevicesSummary property value. The value of work from anywhere autopilot devices summary.
@@ -370,7 +370,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAutopilotDevicesSummary sets the autopilotDevicesSummary property value. The value of work from anywhere autopilot devices summary.

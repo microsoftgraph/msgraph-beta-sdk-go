@@ -17,7 +17,7 @@ const (
 func (i AndroidDeviceOwnerKioskCustomizationSystemNavigation) String() string {
     return []string{"notConfigured", "navigationEnabled", "homeButtonOnly"}[i]
 }
-func ParseAndroidDeviceOwnerKioskCustomizationSystemNavigation(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerKioskCustomizationSystemNavigation(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERKIOSKCUSTOMIZATIONSYSTEMNAVIGATION
     switch v {
         case "notConfigured":

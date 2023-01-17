@@ -7,7 +7,7 @@ import (
 // AndroidDeviceOwnerKioskModeAppPositionItem an item in the list of app positions that sets the order of items on the Managed Home Screen
 type AndroidDeviceOwnerKioskModeAppPositionItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder
     item AndroidDeviceOwnerKioskModeHomeScreenItemable
     // The OdataType property
@@ -19,7 +19,7 @@ type AndroidDeviceOwnerKioskModeAppPositionItem struct {
 func NewAndroidDeviceOwnerKioskModeAppPositionItem()(*AndroidDeviceOwnerKioskModeAppPositionItem) {
     m := &AndroidDeviceOwnerKioskModeAppPositionItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeAppPositionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAndroidDeviceOwnerKioskModeAppPositionItemFromDiscriminatorValue(pars
     return NewAndroidDeviceOwnerKioskModeAppPositionItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItem) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetItem sets the item property value. Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder

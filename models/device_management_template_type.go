@@ -35,7 +35,7 @@ const (
 func (i DeviceManagementTemplateType) String() string {
     return []string{"securityBaseline", "specializedDevices", "advancedThreatProtectionSecurityBaseline", "deviceConfiguration", "custom", "securityTemplate", "microsoftEdgeSecurityBaseline", "microsoftOffice365ProPlusSecurityBaseline", "deviceCompliance", "deviceConfigurationForOffice365", "cloudPC", "firewallSharedSettings"}[i]
 }
-func ParseDeviceManagementTemplateType(v string) (interface{}, error) {
+func ParseDeviceManagementTemplateType(v string) (any, error) {
     result := SECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
     switch v {
         case "securityBaseline":

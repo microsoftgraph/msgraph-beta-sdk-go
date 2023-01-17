@@ -7,7 +7,7 @@ import (
 // ItemSelfActivatePostRequestBody 
 type ItemSelfActivatePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The duration property
     duration *string
     // The reason property
@@ -21,7 +21,7 @@ type ItemSelfActivatePostRequestBody struct {
 func NewItemSelfActivatePostRequestBody()(*ItemSelfActivatePostRequestBody) {
     m := &ItemSelfActivatePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSelfActivatePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateItemSelfActivatePostRequestBodyFromDiscriminatorValue(parseNode i878a
     return NewItemSelfActivatePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSelfActivatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSelfActivatePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDuration gets the duration property value. The duration property
@@ -128,7 +128,7 @@ func (m *ItemSelfActivatePostRequestBody) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSelfActivatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSelfActivatePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDuration sets the duration property value. The duration property

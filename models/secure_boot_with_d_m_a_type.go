@@ -17,7 +17,7 @@ const (
 func (i SecureBootWithDMAType) String() string {
     return []string{"notConfigured", "withoutDMA", "withDMA"}[i]
 }
-func ParseSecureBootWithDMAType(v string) (interface{}, error) {
+func ParseSecureBootWithDMAType(v string) (any, error) {
     result := NOTCONFIGURED_SECUREBOOTWITHDMATYPE
     switch v {
         case "notConfigured":

@@ -11,7 +11,7 @@ type WorkloadActionDeploymentStatus struct {
     // The unique identifier for the workload action. Required. Read-only.
     actionId *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identifier of any policy that was created by applying the workload action. Optional. Read-only.
     deployedPolicyId *string
     // The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
@@ -33,7 +33,7 @@ type WorkloadActionDeploymentStatus struct {
 func NewWorkloadActionDeploymentStatus()(*WorkloadActionDeploymentStatus) {
     m := &WorkloadActionDeploymentStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkloadActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func (m *WorkloadActionDeploymentStatus) GetActionId()(*string) {
     return m.actionId
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkloadActionDeploymentStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkloadActionDeploymentStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeployedPolicyId gets the deployedPolicyId property value. The identifier of any policy that was created by applying the workload action. Optional. Read-only.
@@ -253,7 +253,7 @@ func (m *WorkloadActionDeploymentStatus) SetActionId(value *string)() {
     m.actionId = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkloadActionDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkloadActionDeploymentStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeployedPolicyId sets the deployedPolicyId property value. The identifier of any policy that was created by applying the workload action. Optional. Read-only.

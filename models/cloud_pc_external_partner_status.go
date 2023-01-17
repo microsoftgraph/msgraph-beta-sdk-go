@@ -16,7 +16,7 @@ const (
 func (i CloudPcExternalPartnerStatus) String() string {
     return []string{"notAvailable", "available", "healthy", "unhealthy", "unknownFutureValue"}[i]
 }
-func ParseCloudPcExternalPartnerStatus(v string) (interface{}, error) {
+func ParseCloudPcExternalPartnerStatus(v string) (any, error) {
     result := NOTAVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
     switch v {
         case "notAvailable":

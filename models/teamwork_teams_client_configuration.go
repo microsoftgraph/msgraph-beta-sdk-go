@@ -9,7 +9,7 @@ type TeamworkTeamsClientConfiguration struct {
     // The configuration of the Microsoft Teams client user account for a device.
     accountConfiguration TeamworkAccountConfigurationable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The configuration of Microsoft Teams client features for a device.
     featuresConfiguration TeamworkFeaturesConfigurationable
     // The OdataType property
@@ -19,7 +19,7 @@ type TeamworkTeamsClientConfiguration struct {
 func NewTeamworkTeamsClientConfiguration()(*TeamworkTeamsClientConfiguration) {
     m := &TeamworkTeamsClientConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkTeamsClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func (m *TeamworkTeamsClientConfiguration) GetAccountConfiguration()(TeamworkAcc
     return m.accountConfiguration
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkTeamsClientConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkTeamsClientConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFeaturesConfiguration gets the featuresConfiguration property value. The configuration of Microsoft Teams client features for a device.
@@ -110,7 +110,7 @@ func (m *TeamworkTeamsClientConfiguration) SetAccountConfiguration(value Teamwor
     m.accountConfiguration = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkTeamsClientConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkTeamsClientConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFeaturesConfiguration sets the featuresConfiguration property value. The configuration of Microsoft Teams client features for a device.

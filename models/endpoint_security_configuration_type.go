@@ -25,7 +25,7 @@ const (
 func (i EndpointSecurityConfigurationType) String() string {
     return []string{"unknown", "antivirus", "diskEncryption", "firewall", "endpointDetectionAndResponse", "attackSurfaceReduction", "accountProtection"}[i]
 }
-func ParseEndpointSecurityConfigurationType(v string) (interface{}, error) {
+func ParseEndpointSecurityConfigurationType(v string) (any, error) {
     result := UNKNOWN_ENDPOINTSECURITYCONFIGURATIONTYPE
     switch v {
         case "unknown":

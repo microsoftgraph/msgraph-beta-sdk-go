@@ -43,7 +43,7 @@ const (
 func (i DeviceLicensingStatus) String() string {
     return []string{"unknown", "licenseRefreshStarted", "licenseRefreshPending", "deviceIsNotAzureActiveDirectoryJoined", "verifyingMicrosoftDeviceIdentity", "deviceIdentityVerificationFailed", "verifyingMirosoftAccountIdentity", "mirosoftAccountVerificationFailed", "acquiringDeviceLicense", "refreshingDeviceLicense", "deviceLicenseRefreshSucceed", "deviceLicenseRefreshFailed", "removingDeviceLicense", "deviceLicenseRemoveSucceed", "deviceLicenseRemoveFailed", "unknownFutureValue"}[i]
 }
-func ParseDeviceLicensingStatus(v string) (interface{}, error) {
+func ParseDeviceLicensingStatus(v string) (any, error) {
     result := UNKNOWN_DEVICELICENSINGSTATUS
     switch v {
         case "unknown":

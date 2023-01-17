@@ -7,7 +7,7 @@ import (
 // ItemDevicesGetUserOwnedObjectsPostRequestBody 
 type ItemDevicesGetUserOwnedObjectsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type property
     type_escaped *string
     // The userId property
@@ -17,7 +17,7 @@ type ItemDevicesGetUserOwnedObjectsPostRequestBody struct {
 func NewItemDevicesGetUserOwnedObjectsPostRequestBody()(*ItemDevicesGetUserOwnedObjectsPostRequestBody) {
     m := &ItemDevicesGetUserOwnedObjectsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDevicesGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateItemDevicesGetUserOwnedObjectsPostRequestBodyFromDiscriminatorValue(p
     return NewItemDevicesGetUserOwnedObjectsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDevicesGetUserOwnedObjectsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDevicesGetUserOwnedObjectsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *ItemDevicesGetUserOwnedObjectsPostRequestBody) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDevicesGetUserOwnedObjectsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDevicesGetUserOwnedObjectsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetType sets the type property value. The type property

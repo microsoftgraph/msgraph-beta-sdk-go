@@ -13,7 +13,7 @@ const (
 func (i CertificateStatus) String() string {
     return []string{"notProvisioned", "provisioned"}[i]
 }
-func ParseCertificateStatus(v string) (interface{}, error) {
+func ParseCertificateStatus(v string) (any, error) {
     result := NOTPROVISIONED_CERTIFICATESTATUS
     switch v {
         case "notProvisioned":

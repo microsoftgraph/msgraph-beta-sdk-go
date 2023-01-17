@@ -16,7 +16,7 @@ const (
 func (i KerberosSignOnMappingAttributeType) String() string {
     return []string{"userPrincipalName", "onPremisesUserPrincipalName", "userPrincipalUsername", "onPremisesUserPrincipalUsername", "onPremisesSAMAccountName"}[i]
 }
-func ParseKerberosSignOnMappingAttributeType(v string) (interface{}, error) {
+func ParseKerberosSignOnMappingAttributeType(v string) (any, error) {
     result := USERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
     switch v {
         case "userPrincipalName":

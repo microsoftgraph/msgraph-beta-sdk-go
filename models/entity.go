@@ -7,7 +7,7 @@ import (
 // Entity 
 type Entity struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The unique identifier for an entity. Read-only.
     id *string
     // The OdataType property
@@ -17,7 +17,7 @@ type Entity struct {
 func NewEntity()(*Entity) {
     m := &Entity{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -344,6 +344,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAttachmentBase(), nil
                     case "#microsoft.graph.attachmentSession":
                         return NewAttachmentSession(), nil
+                    case "#microsoft.graph.attackSimulationOperation":
+                        return NewAttackSimulationOperation(), nil
                     case "#microsoft.graph.attackSimulationRoot":
                         return NewAttackSimulationRoot(), nil
                     case "#microsoft.graph.attendanceRecord":
@@ -1724,6 +1726,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPasswordAuthenticationMethod(), nil
                     case "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod":
                         return NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod(), nil
+                    case "#microsoft.graph.payload":
+                        return NewPayload(), nil
                     case "#microsoft.graph.payloadCompatibleAssignmentFilter":
                         return NewPayloadCompatibleAssignmentFilter(), nil
                     case "#microsoft.graph.payloadResponse":
@@ -1850,6 +1854,28 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPrintUsageByUser(), nil
                     case "#microsoft.graph.privilegedAccess":
                         return NewPrivilegedAccess(), nil
+                    case "#microsoft.graph.privilegedAccessGroup":
+                        return NewPrivilegedAccessGroup(), nil
+                    case "#microsoft.graph.privilegedAccessGroupAssignmentSchedule":
+                        return NewPrivilegedAccessGroupAssignmentSchedule(), nil
+                    case "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance":
+                        return NewPrivilegedAccessGroupAssignmentScheduleInstance(), nil
+                    case "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest":
+                        return NewPrivilegedAccessGroupAssignmentScheduleRequest(), nil
+                    case "#microsoft.graph.privilegedAccessGroupEligibilitySchedule":
+                        return NewPrivilegedAccessGroupEligibilitySchedule(), nil
+                    case "#microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance":
+                        return NewPrivilegedAccessGroupEligibilityScheduleInstance(), nil
+                    case "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest":
+                        return NewPrivilegedAccessGroupEligibilityScheduleRequest(), nil
+                    case "#microsoft.graph.privilegedAccessRoot":
+                        return NewPrivilegedAccessRoot(), nil
+                    case "#microsoft.graph.privilegedAccessSchedule":
+                        return NewPrivilegedAccessSchedule(), nil
+                    case "#microsoft.graph.privilegedAccessScheduleInstance":
+                        return NewPrivilegedAccessScheduleInstance(), nil
+                    case "#microsoft.graph.privilegedAccessScheduleRequest":
+                        return NewPrivilegedAccessScheduleRequest(), nil
                     case "#microsoft.graph.privilegedApproval":
                         return NewPrivilegedApproval(), nil
                     case "#microsoft.graph.privilegedOperationEvent":
@@ -2052,8 +2078,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewShiftPreferences(), nil
                     case "#microsoft.graph.shipmentMethod":
                         return NewShipmentMethod(), nil
-                    case "#microsoft.graph.sideLoadingKey":
-                        return NewSideLoadingKey(), nil
                     case "#microsoft.graph.signIn":
                         return NewSignIn(), nil
                     case "#microsoft.graph.simulation":
@@ -2186,8 +2210,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTenantAppManagementPolicy(), nil
                     case "#microsoft.graph.tenantAttachRBAC":
                         return NewTenantAttachRBAC(), nil
-                    case "#microsoft.graph.tenantRelationship":
-                        return NewTenantRelationship(), nil
                     case "#microsoft.graph.tenantRelationshipAccessPolicyBase":
                         return NewTenantRelationshipAccessPolicyBase(), nil
                     case "#microsoft.graph.tenantSetupInfo":
@@ -2370,6 +2392,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserExperienceAnalyticsDeviceStartupProcess(), nil
                     case "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance":
                         return NewUserExperienceAnalyticsDeviceStartupProcessPerformance(), nil
+                    case "#microsoft.graph.userExperienceAnalyticsDeviceTimelineEvents":
+                        return NewUserExperienceAnalyticsDeviceTimelineEvents(), nil
                     case "#microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity":
                         return NewUserExperienceAnalyticsDeviceWithoutCloudIdentity(), nil
                     case "#microsoft.graph.userExperienceAnalyticsImpactingProcess":
@@ -2763,7 +2787,7 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
     return NewEntity(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Entity) GetAdditionalData()(map[string]interface{}) {
+func (m *Entity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -2822,7 +2846,7 @@ func (m *Entity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Entity) SetAdditionalData(value map[string]interface{})() {
+func (m *Entity) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetId sets the id property value. The unique identifier for an entity. Read-only.

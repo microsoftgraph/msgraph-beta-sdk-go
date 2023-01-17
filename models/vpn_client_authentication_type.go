@@ -15,7 +15,7 @@ const (
 func (i VpnClientAuthenticationType) String() string {
     return []string{"userAuthentication", "deviceAuthentication"}[i]
 }
-func ParseVpnClientAuthenticationType(v string) (interface{}, error) {
+func ParseVpnClientAuthenticationType(v string) (any, error) {
     result := USERAUTHENTICATION_VPNCLIENTAUTHENTICATIONTYPE
     switch v {
         case "userAuthentication":

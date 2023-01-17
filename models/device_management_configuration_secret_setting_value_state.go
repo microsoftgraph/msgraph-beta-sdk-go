@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementConfigurationSecretSettingValueState) String() string {
     return []string{"invalid", "notEncrypted", "encryptedValueToken"}[i]
 }
-func ParseDeviceManagementConfigurationSecretSettingValueState(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationSecretSettingValueState(v string) (any, error) {
     result := INVALID_DEVICEMANAGEMENTCONFIGURATIONSECRETSETTINGVALUESTATE
     switch v {
         case "invalid":

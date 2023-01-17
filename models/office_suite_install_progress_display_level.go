@@ -13,7 +13,7 @@ const (
 func (i OfficeSuiteInstallProgressDisplayLevel) String() string {
     return []string{"none", "full"}[i]
 }
-func ParseOfficeSuiteInstallProgressDisplayLevel(v string) (interface{}, error) {
+func ParseOfficeSuiteInstallProgressDisplayLevel(v string) (any, error) {
     result := NONE_OFFICESUITEINSTALLPROGRESSDISPLAYLEVEL
     switch v {
         case "none":

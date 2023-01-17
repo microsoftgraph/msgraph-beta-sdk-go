@@ -8,7 +8,7 @@ import (
 // MembershipRuleProcessingStatus 
 type MembershipRuleProcessingStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
     errorMessage *string
     // Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
@@ -22,7 +22,7 @@ type MembershipRuleProcessingStatus struct {
 func NewMembershipRuleProcessingStatus()(*MembershipRuleProcessingStatus) {
     m := &MembershipRuleProcessingStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMembershipRuleProcessingStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateMembershipRuleProcessingStatusFromDiscriminatorValue(parseNode i878a8
     return NewMembershipRuleProcessingStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MembershipRuleProcessingStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *MembershipRuleProcessingStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetErrorMessage gets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
@@ -130,7 +130,7 @@ func (m *MembershipRuleProcessingStatus) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MembershipRuleProcessingStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *MembershipRuleProcessingStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetErrorMessage sets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.

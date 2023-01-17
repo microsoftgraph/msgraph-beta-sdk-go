@@ -8,7 +8,7 @@ import (
 // ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody 
 type ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignmentState property
     assignmentState *string
     // The decision property
@@ -22,7 +22,7 @@ type ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody struct {
 func NewItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody()(*ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody) {
     m := &ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemRoleAssignmentRequestsItemUpdateRequestPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateItemRoleAssignmentRequestsItemUpdateRequestPostRequestBodyFromDiscrim
     return NewItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentState gets the assignmentState property value. The assignmentState property
@@ -129,7 +129,7 @@ func (m *ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody) Serialize(w
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemRoleAssignmentRequestsItemUpdateRequestPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignmentState sets the assignmentState property value. The assignmentState property

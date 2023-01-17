@@ -7,7 +7,7 @@ import (
 // AssignmentFiltersEnablePostRequestBody 
 type AssignmentFiltersEnablePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The enable property
     enable *bool
 }
@@ -15,7 +15,7 @@ type AssignmentFiltersEnablePostRequestBody struct {
 func NewAssignmentFiltersEnablePostRequestBody()(*AssignmentFiltersEnablePostRequestBody) {
     m := &AssignmentFiltersEnablePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFiltersEnablePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateAssignmentFiltersEnablePostRequestBodyFromDiscriminatorValue(parseNod
     return NewAssignmentFiltersEnablePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFiltersEnablePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFiltersEnablePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnable gets the enable property value. The enable property
@@ -62,7 +62,7 @@ func (m *AssignmentFiltersEnablePostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFiltersEnablePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFiltersEnablePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnable sets the enable property value. The enable property

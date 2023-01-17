@@ -7,7 +7,7 @@ import (
 // DepOnboardingSettingsItemUploadDepTokenPostRequestBody 
 type DepOnboardingSettingsItemUploadDepTokenPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appleId property
     appleId *string
     // The depToken property
@@ -17,7 +17,7 @@ type DepOnboardingSettingsItemUploadDepTokenPostRequestBody struct {
 func NewDepOnboardingSettingsItemUploadDepTokenPostRequestBody()(*DepOnboardingSettingsItemUploadDepTokenPostRequestBody) {
     m := &DepOnboardingSettingsItemUploadDepTokenPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDepOnboardingSettingsItemUploadDepTokenPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDepOnboardingSettingsItemUploadDepTokenPostRequestBodyFromDiscriminat
     return NewDepOnboardingSettingsItemUploadDepTokenPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DepOnboardingSettingsItemUploadDepTokenPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DepOnboardingSettingsItemUploadDepTokenPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppleId gets the appleId property value. The appleId property
@@ -84,7 +84,7 @@ func (m *DepOnboardingSettingsItemUploadDepTokenPostRequestBody) Serialize(write
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DepOnboardingSettingsItemUploadDepTokenPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DepOnboardingSettingsItemUploadDepTokenPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppleId sets the appleId property value. The appleId property

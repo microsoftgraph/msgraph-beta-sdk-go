@@ -19,7 +19,7 @@ const (
 func (i DriveItemSourceApplication) String() string {
     return []string{"teams", "yammer", "sharePoint", "oneDrive", "stream", "powerPoint", "office", "unknownFutureValue"}[i]
 }
-func ParseDriveItemSourceApplication(v string) (interface{}, error) {
+func ParseDriveItemSourceApplication(v string) (any, error) {
     result := TEAMS_DRIVEITEMSOURCEAPPLICATION
     switch v {
         case "teams":

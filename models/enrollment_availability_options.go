@@ -17,7 +17,7 @@ const (
 func (i EnrollmentAvailabilityOptions) String() string {
     return []string{"availableWithPrompts", "availableWithoutPrompts", "unavailable"}[i]
 }
-func ParseEnrollmentAvailabilityOptions(v string) (interface{}, error) {
+func ParseEnrollmentAvailabilityOptions(v string) (any, error) {
     result := AVAILABLEWITHPROMPTS_ENROLLMENTAVAILABILITYOPTIONS
     switch v {
         case "availableWithPrompts":

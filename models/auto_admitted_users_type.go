@@ -13,7 +13,7 @@ const (
 func (i AutoAdmittedUsersType) String() string {
     return []string{"everyoneInCompany", "everyone"}[i]
 }
-func ParseAutoAdmittedUsersType(v string) (interface{}, error) {
+func ParseAutoAdmittedUsersType(v string) (any, error) {
     result := EVERYONEINCOMPANY_AUTOADMITTEDUSERSTYPE
     switch v {
         case "everyoneInCompany":

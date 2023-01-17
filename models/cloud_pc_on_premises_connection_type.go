@@ -14,7 +14,7 @@ const (
 func (i CloudPcOnPremisesConnectionType) String() string {
     return []string{"hybridAzureADJoin", "azureADJoin", "unknownFutureValue"}[i]
 }
-func ParseCloudPcOnPremisesConnectionType(v string) (interface{}, error) {
+func ParseCloudPcOnPremisesConnectionType(v string) (any, error) {
     result := HYBRIDAZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE
     switch v {
         case "hybridAzureADJoin":

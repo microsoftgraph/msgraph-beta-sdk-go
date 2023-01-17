@@ -9,7 +9,7 @@ type MonitoringRule struct {
     // The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
     action *MonitoringAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The signal to monitor. Possible values are: rollback, unknownFutureValue.
@@ -21,7 +21,7 @@ type MonitoringRule struct {
 func NewMonitoringRule()(*MonitoringRule) {
     m := &MonitoringRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMonitoringRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *MonitoringRule) GetAction()(*MonitoringAction) {
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MonitoringRule) GetAdditionalData()(map[string]interface{}) {
+func (m *MonitoringRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -134,7 +134,7 @@ func (m *MonitoringRule) SetAction(value *MonitoringAction)() {
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MonitoringRule) SetAdditionalData(value map[string]interface{})() {
+func (m *MonitoringRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -7,7 +7,7 @@ import (
 // CustomUpdateTimeWindow custom update time window
 type CustomUpdateTimeWindow struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The endDay property
     endDay *DayOfWeek
     // End time of the time window
@@ -23,7 +23,7 @@ type CustomUpdateTimeWindow struct {
 func NewCustomUpdateTimeWindow()(*CustomUpdateTimeWindow) {
     m := &CustomUpdateTimeWindow{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCustomUpdateTimeWindowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateCustomUpdateTimeWindowFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewCustomUpdateTimeWindow(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CustomUpdateTimeWindow) GetAdditionalData()(map[string]interface{}) {
+func (m *CustomUpdateTimeWindow) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndDay gets the endDay property value. The endDay property
@@ -152,7 +152,7 @@ func (m *CustomUpdateTimeWindow) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CustomUpdateTimeWindow) SetAdditionalData(value map[string]interface{})() {
+func (m *CustomUpdateTimeWindow) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndDay sets the endDay property value. The endDay property

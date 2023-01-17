@@ -21,7 +21,7 @@ const (
 func (i DefenderProtectionType) String() string {
     return []string{"userDefined", "enable", "auditMode", "warn", "notConfigured"}[i]
 }
-func ParseDefenderProtectionType(v string) (interface{}, error) {
+func ParseDefenderProtectionType(v string) (any, error) {
     result := USERDEFINED_DEFENDERPROTECTIONTYPE
     switch v {
         case "userDefined":

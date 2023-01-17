@@ -7,7 +7,7 @@ import (
 // VirtualAppointmentSettings 
 type VirtualAppointmentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
     allowClientToJoinUsingBrowser *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type VirtualAppointmentSettings struct {
 func NewVirtualAppointmentSettings()(*VirtualAppointmentSettings) {
     m := &VirtualAppointmentSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVirtualAppointmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateVirtualAppointmentSettingsFromDiscriminatorValue(parseNode i878a80d23
     return NewVirtualAppointmentSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualAppointmentSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *VirtualAppointmentSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowClientToJoinUsingBrowser gets the allowClientToJoinUsingBrowser property value. Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
@@ -84,7 +84,7 @@ func (m *VirtualAppointmentSettings) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualAppointmentSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *VirtualAppointmentSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowClientToJoinUsingBrowser sets the allowClientToJoinUsingBrowser property value. Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.

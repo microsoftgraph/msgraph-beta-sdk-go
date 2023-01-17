@@ -7,7 +7,7 @@ import (
 // DeviceManagementScriptsHasPayloadLinksPostRequestBody 
 type DeviceManagementScriptsHasPayloadLinksPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The payloadIds property
     payloadIds []string
 }
@@ -15,7 +15,7 @@ type DeviceManagementScriptsHasPayloadLinksPostRequestBody struct {
 func NewDeviceManagementScriptsHasPayloadLinksPostRequestBody()(*DeviceManagementScriptsHasPayloadLinksPostRequestBody) {
     m := &DeviceManagementScriptsHasPayloadLinksPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementScriptsHasPayloadLinksPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDeviceManagementScriptsHasPayloadLinksPostRequestBodyFromDiscriminato
     return NewDeviceManagementScriptsHasPayloadLinksPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementScriptsHasPayloadLinksPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementScriptsHasPayloadLinksPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *DeviceManagementScriptsHasPayloadLinksPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementScriptsHasPayloadLinksPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementScriptsHasPayloadLinksPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPayloadIds sets the payloadIds property value. The payloadIds property

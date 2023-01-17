@@ -8,7 +8,7 @@ import (
 // DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody 
 type DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceEnrollmentNotificationConfigurations property
     deviceEnrollmentNotificationConfigurations []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable
 }
@@ -16,7 +16,7 @@ type DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPost
 func NewDeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody()(*DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody) {
     m := &DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateDeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurati
     return NewDeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceEnrollmentNotificationConfigurations gets the deviceEnrollmentNotificationConfigurations property value. The deviceEnrollmentNotificationConfigurations property
@@ -71,7 +71,7 @@ func (m *DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfiguration
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceEnrollmentNotificationConfigurations sets the deviceEnrollmentNotificationConfigurations property value. The deviceEnrollmentNotificationConfigurations property

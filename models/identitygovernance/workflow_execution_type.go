@@ -14,7 +14,7 @@ const (
 func (i WorkflowExecutionType) String() string {
     return []string{"scheduled", "onDemand", "unknownFutureValue"}[i]
 }
-func ParseWorkflowExecutionType(v string) (interface{}, error) {
+func ParseWorkflowExecutionType(v string) (any, error) {
     result := SCHEDULED_WORKFLOWEXECUTIONTYPE
     switch v {
         case "scheduled":

@@ -14,7 +14,7 @@ const (
 func (i CloudPcProvisioningType) String() string {
     return []string{"dedicated", "shared", "unknownFutureValue"}[i]
 }
-func ParseCloudPcProvisioningType(v string) (interface{}, error) {
+func ParseCloudPcProvisioningType(v string) (any, error) {
     result := DEDICATED_CLOUDPCPROVISIONINGTYPE
     switch v {
         case "dedicated":

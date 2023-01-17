@@ -15,7 +15,7 @@ const (
 func (i KeyUsages) String() string {
     return []string{"keyEncipherment", "digitalSignature"}[i]
 }
-func ParseKeyUsages(v string) (interface{}, error) {
+func ParseKeyUsages(v string) (any, error) {
     result := KEYENCIPHERMENT_KEYUSAGES
     switch v {
         case "keyEncipherment":

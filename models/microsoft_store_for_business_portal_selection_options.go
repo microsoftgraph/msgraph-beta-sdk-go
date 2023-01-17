@@ -17,7 +17,7 @@ const (
 func (i MicrosoftStoreForBusinessPortalSelectionOptions) String() string {
     return []string{"none", "companyPortal", "privateStore"}[i]
 }
-func ParseMicrosoftStoreForBusinessPortalSelectionOptions(v string) (interface{}, error) {
+func ParseMicrosoftStoreForBusinessPortalSelectionOptions(v string) (any, error) {
     result := NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
     switch v {
         case "none":

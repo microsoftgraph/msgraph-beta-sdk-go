@@ -7,7 +7,7 @@ import (
 // WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody 
 type WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The azureAdDeviceId property
     azureAdDeviceId *string
 }
@@ -15,7 +15,7 @@ type WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody struct {
 func NewWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody()(*WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody) {
     m := &WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyFromDiscri
     return NewWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. The azureAdDeviceId property
@@ -62,7 +62,7 @@ func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody) Serialize(
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAzureAdDeviceId sets the azureAdDeviceId property value. The azureAdDeviceId property

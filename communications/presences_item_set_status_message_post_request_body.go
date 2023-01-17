@@ -8,7 +8,7 @@ import (
 // PresencesItemSetStatusMessagePostRequestBody 
 type PresencesItemSetStatusMessagePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The statusMessage property
     statusMessage ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PresenceStatusMessageable
 }
@@ -16,7 +16,7 @@ type PresencesItemSetStatusMessagePostRequestBody struct {
 func NewPresencesItemSetStatusMessagePostRequestBody()(*PresencesItemSetStatusMessagePostRequestBody) {
     m := &PresencesItemSetStatusMessagePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePresencesItemSetStatusMessagePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreatePresencesItemSetStatusMessagePostRequestBodyFromDiscriminatorValue(pa
     return NewPresencesItemSetStatusMessagePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresencesItemSetStatusMessagePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *PresencesItemSetStatusMessagePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *PresencesItemSetStatusMessagePostRequestBody) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PresencesItemSetStatusMessagePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *PresencesItemSetStatusMessagePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetStatusMessage sets the statusMessage property value. The statusMessage property

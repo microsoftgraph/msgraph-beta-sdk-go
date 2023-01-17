@@ -8,7 +8,7 @@ import (
 // ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody 
 type ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The expression property
     expression *string
     // The targetAttributeDefinition property
@@ -20,7 +20,7 @@ type ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody struct
 func NewItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody()(*ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody) {
     m := &ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBodyF
     return NewItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpression gets the expression property value. The expression property
@@ -107,7 +107,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody) S
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSynchronizationTemplatesItemSchemaParseExpressionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpression sets the expression property value. The expression property

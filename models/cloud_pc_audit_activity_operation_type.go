@@ -15,7 +15,7 @@ const (
 func (i CloudPcAuditActivityOperationType) String() string {
     return []string{"create", "delete", "patch", "other"}[i]
 }
-func ParseCloudPcAuditActivityOperationType(v string) (interface{}, error) {
+func ParseCloudPcAuditActivityOperationType(v string) (any, error) {
     result := CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
     switch v {
         case "create":

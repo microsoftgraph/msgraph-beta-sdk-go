@@ -21,7 +21,7 @@ const (
 func (i WindowsAutopilotDeviceRemediationState) String() string {
     return []string{"unknown", "noRemediationRequired", "automaticRemediationRequired", "manualRemediationRequired", "unknownFutureValue"}[i]
 }
-func ParseWindowsAutopilotDeviceRemediationState(v string) (interface{}, error) {
+func ParseWindowsAutopilotDeviceRemediationState(v string) (any, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTDEVICEREMEDIATIONSTATE
     switch v {
         case "unknown":

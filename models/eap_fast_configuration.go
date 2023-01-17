@@ -19,7 +19,7 @@ const (
 func (i EapFastConfiguration) String() string {
     return []string{"noProtectedAccessCredential", "useProtectedAccessCredential", "useProtectedAccessCredentialAndProvision", "useProtectedAccessCredentialAndProvisionAnonymously"}[i]
 }
-func ParseEapFastConfiguration(v string) (interface{}, error) {
+func ParseEapFastConfiguration(v string) (any, error) {
     result := NOPROTECTEDACCESSCREDENTIAL_EAPFASTCONFIGURATION
     switch v {
         case "noProtectedAccessCredential":

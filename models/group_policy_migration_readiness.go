@@ -21,7 +21,7 @@ const (
 func (i GroupPolicyMigrationReadiness) String() string {
     return []string{"none", "partial", "complete", "error", "notApplicable"}[i]
 }
-func ParseGroupPolicyMigrationReadiness(v string) (interface{}, error) {
+func ParseGroupPolicyMigrationReadiness(v string) (any, error) {
     result := NONE_GROUPPOLICYMIGRATIONREADINESS
     switch v {
         case "none":

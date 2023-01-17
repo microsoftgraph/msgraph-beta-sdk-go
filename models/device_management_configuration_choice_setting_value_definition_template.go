@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate choice Setting Value Definition Template
 type DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Choice Setting Allowed Options
     allowedOptions []DeviceManagementConfigurationOptionDefinitionTemplateable
     // The OdataType property
@@ -17,7 +17,7 @@ type DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate struct {
 func NewDeviceManagementConfigurationChoiceSettingValueDefinitionTemplate()(*DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) {
     m := &DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingValueDefinitionTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDeviceManagementConfigurationChoiceSettingValueDefinitionTemplateFrom
     return NewDeviceManagementConfigurationChoiceSettingValueDefinitionTemplate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedOptions gets the allowedOptions property value. Choice Setting Allowed Options
@@ -92,7 +92,7 @@ func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) Seri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedOptions sets the allowedOptions property value. Choice Setting Allowed Options

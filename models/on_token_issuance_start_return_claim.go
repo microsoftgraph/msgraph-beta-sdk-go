@@ -7,7 +7,7 @@ import (
 // OnTokenIssuanceStartReturnClaim 
 type OnTokenIssuanceStartReturnClaim struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The claimIdInApiResponse property
     claimIdInApiResponse *string
     // The OdataType property
@@ -17,7 +17,7 @@ type OnTokenIssuanceStartReturnClaim struct {
 func NewOnTokenIssuanceStartReturnClaim()(*OnTokenIssuanceStartReturnClaim) {
     m := &OnTokenIssuanceStartReturnClaim{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnTokenIssuanceStartReturnClaimFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateOnTokenIssuanceStartReturnClaimFromDiscriminatorValue(parseNode i878a
     return NewOnTokenIssuanceStartReturnClaim(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnTokenIssuanceStartReturnClaim) GetAdditionalData()(map[string]interface{}) {
+func (m *OnTokenIssuanceStartReturnClaim) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClaimIdInApiResponse gets the claimIdInApiResponse property value. The claimIdInApiResponse property
@@ -84,7 +84,7 @@ func (m *OnTokenIssuanceStartReturnClaim) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnTokenIssuanceStartReturnClaim) SetAdditionalData(value map[string]interface{})() {
+func (m *OnTokenIssuanceStartReturnClaim) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClaimIdInApiResponse sets the claimIdInApiResponse property value. The claimIdInApiResponse property

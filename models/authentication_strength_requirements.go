@@ -14,7 +14,7 @@ const (
 func (i AuthenticationStrengthRequirements) String() string {
     return []string{"none", "mfa", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationStrengthRequirements(v string) (interface{}, error) {
+func ParseAuthenticationStrengthRequirements(v string) (any, error) {
     result := NONE_AUTHENTICATIONSTRENGTHREQUIREMENTS
     switch v {
         case "none":

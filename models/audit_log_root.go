@@ -7,7 +7,7 @@ import (
 // AuditLogRoot 
 type AuditLogRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The directoryAudits property
     directoryAudits []DirectoryAuditable
     // The directoryProvisioning property
@@ -23,7 +23,7 @@ type AuditLogRoot struct {
 func NewAuditLogRoot()(*AuditLogRoot) {
     m := &AuditLogRoot{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuditLogRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewAuditLogRoot(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuditLogRoot) GetAdditionalData()(map[string]interface{}) {
+func (m *AuditLogRoot) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
@@ -182,7 +182,7 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuditLogRoot) SetAdditionalData(value map[string]interface{})() {
+func (m *AuditLogRoot) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property

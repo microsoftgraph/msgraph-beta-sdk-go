@@ -14,7 +14,7 @@ const (
 func (i PlannerExternalTaskSourceDisplayType) String() string {
     return []string{"none", "default", "unknownFutureValue"}[i]
 }
-func ParsePlannerExternalTaskSourceDisplayType(v string) (interface{}, error) {
+func ParsePlannerExternalTaskSourceDisplayType(v string) (any, error) {
     result := NONE_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
     switch v {
         case "none":

@@ -18,7 +18,7 @@ const (
 func (i ShiftWorkCloudPcAccessState) String() string {
     return []string{"unassigned", "noLicensesAvailable", "activationFailed", "active", "activating", "waitlisted", "unknownFutureValue"}[i]
 }
-func ParseShiftWorkCloudPcAccessState(v string) (interface{}, error) {
+func ParseShiftWorkCloudPcAccessState(v string) (any, error) {
     result := UNASSIGNED_SHIFTWORKCLOUDPCACCESSSTATE
     switch v {
         case "unassigned":

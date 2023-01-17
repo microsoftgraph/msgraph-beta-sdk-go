@@ -7,7 +7,7 @@ import (
 // MacOSLaunchItem represents an app in the list of macOS launch items
 type MacOSLaunchItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Whether or not to hide the item from the Users and Groups List.
     hide *bool
     // The OdataType property
@@ -19,7 +19,7 @@ type MacOSLaunchItem struct {
 func NewMacOSLaunchItem()(*MacOSLaunchItem) {
     m := &MacOSLaunchItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMacOSLaunchItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMacOSLaunchItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewMacOSLaunchItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSLaunchItem) GetAdditionalData()(map[string]interface{}) {
+func (m *MacOSLaunchItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *MacOSLaunchItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MacOSLaunchItem) SetAdditionalData(value map[string]interface{})() {
+func (m *MacOSLaunchItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHide sets the hide property value. Whether or not to hide the item from the Users and Groups List.

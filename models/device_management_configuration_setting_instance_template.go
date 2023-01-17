@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationSettingInstanceTemplate setting Instance Template
 type DeviceManagementConfigurationSettingInstanceTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates if a policy must specify this setting.
     isRequired *bool
     // The OdataType property
@@ -21,7 +21,7 @@ type DeviceManagementConfigurationSettingInstanceTemplate struct {
 func NewDeviceManagementConfigurationSettingInstanceTemplate()(*DeviceManagementConfigurationSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationSettingInstanceTemplate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +57,7 @@ func CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminator
     return NewDeviceManagementConfigurationSettingInstanceTemplate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -156,7 +156,7 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsRequired sets the isRequired property value. Indicates if a policy must specify this setting.

@@ -15,7 +15,7 @@ const (
 func (i UserExperienceAnalyticsInsightSeverity) String() string {
     return []string{"none", "informational", "warning", "error"}[i]
 }
-func ParseUserExperienceAnalyticsInsightSeverity(v string) (interface{}, error) {
+func ParseUserExperienceAnalyticsInsightSeverity(v string) (any, error) {
     result := NONE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
     switch v {
         case "none":

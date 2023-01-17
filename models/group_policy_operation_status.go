@@ -19,7 +19,7 @@ const (
 func (i GroupPolicyOperationStatus) String() string {
     return []string{"unknown", "inProgress", "success", "failed"}[i]
 }
-func ParseGroupPolicyOperationStatus(v string) (interface{}, error) {
+func ParseGroupPolicyOperationStatus(v string) (any, error) {
     result := UNKNOWN_GROUPPOLICYOPERATIONSTATUS
     switch v {
         case "unknown":

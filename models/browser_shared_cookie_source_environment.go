@@ -19,7 +19,7 @@ const (
 func (i BrowserSharedCookieSourceEnvironment) String() string {
     return []string{"microsoftEdge", "internetExplorer11", "both", "unknownFutureValue"}[i]
 }
-func ParseBrowserSharedCookieSourceEnvironment(v string) (interface{}, error) {
+func ParseBrowserSharedCookieSourceEnvironment(v string) (any, error) {
     result := MICROSOFTEDGE_BROWSERSHAREDCOOKIESOURCEENVIRONMENT
     switch v {
         case "microsoftEdge":

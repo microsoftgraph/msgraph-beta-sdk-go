@@ -7,7 +7,7 @@ import (
 // ClassificationResult 
 type ClassificationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The confidence level, 0 to 100, of the result.
     confidenceLevel *int32
     // The number of instances of the specific information type in the input.
@@ -21,7 +21,7 @@ type ClassificationResult struct {
 func NewClassificationResult()(*ClassificationResult) {
     m := &ClassificationResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateClassificationResultFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewClassificationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ClassificationResult) GetAdditionalData()(map[string]interface{}) {
+func (m *ClassificationResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfidenceLevel gets the confidenceLevel property value. The confidence level, 0 to 100, of the result.
@@ -128,7 +128,7 @@ func (m *ClassificationResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ClassificationResult) SetAdditionalData(value map[string]interface{})() {
+func (m *ClassificationResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfidenceLevel sets the confidenceLevel property value. The confidence level, 0 to 100, of the result.

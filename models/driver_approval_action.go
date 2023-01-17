@@ -17,7 +17,7 @@ const (
 func (i DriverApprovalAction) String() string {
     return []string{"approve", "decline", "suspend"}[i]
 }
-func ParseDriverApprovalAction(v string) (interface{}, error) {
+func ParseDriverApprovalAction(v string) (any, error) {
     result := APPROVE_DRIVERAPPROVALACTION
     switch v {
         case "approve":

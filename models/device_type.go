@@ -65,7 +65,7 @@ const (
 func (i DeviceType) String() string {
     return []string{"desktop", "windowsRT", "winMO6", "nokia", "windowsPhone", "mac", "winCE", "winEmbedded", "iPhone", "iPad", "iPod", "android", "iSocConsumer", "unix", "macMDM", "holoLens", "surfaceHub", "androidForWork", "androidEnterprise", "windows10x", "androidnGMS", "chromeOS", "linux", "blackberry", "palm", "unknown", "cloudPC"}[i]
 }
-func ParseDeviceType(v string) (interface{}, error) {
+func ParseDeviceType(v string) (any, error) {
     result := DESKTOP_DEVICETYPE
     switch v {
         case "desktop":

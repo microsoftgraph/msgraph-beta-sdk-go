@@ -19,7 +19,7 @@ const (
 func (i EdgeTelemetryMode) String() string {
     return []string{"notConfigured", "intranet", "internet", "intranetAndInternet"}[i]
 }
-func ParseEdgeTelemetryMode(v string) (interface{}, error) {
+func ParseEdgeTelemetryMode(v string) (any, error) {
     result := NOTCONFIGURED_EDGETELEMETRYMODE
     switch v {
         case "notConfigured":

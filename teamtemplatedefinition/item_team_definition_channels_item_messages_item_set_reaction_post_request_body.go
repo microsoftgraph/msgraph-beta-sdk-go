@@ -7,7 +7,7 @@ import (
 // ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody 
 type ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The reactionType property
     reactionType *string
 }
@@ -15,7 +15,7 @@ type ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody struct
 func NewItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody()(*ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) {
     m := &ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBodyF
     return NewItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) S
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetReactionType sets the reactionType property value. The reactionType property

@@ -13,7 +13,7 @@ const (
 func (i ExternalAuthenticationType) String() string {
     return []string{"passthru", "aadPreAuthentication"}[i]
 }
-func ParseExternalAuthenticationType(v string) (interface{}, error) {
+func ParseExternalAuthenticationType(v string) (any, error) {
     result := PASSTHRU_EXTERNALAUTHENTICATIONTYPE
     switch v {
         case "passthru":

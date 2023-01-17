@@ -15,7 +15,7 @@ const (
 func (i RequestedDeploymentStateValue) String() string {
     return []string{"none", "paused", "archived", "unknownFutureValue"}[i]
 }
-func ParseRequestedDeploymentStateValue(v string) (interface{}, error) {
+func ParseRequestedDeploymentStateValue(v string) (any, error) {
     result := NONE_REQUESTEDDEPLOYMENTSTATEVALUE
     switch v {
         case "none":

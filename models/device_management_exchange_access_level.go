@@ -19,7 +19,7 @@ const (
 func (i DeviceManagementExchangeAccessLevel) String() string {
     return []string{"none", "allow", "block", "quarantine"}[i]
 }
-func ParseDeviceManagementExchangeAccessLevel(v string) (interface{}, error) {
+func ParseDeviceManagementExchangeAccessLevel(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
     switch v {
         case "none":

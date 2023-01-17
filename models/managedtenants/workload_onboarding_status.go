@@ -14,7 +14,7 @@ const (
 func (i WorkloadOnboardingStatus) String() string {
     return []string{"notOnboarded", "onboarded", "unknownFutureValue"}[i]
 }
-func ParseWorkloadOnboardingStatus(v string) (interface{}, error) {
+func ParseWorkloadOnboardingStatus(v string) (any, error) {
     result := NOTONBOARDED_WORKLOADONBOARDINGSTATUS
     switch v {
         case "notOnboarded":

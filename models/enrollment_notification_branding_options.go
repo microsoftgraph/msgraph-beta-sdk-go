@@ -25,7 +25,7 @@ const (
 func (i EnrollmentNotificationBrandingOptions) String() string {
     return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[i]
 }
-func ParseEnrollmentNotificationBrandingOptions(v string) (interface{}, error) {
+func ParseEnrollmentNotificationBrandingOptions(v string) (any, error) {
     result := NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
     switch v {
         case "none":

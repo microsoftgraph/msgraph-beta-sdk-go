@@ -19,7 +19,7 @@ const (
 func (i HorizontalSectionLayoutType) String() string {
     return []string{"none", "oneColumn", "twoColumns", "threeColumns", "oneThirdLeftColumn", "oneThirdRightColumn", "fullWidth", "unknownFutureValue"}[i]
 }
-func ParseHorizontalSectionLayoutType(v string) (interface{}, error) {
+func ParseHorizontalSectionLayoutType(v string) (any, error) {
     result := NONE_HORIZONTALSECTIONLAYOUTTYPE
     switch v {
         case "none":

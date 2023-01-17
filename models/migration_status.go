@@ -15,7 +15,7 @@ const (
 func (i MigrationStatus) String() string {
     return []string{"ready", "needsReview", "additionalStepsRequired", "unknownFutureValue"}[i]
 }
-func ParseMigrationStatus(v string) (interface{}, error) {
+func ParseMigrationStatus(v string) (any, error) {
     result := READY_MIGRATIONSTATUS
     switch v {
         case "ready":

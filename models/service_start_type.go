@@ -17,7 +17,7 @@ const (
 func (i ServiceStartType) String() string {
     return []string{"manual", "automatic", "disabled"}[i]
 }
-func ParseServiceStartType(v string) (interface{}, error) {
+func ParseServiceStartType(v string) (any, error) {
     result := MANUAL_SERVICESTARTTYPE
     switch v {
         case "manual":

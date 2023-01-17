@@ -14,7 +14,7 @@ const (
 func (i AttributeMappingSourceType) String() string {
     return []string{"Attribute", "Constant", "Function"}[i]
 }
-func ParseAttributeMappingSourceType(v string) (interface{}, error) {
+func ParseAttributeMappingSourceType(v string) (any, error) {
     result := ATTRIBUTE_ATTRIBUTEMAPPINGSOURCETYPE
     switch v {
         case "Attribute":

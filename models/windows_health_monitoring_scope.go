@@ -19,7 +19,7 @@ const (
 func (i WindowsHealthMonitoringScope) String() string {
     return []string{"undefined", "healthMonitoring", "bootPerformance", "windowsUpdates"}[i]
 }
-func ParseWindowsHealthMonitoringScope(v string) (interface{}, error) {
+func ParseWindowsHealthMonitoringScope(v string) (any, error) {
     result := UNDEFINED_WINDOWSHEALTHMONITORINGSCOPE
     switch v {
         case "undefined":

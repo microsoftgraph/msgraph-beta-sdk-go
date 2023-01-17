@@ -23,7 +23,7 @@ const (
 func (i RunState) String() string {
     return []string{"unknown", "success", "fail", "scriptError", "pending", "notApplicable"}[i]
 }
-func ParseRunState(v string) (interface{}, error) {
+func ParseRunState(v string) (any, error) {
     result := UNKNOWN_RUNSTATE
     switch v {
         case "unknown":

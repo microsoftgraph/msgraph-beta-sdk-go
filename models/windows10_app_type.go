@@ -15,7 +15,7 @@ const (
 func (i Windows10AppType) String() string {
     return []string{"desktop", "universal"}[i]
 }
-func ParseWindows10AppType(v string) (interface{}, error) {
+func ParseWindows10AppType(v string) (any, error) {
     result := DESKTOP_WINDOWS10APPTYPE
     switch v {
         case "desktop":

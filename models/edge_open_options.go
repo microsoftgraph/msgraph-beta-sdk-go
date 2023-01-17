@@ -21,7 +21,7 @@ const (
 func (i EdgeOpenOptions) String() string {
     return []string{"notConfigured", "startPage", "newTabPage", "previousPages", "specificPages"}[i]
 }
-func ParseEdgeOpenOptions(v string) (interface{}, error) {
+func ParseEdgeOpenOptions(v string) (any, error) {
     result := NOTCONFIGURED_EDGEOPENOPTIONS
     switch v {
         case "notConfigured":

@@ -27,7 +27,7 @@ const (
 func (i AndroidForWorkRequiredPasswordType) String() string {
     return []string{"deviceDefault", "lowSecurityBiometric", "required", "atLeastNumeric", "numericComplex", "atLeastAlphabetic", "atLeastAlphanumeric", "alphanumericWithSymbols"}[i]
 }
-func ParseAndroidForWorkRequiredPasswordType(v string) (interface{}, error) {
+func ParseAndroidForWorkRequiredPasswordType(v string) (any, error) {
     result := DEVICEDEFAULT_ANDROIDFORWORKREQUIREDPASSWORDTYPE
     switch v {
         case "deviceDefault":

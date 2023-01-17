@@ -7,7 +7,7 @@ import (
 // CryptographySuite vPN Security Association Parameters
 type CryptographySuite struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
     authenticationTransformConstants *AuthenticationTransformConstant
     // Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
@@ -27,7 +27,7 @@ type CryptographySuite struct {
 func NewCryptographySuite()(*CryptographySuite) {
     m := &CryptographySuite{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCryptographySuiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateCryptographySuiteFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewCryptographySuite(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CryptographySuite) GetAdditionalData()(map[string]interface{}) {
+func (m *CryptographySuite) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthenticationTransformConstants gets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
@@ -200,7 +200,7 @@ func (m *CryptographySuite) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CryptographySuite) SetAdditionalData(value map[string]interface{})() {
+func (m *CryptographySuite) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthenticationTransformConstants sets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.

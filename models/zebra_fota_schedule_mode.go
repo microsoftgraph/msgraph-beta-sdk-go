@@ -17,7 +17,7 @@ const (
 func (i ZebraFotaScheduleMode) String() string {
     return []string{"installNow", "scheduled", "unknownFutureValue"}[i]
 }
-func ParseZebraFotaScheduleMode(v string) (interface{}, error) {
+func ParseZebraFotaScheduleMode(v string) (any, error) {
     result := INSTALLNOW_ZEBRAFOTASCHEDULEMODE
     switch v {
         case "installNow":

@@ -23,7 +23,7 @@ const (
 func (i OnboardingStatus) String() string {
     return []string{"unknown", "inprogress", "onboarded", "failed", "offboarding", "unknownFutureValue"}[i]
 }
-func ParseOnboardingStatus(v string) (interface{}, error) {
+func ParseOnboardingStatus(v string) (any, error) {
     result := UNKNOWN_ONBOARDINGSTATUS
     switch v {
         case "unknown":

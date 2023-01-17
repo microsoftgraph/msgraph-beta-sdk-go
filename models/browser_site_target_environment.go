@@ -23,7 +23,7 @@ const (
 func (i BrowserSiteTargetEnvironment) String() string {
     return []string{"internetExplorerMode", "internetExplorer11", "microsoftEdge", "configurable", "none", "unknownFutureValue"}[i]
 }
-func ParseBrowserSiteTargetEnvironment(v string) (interface{}, error) {
+func ParseBrowserSiteTargetEnvironment(v string) (any, error) {
     result := INTERNETEXPLORERMODE_BROWSERSITETARGETENVIRONMENT
     switch v {
         case "internetExplorerMode":

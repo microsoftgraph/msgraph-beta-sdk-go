@@ -26,7 +26,7 @@ const (
 func (i DeviceManagementConfigurationStringFormat) String() string {
     return []string{"none", "email", "guid", "ip", "base64", "url", "version", "xml", "date", "time", "binary", "regEx", "json", "dateTime", "surfaceHub"}[i]
 }
-func ParseDeviceManagementConfigurationStringFormat(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationStringFormat(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSTRINGFORMAT
     switch v {
         case "none":

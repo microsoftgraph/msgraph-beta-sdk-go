@@ -7,7 +7,7 @@ import (
 // TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody 
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The reactionType property
     reactionType *string
 }
@@ -15,7 +15,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetRe
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesIte
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemS
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetReactionType sets the reactionType property value. The reactionType property

@@ -15,6 +15,7 @@ type Participantable interface {
     GetMediaStreams()([]MediaStreamable)
     GetMetadata()(*string)
     GetRecordingInfo()(RecordingInfoable)
+    GetRestrictedExperience()(OnlineMeetingRestrictedable)
     SetInfo(value ParticipantInfoable)()
     SetIsIdentityAnonymized(value *bool)()
     SetIsInLobby(value *bool)()
@@ -22,4 +23,5 @@ type Participantable interface {
     SetMediaStreams(value []MediaStreamable)()
     SetMetadata(value *string)()
     SetRecordingInfo(value RecordingInfoable)()
+    SetRestrictedExperience(value OnlineMeetingRestrictedable)()
 }

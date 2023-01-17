@@ -11,7 +11,7 @@ type DelegatedAdminAccessContainer struct {
     // The accessContainerType property
     accessContainerType *DelegatedAdminAccessContainerType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -19,7 +19,7 @@ type DelegatedAdminAccessContainer struct {
 func NewDelegatedAdminAccessContainer()(*DelegatedAdminAccessContainer) {
     m := &DelegatedAdminAccessContainer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDelegatedAdminAccessContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func (m *DelegatedAdminAccessContainer) GetAccessContainerType()(*DelegatedAdmin
     return m.accessContainerType
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DelegatedAdminAccessContainer) GetAdditionalData()(map[string]interface{}) {
+func (m *DelegatedAdminAccessContainer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -115,7 +115,7 @@ func (m *DelegatedAdminAccessContainer) SetAccessContainerType(value *DelegatedA
     m.accessContainerType = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DelegatedAdminAccessContainer) SetAdditionalData(value map[string]interface{})() {
+func (m *DelegatedAdminAccessContainer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

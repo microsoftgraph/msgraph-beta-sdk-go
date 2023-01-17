@@ -23,7 +23,7 @@ const (
 func (i PolicySetStatus) String() string {
     return []string{"unknown", "validating", "partialSuccess", "success", "error", "notAssigned"}[i]
 }
-func ParsePolicySetStatus(v string) (interface{}, error) {
+func ParsePolicySetStatus(v string) (any, error) {
     result := UNKNOWN_POLICYSETSTATUS
     switch v {
         case "unknown":

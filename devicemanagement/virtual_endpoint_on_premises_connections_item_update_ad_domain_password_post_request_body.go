@@ -7,7 +7,7 @@ import (
 // VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody 
 type VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The adDomainPassword property
     adDomainPassword *string
 }
@@ -15,7 +15,7 @@ type VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBo
 func NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody()(*VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) {
     m := &VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostReq
     return NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdDomainPassword gets the adDomainPassword property value. The adDomainPassword property
@@ -62,7 +62,7 @@ func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostReque
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdDomainPassword sets the adDomainPassword property value. The adDomainPassword property

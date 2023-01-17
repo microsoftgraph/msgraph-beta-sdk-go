@@ -21,7 +21,7 @@ const (
 func (i CertificateRevocationStatus) String() string {
     return []string{"none", "pending", "issued", "failed", "revoked"}[i]
 }
-func ParseCertificateRevocationStatus(v string) (interface{}, error) {
+func ParseCertificateRevocationStatus(v string) (any, error) {
     result := NONE_CERTIFICATEREVOCATIONSTATUS
     switch v {
         case "none":

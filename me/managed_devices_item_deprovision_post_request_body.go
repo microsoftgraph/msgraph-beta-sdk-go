@@ -7,7 +7,7 @@ import (
 // ManagedDevicesItemDeprovisionPostRequestBody 
 type ManagedDevicesItemDeprovisionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deprovisionReason property
     deprovisionReason *string
 }
@@ -15,7 +15,7 @@ type ManagedDevicesItemDeprovisionPostRequestBody struct {
 func NewManagedDevicesItemDeprovisionPostRequestBody()(*ManagedDevicesItemDeprovisionPostRequestBody) {
     m := &ManagedDevicesItemDeprovisionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesItemDeprovisionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateManagedDevicesItemDeprovisionPostRequestBodyFromDiscriminatorValue(pa
     return NewManagedDevicesItemDeprovisionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemDeprovisionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesItemDeprovisionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeprovisionReason gets the deprovisionReason property value. The deprovisionReason property
@@ -62,7 +62,7 @@ func (m *ManagedDevicesItemDeprovisionPostRequestBody) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemDeprovisionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesItemDeprovisionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeprovisionReason sets the deprovisionReason property value. The deprovisionReason property

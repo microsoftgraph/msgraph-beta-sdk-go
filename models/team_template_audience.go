@@ -15,7 +15,7 @@ const (
 func (i TeamTemplateAudience) String() string {
     return []string{"organization", "user", "public", "unknownFutureValue"}[i]
 }
-func ParseTeamTemplateAudience(v string) (interface{}, error) {
+func ParseTeamTemplateAudience(v string) (any, error) {
     result := ORGANIZATION_TEAMTEMPLATEAUDIENCE
     switch v {
         case "organization":

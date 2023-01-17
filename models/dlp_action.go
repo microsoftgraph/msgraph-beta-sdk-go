@@ -14,7 +14,7 @@ const (
 func (i DlpAction) String() string {
     return []string{"notifyUser", "blockAccess", "deviceRestriction"}[i]
 }
-func ParseDlpAction(v string) (interface{}, error) {
+func ParseDlpAction(v string) (any, error) {
     result := NOTIFYUSER_DLPACTION
     switch v {
         case "notifyUser":

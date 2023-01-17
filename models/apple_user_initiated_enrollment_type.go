@@ -17,7 +17,7 @@ const (
 func (i AppleUserInitiatedEnrollmentType) String() string {
     return []string{"unknown", "device", "user"}[i]
 }
-func ParseAppleUserInitiatedEnrollmentType(v string) (interface{}, error) {
+func ParseAppleUserInitiatedEnrollmentType(v string) (any, error) {
     result := UNKNOWN_APPLEUSERINITIATEDENROLLMENTTYPE
     switch v {
         case "unknown":

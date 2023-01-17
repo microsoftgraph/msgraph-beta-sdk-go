@@ -20,7 +20,7 @@ const (
 func (i RecordCompletionReason) String() string {
     return []string{"operationCanceled", "stopToneDetected", "maxRecordDurationReached", "initialSilenceTimeout", "maxSilenceTimeout", "playPromptFailed", "playBeepFailed", "mediaReceiveTimeout", "unspecifiedError"}[i]
 }
-func ParseRecordCompletionReason(v string) (interface{}, error) {
+func ParseRecordCompletionReason(v string) (any, error) {
     result := OPERATIONCANCELED_RECORDCOMPLETIONREASON
     switch v {
         case "operationCanceled":

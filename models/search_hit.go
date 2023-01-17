@@ -15,11 +15,13 @@ type SearchHit struct {
     // The _summary property
     _summary *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the content source which the externalItem is part of .
     contentSource *string
     // The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
     hitId *string
+    // The isCollapsed property
+    isCollapsed *bool
     // The OdataType property
     odataType *string
     // The rank or the order of the result.
@@ -35,7 +37,7 @@ type SearchHit struct {
 func NewSearchHit()(*SearchHit) {
     m := &SearchHit{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSearchHitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,7 +61,7 @@ func (m *SearchHit) Get_summary()(*string) {
     return m._summary
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchHit) GetAdditionalData()(map[string]interface{}) {
+func (m *SearchHit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentSource gets the contentSource property value. The name of the content source which the externalItem is part of .
@@ -129,6 +131,16 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["isCollapsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCollapsed(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -185,6 +197,10 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 func (m *SearchHit) GetHitId()(*string) {
     return m.hitId
 }
+// GetIsCollapsed gets the isCollapsed property value. The isCollapsed property
+func (m *SearchHit) GetIsCollapsed()(*bool) {
+    return m.isCollapsed
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SearchHit) GetOdataType()(*string) {
     return m.odataType
@@ -215,6 +231,12 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err := writer.WriteStringValue("hitId", m.GetHitId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isCollapsed", m.GetIsCollapsed())
         if err != nil {
             return err
         }
@@ -298,7 +320,7 @@ func (m *SearchHit) Set_summary(value *string)() {
     m._summary = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchHit) SetAdditionalData(value map[string]interface{})() {
+func (m *SearchHit) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContentSource sets the contentSource property value. The name of the content source which the externalItem is part of .
@@ -308,6 +330,10 @@ func (m *SearchHit) SetContentSource(value *string)() {
 // SetHitId sets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
 func (m *SearchHit) SetHitId(value *string)() {
     m.hitId = value
+}
+// SetIsCollapsed sets the isCollapsed property value. The isCollapsed property
+func (m *SearchHit) SetIsCollapsed(value *bool)() {
+    m.isCollapsed = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SearchHit) SetOdataType(value *string)() {

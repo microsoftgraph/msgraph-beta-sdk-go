@@ -7,7 +7,7 @@ import (
 // DeviceDetail 
 type DeviceDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates the browser information of the used for signing-in.
     browser *string
     // The browserId property
@@ -31,7 +31,7 @@ type DeviceDetail struct {
 func NewDeviceDetail()(*DeviceDetail) {
     m := &DeviceDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateDeviceDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewDeviceDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBrowser gets the browser property value. Indicates the browser information of the used for signing-in.
@@ -238,7 +238,7 @@ func (m *DeviceDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBrowser sets the browser property value. Indicates the browser information of the used for signing-in.

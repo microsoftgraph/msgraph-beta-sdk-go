@@ -17,7 +17,7 @@ type SecurityConfigurationTask struct {
     insights *string
     // The intended settings and their values.
     intendedSettings []KeyValuePairable
-    // The number of vulnerable devices.
+    // The number of vulnerable devices. Valid values 0 to 65536
     managedDeviceCount *int32
     // The vulnerable managed devices.
     managedDevices []VulnerableManagedDeviceable
@@ -138,7 +138,7 @@ func (m *SecurityConfigurationTask) GetInsights()(*string) {
 func (m *SecurityConfigurationTask) GetIntendedSettings()([]KeyValuePairable) {
     return m.intendedSettings
 }
-// GetManagedDeviceCount gets the managedDeviceCount property value. The number of vulnerable devices.
+// GetManagedDeviceCount gets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
 func (m *SecurityConfigurationTask) GetManagedDeviceCount()(*int32) {
     return m.managedDeviceCount
 }
@@ -227,7 +227,7 @@ func (m *SecurityConfigurationTask) SetInsights(value *string)() {
 func (m *SecurityConfigurationTask) SetIntendedSettings(value []KeyValuePairable)() {
     m.intendedSettings = value
 }
-// SetManagedDeviceCount sets the managedDeviceCount property value. The number of vulnerable devices.
+// SetManagedDeviceCount sets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
 func (m *SecurityConfigurationTask) SetManagedDeviceCount(value *int32)() {
     m.managedDeviceCount = value
 }

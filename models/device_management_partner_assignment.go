@@ -7,7 +7,7 @@ import (
 // DeviceManagementPartnerAssignment user group targeting for Device Management Partner
 type DeviceManagementPartnerAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // User groups targeting for devices to be enrolled through partner.
@@ -17,7 +17,7 @@ type DeviceManagementPartnerAssignment struct {
 func NewDeviceManagementPartnerAssignment()(*DeviceManagementPartnerAssignment) {
     m := &DeviceManagementPartnerAssignment{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue(parseNode i87
     return NewDeviceManagementPartnerAssignment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementPartnerAssignment) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementPartnerAssignment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *DeviceManagementPartnerAssignment) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementPartnerAssignment) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementPartnerAssignment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

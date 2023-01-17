@@ -7,7 +7,7 @@ import (
 // VpnDnsRule vPN DNS Rule definition.
 type VpnDnsRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Automatically connect to the VPN when the device connects to this domain: Default False.
     autoTrigger *bool
     // Name.
@@ -25,7 +25,7 @@ type VpnDnsRule struct {
 func NewVpnDnsRule()(*VpnDnsRule) {
     m := &VpnDnsRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVpnDnsRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateVpnDnsRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewVpnDnsRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnDnsRule) GetAdditionalData()(map[string]interface{}) {
+func (m *VpnDnsRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutoTrigger gets the autoTrigger property value. Automatically connect to the VPN when the device connects to this domain: Default False.
@@ -176,7 +176,7 @@ func (m *VpnDnsRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnDnsRule) SetAdditionalData(value map[string]interface{})() {
+func (m *VpnDnsRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAutoTrigger sets the autoTrigger property value. Automatically connect to the VPN when the device connects to this domain: Default False.

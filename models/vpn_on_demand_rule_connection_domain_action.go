@@ -15,7 +15,7 @@ const (
 func (i VpnOnDemandRuleConnectionDomainAction) String() string {
     return []string{"connectIfNeeded", "neverConnect"}[i]
 }
-func ParseVpnOnDemandRuleConnectionDomainAction(v string) (interface{}, error) {
+func ParseVpnOnDemandRuleConnectionDomainAction(v string) (any, error) {
     result := CONNECTIFNEEDED_VPNONDEMANDRULECONNECTIONDOMAINACTION
     switch v {
         case "connectIfNeeded":

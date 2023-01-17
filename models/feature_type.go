@@ -14,7 +14,7 @@ const (
 func (i FeatureType) String() string {
     return []string{"registration", "reset", "unknownFutureValue"}[i]
 }
-func ParseFeatureType(v string) (interface{}, error) {
+func ParseFeatureType(v string) (any, error) {
     result := REGISTRATION_FEATURETYPE
     switch v {
         case "registration":

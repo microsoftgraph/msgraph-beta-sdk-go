@@ -14,7 +14,7 @@ type LogonUser struct {
     // User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
     accountType *UserAccountSecurityType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -30,7 +30,7 @@ type LogonUser struct {
 func NewLogonUser()(*LogonUser) {
     m := &LogonUser{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateLogonUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +50,7 @@ func (m *LogonUser) GetAccountType()(*UserAccountSecurityType) {
     return m.accountType
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LogonUser) GetAdditionalData()(map[string]interface{}) {
+func (m *LogonUser) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -234,7 +234,7 @@ func (m *LogonUser) SetAccountType(value *UserAccountSecurityType)() {
     m.accountType = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *LogonUser) SetAdditionalData(value map[string]interface{})() {
+func (m *LogonUser) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

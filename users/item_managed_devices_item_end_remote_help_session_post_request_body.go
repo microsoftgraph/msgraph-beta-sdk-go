@@ -7,7 +7,7 @@ import (
 // ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody 
 type ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The sessionKey property
     sessionKey *string
 }
@@ -15,7 +15,7 @@ type ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody struct {
 func NewItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody()(*ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody) {
     m := &ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesItemEndRemoteHelpSessionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemManagedDevicesItemEndRemoteHelpSessionPostRequestBodyFromDiscrimi
     return NewItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody) Serialize(wr
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesItemEndRemoteHelpSessionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetSessionKey sets the sessionKey property value. The sessionKey property

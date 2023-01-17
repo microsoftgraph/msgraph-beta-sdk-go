@@ -16,7 +16,7 @@ const (
 func (i ApprovalState) String() string {
     return []string{"pending", "approved", "denied", "aborted", "canceled"}[i]
 }
-func ParseApprovalState(v string) (interface{}, error) {
+func ParseApprovalState(v string) (any, error) {
     result := PENDING_APPROVALSTATE
     switch v {
         case "pending":

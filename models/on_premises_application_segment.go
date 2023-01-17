@@ -7,7 +7,7 @@ import (
 // OnPremisesApplicationSegment 
 type OnPremisesApplicationSegment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If you're configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.
     alternateUrl *string
     // CORS Rule definition for a particular application segment.
@@ -23,7 +23,7 @@ type OnPremisesApplicationSegment struct {
 func NewOnPremisesApplicationSegment()(*OnPremisesApplicationSegment) {
     m := &OnPremisesApplicationSegment{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateOnPremisesApplicationSegmentFromDiscriminatorValue(parseNode i878a80d
     return NewOnPremisesApplicationSegment(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesApplicationSegment) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesApplicationSegment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.
@@ -158,7 +158,7 @@ func (m *OnPremisesApplicationSegment) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesApplicationSegment) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesApplicationSegment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.

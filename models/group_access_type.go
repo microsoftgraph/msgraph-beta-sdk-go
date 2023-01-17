@@ -15,7 +15,7 @@ const (
 func (i GroupAccessType) String() string {
     return []string{"none", "private", "secret", "public"}[i]
 }
-func ParseGroupAccessType(v string) (interface{}, error) {
+func ParseGroupAccessType(v string) (any, error) {
     result := NONE_GROUPACCESSTYPE
     switch v {
         case "none":

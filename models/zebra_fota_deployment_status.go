@@ -8,7 +8,7 @@ import (
 // ZebraFotaDeploymentStatus describes the status for a single FOTA deployment.
 type ZebraFotaDeploymentStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A boolean that indicates if a cancellation was requested on the deployment. NOTE: A cancellation request does not guarantee that the deployment was canceled.
     cancelRequested *bool
     // The date and time when this deployment was completed or canceled. The actual date time is determined by the value of state. If the state is canceled, this property holds the cancellation date/time. If the the state is completed, this property holds the completion date/time. If the deployment is not completed before the deployment end date, then completed date/time and end date/time are the same. This is always in the deployment timezone. Note: An installation that is in progress can continue past the deployment end date.
@@ -44,7 +44,7 @@ type ZebraFotaDeploymentStatus struct {
 func NewZebraFotaDeploymentStatus()(*ZebraFotaDeploymentStatus) {
     m := &ZebraFotaDeploymentStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateZebraFotaDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +52,7 @@ func CreateZebraFotaDeploymentStatusFromDiscriminatorValue(parseNode i878a80d233
     return NewZebraFotaDeploymentStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ZebraFotaDeploymentStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *ZebraFotaDeploymentStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCancelRequested gets the cancelRequested property value. A boolean that indicates if a cancellation was requested on the deployment. NOTE: A cancellation request does not guarantee that the deployment was canceled.
@@ -372,7 +372,7 @@ func (m *ZebraFotaDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ZebraFotaDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *ZebraFotaDeploymentStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCancelRequested sets the cancelRequested property value. A boolean that indicates if a cancellation was requested on the deployment. NOTE: A cancellation request does not guarantee that the deployment was canceled.

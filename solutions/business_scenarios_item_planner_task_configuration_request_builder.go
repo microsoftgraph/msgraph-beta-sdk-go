@@ -23,7 +23,7 @@ type BusinessScenariosItemPlannerTaskConfigurationRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetQueryParameters get taskConfiguration from solutions
+// BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetQueryParameters read the properties and relationships of a plannerTaskConfiguration object.
 type BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,13 +75,16 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Delete(ctx
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
     return nil
 }
-// Get get taskConfiguration from solutions
+// Get read the properties and relationships of a plannerTaskConfiguration object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +94,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Get(ctx co
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerTaskConfigurationFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerTaskConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -100,7 +103,10 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable), nil
 }
-// Patch update the navigation property taskConfiguration in solutions
+// Patch update the properties of a plannerTaskConfiguration object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) Patch(ctx 
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerTaskConfigurationFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerTaskConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -131,7 +137,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get taskConfiguration from solutions
+// ToGetRequestInformation read the properties and relationships of a plannerTaskConfiguration object.
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,7 +153,7 @@ func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property taskConfiguration in solutions
+// ToPatchRequestInformation update the properties of a plannerTaskConfiguration object.
 func (m *BusinessScenariosItemPlannerTaskConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskConfigurationable, requestConfiguration *BusinessScenariosItemPlannerTaskConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

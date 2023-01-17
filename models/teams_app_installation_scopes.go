@@ -15,7 +15,7 @@ const (
 func (i TeamsAppInstallationScopes) String() string {
     return []string{"team", "groupChat", "personal", "unknownFutureValue"}[i]
 }
-func ParseTeamsAppInstallationScopes(v string) (interface{}, error) {
+func ParseTeamsAppInstallationScopes(v string) (any, error) {
     result := TEAM_TEAMSAPPINSTALLATIONSCOPES
     switch v {
         case "team":

@@ -7,7 +7,7 @@ import (
 // SynchronizationError 
 type SynchronizationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The code property
     code *string
     // The message property
@@ -21,7 +21,7 @@ type SynchronizationError struct {
 func NewSynchronizationError()(*SynchronizationError) {
     m := &SynchronizationError{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSynchronizationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateSynchronizationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewSynchronizationError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationError) GetAdditionalData()(map[string]interface{}) {
+func (m *SynchronizationError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. The code property
@@ -128,7 +128,7 @@ func (m *SynchronizationError) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationError) SetAdditionalData(value map[string]interface{})() {
+func (m *SynchronizationError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCode sets the code property value. The code property

@@ -7,7 +7,7 @@ import (
 // TeamworkOnPremisesCalendarSyncConfiguration 
 type TeamworkOnPremisesCalendarSyncConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.
     domain *string
     // The domain and username of the console device, for example, Seattle/RanierConf.
@@ -21,7 +21,7 @@ type TeamworkOnPremisesCalendarSyncConfiguration struct {
 func NewTeamworkOnPremisesCalendarSyncConfiguration()(*TeamworkOnPremisesCalendarSyncConfiguration) {
     m := &TeamworkOnPremisesCalendarSyncConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue(par
     return NewTeamworkOnPremisesCalendarSyncConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDomain gets the domain property value. The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.
@@ -128,7 +128,7 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDomain sets the domain property value. The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.

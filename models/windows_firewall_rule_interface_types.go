@@ -19,7 +19,7 @@ const (
 func (i WindowsFirewallRuleInterfaceTypes) String() string {
     return []string{"notConfigured", "remoteAccess", "wireless", "lan"}[i]
 }
-func ParseWindowsFirewallRuleInterfaceTypes(v string) (interface{}, error) {
+func ParseWindowsFirewallRuleInterfaceTypes(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSFIREWALLRULEINTERFACETYPES
     switch v {
         case "notConfigured":

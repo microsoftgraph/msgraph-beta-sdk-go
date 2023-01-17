@@ -8,7 +8,7 @@ import (
 // TimeCardEvent 
 type TimeCardEvent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the entry was recorded at the approved location.
     atApprovedLocation *bool
     // The time the entry is recorded.
@@ -22,7 +22,7 @@ type TimeCardEvent struct {
 func NewTimeCardEvent()(*TimeCardEvent) {
     m := &TimeCardEvent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTimeCardEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateTimeCardEventFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewTimeCardEvent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeCardEvent) GetAdditionalData()(map[string]interface{}) {
+func (m *TimeCardEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAtApprovedLocation gets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
@@ -129,7 +129,7 @@ func (m *TimeCardEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeCardEvent) SetAdditionalData(value map[string]interface{})() {
+func (m *TimeCardEvent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAtApprovedLocation sets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.

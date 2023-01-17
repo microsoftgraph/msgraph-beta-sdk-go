@@ -9,7 +9,7 @@ type CompanyPortalBlockedAction struct {
     // Action on a device that can be executed in the Company Portal
     action *CompanyPortalAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Owner type of device.
@@ -21,7 +21,7 @@ type CompanyPortalBlockedAction struct {
 func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
     m := &CompanyPortalBlockedAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCompanyPortalBlockedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *CompanyPortalBlockedAction) GetAction()(*CompanyPortalAction) {
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CompanyPortalBlockedAction) GetAdditionalData()(map[string]interface{}) {
+func (m *CompanyPortalBlockedAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -135,7 +135,7 @@ func (m *CompanyPortalBlockedAction) SetAction(value *CompanyPortalAction)() {
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CompanyPortalBlockedAction) SetAdditionalData(value map[string]interface{})() {
+func (m *CompanyPortalBlockedAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

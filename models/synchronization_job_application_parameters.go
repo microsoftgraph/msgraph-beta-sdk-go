@@ -7,7 +7,7 @@ import (
 // SynchronizationJobApplicationParameters 
 type SynchronizationJobApplicationParameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
@@ -19,7 +19,7 @@ type SynchronizationJobApplicationParameters struct {
 func NewSynchronizationJobApplicationParameters()(*SynchronizationJobApplicationParameters) {
     m := &SynchronizationJobApplicationParameters{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSynchronizationJobApplicationParametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateSynchronizationJobApplicationParametersFromDiscriminatorValue(parseNo
     return NewSynchronizationJobApplicationParameters(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationJobApplicationParameters) GetAdditionalData()(map[string]interface{}) {
+func (m *SynchronizationJobApplicationParameters) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -114,7 +114,7 @@ func (m *SynchronizationJobApplicationParameters) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationJobApplicationParameters) SetAdditionalData(value map[string]interface{})() {
+func (m *SynchronizationJobApplicationParameters) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

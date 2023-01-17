@@ -8,7 +8,7 @@ import (
 // CloudPcReviewStatus 
 type CloudPcReviewStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
     azureStorageAccountId *string
     // The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
@@ -34,7 +34,7 @@ type CloudPcReviewStatus struct {
 func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
     m := &CloudPcReviewStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcReviewStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ func CreateCloudPcReviewStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewCloudPcReviewStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcReviewStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcReviewStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAzureStorageAccountId gets the azureStorageAccountId property value. The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
@@ -262,7 +262,7 @@ func (m *CloudPcReviewStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcReviewStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcReviewStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAzureStorageAccountId sets the azureStorageAccountId property value. The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.

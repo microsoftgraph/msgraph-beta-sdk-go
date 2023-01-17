@@ -19,7 +19,7 @@ const (
 func (i ManagedAppDataIngestionLocation) String() string {
     return []string{"oneDriveForBusiness", "sharePoint", "camera", "photoLibrary"}[i]
 }
-func ParseManagedAppDataIngestionLocation(v string) (interface{}, error) {
+func ParseManagedAppDataIngestionLocation(v string) (any, error) {
     result := ONEDRIVEFORBUSINESS_MANAGEDAPPDATAINGESTIONLOCATION
     switch v {
         case "oneDriveForBusiness":

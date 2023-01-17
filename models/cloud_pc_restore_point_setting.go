@@ -7,7 +7,7 @@ import (
 // CloudPcRestorePointSetting 
 type CloudPcRestorePointSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
     frequencyInHours *int32
     // The OdataType property
@@ -19,7 +19,7 @@ type CloudPcRestorePointSetting struct {
 func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
     m := &CloudPcRestorePointSetting{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcRestorePointSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateCloudPcRestorePointSettingFromDiscriminatorValue(parseNode i878a80d23
     return NewCloudPcRestorePointSetting(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcRestorePointSetting) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcRestorePointSetting) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *CloudPcRestorePointSetting) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcRestorePointSetting) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcRestorePointSetting) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFrequencyInHours sets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.

@@ -17,7 +17,7 @@ const (
 func (i VpnServiceExceptionAction) String() string {
     return []string{"forceTrafficViaVPN", "allowTrafficOutside", "dropTraffic"}[i]
 }
-func ParseVpnServiceExceptionAction(v string) (interface{}, error) {
+func ParseVpnServiceExceptionAction(v string) (any, error) {
     result := FORCETRAFFICVIAVPN_VPNSERVICEEXCEPTIONACTION
     switch v {
         case "forceTrafficViaVPN":

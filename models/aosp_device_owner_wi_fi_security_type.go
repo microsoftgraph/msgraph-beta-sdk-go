@@ -19,7 +19,7 @@ const (
 func (i AospDeviceOwnerWiFiSecurityType) String() string {
     return []string{"open", "wep", "wpaPersonal", "wpaEnterprise"}[i]
 }
-func ParseAospDeviceOwnerWiFiSecurityType(v string) (interface{}, error) {
+func ParseAospDeviceOwnerWiFiSecurityType(v string) (any, error) {
     result := OPEN_AOSPDEVICEOWNERWIFISECURITYTYPE
     switch v {
         case "open":

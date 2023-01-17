@@ -11,7 +11,7 @@ type WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody struct {
     // An enum type to represent approval actions of single or list of drivers.
     actionName *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriverApprovalAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deploymentDate property
     deploymentDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The driverIds property
@@ -21,7 +21,7 @@ type WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody struct {
 func NewWindowsDriverUpdateProfilesItemExecuteActionPostRequestBody()(*WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody) {
     m := &WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsDriverUpdateProfilesItemExecuteActionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func (m *WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody) GetActionN
     return m.actionName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeploymentDate gets the deploymentDate property value. The deploymentDate property
@@ -117,7 +117,7 @@ func (m *WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody) SetActionN
     m.actionName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsDriverUpdateProfilesItemExecuteActionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeploymentDate sets the deploymentDate property value. The deploymentDate property

@@ -7,7 +7,7 @@ import (
 // AzureAdJoinPolicy 
 type AzureAdJoinPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.
     allowedGroups []string
     // The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.
@@ -23,7 +23,7 @@ type AzureAdJoinPolicy struct {
 func NewAzureAdJoinPolicy()(*AzureAdJoinPolicy) {
     m := &AzureAdJoinPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAzureAdJoinPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAzureAdJoinPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewAzureAdJoinPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AzureAdJoinPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *AzureAdJoinPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedGroups gets the allowedGroups property value. The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.
@@ -159,7 +159,7 @@ func (m *AzureAdJoinPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AzureAdJoinPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *AzureAdJoinPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedGroups sets the allowedGroups property value. The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.

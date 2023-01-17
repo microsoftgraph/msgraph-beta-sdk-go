@@ -17,7 +17,7 @@ const (
 func (i DiamondModel) String() string {
     return []string{"unknown", "adversary", "capability", "infrastructure", "victim", "unknownFutureValue"}[i]
 }
-func ParseDiamondModel(v string) (interface{}, error) {
+func ParseDiamondModel(v string) (any, error) {
     result := UNKNOWN_DIAMONDMODEL
     switch v {
         case "unknown":

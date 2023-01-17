@@ -7,7 +7,7 @@ import (
 // Filter 
 type Filter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
     categoryFilterGroups []FilterGroupable
     // Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned'. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
@@ -21,7 +21,7 @@ type Filter struct {
 func NewFilter()(*Filter) {
     m := &Filter{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
     return NewFilter(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Filter) GetAdditionalData()(map[string]interface{}) {
+func (m *Filter) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCategoryFilterGroups gets the categoryFilterGroups property value. *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
@@ -152,7 +152,7 @@ func (m *Filter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Filter) SetAdditionalData(value map[string]interface{})() {
+func (m *Filter) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCategoryFilterGroups sets the categoryFilterGroups property value. *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.

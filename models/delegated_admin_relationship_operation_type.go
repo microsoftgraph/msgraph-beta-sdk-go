@@ -13,7 +13,7 @@ const (
 func (i DelegatedAdminRelationshipOperationType) String() string {
     return []string{"delegatedAdminAccessAssignmentUpdate", "unknownFutureValue"}[i]
 }
-func ParseDelegatedAdminRelationshipOperationType(v string) (interface{}, error) {
+func ParseDelegatedAdminRelationshipOperationType(v string) (any, error) {
     result := DELEGATEDADMINACCESSASSIGNMENTUPDATE_DELEGATEDADMINRELATIONSHIPOPERATIONTYPE
     switch v {
         case "delegatedAdminAccessAssignmentUpdate":

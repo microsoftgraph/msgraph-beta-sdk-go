@@ -25,7 +25,7 @@ const (
 func (i GroupPolicyOperationType) String() string {
     return []string{"none", "upload", "uploadNewVersion", "addLanguageFiles", "removeLanguageFiles", "updateLanguageFiles", "remove"}[i]
 }
-func ParseGroupPolicyOperationType(v string) (interface{}, error) {
+func ParseGroupPolicyOperationType(v string) (any, error) {
     result := NONE_GROUPPOLICYOPERATIONTYPE
     switch v {
         case "none":

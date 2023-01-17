@@ -17,7 +17,7 @@ const (
 func (i MacOSFileVaultRecoveryKeyTypes) String() string {
     return []string{"notConfigured", "institutionalRecoveryKey", "personalRecoveryKey"}[i]
 }
-func ParseMacOSFileVaultRecoveryKeyTypes(v string) (interface{}, error) {
+func ParseMacOSFileVaultRecoveryKeyTypes(v string) (any, error) {
     result := NOTCONFIGURED_MACOSFILEVAULTRECOVERYKEYTYPES
     switch v {
         case "notConfigured":

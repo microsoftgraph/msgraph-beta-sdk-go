@@ -12,7 +12,7 @@ const (
 func (i ConnectorGroupType) String() string {
     return []string{"applicationProxy"}[i]
 }
-func ParseConnectorGroupType(v string) (interface{}, error) {
+func ParseConnectorGroupType(v string) (any, error) {
     result := APPLICATIONPROXY_CONNECTORGROUPTYPE
     switch v {
         case "applicationProxy":

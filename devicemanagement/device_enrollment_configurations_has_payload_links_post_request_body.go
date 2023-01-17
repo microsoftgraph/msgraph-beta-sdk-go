@@ -7,7 +7,7 @@ import (
 // DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody 
 type DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The payloadIds property
     payloadIds []string
 }
@@ -15,7 +15,7 @@ type DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody struct {
 func NewDeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody()(*DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody) {
     m := &DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBodyFromDiscr
     return NewDeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody) Serialize
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPayloadIds sets the payloadIds property value. The payloadIds property

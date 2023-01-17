@@ -17,7 +17,7 @@ const (
 func (i AospWifiSecurityType) String() string {
     return []string{"none", "wpa", "wep"}[i]
 }
-func ParseAospWifiSecurityType(v string) (interface{}, error) {
+func ParseAospWifiSecurityType(v string) (any, error) {
     result := NONE_AOSPWIFISECURITYTYPE
     switch v {
         case "none":

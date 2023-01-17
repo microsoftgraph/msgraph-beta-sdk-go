@@ -9,7 +9,7 @@ type WorkloadAction struct {
     // The unique identifier for the workload action. Required. Read-only.
     actionId *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
     category *WorkloadActionCategory
     // The description for the workload action. Optional. Read-only.
@@ -29,7 +29,7 @@ type WorkloadAction struct {
 func NewWorkloadAction()(*WorkloadAction) {
     m := &WorkloadAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkloadActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func (m *WorkloadAction) GetActionId()(*string) {
     return m.actionId
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkloadAction) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkloadAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCategory gets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
@@ -233,7 +233,7 @@ func (m *WorkloadAction) SetActionId(value *string)() {
     m.actionId = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkloadAction) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkloadAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCategory sets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.

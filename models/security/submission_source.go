@@ -14,7 +14,7 @@ const (
 func (i SubmissionSource) String() string {
     return []string{"user", "administrator", "unknownFutureValue"}[i]
 }
-func ParseSubmissionSource(v string) (interface{}, error) {
+func ParseSubmissionSource(v string) (any, error) {
     result := USER_SUBMISSIONSOURCE
     switch v {
         case "user":

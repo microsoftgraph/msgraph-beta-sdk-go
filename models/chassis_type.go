@@ -29,7 +29,7 @@ const (
 func (i ChassisType) String() string {
     return []string{"unknown", "desktop", "laptop", "worksWorkstation", "enterpriseServer", "phone", "tablet", "mobileOther", "mobileUnknown"}[i]
 }
-func ParseChassisType(v string) (interface{}, error) {
+func ParseChassisType(v string) (any, error) {
     result := UNKNOWN_CHASSISTYPE
     switch v {
         case "unknown":

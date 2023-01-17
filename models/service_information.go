@@ -7,7 +7,7 @@ import (
 // ServiceInformation 
 type ServiceInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the cloud service (for example, Twitter, Instagram).
     name *string
     // The OdataType property
@@ -19,7 +19,7 @@ type ServiceInformation struct {
 func NewServiceInformation()(*ServiceInformation) {
     m := &ServiceInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateServiceInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateServiceInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewServiceInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *ServiceInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *ServiceInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServiceInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *ServiceInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name of the cloud service (for example, Twitter, Instagram).

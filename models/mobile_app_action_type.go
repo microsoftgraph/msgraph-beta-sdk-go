@@ -21,7 +21,7 @@ const (
 func (i MobileAppActionType) String() string {
     return []string{"unknown", "installCommandSent", "installed", "uninstalled", "userRequestedInstall"}[i]
 }
-func ParseMobileAppActionType(v string) (interface{}, error) {
+func ParseMobileAppActionType(v string) (any, error) {
     result := UNKNOWN_MOBILEAPPACTIONTYPE
     switch v {
         case "unknown":

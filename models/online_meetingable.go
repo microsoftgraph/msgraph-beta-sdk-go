@@ -41,6 +41,7 @@ type OnlineMeetingable interface {
     GetTranscripts()([]CallTranscriptable)
     GetVideoTeleconferenceId()(*string)
     GetVirtualAppointment()(VirtualAppointmentable)
+    GetWatermarkProtection()(WatermarkProtectionValuesable)
     SetAllowAttendeeToEnableCamera(value *bool)()
     SetAllowAttendeeToEnableMic(value *bool)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
@@ -73,4 +74,5 @@ type OnlineMeetingable interface {
     SetTranscripts(value []CallTranscriptable)()
     SetVideoTeleconferenceId(value *string)()
     SetVirtualAppointment(value VirtualAppointmentable)()
+    SetWatermarkProtection(value WatermarkProtectionValuesable)()
 }

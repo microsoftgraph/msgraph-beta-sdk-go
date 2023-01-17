@@ -37,7 +37,7 @@ const (
 func (i DeviceEnrollmentConfigurationType) String() string {
     return []string{"unknown", "limit", "platformRestrictions", "windowsHelloForBusiness", "defaultLimit", "defaultPlatformRestrictions", "defaultWindowsHelloForBusiness", "defaultWindows10EnrollmentCompletionPageConfiguration", "windows10EnrollmentCompletionPageConfiguration", "deviceComanagementAuthorityConfiguration", "singlePlatformRestriction", "unknownFutureValue", "enrollmentNotificationsConfiguration"}[i]
 }
-func ParseDeviceEnrollmentConfigurationType(v string) (interface{}, error) {
+func ParseDeviceEnrollmentConfigurationType(v string) (any, error) {
     result := UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE
     switch v {
         case "unknown":

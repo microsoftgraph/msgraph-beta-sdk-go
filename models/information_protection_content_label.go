@@ -8,7 +8,7 @@ import (
 // InformationProtectionContentLabel 
 type InformationProtectionContentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignmentMethod property
     assignmentMethod *AssignmentMethod
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -22,7 +22,7 @@ type InformationProtectionContentLabel struct {
 func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) {
     m := &InformationProtectionContentLabel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInformationProtectionContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateInformationProtectionContentLabelFromDiscriminatorValue(parseNode i87
     return NewInformationProtectionContentLabel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationProtectionContentLabel) GetAdditionalData()(map[string]interface{}) {
+func (m *InformationProtectionContentLabel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
@@ -130,7 +130,7 @@ func (m *InformationProtectionContentLabel) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InformationProtectionContentLabel) SetAdditionalData(value map[string]interface{})() {
+func (m *InformationProtectionContentLabel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property

@@ -19,7 +19,7 @@ const (
 func (i OperatingSystemUpgradeEligibility) String() string {
     return []string{"upgraded", "unknown", "notCapable", "capable"}[i]
 }
-func ParseOperatingSystemUpgradeEligibility(v string) (interface{}, error) {
+func ParseOperatingSystemUpgradeEligibility(v string) (any, error) {
     result := UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY
     switch v {
         case "upgraded":

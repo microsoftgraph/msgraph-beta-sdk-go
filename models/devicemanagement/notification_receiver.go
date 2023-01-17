@@ -7,7 +7,7 @@ import (
 // NotificationReceiver 
 type NotificationReceiver struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
     contactInformation *string
     // Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
@@ -19,7 +19,7 @@ type NotificationReceiver struct {
 func NewNotificationReceiver()(*NotificationReceiver) {
     m := &NotificationReceiver{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateNotificationReceiverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateNotificationReceiverFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewNotificationReceiver(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NotificationReceiver) GetAdditionalData()(map[string]interface{}) {
+func (m *NotificationReceiver) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContactInformation gets the contactInformation property value. The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
@@ -106,7 +106,7 @@ func (m *NotificationReceiver) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NotificationReceiver) SetAdditionalData(value map[string]interface{})() {
+func (m *NotificationReceiver) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetContactInformation sets the contactInformation property value. The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.

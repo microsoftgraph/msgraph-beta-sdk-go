@@ -69,7 +69,7 @@ const (
 func (i RemoteAction) String() string {
     return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery"}[i]
 }
-func ParseRemoteAction(v string) (interface{}, error) {
+func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
     switch v {
         case "unknown":

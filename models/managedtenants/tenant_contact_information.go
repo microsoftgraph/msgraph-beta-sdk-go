@@ -7,7 +7,7 @@ import (
 // TenantContactInformation 
 type TenantContactInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The email address for the contact. Optional
     email *string
     // The name for the contact. Required.
@@ -25,7 +25,7 @@ type TenantContactInformation struct {
 func NewTenantContactInformation()(*TenantContactInformation) {
     m := &TenantContactInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTenantContactInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTenantContactInformationFromDiscriminatorValue(parseNode i878a80d2330
     return NewTenantContactInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantContactInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *TenantContactInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. The email address for the contact. Optional
@@ -172,7 +172,7 @@ func (m *TenantContactInformation) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantContactInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *TenantContactInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEmail sets the email property value. The email address for the contact. Optional

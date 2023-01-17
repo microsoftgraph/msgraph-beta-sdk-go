@@ -7,7 +7,7 @@ import (
 // StatusBase 
 type StatusBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Possible values are: success, warning, failure, skipped, unknownFutureValue.
@@ -17,7 +17,7 @@ type StatusBase struct {
 func NewStatusBase()(*StatusBase) {
     m := &StatusBase{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateStatusBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateStatusBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewStatusBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *StatusBase) GetAdditionalData()(map[string]interface{}) {
+func (m *StatusBase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -103,7 +103,7 @@ func (m *StatusBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *StatusBase) SetAdditionalData(value map[string]interface{})() {
+func (m *StatusBase) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

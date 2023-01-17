@@ -17,7 +17,7 @@ const (
 func (i HealthState) String() string {
     return []string{"unknown", "healthy", "unhealthy"}[i]
 }
-func ParseHealthState(v string) (interface{}, error) {
+func ParseHealthState(v string) (any, error) {
     result := UNKNOWN_HEALTHSTATE
     switch v {
         case "unknown":

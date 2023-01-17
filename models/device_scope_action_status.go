@@ -17,7 +17,7 @@ const (
 func (i DeviceScopeActionStatus) String() string {
     return []string{"failed", "succeeded", "unknownFutureValue"}[i]
 }
-func ParseDeviceScopeActionStatus(v string) (interface{}, error) {
+func ParseDeviceScopeActionStatus(v string) (any, error) {
     result := FAILED_DEVICESCOPEACTIONSTATUS
     switch v {
         case "failed":

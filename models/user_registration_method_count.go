@@ -7,7 +7,7 @@ import (
 // UserRegistrationMethodCount 
 type UserRegistrationMethodCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Name of authentication method.
     authenticationMethod *string
     // The OdataType property
@@ -19,7 +19,7 @@ type UserRegistrationMethodCount struct {
 func NewUserRegistrationMethodCount()(*UserRegistrationMethodCount) {
     m := &UserRegistrationMethodCount{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserRegistrationMethodCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateUserRegistrationMethodCountFromDiscriminatorValue(parseNode i878a80d2
     return NewUserRegistrationMethodCount(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserRegistrationMethodCount) GetAdditionalData()(map[string]interface{}) {
+func (m *UserRegistrationMethodCount) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Name of authentication method.
@@ -106,7 +106,7 @@ func (m *UserRegistrationMethodCount) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserRegistrationMethodCount) SetAdditionalData(value map[string]interface{})() {
+func (m *UserRegistrationMethodCount) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Name of authentication method.

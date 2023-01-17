@@ -17,7 +17,7 @@ const (
 func (i RecommendationStatus) String() string {
     return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue"}[i]
 }
-func ParseRecommendationStatus(v string) (interface{}, error) {
+func ParseRecommendationStatus(v string) (any, error) {
     result := ACTIVE_RECOMMENDATIONSTATUS
     switch v {
         case "active":

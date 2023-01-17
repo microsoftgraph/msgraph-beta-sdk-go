@@ -9,13 +9,15 @@ type IdentityGovernance struct {
     // The accessReviews property
     accessReviews AccessReviewSetable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appConsent property
     appConsent AppConsentApprovalRouteable
     // The entitlementManagement property
     entitlementManagement EntitlementManagementable
     // The OdataType property
     odataType *string
+    // The privilegedAccess property
+    privilegedAccess PrivilegedAccessRootable
     // The termsOfUse property
     termsOfUse TermsOfUseContainerable
 }
@@ -23,7 +25,7 @@ type IdentityGovernance struct {
 func NewIdentityGovernance()(*IdentityGovernance) {
     m := &IdentityGovernance{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIdentityGovernanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +37,7 @@ func (m *IdentityGovernance) GetAccessReviews()(AccessReviewSetable) {
     return m.accessReviews
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityGovernance) GetAdditionalData()(map[string]interface{}) {
+func (m *IdentityGovernance) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppConsent gets the appConsent property value. The appConsent property
@@ -89,6 +91,16 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["privilegedAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePrivilegedAccessRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivilegedAccess(val.(PrivilegedAccessRootable))
+        }
+        return nil
+    }
     res["termsOfUse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTermsOfUseContainerFromDiscriminatorValue)
         if err != nil {
@@ -104,6 +116,10 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdentityGovernance) GetOdataType()(*string) {
     return m.odataType
+}
+// GetPrivilegedAccess gets the privilegedAccess property value. The privilegedAccess property
+func (m *IdentityGovernance) GetPrivilegedAccess()(PrivilegedAccessRootable) {
+    return m.privilegedAccess
 }
 // GetTermsOfUse gets the termsOfUse property value. The termsOfUse property
 func (m *IdentityGovernance) GetTermsOfUse()(TermsOfUseContainerable) {
@@ -136,6 +152,12 @@ func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err := writer.WriteObjectValue("privilegedAccess", m.GetPrivilegedAccess())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("termsOfUse", m.GetTermsOfUse())
         if err != nil {
             return err
@@ -154,7 +176,7 @@ func (m *IdentityGovernance) SetAccessReviews(value AccessReviewSetable)() {
     m.accessReviews = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityGovernance) SetAdditionalData(value map[string]interface{})() {
+func (m *IdentityGovernance) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppConsent sets the appConsent property value. The appConsent property
@@ -168,6 +190,10 @@ func (m *IdentityGovernance) SetEntitlementManagement(value EntitlementManagemen
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdentityGovernance) SetOdataType(value *string)() {
     m.odataType = value
+}
+// SetPrivilegedAccess sets the privilegedAccess property value. The privilegedAccess property
+func (m *IdentityGovernance) SetPrivilegedAccess(value PrivilegedAccessRootable)() {
+    m.privilegedAccess = value
 }
 // SetTermsOfUse sets the termsOfUse property value. The termsOfUse property
 func (m *IdentityGovernance) SetTermsOfUse(value TermsOfUseContainerable)() {

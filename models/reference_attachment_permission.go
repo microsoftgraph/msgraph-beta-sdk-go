@@ -18,7 +18,7 @@ const (
 func (i ReferenceAttachmentPermission) String() string {
     return []string{"other", "view", "edit", "anonymousView", "anonymousEdit", "organizationView", "organizationEdit"}[i]
 }
-func ParseReferenceAttachmentPermission(v string) (interface{}, error) {
+func ParseReferenceAttachmentPermission(v string) (any, error) {
     result := OTHER_REFERENCEATTACHMENTPERMISSION
     switch v {
         case "other":

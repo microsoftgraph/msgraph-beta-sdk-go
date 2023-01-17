@@ -10,7 +10,7 @@ type ClassificationInnerError struct {
     // The activityId property
     activityId *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientRequestId property
     clientRequestId *string
     // The code property
@@ -24,7 +24,7 @@ type ClassificationInnerError struct {
 func NewClassificationInnerError()(*ClassificationInnerError) {
     m := &ClassificationInnerError{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateClassificationInnerErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ func (m *ClassificationInnerError) GetActivityId()(*string) {
     return m.activityId
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ClassificationInnerError) GetAdditionalData()(map[string]interface{}) {
+func (m *ClassificationInnerError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientRequestId gets the clientRequestId property value. The clientRequestId property
@@ -155,7 +155,7 @@ func (m *ClassificationInnerError) SetActivityId(value *string)() {
     m.activityId = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ClassificationInnerError) SetAdditionalData(value map[string]interface{})() {
+func (m *ClassificationInnerError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientRequestId sets the clientRequestId property value. The clientRequestId property

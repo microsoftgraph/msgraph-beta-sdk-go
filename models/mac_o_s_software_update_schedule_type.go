@@ -17,7 +17,7 @@ const (
 func (i MacOSSoftwareUpdateScheduleType) String() string {
     return []string{"alwaysUpdate", "updateDuringTimeWindows", "updateOutsideOfTimeWindows"}[i]
 }
-func ParseMacOSSoftwareUpdateScheduleType(v string) (interface{}, error) {
+func ParseMacOSSoftwareUpdateScheduleType(v string) (any, error) {
     result := ALWAYSUPDATE_MACOSSOFTWAREUPDATESCHEDULETYPE
     switch v {
         case "alwaysUpdate":

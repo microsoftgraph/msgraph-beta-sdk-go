@@ -13,7 +13,7 @@ const (
 func (i WeakAlgorithms) String() string {
     return []string{"rsaSha1", "unknownFutureValue"}[i]
 }
-func ParseWeakAlgorithms(v string) (interface{}, error) {
+func ParseWeakAlgorithms(v string) (any, error) {
     result := RSASHA1_WEAKALGORITHMS
     switch v {
         case "rsaSha1":

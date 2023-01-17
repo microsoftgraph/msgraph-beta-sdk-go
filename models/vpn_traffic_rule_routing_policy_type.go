@@ -17,7 +17,7 @@ const (
 func (i VpnTrafficRuleRoutingPolicyType) String() string {
     return []string{"none", "splitTunnel", "forceTunnel"}[i]
 }
-func ParseVpnTrafficRuleRoutingPolicyType(v string) (interface{}, error) {
+func ParseVpnTrafficRuleRoutingPolicyType(v string) (any, error) {
     result := NONE_VPNTRAFFICRULEROUTINGPOLICYTYPE
     switch v {
         case "none":

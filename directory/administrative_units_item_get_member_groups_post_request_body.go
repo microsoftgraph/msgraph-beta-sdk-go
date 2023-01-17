@@ -7,7 +7,7 @@ import (
 // AdministrativeUnitsItemGetMemberGroupsPostRequestBody 
 type AdministrativeUnitsItemGetMemberGroupsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The securityEnabledOnly property
     securityEnabledOnly *bool
 }
@@ -15,7 +15,7 @@ type AdministrativeUnitsItemGetMemberGroupsPostRequestBody struct {
 func NewAdministrativeUnitsItemGetMemberGroupsPostRequestBody()(*AdministrativeUnitsItemGetMemberGroupsPostRequestBody) {
     m := &AdministrativeUnitsItemGetMemberGroupsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAdministrativeUnitsItemGetMemberGroupsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateAdministrativeUnitsItemGetMemberGroupsPostRequestBodyFromDiscriminato
     return NewAdministrativeUnitsItemGetMemberGroupsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AdministrativeUnitsItemGetMemberGroupsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AdministrativeUnitsItemGetMemberGroupsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *AdministrativeUnitsItemGetMemberGroupsPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AdministrativeUnitsItemGetMemberGroupsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AdministrativeUnitsItemGetMemberGroupsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetSecurityEnabledOnly sets the securityEnabledOnly property value. The securityEnabledOnly property

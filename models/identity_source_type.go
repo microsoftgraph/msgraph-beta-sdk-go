@@ -13,7 +13,7 @@ const (
 func (i IdentitySourceType) String() string {
     return []string{"azureActiveDirectory", "external"}[i]
 }
-func ParseIdentitySourceType(v string) (interface{}, error) {
+func ParseIdentitySourceType(v string) (any, error) {
     result := AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE
     switch v {
         case "azureActiveDirectory":

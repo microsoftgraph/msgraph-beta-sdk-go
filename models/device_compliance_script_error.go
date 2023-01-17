@@ -7,7 +7,7 @@ import (
 // DeviceComplianceScriptError 
 type DeviceComplianceScriptError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Error code for rule validation.
     code *Code
     // Error code for rule validation.
@@ -21,7 +21,7 @@ type DeviceComplianceScriptError struct {
 func NewDeviceComplianceScriptError()(*DeviceComplianceScriptError) {
     m := &DeviceComplianceScriptError{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceComplianceScriptErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateDeviceComplianceScriptErrorFromDiscriminatorValue(parseNode i878a80d2
     return NewDeviceComplianceScriptError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceComplianceScriptError) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceComplianceScriptError) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. Error code for rule validation.
@@ -148,7 +148,7 @@ func (m *DeviceComplianceScriptError) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceComplianceScriptError) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceComplianceScriptError) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCode sets the code property value. Error code for rule validation.

@@ -7,7 +7,7 @@ import (
 // DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody 
 type DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceIds property
     deviceIds []string
 }
@@ -15,7 +15,7 @@ type DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmen
 func NewDepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody()(*DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody) {
     m := &DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAss
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceIds gets the deviceIds property value. The deviceIds property
@@ -66,7 +66,7 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssig
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceIds sets the deviceIds property value. The deviceIds property

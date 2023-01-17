@@ -7,7 +7,7 @@ import (
 // ManagedDeviceCleanupSettings define the rule when the admin wants the devices to be cleaned up.
 type ManagedDeviceCleanupSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Number of days when the device has not contacted Intune.
     deviceInactivityBeforeRetirementInDays *string
     // The OdataType property
@@ -17,7 +17,7 @@ type ManagedDeviceCleanupSettings struct {
 func NewManagedDeviceCleanupSettings()(*ManagedDeviceCleanupSettings) {
     m := &ManagedDeviceCleanupSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDeviceCleanupSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateManagedDeviceCleanupSettingsFromDiscriminatorValue(parseNode i878a80d
     return NewManagedDeviceCleanupSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceCleanupSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDeviceCleanupSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceInactivityBeforeRetirementInDays gets the deviceInactivityBeforeRetirementInDays property value. Number of days when the device has not contacted Intune.
@@ -84,7 +84,7 @@ func (m *ManagedDeviceCleanupSettings) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDeviceCleanupSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDeviceCleanupSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceInactivityBeforeRetirementInDays sets the deviceInactivityBeforeRetirementInDays property value. Number of days when the device has not contacted Intune.

@@ -17,7 +17,7 @@ const (
 func (i SkillProficiencyLevel) String() string {
     return []string{"elementary", "limitedWorking", "generalProfessional", "advancedProfessional", "expert", "unknownFutureValue"}[i]
 }
-func ParseSkillProficiencyLevel(v string) (interface{}, error) {
+func ParseSkillProficiencyLevel(v string) (any, error) {
     result := ELEMENTARY_SKILLPROFICIENCYLEVEL
     switch v {
         case "elementary":

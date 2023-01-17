@@ -7,7 +7,7 @@ import (
 // MatchingLabel 
 type MatchingLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The applicationMode property
     applicationMode *ApplicationMode
     // The description property
@@ -35,7 +35,7 @@ type MatchingLabel struct {
 func NewMatchingLabel()(*MatchingLabel) {
     m := &MatchingLabel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMatchingLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateMatchingLabelFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewMatchingLabel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MatchingLabel) GetAdditionalData()(map[string]interface{}) {
+func (m *MatchingLabel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
@@ -291,7 +291,7 @@ func (m *MatchingLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MatchingLabel) SetAdditionalData(value map[string]interface{})() {
+func (m *MatchingLabel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationMode sets the applicationMode property value. The applicationMode property

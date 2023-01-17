@@ -19,7 +19,7 @@ const (
 func (i AndroidDeviceOwnerKioskModeScreenOrientation) String() string {
     return []string{"notConfigured", "portrait", "landscape", "autoRotate"}[i]
 }
-func ParseAndroidDeviceOwnerKioskModeScreenOrientation(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerKioskModeScreenOrientation(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERKIOSKMODESCREENORIENTATION
     switch v {
         case "notConfigured":

@@ -19,7 +19,7 @@ const (
 func (i VpnServerCertificateType) String() string {
     return []string{"rsa", "ecdsa256", "ecdsa384", "ecdsa521"}[i]
 }
-func ParseVpnServerCertificateType(v string) (interface{}, error) {
+func ParseVpnServerCertificateType(v string) (any, error) {
     result := RSA_VPNSERVERCERTIFICATETYPE
     switch v {
         case "rsa":

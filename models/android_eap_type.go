@@ -17,7 +17,7 @@ const (
 func (i AndroidEapType) String() string {
     return []string{"eapTls", "eapTtls", "peap"}[i]
 }
-func ParseAndroidEapType(v string) (interface{}, error) {
+func ParseAndroidEapType(v string) (any, error) {
     result := EAPTLS_ANDROIDEAPTYPE
     switch v {
         case "eapTls":

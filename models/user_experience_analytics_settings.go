@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsSettings the user experience analytics insight is the recomendation to improve the user experience analytics score.
 type UserExperienceAnalyticsSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.
     configurationManagerDataConnectorConfigured *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsSettings struct {
 func NewUserExperienceAnalyticsSettings()(*UserExperienceAnalyticsSettings) {
     m := &UserExperienceAnalyticsSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateUserExperienceAnalyticsSettingsFromDiscriminatorValue(parseNode i878a
     return NewUserExperienceAnalyticsSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfigurationManagerDataConnectorConfigured gets the configurationManagerDataConnectorConfigured property value. True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.
@@ -84,7 +84,7 @@ func (m *UserExperienceAnalyticsSettings) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfigurationManagerDataConnectorConfigured sets the configurationManagerDataConnectorConfigured property value. True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.

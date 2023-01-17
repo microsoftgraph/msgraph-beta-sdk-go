@@ -7,7 +7,7 @@ import (
 // OnPremisesPublishing 
 type OnPremisesPublishing struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
     alternateUrl *string
     // The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
@@ -57,7 +57,7 @@ type OnPremisesPublishing struct {
 func NewOnPremisesPublishing()(*OnPremisesPublishing) {
     m := &OnPremisesPublishing{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesPublishingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,7 +65,7 @@ func CreateOnPremisesPublishingFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewOnPremisesPublishing(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesPublishing) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesPublishing) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlternateUrl gets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
@@ -533,7 +533,7 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesPublishing) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesPublishing) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlternateUrl sets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.

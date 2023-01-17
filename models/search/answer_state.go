@@ -15,7 +15,7 @@ const (
 func (i AnswerState) String() string {
     return []string{"published", "draft", "excluded", "unknownFutureValue"}[i]
 }
-func ParseAnswerState(v string) (interface{}, error) {
+func ParseAnswerState(v string) (any, error) {
     result := PUBLISHED_ANSWERSTATE
     switch v {
         case "published":

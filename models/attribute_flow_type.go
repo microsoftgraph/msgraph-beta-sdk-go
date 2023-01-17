@@ -16,7 +16,7 @@ const (
 func (i AttributeFlowType) String() string {
     return []string{"Always", "ObjectAddOnly", "MultiValueAddOnly", "ValueAddOnly", "AttributeAddOnly"}[i]
 }
-func ParseAttributeFlowType(v string) (interface{}, error) {
+func ParseAttributeFlowType(v string) (any, error) {
     result := ALWAYS_ATTRIBUTEFLOWTYPE
     switch v {
         case "Always":

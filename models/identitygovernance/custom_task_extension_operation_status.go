@@ -14,7 +14,7 @@ const (
 func (i CustomTaskExtensionOperationStatus) String() string {
     return []string{"completed", "failed", "unknownFutureValue"}[i]
 }
-func ParseCustomTaskExtensionOperationStatus(v string) (interface{}, error) {
+func ParseCustomTaskExtensionOperationStatus(v string) (any, error) {
     result := COMPLETED_CUSTOMTASKEXTENSIONOPERATIONSTATUS
     switch v {
         case "completed":

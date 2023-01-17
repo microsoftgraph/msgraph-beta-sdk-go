@@ -13,7 +13,7 @@ const (
 func (i PlannerUserRoleKind) String() string {
     return []string{"relationship", "unknownFutureValue"}[i]
 }
-func ParsePlannerUserRoleKind(v string) (interface{}, error) {
+func ParsePlannerUserRoleKind(v string) (any, error) {
     result := RELATIONSHIP_PLANNERUSERROLEKIND
     switch v {
         case "relationship":

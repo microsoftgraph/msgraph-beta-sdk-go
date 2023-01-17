@@ -7,7 +7,7 @@ import (
 // ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody 
 type ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The decision property
     decision *string
     // The justification property
@@ -21,7 +21,7 @@ type ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPo
 func NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody()(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody) {
     m := &ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecis
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDecision gets the decision property value. The decision property
@@ -128,7 +128,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisio
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDecision sets the decision property value. The decision property

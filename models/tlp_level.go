@@ -17,7 +17,7 @@ const (
 func (i TlpLevel) String() string {
     return []string{"unknown", "white", "green", "amber", "red", "unknownFutureValue"}[i]
 }
-func ParseTlpLevel(v string) (interface{}, error) {
+func ParseTlpLevel(v string) (any, error) {
     result := UNKNOWN_TLPLEVEL
     switch v {
         case "unknown":

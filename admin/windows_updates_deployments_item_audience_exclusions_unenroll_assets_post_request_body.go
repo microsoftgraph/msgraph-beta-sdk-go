@@ -8,7 +8,7 @@ import (
 // WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody 
 type WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assets property
     assets []i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable
     // The updateCategory property
@@ -18,7 +18,7 @@ type WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBod
 func NewWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody()(*WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody) {
     m := &WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequ
     return NewWindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssets gets the assets property value. The assets property
@@ -94,7 +94,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostReques
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsUnenrollAssetsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssets sets the assets property value. The assets property

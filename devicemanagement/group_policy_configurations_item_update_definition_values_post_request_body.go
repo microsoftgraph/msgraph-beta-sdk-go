@@ -10,7 +10,7 @@ type GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody struct {
     // The added property
     added []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionValueable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deletedIds property
     deletedIds []string
     // The updated property
@@ -20,7 +20,7 @@ type GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody struct {
 func NewGroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody()(*GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody) {
     m := &GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func (m *GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody) Get
     return m.added
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeletedIds gets the deletedIds property value. The deletedIds property
@@ -131,7 +131,7 @@ func (m *GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody) Set
     m.added = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *GroupPolicyConfigurationsItemUpdateDefinitionValuesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeletedIds sets the deletedIds property value. The deletedIds property

@@ -7,7 +7,7 @@ import (
 // UpdateWindow 
 type UpdateWindow struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // End of a time window during which agents can receive updates
@@ -19,7 +19,7 @@ type UpdateWindow struct {
 func NewUpdateWindow()(*UpdateWindow) {
     m := &UpdateWindow{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUpdateWindowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateUpdateWindowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewUpdateWindow(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UpdateWindow) GetAdditionalData()(map[string]interface{}) {
+func (m *UpdateWindow) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *UpdateWindow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UpdateWindow) SetAdditionalData(value map[string]interface{})() {
+func (m *UpdateWindow) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

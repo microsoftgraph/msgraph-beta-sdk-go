@@ -16,7 +16,7 @@ const (
 func (i EmailType) String() string {
     return []string{"unknown", "work", "personal", "main", "other"}[i]
 }
-func ParseEmailType(v string) (interface{}, error) {
+func ParseEmailType(v string) (any, error) {
     result := UNKNOWN_EMAILTYPE
     switch v {
         case "unknown":

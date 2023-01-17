@@ -22,7 +22,7 @@ const (
 func (i CallState) String() string {
     return []string{"incoming", "establishing", "ringing", "established", "hold", "transferring", "transferAccepted", "redirecting", "terminating", "terminated", "unknownFutureValue"}[i]
 }
-func ParseCallState(v string) (interface{}, error) {
+func ParseCallState(v string) (any, error) {
     result := INCOMING_CALLSTATE
     switch v {
         case "incoming":

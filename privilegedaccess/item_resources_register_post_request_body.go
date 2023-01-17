@@ -7,7 +7,7 @@ import (
 // ItemResourcesRegisterPostRequestBody 
 type ItemResourcesRegisterPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The externalId property
     externalId *string
 }
@@ -15,7 +15,7 @@ type ItemResourcesRegisterPostRequestBody struct {
 func NewItemResourcesRegisterPostRequestBody()(*ItemResourcesRegisterPostRequestBody) {
     m := &ItemResourcesRegisterPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemResourcesRegisterPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemResourcesRegisterPostRequestBodyFromDiscriminatorValue(parseNode 
     return NewItemResourcesRegisterPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemResourcesRegisterPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemResourcesRegisterPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExternalId gets the externalId property value. The externalId property
@@ -62,7 +62,7 @@ func (m *ItemResourcesRegisterPostRequestBody) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemResourcesRegisterPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemResourcesRegisterPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExternalId sets the externalId property value. The externalId property

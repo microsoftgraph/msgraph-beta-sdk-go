@@ -14,7 +14,7 @@ const (
 func (i CloudPcServicePlanType) String() string {
     return []string{"enterprise", "business", "unknownFutureValue"}[i]
 }
-func ParseCloudPcServicePlanType(v string) (interface{}, error) {
+func ParseCloudPcServicePlanType(v string) (any, error) {
     result := ENTERPRISE_CLOUDPCSERVICEPLANTYPE
     switch v {
         case "enterprise":

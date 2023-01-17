@@ -16,7 +16,7 @@ const (
 func (i AggregationType) String() string {
     return []string{"count", "percentage", "affectedCloudPcCount", "affectedCloudPcPercentage", "unknownFutureValue"}[i]
 }
-func ParseAggregationType(v string) (interface{}, error) {
+func ParseAggregationType(v string) (any, error) {
     result := COUNT_AGGREGATIONTYPE
     switch v {
         case "count":

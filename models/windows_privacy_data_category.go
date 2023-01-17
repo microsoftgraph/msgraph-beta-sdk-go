@@ -49,7 +49,7 @@ const (
 func (i WindowsPrivacyDataCategory) String() string {
     return []string{"notConfigured", "accountInfo", "appsRunInBackground", "calendar", "callHistory", "camera", "contacts", "diagnosticsInfo", "email", "location", "messaging", "microphone", "motion", "notifications", "phone", "radios", "tasks", "syncWithDevices", "trustedDevices"}[i]
 }
-func ParseWindowsPrivacyDataCategory(v string) (interface{}, error) {
+func ParseWindowsPrivacyDataCategory(v string) (any, error) {
     result := NOTCONFIGURED_WINDOWSPRIVACYDATACATEGORY
     switch v {
         case "notConfigured":

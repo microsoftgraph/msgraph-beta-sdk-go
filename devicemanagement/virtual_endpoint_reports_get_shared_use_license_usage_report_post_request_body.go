@@ -8,7 +8,7 @@ import (
 // VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody 
 type VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The filter property
     filter *string
     // The groupBy property
@@ -30,7 +30,7 @@ type VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody struct 
 func NewVirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody()(*VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) {
     m := &VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ func CreateVirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBodyFr
     return NewVirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -230,7 +230,7 @@ func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) Se
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *VirtualEndpointReportsGetSharedUseLicenseUsageReportPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property

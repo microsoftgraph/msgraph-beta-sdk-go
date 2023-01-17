@@ -7,7 +7,7 @@ import (
 // MeetingCapability 
 type MeetingCapability struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether anonymous users dialout is allowed in a meeting.
     allowAnonymousUsersToDialOut *bool
     // Indicates whether anonymous users are allowed to start a meeting.
@@ -21,7 +21,7 @@ type MeetingCapability struct {
 func NewMeetingCapability()(*MeetingCapability) {
     m := &MeetingCapability{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMeetingCapabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateMeetingCapabilityFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewMeetingCapability(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MeetingCapability) GetAdditionalData()(map[string]interface{}) {
+func (m *MeetingCapability) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAnonymousUsersToDialOut gets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.
@@ -129,7 +129,7 @@ func (m *MeetingCapability) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MeetingCapability) SetAdditionalData(value map[string]interface{})() {
+func (m *MeetingCapability) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowAnonymousUsersToDialOut sets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.

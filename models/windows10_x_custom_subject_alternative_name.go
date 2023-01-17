@@ -7,7 +7,7 @@ import (
 // Windows10XCustomSubjectAlternativeName base Profile Type for Authentication Certificates (SCEP or PFX Create)
 type Windows10XCustomSubjectAlternativeName struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Custom SAN Name
     name *string
     // The OdataType property
@@ -19,7 +19,7 @@ type Windows10XCustomSubjectAlternativeName struct {
 func NewWindows10XCustomSubjectAlternativeName()(*Windows10XCustomSubjectAlternativeName) {
     m := &Windows10XCustomSubjectAlternativeName{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindows10XCustomSubjectAlternativeNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateWindows10XCustomSubjectAlternativeNameFromDiscriminatorValue(parseNod
     return NewWindows10XCustomSubjectAlternativeName(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10XCustomSubjectAlternativeName) GetAdditionalData()(map[string]interface{}) {
+func (m *Windows10XCustomSubjectAlternativeName) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *Windows10XCustomSubjectAlternativeName) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Windows10XCustomSubjectAlternativeName) SetAdditionalData(value map[string]interface{})() {
+func (m *Windows10XCustomSubjectAlternativeName) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. Custom SAN Name

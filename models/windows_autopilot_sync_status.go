@@ -19,7 +19,7 @@ const (
 func (i WindowsAutopilotSyncStatus) String() string {
     return []string{"unknown", "inProgress", "completed", "failed"}[i]
 }
-func ParseWindowsAutopilotSyncStatus(v string) (interface{}, error) {
+func ParseWindowsAutopilotSyncStatus(v string) (any, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTSYNCSTATUS
     switch v {
         case "unknown":

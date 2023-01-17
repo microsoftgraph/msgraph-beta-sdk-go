@@ -7,7 +7,7 @@ import (
 // ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody 
 type ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The pubSubConnectionId property
     pubSubConnectionId *string
     // The sessionKey property
@@ -17,7 +17,7 @@ type ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody struct {
 func NewManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody()(*ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody) {
     m := &ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBodyFromDi
     return NewManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody) Serial
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesItemRequestRemoteHelpSessionAccessPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPubSubConnectionId sets the pubSubConnectionId property value. The pubSubConnectionId property

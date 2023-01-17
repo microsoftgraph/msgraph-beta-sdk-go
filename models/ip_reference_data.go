@@ -7,7 +7,7 @@ import (
 // IpReferenceData 
 type IpReferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The asn property
     asn *int64
     // The city property
@@ -27,7 +27,7 @@ type IpReferenceData struct {
 func NewIpReferenceData()(*IpReferenceData) {
     m := &IpReferenceData{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIpReferenceDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateIpReferenceDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewIpReferenceData(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IpReferenceData) GetAdditionalData()(map[string]interface{}) {
+func (m *IpReferenceData) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAsn gets the asn property value. The asn property
@@ -194,7 +194,7 @@ func (m *IpReferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IpReferenceData) SetAdditionalData(value map[string]interface{})() {
+func (m *IpReferenceData) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAsn sets the asn property value. The asn property

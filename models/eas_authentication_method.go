@@ -17,7 +17,7 @@ const (
 func (i EasAuthenticationMethod) String() string {
     return []string{"usernameAndPassword", "certificate", "derivedCredential"}[i]
 }
-func ParseEasAuthenticationMethod(v string) (interface{}, error) {
+func ParseEasAuthenticationMethod(v string) (any, error) {
     result := USERNAMEANDPASSWORD_EASAUTHENTICATIONMETHOD
     switch v {
         case "usernameAndPassword":

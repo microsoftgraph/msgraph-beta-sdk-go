@@ -8,7 +8,7 @@ import (
 // ItemManagedDevicesMoveDevicesToOUPostRequestBody 
 type ItemManagedDevicesMoveDevicesToOUPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceIds property
     deviceIds []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The organizationalUnitPath property
@@ -18,7 +18,7 @@ type ItemManagedDevicesMoveDevicesToOUPostRequestBody struct {
 func NewItemManagedDevicesMoveDevicesToOUPostRequestBody()(*ItemManagedDevicesMoveDevicesToOUPostRequestBody) {
     m := &ItemManagedDevicesMoveDevicesToOUPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesMoveDevicesToOUPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemManagedDevicesMoveDevicesToOUPostRequestBodyFromDiscriminatorValu
     return NewItemManagedDevicesMoveDevicesToOUPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesMoveDevicesToOUPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesMoveDevicesToOUPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceIds gets the deviceIds property value. The deviceIds property
@@ -89,7 +89,7 @@ func (m *ItemManagedDevicesMoveDevicesToOUPostRequestBody) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesMoveDevicesToOUPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesMoveDevicesToOUPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceIds sets the deviceIds property value. The deviceIds property

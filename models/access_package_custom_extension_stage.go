@@ -18,7 +18,7 @@ const (
 func (i AccessPackageCustomExtensionStage) String() string {
     return []string{"assignmentRequestCreated", "assignmentRequestApproved", "assignmentRequestGranted", "assignmentRequestRemoved", "assignmentFourteenDaysBeforeExpiration", "assignmentOneDayBeforeExpiration", "unknownFutureValue"}[i]
 }
-func ParseAccessPackageCustomExtensionStage(v string) (interface{}, error) {
+func ParseAccessPackageCustomExtensionStage(v string) (any, error) {
     result := ASSIGNMENTREQUESTCREATED_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
     switch v {
         case "assignmentRequestCreated":

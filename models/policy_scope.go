@@ -15,7 +15,7 @@ const (
 func (i PolicyScope) String() string {
     return []string{"none", "all", "selected", "unknownFutureValue"}[i]
 }
-func ParsePolicyScope(v string) (interface{}, error) {
+func ParsePolicyScope(v string) (any, error) {
     result := NONE_POLICYSCOPE
     switch v {
         case "none":

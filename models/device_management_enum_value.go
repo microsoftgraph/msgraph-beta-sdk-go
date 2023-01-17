@@ -7,7 +7,7 @@ import (
 // DeviceManagementEnumValue definition information for an enum value
 type DeviceManagementEnumValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Display name for this enum value
     displayName *string
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementEnumValue struct {
 func NewDeviceManagementEnumValue()(*DeviceManagementEnumValue) {
     m := &DeviceManagementEnumValue{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementEnumValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementEnumValueFromDiscriminatorValue(parseNode i878a80d233
     return NewDeviceManagementEnumValue(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementEnumValue) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementEnumValue) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name for this enum value
@@ -106,7 +106,7 @@ func (m *DeviceManagementEnumValue) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementEnumValue) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementEnumValue) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name for this enum value

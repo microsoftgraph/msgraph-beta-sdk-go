@@ -8,7 +8,7 @@ import (
 // WorkloadStatus 
 type WorkloadStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The display name for the workload. Required. Read-only.
     displayName *string
     // The OdataType property
@@ -24,7 +24,7 @@ type WorkloadStatus struct {
 func NewWorkloadStatus()(*WorkloadStatus) {
     m := &WorkloadStatus{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWorkloadStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateWorkloadStatusFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewWorkloadStatus(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkloadStatus) GetAdditionalData()(map[string]interface{}) {
+func (m *WorkloadStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The display name for the workload. Required. Read-only.
@@ -152,7 +152,7 @@ func (m *WorkloadStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WorkloadStatus) SetAdditionalData(value map[string]interface{})() {
+func (m *WorkloadStatus) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The display name for the workload. Required. Read-only.

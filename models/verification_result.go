@@ -7,7 +7,7 @@ import (
 // VerificationResult 
 type VerificationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The signatureValid property
@@ -17,7 +17,7 @@ type VerificationResult struct {
 func NewVerificationResult()(*VerificationResult) {
     m := &VerificationResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVerificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateVerificationResultFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewVerificationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerificationResult) GetAdditionalData()(map[string]interface{}) {
+func (m *VerificationResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *VerificationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerificationResult) SetAdditionalData(value map[string]interface{})() {
+func (m *VerificationResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

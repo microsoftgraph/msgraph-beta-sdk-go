@@ -9,7 +9,7 @@ type VpnOnDemandRule struct {
     // VPN On-Demand Rule Connection Action.
     action *VpnOnDemandRuleConnectionAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // DNS Search Domains.
     dnsSearchDomains []string
     // DNS Search Server Address.
@@ -33,7 +33,7 @@ type VpnOnDemandRule struct {
 func NewVpnOnDemandRule()(*VpnOnDemandRule) {
     m := &VpnOnDemandRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVpnOnDemandRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func (m *VpnOnDemandRule) GetAction()(*VpnOnDemandRuleConnectionAction) {
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnOnDemandRule) GetAdditionalData()(map[string]interface{}) {
+func (m *VpnOnDemandRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDnsSearchDomains gets the dnsSearchDomains property value. DNS Search Domains.
@@ -283,7 +283,7 @@ func (m *VpnOnDemandRule) SetAction(value *VpnOnDemandRuleConnectionAction)() {
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnOnDemandRule) SetAdditionalData(value map[string]interface{})() {
+func (m *VpnOnDemandRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDnsSearchDomains sets the dnsSearchDomains property value. DNS Search Domains.

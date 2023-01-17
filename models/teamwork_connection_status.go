@@ -15,7 +15,7 @@ const (
 func (i TeamworkConnectionStatus) String() string {
     return []string{"unknown", "connected", "disconnected", "unknownFutureValue"}[i]
 }
-func ParseTeamworkConnectionStatus(v string) (interface{}, error) {
+func ParseTeamworkConnectionStatus(v string) (any, error) {
     result := UNKNOWN_TEAMWORKCONNECTIONSTATUS
     switch v {
         case "unknown":

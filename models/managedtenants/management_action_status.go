@@ -21,7 +21,7 @@ const (
 func (i ManagementActionStatus) String() string {
     return []string{"toAddress", "completed", "error", "timeOut", "inProgress", "planned", "resolvedBy3rdParty", "resolvedThroughAlternateMitigation", "riskAccepted", "unknownFutureValue"}[i]
 }
-func ParseManagementActionStatus(v string) (interface{}, error) {
+func ParseManagementActionStatus(v string) (any, error) {
     result := TOADDRESS_MANAGEMENTACTIONSTATUS
     switch v {
         case "toAddress":

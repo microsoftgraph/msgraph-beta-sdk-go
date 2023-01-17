@@ -15,7 +15,7 @@ const (
 func (i Mutability) String() string {
     return []string{"ReadWrite", "ReadOnly", "Immutable", "WriteOnly"}[i]
 }
-func ParseMutability(v string) (interface{}, error) {
+func ParseMutability(v string) (any, error) {
     result := READWRITE_MUTABILITY
     switch v {
         case "ReadWrite":

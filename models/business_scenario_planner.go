@@ -7,11 +7,11 @@ import (
 // BusinessScenarioPlanner 
 type BusinessScenarioPlanner struct {
     Entity
-    // The planConfiguration property
+    // The configuration of Planner plans that will be created for the scenario.
     planConfiguration PlannerPlanConfigurationable
-    // The taskConfiguration property
+    // The configuration of Planner tasks that will be created for the scenario.
     taskConfiguration PlannerTaskConfigurationable
-    // The tasks property
+    // The Planner tasks for the scenario.
     tasks []BusinessScenarioTaskable
 }
 // NewBusinessScenarioPlanner instantiates a new businessScenarioPlanner and sets the default values.
@@ -64,15 +64,15 @@ func (m *BusinessScenarioPlanner) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetPlanConfiguration gets the planConfiguration property value. The planConfiguration property
+// GetPlanConfiguration gets the planConfiguration property value. The configuration of Planner plans that will be created for the scenario.
 func (m *BusinessScenarioPlanner) GetPlanConfiguration()(PlannerPlanConfigurationable) {
     return m.planConfiguration
 }
-// GetTaskConfiguration gets the taskConfiguration property value. The taskConfiguration property
+// GetTaskConfiguration gets the taskConfiguration property value. The configuration of Planner tasks that will be created for the scenario.
 func (m *BusinessScenarioPlanner) GetTaskConfiguration()(PlannerTaskConfigurationable) {
     return m.taskConfiguration
 }
-// GetTasks gets the tasks property value. The tasks property
+// GetTasks gets the tasks property value. The Planner tasks for the scenario.
 func (m *BusinessScenarioPlanner) GetTasks()([]BusinessScenarioTaskable) {
     return m.tasks
 }
@@ -106,15 +106,15 @@ func (m *BusinessScenarioPlanner) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetPlanConfiguration sets the planConfiguration property value. The planConfiguration property
+// SetPlanConfiguration sets the planConfiguration property value. The configuration of Planner plans that will be created for the scenario.
 func (m *BusinessScenarioPlanner) SetPlanConfiguration(value PlannerPlanConfigurationable)() {
     m.planConfiguration = value
 }
-// SetTaskConfiguration sets the taskConfiguration property value. The taskConfiguration property
+// SetTaskConfiguration sets the taskConfiguration property value. The configuration of Planner tasks that will be created for the scenario.
 func (m *BusinessScenarioPlanner) SetTaskConfiguration(value PlannerTaskConfigurationable)() {
     m.taskConfiguration = value
 }
-// SetTasks sets the tasks property value. The tasks property
+// SetTasks sets the tasks property value. The Planner tasks for the scenario.
 func (m *BusinessScenarioPlanner) SetTasks(value []BusinessScenarioTaskable)() {
     m.tasks = value
 }

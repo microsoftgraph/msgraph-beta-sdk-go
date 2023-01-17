@@ -15,7 +15,7 @@ const (
 func (i ClassificationMethod) String() string {
     return []string{"patternMatch", "exactDataMatch", "fingerprint", "machineLearning"}[i]
 }
-func ParseClassificationMethod(v string) (interface{}, error) {
+func ParseClassificationMethod(v string) (any, error) {
     result := PATTERNMATCH_CLASSIFICATIONMETHOD
     switch v {
         case "patternMatch":

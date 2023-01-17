@@ -301,6 +301,8 @@ type DeviceManagement struct {
     userExperienceAnalyticsDeviceStartupProcessPerformance []UserExperienceAnalyticsDeviceStartupProcessPerformanceable
     // User experience analytics devices without cloud identity.
     userExperienceAnalyticsDevicesWithoutCloudIdentity []UserExperienceAnalyticsDeviceWithoutCloudIdentityable
+    // The user experience analytics device events entity contains NRT device timeline events details.
+    userExperienceAnalyticsDeviceTimelineEvents []UserExperienceAnalyticsDeviceTimelineEventsable
     // User experience analytics impacting process
     userExperienceAnalyticsImpactingProcess []UserExperienceAnalyticsImpactingProcessable
     // User experience analytics metric history
@@ -2520,6 +2522,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["userExperienceAnalyticsDeviceTimelineEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsDeviceTimelineEventsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserExperienceAnalyticsDeviceTimelineEventsable, len(val))
+            for i, v := range val {
+                res[i] = v.(UserExperienceAnalyticsDeviceTimelineEventsable)
+            }
+            m.SetUserExperienceAnalyticsDeviceTimelineEvents(res)
+        }
+        return nil
+    }
     res["userExperienceAnalyticsImpactingProcess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue)
         if err != nil {
@@ -3229,6 +3245,10 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcessPerform
 // GetUserExperienceAnalyticsDevicesWithoutCloudIdentity gets the userExperienceAnalyticsDevicesWithoutCloudIdentity property value. User experience analytics devices without cloud identity.
 func (m *DeviceManagement) GetUserExperienceAnalyticsDevicesWithoutCloudIdentity()([]UserExperienceAnalyticsDeviceWithoutCloudIdentityable) {
     return m.userExperienceAnalyticsDevicesWithoutCloudIdentity
+}
+// GetUserExperienceAnalyticsDeviceTimelineEvents gets the userExperienceAnalyticsDeviceTimelineEvents property value. The user experience analytics device events entity contains NRT device timeline events details.
+func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceTimelineEvents()([]UserExperienceAnalyticsDeviceTimelineEventsable) {
+    return m.userExperienceAnalyticsDeviceTimelineEvents
 }
 // GetUserExperienceAnalyticsImpactingProcess gets the userExperienceAnalyticsImpactingProcess property value. User experience analytics impacting process
 func (m *DeviceManagement) GetUserExperienceAnalyticsImpactingProcess()([]UserExperienceAnalyticsImpactingProcessable) {
@@ -4650,6 +4670,16 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetUserExperienceAnalyticsDeviceTimelineEvents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsDeviceTimelineEvents()))
+        for i, v := range m.GetUserExperienceAnalyticsDeviceTimelineEvents() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsDeviceTimelineEvents", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserExperienceAnalyticsImpactingProcess() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsImpactingProcess()))
         for i, v := range m.GetUserExperienceAnalyticsImpactingProcess() {
@@ -5487,6 +5517,10 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceStartupProcessPerform
 // SetUserExperienceAnalyticsDevicesWithoutCloudIdentity sets the userExperienceAnalyticsDevicesWithoutCloudIdentity property value. User experience analytics devices without cloud identity.
 func (m *DeviceManagement) SetUserExperienceAnalyticsDevicesWithoutCloudIdentity(value []UserExperienceAnalyticsDeviceWithoutCloudIdentityable)() {
     m.userExperienceAnalyticsDevicesWithoutCloudIdentity = value
+}
+// SetUserExperienceAnalyticsDeviceTimelineEvents sets the userExperienceAnalyticsDeviceTimelineEvents property value. The user experience analytics device events entity contains NRT device timeline events details.
+func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceTimelineEvents(value []UserExperienceAnalyticsDeviceTimelineEventsable)() {
+    m.userExperienceAnalyticsDeviceTimelineEvents = value
 }
 // SetUserExperienceAnalyticsImpactingProcess sets the userExperienceAnalyticsImpactingProcess property value. User experience analytics impacting process
 func (m *DeviceManagement) SetUserExperienceAnalyticsImpactingProcess(value []UserExperienceAnalyticsImpactingProcessable)() {

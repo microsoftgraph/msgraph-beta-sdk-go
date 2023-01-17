@@ -19,7 +19,7 @@ const (
 func (i AndroidDeviceOwnerBatteryPluggedMode) String() string {
     return []string{"notConfigured", "ac", "usb", "wireless"}[i]
 }
-func ParseAndroidDeviceOwnerBatteryPluggedMode(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerBatteryPluggedMode(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERBATTERYPLUGGEDMODE
     switch v {
         case "notConfigured":

@@ -8,7 +8,7 @@ import (
 // CertificateConnectorHealthMetricValue metric snapshot value returned in response to a GetHealthMetricTimeSeries request.
 type CertificateConnectorHealthMetricValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Timestamp for this metric data-point.
     dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Count of failed requests/operations.
@@ -22,7 +22,7 @@ type CertificateConnectorHealthMetricValue struct {
 func NewCertificateConnectorHealthMetricValue()(*CertificateConnectorHealthMetricValue) {
     m := &CertificateConnectorHealthMetricValue{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCertificateConnectorHealthMetricValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateCertificateConnectorHealthMetricValueFromDiscriminatorValue(parseNode
     return NewCertificateConnectorHealthMetricValue(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CertificateConnectorHealthMetricValue) GetAdditionalData()(map[string]interface{}) {
+func (m *CertificateConnectorHealthMetricValue) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDateTime gets the dateTime property value. Timestamp for this metric data-point.
@@ -129,7 +129,7 @@ func (m *CertificateConnectorHealthMetricValue) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CertificateConnectorHealthMetricValue) SetAdditionalData(value map[string]interface{})() {
+func (m *CertificateConnectorHealthMetricValue) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDateTime sets the dateTime property value. Timestamp for this metric data-point.

@@ -10,13 +10,13 @@ type ConnectionsItemItemsItemAddActivitiesPostRequestBody struct {
     // The activities property
     activities []ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
 }
 // NewConnectionsItemItemsItemAddActivitiesPostRequestBody instantiates a new ConnectionsItemItemsItemAddActivitiesPostRequestBody and sets the default values.
 func NewConnectionsItemItemsItemAddActivitiesPostRequestBody()(*ConnectionsItemItemsItemAddActivitiesPostRequestBody) {
     m := &ConnectionsItemItemsItemAddActivitiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConnectionsItemItemsItemAddActivitiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func (m *ConnectionsItemItemsItemAddActivitiesPostRequestBody) GetActivities()([
     return m.activities
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConnectionsItemItemsItemAddActivitiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ConnectionsItemItemsItemAddActivitiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -75,6 +75,6 @@ func (m *ConnectionsItemItemsItemAddActivitiesPostRequestBody) SetActivities(val
     m.activities = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConnectionsItemItemsItemAddActivitiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ConnectionsItemItemsItemAddActivitiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }

@@ -7,7 +7,7 @@ import (
 // DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse 
 type DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *string
 }
@@ -15,7 +15,7 @@ type DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse struct {
 func NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse()(*DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse) {
     m := &DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDepOnboardingSettingsItemGenerateEncryptionPublicKeyResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDepOnboardingSettingsItemGenerateEncryptionPublicKeyResponseFromDiscr
     return NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse) Serialize
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

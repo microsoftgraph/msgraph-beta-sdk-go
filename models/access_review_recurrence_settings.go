@@ -7,7 +7,7 @@ import (
 // AccessReviewRecurrenceSettings 
 type AccessReviewRecurrenceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The duration in days for recurrence.
     durationInDays *int32
     // The OdataType property
@@ -23,7 +23,7 @@ type AccessReviewRecurrenceSettings struct {
 func NewAccessReviewRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
     m := &AccessReviewRecurrenceSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue(parseNode i878a8
     return NewAccessReviewRecurrenceSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewRecurrenceSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessReviewRecurrenceSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDurationInDays gets the durationInDays property value. The duration in days for recurrence.
@@ -150,7 +150,7 @@ func (m *AccessReviewRecurrenceSettings) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessReviewRecurrenceSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessReviewRecurrenceSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDurationInDays sets the durationInDays property value. The duration in days for recurrence.

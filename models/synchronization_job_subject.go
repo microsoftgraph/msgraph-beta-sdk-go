@@ -7,7 +7,7 @@ import (
 // SynchronizationJobSubject 
 type SynchronizationJobSubject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Principals that you would like to provision.
     links SynchronizationLinkedObjectsable
     // The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
@@ -21,7 +21,7 @@ type SynchronizationJobSubject struct {
 func NewSynchronizationJobSubject()(*SynchronizationJobSubject) {
     m := &SynchronizationJobSubject{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSynchronizationJobSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateSynchronizationJobSubjectFromDiscriminatorValue(parseNode i878a80d233
     return NewSynchronizationJobSubject(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationJobSubject) GetAdditionalData()(map[string]interface{}) {
+func (m *SynchronizationJobSubject) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *SynchronizationJobSubject) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationJobSubject) SetAdditionalData(value map[string]interface{})() {
+func (m *SynchronizationJobSubject) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLinks sets the links property value. Principals that you would like to provision.

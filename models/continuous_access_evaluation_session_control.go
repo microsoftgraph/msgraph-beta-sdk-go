@@ -7,7 +7,7 @@ import (
 // ContinuousAccessEvaluationSessionControl 
 type ContinuousAccessEvaluationSessionControl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
     mode *ContinuousAccessEvaluationMode
     // The OdataType property
@@ -17,7 +17,7 @@ type ContinuousAccessEvaluationSessionControl struct {
 func NewContinuousAccessEvaluationSessionControl()(*ContinuousAccessEvaluationSessionControl) {
     m := &ContinuousAccessEvaluationSessionControl{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue(parseN
     return NewContinuousAccessEvaluationSessionControl(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContinuousAccessEvaluationSessionControl) GetAdditionalData()(map[string]interface{}) {
+func (m *ContinuousAccessEvaluationSessionControl) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *ContinuousAccessEvaluationSessionControl) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContinuousAccessEvaluationSessionControl) SetAdditionalData(value map[string]interface{})() {
+func (m *ContinuousAccessEvaluationSessionControl) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMode sets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.

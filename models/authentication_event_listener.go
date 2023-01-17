@@ -13,10 +13,8 @@ type AuthenticationEventListener struct {
     conditions AuthenticationConditionsable
     // The priority property
     priority *int32
-    // The tags property
-    tags []KeyValuePairable
 }
-// NewAuthenticationEventListener instantiates a new AuthenticationEventListener and sets the default values.
+// NewAuthenticationEventListener instantiates a new authenticationEventListener and sets the default values.
 func NewAuthenticationEventListener()(*AuthenticationEventListener) {
     m := &AuthenticationEventListener{
         Entity: *NewEntity(),
@@ -86,29 +84,11 @@ func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]KeyValuePairable, len(val))
-            for i, v := range val {
-                res[i] = v.(KeyValuePairable)
-            }
-            m.SetTags(res)
-        }
-        return nil
-    }
     return res
 }
 // GetPriority gets the priority property value. The priority property
 func (m *AuthenticationEventListener) GetPriority()(*int32) {
     return m.priority
-}
-// GetTags gets the tags property value. The tags property
-func (m *AuthenticationEventListener) GetTags()([]KeyValuePairable) {
-    return m.tags
 }
 // Serialize serializes information the current object
 func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,16 +114,6 @@ func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
-    if m.GetTags() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTags()))
-        for i, v := range m.GetTags() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("tags", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAuthenticationEventsFlowId sets the authenticationEventsFlowId property value. The authenticationEventsFlowId property
@@ -157,8 +127,4 @@ func (m *AuthenticationEventListener) SetConditions(value AuthenticationConditio
 // SetPriority sets the priority property value. The priority property
 func (m *AuthenticationEventListener) SetPriority(value *int32)() {
     m.priority = value
-}
-// SetTags sets the tags property value. The tags property
-func (m *AuthenticationEventListener) SetTags(value []KeyValuePairable)() {
-    m.tags = value
 }

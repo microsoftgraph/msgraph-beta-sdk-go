@@ -32,7 +32,7 @@ const (
 func (i RequirementProvider) String() string {
     return []string{"user", "request", "servicePrincipal", "v1ConditionalAccess", "multiConditionalAccess", "tenantSessionRiskPolicy", "accountCompromisePolicies", "v1ConditionalAccessDependency", "v1ConditionalAccessPolicyIdRequested", "mfaRegistrationRequiredByIdentityProtectionPolicy", "baselineProtection", "mfaRegistrationRequiredByBaselineProtection", "mfaRegistrationRequiredByMultiConditionalAccess", "enforcedForCspAdmins", "securityDefaults", "mfaRegistrationRequiredBySecurityDefaults", "proofUpCodeRequest", "crossTenantOutboundRule", "gpsLocationCondition", "riskBasedPolicy", "unknownFutureValue"}[i]
 }
-func ParseRequirementProvider(v string) (interface{}, error) {
+func ParseRequirementProvider(v string) (any, error) {
     result := USER_REQUIREMENTPROVIDER
     switch v {
         case "user":

@@ -17,7 +17,7 @@ const (
 func (i SignInAccessType) String() string {
     return []string{"none", "b2bCollaboration", "b2bDirectConnect", "microsoftSupport", "serviceProvider", "unknownFutureValue"}[i]
 }
-func ParseSignInAccessType(v string) (interface{}, error) {
+func ParseSignInAccessType(v string) (any, error) {
     result := NONE_SIGNINACCESSTYPE
     switch v {
         case "none":

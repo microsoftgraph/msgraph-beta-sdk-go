@@ -810,7 +810,7 @@ func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfigu
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -1233,7 +1233,7 @@ func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body ie233ee
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -1941,6 +1941,21 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDevicesWithoutCl
         urlTplParams["userExperienceAnalyticsDeviceWithoutCloudIdentity%2Did"] = id
     }
     return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// UserExperienceAnalyticsDeviceTimelineEvents provides operations to manage the userExperienceAnalyticsDeviceTimelineEvents property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceTimelineEvents()(*UserExperienceAnalyticsDeviceTimelineEventsRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceTimelineEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UserExperienceAnalyticsDeviceTimelineEventsById provides operations to manage the userExperienceAnalyticsDeviceTimelineEvents property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsDeviceTimelineEventsById(id string)(*UserExperienceAnalyticsDeviceTimelineEventsUserExperienceAnalyticsDeviceTimelineEventsItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["userExperienceAnalyticsDeviceTimelineEvents%2Did"] = id
+    }
+    return NewUserExperienceAnalyticsDeviceTimelineEventsUserExperienceAnalyticsDeviceTimelineEventsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UserExperienceAnalyticsImpactingProcess provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpactingProcessRequestBuilder) {

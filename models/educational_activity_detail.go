@@ -11,7 +11,7 @@ type EducationalActivityDetail struct {
     // Extracurricular activities undertaken alongside the program.
     activities []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Any awards or honors associated with the program.
     awards []string
     // Short description of the program provided by the user.
@@ -33,7 +33,7 @@ type EducationalActivityDetail struct {
 func NewEducationalActivityDetail()(*EducationalActivityDetail) {
     m := &EducationalActivityDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationalActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,7 +49,7 @@ func (m *EducationalActivityDetail) GetActivities()([]string) {
     return m.activities
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationalActivityDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationalActivityDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAwards gets the awards property value. Any awards or honors associated with the program.
@@ -280,7 +280,7 @@ func (m *EducationalActivityDetail) SetActivities(value []string)() {
     m.activities = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationalActivityDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationalActivityDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAwards sets the awards property value. Any awards or honors associated with the program.

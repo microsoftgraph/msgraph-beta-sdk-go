@@ -7,7 +7,7 @@ import (
 // ContentClassification 
 type ContentClassification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The confidence property
     confidence *int32
     // The matches property
@@ -23,7 +23,7 @@ type ContentClassification struct {
 func NewContentClassification()(*ContentClassification) {
     m := &ContentClassification{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateContentClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateContentClassificationFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewContentClassification(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContentClassification) GetAdditionalData()(map[string]interface{}) {
+func (m *ContentClassification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfidence gets the confidence property value. The confidence property
@@ -158,7 +158,7 @@ func (m *ContentClassification) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContentClassification) SetAdditionalData(value map[string]interface{})() {
+func (m *ContentClassification) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfidence sets the confidence property value. The confidence property

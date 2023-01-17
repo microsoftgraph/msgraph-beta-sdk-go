@@ -35,7 +35,7 @@ const (
 func (i ManagedDeviceRemoteAction) String() string {
     return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics", "initiateMobileDeviceManagementKeyRecovery"}[i]
 }
-func ParseManagedDeviceRemoteAction(v string) (interface{}, error) {
+func ParseManagedDeviceRemoteAction(v string) (any, error) {
     result := RETIRE_MANAGEDDEVICEREMOTEACTION
     switch v {
         case "retire":

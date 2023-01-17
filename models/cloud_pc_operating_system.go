@@ -14,7 +14,7 @@ const (
 func (i CloudPcOperatingSystem) String() string {
     return []string{"windows10", "windows11", "unknownFutureValue"}[i]
 }
-func ParseCloudPcOperatingSystem(v string) (interface{}, error) {
+func ParseCloudPcOperatingSystem(v string) (any, error) {
     result := WINDOWS10_CLOUDPCOPERATINGSYSTEM
     switch v {
         case "windows10":

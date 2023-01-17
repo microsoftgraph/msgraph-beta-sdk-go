@@ -10,7 +10,7 @@ type TenantAllowOrBlockListAction struct {
     // Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
     action *TenantAllowBlockListAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies when the tenant allow-block-list expires in date time.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Specifies the note added to the tenant allow block list entry in the format of string.
@@ -24,7 +24,7 @@ type TenantAllowOrBlockListAction struct {
 func NewTenantAllowOrBlockListAction()(*TenantAllowOrBlockListAction) {
     m := &TenantAllowOrBlockListAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTenantAllowOrBlockListActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ func (m *TenantAllowOrBlockListAction) GetAction()(*TenantAllowBlockListAction) 
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAllowOrBlockListAction) GetAdditionalData()(map[string]interface{}) {
+func (m *TenantAllowOrBlockListAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Specifies when the tenant allow-block-list expires in date time.
@@ -164,7 +164,7 @@ func (m *TenantAllowOrBlockListAction) SetAction(value *TenantAllowBlockListActi
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TenantAllowOrBlockListAction) SetAdditionalData(value map[string]interface{})() {
+func (m *TenantAllowOrBlockListAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Specifies when the tenant allow-block-list expires in date time.

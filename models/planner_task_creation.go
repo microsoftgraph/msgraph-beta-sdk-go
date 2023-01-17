@@ -7,7 +7,7 @@ import (
 // PlannerTaskCreation 
 type PlannerTaskCreation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
     creationSourceKind *PlannerCreationSourceKind
     // The OdataType property
@@ -19,7 +19,7 @@ type PlannerTaskCreation struct {
 func NewPlannerTaskCreation()(*PlannerTaskCreation) {
     m := &PlannerTaskCreation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerTaskCreationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreatePlannerTaskCreationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPlannerTaskCreation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTaskCreation) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerTaskCreation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreationSourceKind gets the creationSourceKind property value. Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
@@ -127,7 +127,7 @@ func (m *PlannerTaskCreation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTaskCreation) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerTaskCreation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCreationSourceKind sets the creationSourceKind property value. Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.

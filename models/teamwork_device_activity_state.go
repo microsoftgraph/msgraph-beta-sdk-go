@@ -16,7 +16,7 @@ const (
 func (i TeamworkDeviceActivityState) String() string {
     return []string{"unknown", "busy", "idle", "unavailable", "unknownFutureValue"}[i]
 }
-func ParseTeamworkDeviceActivityState(v string) (interface{}, error) {
+func ParseTeamworkDeviceActivityState(v string) (any, error) {
     result := UNKNOWN_TEAMWORKDEVICEACTIVITYSTATE
     switch v {
         case "unknown":

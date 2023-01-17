@@ -7,7 +7,7 @@ import (
 // DeviceManagementUserRightsSetting represents a user rights setting.
 type DeviceManagementUserRightsSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.
     localUsersOrGroups []DeviceManagementUserRightsLocalUserOrGroupable
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementUserRightsSetting struct {
 func NewDeviceManagementUserRightsSetting()(*DeviceManagementUserRightsSetting) {
     m := &DeviceManagementUserRightsSetting{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementUserRightsSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementUserRightsSettingFromDiscriminatorValue(parseNode i87
     return NewDeviceManagementUserRightsSetting(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementUserRightsSetting) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementUserRightsSetting) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -115,7 +115,7 @@ func (m *DeviceManagementUserRightsSetting) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementUserRightsSetting) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementUserRightsSetting) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLocalUsersOrGroups sets the localUsersOrGroups property value. Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.

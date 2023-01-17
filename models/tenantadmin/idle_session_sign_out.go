@@ -7,7 +7,7 @@ import (
 // IdleSessionSignOut 
 type IdleSessionSignOut struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether the idle session sign-out policy is enabled.
     isEnabled *bool
     // The OdataType property
@@ -21,7 +21,7 @@ type IdleSessionSignOut struct {
 func NewIdleSessionSignOut()(*IdleSessionSignOut) {
     m := &IdleSessionSignOut{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIdleSessionSignOutFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateIdleSessionSignOutFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewIdleSessionSignOut(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdleSessionSignOut) GetAdditionalData()(map[string]interface{}) {
+func (m *IdleSessionSignOut) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *IdleSessionSignOut) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdleSessionSignOut) SetAdditionalData(value map[string]interface{})() {
+func (m *IdleSessionSignOut) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the idle session sign-out policy is enabled.

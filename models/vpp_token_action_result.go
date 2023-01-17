@@ -12,7 +12,7 @@ type VppTokenActionResult struct {
     // The actionState property
     actionState *ActionState
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Time the action state was last updated
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
@@ -24,7 +24,7 @@ type VppTokenActionResult struct {
 func NewVppTokenActionResult()(*VppTokenActionResult) {
     m := &VppTokenActionResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVppTokenActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,7 +58,7 @@ func (m *VppTokenActionResult) GetActionState()(*ActionState) {
     return m.actionState
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VppTokenActionResult) GetAdditionalData()(map[string]interface{}) {
+func (m *VppTokenActionResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -178,7 +178,7 @@ func (m *VppTokenActionResult) SetActionState(value *ActionState)() {
     m.actionState = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VppTokenActionResult) SetAdditionalData(value map[string]interface{})() {
+func (m *VppTokenActionResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Time the action state was last updated

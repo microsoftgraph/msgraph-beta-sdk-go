@@ -21,7 +21,7 @@ const (
 func (i DeliveryOptimizationGroupIdOptionsType) String() string {
     return []string{"notConfigured", "adSite", "authenticatedDomainSid", "dhcpUserOption", "dnsSuffix"}[i]
 }
-func ParseDeliveryOptimizationGroupIdOptionsType(v string) (interface{}, error) {
+func ParseDeliveryOptimizationGroupIdOptionsType(v string) (any, error) {
     result := NOTCONFIGURED_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
     switch v {
         case "notConfigured":

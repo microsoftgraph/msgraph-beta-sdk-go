@@ -25,7 +25,7 @@ const (
 func (i EapType) String() string {
     return []string{"eapTls", "leap", "eapSim", "eapTtls", "peap", "eapFast", "teap"}[i]
 }
-func ParseEapType(v string) (interface{}, error) {
+func ParseEapType(v string) (any, error) {
     result := EAPTLS_EAPTYPE
     switch v {
         case "eapTls":

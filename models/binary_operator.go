@@ -13,7 +13,7 @@ const (
 func (i BinaryOperator) String() string {
     return []string{"or", "and"}[i]
 }
-func ParseBinaryOperator(v string) (interface{}, error) {
+func ParseBinaryOperator(v string) (any, error) {
     result := OR_BINARYOPERATOR
     switch v {
         case "or":

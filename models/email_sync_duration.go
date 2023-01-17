@@ -25,7 +25,7 @@ const (
 func (i EmailSyncDuration) String() string {
     return []string{"userDefined", "oneDay", "threeDays", "oneWeek", "twoWeeks", "oneMonth", "unlimited"}[i]
 }
-func ParseEmailSyncDuration(v string) (interface{}, error) {
+func ParseEmailSyncDuration(v string) (any, error) {
     result := USERDEFINED_EMAILSYNCDURATION
     switch v {
         case "userDefined":

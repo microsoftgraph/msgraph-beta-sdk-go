@@ -8,7 +8,7 @@ import (
 // TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody 
 type TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The appGroupType property
     appGroupType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppGroupType
     // The apps property
@@ -18,7 +18,7 @@ type TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody struct {
 func NewTargetedManagedAppConfigurationsItemTargetAppsPostRequestBody()(*TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) {
     m := &TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTargetedManagedAppConfigurationsItemTargetAppsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateTargetedManagedAppConfigurationsItemTargetAppsPostRequestBodyFromDisc
     return NewTargetedManagedAppConfigurationsItemTargetAppsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppGroupType gets the appGroupType property value. The appGroupType property
@@ -94,7 +94,7 @@ func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) Serializ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppGroupType sets the appGroupType property value. The appGroupType property

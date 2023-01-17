@@ -15,7 +15,7 @@ const (
 func (i OfficeProductId) String() string {
     return []string{"o365ProPlusRetail", "o365BusinessRetail", "visioProRetail", "projectProRetail"}[i]
 }
-func ParseOfficeProductId(v string) (interface{}, error) {
+func ParseOfficeProductId(v string) (any, error) {
     result := O365PROPLUSRETAIL_OFFICEPRODUCTID
     switch v {
         case "o365ProPlusRetail":

@@ -13,7 +13,7 @@ const (
 func (i CloudPcPartnerAgentName) String() string {
     return []string{"citrix", "unknownFutureValue"}[i]
 }
-func ParseCloudPcPartnerAgentName(v string) (interface{}, error) {
+func ParseCloudPcPartnerAgentName(v string) (any, error) {
     result := CITRIX_CLOUDPCPARTNERAGENTNAME
     switch v {
         case "citrix":

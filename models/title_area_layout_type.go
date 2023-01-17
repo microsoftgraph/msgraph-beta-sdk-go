@@ -16,7 +16,7 @@ const (
 func (i TitleAreaLayoutType) String() string {
     return []string{"imageAndTitle", "plain", "colorBlock", "overlap", "unknownFutureValue"}[i]
 }
-func ParseTitleAreaLayoutType(v string) (interface{}, error) {
+func ParseTitleAreaLayoutType(v string) (any, error) {
     result := IMAGEANDTITLE_TITLEAREALAYOUTTYPE
     switch v {
         case "imageAndTitle":

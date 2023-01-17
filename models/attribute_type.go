@@ -17,7 +17,7 @@ const (
 func (i AttributeType) String() string {
     return []string{"String", "Integer", "Reference", "Binary", "Boolean", "DateTime"}[i]
 }
-func ParseAttributeType(v string) (interface{}, error) {
+func ParseAttributeType(v string) (any, error) {
     result := STRING_ATTRIBUTETYPE
     switch v {
         case "String":

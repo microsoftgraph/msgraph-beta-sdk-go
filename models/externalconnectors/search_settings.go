@@ -7,7 +7,7 @@ import (
 // SearchSettings 
 type SearchSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.
@@ -17,7 +17,7 @@ type SearchSettings struct {
 func NewSearchSettings()(*SearchSettings) {
     m := &SearchSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSearchSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateSearchSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewSearchSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *SearchSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -92,7 +92,7 @@ func (m *SearchSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *SearchSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

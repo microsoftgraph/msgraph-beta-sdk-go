@@ -14,7 +14,7 @@ const (
 func (i LifecycleTaskCategory) String() string {
     return []string{"joiner", "leaver", "unknownFutureValue"}[i]
 }
-func ParseLifecycleTaskCategory(v string) (interface{}, error) {
+func ParseLifecycleTaskCategory(v string) (any, error) {
     result := JOINER_LIFECYCLETASKCATEGORY
     switch v {
         case "joiner":

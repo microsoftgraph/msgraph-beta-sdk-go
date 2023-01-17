@@ -45,7 +45,7 @@ const (
 func (i AdvancedBitLockerState) String() string {
     return []string{"success", "noUserConsent", "osVolumeUnprotected", "osVolumeTpmRequired", "osVolumeTpmOnlyRequired", "osVolumeTpmPinRequired", "osVolumeTpmStartupKeyRequired", "osVolumeTpmPinStartupKeyRequired", "osVolumeEncryptionMethodMismatch", "recoveryKeyBackupFailed", "fixedDriveNotEncrypted", "fixedDriveEncryptionMethodMismatch", "loggedOnUserNonAdmin", "windowsRecoveryEnvironmentNotConfigured", "tpmNotAvailable", "tpmNotReady", "networkError"}[i]
 }
-func ParseAdvancedBitLockerState(v string) (interface{}, error) {
+func ParseAdvancedBitLockerState(v string) (any, error) {
     result := SUCCESS_ADVANCEDBITLOCKERSTATE
     switch v {
         case "success":

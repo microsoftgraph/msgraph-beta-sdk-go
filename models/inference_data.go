@@ -7,7 +7,7 @@ import (
 // InferenceData 
 type InferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Confidence score reflecting the accuracy of the data inferred about the user.
     confidenceScore *float64
     // The OdataType property
@@ -19,7 +19,7 @@ type InferenceData struct {
 func NewInferenceData()(*InferenceData) {
     m := &InferenceData{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateInferenceDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateInferenceDataFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewInferenceData(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InferenceData) GetAdditionalData()(map[string]interface{}) {
+func (m *InferenceData) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfidenceScore gets the confidenceScore property value. Confidence score reflecting the accuracy of the data inferred about the user.
@@ -106,7 +106,7 @@ func (m *InferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *InferenceData) SetAdditionalData(value map[string]interface{})() {
+func (m *InferenceData) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfidenceScore sets the confidenceScore property value. Confidence score reflecting the accuracy of the data inferred about the user.

@@ -9,7 +9,7 @@ type DlpActionInfo struct {
     // The action property
     action *DlpAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -17,7 +17,7 @@ type DlpActionInfo struct {
 func NewDlpActionInfo()(*DlpActionInfo) {
     m := &DlpActionInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDlpActionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ func (m *DlpActionInfo) GetAction()(*DlpAction) {
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DlpActionInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *DlpActionInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -111,7 +111,7 @@ func (m *DlpActionInfo) SetAction(value *DlpAction)() {
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DlpActionInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *DlpActionInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -16,7 +16,7 @@ type AuthenticationMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AuthenticationMethodsRequestBuilderGetQueryParameters retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+// AuthenticationMethodsRequestBuilderGetQueryParameters retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
 type AuthenticationMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAuthenticationMethodsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *AuthenticationMethodsRequestBuilder) Count()(*AuthenticationMethodsCountRequestBuilder) {
     return NewAuthenticationMethodsCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+// Get retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
 // [Find more info here]
 // 
 // [Find more info here]: https://docs.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0
@@ -87,7 +87,7 @@ func (m *AuthenticationMethodsRequestBuilder) Get(ctx context.Context, requestCo
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -106,7 +106,7 @@ func (m *AuthenticationMethodsRequestBuilder) Post(ctx context.Context, body ie2
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -115,7 +115,7 @@ func (m *AuthenticationMethodsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable), nil
 }
-// ToGetRequestInformation retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+// ToGetRequestInformation retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
 func (m *AuthenticationMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

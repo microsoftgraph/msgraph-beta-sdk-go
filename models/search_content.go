@@ -14,7 +14,7 @@ const (
 func (i SearchContent) String() string {
     return []string{"sharedContent", "privateContent", "unknownFutureValue"}[i]
 }
-func ParseSearchContent(v string) (interface{}, error) {
+func ParseSearchContent(v string) (any, error) {
     result := SHAREDCONTENT_SEARCHCONTENT
     switch v {
         case "sharedContent":

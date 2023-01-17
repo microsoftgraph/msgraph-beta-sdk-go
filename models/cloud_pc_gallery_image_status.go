@@ -15,7 +15,7 @@ const (
 func (i CloudPcGalleryImageStatus) String() string {
     return []string{"supported", "supportedWithWarning", "notSupported", "unknownFutureValue"}[i]
 }
-func ParseCloudPcGalleryImageStatus(v string) (interface{}, error) {
+func ParseCloudPcGalleryImageStatus(v string) (any, error) {
     result := SUPPORTED_CLOUDPCGALLERYIMAGESTATUS
     switch v {
         case "supported":

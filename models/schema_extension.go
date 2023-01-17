@@ -18,7 +18,7 @@ type SchemaExtension struct {
     // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
     targetTypes []string
 }
-// NewSchemaExtension instantiates a new SchemaExtension and sets the default values.
+// NewSchemaExtension instantiates a new schemaExtension and sets the default values.
 func NewSchemaExtension()(*SchemaExtension) {
     m := &SchemaExtension{
         Entity: *NewEntity(),

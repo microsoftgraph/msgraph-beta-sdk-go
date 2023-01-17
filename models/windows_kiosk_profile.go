@@ -7,7 +7,7 @@ import (
 // WindowsKioskProfile 
 type WindowsKioskProfile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The app base class used to identify the application info for the kiosk configuration
     appConfiguration WindowsKioskAppConfigurationable
     // The OdataType property
@@ -23,7 +23,7 @@ type WindowsKioskProfile struct {
 func NewWindowsKioskProfile()(*WindowsKioskProfile) {
     m := &WindowsKioskProfile{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsKioskProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateWindowsKioskProfileFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewWindowsKioskProfile(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsKioskProfile) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsKioskProfile) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppConfiguration gets the appConfiguration property value. The app base class used to identify the application info for the kiosk configuration
@@ -158,7 +158,7 @@ func (m *WindowsKioskProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsKioskProfile) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsKioskProfile) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppConfiguration sets the appConfiguration property value. The app base class used to identify the application info for the kiosk configuration

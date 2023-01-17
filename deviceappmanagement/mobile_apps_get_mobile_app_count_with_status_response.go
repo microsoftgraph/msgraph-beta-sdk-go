@@ -7,7 +7,7 @@ import (
 // MobileAppsGetMobileAppCountWithStatusResponse 
 type MobileAppsGetMobileAppCountWithStatusResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The value property
     value *int64
 }
@@ -15,7 +15,7 @@ type MobileAppsGetMobileAppCountWithStatusResponse struct {
 func NewMobileAppsGetMobileAppCountWithStatusResponse()(*MobileAppsGetMobileAppCountWithStatusResponse) {
     m := &MobileAppsGetMobileAppCountWithStatusResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMobileAppsGetMobileAppCountWithStatusResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateMobileAppsGetMobileAppCountWithStatusResponseFromDiscriminatorValue(p
     return NewMobileAppsGetMobileAppCountWithStatusResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppsGetMobileAppCountWithStatusResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *MobileAppsGetMobileAppCountWithStatusResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *MobileAppsGetMobileAppCountWithStatusResponse) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppsGetMobileAppCountWithStatusResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *MobileAppsGetMobileAppCountWithStatusResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetValue sets the value property value. The value property

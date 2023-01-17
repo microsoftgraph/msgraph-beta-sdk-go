@@ -9,7 +9,7 @@ type WindowsFirewallRule struct {
     // State Management Setting.
     action *StateManagementSetting
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The description of the rule.
     description *string
     // The display name of the rule. Does not need to be unique.
@@ -47,7 +47,7 @@ type WindowsFirewallRule struct {
 func NewWindowsFirewallRule()(*WindowsFirewallRule) {
     m := &WindowsFirewallRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsFirewallRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,7 +59,7 @@ func (m *WindowsFirewallRule) GetAction()(*StateManagementSetting) {
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsFirewallRule) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsFirewallRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description of the rule.
@@ -439,7 +439,7 @@ func (m *WindowsFirewallRule) SetAction(value *StateManagementSetting)() {
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsFirewallRule) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsFirewallRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. The description of the rule.

@@ -7,7 +7,7 @@ import (
 // VpnTrafficRule vPN Traffic Rule definition.
 type VpnTrafficRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // App identifier, if this traffic rule is triggered by an app.
     appId *string
     // Indicates the type of app that a VPN traffic rule is associated with.
@@ -35,7 +35,7 @@ type VpnTrafficRule struct {
 func NewVpnTrafficRule()(*VpnTrafficRule) {
     m := &VpnTrafficRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVpnTrafficRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateVpnTrafficRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewVpnTrafficRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnTrafficRule) GetAdditionalData()(map[string]interface{}) {
+func (m *VpnTrafficRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppId gets the appId property value. App identifier, if this traffic rule is triggered by an app.
@@ -316,7 +316,7 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VpnTrafficRule) SetAdditionalData(value map[string]interface{})() {
+func (m *VpnTrafficRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppId sets the appId property value. App identifier, if this traffic rule is triggered by an app.

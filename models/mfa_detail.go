@@ -7,7 +7,7 @@ import (
 // MfaDetail 
 type MfaDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
     authDetail *string
     // Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
@@ -19,7 +19,7 @@ type MfaDetail struct {
 func NewMfaDetail()(*MfaDetail) {
     m := &MfaDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMfaDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateMfaDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewMfaDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MfaDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *MfaDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthDetail gets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
@@ -106,7 +106,7 @@ func (m *MfaDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MfaDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *MfaDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthDetail sets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.

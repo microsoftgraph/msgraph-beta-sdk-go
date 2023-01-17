@@ -8,7 +8,7 @@ import (
 // PolicyLabelsEvaluateClassificationResultsPostRequestBody 
 type PolicyLabelsEvaluateClassificationResultsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The classificationResults property
     classificationResults []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClassificationResultable
     // The contentInfo property
@@ -18,7 +18,7 @@ type PolicyLabelsEvaluateClassificationResultsPostRequestBody struct {
 func NewPolicyLabelsEvaluateClassificationResultsPostRequestBody()(*PolicyLabelsEvaluateClassificationResultsPostRequestBody) {
     m := &PolicyLabelsEvaluateClassificationResultsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePolicyLabelsEvaluateClassificationResultsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreatePolicyLabelsEvaluateClassificationResultsPostRequestBodyFromDiscrimin
     return NewPolicyLabelsEvaluateClassificationResultsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PolicyLabelsEvaluateClassificationResultsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *PolicyLabelsEvaluateClassificationResultsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClassificationResults gets the classificationResults property value. The classificationResults property
@@ -93,7 +93,7 @@ func (m *PolicyLabelsEvaluateClassificationResultsPostRequestBody) Serialize(wri
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PolicyLabelsEvaluateClassificationResultsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *PolicyLabelsEvaluateClassificationResultsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClassificationResults sets the classificationResults property value. The classificationResults property

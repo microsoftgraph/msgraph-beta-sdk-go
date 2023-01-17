@@ -7,7 +7,7 @@ import (
 // TeamworkMicrophoneConfiguration 
 type TeamworkMicrophoneConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The defaultMicrophone property
     defaultMicrophone TeamworkPeripheralable
     // True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
@@ -21,7 +21,7 @@ type TeamworkMicrophoneConfiguration struct {
 func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
     m := &TeamworkMicrophoneConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue(parseNode i878a
     return NewTeamworkMicrophoneConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkMicrophoneConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkMicrophoneConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultMicrophone gets the defaultMicrophone property value. The defaultMicrophone property
@@ -136,7 +136,7 @@ func (m *TeamworkMicrophoneConfiguration) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkMicrophoneConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkMicrophoneConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDefaultMicrophone sets the defaultMicrophone property value. The defaultMicrophone property

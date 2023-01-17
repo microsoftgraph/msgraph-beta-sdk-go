@@ -8,7 +8,7 @@ import (
 // RolloutSettings 
 type RolloutSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
     devicesPerOffer *int32
     // Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
@@ -24,7 +24,7 @@ type RolloutSettings struct {
 func NewRolloutSettings()(*RolloutSettings) {
     m := &RolloutSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRolloutSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateRolloutSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewRolloutSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RolloutSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *RolloutSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDevicesPerOffer gets the devicesPerOffer property value. Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
@@ -151,7 +151,7 @@ func (m *RolloutSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RolloutSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *RolloutSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDevicesPerOffer sets the devicesPerOffer property value. Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.

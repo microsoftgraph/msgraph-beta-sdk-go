@@ -21,7 +21,7 @@ const (
 func (i FolderProtectionType) String() string {
     return []string{"userDefined", "enable", "auditMode", "blockDiskModification", "auditDiskModification"}[i]
 }
-func ParseFolderProtectionType(v string) (interface{}, error) {
+func ParseFolderProtectionType(v string) (any, error) {
     result := USERDEFINED_FOLDERPROTECTIONTYPE
     switch v {
         case "userDefined":

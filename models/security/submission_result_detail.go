@@ -65,7 +65,7 @@ const (
 func (i SubmissionResultDetail) String() string {
     return []string{"none", "underInvestigation", "simulatedThreat", "allowedBySecOps", "allowedByThirdPartyFilters", "messageNotFound", "urlFileShouldNotBeBlocked", "urlFileShouldBeBlocked", "urlFileCannotMakeDecision", "domainImpersonation", "userImpersonation", "brandImpersonation", "outboundShouldNotBeBlocked", "outboundShouldBeBlocked", "outboundBulk", "outboundCannotMakeDecision", "outboundNotRescanned", "zeroHourAutoPurgeAllowed", "zeroHourAutoPurgeBlocked", "zeroHourAutoPurgeQuarantineReleased", "onPremisesSkip", "allowedByTenantAllowBlockList", "blockedByTenantAllowBlockList", "allowedUrlByTenantAllowBlockList", "allowedFileByTenantAllowBlockList", "allowedSenderByTenantAllowBlockList", "allowedRecipientByTenantAllowBlockList", "blockedUrlByTenantAllowBlockList", "blockedFileByTenantAllowBlockList", "blockedSenderByTenantAllowBlockList", "blockedRecipientByTenantAllowBlockList", "allowedByConnection", "blockedByConnection", "allowedByExchangeTransportRule", "blockedByExchangeTransportRule", "quarantineReleased", "quarantineReleasedThenBlocked", "junkMailRuleDisabled", "allowedByUserSetting", "blockedByUserSetting", "allowedByTenant", "blockedByTenant", "invalidFalsePositive", "invalidFalseNegative", "spoofBlocked", "goodReclassifiedAsBad", "goodReclassifiedAsBulk", "goodReclassifiedAsGood", "goodReclassifiedAsCannotMakeDecision", "badReclassifiedAsGood", "badReclassifiedAsBulk", "badReclassifiedAsBad", "badReclassifiedAsCannotMakeDecision", "unknownFutureValue"}[i]
 }
-func ParseSubmissionResultDetail(v string) (interface{}, error) {
+func ParseSubmissionResultDetail(v string) (any, error) {
     result := NONE_SUBMISSIONRESULTDETAIL
     switch v {
         case "none":

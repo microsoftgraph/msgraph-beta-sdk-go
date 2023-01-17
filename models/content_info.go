@@ -7,7 +7,7 @@ import (
 // ContentInfo 
 type ContentInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The format property
     format *ContentFormat
     // Identifier used for Azure Information Protection Analytics.
@@ -23,7 +23,7 @@ type ContentInfo struct {
 func NewContentInfo()(*ContentInfo) {
     m := &ContentInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateContentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateContentInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewContentInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContentInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *ContentInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,7 +160,7 @@ func (m *ContentInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContentInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *ContentInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFormat sets the format property value. The format property

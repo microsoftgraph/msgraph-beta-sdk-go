@@ -18,7 +18,7 @@ const (
 func (i OperatorType) String() string {
     return []string{"greaterOrEqual", "equal", "greater", "less", "lessOrEqual", "notEqual", "unknownFutureValue"}[i]
 }
-func ParseOperatorType(v string) (interface{}, error) {
+func ParseOperatorType(v string) (any, error) {
     result := GREATEROREQUAL_OPERATORTYPE
     switch v {
         case "greaterOrEqual":

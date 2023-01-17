@@ -7,7 +7,7 @@ import (
 // PrinterDocumentConfiguration 
 type PrinterDocumentConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The collate property
     collate *bool
     // The colorMode property
@@ -55,7 +55,7 @@ type PrinterDocumentConfiguration struct {
 func NewPrinterDocumentConfiguration()(*PrinterDocumentConfiguration) {
     m := &PrinterDocumentConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePrinterDocumentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +63,7 @@ func CreatePrinterDocumentConfigurationFromDiscriminatorValue(parseNode i878a80d
     return NewPrinterDocumentConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterDocumentConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *PrinterDocumentConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCollate gets the collate property value. The collate property
@@ -522,7 +522,7 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PrinterDocumentConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *PrinterDocumentConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCollate sets the collate property value. The collate property

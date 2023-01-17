@@ -7,7 +7,7 @@ import (
 // RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody 
 type RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The roleScopeTagIds property
     roleScopeTagIds []string
 }
@@ -15,7 +15,7 @@ type RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody struct {
 func NewRoleScopeTagsGetRoleScopeTagsByIdPostRequestBody()(*RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody) {
     m := &RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRoleScopeTagsGetRoleScopeTagsByIdPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateRoleScopeTagsGetRoleScopeTagsByIdPostRequestBodyFromDiscriminatorValu
     return NewRoleScopeTagsGetRoleScopeTagsByIdPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody) Serialize(writer i878
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *RoleScopeTagsGetRoleScopeTagsByIdPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. The roleScopeTagIds property

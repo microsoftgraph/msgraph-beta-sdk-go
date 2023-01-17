@@ -21,7 +21,7 @@ const (
 func (i AppliedConditionalAccessPolicyResult) String() string {
     return []string{"success", "failure", "notApplied", "notEnabled", "unknown", "unknownFutureValue", "reportOnlySuccess", "reportOnlyFailure", "reportOnlyNotApplied", "reportOnlyInterrupted"}[i]
 }
-func ParseAppliedConditionalAccessPolicyResult(v string) (interface{}, error) {
+func ParseAppliedConditionalAccessPolicyResult(v string) (any, error) {
     result := SUCCESS_APPLIEDCONDITIONALACCESSPOLICYRESULT
     switch v {
         case "success":

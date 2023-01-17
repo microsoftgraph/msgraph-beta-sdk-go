@@ -7,7 +7,7 @@ import (
 // AppleOwnerTypeEnrollmentType 
 type AppleOwnerTypeEnrollmentType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The enrollmentType property
     enrollmentType *AppleUserInitiatedEnrollmentType
     // The OdataType property
@@ -19,7 +19,7 @@ type AppleOwnerTypeEnrollmentType struct {
 func NewAppleOwnerTypeEnrollmentType()(*AppleOwnerTypeEnrollmentType) {
     m := &AppleOwnerTypeEnrollmentType{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAppleOwnerTypeEnrollmentTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAppleOwnerTypeEnrollmentTypeFromDiscriminatorValue(parseNode i878a80d
     return NewAppleOwnerTypeEnrollmentType(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppleOwnerTypeEnrollmentType) GetAdditionalData()(map[string]interface{}) {
+func (m *AppleOwnerTypeEnrollmentType) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnrollmentType gets the enrollmentType property value. The enrollmentType property
@@ -108,7 +108,7 @@ func (m *AppleOwnerTypeEnrollmentType) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AppleOwnerTypeEnrollmentType) SetAdditionalData(value map[string]interface{})() {
+func (m *AppleOwnerTypeEnrollmentType) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnrollmentType sets the enrollmentType property value. The enrollmentType property

@@ -17,7 +17,7 @@ const (
 func (i RoutingPolicy) String() string {
     return []string{"none", "noMissedCall", "disableForwardingExceptPhone", "disableForwarding", "preferSkypeForBusiness", "unknownFutureValue"}[i]
 }
-func ParseRoutingPolicy(v string) (interface{}, error) {
+func ParseRoutingPolicy(v string) (any, error) {
     result := NONE_ROUTINGPOLICY
     switch v {
         case "none":

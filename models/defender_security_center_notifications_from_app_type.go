@@ -17,7 +17,7 @@ const (
 func (i DefenderSecurityCenterNotificationsFromAppType) String() string {
     return []string{"notConfigured", "blockNoncriticalNotifications", "blockAllNotifications"}[i]
 }
-func ParseDefenderSecurityCenterNotificationsFromAppType(v string) (interface{}, error) {
+func ParseDefenderSecurityCenterNotificationsFromAppType(v string) (any, error) {
     result := NOTCONFIGURED_DEFENDERSECURITYCENTERNOTIFICATIONSFROMAPPTYPE
     switch v {
         case "notConfigured":

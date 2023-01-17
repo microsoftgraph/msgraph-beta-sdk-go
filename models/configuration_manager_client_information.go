@@ -7,7 +7,7 @@ import (
 // ConfigurationManagerClientInformation configuration Manager client information synced from SCCM
 type ConfigurationManagerClientInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Configuration Manager Client Id from SCCM
     clientIdentifier *string
     // Configuration Manager Client version from SCCM
@@ -21,7 +21,7 @@ type ConfigurationManagerClientInformation struct {
 func NewConfigurationManagerClientInformation()(*ConfigurationManagerClientInformation) {
     m := &ConfigurationManagerClientInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConfigurationManagerClientInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateConfigurationManagerClientInformationFromDiscriminatorValue(parseNode
     return NewConfigurationManagerClientInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationManagerClientInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *ConfigurationManagerClientInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientIdentifier gets the clientIdentifier property value. Configuration Manager Client Id from SCCM
@@ -128,7 +128,7 @@ func (m *ConfigurationManagerClientInformation) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationManagerClientInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *ConfigurationManagerClientInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientIdentifier sets the clientIdentifier property value. Configuration Manager Client Id from SCCM

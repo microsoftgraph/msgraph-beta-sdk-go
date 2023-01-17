@@ -7,7 +7,7 @@ import (
 // ServicePrincipalLockConfiguration 
 type ServicePrincipalLockConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
     allProperties *bool
     // Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
@@ -25,7 +25,7 @@ type ServicePrincipalLockConfiguration struct {
 func NewServicePrincipalLockConfiguration()(*ServicePrincipalLockConfiguration) {
     m := &ServicePrincipalLockConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateServicePrincipalLockConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateServicePrincipalLockConfigurationFromDiscriminatorValue(parseNode i87
     return NewServicePrincipalLockConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServicePrincipalLockConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *ServicePrincipalLockConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllProperties gets the allProperties property value. Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
@@ -172,7 +172,7 @@ func (m *ServicePrincipalLockConfiguration) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServicePrincipalLockConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *ServicePrincipalLockConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllProperties sets the allProperties property value. Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.

@@ -17,7 +17,7 @@ const (
 func (i RecommendationCategory) String() string {
     return []string{"usageAndCompliance", "security", "unknownFutureValue", "productivity", "health", "configuration"}[i]
 }
-func ParseRecommendationCategory(v string) (interface{}, error) {
+func ParseRecommendationCategory(v string) (any, error) {
     result := USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY
     switch v {
         case "usageAndCompliance":

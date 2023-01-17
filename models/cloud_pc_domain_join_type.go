@@ -14,7 +14,7 @@ const (
 func (i CloudPcDomainJoinType) String() string {
     return []string{"azureADJoin", "hybridAzureADJoin", "unknownFutureValue"}[i]
 }
-func ParseCloudPcDomainJoinType(v string) (interface{}, error) {
+func ParseCloudPcDomainJoinType(v string) (any, error) {
     result := AZUREADJOIN_CLOUDPCDOMAINJOINTYPE
     switch v {
         case "azureADJoin":

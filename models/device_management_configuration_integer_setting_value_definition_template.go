@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate integer Setting Value Definition Template
 type DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Integer Setting Maximum Value. Valid values -2147483648 to 2147483647
     maxValue *int32
     // Integer Setting Minimum Value. Valid values -2147483648 to 2147483647
@@ -19,7 +19,7 @@ type DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate struct {
 func NewDeviceManagementConfigurationIntegerSettingValueDefinitionTemplate()(*DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) {
     m := &DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationIntegerSettingValueDefinitionTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementConfigurationIntegerSettingValueDefinitionTemplateFro
     return NewDeviceManagementConfigurationIntegerSettingValueDefinitionTemplate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Ser
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMaxValue sets the maxValue property value. Integer Setting Maximum Value. Valid values -2147483648 to 2147483647

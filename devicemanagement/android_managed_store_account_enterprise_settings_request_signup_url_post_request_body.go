@@ -7,7 +7,7 @@ import (
 // AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody 
 type AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The hostName property
     hostName *string
 }
@@ -15,7 +15,7 @@ type AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody
 func NewAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody()(*AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody) {
     m := &AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostReque
     return NewAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequest
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHostName sets the hostName property value. The hostName property

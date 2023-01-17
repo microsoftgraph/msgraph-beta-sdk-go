@@ -7,7 +7,7 @@ import (
 // RunSummary 
 type RunSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of failed workflow runs.
     failedRuns *int32
     // The number of failed tasks of a workflow.
@@ -27,7 +27,7 @@ type RunSummary struct {
 func NewRunSummary()(*RunSummary) {
     m := &RunSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateRunSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewRunSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RunSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *RunSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFailedRuns gets the failedRuns property value. The number of failed workflow runs.
@@ -194,7 +194,7 @@ func (m *RunSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RunSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *RunSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFailedRuns sets the failedRuns property value. The number of failed workflow runs.

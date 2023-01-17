@@ -19,7 +19,7 @@ const (
 func (i KeyStorageProviderOption) String() string {
     return []string{"useTpmKspOtherwiseUseSoftwareKsp", "useTpmKspOtherwiseFail", "usePassportForWorkKspOtherwiseFail", "useSoftwareKsp"}[i]
 }
-func ParseKeyStorageProviderOption(v string) (interface{}, error) {
+func ParseKeyStorageProviderOption(v string) (any, error) {
     result := USETPMKSPOTHERWISEUSESOFTWAREKSP_KEYSTORAGEPROVIDEROPTION
     switch v {
         case "useTpmKspOtherwiseUseSoftwareKsp":

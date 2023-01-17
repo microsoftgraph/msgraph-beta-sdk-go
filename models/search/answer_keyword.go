@@ -7,7 +7,7 @@ import (
 // AnswerKeyword 
 type AnswerKeyword struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A collection of keywords used to trigger the search answer.
     keywords []string
     // If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
@@ -21,7 +21,7 @@ type AnswerKeyword struct {
 func NewAnswerKeyword()(*AnswerKeyword) {
     m := &AnswerKeyword{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAnswerKeywordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAnswerKeywordFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewAnswerKeyword(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AnswerKeyword) GetAdditionalData()(map[string]interface{}) {
+func (m *AnswerKeyword) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -136,7 +136,7 @@ func (m *AnswerKeyword) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AnswerKeyword) SetAdditionalData(value map[string]interface{})() {
+func (m *AnswerKeyword) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKeywords sets the keywords property value. A collection of keywords used to trigger the search answer.

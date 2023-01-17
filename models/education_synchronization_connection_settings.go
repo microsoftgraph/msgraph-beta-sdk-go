@@ -7,7 +7,7 @@ import (
 // EducationSynchronizationConnectionSettings 
 type EducationSynchronizationConnectionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Client ID used to connect to the provider.
     clientId *string
     // Client secret to authenticate the connection to the provider.
@@ -19,7 +19,7 @@ type EducationSynchronizationConnectionSettings struct {
 func NewEducationSynchronizationConnectionSettings()(*EducationSynchronizationConnectionSettings) {
     m := &EducationSynchronizationConnectionSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationSynchronizationConnectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateEducationSynchronizationConnectionSettingsFromDiscriminatorValue(pars
     return NewEducationSynchronizationConnectionSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationConnectionSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationSynchronizationConnectionSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientId gets the clientId property value. Client ID used to connect to the provider.
@@ -126,7 +126,7 @@ func (m *EducationSynchronizationConnectionSettings) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationConnectionSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationSynchronizationConnectionSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientId sets the clientId property value. Client ID used to connect to the provider.

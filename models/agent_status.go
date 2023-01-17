@@ -13,7 +13,7 @@ const (
 func (i AgentStatus) String() string {
     return []string{"active", "inactive"}[i]
 }
-func ParseAgentStatus(v string) (interface{}, error) {
+func ParseAgentStatus(v string) (any, error) {
     result := ACTIVE_AGENTSTATUS
     switch v {
         case "active":

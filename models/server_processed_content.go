@@ -7,7 +7,7 @@ import (
 // ServerProcessedContent 
 type ServerProcessedContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
     componentDependencies []MetaDataKeyStringPairable
     // A key-value map where keys are string identifier and values are object of custom key-value pair.
@@ -27,7 +27,7 @@ type ServerProcessedContent struct {
 func NewServerProcessedContent()(*ServerProcessedContent) {
     m := &ServerProcessedContent{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateServerProcessedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateServerProcessedContentFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewServerProcessedContent(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServerProcessedContent) GetAdditionalData()(map[string]interface{}) {
+func (m *ServerProcessedContent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComponentDependencies gets the componentDependencies property value. A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
@@ -242,7 +242,7 @@ func (m *ServerProcessedContent) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ServerProcessedContent) SetAdditionalData(value map[string]interface{})() {
+func (m *ServerProcessedContent) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComponentDependencies sets the componentDependencies property value. A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.

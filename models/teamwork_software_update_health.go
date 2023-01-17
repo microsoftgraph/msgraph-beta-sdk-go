@@ -7,7 +7,7 @@ import (
 // TeamworkSoftwareUpdateHealth 
 type TeamworkSoftwareUpdateHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The software update available for the admin agent.
     adminAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the company portal.
@@ -27,7 +27,7 @@ type TeamworkSoftwareUpdateHealth struct {
 func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     m := &TeamworkSoftwareUpdateHealth{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue(parseNode i878a80d
     return NewTeamworkSoftwareUpdateHealth(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdminAgentSoftwareUpdateStatus gets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
@@ -194,7 +194,7 @@ func (m *TeamworkSoftwareUpdateHealth) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSoftwareUpdateHealth) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkSoftwareUpdateHealth) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdminAgentSoftwareUpdateStatus sets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.

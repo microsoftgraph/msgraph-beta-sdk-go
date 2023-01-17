@@ -13,6 +13,8 @@ type BookingStaffMember struct {
     colorIndex *int32
     // True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
     isEmailNotificationEnabled *bool
+    // The membershipStatus property
+    membershipStatus *BookingStaffMembershipStatus
     // The role property
     role *BookingStaffRole
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
@@ -74,6 +76,16 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["membershipStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseBookingStaffMembershipStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipStatus(val.(*BookingStaffMembershipStatus))
+        }
+        return nil
+    }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingStaffRole)
         if err != nil {
@@ -124,6 +136,10 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
 func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     return m.isEmailNotificationEnabled
 }
+// GetMembershipStatus gets the membershipStatus property value. The membershipStatus property
+func (m *BookingStaffMember) GetMembershipStatus()(*BookingStaffMembershipStatus) {
+    return m.membershipStatus
+}
 // GetRole gets the role property value. The role property
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
     return m.role
@@ -160,6 +176,13 @@ func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteBoolValue("isEmailNotificationEnabled", m.GetIsEmailNotificationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMembershipStatus() != nil {
+        cast := (*m.GetMembershipStatus()).String()
+        err = writer.WriteStringValue("membershipStatus", &cast)
         if err != nil {
             return err
         }
@@ -206,6 +229,10 @@ func (m *BookingStaffMember) SetColorIndex(value *int32)() {
 // SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
 func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
     m.isEmailNotificationEnabled = value
+}
+// SetMembershipStatus sets the membershipStatus property value. The membershipStatus property
+func (m *BookingStaffMember) SetMembershipStatus(value *BookingStaffMembershipStatus)() {
+    m.membershipStatus = value
 }
 // SetRole sets the role property value. The role property
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {

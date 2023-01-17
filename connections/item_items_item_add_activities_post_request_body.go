@@ -10,13 +10,13 @@ type ItemItemsItemAddActivitiesPostRequestBody struct {
     // The activities property
     activities []ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
 }
 // NewItemItemsItemAddActivitiesPostRequestBody instantiates a new ItemItemsItemAddActivitiesPostRequestBody and sets the default values.
 func NewItemItemsItemAddActivitiesPostRequestBody()(*ItemItemsItemAddActivitiesPostRequestBody) {
     m := &ItemItemsItemAddActivitiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemItemsItemAddActivitiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func (m *ItemItemsItemAddActivitiesPostRequestBody) GetActivities()([]ie98116770
     return m.activities
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemAddActivitiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemItemsItemAddActivitiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -75,6 +75,6 @@ func (m *ItemItemsItemAddActivitiesPostRequestBody) SetActivities(value []ie9811
     m.activities = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemsItemAddActivitiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemItemsItemAddActivitiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }

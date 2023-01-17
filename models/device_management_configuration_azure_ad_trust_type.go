@@ -19,7 +19,7 @@ const (
 func (i DeviceManagementConfigurationAzureAdTrustType) String() string {
     return []string{"none", "azureAdJoined", "addWorkAccount", "mdmOnly"}[i]
 }
-func ParseDeviceManagementConfigurationAzureAdTrustType(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationAzureAdTrustType(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONAZUREADTRUSTTYPE
     switch v {
         case "none":

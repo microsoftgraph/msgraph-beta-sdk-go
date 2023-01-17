@@ -14,7 +14,7 @@ const (
 func (i ContentState) String() string {
     return []string{"rest", "motion", "use"}[i]
 }
-func ParseContentState(v string) (interface{}, error) {
+func ParseContentState(v string) (any, error) {
     result := REST_CONTENTSTATE
     switch v {
         case "rest":

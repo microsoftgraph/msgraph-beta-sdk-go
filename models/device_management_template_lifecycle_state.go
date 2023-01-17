@@ -23,7 +23,7 @@ const (
 func (i DeviceManagementTemplateLifecycleState) String() string {
     return []string{"invalid", "draft", "active", "superseded", "deprecated", "retired"}[i]
 }
-func ParseDeviceManagementTemplateLifecycleState(v string) (interface{}, error) {
+func ParseDeviceManagementTemplateLifecycleState(v string) (any, error) {
     result := INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
     switch v {
         case "invalid":

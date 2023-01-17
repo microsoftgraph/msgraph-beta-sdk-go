@@ -75,7 +75,7 @@ func (m *AttackSimulationRequestBuilder) Delete(ctx context.Context, requestConf
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(ctx, requestInfo, errorMapping)
+    err = m.requestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
         return err
     }
@@ -91,7 +91,7 @@ func (m *AttackSimulationRequestBuilder) Get(ctx context.Context, requestConfigu
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttackSimulationRootFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttackSimulationRootFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -99,6 +99,21 @@ func (m *AttackSimulationRequestBuilder) Get(ctx context.Context, requestConfigu
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable), nil
+}
+// Operations provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) Operations()(*AttackSimulationOperationsRequestBuilder) {
+    return NewAttackSimulationOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OperationsById provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) OperationsById(id string)(*AttackSimulationOperationsAttackSimulationOperationItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["attackSimulationOperation%2Did"] = id
+    }
+    return NewAttackSimulationOperationsAttackSimulationOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property attackSimulation in security
 func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable, requestConfiguration *AttackSimulationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable, error) {
@@ -110,7 +125,7 @@ func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body ie233ee
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttackSimulationRootFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttackSimulationRootFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -118,6 +133,21 @@ func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body ie233ee
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationRootable), nil
+}
+// Payloads provides operations to manage the payloads property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) Payloads()(*AttackSimulationPayloadsRequestBuilder) {
+    return NewAttackSimulationPayloadsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// PayloadsById provides operations to manage the payloads property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) PayloadsById(id string)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["payload%2Did"] = id
+    }
+    return NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SimulationAutomations provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*AttackSimulationSimulationAutomationsRequestBuilder) {

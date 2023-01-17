@@ -8,7 +8,7 @@ import (
 // SynchronizationQuarantine 
 type SynchronizationQuarantine struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     currentBegan *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Describes the error(s) that occurred when putting the synchronization job into quarantine.
@@ -28,7 +28,7 @@ type SynchronizationQuarantine struct {
 func NewSynchronizationQuarantine()(*SynchronizationQuarantine) {
     m := &SynchronizationQuarantine{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSynchronizationQuarantineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ func CreateSynchronizationQuarantineFromDiscriminatorValue(parseNode i878a80d233
     return NewSynchronizationQuarantine(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationQuarantine) GetAdditionalData()(map[string]interface{}) {
+func (m *SynchronizationQuarantine) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentBegan gets the currentBegan property value. Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -196,7 +196,7 @@ func (m *SynchronizationQuarantine) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SynchronizationQuarantine) SetAdditionalData(value map[string]interface{})() {
+func (m *SynchronizationQuarantine) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCurrentBegan sets the currentBegan property value. Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

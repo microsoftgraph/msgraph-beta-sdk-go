@@ -21,7 +21,7 @@ const (
 func (i ConfigurationManagerActionDeliveryStatus) String() string {
     return []string{"unknown", "pendingDelivery", "deliveredToConnectorService", "failedToDeliverToConnectorService", "deliveredToOnPremisesServer"}[i]
 }
-func ParseConfigurationManagerActionDeliveryStatus(v string) (interface{}, error) {
+func ParseConfigurationManagerActionDeliveryStatus(v string) (any, error) {
     result := UNKNOWN_CONFIGURATIONMANAGERACTIONDELIVERYSTATUS
     switch v {
         case "unknown":

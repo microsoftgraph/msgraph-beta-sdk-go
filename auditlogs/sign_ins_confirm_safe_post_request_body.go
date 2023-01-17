@@ -7,7 +7,7 @@ import (
 // SignInsConfirmSafePostRequestBody 
 type SignInsConfirmSafePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The requestIds property
     requestIds []string
 }
@@ -15,7 +15,7 @@ type SignInsConfirmSafePostRequestBody struct {
 func NewSignInsConfirmSafePostRequestBody()(*SignInsConfirmSafePostRequestBody) {
     m := &SignInsConfirmSafePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSignInsConfirmSafePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateSignInsConfirmSafePostRequestBodyFromDiscriminatorValue(parseNode i87
     return NewSignInsConfirmSafePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignInsConfirmSafePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *SignInsConfirmSafePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *SignInsConfirmSafePostRequestBody) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SignInsConfirmSafePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *SignInsConfirmSafePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetRequestIds sets the requestIds property value. The requestIds property

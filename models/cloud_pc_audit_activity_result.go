@@ -16,7 +16,7 @@ const (
 func (i CloudPcAuditActivityResult) String() string {
     return []string{"success", "clientError", "failure", "timeout", "other"}[i]
 }
-func ParseCloudPcAuditActivityResult(v string) (interface{}, error) {
+func ParseCloudPcAuditActivityResult(v string) (any, error) {
     result := SUCCESS_CLOUDPCAUDITACTIVITYRESULT
     switch v {
         case "success":

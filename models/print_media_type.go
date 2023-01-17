@@ -24,7 +24,7 @@ const (
 func (i PrintMediaType) String() string {
     return []string{"stationery", "transparency", "envelope", "envelopePlain", "continuous", "screen", "screenPaged", "continuousLong", "continuousShort", "envelopeWindow", "multiPartForm", "multiLayer", "labels"}[i]
 }
-func ParsePrintMediaType(v string) (interface{}, error) {
+func ParsePrintMediaType(v string) (any, error) {
     result := STATIONERY_PRINTMEDIATYPE
     switch v {
         case "stationery":

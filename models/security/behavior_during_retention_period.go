@@ -16,7 +16,7 @@ const (
 func (i BehaviorDuringRetentionPeriod) String() string {
     return []string{"doNotRetain", "retain", "retainAsRecord", "retainAsRegulatoryRecord", "unknownFutureValue"}[i]
 }
-func ParseBehaviorDuringRetentionPeriod(v string) (interface{}, error) {
+func ParseBehaviorDuringRetentionPeriod(v string) (any, error) {
     result := DONOTRETAIN_BEHAVIORDURINGRETENTIONPERIOD
     switch v {
         case "doNotRetain":

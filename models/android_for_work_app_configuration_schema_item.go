@@ -7,7 +7,7 @@ import (
 // AndroidForWorkAppConfigurationSchemaItem single configuration item inside an Android for Work application's custom configuration schema.
 type AndroidForWorkAppConfigurationSchemaItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Data type for a configuration item inside an Android for Work application's custom configuration schema
     dataType *AndroidForWorkAppConfigurationSchemaItemDataType
     // Default value for boolean type items, if specified by the app developer
@@ -33,7 +33,7 @@ type AndroidForWorkAppConfigurationSchemaItem struct {
 func NewAndroidForWorkAppConfigurationSchemaItem()(*AndroidForWorkAppConfigurationSchemaItem) {
     m := &AndroidForWorkAppConfigurationSchemaItem{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue(parseN
     return NewAndroidForWorkAppConfigurationSchemaItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidForWorkAppConfigurationSchemaItem) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidForWorkAppConfigurationSchemaItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDataType gets the dataType property value. Data type for a configuration item inside an Android for Work application's custom configuration schema
@@ -273,7 +273,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidForWorkAppConfigurationSchemaItem) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidForWorkAppConfigurationSchemaItem) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDataType sets the dataType property value. Data type for a configuration item inside an Android for Work application's custom configuration schema

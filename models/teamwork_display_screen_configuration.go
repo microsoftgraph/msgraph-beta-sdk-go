@@ -7,7 +7,7 @@ import (
 // TeamworkDisplayScreenConfiguration 
 type TeamworkDisplayScreenConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
     backlightBrightness *int32
     // Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
@@ -25,7 +25,7 @@ type TeamworkDisplayScreenConfiguration struct {
 func NewTeamworkDisplayScreenConfiguration()(*TeamworkDisplayScreenConfiguration) {
     m := &TeamworkDisplayScreenConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue(parseNode i8
     return NewTeamworkDisplayScreenConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkDisplayScreenConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkDisplayScreenConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBacklightBrightness gets the backlightBrightness property value. The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
@@ -172,7 +172,7 @@ func (m *TeamworkDisplayScreenConfiguration) Serialize(writer i878a80d2330e89d26
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkDisplayScreenConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkDisplayScreenConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBacklightBrightness sets the backlightBrightness property value. The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.

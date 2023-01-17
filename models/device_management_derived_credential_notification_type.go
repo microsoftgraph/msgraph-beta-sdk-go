@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementDerivedCredentialNotificationType) String() string {
     return []string{"none", "companyPortal", "email"}[i]
 }
-func ParseDeviceManagementDerivedCredentialNotificationType(v string) (interface{}, error) {
+func ParseDeviceManagementDerivedCredentialNotificationType(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
     switch v {
         case "none":

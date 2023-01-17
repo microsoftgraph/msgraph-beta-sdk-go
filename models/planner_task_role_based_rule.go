@@ -7,21 +7,21 @@ import (
 // PlannerTaskRoleBasedRule 
 type PlannerTaskRoleBasedRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
-    // The defaultRule property
+    additionalData map[string]any
+    // Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
     defaultRule *string
     // The OdataType property
     odataType *string
-    // The propertyRule property
+    // Rules for specific properties and actions.
     propertyRule PlannerTaskPropertyRuleable
-    // The role property
+    // The role these rules apply to.
     role PlannerTaskConfigurationRoleBaseable
 }
 // NewPlannerTaskRoleBasedRule instantiates a new plannerTaskRoleBasedRule and sets the default values.
 func NewPlannerTaskRoleBasedRule()(*PlannerTaskRoleBasedRule) {
     m := &PlannerTaskRoleBasedRule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerTaskRoleBasedRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,10 +29,10 @@ func CreatePlannerTaskRoleBasedRuleFromDiscriminatorValue(parseNode i878a80d2330
     return NewPlannerTaskRoleBasedRule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTaskRoleBasedRule) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerTaskRoleBasedRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDefaultRule gets the defaultRule property value. The defaultRule property
+// GetDefaultRule gets the defaultRule property value. Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
 func (m *PlannerTaskRoleBasedRule) GetDefaultRule()(*string) {
     return m.defaultRule
 }
@@ -85,11 +85,11 @@ func (m *PlannerTaskRoleBasedRule) GetFieldDeserializers()(map[string]func(i878a
 func (m *PlannerTaskRoleBasedRule) GetOdataType()(*string) {
     return m.odataType
 }
-// GetPropertyRule gets the propertyRule property value. The propertyRule property
+// GetPropertyRule gets the propertyRule property value. Rules for specific properties and actions.
 func (m *PlannerTaskRoleBasedRule) GetPropertyRule()(PlannerTaskPropertyRuleable) {
     return m.propertyRule
 }
-// GetRole gets the role property value. The role property
+// GetRole gets the role property value. The role these rules apply to.
 func (m *PlannerTaskRoleBasedRule) GetRole()(PlannerTaskConfigurationRoleBaseable) {
     return m.role
 }
@@ -128,10 +128,10 @@ func (m *PlannerTaskRoleBasedRule) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTaskRoleBasedRule) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerTaskRoleBasedRule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDefaultRule sets the defaultRule property value. The defaultRule property
+// SetDefaultRule sets the defaultRule property value. Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
 func (m *PlannerTaskRoleBasedRule) SetDefaultRule(value *string)() {
     m.defaultRule = value
 }
@@ -139,11 +139,11 @@ func (m *PlannerTaskRoleBasedRule) SetDefaultRule(value *string)() {
 func (m *PlannerTaskRoleBasedRule) SetOdataType(value *string)() {
     m.odataType = value
 }
-// SetPropertyRule sets the propertyRule property value. The propertyRule property
+// SetPropertyRule sets the propertyRule property value. Rules for specific properties and actions.
 func (m *PlannerTaskRoleBasedRule) SetPropertyRule(value PlannerTaskPropertyRuleable)() {
     m.propertyRule = value
 }
-// SetRole sets the role property value. The role property
+// SetRole sets the role property value. The role these rules apply to.
 func (m *PlannerTaskRoleBasedRule) SetRole(value PlannerTaskConfigurationRoleBaseable)() {
     m.role = value
 }

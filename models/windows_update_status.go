@@ -19,7 +19,7 @@ const (
 func (i WindowsUpdateStatus) String() string {
     return []string{"upToDate", "pendingInstallation", "pendingReboot", "failed"}[i]
 }
-func ParseWindowsUpdateStatus(v string) (interface{}, error) {
+func ParseWindowsUpdateStatus(v string) (any, error) {
     result := UPTODATE_WINDOWSUPDATESTATUS
     switch v {
         case "upToDate":

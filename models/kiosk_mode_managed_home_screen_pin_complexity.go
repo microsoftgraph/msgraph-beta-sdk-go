@@ -17,7 +17,7 @@ const (
 func (i KioskModeManagedHomeScreenPinComplexity) String() string {
     return []string{"notConfigured", "simple", "complex"}[i]
 }
-func ParseKioskModeManagedHomeScreenPinComplexity(v string) (interface{}, error) {
+func ParseKioskModeManagedHomeScreenPinComplexity(v string) (any, error) {
     result := NOTCONFIGURED_KIOSKMODEMANAGEDHOMESCREENPINCOMPLEXITY
     switch v {
         case "notConfigured":

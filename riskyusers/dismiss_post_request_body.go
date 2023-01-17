@@ -7,7 +7,7 @@ import (
 // DismissPostRequestBody 
 type DismissPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The userIds property
     userIds []string
 }
@@ -15,7 +15,7 @@ type DismissPostRequestBody struct {
 func NewDismissPostRequestBody()(*DismissPostRequestBody) {
     m := &DismissPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDismissPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDismissPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewDismissPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DismissPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DismissPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *DismissPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DismissPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DismissPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetUserIds sets the userIds property value. The userIds property

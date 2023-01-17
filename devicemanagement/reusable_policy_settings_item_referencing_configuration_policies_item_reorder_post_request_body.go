@@ -7,7 +7,7 @@ import (
 // ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody 
 type ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The priority property
     priority *int32
 }
@@ -15,7 +15,7 @@ type ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRe
 func NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody()(*ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody) {
     m := &ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorder
     return NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPo
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemReorderPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPriority sets the priority property value. The priority property

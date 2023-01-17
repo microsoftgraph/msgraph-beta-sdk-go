@@ -7,7 +7,7 @@ import (
 // SafeguardSettings 
 type SafeguardSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of safeguards to ignore per device.
     disabledSafeguardProfiles []SafeguardProfileable
     // The OdataType property
@@ -17,7 +17,7 @@ type SafeguardSettings struct {
 func NewSafeguardSettings()(*SafeguardSettings) {
     m := &SafeguardSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSafeguardSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateSafeguardSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewSafeguardSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SafeguardSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *SafeguardSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisabledSafeguardProfiles gets the disabledSafeguardProfiles property value. List of safeguards to ignore per device.
@@ -92,7 +92,7 @@ func (m *SafeguardSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SafeguardSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *SafeguardSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisabledSafeguardProfiles sets the disabledSafeguardProfiles property value. List of safeguards to ignore per device.

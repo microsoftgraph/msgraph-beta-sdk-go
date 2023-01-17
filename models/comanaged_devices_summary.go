@@ -7,7 +7,7 @@ import (
 // ComanagedDevicesSummary summary data for co managed devices
 type ComanagedDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Number of devices with CompliancePolicy swung-over. This property is read-only.
     compliancePolicyCount *int32
     // Number of devices with ConfigurationSettings swung-over. This property is read-only.
@@ -33,7 +33,7 @@ type ComanagedDevicesSummary struct {
 func NewComanagedDevicesSummary()(*ComanagedDevicesSummary) {
     m := &ComanagedDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComanagedDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ func CreateComanagedDevicesSummaryFromDiscriminatorValue(parseNode i878a80d2330e
     return NewComanagedDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *ComanagedDevicesSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCompliancePolicyCount gets the compliancePolicyCount property value. Number of devices with CompliancePolicy swung-over. This property is read-only.
@@ -206,7 +206,7 @@ func (m *ComanagedDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *ComanagedDevicesSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCompliancePolicyCount sets the compliancePolicyCount property value. Number of devices with CompliancePolicy swung-over. This property is read-only.

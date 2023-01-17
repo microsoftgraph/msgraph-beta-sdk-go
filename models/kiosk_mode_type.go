@@ -17,7 +17,7 @@ const (
 func (i KioskModeType) String() string {
     return []string{"notConfigured", "singleAppMode", "multiAppMode"}[i]
 }
-func ParseKioskModeType(v string) (interface{}, error) {
+func ParseKioskModeType(v string) (any, error) {
     result := NOTCONFIGURED_KIOSKMODETYPE
     switch v {
         case "notConfigured":

@@ -7,7 +7,7 @@ import (
 // KerberosSignOnSettings 
 type KerberosSignOnSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
     kerberosServicePrincipalName *string
     // The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
@@ -19,7 +19,7 @@ type KerberosSignOnSettings struct {
 func NewKerberosSignOnSettings()(*KerberosSignOnSettings) {
     m := &KerberosSignOnSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateKerberosSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateKerberosSignOnSettingsFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewKerberosSignOnSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KerberosSignOnSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *KerberosSignOnSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,7 +107,7 @@ func (m *KerberosSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *KerberosSignOnSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *KerberosSignOnSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKerberosServicePrincipalName sets the kerberosServicePrincipalName property value. The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.

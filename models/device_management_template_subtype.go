@@ -31,7 +31,7 @@ const (
 func (i DeviceManagementTemplateSubtype) String() string {
     return []string{"none", "firewall", "diskEncryption", "attackSurfaceReduction", "endpointDetectionReponse", "accountProtection", "antivirus", "firewallSharedAppList", "firewallSharedIpList", "firewallSharedPortlist"}[i]
 }
-func ParseDeviceManagementTemplateSubtype(v string) (interface{}, error) {
+func ParseDeviceManagementTemplateSubtype(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTTEMPLATESUBTYPE
     switch v {
         case "none":

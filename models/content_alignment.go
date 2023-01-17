@@ -14,7 +14,7 @@ const (
 func (i ContentAlignment) String() string {
     return []string{"left", "right", "center"}[i]
 }
-func ParseContentAlignment(v string) (interface{}, error) {
+func ParseContentAlignment(v string) (any, error) {
     result := LEFT_CONTENTALIGNMENT
     switch v {
         case "left":

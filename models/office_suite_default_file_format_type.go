@@ -19,7 +19,7 @@ const (
 func (i OfficeSuiteDefaultFileFormatType) String() string {
     return []string{"notConfigured", "officeOpenXMLFormat", "officeOpenDocumentFormat", "unknownFutureValue"}[i]
 }
-func ParseOfficeSuiteDefaultFileFormatType(v string) (interface{}, error) {
+func ParseOfficeSuiteDefaultFileFormatType(v string) (any, error) {
     result := NOTCONFIGURED_OFFICESUITEDEFAULTFILEFORMATTYPE
     switch v {
         case "notConfigured":

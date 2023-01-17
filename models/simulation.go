@@ -24,6 +24,12 @@ type Simulation struct {
     description *string
     // Display name of the attack simulation and training campaign. Supports $filter and $orderby.
     displayName *string
+    // The durationInDays property
+    durationInDays *int32
+    // The excludedAccountTarget property
+    excludedAccountTarget AccountTargetContentable
+    // The includedAccountTarget property
+    includedAccountTarget AccountTargetContentable
     // Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
     isAutomated *bool
     // Identity of the user who most recently modified the attack simulation and training campaign.
@@ -32,6 +38,8 @@ type Simulation struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
     launchDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The payload property
+    payload Payloadable
     // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform
     // Report of the attack simulation and training campaign.
@@ -81,6 +89,14 @@ func (m *Simulation) GetDescription()(*string) {
 // GetDisplayName gets the displayName property value. Display name of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) GetDisplayName()(*string) {
     return m.displayName
+}
+// GetDurationInDays gets the durationInDays property value. The durationInDays property
+func (m *Simulation) GetDurationInDays()(*int32) {
+    return m.durationInDays
+}
+// GetExcludedAccountTarget gets the excludedAccountTarget property value. The excludedAccountTarget property
+func (m *Simulation) GetExcludedAccountTarget()(AccountTargetContentable) {
+    return m.excludedAccountTarget
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,6 +181,36 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["durationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDurationInDays(val)
+        }
+        return nil
+    }
+    res["excludedAccountTarget"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccountTargetContentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExcludedAccountTarget(val.(AccountTargetContentable))
+        }
+        return nil
+    }
+    res["includedAccountTarget"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccountTargetContentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludedAccountTarget(val.(AccountTargetContentable))
+        }
+        return nil
+    }
     res["isAutomated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -205,6 +251,16 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePayloadFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPayload(val.(Payloadable))
+        }
+        return nil
+    }
     res["payloadDeliveryPlatform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePayloadDeliveryPlatform)
         if err != nil {
@@ -237,6 +293,10 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
+// GetIncludedAccountTarget gets the includedAccountTarget property value. The includedAccountTarget property
+func (m *Simulation) GetIncludedAccountTarget()(AccountTargetContentable) {
+    return m.includedAccountTarget
+}
 // GetIsAutomated gets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) GetIsAutomated()(*bool) {
     return m.isAutomated
@@ -252,6 +312,10 @@ func (m *Simulation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
 // GetLaunchDateTime gets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.launchDateTime
+}
+// GetPayload gets the payload property value. The payload property
+func (m *Simulation) GetPayload()(Payloadable) {
+    return m.payload
 }
 // GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
@@ -322,6 +386,24 @@ func (m *Simulation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteInt32Value("durationInDays", m.GetDurationInDays())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("excludedAccountTarget", m.GetExcludedAccountTarget())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("includedAccountTarget", m.GetIncludedAccountTarget())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isAutomated", m.GetIsAutomated())
         if err != nil {
             return err
@@ -341,6 +423,12 @@ func (m *Simulation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err = writer.WriteTimeValue("launchDateTime", m.GetLaunchDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("payload", m.GetPayload())
         if err != nil {
             return err
         }
@@ -399,6 +487,18 @@ func (m *Simulation) SetDescription(value *string)() {
 func (m *Simulation) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// SetDurationInDays sets the durationInDays property value. The durationInDays property
+func (m *Simulation) SetDurationInDays(value *int32)() {
+    m.durationInDays = value
+}
+// SetExcludedAccountTarget sets the excludedAccountTarget property value. The excludedAccountTarget property
+func (m *Simulation) SetExcludedAccountTarget(value AccountTargetContentable)() {
+    m.excludedAccountTarget = value
+}
+// SetIncludedAccountTarget sets the includedAccountTarget property value. The includedAccountTarget property
+func (m *Simulation) SetIncludedAccountTarget(value AccountTargetContentable)() {
+    m.includedAccountTarget = value
+}
 // SetIsAutomated sets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) SetIsAutomated(value *bool)() {
     m.isAutomated = value
@@ -414,6 +514,10 @@ func (m *Simulation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 // SetLaunchDateTime sets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.launchDateTime = value
+}
+// SetPayload sets the payload property value. The payload property
+func (m *Simulation) SetPayload(value Payloadable)() {
+    m.payload = value
 }
 // SetPayloadDeliveryPlatform sets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Simulation) SetPayloadDeliveryPlatform(value *PayloadDeliveryPlatform)() {

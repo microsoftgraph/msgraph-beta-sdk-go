@@ -15,7 +15,7 @@ const (
 func (i WindowsDeviceUsageType) String() string {
     return []string{"singleUser", "shared"}[i]
 }
-func ParseWindowsDeviceUsageType(v string) (interface{}, error) {
+func ParseWindowsDeviceUsageType(v string) (any, error) {
     result := SINGLEUSER_WINDOWSDEVICEUSAGETYPE
     switch v {
         case "singleUser":

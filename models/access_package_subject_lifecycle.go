@@ -15,7 +15,7 @@ const (
 func (i AccessPackageSubjectLifecycle) String() string {
     return []string{"notDefined", "notGoverned", "governed", "unknownFutureValue"}[i]
 }
-func ParseAccessPackageSubjectLifecycle(v string) (interface{}, error) {
+func ParseAccessPackageSubjectLifecycle(v string) (any, error) {
     result := NOTDEFINED_ACCESSPACKAGESUBJECTLIFECYCLE
     switch v {
         case "notDefined":

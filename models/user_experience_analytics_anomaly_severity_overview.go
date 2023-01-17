@@ -7,14 +7,14 @@ import (
 // UserExperienceAnalyticsAnomalySeverityOverview the user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
 type UserExperienceAnalyticsAnomalySeverityOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
-    // The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+    additionalData map[string]any
+    // Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
     highSeverityAnomalyCount *int32
-    // The number of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+    // Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
     informationalSeverityAnomalyCount *int32
-    // The number of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+    // Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
     lowSeverityAnomalyCount *int32
-    // The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+    // Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
     mediumSeverityAnomalyCount *int32
     // The OdataType property
     odataType *string
@@ -23,7 +23,7 @@ type UserExperienceAnalyticsAnomalySeverityOverview struct {
 func NewUserExperienceAnalyticsAnomalySeverityOverview()(*UserExperienceAnalyticsAnomalySeverityOverview) {
     m := &UserExperienceAnalyticsAnomalySeverityOverview{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsAnomalySeverityOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateUserExperienceAnalyticsAnomalySeverityOverviewFromDiscriminatorValue(
     return NewUserExperienceAnalyticsAnomalySeverityOverview(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,19 +89,19 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetFieldDeserializers()
     }
     return res
 }
-// GetHighSeverityAnomalyCount gets the highSeverityAnomalyCount property value. The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// GetHighSeverityAnomalyCount gets the highSeverityAnomalyCount property value. Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetHighSeverityAnomalyCount()(*int32) {
     return m.highSeverityAnomalyCount
 }
-// GetInformationalSeverityAnomalyCount gets the informationalSeverityAnomalyCount property value. The number of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// GetInformationalSeverityAnomalyCount gets the informationalSeverityAnomalyCount property value. Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetInformationalSeverityAnomalyCount()(*int32) {
     return m.informationalSeverityAnomalyCount
 }
-// GetLowSeverityAnomalyCount gets the lowSeverityAnomalyCount property value. The number of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// GetLowSeverityAnomalyCount gets the lowSeverityAnomalyCount property value. Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetLowSeverityAnomalyCount()(*int32) {
     return m.lowSeverityAnomalyCount
 }
-// GetMediumSeverityAnomalyCount gets the mediumSeverityAnomalyCount property value. The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// GetMediumSeverityAnomalyCount gets the mediumSeverityAnomalyCount property value. Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetMediumSeverityAnomalyCount()(*int32) {
     return m.mediumSeverityAnomalyCount
 }
@@ -150,22 +150,22 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetHighSeverityAnomalyCount sets the highSeverityAnomalyCount property value. The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// SetHighSeverityAnomalyCount sets the highSeverityAnomalyCount property value. Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetHighSeverityAnomalyCount(value *int32)() {
     m.highSeverityAnomalyCount = value
 }
-// SetInformationalSeverityAnomalyCount sets the informationalSeverityAnomalyCount property value. The number of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// SetInformationalSeverityAnomalyCount sets the informationalSeverityAnomalyCount property value. Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetInformationalSeverityAnomalyCount(value *int32)() {
     m.informationalSeverityAnomalyCount = value
 }
-// SetLowSeverityAnomalyCount sets the lowSeverityAnomalyCount property value. The number of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// SetLowSeverityAnomalyCount sets the lowSeverityAnomalyCount property value. Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetLowSeverityAnomalyCount(value *int32)() {
     m.lowSeverityAnomalyCount = value
 }
-// SetMediumSeverityAnomalyCount sets the mediumSeverityAnomalyCount property value. The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// SetMediumSeverityAnomalyCount sets the mediumSeverityAnomalyCount property value. Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetMediumSeverityAnomalyCount(value *int32)() {
     m.mediumSeverityAnomalyCount = value
 }

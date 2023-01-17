@@ -13,7 +13,7 @@ const (
 func (i SafeguardCategory) String() string {
     return []string{"likelyIssues", "unknownFutureValue"}[i]
 }
-func ParseSafeguardCategory(v string) (interface{}, error) {
+func ParseSafeguardCategory(v string) (any, error) {
     result := LIKELYISSUES_SAFEGUARDCATEGORY
     switch v {
         case "likelyIssues":

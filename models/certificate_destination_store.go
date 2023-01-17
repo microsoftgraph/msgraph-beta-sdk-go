@@ -17,7 +17,7 @@ const (
 func (i CertificateDestinationStore) String() string {
     return []string{"computerCertStoreRoot", "computerCertStoreIntermediate", "userCertStoreIntermediate"}[i]
 }
-func ParseCertificateDestinationStore(v string) (interface{}, error) {
+func ParseCertificateDestinationStore(v string) (any, error) {
     result := COMPUTERCERTSTOREROOT_CERTIFICATEDESTINATIONSTORE
     switch v {
         case "computerCertStoreRoot":

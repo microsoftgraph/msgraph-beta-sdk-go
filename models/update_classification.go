@@ -19,7 +19,7 @@ const (
 func (i UpdateClassification) String() string {
     return []string{"userDefined", "recommendedAndImportant", "important", "none"}[i]
 }
-func ParseUpdateClassification(v string) (interface{}, error) {
+func ParseUpdateClassification(v string) (any, error) {
     result := USERDEFINED_UPDATECLASSIFICATION
     switch v {
         case "userDefined":

@@ -15,7 +15,7 @@ const (
 func (i ConfirmedBy) String() string {
     return []string{"none", "user", "manager", "unknownFutureValue"}[i]
 }
-func ParseConfirmedBy(v string) (interface{}, error) {
+func ParseConfirmedBy(v string) (any, error) {
     result := NONE_CONFIRMEDBY
     switch v {
         case "none":

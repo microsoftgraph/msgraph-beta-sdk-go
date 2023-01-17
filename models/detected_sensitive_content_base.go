@@ -8,7 +8,7 @@ import (
 // DetectedSensitiveContentBase 
 type DetectedSensitiveContentBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The confidence property
     confidence *int32
     // The displayName property
@@ -26,7 +26,7 @@ type DetectedSensitiveContentBase struct {
 func NewDetectedSensitiveContentBase()(*DetectedSensitiveContentBase) {
     m := &DetectedSensitiveContentBase{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDetectedSensitiveContentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ func CreateDetectedSensitiveContentBaseFromDiscriminatorValue(parseNode i878a80d
     return NewDetectedSensitiveContentBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DetectedSensitiveContentBase) GetAdditionalData()(map[string]interface{}) {
+func (m *DetectedSensitiveContentBase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfidence gets the confidence property value. The confidence property
@@ -195,7 +195,7 @@ func (m *DetectedSensitiveContentBase) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DetectedSensitiveContentBase) SetAdditionalData(value map[string]interface{})() {
+func (m *DetectedSensitiveContentBase) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfidence sets the confidence property value. The confidence property

@@ -16,7 +16,7 @@ const (
 func (i SectionEmphasisType) String() string {
     return []string{"none", "netural", "soft", "strong", "unknownFutureValue"}[i]
 }
-func ParseSectionEmphasisType(v string) (interface{}, error) {
+func ParseSectionEmphasisType(v string) (any, error) {
     result := NONE_SECTIONEMPHASISTYPE
     switch v {
         case "none":

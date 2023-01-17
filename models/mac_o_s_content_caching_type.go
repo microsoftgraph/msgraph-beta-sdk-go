@@ -17,7 +17,7 @@ const (
 func (i MacOSContentCachingType) String() string {
     return []string{"notConfigured", "userContentOnly", "sharedContentOnly"}[i]
 }
-func ParseMacOSContentCachingType(v string) (interface{}, error) {
+func ParseMacOSContentCachingType(v string) (any, error) {
     result := NOTCONFIGURED_MACOSCONTENTCACHINGTYPE
     switch v {
         case "notConfigured":

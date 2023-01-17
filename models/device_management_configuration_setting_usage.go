@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementConfigurationSettingUsage) String() string {
     return []string{"none", "configuration", "compliance"}[i]
 }
-func ParseDeviceManagementConfigurationSettingUsage(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationSettingUsage(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
     switch v {
         case "none":

@@ -19,7 +19,7 @@ const (
 func (i AllowedAudiences) String() string {
     return []string{"me", "family", "contacts", "groupMembers", "organization", "federatedOrganizations", "everyone", "unknownFutureValue"}[i]
 }
-func ParseAllowedAudiences(v string) (interface{}, error) {
+func ParseAllowedAudiences(v string) (any, error) {
     result := ME_ALLOWEDAUDIENCES
     switch v {
         case "me":

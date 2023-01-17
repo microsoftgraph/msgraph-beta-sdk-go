@@ -8,7 +8,7 @@ import (
 // ItemActivateServicePlanPostRequestBody 
 type ItemActivateServicePlanPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The servicePlanId property
     servicePlanId *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
     // The skuId property
@@ -18,7 +18,7 @@ type ItemActivateServicePlanPostRequestBody struct {
 func NewItemActivateServicePlanPostRequestBody()(*ItemActivateServicePlanPostRequestBody) {
     m := &ItemActivateServicePlanPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemActivateServicePlanPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateItemActivateServicePlanPostRequestBodyFromDiscriminatorValue(parseNod
     return NewItemActivateServicePlanPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActivateServicePlanPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemActivateServicePlanPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *ItemActivateServicePlanPostRequestBody) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActivateServicePlanPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemActivateServicePlanPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetServicePlanId sets the servicePlanId property value. The servicePlanId property

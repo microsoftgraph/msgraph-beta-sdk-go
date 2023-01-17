@@ -15,7 +15,7 @@ const (
 func (i NonEapAuthenticationMethodForPeap) String() string {
     return []string{"none", "microsoftChapVersionTwo"}[i]
 }
-func ParseNonEapAuthenticationMethodForPeap(v string) (interface{}, error) {
+func ParseNonEapAuthenticationMethodForPeap(v string) (any, error) {
     result := NONE_NONEAPAUTHENTICATIONMETHODFORPEAP
     switch v {
         case "none":

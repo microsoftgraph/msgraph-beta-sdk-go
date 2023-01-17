@@ -17,7 +17,7 @@ const (
 func (i PlannerRelationshipUserRoles) String() string {
     return []string{"defaultRules", "groupOwners", "groupMembers", "taskAssignees", "applications", "unknownFutureValue"}[i]
 }
-func ParsePlannerRelationshipUserRoles(v string) (interface{}, error) {
+func ParsePlannerRelationshipUserRoles(v string) (any, error) {
     result := DEFAULTRULES_PLANNERRELATIONSHIPUSERROLES
     switch v {
         case "defaultRules":

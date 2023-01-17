@@ -25,7 +25,7 @@ const (
 func (i WindowsAutopilotProfileAssignmentStatus) String() string {
     return []string{"unknown", "assignedInSync", "assignedOutOfSync", "assignedUnkownSyncState", "notAssigned", "pending", "failed"}[i]
 }
-func ParseWindowsAutopilotProfileAssignmentStatus(v string) (interface{}, error) {
+func ParseWindowsAutopilotProfileAssignmentStatus(v string) (any, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
     switch v {
         case "unknown":

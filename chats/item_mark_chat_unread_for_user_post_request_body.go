@@ -9,7 +9,7 @@ import (
 // ItemMarkChatUnreadForUserPostRequestBody 
 type ItemMarkChatUnreadForUserPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The lastMessageReadDateTime property
     lastMessageReadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The tenantId property
@@ -21,7 +21,7 @@ type ItemMarkChatUnreadForUserPostRequestBody struct {
 func NewItemMarkChatUnreadForUserPostRequestBody()(*ItemMarkChatUnreadForUserPostRequestBody) {
     m := &ItemMarkChatUnreadForUserPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemMarkChatUnreadForUserPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateItemMarkChatUnreadForUserPostRequestBodyFromDiscriminatorValue(parseN
     return NewItemMarkChatUnreadForUserPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMarkChatUnreadForUserPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemMarkChatUnreadForUserPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,7 +108,7 @@ func (m *ItemMarkChatUnreadForUserPostRequestBody) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMarkChatUnreadForUserPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemMarkChatUnreadForUserPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLastMessageReadDateTime sets the lastMessageReadDateTime property value. The lastMessageReadDateTime property

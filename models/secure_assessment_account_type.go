@@ -19,7 +19,7 @@ const (
 func (i SecureAssessmentAccountType) String() string {
     return []string{"azureADAccount", "domainAccount", "localAccount", "localGuestAccount"}[i]
 }
-func ParseSecureAssessmentAccountType(v string) (interface{}, error) {
+func ParseSecureAssessmentAccountType(v string) (any, error) {
     result := AZUREADACCOUNT_SECUREASSESSMENTACCOUNTTYPE
     switch v {
         case "azureADAccount":

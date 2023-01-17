@@ -7,7 +7,7 @@ import (
 // TitleArea 
 type TitleArea struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Alternative text on the title area.
     alternativeText *string
     // Indicates whether the title area has a gradient effect enabled.
@@ -35,7 +35,7 @@ type TitleArea struct {
 func NewTitleArea()(*TitleArea) {
     m := &TitleArea{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTitleAreaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateTitleAreaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewTitleArea(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TitleArea) GetAdditionalData()(map[string]interface{}) {
+func (m *TitleArea) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAlternativeText gets the alternativeText property value. Alternative text on the title area.
@@ -284,7 +284,7 @@ func (m *TitleArea) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TitleArea) SetAdditionalData(value map[string]interface{})() {
+func (m *TitleArea) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAlternativeText sets the alternativeText property value. Alternative text on the title area.

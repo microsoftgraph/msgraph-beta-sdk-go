@@ -8,7 +8,7 @@ import (
 // CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody 
 type CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The azureBlobContainer property
     azureBlobContainer *string
     // The azureBlobToken property
@@ -26,7 +26,7 @@ type CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody struct {
 func NewCasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody()(*CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody) {
     m := &CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateCasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBodyFromDiscri
     return NewCasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAzureBlobContainer gets the azureBlobContainer property value. The azureBlobContainer property
@@ -175,7 +175,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody) Serialize(
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CasesEdiscoveryCasesItemReviewSetsItemExportPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAzureBlobContainer sets the azureBlobContainer property value. The azureBlobContainer property

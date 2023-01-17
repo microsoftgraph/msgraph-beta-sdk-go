@@ -15,7 +15,7 @@ const (
 func (i GroupPolicyConfigurationType) String() string {
     return []string{"policy", "preference"}[i]
 }
-func ParseGroupPolicyConfigurationType(v string) (interface{}, error) {
+func ParseGroupPolicyConfigurationType(v string) (any, error) {
     result := POLICY_GROUPPOLICYCONFIGURATIONTYPE
     switch v {
         case "policy":

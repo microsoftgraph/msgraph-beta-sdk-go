@@ -16,7 +16,7 @@ const (
 func (i DelegatedPrivilegeStatus) String() string {
     return []string{"none", "delegatedAdminPrivileges", "unknownFutureValue", "granularDelegatedAdminPrivileges", "delegatedAndGranularDelegetedAdminPrivileges"}[i]
 }
-func ParseDelegatedPrivilegeStatus(v string) (interface{}, error) {
+func ParseDelegatedPrivilegeStatus(v string) (any, error) {
     result := NONE_DELEGATEDPRIVILEGESTATUS
     switch v {
         case "none":

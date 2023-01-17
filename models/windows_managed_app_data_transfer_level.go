@@ -15,7 +15,7 @@ const (
 func (i WindowsManagedAppDataTransferLevel) String() string {
     return []string{"allApps", "none"}[i]
 }
-func ParseWindowsManagedAppDataTransferLevel(v string) (interface{}, error) {
+func ParseWindowsManagedAppDataTransferLevel(v string) (any, error) {
     result := ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
     switch v {
         case "allApps":

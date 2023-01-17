@@ -15,7 +15,7 @@ const (
 func (i UserEmailSource) String() string {
     return []string{"userPrincipalName", "primarySmtpAddress"}[i]
 }
-func ParseUserEmailSource(v string) (interface{}, error) {
+func ParseUserEmailSource(v string) (any, error) {
     result := USERPRINCIPALNAME_USEREMAILSOURCE
     switch v {
         case "userPrincipalName":

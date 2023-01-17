@@ -7,7 +7,7 @@ import (
 // Parameter 
 type Parameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the parameter.
     name *string
     // The OdataType property
@@ -21,7 +21,7 @@ type Parameter struct {
 func NewParameter()(*Parameter) {
     m := &Parameter{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateParameterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewParameter(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Parameter) GetAdditionalData()(map[string]interface{}) {
+func (m *Parameter) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -133,7 +133,7 @@ func (m *Parameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Parameter) SetAdditionalData(value map[string]interface{})() {
+func (m *Parameter) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetName sets the name property value. The name of the parameter.

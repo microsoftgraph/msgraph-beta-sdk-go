@@ -7,7 +7,7 @@ import (
 // CompanyDetail 
 type CompanyDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Address of the company.
     address PhysicalAddressable
     // Department Name within a company.
@@ -27,7 +27,7 @@ type CompanyDetail struct {
 func NewCompanyDetail()(*CompanyDetail) {
     m := &CompanyDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCompanyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateCompanyDetailFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewCompanyDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CompanyDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *CompanyDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddress gets the address property value. Address of the company.
@@ -194,7 +194,7 @@ func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CompanyDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *CompanyDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddress sets the address property value. Address of the company.

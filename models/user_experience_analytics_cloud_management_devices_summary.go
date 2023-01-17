@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsCloudManagementDevicesSummary the user experience work from anywhere Cloud management devices summary.
 type UserExperienceAnalyticsCloudManagementDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Total number of  co-managed devices.
     coManagedDeviceCount *int32
     // The count of intune devices that are not autopilot registerd.
@@ -21,7 +21,7 @@ type UserExperienceAnalyticsCloudManagementDevicesSummary struct {
 func NewUserExperienceAnalyticsCloudManagementDevicesSummary()(*UserExperienceAnalyticsCloudManagementDevicesSummary) {
     m := &UserExperienceAnalyticsCloudManagementDevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminator
     return NewUserExperienceAnalyticsCloudManagementDevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCoManagedDeviceCount gets the coManagedDeviceCount property value. Total number of  co-managed devices.
@@ -128,7 +128,7 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) Serialize(writer 
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCoManagedDeviceCount sets the coManagedDeviceCount property value. Total number of  co-managed devices.

@@ -7,7 +7,7 @@ import (
 // AndroidDeviceOwnerKioskModeManagedFolder a folder containing pages of apps and weblinks on the Managed Home Screen
 type AndroidDeviceOwnerKioskModeManagedFolder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Unique identifier for the folder
     folderIdentifier *string
     // Display name for the folder
@@ -21,7 +21,7 @@ type AndroidDeviceOwnerKioskModeManagedFolder struct {
 func NewAndroidDeviceOwnerKioskModeManagedFolder()(*AndroidDeviceOwnerKioskModeManagedFolder) {
     m := &AndroidDeviceOwnerKioskModeManagedFolder{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateAndroidDeviceOwnerKioskModeManagedFolderFromDiscriminatorValue(parseN
     return NewAndroidDeviceOwnerKioskModeManagedFolder(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidDeviceOwnerKioskModeManagedFolder) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -136,7 +136,7 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolder) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidDeviceOwnerKioskModeManagedFolder) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFolderIdentifier sets the folderIdentifier property value. Unique identifier for the folder

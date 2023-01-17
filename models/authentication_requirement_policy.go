@@ -7,7 +7,7 @@ import (
 // AuthenticationRequirementPolicy 
 type AuthenticationRequirementPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Provides additional detail on the feature identified in requirementProvider.
     detail *string
     // The OdataType property
@@ -19,7 +19,7 @@ type AuthenticationRequirementPolicy struct {
 func NewAuthenticationRequirementPolicy()(*AuthenticationRequirementPolicy) {
     m := &AuthenticationRequirementPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationRequirementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAuthenticationRequirementPolicyFromDiscriminatorValue(parseNode i878a
     return NewAuthenticationRequirementPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationRequirementPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationRequirementPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDetail gets the detail property value. Provides additional detail on the feature identified in requirementProvider.
@@ -107,7 +107,7 @@ func (m *AuthenticationRequirementPolicy) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationRequirementPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationRequirementPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDetail sets the detail property value. Provides additional detail on the feature identified in requirementProvider.

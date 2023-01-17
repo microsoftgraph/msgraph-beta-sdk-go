@@ -13,7 +13,7 @@ const (
 func (i WindowsUserType) String() string {
     return []string{"administrator", "standard"}[i]
 }
-func ParseWindowsUserType(v string) (interface{}, error) {
+func ParseWindowsUserType(v string) (any, error) {
     result := ADMINISTRATOR_WINDOWSUSERTYPE
     switch v {
         case "administrator":

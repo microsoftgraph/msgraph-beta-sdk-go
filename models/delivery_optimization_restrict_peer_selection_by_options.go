@@ -15,7 +15,7 @@ const (
 func (i DeliveryOptimizationRestrictPeerSelectionByOptions) String() string {
     return []string{"notConfigured", "subnetMask"}[i]
 }
-func ParseDeliveryOptimizationRestrictPeerSelectionByOptions(v string) (interface{}, error) {
+func ParseDeliveryOptimizationRestrictPeerSelectionByOptions(v string) (any, error) {
     result := NOTCONFIGURED_DELIVERYOPTIMIZATIONRESTRICTPEERSELECTIONBYOPTIONS
     switch v {
         case "notConfigured":

@@ -18,7 +18,7 @@ const (
 func (i DeviceManagementConfigurationSettingAccessTypes) String() string {
     return []string{"none", "add", "copy", "delete", "get", "replace", "execute"}[i]
 }
-func ParseDeviceManagementConfigurationSettingAccessTypes(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationSettingAccessTypes(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
     switch v {
         case "none":

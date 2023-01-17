@@ -26,7 +26,7 @@ const (
 func (i DeviceManagementConfigurationWindowsSkus) String() string {
     return []string{"unknown", "windowsHome", "windowsProfessional", "windowsEnterprise", "windowsEducation", "windowsMobile", "windowsMobileEnterprise", "windowsTeamSurface", "iot", "iotEnterprise", "holoLens", "holoLensEnterprise", "holographicForBusiness", "windowsMultiSession", "surfaceHub"}[i]
 }
-func ParseDeviceManagementConfigurationWindowsSkus(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationWindowsSkus(v string) (any, error) {
     result := UNKNOWN_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
     switch v {
         case "unknown":

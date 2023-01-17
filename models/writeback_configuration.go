@@ -7,7 +7,7 @@ import (
 // WritebackConfiguration 
 type WritebackConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
     isEnabled *bool
     // The OdataType property
@@ -17,7 +17,7 @@ type WritebackConfiguration struct {
 func NewWritebackConfiguration()(*WritebackConfiguration) {
     m := &WritebackConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWritebackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateWritebackConfigurationFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewWritebackConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WritebackConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *WritebackConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -102,7 +102,7 @@ func (m *WritebackConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WritebackConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *WritebackConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.

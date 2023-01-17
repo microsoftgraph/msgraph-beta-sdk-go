@@ -15,7 +15,7 @@ const (
 func (i AndroidManagedAppSafetyNetAppsVerificationType) String() string {
     return []string{"none", "enabled"}[i]
 }
-func ParseAndroidManagedAppSafetyNetAppsVerificationType(v string) (interface{}, error) {
+func ParseAndroidManagedAppSafetyNetAppsVerificationType(v string) (any, error) {
     result := NONE_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
     switch v {
         case "none":

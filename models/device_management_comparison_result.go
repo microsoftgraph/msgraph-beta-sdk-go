@@ -21,7 +21,7 @@ const (
 func (i DeviceManagementComparisonResult) String() string {
     return []string{"unknown", "equal", "notEqual", "added", "removed"}[i]
 }
-func ParseDeviceManagementComparisonResult(v string) (interface{}, error) {
+func ParseDeviceManagementComparisonResult(v string) (any, error) {
     result := UNKNOWN_DEVICEMANAGEMENTCOMPARISONRESULT
     switch v {
         case "unknown":

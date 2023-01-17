@@ -7,7 +7,7 @@ import (
 // TeamworkSystemConfiguration 
 type TeamworkSystemConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The date and time configurations for a device.
     dateTimeConfiguration TeamworkDateTimeConfigurationable
     // The default password for the device. Write-Only.
@@ -39,7 +39,7 @@ type TeamworkSystemConfiguration struct {
 func NewTeamworkSystemConfiguration()(*TeamworkSystemConfiguration) {
     m := &TeamworkSystemConfiguration{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamworkSystemConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateTeamworkSystemConfigurationFromDiscriminatorValue(parseNode i878a80d2
     return NewTeamworkSystemConfiguration(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSystemConfiguration) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamworkSystemConfiguration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDateTimeConfiguration gets the dateTimeConfiguration property value. The date and time configurations for a device.
@@ -326,7 +326,7 @@ func (m *TeamworkSystemConfiguration) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamworkSystemConfiguration) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamworkSystemConfiguration) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDateTimeConfiguration sets the dateTimeConfiguration property value. The date and time configurations for a device.

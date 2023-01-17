@@ -8,7 +8,7 @@ import (
 // EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody 
 type EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The NewReminderTime property
     newReminderTime ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DateTimeTimeZoneable
 }
@@ -16,7 +16,7 @@ type EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody struct {
 func NewEventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody()(*EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody) {
     m := &EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateEventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBodyFromDi
     return NewEventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody) Serial
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *EventsItemExceptionOccurrencesItemSnoozeReminderPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNewReminderTime sets the newReminderTime property value. The NewReminderTime property

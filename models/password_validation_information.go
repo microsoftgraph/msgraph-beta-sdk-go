@@ -7,7 +7,7 @@ import (
 // PasswordValidationInformation 
 type PasswordValidationInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
     isValid *bool
     // The OdataType property
@@ -19,7 +19,7 @@ type PasswordValidationInformation struct {
 func NewPasswordValidationInformation()(*PasswordValidationInformation) {
     m := &PasswordValidationInformation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePasswordValidationInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreatePasswordValidationInformationFromDiscriminatorValue(parseNode i878a80
     return NewPasswordValidationInformation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PasswordValidationInformation) GetAdditionalData()(map[string]interface{}) {
+func (m *PasswordValidationInformation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -114,7 +114,7 @@ func (m *PasswordValidationInformation) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PasswordValidationInformation) SetAdditionalData(value map[string]interface{})() {
+func (m *PasswordValidationInformation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIsValid sets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.

@@ -7,7 +7,7 @@ import (
 // ConfirmCompromisedPostRequestBody 
 type ConfirmCompromisedPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The userIds property
     userIds []string
 }
@@ -15,7 +15,7 @@ type ConfirmCompromisedPostRequestBody struct {
 func NewConfirmCompromisedPostRequestBody()(*ConfirmCompromisedPostRequestBody) {
     m := &ConfirmCompromisedPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConfirmCompromisedPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateConfirmCompromisedPostRequestBodyFromDiscriminatorValue(parseNode i87
     return NewConfirmCompromisedPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfirmCompromisedPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ConfirmCompromisedPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -66,7 +66,7 @@ func (m *ConfirmCompromisedPostRequestBody) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfirmCompromisedPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ConfirmCompromisedPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetUserIds sets the userIds property value. The userIds property

@@ -17,7 +17,7 @@ const (
 func (i WindowsDriverUpdateProfileInventorySyncState) String() string {
     return []string{"pending", "success", "failure"}[i]
 }
-func ParseWindowsDriverUpdateProfileInventorySyncState(v string) (interface{}, error) {
+func ParseWindowsDriverUpdateProfileInventorySyncState(v string) (any, error) {
     result := PENDING_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
     switch v {
         case "pending":

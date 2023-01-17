@@ -20,7 +20,7 @@ const (
 func (i Label) String() string {
     return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension"}[i]
 }
-func ParseLabel(v string) (interface{}, error) {
+func ParseLabel(v string) (any, error) {
     result := TITLE_LABEL
     switch v {
         case "title":

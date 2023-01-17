@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementAutopilotPolicyComplianceStatus) String() string {
     return []string{"unknown", "compliant", "installed", "notCompliant", "notInstalled", "error"}[i]
 }
-func ParseDeviceManagementAutopilotPolicyComplianceStatus(v string) (interface{}, error) {
+func ParseDeviceManagementAutopilotPolicyComplianceStatus(v string) (any, error) {
     result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
     switch v {
         case "unknown":

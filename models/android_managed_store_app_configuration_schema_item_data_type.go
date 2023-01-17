@@ -19,7 +19,7 @@ const (
 func (i AndroidManagedStoreAppConfigurationSchemaItemDataType) String() string {
     return []string{"bool", "integer", "string", "choice", "multiselect", "bundle", "bundleArray", "hidden"}[i]
 }
-func ParseAndroidManagedStoreAppConfigurationSchemaItemDataType(v string) (interface{}, error) {
+func ParseAndroidManagedStoreAppConfigurationSchemaItemDataType(v string) (any, error) {
     result := BOOL_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
     switch v {
         case "bool":

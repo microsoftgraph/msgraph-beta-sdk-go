@@ -7,7 +7,7 @@ import (
 // VppTokensItemRevokeLicensesPostRequestBody 
 type VppTokensItemRevokeLicensesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The notifyManagedDevices property
     notifyManagedDevices *bool
     // The revokeUntrackedLicenses property
@@ -17,7 +17,7 @@ type VppTokensItemRevokeLicensesPostRequestBody struct {
 func NewVppTokensItemRevokeLicensesPostRequestBody()(*VppTokensItemRevokeLicensesPostRequestBody) {
     m := &VppTokensItemRevokeLicensesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVppTokensItemRevokeLicensesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateVppTokensItemRevokeLicensesPostRequestBodyFromDiscriminatorValue(pars
     return NewVppTokensItemRevokeLicensesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VppTokensItemRevokeLicensesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *VppTokensItemRevokeLicensesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *VppTokensItemRevokeLicensesPostRequestBody) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VppTokensItemRevokeLicensesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *VppTokensItemRevokeLicensesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetNotifyManagedDevices sets the notifyManagedDevices property value. The notifyManagedDevices property

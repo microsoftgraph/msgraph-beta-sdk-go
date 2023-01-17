@@ -7,7 +7,7 @@ import (
 // SensitiveContentLocation 
 type SensitiveContentLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The confidence property
     confidence *int32
     // The evidences property
@@ -25,7 +25,7 @@ type SensitiveContentLocation struct {
 func NewSensitiveContentLocation()(*SensitiveContentLocation) {
     m := &SensitiveContentLocation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateSensitiveContentLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateSensitiveContentLocationFromDiscriminatorValue(parseNode i878a80d2330
     return NewSensitiveContentLocation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SensitiveContentLocation) GetAdditionalData()(map[string]interface{}) {
+func (m *SensitiveContentLocation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfidence gets the confidence property value. The confidence property
@@ -180,7 +180,7 @@ func (m *SensitiveContentLocation) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SensitiveContentLocation) SetAdditionalData(value map[string]interface{})() {
+func (m *SensitiveContentLocation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetConfidence sets the confidence property value. The confidence property

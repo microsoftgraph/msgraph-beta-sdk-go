@@ -25,7 +25,7 @@ const (
 func (i WindowsAutopilotProfileAssignmentDetailedStatus) String() string {
     return []string{"none", "hardwareRequirementsNotMet", "surfaceHubProfileNotSupported", "holoLensProfileNotSupported", "windowsPcProfileNotSupported", "surfaceHub2SProfileNotSupported", "unknownFutureValue"}[i]
 }
-func ParseWindowsAutopilotProfileAssignmentDetailedStatus(v string) (interface{}, error) {
+func ParseWindowsAutopilotProfileAssignmentDetailedStatus(v string) (any, error) {
     result := NONE_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
     switch v {
         case "none":

@@ -17,7 +17,7 @@ const (
 func (i WindowsQualityUpdateClassification) String() string {
     return []string{"all", "security", "nonSecurity"}[i]
 }
-func ParseWindowsQualityUpdateClassification(v string) (interface{}, error) {
+func ParseWindowsQualityUpdateClassification(v string) (any, error) {
     result := ALL_WINDOWSQUALITYUPDATECLASSIFICATION
     switch v {
         case "all":

@@ -8,7 +8,7 @@ import (
 // GovernanceSchedule 
 type GovernanceSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The duration of a role assignment. It is in format of a TimeSpan.
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
@@ -24,7 +24,7 @@ type GovernanceSchedule struct {
 func NewGovernanceSchedule()(*GovernanceSchedule) {
     m := &GovernanceSchedule{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateGovernanceScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,7 +32,7 @@ func CreateGovernanceScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewGovernanceSchedule(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GovernanceSchedule) GetAdditionalData()(map[string]interface{}) {
+func (m *GovernanceSchedule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDuration gets the duration property value. The duration of a role assignment. It is in format of a TimeSpan.
@@ -151,7 +151,7 @@ func (m *GovernanceSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *GovernanceSchedule) SetAdditionalData(value map[string]interface{})() {
+func (m *GovernanceSchedule) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDuration sets the duration property value. The duration of a role assignment. It is in format of a TimeSpan.

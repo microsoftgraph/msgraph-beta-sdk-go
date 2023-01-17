@@ -61,7 +61,7 @@ const (
 func (i DeviceComplianceScriptRulOperator) String() string {
     return []string{"none", "and", "or", "isEquals", "notEquals", "greaterThan", "lessThan", "between", "notBetween", "greaterEquals", "lessEquals", "dayTimeBetween", "beginsWith", "notBeginsWith", "endsWith", "notEndsWith", "contains", "notContains", "allOf", "oneOf", "noneOf", "setEquals", "orderedSetEquals", "subsetOf", "excludesAll"}[i]
 }
-func ParseDeviceComplianceScriptRulOperator(v string) (interface{}, error) {
+func ParseDeviceComplianceScriptRulOperator(v string) (any, error) {
     result := NONE_DEVICECOMPLIANCESCRIPTRULOPERATOR
     switch v {
         case "none":

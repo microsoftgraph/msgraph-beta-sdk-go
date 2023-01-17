@@ -17,7 +17,7 @@ const (
 func (i EducationSynchronizationProfileState) String() string {
     return []string{"deleting", "deletionFailed", "provisioningFailed", "provisioned", "provisioning", "unknownFutureValue"}[i]
 }
-func ParseEducationSynchronizationProfileState(v string) (interface{}, error) {
+func ParseEducationSynchronizationProfileState(v string) (any, error) {
     result := DELETING_EDUCATIONSYNCHRONIZATIONPROFILESTATE
     switch v {
         case "deleting":

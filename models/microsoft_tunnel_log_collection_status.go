@@ -19,7 +19,7 @@ const (
 func (i MicrosoftTunnelLogCollectionStatus) String() string {
     return []string{"pending", "completed", "failed", "unknownFutureValue"}[i]
 }
-func ParseMicrosoftTunnelLogCollectionStatus(v string) (interface{}, error) {
+func ParseMicrosoftTunnelLogCollectionStatus(v string) (any, error) {
     result := PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
     switch v {
         case "pending":

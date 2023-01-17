@@ -7,7 +7,7 @@ import (
 // IntuneBrand intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
 type IntuneBrand struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Collection of blocked actions on the company portal as per platform and device ownership types.
     companyPortalBlockedActions []CompanyPortalBlockedActionable
     // Email address of the person/organization responsible for IT support.
@@ -71,7 +71,7 @@ type IntuneBrand struct {
 func NewIntuneBrand()(*IntuneBrand) {
     m := &IntuneBrand{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIntuneBrandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,7 +79,7 @@ func CreateIntuneBrandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewIntuneBrand(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IntuneBrand) GetAdditionalData()(map[string]interface{}) {
+func (m *IntuneBrand) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCompanyPortalBlockedActions gets the companyPortalBlockedActions property value. Collection of blocked actions on the company portal as per platform and device ownership types.
@@ -691,7 +691,7 @@ func (m *IntuneBrand) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IntuneBrand) SetAdditionalData(value map[string]interface{})() {
+func (m *IntuneBrand) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCompanyPortalBlockedActions sets the companyPortalBlockedActions property value. Collection of blocked actions on the company portal as per platform and device ownership types.

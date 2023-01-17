@@ -67,7 +67,7 @@ const (
 func (i GroupPolicySettingType) String() string {
     return []string{"unknown", "policy", "account", "securityOptions", "userRightsAssignment", "auditSetting", "windowsFirewallSettings", "appLockerRuleCollection", "dataSourcesSettings", "devicesSettings", "driveMapSettings", "environmentVariables", "filesSettings", "folderOptions", "folders", "iniFiles", "internetOptions", "localUsersAndGroups", "networkOptions", "networkShares", "ntServices", "powerOptions", "printers", "regionalOptionsSettings", "registrySettings", "scheduledTasks", "shortcutSettings", "startMenuSettings"}[i]
 }
-func ParseGroupPolicySettingType(v string) (interface{}, error) {
+func ParseGroupPolicySettingType(v string) (any, error) {
     result := UNKNOWN_GROUPPOLICYSETTINGTYPE
     switch v {
         case "unknown":

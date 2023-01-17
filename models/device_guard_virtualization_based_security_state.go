@@ -25,7 +25,7 @@ const (
 func (i DeviceGuardVirtualizationBasedSecurityState) String() string {
     return []string{"running", "rebootRequired", "require64BitArchitecture", "notLicensed", "notConfigured", "doesNotMeetHardwareRequirements", "other"}[i]
 }
-func ParseDeviceGuardVirtualizationBasedSecurityState(v string) (interface{}, error) {
+func ParseDeviceGuardVirtualizationBasedSecurityState(v string) (any, error) {
     result := RUNNING_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
     switch v {
         case "running":

@@ -7,7 +7,7 @@ import (
 // EventPropagationResult 
 type EventPropagationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The name of the specific location in the workload associated with the event.
     location *string
     // The OdataType property
@@ -23,7 +23,7 @@ type EventPropagationResult struct {
 func NewEventPropagationResult()(*EventPropagationResult) {
     m := &EventPropagationResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEventPropagationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateEventPropagationResultFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewEventPropagationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EventPropagationResult) GetAdditionalData()(map[string]interface{}) {
+func (m *EventPropagationResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -151,7 +151,7 @@ func (m *EventPropagationResult) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EventPropagationResult) SetAdditionalData(value map[string]interface{})() {
+func (m *EventPropagationResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLocation sets the location property value. The name of the specific location in the workload associated with the event.

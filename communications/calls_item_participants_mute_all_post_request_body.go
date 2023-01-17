@@ -7,7 +7,7 @@ import (
 // CallsItemParticipantsMuteAllPostRequestBody 
 type CallsItemParticipantsMuteAllPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The clientContext property
     clientContext *string
     // The participants property
@@ -17,7 +17,7 @@ type CallsItemParticipantsMuteAllPostRequestBody struct {
 func NewCallsItemParticipantsMuteAllPostRequestBody()(*CallsItemParticipantsMuteAllPostRequestBody) {
     m := &CallsItemParticipantsMuteAllPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCallsItemParticipantsMuteAllPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateCallsItemParticipantsMuteAllPostRequestBodyFromDiscriminatorValue(par
     return NewCallsItemParticipantsMuteAllPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsMuteAllPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CallsItemParticipantsMuteAllPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
@@ -88,7 +88,7 @@ func (m *CallsItemParticipantsMuteAllPostRequestBody) Serialize(writer i878a80d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CallsItemParticipantsMuteAllPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CallsItemParticipantsMuteAllPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property

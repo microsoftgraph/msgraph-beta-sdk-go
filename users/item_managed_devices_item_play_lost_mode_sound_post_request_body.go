@@ -7,7 +7,7 @@ import (
 // ItemManagedDevicesItemPlayLostModeSoundPostRequestBody 
 type ItemManagedDevicesItemPlayLostModeSoundPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The durationInMinutes property
     durationInMinutes *string
 }
@@ -15,7 +15,7 @@ type ItemManagedDevicesItemPlayLostModeSoundPostRequestBody struct {
 func NewItemManagedDevicesItemPlayLostModeSoundPostRequestBody()(*ItemManagedDevicesItemPlayLostModeSoundPostRequestBody) {
     m := &ItemManagedDevicesItemPlayLostModeSoundPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemManagedDevicesItemPlayLostModeSoundPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemManagedDevicesItemPlayLostModeSoundPostRequestBodyFromDiscriminat
     return NewItemManagedDevicesItemPlayLostModeSoundPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemPlayLostModeSoundPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemManagedDevicesItemPlayLostModeSoundPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDurationInMinutes gets the durationInMinutes property value. The durationInMinutes property
@@ -62,7 +62,7 @@ func (m *ItemManagedDevicesItemPlayLostModeSoundPostRequestBody) Serialize(write
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemManagedDevicesItemPlayLostModeSoundPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemManagedDevicesItemPlayLostModeSoundPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDurationInMinutes sets the durationInMinutes property value. The durationInMinutes property

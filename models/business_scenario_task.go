@@ -7,9 +7,9 @@ import (
 // BusinessScenarioTask 
 type BusinessScenarioTask struct {
     PlannerTask
-    // The businessScenarioProperties property
+    // Scenario-specific properties of the task. externalObjectId and externalBucketId properties must be specified when creating a task.
     businessScenarioProperties BusinessScenarioPropertiesable
-    // The target property
+    // Target of the task that specifies where the task should be placed. Must be specified when creating a task.
     target BusinessScenarioTaskTargetBaseable
 }
 // NewBusinessScenarioTask instantiates a new BusinessScenarioTask and sets the default values.
@@ -23,7 +23,7 @@ func NewBusinessScenarioTask()(*BusinessScenarioTask) {
 func CreateBusinessScenarioTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBusinessScenarioTask(), nil
 }
-// GetBusinessScenarioProperties gets the businessScenarioProperties property value. The businessScenarioProperties property
+// GetBusinessScenarioProperties gets the businessScenarioProperties property value. Scenario-specific properties of the task. externalObjectId and externalBucketId properties must be specified when creating a task.
 func (m *BusinessScenarioTask) GetBusinessScenarioProperties()(BusinessScenarioPropertiesable) {
     return m.businessScenarioProperties
 }
@@ -52,7 +52,7 @@ func (m *BusinessScenarioTask) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. Target of the task that specifies where the task should be placed. Must be specified when creating a task.
 func (m *BusinessScenarioTask) GetTarget()(BusinessScenarioTaskTargetBaseable) {
     return m.target
 }
@@ -76,11 +76,11 @@ func (m *BusinessScenarioTask) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetBusinessScenarioProperties sets the businessScenarioProperties property value. The businessScenarioProperties property
+// SetBusinessScenarioProperties sets the businessScenarioProperties property value. Scenario-specific properties of the task. externalObjectId and externalBucketId properties must be specified when creating a task.
 func (m *BusinessScenarioTask) SetBusinessScenarioProperties(value BusinessScenarioPropertiesable)() {
     m.businessScenarioProperties = value
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. Target of the task that specifies where the task should be placed. Must be specified when creating a task.
 func (m *BusinessScenarioTask) SetTarget(value BusinessScenarioTaskTargetBaseable)() {
     m.target = value
 }

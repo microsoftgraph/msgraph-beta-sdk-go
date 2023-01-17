@@ -16,7 +16,7 @@ const (
 func (i NotificationChannelType) String() string {
     return []string{"portal", "email", "phoneCall", "sms", "unknownFutureValue"}[i]
 }
-func ParseNotificationChannelType(v string) (interface{}, error) {
+func ParseNotificationChannelType(v string) (any, error) {
     result := PORTAL_NOTIFICATIONCHANNELTYPE
     switch v {
         case "portal":

@@ -19,7 +19,7 @@ const (
 func (i LocalSecurityOptionsStandardUserElevationPromptBehaviorType) String() string {
     return []string{"notConfigured", "automaticallyDenyElevationRequests", "promptForCredentialsOnTheSecureDesktop", "promptForCredentials"}[i]
 }
-func ParseLocalSecurityOptionsStandardUserElevationPromptBehaviorType(v string) (interface{}, error) {
+func ParseLocalSecurityOptionsStandardUserElevationPromptBehaviorType(v string) (any, error) {
     result := NOTCONFIGURED_LOCALSECURITYOPTIONSSTANDARDUSERELEVATIONPROMPTBEHAVIORTYPE
     switch v {
         case "notConfigured":

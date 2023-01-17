@@ -8,7 +8,7 @@ import (
 // ItemThreadsItemReplyPostRequestBody 
 type ItemThreadsItemReplyPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Post property
     post ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable
 }
@@ -16,7 +16,7 @@ type ItemThreadsItemReplyPostRequestBody struct {
 func NewItemThreadsItemReplyPostRequestBody()(*ItemThreadsItemReplyPostRequestBody) {
     m := &ItemThreadsItemReplyPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemThreadsItemReplyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateItemThreadsItemReplyPostRequestBodyFromDiscriminatorValue(parseNode i
     return NewItemThreadsItemReplyPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemThreadsItemReplyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemThreadsItemReplyPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -63,7 +63,7 @@ func (m *ItemThreadsItemReplyPostRequestBody) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemThreadsItemReplyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemThreadsItemReplyPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPost sets the post property value. The Post property

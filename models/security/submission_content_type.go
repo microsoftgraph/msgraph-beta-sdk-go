@@ -16,7 +16,7 @@ const (
 func (i SubmissionContentType) String() string {
     return []string{"email", "url", "file", "app", "unknownFutureValue"}[i]
 }
-func ParseSubmissionContentType(v string) (interface{}, error) {
+func ParseSubmissionContentType(v string) (any, error) {
     result := EMAIL_SUBMISSIONCONTENTTYPE
     switch v {
         case "email":

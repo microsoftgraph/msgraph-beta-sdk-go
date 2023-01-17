@@ -14,7 +14,7 @@ const (
 func (i ApplicationMode) String() string {
     return []string{"manual", "automatic", "recommended"}[i]
 }
-func ParseApplicationMode(v string) (interface{}, error) {
+func ParseApplicationMode(v string) (any, error) {
     result := MANUAL_APPLICATIONMODE
     switch v {
         case "manual":

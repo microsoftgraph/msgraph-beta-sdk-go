@@ -46,7 +46,7 @@ const (
 func (i PrinterProcessingStateReason) String() string {
     return []string{"paused", "mediaJam", "mediaNeeded", "mediaLow", "mediaEmpty", "coverOpen", "interlockOpen", "outputTrayMissing", "outputAreaFull", "markerSupplyLow", "markerSupplyEmpty", "inputTrayMissing", "outputAreaAlmostFull", "markerWasteAlmostFull", "markerWasteFull", "fuserOverTemp", "fuserUnderTemp", "other", "none", "movingToPaused", "shutdown", "connectingToDevice", "timedOut", "stopping", "stoppedPartially", "tonerLow", "tonerEmpty", "spoolAreaFull", "doorOpen", "opticalPhotoConductorNearEndOfLife", "opticalPhotoConductorLifeOver", "developerLow", "developerEmpty", "interpreterResourceUnavailable", "unknownFutureValue"}[i]
 }
-func ParsePrinterProcessingStateReason(v string) (interface{}, error) {
+func ParsePrinterProcessingStateReason(v string) (any, error) {
     result := PAUSED_PRINTERPROCESSINGSTATEREASON
     switch v {
         case "paused":

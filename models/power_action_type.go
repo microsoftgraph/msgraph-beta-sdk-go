@@ -21,7 +21,7 @@ const (
 func (i PowerActionType) String() string {
     return []string{"notConfigured", "noAction", "sleep", "hibernate", "shutdown"}[i]
 }
-func ParsePowerActionType(v string) (interface{}, error) {
+func ParsePowerActionType(v string) (any, error) {
     result := NOTCONFIGURED_POWERACTIONTYPE
     switch v {
         case "notConfigured":

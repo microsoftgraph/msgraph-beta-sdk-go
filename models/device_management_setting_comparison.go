@@ -7,7 +7,7 @@ import (
 // DeviceManagementSettingComparison entity representing setting comparison result
 type DeviceManagementSettingComparison struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Setting comparison result type
     comparisonResult *DeviceManagementComparisonResult
     // JSON representation of current intent (or) template setting's value
@@ -27,7 +27,7 @@ type DeviceManagementSettingComparison struct {
 func NewDeviceManagementSettingComparison()(*DeviceManagementSettingComparison) {
     m := &DeviceManagementSettingComparison{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementSettingComparisonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateDeviceManagementSettingComparisonFromDiscriminatorValue(parseNode i87
     return NewDeviceManagementSettingComparison(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementSettingComparison) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementSettingComparison) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComparisonResult gets the comparisonResult property value. Setting comparison result type
@@ -195,7 +195,7 @@ func (m *DeviceManagementSettingComparison) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementSettingComparison) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementSettingComparison) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComparisonResult sets the comparisonResult property value. Setting comparison result type

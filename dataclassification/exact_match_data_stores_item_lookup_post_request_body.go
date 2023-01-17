@@ -7,7 +7,7 @@ import (
 // ExactMatchDataStoresItemLookupPostRequestBody 
 type ExactMatchDataStoresItemLookupPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The key property
     key *string
     // The resultColumnNames property
@@ -19,7 +19,7 @@ type ExactMatchDataStoresItemLookupPostRequestBody struct {
 func NewExactMatchDataStoresItemLookupPostRequestBody()(*ExactMatchDataStoresItemLookupPostRequestBody) {
     m := &ExactMatchDataStoresItemLookupPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExactMatchDataStoresItemLookupPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateExactMatchDataStoresItemLookupPostRequestBodyFromDiscriminatorValue(p
     return NewExactMatchDataStoresItemLookupPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExactMatchDataStoresItemLookupPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ExactMatchDataStoresItemLookupPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -114,7 +114,7 @@ func (m *ExactMatchDataStoresItemLookupPostRequestBody) Serialize(writer i878a80
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExactMatchDataStoresItemLookupPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ExactMatchDataStoresItemLookupPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetKey sets the key property value. The key property

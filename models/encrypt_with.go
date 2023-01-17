@@ -13,7 +13,7 @@ const (
 func (i EncryptWith) String() string {
     return []string{"template", "userDefinedRights"}[i]
 }
-func ParseEncryptWith(v string) (interface{}, error) {
+func ParseEncryptWith(v string) (any, error) {
     result := TEMPLATE_ENCRYPTWITH
     switch v {
         case "template":

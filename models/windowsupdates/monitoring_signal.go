@@ -13,7 +13,7 @@ const (
 func (i MonitoringSignal) String() string {
     return []string{"rollback", "unknownFutureValue"}[i]
 }
-func ParseMonitoringSignal(v string) (interface{}, error) {
+func ParseMonitoringSignal(v string) (any, error) {
     result := ROLLBACK_MONITORINGSIGNAL
     switch v {
         case "rollback":

@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementConfigurationSettingVisibility) String() string {
     return []string{"none", "settingsCatalog", "template"}[i]
 }
-func ParseDeviceManagementConfigurationSettingVisibility(v string) (interface{}, error) {
+func ParseDeviceManagementConfigurationSettingVisibility(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
     switch v {
         case "none":

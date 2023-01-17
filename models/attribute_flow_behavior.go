@@ -13,7 +13,7 @@ const (
 func (i AttributeFlowBehavior) String() string {
     return []string{"FlowWhenChanged", "FlowAlways"}[i]
 }
-func ParseAttributeFlowBehavior(v string) (interface{}, error) {
+func ParseAttributeFlowBehavior(v string) (any, error) {
     result := FLOWWHENCHANGED_ATTRIBUTEFLOWBEHAVIOR
     switch v {
         case "FlowWhenChanged":

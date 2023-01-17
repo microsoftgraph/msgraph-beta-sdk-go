@@ -15,7 +15,7 @@ const (
 func (i RemoteAssistanceState) String() string {
     return []string{"disabled", "enabled"}[i]
 }
-func ParseRemoteAssistanceState(v string) (interface{}, error) {
+func ParseRemoteAssistanceState(v string) (any, error) {
     result := DISABLED_REMOTEASSISTANCESTATE
     switch v {
         case "disabled":

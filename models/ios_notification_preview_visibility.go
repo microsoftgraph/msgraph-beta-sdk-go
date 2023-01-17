@@ -19,7 +19,7 @@ const (
 func (i IosNotificationPreviewVisibility) String() string {
     return []string{"notConfigured", "alwaysShow", "hideWhenLocked", "neverShow"}[i]
 }
-func ParseIosNotificationPreviewVisibility(v string) (interface{}, error) {
+func ParseIosNotificationPreviewVisibility(v string) (any, error) {
     result := NOTCONFIGURED_IOSNOTIFICATIONPREVIEWVISIBILITY
     switch v {
         case "notConfigured":

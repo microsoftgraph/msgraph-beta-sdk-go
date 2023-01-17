@@ -23,7 +23,7 @@ const (
 func (i Win32LobAppRegistryDetectionType) String() string {
     return []string{"notConfigured", "exists", "doesNotExist", "string", "integer", "version"}[i]
 }
-func ParseWin32LobAppRegistryDetectionType(v string) (interface{}, error) {
+func ParseWin32LobAppRegistryDetectionType(v string) (any, error) {
     result := NOTCONFIGURED_WIN32LOBAPPREGISTRYDETECTIONTYPE
     switch v {
         case "notConfigured":

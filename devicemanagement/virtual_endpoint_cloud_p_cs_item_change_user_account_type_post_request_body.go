@@ -8,7 +8,7 @@ import (
 // VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody 
 type VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The userAccountType property
     userAccountType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcUserAccountType
 }
@@ -16,7 +16,7 @@ type VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody struct {
 func NewVirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody()(*VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody) {
     m := &VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateVirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBodyFromDi
     return NewVirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -64,7 +64,7 @@ func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody) Serial
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *VirtualEndpointCloudPCsItemChangeUserAccountTypePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetUserAccountType sets the userAccountType property value. The userAccountType property

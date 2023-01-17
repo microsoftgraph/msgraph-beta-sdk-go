@@ -7,7 +7,7 @@ import (
 // AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody 
 type AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The tokenValidityInSeconds property
     tokenValidityInSeconds *int32
 }
@@ -15,7 +15,7 @@ type AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody struct {
 func NewAndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody()(*AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody) {
     m := &AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateAndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBodyFro
     return NewAndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody) Ser
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *AndroidDeviceOwnerEnrollmentProfilesItemCreateTokenPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetTokenValidityInSeconds sets the tokenValidityInSeconds property value. The tokenValidityInSeconds property

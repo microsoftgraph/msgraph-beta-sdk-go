@@ -7,7 +7,7 @@ import (
 // ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody 
 type ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The priority property
     priority *int32
 }
@@ -15,7 +15,7 @@ type ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody struct {
 func NewItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody()(*ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody) {
     m := &ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBodyFromD
     return NewItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody) Seria
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetPriority sets the priority property value. The priority property

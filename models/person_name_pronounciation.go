@@ -7,7 +7,7 @@ import (
 // PersonNamePronounciation 
 type PersonNamePronounciation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The displayName property
     displayName *string
     // The first property
@@ -25,7 +25,7 @@ type PersonNamePronounciation struct {
 func NewPersonNamePronounciation()(*PersonNamePronounciation) {
     m := &PersonNamePronounciation{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePersonNamePronounciationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreatePersonNamePronounciationFromDiscriminatorValue(parseNode i878a80d2330
     return NewPersonNamePronounciation(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PersonNamePronounciation) GetAdditionalData()(map[string]interface{}) {
+func (m *PersonNamePronounciation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -172,7 +172,7 @@ func (m *PersonNamePronounciation) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PersonNamePronounciation) SetAdditionalData(value map[string]interface{})() {
+func (m *PersonNamePronounciation) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property

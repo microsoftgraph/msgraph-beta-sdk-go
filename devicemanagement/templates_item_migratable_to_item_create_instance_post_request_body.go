@@ -8,7 +8,7 @@ import (
 // TemplatesItemMigratableToItemCreateInstancePostRequestBody 
 type TemplatesItemMigratableToItemCreateInstancePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The description property
     description *string
     // The displayName property
@@ -22,7 +22,7 @@ type TemplatesItemMigratableToItemCreateInstancePostRequestBody struct {
 func NewTemplatesItemMigratableToItemCreateInstancePostRequestBody()(*TemplatesItemMigratableToItemCreateInstancePostRequestBody) {
     m := &TemplatesItemMigratableToItemCreateInstancePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTemplatesItemMigratableToItemCreateInstancePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateTemplatesItemMigratableToItemCreateInstancePostRequestBodyFromDiscrim
     return NewTemplatesItemMigratableToItemCreateInstancePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TemplatesItemMigratableToItemCreateInstancePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TemplatesItemMigratableToItemCreateInstancePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description property
@@ -141,7 +141,7 @@ func (m *TemplatesItemMigratableToItemCreateInstancePostRequestBody) Serialize(w
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TemplatesItemMigratableToItemCreateInstancePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TemplatesItemMigratableToItemCreateInstancePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDescription sets the description property value. The description property

@@ -8,7 +8,7 @@ import (
 // ComanagedDevicesItemOverrideComplianceStatePostRequestBody 
 type ComanagedDevicesItemOverrideComplianceStatePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Administrator configured device compliance state Enum
     complianceState *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministratorConfiguredDeviceComplianceState
     // The remediationUrl property
@@ -18,7 +18,7 @@ type ComanagedDevicesItemOverrideComplianceStatePostRequestBody struct {
 func NewComanagedDevicesItemOverrideComplianceStatePostRequestBody()(*ComanagedDevicesItemOverrideComplianceStatePostRequestBody) {
     m := &ComanagedDevicesItemOverrideComplianceStatePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateComanagedDevicesItemOverrideComplianceStatePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -26,7 +26,7 @@ func CreateComanagedDevicesItemOverrideComplianceStatePostRequestBodyFromDiscrim
     return NewComanagedDevicesItemOverrideComplianceStatePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemOverrideComplianceStatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ComanagedDevicesItemOverrideComplianceStatePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComplianceState gets the complianceState property value. Administrator configured device compliance state Enum
@@ -86,7 +86,7 @@ func (m *ComanagedDevicesItemOverrideComplianceStatePostRequestBody) Serialize(w
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ComanagedDevicesItemOverrideComplianceStatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ComanagedDevicesItemOverrideComplianceStatePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetComplianceState sets the complianceState property value. Administrator configured device compliance state Enum

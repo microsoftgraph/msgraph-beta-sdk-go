@@ -9,7 +9,7 @@ type WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody stru
     // The addExclusions property
     addExclusions []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The addMembers property
     addMembers []string
     // The memberEntityType property
@@ -23,7 +23,7 @@ type WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody stru
 func NewWindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody()(*WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody) {
     m := &WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody)
     return m.addExclusions
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAddMembers gets the addMembers property value. The addMembers property
@@ -170,7 +170,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody)
     m.addExclusions = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsUpdatesDeploymentsItemAudienceUpdateAudienceByIdPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAddMembers sets the addMembers property value. The addMembers property

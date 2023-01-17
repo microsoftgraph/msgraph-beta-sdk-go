@@ -37,7 +37,7 @@ const (
 func (i Windows10VpnConnectionType) String() string {
     return []string{"pulseSecure", "f5EdgeClient", "dellSonicWallMobileConnect", "checkPointCapsuleVpn", "automatic", "ikEv2", "l2tp", "pptp", "citrix", "paloAltoGlobalProtect", "ciscoAnyConnect", "unknownFutureValue", "microsoftTunnel"}[i]
 }
-func ParseWindows10VpnConnectionType(v string) (interface{}, error) {
+func ParseWindows10VpnConnectionType(v string) (any, error) {
     result := PULSESECURE_WINDOWS10VPNCONNECTIONTYPE
     switch v {
         case "pulseSecure":

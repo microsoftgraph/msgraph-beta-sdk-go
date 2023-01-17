@@ -7,7 +7,7 @@ import (
 // FilterClause 
 type FilterClause struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
@@ -21,7 +21,7 @@ type FilterClause struct {
 func NewFilterClause()(*FilterClause) {
     m := &FilterClause{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateFilterClauseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateFilterClauseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewFilterClause(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FilterClause) GetAdditionalData()(map[string]interface{}) {
+func (m *FilterClause) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *FilterClause) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *FilterClause) SetAdditionalData(value map[string]interface{})() {
+func (m *FilterClause) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

@@ -16,7 +16,7 @@ const (
 func (i PersonAnnualEventType) String() string {
     return []string{"birthday", "wedding", "work", "other", "unknownFutureValue"}[i]
 }
-func ParsePersonAnnualEventType(v string) (interface{}, error) {
+func ParsePersonAnnualEventType(v string) (any, error) {
     result := BIRTHDAY_PERSONANNUALEVENTTYPE
     switch v {
         case "birthday":

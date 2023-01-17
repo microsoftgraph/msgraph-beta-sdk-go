@@ -7,7 +7,7 @@ import (
 // AuthenticationAppDeviceDetails 
 type AuthenticationAppDeviceDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The version of the client authentication app used during the authentication step.
     appVersion *string
     // The name of the client authentication app used during the authentication step.
@@ -23,7 +23,7 @@ type AuthenticationAppDeviceDetails struct {
 func NewAuthenticationAppDeviceDetails()(*AuthenticationAppDeviceDetails) {
     m := &AuthenticationAppDeviceDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAuthenticationAppDeviceDetailsFromDiscriminatorValue(parseNode i878a8
     return NewAuthenticationAppDeviceDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationAppDeviceDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationAppDeviceDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppVersion gets the appVersion property value. The version of the client authentication app used during the authentication step.
@@ -150,7 +150,7 @@ func (m *AuthenticationAppDeviceDetails) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationAppDeviceDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationAppDeviceDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAppVersion sets the appVersion property value. The version of the client authentication app used during the authentication step.

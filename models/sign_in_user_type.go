@@ -14,7 +14,7 @@ const (
 func (i SignInUserType) String() string {
     return []string{"member", "guest", "unknownFutureValue"}[i]
 }
-func ParseSignInUserType(v string) (interface{}, error) {
+func ParseSignInUserType(v string) (any, error) {
     result := MEMBER_SIGNINUSERTYPE
     switch v {
         case "member":

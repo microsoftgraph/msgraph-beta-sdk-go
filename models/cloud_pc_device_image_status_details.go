@@ -17,7 +17,7 @@ const (
 func (i CloudPcDeviceImageStatusDetails) String() string {
     return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue"}[i]
 }
-func ParseCloudPcDeviceImageStatusDetails(v string) (interface{}, error) {
+func ParseCloudPcDeviceImageStatusDetails(v string) (any, error) {
     result := INTERNALSERVERERROR_CLOUDPCDEVICEIMAGESTATUSDETAILS
     switch v {
         case "internalServerError":

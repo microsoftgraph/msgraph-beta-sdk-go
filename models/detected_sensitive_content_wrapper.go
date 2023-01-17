@@ -7,7 +7,7 @@ import (
 // DetectedSensitiveContentWrapper 
 type DetectedSensitiveContentWrapper struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The classification property
     classification []DetectedSensitiveContentable
     // The OdataType property
@@ -17,7 +17,7 @@ type DetectedSensitiveContentWrapper struct {
 func NewDetectedSensitiveContentWrapper()(*DetectedSensitiveContentWrapper) {
     m := &DetectedSensitiveContentWrapper{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDetectedSensitiveContentWrapperFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDetectedSensitiveContentWrapperFromDiscriminatorValue(parseNode i878a
     return NewDetectedSensitiveContentWrapper(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DetectedSensitiveContentWrapper) GetAdditionalData()(map[string]interface{}) {
+func (m *DetectedSensitiveContentWrapper) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClassification gets the classification property value. The classification property
@@ -92,7 +92,7 @@ func (m *DetectedSensitiveContentWrapper) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DetectedSensitiveContentWrapper) SetAdditionalData(value map[string]interface{})() {
+func (m *DetectedSensitiveContentWrapper) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetClassification sets the classification property value. The classification property

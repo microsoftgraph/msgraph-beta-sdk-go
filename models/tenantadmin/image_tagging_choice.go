@@ -15,7 +15,7 @@ const (
 func (i ImageTaggingChoice) String() string {
     return []string{"disabled", "basic", "enhanced", "unknownFutureValue"}[i]
 }
-func ParseImageTaggingChoice(v string) (interface{}, error) {
+func ParseImageTaggingChoice(v string) (any, error) {
     result := DISABLED_IMAGETAGGINGCHOICE
     switch v {
         case "disabled":

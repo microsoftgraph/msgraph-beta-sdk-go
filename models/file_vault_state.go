@@ -19,7 +19,7 @@ const (
 func (i FileVaultState) String() string {
     return []string{"success", "driveEncryptedByUser", "userDeferredEncryption", "escrowNotEnabled"}[i]
 }
-func ParseFileVaultState(v string) (interface{}, error) {
+func ParseFileVaultState(v string) (any, error) {
     result := SUCCESS_FILEVAULTSTATE
     switch v {
         case "success":

@@ -21,7 +21,7 @@ const (
 func (i WindowsDefenderApplicationControlSupplementalPolicyStatuses) String() string {
     return []string{"unknown", "success", "tokenError", "notAuthorizedByToken", "policyNotFound"}[i]
 }
-func ParseWindowsDefenderApplicationControlSupplementalPolicyStatuses(v string) (interface{}, error) {
+func ParseWindowsDefenderApplicationControlSupplementalPolicyStatuses(v string) (any, error) {
     result := UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
     switch v {
         case "unknown":

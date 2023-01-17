@@ -7,7 +7,7 @@ import (
 // ItemChatsItemMessagesItemSetReactionPostRequestBody 
 type ItemChatsItemMessagesItemSetReactionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The reactionType property
     reactionType *string
 }
@@ -15,7 +15,7 @@ type ItemChatsItemMessagesItemSetReactionPostRequestBody struct {
 func NewItemChatsItemMessagesItemSetReactionPostRequestBody()(*ItemChatsItemMessagesItemSetReactionPostRequestBody) {
     m := &ItemChatsItemMessagesItemSetReactionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemChatsItemMessagesItemSetReactionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemChatsItemMessagesItemSetReactionPostRequestBodyFromDiscriminatorV
     return NewItemChatsItemMessagesItemSetReactionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemChatsItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemChatsItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemChatsItemMessagesItemSetReactionPostRequestBody) Serialize(writer i
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemChatsItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemChatsItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetReactionType sets the reactionType property value. The reactionType property

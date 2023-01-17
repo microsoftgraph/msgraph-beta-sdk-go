@@ -21,7 +21,7 @@ const (
 func (i DeviceGuardLocalSystemAuthorityCredentialGuardState) String() string {
     return []string{"running", "rebootRequired", "notLicensed", "notConfigured", "virtualizationBasedSecurityNotRunning"}[i]
 }
-func ParseDeviceGuardLocalSystemAuthorityCredentialGuardState(v string) (interface{}, error) {
+func ParseDeviceGuardLocalSystemAuthorityCredentialGuardState(v string) (any, error) {
     result := RUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
     switch v {
         case "running":

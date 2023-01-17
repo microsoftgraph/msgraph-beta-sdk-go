@@ -7,7 +7,7 @@ import (
 // IosSingleSignOnSettings iOS Kerberos authentication settings for single sign-on
 type IosSingleSignOnSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.
     allowedAppsList []AppListItemable
     // List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.
@@ -25,7 +25,7 @@ type IosSingleSignOnSettings struct {
 func NewIosSingleSignOnSettings()(*IosSingleSignOnSettings) {
     m := &IosSingleSignOnSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIosSingleSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateIosSingleSignOnSettingsFromDiscriminatorValue(parseNode i878a80d2330e
     return NewIosSingleSignOnSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosSingleSignOnSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *IosSingleSignOnSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedAppsList gets the allowedAppsList property value. List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.
@@ -184,7 +184,7 @@ func (m *IosSingleSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IosSingleSignOnSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *IosSingleSignOnSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedAppsList sets the allowedAppsList property value. List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.

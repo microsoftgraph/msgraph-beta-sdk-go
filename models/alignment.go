@@ -14,7 +14,7 @@ const (
 func (i Alignment) String() string {
     return []string{"left", "right", "center"}[i]
 }
-func ParseAlignment(v string) (interface{}, error) {
+func ParseAlignment(v string) (any, error) {
     result := LEFT_ALIGNMENT
     switch v {
         case "left":

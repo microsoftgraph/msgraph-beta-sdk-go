@@ -17,7 +17,7 @@ const (
 func (i AppLogUploadState) String() string {
     return []string{"pending", "completed", "failed"}[i]
 }
-func ParseAppLogUploadState(v string) (interface{}, error) {
+func ParseAppLogUploadState(v string) (any, error) {
     result := PENDING_APPLOGUPLOADSTATE
     switch v {
         case "pending":

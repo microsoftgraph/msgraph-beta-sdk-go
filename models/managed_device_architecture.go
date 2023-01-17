@@ -21,7 +21,7 @@ const (
 func (i ManagedDeviceArchitecture) String() string {
     return []string{"unknown", "x86", "x64", "arm", "arM64"}[i]
 }
-func ParseManagedDeviceArchitecture(v string) (interface{}, error) {
+func ParseManagedDeviceArchitecture(v string) (any, error) {
     result := UNKNOWN_MANAGEDDEVICEARCHITECTURE
     switch v {
         case "unknown":

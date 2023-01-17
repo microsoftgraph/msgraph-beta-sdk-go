@@ -56,7 +56,7 @@ const (
 func (i SynchronizationSecret) String() string {
     return []string{"None", "UserName", "Password", "SecretToken", "AppKey", "BaseAddress", "ClientIdentifier", "ClientSecret", "SingleSignOnType", "Sandbox", "Url", "Domain", "ConsumerKey", "ConsumerSecret", "TokenKey", "TokenExpiration", "Oauth2AccessToken", "Oauth2AccessTokenCreationTime", "Oauth2RefreshToken", "SyncAll", "InstanceName", "Oauth2ClientId", "Oauth2ClientSecret", "CompanyId", "UpdateKeyOnSoftDelete", "SynchronizationSchedule", "SystemOfRecord", "SandboxName", "EnforceDomain", "SyncNotificationSettings", "SkipOutOfScopeDeletions", "Oauth2AuthorizationCode", "Oauth2RedirectUri", "ApplicationTemplateIdentifier", "Oauth2TokenExchangeUri", "Oauth2AuthorizationUri", "AuthenticationType", "Server", "PerformInboundEntitlementGrants", "HardDeletesEnabled", "SyncAgentCompatibilityKey", "SyncAgentADContainer", "ValidateDomain", "TestReferences", "ConnectionString"}[i]
 }
-func ParseSynchronizationSecret(v string) (interface{}, error) {
+func ParseSynchronizationSecret(v string) (any, error) {
     result := NONE_SYNCHRONIZATIONSECRET
     switch v {
         case "None":

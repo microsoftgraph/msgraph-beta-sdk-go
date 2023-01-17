@@ -19,7 +19,7 @@ const (
 func (i BrowserSiteListStatus) String() string {
     return []string{"draft", "published", "pending", "unknownFutureValue"}[i]
 }
-func ParseBrowserSiteListStatus(v string) (interface{}, error) {
+func ParseBrowserSiteListStatus(v string) (any, error) {
     result := DRAFT_BROWSERSITELISTSTATUS
     switch v {
         case "draft":

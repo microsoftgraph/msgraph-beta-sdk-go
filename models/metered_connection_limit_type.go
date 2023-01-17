@@ -17,7 +17,7 @@ const (
 func (i MeteredConnectionLimitType) String() string {
     return []string{"unrestricted", "fixed", "variable"}[i]
 }
-func ParseMeteredConnectionLimitType(v string) (interface{}, error) {
+func ParseMeteredConnectionLimitType(v string) (any, error) {
     result := UNRESTRICTED_METEREDCONNECTIONLIMITTYPE
     switch v {
         case "unrestricted":

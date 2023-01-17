@@ -8,7 +8,7 @@ import (
 // ContentLabel 
 type ContentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The assignmentMethod property
     assignmentMethod *AssignmentMethod
     // The createdDateTime property
@@ -22,7 +22,7 @@ type ContentLabel struct {
 func NewContentLabel()(*ContentLabel) {
     m := &ContentLabel{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateContentLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewContentLabel(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContentLabel) GetAdditionalData()(map[string]interface{}) {
+func (m *ContentLabel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
@@ -130,7 +130,7 @@ func (m *ContentLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ContentLabel) SetAdditionalData(value map[string]interface{})() {
+func (m *ContentLabel) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property

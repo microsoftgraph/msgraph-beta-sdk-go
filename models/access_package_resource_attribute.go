@@ -7,7 +7,7 @@ import (
 // AccessPackageResourceAttribute 
 type AccessPackageResourceAttribute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
     attributeDestination AccessPackageResourceAttributeDestinationable
     // The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
@@ -27,7 +27,7 @@ type AccessPackageResourceAttribute struct {
 func NewAccessPackageResourceAttribute()(*AccessPackageResourceAttribute) {
     m := &AccessPackageResourceAttribute{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageResourceAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateAccessPackageResourceAttributeFromDiscriminatorValue(parseNode i878a8
     return NewAccessPackageResourceAttribute(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAttributeDestination gets the attributeDestination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
@@ -194,7 +194,7 @@ func (m *AccessPackageResourceAttribute) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAttributeDestination sets the attributeDestination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.

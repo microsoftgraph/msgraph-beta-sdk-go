@@ -8,7 +8,7 @@ import (
 // MobileAppRelationshipState describes the installation status details of the child app in the context of UPN and device id.
 type MobileAppRelationshipState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The corresponding device id.
     deviceId *string
     // The error code for install or uninstall failures of target app.
@@ -32,7 +32,7 @@ type MobileAppRelationshipState struct {
 func NewMobileAppRelationshipState()(*MobileAppRelationshipState) {
     m := &MobileAppRelationshipState{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateMobileAppRelationshipStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,7 +40,7 @@ func CreateMobileAppRelationshipStateFromDiscriminatorValue(parseNode i878a80d23
     return NewMobileAppRelationshipState(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppRelationshipState) GetAdditionalData()(map[string]interface{}) {
+func (m *MobileAppRelationshipState) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceId gets the deviceId property value. The corresponding device id.
@@ -245,7 +245,7 @@ func (m *MobileAppRelationshipState) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *MobileAppRelationshipState) SetAdditionalData(value map[string]interface{})() {
+func (m *MobileAppRelationshipState) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceId sets the deviceId property value. The corresponding device id.

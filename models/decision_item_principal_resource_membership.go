@@ -7,7 +7,7 @@ import (
 // DecisionItemPrincipalResourceMembership 
 type DecisionItemPrincipalResourceMembership struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The membershipType property
     membershipType *DecisionItemPrincipalResourceMembershipType
     // The OdataType property
@@ -17,7 +17,7 @@ type DecisionItemPrincipalResourceMembership struct {
 func NewDecisionItemPrincipalResourceMembership()(*DecisionItemPrincipalResourceMembership) {
     m := &DecisionItemPrincipalResourceMembership{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue(parseNo
     return NewDecisionItemPrincipalResourceMembership(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DecisionItemPrincipalResourceMembership) GetAdditionalData()(map[string]interface{}) {
+func (m *DecisionItemPrincipalResourceMembership) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -85,7 +85,7 @@ func (m *DecisionItemPrincipalResourceMembership) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DecisionItemPrincipalResourceMembership) SetAdditionalData(value map[string]interface{})() {
+func (m *DecisionItemPrincipalResourceMembership) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMembershipType sets the membershipType property value. The membershipType property

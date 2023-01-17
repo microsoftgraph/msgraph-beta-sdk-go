@@ -27,7 +27,7 @@ const (
 func (i ConditionalAccessConditions) String() string {
     return []string{"none", "application", "users", "devicePlatform", "location", "clientType", "signInRisk", "userRisk", "time", "deviceState", "client", "ipAddressSeenByAzureAD", "ipAddressSeenByResourceProvider", "unknownFutureValue", "servicePrincipals", "servicePrincipalRisk"}[i]
 }
-func ParseConditionalAccessConditions(v string) (interface{}, error) {
+func ParseConditionalAccessConditions(v string) (any, error) {
     result := NONE_CONDITIONALACCESSCONDITIONS
     switch v {
         case "none":

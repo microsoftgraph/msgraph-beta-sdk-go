@@ -7,7 +7,7 @@ import (
 // AccessPackageLocalizedText 
 type AccessPackageLocalizedText struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ISO code for the intended language. Required.
     languageCode *string
     // The OdataType property
@@ -19,7 +19,7 @@ type AccessPackageLocalizedText struct {
 func NewAccessPackageLocalizedText()(*AccessPackageLocalizedText) {
     m := &AccessPackageLocalizedText{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAccessPackageLocalizedTextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAccessPackageLocalizedTextFromDiscriminatorValue(parseNode i878a80d23
     return NewAccessPackageLocalizedText(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageLocalizedText) GetAdditionalData()(map[string]interface{}) {
+func (m *AccessPackageLocalizedText) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *AccessPackageLocalizedText) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AccessPackageLocalizedText) SetAdditionalData(value map[string]interface{})() {
+func (m *AccessPackageLocalizedText) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLanguageCode sets the languageCode property value. The ISO code for the intended language. Required.

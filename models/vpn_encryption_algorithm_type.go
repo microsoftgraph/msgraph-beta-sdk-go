@@ -29,7 +29,7 @@ const (
 func (i VpnEncryptionAlgorithmType) String() string {
     return []string{"aes256", "des", "tripleDes", "aes128", "aes128Gcm", "aes256Gcm", "aes192", "aes192Gcm", "chaCha20Poly1305"}[i]
 }
-func ParseVpnEncryptionAlgorithmType(v string) (interface{}, error) {
+func ParseVpnEncryptionAlgorithmType(v string) (any, error) {
     result := AES256_VPNENCRYPTIONALGORITHMTYPE
     switch v {
         case "aes256":

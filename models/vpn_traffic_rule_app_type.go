@@ -17,7 +17,7 @@ const (
 func (i VpnTrafficRuleAppType) String() string {
     return []string{"none", "desktop", "universal"}[i]
 }
-func ParseVpnTrafficRuleAppType(v string) (interface{}, error) {
+func ParseVpnTrafficRuleAppType(v string) (any, error) {
     result := NONE_VPNTRAFFICRULEAPPTYPE
     switch v {
         case "none":

@@ -19,7 +19,7 @@ const (
 func (i ManagedAppPhoneNumberRedirectLevel) String() string {
     return []string{"allApps", "managedApps", "customApp", "blocked"}[i]
 }
-func ParseManagedAppPhoneNumberRedirectLevel(v string) (interface{}, error) {
+func ParseManagedAppPhoneNumberRedirectLevel(v string) (any, error) {
     result := ALLAPPS_MANAGEDAPPPHONENUMBERREDIRECTLEVEL
     switch v {
         case "allApps":

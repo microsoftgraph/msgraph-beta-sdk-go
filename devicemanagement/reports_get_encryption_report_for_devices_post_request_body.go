@@ -7,7 +7,7 @@ import (
 // ReportsGetEncryptionReportForDevicesPostRequestBody 
 type ReportsGetEncryptionReportForDevicesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The filter property
     filter *string
     // The groupBy property
@@ -31,7 +31,7 @@ type ReportsGetEncryptionReportForDevicesPostRequestBody struct {
 func NewReportsGetEncryptionReportForDevicesPostRequestBody()(*ReportsGetEncryptionReportForDevicesPostRequestBody) {
     m := &ReportsGetEncryptionReportForDevicesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateReportsGetEncryptionReportForDevicesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateReportsGetEncryptionReportForDevicesPostRequestBodyFromDiscriminatorV
     return NewReportsGetEncryptionReportForDevicesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetEncryptionReportForDevicesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ReportsGetEncryptionReportForDevicesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -250,7 +250,7 @@ func (m *ReportsGetEncryptionReportForDevicesPostRequestBody) Serialize(writer i
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ReportsGetEncryptionReportForDevicesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ReportsGetEncryptionReportForDevicesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property

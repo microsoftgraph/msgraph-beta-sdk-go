@@ -7,7 +7,7 @@ import (
 // TimeCardBreak 
 type TimeCardBreak struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // ID of the timeCardBreak.
     breakId *string
     // The start event of the timeCardBreak.
@@ -23,7 +23,7 @@ type TimeCardBreak struct {
 func NewTimeCardBreak()(*TimeCardBreak) {
     m := &TimeCardBreak{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTimeCardBreakFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateTimeCardBreakFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewTimeCardBreak(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeCardBreak) GetAdditionalData()(map[string]interface{}) {
+func (m *TimeCardBreak) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBreakId gets the breakId property value. ID of the timeCardBreak.
@@ -150,7 +150,7 @@ func (m *TimeCardBreak) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TimeCardBreak) SetAdditionalData(value map[string]interface{})() {
+func (m *TimeCardBreak) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBreakId sets the breakId property value. ID of the timeCardBreak.

@@ -16,7 +16,7 @@ const (
 func (i IncludedUserRoles) String() string {
     return []string{"all", "privilegedAdmin", "admin", "user", "unknownFutureValue"}[i]
 }
-func ParseIncludedUserRoles(v string) (interface{}, error) {
+func ParseIncludedUserRoles(v string) (any, error) {
     result := ALL_INCLUDEDUSERROLES
     switch v {
         case "all":

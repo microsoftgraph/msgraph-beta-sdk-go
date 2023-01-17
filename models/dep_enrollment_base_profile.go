@@ -19,6 +19,8 @@ type DepEnrollmentBaseProfile struct {
     diagnosticsDisabled *bool
     // Indicates if displaytone setup screen is disabled
     displayToneSetupDisabled *bool
+    // enabledSkipKeys contains all the enabled skip keys as strings
+    enabledSkipKeys []string
     // Indicates if this is the default profile
     isDefault *bool
     // Indicates if the profile is mandatory
@@ -35,7 +37,7 @@ type DepEnrollmentBaseProfile struct {
     screenTimeScreenDisabled *bool
     // Indicates if siri setup pane is disabled
     siriDisabled *bool
-    // Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+    // Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
     supervisedModeEnabled *bool
     // Support department information
     supportDepartment *string
@@ -103,6 +105,10 @@ func (m *DepEnrollmentBaseProfile) GetDiagnosticsDisabled()(*bool) {
 func (m *DepEnrollmentBaseProfile) GetDisplayToneSetupDisabled()(*bool) {
     return m.displayToneSetupDisabled
 }
+// GetEnabledSkipKeys gets the enabledSkipKeys property value. enabledSkipKeys contains all the enabled skip keys as strings
+func (m *DepEnrollmentBaseProfile) GetEnabledSkipKeys()([]string) {
+    return m.enabledSkipKeys
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EnrollmentProfile.GetFieldDeserializers()
@@ -163,6 +169,20 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a
         }
         if val != nil {
             m.SetDisplayToneSetupDisabled(val)
+        }
+        return nil
+    }
+    res["enabledSkipKeys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEnabledSkipKeys(res)
         }
         return nil
     }
@@ -330,7 +350,7 @@ func (m *DepEnrollmentBaseProfile) GetScreenTimeScreenDisabled()(*bool) {
 func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
     return m.siriDisabled
 }
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
     return m.supervisedModeEnabled
 }
@@ -388,6 +408,12 @@ func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err = writer.WriteBoolValue("displayToneSetupDisabled", m.GetDisplayToneSetupDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetEnabledSkipKeys() != nil {
+        err = writer.WriteCollectionOfStringValues("enabledSkipKeys", m.GetEnabledSkipKeys())
         if err != nil {
             return err
         }
@@ -496,6 +522,10 @@ func (m *DepEnrollmentBaseProfile) SetDiagnosticsDisabled(value *bool)() {
 func (m *DepEnrollmentBaseProfile) SetDisplayToneSetupDisabled(value *bool)() {
     m.displayToneSetupDisabled = value
 }
+// SetEnabledSkipKeys sets the enabledSkipKeys property value. enabledSkipKeys contains all the enabled skip keys as strings
+func (m *DepEnrollmentBaseProfile) SetEnabledSkipKeys(value []string)() {
+    m.enabledSkipKeys = value
+}
 // SetIsDefault sets the isDefault property value. Indicates if this is the default profile
 func (m *DepEnrollmentBaseProfile) SetIsDefault(value *bool)() {
     m.isDefault = value
@@ -528,7 +558,7 @@ func (m *DepEnrollmentBaseProfile) SetScreenTimeScreenDisabled(value *bool)() {
 func (m *DepEnrollmentBaseProfile) SetSiriDisabled(value *bool)() {
     m.siriDisabled = value
 }
-// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) SetSupervisedModeEnabled(value *bool)() {
     m.supervisedModeEnabled = value
 }

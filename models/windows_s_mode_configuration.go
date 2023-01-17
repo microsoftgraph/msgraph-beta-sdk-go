@@ -17,7 +17,7 @@ const (
 func (i WindowsSModeConfiguration) String() string {
     return []string{"noRestriction", "block", "unlock"}[i]
 }
-func ParseWindowsSModeConfiguration(v string) (interface{}, error) {
+func ParseWindowsSModeConfiguration(v string) (any, error) {
     result := NORESTRICTION_WINDOWSSMODECONFIGURATION
     switch v {
         case "noRestriction":

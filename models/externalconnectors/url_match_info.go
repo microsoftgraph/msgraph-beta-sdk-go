@@ -7,7 +7,7 @@ import (
 // UrlMatchInfo 
 type UrlMatchInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A list of the URL prefixes that must match URLs to be processed by this URL-to-item-resolver.
     baseUrls []string
     // The OdataType property
@@ -19,7 +19,7 @@ type UrlMatchInfo struct {
 func NewUrlMatchInfo()(*UrlMatchInfo) {
     m := &UrlMatchInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUrlMatchInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateUrlMatchInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewUrlMatchInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UrlMatchInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *UrlMatchInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBaseUrls gets the baseUrls property value. A list of the URL prefixes that must match URLs to be processed by this URL-to-item-resolver.
@@ -110,7 +110,7 @@ func (m *UrlMatchInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UrlMatchInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *UrlMatchInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBaseUrls sets the baseUrls property value. A list of the URL prefixes that must match URLs to be processed by this URL-to-item-resolver.

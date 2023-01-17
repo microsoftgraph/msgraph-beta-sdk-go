@@ -7,7 +7,7 @@ import (
 // ItemMessagesItemSetReactionPostRequestBody 
 type ItemMessagesItemSetReactionPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The reactionType property
     reactionType *string
 }
@@ -15,7 +15,7 @@ type ItemMessagesItemSetReactionPostRequestBody struct {
 func NewItemMessagesItemSetReactionPostRequestBody()(*ItemMessagesItemSetReactionPostRequestBody) {
     m := &ItemMessagesItemSetReactionPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemMessagesItemSetReactionPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemMessagesItemSetReactionPostRequestBodyFromDiscriminatorValue(pars
     return NewItemMessagesItemSetReactionPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemMessagesItemSetReactionPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemMessagesItemSetReactionPostRequestBody) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemMessagesItemSetReactionPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetReactionType sets the reactionType property value. The reactionType property

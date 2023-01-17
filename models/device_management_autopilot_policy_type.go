@@ -15,7 +15,7 @@ const (
 func (i DeviceManagementAutopilotPolicyType) String() string {
     return []string{"unknown", "application", "appModel", "configurationPolicy"}[i]
 }
-func ParseDeviceManagementAutopilotPolicyType(v string) (interface{}, error) {
+func ParseDeviceManagementAutopilotPolicyType(v string) (any, error) {
     result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
     switch v {
         case "unknown":

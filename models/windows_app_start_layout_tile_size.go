@@ -21,7 +21,7 @@ const (
 func (i WindowsAppStartLayoutTileSize) String() string {
     return []string{"hidden", "small", "medium", "wide", "large"}[i]
 }
-func ParseWindowsAppStartLayoutTileSize(v string) (interface{}, error) {
+func ParseWindowsAppStartLayoutTileSize(v string) (any, error) {
     result := HIDDEN_WINDOWSAPPSTARTLAYOUTTILESIZE
     switch v {
         case "hidden":

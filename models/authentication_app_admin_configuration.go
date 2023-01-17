@@ -15,7 +15,7 @@ const (
 func (i AuthenticationAppAdminConfiguration) String() string {
     return []string{"notApplicable", "enabled", "disabled", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationAppAdminConfiguration(v string) (interface{}, error) {
+func ParseAuthenticationAppAdminConfiguration(v string) (any, error) {
     result := NOTAPPLICABLE_AUTHENTICATIONAPPADMINCONFIGURATION
     switch v {
         case "notApplicable":

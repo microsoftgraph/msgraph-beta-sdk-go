@@ -18,7 +18,7 @@ const (
 func (i RestrictionTrigger) String() string {
     return []string{"copyPaste", "copyToNetworkShare", "copyToRemovableMedia", "screenCapture", "print", "cloudEgress", "unallowedApps"}[i]
 }
-func ParseRestrictionTrigger(v string) (interface{}, error) {
+func ParseRestrictionTrigger(v string) (any, error) {
     result := COPYPASTE_RESTRICTIONTRIGGER
     switch v {
         case "copyPaste":

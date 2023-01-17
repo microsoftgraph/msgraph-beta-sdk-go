@@ -7,10 +7,10 @@ import (
 // PlannerPlanConfigurationBucketLocalization 
 type PlannerPlanConfigurationBucketLocalization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
-    // The externalBucketId property
+    additionalData map[string]any
+    // Application-specified identifier of the bucket.
     externalBucketId *string
-    // The name property
+    // Name of the bucket.
     name *string
     // The OdataType property
     odataType *string
@@ -19,7 +19,7 @@ type PlannerPlanConfigurationBucketLocalization struct {
 func NewPlannerPlanConfigurationBucketLocalization()(*PlannerPlanConfigurationBucketLocalization) {
     m := &PlannerPlanConfigurationBucketLocalization{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreatePlannerPlanConfigurationBucketLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,10 +27,10 @@ func CreatePlannerPlanConfigurationBucketLocalizationFromDiscriminatorValue(pars
     return NewPlannerPlanConfigurationBucketLocalization(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerPlanConfigurationBucketLocalization) GetAdditionalData()(map[string]interface{}) {
+func (m *PlannerPlanConfigurationBucketLocalization) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetExternalBucketId gets the externalBucketId property value. The externalBucketId property
+// GetExternalBucketId gets the externalBucketId property value. Application-specified identifier of the bucket.
 func (m *PlannerPlanConfigurationBucketLocalization) GetExternalBucketId()(*string) {
     return m.externalBucketId
 }
@@ -69,7 +69,7 @@ func (m *PlannerPlanConfigurationBucketLocalization) GetFieldDeserializers()(map
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name of the bucket.
 func (m *PlannerPlanConfigurationBucketLocalization) GetName()(*string) {
     return m.name
 }
@@ -106,14 +106,14 @@ func (m *PlannerPlanConfigurationBucketLocalization) Serialize(writer i878a80d23
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerPlanConfigurationBucketLocalization) SetAdditionalData(value map[string]interface{})() {
+func (m *PlannerPlanConfigurationBucketLocalization) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetExternalBucketId sets the externalBucketId property value. The externalBucketId property
+// SetExternalBucketId sets the externalBucketId property value. Application-specified identifier of the bucket.
 func (m *PlannerPlanConfigurationBucketLocalization) SetExternalBucketId(value *string)() {
     m.externalBucketId = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name of the bucket.
 func (m *PlannerPlanConfigurationBucketLocalization) SetName(value *string)() {
     m.name = value
 }

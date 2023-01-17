@@ -7,7 +7,7 @@ import (
 // IdentityContainer 
 type IdentityContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents entry point for API connectors.
     apiConnectors []IdentityApiConnectorable
     // The authenticationEventListeners property
@@ -35,7 +35,7 @@ type IdentityContainer struct {
 func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateIdentityContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ func CreateIdentityContainerFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewIdentityContainer(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityContainer) GetAdditionalData()(map[string]interface{}) {
+func (m *IdentityContainer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApiConnectors gets the apiConnectors property value. Represents entry point for API connectors.
@@ -346,7 +346,7 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *IdentityContainer) SetAdditionalData(value map[string]interface{})() {
+func (m *IdentityContainer) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApiConnectors sets the apiConnectors property value. Represents entry point for API connectors.

@@ -7,7 +7,7 @@ import (
 // AuthenticationAppPolicyDetails 
 type AuthenticationAppPolicyDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
     adminConfiguration *AuthenticationAppAdminConfiguration
     // Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
@@ -23,7 +23,7 @@ type AuthenticationAppPolicyDetails struct {
 func NewAuthenticationAppPolicyDetails()(*AuthenticationAppPolicyDetails) {
     m := &AuthenticationAppPolicyDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationAppPolicyDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAuthenticationAppPolicyDetailsFromDiscriminatorValue(parseNode i878a8
     return NewAuthenticationAppPolicyDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationAppPolicyDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationAppPolicyDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdminConfiguration gets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
@@ -153,7 +153,7 @@ func (m *AuthenticationAppPolicyDetails) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationAppPolicyDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationAppPolicyDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAdminConfiguration sets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.

@@ -7,7 +7,7 @@ import (
 // DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody 
 type DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceConfigurationIds property
     deviceConfigurationIds []string
 }
@@ -15,7 +15,7 @@ type DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody struct {
 func NewDeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody()(*DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody) {
     m := &DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateDeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBodyFromDisc
     return NewDeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceConfigurationIds gets the deviceConfigurationIds property value. The deviceConfigurationIds property
@@ -66,7 +66,7 @@ func (m *DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody) Serializ
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceConfigurationIds sets the deviceConfigurationIds property value. The deviceConfigurationIds property

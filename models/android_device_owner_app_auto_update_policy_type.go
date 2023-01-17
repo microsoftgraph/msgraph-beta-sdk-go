@@ -21,7 +21,7 @@ const (
 func (i AndroidDeviceOwnerAppAutoUpdatePolicyType) String() string {
     return []string{"notConfigured", "userChoice", "never", "wiFiOnly", "always"}[i]
 }
-func ParseAndroidDeviceOwnerAppAutoUpdatePolicyType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerAppAutoUpdatePolicyType(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERAPPAUTOUPDATEPOLICYTYPE
     switch v {
         case "notConfigured":

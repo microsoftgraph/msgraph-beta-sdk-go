@@ -16,7 +16,7 @@ const (
 func (i RegistrationStatusType) String() string {
     return []string{"registered", "enabled", "capable", "mfaRegistered", "unknownFutureValue"}[i]
 }
-func ParseRegistrationStatusType(v string) (interface{}, error) {
+func ParseRegistrationStatusType(v string) (any, error) {
     result := REGISTERED_REGISTRATIONSTATUSTYPE
     switch v {
         case "registered":

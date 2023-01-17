@@ -41,7 +41,7 @@ const (
 func (i DeviceComplianceScriptRuleDataType) String() string {
     return []string{"none", "boolean", "int64", "double", "string", "dateTime", "version", "base64", "xml", "booleanArray", "int64Array", "doubleArray", "stringArray", "dateTimeArray", "versionArray"}[i]
 }
-func ParseDeviceComplianceScriptRuleDataType(v string) (interface{}, error) {
+func ParseDeviceComplianceScriptRuleDataType(v string) (any, error) {
     result := NONE_DEVICECOMPLIANCESCRIPTRULEDATATYPE
     switch v {
         case "none":

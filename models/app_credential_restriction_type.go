@@ -17,7 +17,7 @@ const (
 func (i AppCredentialRestrictionType) String() string {
     return []string{"passwordAddition", "passwordLifetime", "symmetricKeyAddition", "symmetricKeyLifetime", "customPasswordAddition", "unknownFutureValue"}[i]
 }
-func ParseAppCredentialRestrictionType(v string) (interface{}, error) {
+func ParseAppCredentialRestrictionType(v string) (any, error) {
     result := PASSWORDADDITION_APPCREDENTIALRESTRICTIONTYPE
     switch v {
         case "passwordAddition":

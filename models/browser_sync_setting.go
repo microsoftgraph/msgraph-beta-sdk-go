@@ -17,7 +17,7 @@ const (
 func (i BrowserSyncSetting) String() string {
     return []string{"notConfigured", "blockedWithUserOverride", "blocked"}[i]
 }
-func ParseBrowserSyncSetting(v string) (interface{}, error) {
+func ParseBrowserSyncSetting(v string) (any, error) {
     result := NOTCONFIGURED_BROWSERSYNCSETTING
     switch v {
         case "notConfigured":

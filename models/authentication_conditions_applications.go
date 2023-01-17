@@ -7,7 +7,7 @@ import (
 // AuthenticationConditionsApplications 
 type AuthenticationConditionsApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The includeAllApplications property
     includeAllApplications *bool
     // The includeApplications property
@@ -19,7 +19,7 @@ type AuthenticationConditionsApplications struct {
 func NewAuthenticationConditionsApplications()(*AuthenticationConditionsApplications) {
     m := &AuthenticationConditionsApplications{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationConditionsApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAuthenticationConditionsApplicationsFromDiscriminatorValue(parseNode 
     return NewAuthenticationConditionsApplications(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationConditionsApplications) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationConditionsApplications) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -114,7 +114,7 @@ func (m *AuthenticationConditionsApplications) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationConditionsApplications) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationConditionsApplications) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIncludeAllApplications sets the includeAllApplications property value. The includeAllApplications property

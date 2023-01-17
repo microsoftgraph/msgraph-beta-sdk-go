@@ -7,7 +7,7 @@ import (
 // DeviceAndAppManagementAssignmentTarget base type for assignment targets.
 type DeviceAndAppManagementAssignmentTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Id of the filter for the target assignment.
     deviceAndAppManagementAssignmentFilterId *string
     // Represents type of the assignment filter.
@@ -19,7 +19,7 @@ type DeviceAndAppManagementAssignmentTarget struct {
 func NewDeviceAndAppManagementAssignmentTarget()(*DeviceAndAppManagementAssignmentTarget) {
     m := &DeviceAndAppManagementAssignmentTarget{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +53,7 @@ func CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue(parseNod
     return NewDeviceAndAppManagementAssignmentTarget(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceAndAppManagementAssignmentTarget) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceAndAppManagementAssignmentTarget) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceAndAppManagementAssignmentFilterId gets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
@@ -133,7 +133,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceAndAppManagementAssignmentTarget) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceAndAppManagementAssignmentTarget) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceAndAppManagementAssignmentFilterId sets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.

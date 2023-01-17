@@ -7,7 +7,7 @@ import (
 // UnsupportedDeviceConfigurationDetail a description of why an entity is unsupported.
 type UnsupportedDeviceConfigurationDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // A message explaining why an entity is unsupported.
     message *string
     // The OdataType property
@@ -19,7 +19,7 @@ type UnsupportedDeviceConfigurationDetail struct {
 func NewUnsupportedDeviceConfigurationDetail()(*UnsupportedDeviceConfigurationDetail) {
     m := &UnsupportedDeviceConfigurationDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUnsupportedDeviceConfigurationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateUnsupportedDeviceConfigurationDetailFromDiscriminatorValue(parseNode 
     return NewUnsupportedDeviceConfigurationDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UnsupportedDeviceConfigurationDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *UnsupportedDeviceConfigurationDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *UnsupportedDeviceConfigurationDetail) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UnsupportedDeviceConfigurationDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *UnsupportedDeviceConfigurationDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMessage sets the message property value. A message explaining why an entity is unsupported.

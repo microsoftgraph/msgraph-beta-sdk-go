@@ -15,7 +15,7 @@ const (
 func (i DeviceManagementApplicabilityRuleType) String() string {
     return []string{"include", "exclude"}[i]
 }
-func ParseDeviceManagementApplicabilityRuleType(v string) (interface{}, error) {
+func ParseDeviceManagementApplicabilityRuleType(v string) (any, error) {
     result := INCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
     switch v {
         case "include":

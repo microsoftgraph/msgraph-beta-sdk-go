@@ -14,7 +14,7 @@ const (
 func (i SiteAccessType) String() string {
     return []string{"block", "full", "limited"}[i]
 }
-func ParseSiteAccessType(v string) (interface{}, error) {
+func ParseSiteAccessType(v string) (any, error) {
     result := BLOCK_SITEACCESSTYPE
     switch v {
         case "block":

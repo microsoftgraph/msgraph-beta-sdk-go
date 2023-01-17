@@ -7,7 +7,7 @@ import (
 // ItemPreviewPostRequestBody 
 type ItemPreviewPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The allowEdit property
     allowEdit *bool
     // The chromeless property
@@ -23,7 +23,7 @@ type ItemPreviewPostRequestBody struct {
 func NewItemPreviewPostRequestBody()(*ItemPreviewPostRequestBody) {
     m := &ItemPreviewPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemPreviewPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateItemPreviewPostRequestBodyFromDiscriminatorValue(parseNode i878a80d23
     return NewItemPreviewPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPreviewPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemPreviewPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowEdit gets the allowEdit property value. The allowEdit property
@@ -150,7 +150,7 @@ func (m *ItemPreviewPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemPreviewPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemPreviewPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowEdit sets the allowEdit property value. The allowEdit property

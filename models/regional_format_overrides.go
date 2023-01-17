@@ -7,7 +7,7 @@ import (
 // RegionalFormatOverrides 
 type RegionalFormatOverrides struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The calendar to use, e.g., Gregorian Calendar.Returned by default.
     calendar *string
     // The first day of the week to use, e.g., Sunday.Returned by default.
@@ -29,7 +29,7 @@ type RegionalFormatOverrides struct {
 func NewRegionalFormatOverrides()(*RegionalFormatOverrides) {
     m := &RegionalFormatOverrides{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRegionalFormatOverridesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ func CreateRegionalFormatOverridesFromDiscriminatorValue(parseNode i878a80d2330e
     return NewRegionalFormatOverrides(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RegionalFormatOverrides) GetAdditionalData()(map[string]interface{}) {
+func (m *RegionalFormatOverrides) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCalendar gets the calendar property value. The calendar to use, e.g., Gregorian Calendar.Returned by default.
@@ -216,7 +216,7 @@ func (m *RegionalFormatOverrides) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RegionalFormatOverrides) SetAdditionalData(value map[string]interface{})() {
+func (m *RegionalFormatOverrides) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCalendar sets the calendar property value. The calendar to use, e.g., Gregorian Calendar.Returned by default.

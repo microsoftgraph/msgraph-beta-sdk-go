@@ -7,7 +7,7 @@ import (
 // UserExperienceAnalyticsWindows10DevicesSummary the user experience analytics work from anywhere Windows 10 devices summary.
 type UserExperienceAnalyticsWindows10DevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // The count of Windows 10 devices that have unsupported OS versions.
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsWindows10DevicesSummary struct {
 func NewUserExperienceAnalyticsWindows10DevicesSummary()(*UserExperienceAnalyticsWindows10DevicesSummary) {
     m := &UserExperienceAnalyticsWindows10DevicesSummary{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceAnalyticsWindows10DevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateUserExperienceAnalyticsWindows10DevicesSummaryFromDiscriminatorValue(
     return NewUserExperienceAnalyticsWindows10DevicesSummary(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceAnalyticsWindows10DevicesSummary) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceAnalyticsWindows10DevicesSummary) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

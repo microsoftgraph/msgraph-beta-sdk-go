@@ -20,7 +20,7 @@ const (
 func (i WindowsAutopilotEnrollmentType) String() string {
     return []string{"unknown", "azureADJoinedWithAutopilotProfile", "offlineDomainJoined", "azureADJoinedUsingDeviceAuthWithAutopilotProfile", "azureADJoinedUsingDeviceAuthWithoutAutopilotProfile", "azureADJoinedWithOfflineAutopilotProfile", "azureADJoinedWithWhiteGlove", "offlineDomainJoinedWithWhiteGlove", "offlineDomainJoinedWithOfflineAutopilotProfile"}[i]
 }
-func ParseWindowsAutopilotEnrollmentType(v string) (interface{}, error) {
+func ParseWindowsAutopilotEnrollmentType(v string) (any, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTENROLLMENTTYPE
     switch v {
         case "unknown":

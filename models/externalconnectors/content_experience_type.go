@@ -14,7 +14,7 @@ const (
 func (i ContentExperienceType) String() string {
     return []string{"search", "compliance", "unknownFutureValue"}[i]
 }
-func ParseContentExperienceType(v string) (interface{}, error) {
+func ParseContentExperienceType(v string) (any, error) {
     result := SEARCH_CONTENTEXPERIENCETYPE
     switch v {
         case "search":

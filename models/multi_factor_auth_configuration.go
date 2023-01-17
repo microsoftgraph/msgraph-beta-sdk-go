@@ -14,7 +14,7 @@ const (
 func (i MultiFactorAuthConfiguration) String() string {
     return []string{"notRequired", "required", "unknownFutureValue"}[i]
 }
-func ParseMultiFactorAuthConfiguration(v string) (interface{}, error) {
+func ParseMultiFactorAuthConfiguration(v string) (any, error) {
     result := NOTREQUIRED_MULTIFACTORAUTHCONFIGURATION
     switch v {
         case "notRequired":

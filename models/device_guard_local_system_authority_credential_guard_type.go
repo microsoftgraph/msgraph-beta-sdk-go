@@ -19,7 +19,7 @@ const (
 func (i DeviceGuardLocalSystemAuthorityCredentialGuardType) String() string {
     return []string{"notConfigured", "enableWithUEFILock", "enableWithoutUEFILock", "disable"}[i]
 }
-func ParseDeviceGuardLocalSystemAuthorityCredentialGuardType(v string) (interface{}, error) {
+func ParseDeviceGuardLocalSystemAuthorityCredentialGuardType(v string) (any, error) {
     result := NOTCONFIGURED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDTYPE
     switch v {
         case "notConfigured":

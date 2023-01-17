@@ -19,7 +19,7 @@ const (
 func (i WarrantyType) String() string {
     return []string{"unknown", "manufacturer", "contractual", "unknownFutureValue"}[i]
 }
-func ParseWarrantyType(v string) (interface{}, error) {
+func ParseWarrantyType(v string) (any, error) {
     result := UNKNOWN_WARRANTYTYPE
     switch v {
         case "unknown":

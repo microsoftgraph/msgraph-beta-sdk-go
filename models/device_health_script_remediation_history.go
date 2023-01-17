@@ -8,7 +8,7 @@ import (
 // DeviceHealthScriptRemediationHistory the number of devices remediated by a device health script on a given date with the last modified time.
 type DeviceHealthScriptRemediationHistory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The number of devices remediated by the device health script on the given date.
     historyData []DeviceHealthScriptRemediationHistoryDataable
     // The date on which the results history is calculated for the healthscript.
@@ -20,7 +20,7 @@ type DeviceHealthScriptRemediationHistory struct {
 func NewDeviceHealthScriptRemediationHistory()(*DeviceHealthScriptRemediationHistory) {
     m := &DeviceHealthScriptRemediationHistory{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceHealthScriptRemediationHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateDeviceHealthScriptRemediationHistoryFromDiscriminatorValue(parseNode 
     return NewDeviceHealthScriptRemediationHistory(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptRemediationHistory) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceHealthScriptRemediationHistory) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -115,7 +115,7 @@ func (m *DeviceHealthScriptRemediationHistory) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptRemediationHistory) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceHealthScriptRemediationHistory) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetHistoryData sets the historyData property value. The number of devices remediated by the device health script on the given date.

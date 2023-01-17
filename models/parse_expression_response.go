@@ -7,7 +7,7 @@ import (
 // ParseExpressionResponse 
 type ParseExpressionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Error details, if expression evaluation resulted in an error.
     error PublicErrorable
     // A collection of values produced by the evaluation of the expression.
@@ -25,7 +25,7 @@ type ParseExpressionResponse struct {
 func NewParseExpressionResponse()(*ParseExpressionResponse) {
     m := &ParseExpressionResponse{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateParseExpressionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,7 +33,7 @@ func CreateParseExpressionResponseFromDiscriminatorValue(parseNode i878a80d2330e
     return NewParseExpressionResponse(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParseExpressionResponse) GetAdditionalData()(map[string]interface{}) {
+func (m *ParseExpressionResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetError gets the error property value. Error details, if expression evaluation resulted in an error.
@@ -176,7 +176,7 @@ func (m *ParseExpressionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ParseExpressionResponse) SetAdditionalData(value map[string]interface{})() {
+func (m *ParseExpressionResponse) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetError sets the error property value. Error details, if expression evaluation resulted in an error.

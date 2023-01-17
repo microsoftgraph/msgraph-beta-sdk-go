@@ -30,7 +30,7 @@ const (
 func (i FileProcessingStatus) String() string {
     return []string{"success", "internalError", "unknownError", "processingTimeout", "invalidFileId", "fileSizeIsZero", "fileSizeIsTooLarge", "fileDepthLimitExceeded", "fileBodyIsTooLong", "fileTypeIsUnknown", "fileTypeIsNotSupported", "malformedFile", "protectedFile", "poisonFile", "noReviewSetSummaryGenerated", "extractionException", "ocrProcessingTimeout", "ocrFileSizeExceedsLimit", "unknownFutureValue"}[i]
 }
-func ParseFileProcessingStatus(v string) (interface{}, error) {
+func ParseFileProcessingStatus(v string) (any, error) {
     result := SUCCESS_FILEPROCESSINGSTATUS
     switch v {
         case "success":

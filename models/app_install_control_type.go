@@ -21,7 +21,7 @@ const (
 func (i AppInstallControlType) String() string {
     return []string{"notConfigured", "anywhere", "storeOnly", "recommendations", "preferStore"}[i]
 }
-func ParseAppInstallControlType(v string) (interface{}, error) {
+func ParseAppInstallControlType(v string) (any, error) {
     result := NOTCONFIGURED_APPINSTALLCONTROLTYPE
     switch v {
         case "notConfigured":

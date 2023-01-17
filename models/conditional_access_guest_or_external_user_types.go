@@ -19,7 +19,7 @@ const (
 func (i ConditionalAccessGuestOrExternalUserTypes) String() string {
     return []string{"none", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider", "unknownFutureValue"}[i]
 }
-func ParseConditionalAccessGuestOrExternalUserTypes(v string) (interface{}, error) {
+func ParseConditionalAccessGuestOrExternalUserTypes(v string) (any, error) {
     result := NONE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
     switch v {
         case "none":

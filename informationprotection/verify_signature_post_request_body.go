@@ -7,7 +7,7 @@ import (
 // VerifySignaturePostRequestBody 
 type VerifySignaturePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The digest property
     digest []byte
     // The signature property
@@ -19,7 +19,7 @@ type VerifySignaturePostRequestBody struct {
 func NewVerifySignaturePostRequestBody()(*VerifySignaturePostRequestBody) {
     m := &VerifySignaturePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateVerifySignaturePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateVerifySignaturePostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewVerifySignaturePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifySignaturePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *VerifySignaturePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDigest gets the digest property value. The digest property
@@ -106,7 +106,7 @@ func (m *VerifySignaturePostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *VerifySignaturePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *VerifySignaturePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDigest sets the digest property value. The digest property

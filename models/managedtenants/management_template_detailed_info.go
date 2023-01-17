@@ -7,7 +7,7 @@ import (
 // ManagementTemplateDetailedInfo 
 type ManagementTemplateDetailedInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The category property
     category *ManagementCategory
     // The display name for the management template. Required. Read-only.
@@ -23,7 +23,7 @@ type ManagementTemplateDetailedInfo struct {
 func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
     m := &ManagementTemplateDetailedInfo{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagementTemplateDetailedInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateManagementTemplateDetailedInfoFromDiscriminatorValue(parseNode i878a8
     return NewManagementTemplateDetailedInfo(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCategory gets the category property value. The category property
@@ -151,7 +151,7 @@ func (m *ManagementTemplateDetailedInfo) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementTemplateDetailedInfo) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagementTemplateDetailedInfo) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCategory sets the category property value. The category property

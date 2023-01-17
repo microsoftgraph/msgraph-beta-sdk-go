@@ -15,7 +15,7 @@ const (
 func (i EncryptionState) String() string {
     return []string{"notEncrypted", "encrypted"}[i]
 }
-func ParseEncryptionState(v string) (interface{}, error) {
+func ParseEncryptionState(v string) (any, error) {
     result := NOTENCRYPTED_ENCRYPTIONSTATE
     switch v {
         case "notEncrypted":

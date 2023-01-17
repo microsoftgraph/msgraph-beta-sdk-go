@@ -17,7 +17,7 @@ const (
 func (i BookingInvoiceStatus) String() string {
     return []string{"draft", "reviewing", "open", "canceled", "paid", "corrective"}[i]
 }
-func ParseBookingInvoiceStatus(v string) (interface{}, error) {
+func ParseBookingInvoiceStatus(v string) (any, error) {
     result := DRAFT_BOOKINGINVOICESTATUS
     switch v {
         case "draft":

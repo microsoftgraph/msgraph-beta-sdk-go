@@ -16,7 +16,7 @@ const (
 func (i MembershipRuleProcessingStatusDetails) String() string {
     return []string{"NotStarted", "Running", "Failed", "Succeeded", "UnsupportedFutureValue"}[i]
 }
-func ParseMembershipRuleProcessingStatusDetails(v string) (interface{}, error) {
+func ParseMembershipRuleProcessingStatusDetails(v string) (any, error) {
     result := NOTSTARTED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
     switch v {
         case "NotStarted":

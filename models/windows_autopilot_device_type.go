@@ -23,7 +23,7 @@ const (
 func (i WindowsAutopilotDeviceType) String() string {
     return []string{"windowsPc", "surfaceHub2", "holoLens", "surfaceHub2S", "virtualMachine", "unknownFutureValue"}[i]
 }
-func ParseWindowsAutopilotDeviceType(v string) (interface{}, error) {
+func ParseWindowsAutopilotDeviceType(v string) (any, error) {
     result := WINDOWSPC_WINDOWSAUTOPILOTDEVICETYPE
     switch v {
         case "windowsPc":

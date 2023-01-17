@@ -61,7 +61,7 @@ const (
 func (i Operator) String() string {
     return []string{"none", "and", "or", "isEquals", "notEquals", "greaterThan", "lessThan", "between", "notBetween", "greaterEquals", "lessEquals", "dayTimeBetween", "beginsWith", "notBeginsWith", "endsWith", "notEndsWith", "contains", "notContains", "allOf", "oneOf", "noneOf", "setEquals", "orderedSetEquals", "subsetOf", "excludesAll"}[i]
 }
-func ParseOperator(v string) (interface{}, error) {
+func ParseOperator(v string) (any, error) {
     result := NONE_OPERATOR
     switch v {
         case "none":

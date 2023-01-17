@@ -21,7 +21,7 @@ const (
 func (i AndroidDeviceOwnerKioskModeFolderIcon) String() string {
     return []string{"notConfigured", "darkSquare", "darkCircle", "lightSquare", "lightCircle"}[i]
 }
-func ParseAndroidDeviceOwnerKioskModeFolderIcon(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerKioskModeFolderIcon(v string) (any, error) {
     result := NOTCONFIGURED_ANDROIDDEVICEOWNERKIOSKMODEFOLDERICON
     switch v {
         case "notConfigured":

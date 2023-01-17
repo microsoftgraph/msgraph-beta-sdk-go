@@ -7,7 +7,7 @@ import (
 // NumberRange number Range definition.
 type NumberRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Lower number.
     lowerNumber *int32
     // The OdataType property
@@ -19,7 +19,7 @@ type NumberRange struct {
 func NewNumberRange()(*NumberRange) {
     m := &NumberRange{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateNumberRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateNumberRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewNumberRange(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NumberRange) GetAdditionalData()(map[string]interface{}) {
+func (m *NumberRange) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *NumberRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *NumberRange) SetAdditionalData(value map[string]interface{})() {
+func (m *NumberRange) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLowerNumber sets the lowerNumber property value. Lower number.

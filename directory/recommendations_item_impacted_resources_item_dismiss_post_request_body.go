@@ -7,7 +7,7 @@ import (
 // RecommendationsItemImpactedResourcesItemDismissPostRequestBody 
 type RecommendationsItemImpactedResourcesItemDismissPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The dismissReason property
     dismissReason *string
 }
@@ -15,7 +15,7 @@ type RecommendationsItemImpactedResourcesItemDismissPostRequestBody struct {
 func NewRecommendationsItemImpactedResourcesItemDismissPostRequestBody()(*RecommendationsItemImpactedResourcesItemDismissPostRequestBody) {
     m := &RecommendationsItemImpactedResourcesItemDismissPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateRecommendationsItemImpactedResourcesItemDismissPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateRecommendationsItemImpactedResourcesItemDismissPostRequestBodyFromDis
     return NewRecommendationsItemImpactedResourcesItemDismissPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecommendationsItemImpactedResourcesItemDismissPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *RecommendationsItemImpactedResourcesItemDismissPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDismissReason gets the dismissReason property value. The dismissReason property
@@ -62,7 +62,7 @@ func (m *RecommendationsItemImpactedResourcesItemDismissPostRequestBody) Seriali
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RecommendationsItemImpactedResourcesItemDismissPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *RecommendationsItemImpactedResourcesItemDismissPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDismissReason sets the dismissReason property value. The dismissReason property

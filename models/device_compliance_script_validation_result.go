@@ -7,7 +7,7 @@ import (
 // DeviceComplianceScriptValidationResult 
 type DeviceComplianceScriptValidationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
     // Errors in json for the script for rules.
@@ -21,7 +21,7 @@ type DeviceComplianceScriptValidationResult struct {
 func NewDeviceComplianceScriptValidationResult()(*DeviceComplianceScriptValidationResult) {
     m := &DeviceComplianceScriptValidationResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceComplianceScriptValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateDeviceComplianceScriptValidationResultFromDiscriminatorValue(parseNod
     return NewDeviceComplianceScriptValidationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceComplianceScriptValidationResult) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceComplianceScriptValidationResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -152,7 +152,7 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i878a80d2330e8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceComplianceScriptValidationResult) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceComplianceScriptValidationResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

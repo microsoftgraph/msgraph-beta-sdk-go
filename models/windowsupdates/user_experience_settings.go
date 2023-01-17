@@ -7,7 +7,7 @@ import (
 // UserExperienceSettings 
 type UserExperienceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
     daysUntilForcedReboot *int32
     // The OdataType property
@@ -17,7 +17,7 @@ type UserExperienceSettings struct {
 func NewUserExperienceSettings()(*UserExperienceSettings) {
     m := &UserExperienceSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateUserExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateUserExperienceSettingsFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewUserExperienceSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *UserExperienceSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDaysUntilForcedReboot gets the daysUntilForcedReboot property value. Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
@@ -84,7 +84,7 @@ func (m *UserExperienceSettings) Serialize(writer i878a80d2330e89d26896388a3f487
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UserExperienceSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *UserExperienceSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDaysUntilForcedReboot sets the daysUntilForcedReboot property value. Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.

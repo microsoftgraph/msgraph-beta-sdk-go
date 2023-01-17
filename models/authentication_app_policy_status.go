@@ -29,7 +29,7 @@ const (
 func (i AuthenticationAppPolicyStatus) String() string {
     return []string{"unknown", "appLockOutOfDate", "appLockEnabled", "appLockDisabled", "appContextOutOfDate", "appContextShown", "appContextNotShown", "locationContextOutOfDate", "locationContextShown", "locationContextNotShown", "numberMatchOutOfDate", "numberMatchCorrectNumberEntered", "numberMatchIncorrectNumberEntered", "numberMatchDeny", "tamperResistantHardwareOutOfDate", "tamperResistantHardwareUsed", "tamperResistantHardwareNotUsed", "unknownFutureValue"}[i]
 }
-func ParseAuthenticationAppPolicyStatus(v string) (interface{}, error) {
+func ParseAuthenticationAppPolicyStatus(v string) (any, error) {
     result := UNKNOWN_AUTHENTICATIONAPPPOLICYSTATUS
     switch v {
         case "unknown":

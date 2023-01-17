@@ -19,7 +19,7 @@ const (
 func (i TeamworkDeviceOperationType) String() string {
     return []string{"deviceRestart", "configUpdate", "deviceDiagnostics", "softwareUpdate", "deviceManagementAgentConfigUpdate", "remoteLogin", "remoteLogout", "unknownFutureValue"}[i]
 }
-func ParseTeamworkDeviceOperationType(v string) (interface{}, error) {
+func ParseTeamworkDeviceOperationType(v string) (any, error) {
     result := DEVICERESTART_TEAMWORKDEVICEOPERATIONTYPE
     switch v {
         case "deviceRestart":

@@ -23,7 +23,7 @@ const (
 func (i AssignmentFilterEvaluationResult) String() string {
     return []string{"unknown", "match", "notMatch", "inconclusive", "failure", "notEvaluated"}[i]
 }
-func ParseAssignmentFilterEvaluationResult(v string) (interface{}, error) {
+func ParseAssignmentFilterEvaluationResult(v string) (any, error) {
     result := UNKNOWN_ASSIGNMENTFILTEREVALUATIONRESULT
     switch v {
         case "unknown":

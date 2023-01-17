@@ -7,7 +7,7 @@ import (
 // EducationSynchronizationDataProvider 
 type EducationSynchronizationDataProvider struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type EducationSynchronizationDataProvider struct {
 func NewEducationSynchronizationDataProvider()(*EducationSynchronizationDataProvider) {
     m := &EducationSynchronizationDataProvider{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEducationSynchronizationDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ func CreateEducationSynchronizationDataProviderFromDiscriminatorValue(parseNode 
     return NewEducationSynchronizationDataProvider(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationDataProvider) GetAdditionalData()(map[string]interface{}) {
+func (m *EducationSynchronizationDataProvider) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -84,7 +84,7 @@ func (m *EducationSynchronizationDataProvider) Serialize(writer i878a80d2330e89d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EducationSynchronizationDataProvider) SetAdditionalData(value map[string]interface{})() {
+func (m *EducationSynchronizationDataProvider) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

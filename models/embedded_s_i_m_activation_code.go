@@ -7,7 +7,7 @@ import (
 // EmbeddedSIMActivationCode the embedded SIM activation code as provided by the mobile operator.
 type EmbeddedSIMActivationCode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
     integratedCircuitCardIdentifier *string
     // The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
@@ -21,7 +21,7 @@ type EmbeddedSIMActivationCode struct {
 func NewEmbeddedSIMActivationCode()(*EmbeddedSIMActivationCode) {
     m := &EmbeddedSIMActivationCode{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateEmbeddedSIMActivationCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func CreateEmbeddedSIMActivationCodeFromDiscriminatorValue(parseNode i878a80d233
     return NewEmbeddedSIMActivationCode(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EmbeddedSIMActivationCode) GetAdditionalData()(map[string]interface{}) {
+func (m *EmbeddedSIMActivationCode) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -128,7 +128,7 @@ func (m *EmbeddedSIMActivationCode) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *EmbeddedSIMActivationCode) SetAdditionalData(value map[string]interface{})() {
+func (m *EmbeddedSIMActivationCode) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIntegratedCircuitCardIdentifier sets the integratedCircuitCardIdentifier property value. The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.

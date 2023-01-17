@@ -15,7 +15,7 @@ const (
 func (i ConnectionOperationStatus) String() string {
     return []string{"unspecified", "inprogress", "completed", "failed"}[i]
 }
-func ParseConnectionOperationStatus(v string) (interface{}, error) {
+func ParseConnectionOperationStatus(v string) (any, error) {
     result := UNSPECIFIED_CONNECTIONOPERATIONSTATUS
     switch v {
         case "unspecified":

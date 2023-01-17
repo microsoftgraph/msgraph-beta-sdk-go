@@ -7,7 +7,7 @@ import (
 // TrustFrameworkKey 
 type TrustFrameworkKey struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // RSA Key - private exponent. Field cannot be read back.
     d *string
     // RSA Key - first exponent. Field cannot be read back.
@@ -47,7 +47,7 @@ type TrustFrameworkKey struct {
 func NewTrustFrameworkKey()(*TrustFrameworkKey) {
     m := &TrustFrameworkKey{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTrustFrameworkKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,7 +55,7 @@ func CreateTrustFrameworkKeyFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewTrustFrameworkKey(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TrustFrameworkKey) GetAdditionalData()(map[string]interface{}) {
+func (m *TrustFrameworkKey) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetD gets the d property value. RSA Key - private exponent. Field cannot be read back.
@@ -418,7 +418,7 @@ func (m *TrustFrameworkKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TrustFrameworkKey) SetAdditionalData(value map[string]interface{})() {
+func (m *TrustFrameworkKey) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetD sets the d property value. RSA Key - private exponent. Field cannot be read back.

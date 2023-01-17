@@ -33,7 +33,7 @@ const (
 func (i PolicyPlatformType) String() string {
     return []string{"android", "androidForWork", "iOS", "macOS", "windowsPhone81", "windows81AndLater", "windows10AndLater", "androidWorkProfile", "windows10XProfile", "androidAOSP", "all"}[i]
 }
-func ParsePolicyPlatformType(v string) (interface{}, error) {
+func ParsePolicyPlatformType(v string) (any, error) {
     result := ANDROID_POLICYPLATFORMTYPE
     switch v {
         case "android":

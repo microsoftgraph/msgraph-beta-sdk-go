@@ -18,7 +18,7 @@ const (
 func (i AndroidDeviceOwnerEnrollmentMode) String() string {
     return []string{"corporateOwnedDedicatedDevice", "corporateOwnedFullyManaged", "corporateOwnedWorkProfile", "corporateOwnedAOSPUserlessDevice", "corporateOwnedAOSPUserAssociatedDevice"}[i]
 }
-func ParseAndroidDeviceOwnerEnrollmentMode(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerEnrollmentMode(v string) (any, error) {
     result := CORPORATEOWNEDDEDICATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
     switch v {
         case "corporateOwnedDedicatedDevice":

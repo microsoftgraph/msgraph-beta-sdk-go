@@ -19,7 +19,7 @@ const (
 func (i RoleAssignmentScopeType) String() string {
     return []string{"resourceScope", "allDevices", "allLicensedUsers", "allDevicesAndLicensedUsers"}[i]
 }
-func ParseRoleAssignmentScopeType(v string) (interface{}, error) {
+func ParseRoleAssignmentScopeType(v string) (any, error) {
     result := RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
     switch v {
         case "resourceScope":

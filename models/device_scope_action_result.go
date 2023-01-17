@@ -7,7 +7,7 @@ import (
 // DeviceScopeActionResult the result of the triggered device scope action.
 type DeviceScopeActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
     deviceScopeAction *string
     // The unique identifier of the device scope the action was triggered on.
@@ -23,7 +23,7 @@ type DeviceScopeActionResult struct {
 func NewDeviceScopeActionResult()(*DeviceScopeActionResult) {
     m := &DeviceScopeActionResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceScopeActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateDeviceScopeActionResultFromDiscriminatorValue(parseNode i878a80d2330e
     return NewDeviceScopeActionResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceScopeActionResult) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceScopeActionResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceScopeAction gets the deviceScopeAction property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
@@ -151,7 +151,7 @@ func (m *DeviceScopeActionResult) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceScopeActionResult) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceScopeActionResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceScopeAction sets the deviceScopeAction property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.

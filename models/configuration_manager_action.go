@@ -9,7 +9,7 @@ type ConfigurationManagerAction struct {
     // Action type on Configuration Manager client
     action *ConfigurationManagerActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -17,7 +17,7 @@ type ConfigurationManagerAction struct {
 func NewConfigurationManagerAction()(*ConfigurationManagerAction) {
     m := &ConfigurationManagerAction{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateConfigurationManagerActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,7 @@ func (m *ConfigurationManagerAction) GetAction()(*ConfigurationManagerActionType
     return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationManagerAction) GetAdditionalData()(map[string]interface{}) {
+func (m *ConfigurationManagerAction) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,7 +89,7 @@ func (m *ConfigurationManagerAction) SetAction(value *ConfigurationManagerAction
     m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConfigurationManagerAction) SetAdditionalData(value map[string]interface{})() {
+func (m *ConfigurationManagerAction) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

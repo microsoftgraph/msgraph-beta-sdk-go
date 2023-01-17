@@ -17,7 +17,7 @@ const (
 func (i DelegatedAdminAccessAssignmentStatus) String() string {
     return []string{"pending", "active", "deleting", "deleted", "error", "unknownFutureValue"}[i]
 }
-func ParseDelegatedAdminAccessAssignmentStatus(v string) (interface{}, error) {
+func ParseDelegatedAdminAccessAssignmentStatus(v string) (any, error) {
     result := PENDING_DELEGATEDADMINACCESSASSIGNMENTSTATUS
     switch v {
         case "pending":

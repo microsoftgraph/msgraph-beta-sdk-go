@@ -21,7 +21,7 @@ const (
 func (i TeamworkUserIdentityType) String() string {
     return []string{"aadUser", "onPremiseAadUser", "anonymousGuest", "federatedUser", "personalMicrosoftAccountUser", "skypeUser", "phoneUser", "unknownFutureValue", "emailUser", "azureCommunicationServicesUser"}[i]
 }
-func ParseTeamworkUserIdentityType(v string) (interface{}, error) {
+func ParseTeamworkUserIdentityType(v string) (any, error) {
     result := AADUSER_TEAMWORKUSERIDENTITYTYPE
     switch v {
         case "aadUser":

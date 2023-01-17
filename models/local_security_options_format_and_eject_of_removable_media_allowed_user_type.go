@@ -19,7 +19,7 @@ const (
 func (i LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType) String() string {
     return []string{"notConfigured", "administrators", "administratorsAndPowerUsers", "administratorsAndInteractiveUsers"}[i]
 }
-func ParseLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType(v string) (interface{}, error) {
+func ParseLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType(v string) (any, error) {
     result := NOTCONFIGURED_LOCALSECURITYOPTIONSFORMATANDEJECTOFREMOVABLEMEDIAALLOWEDUSERTYPE
     switch v {
         case "notConfigured":

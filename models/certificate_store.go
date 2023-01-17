@@ -13,7 +13,7 @@ const (
 func (i CertificateStore) String() string {
     return []string{"user", "machine"}[i]
 }
-func ParseCertificateStore(v string) (interface{}, error) {
+func ParseCertificateStore(v string) (any, error) {
     result := USER_CERTIFICATESTORE
     switch v {
         case "user":

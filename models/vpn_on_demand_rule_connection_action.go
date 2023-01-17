@@ -19,7 +19,7 @@ const (
 func (i VpnOnDemandRuleConnectionAction) String() string {
     return []string{"connect", "evaluateConnection", "ignore", "disconnect"}[i]
 }
-func ParseVpnOnDemandRuleConnectionAction(v string) (interface{}, error) {
+func ParseVpnOnDemandRuleConnectionAction(v string) (any, error) {
     result := CONNECT_VPNONDEMANDRULECONNECTIONACTION
     switch v {
         case "connect":

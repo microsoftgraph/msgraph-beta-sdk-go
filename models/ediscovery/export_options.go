@@ -17,7 +17,7 @@ const (
 func (i ExportOptions) String() string {
     return []string{"originalFiles", "text", "pdfReplacement", "fileInfo", "tags", "unknownFutureValue"}[i]
 }
-func ParseExportOptions(v string) (interface{}, error) {
+func ParseExportOptions(v string) (any, error) {
     result := ORIGINALFILES_EXPORTOPTIONS
     switch v {
         case "originalFiles":

@@ -8,7 +8,7 @@ import (
 // ItemActivityTimeSet 
 type ItemActivityTimeSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The lastRecordedDateTime property
     lastRecordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // When the activity was observed to take place.
@@ -22,7 +22,7 @@ type ItemActivityTimeSet struct {
 func NewItemActivityTimeSet()(*ItemActivityTimeSet) {
     m := &ItemActivityTimeSet{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemActivityTimeSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateItemActivityTimeSetFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewItemActivityTimeSet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActivityTimeSet) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemActivityTimeSet) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -129,7 +129,7 @@ func (m *ItemActivityTimeSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemActivityTimeSet) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemActivityTimeSet) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetLastRecordedDateTime sets the lastRecordedDateTime property value. The lastRecordedDateTime property

@@ -8,7 +8,7 @@ import (
 // DevicesValidatePropertiesPostRequestBody 
 type DevicesValidatePropertiesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The displayName property
     displayName *string
     // The entityType property
@@ -22,7 +22,7 @@ type DevicesValidatePropertiesPostRequestBody struct {
 func NewDevicesValidatePropertiesPostRequestBody()(*DevicesValidatePropertiesPostRequestBody) {
     m := &DevicesValidatePropertiesPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDevicesValidatePropertiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateDevicesValidatePropertiesPostRequestBodyFromDiscriminatorValue(parseN
     return NewDevicesValidatePropertiesPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DevicesValidatePropertiesPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DevicesValidatePropertiesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
@@ -129,7 +129,7 @@ func (m *DevicesValidatePropertiesPostRequestBody) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DevicesValidatePropertiesPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DevicesValidatePropertiesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property

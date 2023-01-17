@@ -16,7 +16,7 @@ const (
 func (i CloudPcConnectivityStatus) String() string {
     return []string{"unknown", "available", "availableWithWarning", "unavailable", "unknownFutureValue"}[i]
 }
-func ParseCloudPcConnectivityStatus(v string) (interface{}, error) {
+func ParseCloudPcConnectivityStatus(v string) (any, error) {
     result := UNKNOWN_CLOUDPCCONNECTIVITYSTATUS
     switch v {
         case "unknown":

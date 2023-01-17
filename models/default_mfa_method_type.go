@@ -18,7 +18,7 @@ const (
 func (i DefaultMfaMethodType) String() string {
     return []string{"none", "mobilePhone", "alternateMobilePhone", "officePhone", "microsoftAuthenticatorPush", "softwareOneTimePasscode", "unknownFutureValue"}[i]
 }
-func ParseDefaultMfaMethodType(v string) (interface{}, error) {
+func ParseDefaultMfaMethodType(v string) (any, error) {
     result := NONE_DEFAULTMFAMETHODTYPE
     switch v {
         case "none":

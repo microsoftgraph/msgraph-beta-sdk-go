@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationSettingOccurrence 
 type DeviceManagementConfigurationSettingOccurrence struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Maximum times setting can be set on device.
     maxDeviceOccurrence *int32
     // Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
@@ -19,7 +19,7 @@ type DeviceManagementConfigurationSettingOccurrence struct {
 func NewDeviceManagementConfigurationSettingOccurrence()(*DeviceManagementConfigurationSettingOccurrence) {
     m := &DeviceManagementConfigurationSettingOccurrence{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationSettingOccurrenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementConfigurationSettingOccurrenceFromDiscriminatorValue(
     return NewDeviceManagementConfigurationSettingOccurrence(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingOccurrence) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationSettingOccurrence) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i878a8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationSettingOccurrence) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationSettingOccurrence) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMaxDeviceOccurrence sets the maxDeviceOccurrence property value. Maximum times setting can be set on device.

@@ -8,7 +8,7 @@ import (
 // CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody 
 type CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The azureBlobContainer property
     azureBlobContainer *string
     // The azureBlobToken property
@@ -26,7 +26,7 @@ type CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody stru
 func NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody()(*CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody) {
     m := &CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ func CreateCasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBod
     return NewCasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAzureBlobContainer gets the azureBlobContainer property value. The azureBlobContainer property
@@ -175,7 +175,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody)
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *CasesEdiscoveryCasesItemReviewSetsItemQueriesItemExportPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAzureBlobContainer sets the azureBlobContainer property value. The azureBlobContainer property

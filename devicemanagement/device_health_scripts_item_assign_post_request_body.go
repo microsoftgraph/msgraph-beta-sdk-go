@@ -8,7 +8,7 @@ import (
 // DeviceHealthScriptsItemAssignPostRequestBody 
 type DeviceHealthScriptsItemAssignPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The deviceHealthScriptAssignments property
     deviceHealthScriptAssignments []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable
 }
@@ -16,7 +16,7 @@ type DeviceHealthScriptsItemAssignPostRequestBody struct {
 func NewDeviceHealthScriptsItemAssignPostRequestBody()(*DeviceHealthScriptsItemAssignPostRequestBody) {
     m := &DeviceHealthScriptsItemAssignPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceHealthScriptsItemAssignPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,7 @@ func CreateDeviceHealthScriptsItemAssignPostRequestBodyFromDiscriminatorValue(pa
     return NewDeviceHealthScriptsItemAssignPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptsItemAssignPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceHealthScriptsItemAssignPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeviceHealthScriptAssignments gets the deviceHealthScriptAssignments property value. The deviceHealthScriptAssignments property
@@ -71,7 +71,7 @@ func (m *DeviceHealthScriptsItemAssignPostRequestBody) Serialize(writer i878a80d
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceHealthScriptsItemAssignPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceHealthScriptsItemAssignPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDeviceHealthScriptAssignments sets the deviceHealthScriptAssignments property value. The deviceHealthScriptAssignments property

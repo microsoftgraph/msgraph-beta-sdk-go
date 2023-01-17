@@ -7,11 +7,11 @@ import (
 // PlannerPlanConfigurationLocalization 
 type PlannerPlanConfigurationLocalization struct {
     Entity
-    // The buckets property
+    // Localized names for configured buckets in the plan configuration.
     buckets []PlannerPlanConfigurationBucketLocalizationable
-    // The languageTag property
+    // The language code associated with the localized names in this object.
     languageTag *string
-    // The planTitle property
+    // Localized title of the plan.
     planTitle *string
 }
 // NewPlannerPlanConfigurationLocalization instantiates a new plannerPlanConfigurationLocalization and sets the default values.
@@ -25,7 +25,7 @@ func NewPlannerPlanConfigurationLocalization()(*PlannerPlanConfigurationLocaliza
 func CreatePlannerPlanConfigurationLocalizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlanConfigurationLocalization(), nil
 }
-// GetBuckets gets the buckets property value. The buckets property
+// GetBuckets gets the buckets property value. Localized names for configured buckets in the plan configuration.
 func (m *PlannerPlanConfigurationLocalization) GetBuckets()([]PlannerPlanConfigurationBucketLocalizationable) {
     return m.buckets
 }
@@ -68,11 +68,11 @@ func (m *PlannerPlanConfigurationLocalization) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetLanguageTag gets the languageTag property value. The languageTag property
+// GetLanguageTag gets the languageTag property value. The language code associated with the localized names in this object.
 func (m *PlannerPlanConfigurationLocalization) GetLanguageTag()(*string) {
     return m.languageTag
 }
-// GetPlanTitle gets the planTitle property value. The planTitle property
+// GetPlanTitle gets the planTitle property value. Localized title of the plan.
 func (m *PlannerPlanConfigurationLocalization) GetPlanTitle()(*string) {
     return m.planTitle
 }
@@ -106,15 +106,15 @@ func (m *PlannerPlanConfigurationLocalization) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetBuckets sets the buckets property value. The buckets property
+// SetBuckets sets the buckets property value. Localized names for configured buckets in the plan configuration.
 func (m *PlannerPlanConfigurationLocalization) SetBuckets(value []PlannerPlanConfigurationBucketLocalizationable)() {
     m.buckets = value
 }
-// SetLanguageTag sets the languageTag property value. The languageTag property
+// SetLanguageTag sets the languageTag property value. The language code associated with the localized names in this object.
 func (m *PlannerPlanConfigurationLocalization) SetLanguageTag(value *string)() {
     m.languageTag = value
 }
-// SetPlanTitle sets the planTitle property value. The planTitle property
+// SetPlanTitle sets the planTitle property value. Localized title of the plan.
 func (m *PlannerPlanConfigurationLocalization) SetPlanTitle(value *string)() {
     m.planTitle = value
 }

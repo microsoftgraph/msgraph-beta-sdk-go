@@ -7,7 +7,7 @@ import (
 // AssignmentFilterTypeAndEvaluationResult represents the filter type and evalaution result of the filter.
 type AssignmentFilterTypeAndEvaluationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Represents type of the assignment filter.
     assignmentFilterType *DeviceAndAppManagementAssignmentFilterType
     // Supported evaluation results for filter.
@@ -19,7 +19,7 @@ type AssignmentFilterTypeAndEvaluationResult struct {
 func NewAssignmentFilterTypeAndEvaluationResult()(*AssignmentFilterTypeAndEvaluationResult) {
     m := &AssignmentFilterTypeAndEvaluationResult{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFilterTypeAndEvaluationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateAssignmentFilterTypeAndEvaluationResultFromDiscriminatorValue(parseNo
     return NewAssignmentFilterTypeAndEvaluationResult(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterTypeAndEvaluationResult) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFilterTypeAndEvaluationResult) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentFilterType gets the assignmentFilterType property value. Represents type of the assignment filter.
@@ -108,7 +108,7 @@ func (m *AssignmentFilterTypeAndEvaluationResult) Serialize(writer i878a80d2330e
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterTypeAndEvaluationResult) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFilterTypeAndEvaluationResult) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAssignmentFilterType sets the assignmentFilterType property value. Represents type of the assignment filter.

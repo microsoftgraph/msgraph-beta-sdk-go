@@ -17,7 +17,7 @@ const (
 func (i DriverCategory) String() string {
     return []string{"recommended", "previouslyApproved", "other"}[i]
 }
-func ParseDriverCategory(v string) (interface{}, error) {
+func ParseDriverCategory(v string) (any, error) {
     result := RECOMMENDED_DRIVERCATEGORY
     switch v {
         case "recommended":

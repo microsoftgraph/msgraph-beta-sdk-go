@@ -15,7 +15,7 @@ const (
 func (i CloudPcAuditActorType) String() string {
     return []string{"itPro", "application", "partner", "unknown"}[i]
 }
-func ParseCloudPcAuditActorType(v string) (interface{}, error) {
+func ParseCloudPcAuditActorType(v string) (any, error) {
     result := ITPRO_CLOUDPCAUDITACTORTYPE
     switch v {
         case "itPro":

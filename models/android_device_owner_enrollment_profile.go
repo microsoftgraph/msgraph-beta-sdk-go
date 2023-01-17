@@ -26,6 +26,8 @@ type AndroidDeviceOwnerEnrollmentProfile struct {
     enrollmentTokenType *AndroidDeviceOwnerEnrollmentTokenType
     // Total number of AOSP devices that have enrolled using the current token.
     enrollmentTokenUsageCount *int32
+    // Boolean indicating if this profile is an Android AOSP for Teams device profile.
+    isTeamsDeviceProfile *bool
     // Date time the enrollment profile was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // String used to generate a QR code for the token.
@@ -189,6 +191,16 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["isTeamsDeviceProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsTeamsDeviceProfile(val)
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -305,6 +317,10 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
     }
     return res
 }
+// GetIsTeamsDeviceProfile gets the isTeamsDeviceProfile property value. Boolean indicating if this profile is an Android AOSP for Teams device profile.
+func (m *AndroidDeviceOwnerEnrollmentProfile) GetIsTeamsDeviceProfile()(*bool) {
+    return m.isTeamsDeviceProfile
+}
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.lastModifiedDateTime
@@ -407,6 +423,12 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i878a80d2330e89d2
     }
     {
         err = writer.WriteInt32Value("enrollmentTokenUsageCount", m.GetEnrollmentTokenUsageCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isTeamsDeviceProfile", m.GetIsTeamsDeviceProfile())
         if err != nil {
             return err
         }
@@ -515,6 +537,10 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentTokenType(value *Andr
 // SetEnrollmentTokenUsageCount sets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentTokenUsageCount(value *int32)() {
     m.enrollmentTokenUsageCount = value
+}
+// SetIsTeamsDeviceProfile sets the isTeamsDeviceProfile property value. Boolean indicating if this profile is an Android AOSP for Teams device profile.
+func (m *AndroidDeviceOwnerEnrollmentProfile) SetIsTeamsDeviceProfile(value *bool)() {
+    m.isTeamsDeviceProfile = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

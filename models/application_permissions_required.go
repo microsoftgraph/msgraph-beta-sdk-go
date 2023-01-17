@@ -18,7 +18,7 @@ const (
 func (i ApplicationPermissionsRequired) String() string {
     return []string{"unknown", "anonymous", "guest", "user", "administrator", "system", "unknownFutureValue"}[i]
 }
-func ParseApplicationPermissionsRequired(v string) (interface{}, error) {
+func ParseApplicationPermissionsRequired(v string) (any, error) {
     result := UNKNOWN_APPLICATIONPERMISSIONSREQUIRED
     switch v {
         case "unknown":

@@ -15,7 +15,7 @@ const (
 func (i MobileAppDependencyType) String() string {
     return []string{"detect", "autoInstall"}[i]
 }
-func ParseMobileAppDependencyType(v string) (interface{}, error) {
+func ParseMobileAppDependencyType(v string) (any, error) {
     result := DETECT_MOBILEAPPDEPENDENCYTYPE
     switch v {
         case "detect":

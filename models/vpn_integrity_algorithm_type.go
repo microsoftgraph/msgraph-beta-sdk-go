@@ -23,7 +23,7 @@ const (
 func (i VpnIntegrityAlgorithmType) String() string {
     return []string{"sha2_256", "sha1_96", "sha1_160", "sha2_384", "sha2_512", "md5"}[i]
 }
-func ParseVpnIntegrityAlgorithmType(v string) (interface{}, error) {
+func ParseVpnIntegrityAlgorithmType(v string) (any, error) {
     result := SHA2_256_VPNINTEGRITYALGORITHMTYPE
     switch v {
         case "sha2_256":

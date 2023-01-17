@@ -7,7 +7,7 @@ import (
 // AuthenticationSourceFilter 
 type AuthenticationSourceFilter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Applications to include for evaluation of the authenticationListener. These applications trigger the associated action when used as the client application in the authentication flow. The application identifer is the application's client id.
     includeApplications []string
     // The OdataType property
@@ -17,7 +17,7 @@ type AuthenticationSourceFilter struct {
 func NewAuthenticationSourceFilter()(*AuthenticationSourceFilter) {
     m := &AuthenticationSourceFilter{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationSourceFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +25,7 @@ func CreateAuthenticationSourceFilterFromDiscriminatorValue(parseNode i878a80d23
     return NewAuthenticationSourceFilter(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationSourceFilter) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationSourceFilter) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,7 +88,7 @@ func (m *AuthenticationSourceFilter) Serialize(writer i878a80d2330e89d26896388a3
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationSourceFilter) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationSourceFilter) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIncludeApplications sets the includeApplications property value. Applications to include for evaluation of the authenticationListener. These applications trigger the associated action when used as the client application in the authentication flow. The application identifer is the application's client id.

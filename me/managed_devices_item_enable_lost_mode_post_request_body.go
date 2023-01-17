@@ -7,7 +7,7 @@ import (
 // ManagedDevicesItemEnableLostModePostRequestBody 
 type ManagedDevicesItemEnableLostModePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The footer property
     footer *string
     // The message property
@@ -19,7 +19,7 @@ type ManagedDevicesItemEnableLostModePostRequestBody struct {
 func NewManagedDevicesItemEnableLostModePostRequestBody()(*ManagedDevicesItemEnableLostModePostRequestBody) {
     m := &ManagedDevicesItemEnableLostModePostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedDevicesItemEnableLostModePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateManagedDevicesItemEnableLostModePostRequestBodyFromDiscriminatorValue
     return NewManagedDevicesItemEnableLostModePostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemEnableLostModePostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedDevicesItemEnableLostModePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -106,7 +106,7 @@ func (m *ManagedDevicesItemEnableLostModePostRequestBody) Serialize(writer i878a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedDevicesItemEnableLostModePostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedDevicesItemEnableLostModePostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetFooter sets the footer property value. The footer property

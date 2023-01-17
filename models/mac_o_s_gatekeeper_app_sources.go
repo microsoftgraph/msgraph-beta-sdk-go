@@ -19,7 +19,7 @@ const (
 func (i MacOSGatekeeperAppSources) String() string {
     return []string{"notConfigured", "macAppStore", "macAppStoreAndIdentifiedDevelopers", "anywhere"}[i]
 }
-func ParseMacOSGatekeeperAppSources(v string) (interface{}, error) {
+func ParseMacOSGatekeeperAppSources(v string) (any, error) {
     result := NOTCONFIGURED_MACOSGATEKEEPERAPPSOURCES
     switch v {
         case "notConfigured":

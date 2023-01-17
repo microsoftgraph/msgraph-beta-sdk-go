@@ -8,7 +8,7 @@ import (
 // ZebraFotaDeploymentSettings the Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.
 type ZebraFotaDeploymentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Minimum battery level (%) required for both download and installation. Default: -1 (System defaults). Maximum is 100.
     batteryRuleMinimumBatteryLevelPercentage *int32
     // Flag indicating if charger is required. When set to false, the client can install updates whether the device is in or out of the charger. Applied only for installation. Defaults to false.
@@ -48,7 +48,7 @@ type ZebraFotaDeploymentSettings struct {
 func NewZebraFotaDeploymentSettings()(*ZebraFotaDeploymentSettings) {
     m := &ZebraFotaDeploymentSettings{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateZebraFotaDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ func CreateZebraFotaDeploymentSettingsFromDiscriminatorValue(parseNode i878a80d2
     return NewZebraFotaDeploymentSettings(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ZebraFotaDeploymentSettings) GetAdditionalData()(map[string]interface{}) {
+func (m *ZebraFotaDeploymentSettings) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBatteryRuleMinimumBatteryLevelPercentage gets the batteryRuleMinimumBatteryLevelPercentage property value. Minimum battery level (%) required for both download and installation. Default: -1 (System defaults). Maximum is 100.
@@ -418,7 +418,7 @@ func (m *ZebraFotaDeploymentSettings) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ZebraFotaDeploymentSettings) SetAdditionalData(value map[string]interface{})() {
+func (m *ZebraFotaDeploymentSettings) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBatteryRuleMinimumBatteryLevelPercentage sets the batteryRuleMinimumBatteryLevelPercentage property value. Minimum battery level (%) required for both download and installation. Default: -1 (System defaults). Maximum is 100.

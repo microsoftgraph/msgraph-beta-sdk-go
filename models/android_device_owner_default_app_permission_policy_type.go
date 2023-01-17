@@ -19,7 +19,7 @@ const (
 func (i AndroidDeviceOwnerDefaultAppPermissionPolicyType) String() string {
     return []string{"deviceDefault", "prompt", "autoGrant", "autoDeny"}[i]
 }
-func ParseAndroidDeviceOwnerDefaultAppPermissionPolicyType(v string) (interface{}, error) {
+func ParseAndroidDeviceOwnerDefaultAppPermissionPolicyType(v string) (any, error) {
     result := DEVICEDEFAULT_ANDROIDDEVICEOWNERDEFAULTAPPPERMISSIONPOLICYTYPE
     switch v {
         case "deviceDefault":

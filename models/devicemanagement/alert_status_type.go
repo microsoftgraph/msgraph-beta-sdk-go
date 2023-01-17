@@ -14,7 +14,7 @@ const (
 func (i AlertStatusType) String() string {
     return []string{"active", "resolved", "unknownFutureValue"}[i]
 }
-func ParseAlertStatusType(v string) (interface{}, error) {
+func ParseAlertStatusType(v string) (any, error) {
     result := ACTIVE_ALERTSTATUSTYPE
     switch v {
         case "active":

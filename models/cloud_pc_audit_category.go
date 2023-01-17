@@ -13,7 +13,7 @@ const (
 func (i CloudPcAuditCategory) String() string {
     return []string{"cloudPC", "other"}[i]
 }
-func ParseCloudPcAuditCategory(v string) (interface{}, error) {
+func ParseCloudPcAuditCategory(v string) (any, error) {
     result := CLOUDPC_CLOUDPCAUDITCATEGORY
     switch v {
         case "cloudPC":

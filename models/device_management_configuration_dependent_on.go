@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationDependentOn 
 type DeviceManagementConfigurationDependentOn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Identifier of parent setting/ parent setting option dependent on
     dependentOn *string
     // The OdataType property
@@ -19,7 +19,7 @@ type DeviceManagementConfigurationDependentOn struct {
 func NewDeviceManagementConfigurationDependentOn()(*DeviceManagementConfigurationDependentOn) {
     m := &DeviceManagementConfigurationDependentOn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateDeviceManagementConfigurationDependentOnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateDeviceManagementConfigurationDependentOnFromDiscriminatorValue(parseN
     return NewDeviceManagementConfigurationDependentOn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationDependentOn) GetAdditionalData()(map[string]interface{}) {
+func (m *DeviceManagementConfigurationDependentOn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDependentOn gets the dependentOn property value. Identifier of parent setting/ parent setting option dependent on
@@ -106,7 +106,7 @@ func (m *DeviceManagementConfigurationDependentOn) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *DeviceManagementConfigurationDependentOn) SetAdditionalData(value map[string]interface{})() {
+func (m *DeviceManagementConfigurationDependentOn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDependentOn sets the dependentOn property value. Identifier of parent setting/ parent setting option dependent on

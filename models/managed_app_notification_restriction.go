@@ -17,7 +17,7 @@ const (
 func (i ManagedAppNotificationRestriction) String() string {
     return []string{"allow", "blockOrganizationalData", "block"}[i]
 }
-func ParseManagedAppNotificationRestriction(v string) (interface{}, error) {
+func ParseManagedAppNotificationRestriction(v string) (any, error) {
     result := ALLOW_MANAGEDAPPNOTIFICATIONRESTRICTION
     switch v {
         case "allow":

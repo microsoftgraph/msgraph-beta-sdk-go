@@ -14,7 +14,7 @@ const (
 func (i CloudPcUserAccessLevel) String() string {
     return []string{"unrestricted", "restricted", "unknownFutureValue"}[i]
 }
-func ParseCloudPcUserAccessLevel(v string) (interface{}, error) {
+func ParseCloudPcUserAccessLevel(v string) (any, error) {
     result := UNRESTRICTED_CLOUDPCUSERACCESSLEVEL
     switch v {
         case "unrestricted":

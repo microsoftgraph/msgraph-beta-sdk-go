@@ -27,7 +27,7 @@ const (
 func (i AppManagementLevel) String() string {
     return []string{"unspecified", "unmanaged", "mdm", "androidEnterprise", "androidEnterpriseDedicatedDevicesWithAzureAdSharedMode", "androidOpenSourceProjectUserAssociated", "androidOpenSourceProjectUserless", "unknownFutureValue"}[i]
 }
-func ParseAppManagementLevel(v string) (interface{}, error) {
+func ParseAppManagementLevel(v string) (any, error) {
     result := UNSPECIFIED_APPMANAGEMENTLEVEL
     switch v {
         case "unspecified":

@@ -7,7 +7,7 @@ import (
 // AssignmentFilterSupportedProperty represents the information about the property which is supported in crafting the rule of AssignmentFilter.
 type AssignmentFilterSupportedProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The data type of the property.
     dataType *string
     // Indicates whether the property is a collection type or not.
@@ -27,7 +27,7 @@ type AssignmentFilterSupportedProperty struct {
 func NewAssignmentFilterSupportedProperty()(*AssignmentFilterSupportedProperty) {
     m := &AssignmentFilterSupportedProperty{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ func CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue(parseNode i87
     return NewAssignmentFilterSupportedProperty(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterSupportedProperty) GetAdditionalData()(map[string]interface{}) {
+func (m *AssignmentFilterSupportedProperty) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDataType gets the dataType property value. The data type of the property.
@@ -202,7 +202,7 @@ func (m *AssignmentFilterSupportedProperty) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AssignmentFilterSupportedProperty) SetAdditionalData(value map[string]interface{})() {
+func (m *AssignmentFilterSupportedProperty) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetDataType sets the dataType property value. The data type of the property.

@@ -7,7 +7,7 @@ import (
 // WindowsNetworkIsolationPolicy windows Network Isolation Policy
 type WindowsNetworkIsolationPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Contains a list of enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy. This collection can contain a maximum of 500 elements.
     enterpriseCloudResources []ProxiedDomainable
     // This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseCloudResources policy to force traffic to the matched cloud resources through these proxies.
@@ -31,7 +31,7 @@ type WindowsNetworkIsolationPolicy struct {
 func NewWindowsNetworkIsolationPolicy()(*WindowsNetworkIsolationPolicy) {
     m := &WindowsNetworkIsolationPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ func CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue(parseNode i878a80
     return NewWindowsNetworkIsolationPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsNetworkIsolationPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *WindowsNetworkIsolationPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnterpriseCloudResources gets the enterpriseCloudResources property value. Contains a list of enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy. This collection can contain a maximum of 500 elements.
@@ -270,7 +270,7 @@ func (m *WindowsNetworkIsolationPolicy) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *WindowsNetworkIsolationPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *WindowsNetworkIsolationPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEnterpriseCloudResources sets the enterpriseCloudResources property value. Contains a list of enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy. This collection can contain a maximum of 500 elements.

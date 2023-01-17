@@ -14,7 +14,7 @@ const (
 func (i RestrictionAction) String() string {
     return []string{"warn", "audit", "block"}[i]
 }
-func ParseRestrictionAction(v string) (interface{}, error) {
+func ParseRestrictionAction(v string) (any, error) {
     result := WARN_RESTRICTIONACTION
     switch v {
         case "warn":

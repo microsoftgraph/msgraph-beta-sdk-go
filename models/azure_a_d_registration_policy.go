@@ -7,7 +7,7 @@ import (
 // AzureADRegistrationPolicy 
 type AzureADRegistrationPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The identifiers of the groups that are in the scope of the policy. Either this property or allowedUsers is required when the appliesTo property is set to selected.
     allowedGroups []string
     // The identifiers of users that are in the scope of the policy. Either this property or allowedGroups is required when the appliesTo property is set to selected.
@@ -23,7 +23,7 @@ type AzureADRegistrationPolicy struct {
 func NewAzureADRegistrationPolicy()(*AzureADRegistrationPolicy) {
     m := &AzureADRegistrationPolicy{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAzureADRegistrationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateAzureADRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d233
     return NewAzureADRegistrationPolicy(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AzureADRegistrationPolicy) GetAdditionalData()(map[string]interface{}) {
+func (m *AzureADRegistrationPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedGroups gets the allowedGroups property value. The identifiers of the groups that are in the scope of the policy. Either this property or allowedUsers is required when the appliesTo property is set to selected.
@@ -159,7 +159,7 @@ func (m *AzureADRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AzureADRegistrationPolicy) SetAdditionalData(value map[string]interface{})() {
+func (m *AzureADRegistrationPolicy) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAllowedGroups sets the allowedGroups property value. The identifiers of the groups that are in the scope of the policy. Either this property or allowedUsers is required when the appliesTo property is set to selected.

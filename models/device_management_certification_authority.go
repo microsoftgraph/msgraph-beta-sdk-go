@@ -17,7 +17,7 @@ const (
 func (i DeviceManagementCertificationAuthority) String() string {
     return []string{"notConfigured", "microsoft", "digiCert"}[i]
 }
-func ParseDeviceManagementCertificationAuthority(v string) (interface{}, error) {
+func ParseDeviceManagementCertificationAuthority(v string) (any, error) {
     result := NOTCONFIGURED_DEVICEMANAGEMENTCERTIFICATIONAUTHORITY
     switch v {
         case "notConfigured":

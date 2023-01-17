@@ -7,7 +7,7 @@ import (
 // ManagedTenantsTenantGroupsTenantSearchPostRequestBody 
 type ManagedTenantsTenantGroupsTenantSearchPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The tenantId property
     tenantId *string
 }
@@ -15,7 +15,7 @@ type ManagedTenantsTenantGroupsTenantSearchPostRequestBody struct {
 func NewManagedTenantsTenantGroupsTenantSearchPostRequestBody()(*ManagedTenantsTenantGroupsTenantSearchPostRequestBody) {
     m := &ManagedTenantsTenantGroupsTenantSearchPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagedTenantsTenantGroupsTenantSearchPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateManagedTenantsTenantGroupsTenantSearchPostRequestBodyFromDiscriminato
     return NewManagedTenantsTenantGroupsTenantSearchPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsTenantGroupsTenantSearchPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagedTenantsTenantGroupsTenantSearchPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ManagedTenantsTenantGroupsTenantSearchPostRequestBody) Serialize(writer
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagedTenantsTenantGroupsTenantSearchPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagedTenantsTenantGroupsTenantSearchPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property

@@ -21,7 +21,7 @@ const (
 func (i GroupPolicyConfigurationIngestionType) String() string {
     return []string{"unknown", "custom", "builtIn", "mixed", "unknownFutureValue"}[i]
 }
-func ParseGroupPolicyConfigurationIngestionType(v string) (interface{}, error) {
+func ParseGroupPolicyConfigurationIngestionType(v string) (any, error) {
     result := UNKNOWN_GROUPPOLICYCONFIGURATIONINGESTIONTYPE
     switch v {
         case "unknown":

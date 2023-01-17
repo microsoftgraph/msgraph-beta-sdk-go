@@ -21,7 +21,7 @@ const (
 func (i CloudPcRemoteActionName) String() string {
     return []string{"unknown", "restart", "rename", "resize", "restore", "reprovision", "changeUserAccountType", "troubleshoot", "placeUnderReview", "unknownFutureValue"}[i]
 }
-func ParseCloudPcRemoteActionName(v string) (interface{}, error) {
+func ParseCloudPcRemoteActionName(v string) (any, error) {
     result := UNKNOWN_CLOUDPCREMOTEACTIONNAME
     switch v {
         case "unknown":

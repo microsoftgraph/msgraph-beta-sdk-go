@@ -8,7 +8,7 @@ import (
 // TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody 
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The atApprovedLocation property
     atApprovedLocation *bool
     // The notes property
@@ -20,7 +20,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostR
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +28,7 @@ func CreateTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockI
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAtApprovedLocation gets the atApprovedLocation property value. The atApprovedLocation property
@@ -107,7 +107,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInP
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsClockInPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAtApprovedLocation sets the atApprovedLocation property value. The atApprovedLocation property

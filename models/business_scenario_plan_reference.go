@@ -7,7 +7,7 @@ import (
 // BusinessScenarioPlanReference 
 type BusinessScenarioPlanReference struct {
     Entity
-    // The title property
+    // The title property of the plannerPlan.
     title *string
 }
 // NewBusinessScenarioPlanReference instantiates a new BusinessScenarioPlanReference and sets the default values.
@@ -36,7 +36,7 @@ func (m *BusinessScenarioPlanReference) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The title property of the plannerPlan.
 func (m *BusinessScenarioPlanReference) GetTitle()(*string) {
     return m.title
 }
@@ -54,7 +54,7 @@ func (m *BusinessScenarioPlanReference) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The title property of the plannerPlan.
 func (m *BusinessScenarioPlanReference) SetTitle(value *string)() {
     m.title = value
 }

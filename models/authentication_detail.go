@@ -8,7 +8,7 @@ import (
 // AuthenticationDetail 
 type AuthenticationDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.
     authenticationMethod *string
     // Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
@@ -28,7 +28,7 @@ type AuthenticationDetail struct {
 func NewAuthenticationDetail()(*AuthenticationDetail) {
     m := &AuthenticationDetail{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateAuthenticationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +36,7 @@ func CreateAuthenticationDetailFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewAuthenticationDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationDetail) GetAdditionalData()(map[string]interface{}) {
+func (m *AuthenticationDetail) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.
@@ -195,7 +195,7 @@ func (m *AuthenticationDetail) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuthenticationDetail) SetAdditionalData(value map[string]interface{})() {
+func (m *AuthenticationDetail) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.

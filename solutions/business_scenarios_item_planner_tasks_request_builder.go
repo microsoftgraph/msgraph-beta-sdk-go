@@ -16,7 +16,7 @@ type BusinessScenariosItemPlannerTasksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BusinessScenariosItemPlannerTasksRequestBuilderGetQueryParameters get tasks from solutions
+// BusinessScenariosItemPlannerTasksRequestBuilderGetQueryParameters get a list of the businessScenarioTask objects and their properties.
 type BusinessScenariosItemPlannerTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewBusinessScenariosItemPlannerTasksRequestBuilder(rawUrl string, requestAd
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Count()(*BusinessScenariosItemPlannerTasksCountRequestBuilder) {
     return NewBusinessScenariosItemPlannerTasksCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get tasks from solutions
+// Get get a list of the businessScenarioTask objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +87,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Get(ctx context.Contex
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioTaskCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioTaskCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -93,7 +96,10 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskCollectionResponseable), nil
 }
-// Post create new navigation property to tasks for solutions
+// Post create a new businessScenarioTask object.
+// [Find more info here]
+// 
+// [Find more info here]: https://docs.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -103,7 +109,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Post(ctx context.Conte
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendAsync(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioTaskFromDiscriminatorValue, errorMapping)
+    res, err := m.requestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBusinessScenarioTaskFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
@@ -112,7 +118,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable), nil
 }
-// ToGetRequestInformation get tasks from solutions
+// ToGetRequestInformation get a list of the businessScenarioTask objects and their properties.
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +134,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to tasks for solutions
+// ToPostRequestInformation create a new businessScenarioTask object.
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate

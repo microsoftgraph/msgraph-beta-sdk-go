@@ -7,7 +7,7 @@ import (
 // OnPremisesDirectorySynchronizationFeature 
 type OnPremisesDirectorySynchronizationFeature struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // Used to block cloud object takeover via source anchor hard match if enabled.
     blockCloudObjectTakeoverThroughHardMatchEnabled *bool
     // Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
@@ -53,7 +53,7 @@ type OnPremisesDirectorySynchronizationFeature struct {
 func NewOnPremisesDirectorySynchronizationFeature()(*OnPremisesDirectorySynchronizationFeature) {
     m := &OnPremisesDirectorySynchronizationFeature{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateOnPremisesDirectorySynchronizationFeatureFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +61,7 @@ func CreateOnPremisesDirectorySynchronizationFeatureFromDiscriminatorValue(parse
     return NewOnPremisesDirectorySynchronizationFeature(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesDirectorySynchronizationFeature) GetAdditionalData()(map[string]interface{}) {
+func (m *OnPremisesDirectorySynchronizationFeature) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBlockCloudObjectTakeoverThroughHardMatchEnabled gets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. Used to block cloud object takeover via source anchor hard match if enabled.
@@ -480,7 +480,7 @@ func (m *OnPremisesDirectorySynchronizationFeature) Serialize(writer i878a80d233
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesDirectorySynchronizationFeature) SetAdditionalData(value map[string]interface{})() {
+func (m *OnPremisesDirectorySynchronizationFeature) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetBlockCloudObjectTakeoverThroughHardMatchEnabled sets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. Used to block cloud object takeover via source anchor hard match if enabled.

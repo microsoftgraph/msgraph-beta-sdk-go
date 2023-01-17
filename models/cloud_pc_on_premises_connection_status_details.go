@@ -8,7 +8,7 @@ import (
 // CloudPcOnPremisesConnectionStatusDetails 
 type CloudPcOnPremisesConnectionStatusDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // All checks that are done on the connection.
@@ -22,7 +22,7 @@ type CloudPcOnPremisesConnectionStatusDetails struct {
 func NewCloudPcOnPremisesConnectionStatusDetails()(*CloudPcOnPremisesConnectionStatusDetails) {
     m := &CloudPcOnPremisesConnectionStatusDetails{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue(parseN
     return NewCloudPcOnPremisesConnectionStatusDetails(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcOnPremisesConnectionStatusDetails) GetAdditionalData()(map[string]interface{}) {
+func (m *CloudPcOnPremisesConnectionStatusDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -137,7 +137,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) Serialize(writer i878a80d2330
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcOnPremisesConnectionStatusDetails) SetAdditionalData(value map[string]interface{})() {
+func (m *CloudPcOnPremisesConnectionStatusDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetEndDateTime sets the endDateTime property value. The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

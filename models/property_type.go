@@ -20,7 +20,7 @@ const (
 func (i PropertyType) String() string {
     return []string{"string", "int64", "double", "dateTime", "boolean", "stringCollection", "int64Collection", "doubleCollection", "dateTimeCollection"}[i]
 }
-func ParsePropertyType(v string) (interface{}, error) {
+func ParsePropertyType(v string) (any, error) {
     result := STRING_PROPERTYTYPE
     switch v {
         case "string":

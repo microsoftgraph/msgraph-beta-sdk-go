@@ -7,7 +7,7 @@ import (
 // ManagementCertificateWithThumbprint 
 type ManagementCertificateWithThumbprint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The Base 64 encoded management certificate
     certificate *string
     // The OdataType property
@@ -19,7 +19,7 @@ type ManagementCertificateWithThumbprint struct {
 func NewManagementCertificateWithThumbprint()(*ManagementCertificateWithThumbprint) {
     m := &ManagementCertificateWithThumbprint{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateManagementCertificateWithThumbprintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -27,7 +27,7 @@ func CreateManagementCertificateWithThumbprintFromDiscriminatorValue(parseNode i
     return NewManagementCertificateWithThumbprint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementCertificateWithThumbprint) GetAdditionalData()(map[string]interface{}) {
+func (m *ManagementCertificateWithThumbprint) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCertificate gets the certificate property value. The Base 64 encoded management certificate
@@ -106,7 +106,7 @@ func (m *ManagementCertificateWithThumbprint) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ManagementCertificateWithThumbprint) SetAdditionalData(value map[string]interface{})() {
+func (m *ManagementCertificateWithThumbprint) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetCertificate sets the certificate property value. The Base 64 encoded management certificate

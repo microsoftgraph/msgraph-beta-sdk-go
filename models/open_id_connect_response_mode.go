@@ -14,7 +14,7 @@ const (
 func (i OpenIdConnectResponseMode) String() string {
     return []string{"form_post", "query", "unknownFutureValue"}[i]
 }
-func ParseOpenIdConnectResponseMode(v string) (interface{}, error) {
+func ParseOpenIdConnectResponseMode(v string) (any, error) {
     result := FORM_POST_OPENIDCONNECTRESPONSEMODE
     switch v {
         case "form_post":

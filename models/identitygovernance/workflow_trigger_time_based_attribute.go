@@ -14,7 +14,7 @@ const (
 func (i WorkflowTriggerTimeBasedAttribute) String() string {
     return []string{"employeeHireDate", "employeeLeaveDateTime", "unknownFutureValue"}[i]
 }
-func ParseWorkflowTriggerTimeBasedAttribute(v string) (interface{}, error) {
+func ParseWorkflowTriggerTimeBasedAttribute(v string) (any, error) {
     result := EMPLOYEEHIREDATE_WORKFLOWTRIGGERTIMEBASEDATTRIBUTE
     switch v {
         case "employeeHireDate":

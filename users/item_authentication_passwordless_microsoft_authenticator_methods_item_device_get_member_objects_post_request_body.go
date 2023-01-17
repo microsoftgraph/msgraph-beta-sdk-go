@@ -7,7 +7,7 @@ import (
 // ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody 
 type ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The securityEnabledOnly property
     securityEnabledOnly *bool
 }
@@ -15,7 +15,7 @@ type ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMem
 func NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody()(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody) {
     m := &ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -23,7 +23,7 @@ func CreateItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDevice
     return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -62,7 +62,7 @@ func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGe
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsItemDeviceGetMemberObjectsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetSecurityEnabledOnly sets the securityEnabledOnly property value. The securityEnabledOnly property

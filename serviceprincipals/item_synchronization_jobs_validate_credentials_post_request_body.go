@@ -8,7 +8,7 @@ import (
 // ItemSynchronizationJobsValidateCredentialsPostRequestBody 
 type ItemSynchronizationJobsValidateCredentialsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The applicationIdentifier property
     applicationIdentifier *string
     // The credentials property
@@ -22,7 +22,7 @@ type ItemSynchronizationJobsValidateCredentialsPostRequestBody struct {
 func NewItemSynchronizationJobsValidateCredentialsPostRequestBody()(*ItemSynchronizationJobsValidateCredentialsPostRequestBody) {
     m := &ItemSynchronizationJobsValidateCredentialsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateItemSynchronizationJobsValidateCredentialsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +30,7 @@ func CreateItemSynchronizationJobsValidateCredentialsPostRequestBodyFromDiscrimi
     return NewItemSynchronizationJobsValidateCredentialsPostRequestBody(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApplicationIdentifier gets the applicationIdentifier property value. The applicationIdentifier property
@@ -137,7 +137,7 @@ func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) Serialize(wr
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *ItemSynchronizationJobsValidateCredentialsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApplicationIdentifier sets the applicationIdentifier property value. The applicationIdentifier property

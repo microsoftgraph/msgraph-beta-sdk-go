@@ -13,7 +13,7 @@ const (
 func (i OutlierMemberType) String() string {
     return []string{"user", "unknownFutureValue"}[i]
 }
-func ParseOutlierMemberType(v string) (interface{}, error) {
+func ParseOutlierMemberType(v string) (any, error) {
     result := USER_OUTLIERMEMBERTYPE
     switch v {
         case "user":

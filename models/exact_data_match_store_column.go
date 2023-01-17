@@ -7,7 +7,7 @@ import (
 // ExactDataMatchStoreColumn 
 type ExactDataMatchStoreColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The ignoredDelimiters property
     ignoredDelimiters []string
     // The isCaseInsensitive property
@@ -23,7 +23,7 @@ type ExactDataMatchStoreColumn struct {
 func NewExactDataMatchStoreColumn()(*ExactDataMatchStoreColumn) {
     m := &ExactDataMatchStoreColumn{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateExactDataMatchStoreColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +31,7 @@ func CreateExactDataMatchStoreColumnFromDiscriminatorValue(parseNode i878a80d233
     return NewExactDataMatchStoreColumn(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExactDataMatchStoreColumn) GetAdditionalData()(map[string]interface{}) {
+func (m *ExactDataMatchStoreColumn) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -154,7 +154,7 @@ func (m *ExactDataMatchStoreColumn) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ExactDataMatchStoreColumn) SetAdditionalData(value map[string]interface{})() {
+func (m *ExactDataMatchStoreColumn) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetIgnoredDelimiters sets the ignoredDelimiters property value. The ignoredDelimiters property

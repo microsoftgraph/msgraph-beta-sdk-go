@@ -7,7 +7,7 @@ import (
 // Win32LobAppDetection base class to detect a Win32 App
 type Win32LobAppDetection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{}
+    additionalData map[string]any
     // The OdataType property
     odataType *string
 }
@@ -15,7 +15,7 @@ type Win32LobAppDetection struct {
 func NewWin32LobAppDetection()(*Win32LobAppDetection) {
     m := &Win32LobAppDetection{
     }
-    m.SetAdditionalData(make(map[string]interface{}));
+    m.SetAdditionalData(make(map[string]any));
     return m
 }
 // CreateWin32LobAppDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ func CreateWin32LobAppDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewWin32LobAppDetection(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppDetection) GetAdditionalData()(map[string]interface{}) {
+func (m *Win32LobAppDetection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -86,7 +86,7 @@ func (m *Win32LobAppDetection) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *Win32LobAppDetection) SetAdditionalData(value map[string]interface{})() {
+func (m *Win32LobAppDetection) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
